@@ -16,11 +16,31 @@
 #include "include/DrawingNativeCanvasCommonTest.h"
 #include "include/OhosCommonTest.h"
 
+#define DRAWING_NUMBER_1 1
+#define DRAWING_NUMBER_2 2
+#define DRAWING_NUMBER_3 3
+#define DRAWING_NUMBER_4 4
+#define DRAWING_NUMBER_5 5
+#define DRAWING_NUMBER_10 10
+#define DRAWING_NUMBER_47 47
+#define DRAWING_NUMBER_48 48
+#define DRAWING_NUMBER_100 100
+#define DRAWING_NUMBER_200 200
+#define DRAWING_NUMBER_250 250
+#define DRAWING_NUMBER_256 256
+#define DRAWING_NUMBER_500 500
+#define DRAWING_NUMBER_700 700
+#define DRAWING_NUMBER_565 565
+#define DRAWING_NUMBER_2160 2160
+#define DRAWING_NUMBER_4096 4096
+#define DRAWING_NUMBER_4444 4444
+#define DRAWING_NUMBER_8888 8888
+
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
 
-constexpr int POINT_COUNT_TWO = 2;
+constexpr int POINT_COUNT_TWO = DRAWING_NUMBER_2;
 
 // Common SetUp and TearDown functions implementation
 void DrawingNativeCanvasPart2TestSetUp()
@@ -53,11 +73,9 @@ int TestCanvasDrawPixelMapRectNormal()
     EXPECT_NE(canvas, nullptr);
     // 2. Obtain OH_Drawing_PixelMap from OH_Drawing_PixelMapGetFromNativePixelMap()
     // 3. Create src and dst using OH_Drawing_RectCreate
-    OH_Drawing_Rect* src = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(src, nullptr);
-    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
 
     // 4. Obtain OH_Drawing_PixelMap from OH_Drawing_PixelMapGetFromOhPixelMapNative
@@ -102,21 +120,21 @@ int TestCanvasDrawPixelMapRectNormal()
 static void TestDrawPixelMapRectWithZeroRects(OH_Drawing_Canvas* canvas, OH_Drawing_PixelMap* drPixelMap,
     OH_Drawing_Rect* dst, OH_Drawing_SamplingOptions* sampleOptions)
 {
-    const int rectParamCount = 5;
-    float rectParams[][4] = {
-        { TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1 },
-        { TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1 },
-        { TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_1 },
-        { TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_0 },
-        { TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0 },
+    const int rectParamCount = DRAWING_NUMBER_5;
+    float rectParams[][DRAWING_NUMBER_4] = {
+        { 0, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1 },
+        { DRAWING_NUMBER_1, 0, DRAWING_NUMBER_1, DRAWING_NUMBER_1 },
+        { DRAWING_NUMBER_1, DRAWING_NUMBER_1, 0, DRAWING_NUMBER_1 },
+        { DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, 0 },
+        { 0, 0, 0, 0 },
     };
     for (int i = 0; i < rectParamCount; ++i) {
-        OH_Drawing_Rect* src =
-            OH_Drawing_RectCreate(rectParams[i][0], rectParams[i][1], rectParams[i][2], rectParams[i][3]);
+        OH_Drawing_Rect* src = OH_Drawing_RectCreate(rectParams[i][0], rectParams[i][DRAWING_NUMBER_1],
+                                                     rectParams[i][DRAWING_NUMBER_2], rectParams[i][DRAWING_NUMBER_3]);
         EXPECT_NE(src, nullptr);
         OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst, sampleOptions);
-        OH_Drawing_Rect* dst =
-            OH_Drawing_RectCreate(rectParams[i][0], rectParams[i][1], rectParams[i][2], rectParams[i][3]);
+        OH_Drawing_Rect* dst = OH_Drawing_RectCreate(rectParams[i][0], rectParams[i][DRAWING_NUMBER_1],
+                                                     rectParams[i][DRAWING_NUMBER_2], rectParams[i][DRAWING_NUMBER_3]);
         EXPECT_NE(dst, nullptr);
         OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst, sampleOptions);
         OH_Drawing_RectDestroy(src);
@@ -132,11 +150,9 @@ int TestCanvasDrawPixelMapRectNull()
     OH_PixelmapNative* pixelMap = GET_OH_PixelmapNative();
     OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
     EXPECT_NE(drPixelMap, nullptr);
-    OH_Drawing_Rect* src = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(src, nullptr);
-    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_SamplingOptions* sampleOptions =
         OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
@@ -152,9 +168,9 @@ int TestCanvasDrawPixelMapRectNull()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst, nullptr);
     OH_Drawing_PixelMapGetFromNativePixelMap(nullptr);
-    
+
     TestDrawPixelMapRectWithZeroRects(canvas, drPixelMap, dst, sampleOptions);
-    
+
     OH_Drawing_RectDestroy(src);
     OH_Drawing_RectDestroy(dst);
     OH_Drawing_SamplingOptionsDestroy(sampleOptions);
@@ -167,28 +183,29 @@ int TestCanvasDrawPixelMapRectNull()
 static void TestDrawPixelMapRectWithInvalidSrcRects(OH_Drawing_Canvas* canvas, OH_Drawing_PixelMap* drPixelMap,
     OH_Drawing_Rect* dst, OH_Drawing_SamplingOptions* sampleOptions)
 {
-    int srcRects[][4] = {
-        { static_cast<int>(TEST_MATRIX_VALUE_NEG_1), static_cast<int>(TEST_MATRIX_VALUE_1),
-            static_cast<int>(TEST_MATRIX_VALUE_1), static_cast<int>(TEST_MATRIX_VALUE_1) },
-        { static_cast<int>(TEST_MATRIX_VALUE_1), static_cast<int>(TEST_MATRIX_VALUE_NEG_1),
-            static_cast<int>(TEST_MATRIX_VALUE_1), static_cast<int>(TEST_MATRIX_VALUE_1) },
-        { static_cast<int>(TEST_MATRIX_VALUE_1), static_cast<int>(TEST_MATRIX_VALUE_1),
-            static_cast<int>(TEST_MATRIX_VALUE_NEG_1), static_cast<int>(TEST_MATRIX_VALUE_1) },
-        { static_cast<int>(TEST_MATRIX_VALUE_1), static_cast<int>(TEST_MATRIX_VALUE_1),
-          static_cast<int>(TEST_MATRIX_VALUE_1), static_cast<int>(TEST_MATRIX_VALUE_NEG_1) },
-        { static_cast<int>(TEST_CANVAS_COORD_100), static_cast<int>(TEST_CANVAS_COORD_100),
-          static_cast<int>(TEST_CANVAS_COORD_100), static_cast<int>(TEST_CANVAS_COORD_200) },
-        { static_cast<int>(TEST_CANVAS_COORD_100), static_cast<int>(TEST_CANVAS_COORD_200),
-          static_cast<int>(TEST_CANVAS_COORD_200), static_cast<int>(TEST_CANVAS_COORD_200) },
-        { static_cast<int>(TEST_CANVAS_COORD_100), static_cast<int>(TEST_CANVAS_COORD_100),
-          static_cast<int>(TEST_CANVAS_COORD_100), static_cast<int>(TEST_CANVAS_COORD_100) },
-        { static_cast<int>(TEST_CANVAS_COORD_200), static_cast<int>(TEST_CANVAS_COORD_200),
-          static_cast<int>(TEST_CANVAS_COORD_100), static_cast<int>(TEST_CANVAS_COORD_100) },
-        { static_cast<int>(TEST_MATRIX_VALUE_0), static_cast<int>(TEST_MATRIX_VALUE_0),
-          static_cast<int>(TEST_CANVAS_COORD_100), static_cast<int>(TEST_CANVAS_COORD_100) },
+    int srcRects[][DRAWING_NUMBER_4] = {
+        { static_cast<int>(DRAWING_NUMBER_1), static_cast<int>(DRAWING_NUMBER_1),
+            static_cast<int>(DRAWING_NUMBER_1), static_cast<int>(DRAWING_NUMBER_1) },
+        { static_cast<int>(DRAWING_NUMBER_1), static_cast<int>(DRAWING_NUMBER_1),
+            static_cast<int>(DRAWING_NUMBER_1), static_cast<int>(DRAWING_NUMBER_1) },
+        { static_cast<int>(DRAWING_NUMBER_1), static_cast<int>(DRAWING_NUMBER_1),
+            static_cast<int>(DRAWING_NUMBER_1), static_cast<int>(DRAWING_NUMBER_1) },
+        { static_cast<int>(DRAWING_NUMBER_1), static_cast<int>(DRAWING_NUMBER_1),
+          static_cast<int>(DRAWING_NUMBER_1), static_cast<int>(DRAWING_NUMBER_1) },
+        { static_cast<int>(DRAWING_NUMBER_100), static_cast<int>(DRAWING_NUMBER_100),
+          static_cast<int>(DRAWING_NUMBER_100), static_cast<int>(DRAWING_NUMBER_200) },
+        { static_cast<int>(DRAWING_NUMBER_100), static_cast<int>(DRAWING_NUMBER_200),
+          static_cast<int>(DRAWING_NUMBER_200), static_cast<int>(DRAWING_NUMBER_200) },
+        { static_cast<int>(DRAWING_NUMBER_100), static_cast<int>(DRAWING_NUMBER_100),
+          static_cast<int>(DRAWING_NUMBER_100), static_cast<int>(DRAWING_NUMBER_100) },
+        { static_cast<int>(DRAWING_NUMBER_200), static_cast<int>(DRAWING_NUMBER_200),
+          static_cast<int>(DRAWING_NUMBER_100), static_cast<int>(DRAWING_NUMBER_100) },
+        { static_cast<int>(0), static_cast<int>(0),
+          static_cast<int>(DRAWING_NUMBER_100), static_cast<int>(DRAWING_NUMBER_100) },
     };
     for (int i = 0; i < TEST_SRC_RECTS_COUNT; i++) {
-        OH_Drawing_Rect* src = OH_Drawing_RectCreate(srcRects[i][0], srcRects[i][1], srcRects[i][2], srcRects[i][3]);
+        OH_Drawing_Rect* src = OH_Drawing_RectCreate(srcRects[i][0], srcRects[i][DRAWING_NUMBER_1],
+                                                     srcRects[i][DRAWING_NUMBER_2], srcRects[i][DRAWING_NUMBER_3]);
         OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst, sampleOptions);
         OH_Drawing_RectDestroy(src);
     }
@@ -197,14 +214,15 @@ static void TestDrawPixelMapRectWithInvalidSrcRects(OH_Drawing_Canvas* canvas, O
 static void TestDrawPixelMapRectWithInvalidDstRects(OH_Drawing_Canvas* canvas, OH_Drawing_PixelMap* drPixelMap,
     OH_Drawing_Rect* src, OH_Drawing_SamplingOptions* sampleOptions)
 {
-    float dstRects[][4] = {
-        { TEST_RECT_SIZE, TEST_RECT_SIZE, TEST_RECT_SIZE, TEST_RECT_SIZE_200 },
-        { TEST_RECT_SIZE, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200 },
-        { TEST_RECT_SIZE, TEST_RECT_SIZE, TEST_RECT_SIZE, TEST_RECT_SIZE },
-        { TEST_RECT_SIZE_200, TEST_RECT_SIZE_200, TEST_RECT_SIZE, TEST_RECT_SIZE },
+    float dstRects[][DRAWING_NUMBER_4] = {
+        { DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_200 },
+        { DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_200 },
+        { DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100 },
+        { DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_100, DRAWING_NUMBER_100 },
     };
     for (int i = 0; i < TEST_DST_RECTS_COUNT; i++) {
-        OH_Drawing_Rect* dst = OH_Drawing_RectCreate(dstRects[i][0], dstRects[i][1], dstRects[i][2], dstRects[i][3]);
+        OH_Drawing_Rect* dst = OH_Drawing_RectCreate(dstRects[i][0], dstRects[i][DRAWING_NUMBER_1],
+                                                     dstRects[i][DRAWING_NUMBER_2], dstRects[i][DRAWING_NUMBER_3]);
         OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst, sampleOptions);
         OH_Drawing_RectDestroy(dst);
     }
@@ -226,11 +244,9 @@ int TestCanvasDrawPixelMapRectAbnormal()
     OH_PixelmapNative* pixelMap = GET_OH_PixelmapNative();
     OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
     EXPECT_NE(drPixelMap, nullptr);
-    OH_Drawing_Rect* src = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(src, nullptr);
-    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_SamplingOptions* sampleOptions =
         OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
@@ -248,11 +264,11 @@ int TestCanvasDrawPixelMapRectAbnormal()
     OH_Drawing_PixelMapGetFromNativePixelMap(nullptr);
     OH_Drawing_RectDestroy(src);
     OH_Drawing_RectDestroy(dst);
-    
+
     TestDrawPixelMapRectWithInvalidSrcRects(canvas, drPixelMap, dst, sampleOptions);
-    src = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_RECT_SIZE, TEST_RECT_SIZE);
+    src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     TestDrawPixelMapRectWithInvalidDstRects(canvas, drPixelMap, src, sampleOptions);
-    
+
     OH_Drawing_RectDestroy(src);
     OH_Drawing_SamplingOptionsDestroy(sampleOptions);
     OH_Drawing_PixelMapDissolve(drPixelMap);
@@ -280,11 +296,9 @@ int TestCanvasDrawPixelMapRectMaximum()
     OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
     EXPECT_NE(drPixelMap, nullptr);
 
-    OH_Drawing_Rect* src = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(src, nullptr);
-    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
 
     OH_Drawing_SamplingOptions* sampleOptions =
@@ -292,23 +306,23 @@ int TestCanvasDrawPixelMapRectMaximum()
     // add assert
     EXPECT_NE(sampleOptions, nullptr);
     // 2
-    OH_Drawing_Rect* src1 = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* src1 = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // add assert
     EXPECT_NE(src1, nullptr);
     OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src1, dst, sampleOptions);
     // 3
-    OH_Drawing_Rect* src2 = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
+    OH_Drawing_Rect* src2 = OH_Drawing_RectCreate(0, 0,
                                   FLT_MAX_VALUE, FLT_MAX_VALUE);
     // add assert
     EXPECT_NE(src2, nullptr);
     OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src2, dst, sampleOptions);
     // 4
-    OH_Drawing_Rect* dst1 = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* dst1 = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // add assert
     EXPECT_NE(dst1, nullptr);
     OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst1, sampleOptions);
     // 5
-    OH_Drawing_Rect* dst2 = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
+    OH_Drawing_Rect* dst2 = OH_Drawing_RectCreate(0, 0,
                                   FLT_MAX_VALUE, FLT_MAX_VALUE);
     // add assert
     EXPECT_NE(dst2, nullptr);
@@ -348,11 +362,9 @@ int TestCanvasDrawPixelMapRect4KBoundary()
     OH_Drawing_PixelMap* drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
     EXPECT_NE(drPixelMap, nullptr);
 
-    OH_Drawing_Rect* src = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(src, nullptr);
-    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
 
     OH_Drawing_SamplingOptions* sampleOptions =
@@ -360,23 +372,23 @@ int TestCanvasDrawPixelMapRect4KBoundary()
     // add assert
     EXPECT_NE(sampleOptions, nullptr);
     // 2
-    OH_Drawing_Rect* src1 = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* src1 = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // add assert
     EXPECT_NE(src1, nullptr);
     OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src1, dst, sampleOptions);
     // 3
-    OH_Drawing_Rect* src2 = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
+    OH_Drawing_Rect* src2 = OH_Drawing_RectCreate(0, 0,
                                   FLT_MAX_VALUE, FLT_MAX_VALUE);
     // add assert
     EXPECT_NE(src2, nullptr);
     OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src2, dst, sampleOptions);
     // 4
-    OH_Drawing_Rect* dst1 = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* dst1 = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // add assert
     EXPECT_NE(dst1, nullptr);
     OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst1, sampleOptions);
     // 5
-    OH_Drawing_Rect* dst2 = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
+    OH_Drawing_Rect* dst2 = OH_Drawing_RectCreate(0, 0,
                                   FLT_MAX_VALUE, FLT_MAX_VALUE);
     // add assert
     EXPECT_NE(dst2, nullptr);
@@ -482,7 +494,7 @@ int TestCanvasDrawBackgroundNull()
 
 /**
  * @tc.name   testCanvasDrawBackgroundInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_5100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_5DRAWING_NUMBER_100
  * @tc.desc   test for testCanvasDrawBackgroundInputDestroyed.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -518,7 +530,7 @@ int TestCanvasDrawBackgroundMultipleCalls()
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     EXPECT_NE(brush, nullptr);
     // 3. OH_Drawing_CanvasDrawBackground, 10 times.
-    for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_CanvasDrawBackground(canvas, brush);
     }
     // 4. Free the memory.
@@ -550,7 +562,7 @@ int TestCanvasDrawRegionNormal()
     EXPECT_NE(region, nullptr);
     // 3. OH_Drawing_RegionSetRect
     OH_Drawing_Rect* rect =
-        OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_RECT_SIZE_256, TEST_RECT_SIZE_256);
+        OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_256, DRAWING_NUMBER_256);
     // add assert
     EXPECT_NE(rect, nullptr);
 
@@ -591,7 +603,7 @@ int TestCanvasDrawRegionNull()
 
     // 3. OH_Drawing_CanvasDrawRegion, first parameter is nullptr
     OH_Drawing_Rect* rect =
-        OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_RECT_SIZE_256, TEST_RECT_SIZE_256);
+        OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_256, DRAWING_NUMBER_256);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RegionSetRect(region, rect);
@@ -604,14 +616,14 @@ int TestCanvasDrawRegionNull()
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. OH_Drawing_CanvasDrawRegion, region is empty
-    OH_Drawing_Region* region2 = OH_Drawing_RegionCreate();
+    OH_Drawing_Region* regionDRAWING_NUMBER_2 = OH_Drawing_RegionCreate();
     // add assert
-    EXPECT_NE(region2, nullptr);
-    OH_Drawing_CanvasDrawRegion(canvas, region2);
+    EXPECT_NE(regionDRAWING_NUMBER_2, nullptr);
+    OH_Drawing_CanvasDrawRegion(canvas, regionDRAWING_NUMBER_2);
     // 6. Free the memory.
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RegionDestroy(region);
-    OH_Drawing_RegionDestroy(region2);
+    OH_Drawing_RegionDestroy(regionDRAWING_NUMBER_2);
     OH_Drawing_CanvasDestroy(canvas);
 
     DrawingNativeCanvasPart2TestTearDown();
@@ -652,8 +664,8 @@ int TestCanvasDrawPointsNormal()
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_Point2D creates an array of points.
-    OH_Drawing_Point2D point = { TEST_POINT_X_250, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D points1[1] = { point };
+    OH_Drawing_Point2D point = { DRAWING_NUMBER_250, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D points1[DRAWING_NUMBER_1] = { point };
     // 3. OH_Drawing_CanvasDrawPoints iterates through the enum values OH_Drawing_PointMode, with count set to the
     // length of the corresponding value.
     OH_Drawing_PointMode modeArray[TEST_MIPMAP_MODE_COUNT] = { POINT_MODE_POINTS,
@@ -661,14 +673,14 @@ int TestCanvasDrawPointsNormal()
                                                                POINT_MODE_POLYGON };
     for (int i = 0; i < TEST_MIPMAP_MODE_COUNT; i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_CanvasDrawPoints(canvas, modeArray[i], 1, points1);
+        OH_Drawing_CanvasDrawPoints(canvas, modeArray[i], DRAWING_NUMBER_1, points1);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     }
     // 4. OH_Drawing_Point2D creates an array of multiple points.
-    OH_Drawing_Point2D pointOne = { TEST_POINT_X_250, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D pointTwo = { TEST_RECT_SIZE_200, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D pointThree = { TEST_RECT_SIZE_500, TEST_POINT_Y_700 };
+    OH_Drawing_Point2D pointOne = { DRAWING_NUMBER_250, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D pointTwo = { DRAWING_NUMBER_200, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D pointThree = { DRAWING_NUMBER_500, DRAWING_NUMBER_700 };
     OH_Drawing_Point2D points2[TEST_MIPMAP_MODE_COUNT] = { pointOne, pointTwo, pointThree };
     // 5. OH_Drawing_CanvasDrawPoints iterates through the enum values OH_Drawing_PointMode, with count set to the
     // length of the corresponding value.
@@ -702,9 +714,9 @@ int TestCanvasDrawPointsNull()
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
 
-    OH_Drawing_Point2D pointOne = { TEST_POINT_X_250, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D pointTwo = { TEST_RECT_SIZE_200, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D pointThree = { TEST_RECT_SIZE_500, TEST_POINT_Y_700 };
+    OH_Drawing_Point2D pointOne = { DRAWING_NUMBER_250, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D pointTwo = { DRAWING_NUMBER_200, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D pointThree = { DRAWING_NUMBER_500, DRAWING_NUMBER_700 };
     OH_Drawing_Point2D points[TEST_MIPMAP_MODE_COUNT] = { pointOne, pointTwo, pointThree };
     OH_Drawing_Point2D pointsEmpty[0] = {};
     // 2. Pass an empty value as the first argument for OH_Drawing_CanvasDrawPoints.
@@ -712,7 +724,7 @@ int TestCanvasDrawPointsNull()
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Set the third argument of OH_Drawing_CanvasDrawPoints to 0.
-    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, static_cast<int>(TEST_MATRIX_VALUE_0), points);
+    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, static_cast<int>(0), points);
     // 4. Pass an empty array as the fourth argument for OH_Drawing_CanvasDrawPoints.
     OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, TEST_MIPMAP_MODE_COUNT, pointsEmpty);
     // 5. Free the memory.
@@ -739,33 +751,33 @@ int TestCanvasDrawPointsAbnormal()
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
     // 2. Pass a negative value for the count parameter in OH_Drawing_CanvasDrawPoints.
-    OH_Drawing_Point2D pointOne = { TEST_POINT_X_250, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D pointTwo = { TEST_RECT_SIZE_200, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D pointThree = { TEST_RECT_SIZE_500, TEST_POINT_Y_700 };
+    OH_Drawing_Point2D pointOne = { DRAWING_NUMBER_250, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D pointTwo = { DRAWING_NUMBER_200, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D pointThree = { DRAWING_NUMBER_500, DRAWING_NUMBER_700 };
     OH_Drawing_Point2D points[TEST_MIPMAP_MODE_COUNT] = { pointOne, pointTwo, pointThree };
 
     if (0) {
         // todo cpp crash
         // libc++abi: terminating due to uncaught exception of type std::bad_alloc: std::bad_alloc
-        OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, -1, points);
+        OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, -DRAWING_NUMBER_1, points);
     }
     // 3. Pass a floating-point value for the count parameter in OH_Drawing_CanvasDrawPoints.
-    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, 1.0f, points);
+    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, DRAWING_NUMBER_1, points);
     // 4. Set the x-coordinate of the point in OH_Drawing_Point2D parameter to a negative number in
     // OH_Drawing_CanvasDrawPoints.
-    OH_Drawing_Point2D point1 = { -TEST_POINT_X_250, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D points1[1] = { point1 };
-    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, 1, points1);
+    OH_Drawing_Point2D point1 = { -DRAWING_NUMBER_250, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D points1[DRAWING_NUMBER_1] = { point1 };
+    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, DRAWING_NUMBER_1, points1);
     // 5. Set the y-coordinate of the point in OH_Drawing_Point2D parameter to a negative number in
     // OH_Drawing_CanvasDrawPoints.
-    OH_Drawing_Point2D point2 = { TEST_POINT_X_250, -TEST_POINT_Y_500 };
-    OH_Drawing_Point2D points2[1] = { point2 };
-    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, 1, points2);
+    OH_Drawing_Point2D point2 = { DRAWING_NUMBER_250, -DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D points2[DRAWING_NUMBER_1] = { point2 };
+    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, DRAWING_NUMBER_1, points2);
     // 6. Set both the x and y coordinates of the point in OH_Drawing_Point2D parameter to negative numbers in
     // OH_Drawing_CanvasDrawPoints.
-    OH_Drawing_Point2D point3 = { -TEST_POINT_X_250, -TEST_POINT_Y_500 };
-    OH_Drawing_Point2D points3[1] = { point3 };
-    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, 1, points3);
+    OH_Drawing_Point2D pointDRAWING_NUMBER_3 = { -DRAWING_NUMBER_250, -DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D pointsDRAWING_NUMBER_3[DRAWING_NUMBER_1] = { pointDRAWING_NUMBER_3 };
+    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, DRAWING_NUMBER_1, pointsDRAWING_NUMBER_3);
     // 7. Free the memory.
     OH_Drawing_CanvasDestroy(canvas);
 
@@ -792,16 +804,16 @@ int TestCanvasDrawPointsMismatch()
 
     // 2. Pass an array of OH_Drawing_Point2D with a length of 1 and pass 2 as the count parameter in
     // OH_Drawing_CanvasDrawPoints.
-    OH_Drawing_Point2D pointOne = { TEST_POINT_X_250, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D points1[1] = { pointOne };
+    OH_Drawing_Point2D pointOne = { DRAWING_NUMBER_250, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D points1[DRAWING_NUMBER_1] = { pointOne };
     OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, POINT_COUNT_TWO, points1);
     // 3. Pass an array of OH_Drawing_Point2D with a length of 3 and pass 1 as the count parameter in
     // OH_Drawing_CanvasDrawPoints.
-    OH_Drawing_Point2D pointOne1 = { TEST_POINT_X_250, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D pointTwo1 = { TEST_RECT_SIZE_200, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D pointThree1 = { TEST_RECT_SIZE_500, TEST_POINT_Y_700 };
+    OH_Drawing_Point2D pointOne1 = { DRAWING_NUMBER_250, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D pointTwo1 = { DRAWING_NUMBER_200, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D pointThree1 = { DRAWING_NUMBER_500, DRAWING_NUMBER_700 };
     OH_Drawing_Point2D points2[TEST_MIPMAP_MODE_COUNT] = { pointOne1, pointTwo1, pointThree1 };
-    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, 1, points2);
+    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, DRAWING_NUMBER_1, points2);
     // 4. Free the memory.
     OH_Drawing_CanvasDestroy(canvas);
 
@@ -826,25 +838,25 @@ int TestCanvasDrawPointsMaximum()
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
     // 2. Pass an extremely large value for the count parameter in OH_Drawing_CanvasDrawPoints.
-    OH_Drawing_Point2D pointOne = { TEST_POINT_X_250, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D pointTwo = { TEST_RECT_SIZE_200, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D pointThree = { TEST_RECT_SIZE_500, TEST_POINT_Y_700 };
+    OH_Drawing_Point2D pointOne = { DRAWING_NUMBER_250, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D pointTwo = { DRAWING_NUMBER_200, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D pointThree = { DRAWING_NUMBER_500, DRAWING_NUMBER_700 };
     OH_Drawing_Point2D points[TEST_MIPMAP_MODE_COUNT] = { pointOne, pointTwo, pointThree };
     if (0) {
         // todo cpp crash
         // libc++abi: terminating due to uncaught exception of type std::bad_alloc: std::bad_alloc
-        OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, INT32_MAX_VALUE, points);
+        OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, INT32_MAX, points);
     }
     // 3. Set the x-coordinate of the point in OH_Drawing_Point2D parameter to an extremely large value in
     // OH_Drawing_CanvasDrawPoints.
-    OH_Drawing_Point2D point1 = { INT32_MAX_VALUE, TEST_POINT_Y_500 };
-    OH_Drawing_Point2D points1[1] = { point1 };
-    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, 1, points1);
+    OH_Drawing_Point2D point1 = { INT32_MAX, DRAWING_NUMBER_500 };
+    OH_Drawing_Point2D points1[DRAWING_NUMBER_1] = { point1 };
+    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, DRAWING_NUMBER_1, points1);
     // 4. Set the y-coordinate of the point in OH_Drawing_Point2D parameter to an extremely large value in
     // OH_Drawing_CanvasDrawPoints.
-    OH_Drawing_Point2D point2 = { TEST_POINT_X_250, INT32_MAX_VALUE };
-    OH_Drawing_Point2D points2[1] = { point2 };
-    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, 1, points2);
+    OH_Drawing_Point2D point2 = { DRAWING_NUMBER_250, INT32_MAX };
+    OH_Drawing_Point2D points2[DRAWING_NUMBER_1] = { point2 };
+    OH_Drawing_CanvasDrawPoints(canvas, POINT_MODE_LINES, DRAWING_NUMBER_1, points2);
     // 5. Free the memory.
     OH_Drawing_CanvasDestroy(canvas);
 
@@ -855,7 +867,7 @@ int TestCanvasDrawPointsMaximum()
 
 /**
  * @tc.name   testCanvasDrawPointsInputDestroyed
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6DRAWING_NUMBER_100
  * @tc.desc   test for testCanvasDrawPointsInputDestroyed.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -911,8 +923,8 @@ int TestCanvasDrawBitmapNormal()
     for (int i = 0; i < TEST_COLOR_FORMAT_COUNT; i++) {
         for (int j = 0; j < TEST_ALPHA_FORMAT_COUNT; j++) {
             OH_Drawing_ErrorCodeReset();
-            int width = TEST_RECT_SIZE_500;
-            int height = TEST_RECT_SIZE_500;
+            int width = DRAWING_NUMBER_500;
+            int height = DRAWING_NUMBER_500;
             int rowBytes = width * height * BYTES_PER_PIXEL;
             OH_Drawing_Image_Info imageInfo = { width, height, formats[i], alphaFormats[j] };
             OH_Drawing_BitmapFormat cFormat{ formats[i], alphaFormats[j] };
@@ -929,10 +941,10 @@ int TestCanvasDrawBitmapNormal()
         }
     }
     // 6. OH_Drawing_BitmapCreateFromPixels, initialize the Bitmap with rowBytes greater than the image.
-    int width = TEST_RECT_SIZE_500;
-    int height = TEST_RECT_SIZE_500;
+    int width = DRAWING_NUMBER_500;
+    int height = DRAWING_NUMBER_500;
     OH_Drawing_Image_Info imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
-    int rowBytes = TEST_RECT_SIZE_600 * TEST_RECT_SIZE_600 * BYTES_PER_PIXEL;
+    int rowBytes = DRAWING_NUMBER_600 * DRAWING_NUMBER_600 * BYTES_PER_PIXEL;
     void* pixels = new int[width * height];
     bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
     // 7. OH_Drawing_CanvasDrawBitmap
@@ -975,33 +987,33 @@ int TestCanvasDrawBitmapNull()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. OH_Drawing_BitmapCreateFromPixels, initialize the image with a size of 48*48, and allocate memory for pixels
     // as 47*48.
-    int width = TEST_BITMAP_SIZE_48;
-    int height = TEST_BITMAP_SIZE_48;
+    int width = DRAWING_NUMBER_48;
+    int height = DRAWING_NUMBER_48;
     OH_Drawing_Image_Info imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
     int rowBytes = width * height * BYTES_PER_PIXEL;
-    void* pixels = new int[TEST_BITMAP_SIZE_47 * TEST_BITMAP_SIZE_48];
+    void* pixels = new int[DRAWING_NUMBER_47 * DRAWING_NUMBER_48];
     bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
     // 6. OH_Drawing_CanvasDrawBitmap
     OH_Drawing_CanvasDrawBitmap(canvas, bitmap, 0, 0);
     OH_Drawing_BitmapDestroy(bitmap);
     // 7. OH_Drawing_BitmapCreateFromPixels, initialize the image with a size of 48*48, and allocate memory for pixels
     // as 48*47.
-    width = TEST_BITMAP_SIZE_48;
-    height = TEST_BITMAP_SIZE_48;
+    width = DRAWING_NUMBER_48;
+    height = DRAWING_NUMBER_48;
     imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
     rowBytes = width * height * BYTES_PER_PIXEL;
-    pixels = new int[TEST_BITMAP_SIZE_48 * TEST_BITMAP_SIZE_47];
+    pixels = new int[DRAWING_NUMBER_48 * DRAWING_NUMBER_47];
     bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
     // 8. OH_Drawing_CanvasDrawBitmap
     OH_Drawing_CanvasDrawBitmap(canvas, bitmap, 0, 0);
     OH_Drawing_BitmapDestroy(bitmap);
     // 9. OH_Drawing_BitmapCreateFromPixels, initialize the image with a size of 48*48, allocate memory for pixels as
     // 48*48, and set rowBytes as 47.
-    width = TEST_BITMAP_SIZE_48;
-    height = TEST_BITMAP_SIZE_48;
+    width = DRAWING_NUMBER_48;
+    height = DRAWING_NUMBER_48;
     imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
-    rowBytes = TEST_BITMAP_SIZE_47;
-    pixels = new int[TEST_BITMAP_SIZE_48 * TEST_BITMAP_SIZE_48];
+    rowBytes = DRAWING_NUMBER_47;
+    pixels = new int[DRAWING_NUMBER_48 * DRAWING_NUMBER_48];
     bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
     // 10. OH_Drawing_CanvasDrawBitmap
     OH_Drawing_CanvasDrawBitmap(canvas, bitmap, 0, 0);
@@ -1039,10 +1051,10 @@ int TestCanvasDrawBitmapAbnormal()
     EXPECT_NE(bitmap, nullptr);
 
     // 3. The x-coordinate of the top-left corner of the bitmap object in OH_Drawing_CanvasDrawBitmap is negative.
-    OH_Drawing_CanvasDrawBitmap(canvas, bitmap, -1, 0);
+    OH_Drawing_CanvasDrawBitmap(canvas, bitmap, -DRAWING_NUMBER_1, 0);
 
     // 4. The y-coordinate of the top-left corner of the bitmap object in OH_Drawing_CanvasDrawBitmap is negative.
-    OH_Drawing_CanvasDrawBitmap(canvas, bitmap, 0, -1);
+    OH_Drawing_CanvasDrawBitmap(canvas, bitmap, 0, -DRAWING_NUMBER_1);
 
     // 5. Free the memory.
     OH_Drawing_BitmapDestroy(bitmap);
@@ -1146,8 +1158,8 @@ int TestCanvasDrawBitmapBoundary()
         ALPHA_FORMAT_UNPREMUL,
     };
 
-    int width = TEST_RECT_SIZE_4096;
-    int height = TEST_RECT_SIZE_2160;
+    int width = DRAWING_NUMBER_4096;
+    int height = DRAWING_NUMBER_2160;
     for (int i = 0; i < TEST_COLOR_FORMAT_COUNT; i++) {
         for (int j = 0; j < TEST_ALPHA_FORMAT_COUNT; j++) {
             int rowBytes = width * height * BYTES_PER_PIXEL;
@@ -1164,7 +1176,7 @@ int TestCanvasDrawBitmapBoundary()
 
     // 6. OH_Drawing_BitmapCreateFromPixels, initialize the Bitmap with rowBytes greater than the image.
     OH_Drawing_Image_Info imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
-    int rowBytes = TEST_RECT_SIZE_600 * TEST_RECT_SIZE_600 * BYTES_PER_PIXEL;
+    int rowBytes = DRAWING_NUMBER_600 * DRAWING_NUMBER_600 * BYTES_PER_PIXEL;
     void* pixels = new int[width * height];
     bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
 
@@ -1199,10 +1211,8 @@ int TestCanvasDrawBitmapRectNormal()
     OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap, nullptr);
     // 3. OH_Drawing_RectCreate src and dst
-    OH_Drawing_Rect* src = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
-    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // 4. OH_Drawing_CanvasDrawBitmap
     OH_Drawing_CanvasDrawBitmap(canvas, bitmap, 0, 0);
     // 5. OH_Drawing_CanvasDrawBitmapRect, iterate through OH_Drawing_FilterMode and OH_Drawing_MipmapMode to construct
@@ -1223,10 +1233,10 @@ int TestCanvasDrawBitmapRectNormal()
     OH_Drawing_CanvasDrawBitmap(canvas, bitmap, 0, 0);
     OH_Drawing_BitmapDestroy(bitmap);
     // 7. OH_Drawing_BitmapCreateFromPixels, initialize Bitmap with a rowBytes larger than the image
-    int width = TEST_RECT_SIZE_500;
-    int height = TEST_RECT_SIZE_500;
+    int width = DRAWING_NUMBER_500;
+    int height = DRAWING_NUMBER_500;
     OH_Drawing_Image_Info imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
-    int rowBytes = TEST_RECT_SIZE_600 * TEST_RECT_SIZE_600 * BYTES_PER_PIXEL;
+    int rowBytes = DRAWING_NUMBER_600 * DRAWING_NUMBER_600 * BYTES_PER_PIXEL;
     void* pixels = new int[width * height];
     bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
     // 8. OH_Drawing_CanvasDrawBitmapRect, iterate through OH_Drawing_FilterMode and OH_Drawing_MipmapMode to construct
@@ -1255,6 +1265,37 @@ int TestCanvasDrawBitmapRectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
+static void TestDrawBitmapRectWithDifferentBitmaps(OH_Drawing_Canvas* canvas, OH_Drawing_Bitmap** bitmap,
+    OH_Drawing_Rect* src, OH_Drawing_Rect* dst, OH_Drawing_SamplingOptions* options)
+{
+    int width = DRAWING_NUMBER_48;
+    int height = DRAWING_NUMBER_48;
+    OH_Drawing_Image_Info imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
+    int rowBytes = width * height * BYTES_PER_PIXEL;
+    void* pixels = new int[DRAWING_NUMBER_47 * DRAWING_NUMBER_48];
+    OH_Drawing_BitmapDestroy(*bitmap);
+    *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
+    OH_Drawing_CanvasDrawBitmapRect(canvas, *bitmap, src, dst, options);
+
+    width = DRAWING_NUMBER_48;
+    height = DRAWING_NUMBER_48;
+    imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
+    rowBytes = width * height * BYTES_PER_PIXEL;
+    pixels = new int[DRAWING_NUMBER_48 * DRAWING_NUMBER_47];
+    OH_Drawing_BitmapDestroy(*bitmap);
+    *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
+    OH_Drawing_CanvasDrawBitmapRect(canvas, *bitmap, src, dst, options);
+
+    width = DRAWING_NUMBER_48;
+    height = DRAWING_NUMBER_48;
+    imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
+    rowBytes = DRAWING_NUMBER_47;
+    pixels = new int[DRAWING_NUMBER_48 * DRAWING_NUMBER_48];
+    OH_Drawing_BitmapDestroy(*bitmap);
+    *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
+    OH_Drawing_CanvasDrawBitmapRect(canvas, *bitmap, src, dst, options);
+}
+
 /**
  * @tc.name   testCanvasDrawBitmapRectNull
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_6900
@@ -1263,37 +1304,6 @@ int TestCanvasDrawBitmapRectNormal()
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-static void TestDrawBitmapRectWithDifferentBitmaps(OH_Drawing_Canvas* canvas, OH_Drawing_Bitmap** bitmap,
-    OH_Drawing_Rect* src, OH_Drawing_Rect* dst, OH_Drawing_SamplingOptions* options)
-{
-    int width = TEST_BITMAP_SIZE_48;
-    int height = TEST_BITMAP_SIZE_48;
-    OH_Drawing_Image_Info imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
-    int rowBytes = width * height * BYTES_PER_PIXEL;
-    void* pixels = new int[TEST_BITMAP_SIZE_47 * TEST_BITMAP_SIZE_48];
-    OH_Drawing_BitmapDestroy(*bitmap);
-    *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
-    OH_Drawing_CanvasDrawBitmapRect(canvas, *bitmap, src, dst, options);
-    
-    width = TEST_BITMAP_SIZE_48;
-    height = TEST_BITMAP_SIZE_48;
-    imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
-    rowBytes = width * height * BYTES_PER_PIXEL;
-    pixels = new int[TEST_BITMAP_SIZE_48 * TEST_BITMAP_SIZE_47];
-    OH_Drawing_BitmapDestroy(*bitmap);
-    *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
-    OH_Drawing_CanvasDrawBitmapRect(canvas, *bitmap, src, dst, options);
-    
-    width = TEST_BITMAP_SIZE_48;
-    height = TEST_BITMAP_SIZE_48;
-    imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
-    rowBytes = TEST_BITMAP_SIZE_47;
-    pixels = new int[TEST_BITMAP_SIZE_48 * TEST_BITMAP_SIZE_48];
-    OH_Drawing_BitmapDestroy(*bitmap);
-    *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
-    OH_Drawing_CanvasDrawBitmapRect(canvas, *bitmap, src, dst, options);
-}
-
 int TestCanvasDrawBitmapRectNull()
 {
     DrawingNativeCanvasPart2TestSetUp();
@@ -1302,24 +1312,24 @@ int TestCanvasDrawBitmapRectNull()
     OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap, nullptr);
     OH_Drawing_SamplingOptions* options = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_LINEAR);
-    
+
     OH_Drawing_Rect* src =
-        OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200);
+        OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     EXPECT_NE(src, nullptr);
     OH_Drawing_Rect* dst =
-        OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200);
+        OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(nullptr, bitmap, src, dst, options);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
-    
+
     OH_Drawing_CanvasDrawBitmapRect(canvas, nullptr, src, dst, options);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
-    
+
     TestDrawBitmapRectWithDifferentBitmaps(canvas, &bitmap, src, dst, options);
-    
+
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, nullptr);
-    
+
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_RectDestroy(src);
@@ -1334,13 +1344,13 @@ int TestCanvasDrawBitmapRectNull()
 static void TestDrawBitmapRectWithInvalidSrcCoordinates(OH_Drawing_Canvas* canvas, OH_Drawing_Bitmap* bitmap,
     OH_Drawing_Rect* dst, OH_Drawing_SamplingOptions* options)
 {
-    OH_Drawing_Rect* src = OH_Drawing_RectCreate(TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_100,
-        TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_100);
+    OH_Drawing_Rect* src = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100,
+        DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(src, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
-    
-    src = OH_Drawing_RectCreate(TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_200,
-                              TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_100);
+
+    src = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200,
+                              DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(src, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
     OH_Drawing_RectDestroy(src);
@@ -1349,23 +1359,23 @@ static void TestDrawBitmapRectWithInvalidSrcCoordinates(OH_Drawing_Canvas* canva
 static void TestDrawBitmapRectWithInvalidDstCoordinates(OH_Drawing_Canvas* canvas, OH_Drawing_Bitmap* bitmap,
     OH_Drawing_Rect* src, OH_Drawing_SamplingOptions* options)
 {
-    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_100,
-        TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_100);
+    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100,
+        DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
-    
-    dst = OH_Drawing_RectCreate(TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_200,
-                              TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_100);
+
+    dst = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200,
+                              DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
-    
-    dst = OH_Drawing_RectCreate(TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_100,
-                              TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_100);
+
+    dst = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100,
+                              DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
-    
-    dst = OH_Drawing_RectCreate(TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_200,
-                              TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_100);
+
+    dst = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200,
+                              DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
     OH_Drawing_RectDestroy(dst);
@@ -1387,20 +1397,20 @@ int TestCanvasDrawBitmapRectAbnormal()
     OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap, nullptr);
     OH_Drawing_SamplingOptions* options = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_LINEAR);
-    
+
     OH_Drawing_Rect* src =
         OH_Drawing_RectCreate(TEST_NEGATIVE_OFFSET, TEST_NEGATIVE_OFFSET,
-                              TEST_NEGATIVE_OFFSET_50, TEST_NEGATIVE_OFFSET_50);
+                              TEST_NEGATIVE_OFFSET, TEST_NEGATIVE_OFFSET);
     EXPECT_NE(src, nullptr);
     OH_Drawing_Rect* dst =
         OH_Drawing_RectCreate(TEST_NEGATIVE_OFFSET, TEST_NEGATIVE_OFFSET,
-                              TEST_NEGATIVE_OFFSET_50, TEST_NEGATIVE_OFFSET_50);
+                              TEST_NEGATIVE_OFFSET, TEST_NEGATIVE_OFFSET);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
-    
+
     TestDrawBitmapRectWithInvalidSrcCoordinates(canvas, bitmap, dst, options);
     TestDrawBitmapRectWithInvalidDstCoordinates(canvas, bitmap, src, options);
-    
+
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_RectDestroy(src);
@@ -1412,7 +1422,7 @@ int TestCanvasDrawBitmapRectAbnormal()
 
 /**
  * @tc.name   testCanvasDrawBitmapRectMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_7100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_7DRAWING_NUMBER_100
  * @tc.desc   test for testCanvasDrawBitmapRectMaximum.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -1431,25 +1441,25 @@ int TestCanvasDrawBitmapRectMaximum()
     OH_Drawing_SamplingOptions* options = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_LINEAR);
     // 3. OH_Drawing_CanvasDrawBitmapRect with OH_Drawing_Rect src created with maximum values for the top-left
     // coordinate
-    OH_Drawing_Rect* src = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200);
+    OH_Drawing_Rect* src = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     EXPECT_NE(src, nullptr);
     OH_Drawing_Rect* dst =
-        OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200);
+        OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
     // 4. OH_Drawing_CanvasDrawBitmapRect with OH_Drawing_Rect src created with maximum values for the top-right
     // coordinate
-    src = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, FLT_MAX_VALUE, FLT_MAX_VALUE);
+    src = OH_Drawing_RectCreate(0, 0, FLT_MAX_VALUE, FLT_MAX_VALUE);
     EXPECT_NE(src, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
     // 5. OH_Drawing_CanvasDrawBitmapRect with OH_Drawing_Rect dst created with maximum values for the top-left
     // coordinate
-    dst = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200);
+    dst = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
     // 6. OH_Drawing_CanvasDrawBitmapRect with OH_Drawing_Rect dst created with maximum values for the top-right
     // coordinate
-    dst = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, FLT_MAX_VALUE, FLT_MAX_VALUE);
+    dst = OH_Drawing_RectCreate(0, 0, FLT_MAX_VALUE, FLT_MAX_VALUE);
     EXPECT_NE(dst, nullptr);
     OH_Drawing_CanvasDrawBitmapRect(canvas, bitmap, src, dst, options);
     // 7. Free memory
@@ -1502,10 +1512,8 @@ int TestCanvasDrawBitmapRectBoundary()
     OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap, nullptr);
     // 3. OH_Drawing_RectCreate src and dst
-    OH_Drawing_Rect* src = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
-    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
-                                  TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect* dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // 4. OH_Drawing_CanvasDrawBitmap
     OH_Drawing_CanvasDrawBitmap(canvas, bitmap, 0, 0);
     // 5. OH_Drawing_CanvasDrawBitmapRect, iterate through OH_Drawing_FilterMode and OH_Drawing_MipmapMode to construct
@@ -1523,10 +1531,10 @@ int TestCanvasDrawBitmapRectBoundary()
     OH_Drawing_CanvasDrawBitmap(canvas, bitmap, 0, 0);
     OH_Drawing_BitmapDestroy(bitmap);
     // 7. OH_Drawing_BitmapCreateFromPixels, initialize Bitmap with a rowBytes larger than the image
-    int width = TEST_RECT_SIZE_4096;
-    int height = TEST_RECT_SIZE_2160;
+    int width = DRAWING_NUMBER_4096;
+    int height = DRAWING_NUMBER_2160;
     OH_Drawing_Image_Info imageInfo = { width, height, COLOR_FORMAT_UNKNOWN, ALPHA_FORMAT_UNKNOWN };
-    int rowBytes = TEST_RECT_SIZE_600 * TEST_RECT_SIZE_600 * BYTES_PER_PIXEL;
+    int rowBytes = DRAWING_NUMBER_600 * DRAWING_NUMBER_600 * BYTES_PER_PIXEL;
     void* pixels = new int[width * height];
     bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
     // 8. OH_Drawing_CanvasDrawBitmapRect, iterate through OH_Drawing_FilterMode and OH_Drawing_MipmapMode to construct
@@ -1570,7 +1578,7 @@ int TestCanvasDrawRectNormal()
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_RectCreate
     OH_Drawing_Rect* rect =
-        OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_200);
+        OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     EXPECT_NE(rect, nullptr);
     // 3. OH_Drawing_CanvasDrawRect
     OH_Drawing_CanvasDrawRect(canvas, rect);
@@ -1600,7 +1608,7 @@ int TestCanvasDrawRectNull()
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_RectCreate
     OH_Drawing_Rect* rect =
-        OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_200);
+        OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     EXPECT_NE(rect, nullptr);
     // 3. OH_Drawing_CanvasDrawRect with the first parameter being null
     OH_Drawing_CanvasDrawRect(canvas, nullptr);
@@ -1614,24 +1622,24 @@ int TestCanvasDrawRectNull()
     // 5. OH_Drawing_CanvasDrawRect with the second parameter OH_Drawing_Rect created with left, top, right, bottom
     // respectively set to 0
     rect =
-        OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_200,
-                              TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_200);
+        OH_Drawing_RectCreate(0, DRAWING_NUMBER_200,
+                              DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     OH_Drawing_CanvasDrawRect(canvas, rect);
     rect =
-        OH_Drawing_RectCreate(TEST_CANVAS_COORD_200, TEST_MATRIX_VALUE_0,
-                              TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_200);
+        OH_Drawing_RectCreate(DRAWING_NUMBER_200, 0,
+                              DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     OH_Drawing_CanvasDrawRect(canvas, rect);
     rect =
-        OH_Drawing_RectCreate(TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_200,
-                              TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_200);
+        OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200,
+                              0, DRAWING_NUMBER_200);
     OH_Drawing_CanvasDrawRect(canvas, rect);
     rect =
-        OH_Drawing_RectCreate(TEST_CANVAS_COORD_200, TEST_CANVAS_COORD_200,
-                              TEST_CANVAS_COORD_200, TEST_MATRIX_VALUE_0);
+        OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200,
+                              DRAWING_NUMBER_200, 0);
     OH_Drawing_CanvasDrawRect(canvas, rect);
     // 6. OH_Drawing_CanvasDrawRect with the second parameter OH_Drawing_Rect created with all values set to 0
     rect =
-        OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0);
+        OH_Drawing_RectCreate(0, 0, 0, 0);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
     // 7. Free memory
@@ -1661,45 +1669,45 @@ int TestCanvasDrawRectAbnormal()
 
     // 2. OH_Drawing_CanvasDrawRect with OH_Drawing_Rect created with left, top, right, bottom being negative numbers
     OH_Drawing_Rect* rect =
-        OH_Drawing_RectCreate(TEST_NEGATIVE_OFFSET, TEST_RECT_SIZE, TEST_CIRCLE_RADIUS, TEST_CIRCLE_RADIUS);
+        OH_Drawing_RectCreate(TEST_NEGATIVE_OFFSET, DRAWING_NUMBER_100, TEST_CIRCLE_RADIUS, TEST_CIRCLE_RADIUS);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
-    rect = OH_Drawing_RectCreate(TEST_RECT_SIZE, TEST_NEGATIVE_OFFSET, TEST_CIRCLE_RADIUS, TEST_CIRCLE_RADIUS);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, TEST_NEGATIVE_OFFSET, TEST_CIRCLE_RADIUS, TEST_CIRCLE_RADIUS);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
-    rect = OH_Drawing_RectCreate(TEST_RECT_SIZE, TEST_RECT_SIZE, TEST_NEGATIVE_OFFSET_50, TEST_CIRCLE_RADIUS);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, TEST_NEGATIVE_OFFSET, TEST_CIRCLE_RADIUS);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
-    rect = OH_Drawing_RectCreate(TEST_RECT_SIZE, TEST_RECT_SIZE, TEST_CIRCLE_RADIUS, TEST_NEGATIVE_OFFSET_50);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, TEST_CIRCLE_RADIUS, TEST_NEGATIVE_OFFSET);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
 
     // 3. OH_Drawing_CanvasDrawRect with OH_Drawing_Rect created with the top-left coordinate equal to the bottom-right
     // coordinate
-    rect = OH_Drawing_RectCreate(TEST_RECT_SIZE, TEST_RECT_SIZE, TEST_RECT_SIZE, TEST_RECT_SIZE);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
 
-    rect = OH_Drawing_RectCreate(TEST_RECT_SIZE_200, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
 
     // 4. OH_Drawing_CanvasDrawRect with OH_Drawing_Rect created with the top-left coordinate equal to the bottom-right
     // coordinate
-    rect = OH_Drawing_RectCreate(TEST_RECT_SIZE_200, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
 
     // 5. OH_Drawing_CanvasDrawRect with OH_Drawing_Rect created with the top-left coordinate greater than the
     // bottom-right coordinate
-    rect = OH_Drawing_RectCreate(TEST_RECT_SIZE_200, TEST_RECT_SIZE_200, TEST_RECT_SIZE, TEST_RECT_SIZE);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
@@ -1731,19 +1739,19 @@ int TestCanvasDrawRectMaximum()
 
     // 2. OH_Drawing_CanvasDrawRect with OH_Drawing_Rect created with left, top, right, bottom set to maximum values
     OH_Drawing_Rect* rect =
-        OH_Drawing_RectCreate(FLT_MAX_VALUE, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200);
+        OH_Drawing_RectCreate(FLT_MAX_VALUE, DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
-    rect = OH_Drawing_RectCreate(TEST_RECT_SIZE_200, FLT_MAX_VALUE, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, FLT_MAX_VALUE, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
-    rect = OH_Drawing_RectCreate(TEST_RECT_SIZE_200, TEST_RECT_SIZE_200, FLT_MAX_VALUE, TEST_RECT_SIZE_200);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, FLT_MAX_VALUE, DRAWING_NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
-    rect = OH_Drawing_RectCreate(TEST_RECT_SIZE_200, TEST_RECT_SIZE_200, TEST_RECT_SIZE_200, FLT_MAX_VALUE);
+    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_200, FLT_MAX_VALUE);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
@@ -1791,7 +1799,7 @@ int TestCanvasDrawCircleNormal()
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_PointCreate
-    OH_Drawing_Point* center = OH_Drawing_PointCreate(TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_100);
+    OH_Drawing_Point* center = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(center, nullptr);
     // 3. OH_Drawing_CanvasDrawCircle
     OH_Drawing_CanvasDrawCircle(canvas, center, TEST_CIRCLE_RADIUS);
@@ -1848,7 +1856,7 @@ int TestCanvasDrawCircleNull()
 
 /**
  * @tc.name   testCanvasDrawCircleAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_8100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_8DRAWING_NUMBER_100
  * @tc.desc   test for testCanvasDrawCircleAbnormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -1862,13 +1870,13 @@ int TestCanvasDrawCircleAbnormal()
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_PointCreate with x parameter being negative
-    OH_Drawing_Point* center = OH_Drawing_PointCreate(TEST_NEGATIVE_OFFSET, TEST_RECT_SIZE);
+    OH_Drawing_Point* center = OH_Drawing_PointCreate(TEST_NEGATIVE_OFFSET, DRAWING_NUMBER_100);
     // add assert
     EXPECT_NE(center, nullptr);
     // 3. OH_Drawing_CanvasDrawCircle
     OH_Drawing_CanvasDrawCircle(canvas, center, TEST_CIRCLE_RADIUS);
     // 4. OH_Drawing_PointCreate with y parameter being negative
-    center = OH_Drawing_PointCreate(TEST_RECT_SIZE, TEST_NEGATIVE_OFFSET);
+    center = OH_Drawing_PointCreate(DRAWING_NUMBER_100, TEST_NEGATIVE_OFFSET);
     // add assert
     EXPECT_NE(center, nullptr);
     OH_Drawing_CanvasDrawCircle(canvas, center, TEST_CIRCLE_RADIUS);
@@ -1899,12 +1907,12 @@ int TestCanvasDrawCircleMaximum()
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_PointCreate with x parameter set to the maximum value
-    OH_Drawing_Point* center = OH_Drawing_PointCreate(FLT_MAX_VALUE, TEST_RECT_SIZE);
+    OH_Drawing_Point* center = OH_Drawing_PointCreate(FLT_MAX_VALUE, DRAWING_NUMBER_100);
     EXPECT_NE(center, nullptr);
     // 3. OH_Drawing_CanvasDrawCircle
     OH_Drawing_CanvasDrawCircle(canvas, center, TEST_CIRCLE_RADIUS);
     // 4. OH_Drawing_PointCreate with y parameter set to the maximum value
-    center = OH_Drawing_PointCreate(TEST_RECT_SIZE, FLT_MAX_VALUE);
+    center = OH_Drawing_PointCreate(DRAWING_NUMBER_100, FLT_MAX_VALUE);
     EXPECT_NE(center, nullptr);
     // 5. OH_Drawing_CanvasDrawCircle
     OH_Drawing_CanvasDrawCircle(canvas, center, TEST_CIRCLE_RADIUS);
@@ -1938,8 +1946,8 @@ int TestCanvasDrawCircleInputDestroyed()
 
 /**
  * @tc.name   testCanvasDrawPixelMapRect4ByteAlignment
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_CANVAS_4BYTEALIGNMENT
- * @tc.desc   test for Canvas Draw PixelMap Rect 4ByteAlignment.
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_NUMBER_4
+ * @tc.desc   test for CanvasDrawPixelMapRect4ByteAlignment.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
@@ -1956,26 +1964,26 @@ int TestCanvasDrawPixelMapRect4ByteAlignment()
     EXPECT_NE(drPixelMap, nullptr);
 
     OH_Drawing_Rect* src =
-        OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_100);
+        OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(src, nullptr);
     OH_Drawing_Rect* dst =
-        OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0, TEST_CANVAS_COORD_100, TEST_CANVAS_COORD_100);
+        OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     EXPECT_NE(dst, nullptr);
 
     OH_Drawing_SamplingOptions* sampleOptions =
         OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
     // 2
-    OH_Drawing_Rect* src1 = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* src1 = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src1, dst, sampleOptions);
     // 3
-    OH_Drawing_Rect* src2 = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
+    OH_Drawing_Rect* src2 = OH_Drawing_RectCreate(0, 0,
                                   FLT_MAX_VALUE, FLT_MAX_VALUE);
     OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src2, dst, sampleOptions);
     // 4
-    OH_Drawing_Rect* dst1 = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, TEST_RECT_SIZE, TEST_RECT_SIZE);
+    OH_Drawing_Rect* dst1 = OH_Drawing_RectCreate(FLT_MAX_VALUE, FLT_MAX_VALUE, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst1, sampleOptions);
     // 5
-    OH_Drawing_Rect* dst2 = OH_Drawing_RectCreate(TEST_MATRIX_VALUE_0, TEST_MATRIX_VALUE_0,
+    OH_Drawing_Rect* dst2 = OH_Drawing_RectCreate(0, 0,
                                   FLT_MAX_VALUE, FLT_MAX_VALUE);
     OH_Drawing_CanvasDrawPixelMapRect(canvas, drPixelMap, src, dst2, sampleOptions);
     // 6
