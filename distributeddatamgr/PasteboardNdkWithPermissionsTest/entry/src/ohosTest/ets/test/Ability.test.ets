@@ -523,14 +523,14 @@ export default function pasteboardTestNdkPermissionTest() {
     });
 
     /**
-     * @tc.name   OH_Pasteboard_GetDataWithProgress022
-     * @tc.number OH_Pasteboard_GetDataWithProgress022
-     * @tc.desc   OH_Pasteboard_GetDataWithProgress022
+     * @tc.name   SUB_Distributeddatamgr_Pasteboard_GetDataWithProgress_2200
+     * @tc.number SUB_Distributeddatamgr_Pasteboard_GetDataWithProgress_2200
+     * @tc.desc   OH_Pasteboard_GetDataWithProgress test valid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('OH_Pasteboard_GetDataWithProgress022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Distributeddatamgr_Pasteboard_GetDataWithProgress_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';
       let dirPath = BASE_PATH+"/haps";
       fs.mkdirSync(dirPath)
@@ -540,7 +540,7 @@ export default function pasteboardTestNdkPermissionTest() {
       fs.closeSync(file);
       let data = testndk.OH_Pasteboard_GetDataWithProgress022();
       fs.rmdirSync(dirPath);
-      console.info(TAG + "OH_Pasteboard_GetDataWithProgress022 data = " + data );
+      console.info(TAG + "SUB_Distributeddatamgr_Pasteboard_GetDataWithProgress_2200 data = " + data );
       expect(data).assertEqual(0);
       done();
     });
