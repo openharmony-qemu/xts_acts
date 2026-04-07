@@ -157,11 +157,11 @@ export default function WindowEnterpriseTest() {
                             expect(info!.globalDisplayRect!.top).assertLargerOrEqual(0);
                             expect(info!.globalDisplayRect!.width).assertLarger(0);
                             expect(info!.globalDisplayRect!.height).assertLarger(0);
-                            expect(info!.globalRect!.left).assertLargerOrEqual(0);
-                            expect(info!.globalRect!.top).assertLargerOrEqual(0);
-                            expect(info!.globalRect!.width).assertLarger(0);
-                            expect(info!.globalRect!.height).assertLarger(0);
-                            expect(info!.displayId).assertLargerOrEqual(0);
+                            expect(info!.globalRect!.left).assertEqual(res.windowRect.left);
+                            expect(info!.globalRect!.top).assertEqual(res.windowRect.top);
+                            expect(info!.globalRect!.width).assertEqual(res.windowRect.width);
+                            expect(info!.globalRect!.height).assertEqual(res.windowRect.height);
+                            expect(info!.displayId).assertEqual(0);
                             expect(info!.bundleName === "com.example.actswindowtest.static").assertTrue();
                             expect(info!.abilityName !== null).assertTrue();
                             expect(info!.windowId).assertLargerOrEqual(0);
