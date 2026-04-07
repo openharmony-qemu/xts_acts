@@ -1071,7 +1071,7 @@ async function testOnOffSubtitleUpdate(src: media.AVFileDescriptor, avPlayer: me
 function OffSeiMessageReceived(avPlayer: media.AVPlayer | null, done: () => void) {
   let surfaceID: string = globalThis.value;
   let pauseCount = 0
-  avPlayer!.onSeiMessageReceived([5], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
+  avPlayer!.onSeiMessageReceived([5], (messages: Array<media.SeiMessage>, playbackPosition?: int) => {
     console.info('seiMessageReceived playbackPosition ' + playbackPosition);
   });
   avPlayer!.offSeiMessageReceived();
