@@ -1480,7 +1480,7 @@ export default function abilityTest() {
             try{
                 await session!.getOutputDevice().then((device_Info: avSession.OutputDeviceInfo | undefined) => {
                     console.info('Get device successfully');
-                    let deviceInfo: avSession.DeviceInfo | undefined = device_Info.devices[0];
+                    let deviceInfo: avSession.DeviceInfo | undefined = device_Info?.devices[0];
                     console.info(`getOutputDevice successfully ${JSON.stringify(deviceInfo)}`);
                     console.info(`${TAG}TestLog1 castCategory = ${deviceInfo?.castCategory}`);
                     expect(deviceInfo?.castCategory).assertEqual(0);
