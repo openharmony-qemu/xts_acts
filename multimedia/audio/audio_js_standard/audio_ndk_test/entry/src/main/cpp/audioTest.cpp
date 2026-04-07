@@ -1928,14 +1928,14 @@ static napi_value AudioRendererSetOnMarkReached_07(napi_env env, napi_callback_i
     return res;
 }
 
-void WaitForFlagWithTimeout(bool* flag, int maxSeconds) {
-    int elapsed = 0;
+void WaitForFlagWithTimeout(bool* flag, int32_t maxSeconds) {
+    int32_t elapsed = 0;
     while (elapsed < maxSeconds * 1000) {
         if (*flag) {
             LOG("WaitForFlagWithTimeout return after: %{public}d", elapsed);
             return;
         }
-        usleep(1000);
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
         elapsed += 1;
     }
     LOG("WaitForFlagWithTimeout timeout after: %{public}d", maxSeconds);
@@ -1943,7 +1943,7 @@ void WaitForFlagWithTimeout(bool* flag, int maxSeconds) {
 
 static napi_value AudioRendererSetOnMarkReached_08(napi_env env, napi_callback_info info)
 {
-    g_flag = false;
+    std::atomic<bool> flag = false;
     OH_AudioStreamBuilder *builder = CreateRenderBuilder();
     napi_value res;
     OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
@@ -1981,13 +1981,13 @@ static napi_value AudioRendererSetOnMarkReached_08(napi_env env, napi_callback_i
         return res;
     }
     LOG("audioRendererSetOnMarkReached_08 result = AUDIOSTREAM_SUCCESS");
-    int waitTime = 3;
+    int32_t waitTime = 3;
     OH_AudioRenderer_Start(audioRenderer);
     LOG("audioRendererSetOnMarkReached_08 OH_AudioRenderer_Start SUCCESS");
-    WaitForFlagWithTimeout(&g_flag, waitTime);
+    WaitForFlagWithTimeout(&flag, waitTime);
     OH_AudioRenderer_Stop(audioRenderer);
     LOG("audioRendererSetOnMarkReached_08 OH_AudioRenderer_Stop SUCCESS");
-    if (!g_flag) {
+    if (!flag) {
         napi_create_int32(env, TEST_FAIL, &res);
     } else {
         napi_create_int32(env, TEST_PASS, &res);
