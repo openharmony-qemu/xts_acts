@@ -16,19 +16,16 @@
 // WARNING: failed to inject status
 #include <fnmatch.h>
 #include "libc_test_shim.h"
-#define C(n)           \
-    switch (0) {       \
-        case 0:        \
-            (void)(n); \
-        default:       \
-            break;     \
-    }
+static void ConsumeInt(int n)
+{
+    (void)n;
+}
 static void F()
 {
-    C(FNM_NOMATCH)
-    C(FNM_PATHNAME)
-    C(FNM_PERIOD)
-    C(FNM_NOESCAPE)
+    ConsumeInt(FNM_NOMATCH);
+    ConsumeInt(FNM_PATHNAME);
+    ConsumeInt(FNM_PERIOD);
+    ConsumeInt(FNM_NOESCAPE);
     {
         int (*p)(const char*, const char*, int) = fnmatch;
     }

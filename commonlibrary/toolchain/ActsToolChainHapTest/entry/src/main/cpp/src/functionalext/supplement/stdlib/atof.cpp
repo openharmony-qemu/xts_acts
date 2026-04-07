@@ -20,11 +20,12 @@
 
 typedef void (*TEST_FUN)();
 
-#define EXPECT_DOUBLE_EQ(a, b)                                                                                       \
-    do {                                                                                                             \
-        if (!(fabs((a) - (b)) < DBL_EPSILON))                                                                        \
-            t_error("%s failed: %f is not equal to %f\n", __func__, static_cast<double>(a), static_cast<double>(b)); \
-    } while (0)
+static void ExpectDoubleEq(double a, double b)
+{
+    if (!(fabs(a - b) < DBL_EPSILON)) {
+        t_error("%s failed: %f is not equal to %f\n", __func__, a, b);
+    }
+}
 
 /**
  * @tc.name      : Atof0100
@@ -35,7 +36,7 @@ void Atof0100()
 {
     const char* str = "123456.00";
     double result = atof(str);
-    EXPECT_DOUBLE_EQ(result, 123456.00);
+    ExpectDoubleEq(result, 123456.00);
 }
 
 namespace {

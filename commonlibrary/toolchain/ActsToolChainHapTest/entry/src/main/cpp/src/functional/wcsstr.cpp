@@ -16,46 +16,62 @@
 #include <cwchar>
 #include "test.h"
 
-#define N(s, sub)                                                                  \
-    {                                                                              \
-        wchar_t* p = s;                                                            \
-        wchar_t* q = wcsstr(p, sub);                                               \
-        if (q)                                                                     \
-            t_error("wcsstr(%s,%s) returned str+%d, wanted 0\n", #s, #sub, q - p); \
+static void CheckWcsstrNotFound(const wchar_t* s, const wchar_t* sub)
+{
+    wchar_t* p = const_cast<wchar_t*>(s);
+    wchar_t* q = wcsstr(p, sub);
+    if (q) {
+        t_error("wcsstr(%ls,%ls) returned str+%d, wanted 0\n", s, sub, q - p);
     }
+}
 
-#define t(s, sub, n)                                                                         \
-    {                                                                                        \
-        wchar_t* p = s;                                                                      \
-        wchar_t* q = wcsstr(p, sub);                                                         \
-        if (q == 0)                                                                          \
-            t_error("wcsstr(%s,%s) returned 0, wanted str+%d\n", #s, #sub, (n));             \
-        else if (q - p != (n))                                                               \
-            t_error("wcsstr(%s,%s) returned str+%d, wanted str+%d\n", #s, #sub, q - p, (n)); \
+static void CheckWcsstrFoundAt(const wchar_t* s, const wchar_t* sub, int n)
+{
+    wchar_t* p = const_cast<wchar_t*>(s);
+    wchar_t* q = wcsstr(p, sub);
+    if (q == 0) {
+        t_error("wcsstr(%ls,%ls) returned 0, wanted str+%d\n", s, sub, n);
+    } else if (q - p != n) {
+        t_error("wcsstr(%ls,%ls) returned str+%d, wanted str+%d\n", s, sub, q - p, n);
     }
+}
 
 static int WcsstrTestImpl(void)
 {
-    N(L"", L"a")
-    N(L"a", L"aa")
-    N(L"a", L"b")
-    N(L"aa", L"ab")
-    N(L"aa", L"aaa")
-    N(L"abba", L"aba")
-    N(L"abc abc", L"abcd")
-    N(L"0-1-2-3-4-5-6-7-8-9", L"-3-4-56-7-8-")
-    N(L"0-1-2-3-4-5-6-7-8-9", L"-3-4-5+6-7-8-")
-    N(L"_ _ _\xff_ _ _", L"_\x7f_")
-    N(L"_ _ _\x7f_ _ _", L"_\xff_")
-
-    t(L"", L"", 0) t(L"abcd", L"", 0) t(L"abcd", L"a", 0) t(L"abcd", L"b", 1) t(L"abcd", L"c", 2) t(L"abcd", L"d", 3)
-        t(L"abcd", L"ab", 0) t(L"abcd", L"bc", 1) t(L"abcd", L"cd", 2) t(L"ababa", L"baba", 1) t(L"ababab", L"babab", 1)
-            t(L"abababa", L"bababa", 1) t(L"abababab", L"bababab", 1) t(L"ababababa", L"babababa", 1)
-                t(L"abbababab", L"bababa", 2) t(L"abbababab", L"ababab", 3) t(L"abacabcabcab", L"abcabcab", 4)
-                    t(L"nanabanabanana", L"aba", 3) t(L"nanabanabanana", L"ban", 4) t(L"nanabanabanana", L"anab", 1)
-                        t(L"nanabanabanana", L"banana", 8) t(L"_ _\xff_ _", L"_\xff_", 2)
-
-                            return T_STATUS;
+    CheckWcsstrNotFound(L"", L"a");
+    CheckWcsstrNotFound(L"a", L"aa");
+    CheckWcsstrNotFound(L"a", L"b");
+    CheckWcsstrNotFound(L"aa", L"ab");
+    CheckWcsstrNotFound(L"aa", L"aaa");
+    CheckWcsstrNotFound(L"abba", L"aba");
+    CheckWcsstrNotFound(L"abc abc", L"abcd");
+    CheckWcsstrNotFound(L"0-1-2-3-4-5-6-7-8-9", L"-3-4-56-7-8-");
+    CheckWcsstrNotFound(L"0-1-2-3-4-5-6-7-8-9", L"-3-4-5+6-7-8-");
+    CheckWcsstrNotFound(L"_ _ _\xff_ _ _", L"_\x7f_");
+    CheckWcsstrNotFound(L"_ _ _\x7f_ _ _", L"_\xff_");
+    CheckWcsstrFoundAt(L"", L"", 0);
+    CheckWcsstrFoundAt(L"abcd", L"", 0);
+    CheckWcsstrFoundAt(L"abcd", L"a", 0);
+    CheckWcsstrFoundAt(L"abcd", L"b", 1);
+    CheckWcsstrFoundAt(L"abcd", L"c", 2);
+    CheckWcsstrFoundAt(L"abcd", L"d", 3);
+    CheckWcsstrFoundAt(L"abcd", L"ab", 0);
+    CheckWcsstrFoundAt(L"abcd", L"bc", 1);
+    CheckWcsstrFoundAt(L"abcd", L"cd", 2);
+    CheckWcsstrFoundAt(L"ababa", L"baba", 1);
+    CheckWcsstrFoundAt(L"ababab", L"babab", 1);
+    CheckWcsstrFoundAt(L"abababa", L"bababa", 1);
+    CheckWcsstrFoundAt(L"abababab", L"bababab", 1);
+    CheckWcsstrFoundAt(L"ababababa", L"babababa", 1);
+    CheckWcsstrFoundAt(L"abbababab", L"bababa", 2);
+    CheckWcsstrFoundAt(L"abbababab", L"ababab", 3);
+    CheckWcsstrFoundAt(L"abacabcabcab", L"abcabcab", 4);
+    CheckWcsstrFoundAt(L"nanabanabanana", L"aba", 3);
+    CheckWcsstrFoundAt(L"nanabanabanana", L"ban", 4);
+    CheckWcsstrFoundAt(L"nanabanabanana", L"anab", 1);
+    CheckWcsstrFoundAt(L"nanabanabanana", L"banana", 8);
+    CheckWcsstrFoundAt(L"_ _\xff_ _", L"_\xff_", 2);
+    return T_STATUS;
 }
 
 int WcsstrTest(void)

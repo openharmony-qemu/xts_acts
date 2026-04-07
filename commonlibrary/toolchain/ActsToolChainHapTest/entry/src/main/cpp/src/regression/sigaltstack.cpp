@@ -24,7 +24,12 @@
 #include <cstring>
 #include "test.h"
 
-#define t(f) ((f) == 0 || (t_error(#f " failed: %s\n", strerror(errno)), 0))
+static void CheckZeroResult(int ret, const char* expr)
+{
+    if (ret != 0) {
+        t_error("%s failed: %s\n", expr, strerror(errno));
+    }
+}
 
 static char g_stack[SIGSTKSZ];
 
@@ -39,7 +44,7 @@ static void Handler(int sig)
         t_error("signal Handler was not invoked on the altstack\n");
     }
 
-    t(sigaltstack(nullptr, &ss));
+    CheckZeroResult(sigaltstack(nullptr, &ss), "sigaltstack(nullptr, &ss)");
     if (ss.ss_flags != SS_ONSTACK) {
         t_error("ss_flags is not SS_ONSTACK in the signal Handler\n");
     }
@@ -56,10 +61,10 @@ static int SigaltstackTestImpl(void)
     sa.sa_handler = Handler;
     sa.sa_flags = SA_ONSTACK;
 
-    t(sigaltstack(&ss, nullptr));
-    t(sigfillset(&sa.sa_mask));
-    t(sigaction(SIGUSR1, &sa, nullptr));
-    t(raise(SIGUSR1));
+    CheckZeroResult(sigaltstack(&ss, nullptr), "sigaltstack(&ss, nullptr)");
+    CheckZeroResult(sigfillset(&sa.sa_mask), "sigfillset(&sa.sa_mask)");
+    CheckZeroResult(sigaction(SIGUSR1, &sa, nullptr), "sigaction(SIGUSR1, &sa, nullptr)");
+    CheckZeroResult(raise(SIGUSR1), "raise(SIGUSR1)");
 
     errno = 0;
     ss.ss_size = MINSIGSTKSZ - 1;
@@ -79,7 +84,7 @@ static int SigaltstackTestImpl(void)
             strerror(errno));
     }
     errno = 0;
-    t(sigaltstack(nullptr, nullptr));
+    CheckZeroResult(sigaltstack(nullptr, nullptr), "sigaltstack(nullptr, nullptr)");
 
     return T_STATUS;
 }

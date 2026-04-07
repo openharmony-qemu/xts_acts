@@ -40,12 +40,17 @@ static void* F(void* arg)
     return SUCCESS_CODE;
 }
 
-#define CHECK(s, F)                                  \
-    do {                                             \
-        if (F)                                       \
-            LibcTestError(&(s), "%s failed.\n", #F); \
-    } while (0)
-#define length(a) (sizeof(a) / sizeof *(a))
+static void CheckStatus(int& status, int rc, const char* callName)
+{
+    if (rc != 0) {
+        LibcTestError(&status, "%s failed.\n", callName);
+    }
+}
+
+template <typename T, size_t N> constexpr size_t ArrayLength(const T (&)[N])
+{
+    return N;
+}
 
 int TlsInitTest()
 {
@@ -62,13 +67,13 @@ int TlsInitTest()
     }
 
     for (j = 0; j < K_JOIN_REPEAT_ROUNDS; j++) {
-        for (i = 0; i < length(t); i++) {
-            CHECK(status, pthread_create(t + i, nullptr, F, &status));
+        for (i = 0; i < static_cast<int>(ArrayLength(t)); i++) {
+            CheckStatus(status, pthread_create(t + i, nullptr, F, &status), "pthread_create");
             g_tlsFix++;
             g_tlsZero++;
         }
-        for (i = 0; i < length(t); i++) {
-            CHECK(status, pthread_join(t[i], nullptr));
+        for (i = 0; i < static_cast<int>(ArrayLength(t)); i++) {
+            CheckStatus(status, pthread_join(t[i], nullptr), "pthread_join");
         }
     }
 

@@ -19,15 +19,9 @@
 #include <iconv.h>
 #include "test.h"
 
-static int IconvOpenTestImpl(void)
+static void IconvOpenInvalidCodesetCase()
 {
     iconv_t cd;
-    char buf[100];
-    char* inbuf = "test";
-    char* outbuf = buf;
-    size_t inlen = strlen(inbuf);
-    size_t outlen;
-    size_t r;
     char* bad = "bad-codeset";
 
     cd = iconv_open(bad, bad);
@@ -37,6 +31,17 @@ static int IconvOpenTestImpl(void)
     if (errno != EINVAL) {
         t_error("iconv_open(\"%s\",\"%s\") did not fail with EINVAL, got %s\n", bad, bad, strerror(errno));
     }
+}
+
+static void IconvOpenUtf8RoundtripCase()
+{
+    iconv_t cd;
+    char buf[100];
+    char* inbuf = "test";
+    char* outbuf = buf;
+    size_t inlen = strlen(inbuf);
+    size_t outlen;
+    size_t r;
 
     errno = 0;
     cd = iconv_open("UTF-8", "UTF-8");
@@ -68,7 +73,12 @@ static int IconvOpenTestImpl(void)
     if (r == -1) {
         t_error("iconv_close failed: %s\n", strerror(errno));
     }
+}
 
+static int IconvOpenTestImpl(void)
+{
+    IconvOpenInvalidCodesetCase();
+    IconvOpenUtf8RoundtripCase();
     return T_STATUS;
 }
 

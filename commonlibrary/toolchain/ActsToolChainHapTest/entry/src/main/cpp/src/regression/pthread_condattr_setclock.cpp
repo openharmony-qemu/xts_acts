@@ -27,9 +27,13 @@ constexpr long K_NANOS_PER_SECOND = 1000L * 1000L * 1000L;
 constexpr int K_COND_TIMED_WAIT_MS = 10;
 } // namespace
 
-#define t(r, f)      \
-    if (((r) = (f))) \
-    t_error(#f " failed: %s\n", strerror(r))
+static void CheckPthreadResult(int& r, int exprResult, const char* expr)
+{
+    r = exprResult;
+    if (r != 0) {
+        t_error("%s failed: %s\n", expr, strerror(r));
+    }
+}
 
 static int PthreadCondattrSetclockTestImpl(void)
 {
@@ -41,7 +45,7 @@ static int PthreadCondattrSetclockTestImpl(void)
     void* p;
     int r;
 
-    t(r, pthread_condattr_init(&a));
+    CheckPthreadResult(r, pthread_condattr_init(&a), "pthread_condattr_init(&a)");
     r = pthread_condattr_setclock(&a, CLOCK_PROCESS_CPUTIME_ID);
     if (r != EINVAL) {
         t_error("pthread_condattr_setclock CLOCK_PROCESS_CPUTIME_ID should fail with EINVAL, got %s\n", strerror(r));
@@ -50,16 +54,16 @@ static int PthreadCondattrSetclockTestImpl(void)
     if (r != EINVAL) {
         t_error("pthread_condattr_setclock CLOCK_THREAD_CPUTIME_ID should fail with EINVAL, got %s\n", strerror(r));
     }
-    t(r, pthread_condattr_getclock(&a, &clk));
+    CheckPthreadResult(r, pthread_condattr_getclock(&a, &clk), "pthread_condattr_getclock(&a, &clk)");
     if (clk != CLOCK_REALTIME) {
         t_error("condattr default clock is %d, wanted CLOCK_REALTIME (%d)\n",
                 static_cast<int>(clk),
                 static_cast<int>(CLOCK_REALTIME));
     }
 
-    t(r, pthread_cond_init(&c, &a));
-    t(r, pthread_mutex_init(&m, nullptr));
-    t(r, pthread_mutex_lock(&m));
+    CheckPthreadResult(r, pthread_cond_init(&c, &a), "pthread_cond_init(&c, &a)");
+    CheckPthreadResult(r, pthread_mutex_init(&m, nullptr), "pthread_mutex_init(&m, nullptr)");
+    CheckPthreadResult(r, pthread_mutex_lock(&m), "pthread_mutex_lock(&m)");
     r = clock_gettime(CLOCK_REALTIME, &ts);
     if (r) {
         t_error("clock_gettime failed: %s\n", strerror(errno));
@@ -74,11 +78,11 @@ static int PthreadCondattrSetclockTestImpl(void)
     if (r != ETIMEDOUT) {
         t_error("pthread_cond_timedwait did not timeout, returned %s\n", strerror(r));
     }
-    t(r, pthread_mutex_unlock(&m));
+    CheckPthreadResult(r, pthread_mutex_unlock(&m), "pthread_mutex_unlock(&m)");
 
-    t(r, pthread_mutex_destroy(&m));
-    t(r, pthread_cond_destroy(&c));
-    t(r, pthread_condattr_destroy(&a));
+    CheckPthreadResult(r, pthread_mutex_destroy(&m), "pthread_mutex_destroy(&m)");
+    CheckPthreadResult(r, pthread_cond_destroy(&c), "pthread_cond_destroy(&c)");
+    CheckPthreadResult(r, pthread_condattr_destroy(&a), "pthread_condattr_destroy(&a)");
     return T_STATUS;
 }
 

@@ -19,11 +19,12 @@
 #include <test.h>
 
 // val1 == val2
-#define EXPECT_EQ(a, b)                          \
-    do {                                         \
-        if ((a) != (b))                          \
-            t_error("failed %d != %d \n", a, b); \
-    } while (0)
+static void EXPECT_EQ(int a, int b)
+{
+    if (a != b) {
+        t_error("failed %d != %d \n", a, b);
+    }
+}
 typedef void (*TEST_FUN)(void);
 
 /**

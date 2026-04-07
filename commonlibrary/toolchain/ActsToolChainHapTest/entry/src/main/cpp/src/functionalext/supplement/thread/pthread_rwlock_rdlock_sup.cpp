@@ -18,26 +18,32 @@
 #include <pthread.h>
 #include "test.h"
 
-#define TEST(c, ...) ((c) || (t_error(#c " failed: " __VA_ARGS__), 0))
 #define SLEEP_20_MS (20000)
+
+static void ExpectTrue(bool cond, const char* expr)
+{
+    if (!cond) {
+        t_error("%s failed\n", expr);
+    }
+}
 
 pthread_rwlock_t g_rwlock1;
 static int g_number = 0;
 
 static void* PthreadRdlockR1(void* arg)
 {
-    TEST(pthread_rwlock_rdlock(&g_rwlock1) == 0);
+    ExpectTrue(pthread_rwlock_rdlock(&g_rwlock1) == 0, "pthread_rwlock_rdlock(&g_rwlock1) == 0");
     g_number++;
-    TEST(pthread_rwlock_unlock(&g_rwlock1) == 0);
+    ExpectTrue(pthread_rwlock_unlock(&g_rwlock1) == 0, "pthread_rwlock_unlock(&g_rwlock1) == 0");
     return arg;
 }
 
 static void* PthreadRdlockR2(void* arg)
 {
     usleep(SLEEP_20_MS);
-    TEST(pthread_rwlock_rdlock(&g_rwlock1) == 0);
+    ExpectTrue(pthread_rwlock_rdlock(&g_rwlock1) == 0, "pthread_rwlock_rdlock(&g_rwlock1) == 0");
     g_number--;
-    TEST(pthread_rwlock_unlock(&g_rwlock1) == 0);
+    ExpectTrue(pthread_rwlock_unlock(&g_rwlock1) == 0, "pthread_rwlock_unlock(&g_rwlock1) == 0");
     return arg;
 }
 
@@ -49,10 +55,10 @@ static void* PthreadRdlockR2(void* arg)
 void PthreadRwlockRdlock0100(void)
 {
     pthread_t thread;
-    TEST(pthread_rwlock_init(&g_rwlock1, nullptr) == 0);
-    TEST(pthread_rwlock_rdlock(&g_rwlock1) == 0);
-    TEST(pthread_rwlock_unlock(&g_rwlock1) == 0);
-    TEST(pthread_rwlock_destroy(&g_rwlock1) == 0);
+    ExpectTrue(pthread_rwlock_init(&g_rwlock1, nullptr) == 0, "pthread_rwlock_init(&g_rwlock1, nullptr) == 0");
+    ExpectTrue(pthread_rwlock_rdlock(&g_rwlock1) == 0, "pthread_rwlock_rdlock(&g_rwlock1) == 0");
+    ExpectTrue(pthread_rwlock_unlock(&g_rwlock1) == 0, "pthread_rwlock_unlock(&g_rwlock1) == 0");
+    ExpectTrue(pthread_rwlock_destroy(&g_rwlock1) == 0, "pthread_rwlock_destroy(&g_rwlock1) == 0");
 }
 
 /**
@@ -63,12 +69,12 @@ void PthreadRwlockRdlock0100(void)
 void PthreadRwlockRdlock0200(void)
 {
     pthread_t thread;
-    TEST(pthread_rwlock_init(&g_rwlock1, nullptr) == 0);
-    TEST(pthread_rwlock_rdlock(&g_rwlock1) == 0);
-    TEST(pthread_rwlock_rdlock(&g_rwlock1) == 0);
-    TEST(pthread_rwlock_unlock(&g_rwlock1) == 0);
-    TEST(pthread_rwlock_unlock(&g_rwlock1) == 0);
-    TEST(pthread_rwlock_destroy(&g_rwlock1) == 0);
+    ExpectTrue(pthread_rwlock_init(&g_rwlock1, nullptr) == 0, "pthread_rwlock_init(&g_rwlock1, nullptr) == 0");
+    ExpectTrue(pthread_rwlock_rdlock(&g_rwlock1) == 0, "pthread_rwlock_rdlock(&g_rwlock1) == 0");
+    ExpectTrue(pthread_rwlock_rdlock(&g_rwlock1) == 0, "pthread_rwlock_rdlock(&g_rwlock1) == 0");
+    ExpectTrue(pthread_rwlock_unlock(&g_rwlock1) == 0, "pthread_rwlock_unlock(&g_rwlock1) == 0");
+    ExpectTrue(pthread_rwlock_unlock(&g_rwlock1) == 0, "pthread_rwlock_unlock(&g_rwlock1) == 0");
+    ExpectTrue(pthread_rwlock_destroy(&g_rwlock1) == 0, "pthread_rwlock_destroy(&g_rwlock1) == 0");
 }
 
 /**
@@ -79,14 +85,16 @@ void PthreadRwlockRdlock0200(void)
 void PthreadRwlockRdlock0300(void)
 {
     pthread_t tid[2];
-    TEST(pthread_rwlock_init(&g_rwlock1, nullptr) == 0);
+    ExpectTrue(pthread_rwlock_init(&g_rwlock1, nullptr) == 0, "pthread_rwlock_init(&g_rwlock1, nullptr) == 0");
 
-    TEST(pthread_create(&tid[0], nullptr, PthreadRdlockR1, nullptr) == 0);
-    TEST(pthread_create(&tid[1], nullptr, PthreadRdlockR2, nullptr) == 0);
-    TEST(pthread_join(tid[0], nullptr) == 0);
-    TEST(pthread_join(tid[1], nullptr) == 0);
-    TEST(g_number == 0);
-    TEST(pthread_rwlock_destroy(&g_rwlock1) == 0);
+    ExpectTrue(pthread_create(&tid[0], nullptr, PthreadRdlockR1, nullptr) == 0,
+               "pthread_create(&tid[0], nullptr, PthreadRdlockR1, nullptr) == 0");
+    ExpectTrue(pthread_create(&tid[1], nullptr, PthreadRdlockR2, nullptr) == 0,
+               "pthread_create(&tid[1], nullptr, PthreadRdlockR2, nullptr) == 0");
+    ExpectTrue(pthread_join(tid[0], nullptr) == 0, "pthread_join(tid[0], nullptr) == 0");
+    ExpectTrue(pthread_join(tid[1], nullptr) == 0, "pthread_join(tid[1], nullptr) == 0");
+    ExpectTrue(g_number == 0, "g_number == 0");
+    ExpectTrue(pthread_rwlock_destroy(&g_rwlock1) == 0, "pthread_rwlock_destroy(&g_rwlock1) == 0");
 }
 
 static int PthreadRwlockRdlockSupTestImpl(int argc, char* argv[])

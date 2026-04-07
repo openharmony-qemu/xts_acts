@@ -17,17 +17,24 @@
 #include <cstdio>
 #include "test.h"
 
-#define TEST(c, ...) ((c) || (t_error(#c " failed: " __VA_ARGS__), 0))
-
 static int ArgvTestWithArgs(int argc, char** argv)
 {
     char buf[PATH_MAX];
-    TEST(argc == 1, "argc should be 1\n");
-    TEST(argv[0] != nullptr, "argv[0] should not be nullptr\n");
-    TEST(argv[1] == nullptr, "argv[1] should be nullptr\n");
-    TEST(argv[0][0] != 0, "argv[0] should not be empty\n");
-    TEST(snprintf(buf, sizeof buf, "%s", argv[0]) < sizeof buf,
-         "argv[0] is not a valid PATH\n"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    if (!(argc == 1)) {
+        t_error("argc == 1 failed: argc should be 1\n");
+    }
+    if (!(argv[0] != nullptr)) {
+        t_error("argv[0] != nullptr failed: argv[0] should not be nullptr\n");
+    }
+    if (!(argv[1] == nullptr)) {
+        t_error("argv[1] == nullptr failed: argv[1] should be nullptr\n");
+    }
+    if (!(argv[0][0] != 0)) {
+        t_error("argv[0][0] != 0 failed: argv[0] should not be empty\n");
+    }
+    if (!(snprintf(buf, sizeof buf, "%s", argv[0]) < sizeof buf)) {
+        t_error("snprintf(buf, sizeof buf, \"%s\", argv[0]) < sizeof buf failed: argv[0] is not a valid PATH\n");
+    } /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
     return T_STATUS;
 }
 

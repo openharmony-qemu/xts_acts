@@ -24,16 +24,26 @@ namespace {
 constexpr size_t K_HSEARCH_BUCKET_COUNT = 13U;
 } // namespace
 
-#define set(out_e, k, v)                                                                                             \
-    do {                                                                                                             \
-        (out_e) = hsearch((ENTRY){ .key = (k), .data = reinterpret_cast<void*>(static_cast<uintptr_t>(v)) }, ENTER); \
-        if (!(out_e) || strcmp((out_e)->key, (k)) != 0)                                                              \
-            t_error("hsearch ENTER %s %d failed\n", (k), (v));                                                       \
-    } while (0)
+static ENTRY* HsearchSet(const char* key, int value)
+{
+    ENTRY in = { .key = const_cast<char*>(key), .data = reinterpret_cast<void*>(static_cast<uintptr_t>(value)) };
+    ENTRY* out = hsearch(in, ENTER);
+    if (!out || strcmp(out->key, key) != 0) {
+        t_error("hsearch ENTER %s %d failed\n", key, value);
+    }
+    return out;
+}
 
-#define get(k) hsearch((ENTRY){ .key = (k), .data = nullptr }, FIND)
+static ENTRY* HsearchGet(const char* key)
+{
+    ENTRY in = { .key = const_cast<char*>(key), .data = nullptr };
+    return hsearch(in, FIND);
+}
 
-#define getdata(e) reinterpret_cast<intptr_t>((e)->data)
+static intptr_t HsearchData(const ENTRY* e)
+{
+    return reinterpret_cast<intptr_t>(e->data);
+}
 
 static int SearchHsearchTestImpl()
 {
@@ -45,33 +55,33 @@ static int SearchHsearchTestImpl()
     if (!hcreate(K_HSEARCH_BUCKET_COUNT)) {
         t_error("hcreate(13) failed\n");
     }
-    set(e, "", 0);
-    set(e, "a", 1);
-    set(e, "b", 2);
-    set(e, "abc", 3);
-    set(e, "cd", 4);
-    set(e, "e", 5);
-    set(e, "ef", 6);
-    set(e, "g", 7);
-    set(e, "h", 8);
-    set(e, "iiiiiiiiii", 9);
-    if (!get("a")) {
+    e = HsearchSet("", 0);
+    e = HsearchSet("a", 1);
+    e = HsearchSet("b", 2);
+    e = HsearchSet("abc", 3);
+    e = HsearchSet("cd", 4);
+    e = HsearchSet("e", 5);
+    e = HsearchSet("ef", 6);
+    e = HsearchSet("g", 7);
+    e = HsearchSet("h", 8);
+    e = HsearchSet("iiiiiiiiii", 9);
+    if (!HsearchGet("a")) {
         t_error("hsearch FIND a failed\n");
     }
-    if (get("c")) {
+    if (HsearchGet("c")) {
         t_error("hsearch FIND c should fail\n");
     }
-    set(e, "g", 10);
-    if (e && getdata(e) != 7) {
-        t_error("hsearch ENTER g 10 returned data %d, wanted 7\n", getdata(e));
+    e = HsearchSet("g", 10);
+    if (e && HsearchData(e) != 7) {
+        t_error("hsearch ENTER g 10 returned data %d, wanted 7\n", HsearchData(e));
     }
-    set(e, "g", 10);
-    if (e && getdata(e) != 7) {
-        t_error("hsearch ENTER g 10 returned data %d, wanted 7\n", getdata(e));
+    e = HsearchSet("g", 10);
+    if (e && HsearchData(e) != 7) {
+        t_error("hsearch ENTER g 10 returned data %d, wanted 7\n", HsearchData(e));
     }
-    set(e, "j", 10);
-    if (e && getdata(e) != 10) {
-        t_error("hsearch ENTER j 10 returned data %d, wanted 10\n", getdata(e));
+    e = HsearchSet("j", 10);
+    if (e && HsearchData(e) != 10) {
+        t_error("hsearch ENTER j 10 returned data %d, wanted 10\n", HsearchData(e));
     }
     hdestroy();
     return T_STATUS;

@@ -17,10 +17,14 @@
 #include <csetjmp>
 #include <type_traits>
 #include "libc_test_shim.h"
-#define t(Ty) static_cast<std::add_pointer_t<Ty>>(nullptr);
+template <typename Ty> static void UseType()
+{
+    auto* unused = static_cast<std::add_pointer_t<Ty>>(nullptr);
+    (void)unused;
+}
 static void F()
 {
-    t(jmp_buf)
+    UseType<jmp_buf>();
     {
         void (*p)(jmp_buf, int) = longjmp;
     }
@@ -34,7 +38,7 @@ static void F()
     }
 #endif
 #ifdef _POSIX_C_SOURCE
-    t(sigjmp_buf)
+    UseType<sigjmp_buf>();
     {
         void (*p)(sigjmp_buf, int) = siglongjmp;
     }

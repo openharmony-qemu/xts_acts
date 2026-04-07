@@ -17,31 +17,54 @@
 #include "Strverscmp.h"
 #include <cstring>
 #include "libc_test_shim.h"
-#define ASSERT(st, x)                             \
-    do {                                          \
-        if (!(x)) {                               \
-            LibcTestError(&(st), #x " failed\n"); \
-        }                                         \
-    } while (0)
-
 int StrverscmpTest()
 {
     int status = SUCCESS_CODE;
 
-    ASSERT(status, Strverscmp("", "") == 0);
-    ASSERT(status, Strverscmp("a", "a") == 0);
-    ASSERT(status, Strverscmp("a", "b") < 0);
-    ASSERT(status, Strverscmp("b", "a") > 0);
-    ASSERT(status, Strverscmp("000", "00") < 0);
-    ASSERT(status, Strverscmp("00", "000") > 0);
-    ASSERT(status, Strverscmp("a0", "a") > 0);
-    ASSERT(status, Strverscmp("00", "01") < 0);
-    ASSERT(status, Strverscmp("01", "010") < 0);
-    ASSERT(status, Strverscmp("010", "09") < 0);
-    ASSERT(status, Strverscmp("09", "0") < 0);
-    ASSERT(status, Strverscmp("9", "10") < 0);
-    ASSERT(status, Strverscmp("0a", "0") > 0);
-    ASSERT(status, Strverscmp("foobar-1.1.2", "foobar-1.1.3") < 0);
-    ASSERT(status, Strverscmp("foobar-1.1.2", "foobar-1.01.3") > 0);
+    if (!(Strverscmp("", "") == 0)) {
+        LibcTestError(&status, "Strverscmp(\"\", \"\") == 0 failed\n");
+    }
+    if (!(Strverscmp("a", "a") == 0)) {
+        LibcTestError(&status, "Strverscmp(\"a\", \"a\") == 0 failed\n");
+    }
+    if (!(Strverscmp("a", "b") < 0)) {
+        LibcTestError(&status, "Strverscmp(\"a\", \"b\") < 0 failed\n");
+    }
+    if (!(Strverscmp("b", "a") > 0)) {
+        LibcTestError(&status, "Strverscmp(\"b\", \"a\") > 0 failed\n");
+    }
+    if (!(Strverscmp("000", "00") < 0)) {
+        LibcTestError(&status, "Strverscmp(\"000\", \"00\") < 0 failed\n");
+    }
+    if (!(Strverscmp("00", "000") > 0)) {
+        LibcTestError(&status, "Strverscmp(\"00\", \"000\") > 0 failed\n");
+    }
+    if (!(Strverscmp("a0", "a") > 0)) {
+        LibcTestError(&status, "Strverscmp(\"a0\", \"a\") > 0 failed\n");
+    }
+    if (!(Strverscmp("00", "01") < 0)) {
+        LibcTestError(&status, "Strverscmp(\"00\", \"01\") < 0 failed\n");
+    }
+    if (!(Strverscmp("01", "010") < 0)) {
+        LibcTestError(&status, "Strverscmp(\"01\", \"010\") < 0 failed\n");
+    }
+    if (!(Strverscmp("010", "09") < 0)) {
+        LibcTestError(&status, "Strverscmp(\"010\", \"09\") < 0 failed\n");
+    }
+    if (!(Strverscmp("09", "0") < 0)) {
+        LibcTestError(&status, "Strverscmp(\"09\", \"0\") < 0 failed\n");
+    }
+    if (!(Strverscmp("9", "10") < 0)) {
+        LibcTestError(&status, "Strverscmp(\"9\", \"10\") < 0 failed\n");
+    }
+    if (!(Strverscmp("0a", "0") > 0)) {
+        LibcTestError(&status, "Strverscmp(\"0a\", \"0\") > 0 failed\n");
+    }
+    if (!(Strverscmp("foobar-1.1.2", "foobar-1.1.3") < 0)) {
+        LibcTestError(&status, "Strverscmp(\"foobar-1.1.2\", \"foobar-1.1.3\") < 0 failed\n");
+    }
+    if (!(Strverscmp("foobar-1.1.2", "foobar-1.01.3") > 0)) {
+        LibcTestError(&status, "Strverscmp(\"foobar-1.1.2\", \"foobar-1.01.3\") > 0 failed\n");
+    }
     return status;
 }

@@ -17,11 +17,12 @@
 #include <cmath>
 #include "test.h"
 
-#define EXPECT_FLOAT_EQ(a, b)                                                  \
-    do {                                                                       \
-        if (!(fabsf((a) - (b)) < FLT_EPSILON))                                 \
-            t_error("%s failed: %f is not equal to %f\n", __func__, (a), (b)); \
-    } while (0)
+static void ExpectFloatEq(float a, float b)
+{
+    if (!(fabsf(a - b) < FLT_EPSILON)) {
+        t_error("%s failed: %f is not equal to %f\n", __func__, a, b);
+    }
+}
 
 /*
  * @tc.name      : Significandf0100
@@ -31,7 +32,7 @@
 void Significandf0100(void)
 {
     float f = significandf(0.0f);
-    EXPECT_FLOAT_EQ(0.0f, f);
+    ExpectFloatEq(0.0f, f);
 }
 
 /*
@@ -42,7 +43,7 @@ void Significandf0100(void)
 void Significandf0200(void)
 {
     float f = significandf(1.2f);
-    EXPECT_FLOAT_EQ(1.2f, f);
+    ExpectFloatEq(1.2f, f);
 }
 
 /*
@@ -53,7 +54,7 @@ void Significandf0200(void)
 void Significandf0300(void)
 {
     float f = significandf(12.25f);
-    EXPECT_FLOAT_EQ(1.53125f, f);
+    ExpectFloatEq(1.53125f, f);
 }
 
 static int SignificandfTestImpl(int argc, char* argv[])

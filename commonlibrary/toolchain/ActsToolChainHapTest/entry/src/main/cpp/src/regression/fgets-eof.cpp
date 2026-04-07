@@ -18,12 +18,6 @@
 #include <cstdlib>
 #include <cstring>
 #include "libc_test_shim.h"
-#define ASSERT(st, c)                                \
-    do {                                             \
-        if (!(c))                                    \
-            LibcTestError(&(st), "%s failed\n", #c); \
-    } while (0)
-
 int FgetsEofTest()
 {
     int status = SUCCESS_CODE;
@@ -32,10 +26,18 @@ int FgetsEofTest()
     char s[10];
     FILE* f;
 
-    ASSERT(status, (f = fmemopen(buf, sizeof buf, "r")) != nullptr);
-    ASSERT(status, fgets(s, sizeof s, f) == s);
-    ASSERT(status, strcmp(s, buf) == 0);
-    ASSERT(status, fgets(s, sizeof s, f) == nullptr);
+    if (!((f = fmemopen(buf, sizeof buf, "r")) != nullptr)) {
+        LibcTestError(&status, "%s failed\n", "(f = fmemopen(buf, sizeof buf, \"r\")) != nullptr");
+    }
+    if (!(fgets(s, sizeof s, f) == s)) {
+        LibcTestError(&status, "%s failed\n", "fgets(s, sizeof s, f) == s");
+    }
+    if (!(strcmp(s, buf) == 0)) {
+        LibcTestError(&status, "%s failed\n", "strcmp(s, buf) == 0");
+    }
+    if (!(fgets(s, sizeof s, f) == nullptr)) {
+        LibcTestError(&status, "%s failed\n", "fgets(s, sizeof s, f) == nullptr");
+    }
     if (s[0] != 't') {
         LibcTestError(&status, "fgets modified the buffer after eof\n");
     }

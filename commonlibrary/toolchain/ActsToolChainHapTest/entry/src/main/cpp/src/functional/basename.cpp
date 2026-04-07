@@ -19,29 +19,29 @@
 #include <libgen.h>
 #include "test.h"
 
-#define t(PATH, want)                                                              \
-    {                                                                              \
-        char tmp[100];                                                             \
-        (void)snprintf(tmp, sizeof(tmp), "%s", PATH);                              \
-        char* got = basename(tmp);                                                 \
-        if (strcmp(want, got) != 0) {                                              \
-            t_error("basename(\"%s\") got \"%s\" want \"%s\"\n", PATH, got, want); \
-        }                                                                          \
+static void CheckBasename(const char* path, const char* want)
+{
+    char tmp[100];
+    (void)snprintf(tmp, sizeof(tmp), "%s", path);
+    char* got = basename(tmp);
+    if (strcmp(want, got) != 0) {
+        t_error("basename(\"%s\") got \"%s\" want \"%s\"\n", path, got, want);
     }
+}
 
 int BasenameTest()
 {
     if (strcmp(basename(nullptr), ".") != 0) {
         t_error("basename(0) returned \"%s\"; expected \".\"\n", basename(nullptr));
     }
-    t("", ".");
-    t("/usr/lib", "lib");
-    t("/usr/", "usr");
-    t("usr/", "usr");
-    t("/", "/");
-    t("///", "/");
-    t("//usr//lib//", "lib");
-    t(".", ".");
-    t("..", "..");
+    CheckBasename("", ".");
+    CheckBasename("/usr/lib", "lib");
+    CheckBasename("/usr/", "usr");
+    CheckBasename("usr/", "usr");
+    CheckBasename("/", "/");
+    CheckBasename("///", "/");
+    CheckBasename("//usr//lib//", "lib");
+    CheckBasename(".", ".");
+    CheckBasename("..", "..");
     return T_STATUS;
 }

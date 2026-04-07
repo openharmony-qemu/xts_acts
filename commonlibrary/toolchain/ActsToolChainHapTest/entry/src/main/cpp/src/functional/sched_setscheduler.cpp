@@ -19,12 +19,13 @@
 #include <sched.h>
 #include <unistd.h>
 #include "libc_test_shim.h"
-#define TEST(st, c)                                                  \
-    do {                                                             \
-        if ((c) != 0) {                                              \
-            LibcTestError(&(st), #c " failed: %s", strerror(errno)); \
-        }                                                            \
-    } while (0)
+
+static void CheckZeroResult(int& status, int rc, const char* call)
+{
+    if (rc != 0) {
+        LibcTestError(&status, "%s failed: %s", call, strerror(errno));
+    }
+}
 
 namespace {
 constexpr int K_SCHED_FIFO_TEST_PRIORITY = 23;
@@ -48,9 +49,9 @@ int SchedSetschedulerTest()
         return -1;
     }
     param.sched_priority = K_SCHED_FIFO_TEST_PRIORITY; // 取值范围:minpri~maxpri
-    TEST(status, sched_setscheduler(pid, sched, &param));
-    TEST(status, !(sched_getscheduler(pid) == sched));
-    TEST(status, sched_getparam(pid, &param));
+    CheckZeroResult(status, sched_setscheduler(pid, sched, &param), "sched_setscheduler");
+    CheckZeroResult(status, !(sched_getscheduler(pid) == sched), "sched_getscheduler");
+    CheckZeroResult(status, sched_getparam(pid, &param), "sched_getparam");
 
     return SUCCESS_CODE;
 }

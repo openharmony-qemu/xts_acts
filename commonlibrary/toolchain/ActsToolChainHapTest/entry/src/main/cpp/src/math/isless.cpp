@@ -21,110 +21,106 @@ enum { LESS, EQUAL, GREATER, UNORD };
 
 /* compare result only; skip fetestexcept — some OHOS targets report stale/spurious flags after
  * feclearexcept, causing false failures. */
-#define TEST(f, want)                                           \
-    do {                                                        \
-        int r;                                                  \
-        feclearexcept(FE_ALL_EXCEPT);                           \
-        r = (f);                                                \
-        if (r != (want))                                        \
-            t_error(#f " failed: got %d want %d\n", r, (want)); \
-    } while (0)
+static void CheckPredicateResult(const char* pred, int got, bool want)
+{
+    if ((got != 0) != want) {
+        t_error("%s failed: got %d want %d\n", pred, got, static_cast<int>(want));
+    }
+}
 
-#undef T
 /* __builtin_* avoids <cmath> macro/overload mismatch; cast to long double unifies mixed float ranks. */
-#define t(a, b, rel)                                                                \
-    do {                                                                            \
-        long double la = static_cast<long double>(a);                               \
-        long double lb = static_cast<long double>(b);                               \
-        TEST(__builtin_isunordered(la, lb), (rel) == UNORD);                        \
-        TEST(__builtin_isless(la, lb), (rel) == LESS);                              \
-        TEST(__builtin_islessequal(la, lb), (rel) == LESS || (rel) == EQUAL);       \
-        TEST(__builtin_islessgreater(la, lb), (rel) == LESS || (rel) == GREATER);   \
-        TEST(__builtin_isgreater(la, lb), (rel) == GREATER);                        \
-        TEST(__builtin_isgreaterequal(la, lb), (rel) == GREATER || (rel) == EQUAL); \
-    } while (0)
+static void CheckRelation(long double la, long double lb, int rel)
+{
+    feclearexcept(FE_ALL_EXCEPT);
+    CheckPredicateResult("isunordered", __builtin_isunordered(la, lb), rel == UNORD);
+    CheckPredicateResult("isless", __builtin_isless(la, lb), rel == LESS);
+    CheckPredicateResult("islessequal", __builtin_islessequal(la, lb), rel == LESS || rel == EQUAL);
+    CheckPredicateResult("islessgreater", __builtin_islessgreater(la, lb), rel == LESS || rel == GREATER);
+    CheckPredicateResult("isgreater", __builtin_isgreater(la, lb), rel == GREATER);
+    CheckPredicateResult("isgreaterequal", __builtin_isgreaterequal(la, lb), rel == GREATER || rel == EQUAL);
+}
 
 static void IslessTestNanUnordered(void)
 {
-    t(NAN, 1.0, UNORD);
-    t(1.0, NAN, UNORD);
-    t(NAN, NAN, UNORD);
-    t(NAN, NAN + 1.0, UNORD);
-    t(NAN, NAN + 1.0L, UNORD);
+    CheckRelation(NAN, 1.0, UNORD);
+    CheckRelation(1.0, NAN, UNORD);
+    CheckRelation(NAN, NAN, UNORD);
+    CheckRelation(NAN, NAN + 1.0, UNORD);
+    CheckRelation(NAN, NAN + 1.0L, UNORD);
 }
 
 static void IslessTestOrderedDouble(volatile double huge, volatile double tiny, volatile double eps)
 {
-    t(1.0, 1.1, LESS);
-    t(1.0, 1.0 + eps, LESS);
-    t(1.0 + eps, 1.0, GREATER);
-    t(huge - 1, huge, EQUAL);
-    t(huge, huge * huge, LESS);
-    t(-0.0, 0.0, EQUAL);
-    t(-tiny, 0.0, LESS);
-    t(tiny, 2 * tiny, LESS);
-    t(tiny * 0x1p-9, tiny * 0x1p-8, LESS);
+    CheckRelation(1.0, 1.1, LESS);
+    CheckRelation(1.0, 1.0 + eps, LESS);
+    CheckRelation(1.0 + eps, 1.0, GREATER);
+    CheckRelation(huge - 1, huge, EQUAL);
+    CheckRelation(huge, huge * huge, LESS);
+    CheckRelation(-0.0, 0.0, EQUAL);
+    CheckRelation(-tiny, 0.0, LESS);
+    CheckRelation(tiny, 2 * tiny, LESS);
+    CheckRelation(tiny * 0x1p-9, tiny * 0x1p-8, LESS);
 }
 
 static void IslessTestOrderedFloat(volatile float hugef, volatile float tinyf, volatile float epsf)
 {
-    t(1.0f, 1.1f, LESS);
-    t(1.0f, 1.0f + epsf, LESS);
-    t(1.0f + epsf, 1.0f, GREATER);
-    t(hugef - 1, hugef, EQUAL);
-    t(hugef, hugef * hugef, LESS);
-    t(-0.0f, 0.0f, EQUAL);
-    t(-tinyf, 0.0f, LESS);
-    t(tinyf, 2 * tinyf, LESS);
-    t(tinyf * 0x1p-9f, tinyf * 0x1p-8f, LESS);
+    CheckRelation(1.0f, 1.1f, LESS);
+    CheckRelation(1.0f, 1.0f + epsf, LESS);
+    CheckRelation(1.0f + epsf, 1.0f, GREATER);
+    CheckRelation(hugef - 1, hugef, EQUAL);
+    CheckRelation(hugef, hugef * hugef, LESS);
+    CheckRelation(-0.0f, 0.0f, EQUAL);
+    CheckRelation(-tinyf, 0.0f, LESS);
+    CheckRelation(tinyf, 2 * tinyf, LESS);
+    CheckRelation(tinyf * 0x1p-9f, tinyf * 0x1p-8f, LESS);
 }
 
 static void
     IslessTestOrderedLongDouble(volatile long double hugel, volatile long double tinyl, volatile long double epsl)
 {
-    t(1.0L, 1.1L, LESS);
-    t(1.0L, 1.0L + epsl, LESS);
-    t(1.0L + epsl, 1.0L, GREATER);
-    t(hugel - 1, hugel, EQUAL);
-    t(hugel, hugel * hugel, LESS);
-    t(-0.0L, 0.0L, EQUAL);
-    t(-tinyl, 0.0L, LESS);
-    t(tinyl, 2 * tinyl, LESS);
-    t(tinyl * 0x1p-9L, tinyl * 0x1p-8L, LESS);
+    CheckRelation(1.0L, 1.1L, LESS);
+    CheckRelation(1.0L, 1.0L + epsl, LESS);
+    CheckRelation(1.0L + epsl, 1.0L, GREATER);
+    CheckRelation(hugel - 1, hugel, EQUAL);
+    CheckRelation(hugel, hugel * hugel, LESS);
+    CheckRelation(-0.0L, 0.0L, EQUAL);
+    CheckRelation(-tinyl, 0.0L, LESS);
+    CheckRelation(tinyl, 2 * tinyl, LESS);
+    CheckRelation(tinyl * 0x1p-9L, tinyl * 0x1p-8L, LESS);
 
-    t(hugel * hugel, hugel * hugel * 2, EQUAL);
-    t(tinyl * tinyl * 0.5L, tinyl * tinyl, EQUAL);
-    t(-tinyl * tinyl, 0.0L, EQUAL);
-    t(1.0L, 1.0L + epsl * 0.25L, EQUAL);
+    CheckRelation(hugel * hugel, hugel * hugel * 2, EQUAL);
+    CheckRelation(tinyl * tinyl * 0.5L, tinyl * tinyl, EQUAL);
+    CheckRelation(-tinyl * tinyl, 0.0L, EQUAL);
+    CheckRelation(1.0L, 1.0L + epsl * 0.25L, EQUAL);
 }
 
 static void IslessTestFltEvalDouble(volatile double huge, volatile double tiny, volatile double eps)
 {
 #if FLT_EVAL_METHOD == 2
-    t(huge * huge, huge * huge * 2, LESS);
-    t(tiny * tiny * 0.5, tiny * tiny, LESS);
-    t(-tiny * tiny, 0.0, LESS);
-    t(1.0, 1.0 + eps * 0.25, LESS);
+    CheckRelation(huge * huge, huge * huge * 2, LESS);
+    CheckRelation(tiny * tiny * 0.5, tiny * tiny, LESS);
+    CheckRelation(-tiny * tiny, 0.0, LESS);
+    CheckRelation(1.0, 1.0 + eps * 0.25, LESS);
 #else
-    t(huge * huge, huge * huge * 2, EQUAL);
-    t(tiny * tiny * 0.5, tiny * tiny, EQUAL);
-    t(-tiny * tiny, 0.0, EQUAL);
-    t(1.0, 1.0 + eps * 0.25, EQUAL);
+    CheckRelation(huge * huge, huge * huge * 2, EQUAL);
+    CheckRelation(tiny * tiny * 0.5, tiny * tiny, EQUAL);
+    CheckRelation(-tiny * tiny, 0.0, EQUAL);
+    CheckRelation(1.0, 1.0 + eps * 0.25, EQUAL);
 #endif
 }
 
 static void IslessTestFltEvalFloat(volatile float hugef, volatile float tinyf, volatile float epsf)
 {
 #if FLT_EVAL_METHOD >= 1
-    t(hugef * hugef, hugef * hugef * 2, LESS);
-    t(tinyf * tinyf * 0.5f, tinyf * tinyf, LESS);
-    t(-tinyf * tinyf, 0.0f, LESS);
-    t(1.0f, 1.0f + epsf * 0.25f, LESS);
+    CheckRelation(hugef * hugef, hugef * hugef * 2, LESS);
+    CheckRelation(tinyf * tinyf * 0.5f, tinyf * tinyf, LESS);
+    CheckRelation(-tinyf * tinyf, 0.0f, LESS);
+    CheckRelation(1.0f, 1.0f + epsf * 0.25f, LESS);
 #else
-    t(hugef * hugef, hugef * hugef * 2, EQUAL);
-    t(tinyf * tinyf * 0.5f, tinyf * tinyf, EQUAL);
-    t(-tinyf * tinyf, 0.0f, EQUAL);
-    t(1.0f, 1.0f + epsf * 0.25f, EQUAL);
+    CheckRelation(hugef * hugef, hugef * hugef * 2, EQUAL);
+    CheckRelation(tinyf * tinyf * 0.5f, tinyf * tinyf, EQUAL);
+    CheckRelation(-tinyf * tinyf, 0.0f, EQUAL);
+    CheckRelation(1.0f, 1.0f + epsf * 0.25f, EQUAL);
 #endif
 }
 

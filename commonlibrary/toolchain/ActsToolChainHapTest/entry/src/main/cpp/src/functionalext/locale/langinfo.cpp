@@ -17,22 +17,75 @@
 #include <langinfo.h>
 #include <type_traits>
 #include "libc_test_shim.h"
-#define t(Ty) static_cast<std::add_pointer_t<Ty>>(nullptr);
-#define C(n)           \
-    switch (0) {       \
-        case 0:        \
-            (void)(n); \
-        default:       \
-            break;     \
-    }
+template <typename Ty> static void UseType()
+{
+    auto* unused = static_cast<std::add_pointer_t<Ty>>(nullptr);
+    (void)unused;
+}
+
+static void ConsumeInt(int n)
+{
+    (void)n;
+}
 static void F()
 {
-    t(locale_t) t(nl_item) C(CODESET) C(D_T_FMT) C(D_FMT) C(T_FMT) C(T_FMT_AMPM) C(AM_STR) C(PM_STR) C(DAY_1) C(DAY_2)
-        C(DAY_3) C(DAY_4) C(DAY_5) C(DAY_6) C(DAY_7) C(ABDAY_1) C(ABDAY_2) C(ABDAY_3) C(ABDAY_4) C(ABDAY_5) C(ABDAY_6)
-            C(ABDAY_7) C(MON_1) C(MON_2) C(MON_3) C(MON_4) C(MON_5) C(MON_6) C(MON_7) C(MON_8) C(MON_9) C(MON_10)
-                C(MON_11) C(MON_12) C(ABMON_1) C(ABMON_2) C(ABMON_3) C(ABMON_4) C(ABMON_5) C(ABMON_6) C(ABMON_7)
-                    C(ABMON_8) C(ABMON_9) C(ABMON_10) C(ABMON_11) C(ABMON_12) C(ERA) C(ERA_D_FMT) C(ERA_D_T_FMT)
-                        C(ERA_T_FMT) C(ALT_DIGITS) C(RADIXCHAR) C(THOUSEP) C(YESEXPR) C(NOEXPR) C(CRNCYSTR)
+    UseType<locale_t>();
+    UseType<nl_item>();
+    ConsumeInt(CODESET);
+    ConsumeInt(D_T_FMT);
+    ConsumeInt(D_FMT);
+    ConsumeInt(T_FMT);
+    ConsumeInt(T_FMT_AMPM);
+    ConsumeInt(AM_STR);
+    ConsumeInt(PM_STR);
+    ConsumeInt(DAY_1);
+    ConsumeInt(DAY_2);
+    ConsumeInt(DAY_3);
+    ConsumeInt(DAY_4);
+    ConsumeInt(DAY_5);
+    ConsumeInt(DAY_6);
+    ConsumeInt(DAY_7);
+    ConsumeInt(ABDAY_1);
+    ConsumeInt(ABDAY_2);
+    ConsumeInt(ABDAY_3);
+    ConsumeInt(ABDAY_4);
+    ConsumeInt(ABDAY_5);
+    ConsumeInt(ABDAY_6);
+    ConsumeInt(ABDAY_7);
+    ConsumeInt(MON_1);
+    ConsumeInt(MON_2);
+    ConsumeInt(MON_3);
+    ConsumeInt(MON_4);
+    ConsumeInt(MON_5);
+    ConsumeInt(MON_6);
+    ConsumeInt(MON_7);
+    ConsumeInt(MON_8);
+    ConsumeInt(MON_9);
+    ConsumeInt(MON_10);
+    ConsumeInt(MON_11);
+    ConsumeInt(MON_12);
+    ConsumeInt(ABMON_1);
+    ConsumeInt(ABMON_2);
+    ConsumeInt(ABMON_3);
+    ConsumeInt(ABMON_4);
+    ConsumeInt(ABMON_5);
+    ConsumeInt(ABMON_6);
+    ConsumeInt(ABMON_7);
+    ConsumeInt(ABMON_8);
+    ConsumeInt(ABMON_9);
+    ConsumeInt(ABMON_10);
+    ConsumeInt(ABMON_11);
+    ConsumeInt(ABMON_12);
+    ConsumeInt(ERA);
+    ConsumeInt(ERA_D_FMT);
+    ConsumeInt(ERA_D_T_FMT);
+    ConsumeInt(ERA_T_FMT);
+    ConsumeInt(ALT_DIGITS);
+    ConsumeInt(RADIXCHAR);
+    ConsumeInt(THOUSEP);
+    ConsumeInt(YESEXPR);
+    ConsumeInt(NOEXPR);
+    ConsumeInt(CRNCYSTR);
     {
         char* (*p)(nl_item) = nl_langinfo;
     }

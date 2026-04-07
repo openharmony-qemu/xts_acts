@@ -86,10 +86,8 @@ static struct tm g_tm5 = { .tm_sec = 0,
                            .tm_yday = 0,
                            .tm_isdst = 0 };
 
-static int StrftimeTestImpl()
+static void StrftimeTestCenturyAndDateCases()
 {
-    setenv("TZ", "UTC0", 1);
-
     CheckStrftime("%c", &g_tm1, "Sun Jan  3 13:23:45 2016");
     CheckStrftime("%c", &g_tm2, "Mon Jan  5 05:17:53 +10009");
     CheckStrftime("%c", &g_tm3, "Wed Feb 23 12:00:00 0000");
@@ -116,7 +114,10 @@ static int StrftimeTestImpl()
     CheckStrftime("%010F", &g_tm3, "0000-02-23");
     CheckStrftime("%F", &g_tm4, "-123-01-01");
     CheckStrftime("%011F", &g_tm4, "-0123-01-01");
+}
 
+static void StrftimeTestWeekAndTimeCases()
+{
     CheckStrftime("%g", &g_tm1, "15");
     CheckStrftime("%g", &g_tm2, "09");
 
@@ -156,13 +157,10 @@ static int StrftimeTestImpl()
     CheckStrftime("%x", &g_tm1, "01/03/16");
     CheckStrftime("%X", &g_tm1, "13:23:45");
     CheckStrftime("%y", &g_tm1, "16");
+}
 
-    // There is no standard that explicitly specifies the exact format of "%Y".
-    // The C standard says that "%F" is equivalent to "%Y-%m-%d". The
-    // POSIX.1-2008 standard says that "%F" is equivalent to "%+4Y-%m-%d".
-    // This implies that to conform to both standards "%Y" needs to be
-    // equivalent to "%+4Y".
-    // See also http://austingroupbugs.net/view.php?id=739
+static void StrftimeTestYearAndBoundaryCases()
+{
     CheckStrftime("%Y", &g_tm1, "2016");
     CheckStrftime("%05Y", &g_tm1, "02016");
     CheckStrftime("%+4Y", &g_tm1, "2016");
@@ -186,6 +184,22 @@ static int StrftimeTestImpl()
             CheckStrftime("%s", &g_tm5, "67768036160140800");
         }
     }
+}
+
+static int StrftimeTestImpl()
+{
+    setenv("TZ", "UTC0", 1);
+
+    StrftimeTestCenturyAndDateCases();
+    StrftimeTestWeekAndTimeCases();
+
+    // There is no standard that explicitly specifies the exact format of "%Y".
+    // The C standard says that "%F" is equivalent to "%Y-%m-%d". The
+    // POSIX.1-2008 standard says that "%F" is equivalent to "%+4Y-%m-%d".
+    // This implies that to conform to both standards "%Y" needs to be
+    // equivalent to "%+4Y".
+    // See also http://austingroupbugs.net/view.php?id=739
+    StrftimeTestYearAndBoundaryCases();
 
     return T_STATUS;
 }

@@ -19,29 +19,29 @@
 #include <libgen.h>
 #include "test.h"
 
-#define t(PATH, want)                                                             \
-    {                                                                             \
-        char tmp[100];                                                            \
-        (void)snprintf(tmp, sizeof(tmp), "%s", PATH);                             \
-        char* got = dirname(tmp);                                                 \
-        if (strcmp(want, got) != 0) {                                             \
-            t_error("dirname(\"%s\") got \"%s\" want \"%s\"\n", PATH, got, want); \
-        }                                                                         \
+static void CheckDirnameCase(const char* path, const char* want)
+{
+    char tmp[100];
+    (void)snprintf(tmp, sizeof(tmp), "%s", path);
+    char* got = dirname(tmp);
+    if (strcmp(want, got) != 0) {
+        t_error("dirname(\"%s\") got \"%s\" want \"%s\"\n", path, got, want);
     }
+}
 
 int DirnameTest()
 {
     if (strcmp(dirname(nullptr), ".") != 0) {
         t_error("dirname(0) returned \"%s\"; expected \".\"\n", dirname(nullptr));
     }
-    t("", ".");
-    t("/usr/lib", "/usr");
-    t("/usr/", "/");
-    t("usr", ".");
-    t("usr/", ".");
-    t("/", "/");
-    t("///", "/");
-    t(".", ".");
-    t("..", ".");
+    CheckDirnameCase("", ".");
+    CheckDirnameCase("/usr/lib", "/usr");
+    CheckDirnameCase("/usr/", "/");
+    CheckDirnameCase("usr", ".");
+    CheckDirnameCase("usr/", ".");
+    CheckDirnameCase("/", "/");
+    CheckDirnameCase("///", "/");
+    CheckDirnameCase(".", ".");
+    CheckDirnameCase("..", ".");
     return T_STATUS;
 }

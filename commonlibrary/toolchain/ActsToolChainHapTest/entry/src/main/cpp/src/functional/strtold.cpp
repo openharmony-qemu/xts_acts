@@ -19,7 +19,10 @@
 #include <cstdlib>
 #include "test.h"
 
-#define length(x) (sizeof(x) / sizeof *(x))
+template <typename T, size_t N> constexpr size_t ArrayLength(const T (&)[N])
+{
+    return N;
+}
 
 static struct {
     char* s;
@@ -104,7 +107,7 @@ static int StrtoldTestImpl(void)
     long double x;
     char* p;
 
-    for (i = 0; i < length(g_t); i++) {
+    for (i = 0; i < static_cast<int>(ArrayLength(g_t)); i++) {
         x = strtold(g_t[i].s, &p);
         if (x != g_t[i].f) {
             t_error("strtold(\"%s\") want %La got %La\n", g_t[i].s, g_t[i].f, x);

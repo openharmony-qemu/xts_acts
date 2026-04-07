@@ -21,13 +21,6 @@
 #include <sys/syscall.h>
 #include <unistd.h>
 #include "libc_test_shim.h"
-#define t(st, f)                                                       \
-    do {                                                               \
-        if (!(f)) {                                                    \
-            LibcTestError(&(st), #f " failed: %s\n", strerror(errno)); \
-        }                                                              \
-    } while (0)
-
 int SyscallSignExtendTest()
 {
     int status = SUCCESS_CODE;
@@ -37,8 +30,12 @@ int SyscallSignExtendTest()
     int r;
 
     // test syscall with pointer
-    t(status, (fd = open("/dev/zero", O_RDONLY)) >= 0);
-    t(status, (r = syscall(SYS_read, fd, buf, 1)) == 1);
+    if (!((fd = open("/dev/zero", O_RDONLY)) >= 0)) {
+        LibcTestError(&status, "(fd = open(\"/dev/zero\", O_RDONLY)) >= 0 failed: %s\n", strerror(errno));
+    }
+    if (!((r = syscall(SYS_read, fd, buf, 1)) == 1)) {
+        LibcTestError(&status, "(r = syscall(SYS_read, fd, buf, 1)) == 1 failed: %s\n", strerror(errno));
+    }
     if (buf[0] != 0) {
         LibcTestError(&status, "read %d instead of 0\n", buf[0]);
     }

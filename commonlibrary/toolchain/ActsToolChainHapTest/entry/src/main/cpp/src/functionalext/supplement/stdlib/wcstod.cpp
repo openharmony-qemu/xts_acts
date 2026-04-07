@@ -21,11 +21,12 @@
 #include <cwchar>
 #include "test.h"
 
-#define EXPECT_DOUBLE_EQ(a, b)                                                 \
-    do {                                                                       \
-        if (!(fabs((a) - (b)) < DBL_EPSILON))                                  \
-            t_error("%s failed: %f is not equal to %f\n", __func__, (a), (b)); \
-    } while (0)
+static void ExpectDoubleEq(double a, double b)
+{
+    if (!(fabs(a - b) < DBL_EPSILON)) {
+        t_error("%s failed: %f is not equal to %f\n", __func__, a, b);
+    }
+}
 
 /**
  * @tc.name      : Wcstod0100
@@ -39,7 +40,7 @@ void Wcstod0100(void)
     const double target = 3.14;
     wchar_t str1[] = L"wcstod";
     double val = wcstod(str0, &end);
-    EXPECT_DOUBLE_EQ(val, target);
+    ExpectDoubleEq(val, target);
     if (wcscmp(end, str1)) {
         t_error("%s the result of comparing two strings should be equal", __func__);
     }
@@ -56,7 +57,7 @@ void Wcstod0200(void)
     wchar_t* end = nullptr;
     const double target = 3.14;
     double val = wcstod(str, &end);
-    EXPECT_DOUBLE_EQ(val, target);
+    ExpectDoubleEq(val, target);
 }
 
 /**
@@ -70,7 +71,7 @@ void Wcstod0300(void)
     wchar_t* end = nullptr;
     const double target = 3.14;
     double val = wcstod(str, &end);
-    EXPECT_DOUBLE_EQ(val, target);
+    ExpectDoubleEq(val, target);
 }
 
 /**
@@ -100,7 +101,7 @@ void Wcstod0500(void)
     wchar_t* end = nullptr;
     const double target = -3.14;
     double val = wcstod(str, &end);
-    EXPECT_DOUBLE_EQ(val, target);
+    ExpectDoubleEq(val, target);
 }
 
 /**
@@ -114,7 +115,7 @@ void Wcstod0600(void)
     wchar_t* end = nullptr;
     double val = wcstod(str, &end);
     const double target = 111.11;
-    EXPECT_DOUBLE_EQ(val, target);
+    ExpectDoubleEq(val, target);
 }
 
 /**

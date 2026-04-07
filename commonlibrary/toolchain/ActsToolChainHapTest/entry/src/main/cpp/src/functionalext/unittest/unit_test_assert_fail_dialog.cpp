@@ -106,49 +106,23 @@ void ProcessRetry()
     assert(0);
 }
 
-static int UnittestFatalMessageAssertFailDialogTestImpl(void)
+static pid_t ForkAndRun(void (*fn)(), const char* name)
 {
-    (void)signal(SIGUSR1, SIG_DFL);
-    pid_t pid1, pid2, pid3;
+    pid_t pid = fork();
+    if (pid < 0) {
+        fprintf(stderr, "Fork failed for %s\n", name);
+        return -1;
+    }
+    if (pid == 0) {
+        fn();
+        return 0;
+    }
+    return pid;
+}
+
+static int WaitChildrenAndCheckFiles(pid_t pid1, pid_t pid2, pid_t pid3)
+{
     int status;
-
-    // Create the first child process
-    pid1 = fork();
-    if (pid1 < 0) {
-        // Failed to create the process
-        fprintf(stderr, "Fork failed for Process One\n");
-        return 1;
-    } else if (pid1 == 0) {
-        // child process one
-        ProcessAbort(); // Specific operations for child Process One can be added here
-        return 0;
-    }
-
-    // Create the second child process
-    pid2 = fork();
-    if (pid2 < 0) {
-        // Failed to create the process
-        fprintf(stderr, "Fork failed for Process Two\n");
-        return 1;
-    } else if (pid2 == 0) {
-        // child process two
-        ProcessIgnore(); // Specific operations for child Process Two can be added here
-        return 0;
-    }
-
-    // Create the third child process
-    pid3 = fork();
-    if (pid3 < 0) {
-        // Failed to create the process
-        fprintf(stderr, "Fork failed for Process Three\n");
-        return 1;
-    } else if (pid3 == 0) {
-        // child process three
-        ProcessRetry(); // Specific operations for child Process Three can be added here
-        return 0;
-    }
-
-    // Wait for all child processes to finish
     waitpid(pid1, &status, 0);
     waitpid(pid2, &status, 0);
     waitpid(pid3, &status, 0);
@@ -156,17 +130,44 @@ static int UnittestFatalMessageAssertFailDialogTestImpl(void)
     char* bufferAbort = strdup(ReadFile(FILE_ABORT));
     char* bufferIgnore = strdup(ReadFile(FILE_IGNORE));
     char* bufferRetry = strdup(ReadFile(FILE_RETRY));
-
     if (strcmp(bufferAbort, ASSERT_ABORT_INFO) == 0 && strcmp(bufferIgnore, ASSERT_IGNORE_INFO) == 0 &&
         strcmp(bufferRetry, ASSERT_RETRY_INFO) == 0) {
         printf("All processes finished.\n");
     }
-
     free(bufferAbort);
     free(bufferIgnore);
     free(bufferRetry);
-
     return 0;
+}
+
+static int UnittestFatalMessageAssertFailDialogTestImpl(void)
+{
+    (void)signal(SIGUSR1, SIG_DFL);
+    pid_t pid1 = ForkAndRun(ProcessAbort, "Process One");
+    if (pid1 < 0) {
+        return 1;
+    }
+    if (pid1 == 0) {
+        return 0;
+    }
+
+    pid_t pid2 = ForkAndRun(ProcessIgnore, "Process Two");
+    if (pid2 < 0) {
+        return 1;
+    }
+    if (pid2 == 0) {
+        return 0;
+    }
+
+    pid_t pid3 = ForkAndRun(ProcessRetry, "Process Three");
+    if (pid3 < 0) {
+        return 1;
+    }
+    if (pid3 == 0) {
+        return 0;
+    }
+
+    return WaitChildrenAndCheckFiles(pid1, pid2, pid3);
 }
 
 int UnittestFatalMessageAssertFailDialogTest(void)

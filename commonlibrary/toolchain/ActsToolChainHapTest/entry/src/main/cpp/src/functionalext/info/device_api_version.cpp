@@ -18,11 +18,12 @@
 #include <cstring>
 #include <test.h>
 
-#define EXPECT_EQ(a, b)                          \
-    do {                                         \
-        if ((a) != (b))                          \
-            t_error("failed %d != %d \n", a, b); \
-    } while (0)
+static void EXPECT_EQ(int a, int b)
+{
+    if (a != b) {
+        t_error("failed %d != %d \n", a, b);
+    }
+}
 
 #define API_VERSION_DEFAULT 0
 

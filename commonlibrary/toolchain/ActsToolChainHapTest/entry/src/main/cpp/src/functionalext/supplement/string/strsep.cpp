@@ -24,8 +24,7 @@
  */
 void Strsep0100(void)
 {
-    char str[12] = { 0 };
-    (void)snprintf(str, sizeof(str), "%s", "helloworld"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    char str[12] = "helloworld";
     char* p = str;
     char* sep = "w";
     char* result = strsep(&p, sep);
@@ -44,8 +43,7 @@ void Strsep0100(void)
  */
 void Strsep0200(void)
 {
-    char str[12] = { 0 };
-    (void)snprintf(str, sizeof(str), "%s", "helloworld"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    char str[12] = "helloworld";
     char* p = str;
     char* sep = "l";
     char* result = strsep(&p, sep);
@@ -64,8 +62,7 @@ void Strsep0200(void)
  */
 void Strsep0300(void)
 {
-    char str[12] = { 0 };
-    (void)snprintf(str, sizeof(str), "%s", "helloworld"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    char str[12] = "helloworld";
     char* p = str;
     char* sep = "a";
     char* result = strsep(&p, sep);

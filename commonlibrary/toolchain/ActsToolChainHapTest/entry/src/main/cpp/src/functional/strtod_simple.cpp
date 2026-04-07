@@ -28,13 +28,12 @@ constexpr int K_STRTOD_ROUND_TRIP_ITERATIONS = 100;
  * m = message to print on failure (with formats for r & x)
  */
 
-#define TEST(st, r, f, x, m)                                                      \
-    do {                                                                          \
-        (r) = (f);                                                                \
-        if ((r) != (x)) {                                                         \
-            LibcTestError(&(st), "%s failed (" m ")\n", #f, (r), (x), (r) - (x)); \
-        }                                                                         \
-    } while (0)
+static void CheckDoubleEq(int& status, const char* expr, double got, double expect, const char* msg)
+{
+    if (got != expect) {
+        LibcTestError(&status, "%s failed (%s)\n", expr, msg, got, expect, got - expect);
+    }
+}
 
 int StrtodSimpleTest()
 {
@@ -47,10 +46,13 @@ int StrtodSimpleTest()
     for (i = 0; i < K_STRTOD_ROUND_TRIP_ITERATIONS; i++) {
         d = sin(i);
         (void)snprintf(buf, sizeof buf, "%.300f", d); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-        TEST(status, d2, strtod(buf, nullptr), d, "round trip fail %a != %a (%a)");
+        d2 = strtod(buf, nullptr);
+        CheckDoubleEq(status, "strtod(buf, nullptr)", d2, d, "round trip fail %a != %a (%a)");
     }
 
-    TEST(status, d, strtod("0x1p4", nullptr), 16.0, "hex float %a != %a");
-    TEST(status, d, strtod("0x1.1p4", nullptr), 17.0, "hex float %a != %a");
+    d = strtod("0x1p4", nullptr);
+    CheckDoubleEq(status, "strtod(\"0x1p4\", nullptr)", d, 16.0, "hex float %a != %a");
+    d = strtod("0x1.1p4", nullptr);
+    CheckDoubleEq(status, "strtod(\"0x1.1p4\", nullptr)", d, 17.0, "hex float %a != %a");
     return status;
 }

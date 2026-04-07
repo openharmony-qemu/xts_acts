@@ -21,12 +21,6 @@
 #include <cwchar>
 #include <unistd.h>
 #include "libc_test_shim.h"
-#define A(st, c)                                  \
-    do {                                          \
-        if (!(c))                                 \
-            LibcTestError(&(st), #c " failed\n"); \
-    } while (0)
-
 void TSetutf8(void)
 {
     if (!setlocale(LC_ALL, "C.UTF-8")) {
@@ -43,13 +37,23 @@ int FgetwcBufferingTest()
     TSetutf8();
 
     int p[2];
-    A(status, pipe(p) == 0);
-    A(status, write(p[1], "x\340\240", 3) == 3);
-    A(status, dup2(p[0], 0) == 0);
+    if (!(pipe(p) == 0)) {
+        LibcTestError(&status, "pipe(p) == 0 failed\n");
+    }
+    if (!(write(p[1], "x\340\240", 3) == 3)) {
+        LibcTestError(&status, "write(p[1], \"x\\340\\240\", 3) == 3 failed\n");
+    }
+    if (!(dup2(p[0], 0) == 0)) {
+        LibcTestError(&status, "dup2(p[0], 0) == 0 failed\n");
+    }
     wint_t wc;
     wc = fgetwc(stdin);
-    A(status, wc == 'x');
-    A(status, write(p[1], "\200", 1) == 1);
+    if (!(wc == 'x')) {
+        LibcTestError(&status, "wc == 'x' failed\n");
+    }
+    if (!(write(p[1], "\200", 1) == 1)) {
+        LibcTestError(&status, "write(p[1], \"\\200\", 1) == 1 failed\n");
+    }
     close(p[1]);
 
     wc = fgetwc(stdin);
@@ -65,7 +69,11 @@ int FgetwcBufferingTest()
     if (errno != 0) {
         LibcTestError(&status, "wanted errno==0, got %d (%s)\n", errno, strerror(errno));
     }
-    A(status, feof(stdin) != 0);
-    A(status, ferror(stdin) == 0);
+    if (!(feof(stdin) != 0)) {
+        LibcTestError(&status, "feof(stdin) != 0 failed\n");
+    }
+    if (!(ferror(stdin) == 0)) {
+        LibcTestError(&status, "ferror(stdin) == 0 failed\n");
+    }
     return status;
 }

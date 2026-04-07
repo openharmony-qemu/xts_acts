@@ -166,15 +166,18 @@ float Ulperrl(long double got, long double want, float dwant)
 #endif
 }
 
-#define length(a) (sizeof(a) / sizeof *(a))
-#define flag(x) \
-    {           \
-        x, #x   \
-    }
 static struct {
     int flag;
     char* s;
-} g_eflags[] = { flag(INEXACT), flag(INVALID), flag(DIVBYZERO), flag(UNDERFLOW), flag(OVERFLOW) };
+} g_eflags[] = {
+    { INEXACT, "INEXACT" },     { INVALID, "INVALID" },   { DIVBYZERO, "DIVBYZERO" },
+    { UNDERFLOW, "UNDERFLOW" }, { OVERFLOW, "OVERFLOW" },
+};
+
+static int EflagsLength(void)
+{
+    return (int)(sizeof(g_eflags) / sizeof(g_eflags[0]));
+}
 
 char* Estr(int f)
 {
@@ -182,7 +185,7 @@ char* Estr(int f)
     char* p = buf;
     int i, all = 0;
 
-    for (i = 0; i < length(g_eflags); i++) {
+    for (i = 0; i < EflagsLength(); i++) {
         if (f & g_eflags[i].flag) {
             (void)snprintf(p,
                            (size_t)(buf + MTEST_ESTR_BUF_SIZE - p),

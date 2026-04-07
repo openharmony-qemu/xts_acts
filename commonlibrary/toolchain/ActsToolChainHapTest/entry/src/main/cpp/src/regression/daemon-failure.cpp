@@ -28,10 +28,63 @@
 
 int daemon(int, int);
 
+static int DaemonFailureChild(int fdout, int* fd, int oldPid)
+{
+    int r;
+
+    TFdfill();
+    errno = 0;
+    r = daemon(0, 0);
+    if (dup2(fdout, 1) == -1) {
+        constexpr ssize_t kDaemonErrorMsgLen = 7;
+        write(fdout, "ERROR:\n", kDaemonErrorMsgLen);
+        t_error("failed to dup pipe fd for communicating results: %s\n", strerror(errno));
+    }
+    if (r != -1) {
+        t_error("daemon should have failed\n");
+    }
+    if (errno != EMFILE) {
+        t_error("daemon should have failed with %d [EMFILE] got %d [%s]\n", EMFILE, errno, strerror(errno));
+    }
+    if (getpid() != oldPid || getppid() == 1) {
+        t_error("daemon forked despite failure: ppid is %d, pid is %d, old pid is %d\n", getppid(), getpid(), oldPid);
+    }
+    if (write(fd[1], "1" + !T_STATUS, 1) != 1) {
+        t_error("write failed: %s\n", strerror(errno));
+    }
+    return T_STATUS;
+}
+
+static void DaemonFailureParentCheck(int childPid, int fd0, int fd1)
+{
+    int r;
+    int s;
+    char c;
+
+    close(fd1);
+    if (waitpid(childPid, &s, 0) != childPid) {
+        t_error("waitpid failed: %s\n", strerror(errno));
+    } else if (!WIFEXITED(s)) {
+        t_error("child exited abnormally (signal %d)\n", WIFSIGNALED(s) ? WTERMSIG(s) : 0);
+    } else if (WEXITSTATUS(s)) {
+        t_error("child exited with %d\n", WEXITSTATUS(s));
+    }
+    r = read(fd0, &c, 1);
+    if (r == -1) {
+        t_error("read failed: %s\n", strerror(errno));
+    } else if (r == 0) {
+        t_error("read failed: child did not send its exit status\n");
+    } else if (c != 0) {
+        t_error("child failed\n");
+    }
+}
+
 int DaemonFailureTest(void)
 {
-    int r, pid, fd[2], fdout, s;
-    char c;
+    int r;
+    int pid;
+    int fd[2];
+    int fdout;
 
     r = pipe(fd);
     if (r == -1) {
@@ -48,48 +101,11 @@ int DaemonFailureTest(void)
         t_error("fork failed: %s\n", strerror(errno));
         return 1;
     }
-
     if (r == 0) {
-        /* exhausting all fds makes open("/dev/null") fail in Daemon */
-        TFdfill();
         pid = getpid();
-        errno = 0;
-        r = daemon(0, 0);
-        if (dup2(fdout, 1) == -1) {
-            constexpr ssize_t kDaemonErrorMsgLen = 7;
-            write(fdout, "ERROR:\n", kDaemonErrorMsgLen);
-            t_error("failed to dup pipe fd for communicating results: %s\n", strerror(errno));
-        }
-        if (r != -1) {
-            t_error("daemon should have failed\n");
-        }
-        if (errno != EMFILE) {
-            t_error("daemon should have failed with %d [EMFILE] got %d [%s]\n", EMFILE, errno, strerror(errno));
-        }
-        if (getpid() != pid || getppid() == 1) {
-            t_error("daemon forked despite failure: ppid is %d, pid is %d, old pid is %d\n", getppid(), getpid(), pid);
-        }
-        if (write(fd[1], "1" + !T_STATUS, 1) != 1) {
-            t_error("write failed: %s\n", strerror(errno));
-        }
-        return T_STATUS;
+        return DaemonFailureChild(fdout, fd, pid);
     }
-    close(fd[1]);
-    if (waitpid(r, &s, 0) != r) {
-        t_error("waitpid failed: %s\n", strerror(errno));
-    } else if (!WIFEXITED(s)) {
-        t_error("child exited abnormally (signal %d)\n", WIFSIGNALED(s) ? WTERMSIG(s) : 0);
-    } else if (WEXITSTATUS(s)) {
-        t_error("child exited with %d\n", WEXITSTATUS(s));
-    }
-    r = read(fd[0], &c, 1);
-    if (r == -1) {
-        t_error("read failed: %s\n", strerror(errno));
-    } else if (r == 0) {
-        t_error("read failed: child did not send its exit status\n");
-    } else if (c != 0) {
-        t_error("child failed\n");
-    }
+    DaemonFailureParentCheck(r, fd[0], fd[1]);
 
     return T_STATUS;
 }

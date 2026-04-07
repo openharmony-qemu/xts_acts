@@ -25,14 +25,18 @@ static int LsearchStrcmp(const void* a, const void* b)
     return strcmp(static_cast<const char*>(a), static_cast<const char*>(b));
 }
 
-#define set(st, k)                                                                 \
-    do {                                                                           \
-        char* r = static_cast<char*>(lsearch(k, g_tab, &g_nel, W, LsearchStrcmp)); \
-        if (strcmp(r, k) != 0)                                                     \
-            LibcTestError(&(st), "lsearch %s failed\n", #k);                       \
-    } while (0)
+static void LsearchSet(int& status, const char* key)
+{
+    char* r = static_cast<char*>(lsearch(key, g_tab, &g_nel, W, LsearchStrcmp));
+    if (strcmp(r, key) != 0) {
+        LibcTestError(&status, "lsearch %s failed\n", key);
+    }
+}
 
-#define get(k) lfind(k, g_tab, &g_nel, W, LsearchStrcmp)
+static void* LsearchGet(const char* key)
+{
+    return lfind(key, g_tab, &g_nel, W, LsearchStrcmp);
+}
 
 int SearchLsearchTest()
 {
@@ -40,29 +44,29 @@ int SearchLsearchTest()
 
     size_t n;
 
-    set(status, "");
-    set(status, "a");
-    set(status, "b");
-    set(status, "abc");
-    set(status, "cd");
-    set(status, "e");
-    set(status, "ef");
-    set(status, "g");
-    set(status, "h");
-    set(status, "iiiiiiiiii");
-    if (!get("a")) {
+    LsearchSet(status, "");
+    LsearchSet(status, "a");
+    LsearchSet(status, "b");
+    LsearchSet(status, "abc");
+    LsearchSet(status, "cd");
+    LsearchSet(status, "e");
+    LsearchSet(status, "ef");
+    LsearchSet(status, "g");
+    LsearchSet(status, "h");
+    LsearchSet(status, "iiiiiiiiii");
+    if (!LsearchGet("a")) {
         LibcTestError(&status, "lfind a failed\n");
     }
-    if (get("c")) {
+    if (LsearchGet("c")) {
         LibcTestError(&status, "lfind c should fail\n");
     }
     n = g_nel;
-    set(status, "g");
+    LsearchSet(status, "g");
     if (g_nel != n) {
         LibcTestError(&status, "lsearch g should not modify the table size (%d, was %d)\n", g_nel, n);
     }
     n = g_nel;
-    set(status, "j");
+    LsearchSet(status, "j");
     if (g_nel != n + 1) {
         LibcTestError(&status, "lsearch j should increase the table size (%d, was %d)\n", g_nel, n);
     }

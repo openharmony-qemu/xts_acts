@@ -23,20 +23,18 @@ constexpr int K_STRCSPN_FULL_BYTE_LEN = 256;
 constexpr int K_ASCII_LOW7_MASK = 127;
 } // namespace
 
-#define t_strcspn(st, s, c, n)                                         \
-    do {                                                               \
-        char* p = s;                                                   \
-        char* q = c;                                                   \
-        size_t r = strcspn(p, q);                                      \
-        if (r != (n)) {                                                \
-            LibcTestError(&(st),                                       \
-                          "strcspn(%s,%s) returned %lu, wanted %lu\n", \
-                          #s,                                          \
-                          #c,                                          \
-                          static_cast<unsigned long>(r),               \
-                          static_cast<unsigned long>(n));              \
-        }                                                              \
-    } while (0)
+static void CheckStrcspnResult(int& st, const char* p, const char* q, size_t n, const char* sExpr, const char* cExpr)
+{
+    size_t r = strcspn(p, q);
+    if (r != n) {
+        LibcTestError(&st,
+                      "strcspn(%s,%s) returned %lu, wanted %lu\n",
+                      sExpr,
+                      cExpr,
+                      static_cast<unsigned long>(r),
+                      static_cast<unsigned long>(n));
+    }
+}
 
 int StringStrcspnTest()
 {
@@ -53,14 +51,14 @@ int StringStrcspnTest()
         *(reinterpret_cast<unsigned char*>(s) + i) = static_cast<unsigned char>(i + 1);
     }
 
-    t_strcspn(status, "", "", 0);
-    t_strcspn(status, "a", "", 1);
-    t_strcspn(status, "", "a", 0);
-    t_strcspn(status, "abc", "cde", 2);
-    t_strcspn(status, "abc", "ccc", 2);
-    t_strcspn(status, "abc", a, 0);
-    t_strcspn(status, "\xff\x80 abc", a, 2);
-    t_strcspn(status, s, "\xff", 254);
+    CheckStrcspnResult(status, "", "", 0, "\"\"", "\"\"");
+    CheckStrcspnResult(status, "a", "", 1, "\"a\"", "\"\"");
+    CheckStrcspnResult(status, "", "a", 0, "\"\"", "\"a\"");
+    CheckStrcspnResult(status, "abc", "cde", 2, "\"abc\"", "\"cde\"");
+    CheckStrcspnResult(status, "abc", "ccc", 2, "\"abc\"", "\"ccc\"");
+    CheckStrcspnResult(status, "abc", a, 0, "\"abc\"", "a");
+    CheckStrcspnResult(status, "\xff\x80 abc", a, 2, "\"\\xff\\x80 abc\"", "a");
+    CheckStrcspnResult(status, s, "\xff", 254, "s", "\"\\xff\"");
 
     return status;
 }

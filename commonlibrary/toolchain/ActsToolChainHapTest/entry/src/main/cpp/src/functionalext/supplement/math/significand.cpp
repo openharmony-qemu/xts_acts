@@ -17,11 +17,12 @@
 #include <cmath>
 #include "test.h"
 
-#define EXPECT_DOUBLE_EQ(a, b)                                                 \
-    do {                                                                       \
-        if (!(fabs((a) - (b)) < DBL_EPSILON))                                  \
-            t_error("%s failed: %f is not equal to %f\n", __func__, (a), (b)); \
-    } while (0)
+static void ExpectDoubleEq(double a, double b)
+{
+    if (!(fabs(a - b) < DBL_EPSILON)) {
+        t_error("%s failed: %f is not equal to %f\n", __func__, a, b);
+    }
+}
 
 /*
  * @tc.name      : Significand0100
@@ -31,7 +32,7 @@
 void Significand0100(void)
 {
     double d = significand(0.0);
-    EXPECT_DOUBLE_EQ(0.0, d);
+    ExpectDoubleEq(0.0, d);
 }
 
 /*
@@ -42,7 +43,7 @@ void Significand0100(void)
 void Significand0200(void)
 {
     double d = significand(1.2);
-    EXPECT_DOUBLE_EQ(1.2, d);
+    ExpectDoubleEq(1.2, d);
 }
 
 /*
@@ -53,7 +54,7 @@ void Significand0200(void)
 void Significand0300(void)
 {
     double d = significand(12.25);
-    EXPECT_DOUBLE_EQ(1.53125, d);
+    ExpectDoubleEq(1.53125, d);
 }
 
 static int SignificandTestImpl(int argc, char* argv[])

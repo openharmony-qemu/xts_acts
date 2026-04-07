@@ -18,12 +18,14 @@
 #include <ctime>
 #include "test.h"
 
-#define TEST(c, ...) ((c) || (t_error(#c " failed: " __VA_ARGS__), 0))
-
 int ClockGettimeTest()
 {
     struct timespec ts;
-    TEST(clock_gettime(CLOCK_REALTIME, &ts) == 0 && errno == 0, "%s\n", strerror(errno));
-    TEST(CLOCK_GETTIME64(CLOCK_REALTIME, &ts) == 0 && errno == 0, "%s\n", strerror(errno));
+    if (!(clock_gettime(CLOCK_REALTIME, &ts) == 0 && errno == 0)) {
+        t_error("clock_gettime(CLOCK_REALTIME, &ts) == 0 && errno == 0 failed: %s\n", strerror(errno));
+    }
+    if (!(CLOCK_GETTIME64(CLOCK_REALTIME, &ts) == 0 && errno == 0)) {
+        t_error("CLOCK_GETTIME64(CLOCK_REALTIME, &ts) == 0 && errno == 0 failed: %s\n", strerror(errno));
+    }
     return T_STATUS;
 }

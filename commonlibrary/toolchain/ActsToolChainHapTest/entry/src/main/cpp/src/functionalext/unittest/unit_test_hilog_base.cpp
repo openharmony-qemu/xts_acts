@@ -191,13 +191,10 @@ void HiLogWriteTest(char* funcName, LogMethodFunc loggingMethod, uint32_t logCou
         }
         loggingMethod(fullMsg);
     }
-
     if (strlen(logMsg) > MAX_LOG_LEN - 1) {
         logMsg[MAX_LOG_LEN - 1] = '\0'; // 直接截断字符串
     }
-
     usleep(1000); /* 1000: 睡眠 1 毫秒 */
-
     const char* cmd = "/system/bin/hilog -x";
     char* logMsgs = ReadHilogPopenOutput();
     if (!logMsgs) {
@@ -206,7 +203,6 @@ void HiLogWriteTest(char* funcName, LogMethodFunc loggingMethod, uint32_t logCou
         return;
     }
     uint32_t realCount = 0;
-    // 处理字符串分割
     char* line = strtok(logMsgs, "\n");
     while (line != nullptr) {
         if (strstr(line, logMsg) != nullptr) {
@@ -214,16 +210,12 @@ void HiLogWriteTest(char* funcName, LogMethodFunc loggingMethod, uint32_t logCou
         }
         line = strtok(nullptr, "\n");
     }
-
     uint32_t allowedLeastLogCount = logCount - logCount / 10; /* 1 / 10: 丢失率少于10% */
     if (isDebug) {
         allowedLeastLogCount = 0; /* 0: 调试模式关闭统计 */
     }
-
-    // 释放内存
     free(logMsg);
     free(logMsgs);
-
     EXPECT_GTE(funcName, realCount, allowedLeastLogCount);
 }
 

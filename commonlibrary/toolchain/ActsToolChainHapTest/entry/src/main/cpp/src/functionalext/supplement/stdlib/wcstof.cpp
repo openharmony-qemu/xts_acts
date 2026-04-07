@@ -21,11 +21,12 @@
 #include <cwchar>
 #include "test.h"
 
-#define EXPECT_FLOAT_EQ(a, b)                                                  \
-    do {                                                                       \
-        if (!(fabsf((a) - (b)) < FLT_EPSILON))                                 \
-            t_error("%s failed: %f is not equal to %f\n", __func__, (a), (b)); \
-    } while (0)
+static void ExpectFloatEq(float a, float b)
+{
+    if (!(fabsf(a - b) < FLT_EPSILON)) {
+        t_error("%s failed: %f is not equal to %f\n", __func__, a, b);
+    }
+}
 
 /**
  * @tc.name      : Wcstof0100
@@ -39,7 +40,7 @@ void Wcstof0100(void)
     const float target = 3.14f;
     wchar_t str1[] = L"wcstof";
     float val = wcstof(str0, &end);
-    EXPECT_FLOAT_EQ(val, target);
+    ExpectFloatEq(val, target);
     if (wcscmp(end, str1)) {
         t_error("%s the result of comparing two strings should be equal", __func__);
     }
@@ -56,7 +57,7 @@ void Wcstof0200(void)
     wchar_t* end = nullptr;
     const float target = 3.14f;
     float val = wcstof(str, &end);
-    EXPECT_FLOAT_EQ(val, target);
+    ExpectFloatEq(val, target);
 }
 
 /**
@@ -70,7 +71,7 @@ void Wcstof0300(void)
     wchar_t* end = nullptr;
     const float target = 3.14f;
     float val = wcstof(str, &end);
-    EXPECT_FLOAT_EQ(val, target);
+    ExpectFloatEq(val, target);
 }
 
 /**
@@ -100,7 +101,7 @@ void Wcstof0500(void)
     wchar_t* end = nullptr;
     const float target = -3.14f;
     float val = wcstof(str, &end);
-    EXPECT_FLOAT_EQ(val, target);
+    ExpectFloatEq(val, target);
 }
 
 /**
@@ -114,7 +115,7 @@ void Wcstof0600(void)
     wchar_t* end = nullptr;
     float val = wcstof(str, &end);
     const float target = 111.11f;
-    EXPECT_FLOAT_EQ(val, target);
+    ExpectFloatEq(val, target);
 }
 
 /**

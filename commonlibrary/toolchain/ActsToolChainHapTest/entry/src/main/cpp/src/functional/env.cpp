@@ -19,11 +19,8 @@
 #include <unistd.h>
 #include "test.h"
 
-int EnvTest()
+static void EnvTestBasicCases(char*& s)
 {
-    char* s;
-    int r;
-
     if (!environ) {
         t_error("environ is nullptr\n");
     }
@@ -45,6 +42,10 @@ int EnvTest()
     if (strcmp(s, "1") != 0) {
         t_error("getenv(\"TEST\"): \"%s\", wanted \"1\"\n", s);
     }
+}
+
+static void EnvTestSetenvCases(char*& s)
+{
     if (unsetenv("TEST")) {
         t_error("unsetenv: %s\n", strerror(errno));
     }
@@ -78,10 +79,25 @@ int EnvTest()
     if (strcmp(s = getenv("TEST"), "3") != 0) {
         t_error("getenv(\"TEST\"): \"%s\", wanted \"3\"\n", s);
     }
+}
+
+static void EnvTestFailureCases()
+{
+    int r;
+
     /* test failures */
     errno = 0;
     if ((r = setenv("", "", 0)) != -1 || errno != EINVAL) {
         t_error("setenv(\"\",\"\",0): %d, errno: %d (%s), wanted -1, %d (EINVAL)\n", r, errno, strerror(errno), EINVAL);
     }
+}
+
+int EnvTest()
+{
+    char* s;
+
+    EnvTestBasicCases(s);
+    EnvTestSetenvCases(s);
+    EnvTestFailureCases();
     return T_STATUS;
 }

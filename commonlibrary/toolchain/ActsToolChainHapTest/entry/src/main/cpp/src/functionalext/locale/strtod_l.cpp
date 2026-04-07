@@ -20,13 +20,17 @@
 #include <cstring>
 #include "functionalext.h"
 
-#define EXPECT_DOUBLE_EQ(a, b)                                                 \
-    do {                                                                       \
-        if (!((a) == (b) || (fabs((a) - (b)) < DBL_EPSILON)))                  \
-            t_error("%s failed: %f is not equal to %f\n", __func__, (a), (b)); \
-    } while (0)
+static void EXPECT_DOUBLE_EQ(double a, double b)
+{
+    if (!((a == b) || (fabs(a - b) < DBL_EPSILON))) {
+        t_error("%s failed: %f is not equal to %f\n", __func__, a, b);
+    }
+}
 
-#define LENGTH(x) (sizeof(x) / sizeof *(x))
+template <typename T, size_t N> constexpr size_t ArrayLength(const T (&)[N])
+{
+    return N;
+}
 
 static struct {
     char* s;
@@ -97,7 +101,7 @@ void StrtodL0100(void)
     double x;
     char* p;
 
-    for (i = 0; i < LENGTH(g_t); i++) {
+    for (i = 0; i < static_cast<int>(ArrayLength(g_t)); i++) {
         x = strtod_l(g_t[i].s, &p, loc);
         EXPECT_DOUBLE_EQ(x, g_t[i].f);
     }

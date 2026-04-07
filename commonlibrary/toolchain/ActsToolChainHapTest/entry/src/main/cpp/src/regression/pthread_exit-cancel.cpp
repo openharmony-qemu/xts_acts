@@ -18,13 +18,6 @@
 #include <cstring>
 #include <pthread.h>
 #include "libc_test_shim.h"
-#define TEST(st, r, f)                                             \
-    do {                                                           \
-        if (((r) = (f)) != 0) {                                    \
-            LibcTestError(&(st), #f " failed: %s\n", strerror(r)); \
-        }                                                          \
-    } while (0)
-
 static void Cleanup(void* arg)
 {
     *(int*)arg = 1;
@@ -45,8 +38,14 @@ int PthreadExitCancelTest()
     int arg = 0;
     int r;
 
-    TEST(status, r, pthread_create(&td, nullptr, Start, &arg));
-    TEST(status, r, pthread_join(td, nullptr));
+    r = pthread_create(&td, nullptr, Start, &arg);
+    if (r != 0) {
+        LibcTestError(&status, "pthread_create(&td, nullptr, Start, &arg) failed: %s\n", strerror(r));
+    }
+    r = pthread_join(td, nullptr);
+    if (r != 0) {
+        LibcTestError(&status, "pthread_join(td, nullptr) failed: %s\n", strerror(r));
+    }
     if (status) {
         LibcTestError(&status, "expected 0 thread exit status, got 0x%lx\n", static_cast<long>(status));
     }
