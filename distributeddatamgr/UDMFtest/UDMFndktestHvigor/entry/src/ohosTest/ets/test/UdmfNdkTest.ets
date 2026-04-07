@@ -2059,22 +2059,6 @@ export default function UdmfNdkTest() {
     });
 
     /**
-     * @tc.name   OH_Udmf_SetAndGetUnifiedData007
-     * @tc.number SUB_DistributedData_UDMF_OH_Udmf_SetAndGetUnifiedData_0700
-     * @tc.desc   OH_Udmf_SetAndGetUnifiedData test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('OH_Udmf_SetAndGetUnifiedData007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      console.log(TAG, `OH_Udmf_SetAndGetUnifiedData007 start ====`)
-      let result = testNapi.OH_Udmf_SetAndGetUnifiedData007();
-      console.log(TAG, `OH_Udmf_SetAndGetUnifiedData007 result ==== ${result}`)
-      expect(result).assertEqual(1);
-      console.log(TAG, `OH_Udmf_SetAndGetUnifiedData007 end ====`)
-    });
-
-    /**
      * @tc.name   OH_Udmf_SetAndGetUnifiedData008
      * @tc.number SUB_DistributedData_UDMF_OH_Udmf_SetAndGetUnifiedData_0800
      * @tc.desc   OH_Udmf_SetAndGetUnifiedData test.

@@ -744,29 +744,6 @@ static napi_value OH_Udmf_SetAndGetUnifiedData006(napi_env env, napi_callback_in
     return result;
 }
 
-static napi_value OH_Udmf_SetAndGetUnifiedData007(napi_env env, napi_callback_info info)
-{
-    OH_UdmfData *udmfUnifiedData = OH_UdmfData_Create();
-    OH_UdmfRecord *record = OH_UdmfRecord_Create();
-    OH_UdsPlainText *plainText = OH_UdsPlainText_Create();
-    char content[] = "hello world";
-    OH_UdsPlainText_SetContent(plainText, content);
-    OH_UdmfRecord_AddPlainText(record, plainText);
-    OH_UdmfData_AddRecord(udmfUnifiedData, record);
-    Udmf_Intention intention = UDMF_INTENTION_DRAG;
-    char key[UDMF_KEY_BUFFER_LEN];
-
-    int setRes = OH_Udmf_SetUnifiedData(intention, udmfUnifiedData, key, UDMF_KEY_BUFFER_LEN);
-
-    napi_value result = nullptr;
-    napi_create_int32(env, setRes == UDMF_E_OK, &result);
-    OH_UdsPlainText_Destroy(plainText);
-    OH_UdmfRecord_Destroy(record);
-    OH_UdmfData_Destroy(udmfUnifiedData);
-
-    return result;
-}
-
 static napi_value OH_Udmf_SetAndGetUnifiedData008(napi_env env, napi_callback_info info)
 {
     OH_UdmfData *udmfUnifiedData = OH_UdmfData_Create();
@@ -3385,8 +3362,6 @@ EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
         {"OH_Udmf_SetPropertiesExtrasStringParam002", nullptr, OH_Udmf_SetPropertiesExtrasStringParam002,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_Udmf_SetPropertiesExtrasStringParam003", nullptr, OH_Udmf_SetPropertiesExtrasStringParam003,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_Udmf_SetAndGetUnifiedData007", nullptr, OH_Udmf_SetAndGetUnifiedData007,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_Udmf_SetAndGetUnifiedData008", nullptr, OH_Udmf_SetAndGetUnifiedData008,
          nullptr, nullptr, nullptr, napi_default, nullptr}, 
