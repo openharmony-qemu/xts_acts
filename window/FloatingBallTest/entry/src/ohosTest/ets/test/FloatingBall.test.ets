@@ -3040,7 +3040,7 @@ export default function abilityTest() {
       let driver:Driver = Driver.create();
 
       let issupportFloatingBall = floatingBall.isFloatingBallEnabled();
-      console.log(caseName + ' issupportFloatingBall: ' + issupportFloatingBall);
+      console.log(CaseName + ' issupportFloatingBall: ' + issupportFloatingBall);
 
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
