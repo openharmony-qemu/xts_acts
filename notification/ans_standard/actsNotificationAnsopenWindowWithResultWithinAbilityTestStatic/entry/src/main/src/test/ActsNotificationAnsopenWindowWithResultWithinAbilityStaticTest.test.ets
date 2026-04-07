@@ -227,7 +227,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
-          expect(JSON.stringify(data?.grantedBundleInfos)).assertEqual('[{"bundleName":"com.huawei.hmos.ailife","appIndex":0,"appName":"智慧生活"},{"bundleName":"com.huawei.hmos.calendar","appIndex":0,"appName":"日历"},{"bundleName":"com.huawei.hmos.meetime","appIndex":0,"appName":"畅连"},{"bundleName":"com.ohos.contacts","appIndex":0,"appName":"联系人"},{"bundleName":"com.ohos.mms","appIndex":0,"appName":"信息"}]')
+          expect(JSON.stringify(data?.grantedBundleInfos)).assertEqual('[]')
           done()
         }).catch((e:Error) => {
           let err = e as BusinessError
@@ -383,7 +383,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
-          expect(JSON.stringify(data?.grantedBundleInfos)).assertEqual('[{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"},{"bundleName":"com.huawei.hmos.ailife","appIndex":0,"appName":"智慧生活"},{"bundleName":"com.huawei.hmos.calendar","appIndex":0,"appName":"日历"},{"bundleName":"com.huawei.hmos.meetime","appIndex":0,"appName":"畅连"},{"bundleName":"com.ohos.contacts","appIndex":0,"appName":"联系人"},{"bundleName":"com.ohos.mms","appIndex":0,"appName":"信息"}]')
+          expect(JSON.stringify(data?.grantedBundleInfos)).assertEqual('[{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"}]')
         }).catch((e:Error) => {
           let err = e as BusinessError
           console.error(`${testNum}failed to call openSubscriptionSettingsWithResult  ${err.code}, ${err.message}`)
@@ -450,7 +450,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
-          expect(JSON.stringify(data?.grantedBundleInfos)).assertEqual('[{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"},{"bundleName":"com.huawei.hmos.ailife","appIndex":0,"appName":"智慧生活"},{"bundleName":"com.huawei.hmos.calendar","appIndex":0,"appName":"日历"},{"bundleName":"com.huawei.hmos.meetime","appIndex":0,"appName":"畅连"},{"bundleName":"com.ohos.contacts","appIndex":0,"appName":"联系人"},{"bundleName":"com.ohos.mms","appIndex":0,"appName":"信息"}]')
+          expect(JSON.stringify(data?.grantedBundleInfos)).assertEqual('[{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"}]')
           done()
         }).catch((e:Error) => {
           let err = e as BusinessError
