@@ -605,6 +605,21 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @tc.name   OH_Pasteboard_HasType0800
+     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3900
+     * @tc.desc   OH_Pasteboard_HasType test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_Pasteboard_HasType0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+      console.info( TAG + 'OH_Pasteboard_HasType0800' );
+      let data = testndk.OH_Pasteboard_HasType0800();
+      console.info( TAG + 'OH_Pasteboard_HasType0800 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    })
+
+    /**
      * @tc.name   OH_Pasteboard_HasRemoteData0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3600
      * @tc.desc   OH_Pasteboard_HasRemoteData test valid
