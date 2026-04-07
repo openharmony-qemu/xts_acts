@@ -17,8 +17,6 @@ import webView from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
-import UIContext from '@ohos.arkui.node'
-import Router from '@ohos.router'
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import {
   OnRenderExitedEvent,
