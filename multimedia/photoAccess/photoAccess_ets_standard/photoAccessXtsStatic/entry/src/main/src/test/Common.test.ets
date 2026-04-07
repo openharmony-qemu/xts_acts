@@ -23,24 +23,17 @@ import { expect, Hypium } from '../../../hypium';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { Driver, MatchPattern, ON } from '@kit.TestKit';
+import { common } from '@kit.AbilityKit';
 
 export const LOG_TAG = '[PhotoAccessXts].';
 
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 const COMMON_WAIT_DURATION: number = 500;
 
-const domain = 0x0000; // 日志域，可自定义（如 0x1234、0x0001 等）
-const tag = 'ListTest'; // 日志标签，标识你的测试模块
+const domain = 0x0000;
+const tag = 'ListTest';
 
 const TAG = LOG_TAG + 'common';
-
-
-
-let validImageExt = ['.jpg']
-let validVideoExt = ['.mp4']
-let validVideoMpegExt = ['.mpeg']
-let validImageGifExt = ['.gif']
-let validImagePngExt = ['.png']
 
 
 interface filter {
@@ -131,4 +124,18 @@ export async function createMovingPhoto(testNum: string, context: Context, title
     console.error(`${testNum} :: create moving photo failed, error is ${error}`);
   }
   return photoAsset!;
+}
+
+export async function createUserAlbum(testContext: common.Context, testName: string,
+  albumName: string): Promise<void> {
+  console.info(`${testName} createUserAlbum albumName: ${albumName}`);
+  try {
+    let albumName: string = 'newAlbumName' + new Date().getTime();
+    const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
+    let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest | null = photoAccessHelper.MediaAlbumChangeRequest.createAlbumRequest(testContext, albumName);
+    await helper!.applyChanges(albumChangeRequest!);
+    console.info(`${testName} createUserAlbum suc`);
+  } catch (error) {
+    console.error(`Failed to createUserAlbum! error: ${error}`);
+  }
 }
