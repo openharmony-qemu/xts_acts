@@ -2146,7 +2146,7 @@ export default function windowNdk() {
 
     /**
      * @tc.name   test_OH_WindowManager_registerFrameMetricsMeasuredCallback1300016_0100
-     * @tc.number test_OH_WindowManager_registerFrameMetricsMeasuredCallback1300016_0100
+     * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRICSMEASURED_0100
      * @tc.desc   OH_WindowManager_registerFrameMetricsMeasuredCallback接口注册
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2173,7 +2173,7 @@ export default function windowNdk() {
 
     /**
      * @tc.name   test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback1300016_0100
-     * @tc.number test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback1300016_0100
+     * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRICSMEASURED_0200
      * @tc.desc   OH_WindowManager_UnregisterFrameMetricsMeasuredCallback接口注册
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
