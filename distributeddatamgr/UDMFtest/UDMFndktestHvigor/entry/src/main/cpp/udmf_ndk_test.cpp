@@ -595,7 +595,7 @@ static napi_value OH_Udmf_GetPropertiesExtrasStringParam002(napi_env env, napi_c
     const char* pf = OH_UdmfProperty_GetExtrasStringParam(properties, "");
 
     napi_value result = nullptr;
-    napi_create_int32(env, strcmp(pf, "str") !=0 , &result);
+    napi_create_int32(env, strcmp(pf, "str") != 0, &result);
     OH_UdmfData_Destroy(data);
     OH_UdmfProperty_Destroy(properties);
     return result;
@@ -753,11 +753,10 @@ static napi_value OH_Udmf_SetAndGetUnifiedData008(napi_env env, napi_callback_in
     OH_UdsPlainText_SetContent(plainText, content);
     OH_UdmfRecord_AddPlainText(record, plainText);
     OH_UdmfData_AddRecord(udmfUnifiedData, record);
-    Udmf_Intention intention = UDMF_INTENTION_DRAG;
 
+    Udmf_Intention intention = UDMF_INTENTION_DRAG;
     char key[UDMF_KEY_BUFFER_LEN];
     OH_Udmf_SetUnifiedData(intention, udmfUnifiedData, key, UDMF_KEY_BUFFER_LEN);
-
     char key2[] = "";
     OH_UdmfData *readUnifiedData = OH_UdmfData_Create();
     int getRes = OH_Udmf_GetUnifiedData(key2, intention, readUnifiedData);    
@@ -768,7 +767,6 @@ static napi_value OH_Udmf_SetAndGetUnifiedData008(napi_env env, napi_callback_in
     OH_UdmfRecord_Destroy(record);
     OH_UdmfData_Destroy(udmfUnifiedData);
     OH_UdmfData_Destroy(readUnifiedData);
-    
     return result;
 }
 
@@ -3051,7 +3049,7 @@ static napi_value OH_UdmfProperty_GetExtrasIntParam001(napi_env env, napi_callba
 {
     OH_UdmfData *data = OH_UdmfData_Create();
     OH_UdmfProperty *properties = OH_UdmfProperty_Create(data);
-    OH_UdmfProperty_SetExtrasIntParam(properties, "keyInt", 3);
+    OH_UdmfProperty_SetExtrasIntParam(properties, "keyInt", 0);
     int ret = OH_UdmfProperty_GetExtrasIntParam(properties, "", -1);
 
     napi_value result = nullptr;
@@ -3059,7 +3057,6 @@ static napi_value OH_UdmfProperty_GetExtrasIntParam001(napi_env env, napi_callba
     OH_UdmfData_Destroy(data);
     OH_UdmfProperty_Destroy(properties);
     return result;
-
 }
 
 static napi_value OH_UdmfRecord_GetGeneralEntry001(napi_env env, napi_callback_info info)
@@ -3366,8 +3363,7 @@ EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
         {"OH_Udmf_SetAndGetUnifiedData008", nullptr, OH_Udmf_SetAndGetUnifiedData008,
          nullptr, nullptr, nullptr, napi_default, nullptr}, 
         {"OH_UdmfGetDataParams_SetDestUri001", nullptr, OH_UdmfGetDataParams_SetDestUri001,
-         nullptr, nullptr, nullptr, napi_default, nullptr}, 
-         
+         nullptr, nullptr, nullptr, napi_default, nullptr},  
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
