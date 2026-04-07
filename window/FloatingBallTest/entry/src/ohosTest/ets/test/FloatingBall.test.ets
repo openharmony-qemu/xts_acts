@@ -3034,7 +3034,7 @@ export default function abilityTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('test_on_set_floatingball_visibility_inapp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_set_floatingball_visibility_inapp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_on_set_floatingball_visibility_inapp';
       let time:number = 0;
       let driver:Driver = Driver.create();
