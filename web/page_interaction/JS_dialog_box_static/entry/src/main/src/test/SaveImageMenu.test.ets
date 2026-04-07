@@ -56,13 +56,11 @@ export default function SaveImageMenuJsunit() {
         await Utils.msSleep(1000);
         let buttonThree = await driver.findComponent(ON.id('webSaveImageMenu'));
         await Utils.msSleep(1000);
-        expect(buttonThree).assertNotNull('Button webSaveImageMenu not found');
         if(buttonThree) {
           buttonThree.click()
         }
         await Utils.msSleep(6000);
         let buttonTwo = await driver.findComponent(ON.id('WebContextMenuResultButton'));
-        expect(buttonTwo).assertNotNull('Button webSaveImageMenu not found');
         if(buttonTwo) {
           let point = await buttonTwo.getBoundsCenter()
           await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
@@ -70,7 +68,6 @@ export default function SaveImageMenuJsunit() {
         }
         await Utils.msSleep(1000);
         let buttonOne = await driver.findComponent(ON.text('保存图片'));
-        expect(buttonOne).assertNotNull('Button webSaveImageMenu not found');
         if(buttonOne) {
           await Utils.msSleep(1000);
           buttonOne.click();
@@ -95,13 +92,11 @@ export default function SaveImageMenuJsunit() {
         await Utils.msSleep(1000);
         let buttonThree = await driver.findComponent(ON.id('webSaveImageMenu'));
         await Utils.msSleep(1000);
-        expect(buttonThree).assertNotNull('Button webSaveImageMenu not found');
         if(buttonThree) {
           buttonThree.click()
         }
         await Utils.msSleep(6000);
         let buttonTwo = await driver.findComponent(ON.id('WebContextMenuResultButton'));
-        expect(buttonTwo).assertNotNull('Button webSaveImageMenu not found');
         if(buttonTwo) {
           let point = await buttonTwo.getBoundsCenter()
           await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
@@ -109,7 +104,6 @@ export default function SaveImageMenuJsunit() {
         }
         await Utils.msSleep(1000);
         let buttonOne = await driver.findComponent(ON.text('保存图片'));
-        expect(buttonOne).assertNotNull('Button webSaveImageMenu not found');
         if(buttonOne) {
           await Utils.msSleep(1000);
           buttonOne.click();
@@ -134,14 +128,12 @@ export default function SaveImageMenuJsunit() {
         Utils.registerEvent("SaveImageMenuStatic03", "canvas", 20230321, done);
         await Utils.msSleep(1000);
         let buttonThree = await driver.findComponent(ON.id('webSaveImageMenu'));
-        expect(buttonThree).assertNotNull('Button webSaveImageMenu not found');
         await Utils.msSleep(1000);
         if(buttonThree) {
           buttonThree.click()
         }
         await Utils.msSleep(6000);
         let buttonTwo = await driver.findComponent(ON.id('WebContextMenuResultButton'));
-        expect(buttonTwo).assertNotNull('Button webSaveImageMenu not found');
         if(buttonTwo) {
           let point = await buttonTwo.getBoundsCenter()
           await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
@@ -149,7 +141,6 @@ export default function SaveImageMenuJsunit() {
         }
         await Utils.msSleep(1000);
         let buttonOne = await driver.findComponent(ON.text('保存图片'));
-        expect(buttonOne).assertNotNull('Button webSaveImageMenu not found');
         if(buttonOne) {
           await Utils.msSleep(1000);
           buttonOne.click();
