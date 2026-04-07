@@ -125,7 +125,7 @@ export default function SaveImageMenuJsunit() {
         await Utils.msSleep(1000);
         Utils.emitEvent("SaveImageMenuStatic03", EVENT_ID_SET_SUITE_KEY);
         await Utils.msSleep(1000);
-        Utils.registerEvent("SaveImageMenuStatic03", "onLineImage", 20230320, done);
+        Utils.registerEvent("SaveImageMenuStatic03", "onLineImage", 20230321, done);
         await Utils.msSleep(1000);
         let buttonThree = await driver.findComponent(ON.id('webSaveImageMenu'));
         await Utils.msSleep(1000);
