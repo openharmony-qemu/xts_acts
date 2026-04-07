@@ -213,7 +213,7 @@ export default function PiPWindowTest() {
                 expect(res).assertEqual(false)
               }
               let driver = Driver.create();
-              pipWindow.create(config).then((data) => {
+              pipWindow.create(config).then((data: pipWindow.PiPController) => {
                 pipController = data;
                 console.log(`${caseName} Succeeded in creating pip controller. Data:${data}`);
                 expect(data != null).assertTrue();
@@ -303,7 +303,7 @@ export default function PiPWindowTest() {
                 expect(res).assertEqual(false)
               }
               let driver = Driver.create();
-              pipWindow.create(config).then((data) => {
+              pipWindow.create(config).then((data: pipWindow.PiPController) => {
                 pipController = data;
                 console.log(`${caseName} Succeeded in creating pip controller. Data:${data}`);
                 expect(data != null).assertTrue();
@@ -387,7 +387,7 @@ export default function PiPWindowTest() {
                 expect(res).assertEqual(false)
               }
               let driver = Driver.create();
-              pipWindow.create(config).then((data) => {
+              pipWindow.create(config).then((data: pipWindow.PiPController) => {
                 pipController = data;
                 console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
                 expect(data != null).assertTrue();
@@ -468,7 +468,7 @@ export default function PiPWindowTest() {
                 expect(res).assertEqual(false)
               }
               let driver = Driver.create();
-              pipWindow.create(config).then((data) => {
+              pipWindow.create(config).then((data: pipWindow.PiPController) => {
                 pipController = data;
                 console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
                 expect(data != null).assertTrue();
@@ -560,7 +560,7 @@ export default function PiPWindowTest() {
         };
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`www data Succeeded in creating pip controller. Data:${data}`)
             expect(data != null).assertTrue();
@@ -1094,7 +1094,7 @@ export default function PiPWindowTest() {
         };
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`www data Succeeded in creating pip controller. Data:${data}`)
             expect(data != null).assertTrue();
@@ -1141,7 +1141,7 @@ export default function PiPWindowTest() {
         };
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`www data Succeeded in creating pip controller. Data:${data}`)
             expect(data != null).assertTrue();
@@ -1188,7 +1188,7 @@ export default function PiPWindowTest() {
         };
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`www data Succeeded in creating pip controller. Data:${data}`)
             expect(data != null).assertTrue();
@@ -1235,7 +1235,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoPlayControlGroup.VIDEO_PREVIOUS_NEXT]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1284,7 +1284,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoPlayControlGroup.FAST_FORWARD_BACKWARD]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1334,7 +1334,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoCallControlGroup.MICROPHONE_SWITCH]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1382,7 +1382,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoCallControlGroup.HANG_UP_BUTTON]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1430,7 +1430,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoCallControlGroup.CAMERA_SWITCH]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1478,7 +1478,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoCallControlGroup.MICROPHONE_SWITCH, pipWindow.VideoCallControlGroup.HANG_UP_BUTTON]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1526,7 +1526,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoCallControlGroup.MICROPHONE_SWITCH, pipWindow.VideoCallControlGroup.CAMERA_SWITCH]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1575,7 +1575,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoCallControlGroup.HANG_UP_BUTTON, pipWindow.VideoCallControlGroup.CAMERA_SWITCH]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1623,7 +1623,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoCallControlGroup.MICROPHONE_SWITCH, pipWindow.VideoCallControlGroup.HANG_UP_BUTTON, pipWindow.VideoCallControlGroup.CAMERA_SWITCH]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1672,7 +1672,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoMeetingControlGroup.HANG_UP_BUTTON]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1720,7 +1720,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoMeetingControlGroup.CAMERA_SWITCH]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1769,7 +1769,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoMeetingControlGroup.MUTE_SWITCH]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1817,7 +1817,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoMeetingControlGroup.HANG_UP_BUTTON, pipWindow.VideoMeetingControlGroup.MUTE_SWITCH]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1865,7 +1865,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoMeetingControlGroup.HANG_UP_BUTTON, pipWindow.VideoMeetingControlGroup.CAMERA_SWITCH]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1913,7 +1913,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoMeetingControlGroup.MUTE_SWITCH, pipWindow.VideoMeetingControlGroup.CAMERA_SWITCH]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -1961,7 +1961,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoMeetingControlGroup.HANG_UP_BUTTON, pipWindow.VideoMeetingControlGroup.MUTE_SWITCH, pipWindow.VideoMeetingControlGroup.CAMERA_SWITCH]
         };
         try {
-          pipWindow.create(config).then((data) => {
+          pipWindow.create(config).then((data: pipWindow.PiPController) => {
             pipController = data;
             console.log(`${tag} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
@@ -2821,7 +2821,7 @@ export default function PiPWindowTest() {
             promise2.then(() => {
               console.info(`${caseName} Succeeded in starting pip.`);
               let promise3: Promise<pipWindow.PiPWindowInfo> = pipController!.getPiPWindowInfo();
-              promise3.then((data) => {
+              promise3.then((data: pipWindow.PiPWindowInfo) => {
                 pipWindowInfo = data;
                 console.info(caseName + ' Success in get pip window info. Info windowId: ' + JSON.stringify(pipWindowInfo!.windowId) + ' windowSize: ' + JSON.stringify(pipWindowInfo!.size));
                 expect(pipWindowInfo!.windowId).assertLargerOrEqual(0);
@@ -2932,7 +2932,7 @@ export default function PiPWindowTest() {
         }
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -2998,7 +2998,7 @@ export default function PiPWindowTest() {
         };
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3060,7 +3060,7 @@ export default function PiPWindowTest() {
         };
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3122,7 +3122,7 @@ export default function PiPWindowTest() {
         };
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3184,7 +3184,7 @@ export default function PiPWindowTest() {
         };
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3246,7 +3246,7 @@ export default function PiPWindowTest() {
         };
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3314,7 +3314,7 @@ export default function PiPWindowTest() {
         let driver: Driver = Driver.create();
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3408,7 +3408,7 @@ export default function PiPWindowTest() {
           Driver.create();
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3489,7 +3489,7 @@ export default function PiPWindowTest() {
           Driver.create();
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3582,7 +3582,7 @@ export default function PiPWindowTest() {
           Driver.create();
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3676,7 +3676,7 @@ export default function PiPWindowTest() {
         let xComponent = typeNode.createXComponentNodeWithOptions(uiContext, options);
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3743,7 +3743,7 @@ export default function PiPWindowTest() {
           let xComponent = typeNode.createXComponentNodeWithOptions(uiContext, options);;
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3811,7 +3811,7 @@ export default function PiPWindowTest() {
           let xComponent = typeNode.createXComponentNodeWithOptions(uiContext, options);;
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3875,7 +3875,7 @@ export default function PiPWindowTest() {
         };
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3935,7 +3935,7 @@ export default function PiPWindowTest() {
         };
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -3993,7 +3993,7 @@ export default function PiPWindowTest() {
         };
         try {
           let promise = pipWindow.create(config);
-          promise.then((data) => {
+          promise.then((data: pipWindow.PiPController) => {
             pipController = data;
             if (!pipController!.isPiPSupported()) {
   
@@ -4095,7 +4095,7 @@ export default function PiPWindowTest() {
             cornerAdsorptionEnabled: undefined
           };
           try {
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
@@ -4152,7 +4152,7 @@ export default function PiPWindowTest() {
             cornerAdsorptionEnabled: false
           };
           try {
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
@@ -4209,7 +4209,7 @@ export default function PiPWindowTest() {
             cornerAdsorptionEnabled: true
           };
           try {
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
@@ -4274,7 +4274,7 @@ export default function PiPWindowTest() {
               pipController!.stopPiP();
               done();
             }
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               pipController!.onStateChange(callback)
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
@@ -4339,7 +4339,7 @@ export default function PiPWindowTest() {
               await windowClass.restore();
               done();
             }
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               pipController!.onStateChange(callback)
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
@@ -4404,7 +4404,7 @@ export default function PiPWindowTest() {
               pipController?.offStateChange()
               done();
             }
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
@@ -4470,7 +4470,7 @@ export default function PiPWindowTest() {
               pipController?.offStateChange()
               done();
             }
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
@@ -4544,7 +4544,7 @@ export default function PiPWindowTest() {
               pipController?.offStateChange()
               done();
             }
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
@@ -4617,7 +4617,7 @@ export default function PiPWindowTest() {
               pipController2?.stopPiP();
               done();
             }
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
@@ -4674,7 +4674,7 @@ export default function PiPWindowTest() {
             cornerAdsorptionEnabled: true
           };
           try {
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
@@ -4734,7 +4734,7 @@ export default function PiPWindowTest() {
             cornerAdsorptionEnabled: true
           };
           try {
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
@@ -4792,7 +4792,7 @@ export default function PiPWindowTest() {
             cornerAdsorptionEnabled: true
           };
           try {
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
@@ -4852,7 +4852,7 @@ export default function PiPWindowTest() {
           };
           let driver = Driver.create();
           try {
-            pipWindow.create(config).then((data) => {
+            pipWindow.create(config).then((data: pipWindow.PiPController) => {
               pipController = data;
               console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
               expect(data != null).assertTrue();
