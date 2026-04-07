@@ -25,7 +25,7 @@ import BuiltinsBigIntOperatorSubtractTest from "./BigInt/BuiltinsBigIntOperatorS
 import BuiltinsBigIntPositiveTest from "./BigInt/BuiltinsBigIntPositiveTest.test";
 import BuiltinsBigIntPowTest from "./BigInt/BuiltinsBigIntPowTest.test";
 import BuiltinsBigIntBitwiseAndValueTest from "./BigInt/BuiltinsBigIntBitwiseAndValueTest.test";
-import BuiltinsBigIntConstructorTest from "./BigInt/BuiltinsBigIntConstructorTest.test";
+import BuiltinsBigIntConstructorTest from "./BigInt/builtinsBigIntConstructorTest.test";
 import BuiltinsBigIntStringAndComparisonTest from "./BigInt/BuiltinsBigIntStringAndComparisonTest.test";
 
 // Array tests
