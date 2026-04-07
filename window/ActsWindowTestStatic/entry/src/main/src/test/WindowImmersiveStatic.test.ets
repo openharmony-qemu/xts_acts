@@ -105,7 +105,7 @@ export default function WindowImmersiveStaticTest() {
       })
 
        /**
-     * @tc.number      SUB_WINDOW_getWindowSystemBarProperties_001
+     * @tc.number      SUB_WINDOW_getWindowSystemBarProperties_0100
      * @tc.name        testgetWindowSystemBarProperties_All_001
      * @tc.desc        setWindowSystemBarProperties all properties test.
      * @tc.size        MediumTest
