@@ -2145,16 +2145,16 @@ export default function windowNdk() {
       })
 
     /**
-     * @tc.name   test_OH_WindowManager_registerFrameMetricsMeasuredCallback_1300016
-     * @tc.number test_OH_WindowManager_registerFrameMetricsMeasuredCallback_1300016
+     * @tc.name   test_OH_WindowManager_registerFrameMetricsMeasuredCallback1300016_0100
+     * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRICSMEASURED_0100
      * @tc.desc   OH_WindowManager_registerFrameMetricsMeasuredCallback接口注册
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_OH_WindowManager_registerFrameMetricsMeasuredCallback_1300016', TestType.FUNCTION |
+    it('test_OH_WindowManager_registerFrameMetricsMeasuredCallback1300016_0100', TestType.FUNCTION |
       Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        let caseName = 'test_OH_WindowManager_registerFrameMetricsMeasuredCallback_1300016';
+        let caseName = 'test_OH_WindowManager_registerFrameMetricsMeasuredCallback1300016_0100';
         try {
           console.info(`${caseName} start`);
           let windowClass = windowStage.getMainWindowSync();
@@ -2172,16 +2172,16 @@ export default function windowNdk() {
       })
 
     /**
-     * @tc.name   test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_1300016
-     * @tc.number test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_1300016
+     * @tc.name   test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback1300016_0100
+     * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRICSMEASURED_0200
      * @tc.desc   OH_WindowManager_UnregisterFrameMetricsMeasuredCallback接口注册
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_1300016', TestType.FUNCTION |
+    it('test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback1300016_0100', TestType.FUNCTION |
       Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        let caseName = 'test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_1300016';
+        let caseName = 'test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback1300016_0100';
         try {
           console.info(`${caseName} start`);
           let windowClass = windowStage.getMainWindowSync();
