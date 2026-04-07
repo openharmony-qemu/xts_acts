@@ -24,7 +24,7 @@ export default function TextInputOnNeedSoftkeyboardTest() {
     beforeEach(async (done: Function) => {
       console.info("TextInputOnNeedSoftkeyboardTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextInput/TextInputOnNeedSoftkeyboard',
+        url: 'MainAbility/pages/TextInputApi24/TextInputOnNeedSoftkeyboard',
       }
       try {
         router.clear();
