@@ -33,7 +33,7 @@ export default function webCursiveFont() {
 
     /**
      * @tc.name   testWebCursiveFontCursive001
-     * @tc.number SUB_WEB_WEBCURSIVEFONT_CURSIVE_001
+     * @tc.number SUB_WEB_WEBCURSIVEFONT_CURSIVE_0100
      * @tc.desc   test webCursiveFont with 'cursive' font family
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -56,7 +56,7 @@ export default function webCursiveFont() {
 
     /**
      * @tc.name   testWebCursiveFontCursive002
-     * @tc.number SUB_WEB_WEBCURSIVEFONT_CURSIVE_002
+     * @tc.number SUB_WEB_WEBCURSIVEFONT_CURSIVE_0200
      * @tc.desc   test webCursiveFont with 'fantasy' font family
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
