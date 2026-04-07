@@ -39,15 +39,15 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_openWindow_WithResult_0018
-     * @tc.number Sub_Notification_Ans_openWindow_WithResult_0018
+     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_0800
+     * @tc.number SUB_Notification_Ans_openWindow_WithResult_0800
      * @tc.desc   [openSubscriptionSettingsWithResult] After the openSubscriptionSettingsWithResult API is called to display a semi-modal dialog box and the user clicks OK, the callback is correctly executed.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_openWindow_WithResult_0018', Level.LEVEL2, async (done: Function) => {
-      let testNum: string = 'Sub_Notification_Ans_openWindow_WithResult_0018'
+    it('SUB_Notification_Ans_openWindow_WithResult_0800', Level.LEVEL2, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0800'
       let driver: Driver = Driver.create();
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
@@ -88,15 +88,15 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_openWindow_WithResult_0008
-     * @tc.number Sub_Notification_Ans_openWindow_WithResult_0008
+     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_0500
+     * @tc.number SUB_Notification_Ans_openWindow_WithResult_0500
      * @tc.desc   [openSubscriptionSettingsWithResult] After the openSubscriptionSettingsWithResult API is called to display a semi-modal dialog, the switch for allowing the app to obtain local notifications is turned on, and the obtained local notifications remain unchanged. After the user clicks OK, the callback is correctly executed.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_openWindow_WithResult_0008', Level.LEVEL0, async (done: Function) => {
-      let testNum: string = 'Sub_Notification_Ans_openWindow_WithResult_0008'
+    it('SUB_Notification_Ans_openWindow_WithResult_0500', Level.LEVEL0, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0500'
       let driver: Driver = Driver.create();
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
@@ -156,15 +156,15 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_openWindow_WithResult_0009
-     * @tc.number Sub_Notification_Ans_openWindow_WithResult_0009
+     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_0600
+     * @tc.number SUB_Notification_Ans_openWindow_WithResult_0600
      * @tc.desc   [openSubscriptionSettingsWithResult] After the openSubscriptionSettingsWithResult API is called to display a semi-modal dialog, the switch for allowing the app to obtain local notifications is turned on, and the obtained local notifications remain unchanged. After the user clicks OK, the callback is correctly executed.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_openWindow_WithResult_0009', Level.LEVEL0, async (done: Function) => {
-      let testNum: string = 'Sub_Notification_Ans_openWindow_WithResult_0009'
+    it('SUB_Notification_Ans_openWindow_WithResult_0600', Level.LEVEL0, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0600'
       let driver: Driver = Driver.create();
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
@@ -214,15 +214,15 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_openWindow_WithResult_0020
-     * @tc.number Sub_Notification_Ans_openWindow_WithResult_0020
+     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_1000
+     * @tc.number SUB_Notification_Ans_openWindow_WithResult_1000
      * @tc.desc   [openSubscriptionSettingsWithResult] After the call to openSubscriptionSettingsWithResult is used to modify the setting of whether to allow the app to obtain local notifications and the setting is confirmed, the app is closed. Then, the openSubscriptionSettingsWithResult call is used again to directly close the app.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_openWindow_WithResult_0020', Level.LEVEL2, async (done: Function) => {
-      let testNum: string = 'Sub_Notification_Ans_openWindow_WithResult_0020'
+    it('SUB_Notification_Ans_openWindow_WithResult_1000', Level.LEVEL2, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1000'
       let driver: Driver = Driver.create();
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
@@ -324,15 +324,15 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_openWindow_WithResult_0036
-     * @tc.number Sub_Notification_Ans_openWindow_WithResult_0036
+     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_1300
+     * @tc.number SUB_Notification_Ans_openWindow_WithResult_1300
      * @tc.desc   [Stability] The openSubscriptionSettingsWithResult API is called 500 times in a loop, and no crash, freeze, or black screen occurs on the device.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_openWindow_WithResult_0036', Level.LEVEL2, async (done: Function) => {
-      let testNum: string = 'Sub_Notification_Ans_openWindow_WithResult_0036'
+    it('SUB_Notification_Ans_openWindow_WithResult_1300', Level.LEVEL2, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1300'
       let driver: Driver = Driver.create();
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
