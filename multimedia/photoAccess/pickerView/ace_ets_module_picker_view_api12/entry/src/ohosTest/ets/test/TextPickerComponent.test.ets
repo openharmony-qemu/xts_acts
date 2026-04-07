@@ -4792,5 +4792,37 @@ export default function TextPicker() {
       events_emitter.off(event.eventId);
       done();
     })
+    
+    /**
+     * @tc.name   testPicker80
+     * @tc.number testPicker80
+     * @tc.desc   Testing assetCompatibleCapability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPicker80',Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.assetCompatibleCapability = {
+        supportedHighResolution: false
+      }
+      const photoPicker = new photoAccessHelper.PhotoViewPicker();
+      try{
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          console.info('testPicker80, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(PhotoSelectResult));
+        })
+        await closePickerModel(driver);
+      } catch(err) {
+        expect(false).assertTrue();
+        console.error(`testPicker80, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      }
+      console.info("testPicker80 finish");
+      done();
+    });
   })
 }
