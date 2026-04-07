@@ -1928,7 +1928,7 @@ static napi_value AudioRendererSetOnMarkReached_07(napi_env env, napi_callback_i
     return res;
 }
 
-void WaitForFlagWithTimeout(bool* flag, int32_t maxSeconds) {
+void WaitForFlagWithTimeout(std::atomic<bool>* flag, int32_t maxSeconds) {
     int32_t elapsed = 0;
     while (elapsed < maxSeconds * 1000) {
         if (*flag) {
