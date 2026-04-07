@@ -224,22 +224,27 @@ export default function WindowImmersiveStaticTest() {
         let caseName: string = 'testGetImmersiveModeEnabledState_static_001';
         let msgStr: string = 'jsunittest ' + caseName + ' ';
         hilog.info(domain, tag, msgStr + 'begin');
-        try {
-          let enabled: boolean = false;
-          win!.setImmersiveModeEnabledState(enabled);
-          hilog.info(domain, tag, caseName + ' setImmersiveModeEnabledState: ' + enabled);
+        if(isFreeWindowMode){
+           hilog.info(domain, tag, msgStr + 'not support');
+           done();
+        }else{
+          try {
+            let enabled: boolean = false;
+            win!.setImmersiveModeEnabledState(enabled);
+            hilog.info(domain, tag, caseName + ' setImmersiveModeEnabledState: ' + enabled);
 
-          await Utils.msSleep(100);
+            await Utils.msSleep(100);
 
-          let isEnabled: boolean = win!.getImmersiveModeEnabledState();
-          hilog.info(domain, tag, msgStr + 'Succeeded in getting immersive mode enabled state: ' + isEnabled);
-          expect(isEnabled).assertEqual(enabled);
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception.code}, message: ${exception.message}`);
-          expect(false).assertTrue();
-          done();
+            let isEnabled: boolean = win!.getImmersiveModeEnabledState();
+            hilog.info(domain, tag, msgStr + 'Succeeded in getting immersive mode enabled state: ' + isEnabled);
+            expect(isEnabled).assertEqual(enabled);
+            done();
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect(false).assertTrue();
+            done();
+          }
         }
       })
 
@@ -256,22 +261,27 @@ export default function WindowImmersiveStaticTest() {
         let caseName: string = 'testGetImmersiveModeEnabledState_AfterSet_static_002';
         let msgStr: string = 'jsunittest ' + caseName + ' ';
         hilog.info(domain, tag, msgStr + 'begin');
-        try {
-          let enabled: boolean = true;
-          win!.setImmersiveModeEnabledState(enabled);
-          hilog.info(domain, tag, caseName + ' setImmersiveModeEnabledState: ' + enabled);
+        if(isFreeWindowMode){
+           hilog.info(domain, tag, msgStr + 'not support');
+           done();
+        }else{
+          try {
+            let enabled: boolean = true;
+            win!.setImmersiveModeEnabledState(enabled);
+            hilog.info(domain, tag, caseName + ' setImmersiveModeEnabledState: ' + enabled);
 
-          await Utils.msSleep(100);
+            await Utils.msSleep(100);
 
-          let isEnabled: boolean = win!.getImmersiveModeEnabledState();
-          hilog.info(domain, tag, msgStr + 'Succeeded in getting immersive mode enabled state: ' + isEnabled);
-          expect(isEnabled).assertEqual(enabled);
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception.code}, message: ${exception.message}`);
-          expect(false).assertTrue();
-          done();
+            let isEnabled: boolean = win!.getImmersiveModeEnabledState();
+            hilog.info(domain, tag, msgStr + 'Succeeded in getting immersive mode enabled state: ' + isEnabled);
+            expect(isEnabled).assertEqual(enabled);
+            done();
+          } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect(false).assertTrue();
+            done();
+          }
         }
       })
 
