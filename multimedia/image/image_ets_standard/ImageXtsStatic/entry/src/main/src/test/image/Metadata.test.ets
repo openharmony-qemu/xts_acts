@@ -207,8 +207,8 @@ export default function metaDataStaticTest(): void {
      * @tc.type        Functional
      * @tc.level       Level 0
      */
-    it("SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_02", Level.LEVEL0, async (done:() => void)=>{
-      const testTag: string = "SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_02";
+    it("SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MEDIA_IMAGE_EXIFMETADATA_GETANDSETBLOB_PROMISE_static_0200";
       let sourceFileName = "food.jpg";
       let targetFileName = "AllAuxiliaryPictures.jpg";
       let camelCaseMetadataKeys: Array<string> = ["HwMnoteCaptureMode"];
