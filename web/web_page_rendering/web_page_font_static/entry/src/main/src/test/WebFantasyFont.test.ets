@@ -19,6 +19,7 @@ import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
+import { Driver, ON } from '@kit.TestKit';
 
 let testAbilityContext:common.UIAbilityContext;
 
