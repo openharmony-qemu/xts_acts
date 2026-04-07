@@ -55,5 +55,26 @@ export default function webFantasyFont() {
       await Utils.msSleep(2000)
       done()
     })
+
+    /**
+     * @tc.name   testOnSwitchNextPage2
+     * @tc.number SUB_WEB_ONSWITCHNEXTPAGE_STATIC_0100
+     * @tc.desc   test minLogicalFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnSwitchNextPage2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("emitOnSwitchNextPage2", 10)
+        await Utils.msSleep(2000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('WebFantasyFontButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done()
+      })
   })
 }
