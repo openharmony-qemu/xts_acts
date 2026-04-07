@@ -17,8 +17,8 @@
 
 import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
 import { UtilsTest } from '../Util.test';
 import { Driver, Point } from '@kit.TestKit';
 
@@ -39,9 +39,11 @@ export default function CommonDragEventTest(): void {
     });
 
     beforeEach(async (): Promise<void> => {
-      let ro: router.RouterOptions = { url: 'MainAbility/pages/CommonDragEventProbe/CommonDragEventProbe' };
-      router.clear();
-      await router.replaceUrl(ro);
+      let r = await waitForMainRouterForStaticTest();
+      expect(r !== undefined && r !== null).assertTrue();
+      let ro = { url: 'MainAbility/pages/CommonDragEventProbe/CommonDragEventProbe' };
+      r!.clear();
+      await r!.replaceUrl(ro);
       await Utils.sleep(600);
     });
 

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { UIContext } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 
 /** Hypium 与页面树 AppStorage 隔离时，用模块单例把主窗 UIContext 交给静态用例。 */
 let mainUIContext: UIContext | undefined = undefined;
@@ -24,4 +24,34 @@ export function setMainUIContextForStaticTest(ctx: UIContext): void {
 
 export function getMainUIContextForStaticTest(): UIContext | undefined {
   return mainUIContext;
+}
+
+/** 静态用例勿用 @ohos.router 默认导出（'use static' 下类型不全）；与页面共用主窗 Router。 */
+export function getMainRouterForStaticTest(): Router | undefined {
+  return mainUIContext?.getRouter();
+}
+
+function delayMs(ms: int): Promise<void> {
+  return new Promise<void>((resolve: () => void): void => {
+    setTimeout((): void => {
+      resolve();
+    }, ms);
+  });
+}
+
+/**
+ * 主窗 getMainWindow → setMainUIContextForStaticTest 晚于 aa start，beforeEach 若立即取 Router 会得到 undefined 并触发 ClassCastError。
+ * 轮询直至就绪或超时（与 XTS hilog 中 beforeEach Router 未就绪现象对齐）。
+ */
+export async function waitForMainRouterForStaticTest(maxWaitMs: int = 12000, stepMs: int = 200): Promise<Router | undefined> {
+  let waited: int = 0 as int;
+  while (waited < maxWaitMs) {
+    let r: Router | undefined = getMainRouterForStaticTest();
+    if (r !== undefined && r !== null) {
+      return r;
+    }
+    await delayMs(stepMs);
+    waited = waited + stepMs;
+  }
+  return getMainRouterForStaticTest();
 }

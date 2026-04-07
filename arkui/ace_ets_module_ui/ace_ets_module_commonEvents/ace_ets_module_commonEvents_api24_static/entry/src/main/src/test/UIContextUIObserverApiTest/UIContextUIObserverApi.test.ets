@@ -26,9 +26,8 @@ import {
 } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { getMainUIContextForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
+import { getMainUIContextForStaticTest, waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
 import { invokeEnableDropDisallowedBadgeTrueThenFalse } from '../../../ets/MainAbility/common/UIContextBadgeBridge';
 
 export default function UIContextUIObserverApiTest(): void {
@@ -56,8 +55,9 @@ export default function UIContextUIObserverApiTest(): void {
         actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END],
       };
       uiContext!.getUIObserver().addGlobalGestureListener(GestureListenerType.TAP, option, listener);
-      let ro: router.RouterOptions = { url: 'MainAbility/pages/GestureApiProbe/GestureApiProbe' };
-      await router.replaceUrl(ro);
+      let r = await waitForMainRouterForStaticTest();
+      expect(r !== undefined && r !== null).assertTrue();
+      await r!.replaceUrl({ url: 'MainAbility/pages/GestureApiProbe/GestureApiProbe' });
       await Utils.sleep(600);
       let rect = Utils.getComponentRect('gestureTapHost');
       let cx = (rect.left + rect.right) / 2;
@@ -88,8 +88,9 @@ export default function UIContextUIObserverApiTest(): void {
         actionPhases: [GestureActionPhase.WILL_START],
       };
       uiContext!.getUIObserver().addGlobalGestureListener(GestureListenerType.LONG_PRESS, option, listener);
-      let ro: router.RouterOptions = { url: 'MainAbility/pages/DragSpringLoading/DragSpringLoadingIndex' };
-      await router.replaceUrl(ro);
+      let r = await waitForMainRouterForStaticTest();
+      expect(r !== undefined && r !== null).assertTrue();
+      await r!.replaceUrl({ url: 'MainAbility/pages/DragSpringLoading/DragSpringLoadingIndex' });
       await Utils.sleep(600);
       let rect = Utils.getComponentRect('dragSpringLoadingHost');
       let cx = (rect.left + rect.right) / 2;

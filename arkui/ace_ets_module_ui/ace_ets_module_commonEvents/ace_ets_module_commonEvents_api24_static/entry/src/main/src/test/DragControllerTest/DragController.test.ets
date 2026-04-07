@@ -18,8 +18,8 @@
 import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../hypium/index';
 import dragController from '@ohos.arkui.dragController';
 import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
-import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
 import {
   DragSpringLoadingTestBridge,
   SpringLoadingContextForBridge,
@@ -66,15 +66,17 @@ export default function DragControllerTest(): void {
 
     beforeEach(async (): Promise<void> => {
       console.info('DragControllerTest beforeEach start');
-      let options: router.RouterOptions = {
+      let options = {
         url: 'MainAbility/pages/DragSpringLoading/DragSpringLoadingIndex',
       };
       try {
-        router.clear();
-        let pages = router.getState();
+        let r = await waitForMainRouterForStaticTest();
+        expect(r !== undefined && r !== null).assertTrue();
+        r!.clear();
+        let pages = r!.getState();
         console.info('DragControllerTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'DragSpringLoadingIndex') {
-          await router.replaceUrl(options);
+          await r!.replaceUrl(options);
         }
         await Utils.sleep(500);
       } catch (err) {

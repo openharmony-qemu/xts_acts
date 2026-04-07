@@ -18,8 +18,8 @@
 import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../hypium/index';
 import { PanGestureOptions, PanDirection, SourceTool, PanGestureHandlerOptions } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
 import { UtilsTest } from '../Util.test';
 
 function gesturePanOptionsDistanceMap(): Map<SourceTool, number> {
@@ -35,9 +35,11 @@ export default function GestureStaticSuiteTest(): void {
     });
 
     beforeEach(async (): Promise<void> => {
-      let ro: router.RouterOptions = { url: 'MainAbility/pages/GestureApiProbe/GestureApiProbe' };
-      router.clear();
-      await router.replaceUrl(ro);
+      let r = await waitForMainRouterForStaticTest();
+      expect(r !== undefined && r !== null).assertTrue();
+      let ro = { url: 'MainAbility/pages/GestureApiProbe/GestureApiProbe' };
+      r!.clear();
+      await r!.replaceUrl(ro);
       await Utils.sleep(600);
     });
 
