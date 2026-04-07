@@ -1478,9 +1478,9 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_PROMISE_STATIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try{
-                await session!.getOutputDevice().then((device_Info: avSession.OutputDeviceInfo) => {
+                await session!.getOutputDevice().then((device_Info: avSession.OutputDeviceInfo | undefined) => {
                     console.info('Get device successfully');
-                    let deviceInfo: avSession.DeviceInfo = device_Info.devices[0];
+                    let deviceInfo: avSession.DeviceInfo | undefined = device_Info.devices[0];
                     console.info(`getOutputDevice successfully ${JSON.stringify(deviceInfo)}`);
                     console.info(`${TAG}TestLog1 castCategory = ${deviceInfo?.castCategory}`);
                     expect(deviceInfo?.castCategory).assertEqual(0);
@@ -1497,7 +1497,7 @@ export default function abilityTest() {
                     console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo?.supportedProtocols}`);
                     expect(deviceInfo?.supportedProtocols).assertEqual(0);
                     console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo?.supportedDrmCapabilities}`);
-                    expect(deviceInfo?.supportedDrmCapabilities.length).assertEqual(0);
+                    expect(deviceInfo?.supportedDrmCapabilities?.length).assertEqual(0);
                     console.info(`${TAG}TestLog1 manufacturer = ${deviceInfo?.manufacturer}`);
                     expect(deviceInfo?.manufacturer).assertEqual("");
                     done();
