@@ -2911,6 +2911,64 @@ export default function FloatingBallTest() {
       }
     })
 
+    /**
+     * @tc.name   test_set_floatingball_visibility_inapp
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_SET_VISIBILITY_0100
+     * @tc.desc   设置应用内隐藏后闪控球隐藏
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_on_set_floatingball_visibility_inapp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_on_set_floatingball_visibility_inapp';
+      let time:number = 0;
+      let driver:Driver = Driver.create();
+
+      let issupportFloatingBall = floatingBall.isFloatingBallEnabled();
+      console.log(CaseName + ' issupportFloatingBall: ' + issupportFloatingBall);
+
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context!,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      try {
+        if (issupportFloatingBall) {
+          let floatingBallController = await floatingBall.create(config);
+          await floatingBallController.startFloatingBall(startParams);
+          await Utils.msSleep(200);
+
+          //能查询到floatBall
+          let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+          expect(button !== null).assertTrue();
+
+          await floatingBallController.setFloatingBallVisibilityInApp(false);
+          await Utils.msSleep(200);
+          //查不询到floatBall
+          button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+          console.info(CaseName+ ' button after set false: ' + button);
+          expect(button === null).assertTrue();
+
+          await floatingBallController.setFloatingBallVisibilityInApp(true);
+          await Utils.msSleep(200);
+          //能查到floatBall
+          button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+          console.info(CaseName+ ' button after set true: ' + button);
+          expect(button !== null).assertTrue();
+          await floatingBallController.stopFloatingBall();
+          done();
+        } else {
+          done();
+        }
+      } catch(e) {
+        console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
 
 
 
