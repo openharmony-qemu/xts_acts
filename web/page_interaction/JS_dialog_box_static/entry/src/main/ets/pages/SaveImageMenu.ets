@@ -140,13 +140,13 @@ struct BindMenuTest {
         .height(50)
         .onClick(() => {
           this.result?.saveImage();
-          if(this.flag == 1) {
+          if(this.flag === 1) {
             Utils.emitEvent("image", 20230319)
             console.log('image');
-          } else if(this.flag == 2) {
+          } else if(this.flag === 2) {
             console.log('onLineImage');
             Utils.emitEvent("onLineImage", 20230320)
-          } else if(this.flag == 3) {
+          } else if(this.flag === 3) {
             console.log('canvas');
             Utils.emitEvent("canvas", 20230321)
           }
