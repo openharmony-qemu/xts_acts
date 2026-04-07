@@ -76,7 +76,6 @@ struct RichEditorApiPage {
           );
         })
 
-      // 写的不对要重新写
       Button('RichEditorParagraphStyle.textVerticalAlign')
         .id(`${PFX}_btn_paragraphStyle_textVerticalAlign`)
         .width('100%')
@@ -103,6 +102,16 @@ struct RichEditorApiPage {
           this.richCtl.setTypingParagraphStyle(style);
           AppStorage.setOrCreate<string>(`${PFX}_setTypingParagraphStyle_ok`, 'true');
         })
+
+      Button('RichEditorBaseController.setStyledPlaceholder')
+        .id(`${PFX}_btn_setStyledPlaceholder`)
+        .width('100%')
+        .fontSize(11)
+        .onClick((): void => {
+          const ph = new StyledString('placeholder');
+          this.richCtl.setStyledPlaceholder(ph);
+          AppStorage.setOrCreate<string>(`${PFX}_setStyledPlaceholder_ok`, 'true');
+      })  
 
       RichEditor({ controller: this.richCtl })
         .id(`${PFX}_rich_main`)

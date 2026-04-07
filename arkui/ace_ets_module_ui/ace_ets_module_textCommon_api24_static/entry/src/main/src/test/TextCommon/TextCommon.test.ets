@@ -793,5 +793,33 @@ export default function TextCommonTest(): void {
         done();
       }
     });
+
+    /**
+     * @tc.number SUB_ArkUI_TextCommon_ColorSHaderStyle_Color_2900
+     * @tc.name SUB_ArkUI_TextCommon_ColorSHaderStyle_Color_2900
+     * @tc.desc Verify ColorShaderStyle.color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_TextCommon_ColorSHaderStyle_Color_2900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        const d = Driver.create();
+        await findAndClickById(d, `${PFX}_btn_color_shader_color`);
+        await Utils.sleep(SLEEP);
+        const v = AppStorage.get<string>(`${PFX}_color_shader_color_ok`);
+        let colorOk = false;
+        if (v !== undefined && v !== null && v.length > 0) {
+          colorOk = true;
+        }
+        expect(colorOk).assertTrue();
+        done();
+      } catch (e) {
+        console.error('SUB_ArkUI_TextCommon_ColorSHaderStyle_Color_2900 error: ' + e);
+        expect().assertFail();
+        done();
+      }
+    });
+
   });
 }

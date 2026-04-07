@@ -53,7 +53,9 @@ import {
   RichEditorTextSpanOptions,
   RichEditorTextStyle,
   DecorationStyleInterface,
-  ResourceStr
+  ResourceStr,
+  Color,
+  ColorShaderStyle
 } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { LengthMetrics } from '@ohos.arkui.node';
@@ -85,6 +87,7 @@ struct TextCommonPage {
       ['#FF000000', 1.0]
     ]
   } as RadialGradientOptions;
+  private colorShader: ColorShaderStyle = new ColorShaderStyle(Color.Red);
   private ntFromOptions: NumericTextTransition = new NumericTextTransition({
     flipDirection: FlipDirection.DOWN,
     enableBlur: true
@@ -553,6 +556,17 @@ struct TextCommonPage {
             `${PFX}_nt_inst_blur_ok`,
             this.ntInstance.enableBlur === true ? 'true' : 'false'
           );
+        })
+
+      Text('color shader')
+        .fontSize(16)
+        .width('100%')
+        .shaderStyle(this.colorShader)
+      Button('ColorShaderStyle.color')
+        .id(`${PFX}_btn_color_shader_color`)
+        .fontSize(11)
+        .onClick((): void => {
+          AppStorage.setOrCreate<string>(`${PFX}_color_shader_color_ok`, `${this.colorShader.color}`);
         })
 
       Button('TextLayoutOptions.constraintWidth')

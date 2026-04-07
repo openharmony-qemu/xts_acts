@@ -358,5 +358,21 @@ export default function RichEditorApiTest(): void {
         done();
       }
     });
+
+    /**
+     * @tc.number SUB_ArkUI_RichEditor_BaseController_1000
+     * @tc.name SUB_ArkUI_RichEditor_BaseController_1000
+     * @tc.desc Verify RichEditorBaseController.setStyledPlaceholder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ArkUI_RichEditor_BaseController_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const driver = Driver.create();
+      await (await driver.findComponent(ON.id(`${PFX}_btn_setStyledPlaceholder`)))?.click();
+      await Utils.sleep(SLEEP);
+      expect(AppStorage.get<string>(`${PFX}_setStyledPlaceholder_ok`)).assertEqual('true');
+      done();
+    });
   });
 }
