@@ -78,7 +78,7 @@ it('bindMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () => void):
       button?.longClick();
       await CommonFunc.sleep(3000);
 
-      driver.click(2, 2);
+      driver.click(2, 500);
       await CommonFunc.sleep(2000);
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
       let menuPositionX = Number.parseFloat(await (text1?.getText() as Promise<String>));
@@ -95,7 +95,7 @@ it('bindMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () => void):
       expect(textPositionY).assertLess(menuPositionY)
 
       await CommonFunc.sleep(1000);
-      await driver.click(2, 100);
+      await driver.click(2, 500);
       await CommonFunc.sleep(2000);
       console.info('[bindMenuAnchorPosition_static_0100] END');
       done();
@@ -117,7 +117,7 @@ it('bindMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () => void):
       button?.longClick();
       await CommonFunc.sleep(3000);
 
-      driver.click(2, 2);
+      driver.click(2, 500);
       await CommonFunc.sleep(2000);
 
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
@@ -134,7 +134,7 @@ it('bindMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () => void):
       expect(textPositionY).assertLess(menuPositionY)
 
       await CommonFunc.sleep(1000);
-      await driver.click(2, 100);
+      await driver.click(2, 500);
       await CommonFunc.sleep(2000);
       console.info('[bindMenuAnchorPosition_static_0200] END');
       done();
@@ -156,7 +156,7 @@ it('bindMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () => void):
       button?.longClick();
       await CommonFunc.sleep(3000);
 
-      driver.click(2, 2);
+      driver.click(2, 500);
       await CommonFunc.sleep(2000);
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
       let menuPositionX = Number.parseFloat(await (text1?.getText() as Promise<String>));
@@ -173,7 +173,7 @@ it('bindMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () => void):
       expect(textPositionY).assertLess(menuPositionY)
 
       await CommonFunc.sleep(1000);
-      await driver.click(2, 100);
+      await driver.click(2, 500);
       await CommonFunc.sleep(2000);
       console.info('[bindMenuAnchorPosition_static_0300] END');
       done();
