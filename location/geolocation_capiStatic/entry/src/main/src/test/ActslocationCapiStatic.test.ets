@@ -756,8 +756,8 @@ export default function actslocationTest() {
               } catch (error) {
                 console.error("SUB_Location_getActiveGeoFences_0100: errCode" + error.code + ", errMessage" + error.message);
                 expect().assertFalse();
+                done();
               }
-              done();
              }
             })
 
