@@ -104,17 +104,17 @@ export default function WindowImmersiveStaticTest() {
         }
       })
 
-       /**
-     * @tc.number      SUB_WINDOW_getWindowSystemBarProperties_0100
-     * @tc.name        testgetWindowSystemBarProperties_All_001
+       /**git 
+     * @tc.number      SUB_WINDOW_IMMERSIVE_GetWindowSystemBarProperties_0100
+     * @tc.name        testGetWindowSystemBarProperties_All_001
      * @tc.desc        setWindowSystemBarProperties all properties test.
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level3
      */
-    it('testgetWindowSystemBarProperties_All_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testGetWindowSystemBarProperties_All_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let caseName: string = 'testgetWindowSystemBarProperties_All_001';
+        let caseName: string = 'testGetWindowSystemBarProperties_All_001';
         let msgStr: string = 'jsunittest ' + caseName + ' ';
         hilog.info(domain, tag, msgStr + 'begin');
         try {
