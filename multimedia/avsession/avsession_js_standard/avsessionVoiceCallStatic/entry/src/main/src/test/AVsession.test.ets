@@ -1498,6 +1498,8 @@ export default function abilityTest() {
                     expect(deviceInfo?.supportedProtocols).assertEqual(0);
                     console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo?.supportedDrmCapabilities}`);
                     expect(deviceInfo?.supportedDrmCapabilities.length).assertEqual(0);
+                    console.info(`${TAG}TestLog1 manufacturer = ${deviceInfo?.manufacturer}`);
+                    expect(deviceInfo?.manufacturer).assertEqual("");
                     done();
                 }).catch((err: Error) => {
                     console.error(`GetOutputDevice BusinessError: code: ${err.code}, message: ${err.message}`);
