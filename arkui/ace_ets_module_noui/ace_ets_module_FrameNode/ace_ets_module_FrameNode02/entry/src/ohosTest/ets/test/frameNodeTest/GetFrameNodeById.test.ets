@@ -30,7 +30,7 @@ export default function GetFrameNodeByIdTest() {
         let pages = router.getState();
         let result = await router.replaceUrl(options);
         console.info('get GetFrameNodeByIdTest state pages:' + JSON.stringify(pages));
-        if (!('IsOnMainTreeMethodPage' == pages.name)) {
+        if (!('GetFrameNodeById' == pages.name)) {
           console.info('get GetFrameNodeByIdTest pages.name:' + JSON.stringify(pages.name));
           await CommonFunc.sleep(1000);
           console.info('push GetFrameNodeByIdTest page result:' + JSON.stringify(result));
