@@ -94,7 +94,7 @@ function clearModuleStorage(): void {
 export default function EnumsTest() {
   describe('Enums', () => {
     beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.arcAlphabetIndexer.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.ets.module.common.api24.static', 'EntryAbility');
     });
 
     beforeEach(() => {

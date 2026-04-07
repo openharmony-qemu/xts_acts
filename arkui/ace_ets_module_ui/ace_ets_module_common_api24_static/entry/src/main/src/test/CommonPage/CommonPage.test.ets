@@ -97,7 +97,7 @@ function readShowCounterOptionColor(key: string, field: string): string {
 export default function CommonTest(): void {
   describe('Common', () => {
     beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.arcAlphabetIndexer.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.ets.module.common.api24.static', 'EntryAbility');
     });
 
     beforeEach(() => {
