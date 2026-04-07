@@ -80,8 +80,8 @@ group("ans_standard") {
       "actsNotificationAnsThreePartyWatchNoSystemNoPermissionTest:ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest",
       "actsNotificationCesMoreInstanceTest:ActsNotificationCesMoreInstanceTest",
       "actsNotificationCesMoreInstanceTestStatic:ActsNotificationCesMoreInstanceStaticTest",
-	"actsNotificationAnsGetNotificationSettingTest:ActsNotificationAnsGetNotificationSettingTest",
-	"actsNotificationAnsGetNotificationSettingTestStatic:ActsNotificationAnsGetNotificationSettingStaticTest"
+	    "actsNotificationAnsGetNotificationSettingTest:ActsNotificationAnsGetNotificationSettingTest",
+	    "actsNotificationAnsGetNotificationSettingTestStatic:ActsNotificationAnsGetNotificationSettingStaticTest"
     ]
   }
 }
