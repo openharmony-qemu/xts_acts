@@ -82,6 +82,7 @@ export default function abilityTest() {
  	            }).catch((error: BusinessError) => {
  	                console.log(newTag + "createSubscriber err");
  	                expect().assertFail();
+					done();
  	            })
  	            await abilityDelegator.executeShellCommand('aa start -a EntryAbility2 -b com.acts.photoeditorextensiontest --ps action test_0100')
                 done();
