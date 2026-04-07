@@ -74,10 +74,10 @@ struct BindMenuTest {
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
-    if (eventData != null) {
+    if (eventData !== null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       const data = eventData.data as Record<string, RecordData>;
-      if (data != null && data['ACTION'] != null) {
+      if (data !== null && data['ACTION'] !== null) {
         let strValue: string = String(data['ACTION']);
         this.stringObj.str = strValue;
         console.info('this.stringObj.str has been updated to: ' + this.stringObj.str);
