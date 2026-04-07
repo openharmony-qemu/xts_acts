@@ -2645,14 +2645,14 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0100
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLEISDESKTOPLYRICVISIBLE_STATIC_0100Adapt001
          * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0100
          * @tc.desc   Testing setDesktopLyricVisible&isDesktopLyricVisible with visible=true
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLEISDESKTOPLYRICVISIBLE_STATIC_0100Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0100';
             try {
                 const isSupported: boolean = await avSession.isDesktopLyricSupported();
@@ -2672,14 +2672,14 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0200
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLEISDESKTOPLYRICVISIBLE_STATIC_0200Adapt001
          * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0200
          * @tc.desc   Testing setDesktopLyricVisible&isDesktopLyricVisible with visible=false
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLEISDESKTOPLYRICVISIBLE_STATIC_0200Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_STATIC_0200';
             try {
                 const isSupported: boolean = await avSession.isDesktopLyricSupported();
@@ -3023,14 +3023,14 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0100
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATEGETDESKTOPLYRICSTATE_STATIC_0100Adapt001
          * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0100
          * @tc.desc   Testing setDesktopLyricState&getDesktopLyricState with locked state (isLocked: true) - normal scenario
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATEGETDESKTOPLYRICSTATE_STATIC_0100Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0100';
             try {
                 const isSupported: boolean = await avSession.isDesktopLyricSupported();
@@ -3051,14 +3051,14 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0200
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATEGETDESKTOPLYRICSTATE_STATIC_0200Adapt001
          * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0200
          * @tc.desc   Testing setDesktopLyricState&getDesktopLyricState with locked state (isLocked: false) - normal scenario
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATEGETDESKTOPLYRICSTATE_STATIC_0200Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_STATIC_0200';
             try {
                 const isSupported: boolean = await avSession.isDesktopLyricSupported();
