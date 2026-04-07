@@ -687,6 +687,24 @@ export default function MechanicManagerAPI() {
      */
     it("SUB_DH_MechanicManager_setCameraTrackingEnabled_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0100 begin-----------------");
+      if (deviceInfo.deviceType === 'tablet') {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0100_CheckSuccess();
+      } else if (deviceInfo.deviceType === 'phone') {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0100_CheckReturnError1();
+      } else {
+        console.info(`====>SUB_DH_MechanicManager_setCameraTrackingEnabled_0100 end fail====` + deviceInfo.deviceType);
+        except().assertFail();
+      }
+    });
+
+    let SUB_DH_MechanicManager_setCameraTrackingEnabled_0100_CheckReturnError1 = () => {
+      if (totalMem > 9437184) {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0100_CheckSuccess();
+      } else {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0100_CheckReturnError1();
+      }
+    }
+    let SUB_DH_MechanicManager_setCameraTrackingEnabled_0100_CheckSuccess = () => {
       try {
         mechanicManager.setCameraTrackingEnabled(true);
         console.info('SUB_DH_MechanicManager_setCameraTrackingEnabled_0100 Enable Tracking Success');
@@ -696,7 +714,18 @@ export default function MechanicManagerAPI() {
         expect(error.code == 33300001).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0100 end-----------------");
-    });
+    }
+    let SUB_DH_MechanicManager_setCameraTrackingEnabled_0100_CheckReturnError1 = () => {
+      try {
+        mechanicManager.setCameraTrackingEnabled(true);
+        console.info('SUB_DH_MechanicManager_setCameraTrackingEnabled_0100 Enable Tracking Success');
+        expect().assertFail();
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_setCameraTrackingEnabled_0100 failed2, code is ${error.code}, message is ${error.message}`);
+        except(error.code == 33300002).assertTrue();
+      }
+      console.log("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0100 end------------------")
+    }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_setCameraTrackingEnabled_0200
@@ -708,6 +737,24 @@ export default function MechanicManagerAPI() {
      */
     it("SUB_DH_MechanicManager_setCameraTrackingEnabled_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0200 begin-----------------");
+      if (deviceInfo.deviceType === 'tablet') {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0200_CheckSuccess();
+      } else if (deviceInfo.deviceType === 'phone') {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0200_CheckReturnError1();
+      } else {
+        console.info(`====>SUB_DH_MechanicManager_setCameraTrackingEnabled_0200 end fail====` + deviceInfo.deviceType);
+        except().assertFail();
+      }
+    });
+
+    let SUB_DH_MechanicManager_setCameraTrackingEnabled_0200_CheckReturnError1 = () => {
+      if (totalMem > 9437184) {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0200_CheckSuccess();
+      } else {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0200_CheckReturnError1();
+      }
+    }
+    let SUB_DH_MechanicManager_setCameraTrackingEnabled_0200_CheckSuccess = () => {
       try {
         mechanicManager.setCameraTrackingEnabled(false);
         console.info('SUB_DH_MechanicManager_setCameraTrackingEnabled_0200 Enable Tracking Success');
@@ -717,7 +764,18 @@ export default function MechanicManagerAPI() {
         expect(error.code == 33300001).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0200 end-----------------");
-    });
+    }
+    let SUB_DH_MechanicManager_setCameraTrackingEnabled_0200_CheckReturnError1 = () => {
+      try {
+        mechanicManager.setCameraTrackingEnabled(false);
+        console.info('SUB_DH_MechanicManager_setCameraTrackingEnabled_0200 Enable Tracking Success');
+        expect().assertFail();
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_setCameraTrackingEnabled_0200 failed2, code is ${error.code}, message is ${error.message}`);
+        except(error.code == 33300002).assertTrue();
+      }
+      console.log("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0200 end------------------")
+    }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_setCameraTrackingEnabled_0300
@@ -729,6 +787,24 @@ export default function MechanicManagerAPI() {
      */
     it("SUB_DH_MechanicManager_setCameraTrackingEnabled_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0300 begin-----------------");
+      if (deviceInfo.deviceType === 'tablet') {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0300_CheckSuccess();
+      } else if (deviceInfo.deviceType === 'phone') {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0300_CheckReturnError1();
+      } else {
+        console.info(`====>SUB_DH_MechanicManager_setCameraTrackingEnabled_0300 end fail====` + deviceInfo.deviceType);
+        except().assertFail();
+      }
+    });
+
+    let SUB_DH_MechanicManager_setCameraTrackingEnabled_0300_CheckReturnError1 = () => {
+      if (totalMem > 9437184) {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0300_CheckSuccess();
+      } else {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0300_CheckReturnError1();
+      }
+    }
+    let SUB_DH_MechanicManager_setCameraTrackingEnabled_0300_CheckSuccess = () => {
       try {
         mechanicManager.setCameraTrackingEnabled(null);
         console.info('SUB_DH_MechanicManager_setCameraTrackingEnabled_0300 Enable Tracking Success');
@@ -738,7 +814,18 @@ export default function MechanicManagerAPI() {
         expect(error.code == 401).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0300 end-----------------");
-    });
+    }
+    let SUB_DH_MechanicManager_setCameraTrackingEnabled_0300_CheckReturnError1 = () => {
+      try {
+        mechanicManager.setCameraTrackingEnabled(null);
+        console.info('SUB_DH_MechanicManager_setCameraTrackingEnabled_0300 Enable Tracking Success');
+        expect().assertFail();
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_setCameraTrackingEnabled_0300 failed2, code is ${error.code}, message is ${error.message}`);
+        except(error.code == 33300002).assertTrue();
+      }
+      console.log("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0300 end------------------")
+    }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_setCameraTrackingEnabled_0400
@@ -748,8 +835,27 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
+
     it("SUB_DH_MechanicManager_setCameraTrackingEnabled_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0400 begin-----------------");
+      if (deviceInfo.deviceType === 'tablet') {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0400_CheckSuccess();
+      } else if (deviceInfo.deviceType === 'phone') {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0400_CheckReturnError1();
+      } else {
+        console.info(`====>SUB_DH_MechanicManager_setCameraTrackingEnabled_0400 end fail====` + deviceInfo.deviceType);
+        except().assertFail();
+      }
+    });
+
+    let SUB_DH_MechanicManager_setCameraTrackingEnabled_0400_CheckReturnError1 = () => {
+      if (totalMem > 9437184) {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0400_CheckSuccess();
+      } else {
+        SUB_DH_MechanicManager_setCameraTrackingEnabled_0400_CheckReturnError1();
+      }
+    }
+    let SUB_DH_MechanicManager_setCameraTrackingEnabled_0400_CheckSuccess = () => {
       try {
         mechanicManager.setCameraTrackingEnabled(undefined);
         console.info('SUB_DH_MechanicManager_setCameraTrackingEnabled_0400 Enable Tracking Success');
@@ -759,7 +865,18 @@ export default function MechanicManagerAPI() {
         expect(error.code == 401).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0400 end-----------------");
-    });
+    }
+    let SUB_DH_MechanicManager_setCameraTrackingEnabled_0400_CheckReturnError1 = () => {
+      try {
+        mechanicManager.setCameraTrackingEnabled(undefined);
+        console.info('SUB_DH_MechanicManager_setCameraTrackingEnabled_0400 Enable Tracking Success');
+        expect().assertFail();
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_setCameraTrackingEnabled_0400 failed2, code is ${error.code}, message is ${error.message}`);
+        except(error.code == 33300002).assertTrue();
+      }
+      console.log("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0400 end------------------")
+    }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_getCameraTrackingEnabled_0100
@@ -769,8 +886,27 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
+
     it("SUB_DH_MechanicManager_getCameraTrackingEnabled_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0100 begin-----------------");
+      if (deviceInfo.deviceType === 'tablet') {
+        SUB_DH_MechanicManager_getCameraTrackingEnabled_0100_CheckSuccess();
+      } else if (deviceInfo.deviceType === 'phone') {
+        SUB_DH_MechanicManager_getCameraTrackingEnabled_0100_CheckReturnError1();
+      } else {
+        console.info(`====>SUB_DH_MechanicManager_getCameraTrackingEnabled_0100 end fail====` + deviceInfo.deviceType);
+        except().assertFail();
+      }
+    });
+
+    let SUB_DH_MechanicManager_getCameraTrackingEnabled_0100_CheckReturnError1 = () => {
+      if (totalMem > 9437184) {
+        SUB_DH_MechanicManager_getCameraTrackingEnabled_0100_CheckSuccess();
+      } else {
+        SUB_DH_MechanicManager_getCameraTrackingEnabled_0100_CheckReturnError1();
+      }
+    }
+    let SUB_DH_MechanicManager_getCameraTrackingEnabled_0100_CheckSuccess = () => {
       try {
         let enabled = mechanicManager.getCameraTrackingEnabled();
         console.info(`'SUB_DH_MechanicManager_getCameraTrackingEnabled_0100 current tracking status:' ${enabled}`);
@@ -780,7 +916,18 @@ export default function MechanicManagerAPI() {
         expect(error.code == 33300001).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0100 end-----------------");
-    });
+    }
+    let SUB_DH_MechanicManager_getCameraTrackingEnabled_0100_CheckReturnError1 = () => {
+      try {
+        let enabled = mechanicManager.getCameraTrackingEnabled();
+        console.info(`'SUB_DH_MechanicManager_getCameraTrackingEnabled_0100 current tracking status:' ${enabled}`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_getCameraTrackingEnabled_0100 failed2, code is ${error.code}, message is ${error.message}`);
+        except(error.code == 33300002).assertTrue();
+      }
+      console.log("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0100 end------------------")
+    }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_getCameraTrackingEnabled_0200
@@ -792,6 +939,24 @@ export default function MechanicManagerAPI() {
      */
     it("SUB_DH_MechanicManager_getCameraTrackingEnabled_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 begin-----------------");
+      if (deviceInfo.deviceType === 'tablet') {
+        SUB_DH_MechanicManager_getCameraTrackingEnabled_0200_CheckSuccess();
+      } else if (deviceInfo.deviceType === 'phone') {
+        SUB_DH_MechanicManager_getCameraTrackingEnabled_0200_CheckReturnError1();
+      } else {
+        console.info(`====>SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 end fail====` + deviceInfo.deviceType);
+        except().assertFail();
+      }
+    });
+
+    let SUB_DH_MechanicManager_getCameraTrackingEnabled_0200_CheckReturnError1 = () => {
+      if (totalMem > 9437184) {
+        SUB_DH_MechanicManager_getCameraTrackingEnabled_0200_CheckSuccess();
+      } else {
+        SUB_DH_MechanicManager_getCameraTrackingEnabled_0200_CheckReturnError1();
+      }
+    }
+    let SUB_DH_MechanicManager_getCameraTrackingEnabled_0200_CheckSuccess = () => {
       try {
         let enabled = mechanicManager.getCameraTrackingEnabled();
         if (!enabled) {
@@ -805,7 +970,22 @@ export default function MechanicManagerAPI() {
         expect(error.code == 33300001).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 end-----------------");
-    });
+    }
+    let SUB_DH_MechanicManager_getCameraTrackingEnabled_0200_CheckReturnError1 = () => {
+      try {
+        let enabled = mechanicManager.getCameraTrackingEnabled();
+        if (!enabled) {
+          console.log("getCameraTrackingEnabled SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 fail");
+          expect(enabled).assertFalse();
+        }
+        console.info(`'SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 current tracking status:' ${enabled}`);
+        expect(enabled).assertTrue();
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 failed2, code is ${error.code}, message is ${error.message}`);
+        except(error.code == 33300002).assertTrue();
+      }
+      console.log("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 end------------------")
+    }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_on_0400
@@ -1089,8 +1269,27 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_DH_MechanicManager_on_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.log("-----------------SUB_DH_MechanicManager_on_0800 begin-----------------");
+    it("SUB_DH_MechanicManager_on_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------SUB_DH_MechanicManager_on_0800 begin-----------------");
+      if (deviceInfo.deviceType === 'tablet') {
+        SUB_DH_MechanicManager_on_0800_CheckSuccess();
+      } else if (deviceInfo.deviceType === 'phone') {
+        SUB_DH_MechanicManager_on_0800_CheckReturnError1();
+      } else {
+        console.info(`====>SUB_DH_MechanicManager_on_0800 end fail====` + deviceInfo.deviceType);
+        except().assertFail();
+      }
+      done();
+    });
+
+    let SUB_DH_MechanicManager_on_0800_CheckReturnError1 = () => {
+      if (totalMem > 9437184) {
+        SUB_DH_MechanicManager_on_0800_CheckSuccess();
+      } else {
+        SUB_DH_MechanicManager_on_0800_CheckReturnError1();
+      }
+    }
+    let SUB_DH_MechanicManager_on_0800_CheckSuccess = () => {
       try {
         let callback = (result: mechanicManager.AttachStateChangeInfo) => {
           console.info(`'SUB_DH_MechanicManager_on_0800 callback result: ' ${JSON.stringify(result)}`);
@@ -1099,7 +1298,6 @@ export default function MechanicManagerAPI() {
           expect(result.mechInfo[0].mechId == 0).assertTrue();
           expect(result.mechInfo[0].mechDeviceType == 0).assertTrue();
           expect(result.mechInfo[0].mechName == "Osmo Mobile 7P").assertTrue();
-          done();
         };
         console.info('SUB_DH_MechanicManager_on_0800 Register');
         mechanicManager.on("attachStateChange", callback);
@@ -1107,11 +1305,28 @@ export default function MechanicManagerAPI() {
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_on_0800 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
       }
-      done();
       console.log("-----------------SUB_DH_MechanicManager_on_0800 end-----------------");
-    });
+    }
+    let SUB_DH_MechanicManager_on_0800_CheckReturnError1 = () => {
+      try {
+        let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+          console.info(`'SUB_DH_MechanicManager_on_0800 callback result: ' ${JSON.stringify(result)}`);
+          expect(result.state).assertEqual(mechanicManager.AttachState.ATTACHED);
+          expect(result.state).assertEqual(mechanicManager.AttachState.DETACHED);
+          expect(result.mechInfo[0].mechId == 0).assertTrue();
+          expect(result.mechInfo[0].mechDeviceType == 0).assertTrue();
+          expect(result.mechInfo[0].mechName == "Osmo Mobile 7P").assertTrue();
+        };
+        console.info('SUB_DH_MechanicManager_on_0800 Register');
+        mechanicManager.on("attachStateChange", callback);
+        console.info('SUB_DH_MechanicManager_on_0800 Register: success');
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_on_0800 failed2, code is ${error.code}, message is ${error.message}`);
+        except(error.code == 33300001).assertTrue();
+      }
+      console.log("-----------------SUB_DH_MechanicManager_on_0800 end------------------")
+    }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_off_0500
@@ -1410,6 +1625,24 @@ export default function MechanicManagerAPI() {
      */
     it("SUB_DH_MechanicManager_getCameraTrackingLayout_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0100 begin-----------------");
+      if (deviceInfo.deviceType === 'tablet') {
+        SUB_DH_MechanicManager_getCameraTrackingLayout_0100_CheckSuccess();
+      } else if (deviceInfo.deviceType === 'phone') {
+        SUB_DH_MechanicManager_getCameraTrackingLayout_0100_CheckReturnError1();
+      } else {
+        console.info(`====>SUB_DH_MechanicManager_getCameraTrackingLayout_0100 end fail====` + deviceInfo.deviceType);
+        except().assertFail();
+      }
+    });
+
+    let SUB_DH_MechanicManager_getCameraTrackingLayout_0100_CheckReturnError1 = () => {
+      if (totalMem > 9437184) {
+        SUB_DH_MechanicManager_getCameraTrackingLayout_0100_CheckSuccess();
+      } else {
+        SUB_DH_MechanicManager_getCameraTrackingLayout_0100_CheckReturnError1();
+      }
+    }
+    let SUB_DH_MechanicManager_getCameraTrackingLayout_0100_CheckSuccess = () => {
       try {
         let layout = mechanicManager.getCameraTrackingLayout();
         console.info(`'SUB_DH_MechanicManager_getCameraTrackingLayout_0100 Query layout successful, current layout:' ${layout}`);
@@ -1419,7 +1652,18 @@ export default function MechanicManagerAPI() {
         expect(error.code == 33300001).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0100 end-----------------");
-    });
+    }
+    let SUB_DH_MechanicManager_getCameraTrackingLayout_0100_CheckReturnError1 = () => {
+      try {
+        let layout = mechanicManager.getCameraTrackingLayout();
+        console.info(`'SUB_DH_MechanicManager_getCameraTrackingLayout_0100 Query layout successful, current layout:' ${layout}`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_getCameraTrackingLayout_0100 failed2, code is ${error.code}, message is ${error.message}`);
+        except(error.code == 33300002).assertTrue();
+      }
+      console.log("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0100 end------------------")
+    }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_getCameraTrackingLayout_0200
@@ -1431,6 +1675,24 @@ export default function MechanicManagerAPI() {
      */
     it("SUB_DH_MechanicManager_getCameraTrackingLayout_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0200 begin-----------------");
+      if (deviceInfo.deviceType === 'tablet') {
+        SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckSuccess();
+      } else if (deviceInfo.deviceType === 'phone') {
+        SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckReturnError1();
+      } else {
+        console.info(`====>SUB_DH_MechanicManager_getCameraTrackingLayout_0200 end fail====` + deviceInfo.deviceType);
+        except().assertFail();
+      }
+    });
+
+    let SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckReturnError1 = () => {
+      if (totalMem > 9437184) {
+        SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckSuccess();
+      } else {
+        SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckReturnError1();
+      }
+    }
+    let SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckSuccess = () => {
       try {
         let layout = mechanicManager.getCameraTrackingLayout();
         console.info(`'SUB_DH_MechanicManager_getCameraTrackingLayout_0200 Query layout successful, current layout:' ${layout}`);
@@ -1443,7 +1705,21 @@ export default function MechanicManagerAPI() {
         expect(error.code == 33300001).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0200 end-----------------");
-    });
+    }
+    let SUB_DH_MechanicManager_getCameraTrackingLayout_0200_CheckReturnError1 = () => {
+      try {
+        let layout = mechanicManager.getCameraTrackingLayout();
+        console.info(`'SUB_DH_MechanicManager_getCameraTrackingLayout_0200 Query layout successful, current layout:' ${layout}`);
+        expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.DEFAULT);
+        expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.LEFT);
+        expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.MIDDLE);
+        expect(layout).assertEqual(mechanicManager.CameraTrackingLayout.RIGHT);
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_getCameraTrackingLayout_0200 failed2, code is ${error.code}, message is ${error.message}`);
+        except(error.code == 33300002).assertTrue();
+      }
+      console.log("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0200 end------------------")
+    }
 
     /**
      * @tc.name   SUB_DH_MechanicManager_enumerated_0100
