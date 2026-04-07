@@ -1984,7 +1984,7 @@ static napi_value AudioRendererSetOnMarkReached_08(napi_env env, napi_callback_i
     int waitTime = 3;
     OH_AudioRenderer_Start(audioRenderer);
     LOG("audioRendererSetOnMarkReached_08 OH_AudioRenderer_Start SUCCESS");
-    WaitForFlagWithTimeout(waitTime);
+    WaitForFlagWithTimeout(&g_flag, waitTime);
     OH_AudioRenderer_Stop(audioRenderer);
     LOG("audioRendererSetOnMarkReached_08 OH_AudioRenderer_Stop SUCCESS");
     if (!g_flag) {
