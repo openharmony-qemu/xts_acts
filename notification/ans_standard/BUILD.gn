@@ -80,12 +80,12 @@ group("ans_standard") {
       "actsNotificationAnsThreePartyWatchNoSystemNoPermissionTest:ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest",
       "actsNotificationCesMoreInstanceTest:ActsNotificationCesMoreInstanceTest",
       "actsNotificationCesMoreInstanceTestStatic:ActsNotificationCesMoreInstanceStaticTest",
-	    "actsNotificationAnsOpenWindowWithResultWithoutAbilityTest:ActsNotificationAnsOpenWindowWithResultWithoutAbilityTest",
-	    "actsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTest:ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTest",
-	    "actsNotificationAnsopenWindowWithResultWithoutAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithoutAbilityStaticTest",
-	    "actsNotificationAnsopenWindowWithResultWithinAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityStaticTest",
-	    "actsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionStaticTest",
-	    "actsNotificationAnsOpenWindowWithResultWithinAbilityTest:ActsNotificationAnsOpenWindowWithResultWithinAbilityTest"
+      "actsNotificationAnsOpenWindowWithResultWithoutAbilityTest:ActsNotificationAnsOpenWindowWithResultWithoutAbilityTest",
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTest:ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTest",
+      "actsNotificationAnsopenWindowWithResultWithoutAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithoutAbilityStaticTest",
+      "actsNotificationAnsopenWindowWithResultWithinAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityStaticTest",
+      "actsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionStaticTest",
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityTest:ActsNotificationAnsOpenWindowWithResultWithinAbilityTest"
     ]
   }
 }
