@@ -15,18 +15,6 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/kaihong/.ohos/config/openharmony/default_ace_ets_module_builderNode_static_vTiEX8ZrHNK1kScpZoYwPUdTQ8ZT5wxomgoDfQQFgR4=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001A894333037417B33F7A6C0CD5366300928AB0078383DAACB78C5CB2F0847F040990E92CFE08AD",
-          "profile": "C:/Users/kaihong/.ohos/config/openharmony/default_ace_ets_module_builderNode_static_vTiEX8ZrHNK1kScpZoYwPUdTQ8ZT5wxomgoDfQQFgR4=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/kaihong/.ohos/config/openharmony/default_ace_ets_module_builderNode_static_vTiEX8ZrHNK1kScpZoYwPUdTQ8ZT5wxomgoDfQQFgR4=.p12",
-          "storePassword": "0000001ACE75540A6CFD09F2811961D33B464F226ECBB9C2B21161D7F66E79D76508DB05F00B9501EEDA"
-        }
-      }
     ],
     "products": [
       {
@@ -41,8 +29,7 @@
             "caseSensitiveCheck": true,
             "useNormalizedOHMUrl": true
           }
-        },
-        "targetSdkVersion": 23
+        }
       }
     ],
     "buildModeSet": [
