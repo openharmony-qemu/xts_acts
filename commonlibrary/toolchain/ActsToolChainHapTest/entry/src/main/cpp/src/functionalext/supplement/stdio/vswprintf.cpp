@@ -36,7 +36,7 @@ void Vswprintf0100(wchar_t* format, ...)
     wchar_t buffer[MAX];
     va_list aptr;
     va_start(aptr, format);
-    int result = vswprintf(buffer, MAX, format, aptr); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::vswprintf(buffer, MAX, format, aptr);
     va_end(aptr);
     if (result < 0) {
         t_error("%s vswprintf get result is less than 0", __func__);
@@ -56,7 +56,7 @@ void Vswprintf0200(wchar_t* format, ...)
     wchar_t buffer[MAX];
     va_list aptr;
     va_start(aptr, format);
-    int result = vswprintf(buffer, MAX, format, aptr); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::vswprintf(buffer, MAX, format, aptr);
     va_end(aptr);
     if (result < 0) {
         t_error("%s vswprintf get result is less than 0", __func__);
@@ -76,7 +76,7 @@ void Vswprintf0300(wchar_t* format, ...)
     wchar_t buffer[MAX];
     va_list aptr;
     va_start(aptr, format);
-    int result = vswprintf(buffer, MAX, format, aptr); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::vswprintf(buffer, MAX, format, aptr);
     va_end(aptr);
     if (result < 0) {
         t_error("%s vsprintf get result is less than 0", __func__);

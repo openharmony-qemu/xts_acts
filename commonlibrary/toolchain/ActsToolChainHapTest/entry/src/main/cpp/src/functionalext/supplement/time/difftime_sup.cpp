@@ -473,21 +473,16 @@ void Difftime0100(void)
     time_t timeEnd = 20010;
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(G_RESULT_DATA) / sizeof(G_RESULT_DATA[0])); i++) {
         const char* tz = G_RESULT_DATA[i].tz;
-        const char* handlerChar;
+        const char* handlerChar = tz;
 #ifdef TIME_ZONE_SUB_TAG
         char* str = strrchr(tz, TIME_ZONE_SUB_TAG);
         if (str) {
             handlerChar = ++str;
-        } else {
-            handlerChar = tz;
         }
-#else
-        handlerChar = tz;
 #endif
         setenv("TZ", handlerChar, 1);
         tzset();
-        double returnVal;
-        returnVal = difftime(timeEnd, timeStart);
+        double returnVal = difftime(timeEnd, timeStart);
         EXPECT_TRUE("Difftime0100",
                     abs(G_RESULT_DATA[i].result - returnVal) >= 0 && abs(G_RESULT_DATA[i].result - returnVal) < 1);
     }

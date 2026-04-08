@@ -191,7 +191,8 @@ static int StrtolTestImpl(void)
     unsigned long ul;
     long long ll;
     unsigned long long ull;
-    char *s, *c;
+    char* s;
+    char* c;
 
     TEST(l, atol("2147483647"), 2147483647L, "max 32bit signed %ld != %ld");
     TEST(l, strtol("2147483647", nullptr, 0), 2147483647L, "max 32bit signed %ld != %ld");

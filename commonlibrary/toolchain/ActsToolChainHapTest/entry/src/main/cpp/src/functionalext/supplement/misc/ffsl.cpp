@@ -34,9 +34,7 @@ constexpr int K_FFSL_EXPECT_BIT16 = 16;
  */
 void Ffsl0100(void)
 {
-    int result;
-    result = ffsl(0);
-    EXPECT_EQ("Ffsl0100", result, 0);
+    EXPECT_EQ("Ffsl0100", ffsl(0), 0);
 }
 
 /**
@@ -46,9 +44,7 @@ void Ffsl0100(void)
  */
 void Ffsl0200(void)
 {
-    int result;
-    result = ffsl(K_FFSL_MASK0X8);
-    EXPECT_EQ("Ffsl0200", result, K_FFSL_EXPECT_BIT4);
+    EXPECT_EQ("Ffsl0200", ffsl(K_FFSL_MASK0X8), K_FFSL_EXPECT_BIT4);
 }
 
 /**
@@ -58,9 +54,7 @@ void Ffsl0200(void)
  */
 void Ffsl0300(void)
 {
-    int result;
-    result = ffsl(K_FFSL_MASK0X8000);
-    EXPECT_EQ("Ffsl0300", result, K_FFSL_EXPECT_BIT16);
+    EXPECT_EQ("Ffsl0300", ffsl(K_FFSL_MASK0X8000), K_FFSL_EXPECT_BIT16);
 }
 
 static int FfslTestImpl(int argc, char* argv[])

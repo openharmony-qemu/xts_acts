@@ -32,7 +32,8 @@ void PthreadSigmask0100(void)
     sigaddset(&set, SIGUSR1);
     int32_t ret = pthread_sigmask(SIG_BLOCK, &set, nullptr);
     EXPECT_EQ("PthreadSigmask0100", ret, 0);
-    sigset_t setOne, setEmpty;
+    sigset_t setOne;
+    sigset_t setEmpty;
     sigaddset(&setOne, SIGUSR2);
     sigemptyset(&setEmpty);
     ret = pthread_sigmask(SIG_BLOCK, &setOne, &setEmpty);
@@ -84,7 +85,8 @@ void PthreadSigmask0300(void)
  */
 void PthreadSigmask0400(void)
 {
-    sigset_t set, setEmpty;
+    sigset_t set;
+    sigset_t setEmpty;
     sigaddset(&set, SIGUSR1);
     sigemptyset(&setEmpty);
     int32_t ret = pthread_sigmask(SIG_BLOCK, &set, nullptr);

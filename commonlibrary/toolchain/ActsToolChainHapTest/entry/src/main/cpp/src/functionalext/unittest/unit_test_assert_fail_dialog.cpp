@@ -22,8 +22,12 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-#undef assert
-#define assert(x) ((void)((x) || (__assert_fail(#x, __FILE__, __LINE__, __func__), 0)))
+static void AssertOrFail(bool value, const char* expr, const char* func)
+{
+    if (!value) {
+        __assert_fail(expr, __FILE__, __LINE__, func);
+    }
+}
 
 #define FILE_ABORT "abort.Txt"
 #define FILE_IGNORE "ignore.Txt"
@@ -91,19 +95,19 @@ Assert_Status CallbackFunctionRetry(AssertFailureInfo assert_fail)
 void ProcessAbort()
 {
     set_assert_callback(CallbackFunctionAbort);
-    assert(0);
+    AssertOrFail(false, "0", __func__);
 }
 
 void ProcessIgnore()
 {
     set_assert_callback(CallbackFunctionIgnore);
-    assert(0);
+    AssertOrFail(false, "0", __func__);
 }
 
 void ProcessRetry()
 {
     set_assert_callback(CallbackFunctionRetry);
-    assert(0);
+    AssertOrFail(false, "0", __func__);
 }
 
 static pid_t ForkAndRun(void (*fn)(), const char* name)

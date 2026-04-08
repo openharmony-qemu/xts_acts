@@ -24,14 +24,12 @@
  */
 void Chdir0100(void)
 {
-    char buf[30];
+    char buf[30]{};
 
     int result = chdir("/data");
     if (result) {
         t_error("%s fchdir failed, result is %d\n", __func__, result);
     }
-
-    memset(buf, 0, sizeof(buf)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
 
     char* ret = getcwd(buf, sizeof(buf));
     if (!ret) {

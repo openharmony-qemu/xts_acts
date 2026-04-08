@@ -35,7 +35,7 @@ void Wmemcpy0100(void)
     wchar_t dest[30];
     wchar_t src[] = L"This is a c test for wmemcpy";
     int n = 13;
-    wmemcpy(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemcpy(dest, src, n);
     if (wcsncmp(dest, src, n)) {
         t_error("%s The string of dest is not equal to src\n", __func__);
     }
@@ -51,7 +51,7 @@ void Wmemcpy0200(void)
     wchar_t dest[3];
     wchar_t src[] = L"aaa";
     int n = 3;
-    wmemcpy(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemcpy(dest, src, n);
     if (wcsncmp(dest, src, n)) {
         t_error("%s The string of dest is not equal to src\n", __func__);
     }
@@ -67,7 +67,7 @@ void Wmemcpy0300(void)
     wchar_t dest[3];
     wchar_t src[] = L"aaa";
     int n = 0;
-    wmemcpy(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemcpy(dest, src, n);
     if (!wcscmp(dest, src)) {
         t_error("%s The string of dest is equal to src\n", __func__);
     }
@@ -82,7 +82,7 @@ void Wmemcpy0400(void)
 {
     wchar_t dest[30] = L"Original content";
     wchar_t src[] = L"Should not be copied";
-    wmemcpy(dest, src, 0); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemcpy(dest, src, 0);
     if (wcscmp(dest, L"Original content")) {
         t_error("%s Destination was modified when n=0\n", __func__);
     }
@@ -98,7 +98,7 @@ void Wmemcpy0500(void)
     wchar_t dest[30] = L"Original content";
     wchar_t src[] = L"";
     size_t n = 0;
-    wmemcpy(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemcpy(dest, src, n);
     if (wcscmp(dest, L"Original content")) {
         t_error("%s Destination was modified when copying empty string\n", __func__);
     }
@@ -114,7 +114,7 @@ void Wmemcpy0600(void)
     wchar_t dest[30];
     wchar_t src[] = L"test return value";
     size_t n = wcslen(src);
-    wchar_t* ret = wmemcpy(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    wchar_t* ret = std::wmemcpy(dest, src, n);
     if (ret != dest) {
         t_error("%s Return value is not destination pointer\n", __func__);
     }
@@ -131,7 +131,7 @@ void Wmemcpy0700(void)
     wchar_t dest[8]; // Exactly fits the 7 characters + no null terminator
     size_t n = 7;    // Copy exactly 7 characters
 
-    wmemcpy(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemcpy(dest, src, n);
 
     if (wcsncmp(dest, src, n)) {
         t_error("%s Exact buffer copy failed\n", __func__);
@@ -149,7 +149,7 @@ void Wmemcpy0800(void)
     wchar_t src[] = L"Testing restrict semantics";
     size_t n = 10;
 
-    wmemcpy(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemcpy(dest, src, n);
 
     // Verify independent memory regions
     src[0] = L'X'; // Modify source
@@ -179,7 +179,7 @@ void Wmemcpy0900(void)
         src[i] = L'A' + (i % K_LATIN_ALPHABET_SIZE);
     }
 
-    wmemcpy(dest, src, bufferSize); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemcpy(dest, src, bufferSize);
 
     for (size_t i = 0; i < bufferSize; i++) {
         if (dest[i] != src[i]) {
@@ -204,7 +204,7 @@ void Wmemcpy1000(void)
     wchar_t src[] = L"Partial";
     size_t n = 7; // Copy 7 characters
 
-    wmemcpy(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemcpy(dest, src, n);
 
     // Check copied part
     if (wcsncmp(dest, src, n)) {
@@ -230,7 +230,7 @@ void Wmemcpy1100(void)
     wchar_t dest[30];
     wchar_t src[] = L"Complete copy test";
     size_t n = wcslen(src) + 1; // Include null terminator
-    wmemcpy(dest, src, n);      /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemcpy(dest, src, n);
     if (wcscmp(dest, src)) {
         t_error("%s The string of dest is not equal to src\n", __func__);
     }
@@ -250,7 +250,7 @@ void Wmemcpy1200(void)
         original[wi] = dest[wi];
     }
 
-    wmemcpy(dest, src, 0); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemcpy(dest, src, 0);
 
     if (wcscmp(dest, original)) {
         t_error("%s Destination was modified when n=0\n", __func__);
@@ -266,13 +266,13 @@ void Wmemcpy1300(void)
 {
     wchar_t dest[30];
     wchar_t src[] = L"中文测试 こんにちは Привет";
-    size_t n = 8;          // Copy first 8 wide characters
-    wmemcpy(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    size_t n = 8; // Copy first 8 wide characters
+    std::wmemcpy(dest, src, n);
 
     dest[n] = L'\0'; // Null terminate for comparison
 
     wchar_t expected[9];
-    wcsncpy(expected, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wcsncpy(expected, src, n);
     expected[n] = L'\0';
 
     if (wcscmp(dest, expected)) {
@@ -290,7 +290,7 @@ void Wmemcpy1400(void)
     wchar_t dest[20];
     wchar_t src[] = L"test return value";
     size_t n = wcslen(src);
-    wchar_t* ret = wmemcpy(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    wchar_t* ret = std::wmemcpy(dest, src, n);
 
     if (ret != dest) {
         t_error("%s Return value is not destination pointer\n", __func__);

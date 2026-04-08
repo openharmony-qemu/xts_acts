@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <algorithm>
 #include <cstring>
 #include "functionalext.h"
 
@@ -41,7 +42,7 @@ void Memccpy0100(void)
         EXPECT_EQ("Memccpy0100", dest[i], src[i]);
     }
 
-    memset(dest, 0x0, sizeof(dest)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(dest, sizeof(dest), '\0');
     rev = memccpy(dest, src, ' ', sizeof(src));
     EXPECT_PTRNE("Memccpy0100", rev, nullptr);
     EXPECT_EQ("Memccpy0100", strlen(dest), strlen("musl "));

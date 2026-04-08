@@ -175,12 +175,11 @@ void Wcsnrtombs0100(void)
     if (pid == -1) {
         t_error("Wcsnrtombs0100: Error forking process");
     } else if (pid == 0) {
-        char buffer[32];
+        char buffer[32]{};
         mbstate_t mbs;
         size_t wn = 4;
         size_t n = 4;
         mbrlen(nullptr, 0, &mbs);
-        memset(buffer, 0, sizeof(buffer)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
         wcsnrtombs(buffer, nullptr, wn, n, &mbs);
     } else {
         int status;

@@ -18,40 +18,96 @@
 #ifdef _XOPEN_SOURCE
 #include <ftw.h>
 #include "libc_test_shim.h"
-#define t(t) (t*)nullptr;
-#define f(t, n)      \
-    {                \
-        t* y = &x.n; \
-    }
-#define C(n)           \
-    switch (0) {       \
-        case 0:        \
-            (void)(n); \
-        default:       \
-            break;     \
-    }
-static void f()
+
+template <typename T> static void TypePun()
 {
-    t(struct FTW) t(struct stat) C(FTW_F) C(FTW_D) C(FTW_DNR) C(FTW_DP) C(FTW_NS) C(FTW_SL) C(FTW_SLN) C(FTW_PHYS)
-        C(FTW_MOUNT) C(FTW_DEPTH) C(FTW_CHDIR) C(S_IRWXU) C(S_IRUSR) C(S_IWUSR) C(S_IXUSR) C(S_IRWXG) C(S_IRGRP)
-            C(S_IWGRP) C(S_IXGRP) C(S_IRWXO) C(S_IROTH) C(S_IWOTH) C(S_IXOTH) C(S_ISUID) C(S_ISGID) C(S_ISVTX) C(S_IFMT)
-                C(S_IFBLK) C(S_IFCHR) C(S_IFIFO) C(S_IFREG) C(S_IFDIR) C(S_IFLNK) C(S_IFSOCK) C(S_ISBLK(0))
-                    C(S_ISCHR(0)) C(S_ISDIR(0)) C(S_ISFIFO(0)) C(S_ISREG(0)) C(S_ISLNK(0)) C(S_ISSOCK(0))
+    (void)static_cast<T*>(nullptr);
+}
+
+template <typename T, typename F> static void CheckField(T& obj, F T::*member)
+{
+    F* ptr = &(obj.*member);
+    (void)ptr;
+}
+
+static void IgnoreConst(int value)
+{
+    (void)value;
+}
+
+static void FtwBody()
+{
+    TypePun<struct FTW>();
+    TypePun<struct stat>();
+    IgnoreConst(FTW_F);
+    IgnoreConst(FTW_D);
+    IgnoreConst(FTW_DNR);
+    IgnoreConst(FTW_DP);
+    IgnoreConst(FTW_NS);
+    IgnoreConst(FTW_SL);
+    IgnoreConst(FTW_SLN);
+    IgnoreConst(FTW_PHYS);
+    IgnoreConst(FTW_MOUNT);
+    IgnoreConst(FTW_DEPTH);
+    IgnoreConst(FTW_CHDIR);
+    IgnoreConst(S_IRWXU);
+    IgnoreConst(S_IRUSR);
+    IgnoreConst(S_IWUSR);
+    IgnoreConst(S_IXUSR);
+    IgnoreConst(S_IRWXG);
+    IgnoreConst(S_IRGRP);
+    IgnoreConst(S_IWGRP);
+    IgnoreConst(S_IXGRP);
+    IgnoreConst(S_IRWXO);
+    IgnoreConst(S_IROTH);
+    IgnoreConst(S_IWOTH);
+    IgnoreConst(S_IXOTH);
+    IgnoreConst(S_ISUID);
+    IgnoreConst(S_ISGID);
+    IgnoreConst(S_ISVTX);
+    IgnoreConst(S_IFMT);
+    IgnoreConst(S_IFBLK);
+    IgnoreConst(S_IFCHR);
+    IgnoreConst(S_IFIFO);
+    IgnoreConst(S_IFREG);
+    IgnoreConst(S_IFDIR);
+    IgnoreConst(S_IFLNK);
+    IgnoreConst(S_IFSOCK);
+    IgnoreConst(S_ISBLK(0));
+    IgnoreConst(S_ISCHR(0));
+    IgnoreConst(S_ISDIR(0));
+    IgnoreConst(S_ISFIFO(0));
+    IgnoreConst(S_ISREG(0));
+    IgnoreConst(S_ISLNK(0));
+    IgnoreConst(S_ISSOCK(0));
     {
         struct FTW x;
-        f(int, base) f(int, level)
+        CheckField(x, &FTW::base);
+        CheckField(x, &FTW::level);
     }
     {
         struct stat x;
-        f(dev_t, st_dev) f(ino_t, st_ino) f(mode_t, st_mode) f(nlink_t, st_nlink) f(uid_t, st_uid) f(gid_t, st_gid)
-            f(dev_t, st_rdev) f(off_t, st_size) f(struct timespec, st_atim) f(struct timespec, st_mtim)
-                f(struct timespec, st_ctim) f(blksize_t, st_blksize) f(blkcnt_t, st_blocks)
+        CheckField(x, &stat::st_dev);
+        CheckField(x, &stat::st_ino);
+        CheckField(x, &stat::st_mode);
+        CheckField(x, &stat::st_nlink);
+        CheckField(x, &stat::st_uid);
+        CheckField(x, &stat::st_gid);
+        CheckField(x, &stat::st_rdev);
+        CheckField(x, &stat::st_size);
+        CheckField(x, &stat::st_atim);
+        CheckField(x, &stat::st_mtim);
+        CheckField(x, &stat::st_ctim);
+        CheckField(x, &stat::st_blksize);
+        CheckField(x, &stat::st_blocks);
     }
     {
         int (*p)(const char*, int (*)(const char*, const struct stat*, int), int) = ftw;
+        (void)p;
     }
     {
         int (*p)(const char*, int (*)(const char*, const struct stat*, int, struct FTW*), int, int) = nftw;
+        (void)p;
     }
 }
 #endif
@@ -59,7 +115,7 @@ static void f()
 int FtwTest()
 {
 #ifdef _XOPEN_SOURCE
-    f();
+    FtwBody();
 #endif
     return SUCCESS_CODE;
 }

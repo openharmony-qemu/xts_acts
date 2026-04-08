@@ -20,6 +20,8 @@
 
 namespace {
 constexpr int K_STRTOD_ROUND_TRIP_ITERATIONS = 100;
+constexpr double kStrtodWant16 = 16.0;
+constexpr double kStrtodWant17 = 17.0;
 } // namespace
 
 /* r = place to store result
@@ -40,19 +42,20 @@ int StrtodSimpleTest()
     int status = SUCCESS_CODE;
 
     int i;
-    double d, d2;
+    double d;
+    double d2;
     char buf[1000];
 
     for (i = 0; i < K_STRTOD_ROUND_TRIP_ITERATIONS; i++) {
         d = sin(i);
-        (void)snprintf(buf, sizeof buf, "%.300f", d); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+        (void)std::snprintf(buf, sizeof buf, "%.300f", d);
         d2 = strtod(buf, nullptr);
         CheckDoubleEq(status, "strtod(buf, nullptr)", d2, d, "round trip fail %a != %a (%a)");
     }
 
     d = strtod("0x1p4", nullptr);
-    CheckDoubleEq(status, "strtod(\"0x1p4\", nullptr)", d, 16.0, "hex float %a != %a");
+    CheckDoubleEq(status, "strtod(\"0x1p4\", nullptr)", d, kStrtodWant16, "hex float %a != %a");
     d = strtod("0x1.1p4", nullptr);
-    CheckDoubleEq(status, "strtod(\"0x1.1p4\", nullptr)", d, 17.0, "hex float %a != %a");
+    CheckDoubleEq(status, "strtod(\"0x1.1p4\", nullptr)", d, kStrtodWant17, "hex float %a != %a");
     return status;
 }

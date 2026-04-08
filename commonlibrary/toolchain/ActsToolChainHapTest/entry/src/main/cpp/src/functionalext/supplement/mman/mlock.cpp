@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <algorithm>
 #include <cstdlib>
 #include <sys/mman.h>
 
@@ -31,7 +32,7 @@ void Mlock0100(void)
         EXPECT_PTRNE("Mlock0100", memory, nullptr);
         return;
     }
-    memset(memory, '\0', memsize); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(memory, memsize, '\0');
     int result = mlock(memory, memsize);
     EXPECT_NE("Mlock0100", result, ERREXPECT);
 

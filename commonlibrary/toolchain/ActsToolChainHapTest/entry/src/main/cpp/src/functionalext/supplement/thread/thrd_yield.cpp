@@ -38,7 +38,8 @@ double Ustimer(struct timespec tss, struct timespec tse)
 
 void Yieldfunc(void)
 {
-    struct timespec tss, tse;
+    struct timespec tss;
+    struct timespec tse;
     (void)timespec_get(&tss, TIME_UTC);
     do {
         thrd_yield();
@@ -54,7 +55,8 @@ void Yieldfunc(void)
 void ThrdYield0100(void)
 {
     int result;
-    struct timespec tss, tse;
+    struct timespec tss;
+    struct timespec tse;
 
     result = timespec_get(&tss, TIME_UTC);
     if (result != TIME_UTC) {

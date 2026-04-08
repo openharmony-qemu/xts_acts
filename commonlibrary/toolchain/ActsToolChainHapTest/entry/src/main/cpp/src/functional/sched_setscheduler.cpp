@@ -36,7 +36,8 @@ int SchedSetschedulerTest()
     int status = SUCCESS_CODE;
 
     struct sched_param param;
-    int maxpri, minpri;
+    int maxpri;
+    int minpri;
     int sched;
     pid_t pid;
 

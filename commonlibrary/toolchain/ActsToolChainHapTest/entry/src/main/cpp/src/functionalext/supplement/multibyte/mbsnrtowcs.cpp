@@ -35,8 +35,7 @@ void Mbsnrtowcs0100(void)
 {
     const char* test = "musl test";
 
-    wchar_t wc[ARRY_MAX];
-    memset(wc, 0, sizeof(wc)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    wchar_t wc[ARRY_MAX]{};
 
     size_t result = mbsnrtowcs(wc, &test, K_MBSNRTOWCS_IN_BYTE_LEN, ARRY_MAX, nullptr);
     if (result != -1) {
@@ -54,8 +53,7 @@ void Mbsnrtowcs0100(void)
 void Mbsnrtowcs0200(void)
 {
     const char* test = "musl test";
-    wchar_t wc[ARRY_MAX];
-    memset(wc, 0, sizeof(wc)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    wchar_t wc[ARRY_MAX]{};
     size_t result = mbsnrtowcs(wc, &test, 11, ARRY_MAX, nullptr);
 
     EXPECT_EQ("Mbsnrtowcs0200", result, K_MUSL_TEST_WIDE_COUNT);

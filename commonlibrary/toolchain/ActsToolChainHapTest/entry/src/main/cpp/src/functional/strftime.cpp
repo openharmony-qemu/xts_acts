@@ -28,7 +28,6 @@ static char g_buffer[100];
 static void CheckStrftime(const char* format, const struct tm* tm, const char* expected)
 {
     size_t resultLength = strftime(g_buffer, sizeof(g_buffer), format, tm);
-
     if (resultLength != 0 && strcmp(g_buffer, expected) != 0) {
         t_error("\"%s\": expected \"%s\", got \"%s\"\n", format, expected, g_buffer);
     } else if (resultLength == 0 && strlen(expected) != 0) {

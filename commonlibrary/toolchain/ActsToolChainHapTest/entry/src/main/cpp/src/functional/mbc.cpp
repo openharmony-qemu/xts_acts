@@ -26,66 +26,65 @@
  * x = expected result
  * m = message to print on failure
  *
- * Always reset mbstate_t st (not st2) before each check, matching original behavior: tests that use
- * st2 rely on st2 carrying conversion state across consecutive mbrtowc/mbsrtowcs calls.
+ * Reset pointer `pst` is always `&st` here (even when `f` uses `&st2`): the original libc-test macro
+ * always zeroed `st` before each check so `st2` keeps partial conversion state across mbrtowc →
+ * mbsrtowcs. Passing `&st2` as `pst` would clear the wrong object and break resume cases.
  */
-// NOLINTNEXTLINE(G.PRE.10)
-#define t(f, x, m)                                                                                  \
-    do {                                                                                            \
-        int tmp;                                                                                    \
-        (void)(memset(&st, 0, sizeof(st)) /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */, \
-               (tmp = (f)) == (x) || t_error("%s failed (%s) got %d want %d\n", #f, m, tmp, (x)));  \
+#define t(f, x, m, pst)                                                                            \
+    do {                                                                                           \
+        int tmp;                                                                                   \
+        *(pst) = mbstate_t{};                                                                      \
+        (void)((tmp = (f)) == (x) || t_error("%s failed (%s) got %d want %d\n", #f, m, tmp, (x))); \
     } while (0)
-// NOLINTNEXTLINE(G.PRE.10)
-#define TCHAR(f, x, m)                                                                                     \
+#define TCHAR(f, x, m, pst)                                                                                \
     do {                                                                                                   \
         int tmp;                                                                                           \
-        (void)(memset(&st, 0, sizeof(st)) /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */,        \
-               (tmp = (f)) == (x) || t_error("%s failed (%s) got 0x%04x want 0x%04x\n", #f, m, tmp, (x))); \
+        *(pst) = mbstate_t{};                                                                              \
+        (void)((tmp = (f)) == (x) || t_error("%s failed (%s) got 0x%04x want 0x%04x\n", #f, m, tmp, (x))); \
     } while (0)
 
 static void MbcTestMbsrtowcsCases(const char*& cs, mbstate_t& st, wchar_t* wcs)
 {
-    t(mbsrtowcs(wcs, (cs = "abcdef", &cs), 3, &st), 3, "wrong semantics for wcs buf len");
-    t(mbsrtowcs(wcs, (cs = "abcdef", &cs), 8, &st), 6, "wrong semantics for wcs buf len");
-    t(mbsrtowcs(nullptr, (cs = "abcdef", &cs), 2, &st), 6, "wrong semantics for nullptr wcs");
+    t(mbsrtowcs(wcs, (cs = "abcdef", &cs), 3, &st), 3, "wrong semantics for wcs buf len", &st);
+    t(mbsrtowcs(wcs, (cs = "abcdef", &cs), 8, &st), 6, "wrong semantics for wcs buf len", &st);
+    t(mbsrtowcs(nullptr, (cs = "abcdef", &cs), 2, &st), 6, "wrong semantics for nullptr wcs", &st);
 }
 
 static void MbcTestUtf8IllegalAndBoundaryCases(mbstate_t& st, wchar_t& wc)
 {
-    t(mbrtowc(&wc, "\x80", 1, &st), -1, "failed to catch error");
-    t(mbrtowc(&wc, "\xc0", 1, &st), -1, "failed to catch illegal initial");
-    t(mbrtowc(&wc, "\xc0\x80", 2, &st), -1, "aliasing nul");
-    t(mbrtowc(&wc, "\xc0\xaf", 2, &st), -1, "aliasing slash");
-    t(mbrtowc(&wc, "\xe0\x80\xaf", 3, &st), -1, "aliasing slash");
-    t(mbrtowc(&wc, "\xf0\x80\x80\xaf", 4, &st), -1, "aliasing slash");
-    t(mbrtowc(&wc, "\xf8\x80\x80\x80\xaf", 5, &st), -1, "aliasing slash");
-    t(mbrtowc(&wc, "\xfc\x80\x80\x80\x80\xaf", 6, &st), -1, "aliasing slash");
-    t(mbrtowc(&wc, "\xe0\x82\x80", 3, &st), -1, "aliasing U+0080");
-    t(mbrtowc(&wc, "\xe0\x9f\xbf", 3, &st), -1, "aliasing U+07FF");
-    t(mbrtowc(&wc, "\xf0\x80\xa0\x80", 4, &st), -1, "aliasing U+0800");
-    t(mbrtowc(&wc, "\xf0\x8f\xbf\xbd", 4, &st), -1, "aliasing U+FFFD");
-    t(mbrtowc(&wc, "\xed\xa0\x80", 3, &st), -1, "failed to catch surrogate");
-    t(mbrtowc(&wc, "\xef\xbf\xbe", 3, &st), 3, "failed to accept U+FFFE");
-    t(mbrtowc(&wc, "\xef\xbf\xbf", 3, &st), 3, "failed to accept U+FFFF");
-    t(mbrtowc(&wc, "\xf4\x8f\xbf\xbe", 4, &st), 4, "failed to accept U+10FFFE");
-    t(mbrtowc(&wc, "\xf4\x8f\xbf\xbf", 4, &st), 4, "failed to accept U+10FFFF");
+    t(mbrtowc(&wc, "\x80", 1, &st), -1, "failed to catch error", &st);
+    t(mbrtowc(&wc, "\xc0", 1, &st), -1, "failed to catch illegal initial", &st);
+    t(mbrtowc(&wc, "\xc0\x80", 2, &st), -1, "aliasing nul", &st);
+    t(mbrtowc(&wc, "\xc0\xaf", 2, &st), -1, "aliasing slash", &st);
+    t(mbrtowc(&wc, "\xe0\x80\xaf", 3, &st), -1, "aliasing slash", &st);
+    t(mbrtowc(&wc, "\xf0\x80\x80\xaf", 4, &st), -1, "aliasing slash", &st);
+    t(mbrtowc(&wc, "\xf8\x80\x80\x80\xaf", 5, &st), -1, "aliasing slash", &st);
+    t(mbrtowc(&wc, "\xfc\x80\x80\x80\x80\xaf", 6, &st), -1, "aliasing slash", &st);
+    t(mbrtowc(&wc, "\xe0\x82\x80", 3, &st), -1, "aliasing U+0080", &st);
+    t(mbrtowc(&wc, "\xe0\x9f\xbf", 3, &st), -1, "aliasing U+07FF", &st);
+    t(mbrtowc(&wc, "\xf0\x80\xa0\x80", 4, &st), -1, "aliasing U+0800", &st);
+    t(mbrtowc(&wc, "\xf0\x8f\xbf\xbd", 4, &st), -1, "aliasing U+FFFD", &st);
+    t(mbrtowc(&wc, "\xed\xa0\x80", 3, &st), -1, "failed to catch surrogate", &st);
+    t(mbrtowc(&wc, "\xef\xbf\xbe", 3, &st), 3, "failed to accept U+FFFE", &st);
+    t(mbrtowc(&wc, "\xef\xbf\xbf", 3, &st), 3, "failed to accept U+FFFF", &st);
+    t(mbrtowc(&wc, "\xf4\x8f\xbf\xbe", 4, &st), 4, "failed to accept U+10FFFE", &st);
+    t(mbrtowc(&wc, "\xf4\x8f\xbf\xbf", 4, &st), 4, "failed to accept U+10FFFF", &st);
 }
 
 static void MbcTestUtf8ResumeCases(const char*& cs, mbstate_t& st, mbstate_t& st2, wchar_t& wc, wchar_t* wcs)
 {
-    t(mbrtowc(&wc, "\xc2\x80", 2, &st), 2, "wrong length");
-    TCHAR((mbrtowc(&wc, "\xc2\x80", 2, &st), wc), 0x80, "wrong char");
-    t(mbrtowc(&wc, "\xe0\xa0\x80", 3, &st), 3, "wrong length");
-    TCHAR((mbrtowc(&wc, "\xe0\xa0\x80", 3, &st), wc), 0x800, "wrong char");
-    t(mbrtowc(&wc, "\xf0\x90\x80\x80", 4, &st), 4, "wrong length");
-    TCHAR((mbrtowc(&wc, "\xf0\x90\x80\x80", 4, &st), wc), 0x10000, "wrong char");
-    memset(&st2, 0, sizeof(st2)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-    t(mbrtowc(&wc, "\xc2", 1, &st2), -2, "failed to accept initial byte");
-    t(mbrtowc(&wc, "\x80", 1, &st2), 1, "failed to resume");
-    TCHAR(wc, 0x80, "wrong char");
-    memset(&st2, 0, sizeof(st2)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-    t(mbrtowc(&wc, "\xc2", 1, &st2), -2, "failed to accept initial byte");
+    t(mbrtowc(&wc, "\xc2\x80", 2, &st), 2, "wrong length", &st);
+    TCHAR((mbrtowc(&wc, "\xc2\x80", 2, &st), wc), 0x80, "wrong char", &st);
+    t(mbrtowc(&wc, "\xe0\xa0\x80", 3, &st), 3, "wrong length", &st);
+    TCHAR((mbrtowc(&wc, "\xe0\xa0\x80", 3, &st), wc), 0x800, "wrong char", &st);
+    t(mbrtowc(&wc, "\xf0\x90\x80\x80", 4, &st), 4, "wrong length", &st);
+    TCHAR((mbrtowc(&wc, "\xf0\x90\x80\x80", 4, &st), wc), 0x10000, "wrong char", &st);
+    st2 = mbstate_t{};
+    t(mbrtowc(&wc, "\xc2", 1, &st2), -2, "failed to accept initial byte", &st);
+    t(mbrtowc(&wc, "\x80", 1, &st2), 1, "failed to resume", &st);
+    TCHAR(wc, 0x80, "wrong char", &st);
+    st2 = mbstate_t{};
+    t(mbrtowc(&wc, "\xc2", 1, &st2), -2, "failed to accept initial byte", &st);
     t(mbsrtowcs(wcs,
                 (cs = "\xa0"
                       "abc",
@@ -93,17 +92,20 @@ static void MbcTestUtf8ResumeCases(const char*& cs, mbstate_t& st, mbstate_t& st
                 32,
                 &st2),
       4,
-      "failed to resume");
-    TCHAR(wcs[0], 0xa0, "wrong char");
-    TCHAR(wcs[1], 'a', "wrong char");
-    t(!cs, 1, "wrong final position");
+      "failed to resume",
+      &st);
+    TCHAR(wcs[0], 0xa0, "wrong char", &st);
+    TCHAR(wcs[1], 'a', "wrong char", &st);
+    t(!cs, 1, "wrong final position", &st);
 }
 
 static int MbcTestImpl(void)
 {
     const char* cs;
-    mbstate_t st, st2;
-    wchar_t wc, wcs[32];
+    mbstate_t st;
+    mbstate_t st2;
+    wchar_t wc;
+    wchar_t wcs[32];
 
     (void)(setlocale(LC_CTYPE, "en_US.UTF-8") || setlocale(LC_CTYPE, "en_GB.UTF-8") ||
            setlocale(LC_CTYPE, "en.UTF-8") || setlocale(LC_CTYPE, "POSIX.UTF-8") || setlocale(LC_CTYPE, "C.UTF-8") ||

@@ -26,12 +26,12 @@ namespace {
 constexpr int K_ARGC_THRESHOLD_FOR_ARGV_BUF_LEN = 2;
 } // namespace
 
-#define errExitEN(en, msg)  \
-    do {                    \
-        errno = en;         \
-        perror(msg);        \
-        exit(EXIT_FAILURE); \
-    } while (0)
+static void ErrExitEN(int en, const char* msg)
+{
+    errno = en;
+    perror(msg);
+    exit(EXIT_FAILURE);
+}
 
 static void* Threadfunc(void* parm)
 {
@@ -49,12 +49,12 @@ static int PthreadGetnameNpTestImpl(int argc, char** argv)
 
     rc = pthread_getname_np(pthread_self(), threadName, NAMELEN - 1);
     if (rc != ERANGE) {
-        errExitEN(rc, "pthread_getname_np(invalid args[len]) failed");
+        ErrExitEN(rc, "pthread_getname_np(invalid args[len]) failed");
     }
 
     rc = pthread_getname_np(pthread_self(), threadName, NAMELEN);
     if (rc != 0) {
-        errExitEN(rc, "pthread_getname_np failed");
+        ErrExitEN(rc, "pthread_getname_np failed");
     }
     if (strcmp(threadName, defaultName) != 0) {
         perror("pthread name comparison failed");
@@ -62,17 +62,17 @@ static int PthreadGetnameNpTestImpl(int argc, char** argv)
 
     rc = pthread_create(&thread, nullptr, Threadfunc, nullptr);
     if (rc != 0) {
-        errExitEN(rc, "pthread_create failed");
+        ErrExitEN(rc, "pthread_create failed");
     }
 
     rc = pthread_setname_np(thread, (argc > 1) ? argv[1] : setThreadName);
     if (rc != 0) {
-        errExitEN(rc, "pthread_setname_np failed");
+        ErrExitEN(rc, "pthread_setname_np failed");
     }
 
     rc = pthread_getname_np(thread, threadName, (argc > K_ARGC_THRESHOLD_FOR_ARGV_BUF_LEN) ? atoi(argv[1]) : NAMELEN);
     if (rc != 0) {
-        errExitEN(rc, "pthread_getname_np failed");
+        ErrExitEN(rc, "pthread_getname_np failed");
     }
     if (strcmp(threadName, setThreadName) != 0) {
         perror("pthread name comparison failed");
@@ -80,7 +80,7 @@ static int PthreadGetnameNpTestImpl(int argc, char** argv)
 
     rc = pthread_join(thread, nullptr);
     if (rc != 0) {
-        errExitEN(rc, "pthread_join failed");
+        ErrExitEN(rc, "pthread_join failed");
     }
 
     exit(EXIT_SUCCESS);

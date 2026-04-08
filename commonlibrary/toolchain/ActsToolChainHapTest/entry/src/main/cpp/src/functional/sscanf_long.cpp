@@ -57,17 +57,15 @@ int SscanfLongTest()
      * same issue with %d except then storing the conversion
      * result is undefined behaviour
      */
-    i = sscanf(s, "%f %c", &f, &c);
-    /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-
+    i = std::sscanf(s, "%f %c", &f, &c);
     if (i != K_SSCANF_WANT_FLOAT_AND_CHAR) {
         LibcTestError(&status, "sscanf returned %d, want 2\n", i);
     }
     if (f != INFINITY) {
-        LibcTestError(&status, "sscanf(longnum, \"%%f\") read %f, want INF\n", f);
+        LibcTestError(&status, "std::sscanf(longnum, \"%%f\") read %f, want INF\n", f);
     }
     if (c != '1') {
-        LibcTestError(&status, "sscanf(\"1\", %%c) read '%c', want '1'\n", c);
+        LibcTestError(&status, "std::sscanf(\"1\", %%c) read '%c', want '1'\n", c);
     }
     free(s);
     return status;

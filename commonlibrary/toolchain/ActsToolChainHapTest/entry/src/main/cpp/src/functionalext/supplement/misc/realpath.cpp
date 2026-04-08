@@ -13,10 +13,19 @@
  * limitations under the License.
  */
 
+#include <algorithm>
 #include <cstdlib>
 #include <cstring>
 #include <unistd.h>
 #include "functionalext.h"
+
+namespace {
+#if defined(PATH_MAX) && (PATH_MAX > 0)
+constexpr size_t kRealpathBufCap = static_cast<size_t>(PATH_MAX) + 1U;
+#else
+constexpr size_t kRealpathBufCap = 4096U;
+#endif
+} // namespace
 
 /**
  * @tc.name      : Realpath0100
@@ -25,11 +34,7 @@
  */
 void Realpath0100(void)
 {
-#if defined(PATH_MAX) && (PATH_MAX > 0)
-    char actualPath[PATH_MAX];
-#else
-    char actualPath[4096];
-#endif
+    char actualPath[kRealpathBufCap];
     char* ret = realpath("/system/bin/../etc", actualPath);
     EXPECT_STREQ("Realpath0100", ret, "/system/etc");
     EXPECT_STREQ("Realpath0100", actualPath, "/system/etc");
@@ -42,14 +47,10 @@ void Realpath0100(void)
  */
 void Realpath0200(void)
 {
-#if defined(PATH_MAX) && (PATH_MAX > 0)
-    char buf[PATH_MAX] = { 0 };
-#else
-    char buf[4096] = { 0 };
-#endif
+    char buf[kRealpathBufCap] = { 0 };
     char* ret = realpath("/system/bin/../mypth", buf);
     EXPECT_PTREQ("Realpath0200", ret, nullptr);
-    memset(buf, 0, sizeof(buf));
+    std::fill_n(buf, kRealpathBufCap, '\0');
     ret = realpath("/system/bin/../etc", buf);
     EXPECT_STREQ("Realpath0200", ret, "/system/etc");
 }

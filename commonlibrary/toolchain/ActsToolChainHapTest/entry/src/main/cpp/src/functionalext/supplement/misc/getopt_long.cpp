@@ -29,8 +29,7 @@ const int32_t FAILED = -1;
  */
 void GetoptLong0100(int a)
 {
-    int c = a;
-    EXPECT_NE("GetoptLong0100", c, FAILED);
+    EXPECT_NE("GetoptLong0100", a, FAILED);
 }
 
 /**
@@ -40,15 +39,13 @@ void GetoptLong0100(int a)
  */
 void GetoptLong0200(int b)
 {
-    int c = b;
-    EXPECT_EQ("GetoptLong0200", c, FAILED);
+    EXPECT_EQ("GetoptLong0200", b, FAILED);
 }
 
 static int GetoptLongTestImpl(int argc, char* argv[])
 {
     argc = K_MINIMAL_ARGC_WITH_ONE_OPTION;
     argv[1] = "-n";
-    char* lOptArg;
     char* const shortOptions = "nbl:";
     struct option longOptions[] = {
         { "name", 0, nullptr, 'n' },
@@ -56,8 +53,7 @@ static int GetoptLongTestImpl(int argc, char* argv[])
         { "love", 1, nullptr, 'l' },
         { nullptr, 0, nullptr, 0 },
     };
-    int c;
-    c = getopt_long(argc, argv, shortOptions, longOptions, nullptr);
+    int c = getopt_long(argc, argv, shortOptions, longOptions, nullptr);
     GetoptLong0100(c);
     c = getopt_long(0, nullptr, nullptr, nullptr, nullptr);
     GetoptLong0200(c);

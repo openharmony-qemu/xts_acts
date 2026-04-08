@@ -57,7 +57,8 @@ int TlsInitTest()
     int status = SUCCESS_CODE;
 
     pthread_t t[K_TLS_WORKER_THREADS];
-    int i, j;
+    int i;
+    int j;
 
     if (g_tlsFix != K_TLS_FIXED_INIT) {
         LibcTestError(&status, "fixed init failed: want 23 got %d\n", g_tlsFix);

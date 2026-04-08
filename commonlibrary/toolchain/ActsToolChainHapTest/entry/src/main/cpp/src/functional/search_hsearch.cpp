@@ -21,7 +21,21 @@
 #include "test.h"
 
 namespace {
+constexpr size_t K_HCREATE_INVALID_SIZE = static_cast<size_t>(-1);
 constexpr size_t K_HSEARCH_BUCKET_COUNT = 13U;
+constexpr int kHsearchVal0 = 0;
+constexpr int kHsearchVal1 = 1;
+constexpr int kHsearchVal2 = 2;
+constexpr int kHsearchVal3 = 3;
+constexpr int kHsearchVal4 = 4;
+constexpr int kHsearchVal5 = 5;
+constexpr int kHsearchVal6 = 6;
+constexpr int kHsearchVal7 = 7;
+constexpr int kHsearchVal8 = 8;
+constexpr int kHsearchVal9 = 9;
+constexpr int kHsearchVal10 = 10;
+constexpr intptr_t kHsearchWant7 = 7;
+constexpr intptr_t kHsearchWant10 = 10;
 } // namespace
 
 static ENTRY* HsearchSet(const char* key, int value)
@@ -49,38 +63,38 @@ static int SearchHsearchTestImpl()
 {
     ENTRY* e;
 
-    if (hcreate(-1) || errno != ENOMEM) {
+    if (hcreate(K_HCREATE_INVALID_SIZE) || errno != ENOMEM) {
         t_error("hcreate((size_t)-1) should fail with ENOMEM got %s\n", strerror(errno));
     }
     if (!hcreate(K_HSEARCH_BUCKET_COUNT)) {
-        t_error("hcreate(13) failed\n");
+        t_error("hcreate(%zu) failed\n", K_HSEARCH_BUCKET_COUNT);
     }
-    e = HsearchSet("", 0);
-    e = HsearchSet("a", 1);
-    e = HsearchSet("b", 2);
-    e = HsearchSet("abc", 3);
-    e = HsearchSet("cd", 4);
-    e = HsearchSet("e", 5);
-    e = HsearchSet("ef", 6);
-    e = HsearchSet("g", 7);
-    e = HsearchSet("h", 8);
-    e = HsearchSet("iiiiiiiiii", 9);
+    e = HsearchSet("", kHsearchVal0);
+    e = HsearchSet("a", kHsearchVal1);
+    e = HsearchSet("b", kHsearchVal2);
+    e = HsearchSet("abc", kHsearchVal3);
+    e = HsearchSet("cd", kHsearchVal4);
+    e = HsearchSet("e", kHsearchVal5);
+    e = HsearchSet("ef", kHsearchVal6);
+    e = HsearchSet("g", kHsearchVal7);
+    e = HsearchSet("h", kHsearchVal8);
+    e = HsearchSet("iiiiiiiiii", kHsearchVal9);
     if (!HsearchGet("a")) {
         t_error("hsearch FIND a failed\n");
     }
     if (HsearchGet("c")) {
         t_error("hsearch FIND c should fail\n");
     }
-    e = HsearchSet("g", 10);
-    if (e && HsearchData(e) != 7) {
+    e = HsearchSet("g", kHsearchVal10);
+    if (e && HsearchData(e) != kHsearchWant7) {
         t_error("hsearch ENTER g 10 returned data %d, wanted 7\n", HsearchData(e));
     }
-    e = HsearchSet("g", 10);
-    if (e && HsearchData(e) != 7) {
+    e = HsearchSet("g", kHsearchVal10);
+    if (e && HsearchData(e) != kHsearchWant7) {
         t_error("hsearch ENTER g 10 returned data %d, wanted 7\n", HsearchData(e));
     }
-    e = HsearchSet("j", 10);
-    if (e && HsearchData(e) != 10) {
+    e = HsearchSet("j", kHsearchVal10);
+    if (e && HsearchData(e) != kHsearchWant10) {
         t_error("hsearch ENTER j 10 returned data %d, wanted 10\n", HsearchData(e));
     }
     hdestroy();

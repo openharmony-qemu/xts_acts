@@ -29,9 +29,7 @@ const ssize_t COUNT_FOUR = 4;
 void CtypeGetMbCurMax0100()
 {
     (void)setlocale(LC_ALL, ".1252");
-    ssize_t result;
-    result = __ctype_get_mb_cur_max();
-    EXPECT_TRUE("CtypeGetMbCurMax0100", result > 0);
+    EXPECT_TRUE("CtypeGetMbCurMax0100", __ctype_get_mb_cur_max() > 0);
 }
 
 /**
@@ -42,9 +40,7 @@ void CtypeGetMbCurMax0100()
 void CtypeGetMbCurMax0200()
 {
     (void)setlocale(LC_CTYPE, "zh_CN.utf8");
-    ssize_t result;
-    result = __ctype_get_mb_cur_max();
-    EXPECT_EQ("CtypeGetMbCurMax0200", result, COUNT_FOUR);
+    EXPECT_EQ("CtypeGetMbCurMax0200", __ctype_get_mb_cur_max(), COUNT_FOUR);
 }
 
 /**
@@ -55,9 +51,7 @@ void CtypeGetMbCurMax0200()
 void CtypeGetMbCurMax0300()
 {
     (void)setlocale(LC_ALL, ".936");
-    ssize_t result;
-    result = __ctype_get_mb_cur_max();
-    EXPECT_EQ("CtypeGetMbCurMax0300", result, COUNT_FOUR);
+    EXPECT_EQ("CtypeGetMbCurMax0300", __ctype_get_mb_cur_max(), COUNT_FOUR);
 }
 
 namespace {

@@ -36,7 +36,7 @@ void VsnprintfTest(char* str, size_t n, char* fmt, const char* funcName, ...)
     char s[n];
     va_list ap;
     va_start(ap, funcName);
-    int result = vsnprintf(s, n, fmt, ap); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::vsnprintf(s, n, fmt, ap);
     va_end(ap);
     if (result < 0) {
         t_error("%s vsnprintf get result is %d are less 0\n", funcName, result);
@@ -51,8 +51,7 @@ void VsnprintfTest2(char* fmt, const char* funcName, ...)
     char s[K_TWO_CHAR_SCRATCH_BUF] = "a";
     va_list ap;
     va_start(ap, funcName);
-    int result =
-        vsnprintf(s, K_WRITE_AT_MOST_ONE_BYTE, fmt, ap); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::vsnprintf(s, K_WRITE_AT_MOST_ONE_BYTE, fmt, ap);
     va_end(ap);
     if (result < 0) {
         t_error("%s vsnprintf get result is %d are less 0\n", funcName, result);
@@ -68,7 +67,7 @@ void VsnprintfZeron(char* str, char* fmt, const char* funcName, ...)
     char s[K_PROBE_STACK_BUF10];
     va_list ap;
     va_start(ap, funcName);
-    int result = vsnprintf(s, K_NO_BUFFER_SIZE, fmt, ap); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::vsnprintf(s, K_NO_BUFFER_SIZE, fmt, ap);
     va_end(ap);
     if (result < 0) {
         t_error("%s vsnprintf get result is %d are less 0\n", funcName, result);
@@ -82,7 +81,7 @@ void VsnprintfZeronAll(char* str, char* fmt, const char* funcName, ...)
 {
     va_list ap;
     va_start(ap, funcName);
-    int result = vsnprintf(nullptr, K_NO_BUFFER_SIZE, fmt, ap); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::vsnprintf(nullptr, K_NO_BUFFER_SIZE, fmt, ap);
     va_end(ap);
     EXPECT_EQ(funcName, result, strlen(str));
 }

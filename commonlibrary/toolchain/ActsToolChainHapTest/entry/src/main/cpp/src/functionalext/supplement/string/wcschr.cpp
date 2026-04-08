@@ -26,9 +26,7 @@
 void Wcschr0100(void)
 {
     wchar_t wcs[] = L"This is a c test for wcschr";
-    wchar_t* p;
-    p = wcschr(wcs, L'c');
-    if (*p != L'c') {
+    if (*wcschr(wcs, L'c') != L'c') {
         t_error("%s the character pointed to by the pointer is not c", __func__);
     }
 }
@@ -41,9 +39,7 @@ void Wcschr0100(void)
 void Wcschr0200(void)
 {
     wchar_t wcs[] = L"This is a c test for wcschr";
-    wchar_t* p;
-    p = wcschr(wcs, L'\0');
-    if ((p - wcs) != wcslen(wcs)) {
+    if ((wcschr(wcs, L'\0') - wcs) != wcslen(wcs)) {
         t_error("%s pointer does not point to end of wide string", __func__);
     }
 }
@@ -56,9 +52,7 @@ void Wcschr0200(void)
 void Wcschr0300(void)
 {
     wchar_t wcs[] = L"This is a c test for wcschr";
-    wchar_t* p;
-    p = wcschr(wcs, L't');
-    if (*p != L't') {
+    if (*wcschr(wcs, L't') != L't') {
         t_error("%s the character pointed to by the pointer is not t", __func__);
     }
 }

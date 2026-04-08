@@ -36,7 +36,6 @@ static void Expm1fTestOne(struct FF* p, int* err)
     feclearexcept(FE_ALL_EXCEPT);
     y = expm1f(p->x);
     e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
 #ifndef __aarch64__
     if (!Checkexcept(e, p->e, p->r)) {
         const double excX = static_cast<double>(p->x);

@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
+#include <algorithm>
 #include <cstdint>
 #include <cstdio>
-#include <cstring>
 #include "test.h"
 
 namespace {
@@ -41,7 +41,7 @@ int AeabiMemclr(void* dest, size_t n)
         return K_AEABI_OP_SKIPPED;
     }
 
-    memset(dest, 0, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(static_cast<unsigned char*>(dest), n, static_cast<unsigned char>(0));
 
     return K_AEABI_OP_DONE;
 }

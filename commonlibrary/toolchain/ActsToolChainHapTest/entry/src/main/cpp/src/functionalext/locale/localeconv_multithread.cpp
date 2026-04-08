@@ -43,7 +43,8 @@ void* ThreadFunc(void* arg)
 static int LocaleconvMultithreadTestImpl()
 {
     struct lconv* pconv = nullptr;
-    pthread_t tid1, tid2;
+    pthread_t tid1;
+    pthread_t tid2;
     (void)setlocale(LC_ALL, "C");
     (void)setlocale(LC_MONETARY, "C");
     if (pthread_create(&tid1, nullptr, ThreadFunc, reinterpret_cast<void*>(static_cast<uintptr_t>(1))) != 0) {

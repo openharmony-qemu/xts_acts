@@ -175,7 +175,8 @@ void Wcstok0700(void)
     wchar_t str2[] = L"red;green;blue";
     wchar_t* saveptr1 = nullptr;
     wchar_t* saveptr2 = nullptr;
-    wchar_t *result1, *result2;
+    wchar_t* result1;
+    wchar_t* result2;
 
     // Process both strings alternately
     result1 = wcstok(str1, L",", &saveptr1);

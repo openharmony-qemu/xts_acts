@@ -25,7 +25,8 @@ int TgkillTest()
 {
     int status = SUCCESS_CODE;
 
-    int tgid, tid;
+    int tgid;
+    int tid;
     tgid = ARGV_1;
     tid = ARGV_2;
 

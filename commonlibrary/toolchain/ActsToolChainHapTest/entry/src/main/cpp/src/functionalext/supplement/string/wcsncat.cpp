@@ -27,7 +27,7 @@
 void Wcsncat0100(void)
 {
     wchar_t dst[32] = { 0 };
-    wchar_t* result = wcsncat(dst, L"hello, world!", 5); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    wchar_t* result = std::wcsncat(dst, L"hello, world!", 5);
     if (wcscmp(dst, result) != 0) {
         t_error("%s wcsncat get result is %s are not %s\n", __func__, dst, result);
     }
@@ -44,7 +44,7 @@ void Wcsncat0100(void)
 void Wcsncat0200(void)
 {
     wchar_t dst[32] = { 0 };
-    wchar_t* result = wcsncat(dst, L"hello, world!", 0); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    wchar_t* result = std::wcsncat(dst, L"hello, world!", 0);
     if (wcscmp(dst, result) != 0) {
         t_error("%s wcsncat get result is %s are not %s\n", __func__, dst, result);
     }
@@ -62,7 +62,7 @@ void Wcsncat0200(void)
 void Wcsncat0300(void)
 {
     wchar_t dst[32] = { 0 };
-    wchar_t* result = wcsncat(dst, L"hello, world!", 16); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    wchar_t* result = std::wcsncat(dst, L"hello, world!", 16);
     if (wcscmp(dst, result) != 0) {
         t_error("%s wcsncat get result is %s are not %s\n", __func__, dst, result);
     }

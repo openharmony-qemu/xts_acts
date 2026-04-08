@@ -16,9 +16,9 @@
 #ifndef CFI_UTIL_H_H
 #define CFI_UTIL_H_H
 
+#include <cstdio>
+#include <cstring>
 #include <dirent.h>
-#include <stdio.h>
-#include <string.h>
 #include <string>
 #include <unistd.h>
 
@@ -29,8 +29,8 @@
 #define DEBUG 0
 #define BUFFER_SIZE 4096
 
-static void ClearCfiLog(const char* log_tag, const char* logDir);
-static void FindAndCheck(const char* pattern, const char* log_tag, const char* logDir);
+static void ClearCfiLog(const char* logTag, const char* logDir);
+static void FindAndCheck(const char* pattern, const char* logTag, const char* logDir);
 
 static void ShowCfiLogFile()
 {
@@ -50,19 +50,15 @@ static void ClearCfiLog()
     ClearCfiLog(UBSAN_LOG_TAG, FAULTLOG_DIR);
 }
 
-static void ClearCfiLog(const char* log_tag, const char* logDir)
+static void ClearCfiLog(const char* logTag, const char* logDir)
 {
     DIR* dir;
     struct dirent* ptr;
     dir = opendir(logDir);
     while ((ptr = readdir(dir)) != NULL) {
-        if (strstr(ptr->d_name, log_tag) != NULL) {
+        if (strstr(ptr->d_name, logTag) != NULL) {
             char tmp[BUFFER_SIZE];
-            (void)snprintf(tmp,
-                           BUFFER_SIZE,
-                           "%s/%s",
-                           logDir,
-                           ptr->d_name); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+            (void)std::snprintf(tmp, BUFFER_SIZE, "%s/%s", logDir, ptr->d_name);
             (void)remove(tmp);
         }
     }
@@ -116,18 +112,14 @@ template <typename CallbackT> static void FindDirAndCheck(DIR* dir, CallbackT&& 
 }
 
 template <typename CallbackT>
-static void FindDirAndCheck(DIR* dir, const char* log_tag, const char* logDir, CallbackT&& callback)
+static void FindDirAndCheck(DIR* dir, const char* logTag, const char* logDir, CallbackT&& callback)
 {
     sleep(1);
     struct dirent* ptr;
     while ((ptr = readdir(dir)) != NULL) {
-        if (strstr(ptr->d_name, log_tag) != NULL) {
+        if (strstr(ptr->d_name, logTag) != NULL) {
             char tmp[BUFFER_SIZE];
-            (void)snprintf(tmp,
-                           BUFFER_SIZE,
-                           "%s/%s",
-                           logDir,
-                           ptr->d_name); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+            (void)std::snprintf(tmp, BUFFER_SIZE, "%s/%s", logDir, ptr->d_name);
             callback(tmp);
         }
     }
@@ -141,11 +133,11 @@ static void FindAndCheck(const char* pattern)
     closedir(faultlogDir);
 }
 
-static void FindAndCheck(const char* pattern, const char* log_tag, const char* logDir)
+static void FindAndCheck(const char* pattern, const char* logTag, const char* logDir)
 {
     DIR* faultlogDir = opendir(logDir);
     auto callback = [=](char* file) { CheckCfiLog(file, pattern); };
-    FindDirAndCheck(faultlogDir, log_tag, logDir, callback);
+    FindDirAndCheck(faultlogDir, logTag, logDir, callback);
     closedir(faultlogDir);
 }
 

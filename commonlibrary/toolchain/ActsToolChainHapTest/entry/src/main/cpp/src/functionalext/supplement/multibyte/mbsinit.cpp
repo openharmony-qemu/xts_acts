@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <algorithm>
 #include <cstdlib>
 #include <cwchar>
 #include "functionalext.h"
@@ -28,8 +29,7 @@
  */
 void Mbsinit0100(void)
 {
-    mbstate_t mbst;
-    memset(&mbst, 0, sizeof(mbst)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    mbstate_t mbst{};
     int ret = mbsinit(&mbst);
     EXPECT_NE("Mbsinit0100", ret, 0);
 }
@@ -54,7 +54,7 @@ void Mbsinit0200(void)
 void Mbsinit0300(void)
 {
     mbstate_t mbst;
-    memset(&mbst, INIT_ERROR_VALUE, sizeof(mbst)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(reinterpret_cast<unsigned char*>(&mbst), sizeof(mbst), static_cast<unsigned char>(INIT_ERROR_VALUE));
     int ret = mbsinit(&mbst);
     EXPECT_EQ("Mbsinit0300", ret, 0);
 }

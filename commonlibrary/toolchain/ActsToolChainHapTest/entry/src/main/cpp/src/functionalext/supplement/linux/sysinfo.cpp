@@ -14,7 +14,6 @@
  */
 
 #include <cerrno>
-#include <cstring>
 #include <sys/sysinfo.h>
 
 #include "test.h"
@@ -26,8 +25,7 @@
  */
 void Sysinfo0100(void)
 {
-    struct sysinfo info;
-    memset(&info, 0, sizeof(info)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    struct sysinfo info {};
 
     int result = sysinfo(&info);
     if (result != 0) {

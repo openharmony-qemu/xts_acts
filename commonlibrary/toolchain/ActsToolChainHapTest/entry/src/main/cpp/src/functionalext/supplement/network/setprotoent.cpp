@@ -34,7 +34,7 @@ void Setprotoent0100(void)
     }
 
     char buf[BUFSIZ] = { 0 };
-    (void)snprintf(buf, sizeof(buf), "%s", result->p_name); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    (void)std::snprintf(buf, sizeof(buf), "%s", result->p_name);
 
     setprotoent(0);
     result = getprotoent();

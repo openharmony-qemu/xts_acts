@@ -24,14 +24,11 @@
  */
 void Fexecve0100(void)
 {
-    pid_t fpid;
-    fpid = fork();
-    if (fpid == 0) {
+    if (fork() == 0) {
         char* argv[] = { "./fexecverely", nullptr };
         char* environ[] = { nullptr, nullptr };
         int fd = open("fexecverely", O_RDONLY);
-        int ret = fexecve(fd, argv, environ);
-        EXPECT_NE("Fexecve0100", ret, -1);
+        EXPECT_NE("Fexecve0100", fexecve(fd, argv, environ), -1);
     }
 }
 
@@ -44,8 +41,7 @@ void Fexecve0200(void)
 {
     char* myEnv[] = { nullptr };
     char* argv[] = { "touch", "fexecvetest.Txt", nullptr };
-    int ret = fexecve(-1, argv, myEnv);
-    EXPECT_EQ("Fexecve0200", ret, -1);
+    EXPECT_EQ("Fexecve0200", fexecve(-1, argv, myEnv), -1);
 }
 
 static int FexecveTestImpl(int argc, char* argv[])

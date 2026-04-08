@@ -28,20 +28,16 @@
  */
 void SchedCpucountTc0100(void)
 {
-    int ret = 0;
-    cpu_set_t* cpusetp;
-    size_t size;
-    int numCpus;
-    numCpus = sysconf(_SC_NPROCESSORS_CONF);
-    cpusetp = CPU_ALLOC(numCpus);
+    int numCpus = sysconf(_SC_NPROCESSORS_CONF);
+    cpu_set_t* cpusetp = CPU_ALLOC(numCpus);
     EXPECT_PTRNE("SchedCpucountTc0100", cpusetp, nullptr);
 
-    size = CPU_ALLOC_SIZE(numCpus);
+    size_t size = CPU_ALLOC_SIZE(numCpus);
     CPU_ZERO_S(size, cpusetp);
     for (int cpu = 0; cpu < numCpus; cpu++) {
         CPU_SET_S(cpu, size, cpusetp);
     }
-    ret = __sched_cpucount(size, cpusetp);
+    int ret = __sched_cpucount(size, cpusetp);
     EXPECT_EQ("SchedCpucountTc0100", ret, numCpus);
     CPU_FREE(cpusetp);
 }
@@ -54,20 +50,16 @@ void SchedCpucountTc0100(void)
  */
 void SchedCpucountTc0200(void)
 {
-    int ret = 0;
-    cpu_set_t* cpusetp;
-    size_t size;
-    int numCpus;
-    numCpus = sysconf(_SC_NPROCESSORS_CONF);
-    cpusetp = CPU_ALLOC(numCpus);
+    int numCpus = sysconf(_SC_NPROCESSORS_CONF);
+    cpu_set_t* cpusetp = CPU_ALLOC(numCpus);
     EXPECT_PTRNE("SchedCpucountTc0200", cpusetp, nullptr);
 
-    size = CPU_ALLOC_SIZE(numCpus);
+    size_t size = CPU_ALLOC_SIZE(numCpus);
     CPU_ZERO_S(size, cpusetp);
     for (int cpu = 0; cpu < numCpus; cpu++) {
         CPU_SET_S(cpu, size, cpusetp);
     }
-    ret = __sched_cpucount(0, cpusetp);
+    int ret = __sched_cpucount(0, cpusetp);
     EXPECT_EQ("SchedCpucountTc0200", ret, 0);
     CPU_FREE(cpusetp);
 }
@@ -80,17 +72,13 @@ void SchedCpucountTc0200(void)
  */
 void SchedCpucountTc0300(void)
 {
-    int ret = 0;
-    cpu_set_t* cpusetp;
-    size_t size;
-    int numCpus;
-    numCpus = sysconf(_SC_NPROCESSORS_CONF);
-    cpusetp = CPU_ALLOC(numCpus);
+    int numCpus = sysconf(_SC_NPROCESSORS_CONF);
+    cpu_set_t* cpusetp = CPU_ALLOC(numCpus);
     EXPECT_PTRNE("SchedCpucountTc0300", cpusetp, nullptr);
 
-    size = CPU_ALLOC_SIZE(numCpus);
+    size_t size = CPU_ALLOC_SIZE(numCpus);
     CPU_ZERO_S(size, cpusetp);
-    ret = __sched_cpucount(size, cpusetp);
+    int ret = __sched_cpucount(size, cpusetp);
     EXPECT_EQ("SchedCpucountTc0300", ret, 0);
     CPU_FREE(cpusetp);
 }

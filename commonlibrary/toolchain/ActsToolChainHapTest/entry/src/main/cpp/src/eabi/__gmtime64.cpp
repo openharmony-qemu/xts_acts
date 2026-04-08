@@ -17,28 +17,20 @@
 #include <ctime>
 #include "test.h"
 
-namespace {
-constexpr int K_HOURS_PER_DAY = 24;
-} // namespace
-
 /**
  * @tc.name      : memset_0100
  * @tc.desc      : test __gmtime64 method
  * @tc.level     : Level 1
  */
-#define BST (+1)
-#define CCT (+8)
-
 void Gmtime640100(void)
 {
     time_t rawtime;
-    struct tm* info;
 
     (void)time(&rawtime);
-    info = gmtime(&rawtime);
-
+    struct tm* info = gmtime(&rawtime);
     if (info == nullptr) {
-        t_error("%s __gmtime64 error get result is %2d\n", __func__, (info->tm_hour + CCT) % K_HOURS_PER_DAY);
+        t_error("%s __gmtime64 returned nullptr\n", __func__);
+        return;
     }
 }
 

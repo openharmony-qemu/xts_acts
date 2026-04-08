@@ -20,6 +20,10 @@
 
 typedef void (*TEST_FUN)();
 
+namespace {
+constexpr double kAtofExpectValue = 123456.00;
+} // namespace
+
 static void ExpectDoubleEq(double a, double b)
 {
     if (!(fabs(a - b) < DBL_EPSILON)) {
@@ -36,7 +40,7 @@ void Atof0100()
 {
     const char* str = "123456.00";
     double result = atof(str);
-    ExpectDoubleEq(result, 123456.00);
+    ExpectDoubleEq(result, kAtofExpectValue);
 }
 
 namespace {

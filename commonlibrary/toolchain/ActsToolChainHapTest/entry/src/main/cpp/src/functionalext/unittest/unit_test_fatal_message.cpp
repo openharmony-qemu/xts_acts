@@ -35,18 +35,14 @@ static const int WAIT_TIME = 1;
 static void FatalMessage0010(void)
 {
     const char msg[1024] = { "abcdefghijklmnopqrstuvwxyz1234567890" };
-    fatal_msg_t* fatal_message = nullptr;
-    int pidChild = 0;
-    pid_t fpid;
-    fpid = fork();
+    pid_t fpid = fork();
     if (fpid < 0) {
         TPrintf("error in fork!");
     } else if (fpid == 0) {
-        pidChild = getpid();
         set_fatal_message(msg);
-        fatal_message = get_fatal_message();
+        fatal_msg_t* fatal_message = get_fatal_message();
         EXPECT_EQ("FatalMessage0010", fatal_message, nullptr);
-        exit(pidChild);
+        exit(getpid());
     }
 }
 

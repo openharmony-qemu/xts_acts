@@ -27,9 +27,7 @@
  */
 static void SchedGetparam0010(void)
 {
-    pid_t pid;
-    pid = getpid();
-    EXPECT_EQ(SchedGetparam0010, sched_getparam(pid, nullptr), -1);
+    EXPECT_EQ(SchedGetparam0010, sched_getparam(getpid(), nullptr), -1);
 }
 
 static int SchedGetparamTestImpl(void)

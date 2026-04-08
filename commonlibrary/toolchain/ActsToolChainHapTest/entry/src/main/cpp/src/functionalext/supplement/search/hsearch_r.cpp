@@ -29,7 +29,8 @@ void HsearchR0100(void)
     struct hsearch_data hData = {};
     int ret;
     EXPECT_NE("HsearchR0100", hcreate_r(SIZE, &hData), 0);
-    ENTRY e, *ep;
+    ENTRY e;
+    ENTRY* ep;
     for (int i = 0; i < SIZE; i++) {
         e.key = g_data[i];
         e.data = reinterpret_cast<void*>(&i);
@@ -49,7 +50,8 @@ void HsearchR0200(void)
     struct hsearch_data hData = {};
     int ret;
     EXPECT_NE("HsearchR0100", hcreate_r(SIZE, &hData), 0);
-    ENTRY e, *ep;
+    ENTRY e;
+    ENTRY* ep;
     for (int i = 0; i < SIZE; i++) {
         e.key = g_data[i];
         ret = hsearch_r(e, FIND, &ep, &hData);

@@ -128,7 +128,8 @@ static int WcstolTestImpl(void)
     int i;
     long l;
     unsigned long ul;
-    wchar_t *s, *c;
+    wchar_t* s;
+    wchar_t* c;
 
     TEST(l, wcstol(L"2147483647", nullptr, 0), 2147483647L, "max 32bit signed %ld != %ld");
     TEST(ul, wcstoul(L"4294967295", nullptr, 0), 4294967295UL, "max 32bit unsigned %lu != %lu");

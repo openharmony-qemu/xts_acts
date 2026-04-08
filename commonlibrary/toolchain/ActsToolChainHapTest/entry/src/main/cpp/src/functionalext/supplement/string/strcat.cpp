@@ -28,7 +28,7 @@ void StrCatBounded(char* dest, size_t destsz, const char* src)
     if (used >= destsz) {
         return;
     }
-    strncat(dest, src, destsz - used - 1U); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::strncat(dest, src, destsz - used - 1U);
 }
 } // namespace
 

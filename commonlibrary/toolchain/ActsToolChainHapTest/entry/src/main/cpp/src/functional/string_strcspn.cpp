@@ -21,6 +21,10 @@ namespace {
 constexpr int K_STRCSPN_ALPHABET_SIZE = 128;
 constexpr int K_STRCSPN_FULL_BYTE_LEN = 256;
 constexpr int K_ASCII_LOW7_MASK = 127;
+constexpr size_t kStrcspnWantLen0 = 0U;
+constexpr size_t kStrcspnWantLen1 = 1U;
+constexpr size_t kStrcspnWantLen2 = 2U;
+constexpr size_t kStrcspnWantLen254 = 254U;
 } // namespace
 
 static void CheckStrcspnResult(int& st, const char* p, const char* q, size_t n, const char* sExpr, const char* cExpr)
@@ -51,14 +55,14 @@ int StringStrcspnTest()
         *(reinterpret_cast<unsigned char*>(s) + i) = static_cast<unsigned char>(i + 1);
     }
 
-    CheckStrcspnResult(status, "", "", 0, "\"\"", "\"\"");
-    CheckStrcspnResult(status, "a", "", 1, "\"a\"", "\"\"");
-    CheckStrcspnResult(status, "", "a", 0, "\"\"", "\"a\"");
-    CheckStrcspnResult(status, "abc", "cde", 2, "\"abc\"", "\"cde\"");
-    CheckStrcspnResult(status, "abc", "ccc", 2, "\"abc\"", "\"ccc\"");
-    CheckStrcspnResult(status, "abc", a, 0, "\"abc\"", "a");
-    CheckStrcspnResult(status, "\xff\x80 abc", a, 2, "\"\\xff\\x80 abc\"", "a");
-    CheckStrcspnResult(status, s, "\xff", 254, "s", "\"\\xff\"");
+    CheckStrcspnResult(status, "", "", kStrcspnWantLen0, "\"\"", "\"\"");
+    CheckStrcspnResult(status, "a", "", kStrcspnWantLen1, "\"a\"", "\"\"");
+    CheckStrcspnResult(status, "", "a", kStrcspnWantLen0, "\"\"", "\"a\"");
+    CheckStrcspnResult(status, "abc", "cde", kStrcspnWantLen2, "\"abc\"", "\"cde\"");
+    CheckStrcspnResult(status, "abc", "ccc", kStrcspnWantLen2, "\"abc\"", "\"ccc\"");
+    CheckStrcspnResult(status, "abc", a, kStrcspnWantLen0, "\"abc\"", "a");
+    CheckStrcspnResult(status, "\xff\x80 abc", a, kStrcspnWantLen2, "\"\\xff\\x80 abc\"", "a");
+    CheckStrcspnResult(status, s, "\xff", kStrcspnWantLen254, "s", "\"\\xff\"");
 
     return status;
 }

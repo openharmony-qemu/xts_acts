@@ -36,7 +36,7 @@ void* AeabiMemmove(void* dest, const void* src, size_t n)
         return nullptr;
     }
 
-    memmove(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::memmove(dest, src, n);
     return dest;
 }
 

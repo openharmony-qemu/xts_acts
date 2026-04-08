@@ -35,7 +35,6 @@ static void IlogbTestOne(struct DI* p, int* err)
     feclearexcept(FE_ALL_EXCEPT);
     yi = ilogb(p->x);
     e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
 #ifndef __aarch64__
     if (!Checkexcept(e, p->e, p->r)) {
         const double excX = static_cast<double>(p->x);

@@ -360,11 +360,9 @@ void PthreadAttrGetschedpolicy0100(void)
 void PthreadAttrGetschedparam0100(void)
 {
     pthread_attr_t attr;
-    struct sched_param setparam;
-    struct sched_param getparam;
+    struct sched_param setparam {};
+    struct sched_param getparam {};
 
-    memset(&setparam, 0x0, sizeof(setparam)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-    memset(&getparam, 0x0, sizeof(getparam)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
     setparam.sched_priority = 1;
 
     pthread_attr_init(&attr);

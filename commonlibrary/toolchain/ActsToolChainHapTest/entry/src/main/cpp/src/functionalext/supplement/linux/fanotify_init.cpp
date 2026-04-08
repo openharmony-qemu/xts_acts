@@ -49,7 +49,6 @@ void FanotifyInit0100(void)
                                FAN_ACCESS | FAN_MODIFY | FAN_OPEN | FAN_CLOSE | FAN_ONDIR | FAN_EVENT_ON_CHILD,
                                AT_FDCWD,
                                ".");
-
     if (result) {
         t_error("%s fanotify_mark (...) failed\n", __func__);
     }

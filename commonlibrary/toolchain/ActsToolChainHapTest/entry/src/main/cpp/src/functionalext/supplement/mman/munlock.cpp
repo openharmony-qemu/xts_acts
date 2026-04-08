@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <algorithm>
 #include <cstdlib>
 #include <sys/mman.h>
 #include "functionalext.h"
@@ -32,7 +33,7 @@ void Munlock0100(void)
         return;
     }
 
-    memset(memory, 0x0, TEST_SIZE); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(memory, TEST_SIZE, '\0');
     int ret = mlock(memory, TEST_SIZE);
     EXPECT_NE("Munlock0100", ret, ERREXPECT);
 

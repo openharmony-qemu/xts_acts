@@ -25,10 +25,8 @@ const int SUCCESS = 0;
  */
 void Getnetent0100(void)
 {
-    struct netent* ret;
-    ret = getnetent();
+    struct netent* ret = getnetent();
     EXPECT_EQ("Getnetent0100", ret, 0);
-    ret = nullptr;
 }
 
 static int GetnetentTestImpl(int argc, char* argv[])

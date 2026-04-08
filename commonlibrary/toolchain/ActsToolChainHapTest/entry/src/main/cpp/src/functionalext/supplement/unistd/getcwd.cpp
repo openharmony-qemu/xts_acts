@@ -37,10 +37,8 @@ char* g_hdcAuto = "/";
  */
 void Getcwd0100(void)
 {
-    char* result;
     char buf[K_GETCWD_BUF_BYTES] = { 0 };
-    result = getcwd(buf, sizeof(buf));
-
+    char* result = getcwd(buf, sizeof(buf));
     if (!(strcmp(result, g_manual) ^ strcmp(result, g_hdcAuto))) {
         t_error(
             "%s getcwd failed, except result is %s when g_manual or %s when hdc test\n", __func__, g_manual, g_hdcAuto);
@@ -54,8 +52,7 @@ void Getcwd0100(void)
  */
 void Getcwd0200(void)
 {
-    char* result;
-    result = getcwd(nullptr, K_GETCWD_BUF_BYTES);
+    char* result = getcwd(nullptr, K_GETCWD_BUF_BYTES);
     if (!(strcmp(result, g_manual) ^ strcmp(result, g_hdcAuto))) {
         t_error(
             "%s getcwd failed, except result is %s when g_manual or %s when hdc test\n", __func__, g_manual, g_hdcAuto);
@@ -69,9 +66,8 @@ void Getcwd0200(void)
  */
 void Getcwd0300(void)
 {
-    char* result;
     char buf[K_GETCWD_BUF_BYTES] = { 0 };
-    result = getcwd(buf, 0);
+    char* result = getcwd(buf, 0);
     if (result) {
         t_error("%s getcwd should failed, the result should be null\n", __func__);
     }

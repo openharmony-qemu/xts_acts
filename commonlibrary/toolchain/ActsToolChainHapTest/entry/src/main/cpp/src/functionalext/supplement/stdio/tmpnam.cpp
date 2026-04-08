@@ -15,16 +15,18 @@
 
 #include <cstdio>
 #include <cstring>
+#include <dlfcn.h>
 #include "test.h"
 
 namespace {
+using TmpnamFn = char* (*)(char*);
 char* TmpnamForLibcTest(char* buf)
 {
-    // Intentional use of tmpnam for testing purposes only.
-    // This test case verifies the behavior of deprecated and insecure APIs.
-    // It is restricted to test environment and not used in production code.
-    // NOLINTNEXTLINE
-    return tmpnam(buf);
+    static TmpnamFn fn = nullptr;
+    if (fn == nullptr) {
+        fn = reinterpret_cast<TmpnamFn>(dlsym(RTLD_DEFAULT, "tmpnam"));
+    }
+    return (fn != nullptr) ? fn(buf) : nullptr;
 }
 } // namespace
 

@@ -29,7 +29,8 @@ namespace {
 constexpr unsigned K_LOG_POLL_DELAY_US = 500000U;
 } // namespace
 
-extern "C" __attribute__((weak)) int ohos_dfx_log(const char* s, const char* p);
+/* Linker symbol remains ohos_dfx_log for weak resolution with runtime DFX. */
+extern "C" __attribute__((weak)) int OhosDfxLog(const char* s, const char* p) asm("ohos_dfx_log");
 
 static void ClearDfxLogs()
 {
@@ -42,11 +43,7 @@ static void ClearDfxLogs()
     while ((ptr = readdir(dir)) != nullptr) {
         if (strstr(ptr->d_name, LOG_TAG) != nullptr) {
             char tmp[MAX_BUFFER_SIZE];
-            (void)snprintf(tmp,
-                           MAX_BUFFER_SIZE,
-                           "%s/%s",
-                           FAULTLOG_DIR,
-                           ptr->d_name); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+            (void)std::snprintf(tmp, MAX_BUFFER_SIZE, "%s/%s", FAULTLOG_DIR, ptr->d_name);
             (void)remove(tmp);
         }
     }
@@ -101,11 +98,7 @@ static void CheckLog(const char* content)
     while ((ptr = readdir(faultlogDir)) != nullptr) {
         if (strstr(ptr->d_name, LOG_TAG) != nullptr) {
             char tmp[MAX_BUFFER_SIZE];
-            (void)snprintf(tmp,
-                           MAX_BUFFER_SIZE,
-                           "%s/%s",
-                           FAULTLOG_DIR,
-                           ptr->d_name); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+            (void)std::snprintf(tmp, MAX_BUFFER_SIZE, "%s/%s", FAULTLOG_DIR, ptr->d_name);
             CheckLogContent(tmp, content);
             break;
         }
@@ -116,75 +109,75 @@ static void CheckLog(const char* content)
 static void TestAsanLog()
 {
     ClearDfxLogs();
-    if (&ohos_dfx_log) {
-        ohos_dfx_log("[OhosDfxLog] output something to the log path.\n", DEFAULT_LOGPATH);
-        ohos_dfx_log("End Asan report\n", DEFAULT_LOGPATH);
+    if (&OhosDfxLog) {
+        OhosDfxLog("[OhosDfxLog] output something to the log path.\n", DEFAULT_LOGPATH);
+        OhosDfxLog("End Asan report\n", DEFAULT_LOGPATH);
         CheckLog("[OhosDfxLog] output something to the log path.\nEnd Asan report");
     } else {
-        t_error("[ohos_dfx_log] cannot find ohos_dfx_log");
+        t_error("[OhosDfxLog] cannot find OhosDfxLog");
     }
 }
 
 static void TestHWAsanLog()
 {
     ClearDfxLogs();
-    if (&ohos_dfx_log) {
-        ohos_dfx_log("[OhosDfxLog] output something to the log path.\n", DEFAULT_LOGPATH);
-        ohos_dfx_log("End Hwasan report\n", DEFAULT_LOGPATH);
+    if (&OhosDfxLog) {
+        OhosDfxLog("[OhosDfxLog] output something to the log path.\n", DEFAULT_LOGPATH);
+        OhosDfxLog("End Hwasan report\n", DEFAULT_LOGPATH);
         CheckLog("[OhosDfxLog] output something to the log path.\nEnd Hwasan report");
     } else {
-        t_error("[ohos_dfx_log] cannot find ohos_dfx_log");
+        t_error("[OhosDfxLog] cannot find OhosDfxLog");
     }
 }
 
 static void TestTsanLog()
 {
     ClearDfxLogs();
-    if (&ohos_dfx_log) {
-        ohos_dfx_log("[OhosDfxLog] output something to the log path.\n", DEFAULT_LOGPATH);
-        ohos_dfx_log("End Tsan report\n", DEFAULT_LOGPATH);
+    if (&OhosDfxLog) {
+        OhosDfxLog("[OhosDfxLog] output something to the log path.\n", DEFAULT_LOGPATH);
+        OhosDfxLog("End Tsan report\n", DEFAULT_LOGPATH);
         CheckLog("[OhosDfxLog] output something to the log path.\nEnd Tsan report");
     } else {
-        t_error("[ohos_dfx_log] cannot find ohos_dfx_log");
+        t_error("[OhosDfxLog] cannot find OhosDfxLog");
     }
 }
 
 static void TestUbsanLog()
 {
     ClearDfxLogs();
-    if (&ohos_dfx_log) {
-        ohos_dfx_log("[OhosDfxLog] output something to the log path.\n", DEFAULT_LOGPATH);
-        ohos_dfx_log("End Ubsan report\n", DEFAULT_LOGPATH);
+    if (&OhosDfxLog) {
+        OhosDfxLog("[OhosDfxLog] output something to the log path.\n", DEFAULT_LOGPATH);
+        OhosDfxLog("End Ubsan report\n", DEFAULT_LOGPATH);
         CheckLog("[OhosDfxLog] output something to the log path.\nEnd Ubsan report");
     } else {
-        t_error("[ohos_dfx_log] cannot find ohos_dfx_log");
+        t_error("[OhosDfxLog] cannot find OhosDfxLog");
     }
 }
 
 static void TestCfiLog()
 {
     ClearDfxLogs();
-    if (&ohos_dfx_log) {
-        ohos_dfx_log("[OhosDfxLog] output something to the log path.\n", DEFAULT_LOGPATH);
-        ohos_dfx_log("End CFI report\n", DEFAULT_LOGPATH);
+    if (&OhosDfxLog) {
+        OhosDfxLog("[OhosDfxLog] output something to the log path.\n", DEFAULT_LOGPATH);
+        OhosDfxLog("End CFI report\n", DEFAULT_LOGPATH);
         CheckLog("[OhosDfxLog] output something to the log path.\nEnd CFI report");
     } else {
-        t_error("[ohos_dfx_log] cannot find ohos_dfx_log");
+        t_error("[OhosDfxLog] cannot find OhosDfxLog");
     }
 }
 
 static void TestBufferExpand()
 {
     ClearDfxLogs();
-    if (&ohos_dfx_log) {
+    if (&OhosDfxLog) {
         for (int i = 0; i < LARGE_LOG_LINE_AMOUNT; ++i) {
-            ohos_dfx_log("OhosDfxLog output something to the log path OhosDfxLog output something to the log path.\n",
-                         DEFAULT_LOGPATH);
+            OhosDfxLog("OhosDfxLog output something to the log path OhosDfxLog output something to the log path.\n",
+                       DEFAULT_LOGPATH);
         }
-        ohos_dfx_log("End Asan report\n", DEFAULT_LOGPATH);
+        OhosDfxLog("End Asan report\n", DEFAULT_LOGPATH);
         CheckLog("End Asan report");
     } else {
-        t_error("[ohos_dfx_log] cannot find ohos_dfx_log");
+        t_error("[OhosDfxLog] cannot find OhosDfxLog");
     }
 }
 

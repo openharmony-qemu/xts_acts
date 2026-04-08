@@ -24,8 +24,7 @@
  */
 void Prctl0100(void)
 {
-    char buf[BUFSIZ];
-    memset(buf, 0, BUFSIZ); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    char buf[BUFSIZ]{};
 
     int result =
         prctl(PR_SET_NAME,

@@ -14,7 +14,6 @@
  */
 
 #include <csignal>
-#include <cstring>
 #include "functionalext.h"
 
 /**
@@ -26,8 +25,7 @@
 void Psiginfo0100(void)
 {
     errno = 0;
-    siginfo_t info;
-    memset(&info, 0x0, sizeof(siginfo_t)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    siginfo_t info{};
     info.si_signo = SIGUSR1;
     psiginfo(&info, "SIGUSR1");
     EXPECT_EQ("Psiginfo0100", errno, CMPFLAG);
@@ -42,8 +40,7 @@ void Psiginfo0100(void)
 void Psiginfo0200(void)
 {
     errno = 0;
-    siginfo_t info;
-    memset(&info, 0x0, sizeof(siginfo_t)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    siginfo_t info{};
     info.si_signo = SIGUSR1;
     psiginfo(&info, nullptr);
     EXPECT_EQ("Psiginfo0200", errno, CMPFLAG);
@@ -58,8 +55,7 @@ void Psiginfo0200(void)
 void Psiginfo0300(void)
 {
     errno = 0;
-    siginfo_t info;
-    memset(&info, 0x0, sizeof(siginfo_t)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    siginfo_t info{};
     info.si_signo = -1;
     psiginfo(&info, nullptr);
     EXPECT_EQ("Psiginfo0300", errno, CMPFLAG);

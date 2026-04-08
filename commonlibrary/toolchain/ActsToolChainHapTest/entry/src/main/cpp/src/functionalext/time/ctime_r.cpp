@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <algorithm>
 #include <cstdlib>
 #include <ctime>
 #include "asctime_data.h"
@@ -141,7 +142,7 @@ void Ctime64R0200(void)
     int64_t future64TimeVal = 4102444800LL; // 2100-01-01 00:00:00 UTC
     time_t future64Time = static_cast<time_t>(future64TimeVal);
     char buffer[g_bufferSize];
-    memset(buffer, 0, g_bufferSize); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(buffer, static_cast<size_t>(g_bufferSize), '\0');
 
     char* result = CTIME64_R(&future64Time, buffer);
     if (result == nullptr) {
@@ -155,7 +156,7 @@ void Ctime64R0200(void)
 
     // test negative 64-bit time value (Dec 31 1969 23:59:59 UTC - before epoch)
     time_t negative64Time = -1;
-    memset(buffer, 0, g_bufferSize); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(buffer, static_cast<size_t>(g_bufferSize), '\0');
     result = CTIME64_R(&negative64Time, buffer);
     if (result == nullptr) {
         EXPECT_FALSE("Ctime64R0200", result == nullptr);

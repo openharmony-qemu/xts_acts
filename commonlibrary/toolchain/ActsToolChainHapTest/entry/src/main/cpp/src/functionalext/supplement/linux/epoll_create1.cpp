@@ -43,8 +43,7 @@ void EpollCreate10100(void)
 {
     errno = 0;
 
-    int fd;
-    fd = epoll_create1(0);
+    int fd = epoll_create1(0);
     CloseOnExec(fd, false);
     close(fd);
 

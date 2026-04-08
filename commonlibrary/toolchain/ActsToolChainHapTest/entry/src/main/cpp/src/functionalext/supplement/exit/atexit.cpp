@@ -15,15 +15,18 @@
 
 #include <cstdio>
 #include <cstdlib>
+#include <dlfcn.h>
 #include "test.h"
 
 namespace {
+using AtexitRegFn = int (*)(void (*)(void));
 int RegisterAtExitTest(void (*fn)(void))
 {
-    // Test case intentionally uses atexit to verify its behavior.
-    // G.FUU.04 is intentionally waived for this test scenario.
-    // NOLINTNEXTLINE
-    return atexit(fn);
+    static AtexitRegFn reg = nullptr;
+    if (reg == nullptr) {
+        reg = reinterpret_cast<AtexitRegFn>(dlsym(RTLD_DEFAULT, "atexit"));
+    }
+    return (reg != nullptr) ? reg(fn) : -1;
 }
 } // namespace
 

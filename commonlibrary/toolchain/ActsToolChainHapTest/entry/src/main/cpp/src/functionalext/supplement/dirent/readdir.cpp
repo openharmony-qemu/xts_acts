@@ -27,10 +27,8 @@
  */
 void Readdir0100(void)
 {
-    DIR* dir;
-    struct dirent* ret;
-    dir = opendir("/etc");
-    ret = readdir(dir);
+    DIR* dir = opendir("/etc");
+    struct dirent* ret = readdir(dir);
     EXPECT_TRUE("Readdir0100", ret != nullptr);
     closedir(dir);
 }
@@ -48,9 +46,7 @@ void Readdir0200(void)
         EXPECT_PTRNE("Readdir0200", dir, nullptr);
         return;
     }
-    struct dirent* ret;
-    ret = readdir(dir);
-    EXPECT_TRUE(" Readdir0200", ret == nullptr);
+    EXPECT_TRUE(" Readdir0200", readdir(dir) == nullptr);
 
     free(dir);
 }

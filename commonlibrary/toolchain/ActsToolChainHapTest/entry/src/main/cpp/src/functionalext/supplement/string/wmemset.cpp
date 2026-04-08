@@ -159,7 +159,7 @@ void Wmemset0800(void)
 {
     wchar_t des[10] = { L'A', L'B', L'C', L'D', L'E' };
     wchar_t original[K_FIVE_WIDE_PREFIX];
-    wcsncpy(original, des, K_FIVE_WIDE_PREFIX); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wcsncpy(original, des, K_FIVE_WIDE_PREFIX);
     wmemset(des, L'Z', 0);
     for (int i = 0; i < static_cast<int>(K_FIVE_WIDE_PREFIX); i++) {
         if (des[i] != original[i]) {

@@ -51,7 +51,9 @@ static inline void CloseSo(void* handle)
  */
 static void DlnsDlsym0100(void)
 {
-    Dl_namespace dlnsA, dlnsB, dlnsC;
+    Dl_namespace dlnsA;
+    Dl_namespace dlnsB;
+    Dl_namespace dlnsC;
     dlns_dlsym_0100_init_ns(&dlnsA, &dlnsB, &dlnsC);
 
     void* handleC = dlopen_ns(&dlnsC, LIB_NAME_C, RTLD_NOW);

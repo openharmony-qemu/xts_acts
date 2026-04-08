@@ -15,8 +15,8 @@
 
 #pragma once
 
-#include <stdarg.h>
-#include <stdio.h>
+#include <cstdarg>
+#include <cstdio>
 #include "CommonTool.h"
 
 static inline void LibcTestError(int* status, const char* fmt, ...)
@@ -29,7 +29,7 @@ static inline void LibcTestError(int* status, const char* fmt, ...)
     // OHPrintf takes variadic args directly; forward by formatting via vsnprintf is overkill here.
     // Use a small buffer to keep implementation simple.
     char buf[512];
-    (void)vsnprintf(buf, sizeof(buf), fmt, args); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    (void)std::vsnprintf(buf, sizeof(buf), fmt, args);
     va_end(args);
     OHPrintf("%s", buf);
 }

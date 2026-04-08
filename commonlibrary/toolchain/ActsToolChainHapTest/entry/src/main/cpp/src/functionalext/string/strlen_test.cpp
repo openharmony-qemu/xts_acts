@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#include <algorithm>
 #include <cstdio>
 #include <cstring>
 #include "test.h"
@@ -398,7 +399,7 @@ void TestStrlenExtendedAscii()
 void TestStrlenNullAtEndOfBuffer()
 {
     char a[K_CHAR_ARR100];
-    memset(a, 'x', K_LEN99); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(a, K_LEN99, 'x');
     a[K_LEN99] = '\0';
     if (strlen(a) != K_LEN99) {
         t_error("Length of 99 'x's should be 99\n");
@@ -517,7 +518,7 @@ void TestStrlenUnicodeMix()
 void TestStrlenVeryLongString()
 {
     char veryLong[K_CHAR_ARR1025];
-    memset(veryLong, 'x', K_LEN1024); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(veryLong, K_LEN1024, 'x');
     veryLong[K_LEN1024] = '\0';
     if (strlen(veryLong) != K_LEN1024) {
         t_error("Length of very long string should be 1024\n");

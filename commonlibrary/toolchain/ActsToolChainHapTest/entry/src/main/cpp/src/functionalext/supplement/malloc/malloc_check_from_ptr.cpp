@@ -24,17 +24,12 @@
 #define UN_JEMALLOC (-1)
 #define NUM_MALLOCS 256
 
-#define EXPECT_EQ_ONE_OF(fun, val, exp1, exp2)              \
-    do {                                                    \
-        if (((val) != (exp1)) && ((val) != (exp2))) {       \
-            t_error("[%s] failed: %d != %d and %d != %d\n", \
-                    #fun,                                   \
-                    static_cast<int>(val),                  \
-                    static_cast<int>(exp1),                 \
-                    static_cast<int>(val),                  \
-                    static_cast<int>(exp2));                \
-        }                                                   \
-    } while (0)
+static void ExpectEqOneOf(const char* fun, int val, int exp1, int exp2)
+{
+    if (val != exp1 && val != exp2) {
+        t_error("[%s] failed: %d != %d and %d != %d\n", fun, val, exp1, val, exp2);
+    }
+}
 
 static void FreePtrsRange(void** ptrs, int count)
 {
@@ -63,7 +58,7 @@ void MallocCheckFromPtr0100(void)
         return;
     }
     int ret = malloc_check_from_ptr(p);
-    EXPECT_EQ_ONE_OF("MallocCheckFromPtr0100", ret, JEMALLOC_ZONE, UN_JEMALLOC);
+    ExpectEqOneOf("MallocCheckFromPtr0100", ret, JEMALLOC_ZONE, UN_JEMALLOC);
     free(p);
 }
 
@@ -80,7 +75,7 @@ void MallocCheckFromPtr0200(void)
         return;
     }
     int ret = malloc_check_from_ptr(p);
-    EXPECT_EQ_ONE_OF("MallocCheckFromPtr0200", ret, NO_JEMALLOC_ZONE, UN_JEMALLOC);
+    ExpectEqOneOf("MallocCheckFromPtr0200", ret, NO_JEMALLOC_ZONE, UN_JEMALLOC);
     munmap(p, TEST_MEM_SIZE);
 }
 
@@ -97,7 +92,7 @@ void MallocCheckFromPtr0300(void)
         return;
     }
     int ret = malloc_check_from_ptr(p);
-    EXPECT_EQ_ONE_OF("MallocCheckFromPtr0300", ret, JEMALLOC_ZONE, UN_JEMALLOC);
+    ExpectEqOneOf("MallocCheckFromPtr0300", ret, JEMALLOC_ZONE, UN_JEMALLOC);
     free(p);
 }
 
@@ -122,7 +117,7 @@ void MallocCheckFromPtr0400(void)
     // malloc_check_from_ptr in ptrs
     for (int i = 0; i < NUM_MALLOCS; ++i) {
         int ret = malloc_check_from_ptr(ptrs[i]);
-        EXPECT_EQ_ONE_OF("MallocCheckFromPtr0400", ret, JEMALLOC_ZONE, UN_JEMALLOC);
+        ExpectEqOneOf("MallocCheckFromPtr0400", ret, JEMALLOC_ZONE, UN_JEMALLOC);
     }
 
     // free all

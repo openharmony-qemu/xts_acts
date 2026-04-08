@@ -17,39 +17,45 @@
 #include <poll.h>
 #include <type_traits>
 #include "libc_test_shim.h"
-#define TYPE_PUN(t) static_cast<std::add_pointer_t<t>>(nullptr);
-#define FIELD(x, t, n) \
-    do {               \
-        t* y = &(x).n; \
-    } while (0)
-#define IGNORE_POLL_CONST(n) \
-    switch (0) {             \
-        case 0:              \
-            (void)(n);       \
-        default:             \
-            break;           \
-    }
+
+template <typename T> static void TypePun()
+{
+    (void)static_cast<std::add_pointer_t<T>>(nullptr);
+}
+
+template <typename T, typename F> static void CheckField(T& obj, F T::*member)
+{
+    F* ptr = &(obj.*member);
+    (void)ptr;
+}
+
+static void IgnorePollConst(int value)
+{
+    (void)value;
+}
+
 static void PollFortifyBody()
 {
-    TYPE_PUN(nfds_t)
+    TypePun<nfds_t>();
     {
         struct pollfd x;
-        FIELD(x, int, fd);
-        FIELD(x, short, events);
-        FIELD(x, short, revents);
+        CheckField(x, &pollfd::fd);
+        CheckField(x, &pollfd::events);
+        CheckField(x, &pollfd::revents);
     }
-    IGNORE_POLL_CONST(POLLIN)
-    IGNORE_POLL_CONST(POLLRDNORM)
-    IGNORE_POLL_CONST(POLLRDBAND)
-    IGNORE_POLL_CONST(POLLPRI)
-    IGNORE_POLL_CONST(POLLOUT)
-    IGNORE_POLL_CONST(POLLWRNORM)
-    IGNORE_POLL_CONST(POLLWRBAND)
-    IGNORE_POLL_CONST(POLLERR)
-    IGNORE_POLL_CONST(POLLHUP)
-    IGNORE_POLL_CONST(POLLNVAL)
+    IgnorePollConst(POLLIN);
+    IgnorePollConst(POLLRDNORM);
+    IgnorePollConst(POLLRDBAND);
+    IgnorePollConst(POLLPRI);
+    IgnorePollConst(POLLOUT);
+    IgnorePollConst(POLLWRNORM);
+    IgnorePollConst(POLLWRBAND);
+    IgnorePollConst(POLLERR);
+    IgnorePollConst(POLLHUP);
+    IgnorePollConst(POLLNVAL);
     {
         int (*p)(struct pollfd[], nfds_t, int) = poll;
+        (void)p;
     }
 }
 

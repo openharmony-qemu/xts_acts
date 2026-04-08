@@ -32,9 +32,9 @@ static int ArgvTestWithArgs(int argc, char** argv)
     if (!(argv[0][0] != 0)) {
         t_error("argv[0][0] != 0 failed: argv[0] should not be empty\n");
     }
-    if (!(snprintf(buf, sizeof buf, "%s", argv[0]) < sizeof buf)) {
-        t_error("snprintf(buf, sizeof buf, \"%s\", argv[0]) < sizeof buf failed: argv[0] is not a valid PATH\n");
-    } /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    if (!(std::snprintf(buf, sizeof buf, "%s", argv[0]) < sizeof buf)) {
+        t_error("std::snprintf(buf, sizeof buf, \"%s\", argv[0]) < sizeof buf failed: argv[0] is not a valid PATH\n");
+    }
     return T_STATUS;
 }
 

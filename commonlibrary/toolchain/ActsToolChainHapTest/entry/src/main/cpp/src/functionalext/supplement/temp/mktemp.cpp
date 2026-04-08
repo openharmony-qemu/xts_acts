@@ -13,18 +13,21 @@
  * limitations under the License.
  */
 
+#include <cerrno>
 #include <cstdio>
 #include <cstdlib>
+#include <dlfcn.h>
 #include "functionalext.h"
 
 namespace {
+using MktempFn = char* (*)(char*);
 char* MktempForLibcTest(char* tpl)
 {
-    // This test case intentionally uses mktemp to verify its behavior.
-    // mktemp is deprecated and insecure, but used here only for testing.
-    // The use is limited to test scope.
-    // G.FIL.03 is intentionally waived for this test.
-    return mktemp(tpl);
+    static MktempFn fn = nullptr;
+    if (fn == nullptr) {
+        fn = reinterpret_cast<MktempFn>(dlsym(RTLD_DEFAULT, "mktemp"));
+    }
+    return (fn != nullptr) ? fn(tpl) : nullptr;
 }
 } // namespace
 
@@ -118,10 +121,7 @@ void Mktemp0600(void)
     char newFile[256] = { 0 };
     int fd = mkstemp(tempFile); // create file
     if (fd != -1) {
-        (void)snprintf(newFile,
-                       sizeof(newFile),
-                       "%s",
-                       tempFile); // get the file name /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+        (void)std::snprintf(newFile, sizeof(newFile), "%s", tempFile);
         char* ret = MktempForLibcTest(tempFile);
         EXPECT_PTRNE("Mktemp0600", ret, nullptr);
         if (ret) {

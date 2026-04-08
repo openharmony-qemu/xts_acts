@@ -20,7 +20,6 @@ const int SUCCESS = 0;
 
 void* ThreadFun(void* arg)
 {
-
     return nullptr;
 }
 

@@ -36,11 +36,11 @@
 #ifdef A_LL
 
 #ifndef a_pre_llsc
-#define a_pre_llsc()
+static inline void a_pre_llsc(void) {}
 #endif
 
 #ifndef a_post_llsc
-#define a_post_llsc()
+static inline void a_post_llsc(void) {}
 #endif
 
 #ifndef A_CAS

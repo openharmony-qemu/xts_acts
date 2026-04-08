@@ -183,32 +183,22 @@ char* Estr(int f)
 {
     static char buf[MTEST_ESTR_BUF_SIZE];
     char* p = buf;
-    int i, all = 0;
+    int i;
+    int all = 0;
 
     for (i = 0; i < EflagsLength(); i++) {
         if (f & g_eflags[i].flag) {
-            (void)snprintf(p,
-                           (size_t)(buf + MTEST_ESTR_BUF_SIZE - p),
-                           "%s%s",
-                           all ? "|" : "",
-                           g_eflags[i].s); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+            (void)snprintf(p, (size_t)(buf + MTEST_ESTR_BUF_SIZE - p), "%s%s", all ? "|" : "", g_eflags[i].s);
             p += strlen(p);
             all |= g_eflags[i].flag;
         }
     }
     if (all != f) {
-        (void)snprintf(p,
-                       (size_t)(buf + MTEST_ESTR_BUF_SIZE - p),
-                       "%s%d",
-                       all ? "|" : "",
-                       f & ~all); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+        (void)snprintf(p, (size_t)(buf + MTEST_ESTR_BUF_SIZE - p), "%s%d", all ? "|" : "", f & ~all);
         p += strlen(p);
         all = f;
     }
-    (void)snprintf(p,
-                   (size_t)(buf + MTEST_ESTR_BUF_SIZE - p),
-                   "%s",
-                   all ? "" : "0"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    (void)snprintf(p, (size_t)(buf + MTEST_ESTR_BUF_SIZE - p), "%s", all ? "" : "0");
     return buf;
 }
 

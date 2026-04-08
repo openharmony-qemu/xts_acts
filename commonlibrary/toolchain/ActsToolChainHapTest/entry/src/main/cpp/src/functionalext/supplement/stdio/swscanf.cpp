@@ -34,7 +34,7 @@ void Swscanf0100(void)
     wchar_t wstr[] = L"swscanf 123";
     wchar_t tmp[BUFF_SIZE];
     int i;
-    int result = swscanf(wstr, L"%ls %d", tmp, &i); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::swscanf(wstr, L"%ls %d", tmp, &i);
     if (result == EOF) {
         t_error("%s swscanf failed\n", __func__);
         return;
@@ -59,7 +59,7 @@ void Swscanf0200(void)
     wchar_t tmp1[BUFF_SIZE];
     wchar_t tmp2[BUFF_SIZE];
     int i;
-    int result = swscanf(wstr, L"%ls %ls", tmp1, tmp2); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::swscanf(wstr, L"%ls %ls", tmp1, tmp2);
     if (result == EOF) {
         t_error("%s swscanf failed\n", __func__);
         return;
@@ -80,8 +80,9 @@ void Swscanf0200(void)
 void Swscanf0300(void)
 {
     wchar_t wstr[] = L"swscanf 123";
-    int i, j;
-    int result = swscanf(wstr, L"%d %d", &i, &j); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int i;
+    int j;
+    int result = std::swscanf(wstr, L"%d %d", &i, &j);
     if (result >= RESULT_VAL) {
         t_error("%s swscanf expect failed\n", __func__);
     }

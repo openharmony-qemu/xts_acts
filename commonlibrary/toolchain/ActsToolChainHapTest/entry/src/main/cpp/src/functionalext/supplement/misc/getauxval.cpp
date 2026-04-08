@@ -23,9 +23,7 @@
  */
 void Getauxval0100(void)
 {
-    unsigned long int result;
-    result = getauxval(AT_SECURE);
-    EXPECT_EQ("Getauxval0100", result, 0);
+    EXPECT_EQ("Getauxval0100", getauxval(AT_SECURE), 0);
 }
 
 /*
@@ -35,9 +33,7 @@ void Getauxval0100(void)
  */
 void Getauxval0200(void)
 {
-    unsigned long int result;
-    result = getauxval(AT_SYSINFO);
-    EXPECT_EQ("Getauxval0200", result, 0);
+    EXPECT_EQ("Getauxval0200", getauxval(AT_SYSINFO), 0);
 }
 
 /*
@@ -47,9 +43,7 @@ void Getauxval0200(void)
  */
 void Getauxval0300(void)
 {
-    unsigned long int result;
-    result = getauxval(AT_SYSINFO_EHDR);
-    EXPECT_TRUE("Getauxval0300", result != 0);
+    EXPECT_TRUE("Getauxval0300", getauxval(AT_SYSINFO_EHDR) != 0);
 }
 
 static int GetauxvalTestImpl(int argc, char* argv[])

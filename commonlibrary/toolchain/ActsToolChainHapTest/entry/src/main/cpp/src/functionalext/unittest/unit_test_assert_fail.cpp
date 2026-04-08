@@ -20,8 +20,12 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-#undef assert
-#define assert(x) ((void)((x) || (__assert_fail(#x, __FILE__, __LINE__, __func__), 0)))
+static void AssertOrFail(bool value, const char* expr, const char* func)
+{
+    if (!value) {
+        __assert_fail(expr, __FILE__, __LINE__, func);
+    }
+}
 
 static int UnittestFatalMessageAssertFailTestImpl(void)
 {
@@ -36,7 +40,7 @@ static int UnittestFatalMessageAssertFailTestImpl(void)
         return 1;
     } else if (pid1 == 0) {
         // child process one
-        assert(0);
+        AssertOrFail(false, "0", __func__);
         return 0;
     }
     waitpid(pid1, &status, 0);

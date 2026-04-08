@@ -22,7 +22,7 @@
 static void CheckDirnameCase(const char* path, const char* want)
 {
     char tmp[100];
-    (void)snprintf(tmp, sizeof(tmp), "%s", path);
+    (void)std::snprintf(tmp, sizeof(tmp), "%s", path);
     char* got = dirname(tmp);
     if (strcmp(want, got) != 0) {
         t_error("dirname(\"%s\") got \"%s\" want \"%s\"\n", path, got, want);

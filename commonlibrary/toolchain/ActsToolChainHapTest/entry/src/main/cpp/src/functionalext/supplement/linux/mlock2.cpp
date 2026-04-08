@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <algorithm>
 #include <cstdlib>
 #include <sys/mman.h>
 #include "functionalext.h"
@@ -30,7 +31,7 @@ void Mlock20100(void)
         EXPECT_PTRNE("Mlock20100", memory, nullptr);
         return;
     }
-    memset(memory, '\0', memsize); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(memory, memsize, '\0');
     int ret = mlock2(memory, memsize, CMPFLAG);
     EXPECT_EQ("Mlock20100", ret, CMPFLAG);
 
@@ -53,7 +54,7 @@ void Mlock20200(void)
         EXPECT_PTRNE("Mlock20200", memory, nullptr);
         return;
     }
-    memset(memory, '\0', memsize); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(memory, memsize, '\0');
     int ret = mlock2(memory, memchip, MLOCK_ONFAULT);
     EXPECT_EQ("Mlock20200", ret, CMPFLAG);
 

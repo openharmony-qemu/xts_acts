@@ -48,7 +48,8 @@ void Srand480100(void)
             0.801506833263324836,
             0.553675300337165055 } },
     };
-    int i, j;
+    int i;
+    int j;
     for (i = 0; i < K_SRAND48_SEED_CASE_COUNT; i++) {
         srand48(testData[i].seed);
         for (j = 0; j < K_DRAND48_SAMPLE_COUNT; j++) {

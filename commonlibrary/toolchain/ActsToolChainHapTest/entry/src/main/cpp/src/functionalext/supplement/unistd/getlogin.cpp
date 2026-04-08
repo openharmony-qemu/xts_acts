@@ -24,18 +24,14 @@
  */
 void Getlogin0100(void)
 {
-    char* ret;
-    ret = getlogin();
+    char* ret = getlogin();
     if (ret == nullptr) {
-        int senv = setenv("LOGNAME", "newlogname", 1);
-        EXPECT_EQ("Getlogin0100", senv, 0);
+        EXPECT_EQ("Getlogin0100", setenv("LOGNAME", "newlogname", 1), 0);
         ret = getlogin();
         EXPECT_TRUE("Getlogin0100", strcmp(ret, "newlogname") == 0);
         unsetenv("LOGNAME");
     } else {
-        char* genv;
-        genv = getenv("LOGNAME");
-        EXPECT_TRUE("Getlogin0100", strcmp(ret, genv) == 0);
+        EXPECT_TRUE("Getlogin0100", strcmp(ret, getenv("LOGNAME")) == 0);
     }
 }
 

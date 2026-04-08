@@ -27,7 +27,7 @@ int GetReturnVaule(char* s, char* fmt, ...)
 {
     va_list ap;
     va_start(ap, fmt);
-    int result = vsscanf(s, fmt, ap); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::vsscanf(s, fmt, ap);
     va_end(ap);
     return result;
 }

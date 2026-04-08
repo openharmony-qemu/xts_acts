@@ -27,8 +27,7 @@ const int SIZE = 10;
 void Hasmntopt0100(void)
 {
     char* mntOpts = "test_hasmntopt";
-    struct mntent ent;
-    memset(&ent, 0, sizeof(ent)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    struct mntent ent {};
     ent.mnt_opts = mntOpts;
     char* ret = hasmntopt(&ent, "hasmntopt");
     EXPECT_STREQ("Hasmntopt0100", ret, "hasmntopt");
@@ -42,8 +41,7 @@ void Hasmntopt0100(void)
 void Hasmntopt0200(void)
 {
     char* mntOpts = "test_hasmntopt";
-    struct mntent ent;
-    memset(&ent, 0, sizeof(ent)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    struct mntent ent {};
     ent.mnt_opts = mntOpts;
     char* ret = hasmntopt(&ent, "0200");
     EXPECT_PTREQ("Hasmntopt0100", ret, nullptr);

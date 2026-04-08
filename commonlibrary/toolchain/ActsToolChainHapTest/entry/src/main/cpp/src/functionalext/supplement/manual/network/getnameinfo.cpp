@@ -42,8 +42,7 @@ void Getnameinfo0100()
     int ret;
     char host[NI_MAXHOST];
     char server[NI_MAXSERV];
-    struct sockaddr_in sa;
-    memset(&sa, 0, sizeof(sa)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    struct sockaddr_in sa {};
     sa.sin_family = AF_INET;
     inet_pton(AF_INET, "127.0.0.1", &sa.sin_addr.s_addr);
     ret = getnameinfo(
@@ -63,7 +62,8 @@ void Getnameinfo0200()
     int ret = -1;
     int num = -1;
     int res = -1;
-    struct addrinfo *result, hint;
+    struct addrinfo* result;
+    struct addrinfo hint;
     hint.ai_flags = AI_NUMERICHOST;
     hint.ai_family = AF_INET6;
     char buf[] = "fe80::bed5:4695:6cac:bef8";
@@ -90,8 +90,7 @@ void Getnameinfo0300()
     int ret;
     char host[NI_MAXHOST];
     char server[NI_MAXSERV];
-    struct sockaddr_in sa;
-    memset(&sa, 0, sizeof(sa)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    struct sockaddr_in sa {};
     sa.sin_family = AF_INET;
     inet_pton(AF_INET, "127.0.0.1", &sa.sin_addr.s_addr);
     ret = getnameinfo(reinterpret_cast<const struct sockaddr*>(&sa), sizeof(sa), nullptr, 0, server, sizeof(server), 0);
@@ -109,8 +108,7 @@ void Getnameinfo0400()
     int ret;
     char host[NI_MAXHOST];
     char server[NI_MAXSERV];
-    struct sockaddr_in sa;
-    memset(&sa, 0, sizeof(sa)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    struct sockaddr_in sa {};
     sa.sin_family = AF_INET;
     inet_pton(AF_INET, "127.0.0.1", &sa.sin_addr.s_addr);
     ret = getnameinfo(reinterpret_cast<const struct sockaddr*>(&sa), sizeof(sa), host, sizeof(host), nullptr, 0, 0);
@@ -127,8 +125,7 @@ void Getnameinfo0500()
     int ret;
     char host[NI_MAXHOST];
     char server[NI_MAXSERV];
-    struct sockaddr_in sa;
-    memset(&sa, 0, sizeof(sa)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    struct sockaddr_in sa {};
     sa.sin_family = AF_INET;
     inet_pton(AF_INET, "127.0.0.1", &sa.sin_addr.s_addr);
     ret = getnameinfo(reinterpret_cast<const struct sockaddr*>(&sa), 4, host, sizeof(host), server, sizeof(server), 0);
@@ -145,7 +142,8 @@ void Getnameinfo0600()
     int ret = -1;
     int num = -1;
     int res = -1;
-    struct addrinfo *result, hint;
+    struct addrinfo* result;
+    struct addrinfo hint;
     hint.ai_flags = AI_NUMERICHOST;
     hint.ai_family = AF_INET6;
     char buf[] = "fe80::bed5:4695:6cac:bef8";
@@ -171,8 +169,7 @@ void Getnameinfo0700()
     int ret;
     char host[NI_MAXHOST];
     char server[NI_MAXSERV];
-    struct sockaddr_in sa;
-    memset(&sa, 0, sizeof(sa)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    struct sockaddr_in sa {};
     sa.sin_family = AF_LOCAL;
     ret = getnameinfo(
         reinterpret_cast<const struct sockaddr*>(&sa), sizeof(sa), host, sizeof(host), server, sizeof(server), 0);
@@ -185,9 +182,7 @@ void Getnameinfo0900()
     char* ptr = "127.0.0.1";
     char hostname[128] = { 0 };
     char servername[128] = { 0 };
-    struct sockaddr_in addrDst;
-
-    memset(&addrDst, 0, sizeof(addrDst)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    struct sockaddr_in addrDst {};
     addrDst.sin_family = AF_INET;
     addrDst.sin_addr.s_addr = inet_addr(ptr);
     addrDst.sin_port = htons(HTTP_PORT);
@@ -210,9 +205,7 @@ void Getnameinfo1000()
     char* ptr = "127.0.0.1";
     char hostname[128] = { 0 };
     char servername[128] = { 0 };
-    struct sockaddr_in addrDst;
-
-    memset(&addrDst, 0, sizeof(addrDst)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    struct sockaddr_in addrDst {};
     addrDst.sin_family = AF_INET;
     addrDst.sin_addr.s_addr = inet_addr(ptr);
     addrDst.sin_port = htons(TCPMUX_PORT);
@@ -235,9 +228,7 @@ void Getnameinfo1100()
     char* ptr = "127.0.0.1";
     char hostname[128] = { 0 };
     char servername[128] = { 0 };
-    struct sockaddr_in addrDst;
-
-    memset(&addrDst, 0, sizeof(addrDst)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    struct sockaddr_in addrDst {};
     addrDst.sin_family = AF_INET;
     addrDst.sin_addr.s_addr = inet_addr(ptr);
     addrDst.sin_port = htons(FIDO_PORT);
@@ -260,9 +251,7 @@ void Getnameinfo1200()
     char* ptr = "127.0.0.1";
     char hostname[128] = { 0 };
     char servername[128] = { 0 };
-    struct sockaddr_in addrDst;
-
-    memset(&addrDst, 0, sizeof(addrDst)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    struct sockaddr_in addrDst {};
     addrDst.sin_family = AF_INET;
     addrDst.sin_addr.s_addr = inet_addr(ptr);
     addrDst.sin_port = htons(NOT_EXIST_PORT);

@@ -47,7 +47,8 @@ void* ThreadfuncB(void* arg)
  */
 void PthreadOnce0100(void)
 {
-    pthread_t tid1, tid2;
+    pthread_t tid1;
+    pthread_t tid2;
     pthread_create(&tid1, nullptr, ThreadfuncA, nullptr);
     pthread_create(&tid2, nullptr, ThreadfuncB, nullptr);
     pthread_join(tid1, nullptr);

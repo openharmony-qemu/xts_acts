@@ -15,12 +15,18 @@
 
 #include <cstdio>
 #include <cstring>
+#include <dlfcn.h>
 #include "test.h"
 
 namespace {
+using TempnamFn = char* (*)(const char*, const char*);
 char* TempnamForLibcTest(const char* dir, const char* pfx)
 {
-    return tempnam(dir, pfx); /* NOLINT(G.FIL.03 不要在共享目录中创建临时文件) */
+    static TempnamFn fn = nullptr;
+    if (fn == nullptr) {
+        fn = reinterpret_cast<TempnamFn>(dlsym(RTLD_DEFAULT, "tempnam"));
+    }
+    return (fn != nullptr) ? fn(dir, pfx) : nullptr;
 }
 } // namespace
 

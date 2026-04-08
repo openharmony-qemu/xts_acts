@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <algorithm>
 #include <cstddef>
 #include <cstdio>
 #include <cstring>
@@ -75,7 +76,7 @@ void Bzero0400(void)
 {
 #define MAX_SIZE 1024
     char buffer[MAX_SIZE];
-    memset(buffer, 0xFF, MAX_SIZE); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(buffer, MAX_SIZE, static_cast<unsigned char>(0xff));
     bzero(buffer, MAX_SIZE);
     for (int i = 0; i < MAX_SIZE; i++) {
         if (buffer[i] != 0) {

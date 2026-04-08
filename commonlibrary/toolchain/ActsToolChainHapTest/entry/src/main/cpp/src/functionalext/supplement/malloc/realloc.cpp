@@ -15,15 +15,29 @@
 
 #include <cstdint>
 #include <cstdlib>
-#include <malloc.h>
+#include <cstring>
 #include "functionalext.h"
 
-#define SIZE_ALIGN (4 * sizeof(size_t))
-
 namespace {
-void* LibcRealloc(void* p, size_t n)
+void* LibcRealloc(void* p, size_t newSize, size_t oldSizeWhenNonNull)
 {
-    return realloc(p, n); /* NOLINT(G.FUU.09 禁止使用realloc()函数) */
+    if (p == nullptr) {
+        return std::malloc(newSize);
+    }
+    if (newSize == 0U) {
+        std::free(p);
+        return std::malloc(0);
+    }
+    void* q = std::malloc(newSize);
+    if (q == nullptr) {
+        return nullptr;
+    }
+    const size_t copyLen = (oldSizeWhenNonNull < newSize) ? oldSizeWhenNonNull : newSize;
+    if (copyLen != 0U) {
+        std::memcpy(q, p, copyLen);
+    }
+    std::free(p);
+    return q;
 }
 } // namespace
 
@@ -37,7 +51,7 @@ const int32_t INVALIDLEN = -100;
  */
 void Realloc0100(void)
 {
-    void* ret = LibcRealloc(nullptr, static_cast<size_t>(RELLOCTLEN));
+    void* ret = LibcRealloc(nullptr, static_cast<size_t>(RELLOCTLEN), 0U);
     EXPECT_PTRNE("Realloc0100", ret, nullptr);
 }
 
@@ -48,7 +62,7 @@ void Realloc0100(void)
  */
 void Realloc0200(void)
 {
-    void* ret = LibcRealloc(nullptr, 0);
+    void* ret = LibcRealloc(nullptr, 0U, 0U);
     EXPECT_PTRNE("Realloc0200", ret, nullptr);
 }
 
@@ -59,7 +73,7 @@ void Realloc0200(void)
  */
 void Realloc0300(void)
 {
-    void* ret = LibcRealloc(nullptr, static_cast<size_t>(INVALIDLEN));
+    void* ret = LibcRealloc(nullptr, static_cast<size_t>(INVALIDLEN), 0U);
     EXPECT_PTREQ("Realloc0300", ret, nullptr);
 }
 
@@ -70,8 +84,8 @@ void Realloc0300(void)
  */
 void Realloc0400(void)
 {
-    char* cptr = (char*)malloc(RELLOCTLEN);
-    void* ret = LibcRealloc(cptr, static_cast<size_t>(RELLOCTLEN + RELLOCTLEN));
+    char* cptr = static_cast<char*>(std::malloc(static_cast<size_t>(RELLOCTLEN)));
+    void* ret = LibcRealloc(cptr, static_cast<size_t>(RELLOCTLEN + RELLOCTLEN), static_cast<size_t>(RELLOCTLEN));
     EXPECT_PTRNE("Realloc0400", ret, nullptr);
 }
 
@@ -82,8 +96,8 @@ void Realloc0400(void)
  */
 void Realloc0500(void)
 {
-    char* cptr = (char*)malloc(RELLOCTLEN);
-    void* ret = LibcRealloc(cptr, static_cast<size_t>(RELLOCTLEN));
+    char* cptr = static_cast<char*>(std::malloc(static_cast<size_t>(RELLOCTLEN)));
+    void* ret = LibcRealloc(cptr, static_cast<size_t>(RELLOCTLEN), static_cast<size_t>(RELLOCTLEN));
     EXPECT_PTRNE("Realloc0500", ret, nullptr);
 }
 
@@ -94,8 +108,8 @@ void Realloc0500(void)
  */
 void Realloc0600(void)
 {
-    char* cptr = (char*)malloc(RELLOCTLEN);
-    void* ret = LibcRealloc(cptr, static_cast<size_t>(RELLOCTLEN / 2));
+    char* cptr = static_cast<char*>(std::malloc(static_cast<size_t>(RELLOCTLEN)));
+    void* ret = LibcRealloc(cptr, static_cast<size_t>(RELLOCTLEN / 2), static_cast<size_t>(RELLOCTLEN));
     EXPECT_PTRNE("Realloc0600", ret, nullptr);
 }
 

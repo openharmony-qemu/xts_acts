@@ -92,8 +92,10 @@ void Wcstoll0500(void)
 {
     int i;
     long long ll;
-    wchar_t *s, *c;
-    TEST(ll, wcstoll(s = L"0xz", &c, 16), 0, "%lld != %lld");
+    wchar_t* s;
+    wchar_t* c;
+    s = L"0xz";
+    TEST(ll, wcstoll(s, &c, 16), 0, "%lld != %lld");
     TEST2(i, c - s, 1, "wrong final position %lld != %lld");
 }
 
@@ -106,8 +108,10 @@ void Wcstoll0600(void)
 {
     int i;
     long long ll;
-    wchar_t *s, *c;
-    TEST(ll, wcstoll(s = L"0x1234", &c, 16), 0x1234, "%lld != %ld");
+    wchar_t* s;
+    wchar_t* c;
+    s = L"0x1234";
+    TEST(ll, wcstoll(s, &c, 16), 0x1234, "%lld != %ld");
     TEST2(i, c - s, 6, "wrong final position %lld != %lld");
 }
 
@@ -120,8 +124,10 @@ void Wcstoll0700(void)
 {
     int i;
     long long ll;
-    wchar_t *s, *c;
-    TEST(ll, wcstoll(s = L"9223372036854775808", &c, 0), 9223372036854775807LL, "uncaught overflow %lld != %lld");
+    wchar_t* s;
+    wchar_t* c;
+    s = L"9223372036854775808";
+    TEST(ll, wcstoll(s, &c, 0), 9223372036854775807LL, "uncaught overflow %lld != %lld");
     TEST2(i, c - s, 19, "wrong final position %d != %d");
     TEST2(i, errno, ERANGE, "missing errno %d != %d");
 }
@@ -135,8 +141,10 @@ void Wcstoll0800(void)
 {
     int i;
     long long ll;
-    wchar_t *s, *c;
-    TEST(ll, wcstoll(s = L"-9223372036854775809", &c, 0), -9223372036854775807LL - 1, "overflow %lld != %lld");
+    wchar_t* s;
+    wchar_t* c;
+    s = L"-9223372036854775809";
+    TEST(ll, wcstoll(s, &c, 0), -9223372036854775807LL - 1, "overflow %lld != %lld");
     TEST2(i, c - s, 20, "wrong final position %d != %d");
     TEST2(i, errno, ERANGE, "missing errno %d != %d");
 }

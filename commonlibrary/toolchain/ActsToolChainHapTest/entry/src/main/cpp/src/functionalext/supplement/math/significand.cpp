@@ -17,6 +17,13 @@
 #include <cmath>
 #include "test.h"
 
+namespace {
+constexpr double kSignificandZero = 0.0;
+constexpr double kSignificandArg12 = 1.2;
+constexpr double kSignificandArg1225 = 12.25;
+constexpr double kSignificandExpect1225 = 1.53125;
+} // namespace
+
 static void ExpectDoubleEq(double a, double b)
 {
     if (!(fabs(a - b) < DBL_EPSILON)) {
@@ -31,8 +38,8 @@ static void ExpectDoubleEq(double a, double b)
  */
 void Significand0100(void)
 {
-    double d = significand(0.0);
-    ExpectDoubleEq(0.0, d);
+    double d = significand(kSignificandZero);
+    ExpectDoubleEq(kSignificandZero, d);
 }
 
 /*
@@ -42,8 +49,8 @@ void Significand0100(void)
  */
 void Significand0200(void)
 {
-    double d = significand(1.2);
-    ExpectDoubleEq(1.2, d);
+    double d = significand(kSignificandArg12);
+    ExpectDoubleEq(kSignificandArg12, d);
 }
 
 /*
@@ -53,8 +60,8 @@ void Significand0200(void)
  */
 void Significand0300(void)
 {
-    double d = significand(12.25);
-    ExpectDoubleEq(1.53125, d);
+    double d = significand(kSignificandArg1225);
+    ExpectDoubleEq(kSignificandExpect1225, d);
 }
 
 static int SignificandTestImpl(int argc, char* argv[])

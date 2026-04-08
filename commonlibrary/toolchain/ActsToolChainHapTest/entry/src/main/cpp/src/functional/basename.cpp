@@ -22,7 +22,7 @@
 static void CheckBasename(const char* path, const char* want)
 {
     char tmp[100];
-    (void)snprintf(tmp, sizeof(tmp), "%s", path);
+    (void)std::snprintf(tmp, sizeof(tmp), "%s", path);
     char* got = basename(tmp);
     if (strcmp(want, got) != 0) {
         t_error("basename(\"%s\") got \"%s\" want \"%s\"\n", path, got, want);

@@ -35,8 +35,7 @@ void Vsprintf0100(char* format, ...)
     char buffer[K_VSPRINTF_BUF_SIZE] = { 0 };
     va_list aptr;
     va_start(aptr, format);
-    int result =
-        vsnprintf(buffer, K_VSPRINTF_BUF_SIZE, format, aptr); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::vsnprintf(buffer, K_VSPRINTF_BUF_SIZE, format, aptr);
     va_end(aptr);
     if (result < 0) {
         t_error("%s vsnprintf get result is less than 0", __func__);
@@ -56,8 +55,7 @@ void Vsprintf0200(char* format, ...)
     char buffer[K_VSPRINTF_BUF_SIZE] = { 0 };
     va_list aptr;
     va_start(aptr, format);
-    int result =
-        vsnprintf(buffer, K_VSPRINTF_BUF_SIZE, format, aptr); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::vsnprintf(buffer, K_VSPRINTF_BUF_SIZE, format, aptr);
     va_end(aptr);
     if (result < 0) {
         t_error("%s vsnprintf get result is less than 0\n", __func__);
@@ -77,8 +75,7 @@ void Vsprintf0300(char* format, ...)
     char buffer[K_VSPRINTF_BUF_SIZE];
     va_list aptr;
     va_start(aptr, format);
-    int result =
-        vsnprintf(buffer, K_VSPRINTF_BUF_SIZE, format, aptr); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int result = std::vsnprintf(buffer, K_VSPRINTF_BUF_SIZE, format, aptr);
     va_end(aptr);
     if (result < 0) {
         t_error("%s vsnprintf get result is less than 0\n", __func__);

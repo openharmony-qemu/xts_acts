@@ -65,7 +65,8 @@ void PthreadMutexUnLock0200(void)
 {
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
     pthread_mutex_init(&g_mutex, reinterpret_cast<pthread_mutexattr_t*>(&type));
-    pthread_t tid2, tid3;
+    pthread_t tid2;
+    pthread_t tid3;
     pthread_create(&tid2, nullptr, ThreadfuncB, nullptr);
     pthread_join(tid2, nullptr);
     pthread_create(&tid3, nullptr, ThreadfuncC, nullptr);

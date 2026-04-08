@@ -24,9 +24,7 @@
  */
 void Clock0100(void)
 {
-    clock_t ret;
-    ret = clock();
-    EXPECT_TRUE("Clock0100", ret > 0);
+    EXPECT_TRUE("Clock0100", clock() > 0);
 }
 
 static int ClockTestWithArgs(int argc, char* argv[])

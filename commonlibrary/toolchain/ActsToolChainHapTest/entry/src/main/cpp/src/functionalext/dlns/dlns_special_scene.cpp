@@ -57,7 +57,9 @@ void DlopenNsSpecial0200(void)
 {
     Dl_namespace dlns_default;
     dlns_get(nullptr, &dlns_default);
-    Dl_namespace dlns_no_allowed_libs, dlns_normal, dlns_wrong_lib_path;
+    Dl_namespace dlns_no_allowed_libs;
+    Dl_namespace dlns_normal;
+    Dl_namespace dlns_wrong_lib_path;
     dlns_init(&dlns_no_allowed_libs, "ns_no_allowed_libs");
     dlns_init(&dlns_normal, "ns_normal");
     dlns_init(&dlns_wrong_lib_path, "inherited_class");

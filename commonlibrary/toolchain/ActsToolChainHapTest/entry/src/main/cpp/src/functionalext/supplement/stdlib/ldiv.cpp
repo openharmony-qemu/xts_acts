@@ -30,8 +30,7 @@
  */
 void Ldiv0100(void)
 {
-    ldiv_t ret;
-    ret = ldiv(TEST_LDIV_P_SEVENT, TEST_LDIV_P_FOUR);
+    ldiv_t ret = ldiv(TEST_LDIV_P_SEVENT, TEST_LDIV_P_FOUR);
     EXPECT_EQ("Ldiv0100", ret.quot, 1);
     EXPECT_EQ("Ldiv0100", ret.rem, TEST_LDIV_P_THREE);
 

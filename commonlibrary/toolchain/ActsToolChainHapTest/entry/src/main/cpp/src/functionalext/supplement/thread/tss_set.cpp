@@ -22,8 +22,7 @@ static tss_t g_key;
 
 int Tssfunc(void* arg)
 {
-    int ret;
-    ret = tss_create(&g_key, nullptr);
+    int ret = tss_create(&g_key, nullptr);
     if (ret != thrd_success) {
         t_error("%s tss_create failed", __func__);
     }
@@ -50,9 +49,7 @@ int Tssfunc(void* arg)
 void TssSet0100(void)
 {
     thrd_t id;
-    int result;
-
-    result = tss_create(&g_key, nullptr);
+    int result = tss_create(&g_key, nullptr);
     if (result != thrd_success) {
         t_error("%s tss_create failed", __func__);
     }

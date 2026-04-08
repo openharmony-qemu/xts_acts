@@ -27,9 +27,7 @@ const int MASKPRI = LOG_UPTO(LOG_WARNING);
 void Setlogmask0100(void)
 {
     int result = setlogmask(MASKPRI);
-
     result = setlogmask(result);
-
     if (result != MASKPRI) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -43,7 +41,6 @@ void Setlogmask0100(void)
 void Setlogmask0200(void)
 {
     int result = setlogmask(0);
-
     if (result != setlogmask(result)) {
         t_error("%s failed: result = %d\n", __func__, result);
     }

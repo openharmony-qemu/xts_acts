@@ -47,8 +47,10 @@ static const char* WCSTOULL_TEST_MSG = "";
 void Wcstoull0100(void)
 {
     unsigned long long ull;
-    wchar_t *s, *c;
-    TEST(ull, wcstoull(s = L"250068492", &c, 10), 250068492ULL, "expect unsigned %llu != %llu");
+    wchar_t* s;
+    wchar_t* c;
+    s = L"250068492";
+    TEST(ull, wcstoull(s, &c, 10), 250068492ULL, "expect unsigned %llu != %llu");
 }
 
 /**
@@ -59,8 +61,10 @@ void Wcstoull0100(void)
 void Wcstoull0200(void)
 {
     unsigned long long ull;
-    wchar_t *s, *c;
-    TEST(ull, wcstoull(s = L"7b06af00", &c, 16), 2064035584ULL, "expect unsigned %llu != %llu");
+    wchar_t* s;
+    wchar_t* c;
+    s = L"7b06af00";
+    TEST(ull, wcstoull(s, &c, 16), 2064035584ULL, "expect unsigned %llu != %llu");
 }
 
 /**
@@ -71,8 +75,10 @@ void Wcstoull0200(void)
 void Wcstoull0300(void)
 {
     unsigned long long ull;
-    wchar_t *s, *c;
-    TEST(ull, wcstoull(s = L"1100011011110101010001100000", &c, 2), 208622688ULL, "expect unsigned %llu != %llu");
+    wchar_t* s;
+    wchar_t* c;
+    s = L"1100011011110101010001100000";
+    TEST(ull, wcstoull(s, &c, 2), 208622688ULL, "expect unsigned %llu != %llu");
 }
 
 /**
@@ -83,8 +89,10 @@ void Wcstoull0300(void)
 void Wcstoull0400(void)
 {
     unsigned long long ull;
-    wchar_t *s, *c;
-    TEST(ull, wcstoull(s = L"0x6fffff", &c, 0), 7340031ULL, "expect unsigned %llu != %llu");
+    wchar_t* s;
+    wchar_t* c;
+    s = L"0x6fffff";
+    TEST(ull, wcstoull(s, &c, 0), 7340031ULL, "expect unsigned %llu != %llu");
 }
 
 /**
@@ -96,8 +104,10 @@ void Wcstoull0500(void)
 {
     int i;
     unsigned long long ull;
-    wchar_t *s, *c;
-    TEST(ull, wcstoull(s = L"18446744073709551616", &c, 0), 18446744073709551615ULL, "uncaught overflow %llu != %llu");
+    wchar_t* s;
+    wchar_t* c;
+    s = L"18446744073709551616";
+    TEST(ull, wcstoull(s, &c, 0), 18446744073709551615ULL, "uncaught overflow %llu != %llu");
     TEST2(i, c - s, 20, "wrong final position %d != %d");
     TEST2(i, errno, ERANGE, "missing errno %d != %d");
 }
@@ -111,8 +121,10 @@ void Wcstoull0600(void)
 {
     int i;
     unsigned long long ull;
-    wchar_t *s, *c;
-    TEST(ull, wcstoull(s = L"-1", &c, 0), -1ULL, "rejected negative %llu != %llu");
+    wchar_t* s;
+    wchar_t* c;
+    s = L"-1";
+    TEST(ull, wcstoull(s, &c, 0), -1ULL, "rejected negative %llu != %llu");
     TEST2(i, c - s, 2, "wrong final position %d != %d");
     TEST2(i, errno, 0, "spurious errno %d != %d");
 }
@@ -126,8 +138,10 @@ void Wcstoull0700(void)
 {
     int i;
     unsigned long long ull;
-    wchar_t *s, *c;
-    TEST(ull, wcstoull(s = L"-2", &c, 0), -2ULL, "rejected negative %llu != %llu");
+    wchar_t* s;
+    wchar_t* c;
+    s = L"-2";
+    TEST(ull, wcstoull(s, &c, 0), -2ULL, "rejected negative %llu != %llu");
     TEST2(i, c - s, 2, "wrong final position %d != %d");
     TEST2(i, errno, 0, "spurious errno %d != %d");
 }
@@ -141,8 +155,10 @@ void Wcstoull0800(void)
 {
     int i;
     unsigned long long ull;
-    wchar_t *s, *c;
-    TEST(ull, wcstoull(s = L"-9223372036854775808", &c, 0), -9223372036854775808ULL, "rejected negative %llu != %llu");
+    wchar_t* s;
+    wchar_t* c;
+    s = L"-9223372036854775808";
+    TEST(ull, wcstoull(s, &c, 0), -9223372036854775808ULL, "rejected negative %llu != %llu");
     TEST2(i, c - s, 20, "wrong final position %d != %d");
     TEST2(i, errno, 0, "spurious errno %d != %d");
 }

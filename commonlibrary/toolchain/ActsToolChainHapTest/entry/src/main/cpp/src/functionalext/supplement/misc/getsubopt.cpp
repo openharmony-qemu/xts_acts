@@ -29,8 +29,7 @@ void Getsubopt0100(void)
 {
     char* tokens[] = { "getsubopt", "test", nullptr };
     char buf[BUF_SIZE];
-    (void)snprintf(
-        buf, sizeof(buf), "%s", "getsubopt=0100,unknown"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    (void)std::snprintf(buf, sizeof(buf), "%s", "getsubopt=0100,unknown");
     char* subopts = buf;
     char* value = nullptr;
     EXPECT_EQ("Getsubopt0100", 0, getsubopt(&subopts, tokens, &value));
@@ -46,8 +45,7 @@ void Getsubopt0200(void)
 {
     char* tokens[] = { "getsubopt", "test", nullptr };
     char buf[BUF_SIZE];
-    (void)snprintf(
-        buf, sizeof(buf), "%s", "0200=unknown, test"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    (void)std::snprintf(buf, sizeof(buf), "%s", "0200=unknown, test");
     char* subopts = buf;
     char* value = nullptr;
     EXPECT_EQ("Getsubopt0100", -1, getsubopt(&subopts, tokens, &value));

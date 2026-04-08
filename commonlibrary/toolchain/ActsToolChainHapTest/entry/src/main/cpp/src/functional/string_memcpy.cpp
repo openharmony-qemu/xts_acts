@@ -56,11 +56,11 @@ static void TestAlign(int* status, int dalign, int salign, int len)
     }
     p = g_pmemcpy(dst + dalign, src + salign, len);
     if (p != static_cast<void*>(dst + dalign)) {
-        LibcTestError(status, "memcpy(%p,...) returned %p\n", dst + dalign, p);
+        LibcTestError(status, "std::memcpy(%p,...) returned %p\n", dst + dalign, p);
     }
     for (i = 0; i < K_MEMCPY_ALIGN_TEST_N; i++) {
         if (dst[i] != want[i]) {
-            LibcTestError(status, "memcpy(align %d, align %d, %d) failed\n", dalign, salign, len);
+            LibcTestError(status, "std::memcpy(align %d, align %d, %d) failed\n", dalign, salign, len);
             OHPrintf("got : %.*s\n", dalign + len + 1, dst);
             OHPrintf("want: %.*s\n", dalign + len + 1, want);
             break;
@@ -72,9 +72,11 @@ int StringMemcpyTest()
 {
     int status = SUCCESS_CODE;
 
-    int i, j, k;
+    int i;
+    int j;
+    int k;
 
-    g_pmemcpy = memcpy; /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    g_pmemcpy = std::memcpy;
 
     for (i = 0; i < K_MEMCPY_ALIGN_OUTER_BOUND; i++) {
         for (j = 0; j < K_MEMCPY_ALIGN_OUTER_BOUND; j++) {

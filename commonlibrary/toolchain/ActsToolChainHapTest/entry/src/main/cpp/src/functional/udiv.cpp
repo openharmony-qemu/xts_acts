@@ -515,7 +515,10 @@ static struct {
 
 static int UdivTestImpl(void)
 {
-    uint64_t x, y, div, mod;
+    uint64_t x;
+    uint64_t y;
+    uint64_t div;
+    uint64_t mod;
     int i;
 
     for (i = 0; i < sizeof g_t / sizeof *g_t; i++) {

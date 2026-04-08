@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <algorithm>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -75,7 +76,7 @@ void Getgrouplist0100()
         printf("\n");
     }
     if (g_serverGroups != nullptr) {
-        memset(g_serverGroups, 0, groupBytes);
+        std::fill_n(reinterpret_cast<unsigned char*>(g_serverGroups), groupBytes, static_cast<unsigned char>(0));
         free(g_serverGroups);
         g_serverGroups = nullptr;
     }

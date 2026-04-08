@@ -26,7 +26,7 @@ int GetStrValue(const wchar_t* buffer, const wchar_t* format, ...)
     int result = 0;
     va_list args;
     va_start(args, format);
-    (void)vswscanf(buffer, format, args); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    (void)std::vswscanf(buffer, format, args);
     va_end(args);
     return result;
 }

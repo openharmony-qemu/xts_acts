@@ -63,13 +63,11 @@ void TraverseList(char* result, size_t resultLen)
     size_t pos = 0;
     LIST_FOREACH(node, &g_head, entries)
     {
-        int res = snprintf(
-            buffer, sizeof(buffer), "%d ", node->data); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+        int res = std::snprintf(buffer, sizeof(buffer), "%d ", node->data);
         EXPECT_GTE("TraverseList -> snprintf", res, 0);
         size_t len = strlen(buffer);
         if (pos + len < resultLen) {
-            (void)snprintf(
-                result + pos, resultLen - pos, "%s", buffer); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+            (void)std::snprintf(result + pos, resultLen - pos, "%s", buffer);
             pos += len;
         }
     }

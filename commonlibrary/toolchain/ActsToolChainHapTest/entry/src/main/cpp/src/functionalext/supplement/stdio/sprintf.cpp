@@ -20,7 +20,7 @@
 
 #define BUFFER_SIZE 1024
 
-/* 使用 snprintf 替代 sprintf，避免无界写入；各 snprintf 行末附 G.FUU.21 NOLINT（本机 SDK 无 securec 头）。 */
+/* 使用 std::snprintf 替代 sprintf，避免无界写入（C++ 标准库头文件 cstdio）。 */
 
 namespace {
 constexpr int K_EXPECTED_LEN_PLAIN_LITERAL = 4;
@@ -67,81 +67,51 @@ void SprintfSpecifierTests(void)
     char str[BUFFER_SIZE];
     int ret = 0;
 
-    ret = snprintf(str, BUFFER_SIZE, "test"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "test");
     EXPECT_EQ("sprintf_specifier_null", ret, K_EXPECTED_LEN_PLAIN_LITERAL);
     EXPECT_STREQ("sprintf_specifier_null", str, "test");
 
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%d,%i",
-                   K_FMT_SMALL_INT_A,
-                   K_FMT_SMALL_INT_B); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%d,%i", K_FMT_SMALL_INT_A, K_FMT_SMALL_INT_B);
     EXPECT_EQ("sprintf_specifier_integer", ret, K_EXPECTED_LEN_TWO_DECIMAL_INTS);
     EXPECT_STREQ("sprintf_specifier_integer", str, "1,2");
 
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%u,%u",
-                   K_FMT_SMALL_INT_A,
-                   K_UINT32_ALL_BITS_SET); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%u,%u", K_FMT_SMALL_INT_A, K_UINT32_ALL_BITS_SET);
     EXPECT_EQ("sprintf_specifier_Unsigned_integer", ret, K_EXPECTED_LEN_TWO_UNSIGNED_INTS);
     EXPECT_STREQ("sprintf_specifier_Unsigned_integer", str, "1,4294967295");
 
-    ret =
-        snprintf(str, BUFFER_SIZE, "%o", K_OCTAL_SOURCE_NINE); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%o", K_OCTAL_SOURCE_NINE);
     EXPECT_EQ("sprintf_specifier_octal_integer", ret, K_EXPECTED_LEN_OCTAL_DIGITS);
     EXPECT_STREQ("sprintf_specifier_octal_integer", str, "11");
 
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%x,%X",
-                   K_HEX_SOURCE_FIFTEEN,
-                   K_HEX_SOURCE_FIFTEEN); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%x,%X", K_HEX_SOURCE_FIFTEEN, K_HEX_SOURCE_FIFTEEN);
     EXPECT_EQ("sprintf_specifier_hexadecimal_integer", ret, K_EXPECTED_LEN_HEX_PAIR);
     EXPECT_STREQ("sprintf_specifier_hexadecimal_integer", str, "f,F");
 
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%f,%F",
-                   K_SAMPLE_FLOAT_PAIR,
-                   K_SAMPLE_FLOAT_PAIR); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%f,%F", K_SAMPLE_FLOAT_PAIR, K_SAMPLE_FLOAT_PAIR);
     EXPECT_EQ("sprintf_specifier_float", ret, K_EXPECTED_LEN_TWO_DEFAULT_FLOAT);
     EXPECT_STREQ("sprintf_specifier_float", str, "1.230000,1.230000");
 
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%e,%E",
-                   K_SAMPLE_FLOAT_PAIR,
-                   K_SAMPLE_FLOAT_PAIR); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%e,%E", K_SAMPLE_FLOAT_PAIR, K_SAMPLE_FLOAT_PAIR);
     EXPECT_EQ("sprintf_specifier_scientific_notation", ret, K_EXPECTED_LEN_TWO_SCIENTIFIC_FLOAT);
     EXPECT_STREQ("sprintf_specifier_scientific_notation", str, "1.230000e+00,1.230000E+00");
 
-    ret = snprintf(str, BUFFER_SIZE, "%c", K_CHAR_DIGIT_ONE); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%c", K_CHAR_DIGIT_ONE);
     EXPECT_EQ("sprintf_specifier_char", ret, K_EXPECTED_LEN_SINGLE_CHAR);
     EXPECT_STREQ("sprintf_specifier_char", str, "1");
 
-    ret = snprintf(str, BUFFER_SIZE, "%s,%s", "123", "456"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%s,%s", "123", "456");
     EXPECT_EQ("sprintf_specifier_str", ret, K_EXPECTED_LEN_TWO_STRINGS_CSV);
     EXPECT_STREQ("sprintf_specifier_str", str, "123,456");
 
-    ret = snprintf(
-        str,
-        BUFFER_SIZE,
-        "%p",
-        reinterpret_cast<void*>(K_POINTER_PATTERN_ADDR)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%p", reinterpret_cast<void*>(K_POINTER_PATTERN_ADDR));
     EXPECT_EQ("sprintf_specifier_pointer_address", ret, K_EXPECTED_LEN_POINTER_HEX);
     EXPECT_STREQ("sprintf_specifier_pointer_address", str, "0x64fe40");
 
-    ret = snprintf(str, BUFFER_SIZE, "%%test"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%%test");
     EXPECT_EQ("sprintf_specifier_double_percent_sign", ret, K_EXPECTED_LEN_ESCAPED_PERCENT_TEST);
     EXPECT_STREQ("sprintf_specifier_double_percent_sign", str, "%test");
 
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%d,%s,%c",
-                   K_POSITIONAL_FMT_THIRD_INT,
-                   "bc",
-                   'a'); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%d,%s,%c", K_POSITIONAL_FMT_THIRD_INT, "bc", 'a');
     EXPECT_EQ("sprintf_$_symbol", ret, K_EXPECTED_LEN_POSITIONAL_ARGS);
     EXPECT_STREQ("sprintf_$_symbol", str, "123,bc,a");
 }
@@ -151,31 +121,17 @@ void SprintfFlagTests(void)
     char str[BUFFER_SIZE];
     int ret = 0;
 
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%+d %+d %d %d",
-                   K_NEGATIVE_ONE,
-                   K_FMT_SMALL_INT_A,
-                   K_NEGATIVE_ONE,
-                   K_FMT_SMALL_INT_A); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(
+        str, BUFFER_SIZE, "%+d %+d %d %d", K_NEGATIVE_ONE, K_FMT_SMALL_INT_A, K_NEGATIVE_ONE, K_FMT_SMALL_INT_A);
     EXPECT_EQ("sprintf_flag_+_and_space", ret, K_EXPECTED_LEN_SIGN_FLAG_LINE);
     EXPECT_STREQ("sprintf_flag_+_and_space", str, "-1 +1 -1 1");
 
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%#o,%#x,%#X",
-                   K_OCTAL_SOURCE_NINE,
-                   K_OCTAL_SOURCE_NINE,
-                   K_OCTAL_SOURCE_NINE); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%#o,%#x,%#X", K_OCTAL_SOURCE_NINE, K_OCTAL_SOURCE_NINE, K_OCTAL_SOURCE_NINE);
     EXPECT_EQ("sprintf_flag_#", ret, K_EXPECTED_LEN_ALT_OCT_HEX_LINE);
     EXPECT_STREQ("sprintf_flag_#", str, "011,0x9,0X9");
 
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%5d,%05d,%-5d",
-                   K_PADDED_INT_SAMPLE,
-                   K_PADDED_INT_SAMPLE,
-                   K_PADDED_INT_SAMPLE); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret =
+        std::snprintf(str, BUFFER_SIZE, "%5d,%05d,%-5d", K_PADDED_INT_SAMPLE, K_PADDED_INT_SAMPLE, K_PADDED_INT_SAMPLE);
     EXPECT_EQ("sprintf_flag_-_and_0", ret, K_EXPECTED_LEN_WIDTH_ZERO_PAD_LINE);
     EXPECT_STREQ("sprintf_flag_-_and_0", str, "  123,00123,123  ");
 }
@@ -184,21 +140,17 @@ void SprintfWidthTests(void)
 {
     char str[BUFFER_SIZE];
     int ret = 0;
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%d,%3d,%10d",
-                   K_SAMPLE_REPEATED_DECIMAL,
-                   K_SAMPLE_REPEATED_DECIMAL,
-                   K_SAMPLE_REPEATED_DECIMAL); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str,
+                        BUFFER_SIZE,
+                        "%d,%3d,%10d",
+                        K_SAMPLE_REPEATED_DECIMAL,
+                        K_SAMPLE_REPEATED_DECIMAL,
+                        K_SAMPLE_REPEATED_DECIMAL);
     EXPECT_EQ("sprintf_width_num", ret, K_EXPECTED_LEN_WIDTH_THREE_FIELDS);
     EXPECT_STREQ("sprintf_width_num", str, "12345,12345,     12345");
 
     int starFieldWidth = K_FIELD_WIDTH_TEN;
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%*d",
-                   starFieldWidth,
-                   K_SAMPLE_REPEATED_DECIMAL); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%*d", starFieldWidth, K_SAMPLE_REPEATED_DECIMAL);
     EXPECT_EQ("sprintf_width_*", ret, K_EXPECTED_LEN_STAR_WIDTH_FIELD);
     EXPECT_STREQ("sprintf_width_*", str, "     12345");
 }
@@ -207,20 +159,12 @@ void SprintfPrecisionTests(void)
 {
     char str[BUFFER_SIZE];
     int ret = 0;
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%f,%.3f",
-                   K_SAMPLE_PRECISION_FLOAT,
-                   K_SAMPLE_PRECISION_FLOAT); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%f,%.3f", K_SAMPLE_PRECISION_FLOAT, K_SAMPLE_PRECISION_FLOAT);
     EXPECT_EQ("sprintf_precision_num", ret, K_EXPECTED_LEN_TWO_PRECISION_FIELDS);
     EXPECT_STREQ("sprintf_precision_num", str, "1.234500,1.234");
 
     int starFractionDigits = K_FRACTION_DIGITS_THREE;
-    ret = snprintf(str,
-                   BUFFER_SIZE,
-                   "%.*f",
-                   starFractionDigits,
-                   K_SAMPLE_PRECISION_FLOAT); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    ret = std::snprintf(str, BUFFER_SIZE, "%.*f", starFractionDigits, K_SAMPLE_PRECISION_FLOAT);
     EXPECT_EQ("sprintf_precision_*", ret, K_EXPECTED_LEN_PRECISION_STAR_FIELD);
     EXPECT_STREQ("sprintf_precision_*", str, "1.234");
 }

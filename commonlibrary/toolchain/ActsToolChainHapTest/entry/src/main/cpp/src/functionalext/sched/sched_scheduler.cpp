@@ -27,11 +27,7 @@
  */
 static void SchedSetscheduler0010(void)
 {
-    pid_t pid;
-    pid = getpid();
-    int sched;
-    sched = SCHED_FIFO;
-    EXPECT_EQ(SchedSetscheduler0010, sched_setscheduler(pid, sched, nullptr), -1);
+    EXPECT_EQ(SchedSetscheduler0010, sched_setscheduler(getpid(), SCHED_FIFO, nullptr), -1);
 }
 
 static int SchedSchedulerTestImpl(void)

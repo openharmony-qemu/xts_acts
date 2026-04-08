@@ -33,7 +33,8 @@ constexpr double K_NRAND48_EXCLUSIVE_BIT_WIDTH = 31.0;
 void Nrand480100(void)
 {
     unsigned short s[TEST_NRAND_SIZE] = { 1, 2, 3 };
-    int i, j;
+    int i;
+    int j;
     for (i = 0; i < TEST_TIMES; i++) {
         for (j = 0; j < TEST_NRAND_SIZE; j++) {
             s[j] += i * TEST_TIMES;

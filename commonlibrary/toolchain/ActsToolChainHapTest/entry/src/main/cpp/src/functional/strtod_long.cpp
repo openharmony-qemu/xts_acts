@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
+#include <algorithm>
 #include <cstdio>
 #include <cstdlib>
-#include <cstring>
 #include "libc_test_shim.h"
 
 int StrtodLongTest()
@@ -26,7 +26,7 @@ int StrtodLongTest()
     double want = .1111111111111111111111;
     static char buf[40000];
 
-    memset(buf, '1', sizeof buf); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(buf, sizeof buf, '1');
     buf[0] = '.';
     buf[sizeof buf - 1] = 0;
 

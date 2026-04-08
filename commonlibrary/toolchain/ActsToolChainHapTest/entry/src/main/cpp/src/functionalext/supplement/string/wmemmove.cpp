@@ -29,8 +29,8 @@ void Wmemmove0100(void)
     const wchar_t src[] = L"src content";
     int count = 5;
     wchar_t tmp[count + 1];
-    wcsncpy(tmp, src, count);   /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-    wmemmove(dest, src, count); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wcsncpy(tmp, src, count);
+    std::wmemmove(dest, src, count);
     if (wcsncmp(dest, tmp, count)) {
         t_error("The dest specified bits are not equal to the src\n", __func__);
     }
@@ -47,8 +47,8 @@ void Wmemmove0200(void)
     wchar_t* dest = &src[2];
     int count = 5;
     wchar_t tmp[count + 1];
-    wcsncpy(tmp, src, count);   /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-    wmemmove(dest, src, count); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wcsncpy(tmp, src, count);
+    std::wmemmove(dest, src, count);
     if (wcsncmp(dest, tmp, count)) {
         t_error("The dest specified bits are not equal to the src\n", __func__);
     }
@@ -64,7 +64,7 @@ void Wmemmove0300(void)
     wchar_t src[] = L"This is a c test for wmemmove function";
     wchar_t* dest = &src[0];
     int count = 5;
-    wchar_t* result = wmemmove(dest, src, count); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    wchar_t* result = std::wmemmove(dest, src, count);
     if (!(result == dest)) {
         t_error("The first address of dest is not the same as src\n", __func__);
     }
@@ -80,7 +80,7 @@ void Wmemmove0400(void)
     wchar_t dest[30];
     wchar_t src[] = L"Complete wmemmove test";
     size_t n = wcslen(src);
-    wmemmove(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemmove(dest, src, n);
     if (wcsncmp(dest, src, n)) {
         t_error("%s The string of dest is not equal to src\n", __func__);
     }
@@ -99,7 +99,7 @@ void Wmemmove0500(void)
     for (size_t wi = 0; wi < sizeof(original) / sizeof(original[0]); ++wi) {
         original[wi] = dest[wi];
     }
-    wmemmove(dest, src, 0); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemmove(dest, src, 0);
     if (wcscmp(dest, original)) {
         t_error("%s Destination was modified when n=0\n", __func__);
     }
@@ -120,7 +120,7 @@ void Wmemmove0600(void)
     for (size_t wi = 0; wi < sizeof(original) / sizeof(original[0]); ++wi) {
         original[wi] = buf[wi];
     }
-    wmemmove(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemmove(dest, src, n);
     if (wcscmp(buf, original)) {
         t_error("%s Buffer changed when src and dest are same\n", __func__);
     }
@@ -136,7 +136,7 @@ void Wmemmove0700(void)
     wchar_t dest[30];
     wchar_t src[] = L"中文测试 こんにちは Hello";
     size_t n = 6;
-    wmemmove(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemmove(dest, src, n);
     if (wcsncmp(dest, src, n)) {
         t_error("%s Wide character copy failed\n", __func__);
     }
@@ -152,7 +152,7 @@ void Wmemmove0800(void)
     wchar_t dest[20];
     wchar_t src[] = L"test return value";
     size_t n = wcslen(src);
-    wchar_t* ret = wmemmove(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    wchar_t* ret = std::wmemmove(dest, src, n);
     if (ret != dest) {
         t_error("%s Return value is not destination pointer\n", __func__);
     }
@@ -168,7 +168,7 @@ void Wmemmove0900(void)
     wchar_t src[] = L"Exact";
     wchar_t dest[6]; // Exactly fits the string + null terminator
     size_t n = wcslen(src);
-    wmemmove(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemmove(dest, src, n);
     dest[n] = L'\0';
     if (wcscmp(dest, src)) {
         t_error("%s Exact buffer copy failed\n", __func__);
@@ -186,7 +186,7 @@ void Wmemmove1000(void)
     wchar_t* src = buf;
     wchar_t* dest = buf + 5;
     size_t n = 10;
-    wmemmove(dest, src, n); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::wmemmove(dest, src, n);
     wchar_t expected[] = L"abcdeabcdefghijpqrstuvwxyz";
     if (wcscmp(buf, expected)) {
         t_error("%s Forward overlapping copy failed\n", __func__);

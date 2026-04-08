@@ -13,15 +13,6 @@
  * limitations under the License.
  */
 
-// Solve the build error of this test code when importing the header file <sys/epoll.h>
-#ifndef EPOLL_WAIT_TEST
-#define EPOLL_WAIT_TEST
-#if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
-#undef _GNU_SOURCE
-#undef _BSD_SOURCE
-#endif
-#endif
-
 #include <cerrno>
 #include <sys/epoll.h>
 #include "test.h"
@@ -50,10 +41,6 @@ static int EpollWaitTestWithArgs(int argc, char* argv[])
     EpollWait0100();
     return T_STATUS;
 }
-
-#ifdef EPOLL_WAIT_TEST
-#undef EPOLL_WAIT_TEST
-#endif
 
 int EpollWaitTest(void)
 {

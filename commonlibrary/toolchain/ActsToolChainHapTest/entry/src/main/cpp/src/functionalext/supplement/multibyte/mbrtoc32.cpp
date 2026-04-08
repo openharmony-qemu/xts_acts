@@ -54,9 +54,8 @@ void Mbrtoc320200(void)
     char32_t out;
     char str[] = "\u00a3";
     char str1[] = "\u08a3";
-    mbstate_t ps;
+    mbstate_t ps{};
     int ret = 0;
-    memset(&ps, 0x0, sizeof(ps)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
 
     ret = mbrtoc32(&out, str, strlen(str), nullptr);
     EXPECT_EQ("Mbrtoc320200", ret, TWO);
@@ -78,9 +77,8 @@ void Mbrtoc320300(void)
     char str[] = "\xc2";
     char strx[] = "\xc2\xa3";
     int errorresult = -2;
-    mbstate_t ps;
+    mbstate_t ps{};
     int ret = 0;
-    memset(&ps, 0x0, sizeof(ps)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
 
     ret = static_cast<int>(mbrtoc32(&out, str, sizeof(str), nullptr));
     EXPECT_EQ("Mbrtoc320300", ret, ERREXPECT);

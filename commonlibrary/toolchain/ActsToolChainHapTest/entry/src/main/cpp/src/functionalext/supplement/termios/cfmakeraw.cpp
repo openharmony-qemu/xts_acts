@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <cstring>
+#include <algorithm>
 #include <termios.h>
 #include "test.h"
 
@@ -25,7 +25,7 @@
 void Cfmakeraw0100(void)
 {
     struct termios t;
-    memset(&t, 0xff, sizeof(t)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(reinterpret_cast<unsigned char*>(&t), sizeof(t), static_cast<unsigned char>(0xff));
     cfmakeraw(&t);
 
     if ((t.c_iflag & (IGNBRK | BRKINT | PARMRK | ISTRIP | INLCR | IGNCR | ICRNL | IXON)) != 0U) {

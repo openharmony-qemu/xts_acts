@@ -24,14 +24,13 @@
 static void Pipe2Test(const char* msg, int flag)
 {
     int pipefd[TEST_FD_SIZE];
-    char buf[TEST_BUFFER_SIZE];
+    char buf[TEST_BUFFER_SIZE]{};
     int ret = pipe2(pipefd, flag);
     EXPECT_EQ(msg, ret, CMPFLAG);
     if (ret != 0) {
         return;
     }
 
-    memset(buf, 0x0, sizeof(buf)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
     pid_t pid = fork();
     if (pid == 0) {
         close(pipefd[1]);

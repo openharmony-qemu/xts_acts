@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <algorithm>
 #include <cstdio>
 #include <cstring>
 #include "test.h"
@@ -34,10 +35,10 @@ char g_two[50];
  */
 void Memmove0100(void)
 {
-    memset(g_one, 0, sizeof(g_one)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(g_one, sizeof(g_one), '\0');
 
-    (void)snprintf(g_one, sizeof(g_one), "%s", "abcdefgh"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-    memmove(g_one, g_one, K_ABCDEFGH_WITH_NUL); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    (void)std::snprintf(g_one, sizeof(g_one), "%s", "abcdefgh");
+    std::memmove(g_one, g_one, K_ABCDEFGH_WITH_NUL);
     if (strcmp(g_one, "abcdefgh")) {
         t_error("%s memmove failed\n", __func__);
     }
@@ -50,12 +51,12 @@ void Memmove0100(void)
  */
 void Memmove0200(void)
 {
-    memset(g_one, 0, sizeof(g_one)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-    memset(g_two, 0, sizeof(g_two)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(g_one, sizeof(g_one), '\0');
+    std::fill_n(g_two, sizeof(g_two), '\0');
 
-    (void)snprintf(g_one, sizeof(g_one), "%s", "helloWorld"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-    (void)snprintf(g_two, sizeof(g_two), "%s", "foo"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-    memmove(g_two, g_one, K_HELLO_WORLD_WITH_NUL); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    (void)std::snprintf(g_one, sizeof(g_one), "%s", "helloWorld");
+    (void)std::snprintf(g_two, sizeof(g_two), "%s", "foo");
+    std::memmove(g_two, g_one, K_HELLO_WORLD_WITH_NUL);
     if (strcmp(g_one, "helloWorld")) {
         t_error("%s memmove failed\n", __func__);
     }
@@ -71,10 +72,10 @@ void Memmove0200(void)
  */
 void Memmove0300(void)
 {
-    memset(g_one, 0, sizeof(g_one)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(g_one, sizeof(g_one), '\0');
 
-    (void)snprintf(g_one, sizeof(g_one), "%s", "abcdefgh"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-    memmove(g_one + 1, g_one + 2, K_OVERLAP_FORWARD_LEN); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    (void)std::snprintf(g_one, sizeof(g_one), "%s", "abcdefgh");
+    std::memmove(g_one + 1, g_one + 2, K_OVERLAP_FORWARD_LEN);
     if (strcmp(g_one, "acdefgh")) {
         t_error("%s memmove failed\n", __func__);
     }
@@ -87,10 +88,10 @@ void Memmove0300(void)
  */
 void Memmove0400(void)
 {
-    memset(g_one, 0, sizeof(g_one)); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    std::fill_n(g_one, sizeof(g_one), '\0');
 
-    (void)snprintf(g_one, sizeof(g_one), "%s", "abcdefgh"); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
-    memmove(g_one + 1, g_one, K_OVERLAP_REVERSE_LEN); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    (void)std::snprintf(g_one, sizeof(g_one), "%s", "abcdefgh");
+    std::memmove(g_one + 1, g_one, K_OVERLAP_REVERSE_LEN);
     if (strcmp(g_one, "aabcdefgh")) {
         t_error("%s memmove failed\n", __func__);
     }
