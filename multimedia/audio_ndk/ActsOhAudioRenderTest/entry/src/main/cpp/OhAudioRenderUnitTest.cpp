@@ -52,6 +52,10 @@ constexpr int32_t MIN_CALLBACK_COUNT = 10; // 等待的最小回调次数阈值
 constexpr uint32_t FLAG_INITIAL = 0;       // 标记位置初始状态
 constexpr uint32_t FLAG_STARTED = 1;       // 标记位置第一状态
 constexpr uint32_t FLAG_RUNNING = 2;       // 标记位置第二状态
+constexpr int32_t INVALID_LATENCY_MODE = 5; // 无效的延迟模式值
+constexpr float MIN_LOUDNESS_GAIN = -89.9f; // 最小响度增益值
+constexpr float MAX_LOUDNESS_GAIN = 23.9f;  // 最大响度增益值
+constexpr float LOUDNESS_GAIN_TOLERANCE = 0.1f; // 响度增益比较容差
 uint32_t g_flag = FLAG_INITIAL;
 // 设备类型缓存变量
 static bool g_deviceTypeInitialized = false;
@@ -1091,56 +1095,45 @@ int OhAudioRendererGetUnderflowCount001()
 
 int OhAudioRendererGetUnderflowCount002()
 {
-    OH_AudioStreamBuilder* builder = CreateRenderBuilder();
-    OH_AudioStreamBuilder_SetSamplingRate(builder, SAMPLE_RATE_48000);
-    OH_AudioStreamBuilder_SetChannelCount(builder, CHANNEL_2);
-    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_GAME;
-    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioRenderer* audioRenderer = nullptr;
     OHAudioRendererWriteCallbackMock writeCallbackMock;
-    OH_AudioRenderer_Callbacks callbacks;
-    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteDataMock;
-    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, &writeCallbackMock);
-    OH_AudioRenderer* audioRenderer;
-    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
-    if (result != AUDIOSTREAM_SUCCESS) {
+
+    if (CreateGameUsageRendererWithCallback(&builder, &audioRenderer, &writeCallbackMock) != 0) {
         return -1;
     }
+
     std::mutex mutex;
     std::condition_variable cv;
     int32_t count = 0;
-    writeCallbackMock.Install(
-        [&count, &mutex, &cv](OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen) {
-            std::lock_guard<std::mutex> lock(mutex);
-            cv.notify_one();
-            if (count == 0) {
-                std::this_thread::sleep_for(200ms);
-            }
-            count++;
-        });
-    result = OH_AudioRenderer_Start(audioRenderer);
-    if (result != AUDIOSTREAM_SUCCESS) {
+
+    InstallShortDelayCallback(&writeCallbackMock, count, mutex, cv);
+
+    if (StartAndWaitForCallback(audioRenderer, mutex, cv, count, 1) != 0) {
+        CleanupAudioResources(builder, audioRenderer);
         return -1;
     }
-    std::unique_lock<std::mutex> lock(mutex);
-    cv.wait_for(lock, CALLBACK_WAIT_TIMEOUT, [&count] { return count > 1; });
-    lock.unlock();
+
     uint32_t underFlowCount;
-    result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
+    OH_AudioStream_Result result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
     if (result != AUDIOSTREAM_SUCCESS) {
+        CleanupAudioResources(builder, audioRenderer);
         return -1;
     }
+
     if (GetCurrentDeviceIsTV()) {
         if (underFlowCount < 0) {
+            CleanupAudioResources(builder, audioRenderer);
             return -1;
         }
     } else {
         if (underFlowCount <= 0) {
+            CleanupAudioResources(builder, audioRenderer);
             return -1;
         }
     }
-    OH_AudioRenderer_Stop(audioRenderer);
-    OH_AudioRenderer_Release(audioRenderer);
-    OH_AudioStreamBuilder_Destroy(builder);
+
+    CleanupAudioResources(builder, audioRenderer);
     return 0;
 }
 
@@ -1584,7 +1577,9 @@ int OhAudioRenderSetLoudnessGain002()
     }
     float loudnessGain = 0;
     result = OH_AudioRenderer_GetLoudnessGain(audioRenderer, &loudnessGain);
-    if (!((result == AUDIOSTREAM_SUCCESS) && ((-89.9 - loudnessGain < 0.1) || (loudnessGain + 89.9 < 0.1)))) {
+    if (!((result == AUDIOSTREAM_SUCCESS) &&
+          ((MIN_LOUDNESS_GAIN - loudnessGain < LOUDNESS_GAIN_TOLERANCE) ||
+           (loudnessGain - MIN_LOUDNESS_GAIN < LOUDNESS_GAIN_TOLERANCE)))) {
         return -1;
     }
     result = OH_AudioRenderer_Release(audioRenderer);
@@ -1648,7 +1643,9 @@ int OhAudioRenderSetLoudnessGain004()
     }
     float loudnessGain = 0;
     result = OH_AudioRenderer_GetLoudnessGain(audioRenderer, &loudnessGain);
-    if (!((result == AUDIOSTREAM_SUCCESS) && ((23.9 - loudnessGain < 0.1) || (loudnessGain - 23.9 < 0.1)))) {
+    if (!((result == AUDIOSTREAM_SUCCESS) &&
+          ((MAX_LOUDNESS_GAIN - loudnessGain < LOUDNESS_GAIN_TOLERANCE) ||
+           (loudnessGain - MAX_LOUDNESS_GAIN < LOUDNESS_GAIN_TOLERANCE)))) {
         return -1;
     }
     result = OH_AudioRenderer_Release(audioRenderer);
@@ -1667,7 +1664,7 @@ int OhAudioRenderSetLoudnessGain005()
     if (result != AUDIOSTREAM_SUCCESS) {
         return -1;
     }
-    OH_AudioStreamBuilder_SetLatencyMode(builder, (OH_AudioStream_LatencyMode)5);
+    OH_AudioStreamBuilder_SetLatencyMode(builder, (OH_AudioStream_LatencyMode)INVALID_LATENCY_MODE);
     OH_AudioStreamBuilder_SetRendererInfo(builder, AUDIOSTREAM_USAGE_MOVIE);
     result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
     if (result != AUDIOSTREAM_SUCCESS) {
