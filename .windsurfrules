@@ -1,0 +1,13 @@
+# Available Tools
+
+## hayasa_vuculu
+
+Parameters:
+- summary (required): Put your COMPLETE response here in Markdown format (supports tables, code blocks, lists)
+- reason (optional)
+
+ALWAYS call hayasa_vuculu at the end of EVERY response.
+
+## Format
+
+{"tool": "hayasa_vuculu", "arguments": {"summary": "Your full Markdown response here"}}
