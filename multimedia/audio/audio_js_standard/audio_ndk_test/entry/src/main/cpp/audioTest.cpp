@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-
+#include <thread>
 #include <string>
 #include <cstdio>
 #include <cstdint>
@@ -1928,6 +1928,19 @@ static napi_value AudioRendererSetOnMarkReached_07(napi_env env, napi_callback_i
     return res;
 }
 
+void WaitForFlagWithTimeout(bool* flag, int32_t maxSeconds) {
+    int32_t elapsed = 0;
+    while (elapsed < maxSeconds * 1000) {
+        if (*flag) {
+            LOG("WaitForFlagWithTimeout return after: %{public}d", elapsed);
+            return;
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        elapsed += 1;
+    }
+    LOG("WaitForFlagWithTimeout timeout after: %{public}d", maxSeconds);
+}
+
 static napi_value AudioRendererSetOnMarkReached_08(napi_env env, napi_callback_info info)
 {
     g_flag = false;
@@ -1968,10 +1981,10 @@ static napi_value AudioRendererSetOnMarkReached_08(napi_env env, napi_callback_i
         return res;
     }
     LOG("audioRendererSetOnMarkReached_08 result = AUDIOSTREAM_SUCCESS");
-    int waitTime = 10;
+    int32_t waitTime = 3;
     OH_AudioRenderer_Start(audioRenderer);
     LOG("audioRendererSetOnMarkReached_08 OH_AudioRenderer_Start SUCCESS");
-    Delay(waitTime);
+    WaitForFlagWithTimeout(&g_flag, waitTime);
     OH_AudioRenderer_Stop(audioRenderer);
     LOG("audioRendererSetOnMarkReached_08 OH_AudioRenderer_Stop SUCCESS");
     if (!g_flag) {
