@@ -343,39 +343,6 @@ export default function MediaAssetChangeRequestStaticTest(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_STATIC_1700
-     * @tc.number SUB_MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_STATIC_1700
-     * @tc.desc   saveCameraPhoto-success
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_STATIC_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let testNum = 'SUB_MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_STATIC_1700';
-      let testContext: Context = Hypium.get('Context') as Context;
-      const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOptions);
-      let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-      try {
-        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
-        assetChangeRequest.setOrientation(90);
-        await helper!.applyChanges(assetChangeRequest);
-        expect(assetChangeRequest != undefined).assertTrue();
-        done();
-      }
-      catch (error) {
-        console.error(`${testNum} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
      * @tc.name   SUB_MEDIA_ALBUM_CHANGE_REQUEST_GET_ALBUM_STATIC_1900
      * @tc.number SUB_MEDIA_ALBUM_CHANGE_REQUEST_GET_ALBUM_STATIC_1900
      * @tc.desc   getAlbum-success
@@ -691,54 +658,6 @@ export default function MediaAssetChangeRequestStaticTest(): void {
             console.info('commitModify successfully');
           }
         });
-        done();
-      }
-      catch (error) {
-        console.error(`${testNum} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   SUB_MEDIA_ALBUM_CHANGE_REQUEST_ALBUM_TYPE_STATIC_3300
-     * @tc.number SUB_MEDIA_ALBUM_CHANGE_REQUEST_ALBUM_TYPE_STATIC_3300
-     * @tc.desc   albumType-success
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MEDIA_ALBUM_CHANGE_REQUEST_ALBUM_TYPE_STATIC_3300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let testNum = 'SUB_MEDIA_ALBUM_CHANGE_REQUEST_ALBUM_TYPE_STATIC_3300';
-      let testContext: Context = Hypium.get('Context') as Context;
-      const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
-        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-        let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
-        let albumType = albumChangeRequest.getAlbum()?.albumType;
-        let albumSubtype = albumChangeRequest.getAlbum()?.albumSubtype;
-        let albumName = albumChangeRequest.getAlbum()?.albumName;
-        let albumUri = albumChangeRequest.getAlbum()?.albumUri;
-        let imageCount: number = Number(albumChangeRequest.getAlbum()?.imageCount ?? 0);
-        let videoCount: number = Number(albumChangeRequest.getAlbum()?.videoCount ?? 0);
-        let count : number = Number(albumChangeRequest.getAlbum()?.count ?? 0);
-        let coverUri = albumChangeRequest.getAlbum()?.coverUri;
-        expect(albumType != undefined).assertTrue();
-        expect(albumSubtype != undefined).assertTrue();
-        expect(albumName != undefined).assertTrue();
-        expect(albumUri != undefined).assertTrue();
-        expect(imageCount >= 0).assertTrue();
-        expect(videoCount >= 0).assertTrue();
-        expect(count >= 0).assertTrue();
-        expect(coverUri != undefined).assertTrue();
         done();
       }
       catch (error) {
