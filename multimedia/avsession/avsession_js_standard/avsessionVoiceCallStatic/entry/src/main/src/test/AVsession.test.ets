@@ -2863,15 +2863,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_STATIC_1100
-         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_STATIC_1100
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_STATIC_1100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_STATIC_1100
          * @tc.desc   Testing onDesktopLyricVisibilityChanged
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_STATIC_1100';
+        it('SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICSTATECHANGED_STATIC_1100';
             const isSupported: boolean = await avSession.isDesktopLyricSupported();
             if (!isSupported) {
                 done();
@@ -2886,13 +2886,13 @@ export default function abilityTest() {
             }
             try {
                 await session!.enableDesktopLyric(true);
-                session!.onDesktopLyricVisibilityChanged(callback);
+                session!.onDesktopLyricStateChanged(callback);
 
-                await session!.setDesktopLyricVisible(state1);
+                await session!.setDesktopLyricState(state1);
                 await Utils.msSleep(200);
                 expect(callbackTriggered).assertTrue();
 
-                await session!.setDesktopLyricVisible(state2);
+                await session!.setDesktopLyricState(state2);
                 await Utils.msSleep(200);
                 expect(callbackTriggered).assertFalse();
             } catch (err) {
