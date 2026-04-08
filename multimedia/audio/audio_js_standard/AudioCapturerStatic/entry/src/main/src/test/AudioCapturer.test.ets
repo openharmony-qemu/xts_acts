@@ -4256,5 +4256,248 @@ export default function audioCapturer() {
       await audioCapturer!.release();
       done();
     })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0100
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0100
+    * @tc.desc   setIndependentAudioSessionStrategy--0x00000001--VOIP_PRIVACY_TYPE_PUBLIC
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
+      expect(behavior).assertEqual(0x00000001)
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0100 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0100 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0200
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0200
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0200 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0200 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0300
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0300
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0300 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0300 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0400
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0400
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0400 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0400 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0500
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0500
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0500 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICE_0500 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICEREPEATED_0100
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICEREPEATED_0100
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICEREPEATED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
+      try {
+        for(let i=0 ; i < 100 ; i++){
+          audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        }
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICEREPEATED_0100 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_VOICEREPEATED_0100 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
   })
 }

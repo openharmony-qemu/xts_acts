@@ -9744,6 +9744,165 @@ static napi_value AudioSessionManager_SetBehavior_004(napi_env env, napi_callbac
     return res;
 }
 
+static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_enum_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    uint32_t VOIP_PRIVACY_TYPE_PUBLIC = 0x00000001;
+    if (VOIP_PRIVACY_TYPE_PUBLIC != OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOSESSIONMANAGER_VOIP_PRIVACY_TYPE_PUBLIC fail, result is: %{public}d",
+            OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_DEFAULT;
+    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_MIX_WITH_OTHERS;
+    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_DUCK_OTHERS;
+    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_PAUSE_OTHERS;
+    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSessionManager_SetBehavior_Voice_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager* audioSessionManager;
+    OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    OH_AudioCommon_Result result =  OH_AudioSessionManager_SetBehavior(
+ 	    audioSessionManager, OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("AudioSessionManager_SetBehavior_Voice_001 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value AudioSessionManager_SetBehavior_VoiceReapted_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager* audioSessionManager;
+    OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    for (int i = 0 ; i < 100 ;i++) {
+         OH_AudioCommon_Result result =  OH_AudioSessionManager_SetBehavior(
+ 	     audioSessionManager, OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+         if (result == AUDIOSTREAM_SUCCESS) {
+         napi_create_int32(env, TEST_PASS, &res);
+         return res;
+         napi_create_int32(env, TEST_FAIL, &res);
+         LOG("AudioSessionManager_SetBehavior_VoiceReapted_001 fail, result is: %{public}d", result);
+        }
+    }
+    return res;
+}
+
+static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_VoiceReapted_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    for (int i = 0 ;i < 100; i++) {
+        strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_PAUSE_OTHERS;
+        OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+        OH_AudioCapturer_Release(audioCapturer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            return res;
+        }
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AudioCapturer_SetIndependentAudioSessionStrategy_VoiceReapted_001 fail, result is: %{public}d", result);
+    }
+    return res;
+}
+
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
     {"AudioSuiteRendererGetLatency_0100", nullptr, AudioSuiteRendererGetLatency_0100,
@@ -10446,6 +10605,22 @@ napi_property_descriptor desc3[] = {
         AudioSessionManager_SetBehavior_003, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioSessionManager_SetBehavior_004", nullptr,
         AudioSessionManager_SetBehavior_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_SetIndependentAudioSessionStrategy_enum_003", nullptr,
+        AudioCapturer_SetIndependentAudioSessionStrategy_enum_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001", nullptr,
+        AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002", nullptr,
+        AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003", nullptr,
+        AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004", nullptr,
+        AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioSessionManager_SetBehavior_Voice_001", nullptr,
+        AudioSessionManager_SetBehavior_Voice_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioSessionManager_SetBehavior_VoiceReapted_001", nullptr,
+        AudioSessionManager_SetBehavior_VoiceReapted_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCapturer_SetIndependentAudioSessionStrategy_VoiceReapted_001", nullptr,
+        AudioCapturer_SetIndependentAudioSessionStrategy_VoiceReapted_001, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 static napi_value Init(napi_env env, napi_value exports)
 {
