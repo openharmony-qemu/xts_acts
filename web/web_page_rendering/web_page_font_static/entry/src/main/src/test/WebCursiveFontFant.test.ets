@@ -57,14 +57,14 @@ export default function webCursiveFont() {
     /**
      * @tc.name   testWebCursiveFontCursive002
      * @tc.number SUB_WEB_WEBCURSIVEFONT_CURSIVE_0200
-     * @tc.desc   test webCursiveFont with 'fantasy' font family
+     * @tc.desc   test webCursiveFont with 'undefined' font family
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('testWebCursiveFontCursive002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done:()=>void):Promise<void> =>{
-        Utils.emitEvent('testWebCursiveFontCursive002', 10)
+        Utils.emitEvent('testWebCursiveFontCursive002', 150207)
         await Utils.msSleep(2000);
         Utils.registerEvent('testWebCursiveFontCursive002','\"sans-serif\"', 20260312,done);
         await Utils.msSleep(3000);
