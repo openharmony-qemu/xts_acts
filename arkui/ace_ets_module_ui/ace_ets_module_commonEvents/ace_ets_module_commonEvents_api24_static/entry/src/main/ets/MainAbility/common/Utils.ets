@@ -64,7 +64,7 @@ export default class Utils {
     yStep = 0;
     ret = false;
     swipeSteps = steps;
-    if (swipeSteps == 0) {
+    if (swipeSteps === 0) {
       swipeSteps = 1;
     }
     xStep = (upX - downX) / swipeSteps;
@@ -99,7 +99,7 @@ export default class Utils {
       }
       console.info('move touch started: ' + JSON.stringify(movePoint))
       ret = sendTouchEvent(movePoint)
-      if (ret == false) {
+      if (ret === false) {
         break;
       }
       Utils.sleep(5)
