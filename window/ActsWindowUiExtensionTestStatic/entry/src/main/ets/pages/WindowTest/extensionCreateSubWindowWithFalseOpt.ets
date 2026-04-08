@@ -22,6 +22,15 @@ import { UIExtensionContentSession } from '@kit.AbilityKit';
 import uiExtension from '@ohos.arkui.uiExtension';
 import { BusinessError } from '@kit.BasicServicesKit';
 
+async function msSleep(count:int) : Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
+
+
 @Entry
 @Component
 struct extensionCreateSubWindowWithFalseOpt {
@@ -44,13 +53,40 @@ struct extensionCreateSubWindowWithFalseOpt {
 
       Button('createSubWindowWithOptionsFalse')
         .id('createSubWindowWithOptionsFalse')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
+        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(async () => {
           let session: UIExtensionContentSession | undefined = this.storage?.get<UIExtensionContentSession>('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
+
+            const subWindowConfig1: window.SubWindowOptions = {
+              title: 'This is a subwindow',
+              decorEnabled: false,
+              maximizeSupported:true,
+              outlineEnabled:true,
+              isModal: true,
+              modalityType: window.ModalityType.WINDOW_MODALITY
+            };
+            extensionWindow!.createSubWindowWithOptions('createSubWindowWithOptionsFalse', subWindowConfig1, false).then((data: window.Window) => {
+              data!.destroyWindow()
+            })
+            await msSleep(500)
+
+            const subWindowConfig2: window.SubWindowOptions = {
+              title: 'This is a subwindow',
+              decorEnabled: false,
+              maximizeSupported:true,
+              outlineEnabled:true,
+              isModal: true,
+              modalityType: window.ModalityType.APPLICATION_MODALITY
+            };
+            extensionWindow!.createSubWindowWithOptions('createSubWindowWithOptionsFalse', subWindowConfig2, false).then((data: window.Window) => {
+              data!.destroyWindow()
+            })
+            await msSleep(500)
+
             const subWindowConfig: window.SubWindowOptions = {
               title: 'This is a subwindow',
-              decorEnabled: true,
+              decorEnabled: false,
               maximizeSupported:true,
               outlineEnabled:true
             };

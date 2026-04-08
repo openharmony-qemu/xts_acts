@@ -201,6 +201,31 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
+        Button('offWindowSizeChange')
+        .id('offWindowSizeChange')
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = this.storage?.get < UIExtensionContentSession > ('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            let cb = (size: window.Size) => {
+              console.info(`The avoid area of the host window is: ${JSON.stringify(size)}.`);
+              if(size.width>0 &&size.height>0){
+                this.flag = true;
+                console.log('success in getWindowAvoidAreaNAVIGATION_INDICATOR flag:' + this.flag)
+              }
+              
+            }
+            extensionWindow!.onWindowSizeChange(cb);
+            extensionWindow!.offWindowSizeChange(cb);
+            extensionWindow!.onWindowSizeChange(cb);
+            extensionWindow!.offWindowSizeChange();
+            this.message = 'success'
+
+          } catch (err) {
+            console.log('testGetWindowAvoidArea_TYPE_NAVIGATION_INDICATOR err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
         Button('rectChange')
         .id('rectChange')
         .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
