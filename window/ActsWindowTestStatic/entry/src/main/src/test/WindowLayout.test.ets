@@ -2127,7 +2127,6 @@ export default function WindowLayoutTest() {
             let windowClass:window.Window = windowStageStart.getMainWindowSync();
             console.log(caseName + 'Succeed in get mainwindow');
             let timer = 0;
-            if(isFreeWindowMode){
                 try {
                     const callback = (cb: window.RectChangeOptions) => {
                         console.log(caseName + ' cb: ' + JSON.stringify(cb));
@@ -2142,12 +2141,12 @@ export default function WindowLayoutTest() {
                     console.log(caseName + ' timer: ' + timer);
                     if (isFreeWindowMode == true) {
                         expect(timer).assertEqual(1);
+                        await windowClass.recover();
+                        console.log(caseName + 'Succeed recover window');
                     } else {
                         expect(timer).assertEqual(0);
                     }
                     windowClass.offRectChangeInGlobalDisplay();
-                    await windowClass.recover();
-                     console.log(caseName + 'Succeed recover window');
                     await terminateAbility(caseName);
                     done();
                 } catch (err) {
@@ -2163,11 +2162,6 @@ export default function WindowLayoutTest() {
                         done();
                     }
                 }
-            }else{
-                console.log(caseName + 'not supprot');
-                done();
-            }
-        })
         /**
          * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_static_0100
          * @tc.name       testOnOcclusionStatewithDestoryedSubwindow_static
