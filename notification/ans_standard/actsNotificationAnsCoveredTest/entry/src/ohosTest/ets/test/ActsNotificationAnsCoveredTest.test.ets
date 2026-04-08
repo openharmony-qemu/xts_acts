@@ -45,7 +45,7 @@ export default function actsNotificationAnsCovered() {
         await sleep(1500);
       } else {
         console.log(Tag + `button is null`)
-        //expect(button).assertContain('允许')
+        expect(button).assertFail(); // 或者检查权限是否已开启
       }
     })
     beforeEach(() => {
