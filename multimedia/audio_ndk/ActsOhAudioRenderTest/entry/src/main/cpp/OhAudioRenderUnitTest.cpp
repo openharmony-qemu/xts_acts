@@ -14,6 +14,7 @@
  */
 
 #include "include/OhAudioRenderUnitTest.h"
+#include "include/RenderHelperTest.h"
 #include <atomic>
 #include <chrono>
 #include <cmath>
@@ -56,7 +57,6 @@ constexpr int32_t INVALID_LATENCY_MODE = 5; // 无效的延迟模式值
 constexpr float MIN_LOUDNESS_GAIN = -89.9f; // 最小响度增益值
 constexpr float MAX_LOUDNESS_GAIN = 23.9f;  // 最大响度增益值
 constexpr float LOUDNESS_GAIN_TOLERANCE = 0.1f; // 响度增益比较容差
-uint32_t g_flag = FLAG_INITIAL;
 // 设备类型缓存变量
 static bool g_deviceTypeInitialized = false;
 static bool g_isTV = false;
@@ -65,178 +65,13 @@ static bool g_isTV = false;
 namespace Acts {
 namespace AudioRender {
 
-// Callback synchronization context structure
-struct CallbackSyncContext {
-    int32_t& count;
-    std::mutex& mutex;
-    std::condition_variable& cv;
-
-    CallbackSyncContext(int32_t& c, std::mutex& m, std::condition_variable& cvRef) : count(c), mutex(m), cv(cvRef) {}
-};
-
-// Helper callback functions
-static int32_t AudioRendererOnWriteData(OH_AudioRenderer* capturer, void* userData, void* buffer, int32_t bufferLen)
-{
-    return 0;
-}
-
-static void AudioRendererOnMarkReachedCb(OH_AudioRenderer* renderer, uint32_t samplePos, void* userData)
-{
-    g_flag = samplePos;
-}
-
-// Mock class for write callback
-class OHAudioRendererWriteCallbackMock {
-public:
-    void OnWriteData(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
-    {
-        exeCount_++;
-        if (executor_) {
-            executor_(renderer, userData, buffer, bufferLen);
-        }
-    }
-
-    void Install(std::function<void(OH_AudioRenderer*, void*, void*, int32_t)> executor)
-    {
-        executor_ = executor;
-    }
-
-    uint32_t GetExeCount()
-    {
-        return exeCount_;
-    }
-
-private:
-    std::function<void(OH_AudioRenderer*, void*, void*, int32_t)> executor_;
-    std::atomic<uint32_t> exeCount_{ 0 };
-};
-
-static int32_t AudioRendererOnWriteDataMock(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
-{
-    OHAudioRendererWriteCallbackMock* mockPtr = static_cast<OHAudioRendererWriteCallbackMock*>(userData);
-    mockPtr->OnWriteData(renderer, userData, buffer, bufferLen);
-    return 0;
-}
-
-static OH_AudioData_Callback_Result OnWriteDataCallbackWithValidData(
-    OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
-{
-    return AUDIO_DATA_CALLBACK_RESULT_VALID;
-}
-
-static OH_AudioData_Callback_Result OnWriteDataCallbackWithInvalidData(
-    OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
-{
-    return AUDIO_DATA_CALLBACK_RESULT_INVALID;
-}
-
-struct UserData {
-    enum { WRITE_DATA_CALLBACK, WRITE_DATA_CALLBACK_WITH_RESULT } writeDataCallbackType;
-};
-
-static int32_t OnWriteDataCbMock(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
-{
-    UserData* u = static_cast<UserData*>(userData);
-    u->writeDataCallbackType = UserData::WRITE_DATA_CALLBACK;
-    return 0;
-}
-
-static OH_AudioData_Callback_Result OnWriteDataCbWithValidDataMock(
-    OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
-{
-    UserData* u = static_cast<UserData*>(userData);
-    u->writeDataCallbackType = UserData::WRITE_DATA_CALLBACK_WITH_RESULT;
-    return AUDIO_DATA_CALLBACK_RESULT_VALID;
-}
-
-static OH_AudioData_Callback_Result OnWriteDataCbWithInvalidDataMock(
-    OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
-{
-    UserData* u = static_cast<UserData*>(userData);
-    u->writeDataCallbackType = UserData::WRITE_DATA_CALLBACK_WITH_RESULT;
-    return AUDIO_DATA_CALLBACK_RESULT_INVALID;
-}
-
-// Device detection helper
-bool GetCurrentDeviceIsTV()
-{
-    // 如果已经初始化，直接返回缓存值
-    if (g_deviceTypeInitialized) {
-        return g_isTV;
-    }
-
-    // 原有的设备查询逻辑
-    OH_AudioRoutingManager* audioRoutingManager = nullptr;
-    OH_AudioDevice_Flag deviceFlage = AUDIO_DEVICE_FLAG_ALL;
-    OH_AudioDeviceDescriptorArray* audioDeviceDescriptorArray = nullptr;
-    OH_AudioManager_GetAudioRoutingManager(&audioRoutingManager);
-
-    OH_AudioCommon_Result res =
-        OH_AudioRoutingManager_GetDevices(audioRoutingManager, deviceFlage, &audioDeviceDescriptorArray);
-    if (res != OH_AudioCommon_Result::AUDIOCOMMON_RESULT_SUCCESS) {
-        g_isTV = false;
-        g_deviceTypeInitialized = true;
-        return false;
-    }
-
-    OH_AudioDevice_Type deviceType;
-    std::vector<uint8_t> deviceTypes;
-    for (size_t i = 0; i < audioDeviceDescriptorArray->size; i++) {
-        OH_AudioDeviceDescriptor_GetDeviceType(audioDeviceDescriptorArray->descriptors[i], &deviceType);
-        deviceTypes.push_back(deviceType);
-    }
-
-    bool isTVDevice = false;
-    for (auto& device : deviceTypes) {
-        if (!isTVDevice && device == AUDIO_DEVICE_TYPE_DISPLAY_PORT) {
-            isTVDevice = true;
-            break;
-        }
-    }
-    
-    // 缓存结果
-    g_isTV = isTVDevice;
-    g_deviceTypeInitialized = true;
-    return isTVDevice;
-}
-
-// Builder helpers
-OH_AudioStreamBuilder* CreateRenderBuilder()
-{
-    OH_AudioStreamBuilder* builder;
-    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_RENDERER;
-    OH_AudioStreamBuilder_Create(&builder, type);
-    return builder;
-}
-
-OH_AudioStreamBuilder* InitRenderBuilder()
-{
-    OH_AudioStreamBuilder* builder = CreateRenderBuilder();
-    OH_AudioStreamBuilder_SetSamplingRate(builder, SAMPLING_RATE);
-    OH_AudioStreamBuilder_SetChannelCount(builder, CHANNEL_COUNT);
-    OH_AudioStreamBuilder_SetLatencyMode(builder, (OH_AudioStream_LatencyMode)LATENCY_FORMAT);
-    OH_AudioStreamBuilder_SetSampleFormat(builder, (OH_AudioStream_SampleFormat)SAMPLE_FORMAT);
-    OH_AudioStreamBuilder_SetFrameSizeInCallback(builder, FRAME_SIZE);
-    return builder;
-}
+// 全局标记变量（用于回调）
+uint32_t g_flag = FLAG_INITIAL;
 
 // Forward declarations
 static int CreateGameUsageRendererWithCallback(OH_AudioStreamBuilder** builder,
                                                OH_AudioRenderer** audioRenderer,
                                                OHAudioRendererWriteCallbackMock* writeCallbackMock);
-
-void CleanupAudioResources(OH_AudioStreamBuilder* builder, OH_AudioRenderer* audioRenderer)
-{
-    OH_AudioStream_Result result = OH_AudioRenderer_Stop(audioRenderer);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        return;
-    }
-    result = OH_AudioRenderer_Release(audioRenderer);
-    if (result != AUDIOSTREAM_SUCCESS) {
-        return;
-    }
-    OH_AudioStreamBuilder_Destroy(builder);
-}
 
 // Test functions - Category 1: Renderer Creation Tests (2)
 int OhAudioRenderGenerate001()
@@ -771,11 +606,18 @@ int OhAudioRenderSetVolume002()
     OH_AudioStreamBuilder* builder = CreateRenderBuilder();
     OH_AudioRenderer* audioRenderer;
     OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioStreamBuilder_Destroy(builder);
+        return -1;
+    }
     float volumeSet = VALID_TEST_VOLUME;
     result = OH_AudioRenderer_SetVolume(audioRenderer, volumeSet);
     if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Release(audioRenderer);
+        OH_AudioStreamBuilder_Destroy(builder);
         return -1;
     }
+    OH_AudioRenderer_Release(audioRenderer);
     OH_AudioStreamBuilder_Destroy(builder);
     return 0;
 }
@@ -2100,39 +1942,19 @@ int OhAudioRenderSetLoudnessGain021()
     OH_AudioStreamBuilder_SetRendererInfo(builder, AUDIOSTREAM_USAGE_MOVIE);
     result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
     if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioStreamBuilder_Destroy(builder);
         return -1;
     }
-    int i = 0;
-    float loudnessGain = 0;
-    constexpr int LOOP_COUNT = 2000;
-    constexpr float TEST_GAIN_POSITIVE = 10.0f;
-    constexpr float TEST_GAIN_NEGATIVE = -10.0f;
-    while (i < LOOP_COUNT) {
-        result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, TEST_GAIN_POSITIVE);
-        if (result != AUDIOSTREAM_SUCCESS) {
+    constexpr int loopCount = 2000;
+    constexpr float testGainPositive = 10.0f;
+    constexpr float testGainNegative = -10.0f;
+    for (int i = 0; i < loopCount; i++) {
+        if (TestLoudnessGainSetAndGet(audioRenderer, testGainPositive) != 0 ||
+            TestLoudnessGainSetAndGet(audioRenderer, testGainNegative) != 0) {
             OH_AudioRenderer_Release(audioRenderer);
             OH_AudioStreamBuilder_Destroy(builder);
             return -1;
         }
-        result = OH_AudioRenderer_GetLoudnessGain(audioRenderer, &loudnessGain);
-        if (!((result == AUDIOSTREAM_SUCCESS) && (loudnessGain == TEST_GAIN_POSITIVE))) {
-            OH_AudioRenderer_Release(audioRenderer);
-            OH_AudioStreamBuilder_Destroy(builder);
-            return -1;
-        }
-        result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, TEST_GAIN_NEGATIVE);
-        if (result != AUDIOSTREAM_SUCCESS) {
-            OH_AudioRenderer_Release(audioRenderer);
-            OH_AudioStreamBuilder_Destroy(builder);
-            return -1;
-        }
-        result = OH_AudioRenderer_GetLoudnessGain(audioRenderer, &loudnessGain);
-        if (!((result == AUDIOSTREAM_SUCCESS) && (loudnessGain == TEST_GAIN_NEGATIVE))) {
-            OH_AudioRenderer_Release(audioRenderer);
-            OH_AudioStreamBuilder_Destroy(builder);
-            return -1;
-        }
-        i++;
     }
     result = OH_AudioRenderer_Release(audioRenderer);
     if (result != AUDIOSTREAM_SUCCESS) {
