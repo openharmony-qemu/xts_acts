@@ -113,7 +113,7 @@ it('GridRowJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       console.info('[GridRowJsunit_static_0200] START');
       AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({
         name: 'columns',
-        value: '12'
+        value: '-12'
       })
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({
@@ -145,7 +145,7 @@ it('GridRowJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       if (UIContext.resolveUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 400) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('2');
       } else if (UIContext.resolveUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 600) {
-        expect(obj.getElement('$attrs').getString('columns')).assertEqual('12');
+        expect(obj.getElement('$attrs').getString('columns')).assertEqual('4');
       } else if (UIContext.resolveUIContext()!.px2vp(AppStorage.get<number>("winWidth")!) < 800) {
         expect(obj.getElement('$attrs').getString('columns')).assertEqual('8');
       } else {
