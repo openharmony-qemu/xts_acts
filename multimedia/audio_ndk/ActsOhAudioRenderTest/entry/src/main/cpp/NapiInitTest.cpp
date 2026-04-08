@@ -336,12 +336,15 @@ static napi_value UnderflowDetectionTest(napi_env env, napi_callback_info info)
                 testFunc = Acts::AudioRender::OhAudioRendererGetUnderflowCount001;
                 break;
             case CASE_NUM_1:
-                testFunc = Acts::AudioRender::OhAudioRendererGetUnderflowCount003;
+                testFunc = Acts::AudioRender::OhAudioRendererGetUnderflowCount002;
                 break;
             case CASE_NUM_2:
-                testFunc = Acts::AudioRender::OhAudioRendererGetUnderflowCount004;
+                testFunc = Acts::AudioRender::OhAudioRendererGetUnderflowCount003;
                 break;
             case CASE_NUM_3:
+                testFunc = Acts::AudioRender::OhAudioRendererGetUnderflowCount004;
+                break;
+            case CASE_NUM_4:
                 testFunc = Acts::AudioRender::OhAudioRendererGetUnderflowCount005;
                 break;
             default:
@@ -388,7 +391,7 @@ static napi_value WriteDataCallbackTest(napi_env env, napi_callback_info info)
     });
 }
 
-// Category 8: Loudness Gain Set Test (12 cases, note: gaps in numbering)
+// Category 8: Loudness Gain Set Test (17 cases, note: gaps in numbering)
 static napi_value LoudnessGainSetTest(napi_env env, napi_callback_info info)
 {
     return NapiTry(env, [&]() -> napi_value {
@@ -397,39 +400,54 @@ static napi_value LoudnessGainSetTest(napi_env env, napi_callback_info info)
         std::function<int()> testFunc;
         switch (caseNum) {
             case CASE_NUM_0:
-                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain006;
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain001;
                 break;
             case CASE_NUM_1:
-                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain007;
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain002;
                 break;
             case CASE_NUM_2:
-                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain008;
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain003;
                 break;
             case CASE_NUM_3:
-                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain010;
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain004;
                 break;
             case CASE_NUM_4:
-                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain011;
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain005;
                 break;
             case CASE_NUM_5:
-                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain012;
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain006;
                 break;
             case CASE_NUM_6:
-                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain013;
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain007;
                 break;
             case CASE_NUM_7:
-                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain014;
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain008;
                 break;
             case CASE_NUM_8:
-                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain015;
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain010;
                 break;
             case CASE_NUM_9:
-                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain017;
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain011;
                 break;
             case CASE_NUM_10:
-                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain018;
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain012;
                 break;
             case CASE_NUM_11:
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain013;
+                break;
+            case CASE_NUM_12:
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain014;
+                break;
+            case CASE_NUM_13:
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain015;
+                break;
+            case CASE_NUM_14:
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain017;
+                break;
+            case CASE_NUM_15:
+                testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain018;
+                break;
+            case CASE_NUM_16:
                 testFunc = Acts::AudioRender::OhAudioRenderSetLoudnessGain019;
                 break;
             default:

@@ -855,6 +855,7 @@ int OhAudioRenderSetMarkPosition003()
 
 int OhAudioRenderSetMarkPosition004()
 {
+    g_flag = FLAG_INITIAL;
     OH_AudioStreamBuilder* builder = CreateRenderBuilder();
     OH_AudioStreamBuilder_SetSamplingRate(builder, SAMPLING_RATE);
     OH_AudioStreamBuilder_SetChannelCount(builder, CHANNEL_COUNT);
@@ -867,27 +868,38 @@ int OhAudioRenderSetMarkPosition004()
     OH_AudioRenderer* audioRenderer;
     result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
     if (g_flag != FLAG_INITIAL) {
+        OH_AudioRenderer_Release(audioRenderer);
+        OH_AudioStreamBuilder_Destroy(builder);
         return -1;
     }
     uint32_t samplePos = 1;
     OH_AudioRenderer_OnMarkReachedCallback callback = AudioRendererOnMarkReachedCb;
     result = OH_AudioRenderer_SetMarkPosition(audioRenderer, samplePos, callback, nullptr);
     if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Release(audioRenderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        g_flag = FLAG_INITIAL;
         return -1;
     }
     result = OH_AudioRenderer_Start(audioRenderer);
     std::this_thread::sleep_for(std::chrono::seconds(DELAY_TIME_SECONDS));
     if (g_flag != FLAG_STARTED) {
+        OH_AudioRenderer_Stop(audioRenderer);
+        OH_AudioRenderer_Release(audioRenderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        g_flag = FLAG_INITIAL;
         return -1;
     }
     result = OH_AudioRenderer_Stop(audioRenderer);
     result = OH_AudioRenderer_Release(audioRenderer);
     OH_AudioStreamBuilder_Destroy(builder);
+    g_flag = FLAG_INITIAL;
     return 0;
 }
 
 int OhAudioRenderSetMarkPosition005()
 {
+    g_flag = FLAG_INITIAL;
     OH_AudioStreamBuilder* builder = CreateRenderBuilder();
     OH_AudioStreamBuilder_SetSamplingRate(builder, SAMPLING_RATE);
     OH_AudioStreamBuilder_SetChannelCount(builder, CHANNEL_COUNT);
@@ -905,16 +917,24 @@ int OhAudioRenderSetMarkPosition005()
     result = OH_AudioRenderer_SetMarkPosition(audioRenderer, samplePos, callback, nullptr);
     result = OH_AudioRenderer_SetMarkPosition(audioRenderer, samplePos, callback, nullptr);
     if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Release(audioRenderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        g_flag = FLAG_INITIAL;
         return -1;
     }
     result = OH_AudioRenderer_Start(audioRenderer);
     std::this_thread::sleep_for(std::chrono::seconds(DELAY_TIME_SECONDS));
     if (g_flag != FLAG_STARTED) {
+        OH_AudioRenderer_Stop(audioRenderer);
+        OH_AudioRenderer_Release(audioRenderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        g_flag = FLAG_INITIAL;
         return -1;
     }
     result = OH_AudioRenderer_Stop(audioRenderer);
     result = OH_AudioRenderer_Release(audioRenderer);
     OH_AudioStreamBuilder_Destroy(builder);
+    g_flag = FLAG_INITIAL;
     return 0;
 }
 
@@ -943,6 +963,7 @@ int OhAudioRenderCancelMark002()
 
 int OhAudioRenderCancelMark003()
 {
+    g_flag = FLAG_INITIAL;
     OH_AudioStreamBuilder* builder = CreateRenderBuilder();
     OH_AudioStreamBuilder_SetSamplingRate(builder, SAMPLING_RATE);
     OH_AudioStreamBuilder_SetChannelCount(builder, CHANNEL_COUNT);
@@ -958,20 +979,32 @@ int OhAudioRenderCancelMark003()
     OH_AudioRenderer_OnMarkReachedCallback callback = AudioRendererOnMarkReachedCb;
     result = OH_AudioRenderer_SetMarkPosition(audioRenderer, samplePos, callback, nullptr);
     if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Release(audioRenderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        g_flag = FLAG_INITIAL;
         return -1;
     }
     result = OH_AudioRenderer_Start(audioRenderer);
     std::this_thread::sleep_for(std::chrono::seconds(DELAY_TIME_SECONDS));
     if (g_flag != FLAG_RUNNING) {
+        OH_AudioRenderer_Stop(audioRenderer);
+        OH_AudioRenderer_Release(audioRenderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        g_flag = FLAG_INITIAL;
         return -1;
     }
     result = OH_AudioRenderer_CancelMark(audioRenderer);
     if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Stop(audioRenderer);
+        OH_AudioRenderer_Release(audioRenderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        g_flag = FLAG_INITIAL;
         return -1;
     }
     result = OH_AudioRenderer_Stop(audioRenderer);
     result = OH_AudioRenderer_Release(audioRenderer);
     OH_AudioStreamBuilder_Destroy(builder);
+    g_flag = FLAG_INITIAL;
     return 0;
 }
 
@@ -1053,6 +1086,61 @@ int OhAudioRendererGetUnderflowCount001()
     }
 
     CleanupAudioResources(builder, audioRenderer);
+    return 0;
+}
+
+int OhAudioRendererGetUnderflowCount002()
+{
+    OH_AudioStreamBuilder* builder = CreateRenderBuilder();
+    OH_AudioStreamBuilder_SetSamplingRate(builder, SAMPLE_RATE_48000);
+    OH_AudioStreamBuilder_SetChannelCount(builder, CHANNEL_2);
+    OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_GAME;
+    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
+    OHAudioRendererWriteCallbackMock writeCallbackMock;
+    OH_AudioRenderer_Callbacks callbacks;
+    callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteDataMock;
+    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, &writeCallbackMock);
+    OH_AudioRenderer* audioRenderer;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    std::mutex mutex;
+    std::condition_variable cv;
+    int32_t count = 0;
+    writeCallbackMock.Install(
+        [&count, &mutex, &cv](OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen) {
+            std::lock_guard<std::mutex> lock(mutex);
+            cv.notify_one();
+            if (count == 0) {
+                std::this_thread::sleep_for(200ms);
+            }
+            count++;
+        });
+    result = OH_AudioRenderer_Start(audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    std::unique_lock<std::mutex> lock(mutex);
+    cv.wait_for(lock, CALLBACK_WAIT_TIMEOUT, [&count] { return count > 1; });
+    lock.unlock();
+    uint32_t underFlowCount;
+    result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    if (GetCurrentDeviceIsTV()) {
+        if (underFlowCount < 0) {
+            return -1;
+        }
+    } else {
+        if (underFlowCount <= 0) {
+            return -1;
+        }
+    }
+    OH_AudioRenderer_Stop(audioRenderer);
+    OH_AudioRenderer_Release(audioRenderer);
+    OH_AudioStreamBuilder_Destroy(builder);
     return 0;
 }
 
@@ -1443,6 +1531,166 @@ int OhAudioRenderWriteDataCallback006()
 }
 
 // Category 8: Loudness Gain Set Tests (22)
+int OhAudioRenderSetLoudnessGain001()
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioRenderer* audioRenderer = nullptr;
+    auto result = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_RENDERER);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    OH_AudioStreamBuilder_SetLatencyMode(builder, AUDIOSTREAM_LATENCY_MODE_NORMAL);
+    OH_AudioStreamBuilder_SetRendererInfo(builder, AUDIOSTREAM_USAGE_MUSIC);
+    result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, -90.0f);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    std::this_thread::sleep_for(std::chrono::seconds(DELAY_TIME_SECONDS));
+    float loudnessGain = 0;
+    result = OH_AudioRenderer_GetLoudnessGain(audioRenderer, &loudnessGain);
+    if (!((result == AUDIOSTREAM_SUCCESS) && (loudnessGain == -90.0f))) {
+        return -1;
+    }
+    result = OH_AudioRenderer_Release(audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    OH_AudioStreamBuilder_Destroy(builder);
+    return 0;
+}
+
+int OhAudioRenderSetLoudnessGain002()
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioRenderer* audioRenderer = nullptr;
+    auto result = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_RENDERER);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    OH_AudioStreamBuilder_SetLatencyMode(builder, AUDIOSTREAM_LATENCY_MODE_NORMAL);
+    OH_AudioStreamBuilder_SetRendererInfo(builder, AUDIOSTREAM_USAGE_MUSIC);
+    result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, -89.9f);
+    std::this_thread::sleep_for(std::chrono::seconds(DELAY_TIME_SECONDS));
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    float loudnessGain = 0;
+    result = OH_AudioRenderer_GetLoudnessGain(audioRenderer, &loudnessGain);
+    if (!((result == AUDIOSTREAM_SUCCESS) && ((-89.9 - loudnessGain < 0.1) || (loudnessGain + 89.9 < 0.1)))) {
+        return -1;
+    }
+    result = OH_AudioRenderer_Release(audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    OH_AudioStreamBuilder_Destroy(builder);
+    return 0;
+}
+
+int OhAudioRenderSetLoudnessGain003()
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioRenderer* audioRenderer = nullptr;
+    auto result = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_RENDERER);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    OH_AudioStreamBuilder_SetLatencyMode(builder, AUDIOSTREAM_LATENCY_MODE_NORMAL);
+    OH_AudioStreamBuilder_SetRendererInfo(builder, AUDIOSTREAM_USAGE_MOVIE);
+    result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, 24.0f);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    std::this_thread::sleep_for(std::chrono::seconds(DELAY_TIME_SECONDS));
+    float loudnessGain = 0;
+    result = OH_AudioRenderer_GetLoudnessGain(audioRenderer, &loudnessGain);
+    if (!((result == AUDIOSTREAM_SUCCESS) && (loudnessGain == 24.0f))) {
+        return -1;
+    }
+    result = OH_AudioRenderer_Release(audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    OH_AudioStreamBuilder_Destroy(builder);
+    return 0;
+}
+
+int OhAudioRenderSetLoudnessGain004()
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioRenderer* audioRenderer = nullptr;
+    auto result = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_RENDERER);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    OH_AudioStreamBuilder_SetLatencyMode(builder, AUDIOSTREAM_LATENCY_MODE_NORMAL);
+    OH_AudioStreamBuilder_SetRendererInfo(builder, AUDIOSTREAM_USAGE_AUDIOBOOK);
+    result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, 23.9f);
+    std::this_thread::sleep_for(std::chrono::seconds(DELAY_TIME_SECONDS));
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    float loudnessGain = 0;
+    result = OH_AudioRenderer_GetLoudnessGain(audioRenderer, &loudnessGain);
+    if (!((result == AUDIOSTREAM_SUCCESS) && ((23.9 - loudnessGain < 0.1) || (loudnessGain - 23.9 < 0.1)))) {
+        return -1;
+    }
+    result = OH_AudioRenderer_Release(audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    OH_AudioStreamBuilder_Destroy(builder);
+    return 0;
+}
+
+int OhAudioRenderSetLoudnessGain005()
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioRenderer* audioRenderer = nullptr;
+    auto result = OH_AudioStreamBuilder_Create(&builder, AUDIOSTREAM_TYPE_RENDERER);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    OH_AudioStreamBuilder_SetLatencyMode(builder, (OH_AudioStream_LatencyMode)5);
+    OH_AudioStreamBuilder_SetRendererInfo(builder, AUDIOSTREAM_USAGE_MOVIE);
+    result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    result = OH_AudioRenderer_SetLoudnessGain(audioRenderer, 24.0f);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    std::this_thread::sleep_for(std::chrono::seconds(DELAY_TIME_SECONDS));
+    float loudnessGain = 0;
+    result = OH_AudioRenderer_GetLoudnessGain(audioRenderer, &loudnessGain);
+    if (!((result == AUDIOSTREAM_SUCCESS) && (loudnessGain == 24.0f))) {
+        return -1;
+    }
+    result = OH_AudioRenderer_Release(audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        return -1;
+    }
+    OH_AudioStreamBuilder_Destroy(builder);
+    return 0;
+}
+
 int OhAudioRenderSetLoudnessGain006()
 {
     OH_AudioStreamBuilder* builder = nullptr;

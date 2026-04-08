@@ -782,6 +782,23 @@ export default function OhAudioRenderUnitTest() {
     })
 
     /**
+     * @tc.name   OH_AudioRenderer_GetUnderflowCount_002
+     * @tc.number OH_AudioRenderer_GetUnderflowCount_002
+     * @tc.desc   测试回调延迟触发下溢，验证下溢检测功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.Level  LEVEL0
+     */
+    it('OH_AudioRenderer_GetUnderflowCount_002', Level.LEVEL0, async () => {
+      try {
+        const result = await libOhAudioRenderOps.UnderflowDetectionTest(1);
+      expect(result).assertEqual(0);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+
+    /**
      * @tc.name   OH_AudioRenderer_GetUnderflowCount_003
      * @tc.number OH_AudioRenderer_GetUnderflowCount_003
      * @tc.desc   测试正常播放无下溢，验证下溢计数准确性
@@ -791,7 +808,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_AudioRenderer_GetUnderflowCount_003', Level.LEVEL0, async () => {
       try {
-        const result = await libOhAudioRenderOps.UnderflowDetectionTest(1);
+        const result = await libOhAudioRenderOps.UnderflowDetectionTest(2);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -808,7 +825,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_AudioRenderer_GetUnderflowCount_004', Level.LEVEL0, async () => {
       try {
-        const result = await libOhAudioRenderOps.UnderflowDetectionTest(2);
+        const result = await libOhAudioRenderOps.UnderflowDetectionTest(3);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -825,7 +842,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_AudioRenderer_GetUnderflowCount_005', Level.LEVEL0, async () => {
       try {
-        const result = await libOhAudioRenderOps.UnderflowDetectionTest(3);
+        const result = await libOhAudioRenderOps.UnderflowDetectionTest(4);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -935,6 +952,91 @@ export default function OhAudioRenderUnitTest() {
     })
 
     /**
+     * @tc.name   OH_Audio_Render_SetLoudnessGain_001
+     * @tc.number OH_Audio_Render_SetLoudnessGain_001
+     * @tc.desc   测试音乐场景设置-90.0f响度增益，验证边界值设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.Level  LEVEL0
+     */
+    it('OH_Audio_Render_SetLoudnessGain_001', Level.LEVEL0, async () => {
+      try {
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(0);
+      expect(result).assertEqual(0);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   OH_Audio_Render_SetLoudnessGain_002
+     * @tc.number OH_Audio_Render_SetLoudnessGain_002
+     * @tc.desc   测试音乐场景设置-89.9f响度增益，验证浮点数设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.Level  LEVEL0
+     */
+    it('OH_Audio_Render_SetLoudnessGain_002', Level.LEVEL0, async () => {
+      try {
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(1);
+      expect(result).assertEqual(0);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   OH_Audio_Render_SetLoudnessGain_003
+     * @tc.number OH_Audio_Render_SetLoudnessGain_003
+     * @tc.desc   测试电影场景设置24.0f响度增益，验证上限值设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.Level  LEVEL0
+     */
+    it('OH_Audio_Render_SetLoudnessGain_003', Level.LEVEL0, async () => {
+      try {
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(2);
+      expect(result).assertEqual(0);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   OH_Audio_Render_SetLoudnessGain_004
+     * @tc.number OH_Audio_Render_SetLoudnessGain_004
+     * @tc.desc   测试有声读物场景设置23.9f响度增益，验证浮点数设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.Level  LEVEL0
+     */
+    it('OH_Audio_Render_SetLoudnessGain_004', Level.LEVEL0, async () => {
+      try {
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(3);
+      expect(result).assertEqual(0);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   OH_Audio_Render_SetLoudnessGain_005
+     * @tc.number OH_Audio_Render_SetLoudnessGain_005
+     * @tc.desc   测试特殊延迟模式设置响度增益，验证延迟模式兼容性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.Level  LEVEL0
+     */
+    it('OH_Audio_Render_SetLoudnessGain_005', Level.LEVEL0, async () => {
+      try {
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(4);
+      expect(result).assertEqual(0);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+
+    /**
      * @tc.name   OH_Audio_Render_SetLoudnessGain_006
      * @tc.number OH_Audio_Render_SetLoudnessGain_006
      * @tc.desc   测试设置超下限响度增益，验证参数校验功能
@@ -944,7 +1046,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_Audio_Render_SetLoudnessGain_006', Level.LEVEL1, async () => {
       try {
-        const result = await libOhAudioRenderOps.LoudnessGainSetTest(0);
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(5);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -961,7 +1063,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_Audio_Render_SetLoudnessGain_007', Level.LEVEL1, async () => {
       try {
-        const result = await libOhAudioRenderOps.LoudnessGainSetTest(1);
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(6);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -978,7 +1080,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_Audio_Render_SetLoudnessGain_008', Level.LEVEL2, async () => {
       try {
-        const result = await libOhAudioRenderOps.LoudnessGainSetTest(2);
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(7);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -995,7 +1097,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_Audio_Render_SetLoudnessGain_010', Level.LEVEL2, async () => {
       try {
-        const result = await libOhAudioRenderOps.LoudnessGainSetTest(3);
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(8);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -1012,7 +1114,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_Audio_Render_SetLoudnessGain_011', Level.LEVEL2, async () => {
       try {
-        const result = await libOhAudioRenderOps.LoudnessGainSetTest(4);
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(9);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -1029,7 +1131,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_Audio_Render_SetLoudnessGain_012', Level.LEVEL2, async () => {
       try {
-        const result = await libOhAudioRenderOps.LoudnessGainSetTest(5);
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(10);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -1046,7 +1148,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_Audio_Render_SetLoudnessGain_013', Level.LEVEL2, async () => {
       try {
-        const result = await libOhAudioRenderOps.LoudnessGainSetTest(6);
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(11);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -1063,7 +1165,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_Audio_Render_SetLoudnessGain_014', Level.LEVEL2, async () => {
       try {
-        const result = await libOhAudioRenderOps.LoudnessGainSetTest(7);
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(12);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -1080,7 +1182,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_Audio_Render_SetLoudnessGain_015', Level.LEVEL2, async () => {
       try {
-        const result = await libOhAudioRenderOps.LoudnessGainSetTest(8);
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(13);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -1097,7 +1199,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_Audio_Render_SetLoudnessGain_017', Level.LEVEL2, async () => {
       try {
-        const result = await libOhAudioRenderOps.LoudnessGainSetTest(9);
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(14);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -1114,7 +1216,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_Audio_Render_SetLoudnessGain_018', Level.LEVEL2, async () => {
       try {
-        const result = await libOhAudioRenderOps.LoudnessGainSetTest(10);
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(15);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -1131,7 +1233,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_Audio_Render_SetLoudnessGain_019', Level.LEVEL2, async () => {
       try {
-        const result = await libOhAudioRenderOps.LoudnessGainSetTest(11);
+        const result = await libOhAudioRenderOps.LoudnessGainSetTest(16);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
