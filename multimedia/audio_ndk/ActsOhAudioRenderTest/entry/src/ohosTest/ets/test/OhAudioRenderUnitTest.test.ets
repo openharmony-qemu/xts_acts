@@ -1241,14 +1241,14 @@ export default function OhAudioRenderUnitTest() {
     })
 
     /**
-     * @tc.name   SUB_MUlTIMEDIA_AUDIO_FRAMEWORK_OH_AUDIO_RENDER_SET_LOUDNESS_GAIN_0100
-     * @tc.number SUB_MUlTIMEDIA_AUDIO_FRAMEWORK_OH_AUDIO_RENDER_SET_LOUDNESS_GAIN_0100
+     * @tc.name   SUB_MUlTIMEDIA_AUDIO_FRAMEWORK_IS_ACOUSTIC_ECHO_CANCELER_SUPPORTED_0100
+     * @tc.number SUB_MUlTIMEDIA_AUDIO_FRAMEWORK_IS_ACOUSTIC_ECHO_CANCELER_SUPPORTED_0100
      * @tc.desc   测试视频通话场景设置响度增益，验证场景限制
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.Level  LEVEL2
      */
-    it('SUB_MUlTIMEDIA_AUDIO_FRAMEWORK_OH_AUDIO_RENDER_SET_LOUDNESS_GAIN_0100', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AUDIO_FRAMEWORK_IS_ACOUSTIC_ECHO_CANCELER_SUPPORTED_0100', Level.LEVEL2, async () => {
       try {
         const result = await libOhAudioRenderOps.StreamManagerTest(0);
         expect(result).assertEqual(0);
@@ -1256,16 +1256,16 @@ export default function OhAudioRenderUnitTest() {
         expect().assertFail();
       }
     })
-
+    
     /**
-     * @tc.name   SUB_MUlTIMEDIA_AUDIO_FRAMEWORK_OH_AUDIO_RENDER_SET_LOUDNESS_GAIN_0200
-     * @tc.number SUB_MUlTIMEDIA_AUDIO_FRAMEWORK_OH_AUDIO_RENDER_SET_LOUDNESS_GAIN_0200
+     * @tc.name   SUB_MUlTIMEDIA_AUDIO_FRAMEWORK_IS_ACOUSTIC_ECHO_CANCELER_SUPPORTED_0200
+     * @tc.number SUB_MUlTIMEDIA_AUDIO_FRAMEWORK_IS_ACOUSTIC_ECHO_CANCELER_SUPPORTED_0200
      * @tc.desc   测试查询回声消除支持，验证功能查询
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.Level  LEVEL2
      */
-    it('SUB_MUlTIMEDIA_AUDIO_FRAMEWORK_OH_AUDIO_RENDER_SET_LOUDNESS_GAIN_0200', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AUDIO_FRAMEWORK_IS_ACOUSTIC_ECHO_CANCELER_SUPPORTED_0200', Level.LEVEL2, async () => {
       try {
         const result = await libOhAudioRenderOps.StreamManagerTest(1);
         expect(result).assertEqual(0);
