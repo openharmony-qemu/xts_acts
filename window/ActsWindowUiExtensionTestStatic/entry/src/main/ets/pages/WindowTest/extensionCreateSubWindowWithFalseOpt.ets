@@ -53,37 +53,10 @@ struct extensionCreateSubWindowWithFalseOpt {
 
       Button('createSubWindowWithOptionsFalse')
         .id('createSubWindowWithOptionsFalse')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(async () => {
+        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
           let session: UIExtensionContentSession | undefined = this.storage?.get<UIExtensionContentSession>('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
-
-            const subWindowConfig1: window.SubWindowOptions = {
-              title: 'This is a subwindow',
-              decorEnabled: false,
-              maximizeSupported:true,
-              outlineEnabled:true,
-              isModal: true,
-              modalityType: window.ModalityType.WINDOW_MODALITY
-            };
-            extensionWindow!.createSubWindowWithOptions('createSubWindowWithOptionsFalse', subWindowConfig1, false).then((data: window.Window) => {
-              data!.destroyWindow()
-            })
-            await msSleep(500)
-
-            const subWindowConfig2: window.SubWindowOptions = {
-              title: 'This is a subwindow',
-              decorEnabled: false,
-              maximizeSupported:true,
-              outlineEnabled:true,
-              isModal: true,
-              modalityType: window.ModalityType.APPLICATION_MODALITY
-            };
-            extensionWindow!.createSubWindowWithOptions('createSubWindowWithOptionsFalse', subWindowConfig2, false).then((data: window.Window) => {
-              data!.destroyWindow()
-            })
-            await msSleep(500)
-
             const subWindowConfig: window.SubWindowOptions = {
               title: 'This is a subwindow',
               decorEnabled: false,
@@ -102,6 +75,35 @@ struct extensionCreateSubWindowWithFalseOpt {
               console.log('testCreateSubWindowWithOptionsFollowFalse err in page, err : ' + JSON.stringify(err))
               this.message = err.code + ''
             })
+
+            setTimeout(() => {
+              const subWindowConfig1: window.SubWindowOptions = {
+                title: 'This is a subwindow',
+                decorEnabled: false,
+                maximizeSupported:true,
+                outlineEnabled:true,
+                isModal: true,
+                modalityType: window.ModalityType.WINDOW_MODALITY
+              };
+              extensionWindow!.createSubWindowWithOptions('createSubWindowWithOptionsFalse', subWindowConfig1, false).then((data: window.Window) => {
+                data!.destroyWindow()
+              })
+            }, 500)
+
+            setTimeout(() => {
+              const subWindowConfig2: window.SubWindowOptions = {
+                title: 'This is a subwindow',
+                decorEnabled: false,
+                maximizeSupported:true,
+                outlineEnabled:true,
+                isModal: true,
+                modalityType: window.ModalityType.APPLICATION_MODALITY
+              };
+              extensionWindow!.createSubWindowWithOptions('createSubWindowWithOptionsFalse', subWindowConfig2, false).then((data: window.Window) => {
+                data!.destroyWindow()
+              })
+            }, 1000)
+
           } catch (err) {
             console.log('testCreateSubWindowWithOptionsFollowFalse err in page, err : ' + JSON.stringify(err))
             this.message = err.code + ''
