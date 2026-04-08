@@ -26,7 +26,6 @@ group("security") {
       "cipher/datacipher:datacipher",
       "cryptoFramework",
       "crypto_architecture:ActsCryptoArchitectureTest",
-      "crypto_framework_napi_BasicTest:ActsCryptoFrameworkNAPITest",
       "data_identify_annoymize_service_SuccessTest:ActsDataIdentifyTest",
       "dlpNDK20Test:ActsDlpNDK20Test",
       "dlpNDKTest:ActsDlpNDKTest",
