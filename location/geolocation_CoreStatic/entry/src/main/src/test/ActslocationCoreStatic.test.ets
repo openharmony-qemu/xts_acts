@@ -465,7 +465,7 @@ export default function actslocationTest() {
                 }
               };
               try {
-                geoLocationManager.getCurrentLocation(requestInfo, locationChange);
+                geoLocationManager.onLocationChange(requestInfo, locationChange);
               } catch (err) {
                 console.error("Sub_Location_core_getCurrentLocation_0100 errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(801);
