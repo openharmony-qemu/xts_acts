@@ -3759,24 +3759,25 @@ export default function abilityTest() {
             let TAG: string = "[SUB_MULTIMEDIA_AVSESSION_ONPLAY_RETURN_STATIC_0100]";
             let cmdInfo : avSession.CommandInfo = {
                 callerBundleName : 'com.example.hmsapp.music',
-                callerModuleName : 'BroadCastCenter',
-                callerDeviceId : '123123123123',
-                callerType : avSession.CallerType.TYPE_APP
+                callerModuleName : 'callerModuleA',
+                callerDeviceId : '111222333',
+                callerType : avSession.CallerType.TYPE_BLUETOOTH
+            }
+            let controlCommand : avSession.AVControlCommand = {
+                command : 'play',
+                commandInfo : cmdInfo
             }
 
             try {
                 session!.onPlay((info : avSession.CommandInfo) => {
                     console.info(`${TAG}TestLog: Play command callback registration successful`);
-                    expect(info?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
+                    expect(info?.callerBundleName).assertEqual("com.example.myapplication.static");
                     expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
-                    expect(info?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
-                    expect(info?.callerType).assertEqual(cmdInfo.callerType);
+                    expect(info?.callerDeviceId).assertNull();
+                    expect(info?.callerType).assertEqual(avSession.CallerType.TYPE_APP);
                     console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
                 });
-                let controlCommand : avSession.AVControlCommand = {
-                    command : 'play',
-                    commandInfo : cmdInfo
-                }
+                await Utils.msSleep(100);
                 await controller!.sendControlCommand(controlCommand);
                 console.info(`${TAG}TestLog: Controller send command successfully`);
                 await Utils.msSleep(300);
@@ -3801,24 +3802,25 @@ export default function abilityTest() {
             let TAG: string = "[SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_RETURN_STATIC_0100]";
             let cmdInfo : avSession.CommandInfo = {
                 callerBundleName : 'com.example.hmsapp.music',
-                callerModuleName : 'BroadCastCenter',
+                callerModuleName : '123321123321',
                 callerDeviceId : '123123123123',
-                callerType : avSession.CallerType.TYPE_APP
+                callerType : avSession.CallerType.TYPE_NEARLINK
+            }
+            let controlCommand : avSession.AVControlCommand = {
+                command : 'playPrevious',
+                commandInfo : cmdInfo
             }
 
             try {
                 session!.onPlayPrevious((info : avSession.CommandInfo) => {
                     console.info(`${TAG}TestLog: PlayPrevious command callback registration successful`);
-                    expect(info?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
+                    expect(info?.callerBundleName).assertEqual("com.example.myapplication.static");
                     expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
-                    expect(info?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
-                    expect(info?.callerType).assertEqual(cmdInfo.callerType);
+                    expect(info?.callerDeviceId).assertNull();
+                    expect(info?.callerType).assertEqual(avSession.CallerType.TYPE_APP);
                     console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
                 });
-                let controlCommand : avSession.AVControlCommand = {
-                    command : 'playPrevious',
-                    commandInfo : cmdInfo
-                }
+                await Utils.msSleep(100);
                 await controller!.sendControlCommand(controlCommand);
                 console.info(`${TAG}TestLog: Controller send command successfully`);
                 await Utils.msSleep(300);
@@ -3843,24 +3845,25 @@ export default function abilityTest() {
             let TAG: string = "[SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_RETURN_STATIC_0100]";
             let cmdInfo : avSession.CommandInfo = {
                 callerBundleName : 'com.example.hmsapp.music',
-                callerModuleName : 'BroadCastCenter',
+                callerModuleName : 'testModuleName',
                 callerDeviceId : '123123123123',
-                callerType : avSession.CallerType.TYPE_APP
+                callerType : avSession.CallerType.TYPE_CAST
+            }
+            let controlCommand : avSession.AVControlCommand = {
+                command : 'playNext',
+                commandInfo : cmdInfo
             }
 
             try {
                 session!.onPlayNext((info : avSession.CommandInfo) => {
                     console.info(`${TAG}TestLog: PlayNext command callback registration successful`);
-                    expect(info?.callerBundleName).assertEqual(cmdInfo.callerBundleName);
+                    expect(info?.callerBundleName).assertEqual("com.example.myapplication.static");
                     expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
-                    expect(info?.callerDeviceId).assertEqual(cmdInfo.callerDeviceId);
-                    expect(info?.callerType).assertEqual(cmdInfo.callerType);
+                    expect(info?.callerDeviceId).assertNull();
+                    expect(info?.callerType).assertEqual(avSession.CallerType.TYPE_APP);
                     console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
                 });
-                let controlCommand : avSession.AVControlCommand = {
-                    command : 'playNext',
-                    commandInfo : cmdInfo
-                }
+                await Utils.msSleep(100);
                 await controller!.sendControlCommand(controlCommand);
                 console.info(`${TAG}TestLog: Controller send command successfully`);
                 await Utils.msSleep(300);
