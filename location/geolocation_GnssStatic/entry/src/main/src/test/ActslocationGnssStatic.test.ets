@@ -33,11 +33,28 @@ let tag: string = 'location'; //日志标识字符串,作为tag标识当前runne
 const TEST_SUIT_NAME = 'ActslocationTest'
 let g_context: common.UIAbilityContext;
 
+export async function changedLocationMode() {
+  let locationEnabled: boolean = geoLocationManager.isLocationEnabled()
+  console.info('[lbs_js] getLocationSwitchState result: ' + JSON.stringify(locationEnabled));
+  if (!locationEnabled) {
+    try {
+      geoLocationManager.enableLocation((err) => {
+        if (err) {
+          console.error("[lbs_js] enableLocation error." + JSON.stringify(err));
+        }
+      });
+    } catch (err) {
+      console.error("[lbs_js] enableLocation catch error." + JSON.stringify(err));
+    }
+  }
+};
+
 export default function actslocationTest() {
 
   describe("actslocationTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     beforeAll(async () => {
+      await changedLocationMode()
       let isWifiActive: boolean = wifiMg.isWifiActive() as boolean
       if (!isWifiActive) {
         console.info("======> wifi_test/enable wifi:");
