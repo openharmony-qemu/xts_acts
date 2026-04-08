@@ -17,7 +17,7 @@ import { BuilderNode, NodeController, FrameNode, UIContext, InputEventType } fro
 
 class Params {
   public text: string = 'TestButton'
-  public: UIContext | null = null
+  public uiContext: UIContext | null = null
 }
 
 @Builder

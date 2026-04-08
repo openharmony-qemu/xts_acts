@@ -45,14 +45,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   PostInputEventWithStrategyEventNull_001
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEventNull_001
+     * @tc.name   PostInputEventWithStrategyEventNull_0001
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEventNull_0001
      * @tc.desc   Test postInputEventWithStrategy with null event parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PostInputEventWithStrategyEventNull_001', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyEventNull_0001', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyEventNullV24001] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -67,14 +67,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   PostInputEventWithStrategyEventUndefined_002
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEventUndefined_002
+     * @tc.name   PostInputEventWithStrategyEventUndefined_0002
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEventUndefined_0002
      * @tc.desc   Test postInputEventWithStrategy with undefined event parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PostInputEventWithStrategyEventUndefined_002', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyEventUndefined_0002', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyEventUndefinedV24002] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -89,14 +89,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   PostInputEventWithStrategyStrategyNull_003
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyStrategyNull_003
+     * @tc.name   PostInputEventWithStrategyStrategyNull_0003
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyStrategyNull_0003
      * @tc.desc   Test postInputEventWithStrategy with null strategy parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PostInputEventWithStrategyStrategyNull_003', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyStrategyNull_0003', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyStrategyNullV24003] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -114,14 +114,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   PostInputEventWithStrategyStrategyUndefined_004
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyStrategyUndefined_004
+     * @tc.name   PostInputEventWithStrategyStrategyUndefined_0004
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyStrategyUndefined_0004
      * @tc.desc   Test postInputEventWithStrategy with undefined strategy parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PostInputEventWithStrategyStrategyUndefined_004', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyStrategyUndefined_0004', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyStrategyUndefinedV24004] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -139,14 +139,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   PostInputEventWithStrategyTouchDefault_005
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyTouchDefault_005
+     * @tc.name   PostInputEventWithStrategyTouchDefault_0005
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyTouchDefault_0005
      * @tc.desc   Test postInputEventWithStrategy with TouchEvent and CompetitionStrategy.DEFAULT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PostInputEventWithStrategyTouchDefault_005', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyTouchDefault_0005', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyTouchDefaultV24005] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -164,14 +164,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   PostInputEventWithStrategyTouchCompetition_006
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyTouchCompetition_006
+     * @tc.name   PostInputEventWithStrategyTouchCompetition_0006
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyTouchCompetition_0006
      * @tc.desc   Test postInputEventWithStrategy with TouchEvent and CompetitionStrategy.COMPETITION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PostInputEventWithStrategyTouchCompetition_006', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyTouchCompetition_0006', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyTouchCompetitionV24006] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -189,14 +189,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   PostInputEventWithStrategyMouseDefault_007
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyMouseDefault_007
+     * @tc.name   PostInputEventWithStrategyMouseDefault_0007
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyMouseDefault_0007
      * @tc.desc   Test postInputEventWithStrategy with MouseEvent and CompetitionStrategy.DEFAULT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PostInputEventWithStrategyMouseDefault_007', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyMouseDefault_0007', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyMouseDefaultV24007] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -217,14 +217,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   PostInputEventWithStrategyMouseCompetition_008
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyMouseCompetition_008
+     * @tc.name   PostInputEventWithStrategyMouseCompetition_0008
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyMouseCompetition_0008
      * @tc.desc   Test postInputEventWithStrategy with MouseEvent and CompetitionStrategy.COMPETITION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PostInputEventWithStrategyMouseCompetition_008', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyMouseCompetition_0008', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyMouseCompetitionV24008] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
