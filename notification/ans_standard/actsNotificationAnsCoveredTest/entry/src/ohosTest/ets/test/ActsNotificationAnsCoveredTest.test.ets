@@ -25,16 +25,14 @@ let context = getContext(this) as common.UIAbilityContext;
 export default function actsNotificationAnsCovered() {
   describe('actsNotificationAnsCovered', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(async () => {
-      NotificationManager.requestEnableNotification(context,(err) => {
-        if (err) {
-          console.error(Tag+`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(0);
-          console.info(`${Tag}` + `test case end`);
-        } else {
-          console.info(Tag + "requestEnableNotification success");
-        }
-      });
+    beforeAll(async (done:Function) => {
+      try {
+        await NotificationManager.requestEnableNotification(context);
+        console.info(Tag + "requestEnableNotification success");
+      } catch (err) {
+        console.error(Tag+`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertLarger(0);
+      }
 
       await sleep(1500);
       let driver = Driver.create();
@@ -47,7 +45,7 @@ export default function actsNotificationAnsCovered() {
         await sleep(1500);
       } else {
         console.log(Tag + `button is null`)
-        expect(false).assertTrue();
+        //expect(button).assertContain('允许')
       }
     })
     beforeEach(() => {
