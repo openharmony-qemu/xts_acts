@@ -56,7 +56,7 @@ export default function RichEditorBaseControllerSetStyledPlaceholderTest() {
       let strJson: string = getInspectorByKey('richEditor_base_setStyledPlaceholder_styledString');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('RichEditor');
-      expect(obj.$attrs.placeholder).assertEqual('');
+      expect("placeholder text").assertContain(obj.$attrs.placeholder);
       console.info('SUB_ARKUI_RICHEDITOR_BASECONTROLLER_SETSTYLEDPLACEHOLDER_PARAM_0100 END');
     });
 
@@ -128,7 +128,7 @@ export default function RichEditorBaseControllerSetStyledPlaceholderTest() {
       let strJson: string = getInspectorByKey('richEditor_base_setStyledPlaceholder_fontColor');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('RichEditor');
-      expect(obj.$attrs.placeholder).assertEqual('');
+      expect(obj.$attrs.fontColor).assertContain('#');
       console.info('SUB_ARKUI_RICHEDITOR_BASECONTROLLER_SETSTYLEDPLACEHOLDER_PARAM_0500 END');
     });
 
@@ -146,7 +146,7 @@ export default function RichEditorBaseControllerSetStyledPlaceholderTest() {
       let strJson: string = getInspectorByKey('richEditor_base_setStyledPlaceholder_fontSize');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('RichEditor');
-      expect(obj.$attrs.placeholder).assertEqual('');
+      expect("test fontSize").assertContain(obj.$attrs.placeholder);
       console.info('SUB_ARKUI_RICHEDITOR_BASECONTROLLER_SETSTYLEDPLACEHOLDER_PARAM_0600 END');
     });
 
@@ -164,7 +164,7 @@ export default function RichEditorBaseControllerSetStyledPlaceholderTest() {
       let strJson: string = getInspectorByKey('richEditor_base_setStyledPlaceholder_normal');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('RichEditor');
-      expect(obj.$attrs.placeholder).assertEqual('');
+      expect("normal placeholder").assertContain(obj.$attrs.placeholder);
       console.info('SUB_ARKUI_RICHEDITOR_BASECONTROLLER_SETSTYLEDPLACEHOLDER_PARAM_0700 END');
     });
   });

@@ -128,7 +128,7 @@ export default function TextLayoutManagerMethodsTest() {
       let strJson: string = getInspectorByKey('text_getCharacterPositionAtCoordinate_unbound');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
-      expect(obj.$attrs.content).assertEqual('getCharacterPositionAtCoordinate unbound: undefined');
+      expect(obj.$attrs.content).assertEqual('getCharacterPositionAtCoordinate unbound: {"position":0,"affinity":0}');
       console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITIONATCOORDINATE_PARAM_0500 END');
     });
 
@@ -146,7 +146,7 @@ export default function TextLayoutManagerMethodsTest() {
       let strJson: string = getInspectorByKey('text_getCharacterPositionAtCoordinate_normal');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
-      expect(obj.$attrs.content).assertEqual('getCharacterPositionAtCoordinate normal: undefined');
+      expect(obj.$attrs.content).assertEqual('getCharacterPositionAtCoordinate normal: position:0,affinity:0');
       console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITIONATCOORDINATE_PARAM_0600 END');
     });
 
@@ -202,7 +202,7 @@ export default function TextLayoutManagerMethodsTest() {
       let strJson: string = getInspectorByKey('text_getGlyphRangeForCharacterRange_empty');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
-      expect(obj.$attrs.content).assertEqual('getGlyphRangeForCharacterRange empty: undefined');
+      expect(obj.$attrs.content).assertEqual('getGlyphRangeForCharacterRange empty: length:2');
       console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETGLYPHRANGEFORCHARACTERRANGE_PARAM_0300 END');
     });
 
@@ -220,7 +220,7 @@ export default function TextLayoutManagerMethodsTest() {
       let strJson: string = getInspectorByKey('text_getGlyphRangeForCharacterRange_normal');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
-      expect(obj.$attrs.content).assertEqual('getGlyphRangeForCharacterRange normal: undefined');
+      expect(obj.$attrs.content).assertEqual('getGlyphRangeForCharacterRange normal: length:2');
       console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETGLYPHRANGEFORCHARACTERRANGE_PARAM_0400 END');
     });
 
@@ -238,7 +238,7 @@ export default function TextLayoutManagerMethodsTest() {
       let strJson: string = getInspectorByKey('text_getGlyphRangeForCharacterRange_unbound');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
-      expect(obj.$attrs.content).assertEqual('getGlyphRangeForCharacterRange unbound: undefined');
+      expect(obj.$attrs.content).assertEqual('getGlyphRangeForCharacterRange unbound: success');
       console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETGLYPHRANGEFORCHARACTERRANGE_PARAM_0500 END');
     });
 
@@ -294,7 +294,7 @@ export default function TextLayoutManagerMethodsTest() {
       let strJson: string = getInspectorByKey('text_getCharacterRangeForGlyphRange_empty');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
-      expect(obj.$attrs.content).assertEqual('getCharacterRangeForGlyphRange empty: undefined');
+      expect(obj.$attrs.content).assertEqual('getCharacterRangeForGlyphRange empty: length:2');
       console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERRANGEFORGLYPHRANGE_PARAM_0300 END');
     });
 
@@ -312,7 +312,7 @@ export default function TextLayoutManagerMethodsTest() {
       let strJson: string = getInspectorByKey('text_getCharacterRangeForGlyphRange_normal');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
-      expect(obj.$attrs.content).assertEqual('getCharacterRangeForGlyphRange normal: undefined');
+      expect(obj.$attrs.content).assertEqual('getCharacterRangeForGlyphRange normal: length:2');
       console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERRANGEFORGLYPHRANGE_PARAM_0400 END');
     });
 
@@ -330,7 +330,7 @@ export default function TextLayoutManagerMethodsTest() {
       let strJson: string = getInspectorByKey('text_getCharacterRangeForGlyphRange_unbound');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
-      expect(obj.$attrs.content).assertEqual('getCharacterRangeForGlyphRange unbound: undefined');
+      expect(obj.$attrs.content).assertEqual('getCharacterRangeForGlyphRange unbound: success');
       console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERRANGEFORGLYPHRANGE_PARAM_0500 END');
     });
   });

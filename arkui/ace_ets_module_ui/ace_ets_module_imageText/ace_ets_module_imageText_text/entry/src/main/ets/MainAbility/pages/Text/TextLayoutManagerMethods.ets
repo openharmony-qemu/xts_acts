@@ -37,7 +37,7 @@ struct TextLayoutManagerMethods {
   @State resultGetCharacterRangeForGlyphRangeNormal: string = '';
   @State resultGetCharacterRangeForGlyphRangeUndefinedReturn: string = '';
 
-  aboutToAppear(): void {
+  onPageShow(): void {
     let layoutManager: LayoutManager = this.controller.getLayoutManager();
     
     // getCharacterPositionAtCoordinate tests
@@ -229,6 +229,9 @@ struct TextLayoutManagerMethods {
     Column({ space: 1 }) {
       Text('Text LayoutManager Methods Test')
         .id('text_layoutManager_methods')
+        .height('3%')
+      
+      Text(undefined, { controller: this.controller })
         .height('3%')
 
       Text('getCharacterPositionAtCoordinate null X: ' + this.resultGetCharacterPositionAtCoordinateNullX)
