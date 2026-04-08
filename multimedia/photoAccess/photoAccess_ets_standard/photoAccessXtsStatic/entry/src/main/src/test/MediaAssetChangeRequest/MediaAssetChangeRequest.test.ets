@@ -778,15 +778,15 @@ export default function MediaAssetChangeRequestStaticTest(): void {
     });
 
     /**
-     * @tc.name   PHOTO_PROPERTY_ALBUM_CHANGE_INFOS_STATIC_3700
-     * @tc.number PHOTO_PROPERTY_ALBUM_CHANGE_INFOS_STATIC_3700
+     * @tc.name   SUB_MEDIA_PHOTO_PROPERTY_ALBUM_CHANGE_INFOS_STATIC_3700
+     * @tc.number SUB_MEDIA_PHOTO_PROPERTY_ALBUM_CHANGE_INFOS_STATIC_3700
      * @tc.desc   AlbumChangeInfos-property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PHOTO_PROPERTY_ALBUM_CHANGE_INFOS_STATIC_3700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const testName = 'PHOTO_PROPERTY_ALBUM_CHANGE_INFOS_STATIC_3700';
+    it('SUB_MEDIA_PHOTO_PROPERTY_ALBUM_CHANGE_INFOS_STATIC_3700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MEDIA_PHOTO_PROPERTY_ALBUM_CHANGE_INFOS_STATIC_3700';
       let testContext: Context = Hypium.get('Context') as Context;
       const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
