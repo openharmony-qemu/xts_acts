@@ -48,7 +48,7 @@ struct bindPopupTest {
   @State name: string = 'bindPopup_borderLinearGradient_Test';
   @State stepTips: string = '操作步骤:\n' + '1.点击页面中不同的按钮\n' +
     '2.观察弹出气泡的描边线性渐变效果\n' +
-    '预期结果：\n'+'1.点击按钮PopupOptions1气泡的内外描边线性渐变显示正常，内描边的颜色是从黄到绿，外描边的颜色是透明灰\n'
+    '预期结果：\n'+'1.点击按钮PopupOptions1气泡的内外描边线性渐变显示正常，外描边的颜色是从黄到绿，内描边的颜色是透明灰\n'
     + '2.点击按钮PopupOptions2气泡的内外描边线性渐变显示正常，内描边的颜色是从红到蓝，外描边的颜色是绿色\n'
     + '3.点击按钮CustomPopupOptions1气泡的内外描边线性渐变显示正常，内描边的颜色是从红到透明，外描边的颜色是灰到绿\n'
     + '4.点击按钮CustomPopupOptions2气泡的内外描边线性渐变显示正常，内描边的颜色是从绿到白，外描边的颜色是藏蓝到粉紫\n'

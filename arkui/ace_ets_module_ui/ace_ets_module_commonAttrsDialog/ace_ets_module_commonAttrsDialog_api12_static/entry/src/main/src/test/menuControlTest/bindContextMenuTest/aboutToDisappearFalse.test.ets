@@ -78,7 +78,7 @@ it('aboutToDisappearFalse_static_0100', Level.LEVEL0, async (done: () => void): 
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      await driver.click(200, 200);
+      await driver.click(200, 500);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('aboutToDisappearFalseText');
