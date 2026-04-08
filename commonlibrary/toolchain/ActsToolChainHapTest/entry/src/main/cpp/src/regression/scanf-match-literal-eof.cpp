@@ -24,7 +24,7 @@ int ScanfMatchLiteralEofTest()
     char buf[] = { 0 };
     int matchCount;
 
-    matchCount = sscanf(buf, "a");
+    matchCount = std::sscanf(buf, "a");
     if (matchCount != EOF) {
         LibcTestError(&status, "scanf reported match failure instead of input failure on literal EOF match\n");
     }

@@ -36,18 +36,20 @@ int FgetwcBufferingTest()
 
     TSetutf8();
 
+    constexpr ssize_t kUtf8PartialWriteLen = 3;
+
     int p[2];
     if (!(pipe(p) == 0)) {
         LibcTestError(&status, "pipe(p) == 0 failed\n");
     }
-    if (!(write(p[1], "x\340\240", 3) == 3)) {
-        LibcTestError(&status, "write(p[1], \"x\\340\\240\", 3) == 3 failed\n");
+    if (!(write(p[1], "x\340\240", kUtf8PartialWriteLen) == kUtf8PartialWriteLen)) {
+        LibcTestError(
+            &status, "write(p[1], \"x\\340\\240\", %zd) == %zd failed\n", kUtf8PartialWriteLen, kUtf8PartialWriteLen);
     }
     if (!(dup2(p[0], 0) == 0)) {
         LibcTestError(&status, "dup2(p[0], 0) == 0 failed\n");
     }
-    wint_t wc;
-    wc = fgetwc(stdin);
+    wint_t wc = fgetwc(stdin);
     if (!(wc == 'x')) {
         LibcTestError(&status, "wc == 'x' failed\n");
     }
@@ -56,8 +58,7 @@ int FgetwcBufferingTest()
     }
     close(p[1]);
 
-    wc = fgetwc(stdin);
-    if (wc != 0x800) {
+    if ((wc = fgetwc(stdin)) != 0x800) {
         LibcTestError(&status, "wanted 0x800, got 0x%x\n", static_cast<unsigned>(wc));
     }
 

@@ -19,6 +19,34 @@
 
 enum { LESS, EQUAL, GREATER, UNORD };
 
+namespace {
+constexpr double kPosZero = 0.0;
+constexpr double kNegZero = -0.0;
+constexpr float kPosZerof = 0.0f;
+constexpr float kNegZerof = -0.0f;
+constexpr long double kPosZeroL = 0.0L;
+constexpr long double kNegZeroL = -0.0L;
+constexpr double kOne = 1.0;
+constexpr double kOnePointOne = 1.1;
+constexpr float kOnef = 1.0f;
+constexpr float kOnePointOnef = 1.1f;
+constexpr long double kOneL = 1.0L;
+constexpr long double kOnePointOneL = 1.1L;
+constexpr int kFloatRelationScale = 2;
+constexpr double kQuarter = 0.25;
+constexpr float kQuarterf = 0.25f;
+constexpr long double kQuarterL = 0.25L;
+constexpr double kHalf = 0.5;
+constexpr float kHalff = 0.5f;
+constexpr long double kHalfL = 0.5L;
+constexpr double kTinyFrac9 = 0x1p-9;
+constexpr double kTinyFrac8 = 0x1p-8;
+constexpr float kTinyFrac9f = 0x1p-9f;
+constexpr float kTinyFrac8f = 0x1p-8f;
+constexpr long double kTinyFrac9L = 0x1p-9L;
+constexpr long double kTinyFrac8L = 0x1p-8L;
+} // namespace
+
 /* compare result only; skip fetestexcept — some OHOS targets report stale/spurious flags after
  * feclearexcept, causing false failures. */
 static void CheckPredicateResult(const char* pred, int got, bool want)
@@ -42,85 +70,85 @@ static void CheckRelation(long double la, long double lb, int rel)
 
 static void IslessTestNanUnordered(void)
 {
-    CheckRelation(NAN, 1.0, UNORD);
-    CheckRelation(1.0, NAN, UNORD);
+    CheckRelation(NAN, kOne, UNORD);
+    CheckRelation(kOne, NAN, UNORD);
     CheckRelation(NAN, NAN, UNORD);
-    CheckRelation(NAN, NAN + 1.0, UNORD);
-    CheckRelation(NAN, NAN + 1.0L, UNORD);
+    CheckRelation(NAN, NAN + kOne, UNORD);
+    CheckRelation(NAN, NAN + kOneL, UNORD);
 }
 
 static void IslessTestOrderedDouble(volatile double huge, volatile double tiny, volatile double eps)
 {
-    CheckRelation(1.0, 1.1, LESS);
-    CheckRelation(1.0, 1.0 + eps, LESS);
-    CheckRelation(1.0 + eps, 1.0, GREATER);
-    CheckRelation(huge - 1, huge, EQUAL);
+    CheckRelation(kOne, kOnePointOne, LESS);
+    CheckRelation(kOne, kOne + eps, LESS);
+    CheckRelation(kOne + eps, kOne, GREATER);
+    CheckRelation(huge - kOne, huge, EQUAL);
     CheckRelation(huge, huge * huge, LESS);
-    CheckRelation(-0.0, 0.0, EQUAL);
-    CheckRelation(-tiny, 0.0, LESS);
-    CheckRelation(tiny, 2 * tiny, LESS);
-    CheckRelation(tiny * 0x1p-9, tiny * 0x1p-8, LESS);
+    CheckRelation(kNegZero, kPosZero, EQUAL);
+    CheckRelation(-tiny, kPosZero, LESS);
+    CheckRelation(tiny, kFloatRelationScale * tiny, LESS);
+    CheckRelation(tiny * kTinyFrac9, tiny * kTinyFrac8, LESS);
 }
 
 static void IslessTestOrderedFloat(volatile float hugef, volatile float tinyf, volatile float epsf)
 {
-    CheckRelation(1.0f, 1.1f, LESS);
-    CheckRelation(1.0f, 1.0f + epsf, LESS);
-    CheckRelation(1.0f + epsf, 1.0f, GREATER);
-    CheckRelation(hugef - 1, hugef, EQUAL);
+    CheckRelation(kOnef, kOnePointOnef, LESS);
+    CheckRelation(kOnef, kOnef + epsf, LESS);
+    CheckRelation(kOnef + epsf, kOnef, GREATER);
+    CheckRelation(hugef - kOnef, hugef, EQUAL);
     CheckRelation(hugef, hugef * hugef, LESS);
-    CheckRelation(-0.0f, 0.0f, EQUAL);
-    CheckRelation(-tinyf, 0.0f, LESS);
-    CheckRelation(tinyf, 2 * tinyf, LESS);
-    CheckRelation(tinyf * 0x1p-9f, tinyf * 0x1p-8f, LESS);
+    CheckRelation(kNegZerof, kPosZerof, EQUAL);
+    CheckRelation(-tinyf, kPosZerof, LESS);
+    CheckRelation(tinyf, kFloatRelationScale * tinyf, LESS);
+    CheckRelation(tinyf * kTinyFrac9f, tinyf * kTinyFrac8f, LESS);
 }
 
 static void
     IslessTestOrderedLongDouble(volatile long double hugel, volatile long double tinyl, volatile long double epsl)
 {
-    CheckRelation(1.0L, 1.1L, LESS);
-    CheckRelation(1.0L, 1.0L + epsl, LESS);
-    CheckRelation(1.0L + epsl, 1.0L, GREATER);
-    CheckRelation(hugel - 1, hugel, EQUAL);
+    CheckRelation(kOneL, kOnePointOneL, LESS);
+    CheckRelation(kOneL, kOneL + epsl, LESS);
+    CheckRelation(kOneL + epsl, kOneL, GREATER);
+    CheckRelation(hugel - kOneL, hugel, EQUAL);
     CheckRelation(hugel, hugel * hugel, LESS);
-    CheckRelation(-0.0L, 0.0L, EQUAL);
-    CheckRelation(-tinyl, 0.0L, LESS);
-    CheckRelation(tinyl, 2 * tinyl, LESS);
-    CheckRelation(tinyl * 0x1p-9L, tinyl * 0x1p-8L, LESS);
+    CheckRelation(kNegZeroL, kPosZeroL, EQUAL);
+    CheckRelation(-tinyl, kPosZeroL, LESS);
+    CheckRelation(tinyl, kFloatRelationScale * tinyl, LESS);
+    CheckRelation(tinyl * kTinyFrac9L, tinyl * kTinyFrac8L, LESS);
 
-    CheckRelation(hugel * hugel, hugel * hugel * 2, EQUAL);
-    CheckRelation(tinyl * tinyl * 0.5L, tinyl * tinyl, EQUAL);
-    CheckRelation(-tinyl * tinyl, 0.0L, EQUAL);
-    CheckRelation(1.0L, 1.0L + epsl * 0.25L, EQUAL);
+    CheckRelation(hugel * hugel, hugel * hugel * kFloatRelationScale, EQUAL);
+    CheckRelation(tinyl * tinyl * kHalfL, tinyl * tinyl, EQUAL);
+    CheckRelation(-tinyl * tinyl, kPosZeroL, EQUAL);
+    CheckRelation(kOneL, kOneL + epsl * kQuarterL, EQUAL);
 }
 
 static void IslessTestFltEvalDouble(volatile double huge, volatile double tiny, volatile double eps)
 {
 #if FLT_EVAL_METHOD == 2
-    CheckRelation(huge * huge, huge * huge * 2, LESS);
-    CheckRelation(tiny * tiny * 0.5, tiny * tiny, LESS);
-    CheckRelation(-tiny * tiny, 0.0, LESS);
-    CheckRelation(1.0, 1.0 + eps * 0.25, LESS);
+    CheckRelation(huge * huge, huge * huge * kFloatRelationScale, LESS);
+    CheckRelation(tiny * tiny * kHalf, tiny * tiny, LESS);
+    CheckRelation(-tiny * tiny, kPosZero, LESS);
+    CheckRelation(kOne, kOne + eps * kQuarter, LESS);
 #else
-    CheckRelation(huge * huge, huge * huge * 2, EQUAL);
-    CheckRelation(tiny * tiny * 0.5, tiny * tiny, EQUAL);
-    CheckRelation(-tiny * tiny, 0.0, EQUAL);
-    CheckRelation(1.0, 1.0 + eps * 0.25, EQUAL);
+    CheckRelation(huge * huge, huge * huge * kFloatRelationScale, EQUAL);
+    CheckRelation(tiny * tiny * kHalf, tiny * tiny, EQUAL);
+    CheckRelation(-tiny * tiny, kPosZero, EQUAL);
+    CheckRelation(kOne, kOne + eps * kQuarter, EQUAL);
 #endif
 }
 
 static void IslessTestFltEvalFloat(volatile float hugef, volatile float tinyf, volatile float epsf)
 {
 #if FLT_EVAL_METHOD >= 1
-    CheckRelation(hugef * hugef, hugef * hugef * 2, LESS);
-    CheckRelation(tinyf * tinyf * 0.5f, tinyf * tinyf, LESS);
-    CheckRelation(-tinyf * tinyf, 0.0f, LESS);
-    CheckRelation(1.0f, 1.0f + epsf * 0.25f, LESS);
+    CheckRelation(hugef * hugef, hugef * hugef * kFloatRelationScale, LESS);
+    CheckRelation(tinyf * tinyf * kHalff, tinyf * tinyf, LESS);
+    CheckRelation(-tinyf * tinyf, kPosZerof, LESS);
+    CheckRelation(kOnef, kOnef + epsf * kQuarterf, LESS);
 #else
-    CheckRelation(hugef * hugef, hugef * hugef * 2, EQUAL);
-    CheckRelation(tinyf * tinyf * 0.5f, tinyf * tinyf, EQUAL);
-    CheckRelation(-tinyf * tinyf, 0.0f, EQUAL);
-    CheckRelation(1.0f, 1.0f + epsf * 0.25f, EQUAL);
+    CheckRelation(hugef * hugef, hugef * hugef * kFloatRelationScale, EQUAL);
+    CheckRelation(tinyf * tinyf * kHalff, tinyf * tinyf, EQUAL);
+    CheckRelation(-tinyf * tinyf, kPosZerof, EQUAL);
+    CheckRelation(kOnef, kOnef + epsf * kQuarterf, EQUAL);
 #endif
 }
 

@@ -26,8 +26,6 @@
 #include <unistd.h>
 #include "test.h"
 
-int daemon(int, int);
-
 static int DaemonFailureChild(int fdout, int* fd, int oldPid)
 {
     int r;

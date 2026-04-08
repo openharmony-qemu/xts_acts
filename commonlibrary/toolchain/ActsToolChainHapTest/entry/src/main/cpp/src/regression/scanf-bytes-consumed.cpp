@@ -32,7 +32,7 @@ int ScanfBytesConsumedTest()
     int* readCountPtr = &readCount;
     int n;
 
-    n = sscanf(buf, "%s%n", dest, readCountPtr);
+    n = std::sscanf(buf, "%s%n", dest, readCountPtr);
     if (n != 1) {
         LibcTestError(&status, "sscanf matched 1 input items but returned %d\n", n);
     }

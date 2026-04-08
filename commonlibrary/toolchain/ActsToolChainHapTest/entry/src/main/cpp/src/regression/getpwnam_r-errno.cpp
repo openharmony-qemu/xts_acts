@@ -24,7 +24,8 @@ int GetpwnamRErrnoTest()
     int status = SUCCESS_CODE;
 
     int baderr = EOWNERDEAD; // arbitrary absurd error
-    struct passwd *pw, pwbuf;
+    struct passwd* pw;
+    struct passwd pwbuf;
     char buf[1024];
     errno = baderr;
     if (getpwnam_r("nonsensical_user", &pwbuf, buf, sizeof buf, &pw) == baderr) {

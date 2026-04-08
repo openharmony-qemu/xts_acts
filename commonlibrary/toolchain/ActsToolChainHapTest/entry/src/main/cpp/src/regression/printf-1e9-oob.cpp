@@ -27,10 +27,10 @@ static void T(int& status, const char* fmt, double d, const char* want)
 {
     char buf[256];
     int n = strlen(want);
-    int r = snprintf(buf, sizeof buf, fmt, d);
-    /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    int r = std::snprintf(buf, sizeof buf, fmt, d);
+
     if (r != n || memcmp(buf, want, n + 1) != 0) {
-        LibcTestError(&status, "snprintf(\"%s\",%f) want %s got %s\n", fmt, d, want, buf);
+        LibcTestError(&status, "std::snprintf(\"%s\",%f) want %s got %s\n", fmt, d, want, buf);
     }
 }
 

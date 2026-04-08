@@ -19,8 +19,8 @@
 #include <cerrno>
 #include <cstdlib>
 #include <cstring>
+#include <stdlib.h>
 #include "libc_test_shim.h"
-int mkstemp(char*);
 
 #define S "/dev/null/fooXXXX"
 

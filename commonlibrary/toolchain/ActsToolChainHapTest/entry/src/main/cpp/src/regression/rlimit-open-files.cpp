@@ -27,7 +27,8 @@ int RlimitOpenFilesTest()
     static const long lim = 100;
     static const int r = RLIMIT_NOFILE;
     struct rlimit rl;
-    int fd, maxfd = 0;
+    int fd;
+    int maxfd = 0;
 
     rl.rlim_max = lim;
     rl.rlim_cur = lim;

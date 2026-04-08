@@ -14,8 +14,8 @@
  */
 
 #include <climits>
+#include <cstddef>
 #include <cstdio>
-#include <memory.h>
 #include <stdatomic.h>
 #include "test.h"
 #define HOOK_ENABLE
@@ -37,9 +37,9 @@ bool ClientSetHookFlag(bool flag)
 
 void InstallHookFunction()
 {
-    memset(function_of_shared_lib,
-           0,
-           sizeof(function_of_shared_lib[0]) * LAST_FUNCTION); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    for (size_t i = 0; i < LAST_FUNCTION; ++i) {
+        function_of_shared_lib[i] = nullptr;
+    }
     function_of_shared_lib[GET_HOOK_FLAG_FUNCTION] = reinterpret_cast<void*>(ClientGetHookFlag);
     function_of_shared_lib[SET_HOOK_FLAG_FUNCTION] = reinterpret_cast<void*>(ClientSetHookFlag);
 }

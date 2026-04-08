@@ -42,7 +42,7 @@ template <typename T> static void CheckPrintfFmtNVar(int* status, T* var, const 
 
 static void CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* retv, int* var, const char* label)
 {
-    SnprintfFn unsafeSnprintf = &snprintf;
+    SnprintfFn unsafeSnprintf = &std::snprintf;
     *retv = unsafeSnprintf(buf, bufSize, "%256d%d%n%d", INT_D_1, INT_D_2, var, INT_D_3);
     CheckPrintfFmtNCaseAfter(status, retv, label);
     CheckPrintfFmtNVar(status, var, label);
@@ -52,7 +52,7 @@ static void CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* ret
 static void
     CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* retv, long* var, const char* label, bool useJn)
 {
-    SnprintfFn unsafeSnprintf = &snprintf;
+    SnprintfFn unsafeSnprintf = &std::snprintf;
     if (useJn) {
         *retv =
             unsafeSnprintf(buf, bufSize, "%256d%d%jn%d", INT_D_1, INT_D_2, reinterpret_cast<intmax_t*>(var), INT_D_3);
@@ -65,7 +65,7 @@ static void
 
 static void CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* retv, long long* var, const char* label)
 {
-    SnprintfFn unsafeSnprintf = &snprintf;
+    SnprintfFn unsafeSnprintf = &std::snprintf;
     *retv = unsafeSnprintf(buf, bufSize, "%256d%d%lln%d", INT_D_1, INT_D_2, var, INT_D_3);
     CheckPrintfFmtNCaseAfter(status, retv, label);
     CheckPrintfFmtNVar(status, var, label);
@@ -73,7 +73,7 @@ static void CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* ret
 
 static void CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* retv, short* var, const char* label)
 {
-    SnprintfFn unsafeSnprintf = &snprintf;
+    SnprintfFn unsafeSnprintf = &std::snprintf;
     *retv = unsafeSnprintf(buf, bufSize, "%256d%d%hn%d", INT_D_1, INT_D_2, var, INT_D_3);
     CheckPrintfFmtNCaseAfter(status, retv, label);
     CheckPrintfFmtNVar(status, var, label);
@@ -81,7 +81,7 @@ static void CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* ret
 
 static void CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* retv, size_t* var, const char* label)
 {
-    SnprintfFn unsafeSnprintf = &snprintf;
+    SnprintfFn unsafeSnprintf = &std::snprintf;
     *retv = unsafeSnprintf(buf, bufSize, "%256d%d%zn%d", INT_D_1, INT_D_2, var, INT_D_3);
     CheckPrintfFmtNCaseAfter(status, retv, label);
     CheckPrintfFmtNVar(status, var, label);

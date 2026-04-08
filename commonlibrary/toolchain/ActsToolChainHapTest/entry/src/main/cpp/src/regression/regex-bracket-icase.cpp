@@ -26,7 +26,8 @@ int RegexBracketIcaseTest()
     char buf[100];
     char* pat;
     regex_t re;
-    int n, i;
+    int n;
+    int i;
     struct {
         char* s;
         int n;

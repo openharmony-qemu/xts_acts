@@ -55,7 +55,9 @@ static void Handler1(int sig)
 
 static void* Start(void* arg)
 {
-    int i, r, s;
+    int i;
+    int r;
+    int s;
 
     for (i = 0; i < K_RAISE_RACE_SIGNAL_ITERATIONS; i++) {
         r = raise(K_RAISE_RACE_SIGNUM);
@@ -93,7 +95,9 @@ static int RaiseRaceTestImpl(void)
 {
     pthread_t t;
     void* p;
-    int r, i, s;
+    int r;
+    int i;
+    int s;
 
     if (signal(K_RAISE_RACE_SIGNUM, Handler0) == SIG_ERR) {
         t_error("registering signal Handler failed: %s\n", strerror(errno));

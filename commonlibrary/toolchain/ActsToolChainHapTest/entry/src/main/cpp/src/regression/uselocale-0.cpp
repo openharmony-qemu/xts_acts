@@ -22,8 +22,7 @@ int Uselocale0Test()
     int status = SUCCESS_CODE;
 
     locale_t c = newlocale(LC_ALL_MASK, "C", nullptr);
-
-    if (!c) {
+    if (c == nullptr) {
         LibcTestError(&status, "newlocale failed\n");
         return status;
     }

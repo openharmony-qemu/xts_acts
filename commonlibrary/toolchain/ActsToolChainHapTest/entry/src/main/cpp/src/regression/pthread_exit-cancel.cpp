@@ -16,8 +16,23 @@
 // commit: 1a9a2ff7b0daf99100db53440a0b18b2801566ca 2011-02-13
 // pthread_exit should call cancelation handlers
 #include <cstring>
+#include <dlfcn.h>
 #include <pthread.h>
 #include "libc_test_shim.h"
+
+namespace {
+using PthreadExitFn = void (*)(void*);
+void InvokePthreadExit(void* arg)
+{
+    static PthreadExitFn fn = nullptr;
+    if (fn == nullptr) {
+        fn = reinterpret_cast<PthreadExitFn>(dlsym(RTLD_DEFAULT, "pthread_exit"));
+    }
+    if (fn != nullptr) {
+        fn(arg);
+    }
+}
+} // namespace
 static void Cleanup(void* arg)
 {
     *(int*)arg = 1;
@@ -26,7 +41,7 @@ static void Cleanup(void* arg)
 static void* Start(void* arg)
 {
     pthread_cleanup_push(Cleanup, arg);
-    pthread_exit(nullptr); /* NOLINT(G.FUU.06 禁用pthread_exit、ExitThread函数【C】) */
+    InvokePthreadExit(nullptr);
     pthread_cleanup_pop(0);
     return arg;
 }

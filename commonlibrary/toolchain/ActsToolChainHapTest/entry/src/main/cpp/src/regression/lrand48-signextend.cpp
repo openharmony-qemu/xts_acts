@@ -26,18 +26,17 @@ int Lrand48SignextendTest()
 {
     int status = SUCCESS_CODE;
 
-    long r;
-    r = lrand48();
-    if (r != 0) {
-        LibcTestError(&status, "1st lrand48() got %ld want 0\n", r);
+    const long r1 = lrand48();
+    if (r1 != 0) {
+        LibcTestError(&status, "1st lrand48() got %ld want 0\n", r1);
     }
-    r = lrand48();
-    if (r != K_LRAND48_SECOND_EXPECTED) {
-        LibcTestError(&status, "2nd lrand48() got %ld want 2116118\n", r);
+    const long r2 = lrand48();
+    if (r2 != K_LRAND48_SECOND_EXPECTED) {
+        LibcTestError(&status, "2nd lrand48() got %ld want 2116118\n", r2);
     }
-    r = lrand48();
-    if (r != K_LRAND48_THIRD_EXPECTED) {
-        LibcTestError(&status, "3rd lrand48() got %ld want 89401895\n", r);
+    const long r3 = lrand48();
+    if (r3 != K_LRAND48_THIRD_EXPECTED) {
+        LibcTestError(&status, "3rd lrand48() got %ld want 89401895\n", r3);
     }
     return status;
 }

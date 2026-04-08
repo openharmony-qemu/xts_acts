@@ -36,17 +36,13 @@ constexpr int K_IPV6_PAIR_BYTE_STRIDE = 2;
 static void Txt(char* s, unsigned char* buf)
 {
     int i;
-    (void)snprintf(s,
-                   K_IPV6_TXT_BUF_LEN,
-                   "%04x",
-                   buf[0] << K_IPV6_BYTE_PAIR_SHIFT | buf[1]); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+    (void)std::snprintf(s, K_IPV6_TXT_BUF_LEN, "%04x", buf[0] << K_IPV6_BYTE_PAIR_SHIFT | buf[1]);
     for (i = 1; i < K_IPV6_WORD_COUNT; i++) {
-        (void)snprintf(
-            s + K_IPV6_COLON_FIELD_STRIDE * i,
-            K_IPV6_TXT_BUF_LEN - K_IPV6_COLON_FIELD_STRIDE * static_cast<unsigned>(i),
-            ":%04x",
-            buf[K_IPV6_PAIR_BYTE_STRIDE * i] << K_IPV6_BYTE_PAIR_SHIFT |
-                buf[K_IPV6_PAIR_BYTE_STRIDE * i + 1]); /* NOLINT(G.FUU.21 禁止使用内存操作类不安全函数【C】) */
+        (void)std::snprintf(s + K_IPV6_COLON_FIELD_STRIDE * i,
+                            K_IPV6_TXT_BUF_LEN - K_IPV6_COLON_FIELD_STRIDE * static_cast<unsigned>(i),
+                            ":%04x",
+                            buf[K_IPV6_PAIR_BYTE_STRIDE * i] << K_IPV6_BYTE_PAIR_SHIFT |
+                                buf[K_IPV6_PAIR_BYTE_STRIDE * i + 1]);
     }
 }
 
@@ -54,7 +50,8 @@ int InetPtonEmptyLastFieldTest()
 {
     int status = SUCCESS_CODE;
 
-    char s[K_IPV6_TXT_BUF_LEN], sw[K_IPV6_TXT_BUF_LEN];
+    char s[K_IPV6_TXT_BUF_LEN];
+    char sw[K_IPV6_TXT_BUF_LEN];
     unsigned char buf[K_IPV6_ADDR_BYTES];
     unsigned char want[K_IPV6_ADDR_BYTES] = { 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 0 };
     char* addr;
