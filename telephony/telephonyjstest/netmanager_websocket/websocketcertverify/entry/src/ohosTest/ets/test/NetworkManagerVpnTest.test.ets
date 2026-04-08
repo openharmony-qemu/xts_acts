@@ -973,7 +973,6 @@ export default function NetworkManagerVpnTest() {
      */
     it('testNetworkManagerVPNonAuthorizationResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'testNetworkManagerVPNonAuthorizationResult0200';
-      let callbackTriggered = false;
       try {
         let vpnObserver = vpnExtension.createVpnObserver();
         vpnObserver.onAuthorizationResult((result: boolean) => {
@@ -982,7 +981,6 @@ export default function NetworkManagerVpnTest() {
         console.log(`${caseName} onAuthorizationResult success`);
         vpnObserver.onAuthorizationResult((result: boolean) => {
           console.log(`${caseName} onAuthorizationResult callback ${result}`);
-          callbackTriggered = true;
         });
         console.log(`${caseName} onAuthorizationResult success`);
         expect(vpnObserver !== undefined).assertTrue();
