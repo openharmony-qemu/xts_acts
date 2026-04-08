@@ -1,7 +1,7 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  */
-'use static';
 
 import { DragController, UIContext } from '@ohos.arkui.UIContext';
 
