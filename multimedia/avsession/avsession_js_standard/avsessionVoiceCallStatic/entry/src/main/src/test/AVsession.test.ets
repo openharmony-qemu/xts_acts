@@ -2877,8 +2877,8 @@ export default function abilityTest() {
                 done();
                 return;
             }
-            let state1 = avSession.DesktopLyricState = { isLocked : true};
-            let state2 = avSession.DesktopLyricState = { isLocked : false};
+            let state1: avSession.DesktopLyricState = { isLocked : true};
+            let state2: avSession.DesktopLyricState = { isLocked : false};
             let callbackState: boolean = false;
             let callback = (data: avSession.DesktopLyricState) => {
                 callbackState = data.isLocked;
