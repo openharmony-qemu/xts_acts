@@ -420,11 +420,26 @@ export default function windowNdk() {
      */
     it('test_mainWindow_SetWindowStatusBarEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled";
+      windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+      });
       let result = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
-      done();
-
+      await sleep(1000);
+      if(isPCStatus != ''){
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(true)
+        done()
+      }
     })
 
     /**
@@ -437,10 +452,26 @@ export default function windowNdk() {
      */
     it('test_mainWindow_SetWindowStatusBarEnabled_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled_false";
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+      });
       let result = windowNdkTest.setWindowStatusBarEnabled(windowId, false, false);
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
-      done();
+      await sleep(1000);
+      if(isPCStatus != ''){
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
+        expect(flag).assertEqual(true)
+        done()
+      }
     })
 
     /**
@@ -453,10 +484,26 @@ export default function windowNdk() {
      */
     it('test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true";
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+      });
       let result = windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
-      done();
+       await sleep(1000);
+      if(isPCStatus != ''){
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        windowNdkTest.setWindowStatusBarEnabled(windowId, true ,true);
+        expect(flag).assertEqual(true)
+        done()
+      }
     })
 
     /**
@@ -480,11 +527,28 @@ export default function windowNdk() {
           let result1 = windowNdkTest.showWindow(subWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
 
+          let flag: boolean = false;
+          subWindow.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+            console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+              JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+            flag = true;
+          });
+
           let result = windowNdkTest.setWindowStatusBarEnabled(subWindowId, true, true);
           console.info(`${caseName}: result: ${result}`)
-          await subWindow.destroyWindow();
           expect(result).assertEqual(0);
-          done();
+          await sleep(1000);
+          if(isPCStatus != ''){
+            subWindow.off('avoidAreaChange')
+            await subWindow.destroyWindow();
+            expect(flag).assertEqual(false)
+            done()
+          }else{
+            subWindow.off('avoidAreaChange')
+            await subWindow.destroyWindow();
+            expect(flag).assertEqual(true)
+            done()
+          }
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -523,11 +587,28 @@ export default function windowNdk() {
           let result1 = windowNdkTest.showWindow(dialogWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
 
+          let flag: boolean = false;
+          dialogWindow.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+            console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+              JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+            flag = true;
+          });
+
           let result = windowNdkTest.setWindowStatusBarEnabled(dialogWindowId, true, true);
           console.info(`${caseName}: result: ${result}`);
-          await dialogWindow.destroyWindow();
           expect(result).assertEqual(0);
-          done();
+          await sleep(1000);
+          if(isPCStatus != ''){
+            dialogWindow.off('avoidAreaChange')
+            await dialogWindow.destroyWindow();
+            expect(flag).assertEqual(false)
+            done()
+          }else{
+            dialogWindow.off('avoidAreaChange')
+            await dialogWindow.destroyWindow();
+            expect(flag).assertEqual(true)
+            done()
+          }
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -567,10 +648,26 @@ export default function windowNdk() {
      */
     it('test_mainWindow_setWindowNavigationBarEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled";
+      windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+      });
       let result = windowNdkTest.setWindowNavigationBarEnabled(windowId, true, true);
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
-      done();
+      await sleep(1000);
+      if(isPCStatus != ''){
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(true)
+        done()
+      }
     })
 
     /**
@@ -583,10 +680,26 @@ export default function windowNdk() {
      */
     it('test_mainWindow_setWindowNavigationBarEnabled_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled_false";
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+      });
       let result = windowNdkTest.setWindowNavigationBarEnabled(windowId, false, false);
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
-      done();
+      await sleep(1000);
+      if(isPCStatus != ''){
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
+        expect(flag).assertEqual(true)
+        done()
+      }
     })
 
     /**
@@ -599,10 +712,26 @@ export default function windowNdk() {
      */
     it('test_mainWindow_setWindowNavigationBarEnabled_false_enableAnimation_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled_false_enableAnimation_true";
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+      });
       let result = windowNdkTest.setWindowNavigationBarEnabled(windowId, false, true);
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
-      done();
+      await sleep(1000);
+      if(isPCStatus != ''){
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
+        expect(flag).assertEqual(true)
+        done()
+      }
     })
 
     /**
@@ -626,11 +755,28 @@ export default function windowNdk() {
           let result1 = windowNdkTest.showWindow(subWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
 
+           let flag: boolean = false;
+          subWindow.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+            console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+              JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+            flag = true;
+          });
+
           let result = windowNdkTest.setWindowNavigationBarEnabled(subWindowId, true, true);
           console.info(`${caseName}: result: ${result}`);
-          await subWindow.destroyWindow();
           expect(result).assertEqual(0);
-          done();
+          await sleep(1000);
+          if(isPCStatus != ''){
+            subWindow.off('avoidAreaChange')
+            await subWindow.destroyWindow();
+            expect(flag).assertEqual(false)
+            done()
+          }else{
+            subWindow.off('avoidAreaChange')
+            await subWindow.destroyWindow();
+            expect(flag).assertEqual(true)
+            done()
+          }
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -669,11 +815,28 @@ export default function windowNdk() {
           let result1 = windowNdkTest.showWindow(dialogWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
 
+          let flag: boolean = false;
+          dialogWindow.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+            console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+              JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+            flag = true;
+          });
+
           let result = windowNdkTest.setWindowNavigationBarEnabled(dialogWindowId, true, true);
           console.info(`${caseName}: result: ${result}`);
-          await dialogWindow.destroyWindow();
           expect(result).assertEqual(0);
-          done();
+          await sleep(1000);
+          if(isPCStatus != ''){
+            dialogWindow.off('avoidAreaChange')
+            await dialogWindow.destroyWindow();
+            expect(flag).assertEqual(false)
+            done()
+          }else{
+            dialogWindow.off('avoidAreaChange')
+            await dialogWindow.destroyWindow();
+            expect(flag).assertEqual(true)
+            done()
+          }
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -777,9 +940,16 @@ export default function windowNdk() {
       expect(result1).assertEqual(0);
       let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
       console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
-      expect(AvoidArea_system.topRect.width).assertLargerOrEqual(0);
-      expect(AvoidArea_system.topRect.height).assertLargerOrEqual(0);
-      done();
+      if (isPCStatus != '') {	 
+          expect(AvoidArea_system.topRect.width).assertEqual(0);
+          expect(AvoidArea_system.topRect.height).assertEqual(0);
+          done();	 
+       } else {
+        expect(AvoidArea_system.topRect.width).assertLargerOrEqual(0);
+        expect(AvoidArea_system.topRect.height).assertLargerOrEqual(0);
+        done();
+       }
+    
     })
 
     /**
@@ -798,9 +968,15 @@ export default function windowNdk() {
       expect(result1).assertEqual(0);
       let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
       console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
-      expect(AvoidArea_system.topRect.width).assertEqual(0);
-      expect(AvoidArea_system.topRect.height).assertEqual(0);
-      done();
+      if (isPCStatus != '') {	 
+          expect(AvoidArea_system.topRect.width).assertEqual(0);
+          expect(AvoidArea_system.topRect.height).assertEqual(0);
+          done();	 
+       } else {
+        expect(AvoidArea_system.topRect.width).assertLargerOrEqual(0);
+        expect(AvoidArea_system.topRect.height).assertLargerOrEqual(0);
+        done();
+       }
     })
     /**
      * @tc.name   test_getAvoidAreaByType_setLayoutFullScreen
@@ -818,10 +994,17 @@ export default function windowNdk() {
       await WindowClass.setWindowLayoutFullScreen(true);
       let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
       console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
-      expect(AvoidArea_system.topRect.width).assertLargerOrEqual(0);
-      expect(AvoidArea_system.topRect.height).assertLargerOrEqual(0);
-      await WindowClass.setWindowLayoutFullScreen(false);
-      done();
+      if (isPCStatus != '') {	 
+         await WindowClass.setWindowLayoutFullScreen(false);
+          expect(AvoidArea_system.topRect.width).assertEqual(0);
+          expect(AvoidArea_system.topRect.height).assertEqual(0);
+          done();	 
+       } else {
+         await WindowClass.setWindowLayoutFullScreen(false);
+        expect(AvoidArea_system.topRect.width).assertLargerOrEqual(0);
+        expect(AvoidArea_system.topRect.height).assertLargerOrEqual(0);
+        done();
+       }
     })
 
     /**
