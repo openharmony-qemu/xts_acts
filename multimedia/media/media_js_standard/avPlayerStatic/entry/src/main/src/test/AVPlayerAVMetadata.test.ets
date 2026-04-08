@@ -1199,6 +1199,34 @@ export default function AVMetadata() {
       });
       done();
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_SETURLSOURCE_FUNCTION_static_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_SETURLSOURCE_FUNCTION_static_0200
+     * @tc.desc   setUrlSource is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_SETURLSOURCE_FUNCTION_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor | undefined = await media.createAVMetadataExtractor();
+      if (!avMetadataExtractor) {
+        console.info('AVMetadataExtractor create failed. Received null or undefined');
+      }
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor!!.setUrlSource("");
+      console.info('setUrlSource: ');
+      // 获取元信息
+      await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
+        expect(metadata).not().assertNull();
+        console.info(TAG, `fetchMetadata callback success, customInfo: ${metadata}`);
+        avMetadataExtractor!!.release();
+      }).catch((error: Error) => {
+        console.error(`setUrlSource catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
 
     /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_static_3600
@@ -1249,8 +1277,9 @@ export default function AVMetadata() {
         height : 300
       };
       avMetadataExtractor!!.fetchFramesByTimes(timesUs, queryOption, param, onFrameFetched);
-      avMetadataExtractor!!.cancelAllFetchFrames();
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
       avMetadataExtractor!!.release();
+      done();
     });
   })
 }
