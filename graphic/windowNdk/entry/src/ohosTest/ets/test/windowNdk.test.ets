@@ -439,13 +439,8 @@ export default function windowNdk() {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled_false";
       let result = windowNdkTest.setWindowStatusBarEnabled(windowId, false, false);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        done();
-      }
+      expect(result).assertEqual(0);
+      done();
     })
 
     /**
