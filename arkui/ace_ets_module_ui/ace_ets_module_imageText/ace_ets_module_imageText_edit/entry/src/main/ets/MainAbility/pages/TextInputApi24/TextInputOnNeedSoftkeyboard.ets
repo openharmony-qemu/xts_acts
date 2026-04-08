@@ -18,7 +18,7 @@
 struct TextInputOnNeedSoftkeyboard {
   build() {
     Column() {
-      Button('Click to set true')
+      TextInput({ placeholder: 'Click to set true' })
         .onClick(() => {
           this.getUIContext().getFocusController().requestFocus('Button_onNeedSoftkeyboard_true')
         })
@@ -31,7 +31,7 @@ struct TextInputOnNeedSoftkeyboard {
           console.log('onNeedSoftkeyboard_true: '+ AppStorage.get('onNeedSoftkeyboard_true'))
           return true;
         })
-      Button('Click to set false')
+      TextInput({ placeholder: 'Click to set false' })
         .onClick(() => {
           this.getUIContext().getFocusController().requestFocus('Button_onNeedSoftkeyboard_false')
         })

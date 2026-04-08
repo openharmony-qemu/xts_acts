@@ -24,7 +24,7 @@ export default function TextInputOnNeedSoftkeyboardTest() {
     beforeEach(async (done: Function) => {
       console.info("TextInputOnNeedSoftkeyboardTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextInput/TextInputOnNeedSoftkeyboard',
+        url: 'MainAbility/pages/TextInputApi24/TextInputOnNeedSoftkeyboard',
       }
       try {
         router.clear();
@@ -119,6 +119,27 @@ export default function TextInputOnNeedSoftkeyboardTest() {
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson: string = getInspectorByKey('TextInput_onNeedSoftkeyboard_undefined');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      expect(obj.$attrs.onNeedSoftkeyboard).assertEqual(undefined);
+      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_0400 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_DEFAULT_PARAM_0500
+     * @tc.number SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_DEFAULT_PARAM_0500
+     * @tc.desc   Test TextInput onNeedSoftkeyboard callback with default
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_DEFAULT_PARAM_0500', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_DEFAULT_PARAM_0500 START');
+      let driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let button = await driver.findComponent(ON.id('TextInput_onNeedSoftkeyboard_default'))
+      await button.click();
+      await CommonFunc.sleep(1000);
+      let strJson: string = getInspectorByKey('TextInput_onNeedSoftkeyboard_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$attrs.onNeedSoftkeyboard).assertEqual(undefined);
       console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_UNDEFINED_PARAM_0400 END');
