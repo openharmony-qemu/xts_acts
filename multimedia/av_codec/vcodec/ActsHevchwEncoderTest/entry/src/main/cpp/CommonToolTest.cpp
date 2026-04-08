@@ -14,6 +14,7 @@
  */
 
 #include "CommonToolTest.h"
+#include <hilog/log.h>
 #include <random>
 
 namespace {
