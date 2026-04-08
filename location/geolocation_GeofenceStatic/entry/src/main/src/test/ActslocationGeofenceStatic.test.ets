@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, Hypium, beforeEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, Hypium, beforeEach } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
@@ -64,6 +64,7 @@ export default function actslocationTest() {
     describe("actslocationTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         beforeAll(async() => {
+          await changedLocationMode()
           let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
           if(!isWifiActive){
             console.info("======> wifi_test/enable wifi:" );
@@ -120,6 +121,10 @@ export default function actslocationTest() {
             await Utils.clickRequestPermission('仅使用期间允许');
             await Utils.clickRequestPermission('始终允许');
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
+        })
+
+        afterAll(async() => {
+          await changedLocationMode()
         })
 
         beforeEach(async (): Promise<void> => {
