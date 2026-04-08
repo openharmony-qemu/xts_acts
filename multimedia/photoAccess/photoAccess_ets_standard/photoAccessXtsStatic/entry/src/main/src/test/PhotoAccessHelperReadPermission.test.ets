@@ -62,16 +62,16 @@ export default function photoAccessHelperReadPermissionStaticTest() {
         });
 
         /**
-         * @tc.name   PhotoAsset_clone_ReadPermission_static_100
-         * @tc.number PhotoAsset_clone_ReadPermission_static_100
+         * @tc.name   SUB_MUTIMEDIA_PHOTOACCESS_PHOTOASSET_CLONE_STATIC_0100
+         * @tc.number SUB_MUTIMEDIA_PHOTOACCESS_PHOTOASSET_CLONE_STATIC_0100
          * @tc.desc   PhotoAsset-clone invoke with readPermission only
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it("PhotoAsset_clone_ReadPermission_static_100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("SUB_MUTIMEDIA_PHOTOACCESS_PHOTOASSET_CLONE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                const testName:string = 'PhotoAsset_clone_ReadPermission_static_100 ';
+                const testName:string = 'SUB_MUTIMEDIA_PHOTOACCESS_PHOTOASSET_CLONE_STATIC_0100 ';
                 console.info(TAG, testName + 'begin');
                 let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
                 let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -98,16 +98,16 @@ export default function photoAccessHelperReadPermissionStaticTest() {
 
 
         /**
-         * @tc.name   PhotoAsset_commitModify_ReadPermission_static_100
-         * @tc.number PhotoAsset_commitModify_ReadPermission_static_100
+         * @tc.name   SUB_MUTIMEDIA_PHOTOACCESS_PHOTOASSET_COMMITMODIFY_STATIC_0100
+         * @tc.number SUB_MUTIMEDIA_PHOTOACCESS_PHOTOASSET_COMMITMODIFY_STATIC_0100
          * @tc.desc   PhotoAsset-commitModify invoke with readPermission only
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it("PhotoAsset_commitModify_ReadPermission_static_100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("SUB_MUTIMEDIA_PHOTOACCESS_PHOTOASSET_COMMITMODIFY_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                const testName:string = 'PhotoAsset_commitModify_ReadPermission_static_100 ';
+                const testName:string = 'SUB_MUTIMEDIA_PHOTOACCESS_PHOTOASSET_COMMITMODIFY_STATIC_0100 ';
                 console.info(TAG, testName + 'begin');
                 let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
                 let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -120,7 +120,7 @@ export default function photoAccessHelperReadPermissionStaticTest() {
                     let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset>;
                     fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
                     let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-                    console.info(TAG, 'PhotoAsset_commitModify_ReadPermission_static_001 commitModify begin');
+                    console.info(TAG, testName + 'commitModify begin');
                     asset.commitModify();
                     expect().assertFail();
                     done();
@@ -132,16 +132,16 @@ export default function photoAccessHelperReadPermissionStaticTest() {
             })
 
         /**
-         * @tc.name   PhotoAsset_commitModify_ReadPermission_static_200
-         * @tc.number PhotoAsset_commitModify_ReadPermission_static_200
+         * @tc.name   SUB_MUTIMEDIA_PHOTOACCESS_PHOTOASSET_COMMITMODIFY_STATIC_0200
+         * @tc.number SUB_MUTIMEDIA_PHOTOACCESS_PHOTOASSET_COMMITMODIFY_STATIC_0200
          * @tc.desc   PhotoAsset-commitModify invoke with readPermission only
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it("PhotoAsset_commitModify_ReadPermission_static_200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("SUB_MUTIMEDIA_PHOTOACCESS_PHOTOASSET_COMMITMODIFY_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                const testName:string = 'PhotoAsset_commitModify_ReadPermission_static_200 ';
+                const testName:string = 'SUB_MUTIMEDIA_PHOTOACCESS_PHOTOASSET_COMMITMODIFY_STATIC_0200 ';
                 console.info(TAG, testName + 'begin');
                 let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
                 let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -173,16 +173,16 @@ export default function photoAccessHelperReadPermissionStaticTest() {
             })
 
         /**
-         * @tc.name   Album_commitModify_ReadPermission_static_100
-         * @tc.number Album_commitModify_ReadPermission_static_100
+         * @tc.name   SUB_MUTIMEDIA_PHOTOACCESS_ALBUM_COMMITMODIFY_STATIC_0100
+         * @tc.number SUB_MUTIMEDIA_PHOTOACCESS_ALBUM_COMMITMODIFY_STATIC_0100
          * @tc.desc   Album-commitModify invoke with readPermission only
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it("Album_commitModify_ReadPermission_static_100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("SUB_MUTIMEDIA_PHOTOACCESS_ALBUM_COMMITMODIFY_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                const testName:string = 'Album_commitModify_ReadPermission_static_100 ';
+                const testName:string = 'SUB_MUTIMEDIA_PHOTOACCESS_ALBUM_COMMITMODIFY_STATIC_0100 ';
                 console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;
@@ -210,16 +210,16 @@ export default function photoAccessHelperReadPermissionStaticTest() {
             })
 
         /**
-         * @tc.name   Album_commitModify_ReadPermission_static_200
-         * @tc.number Album_commitModify_ReadPermission_static_200
+         * @tc.name   SUB_MUTIMEDIA_PHOTOACCESS_ALBUM_COMMITMODIFY_STATIC_0200
+         * @tc.number SUB_MUTIMEDIA_PHOTOACCESS_ALBUM_COMMITMODIFY_STATIC_0200
          * @tc.desc   Album-commitModify invoke with readPermission only
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it("Album_commitModify_ReadPermission_static_200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("SUB_MUTIMEDIA_PHOTOACCESS_ALBUM_COMMITMODIFY_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                const testName:string = 'Album_commitModify_ReadPermission_static_200 ';
+                const testName:string = 'SUB_MUTIMEDIA_PHOTOACCESS_ALBUM_COMMITMODIFY_STATIC_0200 ';
                 console.info(TAG, testName + 'begin');
                 try {
                     let context: Context = Hypium.get("Context") as Context;

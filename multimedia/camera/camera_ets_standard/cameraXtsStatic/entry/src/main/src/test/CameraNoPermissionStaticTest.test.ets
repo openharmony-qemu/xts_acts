@@ -91,59 +91,64 @@ export default function cameraNoPermissionStaticTest() {
         })
 
         /**
-         * @tc.name CameraManager_createCameraInput_Static_001
-         * @tc.number CAMERA_MANAGER_CREATE_CAMERAINPUT_Static_001
+         * @tc.name SUB_MULTIMEDIA_CAMERA_CAMERAMANAGER_CREATECAMERAINPUT_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERAMANAGER_CREATECAMERAINPUT_STATIC_0100
          * @tc.desc  CameraManager-createCameraInput with no permission
          * @tc.level LEVEL1
          * @tc.size MEDIUMTEST
          * @tc.type FUNCTION
         */
-        it("CameraManager_createCameraInput_Static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            console.info(TAG + 'CameraManager_createCameraInput_Static_001 begin');
+        it("SUB_MULTIMEDIA_CAMERA_CAMERAMANAGER_CREATECAMERAINPUT_STATIC_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            const testName:string = 'SUB_MULTIMEDIA_CAMERA_CAMERAMANAGER_CREATECAMERAINPUT_STATIC_0100 ';
+            console.info(TAG, testName + 'begin');
             try {
                 mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[0]);
                 isCameraInputOpen = true;
                 expect().assertFail();
                 done();
             } catch (err) {
-                console.info(TAG + 'CameraManager_createCameraInput_Static_001 failed, err.code:' + err.code + ' err.message:' + err.message);
+                console.info(TAG, testName + 'failed, err.code:' + err.code + ' err.message:' + err.message);
                 expect(err.code).assertEqual(201);
                 done();
             }
         })
 
         /**
-         * @tc.name CameraManager_createCameraInput_Static_002
-         * @tc.number CAMERA_MANAGER_CREATE_CAMERAINPUT_Static_002
+         * @tc.name SUB_MULTIMEDIA_CAMERA_CAMERAMANAGER_CREATECAMERAINPUT_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERAMANAGER_CREATECAMERAINPUT_STATIC_0200
          * @tc.desc  CameraManager-createCameraInput with no permission
          * @tc.level LEVEL1
          * @tc.size MEDIUMTEST
          * @tc.type FUNCTION
          */
-        it("CameraManager_createCameraInput_Static_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            console.info(TAG + 'CameraManager_createCameraInput_Static_002 begin');
+        it("SUB_MULTIMEDIA_CAMERA_CAMERAMANAGER_CREATECAMERAINPUT_STATIC_0200",
+            TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            const testName:string = 'SUB_MULTIMEDIA_CAMERA_CAMERAMANAGER_CREATECAMERAINPUT_STATIC_0200 ';
+            console.info(TAG, testName + 'begin');
             try {
                 mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[0].cameraPosition, mCameraDevicesArray[0].cameraType);
                 isCameraInputOpen = true;
                 expect().assertFail();
                 done();
             } catch (err) {
-                console.info(TAG + 'CameraManager_createCameraInput_Static_002 failed, err.code:' + err.code + ' err.message:' + err.message);
+                console.info(TAG, testName + 'failed, err.code:' + err.code + ' err.message:' + err.message);
                 expect(err.code).assertEqual(201);
                 done();
             }
         })
 
         /**
-         * @tc.name PhotoOutput_enableMovingPhoto_Static_001
-         * @tc.number PHOTO_OUTPUT_ENABLE_MOVINGPHOTO_Static_001
+         * @tc.name SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_ENABLEMOVINGPHOTO_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_ENABLEMOVINGPHOTO_STATIC_0100
          * @tc.desc  PhotoOutput-enableMovingPhoto with no permission
          * @tc.level LEVEL1
          * @tc.size MEDIUMTEST
          * @tc.type FUNCTION
          */
-        it("PhotoOutput_enableMovingPhoto_Static_001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            console.info(TAG + 'PhotoOutput_enableMovingPhoto_Static_001 begin');
+        it("SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_ENABLEMOVINGPHOTO_STATIC_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+            async (done: () => void): Promise<void> => {
+            const testName:string = 'SUB_MULTIMEDIA_CAMERA_PHOTOOUTPUT_ENABLEMOVINGPHOTO_STATIC_0100 ';
+            console.info(TAG, testName + 'begin');
             try {
                 //创建输出流
                 createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
@@ -152,7 +157,7 @@ export default function cameraNoPermissionStaticTest() {
                 expect().assertFail();
                 done();
             } catch (err) {
-                console.info(TAG + 'PhotoOutput_enableMovingPhoto_Static_001 failed, err.code:' + err.code + ' err.message:' + err.message);
+                console.info(TAG, testName + 'failed, err.code:' + err.code + ' err.message:' + err.message);
                 expect(err.code).assertEqual(201);
                 done();
             }

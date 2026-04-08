@@ -15,7 +15,6 @@
 
 import image from '@ohos.multimedia.image';
 import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
-import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 
 const TAG = 'ImageExifMetadataStaticTest:'
@@ -49,15 +48,15 @@ export default function ImageExifMetadataStaticTest() {
     });
 
     /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002
+     * @tc.number     SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_STATIC_0100
+     * @tc.name       SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_STATIC_0100
      * @tc.desc       Metadata -ExifMetadata -getAllProperties -返回值为undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002';
+    it('SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_STATIC_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_STATIC_0100';
       try {
         const testArrayBufferUint8: Uint8Array = new Uint8Array([48, 50, 49, 48]);
         const testExifArrayBuffer: ArrayBuffer = testArrayBufferUint8.buffer as ArrayBuffer;
