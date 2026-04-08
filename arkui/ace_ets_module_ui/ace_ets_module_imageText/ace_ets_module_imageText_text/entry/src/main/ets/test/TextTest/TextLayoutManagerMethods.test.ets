@@ -97,21 +97,21 @@ export default function TextLayoutManagerMethodsTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITIONATCOORDINATE_PARAM_00400
-     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITIONATCOORDINATE_PARAM_00400
+     * @tc.name   SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITIONATCOORDINATE_PARAM_0400
+     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITIONATCOORDINATE_PARAM_0400
      * @tc.desc   Test LayoutManager getCharacterPositionAtCoordinate method with undefined y parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITIONATCOORDINATE_PARAM_00400', Level.LEVEL1, async () => {
-      console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITIONATCOORDINATE_PARAM_00400 START');
+    it('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITIONATCOORDINATE_PARAM_0400', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITIONATCOORDINATE_PARAM_0400 START');
 
       let strJson: string = getInspectorByKey('text_getCharacterPositionAtCoordinate_undefined_y');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
       expect(obj.$attrs.content).assertEqual('getCharacterPositionAtCoordinate undefined Y: undefined');
-      console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITIONATCOORDINATE_PARAM_00400 END');
+      console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARACTERPOSITIONATCOORDINATE_PARAM_0400 END');
     });
 
     /**
