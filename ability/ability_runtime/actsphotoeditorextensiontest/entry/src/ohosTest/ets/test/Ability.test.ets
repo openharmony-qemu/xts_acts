@@ -41,8 +41,6 @@ export default function abilityTest() {
  	        hilog.info(0x0000, TAG, `ACTS_PhotoEditorExtension afterEach end`);
  	    })
         afterAll(() => {
-            // Presets a clear action, which is performed after all test cases of the test suite end.
-            // This API supports only one parameter: clear action function.
         })
 
         /**
@@ -53,7 +51,7 @@ export default function abilityTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('ACTS_PhotoEditorExtension_0100', Level.LEVEL0, async (done:Function) => {
+        it('ACTS_PhotoEditorExtension_0100', Level.LEVEL0, async () => {
  	        // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
  	        const newTag = 'ACTS_PhotoEditorExtension_0100 == ';
  	        try{
@@ -76,22 +74,17 @@ export default function abilityTest() {
  	                        } catch {
  	                            expect().assertFail();
  	                        }
- 	                        done();
  	                    });
  	                });
  	            }).catch((error: BusinessError) => {
  	                console.log(newTag + "createSubscriber err");
  	                expect().assertFail();
-					done();
  	            })
  	            await abilityDelegator.executeShellCommand('aa start -a EntryAbility2 -b com.acts.photoeditorextensiontest --ps action test_0100')
-                done();
  	        }catch{
  	            console.log(newTag + "createSubscriber err");
  	            expect().assertFail();
-                done();
  	        }
- 	             
  	    })
     })
 }
