@@ -373,23 +373,23 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATICREPEATED_0100
-    * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATICREPEATED_0100
+    * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIORREPEATED_STATIC_0100
+    * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIORREPEATED_STATIC_0100
     * @tc.desc   setAudioSessionBehavior
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATICREPEATED_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIORREPEATED_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
       try {
         for(let i = 0;i < 100 ;i++){
           sessionManager!.setAudioSessionBehavior(behavior);
         }
-        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATICREPEATED_0100: setAudioSessionBehavior with DEFALUT: PASS`);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIORREPEATED_STATIC_0100: setAudioSessionBehavior with DEFALUT: PASS`);
         done();
       } catch (err) {
-        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATICREPEATED_0100: FAIL :${(err as BusinessError).message}`);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIORREPEATED_STATIC_0100: FAIL :${(err as BusinessError).message}`);
         expect(false).assertTrue();
       }
       done();

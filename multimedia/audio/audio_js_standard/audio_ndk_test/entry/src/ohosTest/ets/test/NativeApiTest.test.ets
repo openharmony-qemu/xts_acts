@@ -5626,121 +5626,121 @@ export default function audioNDK() {
     })
 
     /**
-    * @tc.name   AudioCapturer_SetIndependentAudioSessionStrategy_enum_003
-    * @tc.number AudioCapturer_SetIndependentAudioSessionStrategy_enum_003
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AudioCapturerenum_003
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AudioCapturerenum_003
     * @tc.desc   SetIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-    it('AudioCapturer_SetIndependentAudioSessionStrategy_enum_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_enum_003();
-      console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_enum_003 : ${result}`);
+    it('SUB_MULTIMEDIA_AUDIO_AudioCapturerenum_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AudioCapturerenum_003();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AudioCapturerenum_003 : ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
     })
 
     /**
-    * @tc.name   AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001
-    * @tc.number AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_001
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_001
     * @tc.desc   SetIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-    it('AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001();
-      console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001 : ${result}`);
+    it('SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_001 : ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
     })
 
     /**
-    * @tc.name   AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002
-    * @tc.number AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_002
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_002
     * @tc.desc   SetIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-    it('AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002();
-      console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002 : ${result}`);
+    it('SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_002();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_002: ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
     })
 
     /**
-    * @tc.name   AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003
-    * @tc.number AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_003
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_003
     * @tc.desc   SetIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-    it('AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003();
-      console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003 : ${result}`);
+    it('SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_003();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_003 : ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
     })
 
     /**
-    * @tc.name   AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004
-    * @tc.number AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_004
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_004
     * @tc.desc   SetIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-    it('AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004();
-      console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004 : ${result}`);
+    it('SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_004();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_004 : ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
     })
 
     /**
-    * @tc.name   AudioSessionManager_SetBehavior_Voice_001
-    * @tc.number AudioSessionManager_SetBehavior_Voice_001
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoice_005
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoice_005
     * @tc.desc   SetIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-    it('AudioSessionManager_SetBehavior_Voice_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.AudioSessionManager_SetBehavior_Voice_001();
-      console.info(`Tag: AudioSessionManager_SetBehavior_Voice_001 : ${result}`);
+    it('SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoice_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoice_005();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoice_005 : ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
     })
 
     /**
-    * @tc.name   AudioSessionManager_SetBehavior_VoiceReapted_001
-    * @tc.number AudioSessionManager_SetBehavior_VoiceReapted_001
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoiceReapted_001
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoiceReapted_001
     * @tc.desc   SetIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-    it('AudioSessionManager_SetBehavior_VoiceReapted_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.AudioSessionManager_SetBehavior_VoiceReapted_001();
-      console.info(`Tag: AudioSessionManager_SetBehavior_VoiceReapted_001 : ${result}`);
+    it('SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoiceReapted_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoiceReapted_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoiceReapted_001 : ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
     })
 
     /**
-    * @tc.name   AudioCapturer_SetIndependentAudioSessionStrategy_VoiceReapted_001
-    * @tc.number AudioCapturer_SetIndependentAudioSessionStrategy_VoiceReapted_001
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AudioCapturerVoiceReapted_001
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AudioCapturerVoiceReapted_001
     * @tc.desc   SetIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-    it('AudioCapturer_SetIndependentAudioSessionStrategy_VoiceReapted_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.AudioCapturer_SetIndependentAudioSessionStrategy_VoiceReapted_001();
-      console.info(`Tag: AudioCapturer_SetIndependentAudioSessionStrategy_VoiceReapted_001 : ${result}`);
+    it('SUB_MULTIMEDIA_AUDIO_AudioCapturerVoiceReapted_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AudioCapturerVoiceReapted_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AudioCapturerVoiceReapted_001 : ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
     })

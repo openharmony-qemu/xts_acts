@@ -9744,10 +9744,10 @@ static napi_value AudioSessionManager_SetBehavior_004(napi_env env, napi_callbac
     return res;
 }
 
-static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_enum_003(napi_env env, napi_callback_info info)
+static napi_value SUB_MULTIMEDIA_AUDIO_AudioCapturerenum_003(napi_env env, napi_callback_info info)
 {
     napi_value res;
-    uint32_t VOIP_PRIVACY_TYPE_PUBLIC = 0x00000001;
+    uint32_t voipPrivacyTypePublic = 0x00000001;
     if (VOIP_PRIVACY_TYPE_PUBLIC != OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AUDIOSESSIONMANAGER_VOIP_PRIVACY_TYPE_PUBLIC fail, result is: %{public}d",
@@ -9757,7 +9757,7 @@ static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_enum_003(napi
     return res;
 }
 
-static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001(napi_env env, napi_callback_info info)
+static napi_value SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_001(napi_env env, napi_callback_info info)
 {
     napi_value res;
     OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
@@ -9779,7 +9779,7 @@ static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001(nap
     return res;
 }
 
-static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002(napi_env env, napi_callback_info info)
+static napi_value SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_002(napi_env env, napi_callback_info info)
 {
     napi_value res;
     OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
@@ -9801,7 +9801,7 @@ static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002(nap
     return res;
 }
 
-static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003(napi_env env, napi_callback_info info)
+static napi_value SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_003(napi_env env, napi_callback_info info)
 {
     napi_value res;
     OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
@@ -9823,7 +9823,7 @@ static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003(nap
     return res;
 }
 
-static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004(napi_env env, napi_callback_info info)
+static napi_value SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_004(napi_env env, napi_callback_info info)
 {
     napi_value res;
     OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
@@ -9845,7 +9845,7 @@ static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004(nap
     return res;
 }
 
-static napi_value AudioSessionManager_SetBehavior_Voice_001(napi_env env, napi_callback_info info)
+static napi_value SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoice_005(napi_env env, napi_callback_info info)
 {
     napi_value res;
     OH_AudioSessionManager* audioSessionManager;
@@ -9861,7 +9861,7 @@ static napi_value AudioSessionManager_SetBehavior_Voice_001(napi_env env, napi_c
     return res;
 }
 
-static napi_value AudioSessionManager_SetBehavior_VoiceReapted_001(napi_env env, napi_callback_info info)
+static napi_value SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoiceReapted_001(napi_env env, napi_callback_info info)
 {
     napi_value res;
     OH_AudioSessionManager* audioSessionManager;
@@ -9879,7 +9879,7 @@ static napi_value AudioSessionManager_SetBehavior_VoiceReapted_001(napi_env env,
     return res;
 }
 
-static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_VoiceReapted_001(napi_env env, napi_callback_info info)
+static napi_value SUB_MULTIMEDIA_AUDIO_AudioCapturerVoiceReapted_001(napi_env env, napi_callback_info info)
 {
     napi_value res;
     OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
@@ -10605,22 +10605,22 @@ napi_property_descriptor desc3[] = {
         AudioSessionManager_SetBehavior_003, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioSessionManager_SetBehavior_004", nullptr,
         AudioSessionManager_SetBehavior_004, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"AudioCapturer_SetIndependentAudioSessionStrategy_enum_003", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_enum_003, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_Voice_001, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_Voice_002, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_Voice_003, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_Voice_004, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"AudioSessionManager_SetBehavior_Voice_001", nullptr,
-        AudioSessionManager_SetBehavior_Voice_001, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"AudioSessionManager_SetBehavior_VoiceReapted_001", nullptr,
-        AudioSessionManager_SetBehavior_VoiceReapted_001, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"AudioCapturer_SetIndependentAudioSessionStrategy_VoiceReapted_001", nullptr,
-        AudioCapturer_SetIndependentAudioSessionStrategy_VoiceReapted_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AudioCapturerenum_003", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AudioCapturerenum_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_001", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_002", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_003", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_004", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AudioCapturerVoice_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoice_005", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoice_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AudioCapturerVoiceReapted_001", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AudioCapturerVoiceReapted_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoiceReapted_001", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AudioSessionManagerVoiceReapted_001, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 static napi_value Init(napi_env env, napi_value exports)
 {
