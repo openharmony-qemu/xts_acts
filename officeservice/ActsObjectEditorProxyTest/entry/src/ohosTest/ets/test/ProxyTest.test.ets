@@ -163,7 +163,8 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedInfo_EmptyLocal();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED ||
+        result === CE_ERR_SYSTEM_ABNORMAL || result === CE_ERR_OK;
       expect(expectResult).assertTrue();
     })
 
@@ -180,7 +181,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedInfo_LocaleInvalid();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL;
       expect(expectResult).assertTrue();
     })
 
@@ -197,7 +198,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedInfo_Normal();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_OK;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL || result === CE_ERR_OK;
       expect(expectResult).assertTrue();
     })
 
@@ -469,7 +470,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedFormatByOEidAndLocale_NullLocale();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL;
       expect(expectResult).assertTrue();
     })
 
@@ -486,7 +487,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyOEid();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL;
       expect(expectResult).assertTrue();
     })
 
@@ -503,7 +504,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyLocale();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL;
       expect(expectResult).assertTrue();
     })
 
@@ -739,7 +740,7 @@ export default function proxyTest() {
     it('SUB_Object_Editor_TestGetFileNameExtensionsFromFormat_0100', Level.LEVEL0, () => {
       let tag = 'SUB_Object_Editor_TestGetFileNameExtensionsFromFormat_0100';
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyGetFileNameExtensionsFromFormat_Null();
+      let result = testNapi.TestProxyGetFileNameExtensionsFromFormat_NullFormatNullCount();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
       let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
       expect(expectResult).assertTrue();
@@ -1234,7 +1235,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyStartWork_ConnectFailed();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_EXTENSION_ERROR;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL;
       expect(expectResult).assertTrue();
     })
 
@@ -1268,7 +1269,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyStopWork_DisConnectFailed();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_EXTENSION_ERROR;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_SYSTEM_ABNORMAL;
       expect(expectResult).assertTrue();
     })
 

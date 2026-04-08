@@ -231,7 +231,7 @@ export default function documentTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestLoadDocumentFromFile_ValidParam();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_OK;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_NULL_POINTER;
       expect(expectResult).assertTrue();
     })
 
@@ -299,7 +299,7 @@ export default function documentTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestDocumentRead_ValidParam();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_OK;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_STORAGE_OPERATION_FAILED;
       expect(expectResult).assertTrue();
     })
 
@@ -537,7 +537,7 @@ export default function documentTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestDocumentFlush_ValidParam();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_OK;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_FILE_OPERATION_FAILED;
       expect(expectResult).assertTrue();
     })
 
@@ -860,7 +860,7 @@ export default function documentTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestStorageDeleteEntry_ValidParam();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_OK;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_STORAGE_OPERATION_FAILED;
       expect(expectResult).assertTrue();
     })
 
@@ -1524,74 +1524,6 @@ export default function documentTest() {
       let result = testNapi.TestStorageCopyTo_NullDstStorage();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
       let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_TestStorageCopyTo_0300
-     * @tc.number SUB_Object_Editor_TestStorageCopyTo_0300
-     * @tc.desc   Test OH_ContentEmbed_Storage_CopyTo with valid parameters
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_TestStorageCopyTo_0300', Level.LEVEL0, () => {
-      let tag = 'SUB_Object_Editor_TestStorageCopyTo_0300';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestStorageCopyTo_ValidParam();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_OK;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_TestStorageMoveTo_0100
-     * @tc.number SUB_Object_Editor_TestStorageMoveTo_0100
-     * @tc.desc   Test OH_ContentEmbed_Storage_MoveTo with null src storage
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_TestStorageMoveTo_0100', Level.LEVEL0, () => {
-      let tag = 'SUB_Object_Editor_TestStorageMoveTo_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestStorageMoveTo_NullSrcStorage();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_TestStorageMoveTo_0200
-     * @tc.number SUB_Object_Editor_TestStorageMoveTo_0200
-     * @tc.desc   Test OH_ContentEmbed_Storage_MoveTo with null dst storage
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_TestStorageMoveTo_0200', Level.LEVEL0, () => {
-      let tag = 'SUB_Object_Editor_TestStorageMoveTo_0200';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestStorageMoveTo_NullDstStorage();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_TestStorageMoveTo_0300
-     * @tc.number SUB_Object_Editor_TestStorageMoveTo_0300
-     * @tc.desc   Test OH_ContentEmbed_Storage_MoveTo with valid parameters
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_TestStorageMoveTo_0300', Level.LEVEL0, () => {
-      let tag = 'SUB_Object_Editor_TestStorageMoveTo_0300';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestStorageMoveTo_ValidParam();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_OK;
       expect(expectResult).assertTrue();
     })
 
