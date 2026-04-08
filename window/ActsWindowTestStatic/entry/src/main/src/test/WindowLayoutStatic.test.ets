@@ -1309,14 +1309,14 @@ export default function WindowLayoutStaticTest() {
             hilog.info(domain, tag, msgStr + 'begin');
             try {
                 let mainWindow: window.Window = windowStage!.getMainWindowSync();
-                let windowStatus_before: window.WindowStatusType = windowClass.getWindowStatus()
+                let windowStatus_before: window.WindowStatusType = mainWindow.getWindowStatus()
                 hilog.info(domain, tag, caseName + `windowStatus_before: ${windowStatus_before}`);
-                mainWindow.maximize().then(async {
+                mainWindow.maximize().then(async ()=> {
                     hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
                     await Utils.msSleep(1500)
+                    let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
+                    hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                     if(isFreeWindowMode){
-                        let windowStatus: window.WindowStatusType = windowClass.getWindowStatus()
-                        hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                         expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         await mainWindow.recover();
                         hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
@@ -1359,14 +1359,14 @@ export default function WindowLayoutStaticTest() {
             hilog.info(domain, tag, msgStr + 'begin');
             try {
                 let mainWindow: window.Window = windowStage!.getMainWindowSync();
-                let windowStatus_before: window.WindowStatusType = windowClass.getWindowStatus()
+                let windowStatus_before: window.WindowStatusType = mainWindow.getWindowStatus()
                 hilog.info(domain, tag, caseName + `windowStatus_before: ${windowStatus_before}`);
                 mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE).then(async() => {
                     hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
                      await Utils.msSleep(1500)
+                    let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
+                    hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                     if(isFreeWindowMode){
-                        let windowStatus: window.WindowStatusType = windowClass.getWindowStatus()
-                        hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                         expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         await mainWindow.recover();
                         hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
@@ -1409,14 +1409,14 @@ export default function WindowLayoutStaticTest() {
             hilog.info(domain, tag, msgStr + 'begin');
                 try {
                     let mainWindow: window.Window = windowStage!.getMainWindowSync();
-                    let windowStatus_before: window.WindowStatusType = windowClass.getWindowStatus()
+                    let windowStatus_before: window.WindowStatusType = mainWindow.getWindowStatus()
                     hilog.info(domain, tag, caseName + `windowStatus_before: ${windowStatus_before}`);
                     mainWindow.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING).then(async() => {
                         hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
                          await Utils.msSleep(1500)
+                        let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
+                        hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                         if(isFreeWindowMode){
-                            let windowStatus: window.WindowStatusType = windowClass.getWindowStatus()
-                            hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                             expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
                             await mainWindow.recover();
                             hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
@@ -1563,14 +1563,14 @@ export default function WindowLayoutStaticTest() {
             hilog.info(domain, tag, msgStr + 'begin');
             try {
                 let mainWindow: window.Window = windowStage!.getMainWindowSync();
-                let windowStatus_before: window.WindowStatusType = windowClass.getWindowStatus()
+                let windowStatus_before: window.WindowStatusType = mainWindow.getWindowStatus()
                 hilog.info(domain, tag, caseName + `windowStatus_before: ${windowStatus_before}`);
                 mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true).then(async() => {
                     hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
                     await Utils.msSleep(1500)
+                    let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
+                    hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                     if(isFreeWindowMode){
-                        let windowStatus: window.WindowStatusType = windowClass.getWindowStatus()
-                        hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                         expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         await mainWindow.recover();
                         hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
@@ -1613,14 +1613,14 @@ export default function WindowLayoutStaticTest() {
             hilog.info(domain, tag, msgStr + 'begin');
                 try {
                     let mainWindow: window.Window = windowStage!.getMainWindowSync();
-                    let windowStatus_before: window.WindowStatusType = windowClass.getWindowStatus()
+                    let windowStatus_before: window.WindowStatusType = mainWindow.getWindowStatus()
                     hilog.info(domain, tag, caseName + `windowStatus_before: ${windowStatus_before}`);
                     await mainWindow.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING, false).then(async() => {
                         hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
                         await Utils.msSleep(1500)
+                        let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
+                        hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                         if(isFreeWindowMode){
-                            let windowStatus: window.WindowStatusType = windowClass.getWindowStatus()
-                            hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                             expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
                             await mainWindow.recover();
                             hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');

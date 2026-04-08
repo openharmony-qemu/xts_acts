@@ -2162,6 +2162,7 @@ export default function WindowLayoutTest() {
                         done();
                     }
                 }
+        });
         /**
          * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_static_0100
          * @tc.name       testOnOcclusionStatewithDestoryedSubwindow_static
