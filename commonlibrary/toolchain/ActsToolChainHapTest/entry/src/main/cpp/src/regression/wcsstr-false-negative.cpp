@@ -27,8 +27,8 @@ int WcsstrFalseNegativeTest()
 {
     int status = SUCCESS_CODE;
 
-    wchar_t const* haystack = L"playing play play play always";
-    wchar_t const* needle = L"play play play";
+    const wchar_t* haystack = L"playing play play play always";
+    const wchar_t* needle = L"play play play";
 
     const wchar_t* p = wcsstr(haystack, needle);
     if (p != haystack + K_EXPECTED_HAYSTACK_OFFSET) {

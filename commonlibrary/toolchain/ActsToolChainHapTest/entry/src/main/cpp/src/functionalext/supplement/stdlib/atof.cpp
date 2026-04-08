@@ -21,7 +21,7 @@
 typedef void (*TEST_FUN)();
 
 namespace {
-constexpr double kAtofExpectValue = 123456.00;
+constexpr double K_ATOF_EXPECT_VALUE = 123456.00;
 } // namespace
 
 static void ExpectDoubleEq(double a, double b)
@@ -40,7 +40,7 @@ void Atof0100()
 {
     const char* str = "123456.00";
     double result = atof(str);
-    ExpectDoubleEq(result, kAtofExpectValue);
+    ExpectDoubleEq(result, K_ATOF_EXPECT_VALUE);
 }
 
 namespace {

@@ -55,6 +55,19 @@ extern volatile atomic_llong g_ohosMallocHookSharedLibrary;
 extern "C" {
 #endif
 
+#ifdef HOOK_ENABLE
+__attribute__((always_inline)) inline volatile void* LoadHookImplHandle()
+{
+    return reinterpret_cast<volatile void*>(
+        static_cast<uintptr_t>(atomic_load_explicit(&g_ohosMallocHookSharedLibrary, memory_order_acquire)));
+}
+
+__attribute__((always_inline)) inline bool IsHookLibLoading(volatile void* impl_handle)
+{
+    return impl_handle == reinterpret_cast<void*>(static_cast<uintptr_t>(-1));
+}
+#endif
+
 __attribute__((always_inline)) inline bool GetGlobalHookFlag()
 {
 #ifdef HOOK_ENABLE
@@ -88,17 +101,15 @@ __attribute__((always_inline)) inline bool GetCustomHookFlag()
 __attribute__((always_inline)) inline bool GetHookFlag()
 {
 #ifdef HOOK_ENABLE
-    volatile void* impl_handle = reinterpret_cast<volatile void*>(
-        static_cast<uintptr_t>(atomic_load_explicit(&g_ohosMallocHookSharedLibrary, memory_order_acquire)));
+    volatile void* impl_handle = LoadHookImplHandle();
     if (impl_handle == NULL) {
         return false;
-    } else if (impl_handle == reinterpret_cast<void*>(static_cast<uintptr_t>(-1))) {
+    } else if (IsHookLibLoading(impl_handle)) {
         return true;
-    } else {
-        GetHookFlagType get_hook_func_ptr =
-            reinterpret_cast<GetHookFlagType>(function_of_shared_lib[GET_HOOK_FLAG_FUNCTION]);
-        return get_hook_func_ptr();
     }
+    GetHookFlagType get_hook_func_ptr =
+        reinterpret_cast<GetHookFlagType>(function_of_shared_lib[GET_HOOK_FLAG_FUNCTION]);
+    return get_hook_func_ptr();
 #else
     return false;
 #endif
@@ -107,17 +118,15 @@ __attribute__((always_inline)) inline bool GetHookFlag()
 __attribute__((always_inline)) inline bool SetHookFlag(bool flag)
 {
 #ifdef HOOK_ENABLE
-    volatile void* impl_handle = reinterpret_cast<volatile void*>(
-        static_cast<uintptr_t>(atomic_load_explicit(&g_ohosMallocHookSharedLibrary, memory_order_acquire)));
+    volatile void* impl_handle = LoadHookImplHandle();
     if (impl_handle == NULL) {
         return false;
-    } else if (impl_handle == reinterpret_cast<void*>(static_cast<uintptr_t>(-1))) {
+    } else if (IsHookLibLoading(impl_handle)) {
         return true;
-    } else {
-        SetHookFlagType set_hook_func_ptr =
-            reinterpret_cast<SetHookFlagType>(function_of_shared_lib[SET_HOOK_FLAG_FUNCTION]);
-        return set_hook_func_ptr(flag);
     }
+    SetHookFlagType set_hook_func_ptr =
+        reinterpret_cast<SetHookFlagType>(function_of_shared_lib[SET_HOOK_FLAG_FUNCTION]);
+    return set_hook_func_ptr(flag);
 #else
     return false;
 #endif
@@ -148,9 +157,8 @@ __attribute__((always_inline)) inline bool
     SendHookMiscData(uint64_t id, const char* stackPtr, size_t stackSize, uint32_t type)
 {
 #ifdef HOOK_ENABLE
-    volatile void* impl_handle = reinterpret_cast<volatile void*>(
-        static_cast<uintptr_t>(atomic_load_explicit(&g_ohosMallocHookSharedLibrary, memory_order_acquire)));
-    if (impl_handle == NULL || impl_handle == reinterpret_cast<void*>(static_cast<uintptr_t>(-1))) {
+    volatile void* impl_handle = LoadHookImplHandle();
+    if (impl_handle == NULL || IsHookLibLoading(impl_handle)) {
         return false;
     }
     SendHookMiscDataType send_hook_func_ptr =
@@ -164,9 +172,8 @@ __attribute__((always_inline)) inline bool
 __attribute__((always_inline)) inline void* GetHookConfig()
 {
 #ifdef HOOK_ENABLE
-    volatile void* impl_handle = reinterpret_cast<volatile void*>(
-        static_cast<uintptr_t>(atomic_load_explicit(&g_ohosMallocHookSharedLibrary, memory_order_acquire)));
-    if (impl_handle == NULL || impl_handle == reinterpret_cast<void*>(static_cast<uintptr_t>(-1))) {
+    volatile void* impl_handle = LoadHookImplHandle();
+    if (impl_handle == NULL || IsHookLibLoading(impl_handle)) {
         return NULL;
     }
     GetHookConfigType get_hook_func_ptr = reinterpret_cast<GetHookConfigType>(function_of_shared_lib[GET_HOOK_CONFIG]);

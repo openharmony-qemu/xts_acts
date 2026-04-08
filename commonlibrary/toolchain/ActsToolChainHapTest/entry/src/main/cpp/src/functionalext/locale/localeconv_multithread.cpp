@@ -24,6 +24,7 @@
 
 namespace {
 constexpr uintptr_t K_SECOND_THREAD_ARG = 2U;
+constexpr uintptr_t K_FIRST_THREAD_ARG = 1U;
 } // namespace
 
 void* ThreadFunc(void* arg)
@@ -47,13 +48,13 @@ static int LocaleconvMultithreadTestImpl()
     pthread_t tid2;
     (void)setlocale(LC_ALL, "C");
     (void)setlocale(LC_MONETARY, "C");
-    if (pthread_create(&tid1, nullptr, ThreadFunc, reinterpret_cast<void*>(static_cast<uintptr_t>(1))) != 0) {
+    if (pthread_create(&tid1, nullptr, ThreadFunc, reinterpret_cast<void*>(K_FIRST_THREAD_ARG)) != 0) {
         t_error("localeconv_multithread: pthread_create tid1 failed\n");
         return -1;
     }
 
-    if (pthread_create(
-            &tid2, nullptr, ThreadFunc, reinterpret_cast<void*>(static_cast<uintptr_t>(K_SECOND_THREAD_ARG))) != 0) {
+    void* secondThreadArg = reinterpret_cast<void*>(K_SECOND_THREAD_ARG);
+    if (pthread_create(&tid2, nullptr, ThreadFunc, secondThreadArg) != 0) {
         t_error("localeconv_multithread: pthread_create tid2 failed\n");
         return -1;
     }

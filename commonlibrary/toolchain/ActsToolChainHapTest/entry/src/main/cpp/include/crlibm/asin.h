@@ -16,6 +16,8 @@
 #ifndef CRLIBM_ASIN_H_H
 #define CRLIBM_ASIN_H_H
 
+#include "mtest.h"
+
 // asin.testdata
 // copyright (C) 2005 F. de Dinechin, Ch. Q. Lauter and V. Lefevre
 // This file is part of crlibm and is distributed under the GNU Public Licence

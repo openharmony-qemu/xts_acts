@@ -83,7 +83,7 @@ T(RD, NAN, NAN, 0x0p+0, 0)
 T(RZ, NAN, NAN, 0x0p+0, 0)
 // NaN
 // Some boundary cases specific to the exp
-// TODO add a few denormals
+// Add a few denormal boundary cases.
 // the last value before the exp gets infinite
 T(ROUND_TO_NEAREST, 0x1.62e42fefa39efp+9, 0x1.fffffffffff2ap+1023, -0x1.b0e264p-4, INEXACT)
 // the first value that gives infinite exp

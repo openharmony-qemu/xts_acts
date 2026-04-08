@@ -31,19 +31,29 @@ constexpr int K_INET_PTON_SUCCESS = 1;
 constexpr int K_INET_PTON_REJECT = 0;
 constexpr int K_IPV6_BYTE_PAIR_SHIFT = 8;
 constexpr int K_IPV6_PAIR_BYTE_STRIDE = 2;
+constexpr char K_HEX_DIGITS[] = "0123456789abcdef";
 } // namespace
+
+static void WriteWordHex(char* dst, unsigned value)
+{
+    dst[0] = K_HEX_DIGITS[(value >> 12) & 0xF];
+    dst[1] = K_HEX_DIGITS[(value >> 8) & 0xF];
+    dst[2] = K_HEX_DIGITS[(value >> 4) & 0xF];
+    dst[3] = K_HEX_DIGITS[value & 0xF];
+}
 
 static void Txt(char* s, unsigned char* buf)
 {
-    int i;
-    (void)std::snprintf(s, K_IPV6_TXT_BUF_LEN, "%04x", buf[0] << K_IPV6_BYTE_PAIR_SHIFT | buf[1]);
-    for (i = 1; i < K_IPV6_WORD_COUNT; i++) {
-        (void)std::snprintf(s + K_IPV6_COLON_FIELD_STRIDE * i,
-                            K_IPV6_TXT_BUF_LEN - K_IPV6_COLON_FIELD_STRIDE * static_cast<unsigned>(i),
-                            ":%04x",
-                            buf[K_IPV6_PAIR_BYTE_STRIDE * i] << K_IPV6_BYTE_PAIR_SHIFT |
-                                buf[K_IPV6_PAIR_BYTE_STRIDE * i + 1]);
+    unsigned first = (buf[0] << K_IPV6_BYTE_PAIR_SHIFT) | buf[1];
+    WriteWordHex(s, first);
+    for (int i = 1; i < K_IPV6_WORD_COUNT; i++) {
+        int pos = K_IPV6_COLON_FIELD_STRIDE * i - 1;
+        s[pos] = ':';
+        unsigned value =
+            (buf[K_IPV6_PAIR_BYTE_STRIDE * i] << K_IPV6_BYTE_PAIR_SHIFT) | (buf[K_IPV6_PAIR_BYTE_STRIDE * i + 1]);
+        WriteWordHex(s + pos + 1, value);
     }
+    s[K_IPV6_COLON_FIELD_STRIDE * K_IPV6_WORD_COUNT - 1] = '\0';
 }
 
 int InetPtonEmptyLastFieldTest()
@@ -54,7 +64,7 @@ int InetPtonEmptyLastFieldTest()
     char sw[K_IPV6_TXT_BUF_LEN];
     unsigned char buf[K_IPV6_ADDR_BYTES];
     unsigned char want[K_IPV6_ADDR_BYTES] = { 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 0 };
-    char* addr;
+    const char* addr;
 
     addr = "1:2:3:4:5:6:7::";
     if (inet_pton(AF_INET6, addr, buf) != K_INET_PTON_SUCCESS || memcmp(buf, want, K_IPV6_ADDR_BYTES) != 0) {

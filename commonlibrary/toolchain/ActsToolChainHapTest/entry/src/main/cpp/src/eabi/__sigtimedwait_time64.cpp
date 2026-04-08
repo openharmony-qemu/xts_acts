@@ -19,10 +19,6 @@
 #include <ctime>
 #include "test.h"
 
-// extern int SigtimedwaitTime64(const sigset_t *__restrict mask,
-//                                 siginfo_t *__restrict si,
-//                                 const struct timespec *__restrict timeout);
-
 #ifdef __cplusplus
 extern "C" {
 #endif

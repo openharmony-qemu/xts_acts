@@ -16,6 +16,8 @@
 #ifndef CRLIBM_ATAN_H_H
 #define CRLIBM_ATAN_H_H
 
+#include "mtest.h"
+
 // atan.testdata
 // copyright (C) 2005 Ch. Q. Lauter and F. de Dinechin and V.Lefevre
 // This file is part of crlibm and is distributed under the GNU Public Licence

@@ -26,7 +26,7 @@ void FAIL(void)
 }
 /**
  * @tc.name      : Setjmp0100
- * @tc.desc      :
+ * @tc.desc      : Validate _setjmp/_longjmp control transfer and return value.
  * @tc.level     : Level 0
  */
 void Setjmp0100(void)

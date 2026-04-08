@@ -105,13 +105,14 @@ static void NativehookCase3()
     }
 }
 
-static void NativehookCase4To7()
+static void NativehookCase4()
 {
     bool hookFlag;
     volatile const struct MallocDispatchType* mallocDispatchTable;
+    const volatile long long kLoadedLibHandle = (volatile long long)0x10319090;
 
     printf("Case 4: client shared library is loaded, no uninstall signal raising, outside client malloc.\n");
-    atomic_store_explicit(&g_ohosMallocHookSharedLibrary, (volatile long long)0x10319090, memory_order_seq_cst);
+    atomic_store_explicit(&g_ohosMallocHookSharedLibrary, kLoadedLibHandle, memory_order_seq_cst);
     atomic_store_explicit(&g_hookEnableHookFlag, (volatile bool)true, memory_order_seq_cst);
     SetHookFlag(true);
     hookFlag = GetHookFlag();
@@ -122,9 +123,16 @@ static void NativehookCase4To7()
     if (!(mallocDispatchTable != nullptr)) {
         t_error("mallocDispatchTable != nullptr failed: mallocDispatchTable shoud be not nullptr\n");
     }
+}
+
+static void NativehookCase5()
+{
+    bool hookFlag;
+    volatile const struct MallocDispatchType* mallocDispatchTable;
+    const volatile long long kLoadedLibHandle = (volatile long long)0x10319090;
 
     printf("Case 5: client shared library is loaded, no uninstall signal raising, inside client malloc.\n");
-    atomic_store_explicit(&g_ohosMallocHookSharedLibrary, (volatile long long)0x10319090, memory_order_seq_cst);
+    atomic_store_explicit(&g_ohosMallocHookSharedLibrary, kLoadedLibHandle, memory_order_seq_cst);
     atomic_store_explicit(&g_hookEnableHookFlag, (volatile bool)true, memory_order_seq_cst);
     SetHookFlag(false);
     hookFlag = GetHookFlag();
@@ -135,9 +143,16 @@ static void NativehookCase4To7()
     if (!(mallocDispatchTable == nullptr)) {
         t_error("mallocDispatchTable == nullptr failed: mallocDispatchTable shoud be nullptr\n");
     }
+}
+
+static void NativehookCase6()
+{
+    bool hookFlag;
+    volatile const struct MallocDispatchType* mallocDispatchTable;
+    const volatile long long kLoadedLibHandle = (volatile long long)0x10319090;
 
     printf("Case 6: client shared library is loaded, uninstall signal raising, outside client malloc.\n");
-    atomic_store_explicit(&g_ohosMallocHookSharedLibrary, (volatile long long)0x10319090, memory_order_seq_cst);
+    atomic_store_explicit(&g_ohosMallocHookSharedLibrary, kLoadedLibHandle, memory_order_seq_cst);
     atomic_store_explicit(&g_hookEnableHookFlag, (volatile bool)false, memory_order_seq_cst);
     SetHookFlag(true);
     hookFlag = GetHookFlag();
@@ -148,9 +163,16 @@ static void NativehookCase4To7()
     if (!(mallocDispatchTable == nullptr)) {
         t_error("mallocDispatchTable == nullptr failed: mallocDispatchTable shoud be nullptr\n");
     }
+}
+
+static void NativehookCase7()
+{
+    bool hookFlag;
+    volatile const struct MallocDispatchType* mallocDispatchTable;
+    const volatile long long kLoadedLibHandle = (volatile long long)0x10319090;
 
     printf("Case 7: client shared library is loaded, uninstall signal raising, inside client malloc.\n");
-    atomic_store_explicit(&g_ohosMallocHookSharedLibrary, (volatile long long)0x10319090, memory_order_seq_cst);
+    atomic_store_explicit(&g_ohosMallocHookSharedLibrary, kLoadedLibHandle, memory_order_seq_cst);
     atomic_store_explicit(&g_hookEnableHookFlag, (volatile bool)false, memory_order_seq_cst);
     SetHookFlag(false);
     hookFlag = GetHookFlag();
@@ -178,7 +200,10 @@ static int NativehookTestTestImpl(int argc, char** argv)
     NativehookCase1();
     NativehookCase2();
     NativehookCase3();
-    NativehookCase4To7();
+    NativehookCase4();
+    NativehookCase5();
+    NativehookCase6();
+    NativehookCase7();
 
     if (T_STATUS == 0) {
         printf("All test cases passed!\n");

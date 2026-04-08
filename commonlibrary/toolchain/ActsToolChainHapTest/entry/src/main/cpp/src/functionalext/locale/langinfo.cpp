@@ -27,17 +27,9 @@ static void ConsumeInt(int n)
 {
     (void)n;
 }
-static void F()
+
+static void ConsumeWeekdayItems()
 {
-    UseType<locale_t>();
-    UseType<nl_item>();
-    ConsumeInt(CODESET);
-    ConsumeInt(D_T_FMT);
-    ConsumeInt(D_FMT);
-    ConsumeInt(T_FMT);
-    ConsumeInt(T_FMT_AMPM);
-    ConsumeInt(AM_STR);
-    ConsumeInt(PM_STR);
     ConsumeInt(DAY_1);
     ConsumeInt(DAY_2);
     ConsumeInt(DAY_3);
@@ -52,6 +44,10 @@ static void F()
     ConsumeInt(ABDAY_5);
     ConsumeInt(ABDAY_6);
     ConsumeInt(ABDAY_7);
+}
+
+static void ConsumeMonthItems()
+{
     ConsumeInt(MON_1);
     ConsumeInt(MON_2);
     ConsumeInt(MON_3);
@@ -76,6 +72,17 @@ static void F()
     ConsumeInt(ABMON_10);
     ConsumeInt(ABMON_11);
     ConsumeInt(ABMON_12);
+}
+
+static void ConsumeGeneralItems()
+{
+    ConsumeInt(CODESET);
+    ConsumeInt(D_T_FMT);
+    ConsumeInt(D_FMT);
+    ConsumeInt(T_FMT);
+    ConsumeInt(T_FMT_AMPM);
+    ConsumeInt(AM_STR);
+    ConsumeInt(PM_STR);
     ConsumeInt(ERA);
     ConsumeInt(ERA_D_FMT);
     ConsumeInt(ERA_D_T_FMT);
@@ -86,12 +93,28 @@ static void F()
     ConsumeInt(YESEXPR);
     ConsumeInt(NOEXPR);
     ConsumeInt(CRNCYSTR);
+}
+
+static void CheckLanginfoApis()
+{
     {
         char* (*p)(nl_item) = nl_langinfo;
+        (void)p;
     }
     {
         char* (*p)(nl_item, locale_t) = nl_langinfo_l;
+        (void)p;
     }
+}
+
+static void F()
+{
+    UseType<locale_t>();
+    UseType<nl_item>();
+    ConsumeGeneralItems();
+    ConsumeWeekdayItems();
+    ConsumeMonthItems();
+    CheckLanginfoApis();
 }
 
 int LanginfoTest()

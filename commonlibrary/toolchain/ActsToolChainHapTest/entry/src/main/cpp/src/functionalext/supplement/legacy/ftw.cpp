@@ -35,7 +35,7 @@ static void IgnoreConst(int value)
     (void)value;
 }
 
-static void FtwBody()
+static void CheckFtwConstants()
 {
     TypePun<struct FTW>();
     TypePun<struct stat>();
@@ -80,6 +80,10 @@ static void FtwBody()
     IgnoreConst(S_ISREG(0));
     IgnoreConst(S_ISLNK(0));
     IgnoreConst(S_ISSOCK(0));
+}
+
+static void CheckFtwStructFields()
+{
     {
         struct FTW x;
         CheckField(x, &FTW::base);
@@ -101,6 +105,10 @@ static void FtwBody()
         CheckField(x, &stat::st_blksize);
         CheckField(x, &stat::st_blocks);
     }
+}
+
+static void CheckFtwFunctionPointers()
+{
     {
         int (*p)(const char*, int (*)(const char*, const struct stat*, int), int) = ftw;
         (void)p;
@@ -109,6 +117,13 @@ static void FtwBody()
         int (*p)(const char*, int (*)(const char*, const struct stat*, int, struct FTW*), int, int) = nftw;
         (void)p;
     }
+}
+
+static void FtwBody()
+{
+    CheckFtwConstants();
+    CheckFtwStructFields();
+    CheckFtwFunctionPointers();
 }
 #endif
 

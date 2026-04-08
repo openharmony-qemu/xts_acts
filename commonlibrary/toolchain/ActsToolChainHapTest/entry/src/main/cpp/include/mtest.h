@@ -313,7 +313,7 @@ static int Checkexceptall(int got, int want, int r)
 
 static int Checkulp(float d, int r)
 {
-    /* TODO: we only care about > 1.5 ulp errors for now, should be 1.0 */
+    /* currently accept >1.5 ulp errors; target is 1.0 */
     const float kNearestModeUlpThreshold = 1.0f + 1.0f / 2.0f;
     const float kNonNearestModeUlpThreshold = 2.0f + 1.0f;
     if (r == ROUND_TO_NEAREST) {

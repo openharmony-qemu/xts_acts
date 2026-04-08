@@ -18,10 +18,10 @@
 #include "test.h"
 
 namespace {
-constexpr double kSignificandZero = 0.0;
-constexpr double kSignificandArg12 = 1.2;
-constexpr double kSignificandArg1225 = 12.25;
-constexpr double kSignificandExpect1225 = 1.53125;
+constexpr double K_SIGNIFICAND_ZERO = 0.0;
+constexpr double K_SIGNIFICAND_ARG12 = 1.2;
+constexpr double K_SIGNIFICAND_ARG1225 = 12.25;
+constexpr double K_SIGNIFICAND_EXPECT1225 = 1.53125;
 } // namespace
 
 static void ExpectDoubleEq(double a, double b)
@@ -38,8 +38,8 @@ static void ExpectDoubleEq(double a, double b)
  */
 void Significand0100(void)
 {
-    double d = significand(kSignificandZero);
-    ExpectDoubleEq(kSignificandZero, d);
+    double d = significand(K_SIGNIFICAND_ZERO);
+    ExpectDoubleEq(K_SIGNIFICAND_ZERO, d);
 }
 
 /*
@@ -49,8 +49,8 @@ void Significand0100(void)
  */
 void Significand0200(void)
 {
-    double d = significand(kSignificandArg12);
-    ExpectDoubleEq(kSignificandArg12, d);
+    double d = significand(K_SIGNIFICAND_ARG12);
+    ExpectDoubleEq(K_SIGNIFICAND_ARG12, d);
 }
 
 /*
@@ -60,8 +60,8 @@ void Significand0200(void)
  */
 void Significand0300(void)
 {
-    double d = significand(kSignificandArg1225);
-    ExpectDoubleEq(kSignificandExpect1225, d);
+    double d = significand(K_SIGNIFICAND_ARG1225);
+    ExpectDoubleEq(K_SIGNIFICAND_EXPECT1225, d);
 }
 
 static int SignificandTestImpl(int argc, char* argv[])

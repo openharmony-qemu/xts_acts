@@ -24,6 +24,9 @@ constexpr int K_ABC_TRIPLET_LEN = 3;
 constexpr int K_LONG_WCS_BUF_ELEMS = 100;
 constexpr int K_LONG_WCS_NUL_INDEX = 99;
 constexpr int K_PATTERN_BUF_ELEMS = 20;
+constexpr int K_INDEX_CAFE_E_ACUTE = 3;
+constexpr int K_INDEX_NAIVE_I_DIAERESIS = 2;
+constexpr int K_INDEX_UBER_U_UMLAUT = 0;
 } // namespace
 
 static void ExpectNotFound(const wchar_t* s, const wchar_t* sub)
@@ -205,9 +208,9 @@ void Wcswcs0700(void)
     ExpectNotFound(L"Hello WORLD", L"World");
 
     // Special character variants
-    ExpectFoundAt(L"café au lait", L"é", 3);
-    ExpectFoundAt(L"naïve approach", L"ï", 2);
-    ExpectFoundAt(L"über", L"ü", 0);
+    ExpectFoundAt(L"café au lait", L"é", K_INDEX_CAFE_E_ACUTE);
+    ExpectFoundAt(L"naïve approach", L"ï", K_INDEX_NAIVE_I_DIAERESIS);
+    ExpectFoundAt(L"über", L"ü", K_INDEX_UBER_U_UMLAUT);
 }
 
 /**

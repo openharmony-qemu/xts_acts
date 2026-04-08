@@ -20,8 +20,8 @@
 
 namespace {
 constexpr int K_STRTOD_ROUND_TRIP_ITERATIONS = 100;
-constexpr double kStrtodWant16 = 16.0;
-constexpr double kStrtodWant17 = 17.0;
+constexpr double K_STRTOD_WANT16 = 16.0;
+constexpr double K_STRTOD_WANT17 = 17.0;
 } // namespace
 
 /* r = place to store result
@@ -54,8 +54,8 @@ int StrtodSimpleTest()
     }
 
     d = strtod("0x1p4", nullptr);
-    CheckDoubleEq(status, "strtod(\"0x1p4\", nullptr)", d, kStrtodWant16, "hex float %a != %a");
+    CheckDoubleEq(status, "strtod(\"0x1p4\", nullptr)", d, K_STRTOD_WANT16, "hex float %a != %a");
     d = strtod("0x1.1p4", nullptr);
-    CheckDoubleEq(status, "strtod(\"0x1.1p4\", nullptr)", d, kStrtodWant17, "hex float %a != %a");
+    CheckDoubleEq(status, "strtod(\"0x1.1p4\", nullptr)", d, K_STRTOD_WANT17, "hex float %a != %a");
     return status;
 }

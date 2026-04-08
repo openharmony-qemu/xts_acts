@@ -38,7 +38,7 @@ int Eulpf(float x)
         float f;
         uint32_t i;
     } u = { x };
-    int e = u.i >> MTEST_FLOAT_MANT_BITS & MTEST_FLOAT_EXP_MASK;
+    int e = (u.i >> MTEST_FLOAT_MANT_BITS) & MTEST_FLOAT_EXP_MASK;
 
     if (!e) {
         e++;
@@ -52,7 +52,7 @@ int Eulp(double x)
         double f;
         uint64_t i;
     } u = { x };
-    int e = u.i >> MTEST_DOUBLE_MANT_BITS & MTEST_DOUBLE_EXP_MASK;
+    int e = (u.i >> MTEST_DOUBLE_MANT_BITS) & MTEST_DOUBLE_EXP_MASK;
 
     if (!e) {
         e++;
@@ -97,7 +97,7 @@ int Eulpl(long double x)
     return e - MTEST_LDBL_EXP_BIAS - MTEST_LDBL113_MANT_BITS;
 
 #else
-    // TODO
+    // fallback for unsupported long double mantissa layouts
     return 0;
 #endif
 }
@@ -161,7 +161,7 @@ float Ulperrl(long double got, long double want, float dwant)
     }
     return scalbnl(got - want, -Eulpl(want)) + dwant;
 #else
-    // TODO
+    // fallback for unsupported long double mantissa layouts
     return INF;
 #endif
 }

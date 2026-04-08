@@ -26,65 +26,72 @@ static constexpr int INT_D_1 = 1;
 static constexpr int INT_D_2 = 2;
 static constexpr int INT_D_3 = 3;
 
-static void CheckPrintfFmtNCaseAfter(int* status, int* retv, const char* label)
+struct PrintfFmtNContext {
+    int* status;
+    char* buf;
+    size_t bufSize;
+    int* retv;
+    const char* label;
+};
+
+static void CheckPrintfFmtNCaseAfter(const PrintfFmtNContext& ctx)
 {
-    if (*retv != EXPECTED_SNPRINTF_LEN_AFTER) {
-        LibcTestError(status, "%s: expected snprintf to write 258 chars, got %d\n", label, *retv);
+    if (*ctx.retv != EXPECTED_SNPRINTF_LEN_AFTER) {
+        LibcTestError(ctx.status, "%s: expected snprintf to write 258 chars, got %d\n", ctx.label, *ctx.retv);
     }
 }
 
-template <typename T> static void CheckPrintfFmtNVar(int* status, T* var, const char* label)
+template <typename T> static void CheckPrintfFmtNVar(const PrintfFmtNContext& ctx, T* var)
 {
     if (*var != EXPECTED_SNPRINTF_LEN) {
-        LibcTestError(status, "%s: %%n format failed: wanted 257\n", label);
+        LibcTestError(ctx.status, "%s: %%n format failed: wanted 257\n", ctx.label);
     }
 }
 
-static void CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* retv, int* var, const char* label)
+static void CheckPrintfFmtNCase(const PrintfFmtNContext& ctx, int* var)
 {
     SnprintfFn unsafeSnprintf = &std::snprintf;
-    *retv = unsafeSnprintf(buf, bufSize, "%256d%d%n%d", INT_D_1, INT_D_2, var, INT_D_3);
-    CheckPrintfFmtNCaseAfter(status, retv, label);
-    CheckPrintfFmtNVar(status, var, label);
+    *ctx.retv = unsafeSnprintf(ctx.buf, ctx.bufSize, "%256d%d%n%d", INT_D_1, INT_D_2, var, INT_D_3);
+    CheckPrintfFmtNCaseAfter(ctx);
+    CheckPrintfFmtNVar(ctx, var);
 }
 
 // On LP64, intmax_t may be a typedef of long; keep one overload and select %ln vs %jn explicitly.
-static void
-    CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* retv, long* var, const char* label, bool useJn)
+static void CheckPrintfFmtNCase(const PrintfFmtNContext& ctx, long* var, bool useJn)
 {
     SnprintfFn unsafeSnprintf = &std::snprintf;
     if (useJn) {
-        *retv =
-            unsafeSnprintf(buf, bufSize, "%256d%d%jn%d", INT_D_1, INT_D_2, reinterpret_cast<intmax_t*>(var), INT_D_3);
+        *ctx.retv = unsafeSnprintf(
+            ctx.buf, ctx.bufSize, "%256d%d%jn%d", INT_D_1, INT_D_2, reinterpret_cast<intmax_t*>(var), INT_D_3);
     } else {
-        *retv = unsafeSnprintf(buf, bufSize, "%256d%d%ln%d", INT_D_1, INT_D_2, var, INT_D_3);
+        *ctx.retv = unsafeSnprintf(ctx.buf, ctx.bufSize, "%256d%d%ln%d", INT_D_1, INT_D_2, var, INT_D_3);
     }
-    CheckPrintfFmtNCaseAfter(status, retv, label);
-    CheckPrintfFmtNVar(status, var, label);
+    CheckPrintfFmtNCaseAfter(ctx);
+    CheckPrintfFmtNVar(ctx, var);
 }
 
-static void CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* retv, long long* var, const char* label)
+static void CheckPrintfFmtNCase(const PrintfFmtNContext& ctx, long long* var)
 {
     SnprintfFn unsafeSnprintf = &std::snprintf;
-    *retv = unsafeSnprintf(buf, bufSize, "%256d%d%lln%d", INT_D_1, INT_D_2, var, INT_D_3);
-    CheckPrintfFmtNCaseAfter(status, retv, label);
-    CheckPrintfFmtNVar(status, var, label);
+    *ctx.retv = unsafeSnprintf(ctx.buf, ctx.bufSize, "%256d%d%lln%d", INT_D_1, INT_D_2, var, INT_D_3);
+    CheckPrintfFmtNCaseAfter(ctx);
+    CheckPrintfFmtNVar(ctx, var);
 }
 
-static void CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* retv, short* var, const char* label)
+static void CheckPrintfFmtNCase(const PrintfFmtNContext& ctx, short* var)
 {
     SnprintfFn unsafeSnprintf = &std::snprintf;
-    *retv = unsafeSnprintf(buf, bufSize, "%256d%d%hn%d", INT_D_1, INT_D_2, var, INT_D_3);
-    CheckPrintfFmtNCaseAfter(status, retv, label);
-    CheckPrintfFmtNVar(status, var, label);
+    *ctx.retv = unsafeSnprintf(ctx.buf, ctx.bufSize, "%256d%d%hn%d", INT_D_1, INT_D_2, var, INT_D_3);
+    CheckPrintfFmtNCaseAfter(ctx);
+    CheckPrintfFmtNVar(ctx, var);
 }
 
-static void CheckPrintfFmtNCase(int* status, char* buf, size_t bufSize, int* retv, size_t* var, const char* label)
+static void CheckPrintfFmtNCase(const PrintfFmtNContext& ctx, size_t* var)
 {
     SnprintfFn unsafeSnprintf = &std::snprintf;
-    *retv = unsafeSnprintf(buf, bufSize, "%256d%d%zn%d", INT_D_1, INT_D_2, var, INT_D_3);
-    CheckPrintfFmtNCaseAfter(status, retv, label);
-    CheckPrintfFmtNVar(status, var, label);
+    *ctx.retv = unsafeSnprintf(ctx.buf, ctx.bufSize, "%256d%d%zn%d", INT_D_1, INT_D_2, var, INT_D_3);
+    CheckPrintfFmtNCaseAfter(ctx);
+    CheckPrintfFmtNVar(ctx, var);
 }
 
 } // namespace
@@ -101,13 +108,14 @@ int PrintfFmtNTest()
     short h;
     size_t z;
     intmax_t j;
+    const PrintfFmtNContext ctx = { &status, buf, sizeof(buf), &ret, "%n" };
 
-    CheckPrintfFmtNCase(&status, buf, sizeof(buf), &ret, &i, "%n");
-    CheckPrintfFmtNCase(&status, buf, sizeof(buf), &ret, &l, "%ln", false);
-    CheckPrintfFmtNCase(&status, buf, sizeof(buf), &ret, &ll, "%lln");
-    CheckPrintfFmtNCase(&status, buf, sizeof(buf), &ret, &h, "%hn");
-    CheckPrintfFmtNCase(&status, buf, sizeof(buf), &ret, &z, "%zn");
-    CheckPrintfFmtNCase(&status, buf, sizeof(buf), &ret, reinterpret_cast<long*>(&j), "%jn", true);
+    CheckPrintfFmtNCase(ctx, &i);
+    CheckPrintfFmtNCase(ctx, &l, false);
+    CheckPrintfFmtNCase(ctx, &ll);
+    CheckPrintfFmtNCase(ctx, &h);
+    CheckPrintfFmtNCase(ctx, &z);
+    CheckPrintfFmtNCase(ctx, reinterpret_cast<long*>(&j), true);
 
     return status;
 }

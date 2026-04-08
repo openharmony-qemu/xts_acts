@@ -16,9 +16,9 @@
 #ifndef __TIME_TEST_DATA_H__
 #define __TIME_TEST_DATA_H__
 
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
 
 struct TimeTestStringStruct {
     const char* tz;

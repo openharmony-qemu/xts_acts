@@ -16,6 +16,8 @@
 #ifndef UCB_COS_H_H
 #define UCB_COS_H_H
 
+#include "mtest.h"
+
 // cos.testdata
 // copyright (C) 2005 Ch. Q. Lauter, F. de Dinechin and V.Lefevre
 // This file is part of crlibm and is distributed under the GNU Public Licence

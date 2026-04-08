@@ -20,7 +20,6 @@
 #include <cerrno>
 #include <cstdlib>
 #include <cstring>
-#include <stdlib.h>
 #include "libc_test_shim.h"
 
 #define S "/dev/null/fooXXXX"

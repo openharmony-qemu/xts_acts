@@ -17,12 +17,12 @@
 #include "test.h"
 
 namespace {
-constexpr int kWantStrPlus0 = 0;
-constexpr int kWantStrPlus1 = 1;
-constexpr int kWantStrPlus2 = 2;
-constexpr int kWantStrPlus3 = 3;
-constexpr int kWantStrPlus4 = 4;
-constexpr int kWantStrPlus8 = 8;
+constexpr int K_WANT_STR_PLUS0 = 0;
+constexpr int K_WANT_STR_PLUS1 = 1;
+constexpr int K_WANT_STR_PLUS2 = 2;
+constexpr int K_WANT_STR_PLUS3 = 3;
+constexpr int K_WANT_STR_PLUS4 = 4;
+constexpr int K_WANT_STR_PLUS8 = 8;
 } // namespace
 
 static void CheckStrstrNotFound(const char* s, const char* sub)
@@ -58,28 +58,28 @@ static int StringStrstrTestImpl(void)
     CheckStrstrNotFound("0-1-2-3-4-5-6-7-8-9", "-3-4-5+6-7-8-");
     CheckStrstrNotFound("_ _ _\xff_ _ _", "_\x7f_");
     CheckStrstrNotFound("_ _ _\x7f_ _ _", "_\xff_");
-    CheckStrstrFoundAt("", "", kWantStrPlus0);
-    CheckStrstrFoundAt("abcd", "", kWantStrPlus0);
-    CheckStrstrFoundAt("abcd", "a", kWantStrPlus0);
-    CheckStrstrFoundAt("abcd", "b", kWantStrPlus1);
-    CheckStrstrFoundAt("abcd", "c", kWantStrPlus2);
-    CheckStrstrFoundAt("abcd", "d", kWantStrPlus3);
-    CheckStrstrFoundAt("abcd", "ab", kWantStrPlus0);
-    CheckStrstrFoundAt("abcd", "bc", kWantStrPlus1);
-    CheckStrstrFoundAt("abcd", "cd", kWantStrPlus2);
-    CheckStrstrFoundAt("ababa", "baba", kWantStrPlus1);
-    CheckStrstrFoundAt("ababab", "babab", kWantStrPlus1);
-    CheckStrstrFoundAt("abababa", "bababa", kWantStrPlus1);
-    CheckStrstrFoundAt("abababab", "bababab", kWantStrPlus1);
-    CheckStrstrFoundAt("ababababa", "babababa", kWantStrPlus1);
-    CheckStrstrFoundAt("abbababab", "bababa", kWantStrPlus2);
-    CheckStrstrFoundAt("abbababab", "ababab", kWantStrPlus3);
-    CheckStrstrFoundAt("abacabcabcab", "abcabcab", kWantStrPlus4);
-    CheckStrstrFoundAt("nanabanabanana", "aba", kWantStrPlus3);
-    CheckStrstrFoundAt("nanabanabanana", "ban", kWantStrPlus4);
-    CheckStrstrFoundAt("nanabanabanana", "anab", kWantStrPlus1);
-    CheckStrstrFoundAt("nanabanabanana", "banana", kWantStrPlus8);
-    CheckStrstrFoundAt("_ _\xff_ _", "_\xff_", kWantStrPlus2);
+    CheckStrstrFoundAt("", "", K_WANT_STR_PLUS0);
+    CheckStrstrFoundAt("abcd", "", K_WANT_STR_PLUS0);
+    CheckStrstrFoundAt("abcd", "a", K_WANT_STR_PLUS0);
+    CheckStrstrFoundAt("abcd", "b", K_WANT_STR_PLUS1);
+    CheckStrstrFoundAt("abcd", "c", K_WANT_STR_PLUS2);
+    CheckStrstrFoundAt("abcd", "d", K_WANT_STR_PLUS3);
+    CheckStrstrFoundAt("abcd", "ab", K_WANT_STR_PLUS0);
+    CheckStrstrFoundAt("abcd", "bc", K_WANT_STR_PLUS1);
+    CheckStrstrFoundAt("abcd", "cd", K_WANT_STR_PLUS2);
+    CheckStrstrFoundAt("ababa", "baba", K_WANT_STR_PLUS1);
+    CheckStrstrFoundAt("ababab", "babab", K_WANT_STR_PLUS1);
+    CheckStrstrFoundAt("abababa", "bababa", K_WANT_STR_PLUS1);
+    CheckStrstrFoundAt("abababab", "bababab", K_WANT_STR_PLUS1);
+    CheckStrstrFoundAt("ababababa", "babababa", K_WANT_STR_PLUS1);
+    CheckStrstrFoundAt("abbababab", "bababa", K_WANT_STR_PLUS2);
+    CheckStrstrFoundAt("abbababab", "ababab", K_WANT_STR_PLUS3);
+    CheckStrstrFoundAt("abacabcabcab", "abcabcab", K_WANT_STR_PLUS4);
+    CheckStrstrFoundAt("nanabanabanana", "aba", K_WANT_STR_PLUS3);
+    CheckStrstrFoundAt("nanabanabanana", "ban", K_WANT_STR_PLUS4);
+    CheckStrstrFoundAt("nanabanabanana", "anab", K_WANT_STR_PLUS1);
+    CheckStrstrFoundAt("nanabanabanana", "banana", K_WANT_STR_PLUS8);
+    CheckStrstrFoundAt("_ _\xff_ _", "_\xff_", K_WANT_STR_PLUS2);
     return T_STATUS;
 }
 

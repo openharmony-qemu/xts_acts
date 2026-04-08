@@ -321,7 +321,7 @@ static inline int A_CTZ32(uint32_t x)
 #else
     static const char debruijn32[32] = { 0,  1,  23, 2,  29, 24, 19, 3,  30, 27, 25, 11, 20, 8, 4,  13,
                                          31, 22, 28, 18, 26, 10, 7,  12, 21, 17, 9,  6,  16, 5, 15, 14 };
-    return debruijn32[(x & -x) * 0x076be629 >> ATOMIC_K_SHIFT27];
+    return debruijn32[((x & -x) * 0x076be629) >> ATOMIC_K_SHIFT27];
 #endif
 }
 #endif
@@ -342,7 +342,7 @@ static inline int A_CTZ_64(uint64_t x)
         }
         return A_CTZ32(y);
     }
-    return debruijn64[(x & -x) * 0x022fdd63cc95386dull >> ATOMIC_K_SHIFT58];
+    return debruijn64[((x & -x) * 0x022fdd63cc95386dull) >> ATOMIC_K_SHIFT58];
 }
 #endif
 

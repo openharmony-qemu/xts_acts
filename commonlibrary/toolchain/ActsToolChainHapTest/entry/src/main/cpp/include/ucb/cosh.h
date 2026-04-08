@@ -16,6 +16,8 @@
 #ifndef UCB_COSH_H_H
 #define UCB_COSH_H_H
 
+#include "mtest.h"
+
 // cosh.testdata
 // copyright (C) 2005  F. de Dinechin and V.Lefevre
 // This file is part of crlibm and is distributed under the GNU Public Licence
@@ -63,7 +65,7 @@ T(ROUND_TO_NEAREST, -0x1.f4p+9, INF, 0x0p+0, INEXACT | OVERFLOW) // A large nega
 T(RU, -0x1.f4p+9, INF, 0x0p+0, INEXACT | OVERFLOW)
 T(RD, -0x1.f4p+9, 0x1.fffffffffffffp+1023, -0x1p+0, INEXACT | OVERFLOW)
 T(RZ, -0x1.f4p+9, 0x1.fffffffffffffp+1023, -0x1p+0, INEXACT | OVERFLOW)
-// TODO check the transition to infinity (as in exp.checkdate)
+// Check the transition to infinity (as in exp.checkdata).
 //  Behaviour at the bounds of the domain
 //  The first value whose cosh is  +INF
 T(ROUND_TO_NEAREST, 0x1.633ce8fb9f87ep+9, INF, 0x0p+0, INEXACT | OVERFLOW)

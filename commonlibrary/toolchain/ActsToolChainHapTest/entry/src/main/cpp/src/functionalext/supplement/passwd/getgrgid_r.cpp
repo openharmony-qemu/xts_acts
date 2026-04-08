@@ -20,7 +20,7 @@
 
 /**
  * @tc.name      : GetgrgidR0100
- * @tc.desc      :
+ * @tc.desc      : Query root group information by gid.
  * @tc.level     : Level 0
  */
 void GetgrgidR0100(void)

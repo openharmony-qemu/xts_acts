@@ -21,22 +21,30 @@ namespace {
 constexpr int K_STRCSPN_ALPHABET_SIZE = 128;
 constexpr int K_STRCSPN_FULL_BYTE_LEN = 256;
 constexpr int K_ASCII_LOW7_MASK = 127;
-constexpr size_t kStrcspnWantLen0 = 0U;
-constexpr size_t kStrcspnWantLen1 = 1U;
-constexpr size_t kStrcspnWantLen2 = 2U;
-constexpr size_t kStrcspnWantLen254 = 254U;
+constexpr size_t K_STRCSPN_WANT_LEN0 = 0U;
+constexpr size_t K_STRCSPN_WANT_LEN1 = 1U;
+constexpr size_t K_STRCSPN_WANT_LEN2 = 2U;
+constexpr size_t K_STRCSPN_WANT_LEN254 = 254U;
+
+struct StrcspnCase {
+    const char* s;
+    const char* c;
+    size_t want;
+    const char* sExpr;
+    const char* cExpr;
+};
 } // namespace
 
-static void CheckStrcspnResult(int& st, const char* p, const char* q, size_t n, const char* sExpr, const char* cExpr)
+static void CheckStrcspnResult(int& st, const StrcspnCase& testCase)
 {
-    size_t r = strcspn(p, q);
-    if (r != n) {
+    size_t r = strcspn(testCase.s, testCase.c);
+    if (r != testCase.want) {
         LibcTestError(&st,
                       "strcspn(%s,%s) returned %lu, wanted %lu\n",
-                      sExpr,
-                      cExpr,
+                      testCase.sExpr,
+                      testCase.cExpr,
                       static_cast<unsigned long>(r),
-                      static_cast<unsigned long>(n));
+                      static_cast<unsigned long>(testCase.want));
     }
 }
 
@@ -55,14 +63,14 @@ int StringStrcspnTest()
         *(reinterpret_cast<unsigned char*>(s) + i) = static_cast<unsigned char>(i + 1);
     }
 
-    CheckStrcspnResult(status, "", "", kStrcspnWantLen0, "\"\"", "\"\"");
-    CheckStrcspnResult(status, "a", "", kStrcspnWantLen1, "\"a\"", "\"\"");
-    CheckStrcspnResult(status, "", "a", kStrcspnWantLen0, "\"\"", "\"a\"");
-    CheckStrcspnResult(status, "abc", "cde", kStrcspnWantLen2, "\"abc\"", "\"cde\"");
-    CheckStrcspnResult(status, "abc", "ccc", kStrcspnWantLen2, "\"abc\"", "\"ccc\"");
-    CheckStrcspnResult(status, "abc", a, kStrcspnWantLen0, "\"abc\"", "a");
-    CheckStrcspnResult(status, "\xff\x80 abc", a, kStrcspnWantLen2, "\"\\xff\\x80 abc\"", "a");
-    CheckStrcspnResult(status, s, "\xff", kStrcspnWantLen254, "s", "\"\\xff\"");
+    CheckStrcspnResult(status, { "", "", K_STRCSPN_WANT_LEN0, "\"\"", "\"\"" });
+    CheckStrcspnResult(status, { "a", "", K_STRCSPN_WANT_LEN1, "\"a\"", "\"\"" });
+    CheckStrcspnResult(status, { "", "a", K_STRCSPN_WANT_LEN0, "\"\"", "\"a\"" });
+    CheckStrcspnResult(status, { "abc", "cde", K_STRCSPN_WANT_LEN2, "\"abc\"", "\"cde\"" });
+    CheckStrcspnResult(status, { "abc", "ccc", K_STRCSPN_WANT_LEN2, "\"abc\"", "\"ccc\"" });
+    CheckStrcspnResult(status, { "abc", a, K_STRCSPN_WANT_LEN0, "\"abc\"", "a" });
+    CheckStrcspnResult(status, { "\xff\x80 abc", a, K_STRCSPN_WANT_LEN2, "\"\\xff\\x80 abc\"", "a" });
+    CheckStrcspnResult(status, { s, "\xff", K_STRCSPN_WANT_LEN254, "s", "\"\\xff\"" });
 
     return status;
 }

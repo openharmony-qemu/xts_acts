@@ -16,11 +16,11 @@
 #ifndef __FUNCTIONALEXT_H__
 #define __FUNCTIONALEXT_H__
 
+#include <cstring>
 #include <dlfcn.h>
 #include <errno.h>
 #include <math.h>
 #include <stdio.h>
-#include <string.h>
 #include "test.h"
 
 #define EPS (0.00001)

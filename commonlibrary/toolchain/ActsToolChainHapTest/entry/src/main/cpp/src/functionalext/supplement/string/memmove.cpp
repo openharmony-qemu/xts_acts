@@ -23,6 +23,11 @@ constexpr size_t K_ABCDEFGH_WITH_NUL = 9U;
 constexpr size_t K_HELLO_WORLD_WITH_NUL = 11U;
 constexpr size_t K_OVERLAP_FORWARD_LEN = 7U;
 constexpr size_t K_OVERLAP_REVERSE_LEN = 9U;
+constexpr size_t K_OVERLAP_FORWARD_DST_OFFSET = 1U;
+constexpr size_t K_OVERLAP_FORWARD_SRC_OFFSET = 2U;
+constexpr const char* K_TEXT_ABCDEFGH = "abcdefgh";
+constexpr const char* K_TEXT_HELLO_WORLD = "helloWorld";
+constexpr const char* K_TEXT_FOO = "foo";
 } // namespace
 
 char g_one[50];
@@ -37,7 +42,7 @@ void Memmove0100(void)
 {
     std::fill_n(g_one, sizeof(g_one), '\0');
 
-    (void)std::snprintf(g_one, sizeof(g_one), "%s", "abcdefgh");
+    (void)std::memcpy(g_one, K_TEXT_ABCDEFGH, K_ABCDEFGH_WITH_NUL);
     std::memmove(g_one, g_one, K_ABCDEFGH_WITH_NUL);
     if (strcmp(g_one, "abcdefgh")) {
         t_error("%s memmove failed\n", __func__);
@@ -54,8 +59,8 @@ void Memmove0200(void)
     std::fill_n(g_one, sizeof(g_one), '\0');
     std::fill_n(g_two, sizeof(g_two), '\0');
 
-    (void)std::snprintf(g_one, sizeof(g_one), "%s", "helloWorld");
-    (void)std::snprintf(g_two, sizeof(g_two), "%s", "foo");
+    (void)std::memcpy(g_one, K_TEXT_HELLO_WORLD, K_HELLO_WORLD_WITH_NUL);
+    (void)std::memcpy(g_two, K_TEXT_FOO, strlen(K_TEXT_FOO) + 1U);
     std::memmove(g_two, g_one, K_HELLO_WORLD_WITH_NUL);
     if (strcmp(g_one, "helloWorld")) {
         t_error("%s memmove failed\n", __func__);
@@ -74,8 +79,8 @@ void Memmove0300(void)
 {
     std::fill_n(g_one, sizeof(g_one), '\0');
 
-    (void)std::snprintf(g_one, sizeof(g_one), "%s", "abcdefgh");
-    std::memmove(g_one + 1, g_one + 2, K_OVERLAP_FORWARD_LEN);
+    (void)std::memcpy(g_one, K_TEXT_ABCDEFGH, K_ABCDEFGH_WITH_NUL);
+    std::memmove(g_one + K_OVERLAP_FORWARD_DST_OFFSET, g_one + K_OVERLAP_FORWARD_SRC_OFFSET, K_OVERLAP_FORWARD_LEN);
     if (strcmp(g_one, "acdefgh")) {
         t_error("%s memmove failed\n", __func__);
     }
@@ -90,7 +95,7 @@ void Memmove0400(void)
 {
     std::fill_n(g_one, sizeof(g_one), '\0');
 
-    (void)std::snprintf(g_one, sizeof(g_one), "%s", "abcdefgh");
+    (void)std::memcpy(g_one, K_TEXT_ABCDEFGH, K_ABCDEFGH_WITH_NUL);
     std::memmove(g_one + 1, g_one, K_OVERLAP_REVERSE_LEN);
     if (strcmp(g_one, "aabcdefgh")) {
         t_error("%s memmove failed\n", __func__);

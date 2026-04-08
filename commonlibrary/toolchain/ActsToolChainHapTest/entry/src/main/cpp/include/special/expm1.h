@@ -16,6 +16,8 @@
 #ifndef SPECIAL_EXPM1_H_H
 #define SPECIAL_EXPM1_H_H
 
+#include "mtest.h"
+
 // expm1.testdata
 // copyright (C) 2005 Ch. Q. Lauter and V.Lefevre
 // This file is part of crlibm and is distributed under the GNU Public Licence
@@ -25,7 +27,7 @@
 //   1/ a rounding mode : ROUND_TO_NEAREST|RU|RD|RZ (crlibm syntax) or  N|P|M|Z (libmcr syntax)
 //   2/ The high and low hexadecimal halves of an input
 //   3/ The high and low hexadecimal halves of the expected corresponding output
-// TODO: VERIFY THIS VALUES
+// Verify these values.
 // Special cases
 T(ROUND_TO_NEAREST, 0x0p+0, 0x0p+0, 0x0p+0, 0)                           // zero
 T(ROUND_TO_NEAREST, -0x0p+0, -0x0p+0, 0x0p+0, 0)                         // -zero

@@ -23,7 +23,7 @@ static void CryptExpect(const char* want, const char* salt, const char* key)
 {
     g_p = crypt(key, salt);
     if (!g_p) {
-        g_p = (char*)"*";
+        g_p = const_cast<char*>("*");
     }
     if (strcmp(g_p, want) != 0) {
         t_error("crypt(\"%s\", \"%s\") failed: got \"%s\" want \"%s\"\n", key, salt, g_p, want);
@@ -166,11 +166,13 @@ int CryptTest()
         "$6$rounds=10$roundstoolow",
         "the minimum number is still observed");
     /* slow tests */
-    // t("$6$rounds=10000$saltstringsaltst$OW1/O6BYHV6BcXZu8QVeXbDWra3Oeqh0sbHbbMCVNSnCM/UrjmM0Dp8vOuZeHBy/YTBmSK6H9qs/y3RnOaw5v.",
+    // t("$6$rounds=10000$saltstringsaltst$OW1/O6BYHV6BcXZu8QVeXbDWra3Oeqh0sbHbbMCVNSnCM/UrjmM0Dp8vOuZeHBy/"
+    //   "YTBmSK6H9qs/y3RnOaw5v.",
     //	"$6$rounds=10000$saltstringsaltstring", "Hello world!")
     // t("$6$rounds=77777$short$WuQyW2YR.hBNpjjRhpYD/ifIw05xdfeEyQoMxIXbkvr0gge1a1x3yRULJ5CCaUeOxFmtlcGZelFl5CxtgfiAc0",
     //	"$6$rounds=77777$short", "we have a short salt string but not a short password")
-    // t("$6$rounds=123456$asaltof16chars..$BtCwjqMJGx5hrJhZywWvt0RLE8uZ4oPwcelCjmw2kSYu.Ec6ycULevoBK25fs2xXgMNrCzIMVcgEJAstJeonj1",
+    // t("$6$rounds=123456$asaltof16chars..$BtCwjqMJGx5hrJhZywWvt0RLE8uZ4oPwcelCjmw2kSYu.Ec6ycULevoBK25fs2xX"
+    //   "gMNrCzIMVcgEJAstJeonj1",
     //	"$6$rounds=123456$asaltof16chars..", "a short string")
     return T_STATUS;
 }

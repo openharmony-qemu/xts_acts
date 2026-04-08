@@ -16,9 +16,9 @@
 #ifndef __FUNCTIONALEXT_FILEPATH_UTIL_H__
 #define __FUNCTIONALEXT_FILEPATH_UTIL_H__
 
-#include <limits.h>
-#include <stdlib.h>
-#include <string.h>
+#include <climits>
+#include <cstdlib>
+#include <cstring>
 
 #include "test.h"
 
@@ -45,8 +45,13 @@ static inline bool FileAbsolutePath(const char* fileName, char* path, size_t pat
     if (!getcwd(path, pathSize)) {
         return false;
     }
-    strncat(path, STR_SLASH, 1);
-    strncat(path, fileName, strlen(fileName));
+    size_t pathLen = strlen(path);
+    size_t fileLen = strlen(fileName);
+    if (pathLen + 1U + fileLen + 1U > pathSize) {
+        return false;
+    }
+    path[pathLen] = '/';
+    (void)memcpy(path + pathLen + 1U, fileName, fileLen + 1U);
     return true;
 }
 

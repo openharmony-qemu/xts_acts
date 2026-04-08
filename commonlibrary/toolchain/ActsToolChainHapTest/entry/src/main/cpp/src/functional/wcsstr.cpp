@@ -17,12 +17,12 @@
 #include "test.h"
 
 namespace {
-constexpr int kWantStrPlus0 = 0;
-constexpr int kWantStrPlus1 = 1;
-constexpr int kWantStrPlus2 = 2;
-constexpr int kWantStrPlus3 = 3;
-constexpr int kWantStrPlus4 = 4;
-constexpr int kWantStrPlus8 = 8;
+constexpr int K_WANT_STR_PLUS0 = 0;
+constexpr int K_WANT_STR_PLUS1 = 1;
+constexpr int K_WANT_STR_PLUS2 = 2;
+constexpr int K_WANT_STR_PLUS3 = 3;
+constexpr int K_WANT_STR_PLUS4 = 4;
+constexpr int K_WANT_STR_PLUS8 = 8;
 } // namespace
 
 static void CheckWcsstrNotFound(const wchar_t* s, const wchar_t* sub)
@@ -58,28 +58,28 @@ static int WcsstrTestImpl(void)
     CheckWcsstrNotFound(L"0-1-2-3-4-5-6-7-8-9", L"-3-4-5+6-7-8-");
     CheckWcsstrNotFound(L"_ _ _\xff_ _ _", L"_\x7f_");
     CheckWcsstrNotFound(L"_ _ _\x7f_ _ _", L"_\xff_");
-    CheckWcsstrFoundAt(L"", L"", kWantStrPlus0);
-    CheckWcsstrFoundAt(L"abcd", L"", kWantStrPlus0);
-    CheckWcsstrFoundAt(L"abcd", L"a", kWantStrPlus0);
-    CheckWcsstrFoundAt(L"abcd", L"b", kWantStrPlus1);
-    CheckWcsstrFoundAt(L"abcd", L"c", kWantStrPlus2);
-    CheckWcsstrFoundAt(L"abcd", L"d", kWantStrPlus3);
-    CheckWcsstrFoundAt(L"abcd", L"ab", kWantStrPlus0);
-    CheckWcsstrFoundAt(L"abcd", L"bc", kWantStrPlus1);
-    CheckWcsstrFoundAt(L"abcd", L"cd", kWantStrPlus2);
-    CheckWcsstrFoundAt(L"ababa", L"baba", kWantStrPlus1);
-    CheckWcsstrFoundAt(L"ababab", L"babab", kWantStrPlus1);
-    CheckWcsstrFoundAt(L"abababa", L"bababa", kWantStrPlus1);
-    CheckWcsstrFoundAt(L"abababab", L"bababab", kWantStrPlus1);
-    CheckWcsstrFoundAt(L"ababababa", L"babababa", kWantStrPlus1);
-    CheckWcsstrFoundAt(L"abbababab", L"bababa", kWantStrPlus2);
-    CheckWcsstrFoundAt(L"abbababab", L"ababab", kWantStrPlus3);
-    CheckWcsstrFoundAt(L"abacabcabcab", L"abcabcab", kWantStrPlus4);
-    CheckWcsstrFoundAt(L"nanabanabanana", L"aba", kWantStrPlus3);
-    CheckWcsstrFoundAt(L"nanabanabanana", L"ban", kWantStrPlus4);
-    CheckWcsstrFoundAt(L"nanabanabanana", L"anab", kWantStrPlus1);
-    CheckWcsstrFoundAt(L"nanabanabanana", L"banana", kWantStrPlus8);
-    CheckWcsstrFoundAt(L"_ _\xff_ _", L"_\xff_", kWantStrPlus2);
+    CheckWcsstrFoundAt(L"", L"", K_WANT_STR_PLUS0);
+    CheckWcsstrFoundAt(L"abcd", L"", K_WANT_STR_PLUS0);
+    CheckWcsstrFoundAt(L"abcd", L"a", K_WANT_STR_PLUS0);
+    CheckWcsstrFoundAt(L"abcd", L"b", K_WANT_STR_PLUS1);
+    CheckWcsstrFoundAt(L"abcd", L"c", K_WANT_STR_PLUS2);
+    CheckWcsstrFoundAt(L"abcd", L"d", K_WANT_STR_PLUS3);
+    CheckWcsstrFoundAt(L"abcd", L"ab", K_WANT_STR_PLUS0);
+    CheckWcsstrFoundAt(L"abcd", L"bc", K_WANT_STR_PLUS1);
+    CheckWcsstrFoundAt(L"abcd", L"cd", K_WANT_STR_PLUS2);
+    CheckWcsstrFoundAt(L"ababa", L"baba", K_WANT_STR_PLUS1);
+    CheckWcsstrFoundAt(L"ababab", L"babab", K_WANT_STR_PLUS1);
+    CheckWcsstrFoundAt(L"abababa", L"bababa", K_WANT_STR_PLUS1);
+    CheckWcsstrFoundAt(L"abababab", L"bababab", K_WANT_STR_PLUS1);
+    CheckWcsstrFoundAt(L"ababababa", L"babababa", K_WANT_STR_PLUS1);
+    CheckWcsstrFoundAt(L"abbababab", L"bababa", K_WANT_STR_PLUS2);
+    CheckWcsstrFoundAt(L"abbababab", L"ababab", K_WANT_STR_PLUS3);
+    CheckWcsstrFoundAt(L"abacabcabcab", L"abcabcab", K_WANT_STR_PLUS4);
+    CheckWcsstrFoundAt(L"nanabanabanana", L"aba", K_WANT_STR_PLUS3);
+    CheckWcsstrFoundAt(L"nanabanabanana", L"ban", K_WANT_STR_PLUS4);
+    CheckWcsstrFoundAt(L"nanabanabanana", L"anab", K_WANT_STR_PLUS1);
+    CheckWcsstrFoundAt(L"nanabanabanana", L"banana", K_WANT_STR_PLUS8);
+    CheckWcsstrFoundAt(L"_ _\xff_ _", L"_\xff_", K_WANT_STR_PLUS2);
     return T_STATUS;
 }
 

@@ -37,9 +37,75 @@ constexpr char32_t K_CJK_EXT_B_CODEPOINT = 0x24b62;
 constexpr size_t K_C32RTOMB_ERROR = static_cast<size_t>(-1);
 } // namespace
 
+static void CheckUtf8OneByte(char* bytes)
+{
+    std::fill_n(bytes, MB_LEN_MAX, '\0');
+    size_t result = c32rtomb(bytes, L'h', nullptr);
+    if (result != K_UTF8_ONE_BYTE) {
+        t_error("%s c32rtomb failed\n", __func__);
+    }
+    if (bytes[0] != 'h') {
+        t_error("%s bytes[0] failed\n", __func__);
+    }
+}
+
+static void CheckUtf8TwoBytes(char* bytes)
+{
+    std::fill_n(bytes, MB_LEN_MAX, '\0');
+    size_t result = c32rtomb(bytes, K_CENT_SIGN_CODEPOINT, nullptr);
+    if (result != K_UTF8_TWO_BYTES) {
+        t_error("%s c32rtomb failed\n", __func__);
+    }
+    if (bytes[0] != '\xc2') {
+        t_error("%s bytes[0] failed\n", __func__);
+    }
+    if (bytes[K_UTF8_BYTE1] != '\xa2') {
+        t_error("%s bytes[1] failed\n", __func__);
+    }
+}
+
+static void CheckUtf8ThreeBytes(char* bytes)
+{
+    std::fill_n(bytes, MB_LEN_MAX, '\0');
+    size_t result = c32rtomb(bytes, K_EURO_CODEPOINT, nullptr);
+    if (result != K_UTF8_THREE_BYTES) {
+        t_error("%s c32rtomb failed\n", __func__);
+    }
+    if (bytes[0] != '\xe2') {
+        t_error("%s bytes[0] failed\n", __func__);
+    }
+    if (bytes[K_UTF8_BYTE1] != '\x82') {
+        t_error("%s bytes[1] failed\n", __func__);
+    }
+    if (bytes[K_UTF8_BYTE2] != '\xac') {
+        t_error("%s bytes[2] failed\n", __func__);
+    }
+}
+
+static void CheckUtf8FourBytes(char* bytes)
+{
+    std::fill_n(bytes, MB_LEN_MAX, '\0');
+    size_t result = c32rtomb(bytes, K_CJK_EXT_B_CODEPOINT, nullptr);
+    if (result != K_UTF8_FOUR_BYTES) {
+        t_error("%s c32rtomb failed\n", __func__);
+    }
+    if (bytes[K_UTF8_BYTE0] != '\xf0') {
+        t_error("%s bytes[0] failed\n", __func__);
+    }
+    if (bytes[K_UTF8_BYTE1] != '\xa4') {
+        t_error("%s bytes[1] failed\n", __func__);
+    }
+    if (bytes[K_UTF8_BYTE2] != '\xad') {
+        t_error("%s bytes[2] failed\n", __func__);
+    }
+    if (bytes[K_UTF8_BYTE3] != '\xa2') {
+        t_error("%s bytes[3] failed\n", __func__);
+    }
+}
+
 /**
  * @tc.name      : C32rtomb0100
- * @tc.desc      :
+ * @tc.desc      : Validate c32rtomb behavior with null output buffer.
  * @tc.leve      : Level 0
  */
 void C32rtomb0100(void)
@@ -57,7 +123,7 @@ void C32rtomb0100(void)
 
 /**
  * @tc.name      : C32rtomb0200
- * @tc.desc      :
+ * @tc.desc      : Validate single-byte conversion output bytes.
  * @tc.leve      : Level 0
  */
 void C32rtomb0200(void)
@@ -88,7 +154,7 @@ void C32rtomb0200(void)
 
 /**
  * @tc.name      : C32rtomb0300
- * @tc.desc      :
+ * @tc.desc      : Validate UTF-8 encoding for 1 to 4 byte code points.
  * @tc.leve      : Level 0
  */
 void C32rtomb0300(void)
@@ -100,66 +166,15 @@ void C32rtomb0300(void)
         t_error("%s setlocale failed\n", __func__);
     }
     uselocale(LC_GLOBAL_LOCALE);
-
-    // 1-byte UTF-8.
-    std::fill_n(bytes, MB_LEN_MAX, '\0');
-    size_t result = c32rtomb(bytes, L'h', nullptr);
-    if (result != K_UTF8_ONE_BYTE) {
-        t_error("%s c32rtomb failed\n", __func__);
-    }
-    if (bytes[0] != 'h') {
-        t_error("%s bytes[0] failed\n", __func__);
-    }
-    // 2-byte UTF-8.
-    std::fill_n(bytes, MB_LEN_MAX, '\0');
-    result = c32rtomb(bytes, K_CENT_SIGN_CODEPOINT, nullptr);
-    if (result != K_UTF8_TWO_BYTES) {
-        t_error("%s c32rtomb failed\n", __func__);
-    }
-    if (bytes[0] != '\xc2') {
-        t_error("%s bytes[0] failed\n", __func__);
-    }
-    if (bytes[K_UTF8_BYTE1] != '\xa2') {
-        t_error("%s bytes[1] failed\n", __func__);
-    }
-    // 3-byte UTF-8.
-    std::fill_n(bytes, MB_LEN_MAX, '\0');
-    result = c32rtomb(bytes, K_EURO_CODEPOINT, nullptr);
-    if (result != K_UTF8_THREE_BYTES) {
-        t_error("%s c32rtomb failed\n", __func__);
-    }
-    if (bytes[0] != '\xe2') {
-        t_error("%s bytes[0] failed\n", __func__);
-    }
-    if (bytes[K_UTF8_BYTE1] != '\x82') {
-        t_error("%s bytes[1] failed\n", __func__);
-    }
-    if (bytes[K_UTF8_BYTE2] != '\xac') {
-        t_error("%s bytes[2] failed\n", __func__);
-    }
-    // 4-byte UTF-8.
-    std::fill_n(bytes, MB_LEN_MAX, '\0');
-    result = c32rtomb(bytes, K_CJK_EXT_B_CODEPOINT, nullptr);
-    if (result != K_UTF8_FOUR_BYTES) {
-        t_error("%s c32rtomb failed\n", __func__);
-    }
-    if (bytes[K_UTF8_BYTE0] != '\xf0') {
-        t_error("%s bytes[0] failed\n", __func__);
-    }
-    if (bytes[K_UTF8_BYTE1] != '\xa4') {
-        t_error("%s bytes[1] failed\n", __func__);
-    }
-    if (bytes[K_UTF8_BYTE2] != '\xad') {
-        t_error("%s bytes[2] failed\n", __func__);
-    }
-    if (bytes[K_UTF8_BYTE3] != '\xa2') {
-        t_error("%s bytes[3] failed\n", __func__);
-    }
+    CheckUtf8OneByte(bytes);
+    CheckUtf8TwoBytes(bytes);
+    CheckUtf8ThreeBytes(bytes);
+    CheckUtf8FourBytes(bytes);
 }
 
 /**
  * @tc.name      : C32rtomb0400
- * @tc.desc      :
+ * @tc.desc      : invalid code point should fail with (size_t)-1
  * @tc.leve      : Level 2
  */
 void C32rtomb0400(void)
