@@ -70,6 +70,9 @@ export default function WindowLayoutStaticTest() {
                         await Utils.msSleep(1000);
                         // 获取窗口状态 - 自由窗口
                         let windowStatus: window.WindowStatusType = windowClass.getWindowStatus()
+                        if(windowStatus !== window.WindowStatusType.FLOATING){
+                            await windowClass.recover();
+                        }
                         hilog.info(domain, tag, caseName + `windowStatus1: ${windowStatus}`);
                         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
                         // 判断是否存在最大化 - false
@@ -93,8 +96,8 @@ export default function WindowLayoutStaticTest() {
                         let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
                         await Utils.msSleep(1000)
                         let titlePoint = await title!.getBounds()
-                        driver.drag((titlePoint.left + 300)as int, (titlePoint.top + 45) as int, 0, (titlePoint.top + 45) as int, 1000)
-                        await Utils.msSleep(5000)
+                        driver.drag((titlePoint.left + 300)as int, (titlePoint.top + 45) as int, 0, (titlePoint.top + 45) as int, 2000)
+                        await Utils.msSleep(2000)
                         // 获取窗口状态 - 分屏
                         windowStatus = windowClass.getWindowStatus()
                         hilog.info(domain, tag, caseName + `windowStatus2: ${windowStatus}`);
@@ -124,6 +127,8 @@ export default function WindowLayoutStaticTest() {
                         await Utils.msSleep(1000)
                         expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
                         // 获取窗口状态 -- 最小化
+                        await windowClass.recover()
+                        hilog.info(domain, tag, caseName + 'Succeeded in recovering the window.');
                         await windowClass.minimize()
                         hilog.info(domain, tag, caseName + 'Succeeded in minimizing the window.');
                         await Utils.msSleep(1000)

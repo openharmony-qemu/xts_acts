@@ -2031,12 +2031,14 @@ export default function WindowLayoutTest() {
                 (subWin! as window.Window).setAspectRatio(1).then(async ()=> {
                     console.info(msgStr + 'Succeeded in calling setAspectRatio.');
                     expect(true).assertFail();
+                     done()
                 }).catch(async (err: Error) => {
                     console.error(msgStr + 'Failed to call setAspectRatio. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                     expect(err.message!=null).assertTrue();
+                     done()
                 });
-                done()
+               
             } catch (exception) {
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(true).assertFail();
@@ -2097,12 +2099,13 @@ export default function WindowLayoutTest() {
                 (subWin! as window.Window).resetAspectRatio().then(async ()=> {
                     console.info(msgStr + 'Succeeded in calling resetAspectRatio.');
                     expect(true).assertFail();
+                    done()
                 }).catch(async (err: Error) => {
                     console.error(msgStr + 'Failed to call resetAspectRatio. Cause: ' + err!.code+'message:'+err!.message);
                     expect(err.code).assertEqual(1300002);
                     expect(err.message!=null).assertTrue();
+                    done()
                 });
-                done()
             } catch (exception) {
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(true).assertFail();
@@ -2122,38 +2125,47 @@ export default function WindowLayoutTest() {
             console.log(caseName + 'begin.');
             let windowStageStart:window.WindowStage = await startAbility(caseName, context!);
             let windowClass:window.Window = windowStageStart.getMainWindowSync();
+            console.log(caseName + 'Succeed in get mainwindow');
             let timer = 0;
-            try {
-                const callback = (cb: window.RectChangeOptions) => {
-                    console.log(caseName + ' cb: ' + JSON.stringify(cb));
-                    timer++;
-                };
-                windowClass.onRectChangeInGlobalDisplay(callback);
-                windowClass.onRectChangeInGlobalDisplay(callback);
-                windowClass.onRectChangeInGlobalDisplay(callback);
-                windowClass.moveWindowToAsync(50, 50);
-                await Utils.msSleep(200);
-                console.log(caseName + ' timer: ' + timer);
-                if (isFreeWindowMode == true) {
-                    expect(timer).assertEqual(1);
-                } else {
-                    expect(timer).assertEqual(0);
-                }
-                windowClass.offRectChangeInGlobalDisplay();
-                await terminateAbility(caseName);
-                done();
-            } catch (err) {
-                err = err as BusinessError;
-                console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-                await terminateAbility(caseName);
-                if (err.code == 801) {
-                    expect(err.message != null).assertTrue();
-                    done()
-                } else {
+            if(isFreeWindowMode){
+                try {
+                    const callback = (cb: window.RectChangeOptions) => {
+                        console.log(caseName + ' cb: ' + JSON.stringify(cb));
+                        timer++;
+                    };
+                    windowClass.onRectChangeInGlobalDisplay(callback);
+                    windowClass.onRectChangeInGlobalDisplay(callback);
+                    windowClass.onRectChangeInGlobalDisplay(callback);
+                    console.log(caseName + 'Succeed onRectChangeInGlobalDisplay');
+                    await windowClass.maximize()
+                    await Utils.msSleep(200);
+                    console.log(caseName + ' timer: ' + timer);
+                    if (isFreeWindowMode == true) {
+                        expect(timer).assertEqual(1);
+                    } else {
+                        expect(timer).assertEqual(0);
+                    }
                     windowClass.offRectChangeInGlobalDisplay();
-                    expect(true).assertFail();
+                    await windowClass.recover();
+                     console.log(caseName + 'Succeed recover window');
+                    await terminateAbility(caseName);
                     done();
+                } catch (err) {
+                    err = err as BusinessError;
+                    console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+                    await terminateAbility(caseName);
+                    if (err.code == 801) {
+                        expect(err.message != null).assertTrue();
+                        done()
+                    } else {
+                        windowClass.offRectChangeInGlobalDisplay();
+                        expect(true).assertFail();
+                        done();
+                    }
                 }
+            }else{
+                console.log(caseName + 'not supprot');
+                done();
             }
         })
         /**

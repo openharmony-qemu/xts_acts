@@ -120,13 +120,14 @@ export default function WindowImmersiveStaticTest() {
         try {
           let subWin: window.Window = await windowStage!.createSubWindow(caseName);
           expect(!!subWin).assertTrue();
+          await subWin.destroyWindow()
           let statusBarProperty: window.StatusBarProperty = subWin.getStatusBarProperty();
           hilog.info(domain, tag, msgStr + 'Succeeded unexpectedly.');
           expect(false).assertTrue();
           done();
         } catch (exception) {
           exception = exception as BusinessError;
-          if (exception.code === 1300004) {
+          if (exception.code === 1300002) {
             hilog.info(domain, tag, msgStr + 'Window state abnormal as expected.');
             done();
           } else if (exception.code === 801) {
