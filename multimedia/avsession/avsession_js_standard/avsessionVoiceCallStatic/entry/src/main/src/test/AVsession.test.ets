@@ -2890,13 +2890,13 @@ export default function abilityTest() {
 
                 await session!.setDesktopLyricState(state1);
                 await Utils.msSleep(200);
-                expect(callbackTriggered).assertTrue();
+                expect(callbackState).assertTrue();
 
                 await session!.setDesktopLyricState(state2);
                 await Utils.msSleep(200);
-                expect(callbackTriggered).assertFalse();
+                expect(callbackState).assertFalse();
             } catch (err) {
-                console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+                console.info(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
             done();
