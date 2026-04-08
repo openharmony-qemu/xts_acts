@@ -65,7 +65,7 @@ export default function webFantasyFont() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOnSwitchNextPage2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testOnSwitchNextPage2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("emitOnSwitchNextPage2", 10)
         await Utils.msSleep(2000);
