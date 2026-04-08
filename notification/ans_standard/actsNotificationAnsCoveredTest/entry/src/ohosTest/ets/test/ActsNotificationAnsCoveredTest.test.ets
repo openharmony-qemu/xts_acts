@@ -26,13 +26,16 @@ export default function actsNotificationAnsCovered() {
   describe('actsNotificationAnsCovered', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
-      try {
-        await NotificationManager.requestEnableNotification(context);
-        console.info(Tag + "requestEnableNotification success");
-      } catch (err) {
-        console.error(Tag+`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertLarger(0);
-      }
+      NotificationManager.requestEnableNotification((err) => {
+        if (err) {
+          console.error(Tag+`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue();
+          console.info(`${Tag}` + `test case end`);
+          done();
+        } else {
+          console.info(Tag + "requestEnableNotification success");
+        }
+      });
 
       await sleep(1500);
       let driver = Driver.create();
@@ -41,11 +44,14 @@ export default function actsNotificationAnsCovered() {
       let button = await driver.findComponent(ON.text('允许'));
       console.log(Tag + `button is ${JSON.stringify(button)}`);
       if (button !== null) {
+
         await button.click();
         await sleep(1500);
+        done()
       } else {
         console.log(Tag + `button is null`)
-        expect(button).assertFail(); // 或者检查权限是否已开启
+        expect(false).assertTrue();
+        done()
       }
     })
     beforeEach(() => {
