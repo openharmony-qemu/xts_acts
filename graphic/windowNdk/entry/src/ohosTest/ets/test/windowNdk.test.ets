@@ -422,13 +422,8 @@ export default function windowNdk() {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled";
       let result = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        done();
-      }
+      expect(result).assertEqual(0);
+      done();
 
     })
 
@@ -465,13 +460,8 @@ export default function windowNdk() {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true";
       let result = windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        done();
-      }
+      expect(result).assertEqual(0);
+      done();
     })
 
     /**
@@ -496,16 +486,10 @@ export default function windowNdk() {
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
 
           let result = windowNdkTest.setWindowStatusBarEnabled(subWindowId, true, true);
-          console.info(`${caseName}: result: ${result}`);
-          if (isPCStatus != '') {
-            await subWindow.destroyWindow();
-            expect(result).assertEqual(801);
-            done();
-          } else {
-            await subWindow.destroyWindow();
-            expect(result).assertEqual(0);
-            done();
-          }
+          console.info(`${caseName}: result: ${result}`)
+          await subWindow.destroyWindow();
+          expect(result).assertEqual(0);
+          done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -546,15 +530,9 @@ export default function windowNdk() {
 
           let result = windowNdkTest.setWindowStatusBarEnabled(dialogWindowId, true, true);
           console.info(`${caseName}: result: ${result}`);
-          if (isPCStatus != '') {
-            await dialogWindow.destroyWindow();
-            expect(result).assertEqual(801);
-            done();
-          } else {
-            await dialogWindow.destroyWindow();
-            expect(result).assertEqual(0);
-            done();
-          }
+          await dialogWindow.destroyWindow();
+          expect(result).assertEqual(0);
+          done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -596,13 +574,8 @@ export default function windowNdk() {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled";
       let result = windowNdkTest.setWindowNavigationBarEnabled(windowId, true, true);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        done();
-      }
+      expect(result).assertEqual(0);
+      done();
     })
 
     /**
@@ -617,13 +590,8 @@ export default function windowNdk() {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled_false";
       let result = windowNdkTest.setWindowNavigationBarEnabled(windowId, false, false);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        done();
-      }
+      expect(result).assertEqual(0);
+      done();
     })
 
     /**
@@ -638,13 +606,8 @@ export default function windowNdk() {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled_false_enableAnimation_true";
       let result = windowNdkTest.setWindowNavigationBarEnabled(windowId, false, true);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        done();
-      }
+      expect(result).assertEqual(0);
+      done();
     })
 
     /**
@@ -670,15 +633,9 @@ export default function windowNdk() {
 
           let result = windowNdkTest.setWindowNavigationBarEnabled(subWindowId, true, true);
           console.info(`${caseName}: result: ${result}`);
-          if (isPCStatus != '') {
-            await subWindow.destroyWindow();
-            expect(result).assertEqual(801);
-            done();
-          } else {
-            await subWindow.destroyWindow();
-            expect(result).assertEqual(0);
-            done();
-          }
+          await subWindow.destroyWindow();
+          expect(result).assertEqual(0);
+          done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -719,15 +676,9 @@ export default function windowNdk() {
 
           let result = windowNdkTest.setWindowNavigationBarEnabled(dialogWindowId, true, true);
           console.info(`${caseName}: result: ${result}`);
-          if (isPCStatus != '') {
-            await dialogWindow.destroyWindow();
-            expect(result).assertEqual(801);
-            done();
-          } else {
-            await dialogWindow.destroyWindow();
-            expect(result).assertEqual(0);
-            done();
-          }
+          await dialogWindow.destroyWindow();
+          expect(result).assertEqual(0);
+          done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -769,16 +720,11 @@ export default function windowNdk() {
       let caseName = "test_SetWindowStatusBarColor_0xFF00FF00";
       let result = windowNdkTest.setWindowStatusBarColor(windowId, 0XFF00FF00);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        let statusBarContentColor = WindowClass.getWindowSystemBarProperties().statusBarContentColor;
-        console.info(`${caseName}: statusBarContentColor: ${statusBarContentColor}`);
-        expect(statusBarContentColor).assertEqual('#FF00FF00');
-        done();
-      }
+      expect(result).assertEqual(0);
+      let statusBarContentColor = WindowClass.getWindowSystemBarProperties().statusBarContentColor;
+      console.info(`${caseName}: statusBarContentColor: ${statusBarContentColor}`);
+      expect(statusBarContentColor).assertEqual('#FF00FF00');
+      done();
     })
 
     /**
@@ -793,21 +739,16 @@ export default function windowNdk() {
       let caseName = "test_SetWindowStatusBarColor_0xFF000000";
       let result1 = windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
       console.info(`${caseName}: result1: ${result1}`);
-      if (isPCStatus != '') {
-        expect(result1).assertEqual(801);
-        done();
-      } else {
-        expect(result1).assertEqual(0);
-        let result2 = windowNdkTest.setWindowStatusBarColor(windowId, 0XFF000000);
-        console.info(`${caseName}: result: ${result2}`);
-        await sleep(100);
-        let statusBarContentColor = WindowClass.getWindowSystemBarProperties().statusBarContentColor;
-        console.info(`${caseName}: statusBarContentColor: ${statusBarContentColor}`);
-        expect(statusBarContentColor).assertEqual('#FF000000');
-        let result3 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
-        console.info(`${caseName}: result: ${result3}`);
-        done();
-      }
+      expect(result1).assertEqual(0);
+      let result2 = windowNdkTest.setWindowStatusBarColor(windowId, 0XFF000000);
+      console.info(`${caseName}: result: ${result2}`);
+      await sleep(100);
+      let statusBarContentColor = WindowClass.getWindowSystemBarProperties().statusBarContentColor;
+      console.info(`${caseName}: statusBarContentColor: ${statusBarContentColor}`);
+      expect(statusBarContentColor).assertEqual('#FF000000');
+      let result3 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
+      console.info(`${caseName}: result: ${result3}`);
+      done();
     })
 
     /**
@@ -838,17 +779,12 @@ export default function windowNdk() {
       let caseName = "test_getAvoidAreaByType_statusBar_show";
       let result1 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       console.info(`${caseName}: result1: ${result1}`);
-      if (isPCStatus != '') {
-        expect(result1).assertEqual(801);
-        done();
-      } else {
-        expect(result1).assertEqual(0);
-        let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
-        console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
-        expect(AvoidArea_system.topRect.width).assertLargerOrEqual(0);
-        expect(AvoidArea_system.topRect.height).assertLargerOrEqual(0);
-        done();
-      }
+      expect(result1).assertEqual(0);
+      let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
+      console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
+      expect(AvoidArea_system.topRect.width).assertLargerOrEqual(0);
+      expect(AvoidArea_system.topRect.height).assertLargerOrEqual(0);
+      done();
     })
 
     /**
@@ -864,17 +800,12 @@ export default function windowNdk() {
       let result1 = windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
       console.info(`${caseName}: result1: ${result1}`);
       await sleep(500);
-      if (isPCStatus != '') {
-        expect(result1).assertEqual(801);
-        done();
-      } else {
-        expect(result1).assertEqual(0);
-        let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
-        console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
-        expect(AvoidArea_system.topRect.width).assertEqual(0);
-        expect(AvoidArea_system.topRect.height).assertEqual(0);
-        done();
-      }
+      expect(result1).assertEqual(0);
+      let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
+      console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
+      expect(AvoidArea_system.topRect.width).assertEqual(0);
+      expect(AvoidArea_system.topRect.height).assertEqual(0);
+      done();
     })
     /**
      * @tc.name   test_getAvoidAreaByType_setLayoutFullScreen
@@ -888,19 +819,14 @@ export default function windowNdk() {
       let caseName = "test_getAvoidAreaByType_setLayoutFullScreen";
       let result1 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       console.info(`${caseName}: result1: ${result1}`);
-      if (isPCStatus != '') {
-        expect(result1).assertEqual(801);
-        done();
-      } else {
-        expect(result1).assertEqual(0);
-        await WindowClass.setWindowLayoutFullScreen(true);
-        let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
-        console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
-        expect(AvoidArea_system.topRect.width).assertLargerOrEqual(0);
-        expect(AvoidArea_system.topRect.height).assertLargerOrEqual(0);
-        await WindowClass.setWindowLayoutFullScreen(false);
-        done();
-      }
+      expect(result1).assertEqual(0);
+      await WindowClass.setWindowLayoutFullScreen(true);
+      let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
+      console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
+      expect(AvoidArea_system.topRect.width).assertLargerOrEqual(0);
+      expect(AvoidArea_system.topRect.height).assertLargerOrEqual(0);
+      await WindowClass.setWindowLayoutFullScreen(false);
+      done();
     })
 
     /**
