@@ -161,7 +161,7 @@ struct ZIndexPage {
     try {
       console.info('[TabIndexPage] start router ');
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
-      AppStorage.setOrCreate<Int>('_zIndex', routerParamOptions.view.testValue.setValue as Int)
+      AppStorage.setOrCreate<Int>('_zIndex', routerParamOptions.view.testValue.setValue.toInt())
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.targetComponentWidth = routerParamOptions.view.targetComponentWidth

@@ -322,7 +322,7 @@ static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
 
     let result = sendKeyEvent({
       type: type,
-      keyCode: keyCode as int,
+      keyCode: keyCode.toInt(),
       keyText: keyText,
       intentionCode: IntentionCode.INTENTION_UNKNOWN,
       keySource: KeySource.Keyboard,

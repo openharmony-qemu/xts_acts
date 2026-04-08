@@ -52,8 +52,8 @@ export struct WaterFlowView {
 
   getItemSizeArray() {
     for (let i = 0; i < 100; i++) {
-      this.itemWidthArray.push(this.getSize() as int)
-      this.itemHeightArray.push(this.getSize() as int)
+      this.itemWidthArray.push(this.getSize().toInt())
+      this.itemHeightArray.push(this.getSize().toInt())
     }
   }
 
