@@ -54,12 +54,25 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
         notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-    
             expect(data.lockScreenEnabled).assertEqual(false)
-          
           expect(data.bannerEnabled).assertEqual(false)
           expect(data.badgeNumberEnabled).assertEqual(false)
           expect(data.notificationEnabled).assertEqual(false)
+          await sleep(500)
+          notificationManager.getNotificationSetting().then((data) => {
+            hilog.info(0x0000, 'testTag',
+              `${testNum} getNotificationSetting success, data: ${JSON.stringify(data)}`);     
+              expect(data.lockScreenEnabled).assertEqual(false)
+            expect(data.bannerEnabled).assertEqual(false)
+            expect(data.badgeNumberEnabled).assertEqual(false)
+            expect(data.notificationEnabled).assertEqual(false)
+            done()
+          }).catch((err: BusinessError) => {
+            hilog.error(0x0000, 'testTag',
+              `${testNum} getNotificationSetting failed, code is ${err.code}, message is ${err.message}`);
+            expect(false).assertTrue();
+            done()
+          });
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'testTag',
             `${testNum} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
@@ -109,21 +122,6 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
           await button4.click()
           await sleep(100)
         }
-        await sleep(500)
-        notificationManager.getNotificationSetting().then((data) => {
-          hilog.info(0x0000, 'testTag',
-            `${testNum} getNotificationSetting success, data: ${JSON.stringify(data)}`);     
-            expect(data.lockScreenEnabled).assertEqual(false)
-          expect(data.bannerEnabled).assertEqual(false)
-          expect(data.badgeNumberEnabled).assertEqual(false)
-          expect(data.notificationEnabled).assertEqual(false)
-          done()
-        }).catch((err: BusinessError) => {
-          hilog.error(0x0000, 'testTag',
-            `${testNum} getNotificationSetting failed, code is ${err.code}, message is ${err.message}`);
-          expect(false).assertTrue();
-          done()
-        });
       } catch (err) {
         console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
         expect(false).assertTrue();
