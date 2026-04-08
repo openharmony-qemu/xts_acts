@@ -16,25 +16,25 @@
 import { BuilderNode, NodeController, FrameNode, UIContext, InputEventType } from '@kit.ArkUI';
 
 class Params {
-  text: string = 'TestButton'
-  uiContext: UIContext | null = null
+  public text: string = 'TestButton'
+  public: UIContext | null = null
 }
 
 @Builder
-function ButtonBuilder(params: Params) {
+function buttonBuilder(params: Params) {
   Column() {
     Button(params.text)
       .width('80%')
       .height('60%')
       .backgroundColor(Color.Orange)
       .onTouch((event: TouchEvent) => {
-        console.info('ButtonBuilder onTouch triggered');
+        console.info('buttonBuilder onTouch triggered');
       })
       .onMouse((event: MouseEvent) => {
-        console.info('ButtonBuilder onMouse triggered');
+        console.info('buttonBuilder onMouse triggered');
       })
       .onAxisEvent((event: AxisEvent) => {
-        console.info('ButtonBuilder onAxisEvent triggered');
+        console.info('buttonBuilder onAxisEvent triggered');
       })
   }
   .width('100%')
@@ -44,7 +44,7 @@ function ButtonBuilder(params: Params) {
 
 class MyNodeController extends NodeController {
   private builderNode: BuilderNode<[Params]> | null = null;
-  private wrapBuilder: WrappedBuilder<[Params]> = wrapBuilder(ButtonBuilder);
+  private wrapBuilder: WrappedBuilder<[Params]> = wrapBuilder(buttonBuilder);
   private storedTouchEvent: TouchEvent | null = null;
 
   makeNode(uiContext: UIContext): FrameNode | null {
@@ -226,7 +226,7 @@ class MyNodeController extends NodeController {
 @Entry
 @Component
 struct PostInputEventWithStrategyTest {
-  @State PostInputEventWithStrategyResultText: string = 'Init';
+  @State postInputEventWithStrategyResultText: string = 'Init';
   @State currentStrategy: CompetitionStrategy = CompetitionStrategy.DEFAULT;
   private nodeController: MyNodeController = new MyNodeController();
 
@@ -238,8 +238,8 @@ struct PostInputEventWithStrategyTest {
         .textAlign(TextAlign.Center)
         .height('5%')
 
-      Text(this.PostInputEventWithStrategyResultText)
-        .id('PostInputEventWithStrategyResultText')
+      Text(this.postInputEventWithStrategyResultText)
+        .id('postInputEventWithStrategyResultText')
         .width('100%')
         .height('5%')
         .backgroundColor('#FFCCCCCC')
@@ -258,20 +258,20 @@ struct PostInputEventWithStrategyTest {
           .onTouch((event: TouchEvent) => {
             this.nodeController.setStoredTouchEvent(event);
             let result = this.nodeController.postTouchEvent(event, this.getUIContext(), this.currentStrategy);
-            this.PostInputEventWithStrategyResultText = 'Touch_' + (this.currentStrategy === CompetitionStrategy.DEFAULT ? 'DEFAULT' : 'COMPETITION') + ': ' + result;
+            this.postInputEventWithStrategyResultText = 'Touch_' + (this.currentStrategy === CompetitionStrategy.DEFAULT ? 'DEFAULT' : 'COMPETITION') + ': ' + result;
             console.info('onTouch result: ' + result);
           })
           .onMouse((event: MouseEvent) => {
             if (event != undefined) {
               let result = this.nodeController.postMouseEvent(event, this.getUIContext(), this.currentStrategy);
-              this.PostInputEventWithStrategyResultText = 'Mouse_' + (this.currentStrategy === CompetitionStrategy.DEFAULT ? 'DEFAULT' : 'COMPETITION') + ': ' + result;
+              this.postInputEventWithStrategyResultText = 'Mouse_' + (this.currentStrategy === CompetitionStrategy.DEFAULT ? 'DEFAULT' : 'COMPETITION') + ': ' + result;
               console.info('onMouse result: ' + result);
             }
           })
           .onAxisEvent((event: AxisEvent) => {
             if (event != undefined) {
               let result = this.nodeController.postAxisEvent(event, this.getUIContext(), this.currentStrategy);
-              this.PostInputEventWithStrategyResultText = 'Axis_' + (this.currentStrategy === CompetitionStrategy.DEFAULT ? 'DEFAULT' : 'COMPETITION') + ': ' + result;
+              this.postInputEventWithStrategyResultText = 'Axis_' + (this.currentStrategy === CompetitionStrategy.DEFAULT ? 'DEFAULT' : 'COMPETITION') + ': ' + result;
               console.info('onAxisEvent result: ' + result);
             }
           })
@@ -287,7 +287,7 @@ struct PostInputEventWithStrategyTest {
           .height('100%')
           .onClick(() => {
             let result = this.nodeController.testNullEvent();
-            this.PostInputEventWithStrategyResultText = 'EventNull: ' + result;
+            this.postInputEventWithStrategyResultText = 'EventNull: ' + result;
           })
 
         Button('Event Undefined')
@@ -296,7 +296,7 @@ struct PostInputEventWithStrategyTest {
           .height('100%')
           .onClick(() => {
             let result = this.nodeController.testUndefinedEvent();
-            this.PostInputEventWithStrategyResultText = 'EventUndefined: ' + result;
+            this.postInputEventWithStrategyResultText = 'EventUndefined: ' + result;
           })
       }
       .width('100%')
@@ -311,7 +311,7 @@ struct PostInputEventWithStrategyTest {
           .height('100%')
           .onClick(() => {
             let result = this.nodeController.testStrategyNull(this.getUIContext());
-            this.PostInputEventWithStrategyResultText = 'StrategyNull: ' + result;
+            this.postInputEventWithStrategyResultText = 'StrategyNull: ' + result;
           })
 
         Button('Strategy Undefined')
@@ -320,7 +320,7 @@ struct PostInputEventWithStrategyTest {
           .height('100%')
           .onClick(() => {
             let result = this.nodeController.testStrategyUndefined(this.getUIContext());
-            this.PostInputEventWithStrategyResultText = 'StrategyUndefined: ' + result;
+            this.postInputEventWithStrategyResultText = 'StrategyUndefined: ' + result;
           })
       }
       .width('100%')
@@ -336,7 +336,7 @@ struct PostInputEventWithStrategyTest {
           .backgroundColor(this.currentStrategy === CompetitionStrategy.DEFAULT ? Color.Blue : Color.Gray)
           .onClick(() => {
             this.currentStrategy = CompetitionStrategy.DEFAULT;
-            this.PostInputEventWithStrategyResultText = 'Strategy: DEFAULT';
+            this.postInputEventWithStrategyResultText = 'Strategy: DEFAULT';
           })
 
         Button('COMPETITION')
@@ -346,7 +346,7 @@ struct PostInputEventWithStrategyTest {
           .backgroundColor(this.currentStrategy === CompetitionStrategy.COMPETITION ? Color.Blue : Color.Gray)
           .onClick(() => {
             this.currentStrategy = CompetitionStrategy.COMPETITION;
-            this.PostInputEventWithStrategyResultText = 'Strategy: COMPETITION';
+            this.postInputEventWithStrategyResultText = 'Strategy: COMPETITION';
           })
       }
       .width('100%')

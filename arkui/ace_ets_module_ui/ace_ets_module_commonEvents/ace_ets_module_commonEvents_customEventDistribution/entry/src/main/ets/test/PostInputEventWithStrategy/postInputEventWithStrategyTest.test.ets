@@ -45,21 +45,21 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   postInputEventWithStrategyEventNullV24001
-     * @tc.number SUB_ARKUI_POSTINPUTEVENTWITHSTRATEGY_PARAM_001
+     * @tc.name   PostInputEventWithStrategyEventNull_001
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEventNull_001
      * @tc.desc   Test postInputEventWithStrategy with null event parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('postInputEventWithStrategyEventNullV24001', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyEventNull_001', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyEventNullV24001] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('btnEventNull'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('PostInputEventWithStrategyResultText');
+      let strJson = getInspectorByKey('postInputEventWithStrategyResultText');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[postInputEventWithStrategyEventNullV24001] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('EventNull');
@@ -67,21 +67,21 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   postInputEventWithStrategyEventUndefinedV24002
-     * @tc.number SUB_ARKUI_POSTINPUTEVENTWITHSTRATEGY_PARAM_002
+     * @tc.name   PostInputEventWithStrategyEventUndefined_002
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEventUndefined_002
      * @tc.desc   Test postInputEventWithStrategy with undefined event parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('postInputEventWithStrategyEventUndefinedV24002', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyEventUndefined_002', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyEventUndefinedV24002] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('btnEventUndefined'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('PostInputEventWithStrategyResultText');
+      let strJson = getInspectorByKey('postInputEventWithStrategyResultText');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[postInputEventWithStrategyEventUndefinedV24002] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('EventUndefined');
@@ -89,14 +89,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   postInputEventWithStrategyStrategyNullV24003
-     * @tc.number SUB_ARKUI_POSTINPUTEVENTWITHSTRATEGY_PARAM_003
+     * @tc.name   PostInputEventWithStrategyStrategyNull_003
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyStrategyNull_003
      * @tc.desc   Test postInputEventWithStrategy with null strategy parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('postInputEventWithStrategyStrategyNullV24003', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyStrategyNull_003', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyStrategyNullV24003] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -106,7 +106,7 @@ export default function postInputEventWithStrategyTest() {
       let button = await driver.findComponent(ON.id('btnStrategyNull'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('PostInputEventWithStrategyResultText');
+      let strJson = getInspectorByKey('postInputEventWithStrategyResultText');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[postInputEventWithStrategyStrategyNullV24003] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('StrategyNull');
@@ -114,14 +114,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   postInputEventWithStrategyStrategyUndefinedV24004
-     * @tc.number SUB_ARKUI_POSTINPUTEVENTWITHSTRATEGY_PARAM_004
+     * @tc.name   PostInputEventWithStrategyStrategyUndefined_004
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyStrategyUndefined_004
      * @tc.desc   Test postInputEventWithStrategy with undefined strategy parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('postInputEventWithStrategyStrategyUndefinedV24004', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyStrategyUndefined_004', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyStrategyUndefinedV24004] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -131,7 +131,7 @@ export default function postInputEventWithStrategyTest() {
       let button = await driver.findComponent(ON.id('btnStrategyUndefined'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('PostInputEventWithStrategyResultText');
+      let strJson = getInspectorByKey('postInputEventWithStrategyResultText');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[postInputEventWithStrategyStrategyUndefinedV24004] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('StrategyUndefined');
@@ -139,14 +139,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   postInputEventWithStrategyTouchDefaultV24005
-     * @tc.number SUB_ARKUI_POSTINPUTEVENTWITHSTRATEGY_PARAM_005
+     * @tc.name   PostInputEventWithStrategyTouchDefault_005
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyTouchDefault_005
      * @tc.desc   Test postInputEventWithStrategy with TouchEvent and CompetitionStrategy.DEFAULT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('postInputEventWithStrategyTouchDefaultV24005', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyTouchDefault_005', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyTouchDefaultV24005] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -156,7 +156,7 @@ export default function postInputEventWithStrategyTest() {
       let eventArea = await driver.findComponent(ON.id('eventArea'));
       await eventArea.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('PostInputEventWithStrategyResultText');
+      let strJson = getInspectorByKey('postInputEventWithStrategyResultText');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[postInputEventWithStrategyTouchDefaultV24005] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Touch_DEFAULT');
@@ -164,14 +164,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   postInputEventWithStrategyTouchCompetitionV24006
-     * @tc.number SUB_ARKUI_POSTINPUTEVENTWITHSTRATEGY_PARAM_006
+     * @tc.name   PostInputEventWithStrategyTouchCompetition_006
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyTouchCompetition_006
      * @tc.desc   Test postInputEventWithStrategy with TouchEvent and CompetitionStrategy.COMPETITION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('postInputEventWithStrategyTouchCompetitionV24006', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyTouchCompetition_006', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyTouchCompetitionV24006] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -181,7 +181,7 @@ export default function postInputEventWithStrategyTest() {
       let eventArea = await driver.findComponent(ON.id('eventArea'));
       await eventArea.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('PostInputEventWithStrategyResultText');
+      let strJson = getInspectorByKey('postInputEventWithStrategyResultText');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[postInputEventWithStrategyTouchCompetitionV24006] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Touch_COMPETITION');
@@ -189,14 +189,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   postInputEventWithStrategyMouseDefaultV24007
-     * @tc.number SUB_ARKUI_POSTINPUTEVENTWITHSTRATEGY_PARAM_007
+     * @tc.name   PostInputEventWithStrategyMouseDefault_007
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyMouseDefault_007
      * @tc.desc   Test postInputEventWithStrategy with MouseEvent and CompetitionStrategy.DEFAULT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('postInputEventWithStrategyMouseDefaultV24007', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyMouseDefault_007', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyMouseDefaultV24007] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -209,7 +209,7 @@ export default function postInputEventWithStrategyTest() {
       let centerY = (bounds.top + bounds.bottom) / 2;
       await driver.mouseClick({ x: centerX, y: centerY }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('PostInputEventWithStrategyResultText');
+      let strJson = getInspectorByKey('postInputEventWithStrategyResultText');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[postInputEventWithStrategyMouseDefaultV24007] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Mouse_DEFAULT');
@@ -217,14 +217,14 @@ export default function postInputEventWithStrategyTest() {
     });
 
     /**
-     * @tc.name   postInputEventWithStrategyMouseCompetitionV24008
-     * @tc.number SUB_ARKUI_POSTINPUTEVENTWITHSTRATEGY_PARAM_008
+     * @tc.name   PostInputEventWithStrategyMouseCompetition_008
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyMouseCompetition_008
      * @tc.desc   Test postInputEventWithStrategy with MouseEvent and CompetitionStrategy.COMPETITION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('postInputEventWithStrategyMouseCompetitionV24008', Level.LEVEL0, async () => {
+    it('PostInputEventWithStrategyMouseCompetition_008', Level.LEVEL0, async () => {
       console.info('[postInputEventWithStrategyMouseCompetitionV24008] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -237,7 +237,7 @@ export default function postInputEventWithStrategyTest() {
       let centerY = (bounds.top + bounds.bottom) / 2;
       await driver.mouseClick({ x: centerX, y: centerY }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('PostInputEventWithStrategyResultText');
+      let strJson = getInspectorByKey('postInputEventWithStrategyResultText');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[postInputEventWithStrategyMouseCompetitionV24008] result: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('Mouse_COMPETITION');
