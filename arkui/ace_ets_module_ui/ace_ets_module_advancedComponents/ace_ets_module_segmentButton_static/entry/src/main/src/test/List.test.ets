@@ -46,6 +46,7 @@ export default function testsuite() {
   SegmentButtonItemOptionsTest();
   TabSegmentButtonOptionsTest();
   MultiSegmentButtonV2PageTest();
+  MultiSegmentButtonV2UndefinedPageTest();
   SegmentButtonV2Test();
   SegmentButtonV2Test0010();
   CapsuleSegmentButtonAttributeTest();
@@ -59,5 +60,4 @@ export default function testsuite() {
   SegmentButtonItemOptionsArrayTest();
   segmentButtonEnableStateAnimation();
   CapsuleSegementButtonV2Animation();
-  MultiSegmentButtonV2UndefinedPageTest();
 }
