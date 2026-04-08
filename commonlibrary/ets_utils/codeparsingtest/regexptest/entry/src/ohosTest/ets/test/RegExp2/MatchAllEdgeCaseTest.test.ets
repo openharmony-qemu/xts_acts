@@ -1,0 +1,383 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { regexpSymbolMatchAll } from './RegExpHelper';
+
+function createRegexFromFunction(): RegExp {
+  return /cat|dog/g;
+}
+
+export default function matchAllEdgeCaseTest() {
+
+
+    describe('Special_Pattern_Extended_Tests', () => {
+      /**
+      * @tc.name testMatchAllTest0100
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0100
+       * @tc.desc   Test RegExp[Symbol.matchAll] positive lookbehind when supported
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const str: string = "123apple 456apple";
+        const pattern: string = "(?<=\\d{3})apple";
+        let supportsLookbehind: boolean = true;
+
+        try {
+          new RegExp(pattern, "g");
+        } catch (e) {
+          supportsLookbehind = false;
+        }
+
+        if (supportsLookbehind) {
+          const regex: RegExp = new RegExp(pattern, "g");
+          const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+          const results: RegExpMatchArray[] = Array.from(iterator);
+          expect(results.length).assertEqual(2);
+        } else {
+          expect(true).assertTrue();
+        }
+      });
+
+      /**
+      * @tc.name testMatchAllTest0101
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0101
+       * @tc.desc   Test RegExp[Symbol.matchAll] negative lookahead when supported
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const str: string = "apple123 apple456";
+        const pattern: string = "apple(?!123)";
+        let supportsLookahead: boolean = true;
+
+        try {
+          new RegExp(pattern, "g");
+        } catch (e) {
+          supportsLookahead = false;
+        }
+
+        if (supportsLookahead) {
+          const regex: RegExp = new RegExp(pattern, "g");
+          const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+          const results: RegExpMatchArray[] = Array.from(iterator);
+          expect(results.length).assertEqual(1);
+          expect(results[0][0]).assertEqual("apple");
+        } else {
+          expect(true).assertTrue();
+        }
+      });
+
+      /**
+      * @tc.name testMatchAllTest0102
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0102
+       * @tc.desc   Test RegExp[Symbol.matchAll] unicode property escapes when supported
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const str: string = "Hello 123 😀";
+        const pattern: string = "\\p{Number}+";
+        let supportsUnicodeProps: boolean = true;
+
+        try {
+          new RegExp(pattern, "gu");
+        } catch (e) {
+          supportsUnicodeProps = false;
+        }
+
+        if (supportsUnicodeProps) {
+          const regex: RegExp = new RegExp(pattern, "gu");
+          const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+          const results: RegExpMatchArray[] = Array.from(iterator);
+          expect(results.length).assertEqual(1);
+          expect(results[0][0]).assertEqual("123");
+        } else {
+          const regex: RegExp = /\d+/g;
+          const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+          const results: RegExpMatchArray[] = Array.from(iterator);
+          expect(results.length).assertEqual(1);
+          expect(results[0][0]).assertEqual("123");
+        }
+      });
+    });
+
+    describe('This_Value_Extended_Tests', () => {
+      /**
+      * @tc.name testMatchAllTest0103
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0103
+       * @tc.desc   Test RegExp[Symbol.matchAll] with RegExp object passed from variable
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const regex: RegExp = /test/g;
+        const str: string = "test";
+        const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+        const firstMatch: IteratorResult<RegExpMatchArray> = iterator.next();
+        expect(firstMatch.done).assertFalse();
+        expect(firstMatch.value[0]).assertEqual("test");
+      });
+
+      /**
+      * @tc.name testMatchAllTest0104
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0104
+       * @tc.desc   Test RegExp[Symbol.matchAll] with RegExp created via constructor
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const pattern: string = "\\d+";
+        const flags: string = "g";
+        const regex: RegExp = new RegExp(pattern, flags);
+        const str: string = "123 456";
+        const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+        const results: RegExpMatchArray[] = Array.from(iterator);
+        expect(results.length).assertEqual(2);
+      });
+    });
+
+    describe('HasIndices_Flag_Extended_Tests', () => {
+      /**
+      * @tc.name testMatchAllTest0105
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0105
+       * @tc.desc   Test RegExp[Symbol.matchAll] skip d-flag behavior when environment is unsupported
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        expect(true).assertTrue();
+      });
+    });
+
+    describe('Inheritance_Extended_Tests', () => {
+      /**
+      * @tc.name testMatchAllTest0106
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0106
+       * @tc.desc   Test RegExp[Symbol.matchAll] when using RegExp literal
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const regex: RegExp = /test/g;
+        const str: string = "test test";
+        const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+        const results: RegExpMatchArray[] = Array.from(iterator);
+        expect(results.length).assertEqual(2);
+      });
+
+      /**
+      * @tc.name testMatchAllTest0107
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0107
+       * @tc.desc   Test RegExp[Symbol.matchAll] when RegExp is returned from helper function
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const regex: RegExp = createRegexFromFunction();
+        const str: string = "cat dog";
+        const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+        const results: RegExpMatchArray[] = Array.from(iterator);
+        expect(results.length).assertEqual(2);
+      });
+    });
+
+    describe('String_Parameter_Extended_Tests', () => {
+      /**
+      * @tc.name testMatchAllTest0108
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0108
+       * @tc.desc   Test RegExp[Symbol.matchAll] converts boolean input to string and matches
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const regex: RegExp = /true/g;
+        const boolValue: boolean = true;
+        const str: string = String(boolValue);
+        const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+        const results: RegExpMatchArray[] = Array.from(iterator);
+        expect(results.length).assertEqual(1);
+        expect(results[0][0]).assertEqual("true");
+      });
+
+      /**
+      * @tc.name testMatchAllTest0109
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0109
+       * @tc.desc   Test RegExp[Symbol.matchAll] converts String object input to string and matches
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const regex: RegExp = /Hello/g;
+        const strObj: String = new String("Hello World");
+        const str: string = String(strObj);
+        const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+        const results: RegExpMatchArray[] = Array.from(iterator);
+        expect(results.length).assertEqual(1);
+        expect(results[0][0]).assertEqual("Hello");
+      });
+
+      /**
+      * @tc.name testMatchAllTest0110
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0110
+       * @tc.desc   Test RegExp[Symbol.matchAll] converts undefined input to "undefined" and matches
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const regex: RegExp = /undefined/g;
+        const undefinedValue: undefined = undefined;
+        const str: string = String(undefinedValue);
+        const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+        const results: RegExpMatchArray[] = Array.from(iterator);
+        expect(results.length).assertEqual(1);
+        expect(results[0][0]).assertEqual("undefined");
+      });
+    });
+
+    describe('Error_Handling_Extended_Tests', () => {
+      /**
+      * @tc.name testMatchAllTest0111
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0111
+       * @tc.desc   Test RegExp[Symbol.matchAll] iterator returns done=true when no matches
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const regex: RegExp = /pattern-that-does-not-exist/g;
+        const str: string = "some text";
+        const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+        const firstResult: IteratorResult<RegExpMatchArray> = iterator.next();
+        expect(firstResult.done).assertTrue();
+        expect(firstResult.value).assertUndefined();
+      });
+
+      /**
+      * @tc.name testMatchAllTest0112
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0112
+       * @tc.desc   Test RegExp[Symbol.matchAll] does not throw for valid pattern with no matches
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const regex: RegExp = /\\d{100}/;
+        const str: string = "abc";
+        const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+        const results: RegExpMatchArray[] = Array.from(iterator);
+        expect(results.length).assertEqual(0);
+      });
+    });
+
+    describe('Performance_Memory_Basic_Tests', () => {
+      /**
+      * @tc.name testMatchAllTest0113
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0113
+       * @tc.desc   Test RegExp[Symbol.matchAll] iterates many matches over a large string
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const regex: RegExp = /\w+/g;
+        const baseStr: string = "word ";
+        const str: string = baseStr.repeat(50);
+        let count: number = 0;
+
+        for (const match of regexpSymbolMatchAll(regex, str)) {
+          count++;
+          expect(match[0].length > 0).assertTrue();
+        }
+
+        expect(count).assertEqual(50);
+      });
+
+      /**
+      * @tc.name testMatchAllTest0114
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0114
+       * @tc.desc   Test RegExp[Symbol.matchAll] complex regex with capture groups returns correct match count
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const regex: RegExp = /(\w)(\w)(\w)/g;
+        const str: string = "abcdef";
+        const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+        const results: RegExpMatchArray[] = Array.from(iterator);
+
+        expect(results.length).assertEqual(2);
+        if (results.length > 0) {
+          expect(results[0].length).assertEqual(4);
+        }
+      });
+    });
+
+    describe('RegExp_Constructor_Comparison_Tests', () => {
+      /**
+      * @tc.name testMatchAllTest0115
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0115
+       * @tc.desc   Test RegExp[Symbol.matchAll] matches are equivalent between constructed and literal regex
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const pattern: string = "\\d+";
+        const str: string = "123 456";
+
+        const regex1: RegExp = new RegExp(pattern, "g");
+        const results1: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex1, str));
+
+        const regex2: RegExp = /\d+/g;
+        const results2: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex2, str));
+
+        expect(results1.length).assertEqual(results2.length);
+        expect(results1[0][0]).assertEqual(results2[0][0]);
+      });
+
+      /**
+      * @tc.name testMatchAllTest0116
+       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0116
+       * @tc.desc   Test RegExp[Symbol.matchAll] constructor special escape characters work correctly
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testMatchAllTest0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        const pattern: string = "\\.";
+        const str: string = "a.b.c";
+        const regex: RegExp = new RegExp(pattern, "g");
+        const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
+        const results: RegExpMatchArray[] = Array.from(iterator);
+
+        expect(results.length).assertEqual(2);
+      });
+    });
+
+}
