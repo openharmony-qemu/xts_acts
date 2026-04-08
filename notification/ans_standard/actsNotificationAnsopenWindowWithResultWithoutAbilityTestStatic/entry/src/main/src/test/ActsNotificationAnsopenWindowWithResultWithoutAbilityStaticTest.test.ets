@@ -632,7 +632,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
           notificationManager.openNotificationSettingsWithResult(testContext).then(async(data) => {
             hilog.info(0x0000, 'testTag', `${testNum}${index+1}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
             expect(index).assertEqual(0);
-          }).catch((e:Error) => {
+          }).catch(async(e:Error) => {
             let err:BusinessError=e as BusinessError
             hilog.error(0x0000, 'testTag', `${testNum}${index+1}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
             if (err?.code === 801) {
