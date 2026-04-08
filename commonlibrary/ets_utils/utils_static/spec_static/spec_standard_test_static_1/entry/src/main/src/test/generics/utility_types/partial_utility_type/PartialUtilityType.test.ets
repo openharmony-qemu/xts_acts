@@ -1015,7 +1015,6 @@ abstract class AC_87 {
 type P_1 = Partial<AC_87>
 function resetFirstrun_1() { firstrun_1 = true; }
 
-// 来自 type_0.js 到 type_3.js
 class A_88 {
   i: number  = 0
   j: string  = ""
@@ -1084,7 +1083,6 @@ function foo_91(i: Partial<A_91>) {
   }
   return a;
 }
-// 来自 type_4.js 到 type_7.js
 abstract class A_92 {
   i: number  = 0
   j: string  = ""
@@ -1153,7 +1151,6 @@ function foo_95(i: Partial<A_95>) {
   }
   return a;
 }
-// 来自 type_8.js 到 type_11.js
 interface A_96 {
   i: number
   j: string

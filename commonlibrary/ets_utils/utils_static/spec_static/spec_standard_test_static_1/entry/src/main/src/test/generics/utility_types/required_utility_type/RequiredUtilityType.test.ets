@@ -26,8 +26,6 @@ import {
   Level
 } from "../../../../../../hypium"
 
-//  (22)
-// 来自 required_compatibility_*.js
 class A_0 {
   i?: number
   j?: string
@@ -37,7 +35,6 @@ interface A_1 {
   j?: string
 }
 
-// 来自 required_getter_and_setter_*.js
 let c_0: int = 0
 abstract class C_0 {
   _i?: number
@@ -70,13 +67,11 @@ class C_3 {
 }
 function reset_c_3() { c_3 = 0; }
 
-// 来自 required_getter_and_setter_int.js
 interface I_0 {
   set i(i: number|undefined)
   get i(): number|undefined
 }
 
-// 来自 required_type_0.js 到 required_type_8.js
 class C_4 {
   i: number = 0
   j: string = ""
@@ -204,7 +199,6 @@ function foo_10(i: Required<C_12>) {
   return v;
 }
 
-// 来自 type_0.js 到 type_3.js
 class A_2 {
   i?: number;
   j?: string;

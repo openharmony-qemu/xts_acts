@@ -26,8 +26,6 @@ import {
   Level
 } from "../../../../../../hypium"
 
-//  (两)
-// 来自 long_chain_0.js
 interface Issue_0 {
   title?: string
   description?: string
@@ -49,7 +47,6 @@ type TD_0 = Readonly<TC_0>
 type TE_0 = Readonly<TD_0>
 type TF_0 = NonNullable<TE_0>
 
-// 来自 PartialWithGeneric.js
 interface User_0<T> {
   id: number;
   generic?: T

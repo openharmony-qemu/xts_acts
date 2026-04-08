@@ -26,8 +26,7 @@ import {
   Level
 } from "../../../../../../hypium"
 
-//  (7)
-// 类型定义 (来自 nonnullable_utility_type_*.js)
+
 type NullableString_0 = null | undefined | string
 type ClearedString_0 = NonNullable<NullableString_0> // only type string is expected
 
@@ -46,7 +45,6 @@ type ClearedString_4 = NonNullable<NullableString_4> // only type string is expe
 type NullableString_5 = null | undefined | string
 type ClearedString_5 = NonNullable<NullableString_5> // only type string is expected
 
-// 函数定义 (来自 nonnullable_utility_type_*.js)
 function foo_0(param: NullableString_0): ClearedString_0 {
     if (param != null) {
         return param
@@ -89,7 +87,6 @@ function foo_5(param: NullableString_5): ClearedString_5 {
     return ""
 }
 
-// 类型和类定义 (来自 spec_sample.js)
 type X_6 = Object | null | undefined
 type Y_6 = NonNullable<X_6> // That is Object
 
