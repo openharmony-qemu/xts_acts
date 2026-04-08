@@ -391,13 +391,13 @@ static napi_value WriteDataCallbackTest(napi_env env, napi_callback_info info)
     });
 }
 
-// Category 8: Loudness Gain Set Test (17 cases, note: gaps in numbering)
+// Category 8: Loudness Gain Set Test (18 cases, note: gaps in numbering)
 static napi_value LoudnessGainSetTest(napi_env env, napi_callback_info info)
 {
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
 
-        static const std::array<std::function<int()>, 17> loudnessGainTests = {
+        static const std::array<std::function<int()>, 18> loudnessGainTests = {
             Acts::AudioRender::OhAudioRenderSetLoudnessGain001,
             Acts::AudioRender::OhAudioRenderSetLoudnessGain002,
             Acts::AudioRender::OhAudioRenderSetLoudnessGain003,
@@ -414,12 +414,36 @@ static napi_value LoudnessGainSetTest(napi_env env, napi_callback_info info)
             Acts::AudioRender::OhAudioRenderSetLoudnessGain015,
             Acts::AudioRender::OhAudioRenderSetLoudnessGain017,
             Acts::AudioRender::OhAudioRenderSetLoudnessGain018,
-            Acts::AudioRender::OhAudioRenderSetLoudnessGain019
+            Acts::AudioRender::OhAudioRenderSetLoudnessGain019,
+            Acts::AudioRender::OhAudioRenderSetLoudnessGain021
         };
 
         std::function<int()> testFunc = (caseNum >= 0 && caseNum < static_cast<int32_t>(loudnessGainTests.size()))
                                             ? loudnessGainTests[caseNum]
                                             : []() { return RESULT_ERROR; };
+
+        return CreateAsyncWork(env, testFunc);
+    });
+}
+
+// Category 9: Loudness Gain Get Test (2 cases)
+static napi_value LoudnessGainGetTest(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+
+        std::function<int()> testFunc;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                testFunc = Acts::AudioRender::OhAudioRenderGetLoudnessGain001;
+                break;
+            case CASE_NUM_1:
+                testFunc = Acts::AudioRender::OhAudioRenderGetLoudnessGain002;
+                break;
+            default:
+                testFunc = []() { return RESULT_ERROR; };
+                break;
+        }
 
         return CreateAsyncWork(env, testFunc);
     });
@@ -460,6 +484,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "UnderflowDetectionTest", nullptr, UnderflowDetectionTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "WriteDataCallbackTest", nullptr, WriteDataCallbackTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "LoudnessGainSetTest", nullptr, LoudnessGainSetTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "LoudnessGainGetTest", nullptr, LoudnessGainGetTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "StreamManagerTest", nullptr, StreamManagerTest, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
