@@ -2,6 +2,7 @@
   "src": [
     "pages/webFantasyFont",
     "pages/enableFollowSystemFontWeight",
+    "pages/webViewMinLogicalFontSize",
     "pages/WebCursiveFontFant"
   ]
 }
