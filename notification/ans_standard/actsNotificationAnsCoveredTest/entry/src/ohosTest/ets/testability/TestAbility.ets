@@ -12,8 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {ConfigurationConstant} from '@kit.AbilityKit';
-import UIAbility from '@ohos.app.ability.UIAbility';
+import {ConfigurationConstant, UIAbility} from '@kit.AbilityKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
 import { Hypium } from '@ohos/hypium';
