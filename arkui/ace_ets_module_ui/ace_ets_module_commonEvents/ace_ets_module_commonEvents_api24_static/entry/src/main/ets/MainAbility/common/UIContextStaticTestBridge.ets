@@ -44,7 +44,8 @@ function delayMs(ms: int): Promise<void> {
  * 主窗 getMainWindow → setMainUIContextForStaticTest 晚于 aa start，beforeEach 若立即取 Router 会得到 undefined 并触发 ClassCastError。
  * 轮询直至就绪或超时（与 XTS hilog 中 beforeEach Router 未就绪现象对齐）。
  */
-export async function waitForMainRouterForStaticTest(maxWaitMs: int = 12000, stepMs: int = 200): Promise<Router | undefined> {
+export async function waitForMainRouterForStaticTest(maxWaitMs: int = 12000, stepMs: int = 200):
+ Promise<Router | undefined> {
   let waited: int = 0 as int;
   while (waited < maxWaitMs) {
     let r: Router | undefined = getMainRouterForStaticTest();
