@@ -431,7 +431,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isPCStatus != ''){
+      if(isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -462,7 +462,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isPCStatus != ''){
+      if(isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -494,7 +494,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
        await sleep(1000);
-      if(isPCStatus != ''){
+      if(isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -539,7 +539,7 @@ export default function windowNdk() {
           console.info(`${caseName}: result: ${result}`)
           expect(result).assertEqual(0);
           await sleep(1000);
-          if(isPCStatus != ''){
+          if(isFreeWindowMode){
             subWindow.off('avoidAreaChange')
             await subWindow.destroyWindow();
             expect(flag).assertEqual(false)
@@ -600,7 +600,7 @@ export default function windowNdk() {
           console.info(`${caseName}: result: ${result}`);
           expect(result).assertEqual(0);
           await sleep(1000);
-          if(isPCStatus != ''){
+          if(isFreeWindowMode){
             dialogWindow.off('avoidAreaChange')
             await dialogWindow.destroyWindow();
             expect(flag).assertEqual(false)
@@ -661,7 +661,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isPCStatus != ''){
+      if(isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -692,7 +692,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isPCStatus != ''){
+      if(isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -724,7 +724,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isPCStatus != ''){
+      if(isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -769,7 +769,7 @@ export default function windowNdk() {
           console.info(`${caseName}: result: ${result}`);
           expect(result).assertEqual(0);
           await sleep(1000);
-          if(isPCStatus != ''){
+          if(isFreeWindowMode){
             subWindow.off('avoidAreaChange')
             await subWindow.destroyWindow();
             expect(flag).assertEqual(false)
@@ -830,7 +830,7 @@ export default function windowNdk() {
           console.info(`${caseName}: result: ${result}`);
           expect(result).assertEqual(0);
           await sleep(1000);
-          if(isPCStatus != ''){
+          if(isFreeWindowMode){
             dialogWindow.off('avoidAreaChange')
             await dialogWindow.destroyWindow();
             expect(flag).assertEqual(false)
