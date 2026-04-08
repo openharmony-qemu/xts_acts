@@ -16,6 +16,7 @@
 
 import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
 import { UtilsTest } from '../Util.test';
@@ -30,7 +31,7 @@ export default function CommonKeyEventTest(): void {
     beforeEach(async (): Promise<void> => {
       let r = await waitForMainRouterForStaticTest();
       expect(r !== undefined && r !== null).assertTrue();
-      let ro = { url: 'MainAbility/pages/CommonKeyEventProbe/CommonKeyEventProbe' };
+      let ro: router.RouterOptions = { url: 'MainAbility/pages/CommonKeyEventProbe/CommonKeyEventProbe' };
       r!.clear();
       await r!.replaceUrl(ro);
       await Utils.sleep(600);

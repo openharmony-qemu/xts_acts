@@ -27,13 +27,13 @@ export function getMainUIContextForStaticTest(): UIContext | undefined {
   return mainUIContext;
 }
 
-/** 静态用例勿用 @ohos.router 默认导出（'use static' 下类型不全）；与页面共用主窗 Router。 */
+/** 与主窗共用 UIContext.getRouter()；replaceUrl 参数类型与同目录 api24_static 工程一致可用 router.RouterOptions。 */
 export function getMainRouterForStaticTest(): Router | undefined {
   return mainUIContext?.getRouter();
 }
 
 function delayMs(ms: int): Promise<void> {
-  return new Promise<void>((resolve: () => void): void => {
+  return new Promise<void>((resolve: (v: void | PromiseLike<void>) => void, _reject: (e: Error) => void): void => {
     setTimeout((): void => {
       resolve();
     }, ms);

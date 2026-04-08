@@ -24,6 +24,7 @@ import {
   UIContext,
 } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import router from '@ohos.router';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { getMainUIContextForStaticTest, waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
@@ -56,7 +57,8 @@ export default function UIContextUIObserverApiTest(): void {
       uiContext!.getUIObserver().addGlobalGestureListener(GestureListenerType.TAP, option, listener);
       let r = await waitForMainRouterForStaticTest();
       expect(r !== undefined && r !== null).assertTrue();
-      await r!.replaceUrl({ url: 'MainAbility/pages/GestureApiProbe/GestureApiProbe' });
+      let navGesture: router.RouterOptions = { url: 'MainAbility/pages/GestureApiProbe/GestureApiProbe' };
+      await r!.replaceUrl(navGesture);
       await Utils.sleep(600);
       let rect = Utils.getComponentRect('gestureTapHost');
       let cx = (rect.left + rect.right) / 2;
@@ -89,7 +91,8 @@ export default function UIContextUIObserverApiTest(): void {
       uiContext!.getUIObserver().addGlobalGestureListener(GestureListenerType.LONG_PRESS, option, listener);
       let r = await waitForMainRouterForStaticTest();
       expect(r !== undefined && r !== null).assertTrue();
-      await r!.replaceUrl({ url: 'MainAbility/pages/DragSpringLoading/DragSpringLoadingIndex' });
+      let navSpring: router.RouterOptions = { url: 'MainAbility/pages/DragSpringLoading/DragSpringLoadingIndex' };
+      await r!.replaceUrl(navSpring);
       await Utils.sleep(600);
       let rect = Utils.getComponentRect('dragSpringLoadingHost');
       let cx = (rect.left + rect.right) / 2;
