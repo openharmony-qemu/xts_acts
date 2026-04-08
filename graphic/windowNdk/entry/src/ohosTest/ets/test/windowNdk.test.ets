@@ -526,6 +526,7 @@ export default function windowNdk() {
 
           let result1 = windowNdkTest.showWindow(subWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
+          await sleep(1000)
 
           let flag: boolean = false;
           subWindow.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
@@ -586,6 +587,7 @@ export default function windowNdk() {
 
           let result1 = windowNdkTest.showWindow(dialogWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
+          await sleep(1000)
 
           let flag: boolean = false;
           dialogWindow.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
@@ -755,6 +757,7 @@ export default function windowNdk() {
           let result1 = windowNdkTest.showWindow(subWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
 
+           await sleep(1000)
            let flag: boolean = false;
           subWindow.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
             console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
@@ -814,6 +817,7 @@ export default function windowNdk() {
 
           let result1 = windowNdkTest.showWindow(dialogWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
+          await sleep(1000)
 
           let flag: boolean = false;
           dialogWindow.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
