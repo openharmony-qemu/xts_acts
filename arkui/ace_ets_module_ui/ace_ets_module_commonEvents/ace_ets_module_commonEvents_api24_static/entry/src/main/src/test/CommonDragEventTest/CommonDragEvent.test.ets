@@ -56,10 +56,15 @@ export default function CommonDragEventTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Common_DragEvent_GetDragSource_2400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await dragFromProbeHost();
-      let src = AppStorage.get<string>('de_get_drag_src');
-      let srcOk: boolean = src != null && src.length > 0;
-      expect(srcOk).assertTrue();
+      try {
+        await dragFromProbeHost();
+        let src = AppStorage.get<string>('de_get_drag_src');
+        let srcOk: boolean = src != null && src.length > 0;
+        expect(srcOk).assertTrue();
+      } catch (e) {
+        console.error('SUB_ArkUI_Common_DragEvent_GetDragSource_2400 dragFromProbeHost failed: ' + JSON.stringify(e));
+        expect().assertFail();
+      }
       done();
     });
 

@@ -43,7 +43,7 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.desc common.d.ets ClickEvent：探测页 onClick 真实回调中的 globalDisplayX/Y
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_ClickEvent_GlobalDisplayXY_1800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let rect = Utils.getComponentRect('commonEventClickHost');
@@ -66,7 +66,7 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.desc HoverEvent：真实 onHover 回调（依赖设备/输入链路能触发 hover）
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_HoverEvent_GlobalDisplayXY_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let rect = Utils.getComponentRect('commonEventHoverHost');
@@ -89,7 +89,7 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.desc MouseEvent：真实 onMouse 回调
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_MouseEvent_GlobalDisplayXY_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
@@ -115,7 +115,7 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.desc AccessibilityHoverEvent：真实 onAccessibilityHover
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_AccessibilityHoverEvent_GlobalDisplayXY_2100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
@@ -141,7 +141,7 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.desc TouchObject：真实 onTouch Down 的 changedTouches[0] globalDisplayX/Y
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_TouchObject_GlobalDisplayXY_2200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let rect = Utils.getComponentRect('commonEventTouchHost');
