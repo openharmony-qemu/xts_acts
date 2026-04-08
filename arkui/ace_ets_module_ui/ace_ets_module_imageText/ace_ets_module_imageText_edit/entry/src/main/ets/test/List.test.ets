@@ -148,6 +148,7 @@ import TextAreaPropertiesNullUndefined02Test from './TextAreaTest/TextAreaProper
 import TextAreaPropertiesNullUndefined03Test from './TextAreaTest/TextAreaPropertiesNullUndefined03.test';
 import TextAreaMethodsNullTest from './TextAreaTest/TextAreaMethodsNull.test';
 import TextAreaControllerMethodsNullTest from './TextAreaTest/TextAreaControllerMethodsNull.test';
+import TextAreaHorizontalScrollingTest from './TextAreaApi24Test/TextAreaHorizontalScrolling.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -211,6 +212,7 @@ export default function testsuite() {
   TextAreaSpecialAttrsTest()
   TextAreaTypeTest();
   TextAreaStyleTest();
+  TextAreaHorizontalScrollingTest()  // Api24
 
   // TextInputTest
   TextInputOnEditChangeJsunitTest()
