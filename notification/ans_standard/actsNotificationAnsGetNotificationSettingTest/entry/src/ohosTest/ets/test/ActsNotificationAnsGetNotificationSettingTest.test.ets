@@ -51,7 +51,7 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
       let deviceTypeInfo: string = deviceInfo.deviceType;
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        notificationManager.openNotificationSettingsWithResult(ctx).then((data) => {
+        notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
     
