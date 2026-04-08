@@ -227,7 +227,7 @@
  constexpr size_t PEN_GET_FILL_PATH_HANDLER_COUNT = 2;
  constexpr size_t PEN_RESET_HANDLER_COUNT = 3;
  constexpr size_t PEN_GET_FLOAT_HANDLER_COUNT = 8;
- constexpr size_t PEN_SET_COLOR4F_HANDLER_COUNT = 2;
+ constexpr size_t PEN_SET_COLOR4F_HANDLER_COUNT = 3;
  constexpr size_t PIXEL_MAP_HANDLER_COUNT = 10;
  constexpr size_t RECT_CREATE_DESTROY_INTERSECT_JOIN_HANDLER_COUNT = 9;
  constexpr size_t RECT_SET_GET_LEFT_TOP_RIGHT_BOTTOM_HANDLER_COUNT = 24;

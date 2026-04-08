@@ -108,6 +108,31 @@ export default function HitTest() {
         await Utils.msSleep(2000)
         done()
       })
+	  
+	    /**
+     * @tc.name   getLastHitTestStatic002
+     * @tc.number SUB_WEB_GETLASTHITTEST_STATIC_0200
+     * @tc.desc   getLastHitTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getLastHitTestStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("getLastHitTest002", 10)
+        await Utils.msSleep(2000);
+
+        let driver = Driver.create();
+        let component = await driver.findComponent(ON.text('www.example.com'));
+        if (component) {
+          await component.click();
+        }
+        Utils.registerEvent("getLastHitTest002", true, 20250314, done);
+        inspector.sendEventByKey('webGetLastHitTest', 10, '');
+        await Utils.msSleep(2000)
+        done()
+      })
 
     /**
      * @tc.name   emitonSwitchNextPage

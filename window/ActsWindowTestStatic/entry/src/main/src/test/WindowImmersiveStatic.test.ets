@@ -104,6 +104,60 @@ export default function WindowImmersiveStaticTest() {
         }
       })
 
+       /**git 
+     * @tc.number      SUB_WINDOW_IMMERSIVE_GetWindowSystemBarProperties_0100
+     * @tc.name        testGetWindowSystemBarProperties_All_001
+     * @tc.desc        setWindowSystemBarProperties all properties test.
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level3
+     */
+    it('testGetWindowSystemBarProperties_All_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testGetWindowSystemBarProperties_All_001';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          let systemBarProperties: window.SystemBarProperties = {
+            statusBarColor: '#ff00ff',
+            navigationBarColor: '#00ff00',
+            statusBarContentColor: '#ffffff',
+            navigationBarContentColor: '#00ffff',
+            enableStatusBarAnimation: true,
+            enableNavigationBarAnimation: true
+          };
+          win!.setWindowSystemBarProperties(systemBarProperties).then(() => {
+            hilog.info(domain, tag, msgStr + 'Succeeded in setting system bar properties.');
+            done();
+            let systemBarProperty = win!.getWindowSystemBarProperties();
+            hilog.info(domain, tag, msgStr + `Succeeded in getting system bar properties is:${JSON.stringify(systemBarProperty)}`);
+            expect(systemBarProperty.statusBarColor == '#ff00ff').assertTrue();
+            expect(systemBarProperty.isStatusBarLightIcon == false).assertTrue();
+            expect(systemBarProperty.statusBarContentColor =='#ffffff').assertTrue();
+            expect(systemBarProperty.navigationBarColor =='#00ff00').assertTrue();
+            expect(systemBarProperty.isNavigationBarLightIcon == false).assertTrue();
+            expect(systemBarProperty.navigationBarContentColor =='#00ffff').assertTrue();
+            expect(systemBarProperty.enableStatusBarAnimation == true).assertTrue();
+            expect(systemBarProperty.enableNavigationBarAnimation == true).assertTrue();
+          }).catch((err: Error): PromiseLike<void> | undefined => {
+            err = err as BusinessError;
+            if (err.code === 801) {
+              hilog.info(domain, tag, msgStr + 'Capability not supported.');
+              done();
+            } else {
+              hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
     /**
      * @tc.number      SUB_WINDOW_getStatusBarProperty_002
      * @tc.name        testGetStatusBarProperty_ErrorCode1300002_static_002

@@ -371,7 +371,7 @@ export const DrawingFontSetThemeFontFollowed: (caseName: number) => number;
 export const DrawingFontIsThemeFontFollowed: (caseName: number) => number;
 
 // Font GetMetrics Part2 related functions
-export const DrawingFontGetMetricsPart2: (caseName: number) => number;
+export const DrawingFontGetMetrics: (caseName: number) => number;
 
 // Font MeasureTextWithBrushOrPen related functions
 export const DrawingFontMeasureTextWithBrushOrPen: (caseName: number) => number;

@@ -941,14 +941,14 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   test_setBackgroundColor_#FF00FF00
+     * @tc.name   test_setBackgroundColor_FF00FF00Adapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3100
      * @tc.desc   test_setBackgroundColor_#FF00FF00
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_setBackgroundColor_#FF00FF00', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('test_setBackgroundColor_FF00FF00Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_setBackgroundColor_#FF00FF00";
       let result = windowNdkTest.setBackgroundColor(windowId, '#FF00FF00');
       console.info(`${caseName}: setBackgroundColor result: ${JSON.stringify(result)}`);
@@ -1056,14 +1056,14 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   test_SetBrightness_0.0
+     * @tc.name   test_SetBrightness_00Adapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3800
      * @tc.desc   test_SetBrightness_0.0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_SetBrightness_0.0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('test_SetBrightness_00Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_SetBrightness_0.0";
       let result = windowNdkTest.setBrightness(windowId, 0.0);
       console.info(`${caseName}: setBrightness result: ${JSON.stringify(result)}`);
@@ -2145,16 +2145,16 @@ export default function windowNdk() {
       })
 
     /**
-     * @tc.name   test_OH_WindowManager_registerFrameMetricsMeasuredCallback_401
-     * @tc.number test_OH_WindowManager_registerFrameMetricsMeasuredCallback_401
+     * @tc.name   test_OH_WindowManager_registerFrameMetricsMeasuredCallback1300016_0100
+     * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRICSMEASURED_0100
      * @tc.desc   OH_WindowManager_registerFrameMetricsMeasuredCallback接口注册
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_OH_WindowManager_registerFrameMetricsMeasuredCallback_401', TestType.FUNCTION |
+    it('test_OH_WindowManager_registerFrameMetricsMeasuredCallback1300016_0100', TestType.FUNCTION |
       Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        let caseName = 'test_OH_WindowManager_registerFrameMetricsMeasuredCallback_401';
+        let caseName = 'test_OH_WindowManager_registerFrameMetricsMeasuredCallback1300016_0100';
         try {
           console.info(`${caseName} start`);
           let windowClass = windowStage.getMainWindowSync();
@@ -2162,7 +2162,7 @@ export default function windowNdk() {
           console.info(`${caseName} windowId: ${windowId}`);
           let Result: number = windowNdkTest.registerFrameMetricsMeasuredCallbackNullptr(windowId);
           console.info(`${caseName} Result: ${Result}`);
-          expect(Result).assertEqual(401);
+          expect(Result).assertEqual(1300016);
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
@@ -2172,16 +2172,16 @@ export default function windowNdk() {
       })
 
     /**
-     * @tc.name   test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_401
-     * @tc.number test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_401
+     * @tc.name   test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback1300016_0100
+     * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRICSMEASURED_0200
      * @tc.desc   OH_WindowManager_UnregisterFrameMetricsMeasuredCallback接口注册
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_401', TestType.FUNCTION |
+    it('test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback1300016_0100', TestType.FUNCTION |
       Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        let caseName = 'test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_401';
+        let caseName = 'test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback1300016_0100';
         try {
           console.info(`${caseName} start`);
           let windowClass = windowStage.getMainWindowSync();
@@ -2189,7 +2189,7 @@ export default function windowNdk() {
           console.info(`${caseName} windowId: ${windowId}`);
           let Result: number = windowNdkTest.unregisterFrameMetricsMeasuredCallbackNullptr(windowId);
           console.info(`${caseName} Result: ${Result}`);
-          expect(Result).assertEqual(401);
+          expect(Result).assertEqual(1300016);
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
