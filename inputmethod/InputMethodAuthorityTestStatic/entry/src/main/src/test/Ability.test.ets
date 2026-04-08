@@ -25,6 +25,7 @@ import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import { PanelInfo, PanelFlag, PanelType } from '@ohos.inputMethod.Panel';
 import inputMethodEngine from '@ohos.inputMethodEngine';
+import InputMethodMethod from '@ohos.InputMethodSubtype';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext:common.UIAbilityContext | undefined = undefined;
@@ -402,6 +403,61 @@ export default function inputMethodAuthorityJSUnit() {
                 expect(err.code).assertEqual(12800004);
                 done();
             };
+        });
+
+        /**
+         * @tc.name   SUB_Misc_inputMethod_switchCurrentInputMethodAndSubtype_Async_static_0101
+         * @tc.number SUB_Misc_inputMethod_switchCurrentInputMethodAndSubtype_Async_static_0101
+         * @tc.desc   Test switchCurrentInputMethodAndSubtype interface with callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_Misc_inputMethod_switchCurrentInputMethodAndSubtype_Async_static_0101', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethod_switchCurrentInputMethodAndSubtype_Async_static_0101';
+            let inputM: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
+            let subtype: InputMethodMethod = inputMethod.getCurrentInputMethodSubtype();
+            let CallBack = (error: BusinessError | null, data: boolean | undefined) => {
+                if (error != null) {
+                    console.info(`${CASE_NAME} execution fail, error: [${error.code}, ${error.message}]`);
+                    expect().assertFail();
+                } else {
+                    console.info(`${CASE_NAME} execution success`);
+                    expect(data).assertEqual(true);
+                }
+                done();
+            };
+            try {
+                inputMethod.switchCurrentInputMethodAndSubtype(inputM, subtype, CallBack);
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   SUB_Misc_inputMethod_switchCurrentInputMethodAndSubtype_Promise_static_0101
+         * @tc.number SUB_Misc_inputMethod_switchCurrentInputMethodAndSubtype_Promise_static_0101
+         * @tc.desc   Test switchCurrentInputMethodAndSubtype interface with promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_Misc_inputMethod_switchCurrentInputMethodAndSubtype_Promise_static_0101', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethod_switchCurrentInputMethodAndSubtype_Promise_static_0101';
+            let inputM: inputMethod.InputMethodProperty = inputMethod.getCurrentInputMethod();
+            let subtype: InputMethodMethod = inputMethod.getCurrentInputMethodSubtype();
+            try {
+                let result: boolean = await inputMethod.switchCurrentInputMethodAndSubtype(inputM, subtype);
+                console.info(`${CASE_NAME} execution success, result: ${result}`);
+                expect(result).assertEqual(true);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
         });
 
     }) 

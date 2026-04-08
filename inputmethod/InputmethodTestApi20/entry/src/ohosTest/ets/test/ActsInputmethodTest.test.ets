@@ -24,10 +24,10 @@ export default function ActsInputmethodTest() {
      * @tc.desc   test OH_AttachOptions_IsShowKeyboard Null Pointer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('SUB_InputMethod_Imf_SDK_OH_AttachOptions_IsShowKeyboard_0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           console.info("====>SUB_InputMethod_Imf_SDK_OH_AttachOptions_IsShowKeyboard_0100 start====");
@@ -1168,10 +1168,10 @@ export default function ActsInputmethodTest() {
      * @tc.desc   test OH_TextAvoidInfo_SetPositionY Null Pointer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           console.info("====>SUB_InputMethod_Imf_SDK_OH_TextAvoidInfo_SetPositionY_4500 start====");

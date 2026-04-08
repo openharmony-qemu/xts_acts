@@ -144,5 +144,33 @@ export default function webViewController() {
       await Utils.waitAndClickComponent(driver, "WebViewControllerButton","testFileSelectorResultHandleFileList001");
     })
 
+    /**
+     * @tc.name   testFileSelectorResultHandleFileListWithNull001
+     * @tc.number SUB_WEB_FILESELECTORRESULT_HANDLEFILELIST_NULL_0100
+     * @tc.desc   test FileSelectorResult handleFileList with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFileSelectorResultHandleFileListWithNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testFileSelectorResultHandleFileListWithNull001", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testFileSelectorResultHandleFileListWithNull001", "handleFileList with null parameter executed successfully", 183170, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerButton","testFileSelectorResultHandleFileListWithNull001");
+    })
+
+    /**
+     * @tc.name   testFileSelectorResultHandleFileListWithUndefined001
+     * @tc.number SUB_WEB_FILESELECTORRESULT_HANDLEFILELIST_UNDEFINED_0100
+     * @tc.desc   test FileSelectorResult handleFileList with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFileSelectorResultHandleFileListWithUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testFileSelectorResultHandleFileListWithUndefined001", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testFileSelectorResultHandleFileListWithUndefined001", "handleFileList with undefined parameter executed successfully", 183180, done);
+      await Utils.waitAndClickComponent(driver, "WebViewControllerButton","testFileSelectorResultHandleFileListWithUndefined001");
+    })
+
   })
 }

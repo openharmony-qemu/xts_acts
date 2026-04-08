@@ -61,7 +61,7 @@ struct Child_AU {
 }
 
 // 自己声明的接口
-interface Num{
+export interface Num{
   number:number
 }
 

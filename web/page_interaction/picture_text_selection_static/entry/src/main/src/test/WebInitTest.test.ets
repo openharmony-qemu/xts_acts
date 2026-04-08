@@ -192,7 +192,7 @@ export default function WebInitTest() {
 
     /**
     * @tc.name         SwitchNextPageStatic
-    * @tc.number       SUB_WEB_SWITCH_NEXT_PAGE
+    * @tc.number       SUB_WEB_SWITCH_NEXT_PAGE_092
     * @tc.desc         test SwitchNextPageStatic
     * @tc.size         MediumTest
     * @tc.type         Function
@@ -203,7 +203,7 @@ export default function WebInitTest() {
         await Utils.msSleep(2000);
         Utils.emitEvent('SwitchNextPageStatic', 10)
         await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebOnDataResubmittedTestButton', 10, '');
+        inspector.sendEventByKey('WebInitTestButton', 10, '');
         await Utils.msSleep(3000);
         done()
       })

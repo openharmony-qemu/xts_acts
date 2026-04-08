@@ -284,6 +284,15 @@ static napi_value CreatePreviewOutput(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value CreateDeferredPreviewOutput(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    Camera_ErrorCode ret = ndkCamera_->CreateDeferredPreviewOutput();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value CreatePhotoOutput(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -2263,6 +2272,29 @@ static napi_value OHCameraManagerSetTorchMode(napi_env env, napi_callback_info i
     return result;
 }
 
+static napi_value OHCameraManagerIsTorchLevelControlSupported(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    bool code = ndkCamera_->IsTorchLevelControlSupported();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 
+static napi_value OHCameraManagerSetTorchModeOnWithLevel(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    double level;
+    napi_get_value_double(env, args[0], &level);
+    Camera_ErrorCode ret = ndkCamera_->SetTorchModeOnWithLevel(level);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value OHCaptureSessionGetExposureValue(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -2483,6 +2515,28 @@ static napi_value OHPreviewOutputGetActiveFrameRate(napi_env env, napi_callback_
     napi_create_int32(env, code, &jsValue);
     napi_set_named_property(env, activeFrameRateRange, "errorCode", jsValue);
     return activeFrameRateRange;
+}
+
+static napi_value OHPreviewOutputAddDeferredSurface(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    size_t argc = 2;
+    napi_value args[NUMBER_2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    size_t typeLen = 0;
+    char *surfaceId = nullptr;
+    napi_get_value_string_utf8(env, args[1], nullptr, 0, &typeLen);
+    surfaceId = new char[typeLen + 1];
+    napi_get_value_string_utf8(env, args[1], surfaceId, typeLen + 1, &typeLen);
+
+    Camera_ErrorCode ret = ndkCamera_->AddDeferredSurface(index, surfaceId);
+    napi_create_int32(env, ret, &result);
+    return result;
 }
 
 static napi_value OHVideoOutputGetSupportedFrameRates(napi_env env, napi_callback_info info)
@@ -3387,6 +3441,8 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "createPreviewOutputByIndex", nullptr, createPreviewOutputByIndex, nullptr, nullptr, nullptr,
             napi_default, nullptr },
+        { "createDeferredPreviewOutput", nullptr, CreateDeferredPreviewOutput, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
     };
     napi_property_descriptor desc1[] = {
         {"oHCaptureSessionRegisterCallback", nullptr, OHCaptureSessionRegisterCallback, nullptr, nullptr, nullptr,
@@ -3453,6 +3509,8 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"oHPreviewOutputDeleteProfile", nullptr, OHPreviewOutputDeleteProfile, nullptr, nullptr, nullptr, napi_default,
             nullptr},
+        {"oHPreviewOutputAddDeferredSurface", nullptr, OHPreviewOutputAddDeferredSurface, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"oHPhotoOutputGetActiveProfile", nullptr, OHPhotoOutputGetActiveProfile, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"oHPhotoOutputDeleteProfile", nullptr, OHPhotoOutputDeleteProfile, nullptr, nullptr, nullptr, napi_default,
@@ -3467,6 +3525,10 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, napi_default, nullptr},
         {"oHCameraManagerSetTorchMode", nullptr, OHCameraManagerSetTorchMode, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"oHCameraManagerIsTorchLevelControlSupported", nullptr, OHCameraManagerIsTorchLevelControlSupported,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraManagerSetTorchModeOnWithLevel", nullptr, OHCameraManagerSetTorchModeOnWithLevel,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHCaptureSessionGetExposureValue", nullptr, OHCaptureSessionGetExposureValue, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"oHCaptureSessionGetFocalLength", nullptr, OHCaptureSessionGetFocalLength, nullptr, nullptr, nullptr,

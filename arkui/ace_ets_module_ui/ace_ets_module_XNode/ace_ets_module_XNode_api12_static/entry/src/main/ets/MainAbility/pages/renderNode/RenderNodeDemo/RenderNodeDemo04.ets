@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ const renderNode = new MyRenderNode();
 renderNode.frame = { x: 100, y: 100, width: 200, height: 200 };
 renderNode.backgroundColor = 0xff0000ff.toInt();
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
   makeNode(uiContext: UIContext): FrameNode | null {
     this.rootNode = new FrameNode(uiContext);

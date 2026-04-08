@@ -75,6 +75,7 @@ enum CaseNum {
     CASE_NUM_48,
     CASE_NUM_49,
     CASE_NUM_50,
+    CASE_NUM_51,
 };
 
 using TestFn = int (*)();
@@ -89,7 +90,7 @@ template <size_t N> int DispatchByCaseNum(int caseNum, const std::array<TestFn, 
 
 static napi_value VpeImageTest(napi_env env, napi_callback_info info)
 {
-    const int nullCheckFuncSize = 51;
+    const int nullCheckFuncSize = 52;
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         static const std::array<TestFn, nullCheckFuncSize> handlers = {
@@ -118,7 +119,7 @@ static napi_value VpeImageTest(napi_env env, napi_callback_info info)
             OHOS::Media::VideoProcessingEngine::VpeImageNdk41,   OHOS::Media::VideoProcessingEngine::VpeImageNdk42,
             OHOS::Media::VideoProcessingEngine::VpeImageNdk43,   OHOS::Media::VideoProcessingEngine::VpeImageNdk44,
             OHOS::Media::VideoProcessingEngine::VpeImageNdk45,   OHOS::Media::VideoProcessingEngine::VpeImageNdk46,
-            OHOS::Media::VideoProcessingEngine::VpeImageNdk47
+            OHOS::Media::VideoProcessingEngine::VpeImageNdk47,   OHOS::Media::VideoProcessingEngine::VpeImageNdk48
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;

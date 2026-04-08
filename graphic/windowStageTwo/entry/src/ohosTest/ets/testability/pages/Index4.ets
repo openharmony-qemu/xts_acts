@@ -47,7 +47,8 @@ export struct V1ContentComponent {
     AppStorage.setOrCreate('keyboardPX2', this.windowAvoidAreaInfoPX.keyboard);
     }
     }
-    }
+  }
+
   build() {
     Row() {
       Column() {
@@ -86,6 +87,12 @@ export struct V1ContentComponent {
             this.text = value
           })
           .id('textInput')
+        Button('keyBoard监听')
+          .id('index4Btn3')
+          .onClick(()=>{
+            let windowClass = AppStorage.get('windowClass3') as window.Window;
+            windowClass.on('avoidAreaChange', this.keyboardCallback);
+          })
       }
       .width('100%')
     }

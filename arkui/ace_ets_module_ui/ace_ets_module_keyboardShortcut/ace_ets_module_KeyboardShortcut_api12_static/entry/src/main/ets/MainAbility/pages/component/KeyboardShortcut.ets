@@ -46,13 +46,13 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { RecordData } from '@ohos.base';
 
-class ButtonModifier1 implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier1 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.keyboardShortcut(FunctionKey.TAB, [ModifierKey.CTRL]);
   }
 }
 
-class ButtonModifier2 implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier2 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.keyboardShortcut(FunctionKey.DPAD_LEFT, [ModifierKey.SHIFT]);
   }

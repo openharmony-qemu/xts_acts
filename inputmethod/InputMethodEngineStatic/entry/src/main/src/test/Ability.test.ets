@@ -367,9 +367,9 @@ export default function inputMethodEngineStatic() {
          * @tc.desc   Switch current input method subtype.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('Sub_InputMethod_IME_Custom_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it('Sub_InputMethod_IME_Custom_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
             const ATTRIBUTE: inputMethod.TextConfig = {
                 inputAttribute: {
                     textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
@@ -589,6 +589,116 @@ export default function inputMethodEngineStatic() {
                 console.info(`====>${testName} errCode:${err.code}, errMessage is ${err.message}`) 
                 expect().assertFail();
                 done(); 
+            }
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IMF_attachWithUIContextPromise_static_0801
+         * @tc.number Sub_InputMethod_IMF_attachWithUIContextPromise_static_0801
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('Sub_InputMethod_IMF_attachWithUIContextPromise_static_0801', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            const CASE_NAME = '====>Sub_InputMethod_IMF_attachWithUIContextPromise_static_0801';
+            const ATTRIBUTE: inputMethod.TextConfig = {
+                inputAttribute: {
+                    textInputType: inputMethod.TextInputType.MULTILINE, enterKeyType: inputMethod.EnterKeyType.GO
+                },
+                newEditBox: false,
+                capitalizeMode: inputMethod.CapitalizeMode.SENTENCES
+            };
+            try {
+                let uiContext:UIContext = UIContext.getCallingScopeUIContext()!;
+                await inputMethod.getController().attachWithUIContext(uiContext, ATTRIBUTE);
+                console.info(`${CASE_NAME} attach success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect(error.code).assertEqual(0);
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_InputMethodState_static_0900
+         * @tc.number Sub_InputMethod_IME_InputMethodState_static_0900
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('Sub_InputMethod_IME_InputMethodState_static_0900', Level.LEVEL0, async (done: () => void) => {
+            try {
+                let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
+                console.info('====>Sub_InputMethod_IME_InputMethodState_static_0900 getSetting success');
+                let state =  await inputMethodSetting.getInputMethodState();
+                console.info('====>Sub_InputMethod_IME_InputMethodState_static_0900 state is: ' + state);
+                expect(state).assertEqual(inputMethod.EnabledState.FULL_EXPERIENCE_MODE);
+                done();
+            } catch (err) {
+                console.info(`====>Sub_InputMethod_IME_InputMethodState_static_0900 errCode:${err.code}, errMessage is ${err.message}`)
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_InputMethodState_static_0901
+         * @tc.number Sub_InputMethod_IME_InputMethodState_static_0901
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('Sub_InputMethod_IME_InputMethodState_static_0901', Level.LEVEL3, async (done: () => void) => {
+            try {
+                let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+                await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodEngine.test.static -b');
+                let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
+                console.info('====>Sub_InputMethod_IME_InputMethodState_static_0901 getSetting success');
+                let state =  await inputMethodSetting.getInputMethodState();
+                console.info(`====>Sub_InputMethod_IME_InputMethodState_static_0901 state is: ${state}`);
+                await Utils.msSleep(1000);
+                await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodEngine.test.static -f');
+                await Utils.msSleep(1000);
+                expect(state).assertEqual(inputMethod.EnabledState.BASIC_MODE);
+                done();
+            } catch (err) {
+                console.info(`====>Sub_InputMethod_IME_InputMethodState_static_0901 errCode:${err.code}, errMessage is ${err.message}`)
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_InputMethodState_static_0902
+         * @tc.number Sub_InputMethod_IME_InputMethodState_static_0902
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('Sub_InputMethod_IME_InputMethodState_static_0902', Level.LEVEL3, async (done: () => void) => {
+            try {
+                let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+                await abilityDelegator.executeShellCommand('ime -d com.acts.inputmethodEngine.test.static');
+                await Utils.msSleep(1000);
+                let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
+                console.info('====>Sub_InputMethod_IME_InputMethodState_static_0902 getSetting success');
+                let state =  await inputMethodSetting.getInputMethodState();
+                console.info(`====>Sub_InputMethod_IME_InputMethodState_static_0902 state is: ${state}`);
+                await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodEngine.test.static -f');
+                await Utils.msSleep(1000);
+                await abilityDelegator.executeShellCommand('ime -s com.acts.inputmethodEngine.test.static');
+                await Utils.msSleep(1000);
+                expect(state).assertEqual(inputMethod.EnabledState.DISABLED);
+                done();
+            } catch (err) {
+                console.info(`====>Sub_InputMethod_IME_InputMethodState_static_0902 errCode:${err.code}, errMessage is ${err.message}`)
+                expect().assertFail();
+                done();
             }
         });
 

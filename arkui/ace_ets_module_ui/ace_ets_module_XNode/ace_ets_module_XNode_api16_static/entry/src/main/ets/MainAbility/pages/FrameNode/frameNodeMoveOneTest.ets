@@ -34,7 +34,7 @@ function buildText(string: string) {
     .fontWeight(FontWeight.Bold)
 }
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public uiContext: UIContext | null = null
   public rootNode: FrameNode | null = null
   public builderRootNode: FrameNode | null = null

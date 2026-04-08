@@ -31,7 +31,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
 
 @Observed
-class MyModifier1 implements AttributeModifier<TextClockAttribute> {
+export class MyModifier1 implements AttributeModifier<TextClockAttribute> {
   public dateTimeOptionsMFlag: boolean = true;
   public fontFeatureFlag: boolean = true;
   public fontFamilyFlag: boolean = true;
@@ -59,7 +59,7 @@ class MyModifier1 implements AttributeModifier<TextClockAttribute> {
 }
 
 @Observed
-class MyModifier2 implements AttributeModifier<TextClockAttribute> {
+export class MyModifier2 implements AttributeModifier<TextClockAttribute> {
   public onDateChangeFlag: boolean = true;
   public accumulateTime: Long = 0;
 

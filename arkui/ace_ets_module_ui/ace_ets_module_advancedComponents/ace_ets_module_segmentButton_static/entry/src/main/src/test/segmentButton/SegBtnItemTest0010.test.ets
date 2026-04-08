@@ -74,7 +74,7 @@ export default function SegBtnItemTest0010() {
       }
       console.info("SegBtnItemTest0010 beforeEach end");
     });
-    afterEach(async (): Promise<void>  => {
+    afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info("SegBtnItemTest0010 after each called");
     });
@@ -132,5 +132,86 @@ export default function SegBtnItemTest0010() {
       done();
     });
 
+    /**
+     * @tc.name   SegBtnItemTest0010_002
+     * @tc.number SegBtnItemTest0010_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SegBtnItemTest0010_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[SegBtnItemTest0010_002] START');
+      await CommonFunc.sleep(1000);
+      let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[1]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+      console.info("[SegBtnItemTest0010_002] btn0.getElement('$attrs').getString(accessibilityLevel is: " +
+      JSON.stringify(btn0.getElement('$attrs').getString("accessibilityLevel")));
+      console.info("[SegBtnItemTest0010_002] btn0.getElement('$attrs').getString(accessibilityDescription is: " +
+      JSON.stringify(btn0.getElement('$attrs').getString("accessibilityDescription")));
+      expect(btn0.getElement('$attrs').getString("accessibilityLevel")).assertEqual('auto');
+      expect(btn0.getElement('$attrs').getString("accessibilityDescription")).assertEqual('email1');
+      await CommonFunc.sleep(500);
+      let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[1]
+        .getArray("$children")[2]
+        .getArray("$children")[1]
+      console.info("[SegBtnItemTest0010_002] btn1.getElement('$attrs').getString(accessibilityLevel is: " +
+      JSON.stringify(btn1.getElement('$attrs').getString("accessibilityLevel")));
+      expect(btn1.getElement('$attrs').getString("accessibilityLevel")).assertEqual('no');
+      await CommonFunc.sleep(500);
+      let btn2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[1]
+        .getArray("$children")[2]
+        .getArray("$children")[2]
+      console.info("[SegBtnItemTest0010_002] btn2.getElement('$attrs').getString(accessibilityLevel is: " +
+      JSON.stringify(btn2.getElement('$attrs').getString("accessibilityLevel")));
+      expect(btn2.getElement('$attrs').getString("accessibilityLevel")).assertEqual('yes');
+      await CommonFunc.sleep(500);
+      let btn3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[1]
+        .getArray("$children")[2]
+        .getArray("$children")[3]
+      console.info("[SegBtnItemTest0010_002] btn3.getElement('$attrs').getString(accessibilityLevel is: " +
+      JSON.stringify(btn3.getElement('$attrs').getString("accessibilityLevel")));
+      expect(btn3.getElement('$attrs').getString("accessibilityLevel")).assertEqual('no-hide-descendants');
+      await CommonFunc.sleep(500);
+      let icon0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[1]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+      console.info("[SegBtnItemTest0010_002] icon0.getElement('$attrs').getString(selectedIcon is: " +
+      JSON.stringify(icon0.getElement('$attrs').getString("src")));
+      console.info("[SegBtnItemTest0010_002] icon0.getElement('$attrs').getString(accessibilityText is: " +
+      JSON.stringify(icon0.getElement('$attrs').getString("accessibilityText")));
+      expect(icon0.getElement('$attrs').getString("src")).assertEqual('resource:///125830169.svg');
+      expect(icon0.getElement('$attrs').getString("accessibilityText")).assertEqual('email1');
+      await CommonFunc.sleep(500);
+      let icon1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[1]
+        .getArray("$children")[2]
+        .getArray("$children")[1]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+      console.info("[SegBtnItemTest0010_002] icon1.getElement('$attrs').getString(icon is: " +
+      JSON.stringify(icon1.getElement('$attrs').getString("src")));
+      console.info("[SegBtnItemTest0010_002] icon1.getElement('$attrs').getString(accessibilityText is: " +
+      JSON.stringify(icon1.getElement('$attrs').getString("accessibilityText")));
+      expect(icon1.getElement('$attrs').getString("src")).assertEqual('resource:///125830170.svg');
+      expect(icon1.getElement('$attrs').getString("accessibilityText")).assertEqual('notSelect');
+      console.info('[SegBtnItemTest0010_002] END');
+      await CommonFunc.sleep(500);
+      done();
+    });
   })
 }

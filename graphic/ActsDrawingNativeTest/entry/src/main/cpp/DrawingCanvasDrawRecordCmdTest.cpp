@@ -20,6 +20,8 @@
 #include <thread>
 #include "include/OhosCommonTest.h"
 
+#define DRAWING_NUMBER_255 255
+
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
@@ -33,14 +35,6 @@ constexpr int32_t TEST_CANVAS_HEIGHT = 100;
 constexpr int32_t THREAD_TEST_WIDTH = 2;
 constexpr int32_t THREAD_TEST_HEIGHT = 5;
 constexpr float PEN_WIDTH = 1.0f;
-constexpr uint8_t COLOR_RED_A = 0xFF;
-constexpr uint8_t COLOR_RED_R = 0xFF;
-constexpr uint8_t COLOR_RED_G = 0x00;
-constexpr uint8_t COLOR_RED_B = 0x00;
-constexpr uint8_t COLOR_GREEN_A = 0xFF;
-constexpr uint8_t COLOR_GREEN_R = 0x00;
-constexpr uint8_t COLOR_GREEN_G = 0xFF;
-constexpr uint8_t COLOR_GREEN_B = 0x00;
 } // namespace
 
 // Common SetUp and TearDown functions implementation
@@ -78,7 +72,7 @@ OH_Drawing_RecordCmd* threadFunctionTest6()
     // 创建一个画笔Pen对象，Pen对象用于形状的边框线绘制
     OH_Drawing_Pen* cPen = OH_Drawing_PenCreate();
     OH_Drawing_PenSetAntiAlias(cPen, true);
-    OH_Drawing_PenSetColor(cPen, OH_Drawing_ColorSetArgb(COLOR_RED_A, COLOR_RED_R, COLOR_RED_G, COLOR_RED_B));
+    OH_Drawing_PenSetColor(cPen, OH_Drawing_ColorSetArgb(DRAWING_NUMBER_255, DRAWING_NUMBER_255, 0, 0));
     OH_Drawing_PenSetWidth(cPen, PEN_WIDTH);
     OH_Drawing_PenSetJoin(cPen, LINE_ROUND_JOIN);
     // 将Pen画笔设置到canvas中
@@ -86,7 +80,7 @@ OH_Drawing_RecordCmd* threadFunctionTest6()
     // 创建一个画刷Brush对象，Brush对象用于形状的填充
     OH_Drawing_Brush* cBrush = OH_Drawing_BrushCreate();
     OH_Drawing_BrushSetColor(cBrush,
-                             OH_Drawing_ColorSetArgb(COLOR_GREEN_A, COLOR_GREEN_R, COLOR_GREEN_G, COLOR_GREEN_B));
+                             OH_Drawing_ColorSetArgb(DRAWING_NUMBER_255, 0, DRAWING_NUMBER_255, 0));
     // 将Brush画刷设置到canvas中
     OH_Drawing_CanvasAttachBrush(canvas, cBrush);
     drawCircle1(canvas, width);

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import { Entry, Component, Column, AttributeModifier, ListAttribute, ScrollSnapA
 import { State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 
-class ListModifier1 implements AttributeModifier<ListAttribute> {
+export class ListModifier1 implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance
       .scrollSnapAlign(ScrollSnapAlign.NONE)

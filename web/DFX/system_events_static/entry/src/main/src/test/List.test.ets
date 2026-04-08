@@ -13,6 +13,13 @@
  * limitations under the License.
  */
 import webOnFirstContentfulPaint from './WebOnFirstContentfulPaint.test'
+import webOnDataResubmitted from './WebOnDataResubmitted.test'
+import WebViewBlankScreenDetectionConfigSuite from "./WebViewBlankScreenDetectionConfig.test";
+import WebViewBypassVsyncCondition from "./WebViewBypassVsyncCondition.test";
+
 export default function testsuite() {
     webOnFirstContentfulPaint();
+    webOnDataResubmitted();
+    WebViewBlankScreenDetectionConfigSuite();
+    WebViewBypassVsyncCondition();
 }

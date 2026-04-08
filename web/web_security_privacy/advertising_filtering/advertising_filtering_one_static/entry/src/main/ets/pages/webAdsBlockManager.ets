@@ -32,7 +32,7 @@ import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-pl
 import events_emitter from '@ohos.events.emitter'
 import emitter from '@ohos.events.emitter'
 import webview from '@ohos.web.webview'
-import Utils from '../../src/test/Utils.test';
+import Utils from '../../src/test/Util.test';
 import { BusinessError, Callback, RecordData } from '@ohos.base'
 import buffer from '@ohos.buffer'
 class StringFields {
@@ -141,6 +141,34 @@ struct webAdsBlockManager {
                 }
                 break;
               }
+              case 'emitSetAdsBlockRulesEmpty': {
+                try {
+                  let isBlockedCurPageBefore: boolean = this.controller.isAdsBlockEnabledForCurPage();
+
+                  let rulePath: string = "";
+                  webview.AdsBlockManager.setAdsBlockRules(rulePath, true);
+                  Utils.deleteFile(rulePath);
+                  this.controller.refresh()
+
+                  let isBlockedCurPageAfter: boolean = this.controller.isAdsBlockEnabledForCurPage();
+                  console.log(' setAdsBlockRules true:  ');
+                  console.log(' isBlockedCurPageBefore :  ' + isBlockedCurPageBefore);
+                  console.log(' isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
+
+                  Utils.emitEvent(true, 10031)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  if(error.code == 801) {
+                    console.log(`emitSetAdsBlockRules The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
+                    this.errorCode = 801
+                    Utils.emitEvent(true, 10031)
+                  } else {
+                    Utils.emitEvent(false, 10031)
+                  }
+                }
+                break;
+              }
 
               case 'emitSetAdsBlockRules': {
                 try {
@@ -229,6 +257,34 @@ struct webAdsBlockManager {
                 break;
               }
 
+              case 'emitAddAdsBlockDisallowedListEmpty': {
+                try {
+                  let isBlockedCurPageBefore: boolean = this.controller.isAdsBlockEnabledForCurPage();
+
+
+                  let arrDomainSuffixes = new Array<string>();
+                  webview.AdsBlockManager.addAdsBlockDisallowedList(arrDomainSuffixes);
+                  this.controller.loadUrl(this.src_url)
+                  let isBlockedCurPageAfter: boolean = this.controller.isAdsBlockEnabledForCurPage();
+                  console.log(' addAdsBlockDisallowedList:  ' + this.main_url);
+                  console.log(' addAdsBlockDisallowedList: isBlockedCurPageBefore :  ' + isBlockedCurPageBefore);
+                  console.log(' addAdsBlockDisallowedList: isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
+
+                  Utils.emitEvent(true, 10061)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  if(error.code == 801) {
+                    console.log(`emitAddAdsBlockDisallowedList The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
+                    this.errorCode = 801
+                    Utils.emitEvent(true, 10061)
+                  } else {
+                    Utils.emitEvent(false, 10061)
+                  }
+                }
+                break;
+              }
+
               case 'emitRemoveAdsBlockDisallowedList': {
                 try {
                   let isBlockedCurPageBefore: boolean = this.controller.isAdsBlockEnabledForCurPage();
@@ -253,6 +309,34 @@ struct webAdsBlockManager {
                     Utils.emitEvent(true, 1007)
                   } else {
                     Utils.emitEvent(false, 1007)
+                  }
+                }
+                break;
+              }
+
+              case 'emitRemoveAdsBlockDisallowedListEmpty': {
+                try {
+                  let isBlockedCurPageBefore: boolean = this.controller.isAdsBlockEnabledForCurPage();
+
+
+                  let arrDomainSuffixes = new Array<string>();
+                  webview.AdsBlockManager.removeAdsBlockDisallowedList(arrDomainSuffixes);
+                  this.controller.loadUrl(this.src_url)
+                  let isBlockedCurPageAfter: boolean = this.controller.isAdsBlockEnabledForCurPage();
+                  console.log(' removeAdsBlockDisallowedList:  ' + this.main_url);
+                  console.log(' removeAdsBlockDisallowedList isBlockedCurPageBefore :  ' + isBlockedCurPageBefore);
+                  console.log(' removeAdsBlockDisallowedList isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
+
+                  Utils.emitEvent(true, 10071)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  if(error.code == 801) {
+                    console.log(`emitRemoveAdsBlockDisallowedList The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
+                    this.errorCode = 801
+                    Utils.emitEvent(true, 10071)
+                  } else {
+                    Utils.emitEvent(false, 10071)
                   }
                 }
                 break;
@@ -312,6 +396,34 @@ struct webAdsBlockManager {
                 break;
               }
 
+              case 'emitAddAdsBlockAllowedListEmpty': {
+                try {
+                  let isBlockedCurPageBefore: boolean = this.controller.isAdsBlockEnabledForCurPage();
+
+
+                  let arrDomainSuffixes = new Array<string>();
+                  webview.AdsBlockManager.addAdsBlockAllowedList(arrDomainSuffixes);
+                  this.controller.loadUrl(this.src_url)
+                  let isBlockedCurPageAfter: boolean = this.controller.isAdsBlockEnabledForCurPage();
+                  console.log(' addAdsBlockAllowedList:  ' + this.main_url);
+                  console.log(' addAdsBlockAllowedList: isBlockedCurPageBefore :  ' + isBlockedCurPageBefore);
+                  console.log(' addAdsBlockAllowedList: isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
+
+                  Utils.emitEvent(true, 10091)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  if(error.code == 801) {
+                    console.log(`emitAddAdsBlockAllowedList The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
+                    this.errorCode = 801
+                    Utils.emitEvent(true, 10091)
+                  } else {
+                    Utils.emitEvent(false, 10091)
+                  }
+                }
+                break;
+              }
+
               case 'emitRemoveAdsBlockAllowedList': {
                 try {
                   let isBlockedCurPageBefore: boolean = this.controller.isAdsBlockEnabledForCurPage();
@@ -336,6 +448,34 @@ struct webAdsBlockManager {
                     Utils.emitEvent(true, 1010)
                   } else {
                     Utils.emitEvent(false, 1010)
+                  }
+                }
+                break;
+              }
+
+              case 'emitRemoveAdsBlockAllowedListEmpty': {
+                try {
+                  let isBlockedCurPageBefore: boolean = this.controller.isAdsBlockEnabledForCurPage();
+
+
+                  let arrDomainSuffixes = new Array<string>();
+                  webview.AdsBlockManager.removeAdsBlockAllowedList(arrDomainSuffixes);
+                  this.controller.loadUrl(this.src_url)
+                  let isBlockedCurPageAfter: boolean = this.controller.isAdsBlockEnabledForCurPage();
+                  console.log(' removeAdsBlockAllowedList:  ' + this.main_url);
+                  console.log(' removeAdsBlockAllowedList isBlockedCurPageBefore :  ' + isBlockedCurPageBefore);
+                  console.log(' removeAdsBlockAllowedList isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
+
+                  Utils.emitEvent(true, 10101)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  if(error.code == 801) {
+                    console.log(`emitRemoveAdsBlockAllowedList The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
+                    this.errorCode = 801
+                    Utils.emitEvent(true, 10101)
+                  } else {
+                    Utils.emitEvent(false, 10101)
                   }
                 }
                 break;
@@ -422,6 +562,7 @@ struct webAdsBlockManager {
         .onAdsBlocked(( details: AdsBlockedDetails) => {
           this.testIsOnAdsBlocked = true;
           if (details) {
+            console.log('onAdsBlocked:true');
             this.testOnAdsBlockedDetails = true;
             console.log(' Blocked ' + details.adsBlocked.length + ' in ' + details.url);
           }

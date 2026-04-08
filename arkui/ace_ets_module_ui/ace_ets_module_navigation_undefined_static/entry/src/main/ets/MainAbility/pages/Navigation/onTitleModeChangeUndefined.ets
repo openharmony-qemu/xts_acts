@@ -67,7 +67,6 @@ import {
   ResourceStr,
   OptionWidthMode,
   Dimension,
-  SymbolGlyphModifier,
   Entry,
   Edge
 } from '@ohos.arkui.component'

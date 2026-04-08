@@ -160,7 +160,8 @@ struct IndexPage {
     { title: 'AdvancedBlendMode', uri: 'pages/ArkUI/AdvancedBlendMode' },
     { title: 'PluginComponentTest', uri: 'pages/ArkUI/PluginComponentTest' },
     { title: 'CapiDragDrop', uri: 'pages/ArkUI/CapiDragDropTest' },
-    { title: 'SegmentButtonOptions', uri: 'pages/ArkUI/SegmentButtonOptions' },
+    { title: 'CapionDigitalCrown', uri: 'pages/ArkUI/CapionDigitalCrown' },
+
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

@@ -30,7 +30,7 @@ class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
-    windowStage.loadContent('pages/ClearPrefetchedResourceTest', (err: BusinessError<void> | null): void => {
+    windowStage.loadContent('pages/WebBlanklessErrorCode', (err: BusinessError<void> | null): void => {
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
       if (err?.code) {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');

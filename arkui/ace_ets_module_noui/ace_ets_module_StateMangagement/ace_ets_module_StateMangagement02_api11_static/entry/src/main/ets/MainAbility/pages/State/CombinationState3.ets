@@ -34,7 +34,7 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-class SubClass4 {
+export class SubClass4 {
   public value: number;
 
   constructor(value: number) {
@@ -43,7 +43,7 @@ class SubClass4 {
 }
 
 @Observed
-class ClassA3 {
+export class ClassA3 {
   public value: number;
   public sum: SubClass4 = new SubClass4(1) ;
   constructor(value: number, sum: SubClass4) {

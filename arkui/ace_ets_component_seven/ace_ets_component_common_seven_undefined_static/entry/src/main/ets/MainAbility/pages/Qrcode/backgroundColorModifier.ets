@@ -8,7 +8,7 @@ import { QRCodeAttribute,ResourceColor, Color, QRCode, Entry, Text, Column, Comp
 
 
 @Observed
-class MyEnableModifier implements AttributeModifier<QRCodeAttribute> {
+export class MyEnableModifier implements AttributeModifier<QRCodeAttribute> {
   public change: boolean | undefined = true;
   public backgroundColor_:ResourceColor | undefined = Color.Orange
 

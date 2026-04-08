@@ -258,7 +258,7 @@ export default function NewEAWorkerTes2() {
             const worker = new EAWorker(`${TAG} loop-${i}`);
             worker.start();
             expect(worker.isAlive()).assertTrue();
-            worker.run(() => {
+            worker.run<void>(() => {
               console.info(`${TAG} run-${i}`);
             });
             worker.quit();

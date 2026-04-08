@@ -318,14 +318,14 @@ export default function QueueTest() {
     });
 
     /**
-     * @tc.name   testQueueSymbol.iterator0012
+     * @tc.name   testQueueSymboliterator0012Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_[SYMBOL.ITERATOR]_1200
      * @tc.desc   Testing Queue [Symbol.iterator] by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testQueueSymbol.iterator0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testQueueSymboliterator0012Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueueSymbol.iterator0012";
       try {
         let queue: Queue<number | string | object> = new Queue();

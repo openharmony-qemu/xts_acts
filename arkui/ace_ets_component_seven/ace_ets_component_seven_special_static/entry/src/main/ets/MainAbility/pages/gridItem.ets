@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@ import { Entry, Component, Column, AttributeModifier, GridItemAttribute, Color, 
   Alignment, TextAlign, TextOverflow, Flex, ColumnOptions, Text, Grid, GridItem } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-class GridItemGridModifier1 implements AttributeModifier<GridItemAttribute> {
+export class GridItemGridModifier1 implements AttributeModifier<GridItemAttribute> {
   applyNormalAttribute(instance: GridItemAttribute): void {
     instance
       .selected(true)

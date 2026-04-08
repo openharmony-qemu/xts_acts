@@ -289,7 +289,7 @@ function copyAllWavFile(): boolean {
 
 export default function OhRendererTest() {
 
-  describe('OhRendererTest', () => {
+  describe('OhRendererTestAdapt001', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
       let context = getContext();

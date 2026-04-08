@@ -593,6 +593,7 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test start`);
       try {
         let slotId: number = 0;
+        await sim.activateSim(slotId);
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectTrue(data);
@@ -619,6 +620,7 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test start`);
       try {
         let slotId: number = 1;
+        await sim.activateSim(slotId);
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}`);
           ExpectTrue(data);
@@ -644,7 +646,7 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0500';
       console.info(`${caseName} test start`);
       try {
-        let slotId: number = 2;
+        let slotId: number = 3;
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}`);
           ExpectFail();

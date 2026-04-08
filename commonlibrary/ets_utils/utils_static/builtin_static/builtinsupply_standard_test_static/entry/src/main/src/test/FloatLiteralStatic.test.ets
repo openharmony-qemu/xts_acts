@@ -575,7 +575,7 @@ export default function BuiltinsFloatLiteralTest() {
       const caseName = 'BuiltinsFloatLiteralTest2200';
       console.log(`${caseName} test start`);
       const numbers = [1.2, 2.3, 3.4, 4.5, 5.6];
-      const sum = numbers.reduce((acc, num) => acc + num, 0);
+      const sum = numbers.reduce((acc, num) => acc + num, 0.);
       const average = sum / numbers.length;
       console.log(`${average}`);
       expect(3.4).assertEqual(average);

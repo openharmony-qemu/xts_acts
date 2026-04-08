@@ -74,7 +74,7 @@ export default function IndexedCollections04Test() {
       async (done: () => void): Promise<void> => {
         console.log('test_TypedArray_ReduceSum_0002 start');
         const int16: Int16Array = new Int16Array([10, 20, 30, 40]);
-        const sum: number = int16.reduce((acc, val) => acc + val, 0);
+        const sum: number = int16.reduce((acc, val) => acc + val, 0.);
         let result: boolean = sum === 100;
         expect(result).assertTrue();
 
@@ -94,7 +94,7 @@ export default function IndexedCollections04Test() {
       async (done: () => void): Promise<void> => {
         console.log('test_TypedArray_ReduceRightProduct_0003 start');
         const uint32: Uint32Array = new Uint32Array([2, 3, 4]);
-        const product: number = uint32.reduceRight((acc, val) => acc * val, 1);
+        const product: number = uint32.reduceRight((acc, val) => acc * val, 1.);
         let result: boolean = product === 24;
         expect(result).assertTrue();
 

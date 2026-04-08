@@ -421,7 +421,7 @@ export default function SingleKvStoreErrCodeTest(){
         if(kvManager){
           await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
           console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0770 Succeeded in closeKVStore');
-          await kvManager!.getKVStore(TEST_STORE_ID, options1);
+          await kvManager!.getKVStore<Any>(TEST_STORE_ID, options1);
           console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0770 Succeeded in getKVStore1');
           console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0770 options1:' + JSON.stringify(options1));
           expect().assertFail()
@@ -457,7 +457,7 @@ export default function SingleKvStoreErrCodeTest(){
         if(kvManager){
           await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
           console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0780 Succeeded in closeKVStore');
-          kvManager!.getKVStore(TEST_STORE_ID, options1, (err: BusinessError | null) => {
+          kvManager!.getKVStore<Any>(TEST_STORE_ID, options1, (err: BusinessError | null) => {
             waitForCompletion(async () => {
               if (err) {
                 console.error(TAG + `SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0780 Failed to get KVStore.code is ${err.code},message is ${err.message}`);

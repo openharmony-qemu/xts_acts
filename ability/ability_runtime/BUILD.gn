@@ -136,6 +136,7 @@ group("ability_runtime") {
       "appclone:appclonetest",
       "capiabilityruntime:ActsCapiAbilityRuntimeTest",
       "capichildprocess:ActsCapiChildProcessTest",
+      "capicontext:ActsCapiContextTest",
       "context:context",
       "contextprocessname:contextprocessname",
       "fa:fa",

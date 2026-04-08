@@ -22,7 +22,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyModifier implements AttributeModifier<TextAttribute> {
+export class MyModifier implements AttributeModifier<TextAttribute> {
   public isUndefined: boolean = true;
   public cnt: int = 0;
 

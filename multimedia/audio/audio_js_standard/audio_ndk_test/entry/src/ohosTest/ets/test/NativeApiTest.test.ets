@@ -5582,5 +5582,47 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
+    /**
+    * @tc.name   AudioStreamManagerIsMultichannelPlaybackSupported_001
+    * @tc.number AudioStreamManagerIsMultichannelPlaybackSupported_001
+    * @tc.desc   IsMultichannelPlayback
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AudioStreamManagerIsMultichannelPlaybackSupported_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamManagerIsMultichannelPlaybackSupported_001();
+      console.info(`AudioStreamManagerIsMultichannelPlaybackSupported_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+    * @tc.name   AudioStreamManagerIsDirectPlaybackSupported_001
+    * @tc.number AudioStreamManagerIsDirectPlaybackSupported_001
+    * @tc.desc   IsDirectPlaybackSupported
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AudioStreamManagerIsDirectPlaybackSupported_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamManagerIsDirectPlaybackSupported_001();
+      console.info(`Tag: AudioStreamManagerIsDirectPlaybackSupported_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+    * @tc.name   AudioStreamManagerIsOffloadPlaybackSupported_001
+    * @tc.number AudioStreamManagerIsOffloadPlaybackSupported_001
+    * @tc.desc   IsOffloadPlaybackSupported_001
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AudioStreamManagerIsOffloadPlaybackSupported_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.AudioStreamManagerIsOffloadPlaybackSupported_001();
+      console.info(`Tag: AudioStreamManagerIsOffloadPlaybackSupported_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })    
   })
 }

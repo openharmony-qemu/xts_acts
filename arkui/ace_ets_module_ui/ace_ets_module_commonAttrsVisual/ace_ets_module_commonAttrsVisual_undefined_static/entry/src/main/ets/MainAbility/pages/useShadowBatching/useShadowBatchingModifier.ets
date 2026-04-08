@@ -27,7 +27,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyColumnAttributeModifier implements AttributeModifier<ColumnAttribute> {
+export class MyColumnAttributeModifier implements AttributeModifier<ColumnAttribute> {
   @State public isChange: boolean = true
 
   applyNormalAttribute(instance: ColumnAttribute): void {

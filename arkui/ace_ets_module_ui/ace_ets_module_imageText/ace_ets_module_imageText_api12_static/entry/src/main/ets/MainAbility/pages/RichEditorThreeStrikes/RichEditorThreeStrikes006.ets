@@ -63,7 +63,7 @@ struct RichEditorThreeStrikes006 {
     fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Normal
   })
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString('123456',
     [{ start: 0, length: 6, styledKey: StyledStringKey.FONT, styledValue: this.fontStyle1 }]);

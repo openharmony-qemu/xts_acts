@@ -1,7 +1,7 @@
 'use static'
 
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import { UIUtils, Local, Trace, ObservedV2, IMonitor, IMonitorDecoratedVariable,
 import { ComponentV2, Entry, Column, Row, Button, Scroll, ForEach, Text, Divider, DatePicker, TextAlign, Margin } from '@ohos.arkui.component';
 //二维数组
 @ObservedV2
-class MatrixData {
+export class MatrixData {
   @Trace public data: int[][]
   public dataMonitor?: IMonitorDecoratedVariable;
   public data1Monitor?: IMonitorDecoratedVariable;

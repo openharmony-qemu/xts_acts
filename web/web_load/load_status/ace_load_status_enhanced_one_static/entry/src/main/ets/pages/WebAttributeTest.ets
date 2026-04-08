@@ -19,7 +19,7 @@ import emitter from '@ohos.events.emitter';
 import { BusinessError, RecordData } from '@ohos.base';
 import { State } from "@ohos.arkui.stateManagement"
 import { Callback } from '@ohos.base'
-import { OnPageBeginEvent,OnPageEndEvent,OnProgressChangeEvent,Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
+import { OnRefreshAccessedHistoryEvent,OnPageVisibleEvent,OnLoadStartedEvent,OnLoadFinishedEvent,OnPageBeginEvent,OnPageEndEvent,OnProgressChangeEvent,Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
 
 class StringFields {
   public str: string = '';
@@ -35,6 +35,9 @@ struct WebAttributeTest{
   @State progress: string = ""
   @State pageBegin: string = ""
   @State pageEnd: string = ""
+  @State loadStarted: string = ""
+  @State loadFinished: string = ""
+  @State pageVisible: string = ""
 
   aboutToAppear() {
     console.info('Entry aboutToAppear');
@@ -85,6 +88,36 @@ struct WebAttributeTest{
                 }
                 break;
               }
+              case "emitOnLoadStarted001": {
+                try {
+                  setTimeout(() => {
+                    Utils.emitEvent(this.loadStarted, 20260318)
+                  }, 3000)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+              case "emitOnLoadFinished001": {
+                try {
+                  setTimeout(() => {
+                    Utils.emitEvent(this.loadFinished, 20260319)
+                  }, 3000)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+              case "emitOnPageVisible003": {
+                try {
+                  setTimeout(() => {
+                    Utils.emitEvent(this.pageVisible, 20260320)
+                  }, 3000)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
             }
           })
 
@@ -117,6 +150,24 @@ struct WebAttributeTest{
               console.log("onPageEnd==> event.url:" + event.url)
               console.log("onPageEnd==> this.pageEnd:" + this.pageEnd)
             }
+          })
+          .onLoadStarted((event:OnLoadStartedEvent):void => {
+            if (event) {
+              this.loadStarted = event.url
+              console.log("onLoadStarted==> event.url:" + event.url)
+              console.log("onLoadStarted==> this.loadStarted:" + this.loadStarted)
+            }
+          })
+          .onLoadFinished((event:OnLoadFinishedEvent):void => {
+            if (event) {
+              this.loadFinished = event.url
+              console.log("onLoadFinished==> event.url:" + event.url)
+              console.log("onLoadFinished==> this.loadFinished:" + this.loadFinished)
+            }
+          })
+          .onPageVisible((event: OnPageVisibleEvent): void => {
+            this.pageVisible = event.url
+            console.info('onPageVisible url:' + event.url);
           })
       }
       .width('100%')

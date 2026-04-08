@@ -115,9 +115,9 @@ export default function inputMethodNoAttachTest() {
          * @tc.desc   Test updateCursor interface with callback
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('SUB_Misc_inputMethodController_updateCursor_Async_static_0101', Level.LEVEL2, async (done: () => void) => {
+        it('SUB_Misc_inputMethodController_updateCursor_Async_static_0101', Level.LEVEL0, async (done: () => void) => {
             const CASE_NAME: string = 'SUB_Misc_inputMethodController_updateCursor_Async_static_0101';
             let inputMethodCtrl: inputMethod.InputMethodController = inputMethod.getController();
             let cursorInfo: inputMethod.CursorInfo = {

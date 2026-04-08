@@ -898,5 +898,68 @@ export default function applicationManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_0100
+     * @tc.desc   test addAllowedNotificationBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0100
+     * @tc.desc   test removeAllowedNotificationBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAllowedNotificationBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDNOTIFICATIONBUNDLES_0100
+     * @tc.desc   test getAllowedNotificationBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllowedNotificationBundles_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.getAllowedNotificationBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
   })
 }

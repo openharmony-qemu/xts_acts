@@ -62,7 +62,7 @@ interface Dta2 {
   type: DataOperationType
   index: Start
 }
-class BasicDataSource implements IDataSource<string> {
+export class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];
 
@@ -96,7 +96,7 @@ class BasicDataSource implements IDataSource<string> {
   }
 }
 
-class MyDataSource extends BasicDataSource {
+export class MyDataSource extends BasicDataSource {
   public dataArray: string[] = [];
 
   public totalCount(): int {

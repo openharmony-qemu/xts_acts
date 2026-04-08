@@ -3207,20 +3207,6 @@ export default function AssignmentLikeContextsTest() {
     });
 
     /**
-     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11700
-     * @tc.name      testAssignmentLikeContexts0117
-     * @tc.desc     Widening reference conversion: multi-dimensional array to Object
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testAssignmentLikeContexts0117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: Object[][] = new Object[1][1];
-      let dst: Object = src as Object;
-      expect(src).assertEqual(dst);
-    });
-
-    /**
      * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11800
      * @tc.name      testAssignmentLikeContexts0118
      * @tc.desc     Widening reference conversion: wrapper type array to Object

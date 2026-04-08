@@ -30,6 +30,7 @@ class StringFields {
 struct webViewControllerPart2 {
   stringObj: StringFields  = new StringFields ();
   controller: webView.WebviewController = new webView.WebviewController(undefined);
+  controllerOne: webView.WebviewController = new webView.WebviewController(undefined);
   @State str: string = ''
   @State javaScriptAccess: boolean = true
   @State numberOfMatches: number = 0
@@ -106,6 +107,41 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               break;
             }
 
+            case 'testSearchAllAsync002': {
+              try {
+                this.numberOfMatches = 0
+                console.info('searchAllAsync start')
+                this.controller.searchAllAsync('');
+                console.info('searchAllAsync finish' + this.numberOfMatches)
+                setTimeout(() => {
+                  Utils.emitEvent(this.numberOfMatches, 370121)
+                }, 2000)
+
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'testSearchAllAsync003': {
+              try {
+                this.numberOfMatches = 0
+                console.info('searchAllAsync start')
+                this.controllerOne.searchAllAsync('Hello World');
+                console.info('searchAllAsync finish' + this.numberOfMatches)
+                setTimeout(() => {
+                  Utils.emitEvent(this.numberOfMatches, 370122)
+                }, 2000)
+
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 370122);
+              }
+              break;
+            }
+
           }
         })
       }
@@ -125,4 +161,3 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
     }
   }
 }
-

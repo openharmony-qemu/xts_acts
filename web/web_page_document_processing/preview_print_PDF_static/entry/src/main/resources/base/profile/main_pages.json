@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/WebInitTest",
-    "pages/createPdf"
+    "pages/createPdf",
+    "pages/WebViewOnPdfLoadEvent"
   ]
 }

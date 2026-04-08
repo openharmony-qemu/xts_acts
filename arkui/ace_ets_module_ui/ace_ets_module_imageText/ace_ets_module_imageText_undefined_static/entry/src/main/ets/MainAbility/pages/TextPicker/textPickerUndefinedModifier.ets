@@ -22,7 +22,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import { Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<TextPickerAttribute> {
+export class MyModifier implements AttributeModifier<TextPickerAttribute> {
   public textStyleValue: TextPickerTextStyle = { font: {
     size: '30.00fp',
     weight: FontWeight.Regular

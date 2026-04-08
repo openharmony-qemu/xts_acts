@@ -44,7 +44,7 @@ interface Dta {
   type: DataOperationType
   index: number
 }
-class BasicDataSourceA implements IDataSource<string> {
+export class BasicDataSourceA implements IDataSource<string> {
   private listeners: DataChangeListener[] = new Array<DataChangeListener>();
   private originDataArray: string[] = new Array<string>();
 
@@ -78,7 +78,7 @@ class BasicDataSourceA implements IDataSource<string> {
   }
 }
 
-class MyDataSourceA extends BasicDataSourceA {
+export class MyDataSourceA extends BasicDataSourceA {
   public dataArray: string[] = new Array<string>();
 
   public totalCount(): int {

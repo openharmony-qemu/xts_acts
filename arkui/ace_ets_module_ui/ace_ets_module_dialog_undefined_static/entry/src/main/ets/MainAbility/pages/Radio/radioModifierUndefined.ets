@@ -74,7 +74,7 @@ function buildRadio(config: RadioConfiguration) {
 }
 
 @Observed
-class MyModifier1 implements AttributeModifier<RadioAttribute> {
+export class MyModifier1 implements AttributeModifier<RadioAttribute> {
   public isUndefined1: boolean = true;
   public isUndefined2: boolean = true;
   public isUndefined3: boolean = true;

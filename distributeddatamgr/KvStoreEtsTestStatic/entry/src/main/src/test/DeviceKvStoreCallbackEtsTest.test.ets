@@ -115,7 +115,7 @@ export default function deviceKvStoreCallbackTest() {
       }
 
       kvManager = factory.createKVManager(config)
-      await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
+      await kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
         kvStore = store;
         console.info('beforeAll getKVStore for getDeviceId success');
       }).catch((err:Error) => {

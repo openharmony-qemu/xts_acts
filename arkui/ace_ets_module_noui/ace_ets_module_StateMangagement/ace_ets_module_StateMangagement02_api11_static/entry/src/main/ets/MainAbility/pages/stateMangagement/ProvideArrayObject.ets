@@ -58,7 +58,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Observed
-class MyProvideObject {
+export class MyProvideObject {
   public id: number = 1
   public value: string = ''
 

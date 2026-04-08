@@ -31,7 +31,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyRatingModifier implements AttributeModifier<RatingAttribute> {
+export class MyRatingModifier implements AttributeModifier<RatingAttribute> {
   @State public stars: int | undefined = undefined;
   @State public flag: Boolean = true;
   @State public rating: Int = 3;

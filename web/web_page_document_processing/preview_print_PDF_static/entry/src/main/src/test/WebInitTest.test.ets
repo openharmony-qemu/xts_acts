@@ -76,12 +76,88 @@ export default function webInitTest() {
       Utils.registerEvent('testSetPrintBackgroundOne', false, 214, done);
 	  await Utils.msSleep(4000);
 	  inspector.sendEventByKey('WebInitTestButton', 10, '');
-	  await Utils.msSleep(12000);
+      await Utils.msSleep(4000);
+      done();
+      })
+
+    /**
+     * @tc.name   testSetPrintBackgroundOneStatic002
+     * @tc.number SUB_WEB_SETPRINRBACKGROUNDONE_STATIC_002
+     * @tc.desc   test deleteAllGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetPrintBackgroundOneStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(4000);
+      Utils.emitEvent('emitSetPrintBackgroundStatic002', 10)
+      await Utils.msSleep(4000);
+      Utils.registerEvent('testSetPrintBackgroundOneStatic002', true, 202603251, done);
+      await Utils.msSleep(4000);
+      inspector.sendEventByKey('WebInitTestButton', 10, '');
+      await Utils.msSleep(4000);
+      done();
+    })
+
+    /**
+     * @tc.name   testSetPrintBackgroundOneStatic03
+     * @tc.number SUB_WEB_SETPRINRBACKGROUNDONE_STATIC_003
+     * @tc.desc   test deleteAllGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetPrintBackgroundOneStatic03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(4000);
+      Utils.emitEvent('emitSetPrintBackgroundStatic003', 10)
+      await Utils.msSleep(4000);
+      Utils.registerEvent('testSetPrintBackgroundOneStatic003', "17100001", 202603252, done);
+      await Utils.msSleep(4000);
+      inspector.sendEventByKey('WebInitTestButton', 10, '');
+      await Utils.msSleep(10000);
+      done();
+    })
+
+    /**
+     * @tc.name   testOptimizeParserBudgetStatic
+     * @tc.number SUB_WEB_OPTIMIZEPARSERBUDGET_STATIC_001
+     * @tc.desc   test OptimizeParserBudget
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOptimizeParserBudgetStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(4000);
+      Utils.emitEvent('emitOptimizeParserBudgetStatic', 10)
+      await Utils.msSleep(4000);
+      Utils.registerEvent('testOptimizeParserBudgetStatic', true, 133826326, done);
+      await Utils.msSleep(4000);
+      inspector.sendEventByKey('WebInitTestButton', 10, '');
+      await Utils.msSleep(10000);
+      done();
+    })
+
+    /**
+     * @tc.name   testWebViewNotRespondingReasonStatic001
+     * @tc.number SUB_WEB_NAVIGATION_COMMIT_TIMEOUT_0200
+     * @tc.desc   test RenderProcessNotRespondingReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebViewNotRespondingReasonStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(4000);
+      Utils.emitEvent('emitWebViewNotRespondingReason_INPUT_TIMEOUT', 10)
+      await Utils.msSleep(4000);
+      Utils.registerEvent('testWebViewNotRespondingReasonStatic001', 0, 133826325, done);
+      await Utils.msSleep(4000);
+      inspector.sendEventByKey('WebInitTestButton', 10, '');
+      await Utils.msSleep(12000);
       Utils.emitEvent("emitonSwitchNextPage", 10)
       await Utils.msSleep(5000);
       inspector.sendEventByKey('WebInitTestButton', 10, '');
       await Utils.msSleep(10000);
       done();
-      })
+    })
   })
 }

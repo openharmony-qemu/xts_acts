@@ -84,5 +84,47 @@ export default function HitTest() {
         done()
       })
 
+    /**
+     * @tc.name   onLoadInterceptEventDataStatic001
+     * @tc.number onLoadInterceptEventDataTest001
+     * @tc.desc   test onLoadInterceptEventDataTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('onLoadInterceptEventDataStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("onLoadInterceptEventDataTest001", 10)
+        await Utils.msSleep(2000);
+
+        let driver = Driver.create();
+        let component = await driver.findComponent(ON.text('www.example.com'));
+        if (component) {
+          await component.click();
+        }
+        Utils.registerEvent("onLoadInterceptEventDataStatic001", "https://www.example.com/", 202503131, done);
+        inspector.sendEventByKey('webGetLastHitTest', 10, '');
+        await Utils.msSleep(2000)
+        done()
+      })
+
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number emitonSwitchNextPage
+     * @tc.desc   emitonSwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitonSwitchNextPage', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webGetLastHitTest', 10, '');
+        await Utils.msSleep(5000)
+        done();
+      })
+
   })
 }

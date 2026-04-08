@@ -1187,7 +1187,7 @@ export default function promiseThenTest() {
         .then((vals: number[]) => {
           vals.forEach(v => { parallelResults.push(v) });
           return new Promise<number>((resolve) => {
-            setTimeout(() => resolve(vals.reduce((a, b) => a + b, 0)), 10);
+            setTimeout(() => resolve(vals.reduce((a, b) => a + b, 0.)), 10);
           });
         });
 
@@ -1254,7 +1254,7 @@ export default function promiseThenTest() {
           .then((ids: number[]) => {
             return new Promise<number>((resolve) => {
               setTimeout(() => {
-                resolve(ids.reduce((a, b) => a + b, 0));
+                resolve(ids.reduce((a, b) => a + b, 0.));
               }, 10);
             });
           }));

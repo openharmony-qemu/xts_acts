@@ -58,7 +58,7 @@ function buildComponent() {
   TestComponent()
 }
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
   private builderNode: BuilderNode<[]> | null = null;
   public childrenCount: number = 0;

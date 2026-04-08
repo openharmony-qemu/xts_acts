@@ -77,9 +77,9 @@ export default function inputMethodNamespaceTest() {
          * @tc.desc   Test getDefaultInputMethod interface
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL0
          */
-        it('SUB_Misc_inputMethod_getDefaultInputMethod_static_0100', Level.LEVEL1, async (done: () => void) => {
+        it('SUB_Misc_inputMethod_getDefaultInputMethod_static_0100', Level.LEVEL0, async (done: () => void) => {
             const CASE_NAME: string = 'SUB_Misc_inputMethod_getDefaultInputMethod_static_0100';
             try {
                 let defaultIme: inputMethod.InputMethodProperty = inputMethod.getDefaultInputMethod();
@@ -528,6 +528,8 @@ export default function inputMethodNamespaceTest() {
             expect(inputMethodEngine.SecurityMode.BASIC === 0).assertTrue();
             console.info(`${CASE_NAME} CapitalizeMode.CHARACTERS: ${inputMethodEngine.CapitalizeMode.CHARACTERS}`);
             expect(inputMethodEngine.CapitalizeMode.CHARACTERS === 3).assertTrue();
+            console.info(`${CASE_NAME} CapitalizeMode.NONE: ${inputMethodEngine.CapitalizeMode.NONE}`);
+            expect(inputMethodEngine.CapitalizeMode.NONE === 0).assertTrue();
             done();
         });
 
@@ -710,5 +712,36 @@ export default function inputMethodNamespaceTest() {
  	        expect(typeof(ATTRIBUTE.capitalizeMode)).assertEqual('int');
  	        done();
  	    });
+
+        /**
+         * @tc.name   Sub_InputMethod_IMF_EasyConnStatic_0800
+         * @tc.number SUB_INPUTMETHOD_IMF_EASYCONNSTATIC_0800
+         * @tc.desc   Test onAttachmentDidFail interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IMF_EasyConnStatic_0800', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'Sub_InputMethod_IMF_EasyConnStatic_0800';
+            let callback: (reason: inputMethod.AttachFailureReason) => void = (reason: inputMethod.AttachFailureReason): void => {
+                console.info(`${CASE_NAME} attachment failed, reason: ${reason}`);
+            };
+            let callback1: (reason: inputMethod.AttachFailureReason) => void = (reason: inputMethod.AttachFailureReason): void => {
+                console.info(`${CASE_NAME} attachment failed, reason1: ${reason}`);
+            };
+            try {
+                inputMethod.onAttachmentDidFail(callback);
+                console.info(`${CASE_NAME} onAttachmentDidFail success`);
+                inputMethod.onAttachmentDidFail(callback1);
+                console.info(`${CASE_NAME} onAttachmentDidFail1 success`);
+                inputMethod.offAttachmentDidFail(callback);
+                console.info(`${CASE_NAME} offAttachmentDidFail success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
     })
 }

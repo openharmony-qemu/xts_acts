@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 import { Entry, Component, Column, AttributeModifier, TextPickerAttribute, TextPicker, FontWeight, PickerTextStyle, Color } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
-class TextPickerModifier1 implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier1 implements AttributeModifier<TextPickerAttribute> {
   disappearTextStyle: PickerTextStyle = { color: Color.Black, font: { size: 8, weight: FontWeight.Lighter } }
   textStyle: PickerTextStyle = { color: Color.Red, font: { size: '10px', weight: FontWeight.Normal } }
   selectedTextStyle: PickerTextStyle = { color: Color.Blue, font: { size: '20px', weight: FontWeight.Bold } }

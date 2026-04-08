@@ -174,7 +174,7 @@ class AsyncDataProcessor {
   }
 
   private async calculateSum(): Promise<number> {
-    return await Promise.resolve(this.data.reduce((sum, num) => sum + num, 0));
+    return await Promise.resolve(this.data.reduce((sum, num) => sum + num, 0.));
   }
 
   private async calculateAverage(): Promise<number> {

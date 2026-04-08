@@ -72,10 +72,8 @@ class SingletonIterator implements Iterator<int> {
   }
 
   next(): IteratorResult<int> {
-    return {
-      done: this.index >= this.base.data.length,
-      value: this.index >= this.base.data.length ? undefined : this.base.data[this.index++]
-    }
+    return new IteratorResult<int>(this.index >= this.base.data.length,
+      this.index >= this.base.data.length ? undefined : this.base.data[this.index++]);
   }
 }
 

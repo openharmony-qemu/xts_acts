@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,264 +37,257 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, RichText, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mBackgroundColor: int | string = 0
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-    console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
-    instance.backgroundColor(this.mBackgroundColor)
-  }
-}
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
@@ -315,238 +308,238 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
@@ -595,7 +588,6 @@ struct BackroundColorPage {
   
   @State _backgroundColorFormComponentMod: FormComponentModifier = new FormComponentModifier()
   
-  @State _backgroundColorFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _backgroundColorGaugeMod: GaugeModifier = new GaugeModifier()
   @State _backgroundColorGridMod: GridModifier = new GridModifier()
   @State _backgroundColorGridColMod: GridColModifier = new GridColModifier()
@@ -704,7 +696,6 @@ struct BackroundColorPage {
       this._backgroundColorFlexMod.mBackgroundColor = value.backgroundColor
       this._backgroundColorFlowItemMod.mBackgroundColor = value.backgroundColor
       this._backgroundColorFormComponentMod.mBackgroundColor = value.backgroundColor
-      this._backgroundColorFormLinkMod.mBackgroundColor = value.backgroundColor
       this._backgroundColorGaugeMod.mBackgroundColor = value.backgroundColor
       this._backgroundColorGridMod.mBackgroundColor = value.backgroundColor
       this._backgroundColorGridColMod.mBackgroundColor = value.backgroundColor

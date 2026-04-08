@@ -503,7 +503,7 @@ export default function typeArrayUint32ArrayTest() {
     it('TypeArrayUint32Array026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
         const arr = new Uint32Array([10, 20, 30, 40]);
-        const sum = arr.reduce((acc, val) => acc + val, 0);
+        const sum = arr.reduce((acc, val) => acc + val, 0.);
         expect(sum).assertEqual(100);
       })
 
@@ -518,7 +518,7 @@ export default function typeArrayUint32ArrayTest() {
     it('TypeArrayUint32Array027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
         const arr = new Uint32Array([4294967290, 10]);
-        const sum = arr.reduce((acc, val) => acc + val, 0);
+        const sum = arr.reduce((acc, val) => acc + val, 0.);
         expect(sum).assertEqual(4294967300);
         expect(sum > 4294967295).assertEqual(true);
       })
@@ -1050,7 +1050,7 @@ export default function typeArrayUint32ArrayTest() {
     it('TypeArrayUint32Array055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
         const arr = new Uint32Array([1000, 2000, 3000, 4000]);
-        const sum = arr.reduce((acc, val) => acc + (val / 1000), 0);
+        const sum = arr.reduce((acc, val) => acc + (val / 1000), 0.);
         expect(sum).assertEqual(10);
       })
 
@@ -1435,7 +1435,7 @@ export default function typeArrayUint32ArrayTest() {
     it('TypeArrayUint32Array081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
         const arr = new Uint32Array([10, 20, 30, 40]);
-        const sum = arr.reduceRight((acc, val) => acc + val, 0);
+        const sum = arr.reduceRight((acc, val) => acc + val, 0.);
         expect(sum).assertEqual(100);
       })
 

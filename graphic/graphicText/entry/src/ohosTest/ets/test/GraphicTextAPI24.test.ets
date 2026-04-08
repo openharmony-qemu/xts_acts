@@ -135,6 +135,7 @@ export default function GraphicTextAPI24() {
         }
         expect(textLayoutResult.fitStrRange.length).assertLarger(0);
         expect(Math.round(textLayoutResult.correctRect.width * 100) / 100).assertEqual(194.98);
+        expect(textLayoutResult.correctRect.width).assertLarger(194);
         expect(textLayoutResult.correctRect.height).assertEqual(69);
         expect(textLayoutResult.fitStrRange[0].start).assertEqual(0);
         expect(textLayoutResult.fitStrRange[0].end).assertEqual(39);
@@ -620,6 +621,7 @@ export default function GraphicTextAPI24() {
         let myParagraphStyle: text.ParagraphStyle = {
           textStyle: myTextStyle,
           lineSpacing: 15,
+          orphanCharOptimization: true
         }
         let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
         let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
@@ -664,6 +666,7 @@ export default function GraphicTextAPI24() {
         let myParagraphStyle: text.ParagraphStyle = {
           textStyle: myTextStyle,
           lineSpacing: 15,
+          orphanCharOptimization: false
         }
         let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
         let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";

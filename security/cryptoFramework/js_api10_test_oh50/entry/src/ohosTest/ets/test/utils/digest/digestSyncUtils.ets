@@ -17,7 +17,7 @@ import cryptoFramework from '@ohos.security.cryptoFramework';
 
 let DIGEST_SPEC = [
   "SHA1", "SHA224", "SHA256", "SHA384",
-  "SHA512", "MD5", "SM3"
+  "SHA512", "MD5", "SM3", "MD2", "MD4", "RIPEMD160"
 ]
 
 interface mdInfo {
@@ -35,6 +35,9 @@ const SHA3_384_MD_SIZE = 48;
 const SHA3_512_MD_SIZE = 64;
 const SM3_MD_SIZE    = 32;
 const MD5_MD_SIZE    = 16;
+const MD2_MD_SIZE    = 16;
+const MD4_MD_SIZE    = 16;
+const RIPEMD160_MD_SIZE    = 20;
 
 function getMdSize(algName: string): number {
   switch (algName) {
@@ -58,6 +61,12 @@ function getMdSize(algName: string): number {
       return SM3_MD_SIZE;
     case "MD5":
       return MD5_MD_SIZE;
+    case "MD2":
+      return MD2_MD_SIZE;
+    case "MD4":
+      return MD4_MD_SIZE;
+    case "RIPEMD160":
+      return RIPEMD160_MD_SIZE;
     default:
       return 0
   }
@@ -76,6 +85,48 @@ function doMdSync(algName: string, message: cryptoFramework.DataBlob): mdInfo {
   }
 }
 
+async function doMdPromise(algName: string, message: cryptoFramework.DataBlob): Promise<mdInfo> {
+  try {
+    let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
+    await md.update(message);
+    let mdResult: cryptoFramework.DataBlob = await md.digest();
+
+    return {dataRes: mdResult, mdObj: md};
+  } catch (error) {
+    console.error(`doMdPromise “${error}“, error code: ${error.code}`);
+    throw error as Error;
+  }
+}
+
+async function doMdCallback(algName: string, message: cryptoFramework.DataBlob): Promise<mdInfo> {
+  try {
+    let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
+    await new Promise<void>((resolve, reject) => {
+      md.update(message, (error) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(undefined)
+        }
+      })
+    });
+    let mdResult: cryptoFramework.DataBlob = await new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
+      md.digest((err, data) => {
+        if (err || data === undefined) {
+          reject(err)
+        } else {
+          resolve(data)
+        }
+      })
+    })
+
+    return {dataRes: mdResult, mdObj: md};
+  } catch (error) {
+    console.error(`doMdCallback “${error}“, error code: ${error.code}`);
+    throw error as Error;
+  }
+}
+
 function doMdWithNoUpdateSync(algName: string): mdInfo {
   try {
     let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
@@ -83,7 +134,19 @@ function doMdWithNoUpdateSync(algName: string): mdInfo {
 
     return {dataRes: mdResult, mdObj: md};
   } catch (error) {
-    console.error(`doMdSync “${error}“, error code: ${error.code}`);
+    console.error(`doMdWithNoUpdateSync “${error}“, error code: ${error.code}`);
+    throw error as Error;
+  }
+}
+
+async function doMdWithNoUpdatePromise(algName: string): Promise<mdInfo> {
+  try {
+    let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
+    let mdResult: cryptoFramework.DataBlob = await md.digest();
+
+    return {dataRes: mdResult, mdObj: md};
+  } catch (error) {
+    console.error(`doMdWithNoUpdatePromise “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
 }
@@ -116,6 +179,35 @@ function doMdSyncSplit(algName: string, message: cryptoFramework.DataBlob, block
   }
 }
 
+async function doMdPromiseSplit(algName: string,
+  message: cryptoFramework.DataBlob, blockSize: number): Promise<mdInfo> {
+  try {
+    let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
+    let msgLen:number = message.data.byteLength;
+    let iterate: number = msgLen / blockSize;
+    let rem: number = msgLen % blockSize;
+    if (rem != 0) {
+      iterate = (msgLen - rem) / blockSize;
+    }
+    for(let index = 0; index < iterate; index++) {
+      let tmp = message.data.subarray(blockSize * index, blockSize * (index + 1));
+      let updateText: cryptoFramework.DataBlob = { data:tmp };
+      await md.update(updateText);
+      if (rem != 0 && index + 1 == iterate) {
+        let tmp = message.data.subarray(blockSize * (index + 1), msgLen);
+        let updateText: cryptoFramework.DataBlob = { data:tmp };
+        await md.update(updateText);
+      }
+    }
+    let mdResult: cryptoFramework.DataBlob = await md.digest();
+
+    return {dataRes: mdResult, mdObj: md};
+  } catch (error) {
+    console.error(`doMdPromiseSplit “${error}“, error code: ${error.code}`);
+    throw error as Error;
+  }
+}
+
 
 export {
   DIGEST_SPEC,
@@ -123,5 +215,9 @@ export {
   getMdSize,
   doMdSync,
   doMdSyncSplit,
-  doMdWithNoUpdateSync
+  doMdWithNoUpdateSync,
+  doMdCallback,
+  doMdPromise,
+  doMdPromiseSplit,
+  doMdWithNoUpdatePromise
 }

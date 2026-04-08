@@ -1099,6 +1099,30 @@ describe('btConnectionTest', () => {
         done();
     })
 
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600
+     * @tc.desc   Test setDevicePinCode promise with empty string deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setDevicePinCode(null, '12345').then(() => {
+                console.info('setDevicePinCode success');
+                expect().assertFail();
+            }, (error :BusinessError) => {
+                console.info('setDevicePinCode promise: errCode:' + error.code + ',errMessage' + error.message);
+                expect(Number(error.code)).assertEqual(401);
+            })
+        } catch (err) {
+            console.info("setDevicePinCode promise errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
      /**
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0900
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0900
@@ -3592,6 +3616,54 @@ describe('btConnectionTest', () => {
         } catch (err) {
             console.info("connectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
             expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0100
+     * @tc.desc   Test disconnectAllowedProfiles callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        try {
+            let connectAP = () => {
+                return new Promise<void>((resolve,reject) => {
+                    bluetooth.disconnectAllowedProfiles('00:11:22:33:44:55', (err, data: void)=> {
+                        if (err) {
+                            console.info('disconnectAllowedProfiles failed' + JSON.stringify(err));
+                            reject(err.code);
+                        } else
+                        {
+                            console.info('[bluetooth_js]disconnectAllowedProfiles success');
+                        }
+                        resolve();
+                    });
+                });
+            }
+            await connectAP().then(() => {
+                console.info("[bluetooth_js]disconnectAllowedProfiles success");
+            },
+            (e: BusinessError) => {
+                console.info("[bluetooth_js]disconnectAllowedProfiles failed info:" + JSON.stringify(e));
+                if (Number(e) == 801) {
+                    console.info("disconnectAllowedProfiles is not support");
+                    expect(true).assertTrue();
+                }else {
+                    expect(Number(e)).assertEqual(2900099);
+                }
+            })
+        } catch (err) {
+            console.info("disconnectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) == 801) {
+                    console.info("disconnectAllowedProfiles is not support");
+                    expect(true).assertTrue();
+                }else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
         }
         done();
     })
