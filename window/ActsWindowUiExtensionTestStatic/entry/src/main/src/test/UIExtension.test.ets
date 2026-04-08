@@ -125,16 +125,16 @@ export default function UIExtensionTest() {
     it('testUIExtensionHostWindowProxyRectTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         let caseName = 'testUIExtensionHostWindowProxyRectTest';
         console.log(caseName + 'start run');
-        let windowClass = windowStage!.getMainWindowSync();
-        await windowClass!.setUIContent('pages/WindowTest/EmbeddedComponentPage');
-        await Utils.msSleep(2000);
-        let driver: Driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('Button'));
-        console.log(caseName + ' btn1 : ' + btn);
         if (deviceType !== '2in1') {
           console.log(caseName + 'device not support')
           done()
         } else {
+          let windowClass = windowStage!.getMainWindowSync();
+          await windowClass!.setUIContent('pages/WindowTest/EmbeddedComponentPage');
+          await Utils.msSleep(2000);
+          let driver: Driver = Driver.create();
+          let btn = await driver.findComponent(ON.id('Button'));
+          console.log(caseName + ' btn1 : ' + btn);
           await btn!.click();
           await Utils.msSleep(1000);
           let btn2 = await driver.findComponent(ON.id('HelloWorld'));
@@ -1094,6 +1094,68 @@ export default function UIExtensionTest() {
               let flagtext = await flag!.getText();
               console.log(caseName + 'flagtext : ' + flagtext);
               expect(flagtext).assertEqual('true');
+              await subWindowClass!.destroyWindow()
+              done();
+            } else if (errorMessageText == '801') {
+              await subWindowClass!.destroyWindow()
+              done();
+            } else {
+              expect().assertFail()
+              await subWindowClass!.destroyWindow()
+              done();
+            }
+          } else {
+            await subWindowClass!.destroyWindow()
+            done();
+          }
+        } catch (exception) {
+          console.error(caseName + 'Failed, cause:  ' + exception.code + exception.message)
+          await subWindowClass!.destroyWindow()
+          expect().assertFail()
+          done()
+        }
+  
+  
+      })
+      /**
+       * @tc.name   testOffWindowSizeChange
+       * @tc.number SUB_WMS_UEC_OffWindowSizeChange_0100
+       * @tc.desc   testOffWindowSizeChange
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('testOffWindowSizeChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName = 'testOffWindowSizeChange';
+        console.log(caseName + 'start run');
+        let subWindowClass: window.Window | undefined;
+        try {
+          subWindowClass = await windowStage!.createSubWindow('testOffWindowSizeChange');
+          await subWindowClass!.setUIContent('pages/WindowTest/EmbeddedComponentGetWindowAvoidAreaPage');
+          await subWindowClass!.showWindow();
+          await Utils.msSleep(2000);
+          // extensionWindow?.createSubWindowWithOptions
+          let driver: Driver = Driver.create();
+          let btn = await driver.findComponent(ON.id('offWindowSizeChange'))
+          console.log(caseName + ' btn : ' + btn);
+          if (deviceType === '2in1') {
+            await btn!.click()
+            await Utils.msSleep(1000)
+            // 获取接口返回信息
+            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessageText = await errorMessage!.getText()
+            console.log(caseName + 'errorMessageText : ' + errorMessageText);
+  
+            if (errorMessageText == 'success') {
+              let windowSizeChangeWidth = await driver.findComponent(ON.id('windowSizeChangeWidth'))
+              console.log(caseName + 'windowSizeChangeWidth : ' + windowSizeChangeWidth);
+              await windowSizeChangeWidth!.click();
+              await Utils.msSleep(1000);
+              let flag = await driver.findComponent(ON.id('flag'))
+              console.log(caseName + 'flag : ' + flag);
+              let flagtext = await flag!.getText();
+              console.log(caseName + 'flagtext : ' + flagtext);
+              expect(flagtext !== 'true').assertTrue();
               await subWindowClass!.destroyWindow()
               done();
             } else if (errorMessageText == '801') {
