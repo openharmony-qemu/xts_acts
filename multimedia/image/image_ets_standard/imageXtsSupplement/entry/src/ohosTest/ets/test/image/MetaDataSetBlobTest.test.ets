@@ -1084,7 +1084,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.BGRA_8888 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.BGRA_8888).assertTrue();
         console.info(TAG, testName, ' createImageSource success',JSON.stringify(res));
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1110,7 +1110,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGB_565 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.RGB_565).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1136,7 +1136,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_8888 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1162,7 +1162,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.BGRA_8888 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.BGRA_8888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1188,7 +1188,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGB_888 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.RGB_888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1214,7 +1214,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ALPHA_8 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.ALPHA_8).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1240,7 +1240,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_F16 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.RGBA_F16).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1266,7 +1266,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.NV21 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.NV21).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1292,7 +1292,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.NV12 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.NV12).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1318,7 +1318,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_1010102 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.RGBA_1010102).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1344,7 +1344,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.YCBCR_P010 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.YCBCR_P010).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1370,7 +1370,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.YCRCB_P010 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.YCRCB_P010).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1396,7 +1396,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ASTC_4x4 };
         imageSource = image.createImageSource(path, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.ASTC_4x4).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1448,7 +1448,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ARGB_8888 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.ARGB_8888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1474,7 +1474,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGB_565 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.RGB_565).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1500,7 +1500,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_8888 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1526,7 +1526,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.BGRA_8888 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.BGRA_8888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1552,7 +1552,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGB_888 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.RGB_888).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1578,7 +1578,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ALPHA_8 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.ALPHA_8).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1604,7 +1604,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_F16 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.RGBA_F16).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1630,7 +1630,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.NV21 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.NV21).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1656,7 +1656,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.NV12 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.NV12).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1682,7 +1682,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.RGBA_1010102 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.RGBA_1010102).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1708,7 +1708,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.YCBCR_P010 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.YCBCR_P010).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1734,7 +1734,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.YCRCB_P010 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.YCRCB_P010).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
@@ -1760,7 +1760,7 @@ export default function MetaDataSetBlobTest() {
           { sourceDensity: 120, sourcePixelFormat: image.PixelMapFormat.ASTC_4x4 };
         imageSource = image.createImageSource(file.fd, sourceOptions);
         let res = await imageSource.getImageInfo();
-        expect(res.pixelFormat == image.PixelMapFormat.UNKNOWN).assertTrue();
+        expect(res.pixelFormat == image.PixelMapFormat.ASTC_4x4).assertTrue();
         console.info(TAG, testName, ' createImageSource success');
       } catch (error) {
         console.error(TAG, testName, ' createImageSource error', error.message, error.code);
