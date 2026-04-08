@@ -25,13 +25,12 @@ let context = getContext(this) as common.UIAbilityContext;
 export default function actsNotificationAnsCovered() {
   describe('actsNotificationAnsCovered', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(async (done: Function) => {
-      NotificationManager.requestEnableNotification((err) => {
+    beforeAll(async () => {
+      NotificationManager.requestEnableNotification(context,(err) => {
         if (err) {
           console.error(Tag+`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
-          expect(false).assertTrue();
+          expect(err.code).assertEqual(0);
           console.info(`${Tag}` + `test case end`);
-          done();
         } else {
           console.info(Tag + "requestEnableNotification success");
         }
@@ -46,11 +45,9 @@ export default function actsNotificationAnsCovered() {
       if (button !== null) {
         await button.click();
         await sleep(1500);
-        done()
       } else {
         console.log(Tag + `button is null`)
         expect(false).assertTrue();
-        done()
       }
     })
     beforeEach(() => {
