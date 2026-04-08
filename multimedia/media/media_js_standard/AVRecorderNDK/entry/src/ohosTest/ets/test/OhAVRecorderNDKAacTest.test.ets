@@ -1293,15 +1293,15 @@ export default function OhAVRecorderNDKAacTest() { // L2
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_SUCCESS_0100
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_SUCCESS_0100
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_SUCCESS_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_SUCCESS_0100
      * @tc.desc   get max amplitude.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_SUCCESS_0100', Level.LEVEL1, async (done: Function) => {
-      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_SUCCESS_0100 test start `);
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_SUCCESS_0100', Level.LEVEL1, async (done: Function) => {
+      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_SUCCESS_0100 test start `);
       let fileName: string = avRecorderNdkTestBase.resourceAACName();
       fdObject = await avRecorderNdkTestBase.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
@@ -1337,19 +1337,19 @@ export default function OhAVRecorderNDKAacTest() { // L2
         avRecorderNdkTestBase.END_EVENT
       );
       await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_SUCCESS_0100 test end `);
+      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_SUCCESS_0100 test end `);
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_FAIL_0100
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_FAIL_0100
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_FAIL_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_FAIL_0100
      * @tc.desc   get max amplitude.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_FAIL_0100', Level.LEVEL1, async (done: Function) => {
-      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_FAIL_0100 test start `);
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_FAIL_0100', Level.LEVEL1, async (done: Function) => {
+      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_FAIL_0100 test start `);
       let fileName: string = avRecorderNdkTestBase.resourceAACName();
       fdObject = await avRecorderNdkTestBase.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
@@ -1369,19 +1369,19 @@ export default function OhAVRecorderNDKAacTest() { // L2
         avRecorderNdkTestBase.END_EVENT
       );
       await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_FAIL_0100 test end `);
+      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_FAIL_0100 test end `);
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_FAIL_0200
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_FAIL_0200
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_FAIL_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_FAIL_0200
      * @tc.desc   get max amplitude.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_FAIL_0200', Level.LEVEL1, async (done: Function) => {
-      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_FAIL_0200 test start `);
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_FAIL_0200', Level.LEVEL1, async (done: Function) => {
+      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_FAIL_0200 test start `);
       let fileName: string = avRecorderNdkTestBase.resourceAACName();
       fdObject = await avRecorderNdkTestBase.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
@@ -1403,19 +1403,19 @@ export default function OhAVRecorderNDKAacTest() { // L2
         avRecorderNdkTestBase.END_EVENT
       );
       await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_GETMAXAMPLITUDE_FAIL_0200 test end `);
+      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_GETMAXAMPLITUDE_FAIL_0200 test end `);
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_SUCCESS_0100
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_SUCCESS_0100
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_SUCCESS_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_SUCCESS_0100
      * @tc.desc   set metadata.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_SUCCESS_0100', Level.LEVEL1, async (done: Function) => {
-      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_SUCCESS_0100 test start `);
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_SUCCESS_0100', Level.LEVEL1, async (done: Function) => {
+      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_SUCCESS_0100 test start `);
       let fileName: string = avRecorderNdkTestBase.resourceAACName();
       fdObject = await avRecorderNdkTestBase.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
@@ -1451,19 +1451,19 @@ export default function OhAVRecorderNDKAacTest() { // L2
         avRecorderNdkTestBase.END_EVENT
       );
       await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_SUCCESS_0100 test end `);
+      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_SUCCESS_0100 test end `);
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_FAIL_0100
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_FAIL_0100
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_FAIL_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_FAIL_0100
      * @tc.desc   set metadata.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_FAIL_0100', Level.LEVEL1, async (done: Function) => {
-      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_FAIL_0100 test start `);
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_FAIL_0100', Level.LEVEL1, async (done: Function) => {
+      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_FAIL_0100 test start `);
       let fileName: string = avRecorderNdkTestBase.resourceAACName();
       fdObject = await avRecorderNdkTestBase.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
@@ -1483,19 +1483,19 @@ export default function OhAVRecorderNDKAacTest() { // L2
         avRecorderNdkTestBase.END_EVENT
       );
       await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_FAIL_0100 test end `);
+      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_FAIL_0100 test end `);
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_FAIL_0200
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_FAIL_0200
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_FAIL_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_FAIL_0200
      * @tc.desc   set metadata.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_FAIL_0200', Level.LEVEL1, async (done: Function) => {
-      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_FAIL_0200 test start `);
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_FAIL_0200', Level.LEVEL1, async (done: Function) => {
+      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_FAIL_0200 test start `);
       let fileName: string = avRecorderNdkTestBase.resourceAACName();
       fdObject = await avRecorderNdkTestBase.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
@@ -1517,7 +1517,7 @@ export default function OhAVRecorderNDKAacTest() { // L2
         avRecorderNdkTestBase.END_EVENT
       );
       await avRecorderNdkTestBase.toNextStep(config, fdPath, mySteps, done);
-      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NDK_AAC_SETMETADATA_FAIL_0200 test end `);
+      console.info(`SUB_MULTIMEDIA_MEDIA_AVRECORDER_NATIVE_AAC_SETMETADATA_FAIL_0200 test end `);
     });
 
   });
