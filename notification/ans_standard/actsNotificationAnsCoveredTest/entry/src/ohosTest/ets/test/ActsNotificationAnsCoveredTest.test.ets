@@ -25,7 +25,7 @@ let context = getContext(this) as common.UIAbilityContext;
 export default function actsNotificationAnsCovered() {
   describe('actsNotificationAnsCovered', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(async () => {
+    beforeAll(async (done:Function) => {
       NotificationManager.requestEnableNotification((err) => {
         if (err) {
           console.error(Tag+`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
