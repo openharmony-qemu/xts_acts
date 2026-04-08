@@ -39,7 +39,7 @@ export default function webCursiveFont() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testWebCursiveFontCursive001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testWebCursiveFontCursive001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done:()=>void):Promise<void> =>{
         Utils.emitEvent('testWebCursiveFontCursive001', 150207)
         await Utils.msSleep(2000);
@@ -62,7 +62,7 @@ export default function webCursiveFont() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testWebCursiveFontCursive002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testWebCursiveFontCursive002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done:()=>void):Promise<void> =>{
         Utils.emitEvent('testWebCursiveFontCursive002', 10)
         await Utils.msSleep(2000);
