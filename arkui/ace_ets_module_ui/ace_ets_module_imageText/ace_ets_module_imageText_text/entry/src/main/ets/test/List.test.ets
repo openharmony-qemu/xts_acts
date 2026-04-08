@@ -141,6 +141,7 @@ import TextSpecialAttrsNullTest from './TextTest/TextSpecialAttrsNull.test';
 import TextMethodsNullTest from './TextTest/TextMethodsNull.test';
 import TextEditMenuOptionsNullTest from './TextTest/TextEditMenuOptionsNull.test';
 import LayoutManagerTextCommonTest from './TextTest/LayoutManagerTextCommon.test';
+import TextGetCharacter from './TextTest/TextGetCharacter.test';
 
 
 export default function testsuite() {
@@ -273,4 +274,5 @@ export default function testsuite() {
   TextMethodsNullTest();
   TextEditMenuOptionsNullTest();
   LayoutManagerTextCommonTest();
+  TextGetCharacter();
 }
