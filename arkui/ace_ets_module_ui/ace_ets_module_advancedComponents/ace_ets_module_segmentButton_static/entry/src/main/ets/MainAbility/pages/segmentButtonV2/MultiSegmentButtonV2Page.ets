@@ -171,37 +171,6 @@ struct MultiCapsuleSegmentButtonV2Example {
           .padding(8)
           .width('100%')
           .key('MCSegmentButtonBlurStyleId001')
-
-        MultiCapsuleSegmentButtonV2({
-          items: this.textItems,
-          selectedIndexes: [0, 2],
-          $selectedIndexes: undefined,
-          onItemClicked: undefined,
-          itemMinFontScale: undefined,
-          itemMaxFontScale: undefined,
-          itemSpace: undefined,
-          itemFontColor: undefined,
-          itemSelectedFontColor: undefined,
-          itemFontSize: undefined,
-          itemSelectedFontSize: undefined,
-          itemFontWeight: undefined,
-          itemSelectedFontWeight: undefined,
-          itemBorderRadius: undefined,
-          itemBackgroundColor: undefined,
-          itemBackgroundEffect: undefined,
-          itemSelectedBackgroundColor: undefined,
-          itemIconSize: undefined,
-          itemIconFillColor: undefined,
-          itemSelectedIconFillColor: undefined,
-          itemSymbolFontSize: undefined,
-          itemSymbolFontColor: undefined,
-          itemSelectedSymbolFontColor: undefined,
-          itemMinHeight: undefined,
-          itemBackgroundBlurStyle: undefined,
-          itemBackgroundBlurStyleOptions: undefined,
-          itemPadding: undefined,
-          languageDirection: undefined
-        })
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)
