@@ -207,7 +207,7 @@ export default function postInputEventWithStrategyTest() {
       let bounds = await eventArea.getBounds();
       let centerX = (bounds.left + bounds.right) / 2;
       let centerY = (bounds.top + bounds.bottom) / 2;
-      await driver.mouseClick({ x: centerX, y: centerY }, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({ x: Math.round(centerX), y: Math.round(centerY) }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('postInputEventWithStrategyResultText');
       let obj: ESObject = JSON.parse(strJson);
@@ -235,7 +235,7 @@ export default function postInputEventWithStrategyTest() {
       let bounds = await eventArea.getBounds();
       let centerX = (bounds.left + bounds.right) / 2;
       let centerY = (bounds.top + bounds.bottom) / 2;
-      await driver.mouseClick({ x: centerX, y: centerY }, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({ x: Math.round(centerX), y: Math.round(centerY) }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('postInputEventWithStrategyResultText');
       let obj: ESObject = JSON.parse(strJson);
