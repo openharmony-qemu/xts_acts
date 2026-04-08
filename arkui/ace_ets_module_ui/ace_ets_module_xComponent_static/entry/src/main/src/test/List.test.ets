@@ -18,10 +18,14 @@ import XComponentTest from './XComponentTest/XComponent.test';
 import ComponentNodeWithOptionsTest from './XComponentTest/ComponentNodeWithOptionsTest.test';
 import ComponentNodeWithNativeParametersTest from './XComponentTest/ComponentNodeWithNativeParametersTest.test';
 import ComponentNodeDefaultTest from './XComponentTest/ComponentNodeDefaultTest.test';
+import XComponentHdrBrightnessTest from './XComponentHdrBrightnessTest/XComponentHdrBrightness.test';
+ import ComponentContentApiTest from './ComponentContentApiTest/ComponentContentApi.test';
 
 export default function testsuite() {
   XComponentTest();
   ComponentNodeWithOptionsTest();
   ComponentNodeWithNativeParametersTest();
   ComponentNodeDefaultTest();
+  XComponentHdrBrightnessTest();
+  ComponentContentApiTest();
 }
