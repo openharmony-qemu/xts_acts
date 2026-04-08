@@ -780,6 +780,50 @@ export default function UIExtensionTest() {
       })
   
       /**
+       * @tc.name   SUB_WMS_UEC_offAvoidAreaChange_0100
+       * @tc.number SUB_WMS_UEC_offAvoidAreaChange_0100
+       * @tc.desc   SUB_WMS_UEC_offAvoidAreaChange_0100
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_WMS_UEC_offAvoidAreaChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_WMS_UEC_offAvoidAreaChange_0100';
+        console.log(caseName + 'start run');
+        let subWindowClass: window.Window | undefined;
+        try {
+          subWindowClass = await windowStage!.createSubWindow('testGetWindowAvoidArea_TYPE_CUTOUT1');
+          await subWindowClass!.setUIContent('pages/WindowTest/EmbeddedComponentGetWindowAvoidAreaPage');
+          await subWindowClass!.showWindow();
+          await Utils.msSleep(2000);
+          // extensionWindow?.createSubWindowWithOptions
+          let driver: Driver = Driver.create();
+          let btn = await driver.findComponent(ON.id('offAvoidAreaChange'))
+          console.log(caseName + ' btn : ' + btn);
+          if (deviceType === '2in1') {
+            await btn!.click()
+            await Utils.msSleep(1000)
+            // 获取接口返回信息
+            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessageText = await errorMessage!.getText()
+            console.log(caseName + 'errorMessageText : ' + errorMessageText);
+            expect(errorMessageText).assertEqual('success');
+            done();
+          } else {
+            await subWindowClass!.destroyWindow()
+            done();
+          }
+        } catch (exception) {
+          console.error(caseName + 'Failed, cause:  ' + exception.code + exception.message)
+          await subWindowClass!.destroyWindow()
+          expect().assertFail()
+          done()
+        }
+  
+  
+      })
+
+      /**
        * @tc.name   testGetWindowAvoidArea_TYPE_CUTOUT
        * @tc.number SUB_WMS_UEC_getWindowAvoidArea_0100
        * @tc.desc   testGetWindowAvoidArea_TYPE_CUTOUT
