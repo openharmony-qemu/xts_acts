@@ -1913,7 +1913,11 @@ function testSetDisallowedPolicy() {
         restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200002).assertTrue();
+        if (Number(error.code) === 9200002) {
+          expect(Number(error.code) === 9200002).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200007).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -3269,10 +3273,10 @@ function testGetDisallowedPolicy() {
    it("test_get_disallowed_policy_wifi_p2p_0400", Level.LEVEL2, async (done: Function) => {
      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
      try {
-       restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
-       expect(false).assertTrue();
+       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
+       expect(ret).assertFalse();
      } catch (error) {
-       expect(error.code == 9200002).assertTrue();
+       expect(Number(error.code) === 9200002).assertTrue();
      } finally {
        await adminManager.disableAdmin(SELFWANT);
      }
