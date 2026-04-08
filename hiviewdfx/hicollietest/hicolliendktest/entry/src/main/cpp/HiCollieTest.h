@@ -22,4 +22,6 @@ napi_value OH_HiCollie_Report_Main(napi_env env, napi_callback_info info);
 napi_value OH_HiCollie_Report_Remote(napi_env env, napi_callback_info info);
 napi_value OH_HiCollie_ReportInputBlock_Main(napi_env env, napi_callback_info info);
 napi_value OH_HiCollie_ReportInputBlock_Remote(napi_env env, napi_callback_info info);
+napi_value TestHiCollieSetFreezeCallback(napi_env env, napi_callback_info info);
+napi_value TestHiCollieAssociateProcessReport(napi_env env, napi_callback_info info);
 #endif // HICOLLIETEST_H
