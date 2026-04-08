@@ -68,7 +68,7 @@ export default function GraphicHdrInterface() {
 
     /**
      * @tc.name   testHdrBrightnessRatio_static_noPermissions
-     * @tc.number testHdrBrightnessRatio_static_noPermissions
+     * @tc.number SUB_GRAPHIC_UIEFFECT_FILTER_0100
      * @tc.desc   Filter testHdrBrightnessRatio
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
