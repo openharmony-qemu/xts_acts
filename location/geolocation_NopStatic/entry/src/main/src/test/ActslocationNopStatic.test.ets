@@ -33,9 +33,27 @@ let tag: string = 'location';
 const TEST_SUIT_NAME = 'ActslocationTest'
 let g_context: common.UIAbilityContext;
 
+export async function changedLocationMode() {
+  let locationEnabled: boolean = geoLocationManager.isLocationEnabled()
+  console.info('[lbs_js] getLocationSwitchState result: ' + JSON.stringify(locationEnabled));
+  if (!locationEnabled) {
+    try {
+      geoLocationManager.enableLocation((err) => {
+        if (err) {
+          console.error("[lbs_js] enableLocation error." + JSON.stringify(err));
+        }
+      });
+    } catch (err) {
+      console.error("[lbs_js] enableLocation catch error." + JSON.stringify(err));
+    }
+  }
+};
+
 export default function actslocationTest() {
   describe('actslocationTest', () => {
-    beforeAll(() => {
+    beforeAll(async() => {
+      await changedLocationMode()
+      await Utils.msSleep(2000);
     })
     beforeEach(() => {
     })
