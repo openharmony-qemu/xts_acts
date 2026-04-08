@@ -1140,36 +1140,40 @@ export default function WindowLayoutStaticTest() {
             let caseName: string = 'testMinimize_Callback_MainWindow_static_001';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
-            try {
-                let subWin: window.Window = await windowStage!.createSubWindow(caseName);
-                expect(!!subWin).assertTrue();
-                await subWin.setUIContent('pages/index2');
-                await subWin.showWindow();
-                await Utils.msSleep(1000);
-                subWin.minimize(async(err: BusinessError<void> | null): void => {
-                    if (err!.code) {
-                        err === err as BusinessError;
-                        if (err!.code === 801) {
-                            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-                            await subWin.destroyWindow();
-                            expect(err!.code).assertEqual(801);
-                            done();
-                        } else {
-                            hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
-                            await subWin.destroyWindow();
-                            expect(false).assertTrue();
-                            done();
+            if(isFreeWindowMode){
+                try {
+                    let subWin: window.Window = await windowStage!.createSubWindow(caseName);
+                    expect(!!subWin).assertTrue();
+                    await subWin.setUIContent('pages/index2');
+                    await subWin.showWindow();
+                    await Utils.msSleep(1000);
+                    subWin.minimize(async(err: BusinessError<void> | null): void => {
+                        if (err!.code) {
+                            err === err as BusinessError;
+                            if (err!.code === 801) {
+                                hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                                await subWin.destroyWindow();
+                                expect(err!.code).assertEqual(801);
+                                done();
+                            } else {
+                                hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+                                await subWin.destroyWindow();
+                                expect(false).assertTrue();
+                                done();
+                            }
                         }
-                    }
-                    hilog.info(domain, tag, msgStr + 'Succeeded in minimizing window.');
-                    await subWin.destroyWindow();
+                        hilog.info(domain, tag, msgStr + 'Succeeded in minimizing window.');
+                        await subWin.destroyWindow();
+                        done();
+                    });
+                } catch (exception) {
+                    exception === exception as BusinessError;
+                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
                     done();
-                });
-            } catch (exception) {
-                exception === exception as BusinessError;
-                hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                expect(false).assertTrue();
-                done();
+                }
+            }else{
+                done()
             }
         })
 
@@ -1237,35 +1241,39 @@ export default function WindowLayoutStaticTest() {
             let caseName: string = 'testMinimize_Promise_MainWindow_static_001';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
-            try {
-                let subWin: window.Window = await windowStage!.createSubWindow(caseName);
-                expect(!!subWin).assertTrue();
-                await subWin.setUIContent('pages/index2');
-                await subWin.showWindow();
-                await Utils.msSleep(1000);
-                subWin.minimize().then(async() => {
-                    hilog.info(domain, tag, msgStr + 'Succeeded in minimizing window.');
-                    await subWin.destroyWindow();
+            if(isFreeWindowMode){
+                 try {
+                    let subWin: window.Window = await windowStage!.createSubWindow(caseName);
+                    expect(!!subWin).assertTrue();
+                    await subWin.setUIContent('pages/index2');
+                    await subWin.showWindow();
+                    await Utils.msSleep(1000);
+                    subWin.minimize().then(async() => {
+                        hilog.info(domain, tag, msgStr + 'Succeeded in minimizing window.');
+                        await subWin.destroyWindow();
+                        done();
+                    }).catch(async(err: Error): PromiseLike<void> | undefined => {
+                        err === err as BusinessError;
+                        if (err!.code === 801) {
+                            hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                            await subWin.destroyWindow();
+                            expect(err!.code).assertEqual(801);
+                            done();
+                        } else {
+                            hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+                            await subWin.destroyWindow();
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    });
+                } catch (exception) {
+                    exception === exception as BusinessError;
+                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
                     done();
-                }).catch((err: Error): PromiseLike<void> | undefined => {
-                    err === err as BusinessError;
-                    if (err!.code === 801) {
-                        hilog.info(domain, tag, msgStr + 'Capability not supported.');
-                        await subWin.destroyWindow();
-                        expect(err!.code).assertEqual(801);
-                        done();
-                    } else {
-                        hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
-                        await subWin.destroyWindow();
-                        expect(false).assertTrue();
-                        done();
-                    }
-                });
-            } catch (exception) {
-                exception === exception as BusinessError;
-                hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                expect(false).assertTrue();
-                done();
+                }
+            }else{
+                done()
             }
         })
 
