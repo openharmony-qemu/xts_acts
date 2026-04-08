@@ -629,7 +629,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
       try {
         await Utils.msSleep(1000)
         for (let index = 0; index < 500; index++) {
-          notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
+          notificationManager.openNotificationSettingsWithResult(testContext).then(async(data) => {
             hilog.info(0x0000, 'testTag', `${testNum}${index+1}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
             expect(index).assertEqual(0);
           }).catch((error: Error) : void => {
