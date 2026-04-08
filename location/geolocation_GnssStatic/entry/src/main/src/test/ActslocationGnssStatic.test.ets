@@ -57,9 +57,7 @@ export default function actslocationTest() {
       await changedLocationMode()
       let isWifiActive: boolean = wifiMg.isWifiActive() as boolean
       if (!isWifiActive) {
-        console.info("======> wifi_test/enable wifi:");
-        wifiMg.enableWifi();
-        await Utils.msSleep(5000);
+        console.info("======> wifi_test/enable wifi: false");
       }
 
       try {
