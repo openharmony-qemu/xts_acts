@@ -46,7 +46,7 @@ export default function postInputEventWithStrategyTest() {
 
     /**
      * @tc.name   PostInputEventWithStrategyEventNull_0001
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEventNull_0001
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEvent_Null_Func_0100
      * @tc.desc   Test postInputEventWithStrategy with null event parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -68,7 +68,7 @@ export default function postInputEventWithStrategyTest() {
 
     /**
      * @tc.name   PostInputEventWithStrategyEventUndefined_0002
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEventUndefined_0002
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEvent_Undefined_Func_0200
      * @tc.desc   Test postInputEventWithStrategy with undefined event parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -90,7 +90,7 @@ export default function postInputEventWithStrategyTest() {
 
     /**
      * @tc.name   PostInputEventWithStrategyStrategyNull_0003
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyStrategyNull_0003
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEvent_Null_Func_0300
      * @tc.desc   Test postInputEventWithStrategy with null strategy parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -115,7 +115,7 @@ export default function postInputEventWithStrategyTest() {
 
     /**
      * @tc.name   PostInputEventWithStrategyStrategyUndefined_0004
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyStrategyUndefined_0004
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEvent_Undefined_Func_0400
      * @tc.desc   Test postInputEventWithStrategy with undefined strategy parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -140,7 +140,7 @@ export default function postInputEventWithStrategyTest() {
 
     /**
      * @tc.name   PostInputEventWithStrategyTouchDefault_0005
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyTouchDefault_0005
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEvent_Default_Func_0500
      * @tc.desc   Test postInputEventWithStrategy with TouchEvent and CompetitionStrategy.DEFAULT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -165,7 +165,7 @@ export default function postInputEventWithStrategyTest() {
 
     /**
      * @tc.name   PostInputEventWithStrategyTouchCompetition_0006
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyTouchCompetition_0006
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEvent_TouchCompetition_Func_0600
      * @tc.desc   Test postInputEventWithStrategy with TouchEvent and CompetitionStrategy.COMPETITION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -190,7 +190,7 @@ export default function postInputEventWithStrategyTest() {
 
     /**
      * @tc.name   PostInputEventWithStrategyMouseDefault_0007
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyMouseDefault_0007
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEvent_MouseDefault_Func_0700
      * @tc.desc   Test postInputEventWithStrategy with MouseEvent and CompetitionStrategy.DEFAULT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -218,7 +218,7 @@ export default function postInputEventWithStrategyTest() {
 
     /**
      * @tc.name   PostInputEventWithStrategyMouseCompetition_0008
-     * @tc.number SUB_ARKUI_PostInputEventWithStrategyMouseCompetition_0008
+     * @tc.number SUB_ARKUI_PostInputEventWithStrategyEvent_MouseCompetition_Func_0800
      * @tc.desc   Test postInputEventWithStrategy with MouseEvent and CompetitionStrategy.COMPETITION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
