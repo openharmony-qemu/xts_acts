@@ -588,7 +588,8 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
           console.info(testNum+"publish success");
           expect(num).assertEqual(1)
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((error: Error) : void => {
+          let err:BusinessError=error as BusinessError
           console.error(`${testNum}publish failed, code is ${err.code}, message is ${err.message}`);
           if (err?.code === 801) {
             expect(err.code).assertEqual(801);
