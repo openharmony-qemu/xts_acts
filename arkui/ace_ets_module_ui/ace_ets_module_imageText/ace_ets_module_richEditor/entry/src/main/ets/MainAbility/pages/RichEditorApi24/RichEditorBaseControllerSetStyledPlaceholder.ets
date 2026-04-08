@@ -31,7 +31,7 @@ struct RichEditorBaseControllerSetStyledPlaceholder {
       RichEditor({ controller: this.controller1 })
         .id('richEditor_base_setStyledPlaceholder_styledString')
         .onReady(() => {
-          let styledString: MutableStyledString = new MutableStyledString("placeholder text",
+          let styledString: MutableStyledString = new MutableStyledString('placeholder text',
             [
               {
                 start: 0,
@@ -77,7 +77,7 @@ struct RichEditorBaseControllerSetStyledPlaceholder {
       RichEditor({ controller: this.controller5 })
         .id('richEditor_base_setStyledPlaceholder_fontColor')
         .onReady(() => {
-          let styledString: MutableStyledString = new MutableStyledString("test fontColor",
+          let styledString: MutableStyledString = new MutableStyledString('test fontColor',
             [
               {
                 start: 0,
@@ -98,7 +98,7 @@ struct RichEditorBaseControllerSetStyledPlaceholder {
       RichEditor({ controller: this.controller6 })
         .id('richEditor_base_setStyledPlaceholder_fontSize')
         .onReady(() => {
-          let styledString: MutableStyledString = new MutableStyledString("test fontSize",
+          let styledString: MutableStyledString = new MutableStyledString('test fontSize',
             [
               {
                 start: 0,
@@ -119,7 +119,7 @@ struct RichEditorBaseControllerSetStyledPlaceholder {
       RichEditor({ controller: this.controller7 })
         .id('richEditor_base_setStyledPlaceholder_normal')
         .onReady(() => {
-          let styledString: MutableStyledString = new MutableStyledString("normal placeholder",
+          let styledString: MutableStyledString = new MutableStyledString('normal placeholder',
             [
               {
                 start: 0,
