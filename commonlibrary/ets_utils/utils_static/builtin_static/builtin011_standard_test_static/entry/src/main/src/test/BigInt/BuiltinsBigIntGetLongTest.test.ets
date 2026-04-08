@@ -184,12 +184,14 @@ export default function BuiltinsBigIntGetLongTest(): void {
      */
     it('builtinsBigIntGetLongTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const bigInt = new BigInt("9223372036854775808");
-
+      let errorName = "";
       try {
         const result = bigInt.getLong();
         expect(typeof result === 'long').assertTrue();
       } catch (error) {
+        errorName = error.name;
       }
+      expect(errorName).assertEqual("");
     });
 
     /**
@@ -202,11 +204,12 @@ export default function BuiltinsBigIntGetLongTest(): void {
      */
     it('builtinsBigIntGetLongTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const bigInt = new BigInt("-9223372036854775809");
-
+      let errorName = "";
       try {
         const result = bigInt.getLong();
         expect(typeof result === 'long').assertTrue();
       } catch (error) {
+        expect(errorName).assertEqual("RangeError");
       }
     });
 

@@ -290,15 +290,14 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(NaN);
       } catch (e) {
-        threwException = true;
+        threwException = e.name
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");
     });
-
     /**
      * @tc.name    builtinsBigIntInvokeTest1700
      * @tc.number  SUB_BUILTINS_BIGINT_INVOKE_TEST_1700
@@ -364,13 +363,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(NaN);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");
     });
 
     /**
@@ -396,13 +395,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(Infinity);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");;
     });
 
     /**
@@ -414,13 +413,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(-Infinity);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");;
     });
 
     /**
@@ -460,13 +459,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(Number.MIN_VALUE);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");;
     });
 
     /**
@@ -478,13 +477,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(Number.EPSILON);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");;
     });
 
     /**
@@ -636,13 +635,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest3900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(123.456);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");;
     });
 
     /**
@@ -668,13 +667,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(' !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");
     });
 
     /**
@@ -686,13 +685,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~');
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");
     });
 
     /**
@@ -704,13 +703,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke('!!""##$$%%&&\'\'(()))**++,,--..//::;;<<==>>??@@[[\\]]^^__``{{||}}~~');
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");
     });
 
     /**
@@ -722,13 +721,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest4400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke('\a\b\f\n\r\t\v\\\'\"\?\0');
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");
     });
 
     /**
@@ -740,14 +739,14 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke('\ud83d\udc46\ud83d\udc7f\ud83d\udc40\ud83d\udcaf\ud83c\udf85\ud83d\ude3c\ud83d' +
           '\udd27\ud83d\udc87\ud83e\udd3c\u200d\u2642\ufe0f\ud83d\udee2\ud83c\udc04\ud83c\udff4');
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");
     });
 
     /**
@@ -759,13 +758,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest4600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke('\udc04\ud83d\udff4');
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");
     });
 
     /**
@@ -791,13 +790,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsBigIntInvokeTest4800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke("NaN");
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");
     });
 
     /**
@@ -845,21 +844,23 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokeTest5000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const str = "{k1:value1,k2:value2}";
-      let allThrewException = true;
+      let allCorrectError = true;
+
       for (let i = 0; i < 10; i++) {
         const resultStr = str.substring(0, str.length - 2);
-        let threwException = false;
+        let errorName = "";
         try {
           BigInt.$_invoke(resultStr);
         } catch (e) {
-          threwException = true;
+          errorName = e.name;
         }
-        if (!threwException) {
-          allThrewException = false;
+        if (errorName !== "Error") {
+          allCorrectError = false;
           break;
         }
       }
-      expect(allThrewException).assertTrue();
+
+      expect(allCorrectError).assertTrue();
     });
 
     /**
@@ -872,13 +873,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokeTest5100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const str = "a".repeat(1000000);
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(str);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");
     });
 
     /**
@@ -891,15 +892,15 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokeTest5200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let largeStr: string | null = "1".repeat(1000);
-      let threwException = false;
+      let threwException = "";
       try {
         const result = BigInt.$_invoke(largeStr);
         expect(result !== null).assertTrue();
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
       largeStr = null;
-      expect(threwException).assertFalse();
+      expect(threwException).assertEqual("");
     });
 
     /**
@@ -1002,13 +1003,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokeTest5900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const numberObj = new Number(NaN);
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(numberObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");;
     });
 
     /**
@@ -1021,13 +1022,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokeTest6000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const numberObj = new Number(Infinity);
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(numberObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");;
     });
 
     /**
@@ -1040,13 +1041,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokeTest6100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const numberObj = new Number(-Infinity);
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(numberObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");;
     });
 
     /**
@@ -1089,13 +1090,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokeTest6400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const numberObj = new Number(Number.MIN_VALUE);
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(numberObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");;
     });
 
     /**
@@ -1108,13 +1109,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokeTest6500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const numberObj = new Number(Number.EPSILON);
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(numberObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");;
     });
 
     /**
@@ -1277,13 +1278,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokeTest7600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const numberObj = new Number(123.456);
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(numberObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("RangeError");;
     });
 
     /**
@@ -1296,13 +1297,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokeTest7700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const stringObj = new String("undefined");
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(stringObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");;
     });
 
     /**
@@ -1345,13 +1346,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokeTest8000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const stringObj = new String("NaN");
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(stringObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");;
     });
 
     /**
@@ -1364,13 +1365,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokerTest8100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const stringObj = new String("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~");
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(stringObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");;
     });
 
     /**
@@ -1383,13 +1384,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokerTest8200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const stringObj = new String("!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~");
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(stringObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");;
     });
 
     /**
@@ -1402,13 +1403,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokerTest8300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const stringObj = new String("!!\"\"##$$%%&&''(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~");
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(stringObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");;
     });
 
     /**
@@ -1422,14 +1423,14 @@ export default function BuiltinsBigIntInvokeTest(): void {
     it('builtinsBigIntInvokerTest8400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const stringObj = new String("\\a\\b\\f\\n\\r\\t\\v\\\\\\'\\?\\0\\123\\x41");
       const string2 = new String('\\"')
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(string2);
         BigInt.$_invoke(stringObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");;
     });
 
     /**
@@ -1443,13 +1444,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
     it('builtinsBigIntInvokerTest8500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const stringObj = new String("\ud83d\udc46\ud83d\udc7f\ud83d\udc40\ud83d\udcaf\ud83c\udf85\ud83d\ude3c" +
         "\ud83d\udd27\ud83d\udc87\ud83e\udd3c\u200d\u2642\ufe0f\ud83d\udee2\ud83c\udc04\ud83c\udff4");
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(stringObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");;
     });
 
     /**
@@ -1462,13 +1463,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
      */
     it('builtinsBigIntInvokerTest8600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const stringObj = new String("\udc04\ud83d\udff4");
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(stringObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");;
     });
 
     /**
@@ -1482,13 +1483,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
     it('builtinsBigIntInvokerTest8700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const treeString = init(1000);
       const stringObj = new String(treeString);
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(stringObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");;
     });
 
     /**
@@ -1504,13 +1505,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
       const resultStr = str.substring(0, str.length - 2);
       const stringObj = new String(resultStr);
       for (let i = 0; i < 10; i++) {
-        let threwException = false;
+        let threwException = "";
         try {
           BigInt.$_invoke(stringObj);
         } catch (e) {
-          threwException = true;
+          threwException = e.name;
         }
-        expect(threwException).assertTrue();
+        expect(threwException).assertEqual("Error");;
       }
     });
 
@@ -1525,13 +1526,13 @@ export default function BuiltinsBigIntInvokeTest(): void {
     it('builtinsBigIntInvokerTest8900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const largeStr = "a".repeat(1000000);
       const stringObj = new String(largeStr);
-      let threwException = false;
+      let threwException = "";
       try {
         BigInt.$_invoke(stringObj);
       } catch (e) {
-        threwException = true;
+        threwException = e.name;
       }
-      expect(threwException).assertTrue();
+      expect(threwException).assertEqual("Error");
     });
 
     /**
