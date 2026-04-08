@@ -123,8 +123,6 @@ export default function WindowImmersiveStaticTest() {
             navigationBarColor: '#00ff00',
             statusBarContentColor: '#ffffff',
             navigationBarContentColor: '#00ffff',
-            isStatusBarLightIcon: false,
-            isNavigationBarLightIcon: false,
             enableStatusBarAnimation: true,
             enableNavigationBarAnimation: true
           };
@@ -133,14 +131,14 @@ export default function WindowImmersiveStaticTest() {
             done();
             let systemBarProperty = win!.getWindowSystemBarProperties();
             hilog.info(domain, tag, msgStr + `Succeeded in getting system bar properties is:${JSON.stringify(systemBarProperty)}`);
-            expect(systemBarProperty.statusBarColor != null).assertTrue();
-            expect(systemBarProperty.isStatusBarLightIcon != null).assertTrue();
-            expect(systemBarProperty.statusBarContentColor != null).assertTrue();
-            expect(systemBarProperty.navigationBarColor != null).assertTrue();
-            expect(systemBarProperty.isNavigationBarLightIcon != null).assertTrue();
-            expect(systemBarProperty.navigationBarContentColor != null).assertTrue();
-            expect(systemBarProperty.enableStatusBarAnimation != null).assertTrue();
-            expect(systemBarProperty.enableNavigationBarAnimation != null).assertTrue();
+            expect(systemBarProperty.statusBarColor == '#ff00ff').assertTrue();
+            expect(systemBarProperty.isStatusBarLightIcon == false).assertTrue();
+            expect(systemBarProperty.statusBarContentColor =='#ffffff').assertTrue();
+            expect(systemBarProperty.navigationBarColor =='#00ff00').assertTrue();
+            expect(systemBarProperty.isNavigationBarLightIcon == false).assertTrue();
+            expect(systemBarProperty.navigationBarContentColor =='#00ffff').assertTrue();
+            expect(systemBarProperty.enableStatusBarAnimation == true).assertTrue();
+            expect(systemBarProperty.enableNavigationBarAnimation == true).assertTrue();
           }).catch((err: Error): PromiseLike<void> | undefined => {
             err = err as BusinessError;
             if (err.code === 801) {
