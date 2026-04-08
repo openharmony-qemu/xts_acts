@@ -19,6 +19,8 @@ import taskGroupTest from "./TaskGroup.test";
 import taskPoolTest from "./TaskPool.test";
 import taskPoolCoverageTest from "./TaskpoolCoverage.test";
 import taskTimeoutTest from "./TaskTimeout.test";
+import getTaskTest from "./GetTaskTest.test";
+import taskpoolCancelTest from "./TaskpoolCancelTest.test";
 
 
 export default function testsuite() {
@@ -28,4 +30,5 @@ export default function testsuite() {
   taskPoolTest();
   taskPoolCoverageTest();
   taskTimeoutTest();
+  getTaskTest();
 }

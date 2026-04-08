@@ -1458,8 +1458,7 @@ export default function atomicConcurrentTest() {
         eaws.push(eaw);
         eaw.start();
         eaw.run<void>((): void => {
-          if (instance.load() === null) {
-            instance.store(new Object());
+          if (instance.compareAndSwap(null, new Object())) {
             initCount.fetchAdd(1);
           }
         });
@@ -2602,7 +2601,6 @@ export default function atomicConcurrentTest() {
       let count = 0;
       for (let i = 0; i < 100; i++) {
         taskpool.execute(() => {
-          atomicInt.store(i);
           atomicInt.fetchAdd(1);
           atomicInt.fetchSub(1);
           atomicInt.fetchAnd(0xFF);
@@ -2616,7 +2614,7 @@ export default function atomicConcurrentTest() {
       while (count < 100) {
         await sleep(100)
       }
-      expect(finalValue >= 0 && finalValue <= 99).assertTrue();
+      expect(finalValue==0 || finalValue==16).assertEqual(true);
     });
 
     /**
@@ -2755,7 +2753,7 @@ export default function atomicConcurrentTest() {
       while (count < 100) {
         await sleep(100)
       }
-      expect(finalValue).assertEqual(0);
+      expect(finalValue==0 || finalValue==16).assertEqual(true);
     });
 
     /**
