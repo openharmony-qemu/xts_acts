@@ -1458,7 +1458,8 @@ export default function atomicConcurrentTest() {
         eaws.push(eaw);
         eaw.start();
         eaw.run<void>((): void => {
-          if (instance.compareAndSwap(null, new Object())) {
+          let oldValue = instance.compareAndSwap(null, new Object());
+          if (oldValue == null) {
             initCount.fetchAdd(1);
           }
         });
