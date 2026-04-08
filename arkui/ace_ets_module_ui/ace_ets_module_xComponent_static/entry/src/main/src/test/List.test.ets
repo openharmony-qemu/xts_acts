@@ -19,7 +19,7 @@ import ComponentNodeWithOptionsTest from './XComponentTest/ComponentNodeWithOpti
 import ComponentNodeWithNativeParametersTest from './XComponentTest/ComponentNodeWithNativeParametersTest.test';
 import ComponentNodeDefaultTest from './XComponentTest/ComponentNodeDefaultTest.test';
 import XComponentHdrBrightnessTest from './XComponentHdrBrightnessTest/XComponentHdrBrightness.test';
- import ComponentContentApiTest from './ComponentContentApiTest/ComponentContentApi.test';
+import ComponentContentApiTest from './ComponentContentApiTest/ComponentContentApi.test';
 
 export default function testsuite() {
   XComponentTest();
