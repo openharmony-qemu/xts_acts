@@ -3246,26 +3246,28 @@ export default function abilityTest() {
                     } else if (value) {
                         console.info('Get device information successfully');
                         let deviceInfo = value?.devices[0]
-                        console.info(`${TAG}TestLog1 castCategory = ${deviceInfo.castCategory}`);
-                        expect(deviceInfo.castCategory).assertEqual(0);
-                        console.info(`${TAG}TestLog1 deviceId = ${deviceInfo.deviceId}`);
-                        expect(deviceInfo.deviceId).assertEqual("0");
-                        console.info(`${TAG}TestLog1 deviceName = ${deviceInfo.deviceName}`);
-                        expect(deviceInfo.deviceName).assertEqual("LocalDevice");
-                        console.info(`${TAG}TestLog1 deviceType = ${deviceInfo.deviceType}`);
-                        expect(deviceInfo.deviceType).assertEqual(0);
-                        console.info(`${TAG}TestLog1 modelName = ${deviceInfo.modelName}`);
-                        expect(deviceInfo.modelName).assertEqual("");
-                        console.info(`${TAG}TestLog1 supportedPullClients = ${deviceInfo.supportedPullClients}`);
-                        expect(deviceInfo.supportedPullClients).assertEqual(undefined);
-                        console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo.supportedProtocols}`);
-                        expect(deviceInfo.supportedProtocols).assertEqual(0);
+                        console.info(`${TAG}TestLog1 castCategory = ${deviceInfo?.castCategory}`);
+                        expect(deviceInfo?.castCategory).assertEqual(0);
+                        console.info(`${TAG}TestLog1 deviceId = ${deviceInfo?.deviceId}`);
+                        expect(deviceInfo?.deviceId).assertEqual("0");
+                        console.info(`${TAG}TestLog1 deviceName = ${deviceInfo?.deviceName}`);
+                        expect(deviceInfo?.deviceName).assertEqual("LocalDevice");
+                        console.info(`${TAG}TestLog1 deviceType = ${deviceInfo?.deviceType}`);
+                        expect(deviceInfo?.deviceType).assertEqual(0);
+                        console.info(`${TAG}TestLog1 modelName = ${deviceInfo?.modelName}`);
+                        expect(deviceInfo?.modelName).assertEqual("");
+                        console.info(`${TAG}TestLog1 supportedPullClients = ${deviceInfo?.supportedPullClients}`);
+                        expect(deviceInfo?.supportedPullClients).assertEqual(undefined);
+                        console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo?.supportedProtocols}`);
+                        expect(deviceInfo?.supportedProtocols).assertEqual(0);
                         console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo?.supportedDrmCapabilities}`);
-                        expect(deviceInfo?.supportedDrmCapabilities == undefined).assertFail();
+                        expect(deviceInfo?.supportedDrmCapabilities?.length).assertEqual(0);
+                        console.info(`${TAG}TestLog1 manufacturer = ${deviceInfo?.manufacturer}`);
+                        expect(deviceInfo?.manufacturer).assertEqual("");
                     } else {
                         console.info('Get device information failed');
                         expect(false).assertTrue();
-                    }
+                    } 
                     done();
                 });
             } catch (err) {
@@ -3308,7 +3310,9 @@ export default function abilityTest() {
                         console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo?.supportedProtocols}`);
                         expect(deviceInfo?.supportedProtocols).assertEqual(0);
                         console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo?.supportedDrmCapabilities}`);
-                        expect(deviceInfo?.supportedDrmCapabilities == undefined).assertFalse();
+                        expect(deviceInfo?.supportedDrmCapabilities?.length).assertEqual(0);
+                        console.info(`${TAG}TestLog1 manufacturer = ${deviceInfo?.manufacturer}`);
+                        expect(deviceInfo?.manufacturer).assertEqual("");
                     } else {
                         console.info('Get device information failed');
                         expect(false).assertTrue();
