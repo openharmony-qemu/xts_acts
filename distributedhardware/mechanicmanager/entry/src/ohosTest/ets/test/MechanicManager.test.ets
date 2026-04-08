@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file expect in compliance with the License.
+ * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
@@ -14,7 +14,11 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { Driver, ON } from '@ohos.UiTest';
-import mechanicManager from '@ohos.distributedHardware.mechanicManager'
+import mechanicManager from '@ohos.distributedHardware.mechanicManager';
+import deviceInfo from '@ohos.deviceInfo';
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+
+let totalMem: bigint
 
 export default function MechanicManagerAPI() {
   describe('MechanicManagerAPI', () => {
@@ -43,6 +47,12 @@ export default function MechanicManagerAPI() {
     beforeAll(async (done: Function) => {
       console.info(('beforeAll called'));
       await sleep(1000);
+      console.info(`====>MechanicManagerAPI${'beforeAll'} current device:` + deviceInfo.deviceType);
+      let systemMemInfo: hidebug.SystemMemInfo = hidebug.getSystemMemInfo();
+      totalMem = systemMemInfo.totalMem;
+      console.info(`totalMem: ${totalMem} `);
+      console.info(`totalMem: ${systemMemInfo.totalMem}, freeMem: ${systemMemInfo.freeMem}, ` +
+        `availableMem: ${systemMemInfo.availableMem}`);
       done();
     })
     beforeEach(async (done: Function) => {
@@ -205,6 +215,7 @@ export default function MechanicManagerAPI() {
           }
         }
         let SUB_DH_MechanicManager_on_0100_CheckSuccess = () => {
+          let flag = 0;
           try {
             mechanicManager.on("attachStateChange", (data) => {
               console.log("SUB_DH_MechanicManager_on_0100 mechanicManager.on success, data:" + JSON.stringify(data));
@@ -215,14 +226,14 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_on_0100 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
           }
+          console.log("-----------------SUB_DH_MechanicManager_on_0100 end------------------");
         }
         let SUB_DH_MechanicManager_on_0100_CheckReturnError = () => {
           try {
             mechanicManager.on("attachStateChange", (data) => {
               console.log("SUB_DH_MechanicManager_on_0100 mechanicManager.on success, data:" + JSON.stringify(data));
             });
-            console.log("SUB_DH_MechanicManager_on_0100 mechanicManager.on success");
-            expect(flag == 0).assertTrue();
+            expect().assertFail();
           } catch (error) {
             console.error(`SUB_DH_MechanicManager_on_0100 failed2, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 33300001).assertTrue();
@@ -360,6 +371,7 @@ export default function MechanicManagerAPI() {
           }
         }
         let SUB_DH_MechanicManager_off_0100_CheckSuccess = () => {
+          let flag = 0;
           try {
             mechanicManager.off("attachStateChange", (data) => {
               console.log("SUB_DH_MechanicManager_off_0100 mechanicManager.off success, data:" + JSON.stringify(data));
@@ -370,14 +382,14 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_0100 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
           }
+          console.log("-----------------SUB_DH_MechanicManager_off_0100 end------------------");
         }
         let SUB_DH_MechanicManager_off_0100_CheckReturnError = () => {
           try {
             mechanicManager.off("attachStateChange", (data) => {
               console.log("SUB_DH_MechanicManager_off_0100 mechanicManager.off success, data:" + JSON.stringify(data));
             });
-            console.log("SUB_DH_MechanicManager_off_0100 mechanicManager.off success");
-            expect(flag == 0).assertTrue();
+            expect().assertFail();
           } catch (error) {
             console.error(`SUB_DH_MechanicManager_off_0100 failed2, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 33300001).assertTrue();
@@ -496,6 +508,7 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_0900 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 401).assertTrue();
           }
+          console.log("-----------------SUB_DH_MechanicManager_off_0900 end------------------");
         }
         let SUB_DH_MechanicManager_off_0900_CheckReturnError = () => {
           try {
@@ -552,6 +565,7 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_1000 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 401).assertTrue();
           }
+          console.log("-----------------SUB_DH_MechanicManager_off_1000 end------------------");
         }
         let SUB_DH_MechanicManager_off_1000_CheckReturnError = () => {
           try {
@@ -598,25 +612,19 @@ export default function MechanicManagerAPI() {
         }
         let SUB_DH_MechanicManager_off_0400_CheckSuccess = () => {
           try {
-            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
-              console.info(`'callback result:' ${result}`);
-            }
-            mechanicManager.on(null, callback);
-            console.info("SUB_DH_MechanicManager_off_0400 mechanicManager.on success" + ",expect fail");
+            mechanicManager.off("attachStateChange", undefined);
+            console.log("SUB_DH_MechanicManager_off_0400 mechanicManager.off success");
             expect().assertFail();
           } catch (error) {
-            console.error(`SUB_DH_MechanicManager_off_0400 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            console.error(`SUB_DH_MechanicManager_off_0400 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 401).assertTrue();
-            console.info("-----------------SUB_DH_MechanicManager_off_0400 end-----------------");
           }
+          console.info("-----------------SUB_DH_MechanicManager_off_0400 end-----------------");
         }
         let SUB_DH_MechanicManager_off_0400_CheckReturnError = () => {
           try {
-            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
-              console.info(`'callback result:' ${result}`);
-            }
-            mechanicManager.on(null, callback);
-            console.info("SUB_DH_MechanicManager_off_0400 mechanicManager.on success" + ",expect fail");
+            mechanicManager.off("attachStateChange", undefined);
+            console.log("SUB_DH_MechanicManager_off_0400 mechanicManager.off success");
             expect().assertFail();
           } catch (error) {
             console.error(`SUB_DH_MechanicManager_off_0400 failed2, code is ${error.code}, message is ${error.message}`);
@@ -1320,7 +1328,7 @@ export default function MechanicManagerAPI() {
         };
         console.info('SUB_DH_MechanicManager_on_0800 Register');
         mechanicManager.on("attachStateChange", callback);
-        console.info('SUB_DH_MechanicManager_on_0800 Register: success');
+        expect().assertFail();
       } catch (error) {
         console.error(`SUB_DH_MechanicManager_on_0800 failed2, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 33300001).assertTrue();
@@ -1357,6 +1365,7 @@ export default function MechanicManagerAPI() {
           }
         }
         let SUB_DH_MechanicManager_off_0500_CheckSuccess = () => {
+          let flag = 0;
           try {
             mechanicManager.off("trackingStateChange", (data) => {
               console.log("SUB_DH_MechanicManager_off_0500 mechanicManager.off success, data:" + JSON.stringify(data));
@@ -1367,14 +1376,14 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_0500 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
           }
+          console.log("-----------------SUB_DH_MechanicManager_off_0500 end------------------");
         }
         let SUB_DH_MechanicManager_off_0500_CheckReturnError = () => {
           try {
             mechanicManager.off("trackingStateChange", (data) => {
               console.log("SUB_DH_MechanicManager_off_0500 mechanicManager.off success, data:" + JSON.stringify(data));
             });
-            console.log("SUB_DH_MechanicManager_off_0500 mechanicManager.off success");
-            expect(flag == 0).assertTrue();
+            expect().assertFail();
           } catch (error) {
             console.error(`SUB_DH_MechanicManager_off_0500 failed2, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 33300001).assertTrue();
@@ -1440,6 +1449,7 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_0700 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 401).assertTrue();
           }
+          console.log("-----------------SUB_DH_MechanicManager_off_0700 end------------------");
         }
         let SUB_DH_MechanicManager_off_0700_CheckReturnError = () => {
           try {
@@ -1493,6 +1503,7 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_1100 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 401).assertTrue();
           }
+          console.log("-----------------SUB_DH_MechanicManager_off_1100 end------------------");
         }
         let SUB_DH_MechanicManager_off_1100_CheckReturnError = () => {
           try {
@@ -1549,6 +1560,7 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_1200 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 401).assertTrue();
           }
+          console.log("-----------------SUB_DH_MechanicManager_off_1200 end------------------");
         }
         let SUB_DH_MechanicManager_off_1200_CheckReturnError = () => {
           try {
@@ -1602,6 +1614,7 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_0800 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 401).assertTrue();
           }
+          console.log("-----------------SUB_DH_MechanicManager_off_0800 end------------------");
         }
         let SUB_DH_MechanicManager_off_0800_CheckReturnError = () => {
           try {
