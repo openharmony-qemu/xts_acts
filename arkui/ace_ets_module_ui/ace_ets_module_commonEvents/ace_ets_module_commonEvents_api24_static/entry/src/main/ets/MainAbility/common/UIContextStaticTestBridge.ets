@@ -32,10 +32,11 @@ export function getMainRouterForStaticTest(): Router | undefined {
   return mainUIContext?.getRouter();
 }
 
-function delayMs(ms: int): Promise<void> {
-  return new Promise<void>((resolve: (v: void | PromiseLike<void>) => void, _reject: (e: Error) => void): void => {
-    setTimeout((): void => {
-      resolve();
+/** 与同目录 Utils.sleep 一致：静态链路透传对 Promise<void> 的 resolve() 较严，用 string 占位。 */
+function delayMs(ms: int): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
+    setTimeout(() => {
+      resolve('ok');
     }, ms);
   });
 }
