@@ -1476,7 +1476,8 @@ napi_value ImageSourceTest::TestCreateImageRawData(napi_env env, napi_callback_i
     return result;
 }
 
-napi_value ImageSourceTest::TestCreateImageRawDataSucc(napi_env env, napi_callback_info info) {
+napi_value ImageSourceTest::TestCreateImageRawDataSucc(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestCreateImageRawDataSucc IN!");
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
@@ -1515,7 +1516,8 @@ napi_value ImageSourceTest::TestCreateImageRawDataSucc(napi_env env, napi_callba
     return result;
 }
 
-napi_value ImageSourceTest::TestGetBufferFromRawDataSucc(napi_env env, napi_callback_info info) {
+napi_value ImageSourceTest::TestGetBufferFromRawDataSucc(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestGetBufferFromRawDataSucc IN!");
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
@@ -1565,7 +1567,8 @@ napi_value ImageSourceTest::TestGetBufferFromRawDataSucc(napi_env env, napi_call
     return result;
 }
 
-napi_value ImageSourceTest::TestDestroyImageRawDataSucc(napi_env env, napi_callback_info info) {
+napi_value ImageSourceTest::TestDestroyImageRawDataSucc(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestDestroyImageRawDataSucc IN!");
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
@@ -1610,20 +1613,18 @@ napi_value ImageSourceTest::TestDestroyImageRawDataSucc(napi_env env, napi_callb
     return result;
 }
 
-napi_value ImageSourceTest::TestDestroyImageRawDataInvalidParam(napi_env env, napi_callback_info info) {
+napi_value ImageSourceTest::TestDestroyImageRawDataInvalidParam(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "TestDestroyImageRawDataInvalidParam IN!");
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
-
     OH_ImageRawData *rawData = nullptr;
     Image_ErrorCode ret = OH_ImageSourceNative_DestroyImageRawData(rawData);
-
     if (ret != IMAGE_SOURCE_INVALID_PARAMETER) {
         OH_LOG_ERROR(LOG_APP, "Expected IMAGE_SOURCE_INVALID_PARAMETER, but got: %{public}d", ret);
         napi_create_int32(env, ret, &result);
         return result;
     }
-
     OH_LOG_INFO(LOG_APP, "Successfully triggered IMAGE_SOURCE_INVALID_PARAMETER");
     napi_create_int32(env, IMAGE_SOURCE_INVALID_PARAMETER, &result);
     return result;
