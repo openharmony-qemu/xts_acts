@@ -15,21 +15,16 @@
 
 export const AddNullPtrReadOnlyRequestInterceptor: () => number;
 export const AddNullPtrWritableResponseInterceptor: () => number;
-// export const AddReadOnlyRequestInterceptor: (groupId: number, enabled: number) => number;
+export const AddReadOnlyRequestInterceptor: (groupId: number, enabled: number) => number;
 export const AddReadOnlyResponseInterceptor: (groupId: number, enabled: number) => number;
-// export const AddWritableRequestInterceptor: (groupId: number, enabled: number) => number;
-// export const AddWritableResponseInterceptor: (groupId: number, enabled: number) => number;
+export const AddWritableRequestInterceptor: (groupId: number, enabled: number) => number;
+export const AddWritableResponseInterceptor: (groupId: number, enabled: number) => number;
 export const StopAllInterceptor: (groupId: number) => number;
 export const RemoveAllInterceptor: (groupId: number) => number;
 export const RemoveRequestInterceptor: (groupId: number) => number;
 export const RemoveResponseInterceptor: (groupId: number) => number;
 export const RemoveNullptrInterceptor: () => number;
 export const StartAllInterceptor: (groupId: number) => number;
-
-export const GetRequestUrl: () => string;
-export const GetRequestBody: () => string;
-export const GetResponseBody: () => string;
-export const GetRequestMethod: () => string;
-export const GetRequestHeader: () => string;
-export const GetResponseHeader: () => string;
-export const GetResponseCode: () => number;
+export const TestCHttpRequest: (url: string) => number;
+export const RegisterInterceptorCallback: (callbackId: string, callback: any) => number;
+export const UnregisterCallback: (callbackId: string) => number;
