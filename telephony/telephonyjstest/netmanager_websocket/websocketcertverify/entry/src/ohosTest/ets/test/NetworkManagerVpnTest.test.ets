@@ -915,19 +915,19 @@ export default function NetworkManagerVpnTest() {
     })
     
     /**
- 	   * @tc.name   testNetworkManagerVPNcreateVpnObserver0100
- 	   * @tc.number SUB_NetworkManager_VPN_createVpnObserver_0100
- 	   * @tc.desc   Function test
- 	   * @tc.type   FUNCTION
- 	   * @tc.size   MEDIUMTEST
- 	   * @tc.level  LEVEL0
- 	   */
+     * @tc.name   testNetworkManagerVPNcreateVpnObserver0100
+     * @tc.number SUB_NetworkManager_VPN_createVpnObserver_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNetworkManagerVPNcreateVpnObserver0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'testNetworkManagerVPNcreateVpnObserver0100';
       try {
         let vpnObserver = vpnExtension.createVpnObserver();
         console.log(`${caseName} createVpnObserver success`);
-        expect(vpnObserver != undefined).assertTrue();
+        expect(vpnObserver !== undefined).assertTrue();
         done();
       }
       catch (error) {
@@ -953,7 +953,7 @@ export default function NetworkManagerVpnTest() {
           console.log(`${caseName} onAuthorizationResult callback ${result}`);
         });
         console.log(`${caseName} onAuthorizationResult success`);
-        expect(vpnObserver != undefined).assertTrue();
+        expect(vpnObserver !== undefined).assertTrue();
         done();
       }
       catch (error) {
@@ -962,7 +962,6 @@ export default function NetworkManagerVpnTest() {
         done();
       }
     })
-
 
     /**
      * @tc.name   testNetworkManagerVPNonAuthorizationResult0200
@@ -974,6 +973,7 @@ export default function NetworkManagerVpnTest() {
      */
     it('testNetworkManagerVPNonAuthorizationResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'testNetworkManagerVPNonAuthorizationResult0200';
+      let callbackTriggered = false;
       try {
         let vpnObserver = vpnExtension.createVpnObserver();
         vpnObserver.onAuthorizationResult((result: boolean) => {
@@ -982,9 +982,10 @@ export default function NetworkManagerVpnTest() {
         console.log(`${caseName} onAuthorizationResult success`);
         vpnObserver.onAuthorizationResult((result: boolean) => {
           console.log(`${caseName} onAuthorizationResult callback ${result}`);
+          callbackTriggered = true;
         });
         console.log(`${caseName} onAuthorizationResult success`);
-        expect(vpnObserver != undefined).assertTrue();
+        expect(vpnObserver !== undefined).assertTrue();
         done();
       }
       catch (error) {
@@ -1012,7 +1013,7 @@ export default function NetworkManagerVpnTest() {
         vpnObserver.onAuthorizationResult(callback);
         vpnObserver.offAuthorizationResult(callback);
         console.log(`${caseName} offAuthorizationResult success`);
-        expect(vpnObserver != undefined).assertTrue();
+        expect(vpnObserver !== undefined).assertTrue();
         done();
       }
       catch (error) {
@@ -1040,7 +1041,7 @@ export default function NetworkManagerVpnTest() {
         vpnObserver.offAuthorizationResult(callback);
         console.log(`${caseName} offAuthorizationResult success`);
         console.log(`${caseName} vpnObserver = ${JSON.stringify(vpnObserver)}`);
-        expect(vpnObserver != undefined).assertTrue();
+        expect(vpnObserver !== undefined).assertTrue();
         done();
       }
       catch (error) {
@@ -1049,7 +1050,6 @@ export default function NetworkManagerVpnTest() {
         done();
       }
     })
-
 
     /**
      * @tc.name   testNetworkManagerVPNoffAuthorizationResult0300
@@ -1070,7 +1070,7 @@ export default function NetworkManagerVpnTest() {
         console.log(`${caseName} offAuthorizationResult success`);
         vpnObserver.offAuthorizationResult(callback);
         console.log(`${caseName} offAuthorizationResult success`);
-        expect(vpnObserver != undefined).assertTrue();
+        expect(vpnObserver !== undefined).assertTrue();
         done();
       }
       catch (error) {
