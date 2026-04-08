@@ -94,11 +94,11 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
       let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       try {
         for (let index = 0; index < 500; index++) {
-          notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
+          notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then(async(data) => {
             console.info(`${testNum}${index+1}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
             expect(index).assertEqual(0);
             done();
-          }).catch((e:Error) => {
+          }).catch(async(e:Error) => {
             let err = e as BusinessError
             console.error(`${testNum}${index+1}failed to call openSubscriptionSettingsWithResult  ${err.code}, ${err.message}`)
             if (err?.code === 801) {
