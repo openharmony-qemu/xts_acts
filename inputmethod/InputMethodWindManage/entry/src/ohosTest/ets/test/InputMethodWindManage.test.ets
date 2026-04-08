@@ -1530,7 +1530,8 @@ export default function inputMethodWindManageAbility() {
         top: 607,
         width: 720,
         height: 601,
-        displayId: 1979
+        displayId: 1979,
+        userId: 100
       }
       try {
         console.info('====>Sub_Misc_inputMethod_inputWindowInfo_0201 inputWindowInfo: ' + JSON.stringify(inputWindowInfo));
@@ -1540,6 +1541,7 @@ export default function inputMethodWindManageAbility() {
         expect(inputWindowInfo.width).assertEqual(720);
         expect(inputWindowInfo.height).assertEqual(601);
         expect(inputWindowInfo.displayId).assertEqual(1979);
+        expect(inputWindowInfo.userId).assertEqual(100);
         done();
       } catch (err) {
         console.info('====>Sub_Misc_inputMethod_inputWindowInfo_0201 fail: ' + JSON.stringify(err));

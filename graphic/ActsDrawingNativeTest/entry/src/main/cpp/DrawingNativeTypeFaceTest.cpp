@@ -16,21 +16,14 @@
 #include "include/DrawingNativeTypeFaceTest.h"
 #include "include/OhosCommonTest.h"
 
+#define DRAWING_NUMBER_1 1
+#define DRAWING_NUMBER_10 10
+#define DRAWING_NUMBER_100 100
+
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
 
-namespace {
-// Constants for test values
-constexpr int TYPEFACE_INDEX_0 = 0;
-constexpr int TYPEFACE_INDEX_NEGATIVE_1 = -1;
-constexpr int TYPEFACE_STREAM_INDEX_1 = 1;
-constexpr int TEST_LOOP_COUNT_10 = 10;
-constexpr int TEST_FONT_VARIATION_VALUE_0 = 0;
-constexpr int TEST_FONT_VARIATION_VALUE_100 = 100;
-} // namespace
-
-// Common SetUp and TearDown functions implementation
 void DrawingNativeTypeFaceTestSetUp()
 {
     std::cout << "DrawingNativeTypeFaceTest Setup code called before each test case." << std::endl;
@@ -47,7 +40,7 @@ void DrawingNativeTypeFaceTestTearDown()
 
 /**
  * @tc.name   testTypefaceCreateDefaultNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_0100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0100
  * @tc.desc   test for testTypefaceCreateDefaultNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -56,33 +49,30 @@ void DrawingNativeTypeFaceTestTearDown()
 int TestTypefaceCreateDefaultNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_FontCreate
-    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
     // 2. OH_Drawing_TypefaceCreateDefault
-    OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateDefault();
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateDefault();
     // add assert
     EXPECT_NE(typeface, nullptr);
     // 3. OH_Drawing_FontSetTypeface, call OH_Drawing_FontGetTypeface to get the typeface object
     OH_Drawing_FontSetTypeface(font, typeface);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    OH_Drawing_Typeface* typefaceGet = OH_Drawing_FontGetTypeface(font);
+    OH_Drawing_Typeface *typefaceGet = OH_Drawing_FontGetTypeface(font);
     EXPECT_NE(typefaceGet, nullptr);
     // 4. Free memory
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TypefaceDestroy(typeface);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateDefaultNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_0200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0101
  * @tc.desc   test for testTypefaceCreateDefaultNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -91,12 +81,11 @@ int TestTypefaceCreateDefaultNormal()
 int TestTypefaceCreateDefaultNull()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_FontCreate
-    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
-    OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateDefault();
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateDefault();
     // add assert
     EXPECT_NE(typeface, nullptr);
     // 2. OH_Drawing_FontSetTypeface, pass nullptr as the first parameter and check the error code with
@@ -106,7 +95,7 @@ int TestTypefaceCreateDefaultNull()
     OH_Drawing_ErrorCodeReset();
     // 3. OH_Drawing_FontSetTypeface, pass nullptr as the second parameter
     OH_Drawing_FontSetTypeface(font, nullptr);
-    OH_Drawing_Typeface* typefaceGet = OH_Drawing_FontGetTypeface(font);
+    OH_Drawing_Typeface *typefaceGet = OH_Drawing_FontGetTypeface(font);
     EXPECT_NE(typefaceGet, nullptr);
     // 4. OH_Drawing_FontGetTypeface, pass nullptr as the parameter and check the error code with
     // OH_Drawing_ErrorCodeGet
@@ -115,15 +104,13 @@ int TestTypefaceCreateDefaultNull()
     // 5. Free memory
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TypefaceDestroy(typeface);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateFromFileNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_0300
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0200
  * @tc.desc   test for testTypefaceCreateFromFileNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -132,37 +119,34 @@ int TestTypefaceCreateDefaultNull()
 int TestTypefaceCreateFromFileNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_FontCreate
-    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
     // 2. OH_Drawing_TypefaceCreateFromFile
-    OH_Drawing_Typeface* typefaceFromFile =
-        OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular", TYPEFACE_INDEX_0);
+    OH_Drawing_Typeface *typefaceFromFile =
+        OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular", 0);
     // 3. OH_Drawing_FontSetTypeface, call OH_Drawing_FontGetTypeface to get the typeface object
     OH_Drawing_FontSetTypeface(font, typefaceFromFile);
-    OH_Drawing_Typeface* typefaceGet = OH_Drawing_FontGetTypeface(font);
+    OH_Drawing_Typeface *typefaceGet = OH_Drawing_FontGetTypeface(font);
     EXPECT_NE(typefaceGet, nullptr);
     // 4. When the index value is negative, count from the end of the sequence
-    OH_Drawing_Typeface* typefaceFromFile2 =
-        OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular", TYPEFACE_INDEX_NEGATIVE_1);
+    OH_Drawing_Typeface *typefaceFromFile2 =
+        OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular", -DRAWING_NUMBER_1);
     OH_Drawing_FontSetTypeface(font, typefaceFromFile2);
-    OH_Drawing_Typeface* typefaceGet2 = OH_Drawing_FontGetTypeface(font);
+    OH_Drawing_Typeface *typefaceGet2 = OH_Drawing_FontGetTypeface(font);
     EXPECT_NE(typefaceGet2, nullptr);
     // 5. Free memory
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TypefaceDestroy(typefaceFromFile);
     OH_Drawing_TypefaceDestroy(typefaceFromFile2);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateFromFileNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_0400
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0201
  * @tc.desc   test for testTypefaceCreateFromFileNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -171,40 +155,37 @@ int TestTypefaceCreateFromFileNormal()
 int TestTypefaceCreateFromFileNull()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_FontCreate
-    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
     // 2. OH_Drawing_TypefaceCreateFromFile, pass nullptr as the first parameter and check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_Typeface* typefaceFromFile = OH_Drawing_TypefaceCreateFromFile(nullptr, TYPEFACE_INDEX_0);
+    OH_Drawing_Typeface *typefaceFromFile = OH_Drawing_TypefaceCreateFromFile(nullptr, 0);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 3. OH_Drawing_TypefaceCreateFromFile, pass nullptr as the second parameter
-    OH_Drawing_Typeface* typefaceFromFile2 =
-        OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular", TYPEFACE_INDEX_0);
+    OH_Drawing_Typeface *typefaceFromFile2 =
+        OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular", 0);
     OH_Drawing_FontSetTypeface(font, typefaceFromFile2);
-    OH_Drawing_Typeface* typefaceGet = OH_Drawing_FontGetTypeface(font);
+    OH_Drawing_Typeface *typefaceGet = OH_Drawing_FontGetTypeface(font);
     EXPECT_NE(typefaceGet, nullptr);
     // 4. OH_Drawing_TypefaceCreateFromFile, pass nullptr as the parameter and check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_Typeface* typefaceFromFile3 = OH_Drawing_TypefaceCreateFromFile(nullptr, TYPEFACE_INDEX_0);
+    OH_Drawing_Typeface *typefaceFromFile3 = OH_Drawing_TypefaceCreateFromFile(nullptr, 0);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Free memory
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TypefaceDestroy(typefaceFromFile);
     OH_Drawing_TypefaceDestroy(typefaceFromFile2);
     OH_Drawing_TypefaceDestroy(typefaceFromFile3);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateFromStreamNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_0500
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0300
  * @tc.desc   test for testTypefaceCreateFromStreamNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -213,36 +194,33 @@ int TestTypefaceCreateFromFileNull()
 int TestTypefaceCreateFromStreamNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_FontCreate
-    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
     // 2. OH_Drawing_MemoryStream
     char testData[] = "Hello";
-    size_t length = sizeof(testData) - 1;
-    OH_Drawing_MemoryStream* memoryStream = OH_Drawing_MemoryStreamCreate(testData, length, false);
-    EXPECT_TRUE(memoryStream != nullptr);
+    size_t length = sizeof(testData) - DRAWING_NUMBER_1;
+    OH_Drawing_MemoryStream *memoryStream = OH_Drawing_MemoryStreamCreate(testData, length, false);
+    EXPECT_NE(memoryStream, nullptr);
     // 3. OH_Drawing_TypefaceCreateFromStream
-    OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateFromStream(memoryStream, TYPEFACE_STREAM_INDEX_1);
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromStream(memoryStream, DRAWING_NUMBER_1);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 4. OH_Drawing_FontSetTypeface, call OH_Drawing_FontGetTypeface to get the typeface object
     OH_Drawing_FontSetTypeface(font, typeface);
-    OH_Drawing_Typeface* typefaceGet = OH_Drawing_FontGetTypeface(font);
+    OH_Drawing_Typeface *typefaceGet = OH_Drawing_FontGetTypeface(font);
     EXPECT_NE(typefaceGet, nullptr);
     // 5. Free memory
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TypefaceDestroy(typeface);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateFromStreamNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_0600
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0301
  * @tc.desc   test for testTypefaceCreateFromStreamNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -251,39 +229,36 @@ int TestTypefaceCreateFromStreamNormal()
 int TestTypefaceCreateFromStreamNull()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_FontCreate
-    OH_Drawing_Font* font = OH_Drawing_FontCreate();
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
     // add assert
     EXPECT_NE(font, nullptr);
     char testData[] = "Hello";
-    size_t length = sizeof(testData) - 1;
-    OH_Drawing_MemoryStream* memoryStream = OH_Drawing_MemoryStreamCreate(testData, length, false);
+    size_t length = sizeof(testData) - DRAWING_NUMBER_1;
+    OH_Drawing_MemoryStream *memoryStream = OH_Drawing_MemoryStreamCreate(testData, length, false);
     // 2. OH_Drawing_TypefaceCreateFromStream, pass nullptr as the first parameter and check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_Typeface* typeface1 = OH_Drawing_TypefaceCreateFromStream(nullptr, TYPEFACE_STREAM_INDEX_1);
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromStream(nullptr, DRAWING_NUMBER_1);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 3. OH_Drawing_TypefaceCreateFromStream, pass nullptr as the second parameter
-    OH_Drawing_Typeface* typeface2 = OH_Drawing_TypefaceCreateFromStream(memoryStream, TYPEFACE_INDEX_0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromStream(memoryStream, 0);
     // 4. OH_Drawing_TypefaceCreateFromStream, pass nullptr as the parameter and check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_Typeface* typeface3 = OH_Drawing_TypefaceCreateFromStream(nullptr, TYPEFACE_INDEX_0);
+    OH_Drawing_Typeface *typeface3 = OH_Drawing_TypefaceCreateFromStream(nullptr, 0);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Free memory
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TypefaceDestroy(typeface1);
     OH_Drawing_TypefaceDestroy(typeface2);
     OH_Drawing_TypefaceDestroy(typeface3);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_0700
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0400
  * @tc.desc   test for testTypefaceCreateDestroyNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -292,22 +267,19 @@ int TestTypefaceCreateFromStreamNull()
 int TestTypefaceCreateDestroyNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_TypefaceCreateDefault
-    OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateDefault();
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateDefault();
     // add assert
     EXPECT_NE(typeface, nullptr);
     // 2. OH_Drawing_TypefaceDestroy
     OH_Drawing_TypefaceDestroy(typeface);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_0800
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0401
  * @tc.desc   test for testTypefaceCreateDestroyNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -316,20 +288,17 @@ int TestTypefaceCreateDestroyNormal()
 int TestTypefaceCreateDestroyNull()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_TypefaceDestroy
+    OH_Drawing_Typeface *typeface = nullptr;
     OH_Drawing_TypefaceDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
-
+    EXPECT_EQ(typeface, nullptr);
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateFromFileWithArugumentsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_0900
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0500
  * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -338,31 +307,28 @@ int TestTypefaceCreateDestroyNull()
 int TestTypefaceCreateFromFileWithArugumentsNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_FontArgumentsCreate
-    OH_Drawing_FontArguments* fontArguments = OH_Drawing_FontArgumentsCreate();
+    OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
     // add assert
     EXPECT_NE(fontArguments, nullptr);
     // 2. OH_Drawing_FontArgumentsAddVariation, should return OH_DRAWING_SUCCESS
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
-    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", TEST_FONT_VARIATION_VALUE_0);
+    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", 0);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
     // 3. OH_Drawing_TypefaceCreateFromFileWithArguments
-    OH_Drawing_Typeface* typeface =
-        OH_Drawing_TypefaceCreateFromFileWithArguments("/system/fonts/NotoSansBengaliUI-Regular", fontArguments);
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFileWithArguments(
+        "/system/fonts/NotoSansBengaliUI-Regular", fontArguments);
     // 4. OH_Drawing_TypefaceDestroy
     OH_Drawing_TypefaceDestroy(typeface);
     // 5. OH_Drawing_FontArgumentsDestroy
     OH_Drawing_FontArgumentsDestroy(fontArguments);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateFromFileWithArugumentsNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_01000
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0501
  * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -371,35 +337,32 @@ int TestTypefaceCreateFromFileWithArugumentsNormal()
 int TestTypefaceCreateFromFileWithArugumentsNull()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_FontArgumentsCreate
-    OH_Drawing_FontArguments* fontArguments = OH_Drawing_FontArgumentsCreate();
+    OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
     // add assert
     EXPECT_NE(fontArguments, nullptr);
     // 2. OH_Drawing_FontArgumentsAddVariation, should return OH_DRAWING_SUCCESS
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
-    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", TEST_FONT_VARIATION_VALUE_100);
+    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", DRAWING_NUMBER_100);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
     // 3. OH_Drawing_TypefaceCreateFromFileWithArguments,the first parameter is nullptr,return nullptr
-    OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateFromFileWithArguments(nullptr, fontArguments);
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFileWithArguments(nullptr, fontArguments);
     EXPECT_EQ(typeface, nullptr);
     // 4. OH_Drawing_TypefaceCreateFromFileWithArguments,the second parameter is nullptr,return nullptr
-    OH_Drawing_Typeface* typeface1 =
-        OH_Drawing_TypefaceCreateFromFileWithArguments("/system/fonts/NotoSansBengaliUI-Regular", nullptr);
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFileWithArguments(
+        "/system/fonts/NotoSansBengaliUI-Regular", nullptr);
     EXPECT_EQ(typeface1, nullptr);
     // 5. OH_Drawing_TypefaceDestroy
     OH_Drawing_TypefaceDestroy(typeface);
     // 6. OH_Drawing_FontArgumentsDestroy
     OH_Drawing_FontArgumentsDestroy(fontArguments);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateFromFileWithArugumentsAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_01100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0502
  * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsAbnormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -408,34 +371,31 @@ int TestTypefaceCreateFromFileWithArugumentsNull()
 int TestTypefaceCreateFromFileWithArugumentsAbnormal()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_FontArgumentsCreate
-    OH_Drawing_FontArguments* fontArguments = OH_Drawing_FontArgumentsCreate();
+    OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
     // add assert
     EXPECT_NE(fontArguments, nullptr);
     // 2. OH_Drawing_FontArgumentsAddVariation, should return OH_DRAWING_SUCCESS
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
-    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", TEST_FONT_VARIATION_VALUE_100);
+    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", DRAWING_NUMBER_100);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
     // 3. OH_Drawing_TypefaceCreateFromFileWithArguments,the first parameter is nullptr,return nullptr
-    OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateFromFileWithArguments("", fontArguments);
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFileWithArguments("", fontArguments);
     EXPECT_EQ(typeface, nullptr);
     // 4. OH_Drawing_TypefaceCreateFromFileWithArguments,the second parameter is nullptr,return nullptr
-    OH_Drawing_Typeface* typeface1 = OH_Drawing_TypefaceCreateFromFileWithArguments("aaa", nullptr);
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFileWithArguments("aaa", nullptr);
     EXPECT_EQ(typeface1, nullptr);
     // 5. OH_Drawing_TypefaceDestroy
     OH_Drawing_TypefaceDestroy(typeface);
     // 6. OH_Drawing_FontArgumentsDestroy
     OH_Drawing_FontArgumentsDestroy(fontArguments);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateFromFileWithArugumentsMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_01200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0503
  * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -444,34 +404,31 @@ int TestTypefaceCreateFromFileWithArugumentsAbnormal()
 int TestTypefaceCreateFromFileWithArugumentsMultipleCalls()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_FontArgumentsCreate
-    OH_Drawing_FontArguments* fontArguments = OH_Drawing_FontArgumentsCreate();
+    OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
     // add assert
     EXPECT_NE(fontArguments, nullptr);
     // 2. OH_Drawing_FontArgumentsAddVariation, should return OH_DRAWING_SUCCESS
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
-    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", TEST_FONT_VARIATION_VALUE_0);
+    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", 0);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
     // 3. OH_Drawing_TypefaceCreateFromFileWithArguments
-    OH_Drawing_Typeface* typeface = nullptr;
-    for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
-        typeface =
-            OH_Drawing_TypefaceCreateFromFileWithArguments("/system/fonts/NotoSansBengaliUI-Regular", fontArguments);
+    OH_Drawing_Typeface *typeface = nullptr;
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        typeface = OH_Drawing_TypefaceCreateFromFileWithArguments(
+            "/system/fonts/NotoSansBengaliUI-Regular", fontArguments);
     }
     // 4. OH_Drawing_TypefaceDestroy
     OH_Drawing_TypefaceDestroy(typeface);
     // 5. OH_Drawing_FontArgumentsDestroy
     OH_Drawing_FontArgumentsDestroy(fontArguments);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateFromCurrentNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_01300
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0600
  * @tc.desc   test for testTypefaceCreateFromCurrentNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -480,22 +437,21 @@ int TestTypefaceCreateFromFileWithArugumentsMultipleCalls()
 int TestTypefaceCreateFromCurrentNormal()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_TypefaceCreateFromFile
-    OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular",
-                                                                      TYPEFACE_INDEX_0);
+    OH_Drawing_ErrorCodeReset();
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular", 0);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 2. OH_Drawing_FontArgumentsCreate
-    OH_Drawing_FontArguments* fontArguments = OH_Drawing_FontArgumentsCreate();
+    OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
     // add assert
     EXPECT_NE(fontArguments, nullptr);
     // 3. OH_Drawing_FontArgumentsAddVariation, should return OH_DRAWING_SUCCESS
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
-    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", TEST_FONT_VARIATION_VALUE_100);
+    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", DRAWING_NUMBER_100);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
     // 4. OH_Drawing_TypefaceCreateFromCurrent
-    OH_Drawing_Typeface* typeface1 = OH_Drawing_TypefaceCreateFromCurrent(typeface, fontArguments);
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromCurrent(typeface, fontArguments);
     // add assert
     EXPECT_EQ(typeface1, nullptr);
     // 5. OH_Drawing_TypefaceDestroy typeface1
@@ -504,15 +460,13 @@ int TestTypefaceCreateFromCurrentNormal()
     OH_Drawing_TypefaceDestroy(typeface);
     // 7. OH_Drawing_FontArgumentsDestroy
     OH_Drawing_FontArgumentsDestroy(fontArguments);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateFromCurrentNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_01400
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0601
  * @tc.desc   test for testTypefaceCreateFromCurrentNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -521,25 +475,24 @@ int TestTypefaceCreateFromCurrentNormal()
 int TestTypefaceCreateFromCurrentNull()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_TypefaceCreateFromFile
-    OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular",
-                                                                      TYPEFACE_INDEX_0);
+    OH_Drawing_ErrorCodeReset();
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular", 0);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 2. OH_Drawing_FontArgumentsCreate
-    OH_Drawing_FontArguments* fontArguments = OH_Drawing_FontArgumentsCreate();
+    OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
     // add assert
     EXPECT_NE(fontArguments, nullptr);
     // 3. OH_Drawing_FontArgumentsAddVariation, should return OH_DRAWING_SUCCESS
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
-    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", TEST_FONT_VARIATION_VALUE_100);
+    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", DRAWING_NUMBER_100);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
     // 4. OH_Drawing_TypefaceCreateFromCurrent,the first parameter is nullptr
-    OH_Drawing_Typeface* typeface1 = OH_Drawing_TypefaceCreateFromCurrent(nullptr, fontArguments);
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromCurrent(nullptr, fontArguments);
     EXPECT_EQ(typeface1, nullptr);
     // 5. OH_Drawing_TypefaceCreateFromCurrent,the second parameter is nullptr
-    OH_Drawing_Typeface* typeface2 = OH_Drawing_TypefaceCreateFromCurrent(typeface, nullptr);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromCurrent(typeface, nullptr);
     EXPECT_EQ(typeface2, nullptr);
     // 6. OH_Drawing_TypefaceDestroy typeface1
     OH_Drawing_TypefaceDestroy(typeface1);
@@ -547,15 +500,13 @@ int TestTypefaceCreateFromCurrentNull()
     OH_Drawing_TypefaceDestroy(typeface);
     // 8. OH_Drawing_FontArgumentsDestroy
     OH_Drawing_FontArgumentsDestroy(fontArguments);
-
     DrawingNativeTypeFaceTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testTypefaceCreateFromCurrentMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_TYPEFACE_01500
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0602
  * @tc.desc   test for testTypefaceCreateFromCurrentMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -564,23 +515,22 @@ int TestTypefaceCreateFromCurrentNull()
 int TestTypefaceCreateFromCurrentMultipleCalls()
 {
     DrawingNativeTypeFaceTestSetUp();
-
     // 1. OH_Drawing_TypefaceCreateFromFile
-    OH_Drawing_Typeface* typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular",
-                                                                      TYPEFACE_INDEX_0);
+    OH_Drawing_ErrorCodeReset();
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Regular", 0);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 2. OH_Drawing_FontArgumentsCreate
-    OH_Drawing_FontArguments* fontArguments = OH_Drawing_FontArgumentsCreate();
+    OH_Drawing_FontArguments *fontArguments = OH_Drawing_FontArgumentsCreate();
     // add assert
     EXPECT_NE(fontArguments, nullptr);
     // 3. OH_Drawing_FontArgumentsAddVariation, should return OH_DRAWING_SUCCESS
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
-    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", TEST_FONT_VARIATION_VALUE_100);
+    drawingErrorCode = OH_Drawing_FontArgumentsAddVariation(fontArguments, "wght", DRAWING_NUMBER_100);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
     // 4. OH_Drawing_TypefaceCreateFromCurrent
-    OH_Drawing_Typeface* typeface1 = nullptr;
-    for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
+    OH_Drawing_Typeface *typeface1 = nullptr;
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         typeface1 = OH_Drawing_TypefaceCreateFromCurrent(typeface, fontArguments);
     }
     // 5. OH_Drawing_TypefaceDestroy typeface1
@@ -589,9 +539,157 @@ int TestTypefaceCreateFromCurrentMultipleCalls()
     OH_Drawing_TypefaceDestroy(typeface);
     // 7. OH_Drawing_FontArgumentsDestroy
     OH_Drawing_FontArgumentsDestroy(fontArguments);
-
     DrawingNativeTypeFaceTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
 
+/**
+ * @tc.name   testTypefaceIsBoldNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0700
+ * @tc.desc   test for testTypefaceIsBoldNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+int TestTypefaceIsBoldNormal()
+{
+    DrawingNativeTypeFaceTestSetUp();
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isBold = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsBold(typeface1, &isBold);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isBold, true);
+    errorCode = OH_Drawing_TypefaceIsBold(typeface2, &isBold);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isBold, false);
+    OH_Drawing_TypefaceDestroy(typeface1);
+    OH_Drawing_TypefaceDestroy(typeface2);
+    DrawingNativeTypeFaceTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+/**
+ * @tc.name   testTypefaceIsBoldNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0701
+ * @tc.desc   test for testTypefaceIsBoldNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+int TestTypefaceIsBoldNull()
+{
+    DrawingNativeTypeFaceTestSetUp();
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isBold = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsBold(nullptr, &isBold);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isBold, false);
+    errorCode = OH_Drawing_TypefaceIsBold(typeface2, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isBold, false);
+    OH_Drawing_TypefaceDestroy(typeface1);
+    OH_Drawing_TypefaceDestroy(typeface2);
+    DrawingNativeTypeFaceTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+/**
+ * @tc.name   testTypefaceIsBoldMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0702
+ * @tc.desc   test for testTypefaceIsBoldMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+int TestTypefaceIsBoldMultipleCalls()
+{
+    DrawingNativeTypeFaceTestSetUp();
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    bool isBold = false;
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsBold(typeface, &isBold);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isBold, true);
+    }
+    OH_Drawing_TypefaceDestroy(typeface);
+    DrawingNativeTypeFaceTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+/**
+ * @tc.name   testTypefaceIsItalicNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0800
+ * @tc.desc   test for testTypefaceIsItalicNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+int TestTypefaceIsItalicNormal()
+{
+    DrawingNativeTypeFaceTestSetUp();
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isItalic = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsItalic(typeface1, &isItalic);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isItalic, false);
+    errorCode = OH_Drawing_TypefaceIsItalic(typeface2, &isItalic);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isItalic, true);
+    OH_Drawing_TypefaceDestroy(typeface1);
+    OH_Drawing_TypefaceDestroy(typeface2);
+    DrawingNativeTypeFaceTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+/**
+ * @tc.name   testTypefaceIsItalicNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0801
+ * @tc.desc   test for testTypefaceIsItalicNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+int TestTypefaceIsItalicNull()
+{
+    DrawingNativeTypeFaceTestSetUp();
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isItalic = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsItalic(nullptr, &isItalic);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isItalic, false);
+    errorCode = OH_Drawing_TypefaceIsItalic(typeface2, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isItalic, false);
+    OH_Drawing_TypefaceDestroy(typeface1);
+    OH_Drawing_TypefaceDestroy(typeface2);
+    DrawingNativeTypeFaceTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+/**
+ * @tc.name   testTypefaceIsItalicMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0802
+ * @tc.desc   test for testTypefaceIsItalicMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+int TestTypefaceIsItalicMultipleCalls()
+{
+    DrawingNativeTypeFaceTestSetUp();
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isItalic = false;
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsItalic(typeface, &isItalic);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isItalic, true);
+    }
+    OH_Drawing_TypefaceDestroy(typeface);
+    DrawingNativeTypeFaceTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 } // namespace Drawing

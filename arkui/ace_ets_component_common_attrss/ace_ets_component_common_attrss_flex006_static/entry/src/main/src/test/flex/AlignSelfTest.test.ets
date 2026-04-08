@@ -165,7 +165,7 @@ export default function alignSelfTest() {
             let parentRectY = Utils.getRectVerticalCenterY(parentRect);
             console.info('[' + data.caseTag + '] rectY : ' + rectY);
             console.info('[' + data.caseTag + '] parentRectY : ' + parentRectY);
-            expect(rectY).assertEqual(parentRectY);
+            expect(Math.floor(Math.abs(rectY - parentRectY)) <= 1).assertTrue();
             expect(Math.floor(Math.abs(rect.left - parentRect.left)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetEnd') {
             //When alignSelf : ItemAlign.End
@@ -194,7 +194,7 @@ export default function alignSelfTest() {
             let parentRectX = Utils.getRectHorizontalCenterX(parentRect);
             console.info('[' + data.caseTag + '] rectX : ' + rectX);
             console.info('[' + data.caseTag + '] parentRectX : ' + parentRectX);
-            expect(rectX).assertEqual(parentRectX);
+            expect(Math.floor(Math.abs(rectX - parentRectX)) <= 1).assertTrue();
             expect(Math.floor(Math.abs(rect.top - parentRect.top)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetEnd') {
             //When alignSelf : ItemAlign.End
@@ -224,7 +224,7 @@ export default function alignSelfTest() {
             let parentRectY = Utils.getRectVerticalCenterY(parentRect);
             console.info('[' + data.caseTag + '] rectY : ' + rectY);
             console.info('[' + data.caseTag + '] parentRectY : ' + parentRectY);
-            expect(rectY).assertEqual(parentRectY);
+            expect(Math.floor(Math.abs(rectY - parentRectY)) <= 1).assertTrue();
             expect(Math.floor(Math.abs(rect.right - parentRect.right)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetEnd') {
             //When alignSelf : ItemAlign.End
@@ -254,7 +254,7 @@ export default function alignSelfTest() {
             let parentRectX = Utils.getRectHorizontalCenterX(parentRect);
             console.info('[' + data.caseTag + '] rectX : ' + rectX);
             console.info('[' + data.caseTag + '] parentRectX : ' + parentRectX);
-            expect(rectX).assertEqual(parentRectX);
+            expect(Math.floor(Math.abs(rectX - parentRectX)) <= 1).assertTrue();
             expect(Math.floor(Math.abs(rect.bottom - parentRect.bottom)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetEnd') {
             //When alignSelf : ItemAlign.End

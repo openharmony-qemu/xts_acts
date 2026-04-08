@@ -1024,5 +1024,47 @@ export default function VideoEncoderFunc2Test() {
       let result: number = await testNapi.runFunc2Test(65);
       expect(result).assertEqual(0);
     });
+
+     /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ANOTHER_0100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ANOTHER_0100
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_ANOTHER_0100', Level.LEVEL2, async () => {
+      console.info('VIDEO_ENCODE_ANOTHER_0010Test start');
+      let result: number = await testNapi.runFunc2Test(66);
+      expect(result).assertEqual(0);
+    });
+
+     /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_CAPABILITY_CONFIG_0100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_CAPABILITY_CONFIG_0100
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_CAPABILITY_CONFIG_0100', Level.LEVEL2, async () => {
+      console.info('VIDEO_CAPABILITY_CONFIG_0010Test start');
+      let result: number = await testNapi.runFunc2Test(67);
+      expect(result).assertEqual(0);
+    });
+
+     /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_CAPABILITY_CONFIG_0200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_CAPABILITY_CONFIG_0200
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_CAPABILITY_CONFIG_0200', Level.LEVEL2, async () => {
+      console.info('VIDEO_CAPABILITY_CONFIG_0020Test start');
+      let result: number = await testNapi.runFunc2Test(68);
+      expect(result).assertEqual(0);
+    });
   });
 }

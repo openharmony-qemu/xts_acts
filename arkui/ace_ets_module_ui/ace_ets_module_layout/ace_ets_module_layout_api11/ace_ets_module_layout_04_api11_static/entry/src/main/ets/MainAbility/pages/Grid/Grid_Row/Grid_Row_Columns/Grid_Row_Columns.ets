@@ -53,7 +53,7 @@ struct Grid_Row_Columns {
           reference: BreakpointsReference.ComponentSize } as BreakPoints,
         direction: GridRowDirection.Row
       }) {
-        ForEach(this.bgColors, (color: Color, index?: number) => {
+        ForEach(this.bgColors, (color: Color, index?: int) => {
           GridCol({ span: 1 }) {
 
           }.borderColor(color).borderWidth(2).key("Grid_Row_Columns_0" + index).height(50)

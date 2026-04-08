@@ -1580,6 +1580,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_045 begin---');
 
+      await Utils.msSleep(1500);
+
       let callbackFlag = 0;
 
       try {
@@ -1887,6 +1889,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_050 begin---');
 
+      await Utils.msSleep(1500);
+
       try {
         wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
           let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -2171,6 +2175,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_055 begin---');
+
+      await Utils.msSleep(1500);
 
       try {
         wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
@@ -2532,6 +2538,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:() => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6000 begin---');
+
+        await Utils.msSleep(1500);
 
         try {
           wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
