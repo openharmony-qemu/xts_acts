@@ -24,6 +24,7 @@ import SwiperFakeDragTest from './swiper/SwiperFakeDragTest.test';
 import SwiperAttributeNullUndefined from './SwiperAttributeNullUndefined/SwiperAttributeNullUndefined.test';
 import DigitIndicatorNullUndefined from './SwiperAttributeNullUndefined/DigitIndicatorNullUndefined.test';
 import DotIndicatorNullUndefined from './SwiperAttributeNullUndefined/DotIndicatorNullUndefined.test';
+import swiperCachedOptions from './swiper/swiperCachedOptions.test';
 
 export default function testsuite() {
   swiperFillPolicy()
@@ -38,4 +39,5 @@ export default function testsuite() {
   SwiperAttributeNullUndefined()
   DigitIndicatorNullUndefined()
   DotIndicatorNullUndefined()
+  swiperCachedOptions()
 }
