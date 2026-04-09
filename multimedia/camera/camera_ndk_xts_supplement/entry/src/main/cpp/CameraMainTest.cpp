@@ -42,6 +42,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("captureSessionEmu", captureSessionEmu),
     DESCRIPTOR("OHCaptureSessionDeleteSupportedEffectTypes", OHCaptureSessionDeleteSupportedEffectTypes),
     DESCRIPTOR("OHCameraInputOpenConcurrentCameras", OHCameraInputOpenConcurrentCameras),
+    DESCRIPTOR("OHCameraInputOpenConcurrentCamerasErr", OHCameraInputOpenConcurrentCamerasErr),
     DESCRIPTOR("OHCaptureSessionGetSupportedEffectTypesSupp", OHCaptureSessionGetSupportedEffectTypesSupp),
     DESCRIPTOR("captureSessionRegisterIsoChangeCallback", captureSessionRegisterIsoChangeCallback),
     DESCRIPTOR("captureSessionUnregisterIsoChangeCallback", captureSessionUnregisterIsoChangeCallback),
