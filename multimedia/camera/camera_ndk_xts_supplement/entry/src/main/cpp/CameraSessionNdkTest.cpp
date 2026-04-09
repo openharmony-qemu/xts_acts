@@ -674,7 +674,8 @@ napi_value OHCameraInputOpenConcurrentCamerasErr(napi_env env, napi_callback_inf
     ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[1], &frontCameraInput);
     switch (index) {
     case CASE_INDEX_1:
-        errorCode = OH_CameraInput_OpenConcurrentCameras(frontCameraInput, Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
+        errorCode = OH_CameraInput_OpenConcurrentCameras(frontCameraInput,
+                    Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
         if (errorCode != CAMERA_OK) {
             OH_CameraInput_Close(frontCameraInput);
             OH_CameraInput_Close(backCameraInput);
@@ -682,7 +683,8 @@ napi_value OHCameraInputOpenConcurrentCamerasErr(napi_env env, napi_callback_inf
             napi_create_int32(env, errorCode, &result);
             return result;
         }
-        errorCode = OH_CameraInput_OpenConcurrentCameras(backCameraInput, Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
+        errorCode = OH_CameraInput_OpenConcurrentCameras(backCameraInput,
+                    Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
         if (errorCode != CAMERA_CONFLICT_CAMERA) {
             OH_CameraInput_Close(frontCameraInput);
             OH_CameraInput_Close(backCameraInput);
