@@ -27,6 +27,34 @@ constexpr int K_PATTERN_BUF_ELEMS = 20;
 constexpr int K_INDEX_CAFE_E_ACUTE = 3;
 constexpr int K_INDEX_NAIVE_I_DIAERESIS = 2;
 constexpr int K_INDEX_UBER_U_UMLAUT = 0;
+constexpr int K_WCS_OFF_0 = 0;
+constexpr int K_WCS_OFF_1 = 1;
+constexpr int K_WCS_OFF_2 = 2;
+constexpr int K_WCS_OFF_3 = 3;
+constexpr int K_WCS_OFF_4 = 4;
+constexpr int K_WCS_OFF_5 = 5;
+constexpr int K_WCS_OFF_6 = 6;
+constexpr int K_WCS_OFF_8 = 8;
+constexpr int K_WCS_ABB_ABABAB_BABABA = 2;
+constexpr int K_WCS_ABB_ABABAB_ABABAB = 3;
+constexpr int K_WCS_ABACABCABCAB_ABCABCAB = 4;
+constexpr int K_WCS_NANA_ABA = 3;
+constexpr int K_WCS_NANA_BAN = 4;
+constexpr int K_WCS_NANA_ANAB = 1;
+constexpr int K_WCS_NANA_BANANA = 8;
+constexpr int K_WCS_FF_PATTERN_OFF = 2;
+constexpr int K_WCS_SPACE_IN_HELLO = 5;
+constexpr int K_WCS_TAB_AFTER_TAB = 3;
+constexpr int K_WCS_NEWLINE_IN_NEW = 3;
+constexpr int K_WCS_CR_IN_CARRIAGE = 8;
+constexpr int K_WCS_SPACE_GROUP_OFF = 3;
+constexpr int K_WCS_TAB_NR_OFF = 4;
+constexpr int K_WCS_ALPHABET_XYZ = 23;
+constexpr int K_WCS_ABCDE_FFG = 5;
+constexpr int K_WCS_ABRACAD_DAB = 6;
+constexpr int K_WCS_TRIPLET_INDEX_A = 0;
+constexpr int K_WCS_TRIPLET_INDEX_B = 1;
+constexpr int K_WCS_TRIPLET_INDEX_C = 2;
 } // namespace
 
 static void ExpectNotFound(const wchar_t* s, const wchar_t* sub)
@@ -57,28 +85,28 @@ static void ExpectFoundAt(const wchar_t* s, const wchar_t* sub, int n)
  */
 void Wcswcs0100(void)
 {
-    ExpectFoundAt(L"", L"", 0);
-    ExpectFoundAt(L"abcd", L"", 0);
-    ExpectFoundAt(L"abcd", L"a", 0);
-    ExpectFoundAt(L"abcd", L"b", 1);
-    ExpectFoundAt(L"abcd", L"c", 2);
-    ExpectFoundAt(L"abcd", L"d", 3);
-    ExpectFoundAt(L"abcd", L"ab", 0);
-    ExpectFoundAt(L"abcd", L"bc", 1);
-    ExpectFoundAt(L"abcd", L"cd", 2);
-    ExpectFoundAt(L"ababa", L"baba", 1);
-    ExpectFoundAt(L"ababab", L"babab", 1);
-    ExpectFoundAt(L"abababa", L"bababa", 1);
-    ExpectFoundAt(L"abababab", L"bababab", 1);
-    ExpectFoundAt(L"ababababa", L"babababa", 1);
-    ExpectFoundAt(L"abbababab", L"bababa", 2);
-    ExpectFoundAt(L"abbababab", L"ababab", 3);
-    ExpectFoundAt(L"abacabcabcab", L"abcabcab", 4);
-    ExpectFoundAt(L"nanabanabanana", L"aba", 3);
-    ExpectFoundAt(L"nanabanabanana", L"ban", 4);
-    ExpectFoundAt(L"nanabanabanana", L"anab", 1);
-    ExpectFoundAt(L"nanabanabanana", L"banana", 8);
-    ExpectFoundAt(L"_ _\xff_ _", L"_\xff_", 2);
+    ExpectFoundAt(L"", L"", K_WCS_OFF_0);
+    ExpectFoundAt(L"abcd", L"", K_WCS_OFF_0);
+    ExpectFoundAt(L"abcd", L"a", K_WCS_OFF_0);
+    ExpectFoundAt(L"abcd", L"b", K_WCS_OFF_1);
+    ExpectFoundAt(L"abcd", L"c", K_WCS_OFF_2);
+    ExpectFoundAt(L"abcd", L"d", K_WCS_OFF_3);
+    ExpectFoundAt(L"abcd", L"ab", K_WCS_OFF_0);
+    ExpectFoundAt(L"abcd", L"bc", K_WCS_OFF_1);
+    ExpectFoundAt(L"abcd", L"cd", K_WCS_OFF_2);
+    ExpectFoundAt(L"ababa", L"baba", K_WCS_OFF_1);
+    ExpectFoundAt(L"ababab", L"babab", K_WCS_OFF_1);
+    ExpectFoundAt(L"abababa", L"bababa", K_WCS_OFF_1);
+    ExpectFoundAt(L"abababab", L"bababab", K_WCS_OFF_1);
+    ExpectFoundAt(L"ababababa", L"babababa", K_WCS_OFF_1);
+    ExpectFoundAt(L"abbababab", L"bababa", K_WCS_ABB_ABABAB_BABABA);
+    ExpectFoundAt(L"abbababab", L"ababab", K_WCS_ABB_ABABAB_ABABAB);
+    ExpectFoundAt(L"abacabcabcab", L"abcabcab", K_WCS_ABACABCABCAB_ABCABCAB);
+    ExpectFoundAt(L"nanabanabanana", L"aba", K_WCS_NANA_ABA);
+    ExpectFoundAt(L"nanabanabanana", L"ban", K_WCS_NANA_BAN);
+    ExpectFoundAt(L"nanabanabanana", L"anab", K_WCS_NANA_ANAB);
+    ExpectFoundAt(L"nanabanabanana", L"banana", K_WCS_NANA_BANANA);
+    ExpectFoundAt(L"_ _\xff_ _", L"_\xff_", K_WCS_FF_PATTERN_OFF);
 }
 
 /**
@@ -110,16 +138,16 @@ void Wcswcs0200(void)
 void Wcswcs0300(void)
 {
     // Overlapping pattern tests
-    ExpectFoundAt(L"aaaabaaaa", L"aaa", 0);
-    ExpectFoundAt(L"mississippi", L"issi", 1);
-    ExpectFoundAt(L"abcabcabc", L"abcabc", 0);
-    ExpectFoundAt(L"ababababab", L"ababab", 0);
+    ExpectFoundAt(L"aaaabaaaa", L"aaa", K_WCS_OFF_0);
+    ExpectFoundAt(L"mississippi", L"issi", K_WCS_OFF_1);
+    ExpectFoundAt(L"abcabcabc", L"abcabc", K_WCS_OFF_0);
+    ExpectFoundAt(L"ababababab", L"ababab", K_WCS_OFF_0);
 
     // Edge cases
-    ExpectFoundAt(L"x", L"x", 0);
-    ExpectFoundAt(L"xy", L"xy", 0);
-    ExpectFoundAt(L"xyz", L"yz", 1);
-    ExpectFoundAt(L"a\0b", L"a", 0); // String containing null character
+    ExpectFoundAt(L"x", L"x", K_WCS_OFF_0);
+    ExpectFoundAt(L"xy", L"xy", K_WCS_OFF_0);
+    ExpectFoundAt(L"xyz", L"yz", K_WCS_OFF_1);
+    ExpectFoundAt(L"a\0b", L"a", K_WCS_OFF_0); // String containing null character
 }
 
 /**
@@ -132,21 +160,18 @@ void Wcswcs0400(void)
     wchar_t longStr[K_LONG_WCS_BUF_ELEMS];
     wchar_t pattern[K_PATTERN_BUF_ELEMS];
 
-    const int INDEX_0 = 0;
-    const int INDEX_1 = 1;
-    const int INDEX_2 = 2;
     // Generate long string "abcabc...abc"
     for (int i = 0; i < K_ABC_REPEAT_BLOCKS; i++) {
         wchar_t* p = longStr + i * K_ABC_TRIPLET_LEN;
-        p[INDEX_0] = L'a';
-        p[INDEX_1] = L'b';
-        p[INDEX_2] = L'c';
+        p[K_WCS_TRIPLET_INDEX_A] = L'a';
+        p[K_WCS_TRIPLET_INDEX_B] = L'b';
+        p[K_WCS_TRIPLET_INDEX_C] = L'c';
     }
     longStr[K_LONG_WCS_NUL_INDEX] = L'\0';
 
-    ExpectFoundAt(longStr, L"abc", 0);
-    ExpectFoundAt(longStr, L"bca", 1);
-    ExpectFoundAt(longStr, L"abcabc", 0);
+    ExpectFoundAt(longStr, L"abc", K_WCS_OFF_0);
+    ExpectFoundAt(longStr, L"bca", K_WCS_OFF_1);
+    ExpectFoundAt(longStr, L"abcabc", K_WCS_OFF_0);
 
     // test long pattern
     {
@@ -157,7 +182,7 @@ void Wcswcs0400(void)
         }
         pattern[j] = L'\0';
     }
-    ExpectFoundAt(longStr, pattern, 0);
+    ExpectFoundAt(longStr, pattern, K_WCS_OFF_0);
 }
 
 /**
@@ -168,14 +193,14 @@ void Wcswcs0400(void)
 void Wcswcs0500(void)
 {
     // Whitespace character tests
-    ExpectFoundAt(L"hello world", L" ", 5);
-    ExpectFoundAt(L"tab\ttab", L"\t", 3);
-    ExpectFoundAt(L"new\nline", L"\n", 3);
-    ExpectFoundAt(L"carriage\rreturn", L"\r", 8);
+    ExpectFoundAt(L"hello world", L" ", K_WCS_SPACE_IN_HELLO);
+    ExpectFoundAt(L"tab\ttab", L"\t", K_WCS_TAB_AFTER_TAB);
+    ExpectFoundAt(L"new\nline", L"\n", K_WCS_NEWLINE_IN_NEW);
+    ExpectFoundAt(L"carriage\rreturn", L"\r", K_WCS_CR_IN_CARRIAGE);
 
     // Mixed whitespace characters
-    ExpectFoundAt(L"a b c d", L" c ", 3);
-    ExpectFoundAt(L"test\t\n\rstring", L"\t\n\r", 4);
+    ExpectFoundAt(L"a b c d", L" c ", K_WCS_SPACE_GROUP_OFF);
+    ExpectFoundAt(L"test\t\n\rstring", L"\t\n\r", K_WCS_TAB_NR_OFF);
 }
 
 /**
@@ -186,10 +211,10 @@ void Wcswcs0500(void)
 void Wcswcs0600(void)
 {
     // Repeated character tests
-    ExpectFoundAt(L"aaaaaaaaaa", L"aaa", 0);
-    ExpectFoundAt(L"aaaaaaaaaa", L"aaaaa", 0);
-    ExpectFoundAt(L"ababababab", L"abab", 0);
-    ExpectFoundAt(L"abcabcabc", L"bcab", 1);
+    ExpectFoundAt(L"aaaaaaaaaa", L"aaa", K_WCS_OFF_0);
+    ExpectFoundAt(L"aaaaaaaaaa", L"aaaaa", K_WCS_OFF_0);
+    ExpectFoundAt(L"ababababab", L"abab", K_WCS_OFF_0);
+    ExpectFoundAt(L"abcabcabc", L"bcab", K_WCS_OFF_1);
 
     // Partial matches that ultimately fail
     ExpectNotFound(L"abcdeabcdf", L"abcdg"); // Should not find "abcdg"
@@ -204,7 +229,7 @@ void Wcswcs0600(void)
 void Wcswcs0700(void)
 {
     // Case sensitivity tests
-    ExpectFoundAt(L"Hello World", L"World", 6);
+    ExpectFoundAt(L"Hello World", L"World", K_WCS_OFF_6);
     ExpectNotFound(L"Hello WORLD", L"World");
 
     // Special character variants
@@ -221,9 +246,9 @@ void Wcswcs0700(void)
 void Wcswcs0800(void)
 {
     // Partial match tests
-    ExpectFoundAt(L"abcdefghijklmnopqrstuvwxyz", L"xyz", 23);
-    ExpectFoundAt(L"abcdeffghijkl", L"ffg", 5);
-    ExpectFoundAt(L"abracadabra", L"dab", 6);
+    ExpectFoundAt(L"abcdefghijklmnopqrstuvwxyz", L"xyz", K_WCS_ALPHABET_XYZ);
+    ExpectFoundAt(L"abcdeffghijkl", L"ffg", K_WCS_ABCDE_FFG);
+    ExpectFoundAt(L"abracadabra", L"dab", K_WCS_ABRACAD_DAB);
 
     // Close but not exact matches
     ExpectNotFound(L"abcdefgh", L"abcdeg");

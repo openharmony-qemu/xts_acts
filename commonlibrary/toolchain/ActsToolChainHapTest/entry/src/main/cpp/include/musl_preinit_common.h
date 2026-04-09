@@ -132,22 +132,32 @@ __attribute__((always_inline)) inline bool SetHookFlag(bool flag)
 #endif
 }
 
+#ifdef HOOK_ENABLE
+__attribute__((always_inline)) inline volatile const struct MallocDispatchType*
+    NormalizeDispatchByHookFlags(volatile const struct MallocDispatchType* ret)
+{
+    if (ret == NULL) {
+        return NULL;
+    }
+    if (GetCustomHookFlag()) {
+        return ret;
+    }
+    if (!GetGlobalHookFlag()) {
+        return NULL;
+    }
+    if (!GetHookFlag()) {
+        return NULL;
+    }
+    return ret;
+}
+#endif
+
 __attribute__((always_inline)) inline volatile const struct MallocDispatchType* GetCurrentDispatchTable()
 {
 #ifdef HOOK_ENABLE
     volatile const struct MallocDispatchType* ret = reinterpret_cast<volatile const struct MallocDispatchType*>(
         static_cast<uintptr_t>(atomic_load_explicit(&g_muslLibcGlobals.currentDispatchTable, memory_order_acquire)));
-    if (ret != NULL) {
-        if (GetCustomHookFlag()) {
-            return ret;
-        }
-        if (!GetGlobalHookFlag()) {
-            ret = NULL;
-        } else if (!GetHookFlag()) {
-            ret = NULL;
-        }
-    }
-    return ret;
+    return NormalizeDispatchByHookFlags(ret);
 #else
     return NULL;
 #endif

@@ -22,7 +22,12 @@
 static void CheckDirnameCase(const char* path, const char* want)
 {
     char tmp[100];
-    (void)std::snprintf(tmp, sizeof(tmp), "%s", path);
+    size_t plen = strlen(path);
+    if (plen + 1U > sizeof(tmp)) {
+        t_error("dirname test path too long\n");
+        return;
+    }
+    (void)std::memcpy(tmp, path, plen + 1U);
     char* got = dirname(tmp);
     if (strcmp(want, got) != 0) {
         t_error("dirname(\"%s\") got \"%s\" want \"%s\"\n", path, got, want);

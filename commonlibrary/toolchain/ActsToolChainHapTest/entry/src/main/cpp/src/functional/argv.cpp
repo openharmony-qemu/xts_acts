@@ -14,7 +14,7 @@
  */
 
 #include <climits>
-#include <cstdio>
+#include <cstring>
 #include "test.h"
 
 static int ArgvTestWithArgs(int argc, char** argv)
@@ -32,8 +32,13 @@ static int ArgvTestWithArgs(int argc, char** argv)
     if (!(argv[0][0] != 0)) {
         t_error("argv[0][0] != 0 failed: argv[0] should not be empty\n");
     }
-    if (!(std::snprintf(buf, sizeof buf, "%s", argv[0]) < sizeof buf)) {
-        t_error("std::snprintf(buf, sizeof buf, \"%s\", argv[0]) < sizeof buf failed: argv[0] is not a valid PATH\n");
+    {
+        size_t len = strlen(argv[0]);
+        if (!(len < sizeof buf)) {
+            t_error("argv[0] path length is not a valid PATH for buffer\n");
+        } else {
+            (void)std::memcpy(buf, argv[0], len + 1U);
+        }
     }
     return T_STATUS;
 }

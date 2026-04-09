@@ -14,8 +14,10 @@
  */
 
 #include <cmath>
-#include <cstdio>
 #include <cstdlib>
+#include <iomanip>
+#include <sstream>
+#include <string>
 #include "libc_test_shim.h"
 
 namespace {
@@ -44,12 +46,13 @@ int StrtodSimpleTest()
     int i;
     double d;
     double d2;
-    char buf[1000];
 
     for (i = 0; i < K_STRTOD_ROUND_TRIP_ITERATIONS; i++) {
         d = sin(i);
-        (void)std::snprintf(buf, sizeof buf, "%.300f", d);
-        d2 = strtod(buf, nullptr);
+        std::ostringstream oss;
+        oss << std::fixed << std::setprecision(300) << d;
+        std::string dec = oss.str();
+        d2 = strtod(dec.c_str(), nullptr);
         CheckDoubleEq(status, "strtod(buf, nullptr)", d2, d, "round trip fail %a != %a (%a)");
     }
 

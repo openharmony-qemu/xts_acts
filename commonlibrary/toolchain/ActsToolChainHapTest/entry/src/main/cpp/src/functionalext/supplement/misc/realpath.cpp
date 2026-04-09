@@ -34,7 +34,8 @@ constexpr size_t K_REALPATH_BUF_CAP = 4096U;
  */
 void Realpath0100(void)
 {
-    char actualPath[K_REALPATH_BUF_CAP] = { 0 };
+    char actualPath[K_REALPATH_BUF_CAP];
+    (void)memset(actualPath, 0, sizeof(actualPath));
     char* ret = realpath("/system/bin/../etc", actualPath);
     EXPECT_STREQ("Realpath0100", ret, "/system/etc");
     EXPECT_STREQ("Realpath0100", actualPath, "/system/etc");
@@ -47,7 +48,8 @@ void Realpath0100(void)
  */
 void Realpath0200(void)
 {
-    char buf[K_REALPATH_BUF_CAP] = { 0 };
+    char buf[K_REALPATH_BUF_CAP];
+    (void)memset(buf, 0, sizeof(buf));
     char* ret = realpath("/system/bin/../mypth", buf);
     EXPECT_PTREQ("Realpath0200", ret, nullptr);
     std::fill_n(buf, K_REALPATH_BUF_CAP, '\0');

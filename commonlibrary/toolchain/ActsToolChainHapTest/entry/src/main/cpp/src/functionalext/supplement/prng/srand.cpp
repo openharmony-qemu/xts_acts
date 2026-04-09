@@ -34,11 +34,12 @@ void Srand0100(void)
     int b[K_RAND_SAMPLE_COUNT] = { 0 };
     srand(K_REPEAT_SEED);
     for (int i = 0; i < K_RAND_SAMPLE_COUNT; i++) {
-        a[i] = rand(); /* NOLINT(G.OTH.03 禁用rand函数产生用于安全用途的伪随机数) */
+        /* Exercises libc rand; not used as a cryptographic RNG. */
+        a[i] = rand();
     }
     srand(K_REPEAT_SEED);
     for (int i = 0; i < K_RAND_SAMPLE_COUNT; i++) {
-        b[i] = rand(); /* NOLINT(G.OTH.03 禁用rand函数产生用于安全用途的伪随机数) */
+        b[i] = rand();
     }
     for (int i = 0; i < K_RAND_SAMPLE_COUNT; i++) {
         if (a[i] != b[i]) {
@@ -57,9 +58,9 @@ void Srand0200(void)
     int a = 0;
     int b = 0;
     srand(K_REPEAT_SEED);
-    a = rand(); /* NOLINT(G.OTH.03 禁用rand函数产生用于安全用途的伪随机数) */
+    a = rand();
     srand(K_DIFFERENT_SEED);
-    b = rand(); /* NOLINT(G.OTH.03 禁用rand函数产生用于安全用途的伪随机数) */
+    b = rand();
     if (a == b) {
         t_error("%s srand get rand is %d , %d \n", __func__, a, b);
     }

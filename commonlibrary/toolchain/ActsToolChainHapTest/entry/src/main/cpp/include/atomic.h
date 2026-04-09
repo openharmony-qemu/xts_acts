@@ -328,12 +328,17 @@ static inline int A_CTZ32(uint32_t x)
 
 #ifndef A_CTZ_64
 #define A_CTZ_64 A_CTZ_64
-static inline int A_CTZ_64(uint64_t x)
+static inline int A_Ctz64DeBruijn(uint64_t x)
 {
     static const char debruijn64[64] = { 0,  1,  2,  53, 3,  7,  54, 27, 4,  38, 41, 8,  34, 55, 48, 28,
                                          62, 5,  39, 46, 44, 42, 22, 9,  24, 35, 59, 56, 49, 18, 29, 11,
                                          63, 52, 6,  26, 37, 40, 33, 47, 61, 45, 43, 21, 23, 58, 17, 10,
                                          51, 25, 36, 32, 60, 20, 57, 16, 50, 31, 19, 15, 30, 14, 13, 12 };
+    return debruijn64[((x & -x) * 0x022fdd63cc95386dull) >> ATOMIC_K_SHIFT58];
+}
+
+static inline int A_CTZ_64(uint64_t x)
+{
     if (sizeof(long) < sizeof(uint64_t)) {
         uint32_t y = x;
         if (!y) {
@@ -342,7 +347,7 @@ static inline int A_CTZ_64(uint64_t x)
         }
         return A_CTZ32(y);
     }
-    return debruijn64[((x & -x) * 0x022fdd63cc95386dull) >> ATOMIC_K_SHIFT58];
+    return A_Ctz64DeBruijn(x);
 }
 #endif
 
@@ -353,14 +358,8 @@ static inline int ACtzL(unsigned long x)
 
 #ifndef A_CLZ64
 #define A_CLZ64 A_CLZ64
-static inline int A_CLZ64(uint64_t x)
+static inline int A_Clz64BitScanFallback(uint64_t x)
 {
-#ifdef A_CLZ32
-    if (x >> ATOMIC_K_SHIFT32) {
-        return A_CLZ32(x >> ATOMIC_K_SHIFT32);
-    }
-    return A_CLZ32(x) + ATOMIC_K_SHIFT32;
-#else
     uint32_t y;
     int r;
     static const int kClzHalfByteBits = ATOMIC_K_SHIFT8;
@@ -390,6 +389,17 @@ static inline int A_CLZ64(uint64_t x)
         r |= ATOMIC_K_SHIFT2;
     }
     return r | !(y >> ATOMIC_K_SHIFT1);
+}
+
+static inline int A_CLZ64(uint64_t x)
+{
+#ifdef A_CLZ32
+    if (x >> ATOMIC_K_SHIFT32) {
+        return A_CLZ32(x >> ATOMIC_K_SHIFT32);
+    }
+    return A_CLZ32(x) + ATOMIC_K_SHIFT32;
+#else
+    return A_Clz64BitScanFallback(x);
 #endif
 }
 #endif

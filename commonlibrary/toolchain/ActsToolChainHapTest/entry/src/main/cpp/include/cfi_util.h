@@ -29,6 +29,19 @@
 #define DEBUG 0
 #define BUFFER_SIZE 4096
 
+static inline bool JoinLogPath(char* out, size_t outSize, const char* dir, const char* name)
+{
+    const size_t dlen = strlen(dir);
+    const size_t nlen = strlen(name);
+    if (dlen + 1U + nlen + 1U > outSize) {
+        return false;
+    }
+    std::memcpy(out, dir, dlen);
+    out[dlen] = '/';
+    std::memcpy(out + dlen + 1U, name, nlen + 1U);
+    return true;
+}
+
 static void ClearCfiLog(const char* logTag, const char* logDir);
 static void FindAndCheck(const char* pattern, const char* logTag, const char* logDir);
 
@@ -58,8 +71,9 @@ static void ClearCfiLog(const char* logTag, const char* logDir)
     while ((ptr = readdir(dir)) != NULL) {
         if (strstr(ptr->d_name, logTag) != NULL) {
             char tmp[BUFFER_SIZE];
-            (void)std::snprintf(tmp, BUFFER_SIZE, "%s/%s", logDir, ptr->d_name);
-            (void)remove(tmp);
+            if (JoinLogPath(tmp, BUFFER_SIZE, logDir, ptr->d_name)) {
+                (void)remove(tmp);
+            }
         }
     }
     closedir(dir);
@@ -119,8 +133,9 @@ static void FindDirAndCheck(DIR* dir, const char* logTag, const char* logDir, Ca
     while ((ptr = readdir(dir)) != NULL) {
         if (strstr(ptr->d_name, logTag) != NULL) {
             char tmp[BUFFER_SIZE];
-            (void)std::snprintf(tmp, BUFFER_SIZE, "%s/%s", logDir, ptr->d_name);
-            callback(tmp);
+            if (JoinLogPath(tmp, BUFFER_SIZE, logDir, ptr->d_name)) {
+                callback(tmp);
+            }
         }
     }
 }

@@ -22,7 +22,12 @@
 static void CheckBasename(const char* path, const char* want)
 {
     char tmp[100];
-    (void)std::snprintf(tmp, sizeof(tmp), "%s", path);
+    size_t plen = strlen(path);
+    if (plen + 1U > sizeof(tmp)) {
+        t_error("basename test path too long\n");
+        return;
+    }
+    (void)std::memcpy(tmp, path, plen + 1U);
     char* got = basename(tmp);
     if (strcmp(want, got) != 0) {
         t_error("basename(\"%s\") got \"%s\" want \"%s\"\n", path, got, want);

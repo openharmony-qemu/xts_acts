@@ -19,25 +19,9 @@
 #include <cwchar>
 #include "test.h"
 
-static const char* WCSTOLL_TEST_MSG = "";
-
-#define TEST(r, f, x, m)                                            \
-    do {                                                            \
-        errno = 0;                                                  \
-        WCSTOLL_TEST_MSG = #f;                                      \
-        (r) = (f);                                                  \
-        if ((r) != (x)) {                                           \
-            t_error("%s failed (" m ")\n", WCSTOLL_TEST_MSG, r, x); \
-        }                                                           \
-    } while (0)
-
-#define TEST2(r, f, x, m)                                           \
-    do {                                                            \
-        (r) = (f);                                                  \
-        if ((r) != (x)) {                                           \
-            t_error("%s failed (" m ")\n", WCSTOLL_TEST_MSG, r, x); \
-        }                                                           \
-    } while (0)
+namespace {
+constexpr const char K_WCSTOLL_TAG[] = "wcstoll";
+}
 
 /**
  * @tc.name      : Wcstoll0100
@@ -47,7 +31,11 @@ static const char* WCSTOLL_TEST_MSG = "";
 void Wcstoll0100(void)
 {
     long long ll;
-    TEST(ll, wcstoll(L"2147483647", nullptr, 0), 2147483647LL, "expect signed %lld != %lld");
+    errno = 0;
+    ll = wcstoll(L"2147483647", nullptr, 0);
+    if (ll != 2147483647LL) {
+        t_error("%s failed (expect signed %lld != %lld)\n", K_WCSTOLL_TAG, ll, 2147483647LL);
+    }
 }
 
 /**
@@ -58,7 +46,11 @@ void Wcstoll0100(void)
 void Wcstoll0200(void)
 {
     long long ll;
-    TEST(ll, wcstoll(L"10", nullptr, 0), 10LL, "expect signed %lld != %lld");
+    errno = 0;
+    ll = wcstoll(L"10", nullptr, 0);
+    if (ll != 10LL) {
+        t_error("%s failed (expect signed %lld != %lld)\n", K_WCSTOLL_TAG, ll, 10LL);
+    }
 }
 
 /**
@@ -69,7 +61,11 @@ void Wcstoll0200(void)
 void Wcstoll0300(void)
 {
     long long ll;
-    TEST(ll, wcstoll(L"z", nullptr, 36), 35LL, "%lld != %lld");
+    errno = 0;
+    ll = wcstoll(L"z", nullptr, 36);
+    if (ll != 35LL) {
+        t_error("%s failed (%lld != %lld)\n", K_WCSTOLL_TAG, ll, 35LL);
+    }
 }
 
 /**
@@ -80,7 +76,11 @@ void Wcstoll0300(void)
 void Wcstoll0400(void)
 {
     long long ll;
-    TEST(ll, wcstoll(L"00010010001101000101011001111000", nullptr, 2), 0x12345678, "%lld != %lld");
+    errno = 0;
+    ll = wcstoll(L"00010010001101000101011001111000", nullptr, 2);
+    if (ll != static_cast<long long>(0x12345678)) {
+        t_error("%s failed (%lld != %lld)\n", K_WCSTOLL_TAG, ll, static_cast<long long>(0x12345678));
+    }
 }
 
 /**
@@ -95,8 +95,15 @@ void Wcstoll0500(void)
     wchar_t* s;
     wchar_t* c;
     s = L"0xz";
-    TEST(ll, wcstoll(s, &c, 16), 0, "%lld != %lld");
-    TEST2(i, c - s, 1, "wrong final position %lld != %lld");
+    errno = 0;
+    ll = wcstoll(s, &c, 16);
+    if (ll != 0) {
+        t_error("%s failed (%lld != %lld)\n", K_WCSTOLL_TAG, ll, 0LL);
+    }
+    i = static_cast<int>(c - s);
+    if (i != 1) {
+        t_error("%s failed (wrong final position %lld != %lld)\n", K_WCSTOLL_TAG, static_cast<long long>(i), 1LL);
+    }
 }
 
 /**
@@ -111,8 +118,15 @@ void Wcstoll0600(void)
     wchar_t* s;
     wchar_t* c;
     s = L"0x1234";
-    TEST(ll, wcstoll(s, &c, 16), 0x1234, "%lld != %ld");
-    TEST2(i, c - s, 6, "wrong final position %lld != %lld");
+    errno = 0;
+    ll = wcstoll(s, &c, 16);
+    if (ll != static_cast<long long>(0x1234)) {
+        t_error("%s failed (%lld != %ld)\n", K_WCSTOLL_TAG, ll, static_cast<long>(0x1234));
+    }
+    i = static_cast<int>(c - s);
+    if (i != 6) {
+        t_error("%s failed (wrong final position %lld != %lld)\n", K_WCSTOLL_TAG, static_cast<long long>(i), 6LL);
+    }
 }
 
 /**
@@ -127,9 +141,19 @@ void Wcstoll0700(void)
     wchar_t* s;
     wchar_t* c;
     s = L"9223372036854775808";
-    TEST(ll, wcstoll(s, &c, 0), 9223372036854775807LL, "uncaught overflow %lld != %lld");
-    TEST2(i, c - s, 19, "wrong final position %d != %d");
-    TEST2(i, errno, ERANGE, "missing errno %d != %d");
+    errno = 0;
+    ll = wcstoll(s, &c, 0);
+    if (ll != 9223372036854775807LL) {
+        t_error("%s failed (uncaught overflow %lld != %lld)\n", K_WCSTOLL_TAG, ll, 9223372036854775807LL);
+    }
+    i = static_cast<int>(c - s);
+    if (i != 19) {
+        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOLL_TAG, i, 19);
+    }
+    i = errno;
+    if (i != ERANGE) {
+        t_error("%s failed (missing errno %d != %d)\n", K_WCSTOLL_TAG, i, ERANGE);
+    }
 }
 
 /**
@@ -144,9 +168,19 @@ void Wcstoll0800(void)
     wchar_t* s;
     wchar_t* c;
     s = L"-9223372036854775809";
-    TEST(ll, wcstoll(s, &c, 0), -9223372036854775807LL - 1, "overflow %lld != %lld");
-    TEST2(i, c - s, 20, "wrong final position %d != %d");
-    TEST2(i, errno, ERANGE, "missing errno %d != %d");
+    errno = 0;
+    ll = wcstoll(s, &c, 0);
+    if (ll != -9223372036854775807LL - 1) {
+        t_error("%s failed (overflow %lld != %lld)\n", K_WCSTOLL_TAG, ll, -9223372036854775807LL - 1);
+    }
+    i = static_cast<int>(c - s);
+    if (i != 20) {
+        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOLL_TAG, i, 20);
+    }
+    i = errno;
+    if (i != ERANGE) {
+        t_error("%s failed (missing errno %d != %d)\n", K_WCSTOLL_TAG, i, ERANGE);
+    }
 }
 
 static int WcstollTestImpl(int argc, char* argv[])

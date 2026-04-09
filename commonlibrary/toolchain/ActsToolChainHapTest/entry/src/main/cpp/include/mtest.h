@@ -85,30 +85,34 @@
 
 #define POS     \
     char* file; \
-    int line;
+    int line
 struct DD {
-    POS int r;
+    POS;
+    int r;
     double x;
     double y;
     float dy;
     int e;
 };
 struct FF {
-    POS int r;
+    POS;
+    int r;
     float x;
     float y;
     float dy;
     int e;
 };
 struct LL {
-    POS int r;
+    POS;
+    int r;
     long double x;
     long double y;
     float dy;
     int e;
 };
 struct FfF {
-    POS int r;
+    POS;
+    int r;
     float x;
     float x2;
     float y;
@@ -116,7 +120,8 @@ struct FfF {
     int e;
 };
 struct DdD {
-    POS int r;
+    POS;
+    int r;
     double x;
     double x2;
     double y;
@@ -124,7 +129,8 @@ struct DdD {
     int e;
 };
 struct LlL {
-    POS int r;
+    POS;
+    int r;
     long double x;
     long double x2;
     long double y;
@@ -132,7 +138,8 @@ struct LlL {
     int e;
 };
 struct DDi {
-    POS int r;
+    POS;
+    int r;
     double x;
     double y;
     float dy;
@@ -140,7 +147,8 @@ struct DDi {
     int e;
 };
 struct FFi {
-    POS int r;
+    POS;
+    int r;
     float x;
     float y;
     float dy;
@@ -148,7 +156,8 @@ struct FFi {
     int e;
 };
 struct LLi {
-    POS int r;
+    POS;
+    int r;
     long double x;
     long double y;
     float dy;
@@ -156,7 +165,8 @@ struct LLi {
     int e;
 };
 struct DiD {
-    POS int r;
+    POS;
+    int r;
     double x;
     long long i;
     double y;
@@ -164,7 +174,8 @@ struct DiD {
     int e;
 };
 struct FiF {
-    POS int r;
+    POS;
+    int r;
     float x;
     long long i;
     float y;
@@ -172,7 +183,8 @@ struct FiF {
     int e;
 };
 struct LiL {
-    POS int r;
+    POS;
+    int r;
     long double x;
     long long i;
     long double y;
@@ -180,25 +192,29 @@ struct LiL {
     int e;
 };
 struct DI {
-    POS int r;
+    POS;
+    int r;
     double x;
     long long i;
     int e;
 };
 struct FI {
-    POS int r;
+    POS;
+    int r;
     float x;
     long long i;
     int e;
 };
 struct LI {
-    POS int r;
+    POS;
+    int r;
     long double x;
     long long i;
     int e;
 };
 struct DDd {
-    POS int r;
+    POS;
+    int r;
     double x;
     double y;
     float dy;
@@ -207,7 +223,8 @@ struct DDd {
     int e;
 };
 struct FFf {
-    POS int r;
+    POS;
+    int r;
     float x;
     float y;
     float dy;
@@ -216,7 +233,8 @@ struct FFf {
     int e;
 };
 struct LLl {
-    POS int r;
+    POS;
+    int r;
     long double x;
     long double y;
     float dy;
@@ -225,7 +243,8 @@ struct LLl {
     int e;
 };
 struct FfFi {
-    POS int r;
+    POS;
+    int r;
     float x;
     float x2;
     float y;
@@ -234,7 +253,8 @@ struct FfFi {
     int e;
 };
 struct DdDi {
-    POS int r;
+    POS;
+    int r;
     double x;
     double x2;
     double y;
@@ -243,7 +263,8 @@ struct DdDi {
     int e;
 };
 struct LlLi {
-    POS int r;
+    POS;
+    int r;
     long double x;
     long double x2;
     long double y;
@@ -252,7 +273,8 @@ struct LlLi {
     int e;
 };
 struct FffF {
-    POS int r;
+    POS;
+    int r;
     float x;
     float x2;
     float x3;
@@ -261,7 +283,8 @@ struct FffF {
     int e;
 };
 struct DddD {
-    POS int r;
+    POS;
+    int r;
     double x;
     double x2;
     double x3;
@@ -270,7 +293,8 @@ struct DddD {
     int e;
 };
 struct LllL {
-    POS int r;
+    POS;
+    int r;
     long double x;
     long double x2;
     long double x3;

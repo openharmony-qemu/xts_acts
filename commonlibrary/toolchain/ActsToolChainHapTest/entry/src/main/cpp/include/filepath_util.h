@@ -40,6 +40,19 @@
 #define STR_FCHOWNAT_TEST_TXT "fchownattest.Txt"
 #define STR_WRITE_TEST_TXT "test_write.Txt"
 
+static inline bool CopyCStrIntoBuffer(char* dst, size_t dstSize, size_t offset, const char* src)
+{
+    for (size_t i = 0;; ++i) {
+        if (offset + i >= dstSize) {
+            return false;
+        }
+        dst[offset + i] = src[i];
+        if (src[i] == '\0') {
+            return true;
+        }
+    }
+}
+
 static inline bool FileAbsolutePath(const char* fileName, char* path, size_t pathSize)
 {
     if (!getcwd(path, pathSize)) {
@@ -51,8 +64,7 @@ static inline bool FileAbsolutePath(const char* fileName, char* path, size_t pat
         return false;
     }
     path[pathLen] = '/';
-    (void)memcpy(path + pathLen + 1U, fileName, fileLen + 1U);
-    return true;
+    return CopyCStrIntoBuffer(path, pathSize, pathLen + 1U, fileName);
 }
 
 static inline bool FileAbsoluteDir(char* path, size_t pathSize)

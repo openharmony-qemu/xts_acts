@@ -188,17 +188,30 @@ char* Estr(int f)
 
     for (i = 0; i < EflagsLength(); i++) {
         if (f & g_eflags[i].flag) {
-            (void)snprintf(p, (size_t)(buf + MTEST_ESTR_BUF_SIZE - p), "%s%s", all ? "|" : "", g_eflags[i].s);
+            size_t rem = (size_t)(buf + MTEST_ESTR_BUF_SIZE - p);
+            if (rem == 0U) {
+                return buf;
+            }
+            (void)snprintf(p, rem, "%s%s", all ? "|" : "", g_eflags[i].s);
             p += strlen(p);
             all |= g_eflags[i].flag;
         }
     }
     if (all != f) {
-        (void)snprintf(p, (size_t)(buf + MTEST_ESTR_BUF_SIZE - p), "%s%d", all ? "|" : "", f & ~all);
+        size_t rem = (size_t)(buf + MTEST_ESTR_BUF_SIZE - p);
+        if (rem == 0U) {
+            return buf;
+        }
+        (void)snprintf(p, rem, "%s%d", all ? "|" : "", f & ~all);
         p += strlen(p);
         all = f;
     }
-    (void)snprintf(p, (size_t)(buf + MTEST_ESTR_BUF_SIZE - p), "%s", all ? "" : "0");
+    {
+        size_t rem = (size_t)(buf + MTEST_ESTR_BUF_SIZE - p);
+        if (rem > 0U) {
+            (void)snprintf(p, rem, "%s", all ? "" : "0");
+        }
+    }
     return buf;
 }
 

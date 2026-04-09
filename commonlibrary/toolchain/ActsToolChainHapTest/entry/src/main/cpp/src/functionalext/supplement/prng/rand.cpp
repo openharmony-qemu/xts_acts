@@ -27,10 +27,12 @@ const int32_t RANGE = 10;
  */
 void Rand0100(void)
 {
-    srand(static_cast<unsigned int>(time(nullptr)));
+    const time_t seedTime = time(nullptr);
+    srand(static_cast<unsigned int>(seedTime));
     int i = 0;
     for (; i < SIZE; ++i) {
-        int num = rand() % RANGE; /* NOLINT(G.OTH.03 禁用rand函数产生用于安全用途的伪随机数) */
+        /* Exercises libc rand/srand; not used as a cryptographic RNG. */
+        int num = rand() % RANGE;
         EXPECT_LT("Rand0100", num, RANGE);
     }
 }

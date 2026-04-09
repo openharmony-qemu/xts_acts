@@ -32,14 +32,19 @@ constexpr int K_INET_PTON_REJECT = 0;
 constexpr int K_IPV6_BYTE_PAIR_SHIFT = 8;
 constexpr int K_IPV6_PAIR_BYTE_STRIDE = 2;
 constexpr char K_HEX_DIGITS[] = "0123456789abcdef";
+constexpr unsigned K_HEX_NIBBLE_MASK = 0xFU;
+constexpr unsigned K_HEX_SHIFT_12 = 12U;
+constexpr unsigned K_HEX_SHIFT_8 = 8U;
+constexpr unsigned K_HEX_SHIFT_4 = 4U;
+constexpr int K_IPV6_TXT_TERMINATOR_INDEX = K_IPV6_COLON_FIELD_STRIDE * K_IPV6_WORD_COUNT - 1;
 } // namespace
 
 static void WriteWordHex(char* dst, unsigned value)
 {
-    dst[0] = K_HEX_DIGITS[(value >> 12) & 0xF];
-    dst[1] = K_HEX_DIGITS[(value >> 8) & 0xF];
-    dst[2] = K_HEX_DIGITS[(value >> 4) & 0xF];
-    dst[3] = K_HEX_DIGITS[value & 0xF];
+    dst[0] = K_HEX_DIGITS[(value >> K_HEX_SHIFT_12) & K_HEX_NIBBLE_MASK];
+    dst[1] = K_HEX_DIGITS[(value >> K_HEX_SHIFT_8) & K_HEX_NIBBLE_MASK];
+    dst[2] = K_HEX_DIGITS[(value >> K_HEX_SHIFT_4) & K_HEX_NIBBLE_MASK];
+    dst[3] = K_HEX_DIGITS[value & K_HEX_NIBBLE_MASK];
 }
 
 static void Txt(char* s, unsigned char* buf)
@@ -53,7 +58,7 @@ static void Txt(char* s, unsigned char* buf)
             (buf[K_IPV6_PAIR_BYTE_STRIDE * i] << K_IPV6_BYTE_PAIR_SHIFT) | (buf[K_IPV6_PAIR_BYTE_STRIDE * i + 1]);
         WriteWordHex(s + pos + 1, value);
     }
-    s[K_IPV6_COLON_FIELD_STRIDE * K_IPV6_WORD_COUNT - 1] = '\0';
+    s[K_IPV6_TXT_TERMINATOR_INDEX] = '\0';
 }
 
 int InetPtonEmptyLastFieldTest()
