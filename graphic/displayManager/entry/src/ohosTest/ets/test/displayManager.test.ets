@@ -1696,6 +1696,7 @@ export default function displayTest() {
      */
     it('test_setVirtualScreenSurface_ErrorCode401_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_setVirtualScreenSurface_ErrorCode401_02 ';
+      let outDisplayId: number = -1;
       class VirtualScreenOptions {
         name: string = '';
         width: number = 0;
@@ -1712,23 +1713,34 @@ export default function displayTest() {
       };
       try {
         let screenId: number = await display.createVirtualScreen(option);
-        console.log(caseName + 'success in createVirtualScreen ' + screenId);
+        await sleep(500);
+        console.log(caseName + 'success in createVirtualScreen ' + outDisplayId);
+        outDisplayId = screenId;
+        await sleep(1000);
+        console.log(caseName + 'outdisplayId: ' + outDisplayId);
         await display.setVirtualScreenSurface(screenId, '').then(async () => {
           console.log(caseName + 'success in setVirtualScreenSurface');
-          expect().assertFail();
-          await display.destroyVirtualScreen(screenId).then(() =>{
+          await display.destroyVirtualScreen(screenId).then(() => {
             console.info(caseName + 'Succeeded in destroyVirtualScreen1');
-          }).catch((err:BusinessError) => {
+          }).catch((err: BusinessError) => {
             console.info(caseName + 'Failed in destroyVirtualScreen1');
           })
-          done();
+         expect().assertFail();
+         done();
         })
       } catch (err) {
+        if(outDisplayId != -1){
+          await display.destroyVirtualScreen(outDisplayId).then(() => {
+           console.info(caseName + 'Succeeded in destroyVirtualScreen1');
+         }).catch((err: BusinessError) => {
+            console.info(caseName + 'Failed in destroyVirtualScreen1');
+         })
+        }
         console.log(caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
         expect(err.code == 401 || err.code == 801).assertTrue();
         done();
-      }
-    });
+       }
+      });
 
 
 
@@ -2363,16 +2375,11 @@ export default function displayTest() {
       };
       try {
         let screenId: number = await display.createVirtualScreen(option);
-        console.log(caseName + ' success in createVirtualScreen ' + screenId);
-        let displays = await display.getAllDisplays();
-        console.log(caseName + ' getAllDisplays: ' + JSON.stringify(displays));
-        for (let i = 0; i < displays.length; i++) {
-          if (displays[i].id == screenId) {
-            outDisplayId = displays[i].id;
-            break;
-          }
-        }
-        console.log(caseName + ' outDisplayId: ' + outDisplayId);
+        await sleep(500);
+        console.log(caseName + 'success in createVirtualScreen ' + outDisplayId);
+        outDisplayId = screenId;
+        await sleep(1000);
+        console.log(caseName + 'outdisplayId: ' + outDisplayId);
         let position: display.Position = {
           x: 50,
           y: 50
@@ -2537,16 +2544,11 @@ export default function displayTest() {
       };
       try {
         let screenId: number = await display.createVirtualScreen(option);
-        console.log(caseName + ' success in createVirtualScreen ' + screenId);
-        let displays = await display.getAllDisplays();
-        console.log(caseName + ' getAllDisplays: ' + JSON.stringify(displays));
-        for (let i = 0; i < displays.length; i++) {
-          if (displays[i].id == screenId) {
-            outDisplayId = displays[i].id;
-            break;
-          }
-        }
-        console.log(caseName + ' outDisplayId: ' + outDisplayId);
+        await sleep(500);
+        console.log(caseName + 'success in createVirtualScreen ' + outDisplayId);
+        outDisplayId = screenId;
+        await sleep(1000);
+        console.log(caseName + 'outdisplayId: ' + outDisplayId);
         let position: display.Position = {
           x: 50,
           y: 50
