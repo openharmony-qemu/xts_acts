@@ -49,13 +49,12 @@ export default function execSpecialCharTest() {
      */
     it('testExecTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ExecSpecialChar.execEscapedDot("a.b");
-      expect(result).not().assertEqual(null);
       expect(result?.[0]).assertEqual(".");
     });
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0200
      * @tc.desc   Test RegExp.prototype.exec tab and newline escape sequences
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -64,35 +63,36 @@ export default function execSpecialCharTest() {
     it('testExecTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = ExecSpecialChar.execTab("a\tb");
       const result2 = ExecSpecialChar.execNewline("a\nb");
-      expect(result1).not().assertEqual(null);
-      expect(result2).not().assertEqual(null);
+      expect(result1?.[0]).assertEqual("\t");
+      expect(result2?.[0]).assertEqual("\n");
     });
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0300
      * @tc.desc   Test RegExp.prototype.exec Unicode Han character class range
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('testExecTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const result = ExecSpecialChar.execChineseRange("hello世界world");
-      expect(result![0]).assertEqual("世界");
+      const result = ExecSpecialChar.execChineseRange("hello\u4E16\u754Cworld");
+      expect(result![0]).assertEqual("\u4E16\u754C");
     });
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0400
      * @tc.desc   Test RegExp.prototype.exec Unicode property escape \\p{Emoji} with u flag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('testExecTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const result = ExecSpecialChar.execEmojiProperty("Hello 😀 World");
+      const emoji = String.fromCodePoint(0x1F600);
+      const result = ExecSpecialChar.execEmojiProperty(`Hello ${emoji} World`);
       if (result) {
-        expect(result?.[0]).assertEqual("😀");
+        expect(result?.[0]).assertEqual(emoji);
       } else {
       }
     });

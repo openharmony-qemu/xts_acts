@@ -222,7 +222,7 @@ export function newRegExpInvalidUnicodeThrows(): boolean {
   return newRegExpInvalidUnicodeThrowsImpl() as boolean;
 }
 
-/** true锛氭姏 SyntaxError锛堢鍚堣鑼冿級鎴栨湭鎶涳紙寮曟搸瀹瑰繊闈炴硶 flag锛?*/
+/** true: throws SyntaxError (spec) or does not throw (engine tolerance) */
 export function literalUnknownFlagThrows(): boolean {
   return literalUnknownFlagThrowsImpl() as boolean;
 }
@@ -781,6 +781,6 @@ export function regexpDeleteOverrideRestoresPrototype(): string {
   return regexpDeleteOverrideRestoresPrototypeImpl() as string;
 }
 
-export * from './regexp_symbols';
+export * from './RegExpSymbols';
 
 

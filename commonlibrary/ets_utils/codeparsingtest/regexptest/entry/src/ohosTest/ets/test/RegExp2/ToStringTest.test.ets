@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ export default function toStringTest() {
       /**
        * @tc.name testToStringTest0100
        * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0100
-       * @tc.desc   literal_simple
+       * @tc.desc   Test literal simple
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -77,8 +77,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0101
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0101
-       * @tc.desc   literal_with_flags
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0200
+        * @tc.desc   Test literal with flags
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -89,8 +89,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0102
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0102
-       * @tc.desc   ctor_string_args
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0300
+        * @tc.desc   Test ctor string args
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -101,8 +101,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0103
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0103
-       * @tc.desc   ctor_regex_arg
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0400
+        * @tc.desc   Test ctor regex arg
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -113,8 +113,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0104
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0104
-       * @tc.desc   return_type_is_string
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0500
+        * @tc.desc   Test return type is string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -125,8 +125,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0105
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0105
-       * @tc.desc   format_is_slash_pattern_slash_flags
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0600
+        * @tc.desc   Test format is slash pattern slash flags
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -141,8 +141,8 @@ export default function toStringTest() {
     describe('Patterns', () => {
       /**
        * @tc.name testToStringTest0106
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0106
-       * @tc.desc   metacharacters
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0700
+        * @tc.desc   Test metacharacters
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -153,8 +153,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0107
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0107
-       * @tc.desc   char_class
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0800
+        * @tc.desc   Test char class
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -165,8 +165,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0108
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0108
-       * @tc.desc   quantifiers
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0900
+        * @tc.desc   Test quantifiers
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -177,8 +177,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0109
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0109
-       * @tc.desc   capture_groups
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_1000
+        * @tc.desc   Test capture groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -189,8 +189,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0110
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0110
-       * @tc.desc   non_capture_groups
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_1100
+        * @tc.desc   Test non capture groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -201,8 +201,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0111
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0111
-       * @tc.desc   named_capture_groups
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_1200
+        * @tc.desc   Test named capture groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -217,8 +217,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0112
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0112
-       * @tc.desc   positive_lookahead
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_1300
+        * @tc.desc   Test positive lookahead
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -229,8 +229,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0113
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0113
-       * @tc.desc   negative_lookahead
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_1400
+        * @tc.desc   Test negative lookahead
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -241,8 +241,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0114
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0114
-       * @tc.desc   lookbehind_when_supported
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_1500
+        * @tc.desc   Test lookbehind when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -257,8 +257,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0115
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0115
-       * @tc.desc   anchors
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_1600
+        * @tc.desc   Test anchors
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -269,8 +269,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0116
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0116
-       * @tc.desc   word_boundary
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_1700
+        * @tc.desc   Test word boundary
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -281,8 +281,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0117
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0117
-       * @tc.desc   escape_special_chars
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_1800
+       * @tc.desc   Test escape special chars
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -293,8 +293,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0118
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0118
-       * @tc.desc   escape_slash
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_1900
+       * @tc.desc   Test escape slash
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -305,8 +305,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0119
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0119
-       * @tc.desc   empty_pattern_ctor
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_2000
+       * @tc.desc   Test empty pattern ctor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -318,8 +318,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0120
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0120
-       * @tc.desc   empty_pattern_literal
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_2100
+       * @tc.desc   Test empty pattern literal
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -330,8 +330,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0121
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0121
-       * @tc.desc   single_char
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_2200
+       * @tc.desc   Test single char
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -344,8 +344,8 @@ export default function toStringTest() {
     describe('ToString_Flags', () => {
       /**
        * @tc.name testToStringTest0122
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0122
-       * @tc.desc   flag_g_only
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_2300
+       * @tc.desc   Test flag g only
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -356,8 +356,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0123
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0123
-       * @tc.desc   flag_i_only
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_2400
+       * @tc.desc   Test flag i only
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -368,8 +368,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0124
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0124
-       * @tc.desc   flag_m_only
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_2500
+       * @tc.desc   Test flag m only
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -380,8 +380,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0125
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0125
-       * @tc.desc   flag_s_only
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_2600
+       * @tc.desc   Test flag s only
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -396,8 +396,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0126
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0126
-       * @tc.desc   flag_u_only
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_2700
+       * @tc.desc   Test flag u only
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -408,8 +408,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0127
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0127
-       * @tc.desc   flag_y_only
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_2800
+       * @tc.desc   Test flag y only
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -420,8 +420,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0128
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0128
-       * @tc.desc   flag_d_only
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_2900
+       * @tc.desc   Test flag d only
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -436,8 +436,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0129
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0129
-       * @tc.desc   two_flags_gi
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_3000
+       * @tc.desc   Test two flags gi
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -448,8 +448,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0130
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0130
-       * @tc.desc   multiple_flags_gimsuy
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_3100
+       * @tc.desc   Test multiple flags gimsuy
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -464,8 +464,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0131
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0131
-       * @tc.desc   all_flags_gimsud
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_3200
+       * @tc.desc   Test all flags gimsud
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -480,8 +480,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0132
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0132
-       * @tc.desc   no_flags
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_3300
+       * @tc.desc   Test no flags
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -492,8 +492,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0133
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0133
-       * @tc.desc   flags_order_equals_flags_property
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_3400
+       * @tc.desc   Test flags order equals flags property
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -506,8 +506,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0134
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0134
-       * @tc.desc   flags_are_sorted
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_3500
+       * @tc.desc   Test flags are sorted
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -522,8 +522,8 @@ export default function toStringTest() {
     describe('ToString_Boundaries', () => {
       /**
        * @tc.name testToStringTest0135
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0135
-       * @tc.desc   very_long_pattern_length
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_3600
+       * @tc.desc   Test very long pattern length
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -536,8 +536,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0136
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0136
-       * @tc.desc   deep_nesting
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_3700
+       * @tc.desc   Test deep nesting
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -548,8 +548,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0137
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0137
-       * @tc.desc   unicode_range_with_u
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_3800
+       * @tc.desc   Test unicode range with u
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -560,20 +560,21 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0138
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0138
-       * @tc.desc   emoji_with_u
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_3900
+       * @tc.desc   Test emoji with u
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
       it('testToStringTest0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        expect(/😀+/u.toString()).assertEqual('/😀+/u');
+        const emoji = String.fromCodePoint(0x1F600);
+        expect(new RegExp(`${emoji}+`, 'u').toString()).assertEqual(`/${emoji}+/u`);
       });
 
       /**
        * @tc.name testToStringTest0139
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0139
-       * @tc.desc   control_chars
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_4000
+       * @tc.desc   Test control chars
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -584,8 +585,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0140
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0140
-       * @tc.desc   dynamic_pattern_contains_content
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_4100
+       * @tc.desc   Test dynamic pattern contains content
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -598,8 +599,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0141
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0141
-       * @tc.desc   user_input_pattern
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_4200
+       * @tc.desc   Test user input pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -614,8 +615,8 @@ export default function toStringTest() {
     describe('Interactions', () => {
       /**
        * @tc.name testToStringTest0142
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0142
-       * @tc.desc   source_consistency
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_4300
+       * @tc.desc   Test source consistency
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -628,8 +629,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0143
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0143
-       * @tc.desc   empty_source_is_non_empty
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_4400
+       * @tc.desc   Test empty source is non empty
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -645,8 +646,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0144
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0144
-       * @tc.desc   flags_consistency
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_4500
+       * @tc.desc   Test flags consistency
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -659,8 +660,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0145
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0145
-       * @tc.desc   flags_empty
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_4600
+       * @tc.desc   Test flags empty
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -673,8 +674,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0146
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0146
-       * @tc.desc   defineProperty_source_getter
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_4700
+       * @tc.desc   Test defineProperty source getter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -690,8 +691,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0147
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0147
-       * @tc.desc   defineProperty_flags_getter
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_4800
+       * @tc.desc   Test defineProperty flags getter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -707,8 +708,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0148
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0148
-       * @tc.desc   getter_hijack_source_called
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_4900
+       * @tc.desc   Test getter hijack source called
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -724,8 +725,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0149
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0149
-       * @tc.desc   exec_does_not_change_toString
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_5000
+       * @tc.desc   Test exec does not change toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -740,8 +741,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0150
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0150
-       * @tc.desc   test_does_not_change_toString
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_5100
+       * @tc.desc   Test test does not change toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -756,8 +757,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0151
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0151
-       * @tc.desc   lastIndex_does_not_change_toString
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_5200
+       * @tc.desc   Test lastIndex does not change toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -770,8 +771,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0152
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0152
-       * @tc.desc   match_does_not_change_toString
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_5300
+       * @tc.desc   Test match does not change toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -784,8 +785,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0153
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0153
-       * @tc.desc   replace_does_not_change_toString
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_5400
+       * @tc.desc   Test replace does not change toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -798,8 +799,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0154
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0154
-       * @tc.desc   split_does_not_change_toString
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_5500
+       * @tc.desc   Test split does not change toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -814,8 +815,8 @@ export default function toStringTest() {
     describe('Type_Coercion', () => {
       /**
        * @tc.name testToStringTest0155
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0155
-       * @tc.desc   concat
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_5600
+       * @tc.desc   Test concat
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -827,8 +828,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0156
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0156
-       * @tc.desc   template_string
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_5700
+       * @tc.desc   Test template string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -840,8 +841,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0157
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0157
-       * @tc.desc   String_constructor
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_5800
+       * @tc.desc   Test String constructor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -853,8 +854,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0158
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0158
-       * @tc.desc   String_equals_toString
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_5900
+       * @tc.desc   Test String equals toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -866,8 +867,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0159
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0159
-       * @tc.desc   Number_is_NaN
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_6000
+       * @tc.desc   Test Number is NaN
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -879,8 +880,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0160
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0160
-       * @tc.desc   parseInt_is_NaN
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_6100
+       * @tc.desc   Test parseInt is NaN
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -892,8 +893,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0161
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0161
-       * @tc.desc   Boolean_is_true
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_6200
+       * @tc.desc   Test Boolean is true
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -905,8 +906,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0162
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0162
-       * @tc.desc   truthy_in_if_condition
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_6300
+       * @tc.desc   Test truthy in if condition
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -924,8 +925,8 @@ export default function toStringTest() {
     describe('Prototype_And_Inheritance', () => {
       /**
        * @tc.name testToStringTest0163
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0163
-       * @tc.desc   toString_on_prototype
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_6400
+       * @tc.desc   Test toString on prototype
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -937,8 +938,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0164
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0164
-       * @tc.desc   prototype_chain
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_6500
+       * @tc.desc   Test prototype chain
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -949,8 +950,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0165
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0165
-       * @tc.desc   diff_from_Object_prototype_toString
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_6600
+       * @tc.desc   Test diff from Object prototype toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -964,8 +965,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0166
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0166
-       * @tc.desc   call_non_regexp_throws
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_6700
+       * @tc.desc   Test call non regexp throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -976,8 +977,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0167
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0167
-       * @tc.desc   override_instance_toString
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_6800
+       * @tc.desc   Test override instance toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -988,8 +989,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0168
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0168
-       * @tc.desc   delete_override_restore
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_6900
+       * @tc.desc   Test delete override restore
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1000,8 +1001,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0169
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0169
-       * @tc.desc   subclass_inherits_toString
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_7000
+       * @tc.desc   Test subclass inherits toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1014,8 +1015,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0170
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0170
-       * @tc.desc   subclass_override_toString
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_7100
+       * @tc.desc   Test subclass override toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1034,8 +1035,8 @@ export default function toStringTest() {
     describe('Errors_And_Freeze_Seal', () => {
       /**
        * @tc.name testToStringTest0171
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0171
-       * @tc.desc   call_null_throws
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_7200
+       * @tc.desc   Test call null throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1046,8 +1047,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0172
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0172
-       * @tc.desc   call_undefined_throws
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_7300
+       * @tc.desc   Test call undefined throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1058,8 +1059,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0173
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0173
-       * @tc.desc   call_string_throws
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_7400
+       * @tc.desc   Test call string throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1070,8 +1071,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0174
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0174
-       * @tc.desc   call_number_throws
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_7500
+       * @tc.desc   Test call number throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1082,8 +1083,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0175
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0175
-       * @tc.desc   frozen_toString_ok
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_7600
+       * @tc.desc   Test frozen toString ok
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1094,8 +1095,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0176
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0176
-       * @tc.desc   sealed_toString_ok
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_7700
+       * @tc.desc   Test sealed toString ok
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1106,8 +1107,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0177
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0177
-       * @tc.desc   defineProperty_on_frozen_throws
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_7800
+       * @tc.desc   Test defineProperty on frozen throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1120,8 +1121,8 @@ export default function toStringTest() {
     describe('Special_Scenarios', () => {
       /**
        * @tc.name testToStringTest0178
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0178
-       * @tc.desc   unicode_escape_sequence
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_7900
+       * @tc.desc   Test unicode escape sequence
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1132,8 +1133,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0179
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0179
-       * @tc.desc   unicode_property_escape_when_supported
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_8000
+       * @tc.desc   Test unicode property escape when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1148,8 +1149,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0180
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0180
-       * @tc.desc   unicode_property_letter_when_supported
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_8100
+       * @tc.desc   Test unicode property letter when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1164,8 +1165,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0181
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0181
-       * @tc.desc   alternation
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_8200
+       * @tc.desc   Test alternation
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1176,8 +1177,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0182
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0182
-       * @tc.desc   complex_nesting
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_8300
+       * @tc.desc   Test complex nesting
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1188,8 +1189,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0183
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0183
-       * @tc.desc   backreference
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_8400
+       * @tc.desc   Test backreference
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1200,8 +1201,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0184
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0184
-       * @tc.desc   named_backreference_when_supported
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_8500
+       * @tc.desc   Test named backreference when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1216,8 +1217,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0185
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0185
-       * @tc.desc   apply
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_8600
+       * @tc.desc   Test apply
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1228,8 +1229,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0186
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0186
-       * @tc.desc   bind
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_8700
+       * @tc.desc   Test bind
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1240,8 +1241,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0187
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0187
-       * @tc.desc   JSON_stringify_regex
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_8800
+       * @tc.desc   Test JSON stringify regex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1252,8 +1253,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0188
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0188
-       * @tc.desc   custom_toJSON
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_8900
+       * @tc.desc   Test custom toJSON
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1264,8 +1265,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0189
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0189
-       * @tc.desc   strict_mode_toString_output
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_9000
+       * @tc.desc   Test strict mode toString output
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1276,8 +1277,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0190
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0190
-       * @tc.desc   non_strict_same_literal_output_note
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_9100
+       * @tc.desc   Test non strict same literal output note
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1288,8 +1289,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0191
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0191
-       * @tc.desc   repeatability
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_9200
+       * @tc.desc   Test repeatability
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1304,8 +1305,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0192
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0192
-       * @tc.desc   many_regexes_toString_contains_pattern
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_9300
+       * @tc.desc   Test many regexes toString contains pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1320,8 +1321,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0193
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0193
-       * @tc.desc   computed_property_access
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_9400
+       * @tc.desc   Test computed property access
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1332,8 +1333,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0194
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0194
-       * @tc.desc   Object_toStringTag
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_9500
+       * @tc.desc   Test Object toStringTag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1344,8 +1345,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0195
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0195
-       * @tc.desc   property_descriptor
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_9600
+       * @tc.desc   Test property descriptor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1359,8 +1360,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0196
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0196
-       * @tc.desc   toString_output_can_construct_new_regexp
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_9700
+       * @tc.desc   Test toString output can construct new regexp
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1379,8 +1380,8 @@ export default function toStringTest() {
 
       /**
        * @tc.name testToStringTest0197
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0197
-       * @tc.desc   constructed_regexp_test_behavior_matches
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_9800
+       * @tc.desc   Test constructed regexp test behavior matches
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -1399,4 +1400,5 @@ export default function toStringTest() {
     });
 
 }
+
 
