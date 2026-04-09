@@ -68,7 +68,7 @@ export default function ClientAuthenticationHandlerTest() {
     })
     /**
      * @tc.name   testClientAuthenticationHandlerCancelStatic001
-     * @tc.number SUB_ACE_WEB_CLIENTAUTHTICATIONHANDLERCANCEL_25121102
+     * @tc.number SUB_ACE_WEB_CLIENTAUTHTICATIONHANDLERCANCEL_001
      * @tc.desc   test clientAuthenticationHandler confirm string wrong ssl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -85,7 +85,7 @@ export default function ClientAuthenticationHandlerTest() {
     })
     /**
      * @tc.name   testClientAuthenticationHandlerIgnoreStatic001
-     * @tc.number SUB_ACE_WEB_CLIENTAUTHTICATIONHANDLERCANCEL_001
+     * @tc.number SUB_ACE_WEB_CLIENTAUTHTICATION_Ignore_001
      * @tc.desc   test clientAuthenticationHandler confirm string wrong ssl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
