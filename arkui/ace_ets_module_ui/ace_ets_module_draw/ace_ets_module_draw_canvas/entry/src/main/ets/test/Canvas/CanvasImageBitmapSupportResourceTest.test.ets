@@ -44,7 +44,7 @@ export default function CanvasImageBitmapSupportResourceTest() {
 
     /**C
      * @tc.name   CanvasImageBitmapSupportResource_0100
-     * @tc.number Sub_ArKUI_Ace_CanvasImageBitmapSupportResource_0100
+     * @tc.number SUB_ArKUI_Ace_CanvasImageBitmapSupportResource_0100
      * @tc.desc   CanvasAPI
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -62,7 +62,7 @@ export default function createFrameNodesUIContextIntTest() {
 
     /**
      * @tc.name   createFrameNodesUIContextIntTest_0100
-     * @tc.number Sub_ArkUI_Ace_createFrameNodesUIContextIntTest_0100
+     * @tc.number SUB_ArkUI_Ace_createFrameNodesUIContextIntTest_0100
      * @tc.desc   add createFrameNodes api
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
