@@ -215,6 +215,7 @@ import ImageExifMetadataTestSupp from './image/ImageExifMetadata.test';
 import CreatePixelMapSupp from './image/CreatePixelMap.test';
 import GetImageInfoSupp from './image/GetImageInfoTest.test';
 import ReadPixelsToBufferSupp from './image/ReadPixelsToBufferTest.test';
+import ImageMetadataTest from './image/ImageMetadataTest.test';
 
 
 export default function testsuite() {
@@ -407,6 +408,7 @@ export default function testsuite() {
   ImageLensSpecificationSupp();
   ImageLensSerialNumberSupp();
   ImageExifOECFSupp();
+  MultimediaImageTest();
   ImageBitsPerSampleStripOffsetsSupp();
   ImageSourceMetadataSupp();
   ImageGetImagePropertyOptionsSupp();
@@ -417,4 +419,5 @@ export default function testsuite() {
   CreatePixelMapSupp();
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
+  ImageMetadataTest();
 }
