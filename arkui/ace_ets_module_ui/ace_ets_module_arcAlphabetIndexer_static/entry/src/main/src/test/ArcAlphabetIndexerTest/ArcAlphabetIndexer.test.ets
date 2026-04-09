@@ -48,6 +48,7 @@ export default function ArcAlphabetIndexerTest() {
         await Utils.sleep(500);
       } catch (err) {
         console.error("[ARKUI_NEW] ArcAlphabetIndexerTest replaceUrl error: " + err);
+        expect(err !== null && err !== undefined).assertTrue();
         expect().assertFail();
       }
     });
@@ -98,7 +99,7 @@ export default function ArcAlphabetIndexerTest() {
         let usePopup = JSON.parseJsonElement(inspector.getInspectorByKey('arcIndexerFull')).getElement('$attrs').getString('usePopup');
         console.info('[ARKUI_NEW] arcIndexerFull usePopup = ' + usePopup);
         expect(usePopup != null && usePopup !== undefined).assertTrue();
-        expect(usePopup).assertEqual('true');
+        expect(usePopup === 'true').assertTrue();
         console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerFullUsePopup END');
         done();
       } catch (error) {
@@ -180,6 +181,54 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2600
+     * @tc.name arcIndexerInitInfoEmptyArray
+     * @tc.desc Test ArcAlphabetIndexerInitInfo with empty arrayValue as invalid parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('arcIndexerInitInfoEmptyArray', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerInitInfoEmptyArray START');
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+        let info: ArcAlphabetIndexerInitInfo = { arrayValue: [], selected: 0 };
+        expect(info.arrayValue.length).assertEqual(0);
+        expect(info.selected).assertEqual(0);
+        console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerInitInfoEmptyArray END');
+        done();
+      } catch (error) {
+        console.error('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerInitInfoEmptyArray error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2700
+     * @tc.name arcIndexerInitInfoNegativeSelected
+     * @tc.desc Test ArcAlphabetIndexerInitInfo with negative selected index as invalid parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('arcIndexerInitInfoNegativeSelected', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerInitInfoNegativeSelected START');
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+        let info: ArcAlphabetIndexerInitInfo = { arrayValue: ['A', 'B', 'C'], selected: -1 };
+        expect(info.arrayValue.length).assertEqual(3);
+        expect(info.selected).assertEqual(-1);
+        console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerInitInfoNegativeSelected END');
+        done();
+      } catch (error) {
+        console.error('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerInitInfoNegativeSelected error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_0600
      * @tc.name blurStyleNoneEnum
      * @tc.desc Test BlurStyle.NONE enum used with popupBackgroundBlurStyle
@@ -217,7 +266,8 @@ export default function ArcAlphabetIndexerTest() {
         let attrs = node.getElement('$attrs');
         let color = attrs.getString('color');
         console.info('[ARKUI_NEW] arcIndexerFull color = ' + color);
-        expect(color != null && color != undefined).assertTrue();
+        expect(color != null && color !== undefined).assertTrue();
+        expect(color === '#FFFF0000' || color === '#FF0000').assertTrue();
         console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerColorAttr END');
         done();
       } catch (error) {
