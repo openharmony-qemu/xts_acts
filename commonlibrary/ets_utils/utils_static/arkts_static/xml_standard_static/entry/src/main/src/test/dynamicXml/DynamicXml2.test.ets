@@ -17,9 +17,6 @@ import { util, xml } from '@kit.ArkTS';
 import { BusinessError } from '@ohos.base';
 import Utils from '../Util.test';
 
-let str = "";
-let strAttr = "";
-
 export default function DynamicXmlSerializerTest2() {
   describe('DynamicXmlSerializerTest2', (): void => {
     afterEach(async (): Promise<void> => {
@@ -28,7 +25,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicConstructor001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_0100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20001
      * @tc.desc   Test XmlDynamicSerializer constructor with encoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -36,12 +33,12 @@ export default function DynamicXmlSerializerTest2() {
      */
     it('testDynamicConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let serializer = new xml.XmlDynamicSerializer('utf-8');
-      expect(serializer != null).assertTrue;
+      expect(serializer != null).assertTrue();
     })
 
     /**
      * @tc.name   testDynamicConstructor002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_0200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20002
      * @tc.desc   Test XmlDynamicSerializer constructor without encoding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -49,12 +46,12 @@ export default function DynamicXmlSerializerTest2() {
      */
     it('testDynamicConstructor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let serializer = new xml.XmlDynamicSerializer();
-      expect(serializer != null).assertTrue;
+      expect(serializer != null).assertTrue();
     })
 
     /**
      * @tc.name   testGetOutput001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_0300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20003
      * @tc.desc   Test getOutput returns ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,13 +63,13 @@ export default function DynamicXmlSerializerTest2() {
       serializer.setText("Happy");
       serializer.endElement();
       let arrayBuffer = serializer.getOutput();
-      expect(arrayBuffer != null).assertTrue;
+      expect(arrayBuffer != null).assertTrue();
       expect(arrayBuffer instanceof ArrayBuffer).assertTrue();
     })
 
     /**
      * @tc.name   testGetOutput002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_0400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20004
      * @tc.desc   Test getOutput with TextDecoder
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -92,7 +89,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicSetDeclaration002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_0500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20006
      * @tc.desc   Test setDeclaration at different positions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -111,7 +108,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicEndElement001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_0600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20008
      * @tc.desc   Test endElement in XmlDynamicSerializer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -131,7 +128,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicSetAttributes002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_0700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20010
      * @tc.desc   Test setAttributes with special characters in value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -151,7 +148,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicSetNamespace002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_0800
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20014
      * @tc.desc   Test setNamespace with nested elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -173,7 +170,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicSetCdata001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_0900
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20017
      * @tc.desc   Test setCdata in XmlDynamicSerializer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -191,7 +188,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicSetText002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_1000
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20020
      * @tc.desc   Test setText with special characters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -211,7 +208,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicComplexXml001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_1100
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20023
      * @tc.desc   Test complex XML generation with XmlDynamicSerializer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -244,7 +241,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicError003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_1200
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20026
      * @tc.desc   Test empty string error in addEmptyElement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -266,7 +263,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicError004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_1300
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20027
      * @tc.desc   Test empty string error in startElement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -288,7 +285,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicError005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_1400
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20028
      * @tc.desc   Test empty string error in setText
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -310,7 +307,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicError006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_1500
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20029
      * @tc.desc   Test empty string error in setCdata
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -332,7 +329,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicError007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_1600
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20030
      * @tc.desc   Test empty string error in setDocType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -354,7 +351,7 @@ export default function DynamicXmlSerializerTest2() {
 
     /**
      * @tc.name   testDynamicError008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_XML_1700
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_20031
      * @tc.desc   Test empty string error in setNamespace
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -373,7 +370,5 @@ export default function DynamicXmlSerializerTest2() {
         expect(value).assertEqual(e.code);
       }
     })
-
-
   })
 }
