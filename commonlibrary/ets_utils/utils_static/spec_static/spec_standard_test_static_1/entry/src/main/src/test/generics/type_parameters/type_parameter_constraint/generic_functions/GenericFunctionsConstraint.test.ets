@@ -99,20 +99,6 @@ function foo15<T extends Object>(p: T): T {
   return p
 }
 
-// 箭头函数定义
-function arrowFoo1<T extends Int1 | Double1>(p: T): T {
-  return p;
-}
-
-function arrowFoo2<T extends "a" | "b">(p: T): T {
-  return p;
-}
-
-function arrowFoo3<T extends byte>(p: T): T {
-  return p;
-}
-
-
 // 函数表达式定义
 function exprFoo1<T extends Int1 | Double1>(p: T): T {
   return p;
@@ -248,42 +234,12 @@ export default function GenericFunctionsConstraintTest() {
     /**
      * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0600
      * @tc.name      testGenericFunctionsConstraintGroup0006
-     * @tc.desc      Generic arrow function constraint test for arrowFoo1 with Int1 and Double1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraintGroup0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result1 = arrowFoo1<Int1>(new Int1())
-      let result2 = arrowFoo1<Double1>(new Double1())
-      expect(result1 instanceof Int1).assertTrue()
-      expect(result2 instanceof Double1).assertTrue()
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0700
-     * @tc.name      testGenericFunctionsConstraintGroup0007
-     * @tc.desc      Generic arrow function constraint test for arrowFoo2 and arrowFoo3
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraintGroup0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result1 = arrowFoo2<"a">("a")
-      let result2 = arrowFoo3<byte>(1 as byte)
-      expect(result1).assertEqual("a")
-      expect(result2).assertEqual(1)
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0800
-     * @tc.name      testGenericFunctionsConstraintGroup0008
      * @tc.desc      Generic expression function constraint test for exprFoo1
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraintGroup0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testGenericFunctionsConstraintGroup0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result1 = exprFoo1<Int1>(new Int1())
       let result2 = exprFoo1<Double1>(new Double1())
       expect(result1 instanceof Int1).assertTrue()
@@ -291,14 +247,14 @@ export default function GenericFunctionsConstraintTest() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0900
-     * @tc.name      testGenericFunctionsConstraintGroup0009
+     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0700
+     * @tc.name      testGenericFunctionsConstraintGroup0007
      * @tc.desc      Generic expression function constraint test for exprFoo2 and exprFoo3
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraintGroup0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testGenericFunctionsConstraintGroup0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result1 = exprFoo2<"a">("a")
       let result2 = exprFoo2<"b">("b")
       let result3 = exprFoo3<byte>(1 as byte)
@@ -308,14 +264,14 @@ export default function GenericFunctionsConstraintTest() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_1000
-     * @tc.name      testGenericFunctionsConstraintGroup0010
+     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0800
+     * @tc.name      testGenericFunctionsConstraintGroup0008
      * @tc.desc      Generic function constraint test for foo8 and foo9 with different numeric types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraintGroup0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testGenericFunctionsConstraintGroup0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result1 = foo8<double>(1.2 as double)
       let result2 = foo8<number>(1.3 as number)
       let result3 = foo9<double>(1.4 as double)
