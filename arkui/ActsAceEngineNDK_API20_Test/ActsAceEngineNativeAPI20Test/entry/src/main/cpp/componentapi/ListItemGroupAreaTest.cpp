@@ -87,6 +87,7 @@ void  CreateListComponent(XC list)
         item.SetPercentWidth(1.0);
         item.SetPercentHeight(PARAM_0_POINT_1);
         std::shared_ptr<XC> ptr = std::make_shared<XC>(item);
+        item.SetBackgroundColor(COLOR_GREEN);
         list.AddChild(ptr);
     }
 }
@@ -125,6 +126,7 @@ void CreateListGroupComponent(XC group1)
         item.SetPercentWidth(1.0);
         item.SetPercentHeight(PARAM_0_POINT_1);
         std::shared_ptr<XC> ptr = std::make_shared<XC>(item);
+        item.SetBackgroundColor(COLOR_BLUE);
         group1.AddChild(ptr);
     }
 }
@@ -163,6 +165,7 @@ void CreateListGroup2Component(XC group2)
         item.SetPercentWidth(1.0);
         item.SetPercentHeight(PARAM_0_POINT_1);
         std::shared_ptr<XC> ptr = std::make_shared<XC>(item);
+        item.SetBackgroundColor(COLOR_RED);
         group2.AddChild(ptr);
     }
 }
@@ -201,6 +204,7 @@ void CreateListGroup3Component(XC group3)
         item.SetPercentWidth(1.0);
         item.SetPercentHeight(PARAM_0_POINT_1);
         std::shared_ptr<XC> ptr = std::make_shared<XC>(item);
+        item.SetBackgroundColor(COLOR_YELLOW);
         group3.AddChild(ptr);
     }
 }
