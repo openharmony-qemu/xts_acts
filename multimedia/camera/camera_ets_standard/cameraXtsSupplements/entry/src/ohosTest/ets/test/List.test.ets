@@ -48,6 +48,7 @@ import CameraCaptureSessionTest from './camera/CameraCaptureSessionTest.test';
 import CameraPhotoSessionTest from './camera/CameraPhotoSessionTest.test';
 import CameraTest from './camera/CameraTest.test';
 import CameraPickerPickTest from './camera/CameraPickerPickTest.test';
+import ManualFocusQueryTest from './camera/ManualFocusQuery.test';
 
 
 export default function testsuite() {
@@ -100,5 +101,5 @@ export default function testsuite() {
   CameraTest()
   CameraPickerPickTest();
   CameraManagerGetSupportedOutputCapabilityTest();
-
+  ManualFocusQueryTest();
 }
