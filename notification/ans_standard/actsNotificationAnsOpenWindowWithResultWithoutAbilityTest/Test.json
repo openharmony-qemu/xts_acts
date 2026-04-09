@@ -11,8 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsNotificationAnsOpenWindowWithResultWithoutAbilityTest.hap",
-                "ActsNotificationAnsOpenWindowWithResultWithoutAbilityTestMain.hap"
+                "ActsNotificationAnsOpenWindowWithResultWithoutAbilityTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
