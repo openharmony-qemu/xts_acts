@@ -660,11 +660,11 @@ napi_value OHCameraInputOpenConcurrentCamerasErr(napi_env env, napi_callback_inf
     Camera_ErrorCode errorCode = CAMERA_OK;
     uint32_t cameraCount = 0;
     Camera_Device *cameras = nullptr;
+    napi_value result = nullptr;
     Camera_ErrorCode ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &cameraCount);
     const int minCameraCount = 2;
     if (cameraCount < minCameraCount) {
         OH_LOG_WARN(LOG_APP, "fewer than two cameras, skip the use case");
-        napi_value result;
         napi_create_int32(env, CAMERA_CONFLICT_CAMERA, &result);
         return result;
     }
@@ -674,21 +674,17 @@ napi_value OHCameraInputOpenConcurrentCamerasErr(napi_env env, napi_callback_inf
     ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[1], &frontCameraInput);
     switch (index) {
     case CASE_INDEX_1:
-        errorCode = OH_CameraInput_OpenConcurrentCameras(frontCameraInput,
-                    Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
+        errorCode = OH_CameraInput_OpenConcurrentCameras(frontCameraInput, Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
         if (errorCode != CAMERA_OK) {
             OH_CameraInput_Close(frontCameraInput);
             OH_CameraInput_Close(backCameraInput);
-            napi_value result;
             napi_create_int32(env, errorCode, &result);
             return result;
         }
-        errorCode = OH_CameraInput_OpenConcurrentCameras(backCameraInput,
-                    Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
+        errorCode = OH_CameraInput_OpenConcurrentCameras(backCameraInput, Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
         if (errorCode != CAMERA_CONFLICT_CAMERA) {
             OH_CameraInput_Close(frontCameraInput);
             OH_CameraInput_Close(backCameraInput);
-            napi_value result;
             napi_create_int32(env, CAMERA_CONFLICT_CAMERA, &result);
             return result;
         }
