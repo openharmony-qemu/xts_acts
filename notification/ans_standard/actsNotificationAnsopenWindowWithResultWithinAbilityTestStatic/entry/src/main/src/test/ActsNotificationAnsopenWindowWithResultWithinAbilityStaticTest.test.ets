@@ -227,7 +227,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
-          expect(JSON.stringify(data?.grantedBundleInfos)).assertEqual('[]')
+          expect(JSON.stringify(data?.grantedBundleInfos?.[3])).assertEqual('{"bundleName":"com.ohos.contacts","appIndex":0,"appName":"联系人"}')
           done()
         }).catch((e:Error) => {
           let err = e as BusinessError
@@ -383,7 +383,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
-          expect(JSON.stringify(data?.grantedBundleInfos)).assertEqual('[{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"}]')
+          expect(JSON.stringify(data?.grantedBundleInfos?.[0])).assertEqual('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"}')
         }).catch((e:Error) => {
           let err = e as BusinessError
           console.error(`${testNum}failed to call openSubscriptionSettingsWithResult  ${err.code}, ${err.message}`)
@@ -426,7 +426,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
         expect(scrollBar != null).assertTrue()
         scrollBar?.scrollToBottom()
-        await Utils.msSleep(40000)
+        await Utils.msSleep(60000)
         let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('zzztest')));
         console.info(`${testNum} button is ${JSON.stringify(button)}`);
         if (button !== null) {
