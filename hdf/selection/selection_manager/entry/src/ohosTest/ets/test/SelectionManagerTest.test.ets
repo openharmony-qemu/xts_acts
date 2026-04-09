@@ -147,13 +147,6 @@ export default function SelectionManagerTest() {
     });
 
     /**
-     * @tc.number  testSelectionManagerTest0600
-     * @tc.desc    Test should success, when parameters are valid.
-     * @tc.desc    Function test
-     * @tc.level   0
-     */
-
-    /**
      * @tc.name   testSelectionManagerTest0600
      * @tc.number SUB_Driver_Selection_Dyn_0600
      * @tc.desc   Test off success.
@@ -465,7 +458,7 @@ export default function SelectionManagerTest() {
         done();
       }
       console.info('************* testSelectionManagerTest1500 Test end*************');
-    })
+    });
 
     /**
      * @tc.name   testSelectionManagerTest4500
@@ -488,7 +481,7 @@ export default function SelectionManagerTest() {
         done();
       }
       console.info('************* testSelectionManagerTest4500 Test end*************');
-    })
+    });
 
     /**
      * @tc.name   testSelectionManagerTest1600
@@ -770,7 +763,7 @@ export default function SelectionManagerTest() {
       let panel: selectionManager.Panel | undefined = undefined;
       try {
         panel = await selectionManager.createPanel(context, panelInfo);
-        await panel.setUiContent();
+        await panel.setUiContent(undefined);
         console.info(`testSelectionManagerTest4700 promise failed`);
         expect(false).assertTrue();
         done();
@@ -785,49 +778,6 @@ export default function SelectionManagerTest() {
         }
       }
       console.info('************* testSelectionManagerTest4700 Test end*************');
-      done();
-    });
-
-    /**
-     * @tc.name   testSelectionManagerTest4800
-     * @tc.number SUB_Driver_Selection_Dyn_4800
-     * @tc.desc   verify ERROR code 401 of setUiContent.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSelectionManagerTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info('************* testSelectionManagerTest4800 Test start*************');
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      let context = abilityDelegator.getAppContext();
-      context.stageMode = true;
-      let panelInfo: PanelInfo = {
-        panelType: PanelType.MAIN_PANEL,
-        x: 0,
-        y: 0,
-        width: 100,
-        height: 100
-      }
-
-      let panel: selectionManager.Panel | undefined = undefined;
-      try {
-        panel = await selectionManager.createPanel(context, panelInfo);
-        await panel.setUiContent(undefined);
-        console.info(`testSelectionManagerTest4800 promise failed`);
-        expect(false).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`testSelectionManagerTest4800 result: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(401);
-        done();
-      } finally {
-        if (panel) {
-          await selectionManager.destroyPanel(panel);
-          done();
-        }
-      }
-      console.info('************* testSelectionManagerTest4800 Test end*************');
       done();
     });
 
@@ -921,6 +871,46 @@ export default function SelectionManagerTest() {
     });
 
     /**
+     * @tc.name   testSelectionManagerTest4800
+     * @tc.number SUB_Driver_Selection_Dyn_4800
+     * @tc.desc   verify ERROR code 401 of moveToGlobalDisplay.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSelectionManagerTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('************* testSelectionManagerTest4800Test start*************');
+      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+      let context = abilityDelegator.getAppContext();
+      context.stageMode = true;
+      let panelInfo: PanelInfo = {
+        panelType: PanelType.MENU_PANEL,
+        x: 0,
+        y: 0,
+        width: 100,
+        height: 100
+      }
+      let panel: selectionManager.Panel | undefined = undefined;
+      try {
+        panel = await selectionManager.createPanel(context, panelInfo);
+        await panel.moveToGlobalDisplay(null, 20);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`testSelectionManagerTest4800 throw error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(401);
+        done();
+      } finally {
+        if (panel) {
+          await selectionManager.destroyPanel(panel);
+          done();
+        }
+      }
+      console.info('************* testSelectionManagerTest4800 Test end*************');
+    });
+
+    /**
      * @tc.name   testSelectionManagerTest4900
      * @tc.number SUB_Driver_Selection_Dyn_4900
      * @tc.desc   verify ERROR code 401 of moveToGlobalDisplay.
@@ -944,7 +934,7 @@ export default function SelectionManagerTest() {
       let panel: selectionManager.Panel | undefined = undefined;
       try {
         panel = await selectionManager.createPanel(context, panelInfo);
-        await panel.moveToGlobalDisplay(null, 20);
+        await panel.moveToGlobalDisplay(20, null);
         expect(false).assertTrue();
         done();
       } catch (error) {
@@ -960,7 +950,7 @@ export default function SelectionManagerTest() {
       console.info('************* testSelectionManagerTest4900 Test end*************');
     });
 
-    /**
+        /**
      * @tc.name   testSelectionManagerTest5000
      * @tc.number SUB_Driver_Selection_Dyn_5000
      * @tc.desc   verify ERROR code 401 of moveToGlobalDisplay.
@@ -984,7 +974,7 @@ export default function SelectionManagerTest() {
       let panel: selectionManager.Panel | undefined = undefined;
       try {
         panel = await selectionManager.createPanel(context, panelInfo);
-        await panel.moveToGlobalDisplay(20, null);
+        await panel.moveToGlobalDisplay(undefined, 20);
         expect(false).assertTrue();
         done();
       } catch (error) {
@@ -1000,7 +990,7 @@ export default function SelectionManagerTest() {
       console.info('************* testSelectionManagerTest5000 Test end*************');
     });
 
-        /**
+    /**
      * @tc.name   testSelectionManagerTest5100
      * @tc.number SUB_Driver_Selection_Dyn_5100
      * @tc.desc   verify ERROR code 401 of moveToGlobalDisplay.
@@ -1024,7 +1014,7 @@ export default function SelectionManagerTest() {
       let panel: selectionManager.Panel | undefined = undefined;
       try {
         panel = await selectionManager.createPanel(context, panelInfo);
-        await panel.moveToGlobalDisplay(undefined, 20);
+        await panel.moveToGlobalDisplay(20, undefined);
         expect(false).assertTrue();
         done();
       } catch (error) {
@@ -1038,46 +1028,6 @@ export default function SelectionManagerTest() {
         }
       }
       console.info('************* testSelectionManagerTest5100 Test end*************');
-    });
-
-    /**
-     * @tc.name   testSelectionManagerTest5200
-     * @tc.number SUB_Driver_Selection_Dyn_5200
-     * @tc.desc   verify ERROR code 401 of moveToGlobalDisplay.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSelectionManagerTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info('************* testSelectionManagerTest5200 Test start*************');
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
-      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      let context = abilityDelegator.getAppContext();
-      context.stageMode = true;
-      let panelInfo: PanelInfo = {
-        panelType: PanelType.MENU_PANEL,
-        x: 0,
-        y: 0,
-        width: 100,
-        height: 100
-      }
-      let panel: selectionManager.Panel | undefined = undefined;
-      try {
-        panel = await selectionManager.createPanel(context, panelInfo);
-        await panel.moveToGlobalDisplay(20, undefined);
-        expect(false).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`testSelectionManagerTest5200 throw error: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(401);
-        done();
-      } finally {
-        if (panel) {
-          await selectionManager.destroyPanel(panel);
-          done();
-        }
-      }
-      console.info('************* testSelectionManagerTest5200 Test end*************');
     });
 
     /**
