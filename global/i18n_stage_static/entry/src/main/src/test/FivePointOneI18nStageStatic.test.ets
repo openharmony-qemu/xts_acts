@@ -1355,6 +1355,7 @@ export default function FivePointOne_i18nStageTest() {
       let styledDateFormat: i18n.StyledDateTimeFormat = new i18n.StyledDateTimeFormat(formatter, {
         year: yearTextStyle,
         month: monthTextStyle,
+        day: dayTextStyle,
         hour: hourTextStyle,
         minute: minuteTextStyle,
         second: secondTextStyle,
@@ -1620,6 +1621,21 @@ export default function FivePointOne_i18nStageTest() {
       console.log('intl_Collator_resolvedOptions_test_Static_0100 value:', ignorePunctuation);
       expect(usage).assertEqual('sort');
       expect(ignorePunctuation).assertEqual(true);
+    })
+
+    /**
+     * @tc.name TimeZone_GetOffset_test_Static_0100
+     * @tc.number TimeZone_GetOffset_test_Static_0100
+     * @tc.desc with getOffset
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('TimeZone_GetOffset_test_Static_0100', Level.LEVEL3, () => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let value: number = timeZone.getOffset(1234567890);
+      console.log('TimeZone_GetOffset_test_Static_0100 value:', value);
+      expect(value).assertEqual(28800000);
     })
 
 
