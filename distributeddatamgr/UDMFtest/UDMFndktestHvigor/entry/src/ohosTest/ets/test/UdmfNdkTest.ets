@@ -1986,7 +1986,7 @@ export default function UdmfNdkTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('OH_UdmfRecord_GetGeneOH_Udmf_GetPropertiesExtrasStringParam002ralEntry001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('OH_Udmf_GetPropertiesExtrasStringParam002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG, `OH_Udmf_GetPropertiesExtrasStringParam002 start ====`)
       let result = testNapi.OH_Udmf_GetPropertiesExtrasStringParam002();
       console.log(TAG, `OH_Udmf_GetPropertiesExtrasStringParam002 result ==== ${result}`)

@@ -3070,6 +3070,7 @@ static napi_value OH_UdmfRecord_GetGeneralEntry001(napi_env env, napi_callback_i
     napi_value result = nullptr;
     int ret = OH_UdmfRecord_GetGeneralEntry(record, typeId, &entry, &count);
     napi_create_int32(env, ret == Udmf_ErrCode::UDMF_ERR, &result);
+    OH_UdmfRecord_Destroy(record);
     return result;
 }
 
@@ -3084,6 +3085,7 @@ static napi_value OH_UdmfGetDataParams_SetDestUri001(napi_env env, napi_callback
     }
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
+    OH_UdmfGetDataParams_Destroy(param);
     return result;
 }
 
