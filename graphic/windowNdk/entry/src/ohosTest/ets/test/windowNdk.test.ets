@@ -470,6 +470,7 @@ export default function windowNdk() {
       }else{
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
+        await sleep(500)
         expect(flag).assertEqual(true)
         done()
       }
@@ -502,6 +503,7 @@ export default function windowNdk() {
       }else{
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true ,true);
+        await sleep(500)
         expect(flag).assertEqual(true)
         done()
       }
@@ -540,17 +542,10 @@ export default function windowNdk() {
           console.info(`${caseName}: result: ${result}`)
           expect(result).assertEqual(0);
           await sleep(1000);
-          if(isFreeWindowMode){
-            subWindow.off('avoidAreaChange')
-            await subWindow.destroyWindow();
-            expect(flag).assertEqual(false)
-            done()
-          }else{
-            subWindow.off('avoidAreaChange')
-            await subWindow.destroyWindow();
-            expect(flag).assertEqual(true)
-            done()
-          }
+          subWindow.off('avoidAreaChange')
+          await subWindow.destroyWindow();
+          expect(flag).assertEqual(false)
+          done()
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -601,17 +596,10 @@ export default function windowNdk() {
           console.info(`${caseName}: result: ${result}`);
           expect(result).assertEqual(0);
           await sleep(1000);
-          if(isFreeWindowMode){
-            dialogWindow.off('avoidAreaChange')
-            await dialogWindow.destroyWindow();
-            expect(flag).assertEqual(false)
-            done()
-          }else{
-            dialogWindow.off('avoidAreaChange')
-            await dialogWindow.destroyWindow();
-            expect(flag).assertEqual(true)
-            done()
-          }
+          dialogWindow.off('avoidAreaChange')
+          await dialogWindow.destroyWindow();
+          expect(flag).assertEqual(false)
+          done()
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -695,13 +683,14 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isFreeWindowMode){
+      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet'){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
       }else{
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
+        await sleep(500)
         expect(flag).assertEqual(true)
         done()
       }
@@ -727,13 +716,14 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isFreeWindowMode){
+      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet'){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
       }else{
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
+        await sleep(500)
         expect(flag).assertEqual(true)
         done()
       }
@@ -772,17 +762,10 @@ export default function windowNdk() {
           console.info(`${caseName}: result: ${result}`);
           expect(result).assertEqual(0);
           await sleep(1000);
-          if(isFreeWindowMode){
-            subWindow.off('avoidAreaChange')
-            await subWindow.destroyWindow();
-            expect(flag).assertEqual(false)
-            done()
-          }else{
-            subWindow.off('avoidAreaChange')
-            await subWindow.destroyWindow();
-            expect(flag).assertEqual(true)
-            done()
-          }
+          subWindow.off('avoidAreaChange')
+          await subWindow.destroyWindow();
+          expect(flag).assertEqual(false)
+          done()
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -833,17 +816,10 @@ export default function windowNdk() {
           console.info(`${caseName}: result: ${result}`);
           expect(result).assertEqual(0);
           await sleep(1000);
-          if(isFreeWindowMode){
-            dialogWindow.off('avoidAreaChange')
-            await dialogWindow.destroyWindow();
-            expect(flag).assertEqual(false)
-            done()
-          }else{
-            dialogWindow.off('avoidAreaChange')
-            await dialogWindow.destroyWindow();
-            expect(flag).assertEqual(true)
-            done()
-          }
+          dialogWindow.off('avoidAreaChange')
+          await dialogWindow.destroyWindow();
+          expect(flag).assertEqual(false)
+          done()
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
