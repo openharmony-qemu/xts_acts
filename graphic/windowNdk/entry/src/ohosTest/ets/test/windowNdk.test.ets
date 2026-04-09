@@ -421,6 +421,7 @@ export default function windowNdk() {
     it('test_mainWindow_SetWindowStatusBarEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled";
       windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
+      await sleep(1000)
       let flag: boolean = false;
       WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
         console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
@@ -493,7 +494,7 @@ export default function windowNdk() {
       let result = windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
-       await sleep(1000);
+      await sleep(1000);
       if(isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
@@ -524,7 +525,7 @@ export default function windowNdk() {
           let subWindowId = subWindow.getWindowProperties().id;
           console.info(`${caseName}: Succeeded in get the subwindow id: ` + subWindowId);
 
-          let result1 = windowNdkTest.showWindow(subWindowId);
+          let result1 =await windowNdkTest.showWindow(subWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
           await sleep(1000)
 
@@ -585,7 +586,7 @@ export default function windowNdk() {
           let dialogWindowId = dialogWindow.getWindowProperties().id;
           console.info(`${caseName}: Succeeded in get the subwindow id: ` + dialogWindow);
 
-          let result1 = windowNdkTest.showWindow(dialogWindowId);
+          let result1 =await windowNdkTest.showWindow(dialogWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
           await sleep(1000)
 
@@ -650,7 +651,9 @@ export default function windowNdk() {
      */
     it('test_mainWindow_setWindowNavigationBarEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled";
-      windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
+      console.info(`${caseName} start`);
+      windowNdkTest.setWindowNavigationBarEnabled(windowId, false, true);
+      await sleep(1000)
       let flag: boolean = false;
       WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
         console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
@@ -661,8 +664,8 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isFreeWindowMode){
-        WindowClass.off('avoidAreaChange')
+      if (deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet' ){
+         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
       }else{
@@ -754,7 +757,7 @@ export default function windowNdk() {
           let subWindowId = subWindow.getWindowProperties().id;
           console.info(`${caseName}: Succeeded in get the subwindow id: ` + subWindowId);
 
-          let result1 = windowNdkTest.showWindow(subWindowId);
+          let result1 =await windowNdkTest.showWindow(subWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
 
            await sleep(1000)
@@ -815,7 +818,7 @@ export default function windowNdk() {
           let dialogWindowId = dialogWindow.getWindowProperties().id;
           console.info(`${caseName}: Succeeded in get the subwindow id: ` + dialogWindow);
 
-          let result1 = windowNdkTest.showWindow(dialogWindowId);
+          let result1 =await windowNdkTest.showWindow(dialogWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
           await sleep(1000)
 
