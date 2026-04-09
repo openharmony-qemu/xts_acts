@@ -60,12 +60,12 @@ export default function UIUtilsMakeBindingTest() {
     });
 
     /**
-     * @tc.number   SUB_ARUI_UIUTILS_MAKEBINDING_PATH_0100
-     * @tc.name     UIUtilsMakeBindingTest_static_001
+     * @tc.number   SUB_ARKUI_UIUTILS_MAKEBINDING_PATH_0100
+     * @tc.name     SUB_ARKUI_UIUTILS_MAKEBINDING_PATH_0100
      * @tc.desc     UIUtilsMakeBindingTest_static_001
      * @tc.level    Level.LEVEL0
      */
-    it('UIUtilsMakeBindingTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_UIUTILS_MAKEBINDING_PATH_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[UIUtilsMakeBindingTest_001] START');
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -98,12 +98,12 @@ export default function UIUtilsMakeBindingTest() {
     });
 
     /**
-     * @tc.number   SUB_ARUI_UIUTILS_MAKEBINDING_PATH_0200
-     * @tc.name     UIUtilsMakeBindingTest_static_002
+     * @tc.number   SUB_ARKUI_UIUTILS_MAKEBINDING_PATH_0200
+     * @tc.name     SUB_ARKUI_UIUTILS_MAKEBINDING_PATH_0200
      * @tc.desc     UIUtilsMakeBindingTest_static_002
      * @tc.level    Level.LEVEL0
      */
-    it('UIUtilsMakeBindingTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_UIUTILS_MAKEBINDING_PATH_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[UIUtilsMakeBindingTest_002] START');
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
