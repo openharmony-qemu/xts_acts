@@ -213,8 +213,14 @@ napi_value TestOhMediaAsset(napi_env env, napi_callback_info info)
     Camera_Profile *photoProfile = NULL;
     for (int i = 0; i < cameraOutputCapability->previewProfilesSize; i++) {
         Camera_Profile *currPre = cameraOutputCapability->previewProfiles[i];
+        if (currPre->size.width < 480 || currPre->size.height < 480) {
+            continue;
+        }
         for (int j = 0; j < cameraOutputCapability->photoProfilesSize; j++) {
             Camera_Profile *currPhoto = cameraOutputCapability->photoProfiles[j];
+            if (currPhoto->size.width < 480 || currPhoto->size.height < 480) {
+                continue;
+            }
             if (currPre->size.width * currPhoto->size.height == currPhoto->size.width * currPre->size.height) {
                 preProfile = currPre;
                 photoProfile = currPhoto;
