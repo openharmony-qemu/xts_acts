@@ -15,8 +15,14 @@
 
 import { AbilityStage, Want } from '@kit.AbilityKit';
 import hilog from '@ohos.hilog'
-
+import { AppStorage } from '@ohos.arkui.stateManagement'
+import common from '@ohos.app.ability.common';
 export default class MyAbilityStage extends AbilityStage {
+
+  onCreate(): void {
+    hilog.info(0x0000, 'AbilityStage', `onCreate:`);
+    AppStorage.setOrCreate<common.AbilityStageContext>("abilityStageContext", this.context)
+  }
   onAcceptWant(want: Want): string {
     const abilityName = want.abilityName;
     hilog.info(0x0000, 'AbilityStage', `onAcceptWant: ${abilityName}`);
