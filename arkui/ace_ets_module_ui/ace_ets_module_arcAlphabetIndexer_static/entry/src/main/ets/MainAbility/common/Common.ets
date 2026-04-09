@@ -37,7 +37,7 @@ export default class CommonFunc {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj1: JSONElement = JSON.parseJsonElement(strJson)
+    let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
     let rectInfo = parts.map((part: string) => {
@@ -55,7 +55,7 @@ export default class CommonFunc {
 
   static getComponentRectOnScreen(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj1: JSONElement = JSON.parseJsonElement(strJson)
+    let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
     let rectInfo = parts.map((part: string) => {
