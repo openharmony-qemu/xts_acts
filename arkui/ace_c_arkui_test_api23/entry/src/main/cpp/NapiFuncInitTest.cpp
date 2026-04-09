@@ -190,6 +190,8 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"TestAtomicServiceMenuBarSetVisible01", nullptr,
          TestAtomicServiceMenuBarSetVisible01, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestAccessibilityElementInfoSetComponentIdentifier001", nullptr,
+         TestAccessibilityElementInfoSetComponentIdentifier001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextSelectionTest", nullptr, MotionPathNode, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"TestIsInRenderStateReturnValue001", nullptr, TestIsInRenderStateReturnValue001,
