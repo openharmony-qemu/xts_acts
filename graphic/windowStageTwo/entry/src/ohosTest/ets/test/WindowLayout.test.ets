@@ -6193,10 +6193,8 @@ export default function windowLayoutTest() {
           expect().assertFail();
         } else if (textDragged == 'startMoving 801') {
           console.info(`${caseName} textDragged1 = ${JSON.stringify(textDragged)}`);
-          done();
         } else if (textDragged == 'startMoving 1300001') {
           console.info(`${caseName} textDragged2 = ${JSON.stringify(textDragged)}`);
-          done();
         } else {
           console.error(`${caseName} Error.`);
           expect(true).assertFalse()
@@ -6268,10 +6266,8 @@ export default function windowLayoutTest() {
           expect().assertFail();
         } else if (textDragged == 'startMoving 801') {
            console.info(`${caseName} textDragged1 = ${JSON.stringify(textDragged)}`);
-          done();
         } else if (textDragged == 'startMoving 1300001') {
            console.info(`${caseName} textDragged2 = ${JSON.stringify(textDragged)}`);
-          done();;
         } else {
           console.error(`${caseName} Error.`);
           expect(true).assertFalse()
