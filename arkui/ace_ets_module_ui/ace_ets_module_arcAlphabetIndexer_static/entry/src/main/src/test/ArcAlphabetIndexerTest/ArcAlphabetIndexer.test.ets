@@ -97,7 +97,8 @@ export default function ArcAlphabetIndexerTest() {
         expect(node != null).assertTrue();
         let usePopup = JSON.parseJsonElement(inspector.getInspectorByKey('arcIndexerFull')).getElement('$attrs').getString('usePopup');
         console.info('[ARKUI_NEW] arcIndexerFull usePopup = ' + usePopup);
-        expect(usePopup != null && usePopup != undefined).assertTrue();
+        expect(usePopup != null && usePopup !== undefined).assertTrue();
+        expect(usePopup).assertEqual('true');
         console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerFullUsePopup END');
         done();
       } catch (error) {
@@ -480,9 +481,12 @@ export default function ArcAlphabetIndexerTest() {
         await CommonFunc.sleep(SLEEP_TIME);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('arcIndexerFontSize'));
         expect(node != null).assertTrue();
+        let rect = CommonFunc.getComponentRect('arcIndexerFontSize');
+        await Utils.drag(rect.left + 10, rect.top + 10, rect.left + 10, rect.top + 50, 10);
+        await CommonFunc.sleep(500);
         let onSelectIndex = AppStorage.get<int>('arcOnSelectIndex');
         console.info('[ARKUI_NEW] arcOnSelectIndex = ' + onSelectIndex);
-        expect(onSelectIndex != undefined).assertTrue();
+        expect(onSelectIndex !== undefined && onSelectIndex !== -1).assertTrue();
         console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerOnSelectCallback END');
         done();
       } catch (error) {
@@ -659,6 +663,31 @@ export default function ArcAlphabetIndexerTest() {
         done();
       } catch (error) {
         console.error('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerUndefinedAllAttrs error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2500
+     * @tc.name arcIndexerEmptyArrayParams
+     * @tc.desc Test ArcAlphabetIndexer with empty array as invalid parameter renders without crash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('arcIndexerEmptyArrayParams', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerEmptyArrayParams START');
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+        let info: ArcAlphabetIndexerInitInfo = { arrayValue: [], selected: 0 };
+        expect(info.arrayValue.length).assertEqual(0);
+        let node = JSON.parseJsonElement(inspector.getInspectorByKey('arcIndexerUndefined'));
+        expect(node != null).assertTrue();
+        console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerEmptyArrayParams END');
+        done();
+      } catch (error) {
+        console.error('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerEmptyArrayParams error:' + error);
         expect().assertFail();
         done();
       }

@@ -37,7 +37,7 @@ export class MessageManager {
   }
 
   registerCallback(callback: Callback, type?: string) {
-    if (type == undefined) {
+    if (type === undefined) {
       console.error('registerCallback callback set')
       this.callback = callback
       return
@@ -46,7 +46,7 @@ export class MessageManager {
   }
 
   notify(message: Message, type?: string) {
-    if (type == undefined) {
+    if (type === undefined) {
       if (this.callback !== undefined) {
         this.callback!(message)
       }
