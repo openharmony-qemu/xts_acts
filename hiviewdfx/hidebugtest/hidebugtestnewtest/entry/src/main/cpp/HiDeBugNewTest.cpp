@@ -577,6 +577,29 @@ static napi_value TestSetCrashObjAddrLen(napi_env env, napi_callback_info info)
     return ret;
 }
 
+struct CallbackState {
+    std::mutex mutex;
+    std::condition_variable cv;
+    int count = 0;
+    bool done = false;
+    OH_HiDebug_ResourceType type = OH_RES_TYPE_FD;
+    std::string path;
+};
+CallbackState g_state;
+
+void OnResult(OH_HiDebug_ProfilingResult* result) {
+    std::lock_guard<std::mutex> lock(g_state.mutex);
+    g_state.count++;
+    g_state.done = true;
+    if (result != nullptr) {
+        g_state.type = result->resourceType;
+        g_state.path = result->filePath == nullptr ? "" : result->filePath;
+    }
+    OH_LOG_INFO(LOG_APP, "Callback triggered: count=%d, type=%d, path=%s", g_state.count, g_state.type,
+                g_state.path.c_str());
+    g_state.cv.notify_one();
+}
+
 static napi_value HiDebugStartProfiler(napi_env env, napi_callback_info info)
 {
     size_t argc = 6;
@@ -651,7 +674,8 @@ static napi_value HiDebugStartProfiler(napi_env env, napi_callback_info info)
 
     HiDebug_ErrorCode startResult = HIDEBUG_RES_PROF_SUCCESS;
     napi_value ret;
-    startResult = OH_HiDebug_StartProfiler(static_cast<OH_HiDebug_ResourceType>(resourceType), &profilerConfig);
+    startResult = OH_HiDebug_StartProfiler(static_cast<OH_HiDebug_ResourceType>(resourceType), &profilerConfig,
+                                            OnResult);
     if (startResult == HIDEBUG_RES_PROF_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StartProfiler success return code is:%{public}d", startResult);
     } else {
@@ -693,7 +717,7 @@ static napi_value HiDebugStartProfilerNull(napi_env env, napi_callback_info info
 
     HiDebug_ErrorCode startResult = HIDEBUG_RES_PROF_SUCCESS;
     napi_value ret;
-    startResult = OH_HiDebug_StartProfiler(static_cast<OH_HiDebug_ResourceType>(resourceType), nullptr);
+    startResult = OH_HiDebug_StartProfiler(static_cast<OH_HiDebug_ResourceType>(resourceType), nullptr, OnResult);
     if (startResult == HIDEBUG_RES_PROF_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "OH_HiDebug_StartProfiler success return code is:%{public}d", startResult);
     } else {
