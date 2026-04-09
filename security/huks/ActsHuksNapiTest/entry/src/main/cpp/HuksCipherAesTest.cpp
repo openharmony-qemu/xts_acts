@@ -608,15 +608,15 @@ static OH_Huks_Result GenerateAes0200Key(const struct OH_Huks_Blob* keyAlias,
 }
 
 static OH_Huks_Result InitAes0200EncryptParamSet(struct Aes0200ParamSets* paramSets,
-                                                   struct OH_Huks_Param* encryptParams,
-                                                   uint32_t encryptParamCount)
+                                                  struct OH_Huks_Param* encryptParams,
+                                                  uint32_t encryptParamCount)
 {
     return InitParamSet(&paramSets->encryptParamSet, encryptParams, encryptParamCount);
 }
 
 static OH_Huks_Result InitAes0200DecryptParamSet(struct Aes0200ParamSets* paramSets,
-                                                   struct OH_Huks_Param* decryptParams,
-                                                   uint32_t decryptParamCount)
+                                                  struct OH_Huks_Param* decryptParams,
+                                                  uint32_t decryptParamCount)
 {
     return InitParamSet(&paramSets->decryptParamSet, decryptParams, decryptParamCount);
 }
