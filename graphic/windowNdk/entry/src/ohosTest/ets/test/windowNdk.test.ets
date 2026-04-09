@@ -947,7 +947,7 @@ export default function windowNdk() {
       expect(result1).assertEqual(0);
       let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
       console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
-      if (isPCStatus != '') {	 
+      if (isFreeWindowMode) {	 
           expect(AvoidArea_system.topRect.width).assertEqual(0);
           expect(AvoidArea_system.topRect.height).assertEqual(0);
           done();	 
@@ -975,7 +975,7 @@ export default function windowNdk() {
       expect(result1).assertEqual(0);
       let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
       console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
-      if (isPCStatus != '') {	 
+      if (isFreeWindowMode) {	 
           expect(AvoidArea_system.topRect.width).assertEqual(0);
           expect(AvoidArea_system.topRect.height).assertEqual(0);
           done();	 
@@ -1001,7 +1001,7 @@ export default function windowNdk() {
       await WindowClass.setWindowLayoutFullScreen(true);
       let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
       console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
-      if (isPCStatus != '') {	 
+      if (isFreeWindowMode) {	 
          await WindowClass.setWindowLayoutFullScreen(false);
           expect(AvoidArea_system.topRect.width).assertEqual(0);
           expect(AvoidArea_system.topRect.height).assertEqual(0);
