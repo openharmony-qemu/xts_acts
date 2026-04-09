@@ -641,11 +641,10 @@ export default function ApiCoverStaticTest() {
       }
     });
 
-    
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_GetElementName_Static_0100
      * @tc.number SUB_Ability_AbilityRuntime_GetElementName_Static_0100
-     * @tc.desc   AbilityStageContext.elementMentName
+     * @tc.desc   AbilityStageContext.launchElement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

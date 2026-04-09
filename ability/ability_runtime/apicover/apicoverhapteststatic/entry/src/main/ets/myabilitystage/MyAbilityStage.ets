@@ -21,7 +21,7 @@ export default class MyAbilityStage extends AbilityStage {
 
   onCreate(): void {
     hilog.info(0x0000, 'AbilityStage', `onCreate:`);
-    AppStorage.setOrCreate<common.AbilityStageContext>("abilityStageContext", this.context)
+    AppStorage.setOrCreate<common.AbilityStageContext>('abilityStageContext', this.context)
   }
   onAcceptWant(want: Want): string {
     const abilityName = want.abilityName;
