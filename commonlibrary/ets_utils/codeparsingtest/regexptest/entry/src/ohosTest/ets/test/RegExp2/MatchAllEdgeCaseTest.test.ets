@@ -49,13 +49,13 @@ export default function matchAllEdgeCaseTest() {
           const results: RegExpMatchArray[] = Array.from(iterator);
           expect(results.length).assertEqual(2);
         } else {
-          expect(true).assertTrue();
+          expect(supportsLookbehind).assertFalse();
         }
       });
 
       /**
       * @tc.name testMatchAllTest0101
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0200
        * @tc.desc   Test RegExp[Symbol.matchAll] negative lookahead when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -79,20 +79,21 @@ export default function matchAllEdgeCaseTest() {
           expect(results.length).assertEqual(1);
           expect(results[0][0]).assertEqual("apple");
         } else {
-          expect(true).assertTrue();
+          expect(supportsLookahead).assertFalse();
         }
       });
 
       /**
       * @tc.name testMatchAllTest0102
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0102
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0300
        * @tc.desc   Test RegExp[Symbol.matchAll] unicode property escapes when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
       it('testMatchAllTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        const str: string = "Hello 123 😀";
+        const emoji = String.fromCodePoint(0x1F600);
+        const str: string = `Hello 123 ${emoji}`;
         const pattern: string = "\\p{Number}+";
         let supportsUnicodeProps: boolean = true;
 
@@ -121,7 +122,7 @@ export default function matchAllEdgeCaseTest() {
     describe('This_Value_Extended_Tests', () => {
       /**
       * @tc.name testMatchAllTest0103
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0103
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0400
        * @tc.desc   Test RegExp[Symbol.matchAll] with RegExp object passed from variable
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -138,7 +139,7 @@ export default function matchAllEdgeCaseTest() {
 
       /**
       * @tc.name testMatchAllTest0104
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0104
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0500
        * @tc.desc   Test RegExp[Symbol.matchAll] with RegExp created via constructor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -158,7 +159,7 @@ export default function matchAllEdgeCaseTest() {
     describe('HasIndices_Flag_Extended_Tests', () => {
       /**
       * @tc.name testMatchAllTest0105
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0105
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0600
        * @tc.desc   Test RegExp[Symbol.matchAll] skip d-flag behavior when environment is unsupported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -177,7 +178,7 @@ export default function matchAllEdgeCaseTest() {
     describe('Inheritance_Extended_Tests', () => {
       /**
       * @tc.name testMatchAllTest0106
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0106
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0700
        * @tc.desc   Test RegExp[Symbol.matchAll] when using RegExp literal
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -193,7 +194,7 @@ export default function matchAllEdgeCaseTest() {
 
       /**
       * @tc.name testMatchAllTest0107
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0107
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0800
        * @tc.desc   Test RegExp[Symbol.matchAll] when RegExp is returned from helper function
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -211,7 +212,7 @@ export default function matchAllEdgeCaseTest() {
     describe('String_Parameter_Extended_Tests', () => {
       /**
       * @tc.name testMatchAllTest0108
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0108
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0900
        * @tc.desc   Test RegExp[Symbol.matchAll] converts boolean input to string and matches
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -229,7 +230,7 @@ export default function matchAllEdgeCaseTest() {
 
       /**
       * @tc.name testMatchAllTest0109
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0109
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_1000
        * @tc.desc   Test RegExp[Symbol.matchAll] converts String object input to string and matches
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -247,7 +248,7 @@ export default function matchAllEdgeCaseTest() {
 
       /**
       * @tc.name testMatchAllTest0110
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0110
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_1100
        * @tc.desc   Test RegExp[Symbol.matchAll] converts undefined input to "undefined" and matches
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -267,7 +268,7 @@ export default function matchAllEdgeCaseTest() {
     describe('Error_Handling_Extended_Tests', () => {
       /**
       * @tc.name testMatchAllTest0111
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0111
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_1200
        * @tc.desc   Test RegExp[Symbol.matchAll] iterator returns done=true when no matches
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -284,7 +285,7 @@ export default function matchAllEdgeCaseTest() {
 
       /**
       * @tc.name testMatchAllTest0112
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0112
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_1300
        * @tc.desc   Test RegExp[Symbol.matchAll] does not throw for valid pattern with no matches
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -302,7 +303,7 @@ export default function matchAllEdgeCaseTest() {
     describe('Performance_Memory_Basic_Tests', () => {
       /**
       * @tc.name testMatchAllTest0113
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0113
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_1400
        * @tc.desc   Test RegExp[Symbol.matchAll] iterates many matches over a large string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -324,7 +325,7 @@ export default function matchAllEdgeCaseTest() {
 
       /**
       * @tc.name testMatchAllTest0114
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0114
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_1500
        * @tc.desc   Test RegExp[Symbol.matchAll] complex regex with capture groups returns correct match count
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -346,7 +347,7 @@ export default function matchAllEdgeCaseTest() {
     describe('RegExp_Constructor_Comparison_Tests', () => {
       /**
       * @tc.name testMatchAllTest0115
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0115
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_1600
        * @tc.desc   Test RegExp[Symbol.matchAll] matches are equivalent between constructed and literal regex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -368,7 +369,7 @@ export default function matchAllEdgeCaseTest() {
 
       /**
       * @tc.name testMatchAllTest0116
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_0116
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EDGECASE_TEST_1700
        * @tc.desc   Test RegExp[Symbol.matchAll] constructor special escape characters work correctly
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST

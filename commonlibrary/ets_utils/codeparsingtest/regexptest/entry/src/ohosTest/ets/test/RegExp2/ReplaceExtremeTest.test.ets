@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ export default function replaceExtremeTest() {
       /**
        * @tc.name testReplaceTest0100
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0100
-       * @tc.desc   Test Custom_Symbol_replace_Object
+       * @tc.desc   Test Custom Symbol replace Object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -42,8 +42,8 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0101
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0101
-       * @tc.desc   Test RegExp_Symbol_replace_Direct_Call
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0200
+       * @tc.desc   Test RegExp Symbol replace Direct Call
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -55,8 +55,8 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0102
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0102
-       * @tc.desc   Test Parameter_Order_Verification
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0300
+       * @tc.desc   Test Parameter Order Verification
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -69,8 +69,8 @@ export default function replaceExtremeTest() {
     describe('Advanced_Scenario_Tests', () => {
       /**
        * @tc.name testReplaceTest0103
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0103
-       * @tc.desc   Test Recursive_Replacement
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0400
+       * @tc.desc   Test Recursive Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -81,8 +81,8 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0104
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0104
-       * @tc.desc   Test Conditional_Replacement
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0500
+       * @tc.desc   Test Conditional Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -93,8 +93,8 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0105
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0105
-       * @tc.desc   Test Accumulative_Replacement
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0600
+       * @tc.desc   Test Accumulative Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -105,8 +105,8 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0106
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0106
-       * @tc.desc   Test Context_Aware_Replacement
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0700
+       * @tc.desc   Test Context Aware Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -117,8 +117,8 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0107
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0107
-       * @tc.desc   Test Lookup_Table_Replacement
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0800
+       * @tc.desc   Test Lookup Table Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -131,8 +131,8 @@ export default function replaceExtremeTest() {
     describe('Boundary_Case_Extension_Tests', () => {
       /**
        * @tc.name testReplaceTest0108
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0108
-       * @tc.desc   Test Extreme_Quantifier_Value
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0900
+       * @tc.desc   Test Extreme Quantifier Value
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -146,8 +146,8 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0109
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0109
-       * @tc.desc   Test Many_Capture_Groups
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_1000
+       * @tc.desc   Test Many Capture Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -165,8 +165,8 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0110
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0110
-       * @tc.desc   Test Deeply_Nested_Groups
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_1100
+       * @tc.desc   Test Deeply Nested Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -180,8 +180,8 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0111
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0111
-       * @tc.desc   Test Zero_Match_Loop_Guard
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_1200
+       * @tc.desc   Test Zero Match Loop Guard
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -195,8 +195,8 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0112
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0112
-       * @tc.desc   Test Special_Unicode_Combination
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_1300
+       * @tc.desc   Test Special Unicode Combination
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -213,8 +213,8 @@ export default function replaceExtremeTest() {
     describe('String_Parameter_Extension_Tests', () => {
       /**
        * @tc.name testReplaceTest0113
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0113
-       * @tc.desc   Test String_Pattern_Auto_Escape
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_1400
+       * @tc.desc   Test String Pattern Auto Escape
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -227,8 +227,8 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0114
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0114
-       * @tc.desc   Test String_Pattern_Limitations
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_1500
+       * @tc.desc   Test String Pattern Limitations
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -241,8 +241,8 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0115
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0115
-       * @tc.desc   Test String_Pattern_vs_Regex_Pattern_Comparison
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_1600
+       * @tc.desc   Test String Pattern vs Regex Pattern Comparison
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -259,4 +259,5 @@ export default function replaceExtremeTest() {
     });
 
 }
+
 

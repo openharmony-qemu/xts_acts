@@ -35,7 +35,7 @@ export default function execReturnTypeTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURNTYPE_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURNTYPE_TEST_0200
      * @tc.desc   Test RegExp.prototype.exec returns null on failure and lastIndex unchanged
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -50,8 +50,8 @@ export default function execReturnTypeTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURNTYPE_TEST_0102
-     * @tc.desc   Placeholder for enumerable properties on exec result (commented checks)
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURNTYPE_TEST_0300
+    * @tc.desc   Test placeholder for enumerable properties on exec result (commented checks)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

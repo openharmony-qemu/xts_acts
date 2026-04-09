@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ export default function execGlobalSpecialTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0200
      * @tc.desc   Test RegExp lastIndex reset when exec fails on a new string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -61,7 +61,7 @@ export default function execGlobalSpecialTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0300
      * @tc.desc   Test manual lastIndex reset before repeated exec on same string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ export default function matchAllExtrasTest() {
 
     /**
      * @tc.name testMatchAllTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EXTRAS_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EXTRAS_TEST_0200
      * @tc.desc   Test String.matchAll result count equals RegExp[Symbol.matchAll] count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -49,7 +49,7 @@ export default function matchAllExtrasTest() {
 
     /**
      * @tc.name testMatchAllTest0102
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EXTRAS_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EXTRAS_TEST_0300
      * @tc.desc   Test primitive string without callable Symbol.matchAll throws TypeError
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -61,7 +61,7 @@ export default function matchAllExtrasTest() {
 
     /**
      * @tc.name testMatchAllTest0103
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EXTRAS_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EXTRAS_TEST_0400
      * @tc.desc   Test null receiver for Symbol.matchAll throws
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

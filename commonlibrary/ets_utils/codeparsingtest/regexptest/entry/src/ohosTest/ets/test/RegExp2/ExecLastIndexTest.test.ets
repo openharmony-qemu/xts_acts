@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ export default function execLastIndexTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0200
      * @tc.desc   Test sticky RegExp exec honors lastIndex for next attempt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,7 +58,7 @@ export default function execLastIndexTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0300
      * @tc.desc   Test global exec returns null when lastIndex exceeds string length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function execLastIndexTest() {
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_LASTINDEX_TEST_0400
      * @tc.desc   Test negative lastIndex is treated as zero for global exec
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

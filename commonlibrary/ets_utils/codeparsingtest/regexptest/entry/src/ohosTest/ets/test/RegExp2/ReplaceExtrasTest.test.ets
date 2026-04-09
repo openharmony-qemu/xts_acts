@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ export default function replaceExtrasTest() {
     /**
      * @tc.name testReplaceTest0100
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTRAS_TEST_0100
-     * @tc.desc   Test custom_Symbol_replace_object_for_String_replace
+     * @tc.desc   Test custom Symbol replace object for String replace
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -36,8 +36,8 @@ export default function replaceExtrasTest() {
 
     /**
      * @tc.name testReplaceTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTRAS_TEST_0101
-     * @tc.desc   Test Symbol_replace_undefined_this_throws
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTRAS_TEST_0200
+     * @tc.desc   Test Symbol replace undefined this throws
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -48,8 +48,8 @@ export default function replaceExtrasTest() {
 
     /**
      * @tc.name testReplaceTest0102
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTRAS_TEST_0102
-     * @tc.desc   Test Symbol_replace_null_this_throws
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTRAS_TEST_0300
+     * @tc.desc   Test Symbol replace null this throws
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -59,3 +59,4 @@ export default function replaceExtrasTest() {
     });
   });
 }
+

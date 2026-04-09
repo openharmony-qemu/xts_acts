@@ -21,7 +21,7 @@ export default function replaceAdvancedTest() {
       /**
        * @tc.name testReplaceTest0100
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0100
-       * @tc.desc   Non-global replace honors lastIndex as search start
+      * @tc.desc   Test Non-global replace honors lastIndex as search start
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -36,8 +36,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0101
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0101
-       * @tc.desc   Global replace replaces all matches and resets lastIndex
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0200
+      * @tc.desc   Test Global replace replaces all matches and resets lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -53,8 +53,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0102
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0102
-       * @tc.desc   Sticky replace respects lastIndex positioning
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0300
+      * @tc.desc   Test Sticky replace respects lastIndex positioning
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -69,8 +69,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0103
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0103
-       * @tc.desc   Global replace after manually setting lastIndex
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0400
+      * @tc.desc   Test Global replace after manually setting lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -86,8 +86,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0104
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0104
-       * @tc.desc   lastIndex returns to zero after global replace
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0500
+      * @tc.desc   Test lastIndex returns to zero after global replace
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -105,8 +105,8 @@ export default function replaceAdvancedTest() {
     describe('ReplaceAdvanced_Boundary_Value_Tests', () => {
       /**
        * @tc.name testReplaceTest0105
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0105
-       * @tc.desc   Replace on empty source string
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0600
+      * @tc.desc   Test Replace on empty source string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -119,8 +119,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0106
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0106
-       * @tc.desc   Empty-match regex inserts replacement at position zero
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0700
+      * @tc.desc   Test Empty-match regex inserts replacement at position zero
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -133,8 +133,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0107
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0107
-       * @tc.desc   Single-character string replacement
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0800
+      * @tc.desc   Test Single-character string replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -147,8 +147,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0108
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0108
-       * @tc.desc   Long string global replace preserves length
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0900
+      * @tc.desc   Test Long string global replace preserves length
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -162,8 +162,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0109
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0109
-       * @tc.desc   Replace matched segment with empty string
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1000
+      * @tc.desc   Test Replace matched segment with empty string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -176,8 +176,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0110
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0110
-       * @tc.desc   Replace whole string using start/end anchors
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1100
+      * @tc.desc   Test Replace whole string using start/end anchors
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -190,8 +190,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0111
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0111
-       * @tc.desc   Emoji replace with Unicode flag on surrogate pairs
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1200
+      * @tc.desc   Test Emoji replace with Unicode flag on surrogate pairs
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -206,8 +206,8 @@ export default function replaceAdvancedTest() {
     describe('Special_Chars_And_Unicode', () => {
       /**
        * @tc.name testReplaceTest0112
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0112
-       * @tc.desc   Replace newline and tab with spaces
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1300
+      * @tc.desc   Test Replace newline and tab with spaces
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -220,8 +220,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0113
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0113
-       * @tc.desc   Replace accented Unicode character
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1400
+      * @tc.desc   Test Replace accented Unicode character
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -234,8 +234,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0114
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0114
-       * @tc.desc   Replace emoji in plain text
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1500
+      * @tc.desc   Test Replace emoji in plain text
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -248,8 +248,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0115
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0115
-       * @tc.desc   Replace Unicode math digit with u flag
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1600
+      * @tc.desc   Test Replace Unicode math digit with u flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -270,8 +270,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0116
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0116
-       * @tc.desc   Surrogate pair handling with and without global u
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1700
+      * @tc.desc   Test Surrogate pair handling with and without global u
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -286,8 +286,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0117
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0117
-       * @tc.desc   Combining character replace with u flag
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1800
+      * @tc.desc   Test Combining character replace with u flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -300,8 +300,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0118
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0118
-       * @tc.desc   Partial replace in complex emoji sequence
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_1900
+      * @tc.desc   Test Partial replace in complex emoji sequence
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -314,8 +314,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0119
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0119
-       * @tc.desc   Unicode property escape Script=Greek
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_2000
+      * @tc.desc   Test Unicode property escape Script=Greek
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -330,8 +330,8 @@ export default function replaceAdvancedTest() {
     describe('Regex_Flag_Interactions', () => {
       /**
        * @tc.name testReplaceTest0120
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0120
-       * @tc.desc   Sticky y flag replace with lastIndex
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_2100
+      * @tc.desc   Test Sticky y flag replace with lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -346,8 +346,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0121
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0121
-       * @tc.desc   dotAll s flag matches across newline
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_2200
+      * @tc.desc   Test dotAll s flag matches across newline
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -360,8 +360,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0122
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0122
-       * @tc.desc   Combined gim and sm flag replace behavior
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_2300
+      * @tc.desc   Test Combined gim and sm flag replace behavior
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -376,8 +376,8 @@ export default function replaceAdvancedTest() {
 
       /**
        * @tc.name testReplaceTest0123
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_0123
-       * @tc.desc   Compare first-only vs global replace
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_ADVANCED_TEST_2400
+      * @tc.desc   Test Compare first-only vs global replace
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1

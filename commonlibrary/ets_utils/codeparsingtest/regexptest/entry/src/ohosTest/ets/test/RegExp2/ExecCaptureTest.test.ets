@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ export default function execCaptureTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0200
      * @tc.desc   Test RegExp.prototype.exec nested capture groups
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function execCaptureTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0300
      * @tc.desc   Test RegExp.prototype.exec named capture groups year month day
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -99,7 +99,7 @@ export default function execCaptureTest() {
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0400
      * @tc.desc   Test RegExp.prototype.exec non-capturing groups with one capture
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -113,7 +113,7 @@ export default function execCaptureTest() {
 
     /**
      * @tc.name testExecTest0104
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0104
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0500
      * @tc.desc   Test RegExp.prototype.exec optional capture group (\\s+world)?
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -128,7 +128,7 @@ export default function execCaptureTest() {
 
     /**
      * @tc.name testExecTest0105
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0105
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CAPTURE_TEST_0600
      * @tc.desc   Test RegExp.prototype.exec mixed named and numbered capture groups
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

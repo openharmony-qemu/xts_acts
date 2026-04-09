@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ export default function execInteractionTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0200
      * @tc.desc   Test exec results align with String.match for global regex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function execInteractionTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0300
      * @tc.desc   Test String.matchAll iterator yields same substrings as multiple exec
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -75,7 +75,7 @@ export default function execInteractionTest() {
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0400
      * @tc.desc   Test replace does not leave lastIndex mutated for non-global regex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -91,7 +91,7 @@ export default function execInteractionTest() {
 
     /**
      * @tc.name testExecTest0104
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0104
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_INTERACTION_TEST_0500
      * @tc.desc   Test exec match index equals RegExp @@search result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

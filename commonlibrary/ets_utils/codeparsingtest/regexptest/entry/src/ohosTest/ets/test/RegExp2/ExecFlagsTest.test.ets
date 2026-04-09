@@ -37,7 +37,7 @@ export default function execFlagsTest(): void {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0200
      * @tc.desc   Test RegExp.prototype.exec with multiline m flag and ^ anchor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -46,13 +46,12 @@ export default function execFlagsTest(): void {
     it('testExecTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /^hello/m;
       const result: RegExpExecArray | null = re.exec("world\nhello");
-      expect(result).not().assertEqual(null);
       expect(result?.index).assertEqual(6);
     });
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0300
      * @tc.desc   Test RegExp.prototype.exec with dotAll s flag matching newline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -61,13 +60,12 @@ export default function execFlagsTest(): void {
     it('testExecTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /hello.world/s;
       const result: RegExpExecArray | null = re.exec("hello\nworld");
-      expect(result).not().assertEqual(null);
       expect(result?.[0]).assertEqual("hello\nworld");
     });
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0400
      * @tc.desc   Test RegExp.prototype.exec with unicode u flag and code point escape
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -75,13 +73,14 @@ export default function execFlagsTest(): void {
      */
     it('testExecTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /\u{1F600}/u;
-      const result: RegExpExecArray | null = re.exec("Hello 😀 World");
-      expect(result![0]).assertEqual("😀");
+      const emoji = String.fromCodePoint(0x1F600);
+      const result: RegExpExecArray | null = re.exec(`Hello ${emoji} World`);
+      expect(result?.[0]).assertEqual(emoji);
     });
 
     /**
      * @tc.name testExecTest0104
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0104
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0500
      * @tc.desc   Test RegExp.prototype.exec with hasIndices d flag when supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -101,7 +100,7 @@ export default function execFlagsTest(): void {
 
     /**
      * @tc.name testExecTest0105
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0105
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0600
      * @tc.desc   Test RegExp.prototype.exec global g flag loop collects match indices
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -28,13 +28,12 @@ export default function execConstructorTest() {
     it('testExecTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp("hello");
       const result = re.exec("hello world");
-      expect(result).not().assertEqual(null);
       expect(result?.[0]).assertEqual("hello");
     });
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CONSTRUCTOR_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CONSTRUCTOR_TEST_0200
      * @tc.desc   Test RegExp.prototype.exec with regex literal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -43,13 +42,12 @@ export default function execConstructorTest() {
     it('testExecTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = /hello/;
       const result = re.exec("hello world");
-      expect(result).not().assertEqual(null);
       expect(result?.[0]).assertEqual("hello");
     });
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CONSTRUCTOR_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CONSTRUCTOR_TEST_0300
      * @tc.desc   Test RegExp.prototype.exec with dynamic pattern and ignoreCase flag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

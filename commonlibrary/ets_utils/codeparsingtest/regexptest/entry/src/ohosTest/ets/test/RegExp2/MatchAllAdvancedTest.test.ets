@@ -72,7 +72,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0101
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0200
        * @tc.desc   Test RegExp[Symbol.matchAll] negative lookahead assertion
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0102
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0102
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0300
        * @tc.desc   Test RegExp[Symbol.matchAll] line start anchor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -107,7 +107,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0103
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0103
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0400
        * @tc.desc   Test RegExp[Symbol.matchAll] line end anchor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -125,7 +125,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0104
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0104
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0500
        * @tc.desc   Test RegExp[Symbol.matchAll] word boundary matching
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -143,26 +143,27 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0105
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0105
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0600
        * @tc.desc   Test RegExp[Symbol.matchAll] emoji character matching
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
       it('testMatchAllTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        const regex: RegExp = /😀/g;
-        const str: string = "Hello 😀 World";
+        const emoji = String.fromCodePoint(0x1F600);
+        const regex: RegExp = new RegExp(emoji, 'g');
+        const str: string = `Hello ${emoji} World`;
         const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
         const results: RegExpMatchArray[] = Array.from(iterator);
         expect(results.length).assertEqual(1);
-        expect(results[0][0]).assertEqual("😀");
+        expect(results[0][0]).assertEqual(emoji);
       });
     });
 
     describe('Comparison_With_Other_Methods_Tests', () => {
       /**
       * @tc.name testMatchAllTest0106
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0106
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0700
        * @tc.desc   Test matchAll results match an exec loop for global regex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -190,7 +191,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0107
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0107
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0800
        * @tc.desc   Test matchAll preserves capture groups compared with string match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -213,7 +214,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0108
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0108
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0900
        * @tc.desc   Test matchAll does not change lastIndex unlike exec
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -240,7 +241,7 @@ export default function matchAllAdvancedTest() {
     describe('This_Value_Tests', () => {
       /**
       * @tc.name testMatchAllTest0109
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0109
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1000
        * @tc.desc   Test RegExp[Symbol.matchAll] with RegExp object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -259,7 +260,7 @@ export default function matchAllAdvancedTest() {
     describe('HasIndices_Flag_Tests', () => {
       /**
       * @tc.name testMatchAllTest0110
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0110
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1100
        * @tc.desc   Test indices is undefined without d flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -278,7 +279,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0111
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0111
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1200
        * @tc.desc   Test d flag behavior when it is not supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -297,7 +298,7 @@ export default function matchAllAdvancedTest() {
     describe('Inheritance_Custom_Tests', () => {
       /**
       * @tc.name testMatchAllTest0112
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0112
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1300
        * @tc.desc   Test RegExp[Symbol.matchAll] RegExp subclass case
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -317,7 +318,7 @@ export default function matchAllAdvancedTest() {
     describe('String_Parameter_Type_Tests', () => {
       /**
       * @tc.name testMatchAllTest0113
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0113
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1400
        * @tc.desc   Test RegExp[Symbol.matchAll] converts number parameter to string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -336,7 +337,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0114
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0114
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1500
        * @tc.desc   Test RegExp[Symbol.matchAll] converts object parameter to string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -357,7 +358,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0115
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0115
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1600
        * @tc.desc   Test RegExp[Symbol.matchAll] converts custom object via toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -383,7 +384,7 @@ export default function matchAllAdvancedTest() {
     describe('Real_World_Application_Tests', () => {
       /**
       * @tc.name testMatchAllTest0116
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0116
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1700
        * @tc.desc   Test RegExp[Symbol.matchAll] HTML tag extraction
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -404,7 +405,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0117
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0117
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1800
        * @tc.desc   Test RegExp[Symbol.matchAll] URL query parameter extraction
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -425,7 +426,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0118
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0118
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_1900
        * @tc.desc   Test RegExp[Symbol.matchAll] log format parsing
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -445,7 +446,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0119
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0119
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2000
        * @tc.desc   Test RegExp[Symbol.matchAll] date extraction
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -464,7 +465,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0120
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0120
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2100
        * @tc.desc   Test RegExp[Symbol.matchAll] price extraction
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -484,7 +485,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0121
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0121
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2200
        * @tc.desc   Test RegExp[Symbol.matchAll] phone number extraction
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -503,7 +504,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0122
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0122
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2300
        * @tc.desc   Test RegExp[Symbol.matchAll] named capture groups extraction
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -534,7 +535,7 @@ export default function matchAllAdvancedTest() {
     describe('Complex_Scenario_Tests', () => {
       /**
       * @tc.name testMatchAllTest0123
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0123
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2400
        * @tc.desc   Test RegExp[Symbol.matchAll] complex nested groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -557,7 +558,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0124
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0124
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2500
        * @tc.desc   Test RegExp[Symbol.matchAll] alternation patterns
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -579,7 +580,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0125
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0125
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2600
        * @tc.desc   Test RegExp[Symbol.matchAll] multiline text matching
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -598,7 +599,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0126
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0126
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2700
        * @tc.desc   Test RegExp[Symbol.matchAll] dynamic regex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -616,7 +617,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0127
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0127
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2800
        * @tc.desc   Test RegExp[Symbol.matchAll] user input pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -634,7 +635,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0128
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0128
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_2900
        * @tc.desc   Test RegExp[Symbol.matchAll] many matches results
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -655,7 +656,7 @@ export default function matchAllAdvancedTest() {
     describe('Iterator_Boundary_Tests', () => {
       /**
       * @tc.name testMatchAllTest0129
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0129
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3000
        * @tc.desc   Test RegExp[Symbol.matchAll] early termination in for-of
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -678,7 +679,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0130
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0130
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3100
        * @tc.desc   Test RegExp[Symbol.matchAll] early return first match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -698,7 +699,7 @@ export default function matchAllAdvancedTest() {
     describe('RegExp_Constructor_Tests', () => {
       /**
       * @tc.name testMatchAllTest0131
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0131
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3200
        * @tc.desc   Test RegExp[Symbol.matchAll] new RegExp form
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -717,7 +718,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0132
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0132
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3300
        * @tc.desc   Test RegExp[Symbol.matchAll] constructor special escape characters
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -736,7 +737,7 @@ export default function matchAllAdvancedTest() {
 
       /**
       * @tc.name testMatchAllTest0133
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_0133
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_ADVANCED_TEST_3400
        * @tc.desc   Test RegExp[Symbol.matchAll] dynamic patterns constructed at runtime
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST

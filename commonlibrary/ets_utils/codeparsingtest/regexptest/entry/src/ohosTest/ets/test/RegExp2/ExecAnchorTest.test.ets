@@ -50,13 +50,13 @@ export default function execAnchorTest() {
     it('testExecTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = Anchor.matchStartAnchor("hello world");
       const result2 = Anchor.matchStartAnchor("say hello");
-      expect(result1).not().assertEqual(null);
+      expect(result1?.[0]).assertEqual("hello");
       expect(result2).assertEqual(null);
     });
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0200
      * @tc.desc   Test RegExp.prototype.exec with end anchor world$
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -65,13 +65,13 @@ export default function execAnchorTest() {
     it('testExecTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = Anchor.matchEndAnchor("hello world");
       const result2 = Anchor.matchEndAnchor("world hello");
-      expect(result1).not().assertEqual(null);
+      expect(result1?.[0]).assertEqual("world");
       expect(result2).assertEqual(null);
     });
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0300
      * @tc.desc   Test RegExp.prototype.exec with word boundary \\b for whole word test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -81,14 +81,14 @@ export default function execAnchorTest() {
       const result1 = Anchor.matchWordBoundary("test");
       const result2 = Anchor.matchWordBoundary("testing");
       const result3 = Anchor.matchWordBoundary("123 test 456");
-      expect(result1).not().assertEqual(null);
+      expect(result1?.[0]).assertEqual("test");
       expect(result2).assertEqual(null);
-      expect(result3).not().assertEqual(null);
+      expect(result3?.[0]).assertEqual("test");
     });
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0400
      * @tc.desc   Test RegExp.prototype.exec with non-word boundary \\B after test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

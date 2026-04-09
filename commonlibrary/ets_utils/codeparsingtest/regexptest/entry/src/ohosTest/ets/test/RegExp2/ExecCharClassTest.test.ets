@@ -30,14 +30,14 @@ export default function execCharClassTest() {
       const result1 = re.exec("a");
       const result2 = re.exec("b");
       const result3 = re.exec("d");
-      expect(result1).not().assertEqual(null);
-      expect(result2).not().assertEqual(null);
+      expect(result1?.[0]).assertEqual("a");
+      expect(result2?.[0]).assertEqual("b");
       expect(result3).assertEqual(null);
     });
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CHARCLASS_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CHARCLASS_TEST_0200
      * @tc.desc   Test RegExp.prototype.exec range character class [a-z]
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -48,14 +48,14 @@ export default function execCharClassTest() {
       const result1 = re.exec("a");
       const result2 = re.exec("z");
       const result3 = re.exec("A");
-      expect(result1).not().assertEqual(null);
-      expect(result2).not().assertEqual(null);
+      expect(result1?.[0]).assertEqual("a");
+      expect(result2?.[0]).assertEqual("z");
       expect(result3).assertEqual(null);
     });
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CHARCLASS_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CHARCLASS_TEST_0300
      * @tc.desc   Test RegExp.prototype.exec negated character class [^abc]
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,13 +66,12 @@ export default function execCharClassTest() {
       const result1 = re.exec("a");
       const result2 = re.exec("d");
       expect(result1).assertEqual(null);
-      expect(result2).not().assertEqual(null);
       expect(result2?.[0]).assertEqual("d");
     });
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CHARCLASS_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CHARCLASS_TEST_0400
      * @tc.desc   Test RegExp.prototype.exec predefined class \\d+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

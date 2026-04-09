@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ export default function replaceBasicTest() {
       /**
        * @tc.name testReplaceTest0100
        * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0100
-       * @tc.desc   Test Basic_String_Replacement
+       * @tc.desc   Test Basic String Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -34,8 +34,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0101
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0101
-       * @tc.desc   Test String_Replaces_First_Match_Only
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0200
+       * @tc.desc   Test String Replaces First Match Only
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -48,8 +48,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0102
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0102
-       * @tc.desc   Test Empty_String_Pattern
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0300
+       * @tc.desc   Test Empty String Pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -62,8 +62,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0103
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0103
-       * @tc.desc   Test Non_Existent_String_Pattern
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0400
+       * @tc.desc   Test Non Existent String Pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -76,8 +76,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0104
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0104
-       * @tc.desc   Test String_Pattern_Escapes_Special_Chars
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0500
+       * @tc.desc   Test String Pattern Escapes Special Chars
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -92,8 +92,8 @@ export default function replaceBasicTest() {
     describe('Regex_Pattern_Replacement', () => {
       /**
        * @tc.name testReplaceTest0105
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0105
-       * @tc.desc   Test Basic_Regex_Replacement_No_Flags
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0600
+       * @tc.desc   Test Basic Regex Replacement No Flags
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -106,8 +106,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0106
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0106
-       * @tc.desc   Test Global_Replacement_g_Flag
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0700
+       * @tc.desc   Test Global Replacement g Flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -120,8 +120,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0107
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0107
-       * @tc.desc   Test Case_Insensitive_Replacement_i_Flag
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0800
+       * @tc.desc   Test Case Insensitive Replacement i Flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -134,8 +134,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0108
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0108
-       * @tc.desc   Test Multiline_Replacement_m_Flag
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0900
+       * @tc.desc   Test Multiline Replacement m Flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -148,8 +148,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0109
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0109
-       * @tc.desc   Test Combined_Flags_gi
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1000
+       * @tc.desc   Test Combined Flags gi
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -162,8 +162,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0110
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0110
-       * @tc.desc   Test dotAll_Flag_s
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1100
+       * @tc.desc   Test dotAll Flag s
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -176,8 +176,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0111
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0111
-       * @tc.desc   Test Unicode_Flag_u
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1200
+       * @tc.desc   Test Unicode Flag u
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -198,8 +198,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0112
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0112
-       * @tc.desc   Test Sticky_Flag_y
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1300
+       * @tc.desc   Test Sticky Flag y
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -214,8 +214,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0113
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0113
-       * @tc.desc   Test hasIndices_Flag_d
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1400
+       * @tc.desc   Test hasIndices Flag d
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -235,8 +235,8 @@ export default function replaceBasicTest() {
     describe('Special_Replacement_Patterns', () => {
       /**
        * @tc.name testReplaceTest0114
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0114
-       * @tc.desc   Test Insert_Dollar_Sign
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1500
+       * @tc.desc   Test Insert Dollar Sign
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -249,8 +249,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0115
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0115
-       * @tc.desc   Test Insert_Entire_Match
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1600
+       * @tc.desc   Test Insert Entire Match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -263,8 +263,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0116
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0116
-       * @tc.desc   Test Insert_Text_Before_Match
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1700
+       * @tc.desc   Test Insert Text Before Match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -277,8 +277,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0117
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0117
-       * @tc.desc   Test Insert_Text_After_Match
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1800
+       * @tc.desc   Test Insert Text After Match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -291,8 +291,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0118
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0118
-       * @tc.desc   Test Numbered_Capture_Groups
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_1900
+       * @tc.desc   Test Numbered Capture Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -305,8 +305,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0119
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0119
-       * @tc.desc   Test Multiple_Capture_Groups
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2000
+       * @tc.desc   Test Multiple Capture Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -319,8 +319,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0120
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0120
-       * @tc.desc   Test Named_Capture_Groups
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2100
+       * @tc.desc   Test Named Capture Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -333,8 +333,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0121
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0121
-       * @tc.desc   Test Non_Existent_Capture_Group
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2200
+       * @tc.desc   Test Non Existent Capture Group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -347,8 +347,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0122
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0122
-       * @tc.desc   Test String_Pattern_Ignores_Dollar
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2300
+       * @tc.desc   Test String Pattern Ignores Dollar
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -361,8 +361,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0123
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0123
-       * @tc.desc   Test Nested_Capture_Groups
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2400
+       * @tc.desc   Test Nested Capture Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -386,8 +386,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0124
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0124
-       * @tc.desc   Test Basic_Function_Replacement
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2500
+       * @tc.desc   Test Basic Function Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -400,8 +400,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0125
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0125
-       * @tc.desc   Test Function_Receives_Match
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2600
+       * @tc.desc   Test Function Receives Match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -414,8 +414,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0126
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0126
-       * @tc.desc   Test Function_Receives_Capture_Groups
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2700
+       * @tc.desc   Test Function Receives Capture Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -428,8 +428,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0127
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0127
-       * @tc.desc   Test Function_Receives_Offset
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2800
+       * @tc.desc   Test Function Receives Offset
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -442,8 +442,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0128
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0128
-       * @tc.desc   Test Function_Receives_String
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_2900
+       * @tc.desc   Test Function Receives String
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -456,8 +456,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0129
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0129
-       * @tc.desc   Test Function_Receives_Named_Groups
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3000
+       * @tc.desc   Test Function Receives Named Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -472,8 +472,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0130
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0130
-       * @tc.desc   Test Function_Called_Multiple_Times_Global
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3100
+       * @tc.desc   Test Function Called Multiple Times Global
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -488,8 +488,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0131
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0131
-       * @tc.desc   Test Unmatched_Branch_Capture_Group
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3200
+       * @tc.desc   Test Unmatched Branch Capture Group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -504,8 +504,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0132
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0132
-       * @tc.desc   Test Temperature_Conversion_Example
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3300
+       * @tc.desc   Test Temperature Conversion Example
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -527,8 +527,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0133
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0133
-       * @tc.desc   Test Access_Named_Groups_In_Function
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3400
+       * @tc.desc   Test Access Named Groups In Function
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -543,8 +543,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0134
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0134
-       * @tc.desc   Test Function_Returns_Undefined
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3500
+       * @tc.desc   Test Function Returns Undefined
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -559,8 +559,8 @@ export default function replaceBasicTest() {
 
       /**
        * @tc.name testReplaceTest0135
-       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_0135
-       * @tc.desc   Test Function_Throws_Exception
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_BASIC_TEST_3600
+       * @tc.desc   Test Function Throws Exception
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
@@ -580,3 +580,4 @@ export default function replaceBasicTest() {
     });
 
 }
+

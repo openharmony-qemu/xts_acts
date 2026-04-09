@@ -40,15 +40,13 @@ export default function execBacktrackTest() {
     it('testExecTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = ExecBacktrack.matchAlternation("abd");
       const result2 = ExecBacktrack.matchAlternation("acd");
-      expect(result1).not().assertEqual(null);
-      expect(result2).not().assertEqual(null);
       expect(result1?.[1]).assertEqual("b");
       expect(result2?.[1]).assertEqual("c");
     });
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BACKTRACK_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BACKTRACK_TEST_0200
      * @tc.desc   Test RegExp.prototype.exec nested letter-and-digit group
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
