@@ -80,15 +80,15 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0100
-     * @tc.number SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0100
+     * @tc.name   SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0100
+     * @tc.number SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0100
      * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0100] START");
+    it('SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0100] START");
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
       let scroll = tree.getArray("$children")[0];
@@ -101,20 +101,20 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
       let flex1 = common1.getArray("$children")[0];
       let itemBtn01 = flex1.getArray("$children")[1];
       expect(itemBtn0.getElement('$attrs').getString('backgroundColor')).assertEqual(itemBtn01.getElement('$attrs').getString('backgroundColor'));
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0100] END");
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0100] END");
       done();
     })
 
     /**
-     * @tc.name SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0200
-     * @tc.number SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0200
+     * @tc.name SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0200
+     * @tc.number SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0200
      * @tc.desc Test MultiSegmentButtonV2 itemBackgroundEffect
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0200] START");
+    it('SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0200] START");
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
       let scroll = tree.getArray("$children")[0];
@@ -170,20 +170,20 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
         .getString('type')
       console.info(`type: ${type}`)
       expect(type).assertEqual("WITHIN_WINDOW")
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0200] END");
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0200] END");
       done();
     })
 
     /**
-     * @tc.name   SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0300
-     * @tc.number SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0300
+     * @tc.name   SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0300
+     * @tc.number SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0300
      * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundBlurStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0300] START");
+    it('SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0300] START");
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
       let scroll = tree.getArray("$children")[0];
@@ -203,20 +203,20 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
         .getString('inactiveColor')
       console.info(`inactiveColor: ${inactiveColor}`)
       expect(inactiveColor).assertEqual("#00000000")
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0300] END");
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0300] END");
       done();
     })
 
     /**
-     * @tc.name   SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0400
-     * @tc.number SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0400
+     * @tc.name   SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0400
+     * @tc.number SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0400
      * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundBlurStyleOptions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0400] START");
+    it('SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0400] START");
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
       let scroll = tree.getArray("$children")[0];
@@ -231,21 +231,21 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
         .getString('policy')
       console.info(`policy: ${policy}`)
       expect(policy).assertEqual("BlurStyleActivePolicy.ALWAYS_ACTIVE")
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0400] END");
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0400] END");
       done();
     })
 
 
     /**
-     * @tc.name   SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0500
-     * @tc.number SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0500
+     * @tc.name   SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0500
+     * @tc.number SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0500
      * @tc.desc   Test MultiSegmentButtonV2 languageDirection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0500] START");
+    it('SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0500] START");
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
       let scroll = tree.getArray("$children")[0];
@@ -256,20 +256,20 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
       let common1 = itemBtn0.getArray("$children")[0];
       let jsonOption: string = JSON.stringify(common1.getElement('$attrs').getString('direction'));
       expect(jsonOption).assertEqual('"Direction.Auto"');
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0500] END");
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0500] END");
       done();
     })
 
     /**
-     * @tc.name   SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0600
-     * @tc.number SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0600
+     * @tc.name   SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0600
+     * @tc.number SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0600
      * @tc.desc   Test MultiSegmentButtonV2 itemFontColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0600] START");
+    it('SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0600] START");
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
       let scroll = tree.getArray("$children")[0];
@@ -279,20 +279,20 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
       let itemBtn0 = flex.getArray("$children")[1];
       let jsonOption: string = JSON.stringify(itemBtn0.getElement('$attrs').getString('fontColor'));
       expect(jsonOption).assertEqual('"#FFFFFFFF"');
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0600] END");
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0600] END");
       done();
     })
 
     /**
-     * @tc.name   SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0700
-     * @tc.number SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0700
+     * @tc.name   SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0700
+     * @tc.number SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0700
      * @tc.desc   Test MultiSegmentButtonV2 itemFontSize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0700] START");
+    it('SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0700] START");
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
       let scroll = tree.getArray("$children")[0];
@@ -302,20 +302,20 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
       let itemBtn0 = flex.getArray("$children")[0];
       let jsonOption: string = JSON.stringify(itemBtn0.getArray("$children")[0].getArray("$children")[0].getArray("$children")[0].getElement('$attrs').getString('fontSize'));
       expect(jsonOption).assertEqual('"14.00fp"');
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0700] END");
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0700] END");
       done();
     })
 
     /**
-     * @tc.name   SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0800
-     * @tc.number SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0800
+     * @tc.name   SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0800
+     * @tc.number SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0800
      * @tc.desc   Test MultiSegmentButtonV2 itemFontWeight
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0800] START");
+    it('SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0800] START");
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
       let scroll = tree.getArray("$children")[0];
@@ -325,20 +325,20 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
       let itemBtn0 = flex.getArray("$children")[1];
       let jsonOption: string = JSON.stringify(itemBtn0.getElement('$attrs').getString('fontWeight'));
       expect(jsonOption).assertEqual('"FontWeight.Medium"');
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0800] END");
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0800] END");
       done();
     })
 
     /**
-     * @tc.name   SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0900
-     * @tc.number SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0900
+     * @tc.name   SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0900
+     * @tc.number SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0900
      * @tc.desc   Test MultiSegmentButtonV2 itemPadding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0900] START");
+    it('SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0900] START");
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
       let scroll = tree.getArray("$children")[0];
@@ -349,7 +349,7 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
       let common1 = itemBtn0.getArray("$children")[0];
       let jsonOption: string = JSON.stringify(common1.getElement('$attrs').getString('padding'));
       expect(jsonOption).assertEqual('"0.00vp"');
-      console.log("[SUB_ARKUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0900] END");
+      console.log("[SUB_ARKUI_MULTISEGMENTBUTTONV2_UNDEFINED_0900] END");
       done();
     })
   })
