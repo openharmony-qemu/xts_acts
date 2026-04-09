@@ -26,12 +26,13 @@ export default function ImageExifMetadataStaticTest() {
   const getFd = (fileName: string): int => {
     filePath = filesDir + "/" + fileName;
     console.info("image filePath:" + filePath);
-    const file = fs.openSync(filePath!);
+    const file = fs.openSync(filePath);
     fdNumber = file.fd as int;
     return fdNumber;
   };
   describe('ImageExifMetadataStaticTest', (): void => {
     beforeAll(() => {
+      filesDir = Hypium.get('pathDir') as string | undefined | null;
       console.info(TAG, 'beforeAll case.');
     });
 

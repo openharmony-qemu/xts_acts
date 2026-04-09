@@ -108,7 +108,8 @@ export default function cameraNoPermissionStaticTest() {
                 done();
             } catch (err) {
                 console.info(TAG, testName + 'failed, err.code:' + err.code + ' err.message:' + err.message);
-                expect(err.code).assertEqual(201);
+                //与动态接口保持一致，无权限场景抛出7400102
+                expect(err.code).assertEqual(7400102);
                 done();
             }
         })
@@ -132,7 +133,8 @@ export default function cameraNoPermissionStaticTest() {
                 done();
             } catch (err) {
                 console.info(TAG, testName + 'failed, err.code:' + err.code + ' err.message:' + err.message);
-                expect(err.code).assertEqual(201);
+                //与动态接口保持一致，无权限场景抛出7400102
+                expect(err.code).assertEqual(7400102);
                 done();
             }
         })
@@ -153,12 +155,12 @@ export default function cameraNoPermissionStaticTest() {
                 //创建输出流
                 createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
 
+                //音频非必备权限、不允许新增抛出错误码，因此无权限场景不报错
                 photoOutput!.enableMovingPhoto(true)
-                expect().assertFail();
                 done();
             } catch (err) {
                 console.info(TAG, testName + 'failed, err.code:' + err.code + ' err.message:' + err.message);
-                expect(err.code).assertEqual(201);
+                expect().assertFail();
                 done();
             }
         })

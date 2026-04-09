@@ -41,15 +41,18 @@ export default function photoAccessHelperReadPermissionStaticTest() {
                 console.info(TAG, 'getReadPermission start');
                 let atManager = abilityAccessCtrl.createAtManager();
                 let testContext: Context = Hypium.get("context") as Context;
-                atManager.requestPermissionsFromUser(testContext, [
-                    'ohos.permission.READ_IMAGEVIDEO'
-                ], (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
+                let arr: Array<Permission> = new Array<Permission>();
+                arr.push('ohos.permission.READ_IMAGEVIDEO');
+                atManager.requestPermissionsFromUser(testContext, arr,
+                    (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
                     if (err?.code !== 0) {
                         console.info(TAG, 'err.code: ' + err?.code + ', err.message: '+ err?.message);
                     } else {
-                        console.info(TAG, 'requestPermissionsFromUser data:' + data + ' permissions:' + data?.permissions + ' authResults:' + data?.authResults + ' dialogShownResults:' + data?.dialogShownResults);
+                        console.info(TAG, 'requestPermissionsFromUser data:' + data + ' permissions:' + data?.permissions +
+                            ' authResults:' + data?.authResults + ' dialogShownResults:' + data?.dialogShownResults);
                     }
                 });
+                await sleep(2000);
                 let dr = Driver.create();
                 let power = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
                 if (power != null) {

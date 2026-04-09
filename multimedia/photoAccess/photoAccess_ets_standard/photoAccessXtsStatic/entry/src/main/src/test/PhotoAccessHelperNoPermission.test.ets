@@ -390,7 +390,7 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     let extension: string = 'jpg';
                     let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null =
                         photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension);
-                    assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024));
+                    assetChangeRequest!.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024));
                     await helper!.applyChanges(assetChangeRequest!);
                     expect().assertFail();
                     done();
@@ -452,7 +452,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     done();
                 } catch (err) {
                     console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-                    expect(err.code).assertEqual(201);
+                    //与动态保持一致，未调用on时先抛出23800151
+                    expect(err.code).assertEqual(23800151);
                     done();
                 }
             })
@@ -508,7 +509,8 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     done();
                 } catch (err) {
                     console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-                    expect(err.code).assertEqual(201);
+                    //与动态保持一致，未调用on时先抛出23800151
+                    expect(err.code).assertEqual(23800151);
                     done();
                 }
             })
