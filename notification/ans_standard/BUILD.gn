@@ -79,7 +79,9 @@ group("ans_standard") {
       "actsNotificationAnsPCPADsoftbusTest:ActsNotificationAnsPCPADSoftBusTest",
       "actsNotificationAnsThreePartyWatchNoSystemNoPermissionTest:ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest",
       "actsNotificationCesMoreInstanceTest:ActsNotificationCesMoreInstanceTest",
-      "actsNotificationCesMoreInstanceTestStatic:ActsNotificationCesMoreInstanceStaticTest"
+      "actsNotificationCesMoreInstanceTestStatic:ActsNotificationCesMoreInstanceStaticTest",
+      "actsNotificationAnsGetNotificationSettingTest:ActsNotificationAnsGetNotificationSettingTest",
+      "actsNotificationAnsGetNotificationSettingTestStatic:ActsNotificationAnsGetNotificationSettingStaticTest"
     ]
   }
 }

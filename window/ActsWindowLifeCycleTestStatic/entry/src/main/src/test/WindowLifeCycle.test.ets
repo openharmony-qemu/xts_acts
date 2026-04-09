@@ -33,6 +33,8 @@ import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import { Permissions }  from 'permissions';
 import { Driver,ON,Component, Point } from '@ohos.UiTest';
 import settings from '@ohos.settings';
+import deviceInfo from '@ohos.deviceInfo';
+
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 async function getPermision(): Promise<void> {
@@ -115,6 +117,8 @@ export default function WindowLifeCycleTest() {
         let isPCStatus: string = '';
         let isFreeWindowMode:boolean = false;
         let windowclassArr:Array<window.Window>;
+        let deviceType: string = deviceInfo.deviceType;
+        console.info(`deviceType: ${deviceType}`);
         beforeAll(async () => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(0x0000, '[ANI]','windowTest context: ' + JSON.stringify(context))
@@ -4816,6 +4820,111 @@ export default function WindowLifeCycleTest() {
                     done()
                 }
             });
+
+    /**
+     * @tc.number testReleaseUIContent_ErrCode1300002_static_0100
+     * @tc.name testReleaseUIContent_ErrCode1300002_static_0100
+     * @tc.desc testReleaseUIContent_ErrCode1300002_static_0100
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('testReleaseUIContent_ErrCode1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = "testReleaseUIContent_ErrCode1300002_static_0100";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin.');
+        let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+        await terminateAbility(caseName);
+        try {
+          windowStageStart!.releaseUIContent().then(() => {
+            hilog.info(domain, tag, msgStr + 'Succeeded in releasing the content.');
+            expect(false).assertTrue();
+            done();
+          }).catch((err: Error): PromiseLike<void> | undefined => {
+            hilog.error(domain, tag,
+              msgStr + `Failed to release the content. Cause code: ${err.code},message:${err.message}`);
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag,
+            msgStr + `Failed. Cause: ${JSON.stringify(exception.code)}, message:${exception.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.number     testReleaseUIContent_Normal_static_0100
+     * @tc.name       testReleaseUIContent_Normal_static_0100
+     * @tc.desc       testReleaseUIContent_Normal_static_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level2
+     */
+    it('testReleaseUIContent_Normal_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testReleaseUIContent_Normal_static_0100';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let driver = Driver.create();
+        let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+        let mainWindow = windowStageStart.getMainWindowSync();
+        let count = 0;
+        try {
+          if (deviceType === '2in1') {
+            let mainWindowStatus = mainWindow.getWindowStatus();
+            console.info(`${caseName} 1 Succeeded in getting window mainWindowStatus. Data: ${mainWindowStatus}`);
+            let text = await driver.findComponent(ON.id('text_Main_Index2'))
+            console.info(caseName + `before text null: ${text === null}, undefined :${text === undefined}`);
+            await mainWindow.minimize();
+            console.log(`${caseName} minimize`);
+            await Utils.msSleep(1000);
+            windowStageStart.releaseUIContent().then(async () => {
+              console.info(caseName + ' Succeeded in releasing the content.');
+              count++;
+              await mainWindow.restore();
+              await Utils.msSleep(300);
+              let text2 = await driver.findComponent(ON.id('text_Main_Index2'))
+              console.info(caseName + `after text2 null: ${text2 === null}, undefined :${text2 === undefined}`);
+              let mainWindowStatus2 = mainWindow.getWindowStatus();
+              console.info(`${caseName} Succeeded in getting window mainWindowStatus2. Data: ${mainWindowStatus2}`);
+              expect(count === 1).assertTrue();
+              expect(mainWindowStatus).assertEqual(mainWindowStatus2);
+              expect(text2 === null).assertTrue();
+              await terminateAbility(caseName);
+              done();
+            }).catch(async (err: Error): PromiseLike<void> | undefined => {
+              console.error(caseName + `Failed to create the Window. Cause code: ${err.code}, message: ${err.message}`);
+              await terminateAbility(caseName);
+              expect(false).assertTrue();
+              done();
+            });
+          } else {
+            windowStageStart.releaseUIContent().then(async () => {
+              count++;
+              console.info(`${caseName} Succeeded in releasing the content. count: ${count}`);
+              expect(count === 1).assertTrue();
+              await terminateAbility(caseName);
+              done();
+            }).catch(async (err: Error): PromiseLike<void> | undefined => {
+              console.error(caseName + `Failed to create the Window. Cause code: ${err.code}, message: ${err.message}`);
+              await terminateAbility(caseName);
+              expect(false).assertTrue();
+              done();
+            });
+          }
+        } catch (exception) {
+          hilog.error(0x0000, '[ANI]',
+            msgStr +
+              `Failed to release the content. exception Cause code: ${exception!.code}, message: ${exception!.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
     })
 
 }

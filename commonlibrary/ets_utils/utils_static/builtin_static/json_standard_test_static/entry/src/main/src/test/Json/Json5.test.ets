@@ -1089,6 +1089,20 @@ interface TripleMaxCompare {
   result: number[];
 }
 
+class UserProfile {
+    name: string = "default"
+    age: double = 0
+    active: boolean = true
+    @JSONStringifyGetter
+    get displayName(): string {
+        return this.name + " (age " + this.age + ")"
+    }
+    @JSONStringifyGetter
+    get status(): string {
+        return this.active ? "active" : "inactive"
+    }
+}
+
 export default function Json5Test() {
   describe('Json5Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -1469,6 +1483,209 @@ export default function Json5Test() {
         return v;
       },Type.from<StringReplace>()) as StringReplace;
       expect(parsed.replaced).assertEqual("xbc");
+    });
+
+
+    /**
+     * @tc.name   Json5Test072
+     * @tc.number SUB_BUILTINS_JSON_TEST_StringifyWithGetters_7200
+     * @tc.desc   test JSON.stringifyWithGetters serializes custom properties and getter values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Json5Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        const src = new UserProfile()
+        src.name = "Alice"
+        src.age = 30
+        src.active = false
+
+        const json = JSON.stringifyWithGetters(src)
+        const parsed = JSON.parseJsonElement(json)
+        expect(parsed.getString("name")).assertEqual("Alice")
+        expect(parsed.getInteger("age")).assertEqual(30)
+        expect(parsed.getString("displayName")).assertEqual("Alice (age 30)")
+        expect(parsed.getString("status")).assertEqual("inactive")
+      } catch (e) {
+        console.error(`Json5Test072 failed: ${e}`)
+        expect().assertFail()
+      }
+    });
+
+    /**
+     * @tc.name   Json5Test073
+     * @tc.number SUB_BUILTINS_JSON_TEST_StringifyWithGetters_7300
+     * @tc.desc   test JSON.stringifyWithGetters serializes default property values and getter values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Json5Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        const defaultSrc = new UserProfile()
+        const defaultJson = JSON.stringifyWithGetters(defaultSrc)
+        const defaultParsed = JSON.parseJsonElement(defaultJson)
+        expect(defaultParsed.getString("name")).assertEqual("default")
+        expect(defaultParsed.getInteger("age")).assertEqual(0)
+        expect(defaultParsed.getString("displayName")).assertEqual("default (age 0)")
+        expect(defaultParsed.getString("status")).assertEqual("active")
+      } catch (e) {
+        console.error(`Json5Test073 failed: ${e}`)
+        expect().assertFail()
+      }
+    });
+
+    /**
+     * @tc.name   Json5Test074
+     * @tc.number SUB_BUILTINS_JSON_TEST_StringifyWithGetters_7400
+     * @tc.desc   test JSON.stringifyWithGetters serializes empty and zero property values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Json5Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        const emptySrc = new UserProfile()
+        emptySrc.name = ""
+        emptySrc.age = 0
+        emptySrc.active = true
+        const emptyJson = JSON.stringifyWithGetters(emptySrc)
+        const emptyParsed = JSON.parseJsonElement(emptyJson)
+        expect(emptyParsed.getString("name")).assertEqual("")
+        expect(emptyParsed.getInteger("age")).assertEqual(0)
+        expect(emptyParsed.getString("displayName")).assertEqual(" (age 0)")
+        expect(emptyParsed.getString("status")).assertEqual("active")
+      } catch (e) {
+        console.error(`Json5Test074 failed: ${e}`)
+        expect().assertFail()
+      }
+    });
+
+    /**
+     * @tc.name   Json5Test075
+     * @tc.number SUB_BUILTINS_JSON_TEST_StringifyWithGetters_7500
+     * @tc.desc   test JSON.stringifyWithGetters returns null string for null input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Json5Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        const result = JSON.stringifyWithGetters(null)
+        expect(result).assertEqual("null")
+      } catch (e) {
+        console.error(`Json5Test075 failed: ${e}`)
+        expect().assertFail()
+      }
+    });
+
+    /**
+     * @tc.name   Json5Test076
+     * @tc.number SUB_BUILTINS_JSON_TEST_StringifyWithGetters_7600
+     * @tc.desc   test JSON.stringifyWithGetters returns empty string for undefined input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Json5Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        const result = JSON.stringifyWithGetters(undefined)
+        expect(result).assertEqual("")
+      } catch (e) {
+        console.error(`Json5Test076 failed: ${e}`)
+        expect().assertFail()
+      }
+    });
+
+    /**
+     * @tc.name   Json5Test077
+     * @tc.number SUB_BUILTINS_JSON_TEST_ParseUpdate_7700
+     * @tc.desc   test JSON.parseUpdate restores object fields from stringifyWithGetters JSON output
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Json5Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        const src = new UserProfile()
+        src.name = "Alice"
+        src.age = 30
+        src.active = false
+
+        const json = JSON.stringifyWithGetters(src)
+        const target = new UserProfile()
+        JSON.parseUpdate<UserProfile>(json, target)
+
+        expect(target.name).assertEqual("Alice")
+        expect(target.age).assertEqual(30)
+        expect(target.active).assertEqual(false)
+        expect(JSON.stringifyWithGetters(target)).assertEqual(json)
+      } catch (e) {
+        console.error(`Json5Test077 failed: ${e}`)
+        expect().assertFail()
+      }
+    });
+
+    /**
+     * @tc.name   Json5Test078
+     * @tc.number SUB_BUILTINS_JSON_TEST_ParseUpdate_7800
+     * @tc.desc   test JSON.parseUpdate with empty JSON object preserves default values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Json5Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        const emptyTarget = new UserProfile()
+        JSON.parseUpdate<UserProfile>('{}', emptyTarget)
+        expect(emptyTarget.name).assertEqual("default")
+        expect(emptyTarget.age).assertEqual(0)
+        expect(emptyTarget.active).assertEqual(true)
+      } catch (e) {
+        console.error(`Json5Test078 failed: ${e}`)
+        expect().assertFail()
+      }
+    });
+
+    /**
+     * @tc.name   Json5Test079
+     * @tc.number SUB_BUILTINS_JSON_TEST_ParseUpdate_7900
+     * @tc.desc   test JSON.parseUpdate throws SyntaxError for malformed JSON input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Json5Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let isMalformedError: boolean = false
+      try {
+        const target = new UserProfile()
+        JSON.parseUpdate<UserProfile>('{invalid json}', target)
+      } catch (e) {
+        isMalformedError = e instanceof SyntaxError
+        console.error(`Json5Test079 malformed JSON error code: ${(e as Error).name}, message: ${(e as Error).message}`)
+      }
+      expect(isMalformedError).assertEqual(true)
+    });
+
+    /**
+     * @tc.name   Json5Test080
+     * @tc.number SUB_BUILTINS_JSON_TEST_ParseUpdate_8000
+     * @tc.desc   test JSON.parseUpdate throws SyntaxError for empty string input
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Json5Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let isEmptyStringError: boolean = false
+      try {
+        const target = new UserProfile()
+        JSON.parseUpdate<UserProfile>('', target)
+      } catch (e) {
+        isEmptyStringError = e instanceof SyntaxError
+        console.error(`Json5Test080 empty string error code: ${(e as Error).name}, message: ${(e as Error).message}`)
+      }
+      expect(isEmptyStringError).assertEqual(true)
     });
 
   })

@@ -3563,5 +3563,23 @@ export default function utilTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testEnableLocalHandleDetection001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENABLE_LOCAL_HANDLE_DETECTION_0100
+     * @tc.desc   Enable local handle detection with no parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEnableLocalHandleDetection001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testEnableLocalHandleDetection001';
+      try {
+        util.ArkTSVM.enableLocalHandleDetection();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${err.code}`);
+        expect().assertFail();
+      }
+    });
   })
 }

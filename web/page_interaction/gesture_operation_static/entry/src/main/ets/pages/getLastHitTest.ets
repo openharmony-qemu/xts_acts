@@ -65,7 +65,7 @@ struct getLastHitTest {
   @State onTouchIconUrlReceivedUrl: string = "";
   @State str: string = "getLastHitTest001";
   @State dataUrl: string = "";
-  @State avoidMode: WebKeyboardAvoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT;
+  @State avoidMode: WebKeyboardAvoidMode | undefined = WebKeyboardAvoidMode.RESIZE_CONTENT;
   @State icon: image.PixelMap | undefined = undefined;
   aboutToAppear() {
     console.info('Entry aboutToAppear');
@@ -100,6 +100,7 @@ struct getLastHitTest {
           switch (this.str) {
             case "getLastHitTest001": {
               try {
+			    this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT;
                 setTimeout(() => {
                   console.log(`this.sm = ${this.sm}, this.sm2 = ${this.sm2}`);
                   Utils.emitEvent(this.sm == 2 && this.sm2 == 'https://www.example.com/', 20250313)
@@ -112,10 +113,24 @@ struct getLastHitTest {
 
             case "onLoadInterceptEventDataTest001": {
               try {
+			    this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT;
                 this.controller.refresh()
                 setTimeout(() => {
                   Utils.emitEvent(this.dataUrl, 202503131)
                 }, 2000)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+			
+			case "getLastHitTest002": {
+              try {
+                this.avoidMode = undefined;
+                setTimeout(() => {
+                  console.log(`this.sm = ${this.sm}, this.sm2 = ${this.sm2}`);
+                  Utils.emitEvent(this.sm == 2 && this.sm2 == 'https://www.example.com/', 20250314)
+                }, 1000)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }

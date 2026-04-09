@@ -142,6 +142,8 @@ import TextMethodsNullTest from './TextTest/TextMethodsNull.test';
 import TextEditMenuOptionsNullTest from './TextTest/TextEditMenuOptionsNull.test';
 import LayoutManagerTextCommonTest from './TextTest/LayoutManagerTextCommon.test';
 import TextGetCharacter from './TextTest/TextGetCharacter.test';
+import TextLayoutManagerMethodsTest from './TextTest/TextLayoutManagerMethods.test';
+
 
 
 export default function testsuite() {
@@ -275,4 +277,6 @@ export default function testsuite() {
   TextEditMenuOptionsNullTest();
   LayoutManagerTextCommonTest();
   TextGetCharacter();
+  TextLayoutManagerMethodsTest();
+
 }
