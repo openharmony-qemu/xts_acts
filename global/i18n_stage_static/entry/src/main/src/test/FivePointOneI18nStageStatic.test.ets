@@ -1625,7 +1625,7 @@ export default function FivePointOne_i18nStageTest() {
 
     /**
      * @tc.name TimeZone_GetOffset_test_Static_0100
-     * @tc.number SUB_GLOBAL_I18N_TimeZone_GetOffset_test_Static_0100
+     * @tc.number SUB_GLOBAL_I18N_TimeZone_GetOffset_Test_Static_0100
      * @tc.desc with getOffset
      * @tc.type FUNCTION
      * @tc.size MEDIUM
