@@ -661,12 +661,12 @@ export default function ApiCoverStaticTest() {
       let abilityName: string | undefined = stageContext.launchElement?.abilityName;
       console.info(tag + `GetLaunchElement, deviceId is ${deviceId}, uri is ${uri}, shortName is ${shortName}`);
       console.info(tag + `GetLaunchElement, bundleName is ${bundleName}, moduleName is ${moduleName}, abilityName is ${abilityName}`);
-      expect(deviceId).assertEqual('0');
+      expect(deviceId).assertEqual('');
       expect(uri).assertUndefined();
       expect(shortName).assertUndefined();
-      expect(bundleName).assertEqual('com.example.apicoverhaptest');
-      expect(moduleName).assertEqual('entry_test');
-      expect(abilityName).assertEqual('TestAbility');
+      expect(bundleName).assertEqual('com.example.apicoverhaptest.static');
+      expect(moduleName).assertEqual('entry');
+      expect(abilityName).assertEqual('EntryAbility');
       done();
     });
   })
