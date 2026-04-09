@@ -1239,15 +1239,15 @@ export default function api16CertFuncTestTwoUnit() {
     });
 	
 	  /**
-     * @tc.number SUB_Security_CertManager_Ukey_0401
-     * @tc.name SUB_Security_CertManager_Ukey_0401
+     * @tc.number SUB_Security_CertManager_Ukey_Param_0100
+     * @tc.name SUB_Security_CertManager_Ukey_Param_0100
      * @tc.desc Call openAuthorizeDialog interface with set keyAlgIDs "RSA" return 29700001
      * @tc.size MediumTest
      * @tc.level Level3
      * @tc.type Function
      */
-    it('SUB_Security_CertManager_Ukey_0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info("SUB_Security_CertManager_Ukey_0401: started ");
+    it('SUB_Security_CertManager_Ukey_Param_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_Param_0100: started ");
       const context :common.Context = GlobalContext.getContext();
       let certTypes: Array<certManagerDialog.CertificateType> = [
         certManagerDialog.CertificateType.CREDENTIAL_UKEY
@@ -1260,29 +1260,29 @@ export default function api16CertFuncTestTwoUnit() {
 	    };
       try {
         let result : certManagerDialog.CertReference = await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
-        console.info(`SUB_Security_CertManager_Ukey_0401 certType is: ${result.certType}`)
-        console.info(`SUB_Security_CertManager_Ukey_0401 keyUri is: ${result.keyUri}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0100 certType is: ${result.certType}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0100 keyUri is: ${result.keyUri}`)
         expect(null).assertFail();
       } catch (error) {
         if (error.code == 801) {
           done();
         } else {
-          console.error(`SUB_Security_CertManager_Ukey_0401 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          console.error(`SUB_Security_CertManager_Ukey_Param_0100 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(29700001);
         }
       }
       done();
     });
 	  /**
-     * @tc.number SUB_Security_CertManager_Ukey_0402
-     * @tc.name SUB_Security_CertManager_Ukey_0402
+     * @tc.number SUB_Security_CertManager_Ukey_Param_0200
+     * @tc.name SUB_Security_CertManager_Ukey_Param_0200
      * @tc.desc Call openAuthorizeDialog interface with length of keyAlgIDs is 0 return 29700001
      * @tc.size MediumTest
      * @tc.level Level3
      * @tc.type Function
      */
-    it('SUB_Security_CertManager_Ukey_0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info("SUB_Security_CertManager_Ukey_0402: started ");
+    it('SUB_Security_CertManager_Ukey_Param_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_Param_0200: started ");
       const context :common.Context = GlobalContext.getContext();
       let certTypes: Array<certManagerDialog.CertificateType> = [
         certManagerDialog.CertificateType.CREDENTIAL_UKEY
@@ -1295,29 +1295,29 @@ export default function api16CertFuncTestTwoUnit() {
 	    };
       try {
         let result : certManagerDialog.CertReference = await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
-        console.info(`SUB_Security_CertManager_Ukey_0402 certType is: ${result.certType}`)
-        console.info(`SUB_Security_CertManager_Ukey_0402 keyUri is: ${result.keyUri}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0200 certType is: ${result.certType}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0200 keyUri is: ${result.keyUri}`)
         expect(null).assertFail();
       } catch (error) {
         if (error.code == 801) {
           done();
         } else {
-          console.error(`SUB_Security_CertManager_Ukey_0402 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          console.error(`SUB_Security_CertManager_Ukey_Param_0200 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(29700001);
         }
       }
       done();
     });
 	  /**
-     * @tc.number SUB_Security_CertManager_Ukey_0403
-     * @tc.name SUB_Security_CertManager_Ukey_0403
+     * @tc.number SUB_Security_CertManager_Ukey_Param_0300
+     * @tc.name SUB_Security_CertManager_Ukey_Param_0300
      * @tc.desc Call openAuthorizeDialog interface with length of keyAlgIDs is 21 return 29700006
      * @tc.size MediumTest
      * @tc.level Level3
      * @tc.type Function
      */
-    it('SUB_Security_CertManager_Ukey_0403', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info("SUB_Security_CertManager_Ukey_0403: started ");
+    it('SUB_Security_CertManager_Ukey_Param_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_Param_0300: started ");
       const context :common.Context = GlobalContext.getContext();
       let certTypes: Array<certManagerDialog.CertificateType> = [
         certManagerDialog.CertificateType.CREDENTIAL_UKEY
@@ -1330,29 +1330,29 @@ export default function api16CertFuncTestTwoUnit() {
       };
       try {
         let result : certManagerDialog.CertReference = await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
-        console.info(`SUB_Security_CertManager_Ukey_0403 certType is: ${result.certType}`)
-        console.info(`SUB_Security_CertManager_Ukey_0403 keyUri is: ${result.keyUri}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0300 certType is: ${result.certType}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0300 keyUri is: ${result.keyUri}`)
         expect(null).assertFail();
       } catch (error) {
         if (error.code == 801) {
           done();
         } else {
-          console.error(`SUB_Security_CertManager_Ukey_0403 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          console.error(`SUB_Security_CertManager_Ukey_Param_0300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(29700006);
         }
       }
       done();
     });
 	  /**
-     * @tc.number SUB_Security_CertManager_Ukey_0404
-     * @tc.name SUB_Security_CertManager_Ukey_0404
+     * @tc.number SUB_Security_CertManager_Ukey_Param_0400
+     * @tc.name SUB_Security_CertManager_Ukey_Param_0400
      * @tc.desc Call openAuthorizeDialog interface with set issuers to 0x01 return 29700001
      * @tc.size MediumTest
      * @tc.level Level3
      * @tc.type Function
      */
-    it('SUB_Security_CertManager_Ukey_0404', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info("SUB_Security_CertManager_Ukey_0404: started ");
+    it('SUB_Security_CertManager_Ukey_Param_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_Param_0400: started ");
       const context :common.Context = GlobalContext.getContext();
       let certTypes: Array<certManagerDialog.CertificateType> = [
         certManagerDialog.CertificateType.CREDENTIAL_UKEY
@@ -1366,29 +1366,29 @@ export default function api16CertFuncTestTwoUnit() {
 	    };
       try {
         let result : certManagerDialog.CertReference = await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
-        console.info(`SUB_Security_CertManager_Ukey_0404 certType is: ${result.certType}`)
-        console.info(`SUB_Security_CertManager_Ukey_0404 keyUri is: ${result.keyUri}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0400 certType is: ${result.certType}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0400 keyUri is: ${result.keyUri}`)
         expect(null).assertFail();
       } catch (error) {
         if (error.code == 801) {
           done();
         } else {
-          console.error(`SUB_Security_CertManager_Ukey_0404 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          console.error(`SUB_Security_CertManager_Ukey_Param_0400 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(29700001);
         }
       }
       done();
     });
     /**
-     * @tc.number SUB_Security_CertManager_Ukey_0405
-     * @tc.name SUB_Security_CertManager_Ukey_0405
+     * @tc.number SUB_Security_CertManager_Ukey_Param_0500
+     * @tc.name SUB_Security_CertManager_Ukey_Param_0500
      * @tc.desc Call openAuthorizeDialog interface with length of issuers is 0 return 29700006
      * @tc.size MediumTest
      * @tc.level Level3
      * @tc.type Function
      */
-    it('SUB_Security_CertManager_Ukey_0405', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info("SUB_Security_CertManager_Ukey_0405: started ");
+    it('SUB_Security_CertManager_Ukey_Param_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_Param_0500: started ");
       const context :common.Context = GlobalContext.getContext();
       let certTypes: Array<certManagerDialog.CertificateType> = [
         certManagerDialog.CertificateType.CREDENTIAL_UKEY
@@ -1402,29 +1402,29 @@ export default function api16CertFuncTestTwoUnit() {
 	    };
       try {
         let result : certManagerDialog.CertReference = await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
-        console.info(`SUB_Security_CertManager_Ukey_0405 certType is: ${result.certType}`)
-        console.info(`SUB_Security_CertManager_Ukey_0405 keyUri is: ${result.keyUri}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0500 certType is: ${result.certType}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0500 keyUri is: ${result.keyUri}`)
         expect(null).assertFail();
       } catch (error) {
         if (error.code == 801) {
           done();
         } else {
-          console.error(`SUB_Security_CertManager_Ukey_0405 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          console.error(`SUB_Security_CertManager_Ukey_Param_0500 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(29700006);
         }
       }
       done();
     });
     /**
-     * @tc.number SUB_Security_CertManager_Ukey_0406
-     * @tc.name SUB_Security_CertManager_Ukey_0406
+     * @tc.number SUB_Security_CertManager_Ukey_Param_0600
+     * @tc.name SUB_Security_CertManager_Ukey_Param_0600
      * @tc.desc Call openAuthorizeDialog interface with length of issuers is 21 return 29700001
      * @tc.size MediumTest
      * @tc.level Level3
      * @tc.type Function
      */
-    it('SUB_Security_CertManager_Ukey_0406', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info("SUB_Security_CertManager_Ukey_0406: started ");
+    it('SUB_Security_CertManager_Ukey_Param_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_Param_0600: started ");
       const context :common.Context = GlobalContext.getContext();
       let certTypes: Array<certManagerDialog.CertificateType> = [
         certManagerDialog.CertificateType.CREDENTIAL_UKEY
@@ -1439,29 +1439,29 @@ export default function api16CertFuncTestTwoUnit() {
 	    };
       try {
         let result : certManagerDialog.CertReference = await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
-        console.info(`SUB_Security_CertManager_Ukey_0406 certType is: ${result.certType}`)
-        console.info(`SUB_Security_CertManager_Ukey_0406 keyUri is: ${result.keyUri}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0600 certType is: ${result.certType}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0600 keyUri is: ${result.keyUri}`)
         expect(null).assertFail();
       } catch (error) {
         if (error.code == 801) {
           done();
         } else {
-          console.error(`SUB_Security_CertManager_Ukey_0406 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          console.error(`SUB_Security_CertManager_Ukey_Param_0600 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(29700001);
         }
       }
       done();
     });
     /**
-     * @tc.number SUB_Security_CertManager_Ukey_0407
-     * @tc.name SUB_Security_CertManager_Ukey_0407
+     * @tc.number SUB_Security_CertManager_Ukey_Param_0700
+     * @tc.name SUB_Security_CertManager_Ukey_Param_0700
      * @tc.desc Call openAuthorizeDialog interface with set uri "test" return 29700001
      * @tc.size MediumTest
      * @tc.level Level3
      * @tc.type Function
      */
-    it('SUB_Security_CertManager_Ukey_0407', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info("SUB_Security_CertManager_Ukey_0407: started ");
+    it('SUB_Security_CertManager_Ukey_Param_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_Param_0700: started ");
       const context :common.Context = GlobalContext.getContext();
       let certTypes: Array<certManagerDialog.CertificateType> = [
         certManagerDialog.CertificateType.CREDENTIAL_UKEY
@@ -1474,14 +1474,14 @@ export default function api16CertFuncTestTwoUnit() {
 	    };
       try {
         let result : certManagerDialog.CertReference = await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
-        console.info(`SUB_Security_CertManager_Ukey_0407 certType is: ${result.certType}`)
-        console.info(`SUB_Security_CertManager_Ukey_0407 keyUri is: ${result.keyUri}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0700 certType is: ${result.certType}`)
+        console.info(`SUB_Security_CertManager_Ukey_Param_0700 keyUri is: ${result.keyUri}`)
         expect(null).assertFail();
       } catch (error) {
         if (error.code == 801) {
           done();
         } else {
-          console.error(`SUB_Security_CertManager_Ukey_0407 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          console.error(`SUB_Security_CertManager_Ukey_Param_0700 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(29700001);
         }
       }
