@@ -1104,7 +1104,7 @@ export default function WindowLayoutStaticTest() {
 
         // todo minimize
         /**
-         * @tc.number      SUB_WINDOW_minimize_Callback_001
+         * @tc.number      SUB_WINDOW_IMMERSIVE_minimize_Callback_0100
          * @tc.name        testMinimize_Callback_SubWindow_static_001
          * @tc.desc        minimize callback main window test.
          * @tc.size        MediumTest
@@ -1201,7 +1201,7 @@ export default function WindowLayoutStaticTest() {
         })
 
         /**
-         * @tc.number      SUB_WINDOW_minimize_Promise_001
+         * @tc.number      SUB_WINDOW_IMMERSIVE_minimize_Promise_0100
          * @tc.name        testMinimize_Promise_SubWindow_static_001
          * @tc.desc        minimize promise main window test.
          * @tc.size        MediumTest
