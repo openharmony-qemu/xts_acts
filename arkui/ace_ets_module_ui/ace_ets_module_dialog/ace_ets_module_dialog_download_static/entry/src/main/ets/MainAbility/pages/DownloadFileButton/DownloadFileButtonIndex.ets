@@ -23,8 +23,8 @@ import {
   Color,
   Text,
   TextAlign,
-  FlexAlign，
-  FontStyle，
+  FlexAlign,
+  FontStyle,
   FontWeight
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
