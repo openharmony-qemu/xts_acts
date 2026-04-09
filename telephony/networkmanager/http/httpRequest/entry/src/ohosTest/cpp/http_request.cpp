@@ -18,10 +18,7 @@
 #include "network/netstack/net_http.h"
 // 日志头文件（调试用，适配3.2版本）
 #include <hilog/log.h>
-// 基础依赖
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
 
 // 日志宏定义
 static const int GLOBAL_HTTP_NETSTACK = 0xFF00;
@@ -29,29 +26,34 @@ static const char *HTTP_TAG = "netstack";
 
 static void TestResponseCallback(struct Http_Response *response, uint32_t errCode)
 {
-    (void) response;
-    (void) errCode;
+    (void)response;
+    (void)errCode;
     OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_HTTP_NETSTACK, HTTP_TAG, "TestResponseCallback function called!");
 }
 
-void THttp_OnDataReceiveCallback(const char *data, size_t length)
+void THttpOnDataReceiveCallback(const char *data, size_t length)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_HTTP_NETSTACK, HTTP_TAG, "THttp_OnDataReceiveCallback function called!");
+    (void)data;
+    (void)length;
+    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_HTTP_NETSTACK, HTTP_TAG, "THttpOnDataReceiveCallback function called!");
 }
 
-void THttp_OnProgressCallback(uint64_t totalSize, uint64_t transferredSize)
+void THttpOnProgressCallback(uint64_t totalSize, uint64_t transferredSize)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_HTTP_NETSTACK, HTTP_TAG, "THttp_OnProgressCallback function called!");
+    (void)totalSize;
+    (void)transferredSize;
+    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_HTTP_NETSTACK, HTTP_TAG, "THttpOnProgressCallback function called!");
 }
 
-void (THttp_OnHeaderReceiveCallback)(Http_Headers *headers)
+void THttpOnHeaderReceiveCallback(Http_Headers *headers)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_HTTP_NETSTACK, HTTP_TAG, "THttp_OnHeaderReceiveCallback function called!");
+    OH_Http_DestroyHeaders(&headers);
+    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_HTTP_NETSTACK, HTTP_TAG, "THttpOnHeaderReceiveCallback function called!");
 }
 
-void (THttp_OnVoidCallback)(void)
+void(THttpOnVoidCallback)(void)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_HTTP_NETSTACK, HTTP_TAG, "THttp_OnVoidCallback function called!");
+    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_HTTP_NETSTACK, HTTP_TAG, "THttpOnVoidCallback function called!");
 }
 
 /**
@@ -64,33 +66,25 @@ int32_t SendHttpGetRequest(const char *url)
     Http_Request *request = OH_Http_CreateRequest(url);
     request->options = (Http_RequestOptions *)calloc(1, sizeof(Http_RequestOptions));
     Http_ResponseCallback callback = TestResponseCallback;
-    Http_EventsHandler handler = {0};
-    
+    Http_EventsHandler handler = { 0 };
+
     /** Callback function when the response body is received */
-    handler.onDataReceive = THttp_OnDataReceiveCallback;
-      /** Callback function during uploading */
-    handler.onUploadProgress= THttp_OnProgressCallback;
-      /** Callback function during downloading */
-    handler.onDownloadProgress = THttp_OnProgressCallback;
-      /** Callback function when a header is received */
-    handler.onHeadersReceive = THttp_OnHeaderReceiveCallback;
-      /** Callback function at the end of the transfer */
-    handler.onDataEnd = THttp_OnVoidCallback;
-      /** Callback function when a request is canceled */
-    handler.onCanceled = THttp_OnVoidCallback;
-    
-//    request->options->priority = -1;
-//    request->options->priority = 2000;
-//    request->options->priority = 1;
-//    request->options->readTimeout = 1000;
-//    request->options->connectTimeout = 1000;
+    handler.onDataReceive = THttpOnDataReceiveCallback;
+    /** Callback function during uploading */
+    handler.onUploadProgress = THttpOnProgressCallback;
+    /** Callback function during downloading */
+    handler.onDownloadProgress = THttpOnProgressCallback;
+    /** Callback function when a header is received */
+    handler.onHeadersReceive = THttpOnHeaderReceiveCallback;
+    /** Callback function at the end of the transfer */
+    handler.onDataEnd = THttpOnVoidCallback;
+    /** Callback function when a request is canceled */
+    handler.onCanceled = THttpOnVoidCallback;
+
     Http_Headers *header = OH_Http_CreateHeaders();
     OH_Http_SetHeaderValue(header, "Accept", "application/json");
     OH_Http_SetHeaderValue(header, "aaaaa", "11111");
     request->options->headers = header;
     auto ret = OH_Http_Request(request, callback, handler);
-//    free(request->options);
-//    OH_Http_DestroyHeaders(&header);
-//    OH_Http_Destroy(&request);
     return ret;
 }

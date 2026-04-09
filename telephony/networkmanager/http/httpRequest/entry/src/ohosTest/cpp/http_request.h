@@ -15,10 +15,10 @@
 
 #ifndef NETCONNECTION_EXPLOITATION_CASE_HTTP_REQUEST_H
 #define NETCONNECTION_EXPLOITATION_CASE_HTTP_REQUEST_H
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <string>
 
 int32_t SendHttpGetRequest(const char *url);
 
-#endif //NETCONNECTION_EXPLOITATION_CASE_HTTP_REQUEST_H
+#endif // NETCONNECTION_EXPLOITATION_CASE_HTTP_REQUEST_H

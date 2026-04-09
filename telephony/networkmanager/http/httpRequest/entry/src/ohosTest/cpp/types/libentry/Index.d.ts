@@ -26,5 +26,5 @@ export const RemoveResponseInterceptor: (groupId: number) => number;
 export const RemoveNullptrInterceptor: () => number;
 export const StartAllInterceptor: (groupId: number) => number;
 export const TestCHttpRequest: (url: string) => number;
-export const RegisterInterceptorCallback: (callbackId: string, callback: any) => number;
+export const RegisterInterceptorCallback: (callbackId: string, callback: (request: string, interceptorName: string) => void) => number;
 export const UnregisterCallback: (callbackId: string) => number;

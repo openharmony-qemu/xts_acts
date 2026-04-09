@@ -1,7 +1,24 @@
-#include <string>
-#include <map>
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef CALLBACK_H
+#define CALLBACK_H
 #include "napi/native_api.h"
 #include "network/netstack/http_interceptor.h"
+#include <map>
+#include <string>
 
 // 回调数据结构体
 typedef struct CallbackData {
@@ -13,14 +30,14 @@ typedef struct CallbackData {
 
 // 线程安全回调结构体
 typedef struct ThreadSafeCallback {
-    napi_env env{nullptr};
-    napi_value jsCallback{nullptr};
-    napi_threadsafe_function tsfn{nullptr};
+    napi_env env { nullptr };
+    napi_value jsCallback { nullptr };
+    napi_threadsafe_function tsfn { nullptr };
 } ThreadSafeCallback;
 
 typedef struct Callback {
-    napi_env env{nullptr};
-    napi_value jsCallback{nullptr};
+    napi_env env { nullptr };
+    napi_value jsCallback { nullptr };
 } Callback;
 
 void RegisterCallback(std::string callbackName, Callback callback);
@@ -46,5 +63,8 @@ void InitMainThreadRunner();
 // 在主线程中调用 JS 回调函数
 void CallJsCallbackOnMainThread(const CallbackData &data);
 
-InterceptorCallbackResult CallJsFunctionWithRequest(std::string &callbackName, OH_Http_Interceptor_Request *request, const char *interceptorName);
-InterceptorCallbackResult CallJsFunctionWithResponse(std::string &callbackName, OH_Http_Interceptor_Response *response, const char *interceptorName);
+InterceptorCallbackResult CallJsFunctionWithRequest(
+    std::string &callbackName, OH_Http_Interceptor_Request *request, const char *interceptorName);
+InterceptorCallbackResult CallJsFunctionWithResponse(
+    std::string &callbackName, OH_Http_Interceptor_Response *response, const char *interceptorName);
+#endif // CALLBACK_H

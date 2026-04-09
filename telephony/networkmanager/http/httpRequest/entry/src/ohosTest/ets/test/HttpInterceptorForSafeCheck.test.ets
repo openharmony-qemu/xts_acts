@@ -710,7 +710,6 @@ export default function HttpInterceptorForSafeCheckTest() {
             if (err) {
               console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
               testNetManager.UnregisterCallback(REQUEST_GROUP0_MODIFY_URL);
-              testNetManager.UnregisterCallback(REQUEST_GROUP10_READONLY_URL);
               testNetManager.RemoveRequestInterceptor(0);
               httpRequest.destroy();
               ExpectFail();
@@ -726,7 +725,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           const err: BusinessError = error as BusinessError;
           console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
           testNetManager.UnregisterCallback(REQUEST_GROUP0_MODIFY_URL);
-          testNetManager.UnregisterCallback(REQUEST_GROUP10_READONLY_URL);
           testNetManager.RemoveRequestInterceptor(0);
           ExpectFail();
           done();
@@ -765,7 +763,6 @@ export default function HttpInterceptorForSafeCheckTest() {
             if (err) {
               console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
               testNetManager.UnregisterCallback(REQUEST_GROUP3_MODIFY_HEADERS);
-              testNetManager.UnregisterCallback(REQUEST_GROUP12_READONLY_HEADERS);
               testNetManager.RemoveRequestInterceptor(3);
               httpRequest.destroy();
               ExpectFail();
@@ -781,7 +778,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           const err: BusinessError = error as BusinessError;
           console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
           testNetManager.UnregisterCallback(REQUEST_GROUP3_MODIFY_HEADERS);
-          testNetManager.UnregisterCallback(REQUEST_GROUP12_READONLY_HEADERS);
           testNetManager.RemoveRequestInterceptor(3);
           ExpectFail();
           done();
@@ -820,7 +816,6 @@ export default function HttpInterceptorForSafeCheckTest() {
             if (err) {
               console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
               testNetManager.UnregisterCallback(REQUEST_GROUP2_MODIFY_BODY);
-              testNetManager.UnregisterCallback(REQUEST_GROUP13_READONLY_BODY);
               testNetManager.RemoveRequestInterceptor(2);
               httpRequest.destroy();
               ExpectFail();
@@ -836,7 +831,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           const err: BusinessError = error as BusinessError;
           console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
           testNetManager.UnregisterCallback(REQUEST_GROUP2_MODIFY_BODY);
-          testNetManager.UnregisterCallback(REQUEST_GROUP13_READONLY_BODY);
           testNetManager.RemoveRequestInterceptor(2);
           ExpectFail();
           done();
@@ -874,7 +868,6 @@ export default function HttpInterceptorForSafeCheckTest() {
             if (err) {
               console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
               testNetManager.UnregisterCallback(REQUEST_GROUP1_MODIFY_METHOD);
-              testNetManager.UnregisterCallback(REQUEST_GROUP11_READONLY_METHOD);
               testNetManager.RemoveRequestInterceptor(1);
               httpRequest.destroy();
               ExpectFail();
@@ -890,7 +883,6 @@ export default function HttpInterceptorForSafeCheckTest() {
           const err: BusinessError = error as BusinessError;
           console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);
           testNetManager.UnregisterCallback(REQUEST_GROUP1_MODIFY_METHOD);
-          testNetManager.UnregisterCallback(REQUEST_GROUP11_READONLY_METHOD);
           testNetManager.RemoveRequestInterceptor(1);
           ExpectFail();
           done();
