@@ -300,6 +300,8 @@ export default function WindowImmersiveStaticTest() {
         let msgStr: string = 'jsunittest ' + caseName + ' ';
         hilog.info(domain, tag, msgStr + 'begin');
         try {
+          let isImmersive_before: boolean = win!.isImmersiveLayout();
+          hilog.info(domain, tag, msgStr + 'Succeeded in checking isImmersive_before layout: ' + isImmersive_before);
           let enabled: boolean = true;
           win!.setWindowLayoutFullScreen(enabled);
           hilog.info(domain, tag, caseName + ' setWindowLayoutFullScreen: ' + enabled);
@@ -308,8 +310,13 @@ export default function WindowImmersiveStaticTest() {
 
           let isImmersive: boolean = win!.isImmersiveLayout();
           hilog.info(domain, tag, msgStr + 'Succeeded in checking immersive layout: ' + isImmersive);
-          expect(isImmersive).assertEqual(enabled);
-          done();
+          if(isFreeWindowMode){
+             expect(isImmersive).assertEqual(isImmersive_before);
+            done();
+          }else{
+            expect(isImmersive).assertEqual(enabled);
+            done();
+          }
         } catch (exception) {
           exception = exception as BusinessError;
           if (exception.code === 801) {

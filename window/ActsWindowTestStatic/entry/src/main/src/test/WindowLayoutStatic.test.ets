@@ -1105,14 +1105,14 @@ export default function WindowLayoutStaticTest() {
         // todo minimize
         /**
          * @tc.number      SUB_WINDOW_minimize_Callback_001
-         * @tc.name        testMinimize_Callback_MainWindow_static_001
+         * @tc.name        testMinimize_Callback_SubWindow_static_001
          * @tc.desc        minimize callback main window test.
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level3
          */
-        it('testMinimize_Callback_MainWindow_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testMinimize_Callback_MainWindow_static_001';
+        it('testMinimize_Callback_SubWindow_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMinimize_Callback_SubWindow_static_001';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
             try {
@@ -1202,14 +1202,14 @@ export default function WindowLayoutStaticTest() {
 
         /**
          * @tc.number      SUB_WINDOW_minimize_Promise_001
-         * @tc.name        testMinimize_Promise_MainWindow_static_001
+         * @tc.name        testMinimize_Promise_SubWindow_static_001
          * @tc.desc        minimize promise main window test.
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level3
          */
-        it('testMinimize_Promise_MainWindow_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testMinimize_Promise_MainWindow_static_001';
+        it('testMinimize_Promise_SubWindow_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMinimize_Promise_SubWindow_static_001';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
             try {
@@ -1327,21 +1327,21 @@ export default function WindowLayoutStaticTest() {
                     }
                 }).catch((err: Error): PromiseLike<void> | undefined => {
                     err === err as BusinessError;
-                    if (err!.code === 801) {
-                        hilog.info(domain, tag, msgStr + 'Capability not supported.');
-                        expect(err!.code).assertEqual(801);
-                        done();
-                    } else {
-                        hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    }
+                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+                    expect(false).assertTrue();
+                    done();
                 });
             } catch (exception) {
                 exception === exception as BusinessError;
-                hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                expect(false).assertTrue();
-                done();
+                if (exception!.code === 801) {
+                        hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                        expect(exception!.code).assertEqual(801);
+                        done();
+                    } else {
+                        hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    }
             }
         })
 
@@ -1377,21 +1377,21 @@ export default function WindowLayoutStaticTest() {
                     }
                 }).catch((err: Error): PromiseLike<void> | undefined => {
                     err === err as BusinessError;
-                    if (err!.code === 801) {
-                        hilog.info(domain, tag, msgStr + 'Capability not supported.');
-                        expect(err!.code).assertEqual(801);
-                        done();
-                    } else {
-                        hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    }
+                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+                    expect(false).assertTrue();
+                    done();
                 });
             } catch (exception) {
                 exception === exception as BusinessError;
-                hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                expect(false).assertTrue();
-                done();
+                if (exception!.code === 801) {
+                        hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                        expect(exception!.code).assertEqual(801);
+                        done();
+                } else {
+                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
+                }
             }
         })
 
@@ -1427,24 +1427,24 @@ export default function WindowLayoutStaticTest() {
                         }
                     }).catch((err: Error): PromiseLike<void> | undefined => {
                         err === err as BusinessError;
-                        if (err!.code === 801) {
-                            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-                            expect(err!.code).assertEqual(801);
-                            done();
-                        } else {
-                            hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
-                            expect(false).assertTrue();
-                            done();
-                        }
+                        hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+                        expect(false).assertTrue();
+                        done();
                     });
                     await mainWindow.recover();
                     hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
                     done();
                 } catch (exception) {
                     exception === exception as BusinessError;
-                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                    expect(false).assertTrue();
-                    done();
+                    if (exception!.code === 801) {
+                        hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                        expect(exception!.code).assertEqual(801);
+                        done();
+                    } else {
+                        hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    }
                 }
         })
 
@@ -1571,9 +1571,9 @@ export default function WindowLayoutStaticTest() {
                     let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
                     hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                     if(isFreeWindowMode){
-                        expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         await mainWindow.recover();
                         hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
+                        expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         done();
                     }else{
                         expect(windowStatus).assertEqual(windowStatus_before);
@@ -1581,21 +1581,21 @@ export default function WindowLayoutStaticTest() {
                     }
                 }).catch((err: Error): PromiseLike<void> | undefined => {
                     err === err as BusinessError;
-                    if (err!.code === 801) {
-                        hilog.info(domain, tag, msgStr + 'Capability not supported.');
-                        expect(err!.code).assertEqual(801);
-                        done();
-                    } else {
-                        hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    }
+                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+                    expect(false).assertTrue();
+                    done();
                 });
             } catch (exception) {
                 exception === exception as BusinessError;
-                hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                expect(false).assertTrue();
-                done();
+                if (exception!.code === 801) {
+                    hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                    expect(exception!.code).assertEqual(801);
+                    done();
+                } else {
+                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
+                }
             }
         })
 
@@ -1621,9 +1621,9 @@ export default function WindowLayoutStaticTest() {
                         let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
                         hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                         if(isFreeWindowMode){
-                            expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
                             await mainWindow.recover();
                             hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
+                            expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
                             done();
                         }else{
                             expect(windowStatus).assertEqual(windowStatus_before);
@@ -1631,24 +1631,21 @@ export default function WindowLayoutStaticTest() {
                         }
                     }).catch((err: Error): PromiseLike<void> | undefined => {
                         err === err as BusinessError;
-                        if (err!.code === 801) {
-                            hilog.info(domain, tag, msgStr + 'Capability not supported.');
-                            expect(err!.code).assertEqual(801);
-                            done();
-                        } else {
-                            hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
-                            expect(false).assertTrue();
-                            done();
-                        }
+                        hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+                        expect(false).assertTrue();
+                        done();
                     });
-                    await mainWindow.recover();
-                    hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
-                    done();
                 } catch (exception) {
                     exception === exception as BusinessError;
-                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                    expect(false).assertTrue();
-                    done();
+                    if (exception!.code === 801) {
+                        hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                        expect(exception!.code).assertEqual(801);
+                        done();
+                    } else {
+                        hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    }
                 }
         })
 
