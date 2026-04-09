@@ -79,7 +79,8 @@ it('CloseMask_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      await driver.click(200, 500);
+      // await driver.click(200, 500);
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('CloseMaskText');
