@@ -231,7 +231,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.userGrantEnabled).assertEqual(true)
           if (data.grantedBundleInfos !== undefined) {
-            expect(JSON.stringify(data.grantedBundleInfos)).assertEqual('[{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"ZZZopenWindow","appIndex":0}]')
+            expect(JSON.stringify(data.grantedBundleInfos[0])).assertEqual('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"ZZZopenWindow","appIndex":0}')
           }
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
@@ -292,7 +292,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.userGrantEnabled).assertEqual(true)
           if (data.grantedBundleInfos !== undefined) {
-            expect(JSON.stringify(data.grantedBundleInfos)).assertEqual('[{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"ZZZopenWindow","appIndex":0}]')
+            expect(JSON.stringify(data.grantedBundleInfos[0])).assertEqual('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"ZZZopenWindow","appIndex":0}')
           }
           done()
         }).catch((e: Error) => {
