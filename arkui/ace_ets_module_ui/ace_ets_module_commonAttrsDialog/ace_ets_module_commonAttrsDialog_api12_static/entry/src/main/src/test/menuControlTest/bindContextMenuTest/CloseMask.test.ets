@@ -78,8 +78,9 @@ it('CloseMask_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       let Button = await driver.findComponent(ON.id('CloseMask'));
       await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-
-      await driver.click(200, 200);
+      
+      let button1 = await driver.findComponent(ON.text('菜单选项'));
+      await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('CloseMaskText');
