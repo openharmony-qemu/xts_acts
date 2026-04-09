@@ -25,5 +25,18 @@ export default function HuksCipherAesTest() {
       const result = libHuks.HuksCipherAesTest(0);
       expect(result).assertEqual(0);
     })
+
+    /**
+     * @tc.name   SecurityHuksNapiCipherAes0200
+     * @tc.number Security_HUKS_NAPI_Cipher_AES_0200
+     * @tc.desc   alg-AES pur-ENCRYPT&DECRYPT mod-CBC pad-PKCS7 size-256. Decrypt-Abort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SecurityHuksNapiCipherAes0200', Level.LEVEL0, () => {
+      const result = libHuks.HuksCipherAesTest(1);
+      expect(result).assertEqual(0);
+    })
   })
 }

@@ -17,10 +17,16 @@
 #include <algorithm>
 #include <cstdint>
 #include <cstring>
+#include <hilog/log.h>
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 #include <string>
+
+#undef LOG_DOMAIN
+#undef LOG_TAG
+#define LOG_DOMAIN 0x0000
+#define LOG_TAG "HUKS_SM2_TEST"
 
 namespace Acts {
 namespace Huks {
@@ -240,20 +246,26 @@ static OH_Huks_Result ProcessSm2UpdateLoop(const struct OH_Huks_Blob* handle,
 
         // 正常处理逻辑
         outDataSeg.size = MAX_OUTDATA_SIZE;
-        bool needEncryptDecrypt = (purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || purpose == OH_HUKS_KEY_PURPOSE_DECRYPT);
-
-        if (needEncryptDecrypt) {
-            outDataSeg.data = static_cast<uint8_t*>(HksMalloc(outDataSeg.size));
-            if (outDataSeg.data == nullptr) {
-                ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-                return ret;
-            }
+        
+        // 为所有操作分配输出缓冲区（包括签名/验证）
+        outDataSeg.data = static_cast<uint8_t*>(HksMalloc(outDataSeg.size));
+        if (outDataSeg.data == nullptr) {
+            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+            return ret;
         }
 
         ret = OH_Huks_UpdateSession(handle, paramSet, state->inDataSeg, &outDataSeg);
         if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
             HksFree(outDataSeg.data);
             return ret;
+        }
+
+        // 签名和验证操作：UpdateSession 不产生有效输出数据，跳过数据复制
+        // 签名数据只在 FinishSession 时生成
+        if (purpose == OH_HUKS_KEY_PURPOSE_SIGN || purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
+            HksFree(outDataSeg.data);
+            state->inDataSeg->data += MAX_UPDATE_SIZE;
+            continue;
         }
 
         // 早退出：如果没有数据则跳过复制
@@ -296,6 +308,7 @@ static OH_Huks_Result ProcessSm2FinishSession(const struct OH_Huks_Blob* handle,
     OH_Huks_Result ret;
     ret.errorCode = OH_HUKS_SUCCESS;
     struct OH_Huks_Blob outDataSeg = { MAX_OUTDATA_SIZE, nullptr };
+    const struct OH_Huks_Blob* finishInData = nullptr;
 
     if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
         outDataSeg.data = static_cast<uint8_t*>(HksMalloc(outDataSeg.size));
@@ -303,11 +316,34 @@ static OH_Huks_Result ProcessSm2FinishSession(const struct OH_Huks_Blob* handle,
             ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
             return ret;
         }
+        finishInData = state->inDataSeg;
+    } else if (state->purpose == OH_HUKS_KEY_PURPOSE_SIGN) {
+        // 签名操作：FinishSession 传入剩余的原始数据，输出签名
+        // 签名数据只在 FinishSession 时生成，所以输出到 outData 的起始位置
+        outDataSeg.data = state->outData->data;
+        outDataSeg.size = MAX_OUTDATA_SIZE;
+        finishInData = state->inDataSeg;
+    } else if (state->purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
+        // 验证操作：先 UpdateSession 处理剩余数据，然后 FinishSession 传入签名数据
+        uint8_t tmp[] = "temp";
+        struct OH_Huks_Blob tempBlob = { sizeof(tmp), tmp };
+        
+        OH_Huks_Result updateRet = OH_Huks_UpdateSession(handle, paramSet, state->inDataSeg, &tempBlob);
+        if (updateRet.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+            ret.errorCode = updateRet.errorCode;
+            return ret;
+        }
+        
+        // FinishSession: 第一个参数传入签名数据，第二个参数是临时输出
+        finishInData = state->outData;
+        outDataSeg.size = sizeof(tmp);
+        outDataSeg.data = tmp;
     } else {
         outDataSeg.data = state->cur;
+        finishInData = state->inDataSeg;
     }
 
-    ret = OH_Huks_FinishSession(handle, paramSet, state->inDataSeg, &outDataSeg);
+    ret = OH_Huks_FinishSession(handle, paramSet, finishInData, &outDataSeg);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
             HksFree(outDataSeg.data);
@@ -326,6 +362,12 @@ static OH_Huks_Result ProcessSm2FinishSession(const struct OH_Huks_Blob* handle,
             state->outData->size += outDataSeg.size;
         }
         HksFree(outDataSeg.data);
+    } else if (state->purpose == OH_HUKS_KEY_PURPOSE_SIGN) {
+        // 签名操作：FinishSession 返回的就是完整的签名数据
+        state->outData->size = outDataSeg.size;
+    } else if (state->purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
+        // 验证操作：outData 大小保持不变（仍然是签名数据的大小）
+        // 不需要修改 outData->size
     } else {
         state->outData->size += outDataSeg.size;
     }
@@ -346,7 +388,12 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob* handle,
     struct OH_Huks_Blob inDataSeg = *inData;
     uint8_t* lastPtr = inData->data + inData->size - 1;
     uint8_t* cur = outData->data;
-    outData->size = 0;
+    
+    // 验证操作时，outData 包含签名数据，不应该重置
+    // 签名操作时，outData 用于存储输出，需要重置
+    if (purpose != OH_HUKS_KEY_PURPOSE_VERIFY) {
+        outData->size = 0;
+    }
 
     inDataSeg.size = MAX_UPDATE_SIZE;
     bool isFinished = false;
@@ -602,7 +649,7 @@ static OH_Huks_Result HksSm2SignVerifyTestRun(const struct OH_Huks_Blob* keyAlia
         }
 
         /* 4. Verify Three Stage */
-        struct VerifyOperationParams verifyParams = { .importKeyAlias = &importKeyAlias,
+        struct VerifyOperationParams verifyParams = { .importKeyAlias = keyAlias,
                                                       .verifyParamSet = verifyParamSet,
                                                       .inData = &inData,
                                                       .outDataSign = &outDataSign,
@@ -614,6 +661,29 @@ static OH_Huks_Result HksSm2SignVerifyTestRun(const struct OH_Huks_Blob* keyAlia
     FreeBuffAndDeleteKey(&genParamSet, &signParamSet, &verifyParamSet, keyAlias, &importKeyAlias);
     HksFree(importKeyAlias.data);
     return ret;
+}
+
+/**
+ * @tc.name   SecurityHuksNapiSignVerifySm20100
+ * @tc.number Security_HUKS_NAPI_SignVerify_SM2_0100
+ * @tc.desc   normal parameter test case : alg-SM2, pur-Sign/Verify, keySize-256 and dig-SM3.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SecurityHuksNapiSignVerifySm20100()
+{
+    OH_LOG_INFO(LOG_APP, "[SM2_0100] Test start");
+    const char* keyAliasString = "HksSM2SignVerifyKeyAliasTest001";
+    struct OH_Huks_Blob keyAlias = { static_cast<uint32_t>(strlen(keyAliasString)), (uint8_t*)keyAliasString };
+    OH_Huks_Result ret =
+        HksSm2SignVerifyTestRun(&keyAlias, SUCCESS_RETURN_INDEX, SUCCESS_RETURN_INDEX, SUCCESS_RETURN_INDEX, false);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "[SM2_0100] HksSm2SignVerifyTestRun failed, errorCode=%{public}d", ret.errorCode);
+        return -1;
+    }
+    OH_LOG_INFO(LOG_APP, "[SM2_0100] Test passed");
+    return 0;
 }
 
 } // namespace Huks

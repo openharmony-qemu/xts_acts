@@ -17,10 +17,16 @@
 #include <algorithm>
 #include <cstdlib>
 #include <cstring>
+#include <hilog/log.h>
 #include <huks/native_huks_api.h>
 #include <huks/native_huks_param.h>
 #include <huks/native_huks_type.h>
 #include <string>
+
+#undef LOG_DOMAIN
+#undef LOG_TAG
+#define LOG_DOMAIN 0x0000
+#define LOG_TAG "HUKS_RSA_TEST"
 
 namespace Acts {
 namespace Huks {
@@ -296,7 +302,10 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob* handle,
     ret.errorCode = OH_HUKS_SUCCESS;
     uint32_t outDataBufferSize = outData->size;
 
-    if (inData->size <= MAX_UPDATE_SIZE) {
+    // RSA 是块加密算法，必须一次性处理整个数据块，不能分段
+    // 对于 RSA 加密/解密，无论数据大小都使用 ProcessSmallDataUpdateFinish
+    if (inData->size <= MAX_UPDATE_SIZE || purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || 
+        purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
         return ProcessSmallDataUpdateFinish(handle, paramSet, purpose, inData, outData);
     }
 
@@ -403,8 +412,8 @@ static OH_Huks_Result HksRsaCipherTestCase(const struct OH_Huks_Blob* keyAlias,
     }
 
     /* 2. Export Public Key */
-    uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_1024] = { 0 };
-    struct OH_Huks_Blob publicKey = { OH_HUKS_RSA_KEY_SIZE_1024, (uint8_t*)tmpPublicKey };
+    uint8_t tmpPublicKey[OH_HUKS_RSA_KEY_SIZE_4096] = { 0 };
+    struct OH_Huks_Blob publicKey = { OH_HUKS_RSA_KEY_SIZE_4096, (uint8_t*)tmpPublicKey };
     ret = OH_Huks_ExportPublicKeyItem(keyAlias, genParamSet, &publicKey);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_DeleteKeyItem(keyAlias, genParamSet);
@@ -452,6 +461,88 @@ static OH_Huks_Result HksRsaCipherTestCase(const struct OH_Huks_Blob* keyAlias,
     }
 
     return ret;
+}
+
+/**
+ * @tc.name   SecurityHuksNapiCipherRsa0100
+ * @tc.number Security_HUKS_NAPI_Cipher_RSA_0100
+ * @tc.desc   alg-RSA pur-ENCRYPT-DECRYPT size-4096 pad-OAEP dig-SHA384 mode-ECB.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+int SecurityHuksNapiCipherRsa0100()
+{
+    char tmpKeyAlias[] = "HksRSACipherKeyAliasTest041";
+    struct OH_Huks_Blob keyAlias = { static_cast<uint32_t>(strlen(tmpKeyAlias)), (uint8_t*)tmpKeyAlias };
+    struct OH_Huks_Blob inData = { static_cast<uint32_t>(IN_DATA_32.length()), (uint8_t*)IN_DATA_32.c_str() };
+
+    // 清理可能存在的旧密钥
+    char tmpKey[] = "RSA_Encrypt_Decrypt_KeyAlias";
+    struct OH_Huks_Blob oldKeyAlias = { .size = static_cast<uint32_t>(strlen(tmpKey)), .data = (uint8_t*)tmpKey };
+    OH_Huks_DeleteKeyItem(&keyAlias, nullptr);
+    OH_Huks_DeleteKeyItem(&oldKeyAlias, nullptr);
+
+    static struct OH_Huks_Param g_genParams041[] = {
+        { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_RSA },
+        { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT | OH_HUKS_KEY_PURPOSE_DECRYPT },
+        { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_4096 },
+        { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_OAEP },
+        { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384 },
+        { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_ECB },
+        { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+    };
+    static struct OH_Huks_Param g_encryptParams041[] = {
+        { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_RSA },
+        { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_ENCRYPT },
+        { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_4096 },
+        { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_OAEP },
+        { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384 },
+        { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_ECB },
+        { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+    };
+    static struct OH_Huks_Param g_decryptParams041[] = {
+        { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_RSA },
+        { .tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DECRYPT },
+        { .tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_4096 },
+        { .tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_OAEP },
+        { .tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA384 },
+        { .tag = OH_HUKS_TAG_BLOCK_MODE, .uint32Param = OH_HUKS_MODE_ECB },
+        { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
+    };
+
+    struct OH_Huks_ParamSet* genParamSet = nullptr;
+    OH_Huks_Result ret = InitParamSet(&genParamSet, g_genParams041, sizeof(g_genParams041) / sizeof(OH_Huks_Param));
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    struct OH_Huks_ParamSet* encryptParamSet = nullptr;
+    ret = InitParamSet(&encryptParamSet, g_encryptParams041, sizeof(g_encryptParams041) / sizeof(OH_Huks_Param));
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_FreeParamSet(&genParamSet);
+        return -1;
+    }
+
+    struct OH_Huks_ParamSet* decryptParamSet = nullptr;
+    ret = InitParamSet(&decryptParamSet, g_decryptParams041, sizeof(g_decryptParams041) / sizeof(OH_Huks_Param));
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_FreeParamSet(&genParamSet);
+        OH_Huks_FreeParamSet(&encryptParamSet);
+        return -1;
+    }
+
+    ret = HksRsaCipherTestCase(&keyAlias, genParamSet, encryptParamSet, decryptParamSet, &inData);
+
+    OH_Huks_FreeParamSet(&genParamSet);
+    OH_Huks_FreeParamSet(&encryptParamSet);
+    OH_Huks_FreeParamSet(&decryptParamSet);
+
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return -1;
+    }
+
+    return 0;
 }
 
 } // namespace Huks
