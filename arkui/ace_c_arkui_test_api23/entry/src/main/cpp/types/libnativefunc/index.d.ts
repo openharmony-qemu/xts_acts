@@ -132,6 +132,8 @@ export const TestIsInRenderStateReturnValue001: () => number;
 
 export const TestIsInRenderStateReturnValue002: () => number;
 
+export const TestMoveToParam001: () => number;
+
 export const testPullUpToCancelRefresh01: () => number;
 export const testPullUpToCancelRefresh02: () => number;
 export const testPullUpToCancelRefreshError: () => number;

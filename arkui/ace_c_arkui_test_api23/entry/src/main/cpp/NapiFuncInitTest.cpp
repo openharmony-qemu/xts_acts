@@ -198,6 +198,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestIsInRenderStateReturnValue002", nullptr, TestIsInRenderStateReturnValue002,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestMoveToParam001", nullptr, TestMoveToParam001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testPullUpToCancelRefresh01", nullptr, TestPullUpToCancelRefresh01, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testPullUpToCancelRefresh02", nullptr, TestPullUpToCancelRefresh02, nullptr, nullptr, nullptr,
