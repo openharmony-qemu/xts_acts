@@ -35,12 +35,18 @@ import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../../Util.test'
+import { UtilsTest } from '../../Util.test';
+import deviceInfo from "@ohos.deviceInfo"
 
 export default function CloseMask() {
   describe('CloseMask', () => {
+    let currentDeviceIsPC = false 
     beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
+      let deviceTypeInfo = deviceInfo.deviceType
+      currentDeviceIsPC = deviceTypeInfo === "2in1" ? true : false
+      console.info("the value of the currentDeviceIsPC is " + currentDeviceIsPC)
+      console.info("the value of the deviceType is " + deviceInfo.deviceType)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
@@ -79,8 +85,12 @@ it('CloseMask_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      // await driver.click(200, 500);
-      await (Button?.click() as Promise<void>);
+      if (currentDeviceIsPC) {
+        await (Button?.click() as Promise<void>);
+      } else {
+        await driver.click(200, 500);
+      }
+      
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('CloseMaskText');
