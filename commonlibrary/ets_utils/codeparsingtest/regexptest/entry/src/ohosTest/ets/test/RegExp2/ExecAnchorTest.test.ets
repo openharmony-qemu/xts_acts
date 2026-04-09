@@ -41,7 +41,7 @@ export default function execAnchorTest() {
   describe('Anchor_Boundary_Tests', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec with start anchor ^hello
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -56,7 +56,7 @@ export default function execAnchorTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0101
      * @tc.desc   Test RegExp.prototype.exec with end anchor world$
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -71,7 +71,7 @@ export default function execAnchorTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0102
      * @tc.desc   Test RegExp.prototype.exec with word boundary \\b for whole word test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -88,7 +88,7 @@ export default function execAnchorTest() {
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_ANCHOR_TEST_0103
      * @tc.desc   Test RegExp.prototype.exec with non-word boundary \\B after test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -97,7 +97,7 @@ export default function execAnchorTest() {
     it('testExecTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = Anchor.matchNonWordBoundary("testing");
       const result2 = Anchor.matchNonWordBoundary("test");
-      expect(result1).not().assertEqual(null);
+      expect(result1![0]).assertEqual("test");
       expect(result2).assertEqual(null);
     });
   });

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ export default function execCoercionTest() {
   describe('Exec__Input_Coercion', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_COERCION_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec coerces null argument to string "null"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -38,7 +38,7 @@ export default function execCoercionTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_COERCION_TEST_0101
      * @tc.desc   Test RegExp.prototype.exec coerces undefined argument to string "undefined"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -50,7 +50,7 @@ export default function execCoercionTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_COERCION_TEST_0102
      * @tc.desc   Test RegExp.prototype.exec coerces number argument via ToString
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -62,7 +62,7 @@ export default function execCoercionTest() {
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_COERCION_TEST_0103
      * @tc.desc   Test RegExp.prototype.exec coerces object with toString
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -74,7 +74,7 @@ export default function execCoercionTest() {
 
     /**
      * @tc.name testExecTest0104
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0104
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_COERCION_TEST_0104
      * @tc.desc   Test RegExp.prototype.exec throws TypeError for Object.create(null) without toString
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

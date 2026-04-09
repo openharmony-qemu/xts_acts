@@ -47,7 +47,7 @@ export default function searchBasicTest() {
   describe('RegExp_Search_Basic', () => {
     /**
        * @tc.name testSearchTest0100
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0100
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0100
        * @tc.desc   returns the first match index
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -59,7 +59,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0101
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0101
        * @tc.desc   returns -1 when not found
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -71,7 +71,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0102
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0102
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0102
        * @tc.desc   accepts a string pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -83,7 +83,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0103
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0103
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0103
        * @tc.desc   empty pattern returns 0
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -98,7 +98,7 @@ export default function searchBasicTest() {
   describe('RegExp_Search_Flags', () => {
     /**
        * @tc.name testSearchTest0104
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0104
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0104
        * @tc.desc   global flag does not change the result
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -110,7 +110,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0105
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0105
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0105
        * @tc.desc   ignore-case flag works
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0106
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0106
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0106
        * @tc.desc   multiline anchors work
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -134,7 +134,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0107
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0107
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0107
        * @tc.desc   combined flags work
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -146,19 +146,19 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0108
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0108
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0108
        * @tc.desc   unicode flag works
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
       it('testSearchTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(regexpSymbolSearch(/é/u, 'café')).assertEqual(3);
+      expect(regexpSymbolSearch(/\?/u, 'caf?')).assertEqual(3);
     });
 
     /**
        * @tc.name testSearchTest0109
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0109
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0109
        * @tc.desc   sticky flag does not affect the result
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -172,7 +172,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0110
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0110
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0110
        * @tc.desc   dotAll matches newline when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -188,7 +188,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0111
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0111
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0111
        * @tc.desc   hasIndices does not change search return when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -207,7 +207,7 @@ export default function searchBasicTest() {
   describe('RegExp_Search_lastIndex', () => {
     /**
        * @tc.name testSearchTest0112
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0112
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0112
        * @tc.desc   ignores an existing lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -221,7 +221,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0113
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0113
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0113
        * @tc.desc   restores lastIndex after the call
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -236,7 +236,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0114
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0114
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0114
        * @tc.desc   ignores lastIndex for sticky patterns
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -252,7 +252,7 @@ export default function searchBasicTest() {
   describe('RegExp_Search_Patterns_And_Unicode', () => {
     /**
        * @tc.name testSearchTest0115
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0115
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0115
        * @tc.desc   special and escaped characters work
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -265,7 +265,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0116
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0116
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0116
        * @tc.desc   character classes work
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -278,20 +278,20 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0117
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0117
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0117
        * @tc.desc   unicode and emoji work
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
       it('testSearchTest0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(regexpSymbolSearch(/好/, '你好世界')).assertEqual(1);
-      expect(regexpSymbolSearch(/😊/, 'Hello 😊 World')).assertEqual(6);
-    });
+        expect(regexpSymbolSearch(/\u00A3/, 'a\u00A3')).assertEqual(1);
+        expect(regexpSymbolSearch(/\uD83D\uDE00/u, 'Hello \uD83D\uDE00 World')).assertEqual(6);
+      });
 
     /**
        * @tc.name testSearchTest0118
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0118
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0118
        * @tc.desc   unicode property escapes work when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -301,7 +301,7 @@ export default function searchBasicTest() {
       if (supportsRegExp('\\p{Script=Greek}', 'u')) {
         const greekRe: RegExp = new RegExp('\\p{Script=Greek}', 'u');
         const notNumberRe: RegExp = new RegExp('\\P{Number}', 'u');
-        expect(regexpSymbolSearch(greekRe, 'ABC αβγ')).assertEqual(4);
+        expect(regexpSymbolSearch(greekRe, 'ABC \u03B1')).assertEqual(4);
         expect(regexpSymbolSearch(notNumberRe, '123ABC')).assertEqual(3);
       } else {
         expect(supportsRegExp('\\p{Script=Greek}', 'u')).assertFalse();
@@ -310,7 +310,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0119
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0119
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0119
        * @tc.desc   predefined character classes work
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -327,7 +327,7 @@ export default function searchBasicTest() {
   describe('RegExp_Search_Boundaries_And_Lookarounds', () => {
     /**
        * @tc.name testSearchTest0120
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0120
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0120
        * @tc.desc   handles empty and single-char cases
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -340,7 +340,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0121
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0121
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0121
        * @tc.desc   start/end anchors work
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -354,7 +354,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0122
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0122
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0122
        * @tc.desc   works for long strings
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -367,7 +367,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0123
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0123
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0123
        * @tc.desc   lookahead works
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -380,7 +380,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0124
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0124
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0124
        * @tc.desc   lookbehind works when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -399,7 +399,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0125
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0125
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0125
        * @tc.desc   word boundaries work
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -414,7 +414,7 @@ export default function searchBasicTest() {
   describe('RegExp_Search_Type_Conversion', () => {
     /**
        * @tc.name testSearchTest0126
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0126
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0126
        * @tc.desc   coerces number/null/undefined/boolean
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -429,7 +429,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0127
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0127
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0127
        * @tc.desc   coerces object/array to string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -453,7 +453,7 @@ export default function searchBasicTest() {
   describe('RegExp_Search_Advanced_And_Applications', () => {
     /**
        * @tc.name testSearchTest0128
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0128
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0128
        * @tc.desc   preserves group/quantifier/alternation semantics
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -470,7 +470,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0129
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0129
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0129
        * @tc.desc   constructor forms work
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -485,7 +485,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0130
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0130
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0130
        * @tc.desc   covers -1, 0 and positive return values
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -501,7 +501,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0131
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0131
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0131
        * @tc.desc   covers common application scenarios
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -525,7 +525,7 @@ export default function searchBasicTest() {
   describe('RegExp_Search_Error_And_Compatibility', () => {
     /**
        * @tc.name testSearchTest0132
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0132
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0132
        * @tc.desc   invalid regex or flag throws syntax error
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -553,7 +553,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0133
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0133
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0133
        * @tc.desc   invalid unicode property throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -571,7 +571,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0134
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0134
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0134
        * @tc.desc   undefined pattern is coerced to "undefined"
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -583,7 +583,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0135
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0135
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0135
        * @tc.desc   feature detection is consistent
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -605,7 +605,7 @@ export default function searchBasicTest() {
   describe('RegExp_Search_Extended_Scenarios', () => {
     /**
        * @tc.name testSearchTest0136
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0136
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0136
        * @tc.desc   zero-width matches return expected positions
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -621,7 +621,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0137
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0137
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0137
        * @tc.desc   extreme quantifier and nested group work
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -635,7 +635,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0138
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0138
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0138
        * @tc.desc   zero-width global does not loop indefinitely
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -647,7 +647,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0139
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0139
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0139
        * @tc.desc   many capture groups work
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -663,7 +663,7 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0140
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0140
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0140
        * @tc.desc   real-world validation patterns work
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -685,19 +685,19 @@ export default function searchBasicTest() {
 
     /**
        * @tc.name testSearchTest0141
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0141
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_BASIC_TEST_0141
        * @tc.desc   unicode script cases work when supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
       it('testSearchTest0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      if (supportsRegExp('\\p{Script=Hiragana}+', 'u')) {
-        const hiraganaRe: RegExp = new RegExp('\\p{Script=Hiragana}+', 'u');
-        expect(regexpSymbolSearch(hiraganaRe, 'こんにちは')).assertEqual(0);
-      } else {
-        expect(supportsRegExp('\\p{Script=Hiragana}+', 'u')).assertFalse();
-      }
-    });
+        if (supportsRegExp('\\p{Script=Hiragana}+', 'u')) {
+          const hiraganaRe: RegExp = new RegExp('\\p{Script=Hiragana}+', 'u');
+          expect(regexpSymbolSearch(hiraganaRe, '\u3042\u3044\u3046')).assertEqual(0);
+        } else {
+          expect(supportsRegExp('\\p{Script=Hiragana}+', 'u')).assertFalse();
+        }
+      });
   });
 }

@@ -19,7 +19,7 @@ export default function execReturnTypeTest() {
   describe('Match_Result_Type_Tests', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURNTYPE_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec returns array-like object with index and input types
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -35,7 +35,7 @@ export default function execReturnTypeTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURNTYPE_TEST_0101
      * @tc.desc   Test RegExp.prototype.exec returns null on failure and lastIndex unchanged
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -50,14 +50,18 @@ export default function execReturnTypeTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURNTYPE_TEST_0102
      * @tc.desc   Placeholder for enumerable properties on exec result (commented checks)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('testExecTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const re = /(a)(b)/;
+      const result = re.exec('zab');
+      expect(result![1]).assertEqual('a');
+      expect(result![2]).assertEqual('b');
+      expect(result!.index).assertEqual(1);
     });
   });
 }

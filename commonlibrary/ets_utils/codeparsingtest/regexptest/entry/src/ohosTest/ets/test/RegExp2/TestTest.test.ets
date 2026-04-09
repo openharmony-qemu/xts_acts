@@ -56,7 +56,7 @@ export default function testTest() {
     describe('Test_Basic', () => {
       /**
        * @tc.name testRegExpProtoTest0100
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0100
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0100
        * @tc.desc   Test simple_match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -70,7 +70,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0101
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0101
        * @tc.desc   Test full_match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0102
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0102
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0102
        * @tc.desc   Test repeatable_non_global
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -100,7 +100,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0103
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0103
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0103
        * @tc.desc   Test no_match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -114,7 +114,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0104
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0104
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0104
        * @tc.desc   Test partial_match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -130,7 +130,7 @@ export default function testTest() {
     describe('Parameter_Types', () => {
       /**
        * @tc.name testRegExpProtoTest0105
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0105
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0105
        * @tc.desc   Test string_parameter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -144,7 +144,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0106
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0106
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0106
        * @tc.desc   Test empty_string_parameter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -158,7 +158,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0107
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0107
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0107
        * @tc.desc   Test non_string_coercion_number_array_object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -176,7 +176,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0108
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0108
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0108
        * @tc.desc   Test undefined_and_null
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -190,7 +190,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0109
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0109
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0109
        * @tc.desc   Test symbol_parameter_throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -202,7 +202,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0110
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0110
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0110
        * @tc.desc   Test boolean_parameter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -216,7 +216,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0111
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0111
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0111
        * @tc.desc   Test object_toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -235,7 +235,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0112
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0112
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0112
        * @tc.desc   Test symbol_toPrimitive
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -247,7 +247,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0113
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0113
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0113
        * @tc.desc   Test bigint_parameter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -259,7 +259,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0114
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0114
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0114
        * @tc.desc   Test function_parameter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -276,7 +276,7 @@ export default function testTest() {
     describe('Test_Flags', () => {
       /**
        * @tc.name testRegExpProtoTest0115
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0115
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0115
        * @tc.desc   Test ignoreCase
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -290,7 +290,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0116
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0116
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0116
        * @tc.desc   Test global_lastIndex_changes
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -310,7 +310,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0117
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0117
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0117
        * @tc.desc   Test multiline_affects_anchors
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -324,7 +324,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0118
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0118
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0118
        * @tc.desc   Test sticky_uses_lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -341,7 +341,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0119
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0119
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0119
        * @tc.desc   Test dotAll_support_when_available
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -361,7 +361,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0120
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0120
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0120
        * @tc.desc   Test unicode_flag_surrogate_pair
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -377,7 +377,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0121
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0121
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0121
        * @tc.desc   Test hasIndices_supported_or_skip
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -394,7 +394,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0122
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0122
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0122
        * @tc.desc   Test combined_flags
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -411,7 +411,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0123
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0123
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0123
        * @tc.desc   Test invalid_flag_throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -425,7 +425,7 @@ export default function testTest() {
     describe('Syntax', () => {
       /**
        * @tc.name testRegExpProtoTest0124
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0124
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0124
        * @tc.desc   Test character_match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -438,7 +438,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0125
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0125
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0125
        * @tc.desc   Test character_class
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -453,7 +453,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0126
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0126
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0126
        * @tc.desc   Test predefined_classes
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -469,7 +469,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0127
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0127
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0127
        * @tc.desc   Test quantifiers
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -484,7 +484,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0128
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0128
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0128
        * @tc.desc   Test anchors
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -500,7 +500,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0129
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0129
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0129
        * @tc.desc   Test alternation
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -514,7 +514,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0130
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0130
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0130
        * @tc.desc   Test group_and_backref
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -527,7 +527,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0131
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0131
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0131
        * @tc.desc   Test non_capture_group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -540,7 +540,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0132
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0132
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0132
        * @tc.desc   Test lookahead
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -557,7 +557,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0133
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0133
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0133
        * @tc.desc   Test lookbehind_when_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -576,7 +576,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0134
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0134
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0134
        * @tc.desc   Test atomic_group_if_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -593,7 +593,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0135
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0135
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0135
        * @tc.desc   Test possessive_quantifier_if_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -601,16 +601,16 @@ export default function testTest() {
        */
       it('testRegExpProtoTest0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('a++ab')) {
-          expect(true).assertTrue();
           return;
         }
-        expect(new RegExp('a++ab').test('aab')).assertFalse();
-        expect(/a+ab/.test('aab')).assertTrue();
+        const twoAsThenB = '\u0061\u0061\u0062';
+        expect(new RegExp('a++ab').test(twoAsThenB)).assertFalse();
+        expect(/a+ab/.test(twoAsThenB)).assertTrue();
       });
 
       /**
        * @tc.name testRegExpProtoTest0136
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0136
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0136
        * @tc.desc   Test unicode_property_escape_if_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -627,7 +627,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0137
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0137
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0137
        * @tc.desc   Test G_anchor_if_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -635,12 +635,10 @@ export default function testTest() {
        */
       it('testRegExpProtoTest0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('\\Gtest', 'g')) {
-          expect(true).assertTrue();
           return;
         }
         const probe = new RegExp('\\Gtest', 'g');
         if (!probe.test('test')) {
-          expect(true).assertTrue();
           return;
         }
         const str = 'test test';
@@ -654,7 +652,7 @@ export default function testTest() {
     describe('Test_Boundaries', () => {
       /**
        * @tc.name testRegExpProtoTest0138
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0138
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0138
        * @tc.desc   Test min_length_strings
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -668,7 +666,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0139
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0139
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0139
        * @tc.desc   Test long_string_reasonable_size
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -681,7 +679,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0140
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0140
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0140
        * @tc.desc   Test special_unicode
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -694,7 +692,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0141
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0141
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0141
        * @tc.desc   Test surrogate_pair
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -710,7 +708,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0142
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0142
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0142
        * @tc.desc   Test zero_width_assertions
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -725,7 +723,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0143
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0143
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0143
        * @tc.desc   Test number_boundary
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -739,7 +737,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0144
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0144
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0144
        * @tc.desc   Test quantifier_edge
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -754,7 +752,7 @@ export default function testTest() {
     describe('Special_Characters', () => {
       /**
        * @tc.name testRegExpProtoTest0145
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0145
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0145
        * @tc.desc   Test escape_dot
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -768,7 +766,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0146
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0146
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0146
        * @tc.desc   Test backslash
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -781,7 +779,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0147
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0147
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0147
        * @tc.desc   Test quotes
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -794,7 +792,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0148
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0148
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0148
        * @tc.desc   Test parentheses
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -808,7 +806,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0149
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0149
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0149
        * @tc.desc   Test brackets
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -824,7 +822,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0150
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0150
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0150
        * @tc.desc   Test braces_colon_semicolon_equals
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -840,7 +838,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0151
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0151
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0151
        * @tc.desc   Test plus_star_question
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -857,7 +855,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0152
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0152
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0152
        * @tc.desc   Test hash_dollar_percent_amp_pipe_tilde_backtick_at
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -880,7 +878,7 @@ export default function testTest() {
     describe('Test_Capture_Groups', () => {
       /**
        * @tc.name testRegExpProtoTest0153
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0153
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0153
        * @tc.desc   Test basic_groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -892,7 +890,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0154
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0154
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0154
        * @tc.desc   Test nested_groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -904,7 +902,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0155
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0155
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0155
        * @tc.desc   Test named_groups_when_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -921,7 +919,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0156
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0156
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0156
        * @tc.desc   Test backreference
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -934,7 +932,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0157
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0157
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0157
        * @tc.desc   Test named_backreference_when_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -952,7 +950,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0158
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0158
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0158
        * @tc.desc   Test non_capture_group_does_not_shift_backref
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -964,7 +962,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0159
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0159
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0159
        * @tc.desc   Test multiple_groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -976,7 +974,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0160
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0160
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0160
        * @tc.desc   Test nested_named_groups_when_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -993,7 +991,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0161
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0161
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0161
        * @tc.desc   Test empty_groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1006,7 +1004,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0162
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0162
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0162
        * @tc.desc   Test many_groups_reasonable
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1021,7 +1019,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0163
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0163
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0163
        * @tc.desc   Test backref_out_of_range_is_false
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1039,7 +1037,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0164
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0164
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0164
        * @tc.desc   Test duplicate_named_group_throws_when_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1057,7 +1055,7 @@ export default function testTest() {
     describe('Test_Complex_Patterns', () => {
       /**
        * @tc.name testRegExpProtoTest0165
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0165
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0165
        * @tc.desc   Test email
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1071,7 +1069,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0166
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0166
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0166
        * @tc.desc   Test url
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1085,7 +1083,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0167
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0167
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0167
        * @tc.desc   Test phone
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1100,7 +1098,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0168
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0168
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0168
        * @tc.desc   Test date_format
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1117,7 +1115,7 @@ export default function testTest() {
     describe('Compare_With_String_Methods', () => {
       /**
        * @tc.name testRegExpProtoTest0169
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0169
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0169
        * @tc.desc   Test includes_indexOf_search_match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1135,7 +1133,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0170
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0170
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0170
        * @tc.desc   Test replace_split_exec_types
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1155,7 +1153,7 @@ export default function testTest() {
     describe('Error_Handling', () => {
       /**
        * @tc.name testRegExpProtoTest0171
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0171
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0171
        * @tc.desc   Test invalid_regex_syntax
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1167,7 +1165,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0172
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0172
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0172
        * @tc.desc   Test invalid_flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1179,7 +1177,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0173
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0173
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0173
        * @tc.desc   Test nested_quantifier_invalid
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1191,7 +1189,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0174
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0174
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0174
        * @tc.desc   Test invalid_quantifier_range
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1203,7 +1201,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0175
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0175
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0175
        * @tc.desc   Test unicode_codepoint_invalid_when_u_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1221,7 +1219,7 @@ export default function testTest() {
     describe('This_Value', () => {
       /**
        * @tc.name testRegExpProtoTest0176
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0176
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0176
        * @tc.desc   Test call_this_not_regexp_throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1233,7 +1231,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0177
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0177
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0177
        * @tc.desc   Test call_this_undefined_throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1245,7 +1243,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0178
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0178
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0178
        * @tc.desc   Test call_this_null_throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1257,7 +1255,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0179
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0179
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0179
        * @tc.desc   Test regex_like_object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1270,7 +1268,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0180
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0180
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0180
        * @tc.desc   Test subclass_override_test
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1290,7 +1288,7 @@ export default function testTest() {
     describe('RegExp_Constructor', () => {
       /**
        * @tc.name testRegExpProtoTest0181
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0181
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0181
        * @tc.desc   Test new_RegExp
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1304,7 +1302,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0182
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0182
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0182
        * @tc.desc   Test escape_in_constructor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1319,7 +1317,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0183
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0183
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0183
        * @tc.desc   Test dynamic_pattern_flags
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1334,7 +1332,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0184
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0184
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0184
        * @tc.desc   Test empty_pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1349,7 +1347,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0185
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0185
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0185
        * @tc.desc   Test construct_from_regexp
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1364,7 +1362,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0186
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0186
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0186
        * @tc.desc   Test override_flags_in_constructor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1380,7 +1378,7 @@ export default function testTest() {
     describe('Compile', () => {
       /**
        * @tc.name testRegExpProtoTest0187
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0187
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0187
        * @tc.desc   Test compile_existence
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1395,7 +1393,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0188
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0188
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0188
        * @tc.desc   Test compile_behavior_when_exists
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1418,7 +1416,7 @@ export default function testTest() {
     describe('Strict_Mode', () => {
       /**
        * @tc.name testRegExpProtoTest0189
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0189
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0189
        * @tc.desc   Test basic
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1430,7 +1428,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0190
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0190
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0190
        * @tc.desc   Test strict_delete_source_throws_via_helper
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1444,7 +1442,7 @@ export default function testTest() {
     describe('Multi_Instance', () => {
       /**
        * @tc.name testRegExpProtoTest0191
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0191
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0191
        * @tc.desc   Test independent_lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1462,7 +1460,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0192
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0192
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0192
        * @tc.desc   Test alternate_usage
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1479,7 +1477,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0193
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0193
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0193
        * @tc.desc   Test same_pattern_diff_flags
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1499,7 +1497,7 @@ export default function testTest() {
     describe('Web_Compatibility', () => {
       /**
        * @tc.name testRegExpProtoTest0194
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0194
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0194
        * @tc.desc   Test lookbehind_support_probe
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1512,7 +1510,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0195
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0195
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0195
        * @tc.desc   Test unicode_property_support_probe
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1525,7 +1523,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0196
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0196
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0196
        * @tc.desc   Test hasIndices_support_probe
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1538,7 +1536,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0197
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0197
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0197
        * @tc.desc   Test dotAll_support_probe
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1553,7 +1551,7 @@ export default function testTest() {
     describe('Performance_Smoke', () => {
       /**
        * @tc.name testRegExpProtoTest0198
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0198
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0198
        * @tc.desc   Test simple_perf_smoke
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1567,7 +1565,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0199
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0199
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0199
        * @tc.desc   Test global_loop_smoke
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1590,7 +1588,7 @@ export default function testTest() {
     describe('Edge_Cases', () => {
       /**
        * @tc.name testRegExpProtoTest0200
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0200
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0200
        * @tc.desc   Test zero_width
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1602,7 +1600,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0201
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0201
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0201
        * @tc.desc   Test empty_alternative
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1615,7 +1613,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0202
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0202
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0202
        * @tc.desc   Test double_anchor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1627,7 +1625,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0203
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0203
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0203
        * @tc.desc   Test nested_star
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1640,7 +1638,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0204
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0204
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0204
        * @tc.desc   Test special_combo
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1656,7 +1654,7 @@ export default function testTest() {
     describe('Real_World', () => {
       /**
        * @tc.name testRegExpProtoTest0205
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0205
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0205
        * @tc.desc   Test form_email_validation
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1673,7 +1671,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0206
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0206
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0206
        * @tc.desc   Test data_cleaning
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1687,7 +1685,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0207
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0207
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0207
        * @tc.desc   Test search_keyword
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1701,7 +1699,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0208
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0208
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0208
        * @tc.desc   Test log_analysis
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1715,7 +1713,7 @@ export default function testTest() {
 
       /**
        * @tc.name testRegExpProtoTest0209
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0209
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0209
        * @tc.desc   Test config_line
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST

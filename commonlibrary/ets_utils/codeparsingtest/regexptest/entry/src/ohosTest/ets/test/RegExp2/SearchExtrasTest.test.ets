@@ -31,7 +31,7 @@ export default function searchExtrasTest() {
     describe('SearchExtras_Tests', () => {
       /**
        * @tc.name testSearchTest0100
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0100
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0100
        * @tc.desc   uses RegExp[Symbol.search] semantics
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -43,7 +43,7 @@ export default function searchExtrasTest() {
 
       /**
        * @tc.name testSearchTest0101
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0101
        * @tc.desc   supports custom objects via Symbol.search
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -55,7 +55,7 @@ export default function searchExtrasTest() {
 
       /**
        * @tc.name testSearchTest0102
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0102
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0102
        * @tc.desc   coerces BigInt to string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -67,7 +67,7 @@ export default function searchExtrasTest() {
 
       /**
        * @tc.name testSearchTest0103
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0103
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0103
        * @tc.desc   throws TypeError for Symbol pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -79,7 +79,7 @@ export default function searchExtrasTest() {
 
       /**
        * @tc.name testSearchTest0104
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0104
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0104
        * @tc.desc   coerces function to string pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -91,7 +91,7 @@ export default function searchExtrasTest() {
 
       /**
        * @tc.name testSearchTest0105
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0105
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0105
        * @tc.desc   uses @@toPrimitive when available
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -103,7 +103,7 @@ export default function searchExtrasTest() {
 
       /**
        * @tc.name testSearchTest0106
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0106
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0106
        * @tc.desc   throws when calling RegExp[Symbol.search] with undefined receiver
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -115,7 +115,7 @@ export default function searchExtrasTest() {
 
       /**
        * @tc.name testSearchTest0107
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0107
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0107
        * @tc.desc   throws when calling RegExp[Symbol.search] with null receiver
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function searchExtrasTest() {
 
       /**
        * @tc.name testSearchTest0108
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SEARCH_TEST_0108
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_EXTRAS_TEST_0108
        * @tc.desc   supports regex-like objects via RegExp[Symbol.search]
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST

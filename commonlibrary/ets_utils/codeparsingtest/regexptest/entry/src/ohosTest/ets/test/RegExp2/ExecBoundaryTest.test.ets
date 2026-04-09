@@ -29,7 +29,7 @@ export default function execBoundaryTest(): void {
   describe('Exec_Boundary_Tests', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BOUNDARY_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec word boundary \\b and non-word boundary \\B
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -37,17 +37,15 @@ export default function execBoundaryTest(): void {
      */
     it('testExecTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const r1: RegExpExecArray | null = /\b/.exec('abc');
-      expect(r1).not().assertEqual(null);
-      expect(r1?.index).assertEqual(0);
+      expect(r1!.index).assertEqual(0);
 
       const r2: RegExpExecArray | null = /\B/.exec('abc');
-      expect(r2).not().assertEqual(null);
-      expect(r2?.index).assertEqual(1);
+      expect(r2!.index).assertEqual(1);
     });
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BOUNDARY_TEST_0101
      * @tc.desc   Test exec helper for literal /test/ and /123/ patterns and index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

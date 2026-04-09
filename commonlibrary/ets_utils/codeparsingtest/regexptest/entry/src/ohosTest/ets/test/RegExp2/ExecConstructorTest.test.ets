@@ -19,7 +19,7 @@ export default function execConstructorTest() {
   describe('Regex_Constructor_Tests', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CONSTRUCTOR_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec with pattern from RegExp constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -34,7 +34,7 @@ export default function execConstructorTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CONSTRUCTOR_TEST_0101
      * @tc.desc   Test RegExp.prototype.exec with regex literal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -49,7 +49,7 @@ export default function execConstructorTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_CONSTRUCTOR_TEST_0102
      * @tc.desc   Test RegExp.prototype.exec with dynamic pattern and ignoreCase flag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -60,8 +60,7 @@ export default function execConstructorTest() {
       const flags = "i";
       const re = new RegExp(pattern, flags);
       const result = re.exec("HELLO");
-      expect(result).not().assertEqual(null);
-      expect(result?.[0]).assertEqual("HELLO");
+      expect(result![0]).assertEqual("HELLO");
     });
   });
 }

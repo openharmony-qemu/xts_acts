@@ -30,7 +30,7 @@ export default function replaceExtremeTest() {
     describe('Symbol_replace_Custom_Behavior', () => {
       /**
        * @tc.name testReplaceTest0100
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0100
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0100
        * @tc.desc   Test Custom_Symbol_replace_Object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -42,7 +42,7 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0101
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0101
        * @tc.desc   Test RegExp_Symbol_replace_Direct_Call
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -55,7 +55,7 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0102
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0102
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0102
        * @tc.desc   Test Parameter_Order_Verification
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -69,7 +69,7 @@ export default function replaceExtremeTest() {
     describe('Advanced_Scenario_Tests', () => {
       /**
        * @tc.name testReplaceTest0103
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0103
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0103
        * @tc.desc   Test Recursive_Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -81,7 +81,7 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0104
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0104
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0104
        * @tc.desc   Test Conditional_Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -93,7 +93,7 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0105
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0105
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0105
        * @tc.desc   Test Accumulative_Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0106
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0106
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0106
        * @tc.desc   Test Context_Aware_Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -117,7 +117,7 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0107
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0107
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0107
        * @tc.desc   Test Lookup_Table_Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -131,7 +131,7 @@ export default function replaceExtremeTest() {
     describe('Boundary_Case_Extension_Tests', () => {
       /**
        * @tc.name testReplaceTest0108
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0108
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0108
        * @tc.desc   Test Extreme_Quantifier_Value
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -146,7 +146,7 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0109
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0109
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0109
        * @tc.desc   Test Many_Capture_Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -165,7 +165,7 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0110
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0110
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0110
        * @tc.desc   Test Deeply_Nested_Groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -180,7 +180,7 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0111
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0111
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0111
        * @tc.desc   Test Zero_Match_Loop_Guard
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -195,7 +195,7 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0112
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0112
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0112
        * @tc.desc   Test Special_Unicode_Combination
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -213,7 +213,7 @@ export default function replaceExtremeTest() {
     describe('String_Parameter_Extension_Tests', () => {
       /**
        * @tc.name testReplaceTest0113
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0113
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0113
        * @tc.desc   Test String_Pattern_Auto_Escape
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -227,7 +227,7 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0114
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0114
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0114
        * @tc.desc   Test String_Pattern_Limitations
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -241,7 +241,7 @@ export default function replaceExtremeTest() {
 
       /**
        * @tc.name testReplaceTest0115
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0115
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTREME_TEST_0115
        * @tc.desc   Test String_Pattern_vs_Regex_Pattern_Comparison
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST

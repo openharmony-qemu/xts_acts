@@ -49,7 +49,7 @@ export default function regExpCompleteTest() {
     describe('Instance_Methods_exec_toString', () => {
       /**
        * @tc.name   testRegExpCompleteTest0100
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0100
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0100
        * @tc.desc   exec_basic_hello
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -67,7 +67,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0101
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0101
        * @tc.desc   exec_capture_groups_date
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -85,7 +85,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0102
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0102
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0102
        * @tc.desc   exec_named_groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -97,7 +97,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0103
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0103
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0103
        * @tc.desc   exec_global_lastIndex_flow
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -118,7 +118,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0104
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0104
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0104
        * @tc.desc   exec_no_match_null
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -130,7 +130,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0105
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0105
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0105
        * @tc.desc   exec_sticky_lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -149,7 +149,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0106
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0106
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0106
        * @tc.desc   exec_index_input_world
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -164,7 +164,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0107
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0107
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0107
        * @tc.desc   toString_slash_form
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -182,7 +182,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0108
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0108
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0108
        * @tc.desc   toString_escapes_whitespace
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -199,7 +199,7 @@ export default function regExpCompleteTest() {
     describe('Constructor', () => {
       /**
        * @tc.name   testRegExpCompleteTest0109
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0109
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0109
        * @tc.desc   literal_flags
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -214,7 +214,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0110
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0110
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0110
        * @tc.desc   new_RegExp_string_flags
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -228,7 +228,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0111
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0111
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0111
        * @tc.desc   new_RegExp_escape_w_d
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -243,7 +243,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0112
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0112
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0112
        * @tc.desc   from_regexp_override_flags
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -258,7 +258,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0113
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0113
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0113
        * @tc.desc   flags_override_priority
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -273,7 +273,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0114
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0114
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0114
        * @tc.desc   ctor_syntax_error_bracket
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -292,7 +292,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0115
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0115
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0115
        * @tc.desc   dynamic_pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -308,7 +308,7 @@ export default function regExpCompleteTest() {
     describe('Static_RegExp', () => {
       /**
        * @tc.name   testRegExpCompleteTest0116
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0116
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0116
        * @tc.desc   subclass_species
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -320,7 +320,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0117
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0117
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0117
        * @tc.desc   RegExp_lastIndex_static_shape
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -336,7 +336,7 @@ export default function regExpCompleteTest() {
     describe('Symbol_well_known_methods', () => {
       /**
        * @tc.name   testRegExpCompleteTest0118
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0118
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0118
        * @tc.desc   Symbol_match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -348,7 +348,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0119
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0119
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0119
        * @tc.desc   Symbol_matchAll
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -360,7 +360,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0120
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0120
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0120
        * @tc.desc   Symbol_replace
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -372,7 +372,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0121
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0121
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0121
        * @tc.desc   Symbol_search
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -384,7 +384,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0122
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0122
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0122
        * @tc.desc   Symbol_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -398,7 +398,7 @@ export default function regExpCompleteTest() {
     describe('test_method_scenarios', () => {
       /**
        * @tc.name   testRegExpCompleteTest0123
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0123
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0123
        * @tc.desc   empty_quantifier_star
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -415,7 +415,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0124
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0124
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0124
        * @tc.desc   test_returns_boolean
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -430,7 +430,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0125
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0125
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0125
        * @tc.desc   test_sticky_lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -449,7 +449,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0126
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0126
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0126
        * @tc.desc   test_exec_equivalence_no_capture
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -459,14 +459,14 @@ export default function regExpCompleteTest() {
         const str = 'test123';
         const regex = /test\d{3}/;
         expect(regex.test(str)).assertTrue();
-        expect(regex.exec(str)).not().assertEqual(null);
+        expect(regex.exec(str)![0]).assertEqual('test123');
       });
     });
 
     describe('Unicode_advanced', () => {
       /**
        * @tc.name   testRegExpCompleteTest0127
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0127
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0127
        * @tc.desc   pL_pScriptHan_when_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -474,22 +474,21 @@ export default function regExpCompleteTest() {
        */
       it('testRegExpCompleteTest0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('\\p{L}', 'u')) {
-          expect(true).assertTrue();
           return;
         }
         const regex1 = new RegExp('\\p{L}', 'u');
         expect(regex1.test('a')).assertTrue();
-        expect(regex1.test('中')).assertTrue();
+        expect(regex1.test('\u4e2d')).assertTrue();
         if (supportsRegExp('\\p{Script=Han}', 'u')) {
           const regex2 = new RegExp('\\p{Script=Han}', 'u');
-          expect(regex2.test('中文')).assertTrue();
+          expect(regex2.test('\u4e2d\u6587')).assertTrue();
           expect(regex2.test('abc')).assertFalse();
         }
       });
 
       /**
        * @tc.name   testRegExpCompleteTest0128
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0128
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0128
        * @tc.desc   pP_pN_P_when_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -497,7 +496,6 @@ export default function regExpCompleteTest() {
        */
       it('testRegExpCompleteTest0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         if (!supportsRegExp('\\p{P}', 'u')) {
-          expect(true).assertTrue();
           return;
         }
         const pP = new RegExp('\\p{P}', 'u');
@@ -506,7 +504,7 @@ export default function regExpCompleteTest() {
         expect(pP.test('a')).assertFalse();
         const pN = new RegExp('\\p{N}', 'u');
         expect(pN.test('123')).assertTrue();
-        expect(pN.test('१२३')).assertTrue();
+        expect(pN.test('\u0967\u0968\u0969')).assertTrue();
         const pL = new RegExp('\\P{L}', 'u');
         expect(pL.test('123')).assertTrue();
         expect(pL.test('!')).assertTrue();
@@ -515,14 +513,14 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0129
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0129
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0129
        * @tc.desc   w_ascii_vs_unicode_when_supported
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
       it('testRegExpCompleteTest0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        const str = '中文';
+        const str = '\u03B1\u03B2';
         expect(/\w/.test(str)).assertFalse();
         if (supportsRegExp('\\w', 'u')) {
           expect(new RegExp('\\w', 'u').test(str)).assertFalse();
@@ -534,7 +532,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0130
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0130
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0130
        * @tc.desc   combining_char_dot_vs_u
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -552,7 +550,7 @@ export default function regExpCompleteTest() {
     describe('Advanced_syntax', () => {
       /**
        * @tc.name   testRegExpCompleteTest0131
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0131
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0131
        * @tc.desc   atomic_group_not_in_ecmascript_ctor_throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -570,7 +568,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0132
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0132
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0132
        * @tc.desc   possessive_not_standard_ctor_throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -588,7 +586,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0133
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0133
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0133
        * @tc.desc   non_greedy_vs_greedy
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -602,7 +600,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0134
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0134
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0134
        * @tc.desc   quantifier_braces
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -618,7 +616,7 @@ export default function regExpCompleteTest() {
     describe('RegExp_Boundaries', () => {
       /**
        * @tc.name   testRegExpCompleteTest0135
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0135
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0135
        * @tc.desc   empty_string_dollar
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -631,7 +629,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0136
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0136
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0136
        * @tc.desc   lookahead_prefix
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -646,7 +644,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0137
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0137
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0137
        * @tc.desc   empty_group_matches_anywhere
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -658,7 +656,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0138
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0138
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0138
        * @tc.desc   word_boundary_zero_width
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -673,7 +671,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0139
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0139
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0139
        * @tc.desc   large_quantifier_1000
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -688,7 +686,7 @@ export default function regExpCompleteTest() {
     describe('Errors', () => {
       /**
        * @tc.name   testRegExpCompleteTest0140
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0140
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0140
        * @tc.desc   unknown_flag_syntax_error
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -700,7 +698,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0141
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0141
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0141
        * @tc.desc   capture_group_10
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -712,7 +710,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0142
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0142
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0142
        * @tc.desc   invalid_unicode_escape
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -724,7 +722,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0143
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0143
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0143
        * @tc.desc   incomplete_char_class
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -738,7 +736,7 @@ export default function regExpCompleteTest() {
     describe('Property_descriptor', () => {
       /**
        * @tc.name   testRegExpCompleteTest0144
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0144
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0144
        * @tc.desc   assign_global_no_effect
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -750,7 +748,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0145
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0145
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0145
        * @tc.desc   lastIndex_manual_global
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -766,7 +764,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0146
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0146
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0146
        * @tc.desc   enumerable_flags
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -778,7 +776,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0147
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0147
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0147
        * @tc.desc   descriptor_global
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -792,7 +790,7 @@ export default function regExpCompleteTest() {
     describe('API_integration', () => {
       /**
        * @tc.name   testRegExpCompleteTest0148
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0148
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0148
        * @tc.desc   string_matchAll_iterator
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -808,7 +806,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0149
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0149
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0149
        * @tc.desc   string_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -824,7 +822,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0150
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0150
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0150
        * @tc.desc   string_replace_function
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -839,7 +837,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0151
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0151
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0151
        * @tc.desc   string_search
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -853,7 +851,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0152
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0152
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0152
        * @tc.desc   array_filter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -868,7 +866,7 @@ export default function regExpCompleteTest() {
 
       /**
        * @tc.name   testRegExpCompleteTest0153
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_COMPLETE_TEST_0153
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0153
        * @tc.desc   array_map_match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST

@@ -20,7 +20,7 @@ export default function matchAllBasicTest() {
   describe('MatchAll_Basic_Function_Tests', () => {
     /**
      * @tc.name testMatchAllTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0100
      * @tc.desc   Test RegExp[Symbol.matchAll] basic call returns iterator matches and indices
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -37,7 +37,7 @@ export default function matchAllBasicTest() {
 
     /**
      * @tc.name testMatchAllTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0101
      * @tc.desc   Test RegExp[Symbol.matchAll] equivalence with String.matchAll for global regex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -52,7 +52,7 @@ export default function matchAllBasicTest() {
 
     /**
      * @tc.name testMatchAllTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0102
      * @tc.desc   Test RegExp[Symbol.matchAll] returns an iterator object and can be advanced
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -70,7 +70,7 @@ export default function matchAllBasicTest() {
 
     /**
      * @tc.name testMatchAllTest0103
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0103
      * @tc.desc   Test match results structure is consistent with exec-style match data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -93,7 +93,7 @@ export default function matchAllBasicTest() {
 
     /**
      * @tc.name testMatchAllTest0104
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0104
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0104
      * @tc.desc   Test match object properties including groups behavior when no named groups
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -115,7 +115,7 @@ export default function matchAllBasicTest() {
 
     /**
      * @tc.name testMatchAllTest0105
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0105
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0105
      * @tc.desc   Test non-global RegExp returns a single match from matchAll protocol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -135,7 +135,7 @@ export default function matchAllBasicTest() {
 
     /**
      * @tc.name testMatchAllTest0106
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0106
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0106
      * @tc.desc   Test global g RegExp matchAll returns all matches
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -150,7 +150,7 @@ export default function matchAllBasicTest() {
 
     /**
      * @tc.name testMatchAllTest0107
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0107
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_BASIC_TEST_0107
      * @tc.desc   Test non-global matchAll returns one match for a different pattern
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

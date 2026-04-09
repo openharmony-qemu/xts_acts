@@ -33,7 +33,7 @@ export default function execReturnTest() {
   describe('Return_Value_Property_Tests', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURN_TEST_0100
      * @tc.desc   Test RegExpExecArray index property after exec
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -46,7 +46,7 @@ export default function execReturnTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURN_TEST_0101
      * @tc.desc   Test RegExpExecArray input property equals original string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -60,7 +60,7 @@ export default function execReturnTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURN_TEST_0102
      * @tc.desc   Test RegExpExecArray groups property for named capture
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function execReturnTest() {
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURN_TEST_0103
      * @tc.desc   Test RegExpExecArray indices property when d flag is set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -86,13 +86,13 @@ export default function execReturnTest() {
         expect(result.indices[0][0]).assertEqual(0);
         expect(result.indices[0][1]).assertEqual(5);
       } else {
-        expect(true).assertTrue();
+        expect(result?.[0]).assertEqual('hello');
       }
     });
 
     /**
      * @tc.name testExecTest0104
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0104
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_RETURN_TEST_0104
      * @tc.desc   Test named capture exec without d flag placeholder
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

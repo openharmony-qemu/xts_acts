@@ -33,7 +33,7 @@ export default function instancePropertiesTest() {
   describe('Instance_Properties', () => {
     /**
      * @tc.name testRegExpInstanceTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_INSTANCE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0100
      * @tc.desc   Test source_abc_i_and_dollar_plus_g
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -51,7 +51,7 @@ export default function instancePropertiesTest() {
 
     /**
      * @tc.name testRegExpInstanceTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_INSTANCE_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0101
      * @tc.desc   Test source_readonly_strict
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -63,7 +63,7 @@ export default function instancePropertiesTest() {
 
     /**
      * @tc.name testRegExpInstanceTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_INSTANCE_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0102
      * @tc.desc   Test flags_gim_empty_and_s_when_supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function instancePropertiesTest() {
 
     /**
      * @tc.name testRegExpInstanceTest0103
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_INSTANCE_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0103
      * @tc.desc   Test global_ignoreCase_multiline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -101,7 +101,7 @@ export default function instancePropertiesTest() {
 
     /**
      * @tc.name testRegExpInstanceTest0104
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_INSTANCE_TEST_0104
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0104
      * @tc.desc   Test dotAll_sticky_unicode_when_supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -120,7 +120,7 @@ export default function instancePropertiesTest() {
 
     /**
      * @tc.name testRegExpInstanceTest0105
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_INSTANCE_TEST_0105
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_INSTANCE_TEST_0105
      * @tc.desc   Test hasIndices_when_supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -129,8 +129,6 @@ export default function instancePropertiesTest() {
     it('testRegExpInstanceTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (supportsRegExp('test', 'd')) {
         expect(regexpWithDFlagHasIndicesTrue()).assertTrue();
-      } else {
-        expect(true).assertTrue();
       }
       expect(regexpLiteralWithoutDNotHasIndices()).assertTrue();
     });

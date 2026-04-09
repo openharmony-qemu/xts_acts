@@ -56,7 +56,7 @@ export default function replaceComplexTest() {
     describe('Complex_Pattern_Matching', () => {
       /**
        * @tc.name testReplaceTest0100
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0100
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0100
        * @tc.desc   Test Zero_Width_Assertion_Replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -70,7 +70,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0101
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0101
        * @tc.desc   Test Positive_Lookahead
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0102
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0102
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0102
        * @tc.desc   Test Negative_Lookahead
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -98,7 +98,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0103
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0103
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0103
        * @tc.desc   Test Positive_Lookbehind
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -112,7 +112,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0104
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0104
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0104
        * @tc.desc   Test Negative_Lookbehind
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -130,7 +130,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0105
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0105
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0105
        * @tc.desc   Test Atomic_Group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -143,7 +143,6 @@ export default function replaceComplexTest() {
         } catch (_) {
         }
         if (regex === null) {
-          expect(true).assertTrue();
           return;
         }
         const str = "abc";
@@ -153,7 +152,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0106
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0106
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0106
        * @tc.desc   Test Possessive_Quantifier
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -166,7 +165,6 @@ export default function replaceComplexTest() {
         } catch (_) {
         }
         if (regex === null) {
-          expect(true).assertTrue();
           return;
         }
         const str = "aaab";
@@ -176,7 +174,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0107
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0107
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0107
        * @tc.desc   Test G_Anchor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -193,7 +191,7 @@ export default function replaceComplexTest() {
     describe('replacement_Parameter_Type_Tests', () => {
       /**
        * @tc.name testReplaceTest0108
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0108
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0108
        * @tc.desc   Test String_replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -207,7 +205,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0109
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0109
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0109
        * @tc.desc   Test Number_replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -219,7 +217,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0110
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0110
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0110
        * @tc.desc   Test Object_toString
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -231,7 +229,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0111
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0111
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0111
        * @tc.desc   Test Symbol_toPrimitive
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -243,7 +241,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0112
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0112
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0112
        * @tc.desc   Test null_replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -255,7 +253,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0113
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0113
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0113
        * @tc.desc   Test undefined_replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -267,7 +265,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0114
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0114
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0114
        * @tc.desc   Test Symbol_replacement_Throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -279,7 +277,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0115
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0115
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0115
        * @tc.desc   Test BigInt_replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -291,7 +289,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0116
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0116
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0116
        * @tc.desc   Test Boolean_replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -303,7 +301,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0117
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0117
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0117
        * @tc.desc   Test Array_replacement
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -317,7 +315,7 @@ export default function replaceComplexTest() {
     describe('this_Value_Tests', () => {
       /**
        * @tc.name testReplaceTest0118
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0118
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0118
        * @tc.desc   Test Non_RegExp_Object_this_Throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -329,7 +327,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0119
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0119
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0119
        * @tc.desc   Test undefined_this_Throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -341,7 +339,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0120
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0120
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0120
        * @tc.desc   Test null_this_Throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -353,7 +351,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0121
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0121
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0121
        * @tc.desc   Test RegExp_Like_Object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -367,7 +365,7 @@ export default function replaceComplexTest() {
     describe('Error_and_Exception_Handling', () => {
       /**
        * @tc.name testReplaceTest0122
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0122
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0122
        * @tc.desc   Test Invalid_Regex_Throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -379,7 +377,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0123
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0123
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0123
        * @tc.desc   Test Invalid_Flag_Throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -391,7 +389,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0124
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0124
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0124
        * @tc.desc   Test Invalid_Unicode_Code_Point_Throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -403,7 +401,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0125
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0125
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0125
        * @tc.desc   Test Lookbehind_Syntax_Error_Throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -415,7 +413,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0126
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0126
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0126
        * @tc.desc   Test Invalid_Unicode_Property_Throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -427,7 +425,7 @@ export default function replaceComplexTest() {
 
       /**
        * @tc.name testReplaceTest0127
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0127
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_COMPLEX_TEST_0127
        * @tc.desc   Test replacement_Non_Function_Non_String
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST

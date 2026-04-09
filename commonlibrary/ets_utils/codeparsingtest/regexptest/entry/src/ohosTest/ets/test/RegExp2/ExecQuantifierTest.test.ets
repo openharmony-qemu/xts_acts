@@ -45,7 +45,7 @@ export default function execQuantifierTest() {
   describe('Quantifier_Tests', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec greedy quantifier .*
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,7 +58,7 @@ export default function execQuantifierTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0101
      * @tc.desc   Test RegExp.prototype.exec non-greedy quantifier .*?
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -71,7 +71,7 @@ export default function execQuantifierTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0102
      * @tc.desc   Test RegExp.prototype.exec fixed count quantifier a{3}
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function execQuantifierTest() {
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0103
      * @tc.desc   Test RegExp.prototype.exec range quantifier a{2,4}
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -101,7 +101,7 @@ export default function execQuantifierTest() {
 
     /**
      * @tc.name testExecTest0104
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0104
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0104
      * @tc.desc   Test RegExp.prototype.exec zero-or-more quantifier a*
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -118,7 +118,7 @@ export default function execQuantifierTest() {
 
     /**
      * @tc.name testExecTest0105
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0105
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_QUANTIFIER_TEST_0105
      * @tc.desc   Test RegExp.prototype.exec one-or-more quantifier a+
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

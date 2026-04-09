@@ -24,7 +24,7 @@ export default function replaceExtrasTest() {
   describe('Replace_Symbol_Replace', () => {
     /**
      * @tc.name testReplaceTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTRAS_TEST_0100
      * @tc.desc   Test custom_Symbol_replace_object_for_String_replace
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -36,7 +36,7 @@ export default function replaceExtrasTest() {
 
     /**
      * @tc.name testReplaceTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTRAS_TEST_0101
      * @tc.desc   Test Symbol_replace_undefined_this_throws
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -48,7 +48,7 @@ export default function replaceExtrasTest() {
 
     /**
      * @tc.name testReplaceTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_EXTRAS_TEST_0102
      * @tc.desc   Test Symbol_replace_null_this_throws
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

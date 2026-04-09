@@ -25,7 +25,7 @@ export default function matchAllExtrasTest() {
   describe('MatchAll_Protocol_And_Symbol', () => {
     /**
      * @tc.name testMatchAllTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EXTRAS_TEST_0100
      * @tc.desc   Test String.matchAll throws TypeError when RegExp is not global
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -37,7 +37,7 @@ export default function matchAllExtrasTest() {
 
     /**
      * @tc.name testMatchAllTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EXTRAS_TEST_0101
      * @tc.desc   Test String.matchAll result count equals RegExp[Symbol.matchAll] count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -49,7 +49,7 @@ export default function matchAllExtrasTest() {
 
     /**
      * @tc.name testMatchAllTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EXTRAS_TEST_0102
      * @tc.desc   Test primitive string without callable Symbol.matchAll throws TypeError
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -61,7 +61,7 @@ export default function matchAllExtrasTest() {
 
     /**
      * @tc.name testMatchAllTest0103
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_EXTRAS_TEST_0103
      * @tc.desc   Test null receiver for Symbol.matchAll throws
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

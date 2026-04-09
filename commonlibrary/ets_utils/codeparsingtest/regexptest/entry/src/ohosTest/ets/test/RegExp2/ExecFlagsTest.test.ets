@@ -23,7 +23,7 @@ export default function execFlagsTest(): void {
   describe('Regex_Flags_Tests', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec with ignoreCase i flag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -37,7 +37,7 @@ export default function execFlagsTest(): void {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0101
      * @tc.desc   Test RegExp.prototype.exec with multiline m flag and ^ anchor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -52,7 +52,7 @@ export default function execFlagsTest(): void {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0102
      * @tc.desc   Test RegExp.prototype.exec with dotAll s flag matching newline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -67,7 +67,7 @@ export default function execFlagsTest(): void {
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0103
      * @tc.desc   Test RegExp.prototype.exec with unicode u flag and code point escape
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -76,13 +76,12 @@ export default function execFlagsTest(): void {
     it('testExecTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re: RegExp = /\u{1F600}/u;
       const result: RegExpExecArray | null = re.exec("Hello 😀 World");
-      expect(result).not().assertEqual(null);
-      expect(result?.[0]).assertEqual("😀");
+      expect(result![0]).assertEqual("😀");
     });
 
     /**
      * @tc.name testExecTest0104
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0104
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0104
      * @tc.desc   Test RegExp.prototype.exec with hasIndices d flag when supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +101,7 @@ export default function execFlagsTest(): void {
 
     /**
      * @tc.name testExecTest0105
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0105
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_FLAGS_TEST_0105
      * @tc.desc   Test RegExp.prototype.exec global g flag loop collects match indices
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

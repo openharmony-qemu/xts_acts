@@ -19,7 +19,7 @@ export default function execGlobalSpecialTest() {
   describe('Global_Flag_Special_Case_Tests', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec zero-length matches with ^ multiline global
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,7 +41,7 @@ export default function execGlobalSpecialTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0101
      * @tc.desc   Test RegExp lastIndex reset when exec fails on a new string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -51,8 +51,7 @@ export default function execGlobalSpecialTest() {
       const re: RegExp = /ab*/g;
 
       const result1: RegExpExecArray | null = re.exec("abbc");
-      expect(result1).not().assertEqual(null);
-      expect(result1?.[0]).assertEqual("abb");
+      expect(result1![0]).assertEqual("abb");
       expect(re.lastIndex).assertEqual(3);
 
       const result2: RegExpExecArray | null = re.exec("xyz");
@@ -62,7 +61,7 @@ export default function execGlobalSpecialTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBALSPECIAL_TEST_0102
      * @tc.desc   Test manual lastIndex reset before repeated exec on same string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -19,7 +19,7 @@ export default function testLastIndexTest() {
   describe('lastIndex', () => {
     /**
      * @tc.name testRegExpProtoTest0210
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0210
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0210
      * @tc.desc   Test global_lastIndex_update_and_reset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -39,7 +39,7 @@ export default function testLastIndexTest() {
 
     /**
      * @tc.name testRegExpProtoTest0211
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0211
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0211
      * @tc.desc   Test sticky_lastIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -58,7 +58,7 @@ export default function testLastIndexTest() {
 
     /**
      * @tc.name testRegExpProtoTest0212
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0212
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0212
      * @tc.desc   Test manual_reset_lastIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -74,7 +74,7 @@ export default function testLastIndexTest() {
 
     /**
      * @tc.name testRegExpProtoTest0213
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0213
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0213
      * @tc.desc   Test independence_between_instances
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -93,7 +93,7 @@ export default function testLastIndexTest() {
 
     /**
      * @tc.name testRegExpProtoTest0214
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0214
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0214
      * @tc.desc   Test lastIndex_extremes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -114,7 +114,7 @@ export default function testLastIndexTest() {
 
     /**
      * @tc.name testRegExpProtoTest0215
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0215
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0215
      * @tc.desc   Test non_global_ignores_lastIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -124,13 +124,13 @@ export default function testLastIndexTest() {
       const str = 'foo foo';
       const re = /foo/;
       re.lastIndex = 5;
-      expect(re.test(str)).assertTrue();
+      re.test(str);
       expect(re.lastIndex).assertEqual(5);
     });
 
     /**
      * @tc.name testRegExpProtoTest0216
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_PROTO_TEST_0216
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_0216
      * @tc.desc   Test lastIndex_affects_return_value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

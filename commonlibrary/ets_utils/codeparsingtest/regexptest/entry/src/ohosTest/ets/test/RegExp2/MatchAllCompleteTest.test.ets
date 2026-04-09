@@ -36,7 +36,7 @@ export default function matchAllCompleteTest() {
     describe('Sticky_Flag_y_Tests', () => {
       /**
       * @tc.name testMatchAllTest0100
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0100
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0100
        * @tc.desc   Test RegExp[Symbol.matchAll] sticky matches from lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -53,7 +53,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0101
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0101
        * @tc.desc   Test RegExp[Symbol.matchAll] sticky only matches at lastIndex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function matchAllCompleteTest() {
     describe('Unicode_Flag_u_Tests', () => {
       /**
       * @tc.name testMatchAllTest0102
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0102
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0102
        * @tc.desc   Test RegExp[Symbol.matchAll] emoji matches with u flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0103
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0103
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0103
        * @tc.desc   Test RegExp[Symbol.matchAll] surrogate pairs match correctly with u flag
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -108,7 +108,7 @@ export default function matchAllCompleteTest() {
     describe('DotAll_Flag_s_Tests', () => {
       /**
       * @tc.name testMatchAllTest0104
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0104
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0104
        * @tc.desc   Test RegExp[Symbol.matchAll] dotAll s matches newline
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function matchAllCompleteTest() {
     describe('Multiline_Flag_m_Tests', () => {
       /**
       * @tc.name testMatchAllTest0105
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0105
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0105
        * @tc.desc   Test RegExp[Symbol.matchAll] multiline m line start anchor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -146,7 +146,7 @@ export default function matchAllCompleteTest() {
     describe('Ignore_Case_Flag_i_Tests', () => {
       /**
       * @tc.name testMatchAllTest0106
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0106
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0106
        * @tc.desc   Test RegExp[Symbol.matchAll] ignoreCase i matches
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -166,7 +166,7 @@ export default function matchAllCompleteTest() {
     describe('Flag_Combination_Tests', () => {
       /**
       * @tc.name testMatchAllTest0107
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0107
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0107
        * @tc.desc   Test RegExp[Symbol.matchAll] g and i flags combination
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -181,7 +181,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0108
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0108
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0108
        * @tc.desc   Test RegExp[Symbol.matchAll] g i m flags combination
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -198,7 +198,7 @@ export default function matchAllCompleteTest() {
     describe('MatchAll_Capture_Group_Tests', () => {
       /**
       * @tc.name testMatchAllTest0109
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0109
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0109
        * @tc.desc   Test RegExp[Symbol.matchAll] single capture group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -216,7 +216,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0110
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0110
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0110
        * @tc.desc   Test RegExp[Symbol.matchAll] multiple capture groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -235,7 +235,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0111
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0111
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0111
        * @tc.desc   Test RegExp[Symbol.matchAll] nested capture groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -254,7 +254,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0112
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0112
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0112
        * @tc.desc   Test RegExp[Symbol.matchAll] non-capture groups are excluded
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -270,7 +270,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0113
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0113
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0113
        * @tc.desc   Test RegExp[Symbol.matchAll] named capture groups through groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -295,7 +295,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0114
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0114
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0114
        * @tc.desc   Test RegExp[Symbol.matchAll] groups is undefined when no named groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -312,7 +312,7 @@ export default function matchAllCompleteTest() {
     describe('lastIndex_Behavior_Tests', () => {
       /**
       * @tc.name testMatchAllTest0115
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0115
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0115
        * @tc.desc   Test RegExp[Symbol.matchAll] lastIndex does not change original regex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -329,7 +329,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0116
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0116
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0116
        * @tc.desc   Test RegExp[Symbol.matchAll] lastIndex starts from 0 by default
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -345,7 +345,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0117
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0117
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0117
        * @tc.desc   Test RegExp[Symbol.matchAll] lastIndex out of range returns no matches
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -363,7 +363,7 @@ export default function matchAllCompleteTest() {
     describe('Iterator_Characteristic_Tests', () => {
       /**
       * @tc.name testMatchAllTest0118
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0118
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0118
        * @tc.desc   Test RegExp[Symbol.matchAll] iterator protocol next method
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -385,7 +385,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0119
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0119
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0119
        * @tc.desc   Test RegExp[Symbol.matchAll] for-of iterator traversal
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -397,14 +397,14 @@ export default function matchAllCompleteTest() {
         let matchCount: number = 0;
         for (const match of regexpSymbolMatchAll(regex, str)) {
           matchCount++;
-          expect(match[0]).not().assertEqual("");
+          expect(/^\d+$/.test(match[0])).assertTrue();
         }
         expect(matchCount).assertEqual(3);
       });
 
       /**
       * @tc.name testMatchAllTest0120
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0120
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0120
        * @tc.desc   Test RegExp[Symbol.matchAll] Array.from conversion
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -419,7 +419,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0121
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0121
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0121
        * @tc.desc   Test RegExp[Symbol.matchAll] explicit Array.from conversion
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -437,7 +437,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0122
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0122
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0122
        * @tc.desc   Test RegExp[Symbol.matchAll] iterator partial consumption state
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -458,7 +458,7 @@ export default function matchAllCompleteTest() {
     describe('MatchAllComplete_Boundary_Value_Tests', () => {
       /**
       * @tc.name testMatchAllTest0123
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0123
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0123
        * @tc.desc   Test RegExp[Symbol.matchAll] no matches returns empty results array
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -473,7 +473,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0124
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0124
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0124
        * @tc.desc   Test RegExp[Symbol.matchAll] no matches iterator done immediately
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -490,7 +490,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0125
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0125
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0125
        * @tc.desc   Test RegExp[Symbol.matchAll] zero-width assertions
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -506,7 +506,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0126
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0126
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0126
        * @tc.desc   Test RegExp[Symbol.matchAll] empty match returns empty string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -524,7 +524,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0127
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0127
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0127
        * @tc.desc   Test RegExp[Symbol.matchAll] empty string input returns no matches
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -539,7 +539,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0128
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0128
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0128
        * @tc.desc   Test RegExp[Symbol.matchAll] empty string with empty match
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -556,7 +556,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0129
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0129
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0129
        * @tc.desc   Test RegExp[Symbol.matchAll] single character string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -572,7 +572,7 @@ export default function matchAllCompleteTest() {
 
       /**
       * @tc.name testMatchAllTest0130
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_MATCHALL_TEST_0130
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_MATCHALL_COMPLETE_TEST_0130
        * @tc.desc   Test RegExp[Symbol.matchAll] special unicode characters
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST

@@ -53,7 +53,7 @@ export default function splitTest() {
     describe('Split_Basic', () => {
       /**
        * @tc.name testSplitTest0100
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0100
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0100
        * @tc.desc   Test basic_string_separator
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -66,7 +66,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0101
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0101
        * @tc.desc   Test regex_separator
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -78,7 +78,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0102
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0102
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0102
        * @tc.desc   Test regex_literal_char_class
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -90,7 +90,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0103
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0103
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0103
        * @tc.desc   Test separator_not_found
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -104,7 +104,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0104
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0104
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0104
        * @tc.desc   Test direct_symbol_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -116,7 +116,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0105
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0105
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0105
        * @tc.desc   Test string_split_equals_symbol_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -128,7 +128,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0106
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0106
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0106
        * @tc.desc   Test param_order_equivalent_result
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -144,7 +144,7 @@ export default function splitTest() {
     describe('Special_Chars_And_Escape', () => {
       /**
        * @tc.name testSplitTest0107
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0107
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0107
        * @tc.desc   Test dot_escape
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -156,7 +156,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0108
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0108
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0108
        * @tc.desc   Test char_set_tab_newline
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -168,7 +168,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0109
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0109
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0109
        * @tc.desc   Test backslash_escape
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -180,19 +180,19 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0110
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0110
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0110
        * @tc.desc   Test unicode_char_separator
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
       it('testSplitTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        expect('中文①英文①测试'.split(/①/).join('|')).assertEqual('中文|英文|测试');
+        expect('\u4e2d\u6587\u2460\u82f1\u6587\u2460\u6d4b\u8bd5'.split(/\u2460/).join('|')).assertEqual('\u4e2d\u6587|\u82f1\u6587|\u6d4b\u8bd5');
       });
 
       /**
        * @tc.name testSplitTest0111
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0111
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0111
        * @tc.desc   Test emoji_separator
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -204,7 +204,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0112
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0112
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0112
        * @tc.desc   Test zero_width_char_separator
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -218,7 +218,7 @@ export default function splitTest() {
     describe('Split_Flags', () => {
       /**
        * @tc.name testSplitTest0113
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0113
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0113
        * @tc.desc   Test ignore_case_i
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -230,7 +230,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0114
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0114
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0114
        * @tc.desc   Test ignore_g_behavior_equivalent
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -244,7 +244,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0115
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0115
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0115
        * @tc.desc   Test multiline_m
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -257,7 +257,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0116
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0116
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0116
        * @tc.desc   Test unicode_u_empty_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -269,7 +269,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0117
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0117
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0117
        * @tc.desc   Test sticky_y
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -282,7 +282,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0118
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0118
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0118
        * @tc.desc   Test dotAll_s
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -295,7 +295,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0119
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0119
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0119
        * @tc.desc   Test has_indices_d
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -312,7 +312,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0120
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0120
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0120
        * @tc.desc   Test combined_flags_sample
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -326,7 +326,7 @@ export default function splitTest() {
     describe('Split_Capture_Groups', () => {
       /**
        * @tc.name testSplitTest0121
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0121
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0121
        * @tc.desc   Test single_capture_group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -338,7 +338,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0122
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0122
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0122
        * @tc.desc   Test multi_capture_group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -353,7 +353,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0123
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0123
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0123
        * @tc.desc   Test non_capture_group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -365,7 +365,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0124
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0124
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0124
        * @tc.desc   Test nested_capture_group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -380,7 +380,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0125
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0125
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0125
        * @tc.desc   Test named_capture_group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -393,7 +393,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0126
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0126
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0126
        * @tc.desc   Test capture_group_with_limit
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -406,7 +406,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0127
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0127
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0127
        * @tc.desc   Test capture_group_undefined_case
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -424,7 +424,7 @@ export default function splitTest() {
     describe('Quantifiers', () => {
       /**
        * @tc.name testSplitTest0128
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0128
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0128
        * @tc.desc   Test star_quantifier
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -437,7 +437,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0129
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0129
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0129
        * @tc.desc   Test plus_quantifier
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -449,7 +449,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0130
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0130
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0130
        * @tc.desc   Test optional_quantifier
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -461,7 +461,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0131
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0131
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0131
        * @tc.desc   Test exact_quantifier
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -473,7 +473,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0132
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0132
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0132
        * @tc.desc   Test range_quantifier
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -485,7 +485,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0133
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0133
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0133
        * @tc.desc   Test at_least_quantifier
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -497,7 +497,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0134
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0134
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0134
        * @tc.desc   Test possessive_quantifier_family_not_supported_should_throw
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -535,7 +535,7 @@ export default function splitTest() {
     describe('Boundary_Assertions', () => {
       /**
        * @tc.name testSplitTest0135
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0135
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0135
        * @tc.desc   Test start_anchor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -547,7 +547,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0136
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0136
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0136
        * @tc.desc   Test end_anchor
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -559,7 +559,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0137
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0137
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0137
        * @tc.desc   Test word_boundary
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -575,7 +575,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0138
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0138
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0138
        * @tc.desc   Test non_word_boundary
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -588,7 +588,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0139
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0139
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0139
        * @tc.desc   Test positive_lookahead
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -600,7 +600,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0140
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0140
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0140
        * @tc.desc   Test negative_lookahead
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -612,7 +612,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0141
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0141
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0141
        * @tc.desc   Test positive_lookbehind
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -624,7 +624,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0142
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0142
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0142
        * @tc.desc   Test negative_lookbehind
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -636,7 +636,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0143
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0143
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0143
        * @tc.desc   Test G_assertion
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -651,7 +651,7 @@ export default function splitTest() {
     describe('Limit', () => {
       /**
        * @tc.name testSplitTest0144
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0144
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0144
        * @tc.desc   Test limit_count
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -663,7 +663,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0145
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0145
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0145
        * @tc.desc   Test limit_zero
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -675,7 +675,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0146
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0146
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0146
        * @tc.desc   Test limit_gt_possible
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -687,7 +687,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0147
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0147
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0147
        * @tc.desc   Test limit_negative
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -699,7 +699,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0148
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0148
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0148
        * @tc.desc   Test limit_float
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -711,7 +711,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0149
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0149
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0149
        * @tc.desc   Test limit_string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -723,7 +723,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0150
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0150
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0150
        * @tc.desc   Test limit_infinity
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -735,7 +735,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0151
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0151
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0151
        * @tc.desc   Test limit_minus_infinity
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -747,7 +747,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0152
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0152
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0152
        * @tc.desc   Test limit_nan
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -759,7 +759,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0153
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0153
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0153
        * @tc.desc   Test limit_with_capture_group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -774,7 +774,7 @@ export default function splitTest() {
     describe('Empty_And_Edges', () => {
       /**
        * @tc.name testSplitTest0154
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0154
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0154
        * @tc.desc   Test empty_input
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -788,7 +788,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0155
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0155
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0155
        * @tc.desc   Test empty_match_regex_on_non_empty
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -800,7 +800,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0156
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0156
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0156
        * @tc.desc   Test starts_with_separator
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -812,7 +812,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0157
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0157
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0157
        * @tc.desc   Test ends_with_separator
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -824,7 +824,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0158
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0158
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0158
        * @tc.desc   Test consecutive_separator
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -836,7 +836,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0159
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0159
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0159
        * @tc.desc   Test all_separator
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -848,7 +848,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0160
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0160
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0160
        * @tc.desc   Test empty_string_with_empty_match_regex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -860,7 +860,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0161
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0161
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0161
        * @tc.desc   Test nullable_regex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -875,7 +875,7 @@ export default function splitTest() {
     describe('Split_Complex_Patterns', () => {
       /**
        * @tc.name testSplitTest0162
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0162
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0162
        * @tc.desc   Test alternation
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -887,7 +887,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0163
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0163
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0163
        * @tc.desc   Test char_class
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -899,7 +899,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0164
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0164
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0164
        * @tc.desc   Test negated_char_class
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -911,7 +911,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0165
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0165
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0165
        * @tc.desc   Test predefined_class
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -923,7 +923,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0166
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0166
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0166
        * @tc.desc   Test negative_predefined_class
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -935,7 +935,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0167
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0167
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0167
        * @tc.desc   Test combined_pattern
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -947,7 +947,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0168
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0168
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0168
        * @tc.desc   Test atomic_group
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -966,7 +966,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0169
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0169
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0169
        * @tc.desc   Test unicode_property_escape
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -980,7 +980,7 @@ export default function splitTest() {
     describe('Practical', () => {
       /**
        * @tc.name testSplitTest0170
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0170
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0170
        * @tc.desc   Test multiline_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -992,7 +992,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0171
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0171
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0171
        * @tc.desc   Test tsv_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1004,7 +1004,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0172
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0172
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0172
        * @tc.desc   Test html_div_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1016,7 +1016,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0173
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0173
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0173
        * @tc.desc   Test url_path_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1028,7 +1028,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0174
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0174
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0174
        * @tc.desc   Test datetime_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1040,7 +1040,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0175
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0175
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0175
        * @tc.desc   Test quoted_string_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1052,7 +1052,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0176
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0176
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0176
        * @tc.desc   Test csv_split_complex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1066,7 +1066,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0177
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0177
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0177
        * @tc.desc   Test log_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1078,7 +1078,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0178
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0178
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0178
        * @tc.desc   Test config_kv_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1090,7 +1090,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0179
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0179
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0179
        * @tc.desc   Test windows_path_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1102,7 +1102,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0180
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0180
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0180
        * @tc.desc   Test unix_path_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1116,7 +1116,7 @@ export default function splitTest() {
     describe('Symbol_This_Input_11_12_13_14_15', () => {
       /**
        * @tc.name testSplitTest0181
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0181
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0181
        * @tc.desc   Test subclass_override
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1128,7 +1128,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0182
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0182
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0182
        * @tc.desc   Test subclass_call_super_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1143,7 +1143,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0183
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0183
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0183
        * @tc.desc   Test species_effect
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1156,7 +1156,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0184
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0184
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0184
        * @tc.desc   Test subclass_constructor_behavior
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1171,7 +1171,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0185
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0185
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0185
        * @tc.desc   Test lastIndex_reset_by_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1186,7 +1186,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0186
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0186
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0186
        * @tc.desc   Test lastIndex_change_during_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1200,7 +1200,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0187
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0187
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0187
        * @tc.desc   Test manual_lastIndex_ignored
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1215,7 +1215,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0188
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0188
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0188
        * @tc.desc   Test sticky_lastIndex_behavior
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1229,7 +1229,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0189
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0189
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0189
        * @tc.desc   Test non_regexp_this_throw
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1241,7 +1241,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0190
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0190
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0190
        * @tc.desc   Test undefined_null_this_throw
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1253,7 +1253,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0191
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0191
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0191
        * @tc.desc   Test null_this_throw
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1265,7 +1265,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0192
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0192
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0192
        * @tc.desc   Test regex_like_object_this_throw
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1284,7 +1284,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0193
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0193
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0193
        * @tc.desc   Test custom_splitter_object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1296,7 +1296,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0194
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0194
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0194
        * @tc.desc   Test stateful_custom_splitter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1308,7 +1308,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0195
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0195
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0195
        * @tc.desc   Test custom_splitter_with_limit
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1320,7 +1320,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0196
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0196
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0196
        * @tc.desc   Test validating_splitter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1332,7 +1332,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0197
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0197
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0197
        * @tc.desc   Test custom_splitter_non_array_return
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1345,7 +1345,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0198
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0198
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0198
        * @tc.desc   Test symbol_input_throws
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1357,7 +1357,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0199
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0199
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0199
        * @tc.desc   Test bigint_input
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1369,7 +1369,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0200
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0200
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0200
        * @tc.desc   Test object_to_string_input
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1381,7 +1381,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0201
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0201
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0201
        * @tc.desc   Test symbol_toPrimitive_input
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1393,7 +1393,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0202
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0202
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0202
        * @tc.desc   Test array_input
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1405,7 +1405,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0203
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0203
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0203
        * @tc.desc   Test function_input
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1420,7 +1420,7 @@ export default function splitTest() {
     describe('Extended_16_17_18_19_20', () => {
       /**
        * @tc.name testSplitTest0204
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0204
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0204
        * @tc.desc   Test surrogate_pair_u_vs_non_u
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1435,20 +1435,21 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0205
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0205
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0205
        * @tc.desc   Test emoji_sequence_u
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL1
        */
       it('testSplitTest0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        const out = '👨‍👩‍👧‍👦'.split(/(?:)/u);
+        const family = '\uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66';
+        const out = family.split(/(?:)/u);
         expect(out.length >= 1).assertTrue();
       });
 
       /**
        * @tc.name testSplitTest0206
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0206
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0206
        * @tc.desc   Test combining_char_u
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1465,7 +1466,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0207
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0207
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0207
        * @tc.desc   Test unicode_property_letter
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1488,7 +1489,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0208
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0208
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0208
        * @tc.desc   Test unicode_script_greek
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1511,7 +1512,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0209
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0209
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0209
        * @tc.desc   Test separator_undefined
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1523,7 +1524,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0210
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0210
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0210
        * @tc.desc   Test separator_null
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1535,7 +1536,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0211
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0211
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0211
        * @tc.desc   Test separator_number
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1547,7 +1548,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0212
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0212
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0212
        * @tc.desc   Test separator_plain_object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1559,7 +1560,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0213
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0213
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0213
        * @tc.desc   Test invalid_regex_syntax_should_throw
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1577,7 +1578,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0214
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0214
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0214
        * @tc.desc   Test invalid_flag_combination_should_throw
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1595,7 +1596,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0215
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0215
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0215
        * @tc.desc   Test invalid_unicode_codepoint_should_throw
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1613,7 +1614,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0216
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0216
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0216
        * @tc.desc   Test invalid_lookbehind_syntax_should_throw
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1631,7 +1632,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0217
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0217
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0217
        * @tc.desc   Test very_long_string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1646,7 +1647,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0218
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0218
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0218
        * @tc.desc   Test special_unicode_chars
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1658,7 +1659,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0219
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0219
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0219
        * @tc.desc   Test lookbehind_support_detection
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1676,7 +1677,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0220
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0220
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0220
        * @tc.desc   Test unicode_property_support_detection
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1694,7 +1695,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0221
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0221
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0221
        * @tc.desc   Test dotAll_support_detection
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1712,7 +1713,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0222
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0222
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0222
        * @tc.desc   Test hasIndices_support_detection
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1725,7 +1726,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0223
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0223
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0223
        * @tc.desc   Test engine_diff_empty_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1738,7 +1739,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0224
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0224
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0224
        * @tc.desc   Test csv_simple_parse
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1753,7 +1754,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0225
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0225
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0225
        * @tc.desc   Test csv_complex_parse
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1767,7 +1768,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0226
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0226
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0226
        * @tc.desc   Test log_line_parse
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1781,7 +1782,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0227
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0227
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0227
        * @tc.desc   Test ini_section_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1795,7 +1796,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0228
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0228
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0228
        * @tc.desc   Test markdown_heading_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1809,7 +1810,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0229
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0229
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0229
        * @tc.desc   Test code_statement_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1823,7 +1824,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0230
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0230
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0230
        * @tc.desc   Test url_query_parse
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1837,7 +1838,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0231
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0231
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0231
        * @tc.desc   Test rgba_value_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1851,7 +1852,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0232
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0232
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0232
        * @tc.desc   Test extreme_quantifier
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1865,7 +1866,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0233
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0233
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0233
        * @tc.desc   Test many_capture_groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1880,7 +1881,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0234
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0234
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0234
        * @tc.desc   Test deep_nested_groups
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1895,7 +1896,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0235
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0235
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0235
        * @tc.desc   Test zero_width_match_loop_guard
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1908,7 +1909,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0236
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0236
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0236
        * @tc.desc   Test empty_string_with_empty_regex
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1921,7 +1922,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0237
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0237
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0237
        * @tc.desc   Test limit_equals_one
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1933,7 +1934,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0238
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0238
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0238
        * @tc.desc   Test capture_at_start
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1945,7 +1946,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0239
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0239
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0239
        * @tc.desc   Test capture_at_end
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1957,7 +1958,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0240
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0240
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0240
        * @tc.desc   Test only_capture_split
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1969,7 +1970,7 @@ export default function splitTest() {
 
       /**
        * @tc.name testSplitTest0241
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_SPLIT_TEST_0241
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_0241
        * @tc.desc   Test alt_empty_nonempty
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST

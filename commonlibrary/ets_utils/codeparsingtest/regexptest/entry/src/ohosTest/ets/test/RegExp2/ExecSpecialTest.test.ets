@@ -41,7 +41,7 @@ export default function execSpecialTest() {
   describe('Exec_Special_Pattern_Tests', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec positive lookahead (?=)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function execSpecialTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0101
      * @tc.desc   Test RegExp.prototype.exec negative lookahead (?!)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,14 +66,13 @@ export default function execSpecialTest() {
     it('testExecTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result1 = ExecSpecial.matchNegativeLookahead("foobaz");
       const result2 = ExecSpecial.matchNegativeLookahead("foobar");
-      expect(result1).not().assertEqual(null);
-      expect(result1?.[0]).assertEqual("foo");
+      expect(result1![0]).assertEqual("foo");
       expect(result2).assertEqual(null);
     });
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0102
      * @tc.desc   Test RegExp.prototype.exec positive lookbehind (?<=) when supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -91,7 +90,7 @@ export default function execSpecialTest() {
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIAL_TEST_0103
      * @tc.desc   Test RegExp.prototype.exec negative lookbehind (?<!) when supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

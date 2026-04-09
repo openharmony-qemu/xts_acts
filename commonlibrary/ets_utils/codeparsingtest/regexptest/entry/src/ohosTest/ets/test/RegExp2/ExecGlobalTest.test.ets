@@ -19,7 +19,7 @@ export default function execGlobalTest() {
   describe('Global_Matching_State_Tests', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBAL_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec updates lastIndex for global pattern
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -38,7 +38,7 @@ export default function execGlobalTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBAL_TEST_0101
      * @tc.desc   Test RegExp.prototype.exec traverses multiple matches with g flag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -57,7 +57,7 @@ export default function execGlobalTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBAL_TEST_0102
      * @tc.desc   Test RegExp.prototype.exec sticky y flag requires match at lastIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -68,8 +68,7 @@ export default function execGlobalTest() {
       const str = "foo foo";
       re.lastIndex = 0;
       let result = re.exec(str);
-      expect(result).not().assertEqual(null);
-      expect(result?.index).assertEqual(0);
+      expect(result!.index).assertEqual(0);
 
       re.lastIndex = 1;
       result = re.exec(str);
@@ -78,7 +77,7 @@ export default function execGlobalTest() {
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBAL_TEST_0103
      * @tc.desc   Test RegExp lastIndex resets to 0 on global match failure
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -93,7 +92,7 @@ export default function execGlobalTest() {
 
     /**
      * @tc.name testExecTest0104
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0104
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_GLOBAL_TEST_0104
      * @tc.desc   Test RegExp non-global exec does not advance lastIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

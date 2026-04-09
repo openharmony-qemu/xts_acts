@@ -781,6 +781,6 @@ export function regexpDeleteOverrideRestoresPrototype(): string {
   return regexpDeleteOverrideRestoresPrototypeImpl() as string;
 }
 
-export * from './RegExpSymbols';
+export * from './regexp_symbols';
 
 

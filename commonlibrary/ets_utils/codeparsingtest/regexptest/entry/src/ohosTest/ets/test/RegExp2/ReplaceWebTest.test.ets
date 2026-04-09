@@ -39,7 +39,7 @@ export default function replaceWebTest() {
     describe('Web_Compatibility_Tests', () => {
       /**
        * @tc.name testReplaceTest0100
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0100
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0100
        * @tc.desc   Test Detect_Lookbehind_Support
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -52,7 +52,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0101
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0101
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0101
        * @tc.desc   Test Detect_Unicode_Property_Support
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -65,7 +65,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0102
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0102
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0102
        * @tc.desc   Test Detect_dotAll_Support
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -78,7 +78,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0103
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0103
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0103
        * @tc.desc   Test Detect_hasIndices_Support
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -91,7 +91,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0104
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0104
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0104
        * @tc.desc   Test Different_Engine_Behavior
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -107,7 +107,7 @@ export default function replaceWebTest() {
     describe('RegExp_Subclass_Tests', () => {
       /**
        * @tc.name testReplaceTest0105
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0105
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0105
        * @tc.desc   Test Override_Symbol_replace
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -119,7 +119,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0106
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0106
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0106
        * @tc.desc   Test Call_Super_Method
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -131,7 +131,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0107
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0107
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0107
        * @tc.desc   Test Symbol_species_Impact
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -145,7 +145,7 @@ export default function replaceWebTest() {
     describe('Performance_Related_Scenarios', () => {
       /**
        * @tc.name testReplaceTest0108
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0108
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0108
        * @tc.desc   Test Multiple_Replace_Operations
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -157,7 +157,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0109
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0109
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0109
        * @tc.desc   Test Complex_Regex_Global_Replace
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0110
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0110
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0110
        * @tc.desc   Test Complex_Calculation_In_Function
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -183,7 +183,7 @@ export default function replaceWebTest() {
     describe('Practical_Application_Scenarios', () => {
       /**
        * @tc.name testReplaceTest0111
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0111
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0111
        * @tc.desc   Test HTML_Escape
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -196,7 +196,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0112
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0112
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0112
        * @tc.desc   Test HTML_Unescape
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -209,7 +209,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0113
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0113
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0113
        * @tc.desc   Test CamelCase_to_Hyphen_Case
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -221,7 +221,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0114
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0114
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0114
        * @tc.desc   Test Hyphen_Case_to_CamelCase
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -233,7 +233,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0115
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0115
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0115
        * @tc.desc   Test Phone_Number_Formatting
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -245,7 +245,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0116
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0116
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0116
        * @tc.desc   Test Date_Format_Conversion
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -259,7 +259,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0117
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0117
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0117
        * @tc.desc   Test URL_Parameter_Extraction_And_Replace
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -273,7 +273,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0118
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0118
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0118
        * @tc.desc   Test Markdown_Format_Conversion
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -287,7 +287,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0119
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0119
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0119
        * @tc.desc   Test SQL_Injection_Protection
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -299,7 +299,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0120
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0120
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0120
        * @tc.desc   Test File_Path_Normalization
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -311,7 +311,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0121
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0121
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0121
        * @tc.desc   Test Currency_Formatting
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -323,7 +323,7 @@ export default function replaceWebTest() {
 
       /**
        * @tc.name testReplaceTest0122
-       * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_REPLACE_TEST_0122
+       * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_WEB_TEST_0122
        * @tc.desc   Test Sensitive_Information_Masking
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST

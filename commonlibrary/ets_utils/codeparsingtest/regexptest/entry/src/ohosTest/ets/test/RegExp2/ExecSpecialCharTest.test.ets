@@ -41,7 +41,7 @@ export default function execSpecialCharTest() {
   describe('Special_Character_Tests', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec escaped dot matches literal period
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -55,7 +55,7 @@ export default function execSpecialCharTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0101
      * @tc.desc   Test RegExp.prototype.exec tab and newline escape sequences
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -70,7 +70,7 @@ export default function execSpecialCharTest() {
 
     /**
      * @tc.name testExecTest0102
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0102
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0102
      * @tc.desc   Test RegExp.prototype.exec Unicode Han character class range
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -78,13 +78,12 @@ export default function execSpecialCharTest() {
      */
     it('testExecTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ExecSpecialChar.execChineseRange("hello世界world");
-      expect(result).not().assertEqual(null);
-      expect(result?.[0]).assertEqual("世界");
+      expect(result![0]).assertEqual("世界");
     });
 
     /**
      * @tc.name testExecTest0103
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0103
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_SPECIALCHAR_TEST_0103
      * @tc.desc   Test RegExp.prototype.exec Unicode property escape \\p{Emoji} with u flag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

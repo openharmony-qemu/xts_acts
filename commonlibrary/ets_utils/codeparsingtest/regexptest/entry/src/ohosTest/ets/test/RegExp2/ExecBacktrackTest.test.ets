@@ -31,7 +31,7 @@ export default function execBacktrackTest() {
   describe('Backtracking_Complex_Tests', () => {
     /**
      * @tc.name testExecTest0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BACKTRACK_TEST_0100
      * @tc.desc   Test RegExp.prototype.exec alternation capture a(b|c)d
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -48,7 +48,7 @@ export default function execBacktrackTest() {
 
     /**
      * @tc.name testExecTest0101
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BUILTINS_REGEXP_EXEC_TEST_0101
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_BACKTRACK_TEST_0101
      * @tc.desc   Test RegExp.prototype.exec nested letter-and-digit group
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -56,8 +56,7 @@ export default function execBacktrackTest() {
      */
     it('testExecTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const result = ExecBacktrack.matchNestedPattern("test123");
-      expect(result).not().assertEqual(null);
-      expect(result?.[1]).assertEqual("test123");
+      expect(result![1]).assertEqual("test123");
     });
   });
 }
