@@ -112,7 +112,7 @@ export default function UIUtilsMakeBindingTest() {
       await (btn_true?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      strJsonNew1 = inspector.getInspectorByKey('MutableVariableText');
+      let strJsonNew1 = inspector.getInspectorByKey('MutableVariableText');
       console.info(' UIUtilsMakeBindingTest_static_002 MutableVariableText is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
         .getElement('$attrs')
         .getString('content')));
