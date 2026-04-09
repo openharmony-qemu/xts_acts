@@ -15,23 +15,10 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/kaihong/.ohos/config/openharmony/default_ace_ets_module_inspector_static_LX2F1hlJ_nH1JbsNk548GjpaCJ8mRTFSKG2g2qMk1BY=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001BEEFC7A6113C047CF40C051D0E2599C4F177330DF0947D55968D1391E35AB93FDF03BD7EB477894",
-          "profile": "C:/Users/kaihong/.ohos/config/openharmony/default_ace_ets_module_inspector_static_LX2F1hlJ_nH1JbsNk548GjpaCJ8mRTFSKG2g2qMk1BY=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/kaihong/.ohos/config/openharmony/default_ace_ets_module_inspector_static_LX2F1hlJ_nH1JbsNk548GjpaCJ8mRTFSKG2g2qMk1BY=.p12",
-          "storePassword": "0000001B26D20117EEA337976B8BAC6C2CB3A22BB19B3620089E4BC6F49AF82C23D6810186A57B0BC3B00F"
-        }
-      }
     ],
     "products": [
       {
         "name": "default",
-        "signingConfig": "default",
         "compatibleSdkVersion": "23",
         "compileSdkVersion": "26",
         "arkTSVersion": "1.2",
