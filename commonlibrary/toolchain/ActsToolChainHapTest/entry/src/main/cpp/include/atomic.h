@@ -362,33 +362,34 @@ static inline int A_Clz64BitScanFallback(uint64_t x)
 {
     uint32_t y;
     int r;
-    static const int kClzHalfByteBits = ATOMIC_K_SHIFT8;
+    static const int kProbeShift8 = ATOMIC_K_SHIFT32 - ATOMIC_K_SHIFT8;
+    static const int kProbeShift4 = ATOMIC_K_SHIFT32 - ATOMIC_K_SHIFT4;
+    static const int kProbeShift2 = ATOMIC_K_SHIFT32 - ATOMIC_K_SHIFT2;
+    static const int kProbeShift1 = ATOMIC_K_SHIFT31;
     if (x >> ATOMIC_K_SHIFT32) {
-        y = x >> ATOMIC_K_SHIFT32, r = 0;
+        y = x >> ATOMIC_K_SHIFT32;
+        r = 0;
     } else {
-        y = x, r = ATOMIC_K_SHIFT32;
+        y = x;
+        r = ATOMIC_K_SHIFT32;
     }
-    if (y >> ATOMIC_K_SHIFT16) {
-        y >>= ATOMIC_K_SHIFT16;
-    } else {
+    if (!(y >> ATOMIC_K_SHIFT16)) {
         r |= ATOMIC_K_SHIFT16;
+        y <<= ATOMIC_K_SHIFT16;
     }
-    if (y >> kClzHalfByteBits) {
-        y >>= kClzHalfByteBits;
-    } else {
-        r |= kClzHalfByteBits;
+    if (!(y >> kProbeShift8)) {
+        r |= ATOMIC_K_SHIFT8;
+        y <<= ATOMIC_K_SHIFT8;
     }
-    if (y >> ATOMIC_K_SHIFT4) {
-        y >>= ATOMIC_K_SHIFT4;
-    } else {
+    if (!(y >> kProbeShift4)) {
         r |= ATOMIC_K_SHIFT4;
+        y <<= ATOMIC_K_SHIFT4;
     }
-    if (y >> ATOMIC_K_SHIFT2) {
-        y >>= ATOMIC_K_SHIFT2;
-    } else {
+    if (!(y >> kProbeShift2)) {
         r |= ATOMIC_K_SHIFT2;
+        y <<= ATOMIC_K_SHIFT2;
     }
-    return r | !(y >> ATOMIC_K_SHIFT1);
+    return (!(y >> kProbeShift1)) ? (r | ATOMIC_K_SHIFT1) : r;
 }
 
 static inline int A_CLZ64(uint64_t x)

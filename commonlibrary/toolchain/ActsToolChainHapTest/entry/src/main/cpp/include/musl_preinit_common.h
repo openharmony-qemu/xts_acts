@@ -142,13 +142,7 @@ __attribute__((always_inline)) inline volatile const struct MallocDispatchType*
     if (GetCustomHookFlag()) {
         return ret;
     }
-    if (!GetGlobalHookFlag()) {
-        return NULL;
-    }
-    if (!GetHookFlag()) {
-        return NULL;
-    }
-    return ret;
+    return (GetGlobalHookFlag() && GetHookFlag()) ? ret : NULL;
 }
 #endif
 

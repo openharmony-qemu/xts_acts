@@ -31,32 +31,39 @@ constexpr int K_INET_PTON_SUCCESS = 1;
 constexpr int K_INET_PTON_REJECT = 0;
 constexpr int K_IPV6_BYTE_PAIR_SHIFT = 8;
 constexpr int K_IPV6_PAIR_BYTE_STRIDE = 2;
+constexpr int K_IPV6_PAIR_LOW_BYTE_OFFSET = 1;
+constexpr int K_IPV6_WORD_LOOP_START = 1;
+constexpr int K_HEX_WRITE_OFFSET_AFTER_COLON = 1;
 constexpr char K_HEX_DIGITS[] = "0123456789abcdef";
 constexpr unsigned K_HEX_NIBBLE_MASK = 0xFU;
 constexpr unsigned K_HEX_SHIFT_12 = 12U;
 constexpr unsigned K_HEX_SHIFT_8 = 8U;
 constexpr unsigned K_HEX_SHIFT_4 = 4U;
+constexpr int K_HEX_IDX_0 = 0;
+constexpr int K_HEX_IDX_1 = 1;
+constexpr int K_HEX_IDX_2 = 2;
+constexpr int K_HEX_IDX_3 = 3;
 constexpr int K_IPV6_TXT_TERMINATOR_INDEX = K_IPV6_COLON_FIELD_STRIDE * K_IPV6_WORD_COUNT - 1;
 } // namespace
 
 static void WriteWordHex(char* dst, unsigned value)
 {
-    dst[0] = K_HEX_DIGITS[(value >> K_HEX_SHIFT_12) & K_HEX_NIBBLE_MASK];
-    dst[1] = K_HEX_DIGITS[(value >> K_HEX_SHIFT_8) & K_HEX_NIBBLE_MASK];
-    dst[2] = K_HEX_DIGITS[(value >> K_HEX_SHIFT_4) & K_HEX_NIBBLE_MASK];
-    dst[3] = K_HEX_DIGITS[value & K_HEX_NIBBLE_MASK];
+    dst[K_HEX_IDX_0] = K_HEX_DIGITS[(value >> K_HEX_SHIFT_12) & K_HEX_NIBBLE_MASK];
+    dst[K_HEX_IDX_1] = K_HEX_DIGITS[(value >> K_HEX_SHIFT_8) & K_HEX_NIBBLE_MASK];
+    dst[K_HEX_IDX_2] = K_HEX_DIGITS[(value >> K_HEX_SHIFT_4) & K_HEX_NIBBLE_MASK];
+    dst[K_HEX_IDX_3] = K_HEX_DIGITS[value & K_HEX_NIBBLE_MASK];
 }
 
 static void Txt(char* s, unsigned char* buf)
 {
     unsigned first = (buf[0] << K_IPV6_BYTE_PAIR_SHIFT) | buf[1];
     WriteWordHex(s, first);
-    for (int i = 1; i < K_IPV6_WORD_COUNT; i++) {
+    for (int i = K_IPV6_WORD_LOOP_START; i < K_IPV6_WORD_COUNT; i++) {
         int pos = K_IPV6_COLON_FIELD_STRIDE * i - 1;
         s[pos] = ':';
-        unsigned value =
-            (buf[K_IPV6_PAIR_BYTE_STRIDE * i] << K_IPV6_BYTE_PAIR_SHIFT) | (buf[K_IPV6_PAIR_BYTE_STRIDE * i + 1]);
-        WriteWordHex(s + pos + 1, value);
+        unsigned value = (buf[K_IPV6_PAIR_BYTE_STRIDE * i] << K_IPV6_BYTE_PAIR_SHIFT) |
+                         (buf[K_IPV6_PAIR_BYTE_STRIDE * i + K_IPV6_PAIR_LOW_BYTE_OFFSET]);
+        WriteWordHex(s + pos + K_HEX_WRITE_OFFSET_AFTER_COLON, value);
     }
     s[K_IPV6_TXT_TERMINATOR_INDEX] = '\0';
 }

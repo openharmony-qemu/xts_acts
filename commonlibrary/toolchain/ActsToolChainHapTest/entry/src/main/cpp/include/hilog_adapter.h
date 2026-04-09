@@ -34,12 +34,15 @@ HIDDEN void InitHilogSocketFd();
 HIDDEN int HiLogAdapterPrint(LogType type, LogLevel level, unsigned int domain, const char* tag, const char* fmt, ...)
     __attribute__((__format__(os_log, 5, 6)));
 
-HIDDEN int HiLogAdapterPrintArgs(const LogType type,
-                                 const LogLevel level,
-                                 const unsigned int domain,
-                                 const char* tag,
-                                 const char* fmt,
-                                 va_list ap);
+typedef struct HiLogAdapterPrintArgsParams {
+    LogType type;
+    LogLevel level;
+    unsigned int domain;
+    const char* tag;
+    const char* fmt;
+} HiLogAdapterPrintArgsParams;
+
+HIDDEN int HiLogAdapterPrintArgs(const HiLogAdapterPrintArgsParams* params, va_list ap);
 HIDDEN int
     HiLogAdapterVaList(LogType type, LogLevel level, unsigned int domain, const char* tag, const char* fmt, va_list ap);
 
