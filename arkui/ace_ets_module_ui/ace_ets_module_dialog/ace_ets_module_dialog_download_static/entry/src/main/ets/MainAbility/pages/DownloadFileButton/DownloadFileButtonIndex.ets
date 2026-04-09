@@ -23,7 +23,9 @@ import {
   Color,
   Text,
   TextAlign,
-  FlexAlign
+  FlexAlign，
+  FontStyle，
+  FontWeight
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
@@ -48,6 +50,8 @@ struct DownloadFileButtonIndex {
     iconSize: '16vp',
     layoutDirection: DownloadLayoutDirection.HORIZONTAL,
     fontSize: '12fp',
+    fontStyle: FontStyle.Normal,
+    fontWeight: FontWeight.Medium,
     fontColor: Color.Black,
     iconColor: '#ffffffff',
     textIconSpace: '4vp'
