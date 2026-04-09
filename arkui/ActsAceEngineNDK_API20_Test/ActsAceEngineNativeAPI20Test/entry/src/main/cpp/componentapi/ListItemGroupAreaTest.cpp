@@ -14,6 +14,7 @@
  */
 #include "ListItemGroupAreaTest.h"
 #include "component/Component.h"
+#define PARAM_0_POINT_1 0.1
 #define PARAM_0_POINT_2 0.2
 #define PARAM_0_POINT_3 0.3
 #define PARAM_0_POINT_8 0.8
@@ -36,26 +37,36 @@ void OnScrollPositionChanged(ArkUI_NodeEvent *event)
     int endArea = eventData->data[PARAM_5].i32;
 
     if (startArea == ARKUI_LIST_ITEM_GROUP_AREA_OUTSIDE) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "startArea", "startArea--->0", g_areaOutsideResult);
         g_areaOutsideResult = 1;
     } else if (startArea == ARKUI_LIST_ITEM_SWIPE_AREA_NONE) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "startArea", "startArea--->1", g_areaOutsideResult);
         g_areaNoneResult = 1;
     } else if (startArea == ARKUI_LIST_ITEM_SWIPE_AREA_ITEM) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "startArea", "startArea--->2", g_areaOutsideResult);
         g_areaItemResult = 1;
     } else if (startArea == ARKUI_LIST_ITEM_SWIPE_AREA_HEADER) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "startArea", "startArea--->3", g_areaOutsideResult);
         g_areaHeaderResult = 1;
     } else if (startArea == ARKUI_LIST_ITEM_SWIPE_AREA_FOOTER) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "startArea", "startArea--->4", g_areaOutsideResult);
         g_areaFooterResult = 1;
     }
 
     if (endArea == ARKUI_LIST_ITEM_GROUP_AREA_OUTSIDE) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "endArea", "endArea--->0", g_areaOutsideResult);
         g_areaOutsideResult = 1;
     } else if (endArea == ARKUI_LIST_ITEM_SWIPE_AREA_NONE) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "endArea", "endArea--->1", g_areaOutsideResult);
         g_areaNoneResult = 1;
     } else if (endArea == ARKUI_LIST_ITEM_SWIPE_AREA_ITEM) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "endArea", "endArea--->2", g_areaOutsideResult);
         g_areaItemResult = 1;
     } else if (endArea == ARKUI_LIST_ITEM_SWIPE_AREA_HEADER) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "endArea", "endArea--->3", g_areaOutsideResult);
         g_areaHeaderResult = 1;
     } else if (endArea == ARKUI_LIST_ITEM_SWIPE_AREA_FOOTER) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "endArea", "endArea--->4", g_areaOutsideResult);
         g_areaFooterResult = 1;
     }
 }
@@ -74,7 +85,7 @@ void  CreateListComponent(XC list)
     for (int i = 0; i < PARAM_4; i++) {
         XC item = XC(ARKUI_NODE_LIST_ITEM);
         item.SetPercentWidth(1.0);
-        item.SetPercentHeight(PARAM_0_POINT_2);
+        item.SetPercentHeight(PARAM_0_POINT_1);
         std::shared_ptr<XC> ptr = std::make_shared<XC>(item);
         list.AddChild(ptr);
     }
@@ -112,7 +123,7 @@ void CreateListGroupComponent(XC group1)
     for (int i = 0; i < PARAM_3; i++) {
         XC item = XC(ARKUI_NODE_LIST_ITEM);
         item.SetPercentWidth(1.0);
-        item.SetPercentHeight(PARAM_0_POINT_2);
+        item.SetPercentHeight(PARAM_0_POINT_1);
         std::shared_ptr<XC> ptr = std::make_shared<XC>(item);
         group1.AddChild(ptr);
     }
@@ -150,7 +161,7 @@ void CreateListGroup2Component(XC group2)
     for (int i = 0; i < PARAM_3; i++) {
         XC item = XC(ARKUI_NODE_LIST_ITEM);
         item.SetPercentWidth(1.0);
-        item.SetPercentHeight(PARAM_0_POINT_2);
+        item.SetPercentHeight(PARAM_0_POINT_1);
         std::shared_ptr<XC> ptr = std::make_shared<XC>(item);
         group2.AddChild(ptr);
     }
@@ -188,7 +199,7 @@ void CreateListGroup3Component(XC group3)
     for (int i = 0; i < PARAM_3; i++) {
         XC item = XC(ARKUI_NODE_LIST_ITEM);
         item.SetPercentWidth(1.0);
-        item.SetPercentHeight(PARAM_0_POINT_2);
+        item.SetPercentHeight(PARAM_0_POINT_1);
         std::shared_ptr<XC> ptr = std::make_shared<XC>(item);
         group3.AddChild(ptr);
     }
