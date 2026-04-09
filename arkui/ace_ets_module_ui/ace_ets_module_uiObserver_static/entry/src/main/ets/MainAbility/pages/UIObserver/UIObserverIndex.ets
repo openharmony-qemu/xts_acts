@@ -15,7 +15,7 @@
  */
 import { Entry, Component, Column, Text, List, ListItem, Button } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
-import { Router, UIObserver } from '@ohos.arkui.UIContext';
+import { Router, UIObserver, NodeRenderState } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -42,7 +42,7 @@ struct UIObserverIndex {
       this.renderStateInfo = 'IN=' + renderInVal + ',OUT=' + renderOutVal;
       AppStorage.setOrCreate<string>('nodeRenderStateValues', this.renderStateInfo);
 
-      uiObserver.onNodeRenderState('observedTarget', (state: int): void => {
+      uiObserver.onNodeRenderState('observedTarget', (state: NodeRenderState, node?: FrameNode): void => {
         console.info('[ARKUI_NEW] NodeRenderState changed: ' + state);
         AppStorage.setOrCreate<string>('nodeRenderStateCallback', 'triggered:' + state);
       });
