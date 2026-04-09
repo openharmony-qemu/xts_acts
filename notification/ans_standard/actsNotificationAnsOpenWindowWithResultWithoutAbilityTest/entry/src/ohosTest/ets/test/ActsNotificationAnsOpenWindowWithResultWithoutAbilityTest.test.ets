@@ -38,15 +38,15 @@ export default function ActsNotificationAnsOpenWindowWithResultWithoutAbilityTes
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_openWindow_WithResult_0007
-     * @tc.number Sub_Notification_Ans_openWindow_WithResult_0007
+     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_0400
+     * @tc.number SUB_Notification_Ans_openWindow_WithResult_0400
      * @tc.desc   [openSubscriptionSettingsWithResult] The NotificationSubscriberExtensionAbility of an app does not implement the openSubscriptionSettingsWithResult API, and error 1600023 is reported.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Sub_Notification_Ans_openWindow_WithResult_0007', Level.LEVEL1, async (done: Function) => {
-      let testNum: string = 'Sub_Notification_Ans_openWindow_WithResult_0007'
+    it('SUB_Notification_Ans_openWindow_WithResult_0400', Level.LEVEL1, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0400'
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
