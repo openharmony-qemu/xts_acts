@@ -959,8 +959,7 @@ export default function inputMethodTest() {
                 top: 607,
                 width: 720,
                 height: 601,
-                displayId: 1,
-                userId: 100
+                displayId: 1
             }
             try {
                 console.info('====>Sub_Misc_inputMethod_inputWindowInfo_static_0201 inputWindowInfo: ' + JSON.stringify(inputWindowInfo));
@@ -970,7 +969,6 @@ export default function inputMethodTest() {
                 expect(inputWindowInfo.width).assertEqual(720)
                 expect(inputWindowInfo.height).assertEqual(601)
                 expect(inputWindowInfo.displayId).assertEqual(1)
-                expect(inputWindowInfo.userId).assertEqual(100);
                 done();
             } catch (err) {
                 console.info('====>Sub_Misc_inputMethod_inputWindowInfo_static_0201 fail: ' + JSON.stringify(err));
