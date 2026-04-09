@@ -457,5 +457,20 @@ export default function CameraFunctionTest() {
       expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
       console.info(TAG, testName, res);
     });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_INPUT_OPEN_CONCURRENT_CAMERAS_ERR_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_INPUT_OPEN_CONCURRENT_CAMERAS_ERR_0100
+     * @tc.desc     OH_CameraInput_OpenConcurrentCameras - CAMERA_CONFLICT_CAMERA
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_INPUT_OPEN_CONCURRENT_CAMERAS_ERR_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.OHCameraInputOpenConcurrentCamerasErr(1);
+      console.info(TAG, result);
+      expect(result).assertEqual(7400107);
+    });
+    
   })
 }
