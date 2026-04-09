@@ -4258,13 +4258,13 @@ export default function audioCapturer() {
     })
 
     /**
-    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0100
-    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0100
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0100
     * @tc.desc   setIndependentAudioSessionStrategy--0x00000001--VOIP_PRIVACY_TYPE_PUBLIC
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -4299,14 +4299,14 @@ export default function audioCapturer() {
     })
 
     /**
-    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0200
-    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0200
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0200
     * @tc.desc   setIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -4339,14 +4339,14 @@ export default function audioCapturer() {
     })
 
     /**
-    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0300
-    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0300
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0300
     * @tc.desc   setIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -4379,14 +4379,14 @@ export default function audioCapturer() {
     })
 
     /**
-    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0400
-    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0400
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0400
     * @tc.desc   setIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -4419,14 +4419,14 @@ export default function audioCapturer() {
     })
 
     /**
-    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0500
-    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0500
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0500
     * @tc.desc   setIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -4459,14 +4459,14 @@ export default function audioCapturer() {
     })
 
     /**
-    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICEREPEATED_STATIC_0100
-    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICEREPEATED_STATIC_0100
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICEREPEATED_STATIC_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICEREPEATED_STATIC_0100
     * @tc.desc   setIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGYVOICEREPEATED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURESETINDEPENDENTAUDIOSESSIONSTRATEGYVOICEREPEATED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
