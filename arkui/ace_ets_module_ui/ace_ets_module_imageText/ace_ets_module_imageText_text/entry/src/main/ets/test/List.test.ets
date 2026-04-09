@@ -46,6 +46,8 @@ import SpanPageTest from './SpanTest/SpanPageTest.test';
 import SpanTextShadowTest from './SpanTest/SpanTextShadowTest.test';
 import SpanUIJsunitTest from './SpanTest/SpanUIJsunitTest.test';
 import SpanPropertiesNullUndefinedTest from './SpanTest/SpanPropertiesNullUndefinedTest.test';
+import SpanFontConfigsTest from './SpanTest/SpanFontConfigsTest.test';
+import SpanFontWeightTest from './SpanTest/SpanFontWeightTest.test';
 
 import SymbolSpanApi1Test from './SymbolSpanTest/SymbolSpanApi1Test.test';
 import SymbolSpanApi2Test from './SymbolSpanTest/SymbolSpanApi2Test.test';
@@ -180,6 +182,8 @@ export default function testsuite() {
   SpanTextShadowTest()
   SpanUIJsunitTest()
   SpanPropertiesNullUndefinedTest()
+  SpanFontConfigsTest()
+  SpanFontWeightTest()
   // SymbolSpanTest
   SymbolSpanApi1Test()
   SymbolSpanApi2Test()
