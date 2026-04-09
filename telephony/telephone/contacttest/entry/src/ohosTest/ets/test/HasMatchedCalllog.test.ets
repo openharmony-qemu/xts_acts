@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,14 +16,14 @@
 import { describe, beforeAll, it, expect, Level, Size, TestType } from '@ohos/hypium'
 import { BusinessError } from '@ohos.base';
 import contact from '@ohos.contact';
-import abilityDelegatorRegistry from '@ohos.app.abilityDelegatorRegistry';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 
-function sleep (time:number = 66): Promise<void> {
+function sleep (ms :number = 66): Promise<void> {
   return new Promise((resolve) => {
-    setTimeout(()=>{
+    setTimeout(() => {
       resolve();
       }, ms)
   })
@@ -49,7 +49,6 @@ async function getPermissions() {
 
 export default function HasMatchedCallLogTest() {
     describe('HasMatchedCallLogTest', async (done: Function) => {
-
     beforeAll(async (done: Function) => {
       console.info("HasMatchedCallLogTest beforeAll case");
       await getPermissions();
@@ -70,16 +69,16 @@ export default function HasMatchedCallLogTest() {
 
       try {
         let context: Context = AppStorage.get('context') as Context;
-        let phoneNumber = '13800000000';
+        let phoneNumber = "13800000000";
         let minDuration = 10;
         let withinTime = 400;
         let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration, withinTime);
-        console.info(`${caseName} result ${result}`);
-        expect(typepof result == 'boolean').assertTrue();
+        console.info(`${caseName} result: ${result}`);
+        expect(typepof result === 'boolean').assertTrue();
         done();
       } catch (error) {
         console.info(`${caseName} catch error ${JSON.stringify(error)}`);
-        expect().assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -87,7 +86,7 @@ export default function HasMatchedCallLogTest() {
     /**
      * @tc.name   testHasMatchedCallLog002
      * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_002
-     * @tc.desc   Test hasMatchedCallLog with all parameters
+     * @tc.desc   Test hasMatchedCallLog without optional withinTime parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -98,16 +97,16 @@ export default function HasMatchedCallLogTest() {
 
       try {
         let context: Context = AppStorage.get('context') as Context;
-        let phoneNumber = '13800000000';
+        let phoneNumber = "13800000000";
         let minDuration = 10;
 
         let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration, 86400);
-        console.info(`${caseName} result ${result}`);
-        expect(typepof result == 'boolean').assertTrue();
+        console.info(`${caseName} result: ${result}`);
+        expect(typepof result === 'boolean').assertTrue();
         done();
       } catch (error) {
         console.info(`${caseName} catch error ${JSON.stringify(error)}`);
-        expect().assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -115,7 +114,7 @@ export default function HasMatchedCallLogTest() {
     /**
      * @tc.name   testHasMatchedCallLog003
      * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_003
-     * @tc.desc   Test hasMatchedCallLog with all parameters
+     * @tc.desc   Test hasMatchedCallLog with empty phoneNumber
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -134,7 +133,7 @@ export default function HasMatchedCallLogTest() {
         done();
       } catch (error) {
         console.info(`${caseName} catch error ${JSON.stringify(error)}`);
-        expect(error.code == 16700002).assertTrue();
+        expect(error.code === 16700002).assertTrue();
         done();
       }
     });
@@ -142,7 +141,7 @@ export default function HasMatchedCallLogTest() {
     /**
      * @tc.name   testHasMatchedCallLog004
      * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_004
-     * @tc.desc   Test hasMatchedCallLog with all parameters
+     * @tc.desc   Test hasMatchedCallLog with invalid minDuration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -153,7 +152,7 @@ export default function HasMatchedCallLogTest() {
 
       try {
         let context: Context = AppStorage.get('context') as Context;
-        let phoneNumber = '13800000000';
+        let phoneNumber = "13800000000";
 
         let result = await contact.hasMatchedCallLog(context, phoneNumber, null);
         console.info(`${caseName} should throw error but not`);
@@ -161,15 +160,15 @@ export default function HasMatchedCallLogTest() {
         done();
       } catch (error) {
         console.info(`${caseName} catch error ${JSON.stringify(error)}`);
-        expect(error.code == 16700002).assertTrue();
+        expect(error.code === 16700002).assertTrue();
         done();
       }
     });
 
     /**
      * @tc.name   testHasMatchedCallLog005
-     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_004
-     * @tc.desc   Test hasMatchedCallLog with all parameters
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_005
+     * @tc.desc   Test hasMatchedCallLog with invalid withinTime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -180,7 +179,7 @@ export default function HasMatchedCallLogTest() {
 
       try {
         let context: Context = AppStorage.get('context') as Context;
-        let phoneNumber = '13800000000';
+        let phoneNumber = "13800000000";
         let minDuration = 10;
 
         let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration, null);
@@ -189,7 +188,7 @@ export default function HasMatchedCallLogTest() {
         done();
       } catch (error) {
         console.info(`${caseName} catch error ${JSON.stringify(error)}`);
-        expect(error.code == 16700002).assertTrue();
+        expect(error.code === 16700002).assertTrue();
         done();
       }
     });
