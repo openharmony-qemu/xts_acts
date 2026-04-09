@@ -589,8 +589,8 @@ static OH_Huks_Result PerformAesDecryptAndAbort(const struct OH_Huks_Blob* keyAl
 }
 
 static OH_Huks_Result InitAes0200GenParamSet(struct Aes0200ParamSets* paramSets,
-                                              struct OH_Huks_Param* genParams,
-                                              uint32_t genParamCount)
+                                             struct OH_Huks_Param* genParams,
+                                             uint32_t genParamCount)
 {
     return InitParamSet(&paramSets->genParamSet, genParams, genParamCount);
 }
@@ -608,15 +608,15 @@ static OH_Huks_Result GenerateAes0200Key(const struct OH_Huks_Blob* keyAlias,
 }
 
 static OH_Huks_Result InitAes0200EncryptParamSet(struct Aes0200ParamSets* paramSets,
-                                                  struct OH_Huks_Param* encryptParams,
-                                                  uint32_t encryptParamCount)
+                                                 struct OH_Huks_Param* encryptParams,
+                                                 uint32_t encryptParamCount)
 {
     return InitParamSet(&paramSets->encryptParamSet, encryptParams, encryptParamCount);
 }
 
 static OH_Huks_Result InitAes0200DecryptParamSet(struct Aes0200ParamSets* paramSets,
-                                                  struct OH_Huks_Param* decryptParams,
-                                                  uint32_t decryptParamCount)
+                                                 struct OH_Huks_Param* decryptParams,
+                                                 uint32_t decryptParamCount)
 {
     return InitParamSet(&paramSets->decryptParamSet, decryptParams, decryptParamCount);
 }
@@ -625,7 +625,7 @@ static OH_Huks_Result InitAndGenerateAes0200Key(const struct OH_Huks_Blob* keyAl
                                                  struct Aes0200ParamSets* paramSets)
 {
     OH_Huks_Result ret = InitAes0200GenParamSet(paramSets, g_genParams019,
-                                                 sizeof(g_genParams019) / sizeof(OH_Huks_Param));
+        sizeof(g_genParams019) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "[AES_0200] InitParamSet(gen) failed, errorCode=%{public}d", ret.errorCode);
         return ret;
@@ -645,7 +645,7 @@ static OH_Huks_Result PerformAes0200Encryption(const struct OH_Huks_Blob* keyAli
                                                 struct OH_Huks_Blob* cipherText)
 {
     OH_Huks_Result ret = InitAes0200EncryptParamSet(paramSets, g_encryptParams019,
-                                                     sizeof(g_encryptParams019) / sizeof(OH_Huks_Param));
+        sizeof(g_encryptParams019) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "[AES_0200] InitParamSet(encrypt) failed, errorCode=%{public}d", ret.errorCode);
         return ret;
@@ -660,7 +660,7 @@ static OH_Huks_Result PerformAes0200DecryptAbort(const struct OH_Huks_Blob* keyA
                                                   const struct OH_Huks_Blob* cipherText)
 {
     OH_Huks_Result ret = InitAes0200DecryptParamSet(paramSets, g_decryptParams019,
-                                                     sizeof(g_decryptParams019) / sizeof(OH_Huks_Param));
+        sizeof(g_decryptParams019) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "[AES_0200] InitParamSet(decrypt) failed, errorCode=%{public}d", ret.errorCode);
         return ret;
