@@ -39,13 +39,13 @@ export default function ClientAuthenticationHandlerTestThree() {
     })
     /**
      * @tc.name   testClientAuthenticationHandlerConfirmStatic003
-     * @tc.number SUB_ACE_WEB_CLIENTAUTHTICATIONHANDLERCONFIRM_CREDENTIALTYPE_API_00123
+     * @tc.number SUB_ACE_WEB_CLIENTAUTHTICATIONHANDLERCONFIRM_CREDENTIALTYPE_API_25141101
      * @tc.desc   test clientAuthenticationHandler confirm string wrong ssl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testClientAuthenticationHandlerConfirmStatic003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testClientAuthenticationHandlerConfirmStatic003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitClientAuthenticationHandlerConfirm003', 10);
       await Utils.msSleep(2000);
       Utils.registerEvent('emitClientAuthenticationHandlerConfirm003', true, 25141101, done);

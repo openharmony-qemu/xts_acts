@@ -160,7 +160,7 @@ struct ZIndexPage {
   }
 
   commonStyle(instance: CommonMethod){
-    instance.zIndex(this._zIndex as Int)
+    instance.zIndex(this._zIndex.toInt())
     instance.width(this.targetComponentWidth)
     instance.height(this.targetComponentHeight)
     instance.key(this.componentKey)

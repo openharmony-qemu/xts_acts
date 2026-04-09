@@ -1619,7 +1619,7 @@ export default function EAWorkerTest() {
           let worker = new EAWorker();
           worker.start()
           let workerThreadId: number = 0;
-          const mainThreadId = StdProcess.tid;
+          const mainThreadId = StdProcess.tid();
           let worker1 = worker.run<undefined>((): undefined => {
             workerThreadId = StdProcess.tid();
             return undefined;

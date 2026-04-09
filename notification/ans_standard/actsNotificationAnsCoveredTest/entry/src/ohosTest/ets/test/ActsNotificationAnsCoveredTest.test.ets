@@ -25,26 +25,32 @@ let context = getContext(this) as common.UIAbilityContext;
 export default function actsNotificationAnsCovered() {
   describe('actsNotificationAnsCovered', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(async (done: Function) => {
-      NotificationManager.requestEnableNotification(context).then(() => {
-        console.info(`${Tag} requestEnableNotification succeeded`);
-      }).catch((err: Error) => {
-        console.info(`${Tag} requestEnableNotification err: ` + JSON.stringify(err));
-        expect(err).assertNull()
-        done()
+    beforeAll(async (done:Function) => {
+      NotificationManager.requestEnableNotification((err) => {
+        if (err) {
+          console.error(Tag+`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue();
+          console.info(`${Tag}` + `test case end`);
+          done();
+        } else {
+          console.info(Tag + "requestEnableNotification success");
+        }
       });
-      await sleep(1500)
+
+      await sleep(1500);
       let driver = Driver.create();
+      console.log(Tag + `driver is ${JSON.stringify(driver)}`);
+      await driver.assertComponentExist(ON.text('允许'));
       let button = await driver.findComponent(ON.text('允许'));
-      console.info(`${Tag} button is ${JSON.stringify(button)}`);
+      console.log(Tag + `button is ${JSON.stringify(button)}`);
       if (button !== null) {
-        await sleep(1000);
+
         await button.click();
-        await sleep(1000);
+        await sleep(1500);
         done()
       } else {
-        console.info(`${Tag} null button`);
-        expect(button).assertContain('允许')
+        console.log(Tag + `button is null`)
+        expect(false).assertTrue();
         done()
       }
     })

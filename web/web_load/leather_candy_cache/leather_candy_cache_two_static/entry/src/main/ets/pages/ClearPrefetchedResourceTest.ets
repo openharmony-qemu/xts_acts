@@ -66,30 +66,6 @@ struct clearPrefetchedResourceTest {
         .onClick((e: ClickEvent) => {
           console.info('key==>' + this.str)
           switch (this.str) {
-
-            case "testPrefetchResourceErrorCode001": {
-              let msg = "testPrefetchResource001"
-              try {
-                web_webview.WebviewController.prefetchResource(
-                  {url:",,https://www.example1.com/post?e=f&g=h",
-                    method:"POST",
-                    formData:"a=x&b=y"},
-                  [
-                    {headerKey:"Accept",
-                      headerValue:"application/json",
-                    },
-                    {headerKey:"Content-Type",
-                      headerValue:"application/x-www-form-urlencoded",
-                    },
-                  ],
-                  "KeyX", 500);
-              } catch (error) {
-                console.error(`${msg} prefetchResource ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 10510)
-              }
-              break;
-            }
-
             case 'testClearPrefetchedResource001': {
               let msg = 'testClearPrefetchedResource001'
               try {
@@ -129,19 +105,6 @@ struct clearPrefetchedResourceTest {
               }, 1000)
               break;
             }
-
-            case "testClearPrefetchedResource003": {
-              let msg = "testClearPrefetchedResource003"
-              try {
-                web_webview.WebviewController.clearPrefetchedResource([" "]);
-                Utils.emitEvent(true, 148310)
-              } catch (err) {
-                console.error(msg + 'clearPrefetchedResource error: ' + err.code + ' Message: ' + err.message);
-                Utils.emitEvent(err.code, 148310)
-              }
-              break;
-            }
-
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();

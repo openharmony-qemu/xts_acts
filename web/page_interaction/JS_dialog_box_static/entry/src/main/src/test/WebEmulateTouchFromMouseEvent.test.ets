@@ -133,5 +133,27 @@ export default function WebKeyboardAvoidMode() {
         await Utils.msSleep(2000);
         done();
       })
+	  
+	/**
+     * @tc.name   SwitchNextPageSaveImageStatic
+     * @tc.number SUB_WEB_NEXTPAGE_STATIC_0200
+     * @tc.desc   switchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SwitchNextPageSaveImageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('SwitchNextPageSaveImageStatic', 10)
+        await Utils.msSleep(1000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
+        let button = await driver.findComponent(ON.id('buttonEnumAndFontLibrary'));
+        await Utils.msSleep(1000);
+        button?.click();
+        await Utils.msSleep(4000)
+        done()
+      })
   })
 }

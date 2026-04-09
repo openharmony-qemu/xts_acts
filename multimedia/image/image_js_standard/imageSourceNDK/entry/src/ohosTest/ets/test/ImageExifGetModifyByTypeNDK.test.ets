@@ -5811,5 +5811,76 @@ export default function ImageExifGetModifyByTypeNDK() {
       expect(ret.errcode2 == 7700204).assertTrue();
       done();
     });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_0100
+     * @tc.desc        Test OH_ImageSourceNative_CreateImageRawData IMAGE_SUCCESS
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_0100";
+      let fd: number = await getFd("test_fake.dng");
+      let result = mdkTest.TestCreateImageRawDataSucc(fd);
+      console.info(`${testTag} TestCreateImageRawDataSucc result is: ${result}`);
+      fs.closeSync(fd);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GET_BUFFER_FROM_RAWDATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GET_BUFFER_FROM_RAWDATA_0100
+     * @tc.desc        Test OH_ImageSourceNative_CreateImageRawData IMAGE_SUCCESS
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GET_BUFFER_FROM_RAWDATA_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GET_BUFFER_FROM_RAWDATA_0100";
+      let fd: number = await getFd("test_fake.dng");
+      let result = mdkTest.TestGetBufferFromRawDataSucc(fd);
+      console.info(`${testTag} TestGetBufferFromRawDataSucc result is: ${result}`);
+      fs.closeSync(fd);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0100
+     * @tc.desc        Test OH_ImageSourceNative_DestroyImageRawData IMAGE_SUCCESS
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0100";
+      let fd: number = await getFd("test_fake.dng");
+      let result = mdkTest.TestDestroyImageRawDataSucc(fd);
+      console.info(`${testTag} TestGetBufferFromRawDataSucc result is: ${result}`);
+      fs.closeSync(fd);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0200
+     * @tc.desc        Test OH_ImageSourceNative_DestroyImageRawData IMAGE_SOURCE_INVALID_PARAMETER
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0200", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0200";
+      let result = mdkTest.TestDestroyImageRawDataInvalidParam();
+      console.info(`${testTag} TestDestroyImageRawDataInvalidParam result is: ${result}`);
+      expect(result).assertEqual(7700204);
+      done();
+    });
+    
   })
 }

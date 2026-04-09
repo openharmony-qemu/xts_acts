@@ -56,7 +56,25 @@ struct ExtensionErrorCode {
           let session: UIExtensionContentSession | undefined = this.storage?.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
-            let avoidArea: window.AvoidArea | undefined = extensionWindow?.getWindowAvoidArea(window.AvoidAreaType.TYPE_CUTOUT)
+
+            let avoidArea: window.AvoidArea | undefined = extensionWindow?.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM)
+            console.log('success in getWindowAvoidAreaCUTOUT :' + JSON.stringify(avoidArea))
+            if (avoidArea!.visible !== null && avoidArea!.topRect.width === 0 && avoidArea!.topRect.height === 0 && 
+            avoidArea!.topRect.top === 0 && avoidArea!.topRect.left === 0 && 
+              avoidArea!.rightRect.width === 0 && avoidArea!.rightRect.height === 0 && avoidArea!.rightRect.top === 0 && 
+              avoidArea!.rightRect.left === 0 && 
+              avoidArea!.bottomRect.width === 0 && avoidArea!.bottomRect.height === 0 && avoidArea!.bottomRect.top === 0 && 
+              avoidArea!.bottomRect.left === 0 && 
+              avoidArea!.leftRect.width === 0 && avoidArea!.leftRect.height === 0 && avoidArea!.leftRect.top === 0 && 
+              avoidArea!.leftRect.left === 0
+            ) {
+              this.flag = true;
+              console.log('success in getWindowAvoidAreaCUTOUT flag:' + this.flag)
+            } else {
+              return;
+            }
+
+            avoidArea = extensionWindow?.getWindowAvoidArea(window.AvoidAreaType.TYPE_CUTOUT)
             console.log('success in getWindowAvoidAreaCUTOUT :' + JSON.stringify(avoidArea))
             if (avoidArea!.visible === false && avoidArea!.topRect.width === 0 && avoidArea!.topRect.height === 0 && 
             avoidArea!.topRect.top === 0 && avoidArea!.topRect.left === 0 && 
@@ -183,6 +201,31 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
+        Button('offWindowSizeChange')
+        .id('offWindowSizeChange')
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = this.storage?.get < UIExtensionContentSession > ('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            let cb = (size: window.Size) => {
+              console.info(`The avoid area of the host window is: ${JSON.stringify(size)}.`);
+              if(size.width>0 &&size.height>0){
+                this.flag = true;
+                console.log('success in getWindowAvoidAreaNAVIGATION_INDICATOR flag:' + this.flag)
+              }
+              
+            }
+            extensionWindow!.onWindowSizeChange(cb);
+            extensionWindow!.offWindowSizeChange(cb);
+            extensionWindow!.onWindowSizeChange(cb);
+            extensionWindow!.offWindowSizeChange();
+            this.message = 'success'
+
+          } catch (err) {
+            console.log('testGetWindowAvoidArea_TYPE_NAVIGATION_INDICATOR err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
         Button('rectChange')
         .id('rectChange')
         .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
@@ -220,6 +263,26 @@ struct ExtensionErrorCode {
               }
             })
         )
+
+      Button('offAvoidAreaChange')
+        .id('offAvoidAreaChange')
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = this.storage?.get < UIExtensionContentSession > ('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            let cb = (info: uiExtension.AvoidAreaInfo) => {
+              console.info(`The avoid area of the host window is: ${JSON.stringify(info.area)}.`);
+            }
+            extensionWindow?.onAvoidAreaChange(cb);
+            // 取消注册 extensionWindow?.offAvoidAreaChange();
+            extensionWindow?.offAvoidAreaChange(cb);
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
 
     }.width('100%').height('100%')
   }

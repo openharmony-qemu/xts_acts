@@ -58,15 +58,15 @@ export default function abilitystaticTest() {
         }
         let flag: string = "1";
         let startOptions: StartOptions = {};
-        let beginCurrentPid: number = 0;
-        let afterCurrentPid: number = 1;
+        let beginCurrentPid: number = 0.0;
+        let afterCurrentPid: number = 1.0;
         try {
           let abilityInfos: Array<abilityManager.AbilityRunningInfo> = await abilityManager.getAbilityRunningInfos();
           hilog.info(0x0000, 'testTag',
             `${TEST_CASE_NAME} getAbilityRunningInfos success, abilityInfos: ${JSON.stringify(abilityInfos)}`);
           for (let i = 0; i < abilityInfos.length; i++) {
             if (abilityInfos[i].processName === 'com.example.startSelfUIAbilityInCurrentProcess.static') {
-              beginCurrentPid = abilityInfos[i].pid;
+              beginCurrentPid = abilityInfos[i].pid.toDouble();
               hilog.info(0x0000, 'testTag',
                 `${TEST_CASE_NAME} getAbilityRunningInfos success, data: ${JSON.stringify(abilityInfos[i])}`);
             }
@@ -82,7 +82,7 @@ export default function abilitystaticTest() {
                   await abilityManager.getAbilityRunningInfos();
                 for (let i = 0; i < abilityInfos.length; i++) {
                   if (abilityInfos[i].processName === 'com.example.startSelfUIAbilityInCurrentProcess.static') {
-                    afterCurrentPid = abilityInfos[i].pid;
+                    afterCurrentPid = abilityInfos[i].pid.toDouble();
                   }
                   break;
                 }
@@ -418,13 +418,13 @@ export default function abilitystaticTest() {
           abilityName: 'ThirdAbility'
         }
         let flag: string = "15";
-        let beginCurrentPid: number = 0;
-        let afterCurrentPid: number = 1;
+        let beginCurrentPid: number = 0.0;
+        let afterCurrentPid: number = 1.0;
         try {
           let abilityInfos: Array<abilityManager.AbilityRunningInfo> = await abilityManager.getAbilityRunningInfos();
           for (let i = 0; i < abilityInfos.length; i++) {
             if (abilityInfos[i].processName === 'com.example.startSelfUIAbilityInCurrentProcess.static') {
-              beginCurrentPid = abilityInfos[i].pid;
+              beginCurrentPid = abilityInfos[i].pid.toDouble();
               hilog.info(0x0000, 'testTag',
                 `${TEST_CASE_NAME} getAbilityRunningInfos success, data: ${JSON.stringify(abilityInfos[i])}`);
             }
@@ -439,7 +439,7 @@ export default function abilitystaticTest() {
                 await abilityManager.getAbilityRunningInfos();
               for (let i = 0; i < abilityInfos.length; i++) {
                 if (abilityInfos[i].processName === 'com.example.startSelfUIAbilityInCurrentProcess.static') {
-                  afterCurrentPid = abilityInfos[i].pid;
+                  afterCurrentPid = abilityInfos[i].pid.toDouble();
                 }
                 break;
               }

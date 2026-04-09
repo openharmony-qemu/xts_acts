@@ -10,6 +10,7 @@
     "MainAbility/pages/BasicSheet02",
     "MainAbility/pages/PathStackPage",
 
-    "MainAbility/pages/OnActivePage"
+    "MainAbility/pages/OnActivePage",
+    "MainAbility/pages/RouterErrCode"
   ]
 }
