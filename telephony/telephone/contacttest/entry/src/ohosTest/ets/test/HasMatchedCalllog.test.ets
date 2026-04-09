@@ -74,7 +74,7 @@ export default function HasMatchedCallLogTest() {
         let withinTime = 400;
         let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration, withinTime);
         console.info(`${caseName} result: ${result}`);
-        expect(typepof result === 'boolean').assertTrue();
+        expect(typeof result === 'boolean').assertTrue();
         done();
       } catch (error) {
         console.info(`${caseName} catch error ${JSON.stringify(error)}`);
@@ -102,7 +102,7 @@ export default function HasMatchedCallLogTest() {
 
         let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration, 86400);
         console.info(`${caseName} result: ${result}`);
-        expect(typepof result === 'boolean').assertTrue();
+        expect(typeof result === 'boolean').assertTrue();
         done();
       } catch (error) {
         console.info(`${caseName} catch error ${JSON.stringify(error)}`);
