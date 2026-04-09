@@ -75,25 +75,25 @@ export default function createFrameNodesUIContextIntTest() {
 
  	    let button1 = await driver.findComponent(ON.id('addFrameNodeById'));
  	    await button1.click();
- 	    await Utils.sleep(2000)
+ 	    await CommonFunc.sleep(2000);
       let strJson1 = getInspectorByKey('createFrameNodesText');
       console.info('createFrameNodesUIContextIntTest_0100 textContent:'+JSON.parse(strJson1).$attrs.content);
 
       let button2 = await driver.findComponent(ON.id('getFrameNodeByUniqueId'));
  	    await button2.click();
- 	    await Utils.sleep(2000)
+ 	    await CommonFunc.sleep(2000);
       let strJson2 = getInspectorByKey('createFrameNodesText');
       console.info('createFrameNodesUIContextIntTest_0100 textContent:'+JSON.parse(strJson2).$attrs.content);
 
       let button3 = await driver.findComponent(ON.id('createFrameNodes'));
  	    await button3.click();
- 	    await Utils.sleep(2000)
+ 	    await CommonFunc.sleep(2000);
       let strJson3 = getInspectorByKey('createFrameNodesText');
       console.info('createFrameNodesUIContextIntTest_0100 textContent:'+JSON.parse(strJson3).$attrs.content);
 
       let button4 = await driver.findComponent(ON.id('createFrameNodes2'));
  	    await button4.click();
- 	    await Utils.sleep(2000)
+ 	    await CommonFunc.sleep(2000);
       let strJson4 = getInspectorByKey('createFrameNodesText');
       console.info('createFrameNodesUIContextIntTest_0100 textContent:'+JSON.parse(strJson4).$attrs.content);
       
