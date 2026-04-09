@@ -78,7 +78,7 @@ it('aboutToDisappearFalse_static_0100', Level.LEVEL0, async (done: () => void): 
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       
-      let button1 = await driver.findComponent(ON.text('菜单选项1'));
+      let button1 = await driver.findComponent(ON.text('菜单选项'));
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
