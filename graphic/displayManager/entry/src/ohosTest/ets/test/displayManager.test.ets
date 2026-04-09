@@ -154,6 +154,196 @@ export default function displayTest() {
       // This API supports only one parameter: clear action function.
     });
     /**
+     * @tc.name   testOnChangeWithAttribute_width_height_setPreferOrientation
+     * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_0100
+     * @tc.desc   testOnChangeWithAttribute_width_height_setPreferOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnChangeWithAttribute_width_height_setPreferOrientation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnChangeWithAttribute_width_height_setPreferOrientation ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowClass = windowStage.getMainWindowSync();
+      try {
+        if (isSupportRotate) {
+          let index1 = 0;
+          let index2 = 0;
+          const callback1 = (res: number) => {
+            console.info(caseName + ' callback1 res: ' + res);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+          }
+          const callback2 = (res: number) => {
+            console.info(caseName + ' callback2 res: ' + res);
+            index2++;
+            console.info(caseName + ' callback2 index2: ' + index2);
+          }
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          display.onChangeWithAttribute(['width'], callback1);
+          display.onChangeWithAttribute(['height'], callback2);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(1);
+          display.off('change', callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          console.info(caseName + ' setOrientation index1: ' + index1);
+          console.info(caseName + ' setOrientation index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(2);
+          display.off('change');
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(2);
+          done();
+        } else {
+          done();
+        }
+
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation
+     * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_0200
+     * @tc.desc   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnChangeWithAttribute_rotation_orientation_setPreferOrientation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnChangeWithAttribute_rotation_orientation_setPreferOrientation ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowClass = windowStage.getMainWindowSync();
+
+      try {
+        if (isSupportRotate) {
+          let index1 = 0;
+          let index2 = 0;
+          const callback1 = (res: number) => {
+            console.info(caseName + ' callback1 res: ' + res);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+          }
+          const callback2 = (res: number) => {
+            console.info(caseName + ' callback2 res: ' + res);
+            index2++;
+            console.info(caseName + ' callback2 index2: ' + index2);
+          }
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          display.onChangeWithAttribute(['rotation'], callback1);
+          display.onChangeWithAttribute(['orientation'], callback2);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(1);
+          display.off('change', callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT_INVERTED);
+          await sleep(3000);
+          console.info(caseName + ' setOrientation index1: ' + index1);
+          console.info(caseName + ' setOrientation index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(2);
+          display.off('change');
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
+          expect(index1).assertEqual(1);
+          expect(index2).assertEqual(2);
+          done();
+        } else {
+          done();
+        }
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2
+     * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_0300
+     * @tc.desc   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2 ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowClass = windowStage.getMainWindowSync();
+      let diaplayId = display.getDefaultDisplaySync().id;
+      console.info(caseName + 'diaplayId: ' + diaplayId);
+      try {
+        if (isSupportRotate) {
+          let index1 = 0;
+          const callback1 = (res: number) => {
+            console.info(caseName + ' callback1 res: ' + res);
+            expect(res).assertEqual(diaplayId);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+          }
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          display.onChangeWithAttribute(['rotation', 'densityDPI'], callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+          expect(index1).assertEqual(1);
+          display.off('change', callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+          expect(index1).assertEqual(1);
+          done();
+        } else {
+          done();
+        }
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (!canIUseRes) {
+          expect(e.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
      * @tc.name   testFoldAngleChange_On_Off
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5100
      * @tc.desc   register and unregister fold angle changes
@@ -257,8 +447,9 @@ export default function displayTest() {
         done();
       }
     });
-
-    /**
+  
+  
+  /**
 * @tc.number SUB_WMS_DMS_CHANGE_SETPERFERORIENTATION_0100
 * @tc.name   testOnChange_setPreferOrientation_0100
 * @tc.desc   旋转后屏幕改变监听
@@ -1522,9 +1713,14 @@ export default function displayTest() {
       try {
         let screenId: number = await display.createVirtualScreen(option);
         console.log(caseName + 'success in createVirtualScreen ' + screenId);
-        await display.setVirtualScreenSurface(screenId, '').then(() => {
+        await display.setVirtualScreenSurface(screenId, '').then(async () => {
           console.log(caseName + 'success in setVirtualScreenSurface');
           expect().assertFail();
+          await display.destroyVirtualScreen(screenId).then(() =>{
+            console.info(caseName + 'Succeeded in destroyVirtualScreen1');
+          }).catch((err:BusinessError) => {
+            console.info(caseName + 'Failed in destroyVirtualScreen1');
+          })
           done();
         })
       } catch (err) {
@@ -2149,6 +2345,7 @@ export default function displayTest() {
     it('testConvertRelativeToGlobalCoordinatewithVirtualDisplay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testConvertRelativeToGlobalCoordinatewithVirtualDisplay";
       let msgStr = 'jsunittest ' + caseName + ' ';
+      let outDisplayId = -1;
       console.log(msgStr + 'begin.');
       class VirtualScreenOptions {
         name: string = '';
@@ -2169,7 +2366,6 @@ export default function displayTest() {
         console.log(caseName + ' success in createVirtualScreen ' + screenId);
         let displays = await display.getAllDisplays();
         console.log(caseName + ' getAllDisplays: ' + JSON.stringify(displays));
-        let outDisplayId = -1;
         for (let i = 0; i < displays.length; i++) {
           if (displays[i].id == screenId) {
             outDisplayId = displays[i].id;
@@ -2186,9 +2382,21 @@ export default function displayTest() {
           position: position
         }
         display.convertRelativeToGlobalCoordinate(param);
+        await display.destroyVirtualScreen(screenId).then(() =>{
+          console.info(caseName + 'Succeeded in destroyVirtualScreen1');
+        }).catch((err:BusinessError) => {
+          console.info(caseName + 'Failed in destroyVirtualScreen1');
+        });
         expect().assertFail();
         done();
       } catch (e) {
+        if(outDisplayId != -1){
+            await display.destroyVirtualScreen(screenId).then(() =>{
+            console.info(caseName + 'Succeeded in destroyVirtualScreen1');
+          }).catch((err:BusinessError) => {
+            console.info(caseName + 'Failed in destroyVirtualScreen1');
+          });
+          }
         console.error(`${caseName} Failed2. err: ${JSON.stringify(e)}`);
         if (e.code === 801) {
           done()
@@ -2312,6 +2520,7 @@ export default function displayTest() {
       let caseName = "testConvertGlobalToRelativeCoordinatewithVirtualDisplay";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
+      let outDisplayId = -1;
       class VirtualScreenOptions {
         name: string = '';
         width: number = 0;
@@ -2331,7 +2540,6 @@ export default function displayTest() {
         console.log(caseName + ' success in createVirtualScreen ' + screenId);
         let displays = await display.getAllDisplays();
         console.log(caseName + ' getAllDisplays: ' + JSON.stringify(displays));
-        let outDisplayId = -1;
         for (let i = 0; i < displays.length; i++) {
           if (displays[i].id == screenId) {
             outDisplayId = displays[i].id;
@@ -2344,9 +2552,21 @@ export default function displayTest() {
           y: 50
         };
         display.convertGlobalToRelativeCoordinate(position, outDisplayId);
+        await display.destroyVirtualScreen(screenId).then(() =>{
+          console.info(caseName + 'Succeeded in destroyVirtualScreen1');
+        }).catch((err:BusinessError) => {
+          console.info(caseName + 'Failed in destroyVirtualScreen1');
+        })
         expect().assertFail();
         done();
       } catch (e) {
+        if(outDisplayId != -1){
+          await display.destroyVirtualScreen(outDisplayId).then(() =>{
+            console.info(caseName + 'Succeeded in destroyVirtualScreen1');
+          }).catch((err:BusinessError) => {
+            console.info(caseName + 'Failed in destroyVirtualScreen1');
+          })
+        }
         console.error(`${caseName} Failed2. err: ${JSON.stringify(e)}`);
         if (e.code === 801) {
           done()
@@ -2548,6 +2768,11 @@ export default function displayTest() {
         console.log(`${caseName} region: ${JSON.stringify(region)}`);
         expect(region.displayId).assertEqual(0)
         expect(region.creaseRects.length).assertLargerOrEqual(0)
+        await display.destroyVirtualScreen(screenId).then(() =>{
+          console.info(caseName + 'Succeeded in destroyVirtualScreen1');
+        }).catch((err:BusinessError) => {
+          console.info(caseName + 'Failed in destroyVirtualScreen1');
+        })
         done();
       } catch (e) {
         console.error(`${caseName} Failed2. err: ${JSON.stringify(e)}`);
@@ -2861,6 +3086,11 @@ export default function displayTest() {
         expect(brightnessInfo.sdrNits).assertEqual(500);
         expect(brightnessInfo.currentHeadroom).assertEqual(1);
         expect(brightnessInfo.maxHeadroom).assertEqual(1);
+        await display.destroyVirtualScreen(screenId).then(() =>{
+          console.info(caseName + 'Succeeded in destroyVirtualScreen1');
+        }).catch((err:BusinessError) => {
+          console.info(caseName + 'Failed in destroyVirtualScreen1');
+        })
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -3325,7 +3555,6 @@ export default function displayTest() {
 
           })
 
-
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
             await terminateAbility(caseName);
@@ -3623,190 +3852,7 @@ export default function displayTest() {
       }
     });
 
-    /**
-     * @tc.name   testOnChangeWithAttribute_width_height_setPreferOrientation
-     * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_0100
-     * @tc.desc   testOnChangeWithAttribute_width_height_setPreferOrientation
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testOnChangeWithAttribute_width_height_setPreferOrientation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testOnChangeWithAttribute_width_height_setPreferOrientation ';
-      console.log(caseName + 'begin');
-      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
-      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
-      let windowClass = windowStage.getMainWindowSync();
-      try {
-        if (isSupportRotate == true) {
-          let index1 = 0;
-          let index2 = 0;
-          const callback1 = (res: number) => {
-            console.info(caseName + ' callback1 res: ' + res);
-            index1++;
-            console.info(caseName + ' callback1 index1: ' + index1);
-          }
-          const callback2 = (res: number) => {
-            console.info(caseName + ' callback2 res: ' + res);
-            index2++;
-            console.info(caseName + ' callback2 index2: ' + index2);
-          }
-          display.onChangeWithAttribute(['width'], callback1);
-          display.onChangeWithAttribute(['height'], callback2);
-          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
-          await sleep(3000);
-          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
-          console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
-          expect(index1).assertEqual(1);
-          expect(index2).assertEqual(1);
-          display.off('change', callback1);
-          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-          await sleep(3000);
-          console.info(caseName + ' setOrientation index1: ' + index1);
-          console.info(caseName + ' setOrientation index2: ' + index2);
-          expect(index1).assertEqual(1);
-          expect(index2).assertEqual(2);
-          display.off('change');
-          await sleep(3000);
-          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
-          console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
-          expect(index1).assertEqual(1);
-          expect(index2).assertEqual(2);
-          done();
-        } else {
-          done();
-        }
-
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (!canIUseRes) {
-          expect(e.code).assertEqual(801);
-          done();
-        } else {
-          expect().assertFail();
-          done()
-        }
-      }
-    });
-
-    /**
-     * @tc.name   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation
-     * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_0200
-     * @tc.desc   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testOnChangeWithAttribute_rotation_orientation_setPreferOrientation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testOnChangeWithAttribute_rotation_orientation_setPreferOrientation ';
-      console.log(caseName + 'begin');
-      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
-      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
-      let windowClass = windowStage.getMainWindowSync();
-
-      try {
-        if (isSupportRotate == true) {
-          let index1 = 0;
-          let index2 = 0;
-          const callback1 = (res: number) => {
-            console.info(caseName + ' callback1 res: ' + res);
-            index1++;
-            console.info(caseName + ' callback1 index1: ' + index1);
-          }
-          const callback2 = (res: number) => {
-            console.info(caseName + ' callback2 res: ' + res);
-            index2++;
-            console.info(caseName + ' callback2 index2: ' + index2);
-          }
-          display.onChangeWithAttribute(['rotation'], callback1);
-          display.onChangeWithAttribute(['orientation'], callback2);
-          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
-          await sleep(3000);
-          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
-          console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
-          expect(index1).assertEqual(1);
-          expect(index2).assertEqual(1);
-          display.off('change', callback1);
-          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT_INVERTED);
-          await sleep(3000);
-          console.info(caseName + ' setOrientation index1: ' + index1);
-          console.info(caseName + ' setOrientation index2: ' + index2);
-          expect(index1).assertEqual(1);
-          expect(index2).assertEqual(2);
-          display.off('change');
-          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-          await sleep(3000);
-          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
-          console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
-          expect(index1).assertEqual(1);
-          expect(index2).assertEqual(2);
-          done();
-        } else {
-          done();
-        }
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (!canIUseRes) {
-          expect(e.code).assertEqual(801);
-          done();
-        } else {
-          expect().assertFail();
-          done()
-        }
-      }
-    });
-
-    /**
-     * @tc.name   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2
-     * @tc.number SUB_WMS_DMS_CHANGE_WITH_ATTRIBUTE_SETPERFERORIENTATION_0300
-     * @tc.desc   testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testOnChangeWithAttribute_rotation_orientation_setPreferOrientation2 ';
-      console.log(caseName + 'begin');
-      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
-      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
-      let windowClass = windowStage.getMainWindowSync();
-      let diaplayId = display.getDefaultDisplaySync().id;
-      console.info(caseName + 'diaplayId: ' + diaplayId);
-      try {
-        if (isSupportRotate == true) {
-          let index1 = 0;
-          const callback1 = (res: number) => {
-            console.info(caseName + ' callback1 res: ' + res);
-            expect(res).assertEqual(diaplayId);
-            index1++;
-            console.info(caseName + ' callback1 index1: ' + index1);
-          }
-          display.onChangeWithAttribute(['rotation', 'densityDPI'], callback1);
-          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
-          await sleep(3000);
-          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
-          expect(index1).assertEqual(1);
-          display.off('change', callback1);
-          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-          await sleep(3000);
-          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
-          expect(index1).assertEqual(1);
-          done();
-        } else {
-          done();
-        }
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (!canIUseRes) {
-          expect(e.code).assertEqual(801);
-          done();
-        } else {
-          expect().assertFail();
-          done()
-        }
-      }
-    });
-
+    
     /**
      * @tc.name   testEnumCornerType
      * @tc.number SUB_WMS_DMS_ENUM_CORNER_TYPE_0100
