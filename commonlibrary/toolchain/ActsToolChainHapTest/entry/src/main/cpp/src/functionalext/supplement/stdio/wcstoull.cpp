@@ -28,6 +28,7 @@ constexpr int K_BASE_HEX = 16;
 constexpr int K_PARSE_POS_2 = 2;
 constexpr int K_PARSE_POS_20 = 20;
 constexpr int K_EXPECT_ERRNO_OK = 0;
+constexpr unsigned long long K_EXPECT_NEGATIVE_TWO_WRAP = static_cast<unsigned long long>(-2);
 } // namespace
 
 /**
@@ -171,9 +172,8 @@ void Wcstoull0700(void)
     s = L"-2";
     errno = 0;
     ull = wcstoull(s, &c, K_BASE_AUTO);
-    if (ull != static_cast<unsigned long long>(-2)) {
-        t_error(
-            "%s failed (rejected negative %llu != %llu)\n", K_WCSTOULL_TAG, ull, static_cast<unsigned long long>(-2));
+    if (ull != K_EXPECT_NEGATIVE_TWO_WRAP) {
+        t_error("%s failed (rejected negative %llu != %llu)\n", K_WCSTOULL_TAG, ull, K_EXPECT_NEGATIVE_TWO_WRAP);
     }
     i = static_cast<int>(c - s);
     if (i != K_PARSE_POS_2) {
