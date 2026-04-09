@@ -130,7 +130,6 @@
         "MainAbility/pages/Text/TextEditMenuOptionsNull",
         "MainAbility/pages/Text/LayoutManagerTextCommonProbePage",
         "MainAbility/pages/Text/TextGetCharacter"
-        "MainAbility/pages/Text/TextLayoutManagerMethods"
 
     ]
 }
