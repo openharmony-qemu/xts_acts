@@ -60,7 +60,7 @@ export default function UIUtilsMakeBindingTest() {
     });
 
     /**
-     * @tc.number   UIUtilsMakeBindingTest_static_001
+     * @tc.number   SUB_ARUI_UIUTILS_MAKEBINDING_PATH_0100
      * @tc.name     UIUtilsMakeBindingTest_static_001
      * @tc.desc     UIUtilsMakeBindingTest_static_001
      * @tc.level    Level.LEVEL0
@@ -98,7 +98,7 @@ export default function UIUtilsMakeBindingTest() {
     });
 
     /**
-     * @tc.number   UIUtilsMakeBindingTest_static_002
+     * @tc.number   SUB_ARUI_UIUTILS_MAKEBINDING_PATH_0200
      * @tc.name     UIUtilsMakeBindingTest_static_002
      * @tc.desc     UIUtilsMakeBindingTest_static_002
      * @tc.level    Level.LEVEL0

@@ -17,7 +17,7 @@ function customButton(readOnlyParam: Binding<number>, mutableParam: MutableBindi
 }
 
 @Builder
-function MutableVariableBuilder() {
+function mutableVariableBuilder() {
   let message: MutableVariable<string> = rememberVariable<string>('Hello world'); 
   Text(`${message.value}`)
   .id('MutableVariableText')
@@ -61,7 +61,7 @@ struct UIUtilsMakeBindingPage {
           this.num2 = v;
         })
       )
-      MutableVariableBuilder()
+      mutableVariableBuilder()
     }
     .width('100%')
     .height('100%')

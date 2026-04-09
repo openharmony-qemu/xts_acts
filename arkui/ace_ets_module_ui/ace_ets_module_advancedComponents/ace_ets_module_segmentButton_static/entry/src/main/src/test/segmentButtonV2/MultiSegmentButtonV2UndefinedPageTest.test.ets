@@ -81,7 +81,7 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
 
     /**
      * @tc.name   MultiSegmentButtonV2UndefinedPageTest_009
-     * @tc.number MultiSegmentButtonV2UndefinedPageTest_009
+     * @tc.number SUB_ARUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_0900
      * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -107,7 +107,7 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
 
     /**
      * @tc.name MultiSegmentButtonV2UndefinedPageTest_010
-     * @tc.number MultiSegmentButtonV2UndefinedPageTest_010
+     * @tc.number SUB_ARUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_1000
      * @tc.desc Test MultiSegmentButtonV2 itemBackgroundEffect
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -176,7 +176,7 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
 
     /**
      * @tc.name   MultiSegmentButtonV2UndefinedPageTest_011
-     * @tc.number MultiSegmentButtonV2UndefinedPageTest_011
+     * @tc.number SUB_ARUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_1100
      * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundBlurStyle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -209,7 +209,7 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
 
     /**
      * @tc.name   MultiSegmentButtonV2UndefinedPageTest_012
-     * @tc.number MultiSegmentButtonV2UndefinedPageTest_012
+     * @tc.number SUB_ARUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_1200
      * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundBlurStyleOptions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -230,8 +230,7 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
         .getElement('options')
         .getString('policy')
       console.info(`policy: ${policy}`)
-      //
-      //expect(policy).assertEqual("BlurStyleActivePolicy.ALWAYS_INACTIVE")
+      expect(policy).assertEqual("BlurStyleActivePolicy.ALWAYS_ACTIVE")
       console.log("[MultiSegmentButtonV2UndefinedPageTest_012] END");
       done();
     })
@@ -239,7 +238,7 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
 
     /**
      * @tc.name   MultiSegmentButtonV2UndefinedPageTest_015
-     * @tc.number MultiSegmentButtonV2UndefinedPageTest_015
+     * @tc.number SUB_ARUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_1500
      * @tc.desc   Test MultiSegmentButtonV2 languageDirection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -263,7 +262,7 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
 
     /**
      * @tc.name   MultiSegmentButtonV2UndefinedPageTest_016
-     * @tc.number MultiSegmentButtonV2UndefinedPageTest_016
+     * @tc.number SUB_ARUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_1600
      * @tc.desc   Test MultiSegmentButtonV2 itemFontColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -286,7 +285,7 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
 
     /**
      * @tc.name   MultiSegmentButtonV2UndefinedPageTest_017
-     * @tc.number MultiSegmentButtonV2UndefinedPageTest_017
+     * @tc.number SUB_ARUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_1700
      * @tc.desc   Test MultiSegmentButtonV2 itemFontSize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -301,16 +300,15 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
       let common = column.getArray("$children")[3];
       let flex = common.getArray("$children")[0];
       let itemBtn0 = flex.getArray("$children")[0];
-      let jsonOption: string = JSON.stringify(itemBtn0.getElement('$attrs').getString('fontSize'));
-//查看
-      // expect(jsonOption).assertEqual('"14fp"');
+      let jsonOption: string = JSON.stringify(itemBtn0.getArray("$children")[0].getArray("$children")[0].getArray("$children")[0].getElement('$attrs').getString('fontSize'));
+      expect(jsonOption).assertEqual('"14.00fp"');
       console.log("[MultiSegmentButtonV2UndefinedPageTest_017] END");
       done();
     })
 
     /**
      * @tc.name   MultiSegmentButtonV2UndefinedPageTest_018
-     * @tc.number MultiSegmentButtonV2UndefinedPageTest_018
+     * @tc.number SUB_ARUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_1800
      * @tc.desc   Test MultiSegmentButtonV2 itemFontWeight
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -333,7 +331,7 @@ export default function MultiSegmentButtonV2UndefinedPageTest() {
 
     /**
      * @tc.name   MultiSegmentButtonV2UndefinedPageTest_019
-     * @tc.number MultiSegmentButtonV2UndefinedPageTest_019
+     * @tc.number SUB_ARUI_SEGMENTBUTTONV2_MULTISEGMENTBUTTONV2_UNDEFINED_1900
      * @tc.desc   Test MultiSegmentButtonV2 itemPadding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
