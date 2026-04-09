@@ -126,7 +126,6 @@ function exprFoo3<T extends byte>(p: T): T {
   return p;
 }
 
-// sleep 函数紧挨在 export default function 前面
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -157,426 +156,172 @@ export default function GenericFunctionsConstraintTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    
+
     /**
      * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0100
-     * @tc.name      testGenericFunctionsConstraint0001
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericFunctionsConstraintGroup0001
+     * @tc.desc      Generic function constraint test for foo1 with Int1 and Double1
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraint0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo1<Int1>(new Int1())
-      expect(result instanceof Int1).assertTrue()
+    it("testGenericFunctionsConstraintGroup0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result1 = foo1<Int1>(new Int1())
+      let result2 = foo1<Double1>(new Double1())
+      expect(result1 instanceof Int1).assertTrue()
+      expect(result2 instanceof Double1).assertTrue()
     });
 
     /**
      * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0200
-     * @tc.name      testGenericFunctionsConstraint0002
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericFunctionsConstraintGroup0002
+     * @tc.desc      Generic function constraint test for foo2 with "a" and "b"
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraint0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo1<Double1>(new Double1())
-      expect(result instanceof Double1).assertTrue()
+    it("testGenericFunctionsConstraintGroup0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result1 = foo2<"a">("a")
+      let result2 = foo2<"b">("b")
+      expect(result1).assertEqual("a")
+      expect(result2).assertEqual("b")
     });
 
     /**
      * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0300
-     * @tc.name      testGenericFunctionsConstraint0003
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericFunctionsConstraintGroup0003
+     * @tc.desc      Generic function constraint test for byte, short, int, long
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraint0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo2<"a">("a")
-      expect(result).assertEqual("a")
+    it("testGenericFunctionsConstraintGroup0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result1 = foo3<byte>(1 as byte)
+      let result2 = foo4<short>(1 as short)
+      let result3 = foo5<int>(1 as int)
+      let result4 = foo6<long>(1 as long)
+      expect(result1).assertEqual(1)
+      expect(result2).assertEqual(1)
+      expect(result3).assertEqual(1)
+      expect(result4).assertEqual(1)
     });
 
     /**
      * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0400
-     * @tc.name      testGenericFunctionsConstraint0004
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericFunctionsConstraintGroup0004
+     * @tc.desc      Generic function constraint test for float, double, number
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraint0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo2<"b">("b")
-      expect(result).assertEqual("b")
+    it("testGenericFunctionsConstraintGroup0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result1 = foo7<float>(1.1f)
+      let result2 = foo8<double>(1.2 as double)
+      let result3 = foo9<number>(1.3 as number)
+      expect(result1.toString()).assertEqual("1.1")
+      expect(result2).assertEqual(1.2)
+      expect(result3).assertEqual(1.3)
     });
 
     /**
      * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0500
-     * @tc.name      testGenericFunctionsConstraint0005
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericFunctionsConstraintGroup0005
+     * @tc.desc      Generic function constraint test for boolean, char, null, undefined, Object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraint0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo3<byte>(1 as byte)
-      expect(result).assertEqual(1)
+    it("testGenericFunctionsConstraintGroup0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result1 = foo10<boolean>(true)
+      let result2 = foo11<char>(c'V')
+      let result3 = foo12<null>(null)
+      let result4 = foo13<undefined>(undefined)
+      let obj = new Int1()
+      let result5 = foo15<Int1>(obj)
+      expect(result1).assertEqual(true)
+      expect(result2.toString()).assertEqual("V")
+      expect(result3).assertNull()
+      expect(result4).assertUndefined()
+      expect(result5 instanceof Int1).assertTrue()
     });
 
     /**
      * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0600
-     * @tc.name      testGenericFunctionsConstraint0006
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericFunctionsConstraintGroup0006
+     * @tc.desc      Generic arrow function constraint test for arrowFoo1 with Int1 and Double1
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraint0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo4<short>(1 as short)
-      expect(result).assertEqual(1)
+    it("testGenericFunctionsConstraintGroup0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result1 = arrowFoo1<Int1>(new Int1())
+      let result2 = arrowFoo1<Double1>(new Double1())
+      expect(result1 instanceof Int1).assertTrue()
+      expect(result2 instanceof Double1).assertTrue()
     });
 
     /**
      * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0700
-     * @tc.name      testGenericFunctionsConstraint0007
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericFunctionsConstraintGroup0007
+     * @tc.desc      Generic arrow function constraint test for arrowFoo2 and arrowFoo3
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraint0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo5<int>(1 as int)
-      expect(result).assertEqual(1)
+    it("testGenericFunctionsConstraintGroup0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result1 = arrowFoo2<"a">("a")
+      let result2 = arrowFoo3<byte>(1 as byte)
+      expect(result1).assertEqual("a")
+      expect(result2).assertEqual(1)
     });
 
     /**
      * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0800
-     * @tc.name      testGenericFunctionsConstraint0008
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericFunctionsConstraintGroup0008
+     * @tc.desc      Generic expression function constraint test for exprFoo1
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraint0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo6<long>(1 as long)
-      expect(result).assertEqual(1)
+    it("testGenericFunctionsConstraintGroup0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result1 = exprFoo1<Int1>(new Int1())
+      let result2 = exprFoo1<Double1>(new Double1())
+      expect(result1 instanceof Int1).assertTrue()
+      expect(result2 instanceof Double1).assertTrue()
     });
 
     /**
      * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_0900
-     * @tc.name      testGenericFunctionsConstraint0009
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericFunctionsConstraintGroup0009
+     * @tc.desc      Generic expression function constraint test for exprFoo2 and exprFoo3
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraint0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo7<float>(1.1f)
-      expect(result.toString()).assertEqual("1.1")
+    it("testGenericFunctionsConstraintGroup0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result1 = exprFoo2<"a">("a")
+      let result2 = exprFoo2<"b">("b")
+      let result3 = exprFoo3<byte>(1 as byte)
+      expect(result1).assertEqual("a")
+      expect(result2).assertEqual("b")
+      expect(result3).assertEqual(1)
     });
 
     /**
      * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_1000
-     * @tc.name      testGenericFunctionsConstraint0010
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericFunctionsConstraintGroup0010
+     * @tc.desc      Generic function constraint test for foo8 and foo9 with different numeric types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericFunctionsConstraint0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo8<double>(1.2 as double)
-      expect(result).assertEqual(1.2)
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_1100
-     * @tc.name      testGenericFunctionsConstraint0011
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo9<number>(1.3 as number)
-      expect(result).assertEqual(1.3)
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_1200
-     * @tc.name      testGenericFunctionsConstraint0012
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo10<boolean>(true)
-      expect(result).assertEqual(true)
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_1300
-     * @tc.name      testGenericFunctionsConstraint0013
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo11<char>(c'V')
-      expect(result.toString()).assertEqual("V")
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_1400
-     * @tc.name      testGenericFunctionsConstraint0014
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo12<null>(null)
-      expect(result).assertNull()
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_1500
-     * @tc.name      testGenericFunctionsConstraint0015
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo13<undefined>(undefined)
-      expect(result).assertUndefined()
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_1600
-     * @tc.name      testGenericFunctionsConstraint0016
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new Int1()
-      let result = foo15<Int1>(obj)
-      expect(result instanceof Int1).assertTrue()
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_1700
-     * @tc.name      testGenericFunctionsConstraint0017
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = arrowFoo1<Int1>(new Int1())
-      expect(result instanceof Int1).assertTrue()
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_1800
-     * @tc.name      testGenericFunctionsConstraint0018
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = arrowFoo1<Double1>(new Double1())
-      expect(result instanceof Double1).assertTrue()
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_1900
-     * @tc.name      testGenericFunctionsConstraint0019
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = arrowFoo2<"a">("a")
-      expect(result).assertEqual("a")
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_2000
-     * @tc.name      testGenericFunctionsConstraint0020
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = arrowFoo3<byte>(1 as byte)
-      expect(result).assertEqual(1)
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_2100
-     * @tc.name      testGenericFunctionsConstraint0021
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = exprFoo1<Int1>(new Int1())
-      expect(result instanceof Int1).assertTrue()
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_2200
-     * @tc.name      testGenericFunctionsConstraint0022
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = exprFoo1<Double1>(new Double1())
-      expect(result instanceof Double1).assertTrue()
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_2300
-     * @tc.name      testGenericFunctionsConstraint0023
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = exprFoo2<"a">("a")
-      expect(result).assertEqual("a")
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_2400
-     * @tc.name      testGenericFunctionsConstraint0024
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = exprFoo2<"b">("b")
-      expect(result).assertEqual("b")
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_2500
-     * @tc.name      testGenericFunctionsConstraint0025
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = exprFoo3<byte>(1 as byte)
-      expect(result).assertEqual(1)
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_2600
-     * @tc.name      testGenericFunctionsConstraint0026
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo8<double>(1.2 as double)
-      expect(result).assertEqual(1.2)
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_2700
-     * @tc.name      testGenericFunctionsConstraint0027
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo8<number>(1.3 as number)
-      expect(result).assertEqual(1.3)
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_FUNCTIONS_CONSTRAINT_2800
-     * @tc.name      testGenericFunctionsConstraint0028
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericFunctionsConstraint0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = foo9<double>(1.4 as double)
-      expect(result).assertEqual(1.4)
+    it("testGenericFunctionsConstraintGroup0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result1 = foo8<double>(1.2 as double)
+      let result2 = foo8<number>(1.3 as number)
+      let result3 = foo9<double>(1.4 as double)
+      expect(result1).assertEqual(1.2)
+      expect(result2).assertEqual(1.3)
+      expect(result3).assertEqual(1.4)
     });
   })
 }

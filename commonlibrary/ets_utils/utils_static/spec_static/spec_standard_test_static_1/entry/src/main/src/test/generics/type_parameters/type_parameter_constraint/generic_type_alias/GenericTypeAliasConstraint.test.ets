@@ -199,7 +199,6 @@ interface X10<U extends TT<TT<TCore>>> {}
 interface X11<U extends V, V extends TCore> {}
 interface X12<U extends V, V extends W, W extends TCore> {}
 
-// 无约束泛型类定义（重命名避免冲突）
 class ATypeGeneric<T> {}
 type AGeneric<T> = ATypeGeneric<T>
 
@@ -216,13 +215,11 @@ class CType<T extends AWithFoo> {
 }
 type CGeneric<T extends AWithFoo> = CType<T>
 
-// 抽象类和final类定义，避免冲突）
 class A1<T extends SomeTypeCore> {}
 abstract class A2<T extends SomeTypeCore> {}
 final class A3<T extends SomeTypeCore> {}
 class ChildBase<T extends SomeTypeCore> extends A2<T> {}
 
-// 自依赖泛型类定义（重命名避免冲突，修复循环约束）
 class A1Self<T extends TT<SomeTypeCore>> {}
 abstract class A2Self<T extends TT<SomeTypeCore>> {}
 final class A3Self<T extends TT<SomeTypeCore>> {}
@@ -254,7 +251,6 @@ class A28Self<U extends V, V extends TCore> {}
 abstract class A29Self<U extends V, V extends TCore> {}
 final class A30Self<U extends V, V extends TCore> {}
 
-// 自依赖泛型派生类（重命名避免冲突）
 class Child1Self<T extends TT<SomeTypeCore>> extends A2Self<TT<SomeTypeCore>> {}
 class Child2Self<T extends TTT<TT<SomeTypeCore>>> extends A5Self<TTT<TT<SomeTypeCore>>> {}
 class Child3Self<T extends TT<TT<SomeTypeCore>>> extends A8Self<TT<TT<SomeTypeCore>>> {}
@@ -266,7 +262,6 @@ class Child8Self<T extends TTT<TT<TCore>>> extends A23Self<TTT<TT<TCore>>> {}
 class Child9Self<T extends TT<TT<TCore>>> extends A26Self<TT<TT<TCore>>> {}
 class Child10Self<T extends TCore, U extends TCore> extends A29Self<TCore, TCore> {}
 
-// 三层泛型约束类（重命名避免冲突）
 class A1Three<T extends U, U extends W, W extends TCore> {}
 abstract class A2Three<T extends U, U extends W, W extends TCore> {}
 final class A3Three<T extends U, U extends W, W extends TCore> {}
@@ -284,7 +279,6 @@ class CTypeExtendsFloatNumber<T extends number> extends ACTypeFloatNumber<T> {} 
 class CTypeNumberNumber<T extends number> {} // -> number
 class CTypeLiteralString<T extends "literal" | string> {} // -> string
 
-// sleep 函数紧挨在 export default function 前面
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -318,214 +312,121 @@ export default function GenericTypeAliasConstraintTest() {
 
     /**
      * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_0100
-     * @tc.name      testGenericTypeAliasConstraint0001
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericTypeAliasConstraintGroup0001
+     * @tc.desc      Generic type alias constraint test for PointIntDouble and ChildIntDouble with Int1
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericTypeAliasConstraint0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new PointIntDouble<Int1>()
-      expect(x instanceof PointIntDouble).assertTrue()
+    it("testGenericTypeAliasConstraintGroup0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x1 = new PointIntDouble<Int1>()
+      let x2 = new ChildIntDouble<Int1>()
+      expect(x1 instanceof PointIntDouble).assertTrue()
+      expect(x2 instanceof AbstractPointIntDouble).assertTrue()
     });
+
     /**
      * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_0200
-     * @tc.name      testGenericTypeAliasConstraint0002
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericTypeAliasConstraintGroup0002
+     * @tc.desc      Generic type alias constraint test for FinalPointIntDouble and PointIntDouble with Double1
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericTypeAliasConstraint0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new ChildIntDouble<Int1>()
-      expect(x instanceof AbstractPointIntDouble).assertTrue()
+    it("testGenericTypeAliasConstraintGroup0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x1 = new FinalPointIntDouble<Int1>()
+      let x2 = new PointIntDouble<Double1>()
+      expect(x1 instanceof FinalPointIntDouble).assertTrue()
+      expect(x2 instanceof PointIntDouble).assertTrue()
     });
+
     /**
      * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_0300
-     * @tc.name      testGenericTypeAliasConstraint0003
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericTypeAliasConstraintGroup0003
+     * @tc.desc      Generic type alias constraint test for ChildIntDouble and FinalPointIntDouble with Double1
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericTypeAliasConstraint0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new FinalPointIntDouble<Int1>()
-      expect(x instanceof FinalPointIntDouble).assertTrue()
+    it("testGenericTypeAliasConstraintGroup0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x1 = new ChildIntDouble<Double1>()
+      let x2 = new FinalPointIntDouble<Double1>()
+      expect(x1 instanceof AbstractPointIntDouble).assertTrue()
+      expect(x2 instanceof FinalPointIntDouble).assertTrue()
     });
+
     /**
      * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_0400
-     * @tc.name      testGenericTypeAliasConstraint0004
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericTypeAliasConstraintGroup0004
+     * @tc.desc      Generic type alias constraint test for PointAB and ChildAB with "a"
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericTypeAliasConstraint0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new PointIntDouble<Double1>()
-      expect(x instanceof PointIntDouble).assertTrue()
+    it("testGenericTypeAliasConstraintGroup0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x1 = new PointAB<"a">()
+      let x2 = new ChildAB<"a">()
+      expect(x1 instanceof PointAB).assertTrue()
+      expect(x2 instanceof AbstractPointAB).assertTrue()
     });
+
     /**
      * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_0500
-     * @tc.name      testGenericTypeAliasConstraint0005
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericTypeAliasConstraintGroup0005
+     * @tc.desc      Generic type alias constraint test for FinalPointAB and PointByte
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericTypeAliasConstraint0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new ChildIntDouble<Double1>()
-      expect(x instanceof AbstractPointIntDouble).assertTrue()
+    it("testGenericTypeAliasConstraintGroup0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x1 = new FinalPointAB<"a">()
+      let x2 = new PointByte<number>()
+      expect(x1 instanceof FinalPointAB).assertTrue()
+      expect(x2 instanceof PointByte).assertTrue()
     });
+
     /**
      * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_0600
-     * @tc.name      testGenericTypeAliasConstraint0006
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericTypeAliasConstraintGroup0006
+     * @tc.desc      Generic type alias constraint test for ChildByte and FinalPointByte
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericTypeAliasConstraint0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new FinalPointIntDouble<Double1>()
-      expect(x instanceof FinalPointIntDouble).assertTrue()
+    it("testGenericTypeAliasConstraintGroup0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x1 = new ChildByte<number>()
+      let x2 = new FinalPointByte<number>()
+      expect(x1 instanceof AbstractPointByte).assertTrue()
+      expect(x2 instanceof FinalPointByte).assertTrue()
     });
+
     /**
      * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_0700
-     * @tc.name      testGenericTypeAliasConstraint0007
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericTypeAliasConstraintGroup0007
+     * @tc.desc      Generic type alias constraint test for PointShort and ChildShort
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericTypeAliasConstraint0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new PointAB<"a">()
-      expect(x instanceof PointAB).assertTrue()
+    it("testGenericTypeAliasConstraintGroup0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x1 = new PointShort<number>()
+      let x2 = new ChildShort<number>()
+      expect(x1 instanceof PointShort).assertTrue()
+      expect(x2 instanceof AbstractPointShort).assertTrue()
     });
+
     /**
      * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_0800
-     * @tc.name      testGenericTypeAliasConstraint0008
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
+     * @tc.name      testGenericTypeAliasConstraintGroup0008
+     * @tc.desc      Generic type alias constraint test for FinalPointShort
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericTypeAliasConstraint0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new ChildAB<"a">()
-      expect(x instanceof AbstractPointAB).assertTrue()
-    });
-    /**
-     * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_0900
-     * @tc.name      testGenericTypeAliasConstraint0009
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericTypeAliasConstraint0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new FinalPointAB<"a">()
-      expect(x instanceof FinalPointAB).assertTrue()
-    });
-    /**
-     * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_1000
-     * @tc.name      testGenericTypeAliasConstraint0010
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericTypeAliasConstraint0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new PointByte<number>()
-      expect(x instanceof PointByte).assertTrue()
-    });
-    /**
-     * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_1100
-     * @tc.name      testGenericTypeAliasConstraint0011
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericTypeAliasConstraint0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new ChildByte<number>()
-      expect(x instanceof AbstractPointByte).assertTrue()
-    });
-    /**
-     * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_1200
-     * @tc.name      testGenericTypeAliasConstraint0012
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericTypeAliasConstraint0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new FinalPointByte<number>()
-      expect(x instanceof FinalPointByte).assertTrue()
-    });
-    /**
-     * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_1300
-     * @tc.name      testGenericTypeAliasConstraint0013
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericTypeAliasConstraint0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new PointShort<number>()
-      expect(x instanceof PointShort).assertTrue()
-    });
-    /**
-     * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_1400
-     * @tc.name      testGenericTypeAliasConstraint0014
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericTypeAliasConstraint0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = new ChildShort<number>()
-      expect(x instanceof AbstractPointShort).assertTrue()
-    });
-    /**
-     * @tc.number    SUB_GENERIC_TYPE_ALIAS_CONSTRAINT_1500
-     * @tc.name      testGenericTypeAliasConstraint0015
-     * @tc.desc      If possible instantiations need to be constrained, then an individual constraint
-     *               can be set for each type parameter after the keyword extends. A constraint can have
-     *               the form of any type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericTypeAliasConstraint0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testGenericTypeAliasConstraintGroup0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x = new FinalPointShort<number>()
       expect(x instanceof FinalPointShort).assertTrue()
     });
-    
+
   })
 }
