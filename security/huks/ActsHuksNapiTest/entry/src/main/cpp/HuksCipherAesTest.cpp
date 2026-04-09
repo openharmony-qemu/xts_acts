@@ -557,6 +557,39 @@ static OH_Huks_Result PerformAesDecryptAndAbort(const struct OH_Huks_Blob* keyAl
     return ret;
 }
 
+static OH_Huks_Result InitAes0200GenParamSet(struct Aes0200ParamSets* paramSets,
+                                             struct OH_Huks_Param* genParams,
+                                             uint32_t genParamCount)
+{
+    return InitParamSet(&paramSets->genParamSet, genParams, genParamCount);
+}
+
+static OH_Huks_Result GenerateAes0200Key(const struct OH_Huks_Blob* keyAlias,
+                                         struct OH_Huks_ParamSet* genParamSet)
+{
+    OH_Huks_Result ret = OH_Huks_GenerateKeyItem(keyAlias, genParamSet, nullptr);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_LOG_INFO(LOG_APP, "[AES_0200] GenerateKeyItem failed, errorCode=%{public}d", ret.errorCode);
+        return ret;
+    }
+    OH_LOG_INFO(LOG_APP, "[AES_0200] GenerateKeyItem success");
+    return ret;
+}
+
+static OH_Huks_Result InitAes0200EncryptParamSet(struct Aes0200ParamSets* paramSets,
+                                                  struct OH_Huks_Param* encryptParams,
+                                                  uint32_t encryptParamCount)
+{
+    return InitParamSet(&paramSets->encryptParamSet, encryptParams, encryptParamCount);
+}
+
+static OH_Huks_Result InitAes0200DecryptParamSet(struct Aes0200ParamSets* paramSets,
+                                                  struct OH_Huks_Param* decryptParams,
+                                                  uint32_t decryptParamCount)
+{
+    return InitParamSet(&paramSets->decryptParamSet, decryptParams, decryptParamCount);
+}
+
 /**
  * @tc.name   SecurityHuksNapiCipherAes0200
  * @tc.number Security_HUKS_NAPI_Cipher_AES_0200
@@ -602,23 +635,21 @@ int SecurityHuksNapiCipherAes0200()
     };
 
     struct Aes0200ParamSets paramSets = { nullptr, nullptr, nullptr };
-    OH_Huks_Result ret = InitParamSet(&paramSets.genParamSet, g_genParams019,
-                                      sizeof(g_genParams019) / sizeof(OH_Huks_Param));
+    OH_Huks_Result ret = InitAes0200GenParamSet(&paramSets, g_genParams019,
+                                                 sizeof(g_genParams019) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "[AES_0200] InitParamSet(gen) failed, errorCode=%{public}d", ret.errorCode);
         return -1;
     }
 
-    ret = OH_Huks_GenerateKeyItem(&keyAlias, paramSets.genParamSet, nullptr);
+    ret = GenerateAes0200Key(&keyAlias, paramSets.genParamSet);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_LOG_INFO(LOG_APP, "[AES_0200] GenerateKeyItem failed, errorCode=%{public}d", ret.errorCode);
         FreeAes0200ParamSets(&paramSets);
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[AES_0200] GenerateKeyItem success");
 
-    ret = InitParamSet(&paramSets.encryptParamSet, g_encryptParams019,
-                       sizeof(g_encryptParams019) / sizeof(OH_Huks_Param));
+    ret = InitAes0200EncryptParamSet(&paramSets, g_encryptParams019,
+                                      sizeof(g_encryptParams019) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "[AES_0200] InitParamSet(encrypt) failed, errorCode=%{public}d", ret.errorCode);
         OH_Huks_DeleteKeyItem(&keyAlias, paramSets.genParamSet);
@@ -635,8 +666,8 @@ int SecurityHuksNapiCipherAes0200()
         return -1;
     }
 
-    ret = InitParamSet(&paramSets.decryptParamSet, g_decryptParams019,
-                       sizeof(g_decryptParams019) / sizeof(OH_Huks_Param));
+    ret = InitAes0200DecryptParamSet(&paramSets, g_decryptParams019,
+                                      sizeof(g_decryptParams019) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "[AES_0200] InitParamSet(decrypt) failed, errorCode=%{public}d", ret.errorCode);
         OH_Huks_DeleteKeyItem(&keyAlias, paramSets.genParamSet);
@@ -659,7 +690,7 @@ int SecurityHuksNapiCipherAes0200()
         return -1;
     }
 
-    OH_LOG_INFO(LOG_APP, "[AES_0200] Test passed");
+    OH_LOG_INFO(LOG_APP, "[AES_0200] Test end");
     return 0;
 }
 

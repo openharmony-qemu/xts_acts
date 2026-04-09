@@ -38,6 +38,7 @@ static const uint32_t TIMES = 4;
 static const uint32_t MAX_OUTDATA_SIZE = MAX_UPDATE_SIZE * TIMES;
 static const uint32_t DOUBLE_SIZE_MULTIPLIER = 2;
 static const uint32_t MAX_BLOB_SIZE = 1024 * 1024; // 1MB，合理的上限
+static const uint32_t RSA_PARAM_COUNT = 7;
 
 static const std::string IN_DATA_32 = "RSA_32_ttttttttttttttttttttttttt";
 
@@ -489,18 +490,18 @@ static OH_Huks_Result InitRsa0100ParamSets(struct Rsa0100ParamSets* paramSets,
                                            struct OH_Huks_Param* encryptParams,
                                            struct OH_Huks_Param* decryptParams)
 {
-    OH_Huks_Result ret = InitParamSet(&paramSets->genParamSet, genParams, 7);
+    OH_Huks_Result ret = InitParamSet(&paramSets->genParamSet, genParams, RSA_PARAM_COUNT);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return ret;
     }
 
-    ret = InitParamSet(&paramSets->encryptParamSet, encryptParams, 7);
+    ret = InitParamSet(&paramSets->encryptParamSet, encryptParams, RSA_PARAM_COUNT);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_FreeParamSet(&paramSets->genParamSet);
         return ret;
     }
 
-    ret = InitParamSet(&paramSets->decryptParamSet, decryptParams, 7);
+    ret = InitParamSet(&paramSets->decryptParamSet, decryptParams, RSA_PARAM_COUNT);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_Huks_FreeParamSet(&paramSets->genParamSet);
         OH_Huks_FreeParamSet(&paramSets->encryptParamSet);
