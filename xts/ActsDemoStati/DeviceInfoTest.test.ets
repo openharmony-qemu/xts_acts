@@ -1720,5 +1720,199 @@ export default function deviceInfoTest() {
             expect(performanceClass).assertEqual(CLASS_LEVEL_LOW);
             console.info('device_info_test_078 : end');
         })
+             /**
+     * @tc.name   SUB_COMMONLIBRARY_DATE_SETTERS_0100
+     * @tc.number SUB_COMMONLIBRARY_DATE_SETTERS_0100
+     * @tc.desc   Verify setDate() sets day of month and returns timestamp.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_COMMONLIBRARY_DATE_SETTERS_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+        const date: Date = new Date(2024, 5, 1);
+        const timestamp: number = date.setDate(15);
+        expect(date.getDate()).assertEqual(15);
+        expect(typeof timestamp).assertEqual('number');
+        const date: Date = new Date(2024, 0, 31);
+        date.setDate(32);
+        expect(date.getMonth()).assertEqual(1);
+        expect(date.getDate()).assertEqual(1);
+        const date: Date = new Date(2024, 1, 1);
+        date.setDate(0);
+        expect(date.getMonth()).assertEqual(0);
+        expect(date.getDate()).assertEqual(31);
+      
+        const date: Date = new Date(2024, 1, 15);
+        date.setDate(-5);
+        expect(date.getMonth()).assertEqual(0);
+        expect(date.getDate()).assertEqual(26);
+     
+        const date: Date = new Date(2020, 5, 15);
+        const timestamp: number = date.setFullYear(2024);
+        expect(date.getFullYear()).assertEqual(2024);
+        expect(typeof timestamp).assertEqual('number');
+     
+        const date: Date = new Date(2020, 0, 1);
+        date.setFullYear(2024, 11, 31);
+        expect(date.getFullYear()).assertEqual(2024);
+        expect(date.getMonth()).assertEqual(11);
+        expect(date.getDate()).assertEqual(31);
+   
+        const date: Date = new Date(2024, 5, 15);
+        date.setFullYear(0);
+        expect(date.getFullYear()).assertEqual(0);
+    
+        const date: Date = new Date(2024, 5, 15);
+        date.setFullYear(99);
+        expect(date.getFullYear()).assertEqual(99);
+   
+        const date: Date = new Date(2024, 5, 15, 10, 0, 0);
+        const timestamp: number = date.setHours(14);
+        expect(date.getHours()).assertEqual(14);
+        expect(typeof timestamp).assertEqual('number');
+   
+        const date: Date = new Date(2024, 5, 15, 0, 0, 0, 0);
+        date.setHours(14, 30, 45, 123);
+        expect(date.getHours()).assertEqual(14);
+        expect(date.getMinutes()).assertEqual(30);
+        expect(date.getSeconds()).assertEqual(45);
+        expect(date.getMilliseconds()).assertEqual(123);
+      
+        const date: Date = new Date(2024, 5, 15, 23, 0, 0);
+        date.setHours(25);
+        expect(date.getDate()).assertEqual(16);
+        expect(date.getHours()).assertEqual(1);
+   
+        const date: Date = new Date(2024, 5, 15, 1, 0, 0);
+        date.setHours(-1);
+        expect(date.getDate()).assertEqual(14);
+        expect(date.getHours()).assertEqual(23);
+     
+        const date: Date = new Date(2024, 5, 15, 12, 0, 0, 0);
+        const timestamp: number = date.setMilliseconds(123);
+        expect(date.getMilliseconds()).assertEqual(123);
+        expect(typeof timestamp).assertEqual('number');
+   
+        const date: Date = new Date(2024, 5, 15, 12, 0, 0, 500);
+        date.setMilliseconds(1500);
+        expect(date.getSeconds()).assertEqual(1);
+        expect(date.getMilliseconds()).assertEqual(500);
+ 
+        const date: Date = new Date(2024, 5, 15, 12, 0, 0);
+        const timestamp: number = date.setMinutes(30);
+        expect(date.getMinutes()).assertEqual(30);
+        expect(typeof timestamp).assertEqual('number');
+ 
+        const date: Date = new Date(2024, 5, 15, 12, 0, 0, 0);
+        date.setMinutes(30, 45, 123);
+        expect(date.getMinutes()).assertEqual(30);
+        expect(date.getSeconds()).assertEqual(45);
+        expect(date.getMilliseconds()).assertEqual(123);
+   
+        const date: Date = new Date(2024, 5, 15, 12, 30, 0);
+        date.setMinutes(90);
+        expect(date.getHours()).assertEqual(13);
+        expect(date.getMinutes()).assertEqual(30);
+     
+        const date: Date = new Date(2024, 0, 15);
+        const timestamp: number = date.setMonth(5);
+        expect(date.getMonth()).assertEqual(5);
+        expect(typeof timestamp).assertEqual('number');
+
+        const date: Date = new Date(2024, 0, 15);
+        date.setMonth(5, 20);
+        expect(date.getMonth()).assertEqual(5);
+        expect(date.getDate()).assertEqual(20);
+
+        const date: Date = new Date(2024, 5, 15);
+        date.setMonth(12);
+        expect(date.getFullYear()).assertEqual(2025);
+        expect(date.getMonth()).assertEqual(0);
+     
+        const date: Date = new Date(2024, 0, 15);
+        date.setMonth(-1);
+        expect(date.getFullYear()).assertEqual(2023);
+        expect(date.getMonth()).assertEqual(11);
+     
+        const date: Date = new Date(2024, 5, 15, 12, 0, 0);
+        const timestamp: number = date.setSeconds(30);
+        expect(date.getSeconds()).assertEqual(30);
+        expect(typeof timestamp).assertEqual('number');
+ 
+        const date: Date = new Date(2024, 5, 15, 12, 0, 0, 0);
+        date.setSeconds(30, 456);
+        expect(date.getSeconds()).assertEqual(30);
+        expect(date.getMilliseconds()).assertEqual(456);
+   
+        const date: Date = new Date();
+        const timestamp: number = Date.UTC(2024, 5, 15, 12, 0, 0);
+        const result: number = date.setTime(timestamp);
+        expect(date.getTime()).assertEqual(timestamp);
+        expect(result).assertEqual(timestamp);
+    
+        const date: Date = new Date();
+        const timestamp: number = -86400000;
+        date.setTime(timestamp);
+        expect(date.getTime()).assertEqual(timestamp);
+    
+        const date: Date = new Date(Date.UTC(2024, 5, 1));
+        date.setUTCDate(15);
+        expect(date.getUTCDate()).assertEqual(15);
+   
+        const date: Date = new Date(Date.UTC(2020, 5, 15));
+        date.setUTCFullYear(2024);
+        expect(date.getUTCFullYear()).assertEqual(2024);
+     
+        const date: Date = new Date(Date.UTC(2024, 5, 15, 10, 0, 0));
+        date.setUTCHours(14);
+        expect(date.getUTCHours()).assertEqual(14);
+   
+        const date: Date = new Date(Date.UTC(2024, 5, 15, 12, 0, 0, 0));
+        date.setUTCMilliseconds(123);
+        expect(date.getUTCMilliseconds()).assertEqual(123);
+      
+        const date: Date = new Date(Date.UTC(2024, 5, 15, 12, 0, 0));
+        date.setUTCMinutes(30);
+        expect(date.getUTCMinutes()).assertEqual(30);
+      
+        const date: Date = new Date(Date.UTC(2024, 0, 15));
+        date.setUTCMonth(5);
+        expect(date.getUTCMonth()).assertEqual(5);
+     
+        const date: Date = new Date(Date.UTC(2024, 5, 15, 12, 0, 0));
+        date.setUTCSeconds(30);
+        expect(date.getUTCSeconds()).assertEqual(30);
+
+        const date: Date = new Date(2020, 5, 15);
+        date.setFullYear(124);
+        expect(date.getFullYear()).assertEqual(124);
+    
+        for (let i = 0; i <= 99; i++) {
+          const date: Date = new Date(2024, 5, 15);
+          date.setFullYear(i);
+          expect(date.getFullYear()).assertEqual(i);
+        }
+  
+    
+        const date1: Date = new Date(2024, 5, 15);
+        const date2: Date = new Date(date1.getTime());
+        date2.setDate(20);
+        expect(date1.getDate()).assertEqual(15);
+        expect(date2.getDate()).assertEqual(20);
+   
+        const date: Date = new Date(2024, 5, 15, 12, 30, 45);
+        date.setFullYear(2025);
+        date.setMonth(11);
+        date.setDate(25);
+        date.setHours(18);
+        date.setMinutes(45);
+        date.setSeconds(30);
+        expect(date.getFullYear()).assertEqual(2025);
+        expect(date.getMonth()).assertEqual(11);
+        expect(date.getDate()).assertEqual(25);
+        expect(date.getHours()).assertEqual(18);
+        expect(date.getMinutes()).assertEqual(45);
+        expect(date.getSeconds()).assertEqual(30);
+      });
     })
 }
