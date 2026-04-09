@@ -21,6 +21,8 @@
 #include <native_image/native_image.h>
 #include <native_window/external_window.h>
 #include "common/log_common.h"
+#include <vector>
+
 
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 
@@ -553,5 +555,50 @@ napi_value OHNativeBufferWriteAndReadParcelMultipleCalls(napi_env env, napi_call
     OH_NativeBuffer_Unreference(nativeBuffer);
     OH_IPCParcel_Destroy(parcel);
     napi_create_int32(env, NATIVE_ERROR_OK, &result);
+    return result;
+}
+
+std::vector<OH_NativeBuffer_Format> nativeBuffeFormat = {
+    NATIVEBUFFER_PIXEL_FMT_CLUT8,        NATIVEBUFFER_PIXEL_FMT_CLUT1,        NATIVEBUFFER_PIXEL_FMT_CLUT4,
+    NATIVEBUFFER_PIXEL_FMT_RGB_565,      NATIVEBUFFER_PIXEL_FMT_RGBA_5658,    NATIVEBUFFER_PIXEL_FMT_RGB_444,
+    NATIVEBUFFER_PIXEL_FMT_RGBX_5551,    NATIVEBUFFER_PIXEL_FMT_RGBA_5551,    NATIVEBUFFER_PIXEL_FMT_RGB_555,
+    NATIVEBUFFER_PIXEL_FMT_YUV_422_I,    NATIVEBUFFER_PIXEL_FMT_YUYV_422_PKG, NATIVEBUFFER_PIXEL_FMT_UYVY_422_PKG,
+    NATIVEBUFFER_PIXEL_FMT_YVYU_422_PKG, NATIVEBUFFER_PIXEL_FMT_VYUY_422_PKG, NATIVEBUFFER_PIXEL_FMT_RGBA_1010102,
+    NATIVEBUFFER_PIXEL_FMT_YCBCR_P010,   NATIVEBUFFER_PIXEL_FMT_YCRCB_P010,   NATIVEBUFFER_PIXEL_FMT_RAW10,
+    NATIVEBUFFER_PIXEL_FMT_BLOB,         NATIVEBUFFER_PIXEL_FMT_RGBA16_FLOAT, NATIVEBUFFER_PIXEL_FMT_Y8,
+    NATIVEBUFFER_PIXEL_FMT_Y16,          NATIVEBUFFER_PIXEL_FMT_VENDER_MASK,  NATIVEBUFFER_PIXEL_FMT_BUTT
+};
+
+std::vector<OH_NativeBuffer_Format> nativeBuffeFormat_RK = {
+    NATIVEBUFFER_PIXEL_FMT_RGBX_4444,    NATIVEBUFFER_PIXEL_FMT_RGBA_4444,    NATIVEBUFFER_PIXEL_FMT_RGBX_8888,
+    NATIVEBUFFER_PIXEL_FMT_RGBA_8888,    NATIVEBUFFER_PIXEL_FMT_RGB_888,      NATIVEBUFFER_PIXEL_FMT_BGR_565,
+    NATIVEBUFFER_PIXEL_FMT_BGRX_4444,    NATIVEBUFFER_PIXEL_FMT_BGRA_4444,    NATIVEBUFFER_PIXEL_FMT_BGRX_5551,
+    NATIVEBUFFER_PIXEL_FMT_BGRA_5551,    NATIVEBUFFER_PIXEL_FMT_BGRX_8888,    NATIVEBUFFER_PIXEL_FMT_BGRA_8888,
+    NATIVEBUFFER_PIXEL_FMT_YCBCR_422_SP, NATIVEBUFFER_PIXEL_FMT_YCRCB_422_SP, NATIVEBUFFER_PIXEL_FMT_YCBCR_420_SP,
+    NATIVEBUFFER_PIXEL_FMT_YCRCB_420_SP, NATIVEBUFFER_PIXEL_FMT_YCBCR_422_P,  NATIVEBUFFER_PIXEL_FMT_YCRCB_422_P,
+    NATIVEBUFFER_PIXEL_FMT_YCBCR_420_P,  NATIVEBUFFER_PIXEL_FMT_YCRCB_420_P,
+};
+
+napi_value OHNativeBufferAllocFormatDiff(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    for (uint32_t index = 0; index < nativeBuffeFormat_RK.size(); index++) {
+        int backInfo = FAIL;
+        OH_NativeBuffer_Config config = {
+            .width = 0x100,
+            .height = 0x100,
+            .format = nativeBuffeFormat_RK[index],
+            .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
+        };
+        OH_NativeBuffer *buffer = OH_NativeBuffer_Alloc(&config);
+        if (buffer == nullptr) {
+            napi_create_int32(env, backInfo, &result);
+            OH_NativeBuffer_Unreference(buffer);
+            LOGE("OH_NativeBuffer_Alloc OH_NativeBuffer_Alloc index = %{public}d", index);
+            return result;
+        }
+        OH_NativeBuffer_Unreference(buffer);
+    }
+    napi_create_int32(env, NUMBER_0, &result);
     return result;
 }

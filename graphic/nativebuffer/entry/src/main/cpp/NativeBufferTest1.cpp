@@ -155,6 +155,7 @@ napi_property_descriptor desc[] = {
     {"oHNativeBufferWriteAndReadParcelMultipleCalls", nullptr, OHNativeBufferWriteAndReadParcelMultipleCalls, nullptr,
      nullptr, nullptr, napi_default, nullptr},
     {"oHNativeErrorCodeCover", nullptr, OHNativeErrorCodeCover, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeBufferAllocFormatDiff", nullptr, OHNativeBufferAllocFormatDiff, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START
