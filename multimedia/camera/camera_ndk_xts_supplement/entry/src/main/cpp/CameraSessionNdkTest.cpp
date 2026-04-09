@@ -649,6 +649,90 @@ napi_value OHCameraInputOpenConcurrentCameras(napi_env env, napi_callback_info i
     napi_create_int32(env, code, &ret);
     return ret;
 }
+
+napi_value OHCameraInputOpenConcurrentCamerasErr(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    Camera_ErrorCode errorCode = CAMERA_OK;
+
+    // 获取支持的摄像头列表
+    uint32_t cameraCount = 0;
+    Camera_Device *cameras = nullptr;
+    Camera_ErrorCode ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &cameraCount);
+    // 第一个if判断：检查返回码是否成功
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "Failed to get supported cameras.");
+        napi_value result;
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    // 第二个if判断：检查摄像头数量是否足够
+    if (cameraCount < 2) {
+        OH_LOG_WARN(LOG_APP, "Less than 2 cameras available, but operation succeeds.");
+        napi_value result;
+        napi_create_int32(env, CAMERA_OK, &result);
+        return result;
+    }
+    Camera_Input *frontCameraInput = nullptr;
+    Camera_Input *backCameraInput = nullptr;
+    // 创建后置摄像头输入 (cameras[0])
+    ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[0], &backCameraInput);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "Failed to create back camera input.");
+        napi_value result;
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    // 创建前置摄像头输入 (cameras[1])
+    ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[1], &frontCameraInput);
+    if (ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "Failed to create front camera input.");
+        OH_CameraInput_Close(backCameraInput);
+        napi_value result;
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    // 打开并发摄像头
+    switch (index) {
+    case CASE_INDEX_1:
+        // 先打开前置摄像头（预期成功）
+        errorCode = OH_CameraInput_OpenConcurrentCameras(frontCameraInput,
+            Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
+        if (errorCode != CAMERA_OK) {
+            OH_LOG_ERROR(LOG_APP, "Failed to open front camera.");
+            OH_CameraInput_Close(frontCameraInput);
+            OH_CameraInput_Close(backCameraInput);
+            napi_value result;
+            napi_create_int32(env, errorCode, &result);
+            return result;
+        }
+        // 再打开后置摄像头（预期失败，返回CAMERA_CONFLICT_CAMERA）
+        errorCode = OH_CameraInput_OpenConcurrentCameras(backCameraInput,
+            Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
+        if (errorCode != CAMERA_CONFLICT_CAMERA) {
+            OH_LOG_ERROR(LOG_APP, "Unexpected result for back camera open.");
+            OH_CameraInput_Close(frontCameraInput);
+            OH_CameraInput_Close(backCameraInput);
+            napi_value result;
+            napi_create_int32(env, CAMERA_CONFLICT_CAMERA, &result);
+            return result;
+        }
+        break;
+    default:
+        break;
+    }
+    // 释放摄像头输入
+    OH_CameraInput_Close(frontCameraInput);
+    OH_CameraInput_Close(backCameraInput);
+
+    napi_value retValue;
+    napi_create_int32(env, errorCode, &retValue);
+    return retValue;
+}
+
 void OnIsoValueChanged(Camera_CaptureSession* session, int32_t isoValue) {
 }
 napi_value captureSessionRegisterIsoChangeCallback(napi_env env, napi_callback_info info)
