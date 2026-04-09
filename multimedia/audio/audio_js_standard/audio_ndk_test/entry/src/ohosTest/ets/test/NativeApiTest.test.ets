@@ -5701,16 +5701,16 @@ export default function audioNDK() {
     })
 
     /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500:
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500:
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500
     * @tc.desc   SetIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500:', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500:();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500: : ${result}`);
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500: ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
     })
