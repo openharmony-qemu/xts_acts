@@ -359,7 +359,7 @@ export default function audioSessionManagerTest() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIOR_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
       try {
         sessionManager!.setAudioSessionBehavior(behavior);
