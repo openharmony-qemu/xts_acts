@@ -661,52 +661,29 @@ napi_value OHCameraInputOpenConcurrentCamerasErr(napi_env env, napi_callback_inf
     uint32_t cameraCount = 0;
     Camera_Device *cameras = nullptr;
     Camera_ErrorCode ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &cameraCount);
-    if (ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "Failed to get supported cameras.");
-        napi_value result;
-        napi_create_int32(env, ret, &result);
-        return result;
-    }
     const int minCameraCount = 2;
     if (cameraCount < minCameraCount) {
-        OH_LOG_WARN(LOG_APP, "Less than 2 cameras available, but operation succeeds.");
+        OH_LOG_WARN(LOG_APP, "fewer than two cameras, skip the use case");
         napi_value result;
-        napi_create_int32(env, CAMERA_OK, &result);
+        napi_create_int32(env, CAMERA_CONFLICT_CAMERA, &result);
         return result;
     }
     Camera_Input *frontCameraInput = nullptr;
     Camera_Input *backCameraInput = nullptr;
     ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[0], &backCameraInput);
-    if (ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "Failed to create back camera input.");
-        napi_value result;
-        napi_create_int32(env, ret, &result);
-        return result;
-    }
     ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[1], &frontCameraInput);
-    if (ret != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "Failed to create front camera input.");
-        OH_CameraInput_Close(backCameraInput);
-        napi_value result;
-        napi_create_int32(env, ret, &result);
-        return result;
-    }
     switch (index) {
     case CASE_INDEX_1:
-        errorCode = OH_CameraInput_OpenConcurrentCameras(frontCameraInput,
-            Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
+        errorCode = OH_CameraInput_OpenConcurrentCameras(frontCameraInput, Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
         if (errorCode != CAMERA_OK) {
-            OH_LOG_ERROR(LOG_APP, "Failed to open front camera.");
             OH_CameraInput_Close(frontCameraInput);
             OH_CameraInput_Close(backCameraInput);
             napi_value result;
             napi_create_int32(env, errorCode, &result);
             return result;
         }
-        errorCode = OH_CameraInput_OpenConcurrentCameras(backCameraInput,
-            Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
+        errorCode = OH_CameraInput_OpenConcurrentCameras(backCameraInput, Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
         if (errorCode != CAMERA_CONFLICT_CAMERA) {
-            OH_LOG_ERROR(LOG_APP, "Unexpected result for back camera open.");
             OH_CameraInput_Close(frontCameraInput);
             OH_CameraInput_Close(backCameraInput);
             napi_value result;
