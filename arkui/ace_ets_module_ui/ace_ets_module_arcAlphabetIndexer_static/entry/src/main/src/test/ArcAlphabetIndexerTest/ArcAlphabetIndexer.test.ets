@@ -96,7 +96,9 @@ export default function ArcAlphabetIndexerTest() {
         await CommonFunc.sleep(SLEEP_TIME);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('arcIndexerFull'));
         expect(node != null).assertTrue();
-        let usePopup = JSON.parseJsonElement(inspector.getInspectorByKey('arcIndexerFull')).getElement('$attrs').getString('usePopup');
+        let attrs = node.getElement('$attrs');
+        expect(attrs != null).assertTrue();
+        let usePopup = attrs.getString('usePopup');
         console.info('[ARKUI_NEW] arcIndexerFull usePopup = ' + usePopup);
         expect(usePopup != null && usePopup !== undefined).assertTrue();
         expect(usePopup === 'true').assertTrue();
@@ -171,6 +173,13 @@ export default function ArcAlphabetIndexerTest() {
         expect(info.arrayValue.length).assertEqual(3);
         expect(info.arrayValue[0]).assertEqual('X');
         expect(info.selected).assertEqual(1);
+        let node = JSON.parseJsonElement(inspector.getInspectorByKey('arcIndexerFontSize'));
+        expect(node != null).assertTrue();
+        let attrs = node.getElement('$attrs');
+        expect(attrs != null).assertTrue();
+        let selected = attrs.getString('selected');
+        console.info('[ARKUI_NEW] arcIndexerFontSize selected = ' + selected);
+        expect(selected != null && selected !== undefined).assertTrue();
         console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerInitInfoArrayValue END');
         done();
       } catch (error) {
