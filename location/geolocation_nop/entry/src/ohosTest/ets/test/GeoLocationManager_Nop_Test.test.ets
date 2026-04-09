@@ -27,10 +27,30 @@ const PARAMETER_ERROR_MSG = 'The parameter invalid.'
 const SENSOR_NO_SUPPORT_CODE = 14500102
 const PERMISSION_DENIED_MSG = 'Permission denied.'
 
+export async function changedLocationMode() {
+  await geolocation.isLocationEnabled().then(async (result) => {
+    console.info('[lbs_js] nop getLocationSwitchState result: ' + JSON.stringify(result));
+    if (!result) {
+      await geoLocationManager.enableLocation().then(async (res) => {
+        console.info('[lbs_js] nop test requestEnableLocation promise result: ' + JSON.stringify(res));
+      }).catch((error: BusinessError) => {
+        console.info("[lbs_js] nop promise then error." + JSON.stringify(error));
+        expect().assertFail();
+      });
+    }
+  });
+  await geolocation.isLocationEnabled().then(async (result) => {
+    console.info('[lbs_js] check LocationSwitchState result: ' + JSON.stringify(result));
+  });
+}
+
 export default function geoLocationManager_nop_test() {
   describe('geoLocationManager_nop_test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (done: Function) => {
+      console.info('beforeAll case');
+      await changedLocationMode();
+      done();
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
