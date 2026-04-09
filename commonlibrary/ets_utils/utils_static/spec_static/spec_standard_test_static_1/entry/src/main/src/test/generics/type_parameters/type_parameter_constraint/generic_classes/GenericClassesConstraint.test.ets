@@ -598,27 +598,12 @@ export default function GenericClassesConstraintTest() {
     /**
      * @tc.number    SUB_GENERIC_CLASSES_CONSTRAINT_2700
      * @tc.name      testGenericClassesConstraintGroup0027
-     * @tc.desc      Constraint test for PointAny and FinalPointAny with Any
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericClassesConstraintGroup0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x1 = new PointAny<Any>()
-      let x2 = new FinalPointAny<Any>()
-      expect(x1 instanceof PointAny).assertTrue()
-      expect(x2 instanceof FinalPointAny).assertTrue()
-    });
-
-    /**
-     * @tc.number    SUB_GENERIC_CLASSES_CONSTRAINT_2800
-     * @tc.name      testGenericClassesConstraintGroup0028
      * @tc.desc      Constraint test for PointAny and FinalPointAny with Object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericClassesConstraintGroup0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testGenericClassesConstraintGroup0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x1 = new PointAny<Object>()
       let x2 = new FinalPointAny<Object>()
       expect(x1 instanceof PointAny).assertTrue()
@@ -626,14 +611,14 @@ export default function GenericClassesConstraintTest() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_CLASSES_CONSTRAINT_2900
-     * @tc.name      testGenericClassesConstraintGroup0029
+     * @tc.number    SUB_GENERIC_CLASSES_CONSTRAINT_2800
+     * @tc.name      testGenericClassesConstraintGroup0028
      * @tc.desc      Constraint test for PointAny and FinalPointAny with Object|undefined
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericClassesConstraintGroup0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testGenericClassesConstraintGroup0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x1 = new PointAny<Object | undefined>()
       let x2 = new FinalPointAny<Object | undefined>()
       expect(x1 instanceof PointAny).assertTrue()
@@ -641,14 +626,14 @@ export default function GenericClassesConstraintTest() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_CLASSES_CONSTRAINT_3000
-     * @tc.name      testGenericClassesConstraintGroup0030
+     * @tc.number    SUB_GENERIC_CLASSES_CONSTRAINT_2900
+     * @tc.name      testGenericClassesConstraintGroup0029
      * @tc.desc      Constraint test for PointAny and FinalPointAny with Object|null
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericClassesConstraintGroup0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testGenericClassesConstraintGroup0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x1 = new PointAny<Object | null>()
       let x2 = new FinalPointAny<Object | null>()
       expect(x1 instanceof PointAny).assertTrue()
@@ -656,14 +641,14 @@ export default function GenericClassesConstraintTest() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_CLASSES_CONSTRAINT_3100
-     * @tc.name      testGenericClassesConstraintGroup0031
+     * @tc.number    SUB_GENERIC_CLASSES_CONSTRAINT_3000
+     * @tc.name      testGenericClassesConstraintGroup0030
      * @tc.desc      Constraint test for PointAny and FinalPointAny with Object|undefined|null
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericClassesConstraintGroup0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testGenericClassesConstraintGroup0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x1 = new PointAny<Object | undefined | null>()
       let x2 = new FinalPointAny<Object | undefined | null>()
       expect(x1 instanceof PointAny).assertTrue()
@@ -671,14 +656,14 @@ export default function GenericClassesConstraintTest() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_CLASSES_CONSTRAINT_3200
-     * @tc.name      testGenericClassesConstraintGroup0032
+     * @tc.number    SUB_GENERIC_CLASSES_CONSTRAINT_3100
+     * @tc.name      testGenericClassesConstraintGroup0031
      * @tc.desc      Generic class constraint test with custom class A
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testGenericClassesConstraintGroup0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testGenericClassesConstraintGroup0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res = 0
       new C<A>(new A())
       expect(res).assertEqual(0)

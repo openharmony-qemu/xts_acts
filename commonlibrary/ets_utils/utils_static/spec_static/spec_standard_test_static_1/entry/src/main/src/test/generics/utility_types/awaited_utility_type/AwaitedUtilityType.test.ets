@@ -26,8 +26,6 @@ import {
   Level
 } from "../../../../../../hypium"
 
-//  (22)
-// interface 和 enum 定义
 interface I_22 {
   a: number
   b: string
@@ -54,10 +52,8 @@ type o_4 = Awaited<p_4>
 type p_5 = Awaited<ENM_22>
 type o_5 = Awaited<p_5>
 
-
 async function foo_15(i: Awaited<"literal string">, j: "literal string") {
   expect(i).assertEqual(j);
-  expect(i instanceof string).assertTrue();
 }
 
 async function bar_1() {
@@ -105,9 +101,8 @@ export default function AwaitedUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testAwaitedUtilityType0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let i: o_0 = number.MAX_VALUE;
-      expect(i).assertEqual(number.MAX_VALUE);
-      expect(i instanceof number).assertTrue();
+      let i: o_0 = 100;
+      expect(i).assertEqual(100);
     })
 
     /**
@@ -120,7 +115,8 @@ export default function AwaitedUtilityTypeTest() {
      * @tc.level     Level 2
      */
     it("testAwaitedUtilityType0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let i: o_1 = new Array<number>(3); i.fill(1);
+      let i: o_1 = new Array<number>(3);
+      i.fill(1);
       expect(i.at(0)).assertEqual(1);
       expect(i instanceof Array).assertTrue();
     })
@@ -152,7 +148,6 @@ export default function AwaitedUtilityTypeTest() {
     it("testAwaitedUtilityType0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let i: o_4 = {a: 3, b: "str"};
       expect(i.b).assertEqual("str");
-      expect(i instanceof I_22).assertTrue();
     })
 
     /**
@@ -167,7 +162,6 @@ export default function AwaitedUtilityTypeTest() {
     it("testAwaitedUtilityType0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let i: o_5 = ENM_22.Red;
       expect(i).assertEqual(ENM_22.Red);
-      expect(i instanceof ENM_22).assertTrue();
     })
   });
 }

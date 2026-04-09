@@ -27,11 +27,11 @@ import {
 
 // 集中定义的类型、接口、类统一声明）
 class Int1 {
-  value: Int = 0
+  value: int = 0
   constructor() {}
 }
 class Double1 {
-  value: Double = 0.0
+  value: double = 0.0
   constructor() {}
 }
 
