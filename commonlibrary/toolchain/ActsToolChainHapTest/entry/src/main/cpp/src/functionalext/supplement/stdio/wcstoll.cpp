@@ -21,7 +21,15 @@
 
 namespace {
 constexpr const char K_WCSTOLL_TAG[] = "wcstoll";
-}
+constexpr int K_BASE_AUTO = 0;
+constexpr int K_BASE_BIN = 2;
+constexpr int K_BASE_HEX = 16;
+constexpr int K_BASE_36 = 36;
+constexpr int K_PARSE_POS_1 = 1;
+constexpr int K_PARSE_POS_6 = 6;
+constexpr int K_PARSE_POS_19 = 19;
+constexpr int K_PARSE_POS_20 = 20;
+} // namespace
 
 /**
  * @tc.name      : Wcstoll0100
@@ -32,7 +40,7 @@ void Wcstoll0100(void)
 {
     long long ll;
     errno = 0;
-    ll = wcstoll(L"2147483647", nullptr, 0);
+    ll = wcstoll(L"2147483647", nullptr, K_BASE_AUTO);
     if (ll != 2147483647LL) {
         t_error("%s failed (expect signed %lld != %lld)\n", K_WCSTOLL_TAG, ll, 2147483647LL);
     }
@@ -47,7 +55,7 @@ void Wcstoll0200(void)
 {
     long long ll;
     errno = 0;
-    ll = wcstoll(L"10", nullptr, 0);
+    ll = wcstoll(L"10", nullptr, K_BASE_AUTO);
     if (ll != 10LL) {
         t_error("%s failed (expect signed %lld != %lld)\n", K_WCSTOLL_TAG, ll, 10LL);
     }
@@ -62,7 +70,7 @@ void Wcstoll0300(void)
 {
     long long ll;
     errno = 0;
-    ll = wcstoll(L"z", nullptr, 36);
+    ll = wcstoll(L"z", nullptr, K_BASE_36);
     if (ll != 35LL) {
         t_error("%s failed (%lld != %lld)\n", K_WCSTOLL_TAG, ll, 35LL);
     }
@@ -77,7 +85,7 @@ void Wcstoll0400(void)
 {
     long long ll;
     errno = 0;
-    ll = wcstoll(L"00010010001101000101011001111000", nullptr, 2);
+    ll = wcstoll(L"00010010001101000101011001111000", nullptr, K_BASE_BIN);
     if (ll != static_cast<long long>(0x12345678)) {
         t_error("%s failed (%lld != %lld)\n", K_WCSTOLL_TAG, ll, static_cast<long long>(0x12345678));
     }
@@ -96,13 +104,16 @@ void Wcstoll0500(void)
     wchar_t* c;
     s = L"0xz";
     errno = 0;
-    ll = wcstoll(s, &c, 16);
+    ll = wcstoll(s, &c, K_BASE_HEX);
     if (ll != 0) {
         t_error("%s failed (%lld != %lld)\n", K_WCSTOLL_TAG, ll, 0LL);
     }
     i = static_cast<int>(c - s);
-    if (i != 1) {
-        t_error("%s failed (wrong final position %lld != %lld)\n", K_WCSTOLL_TAG, static_cast<long long>(i), 1LL);
+    if (i != K_PARSE_POS_1) {
+        t_error("%s failed (wrong final position %lld != %lld)\n",
+                K_WCSTOLL_TAG,
+                static_cast<long long>(i),
+                static_cast<long long>(K_PARSE_POS_1));
     }
 }
 
@@ -119,13 +130,16 @@ void Wcstoll0600(void)
     wchar_t* c;
     s = L"0x1234";
     errno = 0;
-    ll = wcstoll(s, &c, 16);
+    ll = wcstoll(s, &c, K_BASE_HEX);
     if (ll != static_cast<long long>(0x1234)) {
         t_error("%s failed (%lld != %ld)\n", K_WCSTOLL_TAG, ll, static_cast<long>(0x1234));
     }
     i = static_cast<int>(c - s);
-    if (i != 6) {
-        t_error("%s failed (wrong final position %lld != %lld)\n", K_WCSTOLL_TAG, static_cast<long long>(i), 6LL);
+    if (i != K_PARSE_POS_6) {
+        t_error("%s failed (wrong final position %lld != %lld)\n",
+                K_WCSTOLL_TAG,
+                static_cast<long long>(i),
+                static_cast<long long>(K_PARSE_POS_6));
     }
 }
 
@@ -142,13 +156,13 @@ void Wcstoll0700(void)
     wchar_t* c;
     s = L"9223372036854775808";
     errno = 0;
-    ll = wcstoll(s, &c, 0);
+    ll = wcstoll(s, &c, K_BASE_AUTO);
     if (ll != 9223372036854775807LL) {
         t_error("%s failed (uncaught overflow %lld != %lld)\n", K_WCSTOLL_TAG, ll, 9223372036854775807LL);
     }
     i = static_cast<int>(c - s);
-    if (i != 19) {
-        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOLL_TAG, i, 19);
+    if (i != K_PARSE_POS_19) {
+        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOLL_TAG, i, K_PARSE_POS_19);
     }
     i = errno;
     if (i != ERANGE) {
@@ -169,13 +183,13 @@ void Wcstoll0800(void)
     wchar_t* c;
     s = L"-9223372036854775809";
     errno = 0;
-    ll = wcstoll(s, &c, 0);
+    ll = wcstoll(s, &c, K_BASE_AUTO);
     if (ll != -9223372036854775807LL - 1) {
         t_error("%s failed (overflow %lld != %lld)\n", K_WCSTOLL_TAG, ll, -9223372036854775807LL - 1);
     }
     i = static_cast<int>(c - s);
-    if (i != 20) {
-        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOLL_TAG, i, 20);
+    if (i != K_PARSE_POS_20) {
+        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOLL_TAG, i, K_PARSE_POS_20);
     }
     i = errno;
     if (i != ERANGE) {

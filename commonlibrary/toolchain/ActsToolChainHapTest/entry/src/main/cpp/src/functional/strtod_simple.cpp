@@ -22,6 +22,7 @@
 
 namespace {
 constexpr int K_STRTOD_ROUND_TRIP_ITERATIONS = 100;
+constexpr int K_STRTOD_DECIMAL_PRECISION = 300;
 constexpr double K_STRTOD_WANT16 = 16.0;
 constexpr double K_STRTOD_WANT17 = 17.0;
 } // namespace
@@ -50,7 +51,7 @@ int StrtodSimpleTest()
     for (i = 0; i < K_STRTOD_ROUND_TRIP_ITERATIONS; i++) {
         d = sin(i);
         std::ostringstream oss;
-        oss << std::fixed << std::setprecision(300) << d;
+        oss << std::fixed << std::setprecision(K_STRTOD_DECIMAL_PRECISION) << d;
         std::string dec = oss.str();
         d2 = strtod(dec.c_str(), nullptr);
         CheckDoubleEq(status, "strtod(buf, nullptr)", d2, d, "round trip fail %a != %a (%a)");

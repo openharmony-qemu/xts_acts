@@ -14,6 +14,7 @@
  */
 
 #include <algorithm>
+#include <array>
 #include <cstdlib>
 #include <cstring>
 #include <unistd.h>
@@ -21,7 +22,8 @@
 
 namespace {
 #if defined(PATH_MAX) && (PATH_MAX > 0)
-constexpr size_t K_REALPATH_BUF_CAP = static_cast<size_t>(PATH_MAX) + 1U;
+constexpr size_t K_REALPATH_PATH_CAP = static_cast<size_t>(PATH_MAX);
+constexpr size_t K_REALPATH_BUF_CAP = K_REALPATH_PATH_CAP + 1U;
 #else
 constexpr size_t K_REALPATH_BUF_CAP = 4096U;
 #endif
@@ -34,11 +36,10 @@ constexpr size_t K_REALPATH_BUF_CAP = 4096U;
  */
 void Realpath0100(void)
 {
-    char actualPath[K_REALPATH_BUF_CAP];
-    (void)memset(actualPath, 0, sizeof(actualPath));
-    char* ret = realpath("/system/bin/../etc", actualPath);
+    std::array<char, K_REALPATH_BUF_CAP> actualPath{};
+    char* ret = realpath("/system/bin/../etc", actualPath.data());
     EXPECT_STREQ("Realpath0100", ret, "/system/etc");
-    EXPECT_STREQ("Realpath0100", actualPath, "/system/etc");
+    EXPECT_STREQ("Realpath0100", actualPath.data(), "/system/etc");
 }
 
 /**
@@ -48,12 +49,11 @@ void Realpath0100(void)
  */
 void Realpath0200(void)
 {
-    char buf[K_REALPATH_BUF_CAP];
-    (void)memset(buf, 0, sizeof(buf));
-    char* ret = realpath("/system/bin/../mypth", buf);
+    std::array<char, K_REALPATH_BUF_CAP> buf{};
+    char* ret = realpath("/system/bin/../mypth", buf.data());
     EXPECT_PTREQ("Realpath0200", ret, nullptr);
-    std::fill_n(buf, K_REALPATH_BUF_CAP, '\0');
-    ret = realpath("/system/bin/../etc", buf);
+    std::fill_n(buf.begin(), buf.size(), '\0');
+    ret = realpath("/system/bin/../etc", buf.data());
     EXPECT_STREQ("Realpath0200", ret, "/system/etc");
 }
 

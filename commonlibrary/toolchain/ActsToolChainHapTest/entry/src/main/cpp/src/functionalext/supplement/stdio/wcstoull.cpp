@@ -21,7 +21,14 @@
 
 namespace {
 constexpr const char K_WCSTOULL_TAG[] = "wcstoull";
-}
+constexpr int K_BASE_AUTO = 0;
+constexpr int K_BASE_DEC = 10;
+constexpr int K_BASE_BIN = 2;
+constexpr int K_BASE_HEX = 16;
+constexpr int K_PARSE_POS_2 = 2;
+constexpr int K_PARSE_POS_20 = 20;
+constexpr int K_EXPECT_ERRNO_OK = 0;
+} // namespace
 
 /**
  * @tc.name      : Wcstoull0100
@@ -35,7 +42,7 @@ void Wcstoull0100(void)
     wchar_t* c;
     s = L"250068492";
     errno = 0;
-    ull = wcstoull(s, &c, 10);
+    ull = wcstoull(s, &c, K_BASE_DEC);
     if (ull != 250068492ULL) {
         t_error("%s failed (expect unsigned %llu != %llu)\n", K_WCSTOULL_TAG, ull, 250068492ULL);
     }
@@ -53,7 +60,7 @@ void Wcstoull0200(void)
     wchar_t* c;
     s = L"7b06af00";
     errno = 0;
-    ull = wcstoull(s, &c, 16);
+    ull = wcstoull(s, &c, K_BASE_HEX);
     if (ull != 2064035584ULL) {
         t_error("%s failed (expect unsigned %llu != %llu)\n", K_WCSTOULL_TAG, ull, 2064035584ULL);
     }
@@ -71,7 +78,7 @@ void Wcstoull0300(void)
     wchar_t* c;
     s = L"1100011011110101010001100000";
     errno = 0;
-    ull = wcstoull(s, &c, 2);
+    ull = wcstoull(s, &c, K_BASE_BIN);
     if (ull != 208622688ULL) {
         t_error("%s failed (expect unsigned %llu != %llu)\n", K_WCSTOULL_TAG, ull, 208622688ULL);
     }
@@ -89,7 +96,7 @@ void Wcstoull0400(void)
     wchar_t* c;
     s = L"0x6fffff";
     errno = 0;
-    ull = wcstoull(s, &c, 0);
+    ull = wcstoull(s, &c, K_BASE_AUTO);
     if (ull != 7340031ULL) {
         t_error("%s failed (expect unsigned %llu != %llu)\n", K_WCSTOULL_TAG, ull, 7340031ULL);
     }
@@ -108,13 +115,13 @@ void Wcstoull0500(void)
     wchar_t* c;
     s = L"18446744073709551616";
     errno = 0;
-    ull = wcstoull(s, &c, 0);
+    ull = wcstoull(s, &c, K_BASE_AUTO);
     if (ull != 18446744073709551615ULL) {
         t_error("%s failed (uncaught overflow %llu != %llu)\n", K_WCSTOULL_TAG, ull, 18446744073709551615ULL);
     }
     i = static_cast<int>(c - s);
-    if (i != 20) {
-        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOULL_TAG, i, 20);
+    if (i != K_PARSE_POS_20) {
+        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOULL_TAG, i, K_PARSE_POS_20);
     }
     i = errno;
     if (i != ERANGE) {
@@ -135,18 +142,18 @@ void Wcstoull0600(void)
     wchar_t* c;
     s = L"-1";
     errno = 0;
-    ull = wcstoull(s, &c, 0);
+    ull = wcstoull(s, &c, K_BASE_AUTO);
     if (ull != static_cast<unsigned long long>(-1)) {
         t_error(
             "%s failed (rejected negative %llu != %llu)\n", K_WCSTOULL_TAG, ull, static_cast<unsigned long long>(-1));
     }
     i = static_cast<int>(c - s);
-    if (i != 2) {
-        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOULL_TAG, i, 2);
+    if (i != K_PARSE_POS_2) {
+        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOULL_TAG, i, K_PARSE_POS_2);
     }
     i = errno;
-    if (i != 0) {
-        t_error("%s failed (spurious errno %d != %d)\n", K_WCSTOULL_TAG, i, 0);
+    if (i != K_EXPECT_ERRNO_OK) {
+        t_error("%s failed (spurious errno %d != %d)\n", K_WCSTOULL_TAG, i, K_EXPECT_ERRNO_OK);
     }
 }
 
@@ -163,18 +170,18 @@ void Wcstoull0700(void)
     wchar_t* c;
     s = L"-2";
     errno = 0;
-    ull = wcstoull(s, &c, 0);
+    ull = wcstoull(s, &c, K_BASE_AUTO);
     if (ull != static_cast<unsigned long long>(-2)) {
         t_error(
             "%s failed (rejected negative %llu != %llu)\n", K_WCSTOULL_TAG, ull, static_cast<unsigned long long>(-2));
     }
     i = static_cast<int>(c - s);
-    if (i != 2) {
-        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOULL_TAG, i, 2);
+    if (i != K_PARSE_POS_2) {
+        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOULL_TAG, i, K_PARSE_POS_2);
     }
     i = errno;
-    if (i != 0) {
-        t_error("%s failed (spurious errno %d != %d)\n", K_WCSTOULL_TAG, i, 0);
+    if (i != K_EXPECT_ERRNO_OK) {
+        t_error("%s failed (spurious errno %d != %d)\n", K_WCSTOULL_TAG, i, K_EXPECT_ERRNO_OK);
     }
 }
 
@@ -191,17 +198,17 @@ void Wcstoull0800(void)
     wchar_t* c;
     s = L"-9223372036854775808";
     errno = 0;
-    ull = wcstoull(s, &c, 0);
+    ull = wcstoull(s, &c, K_BASE_AUTO);
     if (ull != 9223372036854775808ULL) {
         t_error("%s failed (rejected negative %llu != %llu)\n", K_WCSTOULL_TAG, ull, 9223372036854775808ULL);
     }
     i = static_cast<int>(c - s);
-    if (i != 20) {
-        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOULL_TAG, i, 20);
+    if (i != K_PARSE_POS_20) {
+        t_error("%s failed (wrong final position %d != %d)\n", K_WCSTOULL_TAG, i, K_PARSE_POS_20);
     }
     i = errno;
-    if (i != 0) {
-        t_error("%s failed (spurious errno %d != %d)\n", K_WCSTOULL_TAG, i, 0);
+    if (i != K_EXPECT_ERRNO_OK) {
+        t_error("%s failed (spurious errno %d != %d)\n", K_WCSTOULL_TAG, i, K_EXPECT_ERRNO_OK);
     }
 }
 
