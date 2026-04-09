@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 type NavType = [Dimension, Dimension];
 
 @Observed
-class MyModifier implements AttributeModifier<NavigationAttribute> {
+export class MyModifier implements AttributeModifier<NavigationAttribute> {
   public isUndefined1: boolean = true;
   public isUndefined2: boolean = true;
   public isUndefined3: boolean = true;

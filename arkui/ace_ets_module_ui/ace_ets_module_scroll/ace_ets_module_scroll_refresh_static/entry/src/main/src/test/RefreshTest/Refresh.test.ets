@@ -35,14 +35,14 @@ export default function RefreshTest() {
     beforeEach((): void => {
       console.info('RefreshTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Refresh/Refresh',
+        url: 'MainAbility/pages/Refresh/refresh',
       };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('RefreshTest state pages: ' + JSON.stringify(pages));
-        if (pages.name !== 'Refresh') {
+        if (pages.name !== 'refresh') {
           routerInstance.replaceUrl(options);
         }
       } catch (err) {
@@ -59,6 +59,7 @@ export default function RefreshTest() {
      * @tc.number RefreshTest_001
      * @tc.name refreshPullUpToCancelRefresh
      * @tc.desc Test RefreshAttribute.pullUpToCancelRefresh(boolean) by toggling state and asserting inspector/AppStorage values.
+     * @tc.level  Level.LEVEL1
      */
     it('refreshPullUpToCancelRefresh', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('RefreshTest execute: refreshPullUpToCancelRefresh START');
@@ -82,10 +83,13 @@ export default function RefreshTest() {
         done();
       }
     });
+
     /**
      * @tc.number RefreshTest_002
      * @tc.name refreshPullUpToCancelRefreshFalse
-     * @tc.desc refresh.d.ets RefreshAttribute.pullUpToCancelRefresh - boolean false variant     */
+     * @tc.desc refresh.d.ets RefreshAttribute.pullUpToCancelRefresh - boolean false variant
+     * @tc.level  Level.LEVEL1
+     */
     it('refreshPullUpToCancelRefreshFalse', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('RefreshTest: refreshPullUpToCancelRefreshFalse START');
       try {
@@ -105,7 +109,9 @@ export default function RefreshTest() {
     /**
      * @tc.number RefreshTest_003
      * @tc.name refreshPullUpToCancelRefreshUndefined
-     * @tc.desc refresh.d.ets RefreshAttribute.pullUpToCancelRefresh - undefined variant     */
+     * @tc.desc refresh.d.ets RefreshAttribute.pullUpToCancelRefresh - undefined variant
+     * @tc.level  Level.LEVEL1
+     */
     it('refreshPullUpToCancelRefreshUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('RefreshTest: refreshPullUpToCancelRefreshUndefined START');
       try {

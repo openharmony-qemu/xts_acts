@@ -22,6 +22,12 @@
 #include "include/CommonToolTest.h"
 #include "include/RoiFuncTest.h"
 #include "include/BframeFuncTest.h"
+#include <hilog/log.h>
+
+#undef LOG_DOMAIN
+#undef LOG_TAG
+#define LOG_DOMAIN 0x0000
+#define LOG_TAG "ActsHevchwEncoderTestTag"
 
 namespace {
 OH_AVCodec *g_venc = nullptr;
@@ -30,12 +36,13 @@ OH_AVCapability *g_cap = nullptr;
 const char *OUT_DIR = "/data/storage/el2/base/files/VIDEO_ENCODE_FILE_ROI.h265";
 const char *CODEC_NAME = "";
 const char *CODEC_HEVC = "";
-constexpr int32_t SQR = 2; // CQ mode
+constexpr int32_t SQR = 3; // CQ mode
 constexpr uint32_t DEFAULT_WIDTH_1920 = 1920;
 constexpr uint32_t DEFAULT_WIDTH_1080 = 1080;
 constexpr uint32_t DEFAULT_HEIGHT_1080 = 1080;
 constexpr uint32_t DEFAULT_HEIGHT_1920 = 1920;
 } // namespace
+
 namespace OHOS {
 namespace Media {
 class HwEncFuncRoiTest {
@@ -76,6 +83,7 @@ void TearDown()
         OH_VideoEncoder_Destroy(g_venc);
         g_venc = nullptr;
     }
+    g_flagValue = true;
 }
 } // RoiFuncTest
 
@@ -139,7 +147,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_003()
     vEncSample->roiInfo = "10,10-100,100=-4;100,100-200,200=-4;350,300-400,430=-4;540,510-690,650=51";
     vEncSample->outDir = OUT_DIR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
-    vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
+    vEncSample->inpDir = INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -162,7 +170,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_004()
     vEncSample->outDir = OUT_DIR;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
-    vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
+    vEncSample->inpDir = INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -205,12 +213,12 @@ int VIDEO_HW_ENCODE_ROI_FUNC_006()
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "10,10-100,100=-8;100,10-200,200=-4;"
-                        "300,350-430,440=-4;510,540650,690=-4;"
+                        "300,350-430,440=-4;510,540-650,690=-4;"
                         "700,710-80,1000=-4";
     vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = CBR;
-    vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
+    vEncSample->inpDir = INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -233,7 +241,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_007()
     vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = VBR;
-    vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
+    vEncSample->inpDir = INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -256,7 +264,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_008()
     vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = CBR;
-    vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
+    vEncSample->inpDir = INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -280,7 +288,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_009()
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
-    vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
+    vEncSample->inpDir = INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -304,7 +312,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_010()
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
-    vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
+    vEncSample->inpDir = INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
     EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());

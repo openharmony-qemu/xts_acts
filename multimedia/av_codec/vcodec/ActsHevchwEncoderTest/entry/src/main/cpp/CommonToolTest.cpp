@@ -94,6 +94,24 @@ void OHPrintf(const char* fmt, ...)
     va_end(args);
 }
 
+int OHPrintf(char* buf, size_t bufSize, const char* fmt, ...)
+{
+    if (!buf || bufSize == 0 || !fmt) {
+        return ERROR_CODE_NEGATIVE_ONE;
+    }
+    if (bufSize > PRINTF_BUFFER_SIZE) {
+        return ERROR_CODE_NEGATIVE_ONE;
+    }
+    va_list args;
+    va_start(args, fmt);
+    int ret = vsnprintf(buf, bufSize, fmt, args);
+    va_end(args);
+    if (ret < 0 || static_cast<size_t>(ret) >= bufSize) {
+        return ERROR_CODE_NEGATIVE_ONE;
+    }
+    return ret;
+}
+
 int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
 {
     if (!dst || !src) {

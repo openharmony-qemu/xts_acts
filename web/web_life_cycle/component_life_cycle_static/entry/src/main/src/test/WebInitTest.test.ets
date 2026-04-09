@@ -101,6 +101,26 @@ export default function webInitTest() {
     })
 
     /**
+     * @tc.name   testOnceStatic003
+     * @tc.number SUB_WEB_ONCE_0300
+     * @tc.desc   test once webCreated should not be called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnceStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitOnce003', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testOnce003', "401", 202603182, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebInitTestButton', 10, '');
+        await Utils.msSleep(5000)
+        done()
+      })
+
+    /**
      * @tc.name   emitonSwitchNextPage
      * @tc.number emitonSwitchNextPage
      * @tc.desc   emitonSwitchNextPage

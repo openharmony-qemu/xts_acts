@@ -34,7 +34,12 @@ import {
   BorderStyle,
   Alignment,
   Color,
-  TextHeightAdaptivePolicy
+  TextHeightAdaptivePolicy,
+  HorizontalAlign,
+  VerticalAlign,
+  Axis,
+  ChainStyle,
+  LocalizedAlignRuleOptions
 } from '@ohos.arkui.component';
 
 let gContext: common.UIAbilityContext;
@@ -1640,7 +1645,7 @@ export default function saveComponentStaticTest() {
     /**
      * @tc.name   Test_Security_SaveButton_Static_2300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_2300
-     * @tc.desc   Test SecurityComponent attr "enbale, max/minFontsize, max/minFontScale, heightAdaptivePolicy, maxLines,
+     * @tc.desc   Test SecurityComponent attr 'enbale, max/minFontsize, max/minFontScale, heightAdaptivePolicy, maxLines' and Authorization passed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1775,6 +1780,76 @@ export default function saveComponentStaticTest() {
       expect(obj.getElement('$attrs').getElement('focusBox').getString('margin')).assertEqual('10.00vp');
       expect(obj.getElement('$attrs').getElement('focusBox').getString('strokeColor')).assertEqual('#FFFF0000');
       expect(obj.getElement('$attrs').getElement('focusBox').getString('strokeWidth')).assertEqual('10.00px');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Static_2500
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_2500
+     * @tc.desc   Test SecurityComponent attr 'alignRules(LocalizedAlignRuleOptions)' and result in Authorization is passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_SaveButton_Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_Static_2500';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.VERTICAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'alignRule': {
+            start: {anchor: '__container__', align: HorizontalAlign.Start},
+            center: {anchor: '__container__', align: VerticalAlign.Center}
+          } as LocalizedAlignRuleOptions,
+          'chainDirection': Axis.Vertical,
+          'chainStyle': ChainStyle.SPREAD
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(0);
+      expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
+      expect(obj.getElement('$attrs').getInteger('buttonType')).assertEqual(0);
       await UtilsTest.msSleep(1000);
       sucCallback(TCNAME, done);
       let driver = Driver.create();

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,7 +33,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
 @Observed
-class StorageB {
+export class StorageB {
   @Track a: number;
   b: number;
 
@@ -47,9 +47,9 @@ let para1: Record<string, StorageB> = { 'PropA': new StorageB(1, 2) }
 
 let storage: LocalStorage = new LocalStorage(para1)
 // let storage1 =LocalStorage.getShared()
-let PropB1: StorageB | undefined = storage.get('PropA')!
+let PropB1: StorageB | undefined = storage.get<StorageB>('PropA')!
 let link2: SubscribedAbstractProperty<StorageB> | undefined =
-  storage.link('PropA') as SubscribedAbstractProperty<StorageB>
+  storage.link<StorageB>('PropA') as SubscribedAbstractProperty<StorageB>
 let prop2: AbstractProperty<StorageB> | undefined = storage.ref<StorageB>('PropA');
 
 link2?.set(new StorageB(10, 20))

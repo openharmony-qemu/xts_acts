@@ -411,6 +411,124 @@ export default function relationalStorePermissionTest() {
        console.log(TAG + "************* relationalStorePermissionTest0900 end *************");
        done();
      })
+
+
+   /**
+     * @tc.name   relationalStorePermissionTest1000
+     * @tc.number  SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1000
+     * @tc.desc   sync  promise method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+   it('relationalStorePermissionTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+      console.log(TAG + "************* relationalStorePermissionTest1000 start *************");
+      let predicates = new data_Rdb.RdbPredicates("cloud_text");
+      try {
+        let res = await rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_CLOUD_FIRST, predicates);
+        console.info("relationalStorePermissionTest1000 sync succeeded");
+        expect(typeof(res) === "object").assertTrue();
+        done();
+      } catch (err) {
+        console.log(TAG + `relationalStorePermissionTest1000 sync fail, errcode: ` + err.code);
+        expect(401).assertEqual(err.code);
+        done();
+      }
+
+      try {
+        let res = await rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_TIME_FIRST, predicates);
+        console.info("relationalStorePermissionTest1000 sync succeeded");
+        expect(typeof(res) === "object").assertTrue();
+        done();
+      } catch (err) {
+        console.log(TAG + `relationalStorePermissionTest1000 sync fail, errcode: ` + err.code);
+        expect(401).assertEqual(err.code);
+        done();
+      }
+
+      try {
+        let res = await rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_NATIVE_FIRST, predicates);
+        console.info("relationalStorePermissionTest1000 sync succeeded");
+        expect(typeof(res) === "object").assertTrue();
+        done();
+      } catch (err) {
+        console.log(TAG + `relationalStorePermissionTest1000 sync fail, errcode: ` + err.code);
+        expect(401).assertEqual(err.code);
+        done();
+      }
+      console.log(TAG + "************* relationalStorePermissionTest1000 end *************");
+   
+    })
+
+     /**
+     * @tc.name   relationalStorePermissionTest1100
+     * @tc.number  SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1100
+     * @tc.desc   sync  promise method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+   it('relationalStorePermissionTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+      console.log(TAG + "************* relationalStorePermissionTest1100 start *************");
+      let predicates = new data_Rdb.RdbPredicates("cloud_text");
+      try {
+        rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_CLOUD_FIRST, predicates, (err: BusinessError<void> | null) => {
+          if(err){
+            expect(401).assertEqual(err.code);
+            done();
+          }else{
+            console.info("relationalStorePermissionTest1100 sync succeeded");
+            expect(null).assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.log(TAG + `relationalStorePermissionTest1100 sync fail, errcode: ` + err.code);
+        expect(401).assertEqual(err.code);
+        done();
+      }
+      console.log(TAG + "************* relationalStorePermissionTest1100 end *************");
+   
+    })
+
+     /**
+     * @tc.name   relationalStorePermissionTest1200
+     * @tc.number  SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1200
+     * @tc.desc   offDataChange   method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+   it('relationalStorePermissionTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+      console.log(TAG + "************* relationalStorePermissionTest1200 start *************");
+      await  rdbStore!.close();
+      try {
+        rdbStore!.offDataChange(data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD,  (devices: Array<string>) => {
+          expect(devices).assertEqual(null);
+          done();
+        });
+      } catch (err) {
+        console.log(TAG + `relationalStorePermissionTest1200 offDataChange fail, errcode: ` + err.code);
+        expect(14800014).assertEqual(err.code);
+        done();
+      }
+
+      try {
+        rdbStore!.offDataChange(data_Rdb.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS,  (devices: Array<data_Rdb.ChangeInfo>) => {
+          expect(devices).assertEqual(null);
+          done();
+        });
+      } catch (err) {
+        console.log(TAG + `relationalStorePermissionTest1200 offDataChange fail, errcode: ` + err.code);
+        expect(14800014).assertEqual(err.code);
+        done();
+      }
+      console.log(TAG + "************* relationalStorePermissionTest1200 end *************");
+   
+    })
     console.info(TAG + "*************Unit Test End*************");
   })
 }

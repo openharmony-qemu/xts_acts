@@ -119,13 +119,19 @@ void CreateTextNode(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle column)
     nodeAPI->registerNodeEvent(text, NODE_TEXT_ON_DETECT_RESULT_UPDATE, 1, nullptr);
     nodeAPI->registerNodeEvent(text, NODE_VISIBLE_AREA_APPROXIMATE_CHANGE_EVENT, 1, nullptr);
     
-    ArkUI_NumberValue textwidth[] = {{ .f32 = PARAM_100 }};
+    ArkUI_NumberValue textwidth[] = {{ .f32 = PARAM_50 }};
+    ArkUI_NumberValue textHeight[] = {{ .f32 = PARAM_20 }};
     ArkUI_AttributeItem textitem1 = {.value = textwidth, .size = PARAM_1};
+    ArkUI_AttributeItem textitem2 = {.value = textHeight, .size = PARAM_1};
+    
     nodeAPI->setAttribute(text, NODE_WIDTH, &textitem1);
-    nodeAPI->setAttribute(text, NODE_HEIGHT, &textitem1);
+    nodeAPI->setAttribute(text, NODE_HEIGHT, &textitem2);
     
     ArkUI_AttributeItem item3 = {.string = "手机号码：15535573557" };
     nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &item3);
+    ArkUI_NumberValue textmaxLines[] = {{ .i32 = PARAM_1 }};
+    ArkUI_AttributeItem textmaxLinesitem1 = {.value = textmaxLines, .size = PARAM_1};
+    nodeAPI->setAttribute(text, NODE_TEXT_MAX_LINES, &textmaxLinesitem1);
     
     ArkUI_NumberValue value2[] = {{ .i32 = ARKUI_TEXT_DATA_DETECTOR_TYPE_PHONE_NUMBER }};
     ArkUI_AttributeItem item2 = {.value = value2, .size = PARAM_1};
@@ -156,8 +162,8 @@ void CreateSpanNode(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle column)
     
     nodeAPI->registerNodeEvent(span, NODE_TEXT_SPAN_ON_LONG_PRESS, PARAM_1, nullptr);
     
-    ArkUI_NumberValue spanwidth[] = {{ .f32 = PARAM_100 }};
-    ArkUI_NumberValue spanHeight[] = {{ .f32 = PARAM_50 }};
+    ArkUI_NumberValue spanwidth[] = {{ .f32 = PARAM_50 }};
+    ArkUI_NumberValue spanHeight[] = {{ .f32 = PARAM_20 }};
     ArkUI_AttributeItem spanitem1 = {.value = spanwidth, .size = PARAM_1};
     ArkUI_AttributeItem spanitem2 = {.value = spanHeight, .size = PARAM_1};
     ArkUI_NumberValue maxLines[] = {{ .i32 = PARAM_1 }};
@@ -311,8 +317,10 @@ napi_value CreateEventTypeNode(napi_env env, napi_callback_info info)
     OH_ArkUI_NodeContent_AddNode(nodeContentHandle, column);
     
     CreateRowAndButtonNodes(nodeAPI, column);
-    CreateTextNode(nodeAPI, column);
-    CreateSpanNode(nodeAPI, column);
+    auto row = nodeAPI->createNode(ARKUI_NODE_ROW);
+    nodeAPI->addChild(column, row);
+    CreateTextNode(nodeAPI, row);
+    CreateSpanNode(nodeAPI, row);
     CreateImageNode(nodeAPI, column);
     CreateTextInputNode(nodeAPI, column);
     CreateTextAreaNode(nodeAPI, column);

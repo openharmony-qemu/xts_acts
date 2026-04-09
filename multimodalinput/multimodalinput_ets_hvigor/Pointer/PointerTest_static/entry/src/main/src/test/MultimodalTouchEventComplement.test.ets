@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Touch, TouchEvent, Action, ToolType, SourceType, FixedMode } from '@ohos.multimodalInput.touchEvent';
+import { Touch, TouchEvent, Action, ToolType, SourceType } from '@ohos.multimodalInput.touchEvent';
 import { InputEvent } from '@ohos.multimodalInput.inputEvent'
 import hilog from '@ohos.hilog';
 import { BusinessError } from "@ohos.base";

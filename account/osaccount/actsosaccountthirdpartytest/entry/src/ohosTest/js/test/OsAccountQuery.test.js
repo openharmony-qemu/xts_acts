@@ -15,7 +15,7 @@
 import osaccount from '@ohos.account.osAccount'
 import bundle from '@ohos.bundle'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
-
+import { CreateAccount, RemoveAccount } from './AccountFunc.test';
 
 const ERR_INVALID_PARAMETER = 12300002;
 
@@ -28,7 +28,7 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       for (let i = 0; i < accounts.length; i++) {
         var localId = accounts[i].localId
         if (localId != 100) {
-          await osAccountManager.removeOsAccount(localId)
+          await RemoveAccount(localId)
         }
       }
       done();
@@ -525,6 +525,11 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       }
       osAccountManager.createOsAccount("osAccountNameIdSerialA", osaccount.OsAccountType.NORMAL, (err, data) => {
         console.info("====>create os account err: " + JSON.stringify(err));
+        if (err && err.code === 204) {
+          console.info("====>Current device need token to use API: createOsAccount");
+          done();
+          return;
+        }
         console.info("====>create os account OsAccountInfo: " + JSON.stringify(data));
         expect(err).assertEqual(null);
         expect(data.localName).assertEqual("osAccountNameIdSerialA");
@@ -587,7 +592,12 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
         done();
         return;
       }
-      var OsAccountInfo = await osAccountManager.createOsAccount("accountIdSerialB", osaccount.OsAccountType.GUEST);
+      let options = {
+        shortName: "query0600",
+        disallowedPreinstalledBundles: [],
+        allowedPreinstalledBundles: []
+      }
+      var OsAccountInfo = await CreateAccount("accountIdSerialB", osaccount.OsAccountType.GUEST, options);
       console.info("====>create os account OsAccountInfo: " + JSON.stringify(OsAccountInfo));
       expect(OsAccountInfo.localName).assertEqual("accountIdSerialB");
       localId = OsAccountInfo.localId;
@@ -596,7 +606,7 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       var getlocalId = await osAccountManager.getOsAccountLocalIdForSerialNumber(serialNumber);
       console.info("====>get localId:" + getlocalId + " by serialNumber: " + serialNumber);
       expect(getlocalId).assertEqual(localId);
-      await osAccountManager.removeOsAccount(localId);
+      await RemoveAccount(localId);
       console.info("====>ActsOsAccountQueryLocalIdSerial_0600 end====");
       done();
     });
@@ -635,6 +645,11 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
         obtainCount = data;
         osAccountManager.createOsAccount("osAccountNameIdSerialE", osaccount.OsAccountType.NORMAL, (err, data) => {
           console.info("====>create first os account err: " + JSON.stringify(err));
+          if (err && err.code === 204) {
+            console.info("====>Current device need token to use API: createOsAccount");
+            done();
+            return;
+          }
           console.info("====>create first os account OsAccountInfo: " + JSON.stringify(data));
           localIdFir = data.localId;
           expect(err).assertEqual(null);
@@ -684,9 +699,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
         done();
         return;
       }
+      let options = {
+        shortName: "query0200",
+        disallowedPreinstalledBundles: [],
+        allowedPreinstalledBundles: []
+      }
       var obtainCount = await osAccountManager.getOsAccountCount();
       console.info("====>obtains the number of all os accounts created:" + obtainCount);
-      var osAccountFir = await osAccountManager.createOsAccount("osAccountIdSerialG", osaccount.OsAccountType.NORMAL);
+      var osAccountFir = await CreateAccount("osAccountIdSerialG", osaccount.OsAccountType.NORMAL, options);
       console.info("====>create first os account OsAccountInfo: " + JSON.stringify(osAccountFir));
       var localIdFir = osAccountFir.localId;
       expect(osAccountFir.localName).assertEqual("osAccountIdSerialG");
@@ -694,7 +714,7 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       console.info("====>obtains the number of all os accounts created count:" + countFir);
       countFir = countFir - 1;
       expect(countFir).assertEqual(obtainCount);
-      await osAccountManager.removeOsAccount(localIdFir);
+      await RemoveAccount(localIdFir);
       console.info("====>remove localId: " + localIdFir);
       console.info("====>ActsOsAccountQueryCounts_0200 end====");
       done();
@@ -1218,6 +1238,76 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
         }
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetLocalIds_0100
+     * @tc.number SUB_Account_OsAccount_GetLocalIds_0100
+     * @tc.desc   query all osAccount Ids getOsAccountLocalIds promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetLocalIds_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetLocalIds_0100 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      try {
+        let dataArray = await accountManager.getOsAccountLocalIds();
+        console.info(tag, "data: " + dataArray);
+        if (dataArray.length > 0) {
+          expect(dataArray.length).assertEqual(1);
+          expect(dataArray[0]).assertEqual(100);
+        } else {
+          expect(dataArray.length).assertEqual(0);
+        }
+        console.info(tag, "end====");
+      } catch (err) {
+        console.info(tag, "catch err: " + JSON.stringify(err));
+        expect().assertFail();
+      };
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_Account_OsAccount_GetLocalIds_0200
+     * @tc.name     SUB_Account_OsAccount_GetLocalIds_0200
+     * @tc.desc     Verify to obtain the local IDs of all os accounts created getOsAccountLocalIds promise
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetLocalIds_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetLocalIds_0200 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      let isEnable = await accountManager.checkMultiOsAccountEnabled();
+      if (isEnable != true) {
+        console.info(tag + "not support multiple osaccouts====");
+        done();
+        return;
+      }
+      let options = {
+        shortName: "Ids",
+        disallowedPreinstalledBundles: [],
+        allowedPreinstalledBundles: []
+      }
+      console.info(tag + "start CreateAccount");
+      let osAccountFir = await CreateAccount("osAccountIds", osaccount.OsAccountType.NORMAL, options);
+      console.info(tag + "create first os account OsAccountInfo: " + JSON.stringify(osAccountFir));
+      let localIdFir = osAccountFir.localId;
+      try {
+        let dataArray = await accountManager.getOsAccountLocalIds();
+        console.info(tag + "data: " + dataArray);
+        expect(dataArray.length >= 1).assertTrue();
+      } catch (err) {
+        console.info(tag + "err: " + JSON.stringify(err));
+        expect().assertFail();
+      }
+      await RemoveAccount(localIdFir);
+      console.info(tag + "remove localId: " + localIdFir);
+      console.info(tag + "end====");
+      done();
     });
   })
 }

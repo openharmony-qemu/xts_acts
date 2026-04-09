@@ -53,14 +53,14 @@ export default function getBurstAssetsTest() {
     });
 
     /**
-     * @tc.name   get_image_burst_assets_static_003 
+     * @tc.name   get_image_burst_assets_static_003Adapt001
      * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_Static_003
      * @tc.desc   getBurstAssets by burstKey not exist
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("get_image_burst_assets_static_003 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("get_image_burst_assets_static_003Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let testNum = 'get_image_burst_assets_static_003';
         try {
@@ -94,7 +94,7 @@ export default function getBurstAssetsTest() {
         const testNum = "get_burst_asset_by_subtype_static_001";
         try {
           let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_SUBTYPE, photoAccessHelper.PhotoSubtype.BURST as long);
+          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_SUBTYPE, Int.toLong(photoAccessHelper.PhotoSubtype.BURST));
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: [],
             predicates: predicates

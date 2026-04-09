@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+
 'use static';
 
 import router from '@ohos.router';
@@ -36,7 +37,10 @@ import {
   ModalMode,
   BlurStyle,
   MenuKeyboardAvoidMode,
-  Color
+  Color,
+  HorizontalAlign,
+  ColumnOptions,
+  TextOverflow
 } from '@ohos.arkui.component';
 import { LengthUnit, LengthMetrics } from '@ohos.arkui.node';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
@@ -82,69 +86,85 @@ struct ContextMenuOptionsIndex {
   }
 
   build() {
-    Column() {
-      Button('Open ContextMenu - mask')
+    Column({ space: 2 } as ColumnOptions) {
+      Button('CM-mask')
         .id('btnContextMenuMask')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(8)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '6.5%' })
         .bindContextMenu(buildMenuContent, ResponseType.LongPress, {
           mask: { color: Color.Red, backgroundBlurStyle: BlurStyle.Thin }
         } as ContextMenuOptions)
 
-      Button('Open ContextMenu - modalMode')
+      Button('CM-modal')
         .id('btnContextMenuModalMode')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(8)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '6.5%' })
         .bindContextMenu(buildMenuContent, ResponseType.LongPress, {
           modalMode: ModalMode.NONE
         } as ContextMenuOptions)
 
-      Button('Open ContextMenu - previewScaleMode')
+      Button('CM-preview')
         .id('btnContextMenuPreviewScaleMode')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(8)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '6.5%' })
         .bindContextMenu(buildMenuContent, ResponseType.LongPress, {
           preview: MenuPreviewMode.IMAGE,
           previewScaleMode: PreviewScaleMode.AUTO
         } as ContextMenuOptions)
 
-      Button('Open ContextMenu - availableLayoutArea')
+      Button('CM-area')
         .id('btnContextMenuAvailableLayoutArea')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(8)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '6.5%' })
         .bindContextMenu(buildMenuContent, ResponseType.LongPress, {
           preview: MenuPreviewMode.IMAGE,
           availableLayoutArea: AvailableLayoutArea.SAFE_AREA
         } as ContextMenuOptions)
 
-      Button('Open ContextMenu - anchorPosition')
+      Button('CM-anchor')
         .id('btnContextMenuAnchorPosition')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(8)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '6.5%' })
         .bindContextMenu(buildMenuContent, ResponseType.LongPress, {
           anchorPosition: { x: 10, y: 10 }
         } as ContextMenuOptions)
 
-      Button('Open ContextMenu - keyboardAvoidMode')
+      Button('CM-keybd')
         .id('btnContextMenuKeyboardAvoidMode')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(8)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '6.5%' })
         .bindContextMenu(buildMenuContent, ResponseType.LongPress, {
           keyboardAvoidMode: MenuKeyboardAvoidMode.NONE
         } as ContextMenuOptions)
 
-      Button('Open ContextMenu - minKeyboardAvoidDistance')
+      Button('CM-kbdD')
         .id('btnContextMenuMinKeyboardAvoidDistance')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(8)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '6.5%' })
         .bindContextMenu(buildMenuContent, ResponseType.LongPress, {
           minKeyboardAvoidDistance: new LengthMetrics(20,LengthUnit.VP)
         } as ContextMenuOptions)
 
-      Button('Open ContextMenu - Lifecycle')
+      Button('CM-life')
         .id('btnContextMenuLifecycle')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(8)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '6.5%' })
         .bindContextMenu(buildMenuContent, ResponseType.LongPress, {
           onWillAppear: () => {
             this.onWillAppearResult = 'onWillAppear_called';
@@ -166,26 +186,41 @@ struct ContextMenuOptionsIndex {
 
       Text(this.onWillAppearResult)
         .key('onWillAppearResultContextMenu')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onDidAppearResult)
         .key('onDidAppearResultContextMenu')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '4.8%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onWillDisappearResult)
         .key('onWillDisappearResultContextMenu')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '4.8%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onDidDisappearResult)
         .key('onDidDisappearResultContextMenu')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '4.8%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
     }
     .width('100%')
     .height('100%')
-    .justifyContent(FlexAlign.Center)
+    .padding({ left: '2%', right: '2%', top: '1%', bottom: '1%' })
+    .alignItems(HorizontalAlign.Center)
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

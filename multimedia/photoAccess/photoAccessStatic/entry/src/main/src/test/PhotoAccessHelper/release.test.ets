@@ -34,14 +34,14 @@ export default function releaseTest() {
       await sleep(1000);
     });
     /**
-     * @tc.name   release_callback_static_000 
+     * @tc.name   release_callback_static_000Adapt001
      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_RELEASE_STATIC_0000
      * @tc.desc   release photoAccessHelper instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("release_callback_static_000 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("release_callback_static_000Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let testNum = 'release_callback_static_000';
         try {
@@ -62,14 +62,14 @@ export default function releaseTest() {
       })
 
     /**
-     * @tc.name   release_promise_static_000 
+     * @tc.name   release_promise_static_000Adapt001
      * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_RELEASE_STATIC_0000
      * @tc.desc   release photoAccessHelper instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("release_promise_static_000 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("release_promise_static_000Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let testNum = 'release_promise_static_000';
         try {

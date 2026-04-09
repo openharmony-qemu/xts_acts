@@ -27,7 +27,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyBackdropBlurModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class MyBackdropBlurModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   public isChange: boolean = true;
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     if (this.isChange) {

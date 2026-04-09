@@ -1197,5 +1197,178 @@ export default function abilityTest() {
             }
             done();
         })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCALLMATADATACHANGEALL_ERRORCODE_STATIC_0103
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCALLMATADATACHANGEALL_ERRORCODE_STATIC_0103
+         * @tc.desc   onCallMetadataChangeAll with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONCALLMATADATACHANGEALL_ERRORCODE_STATIC_0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            await controller!.destroy()
+            try {
+                controller!.onCallMetadataChangeAll((callmetadata: avSession.CallMetadata) => {
+                    console.info(`controller onCallMetadataChangeAll Successfully`);
+                });
+            } catch (err){
+                console.info(`controller onCallMetadataChangeAll BusinessError: code: ${err.code}, message: ${err.message}`)
+                expect(err.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCALLSTATECHANGEALL_ERRORCODE_STATIC_0103
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCALLSTATECHANGEALL_ERRORCODE_STATIC_0103
+         * @tc.desc   onCallStateChangeAll with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONCALLSTATECHANGEALL_ERRORCODE_STATIC_0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            await controller!.destroy()
+            try {
+                controller!.onCallStateChangeAll((callstate: avSession.AVCallState) => {
+                    console.info(`controller onCallStateChangeAll Successfully`);
+                });
+            }catch(err){
+                console.info(`controller onCallStateChangeAll BusinessError: code: ${err.code}, message: ${err.message}`)
+                expect(err.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSESSIONDESTROY_ERRORCODE_STATIC_0103
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSESSIONDESTROY_ERRORCODE_STATIC_0103
+         * @tc.desc   onSessionDestroy with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONDESTROY_ERRORCODE_STATIC_0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            await controller!.destroy()
+            try {
+                controller!.onSessionDestroy(() => {
+                    console.info(`controller onSessionDestroy Successfully`);
+                });
+            }catch(err){
+                console.info(`controller onSessionDestroy BusinessError: code: ${err.code}, message: ${err.message}`)
+                expect(err.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_STATIC_0103
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_STATIC_0103
+         * @tc.desc   onQueueItemsChange with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONQUEUEITEMSCHANGE_ERRORCODE_STATIC_0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            await controller!.destroy()
+            try {
+                controller!.onQueueItemsChange((items: avSession.AVQueueItem[]) => {
+                    console.info(`controller onQueueItemsChange Successfully`);
+                });
+            }catch(err){
+                console.info(`controller onQueueItemsChange BusinessError: code: ${err.code}, message: ${err.message}`)
+                expect(err.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_ERRORCODE_STATIC_0103
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_ERRORCODE_STATIC_0103
+         * @tc.desc   offQueueItemsChange with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUEITEMSCHANGE_ERRORCODE_STATIC_0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            await controller!.destroy()
+            try {
+                controller!.offQueueItemsChange();
+            }catch(err){
+                console.info(`controller offQueueItemsChange BusinessError: code: ${err.code}, message: ${err.message}`)
+                expect(err.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_STATIC_0103
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_STATIC_0103
+         * @tc.desc   onQueueTitleChange with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_ERRORCODE_STATIC_0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            await controller!.destroy()
+            try {
+                controller!.onQueueTitleChange((tilte: string) => {
+                    console.info(`controller onQueueTitleChange Successfully`);
+                });
+            }catch(err){
+                console.info(`controller onQueueTitleChange BusinessError: code: ${err.code}, message: ${err.message}`)
+                expect(err.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_ERRORCODE_STATIC_0103
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_ERRORCODE_STATIC_0103
+         * @tc.desc   offQueueTitleChange with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFQUEUETITLECHANGE_ERRORCODE_STATIC_0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            await controller!.destroy()
+            try {
+                controller!.offQueueTitleChange();
+            }catch(err){
+                console.info(`controller offQueueTitleChange BusinessError: code: ${err.code}, message: ${err.message}`)
+                expect(err.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_ERRORCODE_STATIC_0103
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_ERRORCODE_STATIC_0103
+         * @tc.desc   offQueueTitleChange with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFEXTRASCHANGE_ERRORCODE_STATIC_0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            await controller!.destroy()
+            try {
+                controller!.offExtrasChange();
+            }catch(err){
+                console.info(`controller offExtrasChange BusinessError: code: ${err.code}, message: ${err.message}`)
+                expect(err.code).assertEqual(6600103);
+            }
+            done();
+        })
+
+
+
     })
 }

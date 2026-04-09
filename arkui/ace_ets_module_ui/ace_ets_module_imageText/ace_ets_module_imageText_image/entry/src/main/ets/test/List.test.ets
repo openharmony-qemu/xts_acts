@@ -79,6 +79,7 @@ import ImageAnimatorIterationsUndefinedAndNullTest from './ImageAnimatorUndefine
 import ImageAnimatorPreDecodeUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorPreDecodeUndefinedAndNull.test';
 import ImageAnimatorStateUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorStateUndefinedAndNull.test';
 import ImageAnimatorImagesUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorImagesUndefinedAndNull.test';
+import AnimationStopModeTest from './drawableDescriptor/AnimationStopMode.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -148,4 +149,5 @@ export default function testsuite() {
   ImageAnimatorPreDecodeUndefinedAndNullTest();
   ImageAnimatorStateUndefinedAndNullTest();
   ImageAnimatorImagesUndefinedAndNullTest();
+  AnimationStopModeTest();
 }

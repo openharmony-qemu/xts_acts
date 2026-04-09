@@ -20,9 +20,11 @@ struct UIShowDialog3 {
   private ctx: UIContext = this.getUIContext()
   private promptAction: PromptAction = this.ctx.getPromptAction()
   build() {
-    Column({ space: 10 }){
+    Row(){
       Button('UIShowDialog_Callback_Options001')
         .id('UIShowDialog_Callback_Options001')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           try {
             this.promptAction.showDialog({
@@ -37,6 +39,7 @@ struct UIShowDialog3 {
                 }
               },
               title: 'showDialog Title Info',
+              offset: { dx: 0, dy: 10 },
               message: 'Message Info',
               buttons: [
                 {
@@ -63,6 +66,8 @@ struct UIShowDialog3 {
         })
       Button('UIShowDialog_Callback_Options002')
         .id('UIShowDialog_Callback_Options002')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           try {
             this.promptAction.showDialog({
@@ -75,6 +80,7 @@ struct UIShowDialog3 {
                 blurOptions:undefined,
               },
               title: 'showDialog Title Info',
+              offset: { dx: 0, dy: 10 },
               message: 'Message Info',
               buttons: [
                 {
@@ -101,6 +107,8 @@ struct UIShowDialog3 {
         })
       Button('UIShowDialog_Callback_Options003')
         .id('UIShowDialog_Callback_Options003')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           try {
             this.promptAction.showDialog({
@@ -113,6 +121,7 @@ struct UIShowDialog3 {
                 blurOptions:null,
               },
               title: 'showDialog Title Info',
+              offset: { dx: 0, dy: 10 },
               message: 'Message Info',
               buttons: [
                 {
@@ -142,5 +151,8 @@ struct UIShowDialog3 {
     .width('100%')
     .backgroundImage($r('app.media.icon'))
     .backgroundImageSize({ width: '100%', height: '100%' })
+    .margin({top:30,left:20})
+    .alignItems(VerticalAlign.Top)
+    .justifyContent(FlexAlign.Start)
   }
 }

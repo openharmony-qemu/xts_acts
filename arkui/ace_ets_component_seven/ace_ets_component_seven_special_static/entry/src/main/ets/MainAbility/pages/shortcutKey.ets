@@ -18,7 +18,7 @@ import { Entry, Component, Column, AttributeModifier, ButtonAttribute, ModifierK
 import { State } from '@ohos.arkui.stateManagement';
 import { RecordData } from '@ohos.base';
 
-class ButtonModifier1 implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier1 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.keyboardShortcut('B', [ModifierKey.CTRL]);
   }

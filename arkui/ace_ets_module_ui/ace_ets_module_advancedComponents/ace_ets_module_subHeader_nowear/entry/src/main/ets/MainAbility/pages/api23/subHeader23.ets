@@ -22,11 +22,13 @@ struct SubHeader23 {
   build() {
     Column() {
       SubHeader({
+        titleId: 'subHeaderTitleId',
         primaryTitle: '一级标题',
         secondaryTitle: '二级标题',
         titleAccessibilityText: '自定义内容',
         operationType: OperationType.TEXT_ARROW,
         operationItem: [{
+          id: 'operationId',
           value: '更多',
           action: () => {
             promptAction.showToast({ message: 'demo' })

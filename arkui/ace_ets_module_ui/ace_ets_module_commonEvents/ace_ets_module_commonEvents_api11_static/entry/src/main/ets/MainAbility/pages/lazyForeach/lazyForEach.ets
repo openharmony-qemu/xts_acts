@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,7 +46,7 @@ import {
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 
-class BasicDataSource implements IDataSource<string> {
+export class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = []
 
   public totalCount(): int {
@@ -103,7 +103,7 @@ class BasicDataSource implements IDataSource<string> {
   }
 }
 
-class MyDataSource extends BasicDataSource {
+export class MyDataSource extends BasicDataSource {
   private dataArray: string[] = ['/path/image0', '/path/image1', '/path/image2', '/path/image3']
 
   public totalCount(): int {

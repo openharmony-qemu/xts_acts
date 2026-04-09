@@ -306,7 +306,7 @@ export default function fscreateReadStream() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_015 null');
             return;
           }
-          let contest = data.toString();
+          let contest = (data as Object).toString();
           let callbackCalled = false;
           ws.on('error', (): void => {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_015 writable event test', callbackCalled.toString());
@@ -351,7 +351,7 @@ export default function fscreateReadStream() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_016 null');
             return;
           }
-          let contest = data.toString();
+          let contest = (data as Object).toString();
           let callbackCalled = false;
           ws.on('error', (): void => {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_ReadStream_static_016 writable event test', callbackCalled.toString());

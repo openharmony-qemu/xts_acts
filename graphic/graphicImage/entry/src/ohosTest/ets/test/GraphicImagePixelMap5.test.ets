@@ -1028,11 +1028,11 @@ export default function graphicImagePixelMap5() {
           let srcPixelmap = image.createPixelMapSync(color, opts2);
           let dstPixelMap = image.createPixelMapSync(opts3);
           console.log(" www data 4.2" + msg)
-          image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap).then(() => {
+          image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap).then(async () => {
             console.log(" www data 4.3" + msg)
             console.info(msg + ' Succeeded in converting pixelmap.');
-            srcPixelmap?.release();
-            dstPixelMap?.release();
+            await srcPixelmap?.release();
+            await dstPixelMap?.release();
             done()
           }).catch((error: BusinessError) => {
             console.error(msg + ` Failed to convert pixelmap. code is ${error.code}, message is ${error.message}`);

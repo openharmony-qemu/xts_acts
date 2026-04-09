@@ -2239,14 +2239,14 @@ export default function urlTest() {
       }
     });
     /**
-     * @tc.name   testSymbol.iterator0001
+     * @tc.name   testSymboliterator0001Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0300
      * @tc.desc   Test the function of the interface Symbol.iterator.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSymbol.iterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSymboliterator0001Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSymbol.iterator0001';
       try {
         const paramsObject = new url.URLParams('fod=bay&edg=bap');

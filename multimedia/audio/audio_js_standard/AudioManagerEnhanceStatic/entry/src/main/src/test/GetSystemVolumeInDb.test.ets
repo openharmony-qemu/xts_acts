@@ -81,7 +81,6 @@ export default function audioManagerTest() {
       try {
         let data = audioVolumeGroupManager!.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.SPEAKER)
         console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`GETSYSTEMVOLUMEINDB error ${error.message}, code ${error.code}`);
@@ -103,7 +102,6 @@ export default function audioManagerTest() {
         try {
           let data = await audioVolumeGroupManager!.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.SPEAKER);
           console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
-          expect(true).assertTrue();
           done();
         } catch (error) {
           console.log(`${TagFrmwk}: getSystemVolumeInDb : error ${error}`);
@@ -131,7 +129,6 @@ export default function audioManagerTest() {
           try {
             let data = await audioVolumeGroupManager!.getSystemVolumeInDb(TestConst.AudioVolumeType[index], 3, audio.DeviceType.SPEAKER);
             console.info(`${TestConst.AudioVolumeType[index]} getSystemVolumeInDb :SUCCESS ${data}`);
-            expect(true).assertTrue();
             done();
           } catch (error) {
             console.log(`${TagFrmwk}: ${TestConst.AudioVolumeType[index]} getSystemVolumeInDb : error ${error}`);

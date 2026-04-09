@@ -8,7 +8,7 @@ import { Optional,PickerTextStyle,Color,CalendarAlign,DateRange,CalendarPicker,H
   Column, Component, Button, ClickEvent } from '@ohos.arkui.component'
 
 @Observed
-class MyEnableModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class MyEnableModifier implements AttributeModifier<CalendarPickerAttribute> {
   public change: boolean | undefined = true;
   public edgeAlign_:Optional<CalendarAlign> | undefined = CalendarAlign.START;
 

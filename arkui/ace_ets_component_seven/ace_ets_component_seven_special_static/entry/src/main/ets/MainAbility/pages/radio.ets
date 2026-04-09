@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 import { Entry, Component, Flex, AttributeModifier, RadioAttribute, Text, FlexDirection, ItemAlign, FlexAlign, Alignment,
   TextAlign, TextOverflow, Radio } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-class RadioModifier1 implements AttributeModifier<RadioAttribute> {
+export class RadioModifier1 implements AttributeModifier<RadioAttribute> {
   applyNormalAttribute(instance: RadioAttribute): void {
     instance
       .radioStyle({

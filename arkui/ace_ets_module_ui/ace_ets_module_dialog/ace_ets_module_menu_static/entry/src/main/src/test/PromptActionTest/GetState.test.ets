@@ -1,10 +1,10 @@
-/*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -82,6 +82,7 @@ export default function GetStateTest() {
         console.info('GetStateTest: getStateTest - found btnGetCustomState button component');
         expect(!!getStateButton).assertEqual(true);
         await (getStateButton?.click() as Promise<void>);
+        console.info('GetStateTest: getStateTest - clicked btnGetCustomState, waiting for state update');
         await Utils.sleep(500);
         const customText = await driver.findComponent(ON.id('customText'));
         console.info('GetStateTest: getStateTest - found customText component');

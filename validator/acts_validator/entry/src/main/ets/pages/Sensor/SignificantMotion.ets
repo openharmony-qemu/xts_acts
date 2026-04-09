@@ -49,6 +49,22 @@ struct SignificantMotion {
       // 打开大幅动作检测传感器
       Logger.info(TAG, 'enter')
       try {
+        const sensorList: sensor.Sensor[] = sensor.getSingleSensorByDeviceSync(sensor.SensorId.SIGNIFICANT_MOTION);
+        Logger.info(TAG, `sensorList.length: ${sensorList.length}`);
+        if (sensorList.length > 0) {
+          Logger.info(TAG, `isMockSensor: ${sensorList[0].isMockSensor}`);
+          if (sensorList[0].isMockSensor == false) {
+            this.isHave = false;
+            this.Vue = false;
+            promptAction.showToast({
+              message: '当前设备大幅动作检测传感器为模拟传感器'
+            })
+            router.back({
+              url: 'pages/Sensor/Sensor_index',
+              params: { result: 'false', title: this.name }
+            })
+          }
+        }
         sensor.on(sensor.SensorId.SIGNIFICANT_MOTION, (data: sensor.SignificantMotionResponse) => {
           this.backCount += 1;
           Logger.info('Succeeded in invoking on. HeartRate: ' + data.scalar);
@@ -77,7 +93,7 @@ struct SignificantMotion {
           })
           router.back({
             url: 'pages/Sensor/Sensor_index',
-            params: { result: 'true ', title: this.name }
+            params: { result: 'false', title: this.name }
           })
         }
         console.error(TAG, `Failed to invoke on. Code: ${e.code}, message: ${e.message}`);

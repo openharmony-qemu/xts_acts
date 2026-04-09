@@ -45,7 +45,7 @@ struct Index {
           .fontWeight(FontWeight.Bold)
           .id('undefined')
       }
-      .bindMenu(this.MyMenu)
+      .bindMenu(this.MyMenu,{showInSubWindow:false})
       // .width('100%')\
       Column(){
         Text('menu_null')
@@ -53,7 +53,7 @@ struct Index {
           .fontWeight(FontWeight.Bold)
           .id('null')
       }
-      .bindMenu(this.MyMenu1)
+      .bindMenu(this.MyMenu1,{showInSubWindow:false})
       // .width('100%')
 
     }

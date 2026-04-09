@@ -57,7 +57,7 @@ interface Dta1 {
   index: Index1
   key: Key1
 }
-class BasicDataSource0120 implements IDataSource<string> {
+export class BasicDataSource0120 implements IDataSource<string> {
   private listeners: DataChangeListener[] = new Array<DataChangeListener>();
   private originDataArray: string[] = new Array<string>();
 
@@ -91,7 +91,7 @@ class BasicDataSource0120 implements IDataSource<string> {
   }
 }
 
-class MyDataSource0120 extends BasicDataSource0120 {
+export class MyDataSource0120 extends BasicDataSource0120 {
   public dataArray: string[] = new Array<string>();
 
   public totalCount(): int {

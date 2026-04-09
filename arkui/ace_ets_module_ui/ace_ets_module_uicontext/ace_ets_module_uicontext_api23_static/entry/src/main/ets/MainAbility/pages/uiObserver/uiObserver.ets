@@ -22,28 +22,32 @@ import {
   Text,
   TextAlign,
   Entry,
-  Component
+  Component,
+  FlexAlign
 } from '@ohos.arkui.component';
-import { UIContext, UIObserver } from '@ohos.arkui.UIContext';
+import { UIContext, UIObserver, SwiperContentInfo } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import uiObserver from '@ohos.arkui.observer';
 
 @Entry
 @Component
 struct uiObserverTest {
 
   build() {
-    Column({ space: 15 } as ColumnOptions) {
-      Text('UIObserver Test')
-        .fontSize(20)
+    Column({ space: 1 } as ColumnOptions) {
+      Text('UIObs')
+        .fontSize(11)
         .fontWeight(700)
         .width('100%')
         .textAlign(TextAlign.Center)
         .id('uiObserverTitle')
 
-      Button('onTabChange')
+      Button('Tab+')
         .id('btnOnTabChange')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(8)
         .onClick(() => {
           try {
             let ctx: UIContext = this.getUIContext();
@@ -64,8 +68,10 @@ struct uiObserverTest {
 
       Button('offTabChange')
         .id('btnOffTabChange')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(8)
         .onClick(() => {
           try {
             let ctx: UIContext = this.getUIContext();
@@ -78,10 +84,12 @@ struct uiObserverTest {
           }
         })
 
-      Button('onRouterPageSizeChange')
+      Button('Rsz+')
         .id('btnOnRouterPageSizeChange')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(8)
         .onClick(() => {
           try {
             let ctx: UIContext = this.getUIContext();
@@ -99,10 +107,12 @@ struct uiObserverTest {
           }
         })
 
-      Button('offRouterPageSizeChange')
+      Button('Rsz-')
         .id('btnOffRouterPageSizeChange')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(8)
         .onClick(() => {
           try {
             let ctx: UIContext = this.getUIContext();
@@ -115,10 +125,12 @@ struct uiObserverTest {
           }
         })
 
-      Button('onNavDestinationSizeChange')
+      Button('Nav+')
         .id('btnOnNavDestinationSizeChange')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(8)
         .onClick(() => {
           try {
             let ctx: UIContext = this.getUIContext();
@@ -136,10 +148,12 @@ struct uiObserverTest {
           }
         })
 
-      Button('offNavDestinationSizeChange')
+      Button('Nav-')
         .id('btnOffNavDestinationSizeChange')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(8)
         .onClick(() => {
           try {
             let ctx: UIContext = this.getUIContext();
@@ -152,10 +166,12 @@ struct uiObserverTest {
           }
         })
 
-      Button('onNavDestinationSizeChangeByUniqueId')
+      Button('NavId+')
         .id('btnOnNavDestinationSizeChangeByUniqueId')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(8)
         .onClick(() => {
           try {
             let ctx: UIContext = this.getUIContext();
@@ -173,10 +189,12 @@ struct uiObserverTest {
           }
         })
 
-      Button('offNavDestinationSizeChangeByUniqueId')
+      Button('NavId-')
         .id('btnOffNavDestinationSizeChangeByUniqueId')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(8)
         .onClick(() => {
           try {
             if (AppStorage.get<boolean>('uiObserverOnNavDestinationSizeChangeByUniqueIdRegistered') !== true) {
@@ -195,6 +213,7 @@ struct uiObserverTest {
     }
     .width('100%')
     .height('100%')
-    .padding(20)
+    .padding({ left: '2%', right: '2%', top: '1%', bottom: '1%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

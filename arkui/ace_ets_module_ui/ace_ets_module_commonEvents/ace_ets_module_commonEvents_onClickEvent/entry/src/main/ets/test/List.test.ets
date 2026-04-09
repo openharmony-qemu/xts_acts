@@ -23,6 +23,7 @@ import colorMetricsTest from './ColorTest/colorMetrics.test';
 import nodeRenderStateTest from './NodeRenderStateTest/nodeRenderState.test';
 import clickEventNullAndUndefinedTest from './ClickEvent/clickEventNullAndUndefinedTest.test';
 import enableClickSoundEffect from './enableClickSoundEffect/enableClickSoundEffect.test';
+import CommonMethodInputEventTest from './commonMethodInputEvent/CommonMethodInputEvent.test';
 
 export default function testsuite() {
   OnClick1();
@@ -35,4 +36,5 @@ export default function testsuite() {
   nodeRenderStateTest();
   clickEventNullAndUndefinedTest();
   enableClickSoundEffect();
+  CommonMethodInputEventTest();
 }

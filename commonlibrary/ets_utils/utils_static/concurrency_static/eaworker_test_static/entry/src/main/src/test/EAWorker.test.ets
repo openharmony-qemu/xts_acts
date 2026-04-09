@@ -454,7 +454,7 @@ export default function EAWorkerTest() {
             async (taskInstance: taskpool.Task): Promise<string> => {
               let taskStr: string = '';
               await taskpool.execute(taskInstance).then((res) => {
-                taskStr = res;
+                taskStr = res as string;
               });
               return taskStr;
             },
@@ -947,7 +947,7 @@ export default function EAWorkerTest() {
                 return SUCCESS_MSG;
               }).then((result) => {
                 try {
-                  expect(result).assertEqual(SUCCESS_MSG);
+                  expect(result as string).assertEqual(SUCCESS_MSG);
                   resolve(undefined);
                 } catch (err) {
                   err = err as Error;
@@ -1619,7 +1619,7 @@ export default function EAWorkerTest() {
           let worker = new EAWorker();
           worker.start()
           let workerThreadId: number = 0;
-          const mainThreadId = StdProcess.tid;
+          const mainThreadId = StdProcess.tid();
           let worker1 = worker.run<undefined>((): undefined => {
             workerThreadId = StdProcess.tid();
             return undefined;
@@ -1764,7 +1764,7 @@ export default function EAWorkerTest() {
         let person: Person = new Person(23);
         try {
           const workerPromise = new Promise<Person>((resolve, reject) => {
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 person.age = 25;
                 resolve(person)
@@ -1835,7 +1835,7 @@ export default function EAWorkerTest() {
         worker.start()
         let inputPerson = new Person(23);
         try {
-          const result = worker.run((input: Person): void => {
+          const result = worker.run<Promise<void>>((input: Person): void => {
             throw new Error('Custom worker error')
           }, inputPerson).Await();
           worker.join()
@@ -1904,7 +1904,7 @@ export default function EAWorkerTest() {
         let inputTuple: [number, string] = [1, 'test'];
         try {
           const workerPromise = new Promise<[number, string]>((resolve, reject) => {
-            worker.run((input: [number, string]) => {
+            worker.run<void>((input: [number, string]) => {
               try {
                 const result: [number, string] = [input[0] + 2, input[1].toUpperCase()];
                 resolve(result);
@@ -1952,7 +1952,7 @@ export default function EAWorkerTest() {
 
         try {
           const workerPromise = new Promise<() => Promise<number>>((resolve, reject) => {
-            worker.run((input: () => Promise<number>) => {
+            worker.run<void>((input: () => Promise<number>) => {
               waitForCompletion(async () => {
                 try {
                   const value = await input();
@@ -1996,7 +1996,7 @@ export default function EAWorkerTest() {
         let inputPerson = new Person(23);
         try {
           const workerPromise = new Promise<Person>((resolve, reject) => {
-            worker.run((input: Person) => {
+            worker.run<void>((input: Person) => {
               try {
                 input.age = 25;
                 resolve(input);
@@ -2121,7 +2121,7 @@ export default function EAWorkerTest() {
         const inputNum = 1;
         try {
           const workerPromise = new Promise<bigint>((resolve, reject) => {
-            worker.run(async () => {
+            worker.run<Promise<void>>(async () => {
               try {
                 const result = BigInt(inputNum)
                 resolve(result);
@@ -2162,7 +2162,7 @@ export default function EAWorkerTest() {
         const inputLiteral: Literal = 'pending';
         try {
           const workerPromise = new Promise<Literal>((resolve, reject) => {
-            worker.run(async (input: Literal) => {
+            worker.run<Promise<void>>(async (input: Literal) => {
               try {
                 if (input == 'pending') {
                   input = 'success';
@@ -2203,7 +2203,7 @@ export default function EAWorkerTest() {
         let inputPerson = new Person(23);
         try {
           const workerPromise = new Promise<Person>((resolve, reject) => {
-            worker.run(async (input: Person) => {
+            worker.run<Promise<void>>(async (input: Person) => {
               try {
                 input.age = 25;
                 resolve(input);
@@ -2247,7 +2247,7 @@ export default function EAWorkerTest() {
         let inputDouble: Double = 0;
         try {
           const workerPromise = new Promise<null>((resolve, reject) => {
-            worker.run(async (input: undefined) => {
+            worker.run<Promise<void>>(async (input: undefined) => {
               try {
                 inputDouble = 1;
                 resolve(null);
@@ -2288,7 +2288,7 @@ export default function EAWorkerTest() {
         let inputPerson = new Person(23);
         try {
           const workerPromise = new Promise<Status>((resolve, reject) => {
-            worker.run(async (input: Status) => {
+            worker.run<Promise<void>>(async (input: Status) => {
               try {
                 input = Status.SUCCESS;
                 resolve(input);
@@ -2334,7 +2334,7 @@ export default function EAWorkerTest() {
         };
         try {
           const workerPromise = new Promise<() => Promise<number>>((resolve, reject) => {
-            worker.run(async (input: () => Promise<number>) => {
+            worker.run<Promise<void>>(async (input: () => Promise<number>) => {
               try {
                 const value = await input();
                 const additionalValue = await Promise.resolve(10);
@@ -2382,7 +2382,7 @@ export default function EAWorkerTest() {
         };
         try {
           const workerPromise = new Promise<taskpool.Task>((resolve, reject) => {
-            worker.run(async (input?: string) => {
+            worker.run<Promise<void>>(async (input?: string) => {
               try {
                 const taskName: string = input !== undefined ? input : 'taskName';
                 let task: taskpool.Task = new taskpool.Task(taskName, taskFunc, 20);
@@ -2424,7 +2424,7 @@ export default function EAWorkerTest() {
         worker.start()
         try {
           const workerPromise = new Promise<() => number>((resolve, reject) => {
-            worker.run((input: () => number) => {
+            worker.run<void>((input: () => number) => {
               try {
                 const age: number = input();
                 resolve((): number => age);
@@ -2464,7 +2464,7 @@ export default function EAWorkerTest() {
         let person: Person = new Person(23);
         try {
           const workerPromise = new Promise<Person>((resolve, reject) => {
-            worker.run(async (): Promise<void> => {
+            worker.run<Promise<void>>(async (): Promise<void> => {
               try {
                 person.age = 25;
                 resolve(person);
@@ -2506,7 +2506,7 @@ export default function EAWorkerTest() {
         const inputChar: Char = c'4';
         try {
           const workerPromise = new Promise<Char[]>((resolve, reject) => {
-            worker.run(async (input: Char): Promise<void> => {
+            worker.run<Promise<void>>(async (input: Char): Promise<void> => {
               try {
                 arr[2] = input;
                 resolve(arr);
@@ -2582,7 +2582,7 @@ export default function EAWorkerTest() {
         array[1] = 0;
         try {
           const workerPromise = new Promise<Int32Array>((resolve, reject) => {
-            worker.run(async (input: Int32Array): Promise<void> => {
+            worker.run<Promise<void>>(async (input: Int32Array): Promise<void> => {
               try {
                 setTimeout(() => {
                   console.info('delay 1s');
@@ -2637,7 +2637,7 @@ export default function EAWorkerTest() {
             array[0] = num;
           };
           const workerPromise = new Promise<Int32Array>((resolve, reject) => {
-            worker.run(async (): Promise<void> => {
+            worker.run<Promise<void>>(async (): Promise<void> => {
               try {
                 setTimeout(() => {
                   console.info('delay 3s');
@@ -2693,7 +2693,7 @@ export default function EAWorkerTest() {
             array[0] = num;
           };
           const workerPromise = new Promise<Int32Array>((resolve, reject) => {
-            worker.run(async (): Promise<void> => {
+            worker.run<Promise<void>>(async (): Promise<void> => {
               try {
                 setTimeout(() => {
                   console.info('delay 3s');
@@ -2747,7 +2747,7 @@ export default function EAWorkerTest() {
             array[0] = num;
           };
           const workerPromise = new Promise<Int32Array>((resolve, reject) => {
-            worker.run(async (): Promise<void> => {
+            worker.run<Promise<void>>(async (): Promise<void> => {
               try {
                 setTimeout(() => {
                   console.info('delay 3s');

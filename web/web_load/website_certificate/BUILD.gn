@@ -16,12 +16,14 @@ group("ActsWebsiteCertificateTest") {
   if (is_standard_system) {
     deps = [
       "website_certificate_five:ActsWebsiteCertificateFiveTest",
+      "website_certificate_five_static:ActsWebsiteCertificateFiveStaticTest",
       "website_certificate_four:ActsWebsiteCertificateFourTest",
       "website_certificate_four_static:ActsWebsiteCertificateFourStaticTest",
       "website_certificate_one:ActsWebsiteCertificateOneTest",
       "website_certificate_one_static:ActsWebsiteCertificateOneStaticTest",
       "website_certificate_three:ActsWebsiteCertificateThreeTest",
       "website_certificate_two:ActsWebsiteCertificateTwoTest",
+      "website_certificate_two_static:ActsWebsiteCertificateTwoStaticTest",
     ]
   }
 }

@@ -28,7 +28,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyForegroundEffectModifier implements AttributeModifier<CommonAttribute> {
+export class MyForegroundEffectModifier implements AttributeModifier<CommonAttribute> {
   public isChange: boolean = true;
 
   applyNormalAttribute(instance: CommonAttribute): void {

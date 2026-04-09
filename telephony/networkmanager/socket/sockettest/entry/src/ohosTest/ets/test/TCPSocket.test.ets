@@ -16,6 +16,7 @@ import { describe, it, expect , Level, Size, TestType} from '@ohos/hypium';
 import socket from "@ohos.net.socket";
 import { BusinessError, Callback } from '@ohos.base';
 import { ArrayBufferToString } from './utils/index';
+import connection from '@ohos.net.connection';
 
 function expectSuccess(): void {
   expect(true).assertTrue();
@@ -54,6 +55,43 @@ function expectEqual(exp: string | number | boolean, assert: string | number | b
     console.info(`${info} test failed`);
   }
 };
+
+function isValidIp(ip: string): boolean {
+  if (typeof ip !== 'string' || ip.length === 0) {
+    return false;
+  }
+
+  const ipv4Regex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+  if (ipv4Regex.test(ip)) {
+    return true;
+  }
+
+  const ipv6Regex = new RegExp(
+    '^(' +
+      '([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|' +
+      '([0-9a-fA-F]{1,4}:){1,7}:|' +
+      '([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|' +
+      '([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|' +
+      '([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|' +
+      '([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|' +
+      '([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|' +
+      '[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|' +
+      ':((:[0-9a-fA-F]{1,4}){1,7}|:)|' +
+      'fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|' +
+      '::(ffff(:0{1,4}){0,1}:){0,1}' +
+      '((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}' +
+      '(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|' +
+      '([0-9a-fA-F]{1,4}:){1,4}:' +
+      '((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}' +
+      '(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])' +
+      ')$'
+  );
+  if (ipv6Regex.test(ip)) {
+    return true;
+  }
+
+  return false;
+}
 
 export default function TCPSocketTest() {
   describe('ActsTCPSocketTest', () => {
@@ -8686,5 +8724,181 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
             done();
           }
         });
+    
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions5300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_5300
+     * @tc.desc   Get TCPSocket status,after bind;  callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketSetExtraOptions5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions5300';
+      try {
+        console.info(`${caseName} test start`);
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        expect(tcp).assertInstanceOf('Object');
+        let bindAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 10019
+        };
+        await tcp.bind(bindAddress).catch((err:BusinessError) => {
+          console.info('fail to bind' + err.code.toString());
+        });
+        let tcpExtraOptions: socket.TCPExtraOptions = {
+          keepAlive: true,
+          OOBInline: true,
+          TCPNoDelay: true,
+          socketLinger: {
+            on: true, linger: 10
+          },
+          receiveBufferSize: 1000,
+          sendBufferSize: 1000,
+          reuseAddress: true,
+          socketTimeout: 3000,
+          tcpFastOpen: true
+        };
+        tcp.setExtraOptions(tcpExtraOptions, async (err: BusinessError) => {
+          if (err) {
+            console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+            expectFail();
+          } else {
+            console.info(`${caseName} success`);
+            expectSuccess();
+          }
+          await tcp.close().catch((err:BusinessError) => {
+            console.info('fail to close' + err.code.toString());
+          });
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions5400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_5400
+     * @tc.desc   Get TCPSocket status,after bind;  callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketSetExtraOptions5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions5400';
+      try {
+        console.info(`${caseName} test start`);
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        expect(tcp).assertInstanceOf('Object');
+        let bindAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 10020
+        };
+        await tcp.bind(bindAddress).catch((err:BusinessError) => {
+          console.info('fail to bind' + err.code.toString());
+        });
+        let tcpExtraOptions: socket.TCPExtraOptions = {
+          keepAlive: true,
+          OOBInline: true,
+          TCPNoDelay: true,
+          socketLinger: {
+            on: true, linger: 10
+          },
+          receiveBufferSize: 1000,
+          sendBufferSize: 1000,
+          reuseAddress: true,
+          socketTimeout: 3000,
+          tcpFastOpen: false
+        };
+        tcp.setExtraOptions(tcpExtraOptions, async (err: BusinessError) => {
+          if (err) {
+            console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+            expectFail();
+          } else {
+            console.info(`${caseName} success`);
+            expectSuccess();
+          }
+          await tcp.close().catch((err:BusinessError) => {
+            console.info('fail to close' + err.code.toString());
+          });
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrGetListeningTcpInfo0100
+     * @tc.number SUB_NetworkMgr_Get_Listening_Tcp_Info_0100
+     * @tc.desc   Get current Tcp port states
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrGetListeningTcpInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrGetListeningTcpInfo0100';
+      console.info(`${caseName}---Start`);
+
+      try {
+        connection.getSystemNetPortStates().then((data: connection.NetPortStatesInfo) => {
+          if (data != undefined && data.tcpPortStatesInfo != undefined) {
+            console.info(`${caseName} tcpPortStatesInfo length: ${data.tcpPortStatesInfo.length}`);
+
+            for (let i = 0; i < data.tcpPortStatesInfo.length; i++) {
+              const tcpItem = data.tcpPortStatesInfo[i];
+              console.info(`${caseName} tcpItem[${i}]: ${JSON.stringify(tcpItem)}`);
+
+              expectTrue(typeof tcpItem.tcpLocalIp === 'string');
+              expectTrue(isValidIp(tcpItem.tcpLocalIp));
+
+              expectTrue(typeof tcpItem.tcpLocalPort === 'number');
+              expectTrue(tcpItem.tcpLocalPort >= 0 && tcpItem.tcpLocalPort <= 65535);
+
+              expectTrue(typeof tcpItem.tcpRemoteIp === 'string');
+              expectTrue(isValidIp(tcpItem.tcpRemoteIp));
+
+              expectTrue(typeof tcpItem.tcpRemotePort === 'number');
+              expectTrue(tcpItem.tcpRemotePort >= 0 && tcpItem.tcpRemotePort <= 65535);
+
+              expectTrue(typeof tcpItem.tcpUid === 'number');
+              expectTrue(tcpItem.tcpUid >= 0);
+
+              expectTrue(typeof tcpItem.tcpPid === 'number');
+              expectTrue(tcpItem.tcpPid >= 0);
+
+              expectTrue(typeof tcpItem.tcpState === 'number');
+              expectTrue(tcpItem.tcpState >= 0);
+            }
+
+            expect(data.tcpPortStatesInfo.length >= 0).assertTrue();
+          } else {
+            expect(data === undefined).assertTrue();
+            console.info(`${caseName} error: data or its port states info is undefined`);
+            expectTrue(false);
+          }
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} error fetching system net port states, errorCode:${error.code} ${JSON.stringify(error)}`);
+          expectTrue(false);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
+        expectTrue(err.code === 201);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
   })
 }

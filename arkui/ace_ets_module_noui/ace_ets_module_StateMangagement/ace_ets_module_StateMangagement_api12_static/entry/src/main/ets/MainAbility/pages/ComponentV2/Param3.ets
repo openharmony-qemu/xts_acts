@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,14 +34,14 @@ import {
   Link,Local,Require,
   StorageLink,ObservedV2,Trace,Param,Event
 } from '@ohos.arkui.stateManagement'
-class RawObject {
+export class RawObject {
   name: string;
   constructor(name: string) {
     this.name = name;
   }
 }
 @ObservedV2
-class ObservedObject {
+export class ObservedObject {
   @Trace name: string;
   constructor(name: string) {
     this.name = name;

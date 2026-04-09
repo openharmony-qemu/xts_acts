@@ -31,7 +31,7 @@ export default class GlobalContext {
   }
 
   getObject<T>(value: string): FaceValue<T> | null {
-    const result = AppStorage.get(value)
+    const result = AppStorage.get<FaceValue<T>>(value)
     if (result !== null && result !== undefined) {
       return result as FaceValue<T>
     }

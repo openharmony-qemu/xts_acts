@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsNotificationAnsThreePartyWatchStaticWithOutAbilityNoPermissionTest.hap"
+            "ActsNotificationAnsThreePartyWatchStaticWithOutAbilityNoPermissionStaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true

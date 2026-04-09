@@ -525,6 +525,69 @@ export default function AVImageGeneratorTest() {
         })
 
         /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1700
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1700', Level.LEVEL0, async (done : Function) => {
+            let tmpParam: media.PixelMapParams = {
+                width : 300,
+                height : 300,
+                colorFormat : media.PixelFormat.RGB_888
+            }
+            media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+                if (generator != null) {
+                    let option: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC;
+                    console.info(`createAVImageGenerator success`);
+                    generator.fetchFrameByTime(null, option, tmpParam, (error: BusinessError, pixelMap) => {
+                        if (error) {
+                            console.error(`fetchFrameByTime callback failed, err = ${JSON.stringify(error)}`)
+                            expect().assertFail()
+                            return
+                        }
+                        let pixel_map = pixelMap;
+                        expect(pixel_map).assertNull()
+                    });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err.message}`);
+                    expect().assertFail()
+                };
+            });
+            done()
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1800
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_1800', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
+                if (generator) {
+                    console.info(`createAVImageGenerator success`);
+                    generator.fetchFrameByTime(null, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC, param)
+                        .then((pixelMap: image.PixelMap) => {
+                            expect(pixelMap.isEditable).assertFalse();
+                            expect(pixelMap.isStrideAlignment).assertTrue();
+                        }).catch((error: BusinessError) => {
+                            console.error(`fetchFrameByTime fail, error message:${err.message}`);
+                            expect().assertFail();
+                        });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err.message}`);
+                    expect().assertFail();
+                }
+            });
+            done();
+        })
+
+        /**
          * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100
          * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100
          * @tc.desc   AvImageGenerator fetchFrameByTime test
@@ -662,6 +725,58 @@ export default function AVImageGeneratorTest() {
                     console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
                     expect(error.code == 5400101).assertTrue();
                     expect().assertFail();
+                }
+            });
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_GENERATOR_PROMISE_FUNCTION_0200
+         * @tc.number SUB_MULTIMEDIA_CREATE_IMAGE_GENERATOR_PROMISE_FUNCTION_0200
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_CREATE_IMAGE_GENERATOR_PROMISE_FUNCTION_0200', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator().then((generator: media.AVImageGenerator) => {
+                if (generator) {
+                    console.info(`Succeeded in creating AVImageGenerator`);
+                    expect(generator != undefined).assertTrue();
+                    expect(generator.fdSrc != undefined).assertTrue();
+                    expect(generator.fdSrc?.fd).assertEqual(0);
+                    expect(generator.fdSrc?.offset).assertEqual(0);
+                    expect(generator.fdSrc?.length).assertEqual(-1);
+                } else {
+                    console.error(`Failed to create AVImageGenerator`);
+                }
+            }).catch((error: BusinessError) => {
+                console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
+                expect(error.code == 5400101).assertTrue();
+            });
+            done();
+        })
+        /**
+         * @tc.name   SUB_MULTIMEDIA_CREATE_IMAGE_GENERATOR_CALLBACK_FUNCTION_0200
+         * @tc.number SUB_MULTIMEDIA_CREATE_IMAGE_GENERATOR_CALLBACK_FUNCTION_0200
+         * @tc.desc   AvImageGenerator createAVImageGenerator test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_CREATE_IMAGE_GENERATOR_CALLBACK_FUNCTION_0200', Level.LEVEL0, async (done : Function) => {
+            media.createAVImageGenerator((error: BusinessError, generator: media.AVImageGenerator) => {
+                if (error) {
+                    console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
+                    return;
+                }
+                if (generator) {
+                    console.info(`Succeeded in creating AVImageGenerator`);
+                    expect(generator != undefined).assertTrue();
+                    expect(generator.fdSrc != undefined).assertTrue();
+                    expect(generator.fdSrc?.fd).assertEqual(0);
+                    expect(generator.fdSrc?.offset).assertEqual(0);
+                    expect(generator.fdSrc?.length).assertEqual(-1);
                 }
             });
             done();

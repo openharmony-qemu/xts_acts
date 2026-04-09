@@ -62,7 +62,11 @@ export default function AxisEventTest() {
         const driver = Driver.create();
         const scrollComp = await driver.findComponent(ON.id('axisEventList'));
         expect(scrollComp !== null).assertTrue();
-        await driver.swipe(540, 600, 540, 200, 600);
+        const rect = CommonFunc.getComponentRect('axisEventList');
+        const centerX: int = Math.round((rect.left + rect.right) / 2) as int;
+        const startY: int = Math.round(rect.top + (rect.bottom - rect.top) * 0.8) as int;
+        const endY: int = Math.round(rect.top + (rect.bottom - rect.top) * 0.2) as int;
+        await driver.swipe(centerX, startY, centerX, endY, 600);
         await CommonFunc.sleep(500);
         const status = getContentByKey('axisEventHasAxisStatus');
         expect(status === 'hasAxis_ok' || status === 'init').assertTrue();

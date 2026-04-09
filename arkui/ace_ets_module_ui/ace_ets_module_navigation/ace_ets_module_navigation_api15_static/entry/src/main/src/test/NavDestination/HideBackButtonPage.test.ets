@@ -83,12 +83,12 @@ it('HideBackButtonPage_static_0100', Level.LEVEL0, async (done: () => void): Pro
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushOneId'));
       await (btn1?.click() as Promise<void>)
       console.info('[CustomTransitionPage_0100] btn1 click');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
 
       let button = await driver.findComponent(ON.type('BackButton'));
       expect(button).assertEqual(null);
@@ -112,16 +112,16 @@ it('HideBackButtonPage_static_0200', Level.LEVEL0, async (done: () => void): Pro
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btnPop = await driver.findComponent(ON.id('popId'));
       await (btnPop?.click() as Promise<void>)
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushTwoId'));
       await (btn1?.click() as Promise<void>)
       console.info('[HideBackButtonPage_0200] btn1 click');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
 
       await driver.assertComponentExist(ON.type('BackButton'));
 
@@ -141,28 +141,29 @@ it('HideBackButtonPage_static_0200', Level.LEVEL0, async (done: () => void): Pro
      */
 it('HideBackButtonPage_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
-      console.info('HideBackButtonPage_0300 START');
+      console.info('HideBackButtonPage_static_0300 START');
 
       try {
         await CommonFunc.sleep(1000);
 
         let driver = Driver.create();
-        await CommonFunc.sleep(200);
+        await CommonFunc.sleep(1000);
 
         let btnPop = await driver.findComponent(ON.id('popId'));
         await (btnPop?.click() as Promise<void>)
-        await CommonFunc.sleep(500);
+        console.info('[HideBackButtonPage_static_0300] btnPop click');
+        await CommonFunc.sleep(1000);
 
         let btn1 = await driver.findComponent(ON.id('pageThreeId'));
         await (btn1?.click() as Promise<void>)
-        console.info('[HideBackButtonPage_0300] btn1 click');
-        await CommonFunc.sleep(500);
+        console.info('[HideBackButtonPage_static_0300] btn1 click');
+        await CommonFunc.sleep(1000);
 
         await driver.assertComponentExist(ON.type('BackButton'));
       }catch(error) {
         expect().assertFail();
       }
-      console.info('HideBackButtonPage_0300 END');
+      console.info('HideBackButtonPage_static_0300 END');
       done();
     });
 
@@ -177,28 +178,29 @@ it('HideBackButtonPage_static_0300', Level.LEVEL0, async (done: () => void): Pro
      */
 it('HideBackButtonPage_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
-      console.info('HideBackButtonPage_0400 START');
+      console.info('HideBackButtonPage_static_0400 START');
 
       try {
         await CommonFunc.sleep(1000);
 
         let driver = Driver.create();
-        await CommonFunc.sleep(200);
+        await CommonFunc.sleep(1000);
 
         let btnPop = await driver.findComponent(ON.id('popId'));
         await (btnPop?.click() as Promise<void>)
-        await CommonFunc.sleep(500);
+        console.info('[HideBackButtonPage_static_0400] btnPop click');
+        await CommonFunc.sleep(1000);
 
         let btn1 = await driver.findComponent(ON.id('pushFourId'));
         await (btn1?.click() as Promise<void>)
-        console.info('[HideBackButtonPage_0300] btn1 click');
-        await CommonFunc.sleep(500);
+        console.info('[HideBackButtonPage_static_0400] btn1 click');
+        await CommonFunc.sleep(1000);
 
         await driver.assertComponentExist(ON.type('BackButton'));
       }catch(error) {
         expect().assertFail();
       }
-      console.info('HideBackButtonPage_0400 END');
+      console.info('HideBackButtonPage_static_0400 END');
       done();
     });
 

@@ -35,20 +35,20 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-class Observed0060Model {
+export class Observed0060Model {
   value: string =''
   constructor(value: string) {
     this.value = value
   }
 }
 
-enum Observed0060Enum {
+export enum Observed0060Enum {
   A = 'A',
   B = 'B'
 }
 
 @Observed
-class Observed0060Class {
+export class Observed0060Class {
   id: number = 1
   name: string = ''
   isType: boolean = false

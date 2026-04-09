@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,7 +68,7 @@ import {
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
-class BasicDataSource implements IDataSource<boolean> {
+export class BasicDataSource implements IDataSource<boolean> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: Array<boolean> = [];
 

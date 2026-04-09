@@ -157,5 +157,31 @@ export default function pubCertJsAPINoPermissionTestUnit() {
       }
       done();
     });
+	
+	 /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030 start');
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
+      } catch (error) {
+        if(error.code !== 801){
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030 Failed  Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+        }
+      }
+	    hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030 end');
+      done();
+    });
   })
 }

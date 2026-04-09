@@ -347,7 +347,12 @@ static napi_value Init(napi_env env, napi_value exports)
         { "testHiCollieStuckWithTimeoutNdk2", nullptr, TestHiCollieStuckWithTimeoutNdk2, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_HiCollie_Report_sucess", nullptr, OH_HiCollie_Report_sucess, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_HiCollie_Report_Main", nullptr, OH_HiCollie_Report_Main, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "OH_HiCollie_Report_Remote", nullptr, OH_HiCollie_Report_Remote, nullptr, nullptr, nullptr, napi_default, nullptr }
+        { "OH_HiCollie_Report_Remote", nullptr, OH_HiCollie_Report_Remote, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "OH_HiCollie_ReportInputBlock_Main", nullptr, OH_HiCollie_ReportInputBlock_Main, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "OH_HiCollie_ReportInputBlock_Remote", nullptr, OH_HiCollie_ReportInputBlock_Remote, nullptr, nullptr,
+            nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

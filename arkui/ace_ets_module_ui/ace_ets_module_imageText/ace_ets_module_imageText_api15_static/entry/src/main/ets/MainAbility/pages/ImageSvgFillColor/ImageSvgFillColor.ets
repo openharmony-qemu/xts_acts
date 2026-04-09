@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,7 +54,7 @@ import inspector from '@ohos.arkui.inspector'
 import { AppStorage, State,Observed,ObjectLink } from '@ohos.arkui.stateManagement';
 
 
-class MyImageModifier implements AttributeModifier<ImageAttribute> {
+export class MyImageModifier implements AttributeModifier<ImageAttribute> {
   isDark: boolean = false
 
   applyNormalAttribute(instance: ImageAttribute): void {
@@ -71,7 +71,7 @@ class MyImageModifier implements AttributeModifier<ImageAttribute> {
 let idIndex: number = 0
 
 @Observed
-class FillColorCategory {
+export class FillColorCategory {
 imageKey: string
 buttonID: string
 image: string

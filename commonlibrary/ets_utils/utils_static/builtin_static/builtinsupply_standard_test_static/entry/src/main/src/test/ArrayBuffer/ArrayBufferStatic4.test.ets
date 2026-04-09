@@ -1160,7 +1160,7 @@ export default function ArrayBuffer4Test() {
       const reduceView = new Uint8Array(reduceSliced);
       reduceView[0] = 10;
       reduceView[2] = 20;
-      const total = reduceView.reduce((acc, val) => acc + val, 0);
+      const total = reduceView.reduce((acc, val) => acc + val, 0.);
       expect(total).assertEqual(30);
 
     });

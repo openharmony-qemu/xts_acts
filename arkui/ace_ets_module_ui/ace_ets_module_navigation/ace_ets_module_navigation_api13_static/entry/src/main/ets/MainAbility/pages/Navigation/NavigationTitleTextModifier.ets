@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,7 +22,7 @@ import { Entry, Component, NavPathStack, Builder, Navigation, Column, Button, Co
 import { State, Provide, Consume, AppStorage, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MainTitleTextModifier extends TextModifier {
+export class MainTitleTextModifier extends TextModifier {
   applyNormalAttribute(instance: TextAttribute): void {
       console.log(`testTag mainTitle use style1`);
       instance.fontColor('#FFFFC000')
@@ -34,7 +34,7 @@ class MainTitleTextModifier extends TextModifier {
 }
 
 @Observed
-class SubTitleTextModifier extends TextModifier {
+export class SubTitleTextModifier extends TextModifier {
   applyNormalAttribute(instance: TextAttribute): void {
       console.log(`testTag subTitle use style1`);
       instance.fontColor('#FFFFCEEE')

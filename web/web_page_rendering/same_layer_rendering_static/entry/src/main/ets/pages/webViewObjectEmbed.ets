@@ -72,6 +72,12 @@ struct webViewObjectEmbed {
                 Utils.emitEvent('success', 8017);
                 break;
               }
+              case 'emitSwitchNextPage4': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/webOnNativeEmbedObjectParamChange' })
+                break;
+              }
             }
           })
       }

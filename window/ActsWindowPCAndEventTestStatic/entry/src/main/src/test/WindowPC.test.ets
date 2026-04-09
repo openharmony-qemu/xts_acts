@@ -138,7 +138,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} windowLimits = ${JSON.stringify(windowLimits)}`);
                 let width = windowLimits.minWidth;
                 let height = windowLimits.minHeight;
-                await subWindowClass.resize(width!+200, height!+200);
+                await subWindowClass.resize(width!+200, height!+1000);
                 await Utils.msSleep(200)
                 await subWindowClass.setUIContent("pages/StartMoving8");
                 await Utils.msSleep(200)
@@ -152,7 +152,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
                 let point = await blank!.getBoundsCenter();
                 console.info(`${caseName} point = ${JSON.stringify(point)}`);
-                await driver.drag(point!.x, point!.y, point!.x + 500, point!.y + 500, 50);
+                await driver.drag(point!.x, point!.y, point!.x + 500, point!.y + 500, 200);
                 await Utils.msSleep(1000)
                 let text = await driver.findComponent(ON.id('startMovingText'));
                 await Utils.msSleep(1000)
@@ -206,7 +206,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} windowLimits = ${JSON.stringify(windowLimits)}`);
                 let width = windowLimits.minWidth;
                 let height = windowLimits.minHeight;
-                await subWindowClass!.resize(width!+200, height!+200);
+                await subWindowClass!.resize(width!+200, height!+1000);
                 await Utils.msSleep(200)
                 await subWindowClass.setUIContent("pages/StartMoving9");
                 await Utils.msSleep(200)
@@ -220,7 +220,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
                 let point = await blank!.getBoundsCenter();
                 console.info(`${caseName} point = ${JSON.stringify(point)}`);
-                await driver.drag(point.x, point.y, point.x + 500, point.y + 500, 50);
+                await driver.drag(point.x, point.y, point.x + 500, point.y + 500, 200);
                 await Utils.msSleep(1000)
                 let text = await driver.findComponent(ON.id('startMovingText'));
                 await Utils.msSleep(1000)
@@ -4321,6 +4321,34 @@ export default function WindowPCTest() {
           expect(getStyle.closeButtonRightMargin).assertEqual(setStyle.closeButtonRightMargin);
           expect(getStyle.buttonIconSize).assertEqual(setStyle.buttonIconSize);
           expect(getStyle.buttonBackgroundCornerRadius).assertEqual(setStyle.buttonBackgroundCornerRadius);
+
+          let colorMode1: ConfigurationConstant.ColorMode = ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET;
+          let setStyle1: window.DecorButtonStyle = {
+              colorMode: colorMode1
+          };
+          subWin.setDecorButtonStyle(setStyle1);
+          hilog.info(domain, tag, caseName + ' setDecorButtonStyle success');
+
+          await Utils.msSleep(100);
+
+          let getStyle1: window.DecorButtonStyle = subWin.getDecorButtonStyle();
+          hilog.info(domain, tag, caseName + ' getDecorButtonStyle result: ' + JSON.stringify(getStyle1));
+
+          expect(getStyle1.colorMode).assertEqual(-1);
+
+          let colorMode2: ConfigurationConstant.ColorMode = ConfigurationConstant.ColorMode.COLOR_MODE_DARK;
+          let setStyle2: window.DecorButtonStyle = {
+              colorMode: colorMode2
+          };
+          subWin.setDecorButtonStyle(setStyle2);
+          hilog.info(domain, tag, caseName + ' setDecorButtonStyle success');
+
+          await Utils.msSleep(100);
+
+          let getStyle2: window.DecorButtonStyle = subWin.getDecorButtonStyle();
+          hilog.info(domain, tag, caseName + ' getDecorButtonStyle result: ' + JSON.stringify(getStyle2));
+
+          expect(getStyle2.colorMode).assertEqual(0);
 
           await subWin.destroyWindow();
           hilog.info(domain, tag, caseName + ' destroyWindow success');

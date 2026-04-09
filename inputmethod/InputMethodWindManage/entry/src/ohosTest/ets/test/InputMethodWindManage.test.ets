@@ -1530,7 +1530,8 @@ export default function inputMethodWindManageAbility() {
         top: 607,
         width: 720,
         height: 601,
-        displayId: 1979
+        displayId: 1979,
+        userId: 100
       }
       try {
         console.info('====>Sub_Misc_inputMethod_inputWindowInfo_0201 inputWindowInfo: ' + JSON.stringify(inputWindowInfo));
@@ -1540,6 +1541,7 @@ export default function inputMethodWindManageAbility() {
         expect(inputWindowInfo.width).assertEqual(720);
         expect(inputWindowInfo.height).assertEqual(601);
         expect(inputWindowInfo.displayId).assertEqual(1979);
+        expect(inputWindowInfo.userId).assertEqual(100);
         done();
       } catch (err) {
         console.info('====>Sub_Misc_inputMethod_inputWindowInfo_0201 fail: ' + JSON.stringify(err));
@@ -8636,6 +8638,222 @@ export default function inputMethodWindManageAbility() {
           clearTimeout(t);
           let commonEventPublishData: commonEventManager.CommonEventPublishData = {
             code: 544
+          }
+          commonEventManager.publish('InputMethodWindManageTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_PerceptionScreen_0400
+     * @tc.number SUB_INPUTMETHOD_IMF_PERCEPTIONSCREEN_0400
+     * @tc.desc   on callingDisplayDidChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_InputMethod_IMF_PerceptionScreen_0400', Level.LEVEL2, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0400 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0400 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0400 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0400 subscriberCallback data:"
+          + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0400 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0400 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        runCmd();
+        console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0400 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0400 publishCallback failed:" + JSON.stringify(err));
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IMF_PerceptionScreen_0400"]
+      }
+      let subscriber:ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0400 subscriber data:" + JSON.stringify(data))
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0400 subscriber finish");
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+            code: 563
+          }
+          commonEventManager.publish('InputMethodWindManageTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_PerceptionScreen_0500
+     * @tc.number SUB_INPUTMETHOD_IMF_PERCEPTIONSCREEN_0500
+     * @tc.desc   on callingDisplayDidChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_InputMethod_IMF_PerceptionScreen_0500', Level.LEVEL2, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0500 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0500 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0500 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0500 subscriberCallback data:"
+          + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0500 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0500 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        runCmd();
+        console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0500 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0500 publishCallback failed:" + JSON.stringify(err));
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IMF_PerceptionScreen_0500"]
+      }
+      let subscriber:ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0500 subscriber data:" + JSON.stringify(data))
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0500 subscriber finish");
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+            code: 564
+          }
+          commonEventManager.publish('InputMethodWindManageTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_PerceptionScreen_0600
+     * @tc.number SUB_INPUTMETHOD_IMF_PERCEPTIONSCREEN_0600
+     * @tc.desc   on callingDisplayDidChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_InputMethod_IMF_PerceptionScreen_0600', Level.LEVEL2, async (done: Function) => {
+
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0600 unSubscriberCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0600 unSubscriberCallback failed:" +
+          JSON.stringify(err));
+        } else {
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0600 unSubscriberCallback finish");
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0600 subscriberCallback data:"
+          + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual("SUCCESS");
+            console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0600 end");
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0600 err:" + JSON.stringify(err));
+            clearTimeout(t);
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        runCmd();
+        console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0600 publishCallback start");
+        if (err) {
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0600 publishCallback failed:" + JSON.stringify(err));
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ["Sub_InputMethod_IMF_PerceptionScreen_0600"]
+      }
+      let subscriber:ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0600 subscriber data:" + JSON.stringify(data))
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info("====>Sub_InputMethod_IMF_PerceptionScreen_0600 subscriber finish");
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+            code: 565
           }
           commonEventManager.publish('InputMethodWindManageTest', commonEventPublishData, publishCallback);
         }, 500)

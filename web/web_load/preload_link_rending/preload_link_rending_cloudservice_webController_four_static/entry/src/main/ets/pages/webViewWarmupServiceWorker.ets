@@ -93,6 +93,32 @@ struct WebOnDataResubmitted {
                 }
                 break;
               }
+
+              case 'emitWebViewWarmupServiceWorker02': {
+                this.controller.loadUrl('https://www.baidu.com')
+                try{
+                  webview.WebviewController.warmupServiceWorker('')
+                  Utils.emitEvent(true,13423161)
+                }  catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(`${error.code}`, 13423161);
+                }
+                break;
+              }
+
+              case 'emitWebViewWarmupServiceWorker03': {
+                this.controller.loadUrl('https://www.baidu.com')
+                try{
+                  webview.WebviewController.warmupServiceWorker('1fsagsadg343%%#,')
+                  Utils.emitEvent(true,13423162)
+                }  catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(`${error.code}`, 13423162);
+                }
+                break;
+              }
             }
           })
       }

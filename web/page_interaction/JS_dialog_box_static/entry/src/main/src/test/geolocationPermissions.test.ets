@@ -111,7 +111,7 @@ export default function geolocationPermissions() {
 
     /**
      * @tc.name   testGetStoredGeolocationStatic004
-     * @tc.number SUB_WEB_GETSTOREDGEOLOCATION_STATIC_0400
+     * @tc.number SUB_WEB_GETSTOREDGEOLOCATION_STATIC_04001
      * @tc.desc   test getStoredGeolocation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -180,6 +180,52 @@ export default function geolocationPermissions() {
 
 
     /**
+     * @tc.name   testGetStoredGeolocationStatic005
+     * @tc.number SUB_WEB_GETSTOREDGEOLOCATION_STATIC_0500
+     * @tc.desc   test getStoredGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetStoredGeolocationStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testGetStoredGeolocation005', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testGetStoredGeolocation005', 'file:///', 30062, done);
+        await Utils.msSleep(3000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('GeolocationPermissionsButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+    /**
+     * @tc.name   testGetStoredGeolocationStatic006
+     * @tc.number SUB_WEB_GETSTOREDGEOLOCATION_STATIC_0400
+     * @tc.desc   test getStoredGeolocation with false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetStoredGeolocationStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testGetStoredGeolocation006', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testGetStoredGeolocation006', 'file:///', 100013, done);
+        await Utils.msSleep(3000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('GeolocationPermissionsButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+
+
+    /**
      * @tc.name   testGetAccessibleGeolocationStatic001
      * @tc.number SUB_WEB_GETACCESSIBLEGEOLOCATION_STATIC_0100
      * @tc.desc   test getAccessibleGeolocation
@@ -225,7 +271,52 @@ export default function geolocationPermissions() {
         done();
       })
 
-    /*
+    /**
+     * @tc.name   testGetAccessibleGeolocationStatic003
+     * @tc.number SUB_WEB_GETACCESSIBLEGEOLOCATION_STATIC_0300
+     * @tc.desc   test getAccessibleGeolocation (callback) with origin null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetAccessibleGeolocationStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testGetAccessibleGeolocation003', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testGetAccessibleGeolocation003", 0, 110580, done);
+        await Utils.msSleep(3000);
+        // Utils.registerEvent("testGetAccessibleGeolocation003", "Invalid origin.The origin format must follow defined in RFC 6454.", 110590, done);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(3000);
+        let button = await driver.findComponent(ON.id('GeolocationPermissionsButton'));
+        await Utils.msSleep(3000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      });
+    /**
+     * @tc.name   testGetAccessibleGeolocationStatic004
+     * @tc.number SUB_WEB_GETACCESSIBLEGEOLOCATION_STATIC_0400
+     * @tc.desc   test getAccessibleGeolocation (promise) with origin null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetAccessibleGeolocationStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testGetAccessibleGeolocation004', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testGetAccessibleGeolocation004", false, 110630, done);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('GeolocationPermissionsButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      });
+
+  /*
   * @tc.number     : SUB_WEB_GETACCESSIBLEGEOLOCATION_STATIC_0300
   * @tc.name       : testGetAccessibleGeolocationStatic003
   * @tc.desc       : test getAccessibleGeolocation

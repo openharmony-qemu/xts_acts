@@ -87,6 +87,10 @@ import updateConfigurationTest1 from './BuilderNodeTest/updateConfigurationTest1
 import updateConfigurationTest2 from './ComponentContentTest/updateConfigurationTest2';
 import getAttachedFrameNodeById from './FrameNodeTest/getAttachedFrameNodeById.test';
 import getAfterRemove from './FrameNodeTest/getAfterRemove.test';
+import NodeAdapterTotalNodeCountTest from './FrameNodeTest/NodeAdapterTotalNodeCountTest.test';
+import TypedFrameNodeAttributeTest from './FrameNodeTest/TypedFrameNodeAttributeTest.test';
+import DrawContextSizeTest from './GraphicsTest/DrawContextSizeTest.test';
+import ColorMetricsColorWithSpaceTest from './GraphicsTest/ColorMetricsColorWithSpaceTest.test';
 
 export default function testsuite() {
   getNumeric();
@@ -162,4 +166,8 @@ export default function testsuite() {
   //PercentReferenceTest();
   //graphicGetInterfaceTest();
   setMeasureSizeTest();
+  NodeAdapterTotalNodeCountTest();
+  TypedFrameNodeAttributeTest();
+  DrawContextSizeTest();
+  ColorMetricsColorWithSpaceTest();
 }

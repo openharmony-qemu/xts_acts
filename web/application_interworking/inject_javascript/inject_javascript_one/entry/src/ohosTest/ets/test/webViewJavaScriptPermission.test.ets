@@ -46,7 +46,7 @@ export default function ActsAceWebviewJavaScriptPermission() {
       } catch (err) {
         console.error('push webViewJavaScriptPermission page error:' + err);
       }
-      await driver.waitForComponent(ON.id("webviewJavaScriptPermissionButton"), 10000);
+      await Utils.waitForComponent(driver, 'webviewJavaScriptPermissionButton');
       done()
     });
 

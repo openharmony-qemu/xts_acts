@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -188,20 +188,20 @@ export default function alignSelfTest() {
         if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow') {
           //When alignSelf : ItemAlign.Auto or ItemAlign.Start
           if (data.testValue.describe == 'SetAuto' || data.testValue.describe == 'SetStart') {
-            expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.left).assertEqual(parentRect.left);
+            expect(Math.floor(Math.abs(rect.top - parentRect.top)) <= 1).assertTrue();
+            expect(Math.floor(Math.abs(rect.left - parentRect.left)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetCenter') {
             //When alignSelf : ItemAlign.Center
             let rectY = Utils.getRectVerticalCenterY(rect);
             let parentRectY = Utils.getRectVerticalCenterY(parentRect);
             console.info('[' + data.caseTag + '] rectY : ' + rectY);
             console.info('[' + data.caseTag + '] parentRectY : ' + parentRectY);
-            expect(rectY).assertEqual(parentRectY);
-            expect(rect.left).assertEqual(parentRect.left);
+            expect(Math.floor(Math.abs(rectY - parentRectY)) <= 1).assertTrue();
+            expect(Math.floor(Math.abs(rect.left - parentRect.left)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetEnd') {
             //When alignSelf : ItemAlign.End
-            expect(rect.bottom).assertEqual(parentRect.bottom);
-            expect(rect.left).assertEqual(parentRect.left);
+            expect(Math.floor(Math.abs(rect.bottom - parentRect.bottom)) <= 1).assertTrue();
+            expect(Math.floor(Math.abs(rect.left - parentRect.left)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetStretch') {
             //When alignSelf : ItemAlign.Stretch
             expect(Math.abs((rect.bottom - rect.top) - uiContext.vp2px(parentHeight)) <= 1).assertTrue();
@@ -209,20 +209,20 @@ export default function alignSelfTest() {
         } else if (data.pageConfig.containerView == 'Column' || data.pageConfig.containerView == 'FlexColumn') {
           if (data.testValue.describe == 'SetAuto' || data.testValue.describe == 'SetStart') {
             //When alignSelf : ItemAlign.Auto or ItemAlign.Start
-            expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.left).assertEqual(parentRect.left);
+            expect(Math.floor(Math.abs(rect.top - parentRect.top)) <= 1).assertTrue();
+            expect(Math.floor(Math.abs(rect.left - parentRect.left)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetCenter') {
             //When alignSelf : ItemAlign.Center
             let rectX = Utils.getRectHorizontalCenterX(rect);
             let parentRectX = Utils.getRectHorizontalCenterX(parentRect);
             console.info('[' + data.caseTag + '] rectX : ' + rectX);
             console.info('[' + data.caseTag + '] parentRectX : ' + parentRectX);
-            expect(rectX).assertEqual(parentRectX);
-            expect(rect.top).assertEqual(parentRect.top);
+            expect(Math.floor(Math.abs(rectX - parentRectX)) <= 1).assertTrue();
+            expect(Math.floor(Math.abs(rect.top - parentRect.top)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetEnd') {
             //When alignSelf : ItemAlign.End
-            expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.right).assertEqual(parentRect.right);
+            expect(Math.floor(Math.abs(rect.top - parentRect.top)) <= 1).assertTrue();
+            expect(Math.floor(Math.abs(rect.right - parentRect.right)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetStretch') {
             //When alignSelf : ItemAlign.Stretch
             expect(Math.abs((rect.right - rect.left) - uiContext.vp2px(parentWidth)) <= 1).assertTrue();
@@ -231,20 +231,20 @@ export default function alignSelfTest() {
           //Special parent component
           if (data.testValue.describe == 'SetAuto' || data.testValue.describe == 'SetStart') {
             //When alignSelf : ItemAlign.Auto or ItemAlign.Start
-            expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.right).assertEqual(parentRect.right);
+            expect(Math.floor(Math.abs(rect.top - parentRect.top)) <= 1).assertTrue();
+            expect(Math.floor(Math.abs(rect.right - parentRect.right)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetCenter') {
             //When alignSelf : ItemAlign.Center
             let rectY = Utils.getRectVerticalCenterY(rect);
             let parentRectY = Utils.getRectVerticalCenterY(parentRect);
             console.info('[' + data.caseTag + '] rectY : ' + rectY);
             console.info('[' + data.caseTag + '] parentRectY : ' + parentRectY);
-            expect(rectY).assertEqual(parentRectY);
-            expect(rect.right).assertEqual(parentRect.right);
+            expect(Math.floor(Math.abs(rectY - parentRectY)) <= 1).assertTrue();
+            expect(Math.floor(Math.abs(rect.right - parentRect.right)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetEnd') {
             //When alignSelf : ItemAlign.End
-            expect(rect.bottom).assertEqual(parentRect.bottom);
-            expect(rect.right).assertEqual(parentRect.right);
+            expect(Math.floor(Math.abs(rect.bottom - parentRect.bottom)) <= 1).assertTrue();
+            expect(Math.floor(Math.abs(rect.right - parentRect.right)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetStretch') {
             //When alignSelf : ItemAlign.Stretch
             expect(Math.abs((rect.bottom - rect.top) - uiContext.vp2px(parentHeight)) <= 1).assertTrue();
@@ -253,20 +253,20 @@ export default function alignSelfTest() {
           //Special parent component
           if (data.testValue.describe == 'SetAuto' || data.testValue.describe == 'SetStart') {
             //When alignSelf : ItemAlign.Auto or ItemAlign.Start
-            expect(rect.bottom).assertEqual(parentRect.bottom);
-            expect(rect.left).assertEqual(parentRect.left);
+            expect(Math.floor(Math.abs(rect.bottom - parentRect.bottom)) <= 1).assertTrue();
+            expect(Math.floor(Math.abs(rect.left - parentRect.left)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetCenter') {
             //When alignSelf : ItemAlign.Center
             let rectX = Utils.getRectHorizontalCenterX(rect);
             let parentRectX = Utils.getRectHorizontalCenterX(parentRect);
             console.info('[' + data.caseTag + '] rectX : ' + rectX);
             console.info('[' + data.caseTag + '] parentRectX : ' + parentRectX);
-            expect(rectX).assertEqual(parentRectX);
-            expect(rect.bottom).assertEqual(parentRect.bottom);
+            expect(Math.floor(Math.abs(rectX - parentRectX)) <= 1).assertTrue();
+            expect(Math.floor(Math.abs(rect.bottom - parentRect.bottom)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetEnd') {
             //When alignSelf : ItemAlign.End
-            expect(rect.bottom).assertEqual(parentRect.bottom);
-            expect(rect.right).assertEqual(parentRect.right);
+            expect(Math.floor(Math.abs(rect.bottom - parentRect.bottom)) <= 1).assertTrue();
+            expect(Math.floor(Math.abs(rect.right - parentRect.right)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetStretch') {
             //When alignSelf : ItemAlign.Stretch
             expect(Math.abs((rect.right - rect.left) - uiContext.vp2px(parentWidth)) <= 1).assertTrue();

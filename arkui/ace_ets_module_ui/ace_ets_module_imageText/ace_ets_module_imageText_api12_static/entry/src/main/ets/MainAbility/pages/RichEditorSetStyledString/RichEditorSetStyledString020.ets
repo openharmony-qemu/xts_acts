@@ -64,7 +64,7 @@ struct RichEditorSetStyledString020 {
   });
   imagePixelMap: image.PixelMap | undefined = undefined;
 
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   mutableStyledString: MutableStyledString = new MutableStyledString('123',
     [{
       start: 0,

@@ -28,8 +28,6 @@ class Params {
 function buildMenu(param?: Params) {
   Column() {
     Menu() {
-      // MenuItem({ startIcon: $r('app.media.icon'), content: '菜单选项1' })
-      // MenuItem({ startIcon: $r('app.media.icon'), content: '菜单选项2' })
       MenuItem({  content: '菜单选项1' })
       MenuItem({  content: '菜单选项2' })
     }
@@ -47,35 +45,34 @@ struct PromptActionCloseMenuNullTest {
     Row() {
       Column() {
         Text('closeMenu Null/Undefined Test Page')
-          .fontSize(20)
+          .fontSize(10)
           .fontWeight(FontWeight.Bold)
-          .margin({ bottom: 20 })
 
         Text('Test Result: ' + this.testResult)
-          .fontSize(16)
-          .margin({ bottom: 10 })
+          .fontSize(10)
+
           .id('closemenu_test_result')
 
         Text('Last Error: ' + this.lastError)
           .fontSize(14)
           .fontColor(Color.Red)
-          .margin({ bottom: 20 })
+
           .id('closemenu_last_error')
 
-        Divider().margin({ bottom: 20 })
+        Divider()
 
         // ========== closeMenu with null/undefined parameters ==========
         Text('=== Null/Undefined Parameter Tests ===')
           .fontSize(16)
           .fontWeight(FontWeight.Medium)
-          .margin({ bottom: 10 })
+
 
         // Test closeMenu with null contentNode (param 1)
         Button('closeMenu with null contentNode')
           .id('btn_closemenu_null_content')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
+
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -95,7 +92,7 @@ struct PromptActionCloseMenuNullTest {
           .id('btn_closemenu_undefined_content')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
+
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -113,6 +110,7 @@ struct PromptActionCloseMenuNullTest {
       .width('100%')
       .height('100%')
       .padding(20)
+      .margin({top:40})
     }
     .height('100%')
   }

@@ -1587,5 +1587,53 @@ export default function AVMetadata() {
       avMetadataExtractor.release();
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_EXTRACTOR_CALLBACK_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_CREATE_EXTRACTOR_CALLBACK_FUNCTION_0200
+     * @tc.desc   AvImageGenerator createAVImageGenerator test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CREATE_EXTRACTOR_CALLBACK_FUNCTION_0200', Level.LEVEL0, async (done : Function) => {
+        media.createAVMetadataExtractor((error: BusinessError, extractor: media.AVMetadataExtractor) => {
+          console.info(`Succeeded in creating AVMetadataExtractor`);
+          expect(extractor != undefined).assertTrue();
+          expect(extractor.fdSrc != undefined).assertTrue();
+          expect(extractor.dataSrc == undefined).assertTrue();
+          expect(extractor.fdSrc?.fd).assertEqual(0);
+          expect(extractor.fdSrc?.offset).assertEqual(0);
+          expect(extractor.fdSrc?.length).assertEqual(-1);
+          expect(extractor.dataSrc?.fileSize).assertEqual(undefined);
+        });
+        done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_EXTRACTOR_PROMISE_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_CREATE_EXTRACTOR_PROMISE_FUNCTION_0200
+     * @tc.desc   AvImageGenerator createAVImageGenerator test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CREATE_EXTRACTOR_PROMISE_FUNCTION_0200', Level.LEVEL0, async (done : Function) => {
+        media.createAVMetadataExtractor().then((extractor: media.AVMetadataExtractor) => {
+            if (extractor) {
+              console.info(`Succeeded in creating AVImageGenerator`);
+              expect(extractor != undefined).assertTrue();
+              expect(extractor.fdSrc != undefined).assertTrue();
+              expect(extractor.dataSrc == undefined).assertTrue();
+              expect(extractor.fdSrc?.fd).assertEqual(0);
+              expect(extractor.fdSrc?.offset).assertEqual(0);
+              expect(extractor.fdSrc?.length).assertEqual(-1);
+              expect(extractor.dataSrc?.fileSize).assertEqual(undefined);
+            }     
+        }).catch((error: BusinessError) => {
+            console.error(`Failed to create AVImageGenerator, error message:${error.message}`);
+            expect(error.code == 5400101).assertTrue();
+        });
+        done();
+    })
   })
 }

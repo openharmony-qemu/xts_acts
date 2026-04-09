@@ -24,7 +24,8 @@ import {
   Component,
   Image,
   $r,
-  ClickEvent
+  ClickEvent,
+  FlexAlign
 } from '@ohos.arkui.component';
 import { DrawableDescriptor, LayeredDrawableDescriptor } from '@ohos.arkui.drawableDescriptor';
 import drawing from '@ohos.graphics.drawing';
@@ -89,11 +90,13 @@ struct drawableDescriptor {
   }
 
   build() {
-    Column({ space: 15 } as ColumnOptions) {
-      Button('Test DrawableDescriptor - getPixelMap')
+    Column({ space: 1 } as ColumnOptions) {
+      Button('像素图')
         .id('btnGetPixelMap')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
+        .fontSize(9)
         .onClick(() => {
           // Per API, get via resourceManager.getDrawableDescriptor()
           let resManager = this.getUIContext().getHostContext()?.resourceManager;
@@ -117,10 +120,12 @@ struct drawableDescriptor {
           }
         })
 
-      Button('测试 LayeredDrawableDescriptor - getForeground')
+      Button('前景')
         .id('btnGetForeground')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
+        .fontSize(9)
         .onClick(() => {
           try {
             // Per API, get via resourceManager.getDrawableDescriptor()
@@ -139,10 +144,12 @@ struct drawableDescriptor {
           }
         })
 
-      Button('Test LayeredDrawableDescriptor - getBackground')
+      Button('背景')
         .id('btnGetBackground')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
+        .fontSize(9)
         .onClick(() => {
           try {
             // Per API, get via resourceManager.getDrawableDescriptor()
@@ -163,8 +170,10 @@ struct drawableDescriptor {
 
       Button('Test LayeredDrawableDescriptor - getMask')
         .id('btnGetMask')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
+        .fontSize(9)
         .onClick(() => {
           try {
             // Per API, get via resourceManager.getDrawableDescriptor()
@@ -183,10 +192,12 @@ struct drawableDescriptor {
           }
         })
 
-      Button('Test LayeredDrawableDescriptor - getMaskClipPath')
+      Button('剪径')
         .id('btnGetMaskClipPath')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
+        .fontSize(9)
         .onClick(() => {
           try {
             // Per API, getMaskClipPath is static
@@ -200,10 +211,12 @@ struct drawableDescriptor {
           }
         })
 
-      Button('Test LayeredDrawableDescriptor - setBlendMode')
+      Button('混合')
         .id('btnSetBlendMode')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
+        .fontSize(9)
         .onClick(() => {
           try {
             // Per API, create LayeredDrawableDescriptor via constructor
@@ -227,6 +240,7 @@ struct drawableDescriptor {
     }
     .width('100%')
     .height('100%')
-    .padding(20)
+    .padding({ left: '3%', right: '3%', top: '1%', bottom: '1%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

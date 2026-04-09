@@ -6,7 +6,7 @@ import { Entry, Text, Column, Row, Component, Button, ClickEvent, Scroll, Margin
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyPrevMarginModifier implements AttributeModifier<SwiperAttribute> {
+export class MyPrevMarginModifier implements AttributeModifier<SwiperAttribute> {
   public isPrevMarginModifier : Boolean = false
 
   applyNormalAttribute(instance: SwiperAttribute): void {

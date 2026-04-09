@@ -425,6 +425,7 @@ export default function inputMethodControllerTest() {
                     expect().assertFail();
                 } else {
                     console.info(`${CASE_NAME} execution success`);
+                    expect(data == true).assertTrue();
                     expect(typeof(data) === 'boolean').assertTrue();
                 }
                 done();
@@ -452,6 +453,7 @@ export default function inputMethodControllerTest() {
             try {
                 let result: boolean = await inputMethodCtrl.stopInputSession();
                 console.info(`${CASE_NAME} execution success, result: ${result}`);
+                expect(result == true).assertTrue();
                 expect(typeof(result) === 'boolean').assertTrue();
                 done();
             } catch (error) {
@@ -605,6 +607,8 @@ export default function inputMethodControllerTest() {
             let inputMethodCtrl = inputMethod.getController();
             let callback = (range: inputMethod.Range) => {
                 console.info(`${CASE_NAME} callback start: ${range.start} , end: ${range.end}`);
+                expect(typeof(range.start)).assertEqual('int');
+ 	            expect(typeof(range.end)).assertEqual('int');
             };
             try {
                 inputMethodCtrl.onSelectByRange(callback);
@@ -644,6 +648,32 @@ export default function inputMethodControllerTest() {
         });
 
         /**
+        * @tc.name   SUB_Misc_inputMethodController_offSelectByRange_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offSelectByRange_static_0200
+        * @tc.desc   Test offSelectByRange interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offSelectByRange_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offSelectByRange_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback = (range: inputMethod.Range) => {
+                console.info(`${CASE_NAME} callback start: ${range.start} , end: ${range.end}`);
+            };
+            try {
+                inputMethodCtrl.onSelectByRange(callback);
+                inputMethodCtrl.offSelectByRange();
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
          * @tc.name   SUB_Misc_inputMethodController_onSelectByMovement_static_0100
          * @tc.number SUB_Misc_inputMethodController_onSelectByMovement_static_0100
          * @tc.desc   Test onSelectByMovement interface
@@ -655,7 +685,11 @@ export default function inputMethodControllerTest() {
             const CASE_NAME: string = 'SUB_Misc_inputMethodController_onSelectByMovement_static_0100';
             let inputMethodCtrl = inputMethod.getController();
             let callback = (movement: inputMethod.Movement) => {
-                console.info(`${CASE_NAME} callback direction: ${movement.direction}`);
+                console.info(`${CASE_NAME} callback direction: ${movement.direction}`);                
+                expect(typeof(movement.direction.CURSOR_UP)).assertEqual('int');
+                expect(typeof(movement.direction.CURSOR_DOWN)).assertEqual('int');
+                expect(typeof(movement.direction.CURSOR_LEFT)).assertEqual('int');
+                expect(typeof(movement.direction.CURSOR_RIGHT)).assertEqual('int');
             };
             try {
                 inputMethodCtrl.onSelectByMovement(callback);
@@ -685,6 +719,32 @@ export default function inputMethodControllerTest() {
             try {
                 inputMethodCtrl.onSelectByMovement(callback);
                 inputMethodCtrl.offSelectByMovement(callback);
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+        * @tc.name   SUB_Misc_inputMethodController_offSelectByMovement_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offSelectByMovement_static_0200
+        * @tc.desc   Test offSelectByMovement interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offSelectByMovement_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offSelectByMovement_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback = (movement: inputMethod.Movement) => {
+                console.info(`${CASE_NAME} callback direction: ${movement.direction}`);
+            };
+            try {
+                inputMethodCtrl.onSelectByMovement(callback);
+                inputMethodCtrl.offSelectByMovement();
                 console.info(`${CASE_NAME} execution success`);
                 done();
             } catch (error) {
@@ -746,6 +806,32 @@ export default function inputMethodControllerTest() {
         });
 
         /**
+        * @tc.name   SUB_Misc_inputMethodController_offInsertText_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offInsertText_static_0200
+        * @tc.desc   Test offInsertText interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offInsertText_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offInsertText_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback = (text: string) => {
+                console.info(`${CASE_NAME} callback text: ${text}`);
+            };
+            try {
+                inputMethodCtrl.onInsertText(callback);
+                inputMethodCtrl.offInsertText();
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
          * @tc.name   SUB_Misc_inputMethodController_onDeleteLeft_static_0100
          * @tc.number SUB_Misc_inputMethodController_onDeleteLeft_static_0100
          * @tc.desc   Test onDeleteLeft interface
@@ -787,6 +873,32 @@ export default function inputMethodControllerTest() {
             try {
                 inputMethodCtrl.onDeleteLeft(callback);
                 inputMethodCtrl.offDeleteLeft(callback);
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+        * @tc.name   SUB_Misc_inputMethodController_offDeleteLeft_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offDeleteLeft_static_0200
+        * @tc.desc   Test offDeleteLeft interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offDeleteLeft_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offDeleteLeft_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback = (length: int) => {
+                console.info(`${CASE_NAME} callback length: ${length}`);
+            };
+            try {
+                inputMethodCtrl.onDeleteLeft(callback);
+                inputMethodCtrl.offDeleteLeft();
                 console.info(`${CASE_NAME} execution success`);
                 done();
             } catch (error) {
@@ -848,6 +960,32 @@ export default function inputMethodControllerTest() {
         });
 
         /**
+        * @tc.name   SUB_Misc_inputMethodController_offDeleteRight_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offDeleteRight_static_0200
+        * @tc.desc   Test offDeleteRight interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offDeleteRight_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offDeleteRight_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback = (length: int) => {
+                console.info(`${CASE_NAME} callback length: ${length}`);
+            };
+            try {
+                inputMethodCtrl.onDeleteRight(callback);
+                inputMethodCtrl.offDeleteRight();
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
          * @tc.name   SUB_Misc_inputMethodController_onSendKeyboardStatus_static_0100
          * @tc.number SUB_Misc_inputMethodController_onSendKeyboardStatus_static_0100
          * @tc.desc   Test onSendKeyboardStatus interface
@@ -860,6 +998,9 @@ export default function inputMethodControllerTest() {
             let inputMethodCtrl = inputMethod.getController();
             let callback = (keyboardStatus: inputMethod.KeyboardStatus) => {
                 console.info(`${CASE_NAME} callback keyboardStatus: ${keyboardStatus}`);
+                expect(typeof(keyboardStatus.NONE)).assertEqual('int');
+                expect(typeof(keyboardStatus.HIDE)).assertEqual('int');
+                expect(typeof(keyboardStatus.SHOW)).assertEqual('int');
             };
             try {
                 inputMethodCtrl.onSendKeyboardStatus(callback);
@@ -899,6 +1040,32 @@ export default function inputMethodControllerTest() {
         });
 
         /**
+        * @tc.name   SUB_Misc_inputMethodController_offSendKeyboardStatus_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offSendKeyboardStatus_static_0200
+        * @tc.desc   Test offSendKeyboardStatus interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offSendKeyboardStatus_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offSendKeyboardStatus_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback = (keyboardStatus: inputMethod.KeyboardStatus) => {
+                console.info(`${CASE_NAME} callback keyboardStatus: ${keyboardStatus}`);
+            };
+            try {
+                inputMethodCtrl.onSendKeyboardStatus(callback);
+                inputMethodCtrl.offSendKeyboardStatus();
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
          * @tc.name   SUB_Misc_inputMethodController_onSendFunctionKey_static_0100
          * @tc.number SUB_Misc_inputMethodController_onSendFunctionKey_static_0100
          * @tc.desc   Test onSendFunctionKey interface
@@ -911,6 +1078,15 @@ export default function inputMethodControllerTest() {
             let inputMethodCtrl = inputMethod.getController();
             let callback = (functionKey: inputMethod.FunctionKey) => {
                 console.info(`${CASE_NAME} callback functionKey.enterKeyType: ${functionKey.enterKeyType}`);
+                expect(typeof(functionKey.enterKeyType.UNSPECIFIED)).assertEqual('int');
+                expect(typeof(functionKey.enterKeyType.NONE)).assertEqual('int');
+                expect(typeof(functionKey.enterKeyType.GO)).assertEqual('int');
+                expect(typeof(functionKey.enterKeyType.SEARCH)).assertEqual('int');
+                expect(typeof(functionKey.enterKeyType.SEND)).assertEqual('int');
+                expect(typeof(functionKey.enterKeyType.NEXT)).assertEqual('int');
+                expect(typeof(functionKey.enterKeyType.DONE)).assertEqual('int');
+                expect(typeof(functionKey.enterKeyType.PREVIOUS)).assertEqual('int');
+                expect(typeof(functionKey.enterKeyType.NEWLINE)).assertEqual('int');
             };
             try {
                 inputMethodCtrl.onSendFunctionKey(callback);
@@ -950,6 +1126,32 @@ export default function inputMethodControllerTest() {
         });
 
         /**
+        * @tc.name   SUB_Misc_inputMethodController_offSendFunctionKey_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offSendFunctionKey_static_0200
+        * @tc.desc   Test offSendFunctionKey interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offSendFunctionKey_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offSendFunctionKey_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback = (functionKey: inputMethod.FunctionKey) => {
+                console.info(`${CASE_NAME} callback functionKey.enterKeyType: ${functionKey.enterKeyType}`);
+            };
+            try {
+                inputMethodCtrl.onSendFunctionKey(callback);
+                inputMethodCtrl.offSendFunctionKey();
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
          * @tc.name   SUB_Misc_inputMethodController_onMoveCursor_static_0100
          * @tc.number SUB_Misc_inputMethodController_onMoveCursor_static_0100
          * @tc.desc   Test onMoveCursor interface
@@ -962,6 +1164,10 @@ export default function inputMethodControllerTest() {
             let inputMethodCtrl = inputMethod.getController();
             let callback = (direction: inputMethod.Direction) => {
                 console.info(`${CASE_NAME} callback direction: ${direction}`);
+                expect(typeof(direction.CURSOR_UP)).assertEqual('int');
+                expect(typeof(direction.CURSOR_DOWN)).assertEqual('int');
+                expect(typeof(direction.CURSOR_LEFT)).assertEqual('int');
+                expect(typeof(direction.CURSOR_RIGHT)).assertEqual('int');
             };
             try {
                 inputMethodCtrl.onMoveCursor(callback);
@@ -1001,6 +1207,32 @@ export default function inputMethodControllerTest() {
         });
 
         /**
+        * @tc.name   SUB_Misc_inputMethodController_offMoveCursor_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offMoveCursor_static_0200
+        * @tc.desc   Test offMoveCursor interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offMoveCursor_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offMoveCursor_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback = (direction: inputMethod.Direction) => {
+                console.info(`${CASE_NAME} callback direction: ${direction}`);
+            };
+            try {
+                inputMethodCtrl.onMoveCursor(callback);
+                inputMethodCtrl.offMoveCursor();
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
          * @tc.name   SUB_Misc_inputMethodController_onHandleExtendAction_static_0100
          * @tc.number SUB_Misc_inputMethodController_onHandleExtendAction_static_0100
          * @tc.desc   Test onHandleExtendAction interface
@@ -1013,6 +1245,10 @@ export default function inputMethodControllerTest() {
             let inputMethodCtrl = inputMethod.getController();
             let callback = (action: inputMethod.ExtendAction) => {
                 console.info(`${CASE_NAME} callback action: ${action}`);
+                expect(typeof(action.SELECT_ALL)).assertEqual('int');
+                expect(typeof(action.CUT)).assertEqual('int');
+                expect(typeof(action.COPY)).assertEqual('int');
+                expect(typeof(action.PASTE)).assertEqual('int');
             };
             try {
                 inputMethodCtrl.onHandleExtendAction(callback);
@@ -1037,11 +1273,37 @@ export default function inputMethodControllerTest() {
             const CASE_NAME: string = 'SUB_Misc_inputMethodController_offHandleExtendAction_static_0100';
             let inputMethodCtrl = inputMethod.getController();
             let callback = (action: inputMethod.ExtendAction) => {
-                console.info(`${CASE_NAME} callback action: ${action}`);
+                console.info(`${CASE_NAME} callback action: ${action}`);                
             };
             try {
                 inputMethodCtrl.onHandleExtendAction(callback);
                 inputMethodCtrl.offHandleExtendAction(callback);
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+        * @tc.name   SUB_Misc_inputMethodController_offHandleExtendAction_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offHandleExtendAction_static_0200
+        * @tc.desc   Test offHandleExtendAction interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offHandleExtendAction_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offHandleExtendAction_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback = (action: inputMethod.ExtendAction) => {
+                console.info(`${CASE_NAME} callback action: ${action}`);
+            };
+            try {
+                inputMethodCtrl.onHandleExtendAction(callback);
+                inputMethodCtrl.offHandleExtendAction();
                 console.info(`${CASE_NAME} execution success`);
                 done();
             } catch (error) {
@@ -1107,6 +1369,34 @@ export default function inputMethodControllerTest() {
         });
 
         /**
+        * @tc.name   SUB_Misc_inputMethodController_offGetLeftTextOfCursor_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offGetLeftTextOfCursor_static_0200
+        * @tc.desc   Test offGetLeftTextOfCursor interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offGetLeftTextOfCursor_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offGetLeftTextOfCursor_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback: inputMethod.GetTextCallback = (length: int): string => {
+                console.info(`${CASE_NAME} callback length: ${length}`);
+                let text:string = "";
+                return text;
+            };
+            try {
+                inputMethodCtrl.onGetLeftTextOfCursor(callback);
+                inputMethodCtrl.offGetLeftTextOfCursor();
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
          * @tc.name   SUB_Misc_inputMethodController_onGetRightTextOfCursor_static_0100
          * @tc.number SUB_Misc_inputMethodController_onGetRightTextOfCursor_static_0100
          * @tc.desc   Test onGetRightTextOfCursor interface
@@ -1152,6 +1442,34 @@ export default function inputMethodControllerTest() {
             try {
                 inputMethodCtrl.onGetRightTextOfCursor(callback);
                 inputMethodCtrl.offGetRightTextOfCursor(callback);
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+        * @tc.name   SUB_Misc_inputMethodController_offGetRightTextOfCursor_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offGetRightTextOfCursor_static_0200
+        * @tc.desc   Test offGetRightTextOfCursor interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offGetRightTextOfCursor_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offGetRightTextOfCursor_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback: inputMethod.GetTextCallback = (length: int): string => {
+                console.info(`${CASE_NAME} callback length: ${length}`);
+                let text:string = "";
+                return text;
+            };
+            try {
+                inputMethodCtrl.onGetRightTextOfCursor(callback);
+                inputMethodCtrl.offGetRightTextOfCursor();
                 console.info(`${CASE_NAME} execution success`);
                 done();
             } catch (error) {
@@ -1217,6 +1535,34 @@ export default function inputMethodControllerTest() {
         });
 
         /**
+        * @tc.name   SUB_Misc_inputMethodController_offGetTextIndexAtCursor_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offGetTextIndexAtCursor_static_0200
+        * @tc.desc   Test offGetTextIndexAtCursor interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offGetTextIndexAtCursor_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offGetTextIndexAtCursor_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback: inputMethod.GetTextIndexAtCursorCallback = (): int => {
+                console.info(`${CASE_NAME} callback `);
+                let index:int = 0;
+                return index;
+            };
+            try {
+                inputMethodCtrl.onGetTextIndexAtCursor(callback);
+                inputMethodCtrl.offGetTextIndexAtCursor();
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
          * @tc.name   SUB_Misc_inputMethodController_onSetPreviewText_static_0100
          * @tc.number SUB_Misc_inputMethodController_onSetPreviewText_static_0100
          * @tc.desc   Test onSetPreviewText interface
@@ -1258,6 +1604,32 @@ export default function inputMethodControllerTest() {
             try {
                 inputMethodCtrl.onSetPreviewText(callback);
                 inputMethodCtrl.offSetPreviewText(callback);
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+        * @tc.name   SUB_Misc_inputMethodController_offSetPreviewText_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offSetPreviewText_static_0200
+        * @tc.desc   Test offSetPreviewText interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offSetPreviewText_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offSetPreviewText_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback: inputMethod.SetPreviewTextCallback = (text: string, range: inputMethod.Range): void => {
+                console.info(`${CASE_NAME} callback `);
+            };
+            try {
+                inputMethodCtrl.onSetPreviewText(callback);
+                inputMethodCtrl.offSetPreviewText();
                 console.info(`${CASE_NAME} execution success`);
                 done();
             } catch (error) {
@@ -1318,7 +1690,30 @@ export default function inputMethodControllerTest() {
             }
         });
 
-
-
+        /**
+        * @tc.name   SUB_Misc_inputMethodController_offFinishTextPreview_static_0200
+        * @tc.number SUB_Misc_inputMethodController_offFinishTextPreview_static_0200
+        * @tc.desc   Test offFinishTextPreview interface
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
+        it('SUB_Misc_inputMethodController_offFinishTextPreview_static_0200', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'SUB_Misc_inputMethodController_offFinishTextPreview_static_0200';
+            let inputMethodCtrl = inputMethod.getController();
+            let callback = (): void => {
+                console.info(`${CASE_NAME} callback `);
+            };
+            try {
+                inputMethodCtrl.onFinishTextPreview(callback);
+                inputMethodCtrl.offFinishTextPreview();
+                console.info(`${CASE_NAME} execution success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
     })
 }

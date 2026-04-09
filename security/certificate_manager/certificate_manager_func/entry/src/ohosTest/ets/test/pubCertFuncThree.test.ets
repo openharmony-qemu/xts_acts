@@ -394,7 +394,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       try {
         await certManager.getUkeyCertificateList("", ukeyInfo);
       } catch (error) {
-        if(error.code != 801){
+        if(error.code !== 801){
         console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0020 failed. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(17500001);
         }
@@ -418,7 +418,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       try {
         await certManager.getUkeyCertificateList(null, ukeyInfo);
       } catch (error) {
-        if(error.code != 801){
+        if(error.code !== 801){
           console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0021 failed. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(401);
         }
@@ -442,7 +442,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       try {
         await certManager.getUkeyCertificateList(undefined, ukeyInfo);
       } catch (error) {
-        if(error.code != 801){
+        if(error.code !== 801){
           console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0022 failed. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(401);
         }
@@ -466,7 +466,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       try {
         await certManager.getUkeyCertificateList(ukeyProvider, null);
       } catch (error) {
-        if(error.code != 801){
+        if(error.code !== 801){
           console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0023 failed. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(401);
         }
@@ -490,7 +490,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       try {
         await certManager.getUkeyCertificateList(ukeyProvider, undefined);
       } catch (error) {
-        if(error.code != 801){
+        if(error.code !== 801){
           console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0024 failed. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(17500011);
         }

@@ -46,7 +46,7 @@ struct TransitionEffectIndex {
 
   build() {
     Column() {
-      Button('IDENTITY').id('transitionIdentityBtn').onClick(() => {
+      Button('IDENTITY').id('transitionIdentityBtn').height('8%').onClick(() => {
         try {
           let identity: TransitionEffect = TransitionEffect.IDENTITY;
           this.identityStatus = this.hasComponentInfo() && identity !== undefined ? 'identity_ok' : 'identity_fail';
@@ -54,9 +54,9 @@ struct TransitionEffectIndex {
           this.identityStatus = 'identity_fail';
         }
       });
-      Text(this.identityStatus).key('transitionIdentityStatus');
+      Text(this.identityStatus).key('transitionIdentityStatus').height('5%');
 
-      Button('SLIDE').id('transitionSlideBtn').onClick(() => {
+      Button('SLIDE').id('transitionSlideBtn').height('8%').onClick(() => {
         try {
           let slide: TransitionEffect = TransitionEffect.SLIDE;
           this.slideStatus = this.hasComponentInfo() && slide !== undefined ? 'slide_ok' : 'slide_fail';
@@ -64,9 +64,9 @@ struct TransitionEffectIndex {
           this.slideStatus = 'slide_fail';
         }
       });
-      Text(this.slideStatus).key('transitionSlideStatus');
+      Text(this.slideStatus).key('transitionSlideStatus').height('5%');
 
-      Button('SLIDE_SWITCH').id('transitionSlideSwitchBtn').onClick(() => {
+      Button('SLIDE_SWITCH').id('transitionSlideSwitchBtn').height('8%').onClick(() => {
         try {
           let slideSwitch: TransitionEffect = TransitionEffect.SLIDE_SWITCH;
           this.slideSwitchStatus = this.hasComponentInfo() && slideSwitch !== undefined ? 'slideSwitch_ok' : 'slideSwitch_fail';
@@ -74,7 +74,7 @@ struct TransitionEffectIndex {
           this.slideSwitchStatus = 'slideSwitch_fail';
         }
       });
-      Text(this.slideSwitchStatus).key('transitionSlideSwitchStatus');
+      Text(this.slideSwitchStatus).key('transitionSlideSwitchStatus').height('5%');
     }
     .width('100%')
     .height('100%');

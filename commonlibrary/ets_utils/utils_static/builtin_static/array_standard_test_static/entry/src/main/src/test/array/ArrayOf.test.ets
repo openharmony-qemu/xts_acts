@@ -220,7 +220,7 @@ export default function ArrayOfTest() {
      * @tc.level Level 1
      */
     it('testArrayOf0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: never[] = Array.of();
+      const arr: never[] = Array.of<never>();
       expect(arr.length).assertEqual(0);
       expect(Array.isArray(arr)).assertTrue();
     });

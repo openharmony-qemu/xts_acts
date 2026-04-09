@@ -87,6 +87,16 @@ export default function restrictionsTest() {
 }
 
 function testSetDisallowedPolicy() {
+
+  let sleep = (timeout: number): Promise<ESObject> => {
+    return new Promise(resolve => {
+      const st =setTimeout(() => {
+        resolve(null);
+        clearTimeout(st);
+      }, timeout);
+    });
+  };
+
   /**
    * @tc.name   test_set_disallowed_policy_0100
    * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0100
@@ -1800,6 +1810,277 @@ function testSetDisallowedPolicy() {
       console.info(' --- setDisallowedPolicy_test_002  -------- END --------');
     })
 
+    /**
+     * @tc.name   setDisallowedPolicy_test_003
+     * @tc.number setDisallowedPolicy_test_003
+     * @tc.desc   setDisallowedPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDisallowedPolicy_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDisallowedPolicy_test_003  -------- START --------');
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, null, true);
+        console.info(' --- setDisallowedPolicy_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDisallowedPolicy_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setDisallowedPolicy_test_003  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setDisallowedPolicy_test_004
+     * @tc.number setDisallowedPolicy_test_004
+     * @tc.desc   setDisallowedPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDisallowedPolicy_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDisallowedPolicy_test_004  -------- START --------');
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, undefined, true);
+        console.info(' --- setDisallowedPolicy_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDisallowedPolicy_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setDisallowedPolicy_test_004  -------- END --------');
+     })
+
+   /**
+    * @tc.name   test_set_disallowed_policy_wifi_p2p_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with wifiP2p feature using byod admin (disallow true)
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_wifi_p2p_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, true);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
+        expect(ret).assertTrue();
+        await sleep(3000);
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_wifi_p2p_0200
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0200
+    * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_wifi_p2p_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+    * @tc.name   test_set_disallowed_policy_wifi_p2p_0300
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0300
+    * @tc.desc   test restrictions setDisallowedPolicy with wifiP2p feature using normal admin (should fail with 9200002)
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_wifi_p2p_0300", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+    * @tc.name   test_set_disallowed_policy_wifi_p2p_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0400
+    * @tc.desc   test restrictions setDisallowedPolicy with wifiP2p feature using super admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_wifi_p2p_0400", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, true);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
+        expect(ret).assertTrue();
+        await sleep(3000);
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+    * @tc.name   test_set_disallowed_policy_wifi_p2p_0500
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0500
+    * @tc.desc   test restrictions setDisallowedPolicy with wifiP2p feature without admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_wifi_p2p_0500", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+    });
+
+    /**
+    * @tc.name   test_set_disallowed_policy_wifi_p2p_0600
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0600
+    * @tc.desc   test restrictions setDisallowedPolicy with null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_wifi_p2p_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.WIFI_P2P, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+    });
+
+    /**
+    * @tc.name   test_set_disallowed_policy_wifi_p2p_0700
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0700
+    * @tc.desc   test restrictions setDisallowedPolicy with undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_wifi_p2p_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.WIFI_P2P, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+    });
+
+    /**
+    * @tc.name   test_set_disallowed_policy_wifi_p2p_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0800
+    * @tc.desc   test restrictions setDisallowedPolicy with null feature
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_wifi_p2p_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, null, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+    * @tc.name   test_set_disallowed_policy_wifi_p2p_0900
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_0900
+    * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_wifi_p2p_0900", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, undefined, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+    * @tc.name   test_set_disallowed_policy_wifi_p2p_1000
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFIP2P_1000
+    * @tc.desc   test restrictions setDisallowedPolicy with undefined feature
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_wifi_p2p_1000", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+    * @tc.name   getDisallowedPolicy_test_001
+    * @tc.number getDisallowedPolicy_test_001
+    * @tc.desc   getDisallowedPolicy with undefined parameter admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("getDisallowedPolicy_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedPolicy_test_001  -------- START --------');
+      try {
+        restrictions.getDisallowedPolicy(null, LABEL_PRINTER);
+        console.info(' --- getDisallowedPolicy_test_001 error is expected, but it done.');
+      } catch (error) {
+        console.info(' --- getDisallowedPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error === null).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedPolicy_test_001  -------- END --------');
+    })
 
     /**
      * @tc.name   getDisallowedPolicy_test_002
@@ -1913,6 +2194,50 @@ function testSetDisallowedPolicy() {
       }
       done();
       console.info(' --- setDisallowedPolicyForAccount_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setDisallowedPolicyForAccount_test_005
+     * @tc.number setDisallowedPolicyForAccount_test_005
+     * @tc.desc   setDisallowedPolicyForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDisallowedPolicyForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDisallowedPolicyForAccount_test_005  -------- START --------');
+      try {
+        restrictions.setDisallowedPolicyForAccount(SELFWANT, null, true, DEFAULT_USER_ID);
+        console.info(' --- setDisallowedPolicyForAccount_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDisallowedPolicyForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setDisallowedPolicyForAccount_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setDisallowedPolicyForAccount_test_006
+     * @tc.number setDisallowedPolicyForAccount_test_006
+     * @tc.desc   setDisallowedPolicyForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDisallowedPolicyForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDisallowedPolicyForAccount_test_006  -------- START --------');
+      try {
+        restrictions.setDisallowedPolicyForAccount(SELFWANT, undefined, true, DEFAULT_USER_ID);
+        console.info(' --- setDisallowedPolicyForAccount_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDisallowedPolicyForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setDisallowedPolicyForAccount_test_006  -------- END --------');
     })
 
 
@@ -2398,6 +2723,49 @@ function testSetDisallowedPolicy() {
       console.info(' --- setUserRestriction_test_002  -------- END --------');
     })
 
+    /**
+     * @tc.name   setUserRestriction_test_003
+     * @tc.number setUserRestriction_test_003
+     * @tc.desc   setUserRestriction with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUserRestriction_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUserRestriction_test_003  -------- START --------');
+      try {
+        restrictions.setUserRestriction(SELFWANT, null, true);
+        console.info(' --- setUserRestriction_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUserRestriction_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUserRestriction_test_003  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setUserRestriction_test_004
+     * @tc.number setUserRestriction_test_004
+     * @tc.desc   setUserRestriction with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUserRestriction_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUserRestriction_test_004  -------- START --------');
+      try {
+        restrictions.setUserRestriction(SELFWANT, undefined, true);
+        console.info(' --- setUserRestriction_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUserRestriction_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUserRestriction_test_004  -------- END --------');
+    })
 
     /**
      * @tc.name   getUserRestricted_test_002
@@ -2513,6 +2881,49 @@ function testSetDisallowedPolicy() {
       console.info(' --- setUserRestrictionForAccount_test_004  -------- END --------');
     })
 
+    /**
+     * @tc.name   setUserRestrictionForAccount_test_005
+     * @tc.number setUserRestrictionForAccount_test_005
+     * @tc.desc   setUserRestrictionForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUserRestrictionForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUserRestrictionForAccount_test_005  -------- START --------');
+      try {
+        restrictions.setUserRestrictionForAccount(SELFWANT, null, 100, true);
+        console.info(' --- setUserRestrictionForAccount_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUserRestrictionForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUserRestrictionForAccount_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setUserRestrictionForAccount_test_006
+     * @tc.number setUserRestrictionForAccount_test_006
+     * @tc.desc   setUserRestrictionForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUserRestrictionForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUserRestrictionForAccount_test_006  -------- START --------');
+      try {
+        restrictions.setUserRestrictionForAccount(SELFWANT, undefined, 100, true);
+        console.info(' --- setUserRestrictionForAccount_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUserRestrictionForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUserRestrictionForAccount_test_006  -------- END --------');
+    })
 
     /**
      * @tc.name   getUserRestrictedForAccount_test_002
@@ -2580,6 +2991,50 @@ function testSetDisallowedPolicy() {
       }
       done();
       console.info(' --- getUserRestrictedForAccount_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getUserRestrictedForAccount_test_005
+     * @tc.number getUserRestrictedForAccount_test_005
+     * @tc.desc   getUserRestrictedForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserRestrictedForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserRestrictedForAccount_test_005  -------- START --------');
+      try {
+        restrictions.getUserRestrictedForAccount(SELFWANT, null, 100);
+        console.info(' --- getUserRestrictedForAccount_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserRestrictedForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserRestrictedForAccount_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getUserRestrictedForAccount_test_006
+     * @tc.number getUserRestrictedForAccount_test_006
+     * @tc.desc   getUserRestrictedForAccount with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserRestrictedForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserRestrictedForAccount_test_006  -------- START --------');
+      try {
+        restrictions.getUserRestrictedForAccount(SELFWANT, undefined, 100);
+        console.info(' --- getUserRestrictedForAccount_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserRestrictedForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserRestrictedForAccount_test_006  -------- END --------');
     })
 
   /**
@@ -2739,6 +3194,150 @@ function testGetDisallowedPolicy() {
     }
     done();
   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_wifi_p2p_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0100
+    * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature using byod admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_wifi_p2p_0100", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+     try {
+       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(false).assertTrue();
+     } finally {
+       await adminManager.disableAdmin(SELFWANT);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_wifi_p2p_0200
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0200
+    * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature using null admin (should succeed)
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_wifi_p2p_0200", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+     try {
+       let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.WIFI_P2P);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(false).assertTrue();
+     } finally {
+       await adminManager.disableAdmin(SELFWANT);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_wifi_p2p_0300
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0300
+    * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature using super admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_wifi_p2p_0300", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+     try {
+       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(false).assertTrue();
+     } finally {
+       await adminManager.disableSuperAdmin(SELFHAPNAME);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_wifi_p2p_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0400
+    * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature using normal admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_wifi_p2p_0400", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+     try {
+       restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
+       expect(false).assertTrue();
+     } catch (error) {
+       expect(error.code == 9200002).assertTrue();
+     } finally {
+       await adminManager.disableAdmin(SELFWANT);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_wifi_p2p_0500
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0500
+    * @tc.desc   test restrictions getDisallowedPolicy with wifiP2p feature without admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_wifi_p2p_0500", Level.LEVEL2, async (done: Function) => {
+     try {
+       restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
+       expect(false).assertTrue();
+     } catch (error) {
+       expect(error.code == 9200001).assertTrue();
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_wifi_p2p_0600
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0600
+    * @tc.desc   test restrictions getDisallowedPolicy with null feature
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_wifi_p2p_0600", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+     try {
+       restrictions.getDisallowedPolicy(SELFWANT, null);
+       expect(false).assertTrue();
+     } catch (error) {
+       expect(Number(error.code) === 401).assertTrue();
+     } finally {
+       await adminManager.disableAdmin(SELFWANT);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_wifi_p2p_0700
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYWIFIP2P_0700
+    * @tc.desc   test restrictions getDisallowedPolicy with undefined feature
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_wifi_p2p_0700", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+     try {
+       restrictions.getDisallowedPolicy(SELFWANT, undefined);
+       expect(false).assertTrue();
+     } catch (error) {
+       expect(Number(error.code) === 401).assertTrue();
+     } finally {
+       await adminManager.disableAdmin(SELFWANT);
+     }
+     done();
+   });
 
   /**
    * @tc.name   test_get_disallowed_policy_0102
@@ -5390,6 +5989,48 @@ function testAddDisallowedListForAccountPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_add_disallowed_list_for_account_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_LIST_FOR_ACCOUNT_JS_1000
+   * @tc.desc   test restrictions addDisallowedListForAccount with empty accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_disallowed_list_for_account_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.addDisallowedListForAccount(SELFWANT, null, APP_IDS_1, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_disallowed_list_for_account_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_LIST_FOR_ACCOUNT_JS_1100
+   * @tc.desc   test restrictions addDisallowedListForAccount with empty accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_disallowed_list_for_account_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.addDisallowedListForAccount(SELFWANT, undefined, APP_IDS_1, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testRemoveDisallowedListForAccountPolicy() {
@@ -5540,6 +6181,68 @@ function testRemoveDisallowedListForAccountPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_remove_disallowed_list_for_account_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_LIST_FOR_ACCOUNT_JS_0800
+   * @tc.desc   test restrictions removeDisallowedListForAccount with empty admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_disallowed_list_for_account_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.removeDisallowedListForAccount(SELFWANT, null, APP_IDS_1, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_disallowed_list_for_account_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_LIST_FOR_ACCOUNT_JS_0900
+   * @tc.desc   test restrictions removeDisallowedListForAccount with empty admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_disallowed_list_for_account_0900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.removeDisallowedListForAccount(SELFWANT, undefined, APP_IDS_1, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_disallowed_list_for_account_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_LIST_FOR_ACCOUNT_JS_1000
+   * @tc.desc   test restrictions removeDisallowedListForAccount with empty admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_disallowed_list_for_account_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.removeDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, [], DEFAULT_USER_ID);
+    } catch (error) {
+      expect(error === null).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testGetDisallowedListForAccountPolicy() {
@@ -5636,6 +6339,48 @@ function testGetDisallowedListForAccountPolicy() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       restrictions.getDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_list_for_account_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_LIST_FOR_ACCOUNT_JS_0700
+   * @tc.desc   test restrictions getDisallowedListForAccount with empty admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_list_for_account_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.getDisallowedListForAccount(INVALID_WANT, null, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_list_for_account_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_LIST_FOR_ACCOUNT_JS_0800
+   * @tc.desc   test restrictions getDisallowedListForAccount with empty admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_list_for_account_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.getDisallowedListForAccount(INVALID_WANT, undefined, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
       expect(Number(error.code) === 401).assertTrue();

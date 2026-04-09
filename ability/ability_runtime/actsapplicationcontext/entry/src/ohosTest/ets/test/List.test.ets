@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import abilityTest from './Ability.test'
+import SystemConfigurationTest from './SystemConfiguration.test'
 
 export default function testsuite() {
   abilityTest()
+  SystemConfigurationTest()
 }

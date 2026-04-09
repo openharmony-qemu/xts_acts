@@ -71,7 +71,7 @@ struct DividerExample  {
         this.lineCap = LineCapStyle.Round
       } else if(data['typeValue'] === 7){
         console.info(`Divider.lineCap=>LineCapStyle.Square`)
-        this.lineCap = 100 as LineCapStyle
+        this.lineCap = LineCapStyle.Square
       } else if(data['typeValue'] === 8){
         console.info(`Divider.strokeWidth=>2`)
         this.strokeWidth = 2

@@ -3538,5 +3538,56 @@ export default function cameraJSUnitOutput() {
       await Utils.msSleep(1000);
       done();
     })
+
+    /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100
+      * @tc.number SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100
+      * @tc.desc   preview output addDeferredSurface api when session is not config.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100--------------");
+      let appContext: Context = Hypium.get("Context") as Context;
+      cameraManager = cameraObj.getCameraManager(appContext);
+      let camerasArray = cameraManager!.getSupportedCameras();
+      if (isEmpty01(cameraManager!)) {
+          console.info(tag + "mCameraManager == null || undefined");
+          expect().assertFail();
+      }
+      let captureSession = cameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+      if (isEmpty21(captureSession)) {
+          console.info(tag + "captureSession == null || undefined");
+          expect().assertFail();
+      }
+      console.info("SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100 camera:" + camerasArray[0].cameraId);
+      let cameraOutputCap = getSupportedOutputCapabilityInPromise(camerasArray[0], cameraObj.SceneMode.NORMAL_PHOTO);
+      if (isEmpty09(cameraOutputCap)) {
+          console.info(tag + "Entering cameraOutputCap == null || undefined");
+          expect().assertFail();
+      }
+      let cameraInput = cameraManager!.createCameraInput(camerasArray[0]);
+      if (isEmpty04(cameraInput)) {
+          console.info(tag + "Entering cameraInput == null || undefined");
+          expect().assertFail();
+      }
+      let previewProfiles: cameraObj.Profile = cameraOutputCap?.previewProfiles[0] as cameraObj.Profile;
+      expect(isEmpty16(previewProfiles)).assertFalse();
+      previewOutput = cameraManager!.createDeferredPreviewOutput(previewProfiles);
+      await cameraInput.open();
+
+      try {
+        previewOutput!.addDeferredSurface(surfaceId);
+        console.info("addDeferredSurface success");
+      } catch (err) {
+        console.info(`addDeferredSurface failed: ${JSON.stringify(err.code)}`);
+        expect(err.code === cameraObj.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+      }
+
+      console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100 PASS");
+      await Utils.msSleep(1000);
+      done();
+    })
   })
 }

@@ -682,7 +682,7 @@ export default function WorkSchedulerMgrNewTest() {
                 }
             });
         }catch(error){
-            console.info('testStartWorkNEW022 failed, code is ${error.code} message is ${error.message}');
+            console.info(`testStartWorkNEW022 failed, code is ${error.code} message is ${error.message}`);
             expect(error.code).assertEqual("401");
             done();
         }
@@ -706,7 +706,7 @@ export default function WorkSchedulerMgrNewTest() {
                 }
             });
         }catch(error){
-            console.info('testStartWorkNEW023 failed, code is ${error.code} message is ${error.message}');
+            console.info(`testStartWorkNEW023 failed, code is ${error.code} message is ${error.message}`);
             expect(error.code).assertEqual("401");
             done();
         }
@@ -900,7 +900,7 @@ export default function WorkSchedulerMgrNewTest() {
                 console.info('testStartWorkNEW027 workscheduleLog isLastWorkTimeOut failed, cause:' + err.code);
             });
         }catch(error){
-            console.info('testStartWorkNEW027 failed, code is ${error.code} message is ${error.message}');
+            console.info(`testStartWorkNEW027 failed, code is ${error.code} message is ${error.message}`);
             expect(error.code).assertEqual("401");
             done();
         }
@@ -922,7 +922,7 @@ export default function WorkSchedulerMgrNewTest() {
                 console.info('testStartWorkNEW028 workscheduleLog isLastWorkTimeOut failed, cause:' + err.code);
             });
         }catch(error){
-            console.info('testStartWorkNEW028 failed, code is ${error.code} message is ${error.message}');
+            console.info(`testStartWorkNEW028 failed, code is ${error.code} message is ${error.message}`);
             expect(error.code).assertEqual("401");
             done();
         }
@@ -940,13 +940,13 @@ export default function WorkSchedulerMgrNewTest() {
         try{
             workScheduler.getWorkStatus(undefined, (err, res) => {
                 if (err) {
-                    console.error('testStartWorkNEW029 isLastWorkTimeOut failed. code is ${err.code} message is ${err.message}');
+                    console.error(`testStartWorkNEW029 isLastWorkTimeOut failed. code is ${err.code} message is ${err.message}`);
                 } else {
-                    console.info('testStartWorkNEW029 workscheduleLog isLastWorkTimeOut success, data is: ${res}');
+                    console.info(`testStartWorkNEW029 workscheduleLog isLastWorkTimeOut success, data is: ${res}`);
                 }
             });
         }catch(error){
-            console.info('testStartWorkNEW029 failed, code is ${error.code} message is ${error.message}');
+            console.info(`testStartWorkNEW029 failed, code is ${error.code} message is ${error.message}`);
             expect(error.code).assertEqual("401");
             done();
         }
@@ -965,13 +965,13 @@ export default function WorkSchedulerMgrNewTest() {
         try{
             workScheduler.getWorkStatus(null, (err, res) => {
                 if (err) {
-                    console.error('testStartWorkNEW030 isLastWorkTimeOut failed. code is ${err.code} message is ${err.message}');
+                    console.error(`testStartWorkNEW030 isLastWorkTimeOut failed. code is ${err.code} message is ${err.message}`);
                 } else {
-                    console.info('testStartWorkNEW030 workscheduleLog isLastWorkTimeOut success, data is: ${res}');
+                    console.info(`testStartWorkNEW030 workscheduleLog isLastWorkTimeOut success, data is: ${res}`);
                 }
             });
         }catch(error){
-            console.info('testStartWorkNEW030 failed, code is ${error.code} message is ${error.message}');
+            console.info(`testStartWorkNEW030 failed, code is ${error.code} message is ${error.message}`);
             expect(error.code).assertEqual("401");
             done();
         }
@@ -1014,7 +1014,7 @@ export default function WorkSchedulerMgrNewTest() {
             }
         ];
         for (const testCase of networkCases) {
-            console.info('Testing networkType: ${testCase.name}');
+            console.info(`Testing networkType: ${testCase.name}`);
             workScheduler.stopAndClearWorks();
             let workInfo = {
                 workId: 1,
@@ -1025,15 +1025,16 @@ export default function WorkSchedulerMgrNewTest() {
             try{
                 workScheduler.startWork(workInfo);
                 workScheduler.getWorkStatus(1, (err, res) => {
-                    console.info('getWorkStatus success, data: ${JSON.stringify(res)}');
+                    console.info(`getWorkStatus success, data: ${JSON.stringify(res)}`);
                     expect(res.networkType).assertEqual(testCase.expected);
                 })
                 workScheduler.stopWork(workInfo);
             }catch(error){
-                console.error('testStartWorkNEW031 Test failed for ${testCase.name}: ${error.code}');
-                expect.fail('testStartWorkNEW031 Test failed for ${testCase.name}: ${error.code}');
+                console.error(`testStartWorkNEW031 Test failed for ${testCase.name}: ${error.code}`);
+                expect.fail(`testStartWorkNEW031 Test failed for ${testCase.name}: ${error.code}`);
             }
     }
+    done();
     });
 
     /**
@@ -1077,16 +1078,17 @@ export default function WorkSchedulerMgrNewTest() {
             try{
                 workScheduler.startWork(workInfo);
                 workScheduler.getWorkStatus(1).then((res) => {
-                    console.info('testStartWorkNEW032 getWorkStatus success for ${testCase.name}, data: ${JSON.stringify(res)}');
+                    console.info(`testStartWorkNEW032 getWorkStatus success for ${testCase.name}, data: ${JSON.stringify(res)}`);
                     expect(res.isCharging).assertEqual(true);
                     expect(res.chargerType).assertEqual(testCase.expected);
                 })
                 workScheduler.stopWork(workInfo)
             }catch(error){
-                console.error('testStartWorkNEW032 Test failed for ${testCase.name}: ${error.code}');
-                expect.fail('testStartWorkNEW032 Test failed for ${testCase.name}: ${error.code}');
+                console.error(`testStartWorkNEW032 Test failed for ${testCase.name}: ${error.code}`);
+                expect.fail(`testStartWorkNEW032 Test failed for ${testCase.name}: ${error.code}`);
             }
     }
+    done();
     });
 
     /**

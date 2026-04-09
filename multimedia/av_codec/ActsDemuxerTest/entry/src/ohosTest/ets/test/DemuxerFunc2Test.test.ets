@@ -70,6 +70,8 @@ export default function DemuxerFunc2TestTest() {
           { raw: 'Muxer_Auxiliary_03.mp4', target: mediaDir + '/Muxer_Auxiliary_03.mp4' },
           { raw: 'Muxer_Auxiliary_04.mp4', target: mediaDir + '/Muxer_Auxiliary_04.mp4' },
           { raw: 'test_size_large.mp4', target: mediaDir + '/test_size_large.mp4' },
+          { raw: 'MP3_8K_1.mp3', target: audioDir + '/MP3_8K_1.mp3' },
+          { raw: 'OGG_8K_1.ogg', target: audioDir + '/OGG_8K_1.ogg' },
         ];
         
         for (const file of filesToCopy) {
@@ -732,6 +734,32 @@ export default function DemuxerFunc2TestTest() {
      */
     it('DEMUXER_FUNCTION_ADD_0030', Level.LEVEL2, () => {
       let result:number = testNapi.runFunc2Test(48);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_SKIP_SAMPLE_FUNC_0010
+     * @tc.number DEMUXER_SKIP_SAMPLE_FUNC_0010
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_SKIP_SAMPLE_FUNC_0010', Level.LEVEL0, () => {
+      let result:number = testNapi.runFunc2Test(49);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name DEMUXER_SKIP_SAMPLE_FUNC_0020
+     * @tc.number DEMUXER_SKIP_SAMPLE_FUNC_0020
+     * @tc.desc test
+     * @tc.type FUNC
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DEMUXER_SKIP_SAMPLE_FUNC_0020', Level.LEVEL0, () => {
+      let result:number = testNapi.runFunc2Test(50);
       expect(result).assertEqual(0);
     });
 

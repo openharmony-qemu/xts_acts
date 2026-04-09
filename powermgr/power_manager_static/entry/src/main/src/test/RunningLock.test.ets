@@ -249,7 +249,7 @@ export default function RunningLockTest() {
         let TAG: string = 'testRunningLockTest_static_0700';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let isSupported: boolean = runningLock.isSupported(1 as runningLock.RunningLockType);
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.fromValue(1));
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect(isSupported).assertTrue();
           done();
@@ -274,7 +274,7 @@ export default function RunningLockTest() {
         let TAG: string = 'testRunningLockTest_static_0800';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let isSupported: boolean = runningLock.isSupported(2 as runningLock.RunningLockType);
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.fromValue(2));
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect(isSupported).assertTrue();
           done();
@@ -300,7 +300,7 @@ export default function RunningLockTest() {
         let TAG: string = 'testRunningLockTest_static_0900';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let isSupported: boolean = runningLock.isSupported(3 as runningLock.RunningLockType);
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.fromValue(3));
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect().assertFail();
           done();
@@ -535,7 +535,7 @@ export default function RunningLockTest() {
         let TAG: string = 'testRunningLockTest_static_1600';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let isSupported: boolean = runningLock.isSupported(0 as runningLock.RunningLockType);
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.fromValue(0));
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect().assertFail();
           done();

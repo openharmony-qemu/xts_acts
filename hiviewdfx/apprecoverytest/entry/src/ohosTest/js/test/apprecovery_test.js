@@ -496,6 +496,28 @@ describe("ActsAppRecoveryTest", function () {
         }
         console.info("DFX_DFR_AppRecovery_Interface_2300 end");
     })
-
+    
+    
+    /**
+     * @tc.name   DFX_DFR_AppRecovery_Interface_2400
+     * @tc.number DFX_DFR_AppRecovery_Interface_2400
+     * @tc.desc   appRecovery interface test.RESTART_WHEN_CPP_CRASH24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("DFX_DFR_AppRecovery_Interface_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+        console.info("-------------------------DFX_DFR_AppRecovery_Interface_2400 start-------------------------");
+        try{
+            appRecovery.enableAppRecovery(
+                appRecovery.RestartFlag.ALWAYS_RESTART | appRecovery.RestartFlag.RESTART_WHEN_JS_CRASH | appRecovery.RestartFlag.RESTART_WHEN_APP_FREEZE | appRecovery.RestartFlag.RESTART_WHEN_CPP_CRASH,
+                appRecovery.SaveOccasionFlag.SAVE_WHEN_ERROR | appRecovery.SaveOccasionFlag.SAVE_WHEN_BACKGROUND,
+                appRecovery.SaveModeFlag.SAVE_WITH_FILE);
+        }catch(error){
+            console.info("DFX_DFR_AppRecovery_Interface_2400 err = " + error);
+            expect(false).assertTrue();
+        }
+        console.info("DFX_DFR_AppRecovery_Interface_2400 end");
+    })
 })
 }

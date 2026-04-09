@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach } from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '../../../hypium/index';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { BusinessError, RecordData } from '@ohos.base';
@@ -22,6 +22,7 @@ import common from '@ohos.app.ability.common';
 import commonEventManager from '@ohos.commonEventManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
+import wifiManager from '@ohos.wifiManager';
 
 const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
@@ -66,11 +67,21 @@ export default function ActsUIExtensionContextMethodStaticTest() {
         mpEnable = PARAM_FAIL;
       }
 
+      hilog.info(DOMAIN, TAG, 'wifiManager start');
+      wifiManager.disableWifi();
+      hilog.info(DOMAIN, TAG, 'wifiManager end');
+
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#beforeAll end`);
     })
     
     afterEach(async () => {
       await Utils.msSleep(WAIT_TIME500);
+    })
+
+    afterAll(() => {
+      hilog.info(DOMAIN, TAG, 'afterAll start');
+      wifiManager.enableWifi();
+      hilog.info(DOMAIN, TAG, 'afterAll end');
     })
 
     /**

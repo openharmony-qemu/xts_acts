@@ -30,7 +30,10 @@ import {
   MenuItem,
   $r,
   MenuItemOptions,
-  Color
+  Color,
+  FlexAlign,
+  HorizontalAlign,
+  ColumnOptions
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
@@ -73,17 +76,19 @@ struct HoverScaleInterruptionIndex {
   MyPreview() {
     Column() {
       Image($r('app.media.icon'))
-        .width(300)
-        .height(200)
+        .width(50)
+        .height(30)
     }
   }
 
   build() {
-    Column() {
-      Button('hoverScaleInterruption true')
+    Column({ space: 6 } as ColumnOptions) {
+      Button('HS-I:F')
         .id('btnHoverScaleInterruptionTrue')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(9)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '44%' })
         .bindContextMenu(buildMenuContent, ResponseType.LongPress,
           {
             preview: this.MyPreview,
@@ -94,10 +99,12 @@ struct HoverScaleInterruptionIndex {
           } as ContextMenuOptions
         )
 
-      Button('hoverScaleInterruption false')
+      Button('HS-I:T')
         .id('btnHoverScaleInterruptionFalse')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(9)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '44%' })
         .bindContextMenu(buildMenuContent, ResponseType.LongPress,
           {
             preview: this.MyPreview,
@@ -110,5 +117,8 @@ struct HoverScaleInterruptionIndex {
     }
     .width('100%')
     .height('100%')
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
+    .alignItems(HorizontalAlign.Center)
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

@@ -441,6 +441,8 @@ static bool StartPhotoPreviewSession(Camera_CaptureSession* captureSession, Came
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_Start failed.");
         return false;
     }
+    const int sessionStartWaitSeconds = 5;
+    std::this_thread::sleep_for(std::chrono::seconds(sessionStartWaitSeconds));
     return true;
 }
 

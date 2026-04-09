@@ -17,7 +17,7 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-const ColorGreen: string = '#FF00FF00'
+const ColorRed: string = '#FFFF0000'
 const SleepTime: number = 2000
 
 export default function lazyForEachGetHostNodeTest() {
@@ -40,7 +40,7 @@ export default function lazyForEachGetHostNodeTest() {
     it('testLazyForEachGetHostNode001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`lazyforeach/LazyForEachGetHostNodeTest`)
       await Utils.sleep(SleepTime)
-      expect(Utils.getComponentInfoByKey('gridHostNode').$attrs.backgroundColor).assertEqual(ColorGreen)
+      expect(Utils.getComponentInfoByKey('gridHostNode').$attrs.backgroundColor).assertEqual(ColorRed)
       done()
     })
 

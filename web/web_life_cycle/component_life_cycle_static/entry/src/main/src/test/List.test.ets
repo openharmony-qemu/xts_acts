@@ -16,9 +16,16 @@
 import webInitTest from './WebInitTest.test'
 import componentLifeCycleTestOne from './ComponentLifeCycleTestOne.test'
 import webViewSharedRenderProcessToken from './WebViewSharedRenderProcessToken.test'
-
+import ActsAcewebViewCookieTrack from './WebViewCookieTrack.test'
+import WebNestedScrollOptionsScrollBackwardHorizontalTest from './WebNestedScrollOptionsScrollBackwardHorizontalTest.test'
+import  webJsunit from './WebJsunit.test'
+import  webViewControllerPart2Test from './WebViewControllerPart2.test'
 export default function testsuite() {
     webInitTest();
     componentLifeCycleTestOne();
     webViewSharedRenderProcessToken();
+    ActsAcewebViewCookieTrack();
+    WebNestedScrollOptionsScrollBackwardHorizontalTest();
+    webJsunit();
+    webViewControllerPart2Test();
 }

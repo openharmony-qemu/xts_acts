@@ -15,7 +15,7 @@
  */
 
 import { Callback, MessageManager } from '../../utils/MessageManager';
-import { AnimatorOptions, AnimatorResult, PlayMode } from '@ohos.animator';
+import { AnimatorOptions, AnimatorResult } from '@ohos.animator';
 import {
   Button,
   ClickEvent,

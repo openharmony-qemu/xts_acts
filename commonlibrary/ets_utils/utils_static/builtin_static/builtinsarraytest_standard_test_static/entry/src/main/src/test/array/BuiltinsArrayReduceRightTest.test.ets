@@ -57,7 +57,7 @@ export default function builtinsArrayReduceRightTest() {
      */
     it('builtinsArrayReduceRightTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void) => {
       let array: Array<number> = [1, 2, 3];
-      let reducedRightValue = array.reduceRight((acc, curr) => acc + curr, 0);
+      let reducedRightValue = array.reduceRight((acc, curr) => acc + curr, 0.);
       expect(6).assertEqual(reducedRightValue);
       done();
     })
@@ -106,7 +106,7 @@ export default function builtinsArrayReduceRightTest() {
      */
     it('builtinsArrayReduceRightTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:() => void) => {
       let array: number[] = [];
-      let reducedRightValue = array.reduceRight((acc, curr) => acc + curr, 0);
+      let reducedRightValue = array.reduceRight((acc, curr) => acc + curr, 0.);
       expect(0).assertEqual(reducedRightValue);
       done();
     })
@@ -121,7 +121,7 @@ export default function builtinsArrayReduceRightTest() {
      */
     it('builtinsArrayReduceRightTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:() => void) => {
       let array: Array<number | undefined> = [1, undefined, 3];
-      let reducedRightValue = array.reduceRight((acc, curr) => acc! + (curr !== undefined ? curr : 0), 0);
+      let reducedRightValue = array.reduceRight((acc, curr) => acc! + (curr !== undefined ? curr : 0), 0.);
       expect(4).assertEqual(reducedRightValue);
       done();
     })
@@ -136,7 +136,7 @@ export default function builtinsArrayReduceRightTest() {
      */
     it('builtinsArrayReduceRightTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:() => void) => {
       let array: Array<number> = [5];
-      let reducedRightValue = array.reduceRight((acc, curr) => acc + curr, 0);
+      let reducedRightValue = array.reduceRight((acc, curr) => acc + curr, 0.);
       expect(5).assertEqual(reducedRightValue);
       done();
     })
@@ -151,7 +151,7 @@ export default function builtinsArrayReduceRightTest() {
      */
     it('builtinsArrayReduceRightTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:() => void) => {
       let array: Array<number | undefined> = [undefined,];
-      let reducedRightValue = array.reduceRight((acc, curr) => acc! + (curr !== undefined ? curr : 0), 0);
+      let reducedRightValue = array.reduceRight((acc, curr) => acc! + (curr !== undefined ? curr : 0), 0.);
       expect(0).assertEqual(reducedRightValue);
       done();
     })
@@ -200,7 +200,7 @@ export default function builtinsArrayReduceRightTest() {
      */
     it('builtinsArrayReduceRightTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:() => void) => {
       let array: Array<number> = [Math.floor(1.5)];
-      let reducedRightValue = array.reduceRight((acc, current) => acc + current, 0);
+      let reducedRightValue = array.reduceRight((acc, current) => acc + current, 0.);
       expect(1).assertEqual(reducedRightValue);
       done();
     })
@@ -230,7 +230,7 @@ export default function builtinsArrayReduceRightTest() {
      */
     it('builtinsArrayReduceRightTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:() => void) => {
       let array: Array<number> = [123.456, 0x0102];
-      let reducedRightValue = array.reduceRight((acc, current) => acc + current, 0x01020304);
+      let reducedRightValue = array.reduceRight((acc, current) => acc + current, 0x01020304.toDouble());
       expect(16909441.456).assertEqual(reducedRightValue);
       done();
     })

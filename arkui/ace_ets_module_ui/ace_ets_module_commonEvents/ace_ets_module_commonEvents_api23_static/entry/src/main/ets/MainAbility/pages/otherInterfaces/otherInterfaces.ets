@@ -29,7 +29,8 @@ import {
   MouseButton,
   MouseAction,
   SourceType,
-  SourceTool
+  SourceTool,
+  FlexAlign
 } from '@ohos.arkui.component';
 import { CustomTheme, CustomDarkColors } from '@ohos.arkui.theme';
 import { Font } from '@ohos.arkui.UIContext';
@@ -91,11 +92,13 @@ struct otherInterfaces {
   }
 
   build() {
-    Column({ space: 15 } as ColumnOptions) {
-      Button('Test global - sendKeyEvent')
+    Column({ space: 6 } as ColumnOptions) {
+      Button('KeyEvent')
         .id('btnSendKeyEvent')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '22%' })
+        .fontSize(10)
         .onClick(() => {
           try {
             const keyEvent: KeyEventPayload = {
@@ -116,10 +119,12 @@ struct otherInterfaces {
           }
         })
 
-      Button('Test global - sendMouseEvent')
+      Button('鼠标')
         .id('btnSendMouseEvent')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '22%' })
+        .fontSize(11)
         .onClick(() => {
           try {
             const mouseEvent: MouseEventPayload = {
@@ -147,10 +152,12 @@ struct otherInterfaces {
           }
         })
 
-      Button('Test CustomTheme - darkColors')
+      Button('Theme')
         .id('btnCustomThemeDarkColors')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '22%' })
+        .fontSize(10)
         .onClick(() => {
           try {
             // Test darkColors property
@@ -167,10 +174,12 @@ struct otherInterfaces {
           }
         })
 
-      Button('Test Font - registerFont')
+      Button('字体')
         .id('btnFontRegisterFont')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '22%' })
+        .fontSize(10)
         .onClick(() => {
           try {
             // Test registerFont method
@@ -186,6 +195,7 @@ struct otherInterfaces {
     }
     .width('100%')
     .height('100%')
-    .padding(20)
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

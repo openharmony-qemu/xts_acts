@@ -288,6 +288,20 @@ const DOMAIN_FILTER_RULE14: networkManager.DomainFilterRule = {
   logType: networkManager.LogType.NFLOG
 };
 
+const DOMAIN_FILTER_RULE15: networkManager.DomainFilterRule = {
+  domainName: 'www.example.com',
+  direction: networkManager.Direction.INPUT,
+  action: networkManager.Action.ALLOW,
+  logType: networkManager.LogType.NFLOG
+};
+
+const DOMAIN_FILTER_RULE16: networkManager.DomainFilterRule = {
+  domainName: 'www.example.com',
+  direction: networkManager.Direction.OUTPUT,
+  action: networkManager.Action.ALLOW,
+  logType: networkManager.LogType.NFLOG
+};
+
 const ADD_APN_INFO: Record<string, string> = {
   "apn": "TEST_ADD_APN",
   "mcc": "TEST_ADD_MCC",
@@ -337,6 +351,12 @@ const INTERFACE_INVALID_CONFIG: networkManager.InterfaceConfig = {
   "gateway": "192.168.1.1",
   "netMask": "255.255.255.0",
   "dnsServers": "8.8.8.8,bbbbbbb"
+}
+
+const defProxy: connection.HttpProxy = {
+  host: "",
+  port: 0,
+  exclusionList: []
 }
 
 export default function networkManagerTest() {
@@ -1528,6 +1548,36 @@ function testSetGlobalProxySync() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_global_proxy_sync_0103_1
+   * @tc.number test_set_global_proxy_sync_0103_1
+   * @tc.desc   test networkManager setGlobalProxySync success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_set_global_proxy_sync_0103_1", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let originProxy: connection.HttpProxy = {
+      host: "192.168.1.101",
+      port: 65000,
+      exclusionList: []
+    }
+    try {
+      let defProxy: connection.HttpProxy = networkManager.getGlobalProxySync(SELFWANT);
+      let ret = networkManager.setGlobalProxySync(SELFWANT, originProxy);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_global_proxy_sync_0103_1 done is expected, but it error, actually catch: ' +
+      error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      networkManager.setGlobalProxySync(SELFWANT, defProxy);
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done()
+  })
 }
 
 function testGetGlobalProxySync() {
@@ -2667,6 +2717,38 @@ function testRemoveFirewallRule() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0120_1
+   * @tc.number test_remove_firewall_rule_0120_1
+   * @tc.desc   test networkManager removeFirewallRule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0120_1", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let fireWallRule: networkManager.FirewallRule = {
+      srcAddr: '192.168.1.1-192.168.1.22',
+      destAddr: '192.168.2.1',
+      direction: networkManager.Direction.INPUT
+    }
+    try {
+      networkManager.removeFirewallRule(SELFWANT, fireWallRule);
+      let firewallRules: Array<networkManager.FirewallRule>;
+      firewallRules = networkManager.getFirewallRules(SELFWANT);
+      expect(firewallRules.length == 0).assertTrue();
+    } catch (e) {
+      if (Number(e.code) === 801)
+        expect(Number(e.code) === 801).assertTrue();
+      else
+        expect(Number(e.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFWANT.bundleName);
+    }
+    done()
+  })
+
 }
 
 function testGetFirewallRules() {
@@ -3701,6 +3783,70 @@ function testRemoveDomainFilterRule() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0130
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0130
+   * @tc.desc   test networkManager removeDomainFilterRule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0130", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE15);
+      let domainFilterRules1: Array<networkManager.DomainFilterRule>;
+      domainFilterRules1 = networkManager.getDomainFilterRules(SELFWANT);
+      console.log("test_remove_domain_filter_rule_0130  result:" + domainFilterRules1.length)
+      expect(domainFilterRules1.length == 1).assertTrue();
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE15);
+      let domainFilterRules2: Array<networkManager.DomainFilterRule>;
+      domainFilterRules2 = networkManager.getDomainFilterRules(SELFWANT);
+      console.log("test_remove_domain_filter_rule_0130  result:" + domainFilterRules2.length)
+      expect(domainFilterRules2.length == 0).assertTrue();
+    } catch (e) {
+      console.log("test_remove_domain_filter_rule_0130  errornsg:" + e.message + e.code)
+      expect(false).assertTrue();
+    }
+    finally {
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE9);
+      await adminManager.disableSuperAdmin(SELFWANT.bundleName);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0140
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0140
+   * @tc.desc   test networkManager removeDomainFilterRule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0140", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE16);
+      let domainFilterRules1: Array<networkManager.DomainFilterRule>;
+      domainFilterRules1 = networkManager.getDomainFilterRules(SELFWANT);
+      console.log("test_remove_domain_filter_rule_0140  result:" + domainFilterRules1.length)
+      expect(domainFilterRules1.length == 1).assertTrue();
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE16);
+      let domainFilterRules2: Array<networkManager.DomainFilterRule>;
+      domainFilterRules2 = networkManager.getDomainFilterRules(SELFWANT);
+      console.log("test_remove_domain_filter_rule_0140  result:" + domainFilterRules2.length)
+      expect(domainFilterRules2.length == 0).assertTrue();
+    } catch (e) {
+      console.log("test_remove_domain_filter_rule_0140  errornsg:" + e.message + e.code)
+      expect(false).assertTrue();
+    }
+    finally {
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE9);
+      await adminManager.disableSuperAdmin(SELFWANT.bundleName);
+    }
+    done();
+  });
 }
 
 function testGetDomainFilterRules() {
@@ -4095,6 +4241,127 @@ function testSetGlobalProxyForAccount() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0104_1
+   * @tc.number test_set_global_proxy_for_account_0104_1
+   * @tc.desc   test networkManager setGlobalProxyForAccount success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0104_1", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let originProxy: connection.HttpProxy = {
+      host: "192.168.1.101",
+      port: 65000,
+      exclusionList: []
+    }
+    try {
+      let defProxy: connection.HttpProxy = networkManager.getGlobalProxyForAccount(SELFWANT, DEFAULT_ACCOUNT_ID);
+      networkManager.setGlobalProxyForAccount(SELFWANT, originProxy, DEFAULT_ACCOUNT_ID);
+    } catch (error) {
+      console.info(' --- test_set_global_proxy_for_account_0104_1 done is expected, but it error, actually catch: ' +
+      error.code);
+      if (Number(error.code) === 801)
+        expect(Number(error.code) === 801).assertTrue();
+      else {
+        expect(Number(error.code) === 401).assertTrue();
+        networkManager.setGlobalProxyForAccount(SELFWANT, defProxy, DEFAULT_ACCOUNT_ID);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0110
+   * @tc.desc   test networkManager setGlobalProxyForAccount with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0110", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxyForAccount(SELFWANT, HTTP_PROXY, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0111
+   * @tc.desc   test networkManager setGlobalProxyForAccount with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0111", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxyForAccount(SELFWANT, null, DEFAULT_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0112
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0112
+   * @tc.desc   test networkManager setGlobalProxyForAccount with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0112", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxyForAccount(SELFWANT, undefined, DEFAULT_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
 }
 
 function testGetGlobalProxyForAccount() {
@@ -4256,6 +4523,35 @@ function testGetGlobalProxyForAccount() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       networkManager.getGlobalProxyForAccount(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_global_proxy_for_account_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0106
+   * @tc.desc   test networkManager getGlobalProxyForAccount with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_global_proxy_for_account_0106", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getGlobalProxyForAccount(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
       if (Number(error.code) === 801) {

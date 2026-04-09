@@ -127,6 +127,8 @@
         "MainAbility/pages/Text/TextLayoutOptionsNull",
         "MainAbility/pages/Text/TextSpecialAttrsNull",
         "MainAbility/pages/Text/TextMethodsNull",
-        "MainAbility/pages/Text/TextEditMenuOptionsNull"
+        "MainAbility/pages/Text/TextEditMenuOptionsNull",
+        "MainAbility/pages/Text/LayoutManagerTextCommonProbePage",
+        "MainAbility/pages/Text/TextLayoutManagerMethods"
     ]
 }

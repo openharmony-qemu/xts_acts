@@ -46,14 +46,6 @@
     ],
     "requestPermissions": [
       {
-        "name": "ohos.permission.GRANT_SENSITIVE_PERMISSIONS",
-        "reason": "$string:TestAbility_desc"
-      },
-      {
-        "name": "ohos.permission.REVOKE_SENSITIVE_PERMISSIONS",
-        "reason": "$string:TestAbility_desc"
-      },
-      {
         "name": "ohos.permission.CAMERA",
         "reason": "$string:TestAbility_desc"
       },
@@ -66,23 +58,11 @@
         "reason": "$string:TestAbility_desc"
       },
       {
-        "name": "ohos.permission.READ_MEDIA",
+        "name": "ohos.permission.READ_IMAGEVIDEO",
         "reason": "$string:TestAbility_desc"
       },
       {
-        "name": "ohos.permission.WRITE_MEDIA",
-        "reason": "$string:TestAbility_desc"
-      },
-      {
-        "name": "ohos.permission.START_ABILIIES_FROM_BACKGROUND",
-        "reason": "$string:TestAbility_desc"
-      },
-      {
-        "name": "ohos.permission.START_INVISIBLE_ABILITY",
-        "reason": "$string:TestAbility_desc"
-      },
-      {
-        "name": "ohos.permission.ABILITY_BACKGROUND_COMMUNICATION",
+        "name": "ohos.permission.WRITE_IMAGEVIDEO",
         "reason": "$string:TestAbility_desc"
       },
       {

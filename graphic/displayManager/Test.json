@@ -20,7 +20,8 @@
                 "uinput -T -m 300 2700 280 200",
                 "power-shell setmode 602",
                 "power-shell timeout -o 864000000",
-                "param set persist.sys.abilityms.support.ecologicalrulemgrservice false"
+                "param set persist.sys.abilityms.support.ecologicalrulemgrservice false",
+                "param set dms.hidumper.supportdebug true"
             ],
             "teardown-command": [
               "param set persist.sys.abilityms.support.ecologicalrulemgrservice true"

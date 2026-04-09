@@ -118,7 +118,7 @@ class MyDataPanelStyle implements ContentModifier<DataPanelConfiguration> {
   }
 }
 
-class DataPanelModifier implements ContentModifier<DataPanelConfiguration> {
+export class DataPanelModifier implements ContentModifier<DataPanelConfiguration> {
   constructor() {
   }
 

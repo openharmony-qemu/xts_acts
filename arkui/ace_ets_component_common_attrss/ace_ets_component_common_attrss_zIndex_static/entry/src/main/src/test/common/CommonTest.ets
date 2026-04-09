@@ -97,7 +97,7 @@ export default class CommonTest {
                 }
               } else {
                 //If there is only an assertion function, automatically modify the status value
-                AppStorage.setOrCreate<Int>('_zIndex', data.testValue.setValue  as Int) // 页面不更新
+                AppStorage.setOrCreate<Int>('_zIndex', data.testValue.setValue.toInt()) // 页面不更新
                 console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
                 await Utils.sleep(1000);
               }

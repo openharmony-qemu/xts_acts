@@ -1207,5 +1207,29 @@ export default function ActsOANoPermissionTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_NoPermission_4300
+     * @tc.number SUB_Account_OsAccount_NoPermission_4300
+     * @tc.desc   no ohos.permission.GET_LOCAL_ACCOUNT_IDENTIFIERS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_NoPermission_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_NoPermission_4300 "
+      console.info(tag + "start====");
+      let accountManager = osAccount.getAccountManager();
+      try {
+        await accountManager.getOsAccountLocalIds();
+        console.info(tag + "run err");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(201);
+        done();
+      }
+    });
   });
 }

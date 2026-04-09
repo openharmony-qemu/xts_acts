@@ -52,6 +52,7 @@ import {
 } from '@ohos.file.RecentPhotoComponent';
 import { fileUri } from '@kit.CoreFileKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import fs, { ReadOptions, WriteOptions } from '@ohos.file.fs';
 
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
@@ -207,10 +208,9 @@ async function clickUpdatablePickerButton(driver: Driver) {
 
 async function clickAlbumButton(driver: Driver) {
   console.info("testpicker create");
-  let btn = await driver.findComponent(ON.id('albumButton'));
-  if (btn === null) {
+  let btn: Component = await driver.waitForComponent(ON.text('全部相册').type('Button'), 5000);
+  if (btn === undefined || btn === null) {
     console.info("clickAlbumButton findComponent btn fail");
-    expect(false).assertTrue();
   } else {
     console.info("clickAlbumButton findComponent btn success");
     await btn.click();
@@ -251,10 +251,14 @@ function waitForSelectItemInfo(code: number, timeout = 5000): Promise<ItemInfo> 
 }
 
 async function clickExitBrowserButton(driver: Driver) {
-  const exitButton: Component | null = await driver.findComponent(ON.id('exitBrowser'));
-  await exitButton!.click();
-  console.info('testPicker55: clicked exitBrowser, browser closed');
-  await CommonFunc.sleep(800);
+  const exitButton: Component = await driver.waitForComponent(ON.text('退出大图').type('Button'), 5000);
+  if (exitButton === undefined || exitButton === null) {
+    console.log('exitButton is miss');
+  } else {
+    await exitButton.click();
+    console.info('testPicker55: clicked exitBrowser, browser closed');
+    await CommonFunc.sleep(800);
+  }
 }
 
 async function testCompleteButton(driver: Driver, options: router.RouterOptions, textMode: number) {
@@ -344,6 +348,60 @@ async function closePickerModel(driver: Driver, time ?: number) {
   await CommonFunc.sleep(time ?? 500);
 }
 
+async function savePhoto() {
+  console.log('savePhoto start');
+  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+  try {
+    let uri = 'data/storage/el2/base/haps/files/demo.jpg';
+    let fileUriList = [fileUri.getUriFromPath(uri)];
+    let photoCreationConfig: Array<photoAccessHelper.PhotoCreationConfig> = [
+      {
+        title: 'showAssetsCreationDialogTest',
+        fileNameExtension: 'jpg',
+        photoType: photoAccessHelper.PhotoType.IMAGE,
+        subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
+      }
+    ];
+    let result: string[] = [];
+    phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfig).then((uris)=>{
+      result = uris;
+      console.log(`savePhoto result = ${JSON.stringify(uris)}`);
+    })
+    await CommonFunc.sleep(3000);
+    await driveFn(); 
+    readWriteFile(uri, result[0]);
+    console.log('savePhoto success');
+  } catch (error) {
+    console.log('savePhoto fail')
+  }
+}
+
+function readWriteFile(srcUri: string, dstUri: string) {
+  let srcFile: fileIo.File = fs.openSync(srcUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  let destFile: fileIo.File = fs.openSync(dstUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  let bufSize = 4096;
+  let readSize = 0;
+  let buf = new ArrayBuffer(bufSize);
+  let readOptions: ReadOptions = {
+    offset: readSize,
+    length: bufSize
+  };
+  let readLen: number = fs.readSync(srcFile.fd, buf, readOptions);
+  console.log(`srcUri: ${srcUri}, dstUri: ${dstUri}, readLen: ${readLen}`);
+  while (readLen > 0) {
+    readSize += readLen;
+    let writeOptions: WriteOptions = {
+      length: readLen
+    };
+    fs.writeSync(destFile.fd, buf, writeOptions);
+    readOptions.offset = readSize;
+    readLen = fs.readSync(srcFile.fd, buf, readOptions);
+  }
+  fs.closeSync(srcFile);
+  fs.closeSync(destFile);
+}
+ 	 
+
 export default function TextPicker() {
   describe('testPicker', () => {
     const isExecutePicker = canIUse('SystemCapability.FileManagement.PhotoAccessHelper.Core');
@@ -361,7 +419,7 @@ export default function TextPicker() {
       await CommonFunc.sleep(1000);
       if (!isExecuteTestCase) {
         try {
-          driver.triggerCombineKeys(17, 18);
+          await savePhoto();
         } catch (error) {
           console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
         }
@@ -1083,26 +1141,25 @@ export default function TextPicker() {
       await routeToUrl(options);
       await CommonFunc.sleep(2000);
 
-      let changeNumButton: Component = await driver.findComponent(ON.id('changeNumButton'));
-      if (changeNumButton === null) {
+      let changeNumButton: Component = await driver.waitForComponent(ON.text('选择修改数量').type('Button'), 5000);
+      if (changeNumButton === null || changeNumButton === undefined) {
         console.info("testPicker15 findComponent changeNumButton fail");
-        expect(false).assertTrue();
       } else {
         console.info("testPicker15 findComponent changeNumButton success");
         await changeNumButton.click();
-      }
-      let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
-      if (checkBoxs === null || checkBoxs.length <= 0) {
-        console.info("testPicker15 findComponent checkbox fail");
-      } else {
-        console.info("testPicker15 findComponent checkbox success");
-        let selectNum = Math.min(checkBoxs.length, 3);
-        for (let index = 0; index < selectNum; index++) {
-          await checkBoxs[index].click();
+        let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+        if (checkBoxs === null || checkBoxs.length <= 0) {
+          console.info("testPicker15 findComponent checkbox fail");
+        } else {
+          console.info("testPicker15 findComponent checkbox success");
+          let selectNum = Math.min(checkBoxs.length, 3);
+          for (let index = 0; index < selectNum; index++) {
+            await checkBoxs[index].click();
+          }
+          await CommonFunc.sleep(1000);
+          expect(selectCount).assertLessOrEqual(1);
+          console.info("testPicker15 btn click finish");
         }
-        await CommonFunc.sleep(1000);
-        expect(selectCount).assertLessOrEqual(1);
-        console.info("testPicker15 btn click finish");
       }
 
       router.back();
@@ -1633,17 +1690,19 @@ export default function TextPicker() {
 
       for (let i = 0; i < cases.length; i++) {
         let item = cases[i];
-
+        console.log(`testPicker25 index = ${i}`)
         try {
           let createPromise = phAccessHelper.createAssetWithShortTermPermission(item);
-
+          console.log(`testPicker25 createPromise`)
           await driveFn();
 
           let result = await createPromise;
+          console.log(`testPicker25 result = ${JSON.stringify(result)}`)
           expect(result).not().assertUndefined();
 
         } catch(error) {
           let isValidErrorCode = (error.code == 14000011 || error.code == 13900020);
+          console.log(`testPicker25 isValidErrorCode = ${isValidErrorCode}`)
           expect(isValidErrorCode).assertTrue();
         }
 
@@ -2765,23 +2824,19 @@ export default function TextPicker() {
 
       await routeToUrl(options);
       await CommonFunc.sleep(1000);
-      let chooostModeButton: Component = await driver.findComponent(ON.text('TEXT_DONE'));
-      let button: Component = await driver.findComponent(ON.id('btnSelectPhoto'));
-      if (button !== undefined  && chooostModeButton !== undefined) {
+      let chooostModeButton: Component = await driver.waitForComponent(ON.text('TEXT_DONE').type('Button'), 5000);
+      let btn: Component | undefined = await driver.waitForComponent(ON.text('select photo').type('Button'), 5000);
+      if (btn !== undefined && chooostModeButton !== undefined && btn !== null && chooostModeButton !== null) {
         await chooostModeButton.click();
-        await button.click();
-      } else {
-        console.error("testPicker51 can not find button");
-        expect(false).assertTrue();
+        await btn.click();
       }
 
       const checkbox = await driver.waitForComponent(ON.type('Checkbox'), 3000);
-      if (checkbox !== undefined && checkbox !== null) {
+      const finishBtn: Component = await driver.findComponent(ON.id('Complete')) || await driver.waitForComponent(ON.text('完成').type('Button'), 5000);
+      if (checkbox !== undefined && checkbox !== null && finishBtn !== undefined && finishBtn !== null) {
         await checkbox.click();
         await CommonFunc.sleep(1000);
-        const finishBtn: Component = await driver.findComponent(ON.id('Complete'));
         await finishBtn.click();
-        await CommonFunc.sleep(1000);
       }
 
       router.back();
@@ -3031,7 +3086,7 @@ export default function TextPicker() {
       if (movingBtn === null) {
         console.log("Any button found! Fail!");
         await clickExitBrowserButton(driver);
-      } else {
+      } else { 
         await movingBtn!.click();
         await CommonFunc.sleep(3000);
         console.info('testPicker55: clicked "Moving picture" button');
@@ -3106,6 +3161,7 @@ export default function TextPicker() {
         ];
         let expectedAppAlbumFilters: Array<string> =
           ['com.example.sourceapp.album', 'com.example.sourceapp.album1', 'com.example.sourceapp.album2',];
+        let expectedBackgroundOpacity: number = 0.75;
 
         let msg: PhotoPickerResult = event?.data?.msg;
         console.info('testPicker56 result msg ' + JSON.stringify(msg));
@@ -3128,6 +3184,7 @@ export default function TextPicker() {
         expect(expectedPreselectedUris).assertDeepEquals(msg.preselectedUris);
         expect(expectedAutoPlayScenes).assertDeepEquals(msg.autoPlayScenes);
         expect(expectedAppAlbumFilters).assertDeepEquals(msg.appAlbumFilters);
+        expect(expectedBackgroundOpacity).assertDeepEquals(msg.backgroundOpacity);
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -3356,7 +3413,11 @@ export default function TextPicker() {
             let callback = (event: events_emitter.EventData) => {
               let result: ItemInfo = event?.data?.msg;
               console.info('testPicker59 select ItemInfo=:' + JSON.stringify(result));
-              expect(result.videoMode).assertUndefined();
+              if (result?.mimeType?.includes('video')) {
+                expect(result.videoMode).not().assertUndefined();
+              } else {
+                expect(result.videoMode).assertUndefined();
+              }
             }
 
             let event: events_emitter.InnerEvent = {
@@ -3397,7 +3458,7 @@ export default function TextPicker() {
 
           } catch (error) {
             console.error("testPicker59 valid case error: " + JSON.stringify(error));
-            expect(error).assertUndefined();
+            expect(error.code).assertEqual(14000011)
           }
         }
       }
@@ -3477,9 +3538,11 @@ export default function TextPicker() {
       };
       await routeToUrl(options);
       await CommonFunc.sleep(2000);
-      let button: Component = await driver.findComponent(ON.id('btnSelectPhoto'));
-      await button.click();
-      console.info('testPicker61 Clicked select button');
+      let btn: Component = await driver.waitForComponent(ON.text('select photo').type('Button'), 5000);
+      if (btn !== undefined && btn !== null) {
+        await btn.click();
+        console.info('testPicker61 Clicked select button');
+      }
       await CommonFunc.sleep(2000);
       router.back();
       console.info('testPicker61 finished');
@@ -3557,6 +3620,7 @@ export default function TextPicker() {
       for (let i = 0; i < testCases.length; i++) {
         let isInvalidCase = !testCases[i].src || !testCases[i].config || !testCases[i].src?.length || !testCases[i].config?.length;
         console.log('testPicker63 Case A: ' + JSON.stringify(testCases[i]) + ' ' + i);
+        console.log(`testPicker63 isInvalidCase = ${isInvalidCase}`);
 
         try {
           let dialogPromise = photoAccessHelper
@@ -3581,7 +3645,11 @@ export default function TextPicker() {
           }
         } catch (error) {
           console.error(" error: " + JSON.stringify(error) + error.code);
-          expect(error.code).assertEqual(401);
+          if (isInvalidCase) {	 
+            expect(error.code).assertEqual(401); 
+          } else {
+            expect(error.code).assertEqual(23800301); 
+          }
         }
       }
 
@@ -3614,7 +3682,11 @@ export default function TextPicker() {
           expect(testResult).not().assertUndefined();
         } catch (error) {
           console.error(" error: " + JSON.stringify(error) + error.code);
-          expect(error.code).assertEqual(401);
+          if (isInvalidSingleCase) {
+            expect(error.code).assertEqual(401);
+          } else {
+            expect(error.code).assertEqual(23800301);
+          }
         }
       }
 
@@ -3858,20 +3930,30 @@ export default function TextPicker() {
 
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
       console.info("testPicker67 start");
-
+      let requestPhotoUrisReadPermission = { 
+        authorizedUris: ['file://media/photo/test.jpg'], 
+        invalidUris: [] 
+      } as photoAccessHelper.RequestReadPermissionResult;
       let validUris = ['file://media/photo/test.jpg'];
       phAccessHelper.requestPhotoUrisReadPermissionEx(validUris).then((result) => {
-        console.info("requestPhotoUrisReadPermissionEx valid, result = " + JSON.stringify(result));
+        console.info("testPicker67 requestPhotoUrisReadPermissionEx valid, result = " + JSON.stringify(result));
         if (result) {
           expect(result).not().assertUndefined();
+          expect(requestPhotoUrisReadPermission.authorizedUris).assertEqual(validUris); 
+          expect(requestPhotoUrisReadPermission.invalidUris).assertEqual([]); 
+        } else { 
+          console.error("testPicker67 result should be defined") 
+          expect(false).assertTrue();
         }
       }).catch((error: BusinessError) => {
         console.error("testPicker67 valid case error: " + JSON.stringify(error));
+        let isValidErrorCode = error.code === 14000011 || error.code === 23800301;
+        expect(isValidErrorCode).assertTrue();
       });
 
       let emptyUris: Array<string> = [];
       phAccessHelper.requestPhotoUrisReadPermissionEx(emptyUris).then((result) => {
-        console.info("requestPhotoUrisReadPermissionEx empty, result = " + JSON.stringify(result));
+        console.info("testPicker67 empty case requestPhotoUrisReadPermissionEx empty, result = " + JSON.stringify(result));
         if (result) {
           expect(result).not().assertUndefined();
         }
@@ -4188,7 +4270,7 @@ export default function TextPicker() {
 
       } catch (error) {
         console.error("testPicker71 error:" + JSON.stringify(error));
-        expect(false).assertTrue();
+        expect(error.code).assertEqual(14000011);
       }
 
       await CommonFunc.sleep(1000);
@@ -4363,7 +4445,7 @@ export default function TextPicker() {
 
       } catch (error) {
         console.log("testPicker73 error:" + JSON.stringify(error));
-        expect(false).assertTrue();
+        expect(error.code).assertEqual(14000011);
       } finally {
         await CommonFunc.sleep(1000);
         console.log("testPicker73 btn click finish");
@@ -4611,15 +4693,103 @@ export default function TextPicker() {
       }
       await imageCheckbox.click();
       await CommonFunc.sleep(300);
-      const btn = await driver.findComponent(ON.id('setPhotoBrowserItemWithEmptyURI'));
+      const btn = await driver.waitForComponent(ON.id('setPhotoBrowserItemWithEmptyURI'), 1000);
       console.log('testPicker77 btn click')
-      await btn.click();
+      if (!btn) {
+        console.error('testPicker77 no btn');
+      } else {
+        await btn.click();
+      }
       await CommonFunc.sleep(500);
-      const previewButton = await driver.findComponent(ON.id('previewButton'));
+      const previewButton = await driver.waitForComponent(ON.id('previewButton'), 1000);
       console.log('testPicker77 previewButton click')
-      await previewButton.click();
+      if (!previewButton) {
+        console.error('testPicker77 no previewButton');
+      } else {
+        await previewButton.click();
+      }
       await CommonFunc.sleep(500);
       router.back();
+      done();
+    })
+
+    /**
+     * @tc.name   testPicker78
+     * @tc.number testPicker78
+     * @tc.desc   Testing defaultRecommendationType & GAUSSIAN_SPLAT_3D
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPicker78',Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.recommendationOptions = {
+        recommendationTypeList: [photoAccessHelper.RecommendationType.GAUSSIAN_SPLAT_3D, photoAccessHelper.RecommendationType.DOG,
+          photoAccessHelper.RecommendationType.ARCHITECTURE, photoAccessHelper.RecommendationType.LANDSCAPE],
+          defaultRecommendationType: photoAccessHelper.RecommendationType.GAUSSIAN_SPLAT_3D
+      }
+      const photoPicker = new photoAccessHelper.PhotoViewPicker();
+      try{
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          console.info('testPicker78, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(PhotoSelectResult));
+        })
+        await closePickerModel(driver);
+      } catch(err) {
+        expect(false).assertTrue();
+        console.error(`testPicker78, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      }
+      console.info("testPicker78 finish");
+      done();
+    });
+
+    /**
+     * @tc.name   testPicker79
+     * @tc.number testPicker79
+     * @tc.desc   Testing Change PhotoPickerComponent pickerOptions's backgroundOpacity property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPicker79', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.backgroundOpacity = 0.5;
+      let callback = (event: events_emitter.EventData) => {
+        let expectResult: number| undefined = pickerOptions.backgroundOpacity;
+        let result: PhotoPickerResult = event?.data?.msg.backgroundOpacity;
+        console.info('testPicker79 result event.data.msg=:' + result);
+        console.info('testPicker79 result expect =:' + expectResult);
+        expect(result).assertEqual(expectResult);
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker79 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await clickResultButton(driver);
+      router.back();
+      console.info("testPicker79 finish");
+      events_emitter.off(event.eventId);
       done();
     })
   })

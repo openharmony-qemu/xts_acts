@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import util from '@ohos.util';
 
 function sleep(ms: number) {
@@ -7,8 +7,8 @@ function sleep(ms: number) {
 
 export default function Base64HelperTest() {
   describe('Base64HelperTest', () => {
-      let base64Helper: util.Base64Helper;
-      base64Helper = new util.Base64Helper();
+    let base64Helper: util.Base64Helper;
+    base64Helper = new util.Base64Helper();
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -38,18 +38,12 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Basehelper_Encryptosyncsync_English_Text_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Basehelper_Encryptosyncsync_English_Text_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
         const TAG = 'test_Basehelper_Encryptosyncsync_English_Text_0001';
-        console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([72, 101, 108, 108, 111]);
         const result: string = base64Helper.encodeToStringSync(input);
-        expect(result != null).assertTrue();
-        expect(result.length > 0).assertTrue();
-        expect(typeof result === 'string').assertTrue();
-        console.log(TAG + ' encoded result: ' + result);
-        console.log(TAG + ' done');
-
+        expect(result).assertEqual('SGVsbG8=');
       });
 
     /**
@@ -60,18 +54,11 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Base64helper_EncodeToStringSync_Chinese_text_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_EncodeToStringSync_Chinese_text_0002';
-        console.log(TAG + ' start');
+    it('test_Base64helper_EncodeToStringSync_Chinese_text_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
         const input: Uint8Array = new Uint8Array([228, 189, 160, 229, 165, 189]);
         const result: string = base64Helper.encodeToStringSync(input);
-        expect(result != null).assertTrue();
-        expect(result.length > 0).assertTrue();
-        expect(typeof result === 'string').assertTrue();
-        console.log(TAG + ' encoded result: ' + result);
-        console.log(TAG + ' done');
-
+        expect(result).assertEqual('5L2g5aW9');
       });
 
     /**
@@ -82,17 +69,13 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Base64helper_EncodeToStringSync_Special_Chars_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('test_Base64helper_EncodeToStringSync_Special_Chars_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
         const TAG = 'test_Base64helper_EncodeToStringSync_Special_Chars_0003';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([64, 35, 36, 37, 94, 38, 42, 40, 41]);
         const result: string = base64Helper.encodeToStringSync(input);
-        expect(result != null).assertTrue();
-        expect(result.length > 0).assertTrue();
-        expect(typeof result === 'string').assertTrue();
-        console.log(TAG + ' encoded result: ' + result);
-        console.log(TAG + ' done');
-
+        expect(result).assertEqual('QCMkJV4mKigp');
       });
 
     /**
@@ -103,14 +86,13 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Base64helper_EncodeToStringSync_Empty_Input_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('test_Base64helper_EncodeToStringSync_Empty_Input_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
         const TAG = 'test_Base64helper_EncodeToStringSync_Empty_Input_0004';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([0]);
         const result: string = base64Helper.encodeToStringSync(input);
-        expect(result != null).assertTrue();
-        expect(typeof result === 'string').assertTrue();
-        expect(result).assertEqual("AA==");
+        expect(result).assertEqual('AA==');
 
       });
 
@@ -122,17 +104,14 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Basehelper_Encryptosyncsync_Numeric_Data_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Basehelper_Encryptosyncsync_Numeric_Data_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+
         const TAG = 'test_Basehelper_Encryptosyncsync_Numeric_Data_0005';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
         const result: string = base64Helper.encodeToStringSync(input);
-        expect(result != null).assertTrue();
-        expect(result.length > 0).assertTrue();
-        expect(typeof result === 'string').assertTrue();
-        console.log(TAG + ' encoded result: ' + result);
-
+        expect(result).assertEqual('AAECAwQFBgcICQ==');
       });
 
     /**
@@ -143,16 +122,13 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Basehelper_Encryptsync_English_Text_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Basehelper_Encryptsync_English_Text_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
         const TAG = 'test_Basehelper_Encryptsync_English_Text_0006';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([72, 101, 108, 108, 111]);
         const result: Uint8Array = base64Helper.encodeSync(input);
-        expect(result != null).assertTrue();
-        expect(result.length > 0).assertTrue();
-        console.log(TAG + ' encoded result length: ' + result.length);
-
+        expect(JSON.stringify(result)).assertEqual('{"0":83,"1":71,"2":86,"3":115,"4":98,"5":71,"6":56,"7":61}');
       });
 
     /**
@@ -163,15 +139,13 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Basehelper_Encryptsync_Chinese_Text_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('test_Basehelper_Encryptsync_Chinese_Text_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
         const TAG = 'test_Basehelper_Encryptsync_Chinese_Text_0007';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([228, 189, 160, 229, 165, 189]);
         const result: Uint8Array = base64Helper.encodeSync(input);
-        expect(result != null).assertTrue();
-        expect(result.length > 0).assertTrue();
-        console.log(TAG + ' encoded result length: ' + result.length);
-
+        expect(JSON.stringify(result)).assertEqual('{"0":53,"1":76,"2":50,"3":103,"4":53,"5":97,"6":87,"7":57}');
       });
 
     /**
@@ -182,15 +156,14 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Basehelper_Encryptsync_Special_Chars_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('test_Basehelper_Encryptsync_Special_Chars_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
         const TAG = 'test_Basehelper_Encryptsync_Special_Chars_0008';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([64, 35, 36, 37, 94, 38, 42, 40, 41]);
         const result: Uint8Array = base64Helper.encodeSync(input);
-        expect(result != null).assertTrue();
-        expect(result.length > 0).assertTrue();
-        console.log(TAG + ' encoded result length: ' + result.length);
-
+        expect(JSON.stringify(result))
+          .assertEqual('{"0":81,"1":67,"2":77,"3":107,"4":74,"5":86,"6":52,"7":109,"8":75,"9":105,"10":103,"11":112}');
       });
 
     /**
@@ -201,16 +174,15 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Basehelper_Encryptsync_Numeric_Data_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Basehelper_Encryptsync_Numeric_Data_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+
         const TAG = 'test_Basehelper_Encryptsync_Numeric_Data_0009';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
         const result: Uint8Array = base64Helper.encodeSync(input);
-        expect(result != null).assertTrue();
-        expect(result.length > 0).assertTrue();
-        console.log(TAG + ' numeric data encoded, result length: ' + result.length);
-
+        expect(JSON.stringify(result))
+          .assertEqual('{"0":65,"1":65,"2":69,"3":67,"4":65,"5":119,"6":81,"7":70,"8":66,"9":103,"10":99,"11":73,"12":67,"13":81,"14":61,"15":61}');
       });
 
     /**
@@ -222,13 +194,12 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Basehelper_Create_Default_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Basehelper_Create_Default_0010';
-        console.log(TAG + ' start');
-        const base64Helper: util.Base64Helper = new util.Base64Helper();
-        expect(base64Helper != null).assertTrue();
 
-      });
+      const TAG = 'test_Basehelper_Create_Default_0010';
+      console.log(TAG + ' start');
+      const base64Helper: util.Base64Helper = new util.Base64Helper();
+      expect(base64Helper != null).assertTrue();
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASEHELPER_DECRYPTSYNC_1100
@@ -239,15 +210,14 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Basehelper_Decryptsync_Basic_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Basehelper_Decryptsync_Basic_0011';
-        console.log(TAG + ' start');
-        const base64Helper: util.Base64Helper = new util.Base64Helper();
-        const encodedData = new Uint8Array([83, 71, 86, 115, 98, 71, 56, 61]);
-        const result: Uint8Array = base64Helper.decodeSync(encodedData);
-        expect(result != null).assertTrue();
 
-      });
+      const TAG = 'test_Basehelper_Decryptsync_Basic_0011';
+      console.log(TAG + ' start');
+      const base64Helper: util.Base64Helper = new util.Base64Helper();
+      const encodedData = new Uint8Array([83, 71, 86, 115, 98, 71, 56, 61]);
+      const result: Uint8Array = base64Helper.decodeSync(encodedData);
+      expect(JSON.stringify(result)).assertEqual('{"0":72,"1":101,"2":108,"3":108,"4":111}');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASEHELPER_DECRYPTSYNC_1200
@@ -257,15 +227,15 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Basehelper_Decryptsync_Single_Character_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Basehelper_Decryptsync_Single_Character_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+
         const TAG = 'test_Basehelper_Decryptsync_Single_Character_0012';
         console.log(TAG + ' start');
         const base64Helper: util.Base64Helper = new util.Base64Helper();
         const encodedData = new Uint8Array([81, 103, 61, 61]);
         const result: Uint8Array = base64Helper.decodeSync(encodedData);
-        expect(result != null).assertTrue();
-
+        expect(JSON.stringify(result)).assertEqual('{"0":66}');
       });
 
     /**
@@ -276,15 +246,15 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Basehelper_Decryptsync_Special_Chars_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Basehelper_Decryptsync_Special_Chars_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+
         const TAG = 'test_Basehelper_Decryptsync_Special_Chars_0013';
         console.log(TAG + ' start');
         const base64Helper: util.Base64Helper = new util.Base64Helper();
         const encodedData = new Uint8Array([75, 105, 43, 47]);
         const result: Uint8Array = base64Helper.decodeSync(encodedData);
-        expect(result != null).assertTrue();
-
+        expect(JSON.stringify(result)).assertEqual('{"0":42,"1":47,"2":191}');
       });
 
     /**
@@ -295,66 +265,14 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Basehelper_Decryptsync_Numeric_Data_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Basehelper_Decryptsync_Numeric_Data_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
         const TAG = 'test_Basehelper_Decryptsync_Numeric_Data_0014';
         console.log(TAG + ' start');
         const base64Helper: util.Base64Helper = new util.Base64Helper();
         const encodedData = new Uint8Array([77, 84, 73, 122]);
         const result: Uint8Array = base64Helper.decodeSync(encodedData);
-        expect(result != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_BASEHELPER_CREATE_1500
-     * @tc.name      test_Basehelper_Create_Default_0015
-     * @tc.desc      Base64Helper create default instance.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Basehelper_Create_Default_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Basehelper_Create_Default_0015';
-        console.log(TAG + ' start');
-        const base64Helper: util.Base64Helper = new util.Base64Helper();
-        expect(base64Helper != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_BASEHELPER_CREATE_2000
-     * @tc.name      test_Basehelper_Create_Default_0020
-     * @tc.desc      Base64Helper create default instance.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Basehelper_Create_Default_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Basehelper_Create_Default_0020';
-        console.log(TAG + ' start');
-        const base64Helper: util.Base64Helper = new util.Base64Helper();
-        expect(base64Helper != null).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_UTIL_BASEHELPER_CREATE_2600
-     * @tc.name      test_Basehelper_Create_Default_0026
-     * @tc.desc      Base64Helper create default instance.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('test_Basehelper_Create_Default_0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Basehelper_Create_Default_0026';
-        console.log(TAG + ' start');
-        const base64Helper: util.Base64Helper = new util.Base64Helper();
-        expect(base64Helper != null).assertTrue();
-
+        expect(JSON.stringify(result)).assertEqual('{"0":49,"1":50,"2":51}');
       });
 
     /**
@@ -365,15 +283,14 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Base64helper_EncodeToStringSync_Single_Byte_0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Base64helper_EncodeToStringSync_Single_Byte_0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+
         const TAG = 'test_Base64helper_EncodeToStringSync_Single_Byte_0031';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([65]);
         const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
-
+        expect(result).assertEqual('QQ==');
       });
 
     /**
@@ -384,15 +301,14 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Base64helper_EncodeToStringSync_Control_Chars_0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Base64helper_EncodeToStringSync_Control_Chars_0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+
         const TAG = 'test_Base64helper_EncodeToStringSync_Control_Chars_0032';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([0, 1, 2, 3, 4, 5]);
         const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
-
+        expect(result).assertEqual('AAECAwQF');
       });
 
     /**
@@ -403,15 +319,14 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Base64helper_EncodeToStringSync_Max_Bytes_0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Base64helper_EncodeToStringSync_Max_Bytes_0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+
         const TAG = 'test_Base64helper_EncodeToStringSync_Max_Bytes_0033';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([255, 255, 255, 255]);
         const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
-
+        expect(result).assertEqual('/////w==');
       });
 
     /**
@@ -422,15 +337,14 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Base64helper_EncodeToStringSync_Mixed_Bytes_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Base64helper_EncodeToStringSync_Mixed_Bytes_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+
         const TAG = 'test_Base64helper_EncodeToStringSync_Mixed_Bytes_0034';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([0, 128, 255, 64, 192]);
         const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
-
+        expect(result).assertEqual('AID/QMA=');
       });
 
     /**
@@ -441,15 +355,14 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Base64helper_EncodeSync_Three_Bytes_0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Base64helper_EncodeSync_Three_Bytes_0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
+
         const TAG = 'test_Base64helper_EncodeSync_Three_Bytes_0035';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([1, 2, 3]);
         const result: Uint8Array = base64Helper.encodeSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
-
+        expect(JSON.stringify(result)).assertEqual('{"0":65,"1":81,"2":73,"3":68}');
       });
 
     /**
@@ -461,15 +374,13 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_EncodeSync_Four_Bytes_0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_EncodeSync_Four_Bytes_0036';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([1, 2, 3, 4]);
-        const result: Uint8Array = base64Helper.encodeSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
 
-      });
+      const TAG = 'test_Base64helper_EncodeSync_Four_Bytes_0036';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([1, 2, 3, 4]);
+      const result: Uint8Array = base64Helper.encodeSync(input);
+      expect(JSON.stringify(result)).assertEqual('{"0":65,"1":81,"2":73,"3":68,"4":66,"5":65,"6":61,"7":61}');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_3700
@@ -480,15 +391,13 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_EncodeSync_Five_Bytes_0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_EncodeSync_Five_Bytes_0037';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([1, 2, 3, 4, 5]);
-        const result: Uint8Array = base64Helper.encodeSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
 
-      });
+      const TAG = 'test_Base64helper_EncodeSync_Five_Bytes_0037';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([1, 2, 3, 4, 5]);
+      const result: Uint8Array = base64Helper.encodeSync(input);
+      expect(JSON.stringify(result)).assertEqual('{"0":65,"1":81,"2":73,"3":68,"4":66,"5":65,"6":85,"7":61}');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_3800
@@ -499,15 +408,13 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Fibonacci_Sequence_0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Fibonacci_Sequence_0038';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([1, 1, 2, 3, 5, 8, 13, 21]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
 
-      });
+      const TAG = 'test_Base64helper_Fibonacci_Sequence_0038';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([1, 1, 2, 3, 5, 8, 13, 21]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('AQECAwUIDRU=');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_3900
@@ -518,15 +425,13 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Unicode_Bytes_0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Unicode_Bytes_0039';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([195, 169, 195, 168, 195, 170]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
 
-      });
+      const TAG = 'test_Base64helper_Unicode_Bytes_0039';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([195, 169, 195, 168, 195, 170]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('w6nDqMOq');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_4000
@@ -537,15 +442,14 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Ascii_Printable_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Ascii_Printable_0040';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([65, 66, 67, 97, 98, 99, 48, 49, 50]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
 
-      });
+      const TAG = 'test_Base64helper_Ascii_Printable_0040';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([65, 66, 67, 97, 98, 99, 48, 49, 50]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('QUJDYWJjMDEy');
+      ;
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_4100
@@ -556,15 +460,13 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_EncodeSync_Six_Bytes_0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_EncodeSync_Six_Bytes_0041';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([1, 2, 3, 4, 5, 6]);
-        const result: Uint8Array = base64Helper.encodeSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
 
-      });
+      const TAG = 'test_Base64helper_EncodeSync_Six_Bytes_0041';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([1, 2, 3, 4, 5, 6]);
+      const result: Uint8Array = base64Helper.encodeSync(input);
+      expect(JSON.stringify(result)).assertEqual('{"0":65,"1":81,"2":73,"3":68,"4":66,"5":65,"6":85,"7":71}');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_4200
@@ -574,14 +476,13 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Base64helper_DecodeSync_Single_Char_0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Base64helper_DecodeSync_Single_Char_0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
         const TAG = 'test_Base64helper_DecodeSync_Single_Char_0042';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([65]); // "A"
         const result: Uint8Array = base64Helper.decodeSync(input);
-        expect(result !== null).assertTrue();
-
+        expect(result).assertEqual(undefined);
       });
 
     /**
@@ -593,14 +494,12 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_DecodeSync_Two_Chars_0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_DecodeSync_Two_Chars_0043';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([65, 66]);
-        const result: Uint8Array = base64Helper.decodeSync(input);
-        expect(result !== null).assertTrue();
-
-      });
+      const TAG = 'test_Base64helper_DecodeSync_Two_Chars_0043';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([65, 66]);
+      const result: Uint8Array = base64Helper.decodeSync(input);
+      expect(result).assertEqual(undefined);
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_4400
@@ -610,14 +509,13 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Base64helper_DecodeSync_Three_Chars_0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+    it('test_Base64helper_DecodeSync_Three_Chars_0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
         const TAG = 'test_Base64helper_DecodeSync_Three_Chars_0044';
         console.log(TAG + ' start');
         const input: Uint8Array = new Uint8Array([65, 66, 67]);
         const result: Uint8Array = base64Helper.decodeSync(input);
-        expect(result !== null).assertTrue();
-
+        expect(result).assertEqual(undefined);
       });
 
     /**
@@ -629,14 +527,12 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_DecodeSync_Four_Chars_0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_DecodeSync_Four_Chars_0045';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([65, 66, 67, 68]);
-        const result: Uint8Array = base64Helper.decodeSync(input);
-        expect(result !== null).assertTrue();
-
-      });
+      const TAG = 'test_Base64helper_DecodeSync_Four_Chars_0045';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([65, 66, 67, 68]);
+      const result: Uint8Array = base64Helper.decodeSync(input);
+      expect(JSON.stringify(result)).assertEqual('{"0":0,"1":16,"2":131}');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_5800
@@ -646,16 +542,13 @@ export default function Base64HelperTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('test_Base64helper_Encode_Decode_Roundtrip_Short_0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Encode_Decode_Roundtrip_Short_0058';
-        console.log(TAG + ' start');
+    it('test_Base64helper_Encode_Decode_Roundtrip_Short_0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (): void => {
         const original: Uint8Array = new Uint8Array([1, 2, 3, 4, 5]);
         const encoded: Uint8Array = base64Helper.encodeSync(original);
         const decoded: Uint8Array = base64Helper.decodeSync(encoded);
-        expect(decoded !== null).assertTrue();
-        expect(decoded.length === original.length).assertTrue();
-
+        expect(JSON.stringify(encoded)).assertEqual('{"0":65,"1":81,"2":73,"3":68,"4":66,"5":65,"6":85,"7":61}');
+        expect(JSON.stringify(decoded)).assertEqual('{"0":1,"1":2,"2":3,"3":4,"4":5}');
       });
 
     /**
@@ -667,19 +560,16 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Multiple_Instances_0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Multiple_Instances_0059';
-        console.log(TAG + ' start');
-        const helper1: util.Base64Helper = new util.Base64Helper();
-        const helper2: util.Base64Helper = new util.Base64Helper();
-        const input: Uint8Array = new Uint8Array([1, 2, 3]);
-        const result1: string = helper1.encodeToStringSync(input);
-        const result2: string = helper2.encodeToStringSync(input);
-        expect(result1 !== null).assertTrue();
-        expect(result2 !== null).assertTrue();
-        expect(result1 === result2).assertTrue();
-
-      });
+      const TAG = 'test_Base64helper_Multiple_Instances_0059';
+      console.log(TAG + ' start');
+      const helper1: util.Base64Helper = new util.Base64Helper();
+      const helper2: util.Base64Helper = new util.Base64Helper();
+      const input: Uint8Array = new Uint8Array([1, 2, 3]);
+      const result1: string = helper1.encodeToStringSync(input);
+      const result2: string = helper2.encodeToStringSync(input);
+      expect(result1).assertEqual('AQID');
+      expect(result2).assertEqual('AQID');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_6000
@@ -690,20 +580,19 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Concurrent_Operations_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Concurrent_Operations_0060';
-        console.log(TAG + ' start');
-        const input1: Uint8Array = new Uint8Array([65, 66, 67]);
-        const input2: Uint8Array = new Uint8Array([68, 69, 70]);
-        const input3: Uint8Array = new Uint8Array([71, 72, 73]);
-        const result1: string = base64Helper.encodeToStringSync(input1);
-        const result2: string = base64Helper.encodeToStringSync(input2);
-        const result3: string = base64Helper.encodeToStringSync(input3);
-        expect(result1 !== null).assertTrue();
-        expect(result2 !== null).assertTrue();
-        expect(result3 !== null).assertTrue();
 
-      });
+      const TAG = 'test_Base64helper_Concurrent_Operations_0060';
+      console.log(TAG + ' start');
+      const input1: Uint8Array = new Uint8Array([65, 66, 67]);
+      const input2: Uint8Array = new Uint8Array([68, 69, 70]);
+      const input3: Uint8Array = new Uint8Array([71, 72, 73]);
+      const result1: string = base64Helper.encodeToStringSync(input1);
+      const result2: string = base64Helper.encodeToStringSync(input2);
+      const result3: string = base64Helper.encodeToStringSync(input3);
+      expect(result1).assertEqual('QUJD');
+      expect(result2).assertEqual('REVG');
+      expect(result3).assertEqual('R0hJ');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_6100
@@ -714,15 +603,12 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Large_Single_Byte_0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Large_Single_Byte_0061';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([200, 201, 202, 203, 204, 205]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
-
-      });
+      const TAG = 'test_Base64helper_Large_Single_Byte_0061';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([200, 201, 202, 203, 204, 205]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('yMnKy8zN');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_6200
@@ -733,15 +619,13 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Alternating_Pattern_0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Alternating_Pattern_0062';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([0, 255, 0, 255, 0, 255]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
 
-      });
+      const TAG = 'test_Base64helper_Alternating_Pattern_0062';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([0, 255, 0, 255, 0, 255]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('AP8A/wD/');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_6300
@@ -752,15 +636,13 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Incremental_Pattern_0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Incremental_Pattern_0063';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
 
-      });
+      const TAG = 'test_Base64helper_Incremental_Pattern_0063';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('AQIDBAUGBwg=');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_6400
@@ -771,15 +653,13 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Decremental_Pattern_0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Decremental_Pattern_0064';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([8, 7, 6, 5, 4, 3, 2, 1]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
 
-      });
+      const TAG = 'test_Base64helper_Decremental_Pattern_0064';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([8, 7, 6, 5, 4, 3, 2, 1]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('CAcGBQQDAgE=');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_6500
@@ -790,15 +670,12 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Repeated_Pattern_0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Repeated_Pattern_0065';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([1, 2, 3, 1, 2, 3, 1, 2, 3]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
-
-      });
+      const TAG = 'test_Base64helper_Repeated_Pattern_0065';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([1, 2, 3, 1, 2, 3, 1, 2, 3]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('AQIDAQIDAQID');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_6600
@@ -809,15 +686,12 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_All_Zeros_0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_BASE64HELPER_ALL_ZEROS_0066';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([0, 0, 0, 0, 0, 0]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
-
-      });
+      const TAG = 'test_BASE64HELPER_ALL_ZEROS_0066';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([0, 0, 0, 0, 0, 0]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('AAAAAAAA');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_6700
@@ -828,15 +702,12 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_All_Ones_0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_All_Ones_0067';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([1, 1, 1, 1, 1, 1]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
-
-      });
+      const TAG = 'test_Base64helper_All_Ones_0067';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([1, 1, 1, 1, 1, 1]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('AQEBAQEB');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_6800
@@ -847,15 +718,12 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Sequential_Bytes_0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Sequential_Bytes_0068';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([10, 11, 12, 13, 14, 15, 16, 17]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
-
-      });
+      const TAG = 'test_Base64helper_Sequential_Bytes_0068';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([10, 11, 12, 13, 14, 15, 16, 17]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('CgsMDQ4PEBE=');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_6900
@@ -866,15 +734,12 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Power_Of_Two_0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Power_Of_Two_0069';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([1, 2, 4, 8, 16, 32, 64, 128]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
-
-      });
+      const TAG = 'test_Base64helper_Power_Of_Two_0069';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([1, 2, 4, 8, 16, 32, 64, 128]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('AQIECBAgQIA=');
+    });
 
     /**
      * @tc.number    SUB_UTIL_BASE64HELPER_7000
@@ -885,14 +750,11 @@ export default function Base64HelperTest() {
      * @tc.level     Level 2
      */
     it('test_Base64helper_Prime_Numbers_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-        const TAG = 'test_Base64helper_Prime_Numbers_0070';
-        console.log(TAG + ' start');
-        const input: Uint8Array = new Uint8Array([2, 3, 5, 7, 11, 13, 17, 19]);
-        const result: string = base64Helper.encodeToStringSync(input);
-        expect(result !== null).assertTrue();
-        expect(result.length > 0).assertTrue();
-
-      });
+      const TAG = 'test_Base64helper_Prime_Numbers_0070';
+      console.log(TAG + ' start');
+      const input: Uint8Array = new Uint8Array([2, 3, 5, 7, 11, 13, 17, 19]);
+      const result: string = base64Helper.encodeToStringSync(input);
+      expect(result).assertEqual('AgMFBwsNERM=');
+    });
   })
 }

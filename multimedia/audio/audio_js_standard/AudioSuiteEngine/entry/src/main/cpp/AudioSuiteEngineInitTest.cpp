@@ -30,9 +30,9 @@ int32_t g_writeSize = g_frameSize;
 const int32_t NUM_ONE = 1;
 const int32_t NUM_TWO = 2;
 const int32_t NUM_THREE = 3;
-const int32_t NUM_FOUR = 4;
-const int32_t NUM_FIVE = 5;
-const int32_t NUM_SIX = 6;
+const int32_t NUM_FOURTEEN = 14;
+const int32_t NUM_FIFTEEN = 15;
+const int32_t NUM_SIXTEEN = 16;
 const int32_t NUM_TEN = 10;
 const int32_t NUM_ELEVEN = 11;
 const int32_t REQUEST_FRAME_SIZE = 4096;
@@ -3515,15 +3515,15 @@ static napi_value AudioSuiteEngine_CreateNode_008(napi_env env, napi_callback_in
     napi_value res;
     OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
     OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
-    OH_AudioNodeBuilder *builders[6] = {nullptr};
-    OH_AudioNode *audioNodes[6] = {nullptr};
-    OH_AudioSuite_Result result[6];
+    OH_AudioNodeBuilder *builders[NUM_SIXTEEN] = {nullptr};
+    OH_AudioNode *audioNodes[NUM_SIXTEEN] = {nullptr};
+    OH_AudioSuite_Result result[NUM_SIXTEEN];
     OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_EQUALIZER_TEST);
     bool isSupported = IsNodeTypeSupported(type);
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_REALTIME_MODE);
-    for (int i = 0; i < NUM_SIX; ++i) {
+    for (int i = 0; i < NUM_SIXTEEN; ++i) {
         builders[i] = nullptr;
         OH_AudioSuiteNodeBuilder_Create(&builders[i]);
         OH_AudioSuiteNodeBuilder_SetNodeType(builders[i], type);
@@ -3531,10 +3531,11 @@ static napi_value AudioSuiteEngine_CreateNode_008(napi_env env, napi_callback_in
         result[i] = OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builders[i], &audioNodes[i]);
     }
     if (!isSupported ||
-        (result[NUM_FOUR] == AUDIOSUITE_SUCCESS && result[NUM_FIVE] == AUDIOSUITE_ERROR_CREATED_EXCEED_SYSTEM_LIMITS)) {
-        LOG("CreateNode_008 success, createNodeResult6 is:%{public}d", result[NUM_FIVE]);
+        (result[NUM_FOURTEEN] == AUDIOSUITE_SUCCESS &&
+            result[NUM_FIFTEEN] == AUDIOSUITE_ERROR_CREATED_EXCEED_SYSTEM_LIMITS)) {
+        LOG("CreateNode_008 success, createNodeResult6 is:%{public}d", result[NUM_FIFTEEN]);
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
-        for (int i = 0; i < NUM_SIX; ++i) {
+        for (int i = 0; i < NUM_SIXTEEN; ++i) {
             if (builders[i])
                 OH_AudioSuiteNodeBuilder_Destroy(builders[i]);
             if (audioNodes[i])
@@ -3544,10 +3545,10 @@ static napi_value AudioSuiteEngine_CreateNode_008(napi_env env, napi_callback_in
         OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
         return res;
     }
-    LOG("CreateNode_008 fail, createNodeResult5 is:%{public}d, createNodeResult6 is:%{public}d", result[NUM_FOUR],
-        result[NUM_FIVE]);
+    LOG("CreateNode_008 fail, createNodeResult5 is:%{public}d, createNodeResult6 is:%{public}d", result[NUM_FOURTEEN],
+        result[NUM_FIFTEEN]);
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
-    for (int i = 0; i < NUM_SIX; ++i) {
+    for (int i = 0; i < NUM_SIXTEEN; ++i) {
         if (builders[i])
             OH_AudioSuiteNodeBuilder_Destroy(builders[i]);
         if (audioNodes[i])
@@ -4082,16 +4083,19 @@ static napi_value OH_AudioSuiteEngine_MultiRenderFrame_001(napi_env env, napi_ca
     audioDataArray->arraySize = NUM_TWO;
     audioDataArray->requestFrameSize = REQUEST_FRAME_SIZE;
     bool isSupported = IsNodeTypeSupported(EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION);
-    AudioSuiteRAII audioSuite;
-    do {
-        OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray,
-                                                                        &responseSize, &g_finishedFlag);
-        if (isSupported && res != AUDIOSUITE_SUCCESS) {
-            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
-            LOG("AudioSuiteEngine_MultiRenderFrame001 fail, result is: %{public}d", res);
-            return result;
-        }
-    } while (!g_finishedFlag);
+    if (isSupported) {
+        AudioSuiteRAII audioSuite;
+        do {
+            OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline,
+                                                                            audioDataArray, &responseSize,
+                                                                            &g_finishedFlag);
+            if (isSupported && res != AUDIOSUITE_SUCCESS) {
+                napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+                LOG("AudioSuiteEngine_MultiRenderFrame001 fail, result is: %{public}d", res);
+                return result;
+            }
+        } while (!g_finishedFlag);
+    }
 
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
     return result;
@@ -4101,17 +4105,19 @@ static napi_value OH_AudioSuiteEngine_MultiRenderFrame_002(napi_env env, napi_ca
 {
     napi_value result;
     int responseSize = 0;
-
-    AudioSuiteRAII audioSuite;
-    do {
-        OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, nullptr,
-                                                                        &responseSize, &g_finishedFlag);
-        if (res != AUDIOSUITE_ERROR_INVALID_PARAM) {
-            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
-            LOG("OH_AudioSuiteEngine_MultiRenderFrame_002 fail, result is: %{public}d", res);
-            return result;
-        }
-    } while (!g_finishedFlag);
+    bool isSupported = IsNodeTypeSupported(EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION);
+    if (isSupported) {
+        AudioSuiteRAII audioSuite;
+        do {
+            OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, nullptr,
+                                                                            &responseSize, &g_finishedFlag);
+            if (res != AUDIOSUITE_ERROR_INVALID_PARAM) {
+                napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+                LOG("OH_AudioSuiteEngine_MultiRenderFrame_002 fail, result is: %{public}d", res);
+                return result;
+            }
+        } while (!g_finishedFlag);
+    }
 
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
     return result;
@@ -4133,15 +4139,17 @@ static napi_value OH_AudioSuiteEngine_MultiRenderFrame_003(napi_env env, napi_ca
     audioDataArray->audioDataArray = audioDataPtr;
     audioDataArray->arraySize = NUM_TWO;
     audioDataArray->requestFrameSize = REQUEST_FRAME_SIZE;
-
-    AudioSuiteRAII audioSuite;
-    OH_AudioSuiteEngine_DestroyPipeline(audioSuite.audioSuitePipeline);
-    OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray,
-                                                                    &responseSize, &g_finishedFlag);
-    if (res != AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST) {
-        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
-        LOG("OH_AudioSuiteEngine_MultiRenderFrame_003 fail, result is: %{public}d", res);
-        return result;
+    bool isSupported = IsNodeTypeSupported(EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION);
+    if (isSupported) {
+        AudioSuiteRAII audioSuite;
+        OH_AudioSuiteEngine_DestroyPipeline(audioSuite.audioSuitePipeline);
+        OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray,
+                                                                        &responseSize, &g_finishedFlag);
+        if (res != AUDIOSUITE_ERROR_PIPELINE_NOT_EXIST) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+            LOG("OH_AudioSuiteEngine_MultiRenderFrame_003 fail, result is: %{public}d", res);
+            return result;
+        }
     }
 
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
@@ -4164,19 +4172,21 @@ static napi_value OH_AudioSuiteEngine_MultiRenderFrame_004(napi_env env, napi_ca
     audioDataArray->audioDataArray = audioDataPtr;
     audioDataArray->arraySize = NUM_TWO;
     audioDataArray->requestFrameSize = REQUEST_FRAME_SIZE;
-
-    AudioSuiteRAII audioSuite;
-    do {
-        OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray, &responseSize,
-                                             &g_finishedFlag);
-    } while (!g_finishedFlag);
-    OH_AudioSuiteEngine_StopPipeline(audioSuite.audioSuitePipeline);
-    OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray,
-                                                                    &responseSize, &g_finishedFlag);
-    if (res != AUDIOSUITE_ERROR_INVALID_STATE) {
-        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
-        LOG("OH_AudioSuiteEngine_MultiRenderFrame_004 fail, result is: %{public}d", res);
-        return result;
+    bool isSupported = IsNodeTypeSupported(EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION);
+    if (isSupported) {
+        AudioSuiteRAII audioSuite;
+        do {
+            OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray, &responseSize,
+                                                 &g_finishedFlag);
+        } while (!g_finishedFlag);
+        OH_AudioSuiteEngine_StopPipeline(audioSuite.audioSuitePipeline);
+        OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray,
+                                                                        &responseSize, &g_finishedFlag);
+        if (res != AUDIOSUITE_ERROR_INVALID_STATE) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+            LOG("OH_AudioSuiteEngine_MultiRenderFrame_004 fail, result is: %{public}d", res);
+            return result;
+        }
     }
 
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);
@@ -4200,17 +4210,19 @@ static napi_value OH_AudioSuiteEngine_MultiRenderFrame_005(napi_env env, napi_ca
     audioDataArray->arraySize = NUM_TWO;
     audioDataArray->requestFrameSize = REQUEST_FRAME_SIZE;
     bool isSupported = IsNodeTypeSupported(EFFECT_MULTII_OUTPUT_NODE_TYPE_AUDIO_SEPARATION);
-    AudioSuiteRAII audioSuite;
-    do {
-        OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray, &responseSize,
-                                             &g_finishedFlag);
-    } while (!g_finishedFlag);
-    OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray,
-                                                                    &responseSize, &g_finishedFlag);
-    if (isSupported && res != AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
-        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
-        LOG("OH_AudioSuiteEngine_MultiRenderFrame_005 fail, result is: %{public}d", res);
-        return result;
+    if (isSupported) {
+        AudioSuiteRAII audioSuite;
+        do {
+            OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray, &responseSize,
+                                                 &g_finishedFlag);
+        } while (!g_finishedFlag);
+        OH_AudioSuite_Result res = OH_AudioSuiteEngine_MultiRenderFrame(audioSuite.audioSuitePipeline, audioDataArray,
+                                                                        &responseSize, &g_finishedFlag);
+        if (isSupported && res != AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &result);
+            LOG("OH_AudioSuiteEngine_MultiRenderFrame_005 fail, result is: %{public}d", res);
+            return result;
+        }
     }
 
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &result);

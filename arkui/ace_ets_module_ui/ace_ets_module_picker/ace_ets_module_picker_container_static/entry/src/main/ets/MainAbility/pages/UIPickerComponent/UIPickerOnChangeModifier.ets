@@ -20,7 +20,7 @@ import { Entry, Scroll, Column, Component, Button, $r, Row,Color,
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<UIPickerComponentAttribute> {
+export class MyModifier implements AttributeModifier<UIPickerComponentAttribute> {
   public colorValue: string = '#ffff00'
   public textValue: string = 'aaaa'
   applyNormalAttribute(instance: UIPickerComponentAttribute): void {

@@ -5896,7 +5896,8 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     it('testPiPisPiPActiveSidebar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testPiPisPiPActiveSidebar';
       console.log(tag + caseName + ' begin');
-      if (isPipWindowEnabled && isFreeWindowMode == false) {
+
+      let testSupport = async () => {
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -5930,10 +5931,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             let dragToY = pipWindowCenter.y;
             await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
             await sleep(3000);
-            let expectValue = deviceType == 'tv' ? true : false;
             let isPipActive = await pipController.isPiPActive();
             console.log(tag + caseName + ' isPipActive: ' + isPipActive);
-            expect(isPipActive).assertEqual(expectValue);
+            expect(isPipActive).assertEqual(false);
             await pipController.stopPiP();
             await sleep(5000);
             done();
@@ -5953,8 +5953,69 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           expect().assertFail();
           done();
         }
-      } else {
-        done()
+      }
+
+      let testNotSupport = async () => {
+        let pipController: pipWindow.PiPController | undefined = undefined;
+        let mXComponentController = new XComponentController();
+        let navId = "";
+        let contentWidth = 400;
+        let contentHeight = 600;
+        let config: pipWindow.PiPConfiguration = {
+          context: context1,
+          componentController: mXComponentController,
+          navigationId: navId,
+          templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled: true
+        };
+        try {
+          pipWindow.create(config).then(async (data) => {
+            pipController = data;
+            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
+            expect(data != null).assertTrue();
+            await pipController.startPiP();
+            let isPipActive = await pipController.isPiPActive();
+            console.log(tag + caseName + ' isPipActive: ' + isPipActive);
+            expect(isPipActive).assertEqual(true);
+            await pipController.stopPiP();
+            await sleep(5000);
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            if (err.code == 801) {
+              expect(err.message != null).assertTrue();
+              done();
+            }
+            else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      }
+
+      switch (deviceType) {
+        case 'tv':
+        case '2in1':
+        case 'wearable':
+        case 'car':
+          testNotSupport();
+          break;
+        case 'tablet':
+          isFreeWindowMode ? testNotSupport() : testSupport();
+          break;
+        case 'phone':
+          testSupport();
+          break;
+        default:
+          testNotSupport();
+          break;
       }
     })
 

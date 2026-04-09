@@ -20,24 +20,34 @@ import {
   Component,
   Entry,
   OnLoadInterceptEvent,
+  OnFaviconReceivedEvent,
+  OnTouchIconUrlReceivedEvent,
+  OnScaleChangeEvent,
+  FileSelectorParam,
+  OnShowFileSelectorEvent,
+  Image,
   Row,
   Text,
   Web,
   WebKeyboardCallbackInfo,
   WebKeyboardOptions,
+  CacheMode,
   WebKeyboardAvoidMode
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import image from '@ohos.multimedia.image';
 import web_webview from '@ohos.web.webview';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import { Driver, ON } from '@ohos.UiTest';
 import { FontWeight } from 'arkui.component.enums';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
 import { JsProxyObject } from '../../src/test/Interfaces';
+import image from '@ohos.multimedia.image';
 
 @Entry
 @Component
@@ -47,9 +57,16 @@ struct getLastHitTest {
   @State sm: number = 0
   @State sm2: string = '黑盒'
   @State shouldShowVirtualKeyboard: boolean = false;
+  @State onFaviconReceivedTag: boolean = false;
+  @State onTouchIconUrlReceivedEventTag: boolean = false;
+  @State onTouchIconUrlReceivedPrecomposed: boolean = false;
+  @State Mode: CacheMode = CacheMode.NONE
+  @State FileSelectorMode: Number = 0
+  @State onTouchIconUrlReceivedUrl: string = "";
   @State str: string = "getLastHitTest001";
-  @State avoidMode: WebKeyboardAvoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT;
-
+  @State dataUrl: string = "";
+  @State avoidMode: WebKeyboardAvoidMode | undefined = WebKeyboardAvoidMode.RESIZE_CONTENT;
+  @State icon: image.PixelMap | undefined = undefined;
   aboutToAppear() {
     console.info('Entry aboutToAppear');
     let valueChangeEvent: emitter.InnerEvent = {
@@ -58,10 +75,6 @@ struct getLastHitTest {
     }
     emitter.on(valueChangeEvent, this.valueChangeCallBack)
     console.info('Finish aboutToAppear ' + this.valueChangeCallBack);
-  }
-
-  onPageHide() {
-    emitter.off(10)
   }
 
   private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
@@ -78,18 +91,6 @@ struct getLastHitTest {
       }
     }
   }
-  private jsObj: JsProxyObject = {
-    test: (res: object) => {
-      Utils.emitEvent(String(res), 102);
-    },
-    showString: (str: string) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: object) => {
-      Utils.emitEvent(String(res), 86);
-      return "web222"
-    }
-  } as JsProxyObject
 
   build() {
     Column() {
@@ -99,6 +100,7 @@ struct getLastHitTest {
           switch (this.str) {
             case "getLastHitTest001": {
               try {
+			    this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT;
                 setTimeout(() => {
                   console.log(`this.sm = ${this.sm}, this.sm2 = ${this.sm2}`);
                   Utils.emitEvent(this.sm == 2 && this.sm2 == 'https://www.example.com/', 20250313)
@@ -107,6 +109,38 @@ struct getLastHitTest {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
+            }
+
+            case "onLoadInterceptEventDataTest001": {
+              try {
+			    this.avoidMode = WebKeyboardAvoidMode.RESIZE_CONTENT;
+                this.controller.refresh()
+                setTimeout(() => {
+                  Utils.emitEvent(this.dataUrl, 202503131)
+                }, 2000)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+			
+			case "getLastHitTest002": {
+              try {
+                this.avoidMode = undefined;
+                setTimeout(() => {
+                  console.log(`this.sm = ${this.sm}, this.sm2 = ${this.sm2}`);
+                  Utils.emitEvent(this.sm == 2 && this.sm2 == 'https://www.example.com/', 20250314)
+                }, 1000)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/OnTouchIconUrlReceivedTest' })
+              console.log('push URL success')
             }
           }
         })
@@ -123,6 +157,7 @@ struct getLastHitTest {
       Web({ src: 'resource://rawfile/getLastHitTest.html', controller: this.controller })
         .height("75%")
         .domStorageAccess(true)
+        .zoomAccess(true)
         .keyboardAvoidMode(this.avoidMode)
         .onInterceptKeyboardAttach((event: WebKeyboardCallbackInfo): WebKeyboardOptions => {
           return {
@@ -131,6 +166,8 @@ struct getLastHitTest {
         })
         .onLoadIntercept((event: OnLoadInterceptEvent): boolean => {
           try {
+            this.dataUrl = event.data.getRequestUrl();
+            console.log('url:' + event.data.getRequestUrl());
             let tmp = this.controller.getLastHitTest()
             this.sm = tmp.type;
             this.sm2 = tmp.extra;

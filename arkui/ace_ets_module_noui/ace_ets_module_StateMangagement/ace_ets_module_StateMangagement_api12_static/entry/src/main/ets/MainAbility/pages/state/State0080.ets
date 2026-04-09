@@ -34,7 +34,7 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-class StateClass0080 {
+export class StateClass0080 {
   private _value: string = ''
 
   public set value(value: string) {

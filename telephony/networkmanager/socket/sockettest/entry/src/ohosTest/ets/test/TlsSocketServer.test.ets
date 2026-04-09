@@ -1259,14 +1259,16 @@ export default function TLSSocketServerTest() {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetState0100';
       console.info(`${caseName} test start `);
       await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+        console.info('fail to listen' + err.code.toString());
+      });
       try {
         tlsServer.getState((err: BusinessError, data: socket.SocketStateBase) => {
           if (err) {
             done();
           }
-          expectTrue(data != null);
+          expectTrue(data.isBound != null);
+          expectTrue(data.isClose != null);
+          expectTrue(data.isConnected != null);
           done();
         })
       } catch (errState) {
@@ -1415,7 +1417,9 @@ export default function TLSSocketServerTest() {
         })
         try {
           await tlsServer.getState().then((data: socket.SocketStateBase) => {
-            expectTrue(data !== null);
+            expectTrue(data.isBound != null);
+            expectTrue(data.isClose != null);
+            expectTrue(data.isConnected != null);
             done();
           }).catch((err: BusinessError) => {
             expectFalse(err != null);
@@ -2986,12 +2990,12 @@ export default function TLSSocketServerTest() {
                 key: pri_key_server,
                 password: '123456',
                 cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
+                protocols: [socket.Protocol.TLSv13],
                 useRemoteCipherPrefer: true,
                 signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
                 cipherSuite: "AES256-SHA256"
               },
-              ALPNProtocols: ["spdy/1", "http/1.1"]
+              ALPNProtocols: [""]
             };
             tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
               if (err) {

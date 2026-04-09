@@ -157,7 +157,7 @@ struct cameraFormat {
             Image($r('app.media.ic_public_back'))
               .width('20vp')
               .height('18vp')
-              .margin({ left: '20vp' })
+              .margin({ left: '1vp' })
           }
           .backgroundColor(Color.Black)
           .size({ width: '40vp', height: '30vp' })
@@ -177,8 +177,8 @@ struct cameraFormat {
             .visibility(Visibility.Hidden)
         }
         .backgroundColor(Color.Black)
-        .height('20%')
-        .width('160%')
+        .height('10%')
+        .width('100%')
         .justifyContent(FlexAlign.Center)
       }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
 
@@ -189,6 +189,7 @@ struct cameraFormat {
                 .borderRadius(8)
                 .backgroundColor(0x317aff)
                 .width('50%')
+                .height('10%')
                 .onClick(()=>{
                   this.Vue = false;
                   router.back({
@@ -215,7 +216,7 @@ struct cameraFormat {
                 })
                 .size({ width: '100%', height: '70%' })
               Text('预览').fontSize('20fp').fontColor(Color.White)
-            }.size({ width: '80%' })
+            }.size({ width: '60%' , height: '60%'})
             Column() {
               Row() {
                 Select(this.resolution)
@@ -259,7 +260,7 @@ struct cameraFormat {
                     this.selectClickFn()
                   })
                   .backgroundColor(Color.Black)
-              }.size({ width: '100%', height: '30%' }).justifyContent(FlexAlign.SpaceEvenly)
+              }.size({ width: '100%', height: '40%' }).justifyContent(FlexAlign.SpaceEvenly)
 
               Row() {
                 Select([{ value: 'YUV' }])
@@ -280,15 +281,17 @@ struct cameraFormat {
                   .backgroundColor(0x317aff)
                   .enabled(this.nextEnabled)
                   .opacity(this.nextEnabled ? 1 : 0.4)
-                  .width('20%')
+                  .width('30%')
                   .onClick(async () => {
                     this.nextClickFn()
                   })
-              }.size({ width: '100%', height: '30%' }).justifyContent(FlexAlign.SpaceEvenly)
-            }.size({ width: '100%', height: '20%' })
+              }.size({ width: '100%', height: '40%' }).justifyContent(FlexAlign.SpaceEvenly)
+            }.size({ width: '100%', height: '40%' })
           }
-        }.height('65%').width('100%')
-      }.scrollBarColor(Color.White) // 滚动条颜色
+        }.width('100%')
+      }
+      .height('75%')
+      .scrollBarColor(Color.White) // 滚动条颜色
       .scrollBarWidth(10)
 
       CustomContainer({

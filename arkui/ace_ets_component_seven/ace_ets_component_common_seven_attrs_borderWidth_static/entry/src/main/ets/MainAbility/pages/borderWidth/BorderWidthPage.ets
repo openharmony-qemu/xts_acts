@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,265 +37,258 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, RenderFit, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mBorderWidth: number | string = 10
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-    console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
-    instance.borderWidth(this.mBorderWidth)
-  }
-}
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
@@ -316,238 +309,238 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
     instance.borderWidth(this.mBorderWidth)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mBorderWidth: number | string = 10
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`borderWidth page show ${JSON.stringify(this.mBorderWidth)}`)
@@ -576,7 +569,6 @@ struct borderWidthPage {
   @State _borderWidthFlexMod: FlexModifier = new FlexModifier()
   @State _borderWidthFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _borderWidthFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _borderWidthFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _borderWidthGaugeMod: GaugeModifier = new GaugeModifier()
   @State _borderWidthGridMod: GridModifier = new GridModifier()
   @State _borderWidthGridColMod: GridColModifier = new GridColModifier()
@@ -669,7 +661,6 @@ struct borderWidthPage {
       this._borderWidthFlexMod.mBorderWidth = value.borderWidth
       this._borderWidthFlowItemMod.mBorderWidth = value.borderWidth
       this._borderWidthFormComponentMod.mBorderWidth = value.borderWidth
-      this._borderWidthFormLinkMod.mBorderWidth = value.borderWidth
       this._borderWidthGaugeMod.mBorderWidth = value.borderWidth
       this._borderWidthGridMod.mBorderWidth = value.borderWidth
       this._borderWidthGridColMod.mBorderWidth = value.borderWidth
