@@ -304,7 +304,7 @@ static OH_Huks_Result TestUpdateFinish(const struct OH_Huks_Blob* handle,
 
     // RSA 是块加密算法，必须一次性处理整个数据块，不能分段
     // 对于 RSA 加密/解密，无论数据大小都使用 ProcessSmallDataUpdateFinish
-    if (inData->size <= MAX_UPDATE_SIZE || purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || 
+    if (inData->size <= MAX_UPDATE_SIZE || purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT ||
         purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
         return ProcessSmallDataUpdateFinish(handle, paramSet, purpose, inData, outData);
     }
@@ -463,6 +463,53 @@ static OH_Huks_Result HksRsaCipherTestCase(const struct OH_Huks_Blob* keyAlias,
     return ret;
 }
 
+struct Rsa0100ParamSets {
+    struct OH_Huks_ParamSet* genParamSet;
+    struct OH_Huks_ParamSet* encryptParamSet;
+    struct OH_Huks_ParamSet* decryptParamSet;
+};
+
+static void FreeRsa0100ParamSets(struct Rsa0100ParamSets* paramSets)
+{
+    OH_Huks_FreeParamSet(&paramSets->genParamSet);
+    OH_Huks_FreeParamSet(&paramSets->encryptParamSet);
+    OH_Huks_FreeParamSet(&paramSets->decryptParamSet);
+}
+
+static void CleanupOldRsaKeys(const struct OH_Huks_Blob* keyAlias)
+{
+    char tmpKey[] = "RSA_Encrypt_Decrypt_KeyAlias";
+    struct OH_Huks_Blob oldKeyAlias = { .size = static_cast<uint32_t>(strlen(tmpKey)), .data = (uint8_t*)tmpKey };
+    OH_Huks_DeleteKeyItem(keyAlias, nullptr);
+    OH_Huks_DeleteKeyItem(&oldKeyAlias, nullptr);
+}
+
+static OH_Huks_Result InitRsa0100ParamSets(struct Rsa0100ParamSets* paramSets,
+                                           struct OH_Huks_Param* genParams,
+                                           struct OH_Huks_Param* encryptParams,
+                                           struct OH_Huks_Param* decryptParams)
+{
+    OH_Huks_Result ret = InitParamSet(&paramSets->genParamSet, genParams, 7);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return ret;
+    }
+
+    ret = InitParamSet(&paramSets->encryptParamSet, encryptParams, 7);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_FreeParamSet(&paramSets->genParamSet);
+        return ret;
+    }
+
+    ret = InitParamSet(&paramSets->decryptParamSet, decryptParams, 7);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_FreeParamSet(&paramSets->genParamSet);
+        OH_Huks_FreeParamSet(&paramSets->encryptParamSet);
+        return ret;
+    }
+
+    return ret;
+}
+
 /**
  * @tc.name   SecurityHuksNapiCipherRsa0100
  * @tc.number Security_HUKS_NAPI_Cipher_RSA_0100
@@ -477,11 +524,7 @@ int SecurityHuksNapiCipherRsa0100()
     struct OH_Huks_Blob keyAlias = { static_cast<uint32_t>(strlen(tmpKeyAlias)), (uint8_t*)tmpKeyAlias };
     struct OH_Huks_Blob inData = { static_cast<uint32_t>(IN_DATA_32.length()), (uint8_t*)IN_DATA_32.c_str() };
 
-    // 清理可能存在的旧密钥
-    char tmpKey[] = "RSA_Encrypt_Decrypt_KeyAlias";
-    struct OH_Huks_Blob oldKeyAlias = { .size = static_cast<uint32_t>(strlen(tmpKey)), .data = (uint8_t*)tmpKey };
-    OH_Huks_DeleteKeyItem(&keyAlias, nullptr);
-    OH_Huks_DeleteKeyItem(&oldKeyAlias, nullptr);
+    CleanupOldRsaKeys(&keyAlias);
 
     static struct OH_Huks_Param g_genParams041[] = {
         { .tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_RSA },
@@ -511,32 +554,15 @@ int SecurityHuksNapiCipherRsa0100()
         { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
     };
 
-    struct OH_Huks_ParamSet* genParamSet = nullptr;
-    OH_Huks_Result ret = InitParamSet(&genParamSet, g_genParams041, sizeof(g_genParams041) / sizeof(OH_Huks_Param));
+    struct Rsa0100ParamSets paramSets = { nullptr, nullptr, nullptr };
+    OH_Huks_Result ret = InitRsa0100ParamSets(&paramSets, g_genParams041, g_encryptParams041, g_decryptParams041);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;
     }
 
-    struct OH_Huks_ParamSet* encryptParamSet = nullptr;
-    ret = InitParamSet(&encryptParamSet, g_encryptParams041, sizeof(g_encryptParams041) / sizeof(OH_Huks_Param));
-    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_Huks_FreeParamSet(&genParamSet);
-        return -1;
-    }
-
-    struct OH_Huks_ParamSet* decryptParamSet = nullptr;
-    ret = InitParamSet(&decryptParamSet, g_decryptParams041, sizeof(g_decryptParams041) / sizeof(OH_Huks_Param));
-    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_Huks_FreeParamSet(&genParamSet);
-        OH_Huks_FreeParamSet(&encryptParamSet);
-        return -1;
-    }
-
-    ret = HksRsaCipherTestCase(&keyAlias, genParamSet, encryptParamSet, decryptParamSet, &inData);
-
-    OH_Huks_FreeParamSet(&genParamSet);
-    OH_Huks_FreeParamSet(&encryptParamSet);
-    OH_Huks_FreeParamSet(&decryptParamSet);
+    ret = HksRsaCipherTestCase(&keyAlias, paramSets.genParamSet, paramSets.encryptParamSet,
+                               paramSets.decryptParamSet, &inData);
+    FreeRsa0100ParamSets(&paramSets);
 
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         return -1;

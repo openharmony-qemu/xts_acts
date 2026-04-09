@@ -14,14 +14,14 @@ export default function HuksSignVerifyEd25519Test() {
     })
 
     /**
-     * @tc.name   SecurityHuksNapiSignVerifyEd255190100
-     * @tc.number Security_HUKS_NAPI_SignVerify_ED25519_0100
+     * @tc.name   SUB_SECURITY_HUKS_NAPI_SIGN_VERIFY_ED25519_0100
+     * @tc.number SUB_SECURITY_HUKS_NAPI_SIGN_VERIFY_ED25519_0100
      * @tc.desc   alg-ED25519 pur-Sign.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SecurityHuksNapiSignVerifyEd255190100', Level.LEVEL0, () => {
+    it('SUB_SECURITY_HUKS_NAPI_SIGN_VERIFY_ED25519_0100', Level.LEVEL0, () => {
       const result = libHuks.HuksSignVerifyEd25519Test(0);
       expect(result).assertEqual(0);
     })

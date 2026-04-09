@@ -292,7 +292,6 @@ static OH_Huks_Result ProcessSm2UpdateLoop(const struct OH_Huks_Blob* handle,
     return ret;
 }
 
-// Structure to encapsulate SM2 finish session state
 struct Sm2FinishSessionState {
     uint32_t purpose;
     const struct OH_Huks_Blob* inDataSeg;
@@ -300,78 +299,105 @@ struct Sm2FinishSessionState {
     uint8_t* cur;
 };
 
-// Helper function: Process SM2 finish session
+struct Sm2FinishParams {
+    struct OH_Huks_Blob outDataSeg;
+    const struct OH_Huks_Blob* finishInData;
+    uint8_t tempBuffer[8];
+};
+
+static OH_Huks_Result PrepareVerifyFinishParams(const struct OH_Huks_Blob* handle,
+                                                const struct OH_Huks_ParamSet* paramSet,
+                                                struct Sm2FinishSessionState* state,
+                                                struct Sm2FinishParams* params)
+{
+    struct OH_Huks_Blob tempBlob = { sizeof(params->tempBuffer), params->tempBuffer };
+    OH_Huks_Result ret = OH_Huks_UpdateSession(handle, paramSet, state->inDataSeg, &tempBlob);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return ret;
+    }
+    params->finishInData = state->outData;
+    params->outDataSeg.size = sizeof(params->tempBuffer);
+    params->outDataSeg.data = params->tempBuffer;
+    ret.errorCode = OH_HUKS_SUCCESS;
+    return ret;
+}
+
+static OH_Huks_Result PrepareFinishParams(const struct OH_Huks_Blob* handle,
+                                          const struct OH_Huks_ParamSet* paramSet,
+                                          struct Sm2FinishSessionState* state,
+                                          struct Sm2FinishParams* params)
+{
+    OH_Huks_Result ret;
+    ret.errorCode = OH_HUKS_SUCCESS;
+    params->outDataSeg.size = MAX_OUTDATA_SIZE;
+    params->outDataSeg.data = nullptr;
+
+    if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
+        params->outDataSeg.data = static_cast<uint8_t*>(HksMalloc(params->outDataSeg.size));
+        if (params->outDataSeg.data == nullptr) {
+            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+            return ret;
+        }
+        params->finishInData = state->inDataSeg;
+    } else if (state->purpose == OH_HUKS_KEY_PURPOSE_SIGN) {
+        params->outDataSeg.data = state->outData->data;
+        params->outDataSeg.size = MAX_OUTDATA_SIZE;
+        params->finishInData = state->inDataSeg;
+    } else if (state->purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
+        return PrepareVerifyFinishParams(handle, paramSet, state, params);
+    } else {
+        params->outDataSeg.data = state->cur;
+        params->finishInData = state->inDataSeg;
+    }
+    return ret;
+}
+
+static OH_Huks_Result ProcessFinishResult(struct Sm2FinishSessionState* state,
+                                          const struct OH_Huks_Blob* outDataSeg)
+{
+    OH_Huks_Result ret;
+    ret.errorCode = OH_HUKS_SUCCESS;
+
+    if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
+        if (outDataSeg->size > 0 && state->cur != nullptr) {
+            if (static_cast<size_t>(outDataSeg->size) >
+                static_cast<size_t>(state->outData->size + outDataSeg->size)) {
+                ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+                return ret;
+            }
+            std::copy(outDataSeg->data, outDataSeg->data + outDataSeg->size, state->cur);
+            state->outData->size += outDataSeg->size;
+        }
+    } else if (state->purpose == OH_HUKS_KEY_PURPOSE_SIGN) {
+        state->outData->size = outDataSeg->size;
+    } else if (state->purpose != OH_HUKS_KEY_PURPOSE_VERIFY) {
+        state->outData->size += outDataSeg->size;
+    }
+    return ret;
+}
+
 static OH_Huks_Result ProcessSm2FinishSession(const struct OH_Huks_Blob* handle,
                                               const struct OH_Huks_ParamSet* paramSet,
                                               struct Sm2FinishSessionState* state)
 {
-    OH_Huks_Result ret;
-    ret.errorCode = OH_HUKS_SUCCESS;
-    struct OH_Huks_Blob outDataSeg = { MAX_OUTDATA_SIZE, nullptr };
-    const struct OH_Huks_Blob* finishInData = nullptr;
-
-    if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
-        outDataSeg.data = static_cast<uint8_t*>(HksMalloc(outDataSeg.size));
-        if (outDataSeg.data == nullptr) {
-            ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-            return ret;
-        }
-        finishInData = state->inDataSeg;
-    } else if (state->purpose == OH_HUKS_KEY_PURPOSE_SIGN) {
-        // 签名操作：FinishSession 传入剩余的原始数据，输出签名
-        // 签名数据只在 FinishSession 时生成，所以输出到 outData 的起始位置
-        outDataSeg.data = state->outData->data;
-        outDataSeg.size = MAX_OUTDATA_SIZE;
-        finishInData = state->inDataSeg;
-    } else if (state->purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
-        // 验证操作：先 UpdateSession 处理剩余数据，然后 FinishSession 传入签名数据
-        uint8_t tmp[] = "temp";
-        struct OH_Huks_Blob tempBlob = { sizeof(tmp), tmp };
-        
-        OH_Huks_Result updateRet = OH_Huks_UpdateSession(handle, paramSet, state->inDataSeg, &tempBlob);
-        if (updateRet.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-            ret.errorCode = updateRet.errorCode;
-            return ret;
-        }
-        
-        // FinishSession: 第一个参数传入签名数据，第二个参数是临时输出
-        finishInData = state->outData;
-        outDataSeg.size = sizeof(tmp);
-        outDataSeg.data = tmp;
-    } else {
-        outDataSeg.data = state->cur;
-        finishInData = state->inDataSeg;
+    struct Sm2FinishParams params = { { 0, nullptr }, nullptr, { 0 } };
+    OH_Huks_Result ret = PrepareFinishParams(handle, paramSet, state, &params);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        return ret;
     }
 
-    ret = OH_Huks_FinishSession(handle, paramSet, finishInData, &outDataSeg);
+    ret = OH_Huks_FinishSession(handle, paramSet, params.finishInData, &params.outDataSeg);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
-            HksFree(outDataSeg.data);
+            HksFree(params.outDataSeg.data);
         }
         return ret;
     }
 
+    ret = ProcessFinishResult(state, &params.outDataSeg);
     if (state->purpose == OH_HUKS_KEY_PURPOSE_ENCRYPT || state->purpose == OH_HUKS_KEY_PURPOSE_DECRYPT) {
-        if (outDataSeg.size > 0 && state->cur != nullptr) {
-            if (static_cast<size_t>(outDataSeg.size) > static_cast<size_t>(state->outData->size + outDataSeg.size)) {
-                HksFree(outDataSeg.data);
-                ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
-                return ret;
-            }
-            std::copy(outDataSeg.data, outDataSeg.data + outDataSeg.size, state->cur);
-            state->outData->size += outDataSeg.size;
-        }
-        HksFree(outDataSeg.data);
-    } else if (state->purpose == OH_HUKS_KEY_PURPOSE_SIGN) {
-        // 签名操作：FinishSession 返回的就是完整的签名数据
-        state->outData->size = outDataSeg.size;
-    } else if (state->purpose == OH_HUKS_KEY_PURPOSE_VERIFY) {
-        // 验证操作：outData 大小保持不变（仍然是签名数据的大小）
-        // 不需要修改 outData->size
-    } else {
-        state->outData->size += outDataSeg.size;
+        HksFree(params.outDataSeg.data);
     }
-
     return ret;
 }
 

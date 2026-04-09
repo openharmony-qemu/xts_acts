@@ -14,14 +14,14 @@ export default function HuksSignVerifyDsaTest() {
     })
 
     /**
-     * @tc.name   SecurityHuksNapiSignVerifyDsa0100
-     * @tc.number Security_HUKS_NAPI_SignVerify_DSA_0100
+     * @tc.name   SUB_SECURITY_HUKS_NAPI_SIGN_VERIFY_DSA_0100
+     * @tc.number SUB_SECURITY_HUKS_NAPI_SIGN_VERIFY_DSA_0100
      * @tc.desc   alg-DSA pur-Sign-verify dig-SHA1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SecurityHuksNapiSignVerifyDsa0100', Level.LEVEL0, () => {
+    it('SUB_SECURITY_HUKS_NAPI_SIGN_VERIFY_DSA_0100', Level.LEVEL0, () => {
       const result = libHuks.HuksSignVerifyDsaTest(0);
       expect(result).assertEqual(0);
     })

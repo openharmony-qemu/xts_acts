@@ -493,6 +493,70 @@ int SecurityHuksNapiCipherAes0100()
     return ExecuteAesCipherTestWithCleanup(&keyAlias, &params);
 }
 
+struct Aes0200ParamSets {
+    struct OH_Huks_ParamSet* genParamSet;
+    struct OH_Huks_ParamSet* encryptParamSet;
+    struct OH_Huks_ParamSet* decryptParamSet;
+};
+
+static void FreeAes0200ParamSets(struct Aes0200ParamSets* paramSets)
+{
+    OH_Huks_FreeParamSet(&paramSets->genParamSet);
+    OH_Huks_FreeParamSet(&paramSets->encryptParamSet);
+    OH_Huks_FreeParamSet(&paramSets->decryptParamSet);
+}
+
+static OH_Huks_Result PerformAesEncryption(const struct OH_Huks_Blob* keyAlias,
+                                           struct OH_Huks_ParamSet* encryptParamSet,
+                                           const struct OH_Huks_Blob* inData,
+                                           struct OH_Huks_Blob* cipherText)
+{
+    uint8_t handleE[sizeof(uint64_t)] = { 0 };
+    struct OH_Huks_Blob handleEncrypt = { sizeof(uint64_t), handleE };
+    OH_Huks_Result ret = OH_Huks_InitSession(keyAlias, encryptParamSet, &handleEncrypt, nullptr);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_LOG_INFO(LOG_APP, "[AES_0200] InitSession(encrypt) failed, errorCode=%{public}d", ret.errorCode);
+        return ret;
+    }
+
+    ret = TestUpdateLoopFinish(&handleEncrypt, encryptParamSet, inData, cipherText);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS ||
+        HksMemCmp(inData->data, cipherText->data, inData->size) == (int32_t)OH_HUKS_SUCCESS) {
+        OH_LOG_INFO(LOG_APP, "[AES_0200] Encrypt failed, errorCode=%{public}d", ret.errorCode);
+        return ret;
+    }
+    OH_LOG_INFO(LOG_APP, "[AES_0200] Encrypt success");
+    return ret;
+}
+
+static OH_Huks_Result PerformAesDecryptAndAbort(const struct OH_Huks_Blob* keyAlias,
+                                                struct OH_Huks_ParamSet* decryptParamSet,
+                                                const struct OH_Huks_Blob* cipherText)
+{
+    uint8_t handleD[sizeof(uint64_t)] = { 0 };
+    struct OH_Huks_Blob handleDecrypt = { sizeof(uint64_t), handleD };
+    OH_Huks_Result ret = OH_Huks_InitSession(keyAlias, decryptParamSet, &handleDecrypt, nullptr);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_LOG_INFO(LOG_APP, "[AES_0200] InitSession(decrypt) failed, errorCode=%{public}d", ret.errorCode);
+        return ret;
+    }
+
+    ret = HksTestUpdate(&handleDecrypt, decryptParamSet, cipherText);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_LOG_INFO(LOG_APP, "[AES_0200] Update(decrypt) failed, errorCode=%{public}d", ret.errorCode);
+        return ret;
+    }
+    OH_LOG_INFO(LOG_APP, "[AES_0200] Update success");
+
+    ret = OH_Huks_AbortSession(&handleDecrypt, decryptParamSet);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_LOG_INFO(LOG_APP, "[AES_0200] AbortSession failed, errorCode=%{public}d", ret.errorCode);
+        return ret;
+    }
+    OH_LOG_INFO(LOG_APP, "[AES_0200] AbortSession success");
+    return ret;
+}
+
 /**
  * @tc.name   SecurityHuksNapiCipherAes0200
  * @tc.number Security_HUKS_NAPI_Cipher_AES_0200
@@ -537,102 +601,58 @@ int SecurityHuksNapiCipherAes0200()
         { .tag = OH_HUKS_TAG_AUTH_STORAGE_LEVEL, .uint32Param = OH_HUKS_AUTH_STORAGE_LEVEL_DE }
     };
 
-    struct OH_Huks_ParamSet* genParamSet = nullptr;
-    OH_Huks_Result ret = InitParamSet(&genParamSet, g_genParams019, sizeof(g_genParams019) / sizeof(OH_Huks_Param));
+    struct Aes0200ParamSets paramSets = { nullptr, nullptr, nullptr };
+    OH_Huks_Result ret = InitParamSet(&paramSets.genParamSet, g_genParams019,
+                                      sizeof(g_genParams019) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "[AES_0200] InitParamSet(gen) failed, errorCode=%{public}d", ret.errorCode);
         return -1;
     }
 
-    ret = OH_Huks_GenerateKeyItem(&keyAlias, genParamSet, nullptr);
+    ret = OH_Huks_GenerateKeyItem(&keyAlias, paramSets.genParamSet, nullptr);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "[AES_0200] GenerateKeyItem failed, errorCode=%{public}d", ret.errorCode);
-        OH_Huks_FreeParamSet(&genParamSet);
+        FreeAes0200ParamSets(&paramSets);
         return -1;
     }
     OH_LOG_INFO(LOG_APP, "[AES_0200] GenerateKeyItem success");
 
-    struct OH_Huks_ParamSet* encryptParamSet = nullptr;
-    ret = InitParamSet(&encryptParamSet, g_encryptParams019, sizeof(g_encryptParams019) / sizeof(OH_Huks_Param));
+    ret = InitParamSet(&paramSets.encryptParamSet, g_encryptParams019,
+                       sizeof(g_encryptParams019) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "[AES_0200] InitParamSet(encrypt) failed, errorCode=%{public}d", ret.errorCode);
-        OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
-        OH_Huks_FreeParamSet(&genParamSet);
-        return -1;
-    }
-
-    uint8_t handleE[sizeof(uint64_t)] = { 0 };
-    struct OH_Huks_Blob handleEncrypt = { sizeof(uint64_t), handleE };
-    ret = OH_Huks_InitSession(&keyAlias, encryptParamSet, &handleEncrypt, nullptr);
-    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_LOG_INFO(LOG_APP, "[AES_0200] InitSession(encrypt) failed, errorCode=%{public}d", ret.errorCode);
-        OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
-        OH_Huks_FreeParamSet(&genParamSet);
-        OH_Huks_FreeParamSet(&encryptParamSet);
+        OH_Huks_DeleteKeyItem(&keyAlias, paramSets.genParamSet);
+        FreeAes0200ParamSets(&paramSets);
         return -1;
     }
 
     uint8_t cipher[AES_COMMON_SIZE] = { 0 };
     struct OH_Huks_Blob cipherText = { AES_COMMON_SIZE, cipher };
-    ret = TestUpdateLoopFinish(&handleEncrypt, encryptParamSet, &inData, &cipherText);
-    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS ||
-        HksMemCmp(inData.data, cipherText.data, inData.size) == (int32_t)OH_HUKS_SUCCESS) {
-        OH_LOG_INFO(LOG_APP, "[AES_0200] Encrypt failed, errorCode=%{public}d", ret.errorCode);
-        OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
-        OH_Huks_FreeParamSet(&genParamSet);
-        OH_Huks_FreeParamSet(&encryptParamSet);
+    ret = PerformAesEncryption(&keyAlias, paramSets.encryptParamSet, &inData, &cipherText);
+    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
+        OH_Huks_DeleteKeyItem(&keyAlias, paramSets.genParamSet);
+        FreeAes0200ParamSets(&paramSets);
         return -1;
     }
-    OH_LOG_INFO(LOG_APP, "[AES_0200] Encrypt success");
 
-    struct OH_Huks_ParamSet* decryptParamSet = nullptr;
-    ret = InitParamSet(&decryptParamSet, g_decryptParams019, sizeof(g_decryptParams019) / sizeof(OH_Huks_Param));
+    ret = InitParamSet(&paramSets.decryptParamSet, g_decryptParams019,
+                       sizeof(g_decryptParams019) / sizeof(OH_Huks_Param));
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "[AES_0200] InitParamSet(decrypt) failed, errorCode=%{public}d", ret.errorCode);
-        OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
-        OH_Huks_FreeParamSet(&genParamSet);
-        OH_Huks_FreeParamSet(&encryptParamSet);
+        OH_Huks_DeleteKeyItem(&keyAlias, paramSets.genParamSet);
+        FreeAes0200ParamSets(&paramSets);
         return -1;
     }
 
-    uint8_t handleD[sizeof(uint64_t)] = { 0 };
-    struct OH_Huks_Blob handleDecrypt = { sizeof(uint64_t), handleD };
-    ret = OH_Huks_InitSession(&keyAlias, decryptParamSet, &handleDecrypt, nullptr);
+    ret = PerformAesDecryptAndAbort(&keyAlias, paramSets.decryptParamSet, &cipherText);
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_LOG_INFO(LOG_APP, "[AES_0200] InitSession(decrypt) failed, errorCode=%{public}d", ret.errorCode);
-        OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
-        OH_Huks_FreeParamSet(&genParamSet);
-        OH_Huks_FreeParamSet(&encryptParamSet);
-        OH_Huks_FreeParamSet(&decryptParamSet);
+        OH_Huks_DeleteKeyItem(&keyAlias, paramSets.genParamSet);
+        FreeAes0200ParamSets(&paramSets);
         return -1;
     }
 
-    ret = HksTestUpdate(&handleDecrypt, decryptParamSet, &cipherText);
-    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_LOG_INFO(LOG_APP, "[AES_0200] Update(decrypt) failed, errorCode=%{public}d", ret.errorCode);
-        OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
-        OH_Huks_FreeParamSet(&genParamSet);
-        OH_Huks_FreeParamSet(&encryptParamSet);
-        OH_Huks_FreeParamSet(&decryptParamSet);
-        return -1;
-    }
-    OH_LOG_INFO(LOG_APP, "[AES_0200] Update success");
-
-    ret = OH_Huks_AbortSession(&handleDecrypt, decryptParamSet);
-    if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
-        OH_LOG_INFO(LOG_APP, "[AES_0200] AbortSession failed, errorCode=%{public}d", ret.errorCode);
-        OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
-        OH_Huks_FreeParamSet(&genParamSet);
-        OH_Huks_FreeParamSet(&encryptParamSet);
-        OH_Huks_FreeParamSet(&decryptParamSet);
-        return -1;
-    }
-    OH_LOG_INFO(LOG_APP, "[AES_0200] AbortSession success");
-
-    ret = OH_Huks_DeleteKeyItem(&keyAlias, genParamSet);
-    OH_Huks_FreeParamSet(&genParamSet);
-    OH_Huks_FreeParamSet(&encryptParamSet);
-    OH_Huks_FreeParamSet(&decryptParamSet);
+    ret = OH_Huks_DeleteKeyItem(&keyAlias, paramSets.genParamSet);
+    FreeAes0200ParamSets(&paramSets);
 
     if (ret.errorCode != (int32_t)OH_HUKS_SUCCESS) {
         OH_LOG_INFO(LOG_APP, "[AES_0200] DeleteKeyItem failed, errorCode=%{public}d", ret.errorCode);
