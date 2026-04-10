@@ -20,15 +20,22 @@ import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
 import { UtilsTest } from '../Util.test';
-import { Driver, Point } from '@kit.TestKit';
+import { Driver, Point, Rect, ON } from '@kit.TestKit';
 
 async function dragFromProbeHost(): Promise<void> {
-  let rect = Utils.getComponentRect('commonDragHost');
-  let cx: int = Double.toInt(Math.floor((rect.left + rect.right) / 2));
-  let cy: int = Double.toInt(Math.floor((rect.top + rect.bottom) / 2));
-  let toX: int = Double.toInt(cx + 60);
   const driver = Driver.create();
-  await driver.dragBetween({ x: cx, y: cy } as Point, { x: toX, y: cy } as Point, 3500, 1600);
+  let button = await driver.findComponent(ON.id('commonDragHost'));
+  if (button === undefined || button === null) {
+    throw new Error('commonDragHost not found');
+  }
+  let center = await (button.getBoundsCenter() as Promise<Point>);
+  let bounds = await (button.getBounds() as Promise<Rect>);
+  await driver.dragBetween(
+    { x: Double.toInt(Math.round(center.x)) as int, y: Double.toInt(Math.round(center.y)) as int } as Point,
+    { x: Double.toInt(Math.round(bounds.left)) as int, y: Double.toInt(Math.round(center.y)) as int } as Point,
+    3500,
+    1600
+  );
   await Utils.sleep(500);
 }
 
