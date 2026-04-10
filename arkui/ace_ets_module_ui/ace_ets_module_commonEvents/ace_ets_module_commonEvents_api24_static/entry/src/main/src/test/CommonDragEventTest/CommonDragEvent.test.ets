@@ -28,8 +28,8 @@ async function dragFromProbeHost(): Promise<void> {
   if (host === undefined || host === null) {
     throw new Error('commonDragHost not found');
   }
-  const center = await host.getBoundsCenter();
-  const bounds = await host.getBounds();
+  const center = await host!.getBoundsCenter();
+  const bounds = await host!.getBounds();
   if (center === undefined || center === null) {
     throw new Error('getBoundsCenter nullish');
   }
