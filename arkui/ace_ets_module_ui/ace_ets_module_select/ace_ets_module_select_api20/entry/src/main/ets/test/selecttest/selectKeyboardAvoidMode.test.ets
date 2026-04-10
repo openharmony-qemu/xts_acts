@@ -70,7 +70,7 @@ export default function selectKeyboardAvoidMode() {
       let hideBtn = await driver.findComponent(ON.id('hideBtn'));
       await btn1.click();
       await Utils.sleep(5000);
-      let str = await driver.findComponent(ON.text('ddd'));
+      let str = await driver.findComponent(ON.text('123'));
       expect(str == null ).assertTrue();
       await Utils.sleep(1000);
       await btn1.click();

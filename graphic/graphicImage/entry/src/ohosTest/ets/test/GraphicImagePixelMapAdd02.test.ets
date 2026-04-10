@@ -1694,7 +1694,7 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 0, size: { width: 2, height: 2 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
         expect(pixelMap.isEditable).assertTrue();
 
         const info = pixelMap.getImageInfoSync();
@@ -1731,7 +1731,7 @@ export default function graphicImagePixelMapAdd02() {
         console.info(`${LOG_PREFIX} getImageInfo004: Starting test.`);
         expect(pixelMap.isEditable).assertTrue();
 
-        pixelMap.scale(2.0, 2.0);
+        await pixelMap.scale(2.0, 2.0);
         expect(pixelMap.isEditable).assertTrue();
 
         const info = pixelMap.getImageInfoSync();

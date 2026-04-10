@@ -419,6 +419,14 @@ public:
     Camera_ErrorCode MacroStatusChangeTest(void);
     Camera_ErrorCode IsoInfoChangeTest(void);
     Camera_ErrorCode CameraOcclusionDetectChangeTest(void);
+    Camera_ErrorCode TestRegisterFlashStateChangeCallback(int useCaseCode);
+    Camera_ErrorCode TestUnregisterFlashStateChangeCallback(int useCaseCode);
+    Camera_ErrorCode IsExposureMeteringModeSupported(int useCaseCode);
+    Camera_ErrorCode GetExposureMeteringMode(int useCaseCode);
+    Camera_ErrorCode SetExposureMeteringMode(int useCaseCode);
+    Camera_ErrorCode GetSupportedISORange(int useCaseCode);
+    Camera_ErrorCode getIso(int useCaseCode);
+    Camera_ErrorCode setIso(int useCaseCode);
     // test aid
     Camera_ErrorCode SetSceneMode(int useCaseCode);
     Camera_ErrorCode GetCameraFromCameras(Camera_Device* cameras, Camera_Device** camera,

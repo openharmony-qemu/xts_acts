@@ -62,6 +62,16 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_xComponent_static:ActsAceEtsModuleXComponentStaticTest",
       "ace_ets_module_waterFlow_static:ActsAceEtsModuleWaterFlowStaticTest",
       "ace_ets_module_canvas_static:ActsAceEtsModuleCanvasStaticTest",
+      "ace_ets_module_search_api24_static:ActsAceEtsModuleSearchApi24StaticTest",
+      "ace_ets_module_imageSpan_api24_static:ActsAceEtsModuleImageSpanApi24StaticTest",
+      "ace_ets_module_richEditor_api24_static:ActsAceEtsModuleRichEditorApi24StaticTest",
+      "ace_ets_module_styleString_api24_static:ActsAceEtsModuleStyleStringApi24StaticTest",
+      "ace_ets_module_arkuiObserver_api24_static:ActsAceEtsModuleArkUIObserverApi24StaticTest",
+      "ace_ets_module_common_api24_static:ActsAceEtsModuleCommonApi24StaticTest",
+      "ace_ets_module_textArea_api24_static:ActsAceEtsModuleTextAreaApi24StaticTest",
+      "ace_ets_module_textCommon_api24_static:ActsAceEtsModuleTextCommonApi24StaticTest",
+      "ace_ets_module_textInput_api24_static:ActsAceEtsModuleTextInputApi24StaticTest",
+      "ace_ets_module_text_api24_static:ActsAceEtsModuleTextApi24StaticTest",
     ]
   } else {
     deps = [
@@ -101,6 +111,16 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_select/ace_ets_module_select_api18:ActsAceEtsModuleSelectApi18Test",
       "ace_ets_module_select/ace_ets_module_select_api20:ActsAceEtsModuleSelectApi20Test",
       "ace_ets_module_theme:ActsAceEtsModuleThemeTest",
+      "ace_ets_module_search_api24_static:ActsAceEtsModuleSearchApi24StaticTest",
+      "ace_ets_module_imageSpan_api24_static:ActsAceEtsModuleImageSpanApi24StaticTest",
+      "ace_ets_module_richEditor_api24_static:ActsAceEtsModuleRichEditorApi24StaticTest",
+      "ace_ets_module_styleString_api24_static:ActsAceEtsModuleStyleStringApi24StaticTest",
+      "ace_ets_module_arkuiObserver_api24_static:ActsAceEtsModuleArkUIObserverApi24StaticTest",
+      "ace_ets_module_common_api24_static:ActsAceEtsModuleCommonApi24StaticTest",
+      "ace_ets_module_textArea_api24_static:ActsAceEtsModuleTextAreaApi24StaticTest",
+      "ace_ets_module_textCommon_api24_static:ActsAceEtsModuleTextCommonApi24StaticTest",
+      "ace_ets_module_textInput_api24_static:ActsAceEtsModuleTextInputApi24StaticTest",
+      "ace_ets_module_text_api24_static:ActsAceEtsModuleTextApi24StaticTest",
       "ace_ets_module_uicontext:ActsAceEtsModuleUIContextTest",
       "ace_ets_module_uicontext_widget:ActsAceEtsModuleUiContextWidgetTest",
       "ace_ets_module_video:ActsAceEtsModuleVideoTest",
@@ -109,6 +129,7 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_select/ace_ets_module_select_api12_static:ActsAceEtsModuleSelectApi12StaticTest",
       "ace_ets_module_select/ace_ets_module_select_api18_static:ActsAceEtsModuleSelectApi18StaticTest",
       "ace_ets_module_select/ace_ets_module_select_api20_static:ActsAceEtsModuleSelectApi20StaticTest",
+      "ace_ets_module_swiper:ActsAceEtsModuleSwiperTest",
       "ace_ets_module_modifier_noWear_static:ActsAceEtsModuleModifierNoWearStaticTest",
       "ace_ets_module_dialog_undefined_static:ActsAceEtsModuleDialogUndefinedStaticTest",
       "ace_ets_module_common_undefined_static:ActsAceEtsModuleCommonUndefinedStaticTest",
@@ -126,6 +147,8 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_xComponent_static:ActsAceEtsModuleXComponentStaticTest",
       "ace_ets_module_waterFlow_static:ActsAceEtsModuleWaterFlowStaticTest",
       "ace_ets_module_canvas_static:ActsAceEtsModuleCanvasStaticTest",
+      "ace_ets_module_common_methodstyles_api24_static:ActsAceEtsModuleCommonMethodStylesAPI24StaticTest",
+      "ace_ets_module_stateManagement_api24_static:ActsAceEtsModuleStateManagementApi24StaticTest",
     ]
   }
 }

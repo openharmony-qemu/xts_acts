@@ -71,6 +71,7 @@ import TextMethodsNull2Test from './TextTest/TextMethodsNull2.test';
 import TextAreaEllipsisModeTest from './EllipsisModeTest/TextAreaEllipsisModeTest.test';
 import TextEllipsisModeTest from './EllipsisModeTest/TextInputEllipsisModeTest.test';
 import TextInputEllipsisModeTest from './EllipsisModeTest/TextInputEllipsisModeTest.test';
+import Marquee from './ScrollTest/Marquee.test';
 
 export default function testsuite() {
   TextControllerTest();
@@ -128,5 +129,6 @@ export default function testsuite() {
   TextMethodsNull2Test();
   TextAreaEllipsisModeTest();
   TextEllipsisModeTest();
-  TextInputEllipsisModeTest()
+  TextInputEllipsisModeTest();
+  Marquee();
 }

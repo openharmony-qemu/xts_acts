@@ -1,0 +1,11 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/DragSpringLoading/DragSpringLoadingIndex",
+    "MainAbility/pages/GestureApiProbe/GestureApiProbe",
+    "MainAbility/pages/CommonEventApiProbe/CommonEventApiProbe",
+    "MainAbility/pages/CommonDragEventProbe/CommonDragEventProbe",
+    "MainAbility/pages/CommonKeyEventProbe/CommonKeyEventProbe"
+
+  ]
+}

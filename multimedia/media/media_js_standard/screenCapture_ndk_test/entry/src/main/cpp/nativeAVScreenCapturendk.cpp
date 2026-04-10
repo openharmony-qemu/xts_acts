@@ -171,7 +171,8 @@ void OnCaptureContentChanged(struct OH_AVScreenCapture *capture, OH_AVScreenCapt
 void OnPrivacyProtect(OH_AVScreenCapture* capture, OH_PrivacyProtectInfo* privacyProtect, void *userData)
 {
     (void)capture;
-    (void)privacyProtect;
+    (void)privacyProtect->systemWindowProtection;
+    (void)privacyProtect->sensitiveAppProtection;
     (void)userData;
 }
 // SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0100

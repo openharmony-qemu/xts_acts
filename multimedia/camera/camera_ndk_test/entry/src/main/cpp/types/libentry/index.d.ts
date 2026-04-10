@@ -593,3 +593,19 @@ export const getVideoProfiles: () => Array<videoProfile>;
 export const createVideoOutputByIndex: (surfaceId: string, index: number) => number;
 
 export const createPreviewOutputByIndex: (index: number) => number;
+
+export const oHTestRegisterFlashStateChangeCallback: (index:number) => number;
+
+export const oHTestUnregisterFlashStateChangeCallback: (index:number) => number;
+
+export const oHIsExposureMeteringModeSupported: (index:number) => number;
+
+export const oHGetExposureMeteringMode: (index:number) => number;
+
+export const oHSetExposureMeteringMode: (index:number) => number;
+
+export const oHGetSupportedISORange: (index:number) => number;
+
+export const oHgetIso: (index:number) => number;
+
+export const oHsetIso: (index:number) => number;

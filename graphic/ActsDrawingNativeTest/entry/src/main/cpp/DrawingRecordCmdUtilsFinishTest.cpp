@@ -17,17 +17,13 @@
 #include <random>
 #include "include/OhosCommonTest.h"
 
+#define DRAWING_NUMBER_1 1
+
+
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
 
-namespace {
-// Constants for test values
-constexpr int32_t TEST_RECORD_WIDTH_1 = 1;
-constexpr int32_t TEST_RECORD_HEIGHT_1 = 1;
-} // namespace
-
-// Common SetUp and TearDown functions implementation
 void DrawingRecordCmdUtilsFinishRecordingTestSetUp()
 {
     std::cout << "DrawingRecordCmdUtilsFinishRecordingTest Setup code called before each test case." << std::endl;
@@ -44,7 +40,7 @@ void DrawingRecordCmdUtilsFinishRecordingTestTearDown()
 
 /**
  * @tc.name   testRecordCmdUtilsFinishRecordingNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_02000
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0300
  * @tc.desc   test for testRecordCmdUtilsFinishRecordingNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -53,28 +49,25 @@ void DrawingRecordCmdUtilsFinishRecordingTestTearDown()
 int TestRecordCmdUtilsFinishRecordingNormal()
 {
     DrawingRecordCmdUtilsFinishRecordingTestSetUp();
-
     // 1. None of the OH_Drawing_RecordCmdUtilsFinishRecording parameters are empty
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     // add assert
     EXPECT_NE(canvas, nullptr);
     OH_Drawing_Canvas** canvass = &canvas;
-    OH_Drawing_RecordCmd* recordCmd;
-    OH_Drawing_RecordCmd** recordCmds = &recordCmd;
+    OH_Drawing_RecordCmd *recordCmd;
+    OH_Drawing_RecordCmd **recordCmds = &recordCmd;
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
     OH_Drawing_RecordCmdUtils* recordcmdutil1 = OH_Drawing_RecordCmdUtilsCreate();
-    OH_Drawing_RecordCmdUtilsBeginRecording(recordcmdutil1, TEST_RECORD_WIDTH_1, TEST_RECORD_HEIGHT_1, canvass);
+    OH_Drawing_RecordCmdUtilsBeginRecording(recordcmdutil1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, canvass);
     drawingErrorCode = OH_Drawing_RecordCmdUtilsFinishRecording(recordcmdutil1, recordCmds);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
-
     DrawingRecordCmdUtilsFinishRecordingTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testRecordCmdUtilsFinishRecordingNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_02100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0301
  * @tc.desc   test for testRecordCmdUtilsFinishRecordingNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -83,7 +76,6 @@ int TestRecordCmdUtilsFinishRecordingNormal()
 int TestRecordCmdUtilsFinishRecordingNull()
 {
     DrawingRecordCmdUtilsFinishRecordingTestSetUp();
-
     // 1. OH-Drawing-RecordCmdUtelsFinishRecording, RecordCmd or RecordCmdUtils parameter is empty
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     // add assert
@@ -93,15 +85,13 @@ int TestRecordCmdUtilsFinishRecordingNull()
     OH_Drawing_RecordCmd** recordCmds = &recordCmd;
     OH_Drawing_RecordCmdUtils* recordcmdutil1 = OH_Drawing_RecordCmdUtilsCreate();
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_SUCCESS;
-    OH_Drawing_RecordCmdUtilsBeginRecording(recordcmdutil1, TEST_RECORD_WIDTH_1, TEST_RECORD_HEIGHT_1, canvass);
+    OH_Drawing_RecordCmdUtilsBeginRecording(recordcmdutil1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, canvass);
     drawingErrorCode = OH_Drawing_RecordCmdUtilsFinishRecording(nullptr, recordCmds);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
-    OH_Drawing_RecordCmdUtilsBeginRecording(recordcmdutil1, TEST_RECORD_WIDTH_1, TEST_RECORD_HEIGHT_1, canvass);
+    OH_Drawing_RecordCmdUtilsBeginRecording(recordcmdutil1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, canvass);
     drawingErrorCode = OH_Drawing_RecordCmdUtilsFinishRecording(recordcmdutil1, nullptr);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
-
     DrawingRecordCmdUtilsFinishRecordingTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 

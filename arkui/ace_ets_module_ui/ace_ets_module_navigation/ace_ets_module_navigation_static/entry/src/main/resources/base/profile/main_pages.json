@@ -3,6 +3,8 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/NavDestination/NavDestination",
     "MainAbility/pages/Navigation/Navigation",
-    "MainAbility/pages/SwiperController/SwiperController"
+    "MainAbility/pages/SwiperController/SwiperController",
+    "MainAbility/pages/navigationNavDestination/navigationNavDestination",
+    "MainAbility/pages/toolBarItemDebugLine/toolBarItemDebugLine"
   ]
 }

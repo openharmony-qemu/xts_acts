@@ -69,6 +69,10 @@ export const TestModifyImagePropertyDoubleArray: (fd: number, key: image.Propert
 export const TestModifyImagePropertyBlob: (fd: number, key: image.PropertyKey, value: ArrayBuffer) => number;
 export const TestModifyImagePropertyError: (type: string) => number;
 export const TestCreateImageRawData: (fd: number) => myRawData;
+export const TestCreateImageRawDataSucc: (fd: number) => number;
+export const TestGetBufferFromRawDataSucc: (fd: number) => number;
+export const TestDestroyImageRawDataSucc: (fd: number) => number;
+export const TestDestroyImageRawDataInvalidParam: () => number;
 export const TestCreateImageRawDataNullptr: () => ErrorCode;
 export const TestGetBufferFromRawDataNullptr: () => ErrorCode;
 export const TestGetBitsPerPixelFromRawDataNullptr: () => ErrorCode;

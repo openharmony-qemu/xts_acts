@@ -24,8 +24,15 @@
 #include <native_window/external_window.h>
 #include <native_buffer/native_buffer.h>
 #include <native_buffer/buffer_common.h>
+#include <hilog/log.h>
 #include "include/VideoencApi11Sample.h"
 #include "include/CommonToolTest.h"
+
+#undef LOG_DOMAIN
+#undef LOG_TAG
+#define LOG_DOMAIN 0x0000
+#define LOG_TAG "ActsHevchwEncoderTestTag"
+
 using namespace OHOS;
 using namespace OHOS::Media;
 using namespace std;
@@ -45,8 +52,8 @@ constexpr uint32_t THREE = 3;
 constexpr uint32_t FOUR = 4;
 constexpr uint32_t FIVE = 5;
 constexpr uint32_t SIX = 6;
-OH_NativeImage* cNativeImage = {}; //sptr<Surface> cs = nullptr;
-OH_NativeImage* pNativeImage = {}; //sptr<Surface> ps = nullptr;
+OH_NativeImage* cNativeImage = {};
+OH_NativeImage* pNativeImage = {};
 VEncAPI11Sample* g_encSample = nullptr;
 int32_t g_picWidth;
 int32_t g_picHeight;
@@ -264,15 +271,9 @@ void VEncAPI11Sample::StopInloop()
 
 int32_t VEncAPI11Sample::CreateSurface()
 {
-    int32_t ret = 0;
-    ret = OH_VideoEncoder_GetSurface(venc_, &nativeWindow);
+    int32_t ret = OH_VideoEncoder_GetSurface(venc_, &nativeWindow);
     if (ret != AV_ERR_OK) {
         cout << "OH_VideoEncoder_GetSurface fail" << endl;
-        return ret;
-    }
-    ret = AV_ERR_OK;
-    if (ret != AV_ERR_OK) {
-        cout << "NativeWindowHandleOpt SET_FORMAT fail" << endl;
         return ret;
     }
     ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_BUFFER_GEOMETRY, defaultWidth, defaultHeight);
@@ -334,7 +335,10 @@ int32_t VEncAPI11Sample::StartVideoEncoder()
         (void)OH_VideoEncoder_Stop(venc_);
         return AV_ERR_UNKNOWN;
     }
-    ReadMultiFilesFunc();
+    ret = ReadMultiFilesFunc();
+    if (ret != AV_ERR_OK) {
+        return ret;
+    }
     if (surfInput) {
         inputLoop_ = make_unique<thread>(&VEncAPI11Sample::InputFuncSurface, this);
     } else {
@@ -358,14 +362,18 @@ int32_t VEncAPI11Sample::StartVideoEncoder()
     return AV_ERR_OK;
 }
 
-void VEncAPI11Sample::ReadMultiFilesFunc()
+int32_t VEncAPI11Sample::ReadMultiFilesFunc()
 {
     if (!readMultiFiles) {
+        cout << "Opening input file: " << inpDir << endl;
         inFile_->open(inpDir, ios::in | ios::binary);
         if (!inFile_->is_open()) {
-            OpenFileFail();
+            cout << "Failed to open input file: " << inpDir << endl;
+            return OpenFileFail();
         }
+        cout << "Input file opened successfully" << endl;
     }
+    return AV_ERR_OK;
 }
 
 int32_t VEncAPI11Sample::CreateVideoEncoder(const char *codecName)
@@ -398,22 +406,27 @@ uint32_t VEncAPI11Sample::ReturnZeroIfEOS(uint32_t expectedSize)
 
 uint32_t VEncAPI11Sample::ReadOneFrameYUV420SP(uint8_t *dst)
 {
+    if (!inFile_ || !inFile_->is_open()) {
+        cout << "ReadOneFrameYUV420SP: Input file not open" << endl;
+        return 0;
+    }
+    
     uint8_t *start = dst;
-    // copy Y
+    // copy Y - 使用紧凑布局，不使用stride_
     for (uint32_t i = 0; i < defaultHeight; i++) {
         inFile_->read(reinterpret_cast<char *>(dst), defaultWidth);
         if (!ReturnZeroIfEOS(defaultWidth)) {
             return 0;
         }
-        dst += stride_;
+        dst += defaultWidth;
     }
-    // copy UV
+    // copy UV - 使用紧凑布局，不使用stride_
     for (uint32_t i = 0; i < defaultHeight / sampleRatio; i++) {
         inFile_->read(reinterpret_cast<char *>(dst), defaultWidth);
         if (!ReturnZeroIfEOS(defaultWidth)) {
             return 0;
         }
-        dst += stride_;
+        dst += defaultWidth;
     }
     return dst - start;
 }
@@ -434,6 +447,16 @@ uint32_t VEncAPI11Sample::ReadOneFrameRGBA8888(uint8_t *dst)
 uint32_t VEncAPI11Sample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, OH_NativeBuffer *nativeBuffer)
 {
     int32_t ret = 0;
+    
+    if (nativeBuffer != nullptr) {
+        ret = OH_NativeBuffer_Unmap(nativeBuffer);
+        if (ret != 0) {
+            cout << "OH_NativeBuffer_Unmap failed: ret=" << ret << endl;
+        } else {
+            cout << "OH_NativeBuffer_Unmap success" << endl;
+        }
+    }
+    
     struct Region region;
     struct Region::Rect *rect = new Region::Rect();
     rect->x = 0;
@@ -448,12 +471,6 @@ uint32_t VEncAPI11Sample::FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, 
         tmp = timeList[frameIndex];
     }
     frameIndex++;
-    ret = OH_NativeBuffer_Unmap(nativeBuffer);
-    if (ret != 0) {
-        cout << "OH_NativeBuffer_Unmap failed" << endl;
-        delete rect;
-        return ret;
-    }
     ret = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, ohNativeWindowBuffer, -1, region);
     delete rect;
     if (ret != 0) {
@@ -522,22 +539,43 @@ int32_t VEncAPI11Sample::InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
     if (fenceFd > 0) {
         close(fenceFd);
     }
-    nativeBuffer = nullptr;
-    void *virAddr = nullptr;
-    err = OH_NativeBuffer_Map(nativeBuffer, &virAddr);
-    if (err != 0) {
-        cout << "OH_NativeBuffer_Map failed, GSError=" << err << endl;
+    BufferHandle *bufferHandle = OH_NativeWindow_GetBufferHandleFromNative(ohNativeWindowBuffer);
+    if (bufferHandle == nullptr) {
+        cout << "OH_NativeWindow_GetBufferHandleFromNative failed" << endl;
         isRunning_.store(false);
         return 0;
     }
+    void *virAddr = bufferHandle->virAddr;
+    int32_t stride = bufferHandle->stride;
+    
+    if (virAddr == nullptr) {
+        cout << "virAddr is nullptr, using OH_NativeBuffer_FromNativeWindowBuffer" << endl;
+        
+        int32_t convertRet = OH_NativeBuffer_FromNativeWindowBuffer(ohNativeWindowBuffer, &nativeBuffer);
+        if (convertRet != 0 || nativeBuffer == nullptr) {
+            cout << "OH_NativeBuffer_FromNativeWindowBuffer failed: ret=" << convertRet << endl;
+            isRunning_.store(false);
+            return 0;
+        }
+        
+        cout << "OH_NativeBuffer_FromNativeWindowBuffer success, calling OH_NativeBuffer_Map" << endl;
+        int32_t ret = OH_NativeBuffer_Map(nativeBuffer, &virAddr);
+        if (ret != 0 || virAddr == nullptr) {
+            cout << "OH_NativeBuffer_Map failed: ret=" << ret << endl;
+            isRunning_.store(false);
+            return 0;
+        }
+        
+        cout << "OH_NativeBuffer_Map success: virAddr=" << virAddr << endl;
+    }
+    
     dst = reinterpret_cast<uint8_t *>(virAddr);
-    int32_t stride = defaultWidth;
-    if (dst == nullptr || stride < static_cast<int32_t>(defaultWidth)) {
-        cout << "invalid va or stride=" << stride << endl;
-        err = 0;
+    if (stride < static_cast<int32_t>(defaultWidth)) {
+        cout << "invalid stride=" << stride << endl;
         isRunning_.store(false);
         return 0;
     }
+    
     stride_ = stride;
     return 1;
 }
@@ -906,6 +944,10 @@ void VEncAPI11Sample::StopOutloop()
 
 int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, EncoderConfig &config)
 {
+    auto trim = [](std::string &s) {
+        s.erase(0, s.find_first_not_of(" \t\n\r\f\v"));
+        s.erase(s.find_last_not_of(" \t\n\r\f\v") + 1);
+    };
     std::ifstream file(filePath);
     if (!file.is_open()) {
         return AV_ERR_IO;
@@ -913,42 +955,34 @@ int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, EncoderConfig &
     std::string temp;
     int32_t num = 0;
     while (getline(file, temp)) {
-        if (num == ZERO) {
-            config.inputDir = temp;
-            num++;
-            continue;
+        switch (num) {
+            case ZERO:
+                trim(temp);
+                config.inputDir = temp;
+                break;
+            case ONE:
+                trim(temp);
+                config.outputDir = temp;
+                break;
+            case TWO:
+                config.width = stoi(temp);
+                break;
+            case THREE:
+                config.height = stoi(temp);
+                break;
+            case FOUR:
+                config.bitrateMode = stoi(temp);
+                break;
+            case FIVE:
+                config.bitRate = stoi(temp);
+                break;
+            case SIX:
+                config.surfaceMode = stoi(temp) == 1;
+                break;
+            default:
+                timeList.push_back(stoll(temp));
+                break;
         }
-        if (num == ONE) {
-            config.outputDir = temp;
-            num++;
-            continue;
-        }
-        if (num == TWO) {
-            config.width = stoi(temp);
-            num++;
-            continue;
-        }
-        if (num == THREE) {
-            config.height = stoi(temp);
-            num++;
-            continue;
-        }
-        if (num == FOUR) {
-            config.bitrateMode = stoi(temp);
-            num++;
-            continue;
-        }
-        if (num == FIVE) {
-            config.bitRate = stoi(temp);
-            num++;
-            continue;
-        }
-        if (num == SIX) {
-            config.surfaceMode = stoi(temp) == 1 ? true : false;
-            num++;
-            continue;
-        }
-        timeList.push_back(stoll(temp));
         num++;
     }
     file.close();

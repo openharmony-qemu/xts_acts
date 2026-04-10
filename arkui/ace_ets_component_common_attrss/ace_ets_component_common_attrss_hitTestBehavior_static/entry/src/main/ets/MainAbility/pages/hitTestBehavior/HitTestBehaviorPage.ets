@@ -249,7 +249,7 @@ struct HitTestBehaviorPage {
       Marquee({
         start: true,
         step: 50,
-        loop: Number.MAX_VALUE as Int,
+        loop: Number.MAX_VALUE.valueOf().toInt(),
         fromStart: true,
         src: 'Running Marquee starts rolling'
       }).applyStyles(this.commonStyle)

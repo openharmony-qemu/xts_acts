@@ -31,8 +31,10 @@ import HttpRequestInactivityMsTest from './HttpRequestInactivityMs.test';
 import HttpRequestPatchTest from './HttpRequestPatch.test';
 import HttpRequestSyncTest from './HttpRequestSync.test';
 import HttpRequestReuseConnectionsTest from './HttpRequestReuseConnections.test';
+import HttpInterceptorForSafeCheckTest from './HttpInterceptorForSafeCheck.test';
 
 export default function testsuite() {
+  HttpInterceptorForSafeCheckTest();
   HttpRequestInterceptor();
   HttpRequestMaxAutoRedirectsTest();
   HttpRequestMaxAutoRedirectsWithInterceptorTest();

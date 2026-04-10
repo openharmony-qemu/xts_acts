@@ -704,7 +704,10 @@ static std::vector<TestFunction> GetFunc2TestPart2()
     VideoEncodeRgba10101020170Test,
     VideoEncodeRgba10101020180Test,
     VideoEncodeRgba10101020190Test,
-    VideoEncodeSyncFormat0010Test
+    VideoEncodeSyncFormat0010Test,
+    VideoEncodeAnother0010Test,
+    VideoCapabilityConfig0010Test,
+    VideoCapabilityConfig0020Test
     };
 }
 

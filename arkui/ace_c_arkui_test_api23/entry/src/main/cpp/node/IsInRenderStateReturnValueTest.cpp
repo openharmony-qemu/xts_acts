@@ -49,4 +49,35 @@ static napi_value TestIsInRenderStateReturnValue002(napi_env env, napi_callback_
     NAPI_END;
 }
 
+static napi_value TestMoveToParam001(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Custom, ARKUI_NODE_CUSTOM);
+    ArkUI_NodeHandle column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
+    ArkUI_NodeHandle Text = nodeAPI->createNode(ARKUI_NODE_TEXT);
+    OH_ArkUI_NativeModule_AdoptChild(Custom, Text);
+    auto result1 = OH_ArkUI_NodeUtils_MoveTo(Text, column, 100000000);
+    auto result2 = OH_ArkUI_NodeUtils_MoveTo(Text, column, 100000001);
+    auto result3 = OH_ArkUI_NodeUtils_MoveTo(Text, column, -1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "TestMoveToParam001 1 %{public}d", result1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "TestMoveToParam001 2 %{public}d", result2);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "TestMoveToParam001 3 %{public}d", result3);
+    ASSERT_EQ(result1, ARKUI_ERROR_CODE_NODE_IS_ADOPTED);
+    ASSERT_EQ(result2, ARKUI_ERROR_CODE_NODE_IS_ADOPTED);
+    ASSERT_EQ(result3, ARKUI_ERROR_CODE_NODE_IS_ADOPTED);
+    ArkUI_NodeHandle btn = nodeAPI->createNode(ARKUI_NODE_BUTTON);
+    auto result4 = OH_ArkUI_NodeContent_InsertNode(nullptr, btn, 0);
+    auto result5 = OH_ArkUI_NodeContent_InsertNode(nullptr, btn, 100000000);
+    auto result6 = OH_ArkUI_NodeContent_InsertNode(nullptr, btn, 100000001);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "TestMoveToParam001 4 %{public}d", result4);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "TestMoveToParam001 5 %{public}d", result5);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "TestMoveToParam001 6 %{public}d", result6);
+    ASSERT_EQ(result4, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(result5, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(result6, ARKUI_ERROR_CODE_PARAM_INVALID);
+    auto result7 = OH_ArkUI_NodeUtils_GetNodeHandleByUniqueId(0, nullptr);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "TestMoveToParam001 7 %{public}d", result7);
+    ASSERT_EQ(result7, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
 } // namespace ArkUICapiTest

@@ -17,7 +17,6 @@ import { Entry, Text, Column, Component, Button, ClickEvent } from '@ohos.arkui.
 import { State } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-import { FormLink } from '@ohos.arkui.component';
 import formProvider from '@ohos.app.form.formProvider';
 import formInfo from '@ohos.app.form.formInfo';
 import formError from '@ohos.application.formError';
@@ -91,17 +90,6 @@ struct MyStateSample {
           let aRouter = this.getUIContext().getRouter();
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormInfo'});
-          } catch (err) {
-            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
-          }
-        })
-
-      Button('XtsFormLink.router.push').backgroundColor('#ff35e288')
-        .onClick((event: ClickEvent) => {
-          hilog.info(DOMAIN, TAG, 'onClick XtsFormLink.router.push');
-          let aRouter = this.getUIContext().getRouter();
-          try {
-            aRouter.pushUrl({url: 'testform/pages/XtsFormLink'});
           } catch (err) {
             hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }

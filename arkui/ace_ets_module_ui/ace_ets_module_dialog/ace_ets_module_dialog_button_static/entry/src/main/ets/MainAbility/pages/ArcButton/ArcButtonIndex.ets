@@ -13,28 +13,22 @@
  * limitations under the License.
  */
 
-'use static'
+'use static';
+
 import {
   Entry,
   Text,
   Column,
   Component,
-  Button,
   ClickEvent,
-  ComponentV2,
-  Stack,
-  Circle,
-  Blank,
-  Alignment,
   ResourceColor,
   BlurStyle,
   FontStyle,
   Color,
   TouchEvent,
   ResourceStr,
-  Resource,
   TextAlign,
-  FlexAlign
+  FlexAlign,
 } from '@ohos.arkui.component';
 import {
   ArcButtonOptions,
@@ -42,39 +36,20 @@ import {
   ArcButtonStatus,
   ArcButtonPosition,
   ArcButtonStyleMode,
-  ArcButtonProgressConfig
+  ArcButtonProgressConfig,
 } from '@ohos.arkui.advanced.ArcButton';
-import { State, Local, AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import { LengthMetrics, LengthUnit } from '@ohos.arkui.node';
 import { ColorMetrics, LocalizedMargin, ColorSpace } from '@kit.ArkUI';
-import hilog from '@ohos.hilog';
 
 @Entry
-@ComponentV2
+@Component
 struct ArcButtonIndex {
-  @Builder
-  ArcButtonBuild() {
-    Column(){
-      Text('ArcButtonBuild')
-        .fontSize(28)
-      ArcButton({ options: new ArcButtonOptions
-        ({
-          label: 'ButtonTop',
-          status: ArcButtonStatus.NORMAL,
-          position: ArcButtonPosition.TOP_EDGE,
-          styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,
-          fontSize: new LengthMetrics(15, LengthUnit.FP),
-          shadowEnabled: true
-        })
-      })
-    }
-  }
+  /** 不在字段初始化时 new ArcButtonOptions，减少静态包下 Observed 路径触发 */
+  private allPropertiesOptions!: ArcButtonOptions;
+  private progressArcOptions!: ArcButtonOptions;
 
-  @Local allPropertiesOptions: ArcButtonOptions = new ArcButtonOptions({});
-  @Local progressArcOptions: ArcButtonOptions = new ArcButtonOptions({});
-
-  aboutToAppear() {
-    // Create ArcButtonOptions with all properties
+  aboutToAppear(): void {
     this.allPropertiesOptions = new ArcButtonOptions({
       position: ArcButtonPosition.BOTTOM_EDGE,
       styleMode: ArcButtonStyleMode.CUSTOM,
@@ -93,7 +68,7 @@ struct ArcButtonIndex {
         start: LengthMetrics.vp(24),
         top: LengthMetrics.vp(10),
         end: LengthMetrics.vp(24),
-        bottom: LengthMetrics.vp(16)
+        bottom: LengthMetrics.vp(16),
       } as LocalizedMargin,
       onTouch: (event: TouchEvent) => {
         console.info('ArcButton onTouch event: ' + JSON.stringify(event));
@@ -102,7 +77,7 @@ struct ArcButtonIndex {
       onClick: (event: ClickEvent) => {
         console.info('ArcButton onClick event: ' + JSON.stringify(event));
         AppStorage.setOrCreate('arcButtonOnClickCalled', true);
-      }
+      },
     });
 
     this.progressArcOptions = new ArcButtonOptions({
@@ -110,7 +85,7 @@ struct ArcButtonIndex {
       status: ArcButtonStatus.NORMAL,
       fontSize: new LengthMetrics(15, LengthUnit.FP),
       shadowEnabled: true,
-      progressConfig: new ArcButtonProgressConfig(40, 120, '#FF1F71FF')
+      progressConfig: new ArcButtonProgressConfig(40, 120, '#FF1F71FF'),
     });
   }
 
@@ -120,39 +95,39 @@ struct ArcButtonIndex {
         .fontSize(12)
         .width('100%')
         .textAlign(TextAlign.Center)
-        .layoutWeight(0)
+        .layoutWeight(0);
 
       ArcButton({ options: this.allPropertiesOptions })
         .key('arcButtonAllProperties')
         .id('arcButtonAllProperties')
         .width('100%')
         .layoutWeight(1)
-        .constraintSize({ minHeight: 0, maxHeight: '28%' })
+        .constraintSize({ minHeight: 0, maxHeight: '28%' });
 
       ArcButton({
         options: new ArcButtonOptions({
           label: 'BottomEdge' as ResourceStr,
           position: ArcButtonPosition.BOTTOM_EDGE,
           styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,
-          status: ArcButtonStatus.NORMAL
-        })
+          status: ArcButtonStatus.NORMAL,
+        }),
       })
         .key('arcButtonBottomEdge')
         .id('arcButtonBottomEdge')
         .width('100%')
         .layoutWeight(1)
-        .constraintSize({ minHeight: 0, maxHeight: '28%' })
+        .constraintSize({ minHeight: 0, maxHeight: '28%' });
 
       ArcButton({ options: this.progressArcOptions })
         .key('arcButtonProgressConfig')
         .id('arcButtonProgressConfig')
         .width('100%')
         .layoutWeight(1)
-        .constraintSize({ minHeight: 0, maxHeight: '28%' })
+        .constraintSize({ minHeight: 0, maxHeight: '28%' });
     }
     .width('100%')
     .height('100%')
     .padding({ left: '2%', right: '2%', top: '1%', bottom: '1%' })
-    .justifyContent(FlexAlign.SpaceEvenly)
+    .justifyContent(FlexAlign.SpaceEvenly);
   }
 }

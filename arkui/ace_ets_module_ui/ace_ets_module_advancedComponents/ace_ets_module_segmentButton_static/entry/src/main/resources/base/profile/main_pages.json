@@ -19,7 +19,6 @@
     "MainAbility/pages/segmentButton/SegmentButtonDirection",
     "MainAbility/pages/segmentButton/SegmentBtnItem0010",
     "MainAbility/pages/segmentButton/SegmentButtonIndex",
-    "MainAbility/pages/segmentButton/segmentButtonEnableStateAnimation",
-    "MainAbility/pages/capsuleSegmentButtonV2/CapsuleSegementButtonV2Animation"
+    "MainAbility/pages/segmentButton/segmentButtonEnableStateAnimation"
   ]
 }

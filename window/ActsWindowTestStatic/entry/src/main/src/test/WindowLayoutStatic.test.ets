@@ -52,6 +52,86 @@ export default function WindowLayoutStaticTest() {
             console.info(`brforeAll isFreeWindowMode: ${isFreeWindowMode}`);
         })
 
+        /**
+         * @tc.number   SUB_WINDOW_getWindowStatus_004
+         * @tc.name testGetWindowStatus_allStatus_static_003
+         * @tc.desc   Test the function value of GetWindowStatu
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetWindowStatus_allStatus_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testGetWindowStatus_allStatus_static_003';
+                let driver = Driver.create();
+                if (deviceType === '2in1') {
+                    try {
+                        let windowClass: window.Window = windowStage!.getMainWindowSync()
+                        await Utils.msSleep(1000);
+                        let windowStatus: window.WindowStatusType = windowClass.getWindowStatus()
+                        if(windowStatus !== window.WindowStatusType.FLOATING){
+                            await windowClass.recover();
+                        }
+                        hilog.info(domain, tag, caseName + `windowStatus1: ${windowStatus}`);
+                        expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+                        let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
+                        await Utils.msSleep(1000)
+                        let titlePoint = await title!.getBounds()
+                        driver.drag((titlePoint.left + 300)as int, (titlePoint.top + 45) as int, 0, (titlePoint.top + 45) as int, 2000)
+                        await Utils.msSleep(2000)
+                        windowStatus = windowClass.getWindowStatus()
+                        hilog.info(domain, tag, caseName + `windowStatus2: ${windowStatus}`);
+                        await Utils.msSleep(1000)
+                        expect(windowStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
+                        await windowClass.recover()
+                        hilog.info(domain, tag, caseName + 'Succeeded in recovering the window.');
+                        await Utils.msSleep(1000)
+                        await windowClass.maximize()
+                        hilog.info(domain, tag, caseName + 'Succeeded in maximizing the window.');
+                        await Utils.msSleep(1000)
+                        windowStatus = windowClass.getWindowStatus();
+                        hilog.info(domain, tag, caseName + `windowStatus3: ${windowStatus}`);
+                        await Utils.msSleep(1000)
+                        expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+                        await windowClass.recover()
+                        hilog.info(domain, tag, caseName + 'Succeeded in recovering the window.');
+                        await Utils.msSleep(1000)
+                        windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE)
+                        hilog.info(domain, tag, caseName + 'Succeeded in maximizing the window.');
+                        await Utils.msSleep(1000)
+                        windowStatus = windowClass.getWindowStatus();
+                        hilog.info(domain, tag, caseName + ` windowStatus4: ${windowStatus}`);
+                        await Utils.msSleep(1000)
+                        expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
+                        await windowClass.recover()
+                        hilog.info(domain, tag, caseName + 'Succeeded in recovering the window.');
+                        await windowClass.minimize()
+                        hilog.info(domain, tag, caseName + 'Succeeded in minimizing the window.');
+                        await Utils.msSleep(1000)
+                        windowStatus = windowClass.getWindowStatus();
+                        hilog.info(domain, tag, caseName + `windowStatus5: ${windowStatus}`);
+                        await Utils.msSleep(1000)
+                        expect(windowStatus).assertEqual(window.WindowStatusType.MINIMIZE);
+                        await windowClass.restore()
+                        hilog.info(domain, tag, caseName + 'Succeeded in restoring the window.');
+                        done();
+                    } catch (exception) {
+                        hilog.error(domain, tag, caseName +
+                            `Failed to obtain the window status of window. Cause code: ${exception.code}, message: ${exception.message}`);
+                        if (exception.code === 801) {
+                            expect(exception!.code).assertEqual(801);
+                            done();
+                        } else {
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    }
+                } else {
+                    hilog.info(domain, tag, caseName + `not support`);
+                    done()
+                }
+            })
+
         
         // todo SetFollowParentWindowLayoutEnabled
         /**
@@ -1024,33 +1104,40 @@ export default function WindowLayoutStaticTest() {
 
         // todo minimize
         /**
-         * @tc.number      SUB_WINDOW_minimize_Callback_001
-         * @tc.name        testMinimize_Callback_MainWindow_static_001
+         * @tc.number      SUB_WINDOW_IMMERSIVE_minimize_Callback_0100
+         * @tc.name        testMinimize_Callback_SubWindow_static_001
          * @tc.desc        minimize callback main window test.
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level3
          */
-        it('testMinimize_Callback_MainWindow_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testMinimize_Callback_MainWindow_static_001';
+        it('testMinimize_Callback_SubWindow_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMinimize_Callback_SubWindow_static_001';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
             try {
-                let mainWindow: window.Window = windowStage!.getMainWindowSync();
-                mainWindow.minimize((err: BusinessError<void> | null): void => {
+                let subWin: window.Window = await windowStage!.createSubWindow(caseName);
+                expect(!!subWin).assertTrue();
+                await subWin.setUIContent('pages/index2');
+                await subWin.showWindow();
+                await Utils.msSleep(1000);
+                subWin.minimize(async(err: BusinessError<void> | null): void => {
                     if (err!.code) {
                         err === err as BusinessError;
                         if (err!.code === 801) {
                             hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                            await subWin.destroyWindow();
                             expect(err!.code).assertEqual(801);
                             done();
                         } else {
                             hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+                            await subWin.destroyWindow();
                             expect(false).assertTrue();
                             done();
                         }
                     }
                     hilog.info(domain, tag, msgStr + 'Succeeded in minimizing window.');
+                    await subWin.destroyWindow();
                     done();
                 });
             } catch (exception) {
@@ -1114,30 +1201,37 @@ export default function WindowLayoutStaticTest() {
         })
 
         /**
-         * @tc.number      SUB_WINDOW_minimize_Promise_001
-         * @tc.name        testMinimize_Promise_MainWindow_static_001
+         * @tc.number      SUB_WINDOW_IMMERSIVE_minimize_Promise_0100
+         * @tc.name        testMinimize_Promise_SubWindow_static_001
          * @tc.desc        minimize promise main window test.
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level3
          */
-        it('testMinimize_Promise_MainWindow_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testMinimize_Promise_MainWindow_static_001';
+        it('testMinimize_Promise_SubWindow_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMinimize_Promise_SubWindow_static_001';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
             try {
-                let mainWindow: window.Window = windowStage!.getMainWindowSync();
-                await mainWindow.minimize().then(() => {
+                let subWin: window.Window = await windowStage!.createSubWindow(caseName);
+                expect(!!subWin).assertTrue();
+                await subWin.setUIContent('pages/index2');
+                await subWin.showWindow();
+                await Utils.msSleep(1000);
+                subWin.minimize().then(async() => {
                     hilog.info(domain, tag, msgStr + 'Succeeded in minimizing window.');
+                    await subWin.destroyWindow();
                     done();
-                }).catch((err: Error): PromiseLike<void> | undefined => {
+                }).catch(async(err: Error): PromiseLike<void> | undefined => {
                     err === err as BusinessError;
                     if (err!.code === 801) {
                         hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                        await subWin.destroyWindow();
                         expect(err!.code).assertEqual(801);
                         done();
                     } else {
                         hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+                        await subWin.destroyWindow();
                         expect(false).assertTrue();
                         done();
                     }
@@ -1166,7 +1260,7 @@ export default function WindowLayoutStaticTest() {
                 let subWin: window.Window = await windowStage!.createSubWindow(caseName);
                 expect(!!subWin).assertTrue();
                 await subWin.destroyWindow();
-                await subWin.minimize().then(() => {
+                subWin.minimize().then(() => {
                     hilog.info(domain, tag, msgStr + 'Succeeded unexpectedly.');
                     expect(false).assertTrue();
                     done();
@@ -1215,9 +1309,22 @@ export default function WindowLayoutStaticTest() {
             hilog.info(domain, tag, msgStr + 'begin');
             try {
                 let mainWindow: window.Window = windowStage!.getMainWindowSync();
-                await mainWindow.maximize().then(() => {
+                let windowStatus_before: window.WindowStatusType = mainWindow.getWindowStatus()
+                hilog.info(domain, tag, caseName + `windowStatus_before: ${windowStatus_before}`);
+                mainWindow.maximize().then(async ()=> {
                     hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
-                    done();
+                    await Utils.msSleep(1500)
+                    let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
+                    hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
+                    if(isFreeWindowMode){
+                        expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+                        await mainWindow.recover();
+                        hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
+                        done();
+                    }else{
+                        expect(windowStatus).assertEqual(windowStatus_before);
+                        done()
+                    }
                 }).catch((err: Error): PromiseLike<void> | undefined => {
                     err === err as BusinessError;
                     if (err!.code === 801) {
@@ -1252,9 +1359,22 @@ export default function WindowLayoutStaticTest() {
             hilog.info(domain, tag, msgStr + 'begin');
             try {
                 let mainWindow: window.Window = windowStage!.getMainWindowSync();
-                await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE).then(() => {
+                let windowStatus_before: window.WindowStatusType = mainWindow.getWindowStatus()
+                hilog.info(domain, tag, caseName + `windowStatus_before: ${windowStatus_before}`);
+                mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE).then(async() => {
                     hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
-                    done();
+                     await Utils.msSleep(1500)
+                    let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
+                    hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
+                    if(isFreeWindowMode){
+                        expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+                        await mainWindow.recover();
+                        hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
+                        done();
+                    }else{
+                        expect(windowStatus).assertEqual(windowStatus_before);
+                        done()
+                    }
                 }).catch((err: Error): PromiseLike<void> | undefined => {
                     err === err as BusinessError;
                     if (err!.code === 801) {
@@ -1287,29 +1407,42 @@ export default function WindowLayoutStaticTest() {
             let caseName: string = 'testMaximize_OneParam_WithPresentation_static_003';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
-            try {
-                let mainWindow: window.Window = windowStage!.getMainWindowSync();
-                await mainWindow.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING).then(() => {
-                    hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
+                try {
+                    let mainWindow: window.Window = windowStage!.getMainWindowSync();
+                    let windowStatus_before: window.WindowStatusType = mainWindow.getWindowStatus()
+                    hilog.info(domain, tag, caseName + `windowStatus_before: ${windowStatus_before}`);
+                    mainWindow.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING).then(async() => {
+                        hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
+                         await Utils.msSleep(1500)
+                        let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
+                        hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
+                        if(isFreeWindowMode){
+                            expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
+                            await mainWindow.recover();
+                            hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
+                            done();
+                        }else{
+                            expect(windowStatus).assertEqual(windowStatus_before);
+                            done()
+                        }
+                    }).catch((err: Error): PromiseLike<void> | undefined => {
+                        err === err as BusinessError;
+                        if (err!.code === 801) {
+                            hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                            expect(err!.code).assertEqual(801);
+                            done();
+                        } else {
+                            hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(false).assertTrue();
+                            done();  
+                        }
+                    });
+                } catch (exception) {
+                    exception === exception as BusinessError;
+                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
                     done();
-                }).catch((err: Error): PromiseLike<void> | undefined => {
-                    err === err as BusinessError;
-                    if (err!.code === 801) {
-                        hilog.info(domain, tag, msgStr + 'Capability not supported.');
-                        expect(err!.code).assertEqual(801);
-                        done();
-                    } else {
-                        hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    }
-                });
-            } catch (exception) {
-                exception === exception as BusinessError;
-                hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                expect(false).assertTrue();
-                done();
-            }
+                }
         })
 
 
@@ -1427,9 +1560,22 @@ export default function WindowLayoutStaticTest() {
             hilog.info(domain, tag, msgStr + 'begin');
             try {
                 let mainWindow: window.Window = windowStage!.getMainWindowSync();
-                await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true).then(() => {
+                let windowStatus_before: window.WindowStatusType = mainWindow.getWindowStatus()
+                hilog.info(domain, tag, caseName + `windowStatus_before: ${windowStatus_before}`);
+                mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true).then(async() => {
                     hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
-                    done();
+                    await Utils.msSleep(1500)
+                    let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
+                    hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
+                    if(isFreeWindowMode){
+                        await mainWindow.recover();
+                        hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
+                        expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+                        done();
+                    }else{
+                        expect(windowStatus).assertEqual(windowStatus_before);
+                        done()
+                    }
                 }).catch((err: Error): PromiseLike<void> | undefined => {
                     err === err as BusinessError;
                     if (err!.code === 801) {
@@ -1462,29 +1608,42 @@ export default function WindowLayoutStaticTest() {
             let caseName: string = 'testMaximize_TwoParams_Both_static_002';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
-            try {
-                let mainWindow: window.Window = windowStage!.getMainWindowSync();
-                await mainWindow.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING, false).then(() => {
-                    hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
+                try {
+                    let mainWindow: window.Window = windowStage!.getMainWindowSync();
+                    let windowStatus_before: window.WindowStatusType = mainWindow.getWindowStatus()
+                    hilog.info(domain, tag, caseName + `windowStatus_before: ${windowStatus_before}`);
+                    await mainWindow.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING, false).then(async() => {
+                        hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
+                        await Utils.msSleep(1500)
+                        let windowStatus: window.WindowStatusType = mainWindow.getWindowStatus()
+                        hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
+                        if(isFreeWindowMode){
+                            await mainWindow.recover();
+                            hilog.info(domain, tag, msgStr + 'Succeeded in recover window.');
+                            expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
+                            done();
+                        }else{
+                            expect(windowStatus).assertEqual(windowStatus_before);
+                            done()
+                        }
+                    }).catch((err: Error): PromiseLike<void> | undefined => {
+                        err === err as BusinessError;
+                        if (err!.code === 801) {
+                            hilog.info(domain, tag, msgStr + 'Capability not supported.');
+                            expect(err!.code).assertEqual(801);
+                            done();
+                        } else {
+                            hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    });
+                } catch (exception) {
+                    exception === exception as BusinessError;
+                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
                     done();
-                }).catch((err: Error): PromiseLike<void> | undefined => {
-                    err === err as BusinessError;
-                    if (err!.code === 801) {
-                        hilog.info(domain, tag, msgStr + 'Capability not supported.');
-                        expect(err!.code).assertEqual(801);
-                        done();
-                    } else {
-                        hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    }
-                });
-            } catch (exception) {
-                exception === exception as BusinessError;
-                hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                expect(false).assertTrue();
-                done();
-            }
+                }
         })
 
         /**
@@ -4401,169 +4560,7 @@ export default function WindowLayoutStaticTest() {
             });
         })
 
-        /**
-         * @tc.number   SUB_WINDOW_getWindowStatus_004
-         * @tc.name testGetWindowStatus_allStatus_static_003
-         * @tc.desc   Test the function value of setWindowTitleMoveEnabled
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('testGetWindowStatus_allStatus_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-            async (done: () => void): Promise<void> => {
-                let caseName: string = 'testGetWindowStatus_allStatus_static_003';
-                let driver = Driver.create();
-                if (deviceType === '2in1' || (deviceType === 'tablet' && isFreeWindowMode === true) ||
-                    (deviceType === 'phone' && isFreeWindowMode === true)) {
-                    try {
-                        let windowClass: window.Window = windowStage!.getMainWindowSync()
-                        await Utils.msSleep(1000);
-                        // 获取窗口状态 - 自由窗口
-                        let windowStatus: window.WindowStatusType = windowClass.getWindowStatus()
-                        hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
-                        expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
-                        // 判断是否存在最大化 - false
-                        // let test = await assertMaximizeComponentExist(windowStatus, windowClass);
-                        if (windowStatus==2 || windowStatus==1) {
-                            await driver.mouseMoveTo({ x: 100, y: 0 })
-                        }
-                        let test:boolean = true;
-                        driver.assertComponentExist(ON.id('EnhanceMaximizeBtn')).then(() => {
-                            test = true;
-                        }).catch((err: Error) => {
-                            if (err.code == 17000003) {
-                                test = false;
-                            }
-                        })
-                        await Utils.msSleep(1000)
-                        hilog.info(domain, tag,
-                            caseName + `EnhanceMaximizeBtn existence or not: ${test}, expect false`);
-                        expect(test).assertFalse()
-                        // 模拟用户移动窗口到左边缘，触发分屏
-                        let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
-                        await Utils.msSleep(1000)
-                        let titlePoint = await title!.getBounds()
-                        driver.drag((titlePoint.left + 100)as int, (titlePoint.top + 10) as int, 0, (titlePoint.top + 200) as int, 200)
-                        await Utils.msSleep(1000)
-                        // 获取窗口状态 - 分屏
-                        windowStatus = windowClass.getWindowStatus()
-                        hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
-                        await Utils.msSleep(1000)
-                        expect(windowStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
-                        // 获取窗口状态--全屏
-                        // recover窗口
-                        windowClass.recover().then(() => {
-                            hilog.info(domain, tag, caseName + 'Succeeded in recovering the window.');
-                        }).catch((err: Error) => {
-                            hilog.error(domain, tag, caseName +
-                                `Failed to recover the window. Cause code: ${err.code}, message: ${err.message}`);
-                            if (err.code === 801) {
-                                expect(err!.code).assertEqual(801);
-                                done();
-                            } else {
-                                expect(false).assertTrue();
-                                done();
-                            }
-                        });
-                        await Utils.msSleep(1000)
-                        windowClass.maximize().then(async() => {
-                            hilog.info(domain, tag, caseName + 'Succeeded in maximizing the window.');
-                            windowStatus = windowClass.getWindowStatus();
-                            hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
-                            await Utils.msSleep(1000)
-                            expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
-                        }).catch((err: Error) => {
-                            hilog.error(domain, tag, caseName +
-                                `Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
-                            if (err.code === 801) {
-                                expect(err!.code).assertEqual(801);
-                                done();
-                            } else {
-                                expect(false).assertTrue();
-                                done();
-                            }
-                        });
-                        // 获取窗口状态-- 最大化
-                        windowClass.recover().then(() => {
-                            hilog.info(domain, tag, caseName + 'Succeeded in recovering the window.');
-                        }).catch((err: Error) => {
-                            hilog.error(domain, tag, caseName +
-                                `Failed to recover the window. Cause code: ${err.code}, message: ${err.message}`);
-                            if (err.code === 801) {
-                                expect(err!.code).assertEqual(801);
-                                done();
-                            } else {
-                                expect(false).assertTrue();
-                                done();
-                            }
-                        });
-                        await Utils.msSleep(1000)
-                        windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(async() => {
-                            hilog.info(domain, tag, caseName + 'Succeeded in maximizing the window.');
-                            windowStatus = windowClass.getWindowStatus();
-                            hilog.info(domain, tag, caseName + ` windowStatus: ${windowStatus}`);
-                            await Utils.msSleep(1000)
-                            expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
-                        }).catch((err: Error) => {
-                            hilog.error(domain, tag, caseName +
-                                `Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
-                            if (err.code === 801) {
-                                expect(err!.code).assertEqual(801);
-                                done();
-                            } else {
-                                expect(false).assertTrue();
-                                done();
-                            }
-                        });
-                        // 获取窗口状态 -- 最小化
-                        windowClass.minimize().then(async() => {
-                            hilog.info(domain, tag, caseName + 'Succeeded in minimizing the window.');
-                            windowStatus = windowClass.getWindowStatus();
-                            hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
-                            await Utils.msSleep(1000)
-                            expect(windowStatus).assertEqual(window.WindowStatusType.MINIMIZE);
-                        }).catch((err: Error) => {
-                            hilog.error(domain, tag, caseName +
-                                `Failed to minimize the window. Cause code: ${err.code}, message: ${err.message}`);
-                            if (err.code === 801) {
-                                expect(err!.code).assertEqual(801);
-                                done();
-                            } else {
-                                expect(false).assertTrue();
-                                done();
-                            }
-                        });
-                        // 恢复窗口状态
-                        windowClass.restore().then(() => {
-                            hilog.info(domain, tag, caseName + 'Succeeded in restoring the window.');
-                        }).catch((err: Error) => {
-                            hilog.error(domain, tag, caseName +
-                                `Failed to restore the window. Cause code: ${err.code}, message: ${err.message}`);
-                            if (err.code === 801) {
-                                expect(err!.code).assertEqual(801);
-                                done();
-                            } else {
-                                expect(false).assertTrue();
-                                done();
-                            }
-                        });
-                        done();
-                    } catch (exception) {
-                        hilog.error(domain, tag, caseName +
-                            `Failed to obtain the window status of window. Cause code: ${exception.code}, message: ${exception.message}`);
-                        if (exception.code === 801) {
-                            expect(exception!.code).assertEqual(801);
-                            done();
-                        } else {
-                            expect(false).assertTrue();
-                            done();
-                        }
-                    }
-                } else {
-                    hilog.info(domain, tag, caseName + `not support`);
-                    done()
-                }
-            })
+        
 
         /**
          * @tc.number      SUB_WINDOW_offRectChangeInGlobalDisplay_003
