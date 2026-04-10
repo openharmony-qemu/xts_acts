@@ -579,7 +579,7 @@ std::vector<OH_NativeBuffer_Format> nativeBuffeFormat = {
 napi_value OHNativeBufferAllocFormatDiff(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    int success = 0;
+    int32_t success = 0;
     for (uint32_t index = 0; index < nativeBuffeFormat.size(); index++) {
         OH_NativeBuffer_Config config = {
             .width = 0x100,
