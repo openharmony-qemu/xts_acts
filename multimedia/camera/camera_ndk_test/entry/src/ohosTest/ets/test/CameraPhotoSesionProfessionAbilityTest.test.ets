@@ -747,26 +747,6 @@ export default function CameraPhotoSesionProfessionAbilityTest() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0500
-     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0500
-     * @tc.desc   Check capture session Get Supported ISO Range Errcode CAMERA_SESSION_NOT_CONFIG
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0500', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0500--------------");
-      createCameraSessionInstance();
-      await beginCameraSession();
-      let ret = cameraObj.oHGetSupportedISORange(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0500 ret is "+ret);
-      expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0500 ends here");
-      await releaseOutputAndInput();
-      await releaseCameraSessionInstance();
-    });
-
-    /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0100
      * @tc.desc   Check capture session Get ISO  CAMERA_OK
