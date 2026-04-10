@@ -593,7 +593,6 @@ napi_value OHNativeBufferAllocFormatDiff(napi_env env, napi_callback_info info)
         OH_NativeBuffer *buffer = OH_NativeBuffer_Alloc(&config);
         if (buffer == nullptr) {
             napi_create_int32(env, backInfo, &result);
-            OH_NativeBuffer_Unreference(buffer);
             LOGE("OH_NativeBuffer_Alloc OH_NativeBuffer_Alloc index = %{public}d", index);
             return result;
         }
