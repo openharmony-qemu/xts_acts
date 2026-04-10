@@ -22,17 +22,33 @@ import { waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/
 import { UtilsTest } from '../Util.test';
 import { Driver, Point, Rect, ON } from '@kit.TestKit';
 
+function finiteOrThrow(n: number | undefined | null, label: string): number {
+  if (n === undefined || n === null || Number.isNaN(Number(n))) {
+    throw new Error(`${label} is nullish or NaN`);
+  }
+  return Number(n);
+}
+
 async function dragFromProbeHost(): Promise<void> {
   const driver = Driver.create();
   let button = await driver.findComponent(ON.id('commonDragHost'));
   if (button === undefined || button === null) {
     throw new Error('commonDragHost not found');
   }
-  let center = await (button.getBoundsCenter() as Promise<Point>);
-  let bounds = await (button.getBounds() as Promise<Rect>);
+  let centerRaw: Point | undefined | null = await (button.getBoundsCenter() as Promise<Point>);
+  let boundsRaw: Rect | undefined | null = await (button.getBounds() as Promise<Rect>);
+  if (centerRaw === undefined || centerRaw === null) {
+    throw new Error('getBoundsCenter nullish');
+  }
+  if (boundsRaw === undefined || boundsRaw === null) {
+    throw new Error('getBounds nullish');
+  }
+  let cx: number = finiteOrThrow(centerRaw.x, 'center.x');
+  let cy: number = finiteOrThrow(centerRaw.y, 'center.y');
+  let left: number = finiteOrThrow(boundsRaw.left, 'bounds.left');
   await driver.dragBetween(
-    { x: Double.toInt(Math.round(center.x)) as int, y: Double.toInt(Math.round(center.y)) as int } as Point,
-    { x: Double.toInt(Math.round(bounds.left)) as int, y: Double.toInt(Math.round(center.y)) as int } as Point,
+    { x: Double.toInt(Math.round(cx)) as int, y: Double.toInt(Math.round(cy)) as int } as Point,
+    { x: Double.toInt(Math.round(left)) as int, y: Double.toInt(Math.round(cy)) as int } as Point,
     3500,
     1600
   );
