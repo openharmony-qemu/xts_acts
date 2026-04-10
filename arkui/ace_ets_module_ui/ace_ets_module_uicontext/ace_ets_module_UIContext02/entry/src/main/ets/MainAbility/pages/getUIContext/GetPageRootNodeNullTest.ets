@@ -22,7 +22,5 @@ struct GetPageRootNodeNullIndex {
   }
 
   build() {
-    if (true) {
-    }
   }
 }
