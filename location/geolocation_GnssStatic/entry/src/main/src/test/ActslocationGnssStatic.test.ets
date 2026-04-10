@@ -324,14 +324,14 @@ export default function actslocationTest() {
     });
 
     /**
-     * @tc.number  SUB_Location_onCachedGnssLocationsChange_0100
-     * @tc.name  SUB_Location_onCachedGnssLocationsChange_0100
+     * @tc.number  SUB_Location_onCachedGnssLocationsChange_gnss_0100
+     * @tc.name  SUB_Location_onCachedGnssLocationsChange_gnss_0100
      * @tc.desc  onCachedGnssLocationsChange(request: CachedGnssLocationsRequest, callback: Callback<Array<Location>>): void
      * @tc.level  Level 0
      * @tc.type  Function
      * @tc.size  MEDIUMTEST
     */
-    it('SUB_Location_onCachedGnssLocationsChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Location_onCachedGnssLocationsChange_gnss_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let request: geoLocationManager.CachedGnssLocationsRequest = {
           'reportingPeriodSec': 1000,
           'wakeUpCacheQueueFull': true
@@ -343,7 +343,7 @@ export default function actslocationTest() {
       let callback = (result: Array<geoLocationManager.Location>): void => {
           callbackCalled = true;
           locations = result;
-          console.info('SUB_Location_onCachedGnssLocationsChange_0100: locations=' + JSON.stringify(result));
+          console.info('SUB_Location_onCachedGnssLocationsChange_gnss_0100: locations=' + JSON.stringify(result));
           expect(result instanceof Array).assertTrue();
           
           if (result.length > 0) {
@@ -378,7 +378,7 @@ export default function actslocationTest() {
       try {
           geoLocationManager.onCachedGnssLocationsChange(request, callback);
       } catch (err) {
-          console.error("SUB_Location_onCachedGnssLocationsChange_0100 errCode:" + err.code + ", message:" + err.message);
+          console.error("SUB_Location_onCachedGnssLocationsChange_gnss_0100 errCode:" + err.code + ", message:" + err.message);
           expect(err.code).assertEqual(801);
       }
       
@@ -387,28 +387,28 @@ export default function actslocationTest() {
   })
 
   /**
-   * @tc.number  SUB_Location_onCachedGnssLocationsChange_0200
-   * @tc.name  SUB_Location_onCachedGnssLocationsChange_0200
+   * @tc.number  SUB_Location_onCachedGnssLocationsChange_gnss_0200
+   * @tc.name  SUB_Location_onCachedGnssLocationsChange_gnss_0200
    * @tc.desc  onCachedGnssLocationsChange(request: CachedGnssLocationsRequest, callback: Callback<Array<Location>>): void - Verify parameter error
    * @tc.level  Level 0
    * @tc.type  Function
    * @tc.size  MEDIUMTEST
    */
-  it('SUB_Location_onCachedGnssLocationsChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+  it('SUB_Location_onCachedGnssLocationsChange_gnss_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let request: geoLocationManager.CachedGnssLocationsRequest = {
           'reportingPeriodSec': 0,
           'wakeUpCacheQueueFull': false
       };
       
       let callback = (result: Array<geoLocationManager.Location>): void => {
-          console.info('SUB_Location_onCachedGnssLocationsChange_0200: locations=' + JSON.stringify(result));
+          console.info('SUB_Location_onCachedGnssLocationsChange_gnss_0200: locations=' + JSON.stringify(result));
       };
       
       try {
           geoLocationManager.onCachedGnssLocationsChange(request, callback);
           expect().assertFail();
       } catch (err) {
-          console.error("SUB_Location_onCachedGnssLocationsChange_0200 errCode:" + err.code + ", message:" + err.message);
+          console.error("SUB_Location_onCachedGnssLocationsChange_gnss_0200 errCode:" + err.code + ", message:" + err.message);
           if (err.code === 401) {
               expect(err.code).assertEqual(401);
           } else {
@@ -421,21 +421,21 @@ export default function actslocationTest() {
   })
 
   /**
-   * @tc.number  SUB_Location_offCachedGnssLocationsChange_0100
-   * @tc.name  SUB_Location_offCachedGnssLocationsChange_0100
+   * @tc.number  SUB_Location_offCachedGnssLocationsChange_gnss_0100
+   * @tc.name  SUB_Location_offCachedGnssLocationsChange_gnss_0100
    * @tc.desc  offCachedGnssLocationsChange(callback?: Callback<Array<Location>>): void
    * @tc.level  Level 0
    * @tc.type  Function
    * @tc.size  MEDIUMTEST
    */
-  it('SUB_Location_offCachedGnssLocationsChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+  it('SUB_Location_offCachedGnssLocationsChange_gnss_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
     let request: geoLocationManager.CachedGnssLocationsRequest = {
         'reportingPeriodSec': 1000,
         'wakeUpCacheQueueFull': true
     };
     
     let callback = (result: Array<geoLocationManager.Location>): void => {
-        console.info('SUB_Location_offCachedGnssLocationsChange_0100: locations=' + JSON.stringify(result));
+        console.info('SUB_Location_offCachedGnssLocationsChange_gnss_0100: locations=' + JSON.stringify(result));
         expect(result instanceof Array).assertTrue();
     };
     
@@ -443,7 +443,7 @@ export default function actslocationTest() {
         geoLocationManager.onCachedGnssLocationsChange(request, callback);
         geoLocationManager.offCachedGnssLocationsChange(callback);
     } catch (err) {
-        console.error("SUB_Location_offCachedGnssLocationsChange_0100 errCode:" + err.code + ", message:" + err.message);
+        console.error("SUB_Location_offCachedGnssLocationsChange_gnss_0100 errCode:" + err.code + ", message:" + err.message);
         expect(err.code).assertEqual(801);
     }
     
@@ -562,30 +562,30 @@ export default function actslocationTest() {
   });
 
   /**
-   * @tc.number  SUB_Location_onCachedGnssLocationsChange_0300
-   * @tc.name  SUB_Location_onCachedGnssLocationsChange_0300
+   * @tc.number  SUB_Location_onCachedGnssLocationsChange_gnss_0300
+   * @tc.name  SUB_Location_onCachedGnssLocationsChange_gnss_0300
    * @tc.desc  onCachedGnssLocationsChange(request: CachedGnssLocationsRequest, callback: Callback<Array<Location>>): void
    * @tc.level  Level 0
    * @tc.type  Function
    * @tc.size  MEDIUMTEST
    */
-  it('SUB_Location_onCachedGnssLocationsChange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+  it('SUB_Location_onCachedGnssLocationsChange_gnss_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       geoLocationManager.disableLocation()
-      console.info('SUB_Location_onCachedGnssLocationsChange_0300: disableLocation');
+      console.info('SUB_Location_onCachedGnssLocationsChange_gnss_0300: disableLocation');
       let request: geoLocationManager.CachedGnssLocationsRequest = {
           'reportingPeriodSec': 1000,
           'wakeUpCacheQueueFull': true
       };
       
       let callback = (result: Array<geoLocationManager.Location>): void => {
-          console.info('SUB_Location_onCachedGnssLocationsChange_0300: locations=' + JSON.stringify(result));
+          console.info('SUB_Location_onCachedGnssLocationsChange_gnss_0300: locations=' + JSON.stringify(result));
       };
       
       try {
           geoLocationManager.onCachedGnssLocationsChange(request, callback);
           expect().assertFail();
       } catch (err) {
-          console.error("SUB_Location_onCachedGnssLocationsChange_0300 errCode:" + err.code + ", message:" + err.message);
+          console.error("SUB_Location_onCachedGnssLocationsChange_gnss_0300 errCode:" + err.code + ", message:" + err.message);
           if (err.code === 3301100) {
               expect(err.code).assertEqual(3301100);
           } else {
@@ -597,20 +597,20 @@ export default function actslocationTest() {
   })
 
   /**
-   * @tc.number  SUB_Location_offCachedGnssLocationsChange_0200
-   * @tc.name  SUB_Location_offCachedGnssLocationsChange_0200
+   * @tc.number  SUB_Location_offCachedGnssLocationsChange_gnss_0200
+   * @tc.name  SUB_Location_offCachedGnssLocationsChange_gnss_0200
    * @tc.desc  offCachedGnssLocationsChange(callback?: Callback<Array<Location>>): void
    * @tc.level  Level 0
    * @tc.type  Function
    * @tc.size  MEDIUMTEST
    */
-  it('SUB_Location_offCachedGnssLocationsChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+  it('SUB_Location_offCachedGnssLocationsChange_gnss_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
     let request: geoLocationManager.CachedGnssLocationsRequest = {
       'reportingPeriodSec': 1000,
       'wakeUpCacheQueueFull': true
     };
       let callback = (result: Array<geoLocationManager.Location>): void => {
-          console.info('SUB_Location_offCachedGnssLocationsChange_0200: locations=' + JSON.stringify(result));
+          console.info('SUB_Location_offCachedGnssLocationsChange_gnss_0200: locations=' + JSON.stringify(result));
       };
       
       try {
@@ -618,7 +618,7 @@ export default function actslocationTest() {
           geoLocationManager.offCachedGnssLocationsChange(callback);
           expect().assertFail();
       } catch (err) {
-          console.error("SUB_Location_offCachedGnssLocationsChange_0200 errCode:" + err.code + ", message:" + err.message);
+          console.error("SUB_Location_offCachedGnssLocationsChange_gnss_0200 errCode:" + err.code + ", message:" + err.message);
           if (err.code === 3301100) {
               expect(err.code).assertEqual(3301100);
           } else {
