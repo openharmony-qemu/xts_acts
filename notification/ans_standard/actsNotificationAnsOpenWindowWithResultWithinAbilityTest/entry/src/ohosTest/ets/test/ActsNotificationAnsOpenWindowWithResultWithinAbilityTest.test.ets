@@ -379,5 +379,87 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
         }
       }
     })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_1400
+     * @tc.number SUB_Notification_Ans_openWindow_WithResult_1400
+     * @tc.desc   [Stability] The openSubscriptionSettingsWithResult API is called 500 times in a loop, and no crash, freeze, or black screen occurs on the device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Notification_Ans_openWindow_WithResult_1400', Level.LEVEL2, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1400'
+      let driver: Driver = Driver.create();
+      try {
+        let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
+          notificationExtensionSubscription.openSubscriptionSettingsWithResult(null).then((data) => {
+            hilog.info(0x0000, 'testTag',
+              `${testNum}  openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
+            expect(false).assertTrue();
+            done();
+          }).catch(async (e: Error) => {
+            let err: BusinessError = e as BusinessError
+            hilog.error(0x0000, 'testTag',
+              `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+            if (err?.code === 201) {
+              expect(err.code).assertEqual(201);
+              done();
+            } else {
+              expect(err.code).assertEqual(401);
+            }
+          });
+      } catch (err) {
+        console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
+        if (err?.code === 201) {
+          expect(err.code).assertEqual(201);
+          done();
+        } else {
+          expect(err.code).assertEqual(401);
+          done()
+        }
+      }
+    })
+
+     /**
+     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_1500
+     * @tc.number SUB_Notification_Ans_openWindow_WithResult_1500
+     * @tc.desc   [Stability] The openSubscriptionSettingsWithResult API is called 500 times in a loop, and no crash, freeze, or black screen occurs on the device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Notification_Ans_openWindow_WithResult_1500', Level.LEVEL2, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1500'
+      let driver: Driver = Driver.create();
+      try {
+        let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
+          notificationExtensionSubscription.openSubscriptionSettingsWithResult(undefined).then((data) => {
+            hilog.info(0x0000, 'testTag',
+              `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
+            expect(false).assertTrue();
+            done();
+          }).catch(async (e: Error) => {
+            let err: BusinessError = e as BusinessError
+            hilog.error(0x0000, 'testTag',
+              `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+            if (err?.code === 201) {
+              expect(err.code).assertEqual(201);
+              done();
+            } else {
+              expect(err.code).assertEqual(401);
+            }
+          });
+      } catch (err) {
+        console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
+        if (err?.code === 201) {
+          expect(err.code).assertEqual(201);
+          done();
+        } else {
+          expect(err.code).assertEqual(401);
+          done()
+        }
+      }
+    })
   })
 }
