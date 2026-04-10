@@ -1,5 +1,20 @@
-'use static';
 /**
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+'use static';
+/*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,14 +37,18 @@ import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
+import common from "@ohos.app.ability.common";
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onCreate');
+    AppStorage.setOrCreate<Want>('abilityWant', want);
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
+    AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage);
+    AppStorage.setOrCreate<common.UIAbilityContext>('stageContext', this.context);
     try {
       windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
@@ -51,11 +70,10 @@ class EntryAbility extends UIAbility {
             let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
             let wRect: window.Rect | undefined = properties?.windowRect;
             AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
-            AppStorage.setOrCreate<number>('winTop as Int', wRect?.top ?? 0);
-            hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop as Int:' + wRect?.top);
+            AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
+            hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
           } catch (exception) {
-            hilog.error(0x0000, 'testTag',
-              'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+            hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
           }
           // Obtain a UIContext instance.
           if (windowClass !== null) {
@@ -69,9 +87,8 @@ class EntryAbility extends UIAbility {
     }
   }
 
-  onDestroy(): Promise<void>|undefined {
+  onDestroy(): Promise<void> {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
-    return undefined
   }
 
   onWindowStageDestroy() {
