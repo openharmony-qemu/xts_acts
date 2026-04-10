@@ -119,10 +119,10 @@ export default function WindowImmersiveStaticTest() {
         hilog.info(domain, tag, msgStr + 'begin');
         try {
           let systemBarProperties: window.SystemBarProperties = {
-            statusBarColor: '0xff00ff',
-            navigationBarColor: '0x00ff00',
-            statusBarContentColor: '0xffffff',
-            navigationBarContentColor: '0x00ffff',
+            statusBarColor: '#ff00ff',
+            navigationBarColor: '#00ff00',
+            statusBarContentColor: '#ffffff',
+            navigationBarContentColor: '#00ffff',
             enableStatusBarAnimation: true,
             enableNavigationBarAnimation: true
           };
@@ -131,12 +131,12 @@ export default function WindowImmersiveStaticTest() {
             done();
             let systemBarProperty = win!.getWindowSystemBarProperties();
             hilog.info(domain, tag, msgStr + `Succeeded in getting system bar properties is:${JSON.stringify(systemBarProperty)}`);
-            expect(systemBarProperty.statusBarColor == '0xff00ff').assertTrue();
+            expect(systemBarProperty.statusBarColor == '#FFFF00FF').assertTrue();
             expect(systemBarProperty.isStatusBarLightIcon == false).assertTrue();
-            expect(systemBarProperty.statusBarContentColor =='0xffffff').assertTrue();
-            expect(systemBarProperty.navigationBarColor =='0x00ff00').assertTrue();
+            expect(systemBarProperty.statusBarContentColor =='#FFFFFFFF').assertTrue();
+            expect(systemBarProperty.navigationBarColor =='#FF00FF00').assertTrue();
             expect(systemBarProperty.isNavigationBarLightIcon == false).assertTrue();
-            expect(systemBarProperty.navigationBarContentColor =='0x00ffff').assertTrue();
+            expect(systemBarProperty.navigationBarContentColor =='#FF00FFFF').assertTrue();
             expect(systemBarProperty.enableStatusBarAnimation == true).assertTrue();
             expect(systemBarProperty.enableNavigationBarAnimation == true).assertTrue();
           }).catch((err: Error): PromiseLike<void> | undefined => {
