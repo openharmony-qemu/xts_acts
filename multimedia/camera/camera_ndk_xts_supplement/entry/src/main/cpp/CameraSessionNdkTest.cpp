@@ -701,7 +701,8 @@ napi_value OHCameraInputOpenConcurrentCamerasErr(napi_env env, napi_callback_inf
     return retValue;
 }
 
-napi_value TestCreateDeferredPreviewOutputSucc(napi_env env, napi_callback_info info) {
+napi_value TestCreateDeferredPreviewOutputSucc(napi_env env, napi_callback_info info)
+{
     uint32_t cameraCount = 0;
     Camera_Device *cameras = nullptr;
     napi_value result = nullptr;
@@ -728,7 +729,8 @@ napi_value TestCreateDeferredPreviewOutputSucc(napi_env env, napi_callback_info 
     return result;
 }
 
-napi_value TestCreateDeferredPreviewOutputWithNullArgs(napi_env env, napi_callback_info info) {
+napi_value TestCreateDeferredPreviewOutputWithNullArgs(napi_env env, napi_callback_info info)
+{
     uint32_t cameraCount = 0;
     Camera_Device *cameras = nullptr;
     napi_value result = nullptr;
@@ -757,7 +759,8 @@ napi_value TestCreateDeferredPreviewOutputWithNullArgs(napi_env env, napi_callba
     return result;
 }
 
-napi_value TestCreateDeferredPreviewOutputWithInvalidProfile(napi_env env, napi_callback_info info) {
+napi_value TestCreateDeferredPreviewOutputWithInvalidProfile(napi_env env, napi_callback_info info)
+{
     uint32_t cameraCount = 0;
     Camera_Device *cameras = nullptr;
     napi_value result = nullptr;
@@ -785,7 +788,8 @@ napi_value TestCreateDeferredPreviewOutputWithInvalidProfile(napi_env env, napi_
     return result;
 }
 
-napi_value TestIsTorchLevelControlSupportedErr(napi_env env, napi_callback_info info) {
+napi_value TestIsTorchLevelControlSupportedErr(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     bool isSupported = false;
     Camera_ErrorCode ret = OH_CameraManager_IsTorchLevelControlSupported(nullptr, &isSupported);
@@ -798,7 +802,8 @@ napi_value TestIsTorchLevelControlSupportedErr(napi_env env, napi_callback_info 
     return result;
 }
 
-napi_value TestIsTorchLevelControlSupportedSucc(napi_env env, napi_callback_info info) {
+napi_value TestIsTorchLevelControlSupportedSucc(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     bool isSupported = false;
     
@@ -815,10 +820,13 @@ napi_value TestIsTorchLevelControlSupportedSucc(napi_env env, napi_callback_info
     return result;
 }
 
-napi_value TestSetTorchModeOnWithLevelErr(napi_env env, napi_callback_info info) {
+napi_value TestSetTorchModeOnWithLevelErr(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
-    
-    Camera_ErrorCode ret = OH_CameraManager_SetTorchModeOnWithLevel(nullptr, 1.0);
+    const double NORMAL_TORCH_LEVEL = 1.0;
+    const double NEGATIVE_TORCH_LEVEL = -1.0;
+    const double OVER_RANGE_TORCH_LEVEL = 1.1;
+    Camera_ErrorCode ret = OH_CameraManager_SetTorchModeOnWithLevel(nullptr, NORMAL_TORCH_LEVEL);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         napi_create_int32(env, ret, &result);
         return result;
@@ -831,13 +839,13 @@ napi_value TestSetTorchModeOnWithLevelErr(napi_env env, napi_callback_info info)
         return result;
     }
     
-    ret = OH_CameraManager_SetTorchModeOnWithLevel(cameraManager, -1.0);
+    ret = OH_CameraManager_SetTorchModeOnWithLevel(cameraManager, NEGATIVE_TORCH_LEVEL);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         napi_create_int32(env, ret, &result);
         return result;
     }
 
-    ret = OH_CameraManager_SetTorchModeOnWithLevel(cameraManager, 1.1);
+    ret = OH_CameraManager_SetTorchModeOnWithLevel(cameraManager, OVER_RANGE_TORCH_LEVEL);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         napi_create_int32(env, ret, &result);
         return result;
