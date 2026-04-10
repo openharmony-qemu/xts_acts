@@ -15,7 +15,7 @@ class TestDuplex extends stream.Duplex {
     callback();
   }
 
-  doRead(size: number):void {
+  doRead(size: number): void {
     this.push('Test data');
     this.push(null);
   }
@@ -76,28 +76,35 @@ class CustomDuplex extends stream.Duplex {
     this._buffer = [];
   }
 }
+
 let writeChunk: string | Uint8Array = new Uint8Array(0);
 let writeEncoding: string = '';
+
 class TestDuplex1 extends stream.Duplex {
   doRead(_size: number): void {
     this.push(null);
   }
+
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
     writeChunk = chunk;
     writeEncoding = encoding;
     callback();
   }
 }
+
 interface ChunkItem {
   chunk: string | Uint8Array;
   encoding: string;
 }
+
 const chunkList: Array<ChunkItem> = [];
 let callbackCount = 0;
+
 class TestDuplex2 extends stream.Duplex {
   _read(): void {
     this.push(null);
   }
+
   _write(
     chunk: string | Uint8Array,
     encoding: string,
@@ -107,31 +114,39 @@ class TestDuplex2 extends stream.Duplex {
     callback();
   }
 }
+
 class TestDuplex3 extends stream.Duplex {
   doRead(_size: number): void {
     this.push(null);
   }
+
   doWrite(chunk: string | Uint8Array, _encoding: string, callback: Function): void {
     (typeof chunk === 'string' && chunk === '') || (chunk instanceof Uint8Array && chunk.length === 0);
     callback();
   }
 }
+
 class TestDuplex4 extends stream.Duplex {
   doRead(size: number): void {
     this.push(null);
   }
+
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
   }
 }
+
 interface ChunkOrderItem {
   type: 'string' | 'binary';
   data: string | Uint8Array;
 }
+
 const chunkOrder: Array<ChunkOrderItem> = [];
+
 class TestDuplex5 extends stream.Duplex {
   doRead(size: number): void {
     this.push(null);
   }
+
   doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
     chunkOrder.push({
       type: typeof chunk === 'string' ? 'string' : 'binary',
@@ -140,27 +155,33 @@ class TestDuplex5 extends stream.Duplex {
     callback();
   }
 }
+
 class TestDuplex6 extends stream.Duplex {
   doRead(_size: number): void {
     this.push(null);
   }
+
   doWrite(chunk: string | Uint8Array, encoding: string, callback: (err?: Error) => void): void {
     callback(new Error('callback is not callable'));
   }
 }
+
 class CorkedDuplex extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: () => void) {
     this.push(chunk);
     callback();
   }
+
   final(callback: () => void) {
     callback();
   }
 }
+
 class CorkedDuplex1 extends stream.Duplex {
   _read(): void {
     this.push(null);
   }
+
   _write(
     chunk: string | Uint8Array,
     encoding: string,
@@ -169,6 +190,7 @@ class CorkedDuplex1 extends stream.Duplex {
     callback();
   }
 }
+
 class CorkedDuplex2 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: () => void) {
     if (encoding === 'utf-16le' && chunk === 'ValidString') {
@@ -181,68 +203,87 @@ class CorkedDuplex2 extends stream.Duplex {
     callback();
   }
 }
+
 class CorkedDuplex3 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: () => void) {
     this.push(chunk);
   }
 }
+
 class InvalidDuplex4 extends stream.Duplex {
   _write(chunk: string | Uint8Array, encoding: string, callback: (error?: Error) => void) {
     this.push(chunk);
     callback();
   }
+
   _read(size: number): void {
     this.push(null);
   }
+
   final(callback: () => void) {
     callback();
   }
 }
+
 class CorkedDuplex4 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: () => void) {
-    if (chunk === '12345') {}
+    if (chunk === '12345') {
+    }
     this.push(chunk);
   }
 }
+
 let writeCount = 0;
+
 class CustomDuplex1 extends stream.Duplex {
   doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error) => void) {
     writeCount++;
   }
 }
+
 class InnerTestDuplex extends stream.Duplex {
   constructor() {
     super();
   }
+
   doWrite(chunk: string | Uint8Array, encoding: string, callback: () => void) {
     callback();
   }
+
   doRead(size: number) {
     this.push(null);
   }
 }
+
 class InnerTestDuplex1 extends stream.Duplex {
   constructor() {
     super();
   }
+
   doWrite(chunk: string | Uint8Array, encoding: string, callback: () => void) {
     callback();
   }
+
   doRead(size: number) {
     this.push(null);
   }
+
   setDefaultEncoding(encoding: string): boolean {
     return true;
   }
 }
+
 class InnerTestDuplex2 extends stream.Duplex {
   private defaultEncoding: string = '';
+
   constructor() {
     super();
   }
+
   _read(size: number): void {
     this.push(null);
   }
+
   _write(
     chunk: string | Uint8Array,
     encoding: string,
@@ -250,6 +291,7 @@ class InnerTestDuplex2 extends stream.Duplex {
   ): void {
     callback();
   }
+
   setDefaultEncoding(encoding: string): boolean {
     if (encoding === 'unsupported_encoding') {
       throw new Error('Parameter error');
@@ -257,45 +299,56 @@ class InnerTestDuplex2 extends stream.Duplex {
     this.defaultEncoding = encoding;
     return true;
   }
+
   getDefaultEncoding(): string {
     return this.defaultEncoding;
   }
 }
+
 class InnerTestDuplex3 extends stream.Duplex {
   constructor() {
     super();
   }
+
   doWrite(chunk: string | Uint8Array, encoding: string, callback: () => void) {
     callback();
   }
+
   doRead(size: number) {
     this.push(null);
   }
 }
+
 class TestDuplex7 extends stream.Duplex {
   constructor() {
     super();
   }
+
   _write(chunk: string | Uint8Array, encoding: string, callback: () => void) {
     if (!chunk) {
       throw new Error('INVALID_CHUNK: Chunk cannot be empty');
     }
     callback();
   }
+
   _read(size: number) {
     this.push(null);
   }
 }
+
 class TestDuplex8 extends stream.Duplex {
   constructor() {
     super();
   }
+
   _write(chunk: string | Uint8Array, encoding: string, callback: () => void) {
     callback();
   }
+
   _read() {
     this.push(null);
   }
+
   uncork(): boolean {
     if (this.writableCorked === 0) {
       throw new Error('OVER_UNCORK: Uncork called without active cork');
@@ -303,16 +356,20 @@ class TestDuplex8 extends stream.Duplex {
     return super.uncork();
   }
 }
+
 class TestDuplex9 extends stream.Duplex {
   constructor() {
     super();
   }
+
   _write(chunk: string | Uint8Array, encoding: string, callback: () => void) {
     callback();
   }
+
   _read() {
     this.push(null);
   }
+
   uncork(): boolean {
     if (this.writableEnded) {
       throw new Error('UNCORK_ON_ENDED_STREAM: Uncork called on ended stream');
@@ -320,6 +377,7 @@ class TestDuplex9 extends stream.Duplex {
     return super.uncork();
   }
 }
+
 class TestDuplex10 extends stream.Duplex {
   constructor() {
     super();
@@ -340,11 +398,14 @@ class TestDuplex10 extends stream.Duplex {
     return super.uncork();
   }
 }
+
 class TestDuplex11 extends stream.Duplex {
   public writeCount: number = 0;
+
   constructor() {
     super();
   }
+
   doWrite(chunk: string | Uint8Array, encoding: string, callback: (err?: Error) => void) {
     if (chunk.toString().includes('Invalid')) {
       callback(new Error('INVALID_DATA: Invalid chunk content'));
@@ -353,6 +414,7 @@ class TestDuplex11 extends stream.Duplex {
     this.writeCount++;
     callback();
   }
+
   doRead(size: number) {
     this.push(null);
   }
@@ -394,21 +456,20 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexWriteUint8ArrayUtf80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexWriteUint8ArrayUtf80002';
-        console.log(TAG + ' start');
-        const duplex = new TestDuplex1();
-        const testData = new Uint8Array([0x41, 0x42, 0x43]);
-        const testEncoding = 'utf8';
-        expect(duplex.writable).assertTrue();
-        expect(duplex.readable).assertTrue();
-          const writeResult = duplex.write(testData, testEncoding, () => {});
-          expect(writeResult).assertTrue();
-          const chunkMatch = (writeChunk as Uint8Array).join(',') === testData.join(',');
-          expect(chunkMatch).assertTrue();
-          expect(writeEncoding === testEncoding).assertTrue();
-          expect(duplex.writable).assertTrue();
-
+      const duplex = new TestDuplex1();
+      const testData = new Uint8Array([0x41, 0x42, 0x43]);
+      const testEncoding = 'utf8';
+      expect(duplex.writable).assertTrue();
+      expect(duplex.readable).assertTrue();
+      const writeResult = duplex.write(testData, testEncoding, () => {
       });
+      expect(writeResult).assertTrue();
+      const chunkMatch = (writeChunk as Uint8Array).join(',') === testData.join(',');
+      expect(chunkMatch).assertTrue();
+      expect(writeEncoding === testEncoding).assertTrue();
+      expect(duplex.writable).assertTrue();
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0200
@@ -419,45 +480,35 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexWriteMultiChunk0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexWriteMultiChunk0003';
-        console.log(TAG + ' start');
-        const duplex = new TestDuplex2();
-        const testChunk1 = 'Chunk1';
-        const testEnc1 = 'utf8';
-        const testChunk2 = new Uint8Array([0x31, 0x32]);
-        const testEnc2 = 'utf8';
-        try {
-          expect(duplex.writable).assertTrue();
-          expect(duplex.readable).assertTrue();
-          const writeResult1 = duplex.write(testChunk1, testEnc1, () => {
-            callbackCount++;
-          });
-          const writeResult2 = duplex.write(testChunk2, testEnc2, () => {
-            callbackCount++;
-          });
-          expect(writeResult1).assertTrue();
-          expect(writeResult2).assertTrue();
-          const chunk1Match = chunkList.some(item => item.chunk === testChunk1 && item.encoding === testEnc1);
-          const chunk2Match = chunkList.some(item =>
-          (item.chunk as Uint8Array).join(',') === testChunk2.join(',') && item.encoding === testEnc2
-          );
-          expect(chunk1Match).assertTrue();
-          expect(chunk2Match).assertTrue();
-          expect(callbackCount === 2).assertTrue();
-          expect(duplex.writable).assertTrue();
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_write method not implemented') ||
-            errMsg.includes('chunk match failed') ||
-            errMsg.includes('write operation failed')
-          ).assertEqual(false);
-        }
-
-      });
+      const duplex = new TestDuplex2();
+      const testChunk1 = 'Chunk1';
+      const testEnc1 = 'utf8';
+      const testChunk2 = new Uint8Array([0x31, 0x32]);
+      const testEnc2 = 'utf8';
+      try {
+        expect(duplex.writable).assertEqual(true);
+        expect(duplex.readable).assertEqual(true);
+        const writeResult1 = duplex.write(testChunk1, testEnc1, () => {
+          callbackCount++;
+        });
+        const writeResult2 = duplex.write(testChunk2, testEnc2, () => {
+          callbackCount++;
+        });
+        expect(writeResult1).assertEqual(true);
+        expect(writeResult2).assertEqual(true);
+        const chunk1Match = chunkList.some(item => item.chunk === testChunk1 && item.encoding === testEnc1);
+        const chunk2Match = chunkList.some(item =>
+        (item.chunk as Uint8Array).join(',') === testChunk2.join(',') && item.encoding === testEnc2
+        );
+        expect(chunk1Match).assertEqual(true);
+        expect(chunk2Match).assertEqual(true);
+        expect(callbackCount === 2).assertEqual(true);
+        expect(duplex.writable).assertEqual(true);
+        expect().assertFail()
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0300
@@ -468,17 +519,15 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexWriteEmptyChunk0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexWriteEmptyChunk0004';
-        console.log(TAG + ' start');
-        const duplex = new TestDuplex3();
-        expect(duplex.writable).assertTrue();
-        expect(duplex.readable).assertTrue();
-          const writeResult = duplex.write(new Uint8Array(0), 'utf8', () => {
-          });
-          expect(writeResult).assertTrue();
-          expect(duplex.writable).assertTrue();
-
+      const duplex = new TestDuplex3();
+      expect(duplex.writable).assertTrue();
+      expect(duplex.readable).assertTrue();
+      const writeResult = duplex.write(new Uint8Array(0), 'utf8', () => {
       });
+      expect(writeResult).assertTrue();
+      expect(duplex.writable).assertTrue();
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0400
@@ -489,15 +538,13 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexWriteUnsupportedEncoding0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexWriteUnsupportedEncoding0005';
-        console.log(TAG + ' start');
-        const duplex = new TestDuplex4();
-        const testEncoding = 'gb18030';
-        expect(typeof duplex.doRead).assertEqual('function');
-        expect(typeof duplex.doWrite).assertEqual('function');
-        expect(testEncoding).assertEqual('gb18030');
+      const duplex = new TestDuplex4();
+      const testEncoding = 'gb18030';
+      expect(typeof duplex.doRead).assertEqual('function');
+      expect(typeof duplex.doWrite).assertEqual('function');
+      expect(testEncoding).assertEqual('gb18030');
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0500
@@ -508,34 +555,32 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexWriteMixedData0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexWriteMixedData0006';
-        console.log(TAG + ' start');
-        let callbackCount = 0;
-        const duplex = new TestDuplex5();
-        const testString = 'MixedString';
-        const testBinary = new Uint8Array([0x4d, 0x49, 0x58]);
-        expect(duplex.writable).assertTrue();
-        expect(duplex.readable).assertTrue();
-          const writeResult1 = duplex.write(testString, 'utf8', () => {
-            callbackCount++;
-          });
-          const writeResult2 = duplex.write(testBinary, 'utf8', () => {
-            callbackCount++;
-          });
-          const writeResult3 = duplex.write(testString, 'utf8', () => {
-            callbackCount++;
-          });
-          expect(writeResult1).assertTrue();
-          expect(writeResult2).assertTrue();
-          expect(writeResult3).assertTrue();
-          const orderMatch = chunkOrder[0].type === 'string' && chunkOrder[0].data === testString
-            && chunkOrder[1].type === 'binary' && (chunkOrder[1].data as Uint8Array).join(',') === testBinary.join(',')
-            && chunkOrder[2].type === 'string' && chunkOrder[2].data === testString;
-          expect(orderMatch).assertTrue();
-          expect(callbackCount === 3).assertTrue();
-          expect(duplex.writable).assertTrue();
-
+      let callbackCount = 0;
+      const duplex = new TestDuplex5();
+      const testString = 'MixedString';
+      const testBinary = new Uint8Array([0x4d, 0x49, 0x58]);
+      expect(duplex.writable).assertTrue();
+      expect(duplex.readable).assertTrue();
+      const writeResult1 = duplex.write(testString, 'utf8', () => {
+        callbackCount++;
       });
+      const writeResult2 = duplex.write(testBinary, 'utf8', () => {
+        callbackCount++;
+      });
+      const writeResult3 = duplex.write(testString, 'utf8', () => {
+        callbackCount++;
+      });
+      expect(writeResult1).assertTrue();
+      expect(writeResult2).assertTrue();
+      expect(writeResult3).assertTrue();
+      const orderMatch = chunkOrder[0].type === 'string' && chunkOrder[0].data === testString
+        && chunkOrder[1].type === 'binary' && (chunkOrder[1].data as Uint8Array).join(',') === testBinary.join(',')
+        && chunkOrder[2].type === 'string' && chunkOrder[2].data === testString;
+      expect(orderMatch).assertTrue();
+      expect(callbackCount === 3).assertTrue();
+      expect(duplex.writable).assertTrue();
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0600
@@ -546,22 +591,20 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexWriteCallbackError0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexWriteCallbackError0007';
-        console.log(TAG + ' start');
-        const duplex = new TestDuplex6();
-        let callbackErr: Error | undefined;
-        const writeResult = duplex.write('test', 'utf8', (err?: Error) => {
-          callbackErr = err;
-        });
-        expect(duplex instanceof TestDuplex).assertFalse();
-        expect(duplex instanceof stream.Duplex).assertTrue();
-        expect(typeof duplex.doWrite).assertEqual('function');
-        expect(typeof writeResult).assertEqual('boolean');
-        expect(writeResult).assertEqual(false);
-        expect(callbackErr?.message).assertEqual('callback is not callable');
-
-
+      const duplex = new TestDuplex6();
+      let callbackErr: Error | undefined;
+      const writeResult = duplex.write('test', 'utf8', (err?: Error) => {
+        callbackErr = err;
       });
+      expect(duplex instanceof TestDuplex).assertFalse();
+      expect(duplex instanceof stream.Duplex).assertTrue();
+      expect(typeof duplex.doWrite).assertEqual('function');
+      expect(typeof writeResult).assertEqual('boolean');
+      expect(writeResult).assertEqual(false);
+      expect(callbackErr?.message).assertEqual('callback is not callable');
+
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0700
@@ -572,17 +615,15 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexEnd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexEnd0001';
-        console.log(TAG + ' start');
-          const duplex = new CorkedDuplex();
-          duplex.cork();
-          duplex.write('Hello');
-          duplex.end(null, 'utf8', () => {
-          });
-          expect(duplex.writableEnded).assertEqual(true);
-          expect(duplex.writableCorked).assertEqual(0);
-
+      const duplex = new CorkedDuplex();
+      duplex.cork();
+      duplex.write('Hello');
+      duplex.end(null, 'utf8', () => {
       });
+      expect(duplex.writableEnded).assertEqual(true);
+      expect(duplex.writableCorked).assertEqual(0);
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0800
@@ -593,16 +634,15 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexEnd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexEnd0002';
-        console.log(TAG + ' start');
-        const duplex = new CorkedDuplex1();
-        duplex.on('finish', () => {
-          expect(duplex.writableFinished).assertTrue();
-        });
-        expect(typeof duplex.end).assertEqual('function');  ``
-
-
+      const duplex = new CorkedDuplex1();
+      duplex.on('finish', () => {
+        expect(duplex.writableFinished).assertTrue();
       });
+      expect(typeof duplex.end).assertEqual('function');
+      ``
+
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0900
@@ -613,13 +653,11 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexEnd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexEnd0003';
-        console.log(TAG + ' start');
-          const duplex = new CorkedDuplex2();
-          duplex.end('ValidString', 'utf-16le');
-          expect(duplex.readableEnded).assertEqual(false);
+      const duplex = new CorkedDuplex2();
+      duplex.end('ValidString', 'utf-16le');
+      expect(duplex.readableEnded).assertEqual(false);
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1000
@@ -630,14 +668,13 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexEnd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexEnd0004';
-        console.log(TAG + ' start');
-          const binaryDuplex = new CorkedDuplex3();
-          binaryDuplex.write(new Uint8Array([0x01, 0x02]));
-          binaryDuplex.end(null, 'utf8', () => {});
-          expect(binaryDuplex.writableEnded).assertEqual(true);
-
+      const binaryDuplex = new CorkedDuplex3();
+      binaryDuplex.write(new Uint8Array([0x01, 0x02]));
+      binaryDuplex.end(null, 'utf8', () => {
       });
+      expect(binaryDuplex.writableEnded).assertEqual(true);
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1100
@@ -648,14 +685,12 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('DuplexWriteTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DuplexWriteTest0005';
-        console.log(TAG + ' start');
-        const invalidDuplex = new InvalidDuplex4();
-        expect(typeof invalidDuplex._write).assertEqual('function');
-        expect(typeof invalidDuplex._read).assertEqual('function');
-        expect(typeof invalidDuplex.final).assertEqual('function');
+      const invalidDuplex = new InvalidDuplex4();
+      expect(typeof invalidDuplex._write).assertEqual('function');
+      expect(typeof invalidDuplex._read).assertEqual('function');
+      expect(typeof invalidDuplex.final).assertEqual('function');
 
-      });
+    });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1200
      * @tc.name      testDuplexEnd0006
@@ -665,14 +700,12 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexEnd0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexEnd0006';
-        console.log(TAG + ' start');
-          const duplex = new CorkedDuplex4();
-          const invalidChunk = 12345;
-          duplex.end(invalidChunk.toString(), 'utf8');
-          expect(duplex.readableEnded).assertEqual(false);
+      const duplex = new CorkedDuplex4();
+      const invalidChunk = 12345;
+      duplex.end(invalidChunk.toString(), 'utf8');
+      expect(duplex.readableEnded).assertEqual(false);
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1300
@@ -683,19 +716,15 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexEnd0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexEnd0007';
-        console.log(TAG + ' start');
-        try {
-          const testData = new Uint8Array([123]);
-          const duplex = new stream.Duplex();
-          duplex.end(testData, 'utf8');
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-        }
-
-      });
+      try {
+        const testData = new Uint8Array([123]);
+        const duplex = new stream.Duplex();
+        duplex.end(testData, 'utf8');
+        expect().assertFail()
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1400
@@ -706,14 +735,12 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexEnd0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexEnd0008';
-        console.log(TAG + ' start');
-          const asyncDuplex = new CustomDuplex1();
-          asyncDuplex.end();
-          expect(writeCount).assertEqual(0);
-          expect(asyncDuplex.writableEnded).assertTrue();
+      const asyncDuplex = new CustomDuplex1();
+      asyncDuplex.end();
+      expect(writeCount).assertEqual(0);
+      expect(asyncDuplex.writableEnded).assertTrue();
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1500
@@ -724,15 +751,13 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexEnd0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexEnd0009';
-        console.log(TAG + ' start');
-          const errorDuplex = new stream.Duplex();
-          errorDuplex.on('error', () => {
-          });
-          errorDuplex.end();
-          expect(errorDuplex.writableEnded).assertTrue();
-
+      const errorDuplex = new stream.Duplex();
+      errorDuplex.on('error', () => {
       });
+      errorDuplex.end();
+      expect(errorDuplex.writableEnded).assertTrue();
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1600
@@ -743,16 +768,14 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexSetDefaultEncoding0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexSetDefaultEncoding0001';
-        console.log(TAG + ' start');
-        const duplexGBK = new TestDuplex();
-        const resultGBK = duplexGBK.setDefaultEncoding('gbk');
-        const duplexGB18030 = new TestDuplex();
-        const resultGB18030 = duplexGB18030.setDefaultEncoding('gb18030');
-        expect(resultGBK).assertTrue();
-        expect(resultGB18030).assertTrue();
+      const duplexGBK = new TestDuplex();
+      const resultGBK = duplexGBK.setDefaultEncoding('gbk');
+      const duplexGB18030 = new TestDuplex();
+      const resultGB18030 = duplexGB18030.setDefaultEncoding('gb18030');
+      expect(resultGBK).assertTrue();
+      expect(resultGB18030).assertTrue();
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1700
@@ -763,14 +786,13 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexSetDefaultEncoding0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexSetDefaultEncoding0002';
-        console.log(TAG + ' start');
-        const duplexInvalid = new TestDuplex();
-        const invalidResult = duplexInvalid.setDefaultEncoding('gbk');
-        duplexInvalid.on('error', () => {});
-        expect(invalidResult).assertEqual(true);
-
+      const duplexInvalid = new TestDuplex();
+      const invalidResult = duplexInvalid.setDefaultEncoding('gbk');
+      duplexInvalid.on('error', () => {
       });
+      expect(invalidResult).assertEqual(true);
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1800
@@ -781,18 +803,17 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexSetDefaultEncoding0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexSetDefaultEncoding0003';
-        console.log(TAG + ' start');
-        const duplexCork = new TestDuplex();
-        const setResult = duplexCork.setDefaultEncoding('utf8');
-        duplexCork.cork();
-        duplexCork.write('cork data', 'utf8');
-        duplexCork.uncork();
-        duplexCork.on('drain', () => {});
-        expect(setResult).assertTrue();
-        expect(duplexCork.writableCorked).assertEqual(0);
-
+      const duplexCork = new TestDuplex();
+      const setResult = duplexCork.setDefaultEncoding('utf8');
+      duplexCork.cork();
+      duplexCork.write('cork data', 'utf8');
+      duplexCork.uncork();
+      duplexCork.on('drain', () => {
       });
+      expect(setResult).assertTrue();
+      expect(duplexCork.writableCorked).assertEqual(0);
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1900
@@ -803,23 +824,21 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexSetDefaultEncoding0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexSetDefaultEncoding0004';
-        console.log(TAG + ' start');
-        const duplexDynamic = new TestDuplex();
-        const firstSetResult = duplexDynamic.setDefaultEncoding('utf8');
-        duplexDynamic.write('Initial data', 'utf8');
-        const switchResult = duplexDynamic.setDefaultEncoding('gbk');
-        duplexDynamic.write('Subsequent data', 'gbk');
-        expect(firstSetResult).assertTrue();
-        expect(switchResult).assertTrue();
-        expect(duplexDynamic instanceof TestDuplex).assertTrue();
-        expect(duplexDynamic instanceof stream.Duplex).assertTrue();
-        expect(duplexDynamic.writable).assertTrue();
-        expect(duplexDynamic.readable).assertTrue();
-        expect(typeof duplexDynamic.setDefaultEncoding).assertEqual('function');
-        expect(typeof duplexDynamic.write).assertEqual('function');
+      const duplexDynamic = new TestDuplex();
+      const firstSetResult = duplexDynamic.setDefaultEncoding('utf8');
+      duplexDynamic.write('Initial data', 'utf8');
+      const switchResult = duplexDynamic.setDefaultEncoding('gbk');
+      duplexDynamic.write('Subsequent data', 'gbk');
+      expect(firstSetResult).assertTrue();
+      expect(switchResult).assertTrue();
+      expect(duplexDynamic instanceof TestDuplex).assertTrue();
+      expect(duplexDynamic instanceof stream.Duplex).assertTrue();
+      expect(duplexDynamic.writable).assertTrue();
+      expect(duplexDynamic.readable).assertTrue();
+      expect(typeof duplexDynamic.setDefaultEncoding).assertEqual('function');
+      expect(typeof duplexDynamic.write).assertEqual('function');
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2000
@@ -830,20 +849,18 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexSetDefaultEncoding0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexSetDefaultEncoding0005';
-        console.log(TAG + ' start');
-        const duplexStream = new InnerTestDuplex();
-        const writeResult = duplexStream.write('Test data');
-        expect(writeResult).assertEqual(true);
-        expect(duplexStream instanceof InnerTestDuplex).assertTrue();
-        expect(duplexStream instanceof stream.Duplex).assertTrue();
-        expect(typeof duplexStream.doWrite).assertEqual('function');
-        expect(typeof duplexStream.doRead).assertEqual('function');
-        expect(duplexStream.writable).assertTrue();
-        expect(duplexStream.readable).assertTrue();
-        expect(typeof duplexStream.write).assertEqual('function');
+      const duplexStream = new InnerTestDuplex();
+      const writeResult = duplexStream.write('Test data');
+      expect(writeResult).assertEqual(true);
+      expect(duplexStream instanceof InnerTestDuplex).assertTrue();
+      expect(duplexStream instanceof stream.Duplex).assertTrue();
+      expect(typeof duplexStream.doWrite).assertEqual('function');
+      expect(typeof duplexStream.doRead).assertEqual('function');
+      expect(duplexStream.writable).assertTrue();
+      expect(duplexStream.readable).assertTrue();
+      expect(typeof duplexStream.write).assertEqual('function');
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2100
@@ -854,17 +871,15 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexSetDefaultEncoding0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexSetDefaultEncoding0006';
-        console.log(TAG + ' start');
-        const duplexStream = new InnerTestDuplex1();
-        duplexStream.cork();
-        const setResult = duplexStream.setDefaultEncoding('gbk');
-        duplexStream.write('GBK data');
-        duplexStream.uncork();
-        expect(setResult).assertTrue();
-        expect(duplexStream.writableCorked).assertEqual(0);
+      const duplexStream = new InnerTestDuplex1();
+      duplexStream.cork();
+      const setResult = duplexStream.setDefaultEncoding('gbk');
+      duplexStream.write('GBK data');
+      duplexStream.uncork();
+      expect(setResult).assertTrue();
+      expect(duplexStream.writableCorked).assertEqual(0);
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2200
@@ -875,21 +890,19 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexSetDefaultEncoding0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexSetDefaultEncoding0007';
-        console.log(TAG + ' start');
-        const duplexStream = new InnerTestDuplex2();
-        try {
-          const setResult = duplexStream.setDefaultEncoding('unsupported_encoding');
-          expect(setResult).assertEqual(true);
-          expect(duplexStream.getDefaultEncoding()).assertEqual('unsupported_encoding');
-          expect().assertFail();
-        } catch (err) {
-          expect(err instanceof Error).assertEqual(true);
-          expect(err.code).assertEqual(undefined);
-          expect(typeof duplexStream.setDefaultEncoding).assertEqual('function');
-        }
+      const duplexStream = new InnerTestDuplex2();
+      try {
+        const setResult = duplexStream.setDefaultEncoding('unsupported_encoding');
+        expect(setResult).assertEqual(true);
+        expect(duplexStream.getDefaultEncoding()).assertEqual('unsupported_encoding');
+        expect().assertFail();
+      } catch (err) {
+        expect(err instanceof Error).assertEqual(true);
+        expect(err.code).assertEqual(undefined);
+        expect(typeof duplexStream.setDefaultEncoding).assertEqual('function');
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2300
@@ -900,13 +913,12 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexSetDefaultEncoding0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexSetDefaultEncoding0008';
-        console.log(TAG + ' start');
-        const duplexStream = new InnerTestDuplex3();
-        duplexStream.on('error', () => {});
-        expect(duplexStream.writable).assertTrue();
-
+      const duplexStream = new InnerTestDuplex3();
+      duplexStream.on('error', () => {
       });
+      expect(duplexStream.writable).assertTrue();
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2400
@@ -917,13 +929,11 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexSetDefaultEncoding0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexSetDefaultEncoding0009';
-        console.log(TAG + ' start');
-        const duplex = new CustomDuplex();
-        expect(duplex).not().assertNull();
-        expect(duplex.writable).assertTrue();
+      const duplex = new CustomDuplex();
+      expect(duplex).not().assertNull();
+      expect(duplex.writable).assertTrue();
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2500
@@ -934,17 +944,16 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexSetDefaultEncoding0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexSetDefaultEncoding0010';
-        console.log(TAG + ' start');
-        const duplex = new CustomDuplex();
-        const setResult = duplex.setDefaultEncoding('gbk');
-        duplex.write('Test data');
-        duplex.on('data', () => {});
-        const readResult = duplex.read();
-        expect(setResult).assertTrue();
-        expect(readResult).assertEqual(null);
-
+      const duplex = new CustomDuplex();
+      const setResult = duplex.setDefaultEncoding('gbk');
+      duplex.write('Test data');
+      duplex.on('data', () => {
       });
+      const readResult = duplex.read();
+      expect(setResult).assertTrue();
+      expect(readResult).assertEqual(null);
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2600
@@ -955,13 +964,11 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexCork0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexCork0001';
-        console.log(TAG + ' start');
-        const duplex = new stream.Duplex();
-        duplex.cork();
-        expect(duplex.writableCorked).assertEqual(1);
+      const duplex = new stream.Duplex();
+      duplex.cork();
+      expect(duplex.writableCorked).assertEqual(1);
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2700
@@ -972,13 +979,11 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexCork0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexCork0002';
-        console.log(TAG + ' start');
-        const duplex = new stream.Duplex();
-        duplex.cork();
-        expect(duplex.writableCorked).assertEqual(1);
+      const duplex = new stream.Duplex();
+      duplex.cork();
+      expect(duplex.writableCorked).assertEqual(1);
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2800
@@ -989,21 +994,17 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexCork0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexCork0003';
-        console.log(TAG + ' start');
-        const duplexStream = new TestDuplex7();
-        duplexStream.cork();
-        expect(duplexStream.writableCorked).assertEqual(1);
-        try {
-          duplexStream.write('', 'utf8');
-          duplexStream.write(' OpenHarmony', 'utf8');
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(duplexStream.writableCorked === 0 && writeCount === 1).assertEqual(false);
-        }
-
-      });
+      const duplexStream = new TestDuplex7();
+      duplexStream.cork();
+      expect(duplexStream.writableCorked).assertEqual(1);
+      try {
+        duplexStream.write('', 'utf8');
+        duplexStream.write(' OpenHarmony', 'utf8');
+        expect().assertFail()
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2900
@@ -1014,19 +1015,17 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexCork0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexCork0004';
-        console.log(TAG + ' start');
-        const duplex = new stream.Duplex();
-        duplex.cork();
-        expect(duplex.writableCorked).assertEqual(1);
-        duplex.cork();
-        expect(duplex.writableCorked).assertEqual(2);
-        duplex.uncork();
-        expect(duplex.writableCorked).assertEqual(1);
-        duplex.uncork();
-        expect(duplex.writableCorked).assertEqual(0);
+      const duplex = new stream.Duplex();
+      duplex.cork();
+      expect(duplex.writableCorked).assertEqual(1);
+      duplex.cork();
+      expect(duplex.writableCorked).assertEqual(2);
+      duplex.uncork();
+      expect(duplex.writableCorked).assertEqual(1);
+      duplex.uncork();
+      expect(duplex.writableCorked).assertEqual(0);
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_3000
@@ -1037,21 +1036,19 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexCork0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexCork0005';
-        console.log(TAG + ' start');
-        const duplexStream = new TestDuplex8();
-        const initialCorked = duplexStream.writableCorked;
-        duplexStream.cork();
-        expect(duplexStream.writableCorked !== initialCorked).assertTrue();
-        const firstUncork = duplexStream.uncork();
-        expect(firstUncork && duplexStream.writableCorked === initialCorked).assertTrue();
-        try {
-          duplexStream.uncork();
-          expect().assertFail()
-        } catch (err) {
-          expect(err.code).assertEqual(undefined);
-        }
-      });
+      const duplexStream = new TestDuplex8();
+      const initialCorked = duplexStream.writableCorked;
+      duplexStream.cork();
+      expect(duplexStream.writableCorked !== initialCorked).assertTrue();
+      const firstUncork = duplexStream.uncork();
+      expect(firstUncork && duplexStream.writableCorked === initialCorked).assertTrue();
+      try {
+        duplexStream.uncork();
+        expect().assertFail()
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_3100
@@ -1062,22 +1059,20 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexCork0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexCork0006';
-        console.log(TAG + ' start');
-        const duplexStream = new TestDuplex9();
-        const initialCorked = duplexStream.writableCorked;
-        duplexStream.cork();
-        expect(duplexStream.writableCorked !== initialCorked).assertTrue();
-        duplexStream.end();
-        expect(duplexStream.writableCorked === initialCorked || duplexStream.writableEnded).assertTrue();
-        try {
-          duplexStream.uncork();
-          expect().assertFail()
-        } catch (err) {
-          expect(err.code).assertEqual(undefined);
-        }
+      const duplexStream = new TestDuplex9();
+      const initialCorked = duplexStream.writableCorked;
+      duplexStream.cork();
+      expect(duplexStream.writableCorked !== initialCorked).assertTrue();
+      duplexStream.end();
+      expect(duplexStream.writableCorked === initialCorked || duplexStream.writableEnded).assertTrue();
+      try {
+        duplexStream.uncork();
+        expect().assertFail()
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_3200
@@ -1088,20 +1083,18 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexCork0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexCork0007';
-        console.log(TAG + ' start');
-        const duplexStream = new TestDuplex10();
-        duplexStream.cork();
-        duplexStream.end();
-        expect(duplexStream.writable === false && duplexStream.writableEnded === true).assertTrue();
-        try {
-          duplexStream.uncork();
-          expect().assertFail()
-        } catch (err) {
-          expect(err.code).assertEqual(undefined);
-        }
+      const duplexStream = new TestDuplex10();
+      duplexStream.cork();
+      duplexStream.end();
+      expect(duplexStream.writable === false && duplexStream.writableEnded === true).assertTrue();
+      try {
+        duplexStream.uncork();
+        expect().assertFail()
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_3300
@@ -1112,21 +1105,21 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexCork0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexCork0008';
-        console.log(TAG + ' start');
-        const duplex = new TestDuplex11();
-        const getWriteCount = () => duplex.writeCount;
-        duplex.cork();
-        duplex.cork();
-          duplex.write('InvalidChunk', 'utf8', () => {});
-          duplex.write('Chunk2', 'utf8', () => {});
-          expect(duplex.writableCorked).assertEqual(2);
-        duplex.uncork();
-        expect(duplex.writableCorked === 1 && getWriteCount() === 0).assertEqual(true);
-        duplex.uncork();
-        expect(duplex.writableCorked === 0 && getWriteCount() === 1).assertEqual(true);
-
+      const duplex = new TestDuplex11();
+      const getWriteCount = () => duplex.writeCount;
+      duplex.cork();
+      duplex.cork();
+      duplex.write('InvalidChunk', 'utf8', () => {
       });
+      duplex.write('Chunk2', 'utf8', () => {
+      });
+      expect(duplex.writableCorked).assertEqual(2);
+      duplex.uncork();
+      expect(duplex.writableCorked === 1 && getWriteCount() === 0).assertEqual(true);
+      duplex.uncork();
+      expect(duplex.writableCorked === 0 && getWriteCount() === 1).assertEqual(true);
+
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_3400
@@ -1137,17 +1130,15 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexCork0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexCork0009';
-        console.log(TAG + ' start');
-        const duplex = new stream.Duplex();
-        duplex.cork();
-        duplex.cork();
-        duplex.uncork();
-        expect(duplex.writableCorked).assertEqual(1);
-        duplex.uncork();
-        expect(duplex.writableCorked).assertEqual(0);
+      const duplex = new stream.Duplex();
+      duplex.cork();
+      duplex.cork();
+      duplex.uncork();
+      expect(duplex.writableCorked).assertEqual(1);
+      duplex.uncork();
+      expect(duplex.writableCorked).assertEqual(0);
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_3500
@@ -1158,25 +1149,23 @@ export default function StreamTest_08() {
      * @tc.level     Level 2
      */
     it('testDuplexCork0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testDuplexCork0010';
-        console.log(TAG + ' start');
-        const duplex = new stream.Duplex();
-        const preCorkState = duplex.writableCorked;
-        duplex.cork();
-        const afterCorkState = duplex.writableCorked;
-        duplex.uncork();
-        const afterUncorkState = duplex.writableCorked;
-        let callbackCalled = true;
-        expect(callbackCalled).assertTrue();
-        expect(duplex.writableCorked).assertEqual(0);
-        expect(duplex instanceof stream.Duplex).assertTrue();
-        expect(preCorkState).assertEqual(0);
-        expect(afterCorkState).assertEqual(1);
-        expect(afterUncorkState).assertEqual(0);
-        expect(typeof duplex.cork).assertEqual('function');
-        expect(typeof duplex.uncork).assertEqual('function');
-        expect(duplex.writable).assertTrue();
+      const duplex = new stream.Duplex();
+      const preCorkState = duplex.writableCorked;
+      duplex.cork();
+      const afterCorkState = duplex.writableCorked;
+      duplex.uncork();
+      const afterUncorkState = duplex.writableCorked;
+      let callbackCalled = true;
+      expect(callbackCalled).assertTrue();
+      expect(duplex.writableCorked).assertEqual(0);
+      expect(duplex instanceof stream.Duplex).assertTrue();
+      expect(preCorkState).assertEqual(0);
+      expect(afterCorkState).assertEqual(1);
+      expect(afterUncorkState).assertEqual(0);
+      expect(typeof duplex.cork).assertEqual('function');
+      expect(typeof duplex.uncork).assertEqual('function');
+      expect(duplex.writable).assertTrue();
 
-      });
+    });
   });
 }

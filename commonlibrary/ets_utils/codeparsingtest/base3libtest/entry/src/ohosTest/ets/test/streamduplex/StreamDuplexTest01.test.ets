@@ -37,8 +37,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0001';
-      console.log(TAG + ' start');
       const duplex: stream.Duplex = new stream.Duplex();
       expect(duplex !== null && duplex !== undefined).assertTrue();
     });
@@ -52,8 +50,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0002';
-      console.log(TAG + ' start');
       const duplex1: stream.Duplex = new stream.Duplex();
       const duplex2: stream.Duplex = new stream.Duplex();
       expect(duplex1 !== duplex2).assertTrue();
@@ -68,8 +64,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0003';
-      console.log(TAG + ' start');
       const duplex: stream.Duplex = new stream.Duplex();
       const isInstance: boolean = duplex instanceof stream.Duplex;
       expect(isInstance).assertTrue();
@@ -84,8 +78,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0004';
-      console.log(TAG + ' start');
       const duplex: stream.Duplex = new stream.Duplex();
       expect(typeof duplex.write === 'function').assertTrue();
       expect(typeof duplex.read === 'function').assertTrue();
@@ -100,8 +92,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0005';
-      console.log(TAG + ' start');
       const instances: Array<stream.Duplex> = [];
       for (let i: number = 0; i < 1000; i++) {
         const duplex: stream.Duplex = new stream.Duplex();
@@ -119,8 +109,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0006';
-      console.log(TAG + ' start');
       const duplex: stream.Duplex = new stream.Duplex();
       expect(duplex !== null).assertTrue();
       expect(typeof duplex === 'object').assertTrue();
@@ -135,8 +123,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0007';
-      console.log(TAG + ' start');
       const duplex: stream.Duplex = new stream.Duplex();
       const isObject: boolean = !(typeof duplex === 'string' ||
         typeof duplex === 'number' ||
@@ -155,8 +141,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0008';
-      console.log(TAG + ' start');
       const duplex: stream.Duplex = new stream.Duplex();
       expect(duplex.constructor.name === 'Duplex').assertTrue();
     });
@@ -170,8 +154,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0009';
-      console.log(TAG + ' start');
       const duplex: stream.Duplex = new stream.Duplex();
       let assignedDuplex: stream.Duplex = duplex;
       expect(assignedDuplex === duplex).assertTrue();
@@ -186,8 +168,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0010';
-      console.log(TAG + ' start');
       const duplex: stream.Duplex = new stream.Duplex();
       expect(duplex.readable !== undefined).assertTrue();
       expect(duplex.writable !== undefined).assertTrue();
@@ -202,8 +182,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0011';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -229,8 +207,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0012';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -257,8 +233,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0013';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -284,8 +258,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0014';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -314,8 +286,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0015';
-      console.log(TAG + ' start');
       try {
         class TestDuplex extends stream.Duplex {
           constructor() {
@@ -331,7 +301,7 @@ export default function StreamDuplex01Test() {
         let result: boolean = duplexStream.write('');
         expect(result).assertFalse();
       } catch (err) {
-        expect(err !== undefined).assertTrue();
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -344,8 +314,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0016';
-      console.log(TAG + ' start');
       try {
         class TestDuplex extends stream.Duplex {
           constructor() {
@@ -361,7 +329,7 @@ export default function StreamDuplex01Test() {
         let result: boolean = duplexStream.write(undefined);
         expect(result).assertFalse();
       } catch (err) {
-        expect(err !== undefined).assertTrue();
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -374,8 +342,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0017';
-      console.log(TAG + ' start');
       try {
         class TestDuplex extends stream.Duplex {
           constructor() {
@@ -391,7 +357,7 @@ export default function StreamDuplex01Test() {
         let result: boolean = duplexStream.write(null);
         expect(result).assertFalse();
       } catch (err) {
-        expect(err !== undefined).assertTrue();
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -404,8 +370,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0018';
-      console.log(TAG + ' start');
       try {
         class TestDuplex extends stream.Duplex {
           constructor() {
@@ -421,7 +385,7 @@ export default function StreamDuplex01Test() {
         let result: boolean = duplexStream.write('test', 'unsupported');
         expect(result).assertFalse();
       } catch (err) {
-        expect(err !== undefined).assertTrue();
+        expect(err.code).assertEqual(401);
       }
     });
 
@@ -435,8 +399,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0019';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -463,8 +425,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0020';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -491,8 +451,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0021';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -519,8 +477,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0022';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -549,8 +505,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0023';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -576,8 +530,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0024';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -603,8 +555,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0025';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         private callbackInvoked: number = 0;
         constructor() {
@@ -635,8 +585,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0026';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -663,8 +611,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0027';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -693,8 +639,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0028';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -721,8 +665,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0029';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -763,8 +705,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0030';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -791,8 +731,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0031';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -821,8 +759,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0032';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -851,8 +787,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0033';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -885,8 +819,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0034';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -913,8 +845,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0035';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -947,8 +877,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0036';
-      console.log(TAG + ' start');
       try {
         class InvalidDuplex extends stream.Duplex {
           constructor() {
@@ -961,7 +889,7 @@ export default function StreamDuplex01Test() {
         let result: boolean = duplexStream.write('test');
         expect(result).assertFalse();
       } catch (err) {
-        expect(err !== undefined).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -974,8 +902,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0037';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -1005,8 +931,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0038';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         constructor() {
           super();
@@ -1043,8 +967,6 @@ export default function StreamDuplex01Test() {
      * @tc.level     Level 2
      */
     it("testStreamDuplex01Chapter0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex01Chapter0039';
-      console.log(TAG + ' start');
       class TestDuplex extends stream.Duplex {
         private writeCount: number = 0;
         constructor() {
