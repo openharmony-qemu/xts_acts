@@ -184,10 +184,8 @@ export default function BuiltinsBigIntGetLongTest(): void {
      */
     it('builtinsBigIntGetLongTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const bigInt = new BigInt(922337203685477580);
-
       const result = bigInt.getLong();
       const expected = 922337203685477580;
-
       expect(result).assertEqual(expected);
     });
 

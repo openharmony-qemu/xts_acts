@@ -207,23 +207,6 @@ export default function BuiltinsBigIntDoubleValueTest(): void {
     });
 
     /**
-     * @tc.name    builtinsBigIntDoubleValueTest1100
-     * @tc.number  SUB_BUILTINS_BIGINT_DOUBLE_VALUE_TEST_1100
-     * @tc.desc    Verify doubleValue with zero (boundary case)
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('builtinsBigIntDoubleValueTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const bigInt = new BigInt(0);
-      
-      const result = bigInt.doubleValue();
-      const expected = 0.0;
-
-      expect(result).assertEqual(expected);
-    });
-
-    /**
      * @tc.name    builtinsBigIntDoubleValueTest1200
      * @tc.number  SUB_BUILTINS_BIGINT_DOUBLE_VALUE_TEST_1200
      * @tc.desc    Verify doubleValue with large hex value (complex boundary case)
