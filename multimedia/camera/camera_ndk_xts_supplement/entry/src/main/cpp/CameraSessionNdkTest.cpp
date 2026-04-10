@@ -785,6 +785,68 @@ napi_value TestCreateDeferredPreviewOutputWithInvalidProfile(napi_env env, napi_
     return result;
 }
 
+napi_value TestIsTorchLevelControlSupportedErr(napi_env env, napi_callback_info info) {
+    napi_value result = nullptr;
+    bool isSupported = false;
+    Camera_ErrorCode ret = OH_CameraManager_IsTorchLevelControlSupported(nullptr, &isSupported);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestIsTorchLevelControlSupportedSucc(napi_env env, napi_callback_info info) {
+    napi_value result = nullptr;
+    bool isSupported = false;
+    
+    Camera_Manager* cameraManager = nullptr;
+    OH_Camera_GetCameraManager(&cameraManager);
+    OH_LOG_ERROR(LOG_APP, "cameraManager is. %{public}d", cameraManager);
+    Camera_ErrorCode ret = OH_CameraManager_IsTorchLevelControlSupported(cameraManager, &isSupported);
+    if (ret != CAMERA_OK) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+napi_value TestSetTorchModeOnWithLevelErr(napi_env env, napi_callback_info info) {
+    napi_value result = nullptr;
+    
+    Camera_ErrorCode ret = OH_CameraManager_SetTorchModeOnWithLevel(nullptr, 1.0);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    Camera_Manager* cameraManager = nullptr;
+    OH_Camera_GetCameraManager(&cameraManager);
+    if (!cameraManager) {
+        napi_create_int32(env, CAMERA_INVALID_ARGUMENT, &result);
+        return result;
+    }
+    
+    ret = OH_CameraManager_SetTorchModeOnWithLevel(cameraManager, -1.0);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    ret = OH_CameraManager_SetTorchModeOnWithLevel(cameraManager, 1.1);
+    if (ret != CAMERA_INVALID_ARGUMENT) {
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 void OnIsoValueChanged(Camera_CaptureSession* session, int32_t isoValue) {
 }
 napi_value captureSessionRegisterIsoChangeCallback(napi_env env, napi_callback_info info)
