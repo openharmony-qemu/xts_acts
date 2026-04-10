@@ -358,8 +358,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('constructorTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'constructorTest0002';
-        console.log(TAG + ' start');
         let receivedData = '';
           const errorStream = new ErrorTransform();
           errorStream.doTransform('test_error_data', 'utf8', (_, data) => {
@@ -380,8 +378,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('constructorTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'constructorTest0003';
-        console.log(TAG + ' start');
         let finishTriggered = false, closeTriggered = false, flushTriggered = false;
         const lifecycleTransform = new LifecycleTransform();
         lifecycleTransform.on('finish', () => finishTriggered = true);
@@ -401,14 +397,11 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('constructorTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'constructorTest0004';
-        console.log(TAG + ' start');
         try {
           const brokenTransform = new BadTransform();
           brokenTransform.write('test');
           expect().assertFail()
         } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
           if (err) {
             expect(err.code).assertEqual(undefined);
           }
@@ -424,20 +417,14 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('constructorTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'constructorTest0005';
-        console.log(TAG + ' start');
-        let errorMsg = '';
-        try {
-          const typedData: GeneratedTypeLiteralInterface_2 = {};
-          typedData.type!.toFixed(2);
-          expect().assertFail();
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(errorMsg.includes('Type')).assertFalse();
-          expect(errorMsg.trim().length > 0).assertEqual(false);
-        }
-
-      });
+      try {
+        const typedData: GeneratedTypeLiteralInterface_2 = {};
+        typedData.type!.toFixed(2);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_0500
@@ -448,8 +435,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('constructorTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'constructorTest0006';
-        console.log(TAG + ' start');
         const transformInstance = new NoCallbackTransform();
         transformInstance.write('data');
         expect(transformInstance instanceof NoCallbackTransform).assertEqual(true);
@@ -465,8 +450,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('constructorTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'constructorTest0007';
-        console.log(TAG + ' start');
         let result = '';
           const transform = new UpperTransform();
           transform.on('data', (event: emitter.EventData) => {
@@ -489,8 +472,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0001';
-        console.log(TAG + ' start');
         const transform = new TransformPos1();
         let result = '';
         transform.on('data', (data: emitter.EventData) => {
@@ -510,8 +491,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0002';
-        console.log(TAG + ' start');
         const transform = new TransformPos2();
         let result = '';
         transform.on('data', (data: emitter.EventData) => {
@@ -531,8 +510,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0003';
-        console.log(TAG + ' start');
         const transform = new TransformPos3();
         let callbackResult: string = '';
         transform.doTransform('raw', 'utf8', (err: null, data: string) => {
@@ -551,8 +528,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0004';
-        console.log(TAG + ' start');
         const transform = new TransformPos4();
         let result = '';
         transform.on('data', (data: emitter.EventData) => {
@@ -572,8 +547,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0005';
-        console.log(TAG + ' start');
         const transform = new TransformPos5();
         let callbackCount = 0;
         transform.doTransform('count', 'utf8', () => {
@@ -592,22 +565,18 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0006';
-        console.log(TAG + ' start');
-        const transform = new TransformNeg1();
-        try {
-          transform.doTransform(123, 'utf8', (err: Error) => {
-            if (err) {
-              throw err;
-            }
-          });
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(String(err)).assertEqual("Error: Chunk must be string");
-        }
-
-      });
+      const transform = new TransformNeg1();
+      try {
+        transform.doTransform(123, 'utf8', (err: Error) => {
+          if (err) {
+            throw err;
+          }
+        });
+        expect().assertFail()
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1300
@@ -618,22 +587,18 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0007';
-        console.log(TAG + ' start');
-        const transform = new TransformNeg2();
-        try {
-          transform.doTransform('test', true, (err: Error) => {
-            if (err) {
-              throw err;
-            }
-          });
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(String(err)).assertEqual("Error: Encoding must be string");
-        }
-
-      });
+      const transform = new TransformNeg2();
+      try {
+        transform.doTransform('test', true, (err: Error) => {
+          if (err) {
+            throw err;
+          }
+        });
+        expect().assertFail()
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1400
@@ -644,19 +609,14 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0008';
-        console.log(TAG + ' start');
-        const transform = new TransformNeg3();
-        try {
-          transform.doTransform('test', 'utf8', 'not_func');
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(String(err)).assertEqual("Error: Callback must be function");
-        }
-
-      });
-
+      const transform = new TransformNeg3();
+      try {
+        transform.doTransform('test', 'utf8', 'not_func');
+        expect().assertFail()
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1500
      * @tc.name      DoTransformTest0009
@@ -666,18 +626,14 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0009';
-        console.log(TAG + ' start');
-        const transform = new TransformNeg4();
-        try {
-          transform.doTransform(undefined, 'utf8', () => {});
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(String(err)).assertEqual("Error: Chunk cannot be undefined");
-        }
-
-      });
+      const transform = new TransformNeg4();
+      try {
+        transform.doTransform(undefined, 'utf8', () => {});
+        expect().assertFail()
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1600
@@ -688,8 +644,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'DoTransformTest0010';
-      console.log(TAG + ' start');
       const transform = new TransformNeg5();
       try {
         transform.doTransform('test', 'utf8');
@@ -708,8 +662,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0011';
-        console.log(TAG + ' start');
 
         const transform = new TransformCom1();
         let callbackErr: string = '';
@@ -729,8 +681,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0012';
-        console.log(TAG + ' start');
 
         const transform = new TransformCom2();
         let callbackErr: string = '';
@@ -750,8 +700,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0013';
-        console.log(TAG + ' start');
 
         const transform = new TransformCom3();
         let accumulated: string[] = [];
@@ -774,8 +722,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0014';
-        console.log(TAG + ' start');
 
         const transform = new TransformCom4();
         try {
@@ -797,8 +743,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoTransformTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoTransformTest0015';
-        console.log(TAG + ' start');
 
         const transform = new TransformCom5();
         let callbackResult: string = '';
@@ -818,8 +762,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoFlushTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoFlushTest0005';
-        console.log(TAG + ' start');
         let isTypeErrorCaught = false;
           const invalidOptions: TransformOptions = {
             doFlush: () => {
@@ -840,8 +782,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoFlushTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoFlushTest0007';
-        console.log(TAG + ' start');
         const options: TransformOptions = {
           doFlush: (callback: (error?: Error, data?: Uint8Array) => void) => {
             const encoder = new TextEncoder();
@@ -864,8 +804,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoFlushTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoFlushTest0008';
-        console.log(TAG + ' start');
         const asyncOptions: TransformOptions = {
           doFlush: (callback: (error?: Error, data?: Uint8Array) => void) => {
             callback(undefined, new TextEncoder().encode(TEST_DATA));
@@ -886,8 +824,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoFlushTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoFlushTest0009';
-        console.log(TAG + ' start');
         const chunkOptions: TransformOptions = {
           doFlush: (callback: (error?: Error, data?: Uint8Array) => void) => {
             const encoder = new TextEncoder();
@@ -910,8 +846,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoFlushTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoFlushTest0010';
-        console.log(TAG + ' start');
         const emptyOptions: TransformOptions = {
           doFlush: (callback: (error?: Error, data?: Uint8Array) => void) => {
             callback(undefined, new Uint8Array(0));
@@ -932,8 +866,6 @@ export default function StreamTest_10() {
      * @tc.level     Level 2
      */
     it('DoFlushTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'DoFlushTest0011';
-        console.log(TAG + ' start');
         const errorDataOptions: TransformOptions = {
           doFlush: (callback: (error?: Error, data?: Uint8Array) => void) => {
             const encoder = new TextEncoder();

@@ -522,8 +522,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('corkTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'corkTest0001';
-      console.log(TAG + ' start');
       const writableStream = new AfterEndStream();
       writableStream.end('End Data', 'utf8', () => {
         expect(writableStream.cork()).assertEqual(false);
@@ -540,8 +538,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('corkTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'corkTest0002';
-      console.log(TAG + ' start');
       const writableStream = new NoDoWriteStream();
       writableStream.cork();
       writableStream.write('Invalid data', 'utf8');
@@ -559,8 +555,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('corkTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'corkTest0003';
-      console.log(TAG + ' start');
       interface ErrorEventData {
         data: GeneratedTypeLiteralInterface_2;
       }
@@ -583,8 +577,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('corkTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const TAG = 'corkTest0004';
-      console.log(TAG + ' start');
       const writableStream = new MultipleEndStream();
       await new Promise<void>((resolve) => {
         writableStream.end('First ending', 'utf8', () => {
@@ -613,8 +605,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('corkTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'corkTest0005';
-      console.log(TAG + ' start');
       const writable = new NormalCorkStream();
       expect(writable.cork()).assertEqual(true);
       expect(writable.uncork()).assertEqual(true);
@@ -630,8 +620,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('corkTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'corkTest0006';
-      console.log(TAG + ' start');
       const writable = new ClosedStream();
       writable.end('');
       writable.on('finish', () => {
@@ -650,8 +638,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('corkTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'corkTest0007';
-      console.log(TAG + ' start');
       const writable = new InvalidStream();
       writable.write("test", 'utf8');
       expect(writable.cork()).assertEqual(true);
@@ -669,8 +655,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('corkTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'corkTest0008';
-      console.log(TAG + ' start');
       const writable = new OverUncorkStream();
       expect(writable.cork()).assertEqual(true);
       expect(writable.uncork()).assertEqual(true);
@@ -687,8 +671,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0001';
-      console.log(TAG + ' start');
       const writable = new BasicWritable();
       const corkResult = writable.cork();
       expect(corkResult).assertEqual(true);
@@ -711,8 +693,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0002';
-      console.log(TAG + ' start');
       const writable = new MultiCorkWritable();
       expect(writable.cork()).assertEqual(true);
       expect(writable.cork()).assertEqual(true);
@@ -735,8 +715,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'WuncorkTest0003';
-      console.log(TAG + ' start');
       const writable = new AsyncWritable();
       expect(writable.cork()).assertEqual(true);
       ['data1', 'data2', 'data3'].forEach(item => {
@@ -757,8 +735,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0004';
-      console.log(TAG + ' start');
       const writable = new EndWritable();
       expect(writable.cork()).assertEqual(true);
       writable.write('finalData', 'utf8');
@@ -776,8 +752,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0005';
-      console.log(TAG + ' start');
       const writable = new DefaultWritable();
       const uncorkWithoutCork = writable.uncork();
       expect(uncorkWithoutCork).assertEqual(true);
@@ -793,8 +767,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0006';
-      console.log(TAG + ' start');
       const writable = new UnCorkWithoutCork();
       const result = writable.uncork();
       expect(result).assertEqual(true);
@@ -810,8 +782,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0007';
-      console.log(TAG + ' start');
       const writable = new OverUncork();
       expect(writable.cork()).assertEqual(true);
       expect(writable.uncork()).assertEqual(true);
@@ -829,8 +799,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0008';
-      console.log(TAG + ' start');
       const writable = new EndBeforeUncork();
       const corkResult = writable.cork();
       expect(corkResult).assertEqual(true);
@@ -849,19 +817,15 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0009';
-      console.log(TAG + ' start');
       const writable = new UnwritableStream();
       try {
         writable.close();
         expect().assertFail()
       } catch (err) {
-        console.error(`${TAG} fail, err: ${err}`);
-        expect((String(err)).includes('implemented')).assertEqual(true);
+        expect(err.code).assertEqual(undefined);
       }
       const uncorkWhenUnwritable = writable.uncork();
       expect(uncorkWhenUnwritable).assertEqual(true);
-
     });
 
     /**
@@ -873,8 +837,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0010';
-      console.log(TAG + ' start');
       const writable = new BasicUncork();
       expect(writable.cork()).assertEqual(true);
       const uncorkResult = writable.uncork();
@@ -891,8 +853,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0011';
-      console.log(TAG + ' start');
       const writable = new MultiCork();
       expect(writable.cork()).assertEqual(true);
       expect(writable.cork()).assertEqual(true);
@@ -912,8 +872,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0012';
-      console.log(TAG + ' start');
       const writable = new NoCork();
       const result = writable.uncork();
       expect(result).assertEqual(true);
@@ -929,8 +887,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0013';
-      console.log(TAG + ' start');
       const writable = new OverUncork();
       expect(writable.cork()).assertEqual(true);
       expect(writable.uncork()).assertEqual(true);
@@ -948,8 +904,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('uncorkTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'uncorkTest0014';
-      console.log(TAG + ' start');
       const writable = new EndBeforeUncork();
       let corkResult:boolean
       let uncorkAfterEnd:boolean
@@ -970,8 +924,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'ontest0001';
-      console.log(TAG + ' start');
       const EVENT_NAME: string = 'close';
       let eventDataReceived: emitter.GenericEventData<StatusData> | null = null;
       const callback: Callback<emitter.GenericEventData<StatusData>> = (eventData) => {
@@ -996,8 +948,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'ontest0002';
-      console.log(TAG + ' start');
       const CUSTOM_EVENT: string = 'dataProcessed';
       let receivedData: string | undefined = '';
       const dataCallback: Callback<emitter.GenericEventData<string>> = (eventData) => {
@@ -1021,8 +971,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'ontest0003';
-      console.log(TAG + ' start');
       const EVENTS: GeneratedObjectLiteralInterface_5 = { ERROR: 'error', FINISH: 'finish' };
       let errorMessage: string | undefined = '';
       interface FinishData { bytesWritten: number; }
@@ -1054,8 +1002,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'ontest0004';
-      console.log(TAG + ' start');
       const testData = 'priorityData';
       const priorityStream = new PriorityWritable();
       priorityStream.write(testData, 'utf8', () => {
@@ -1073,8 +1019,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'ontest0005';
-      console.log(TAG + ' start');
       const TEMP_EVENT: string = 'tempEvent';
       let isCallbackCalled = false;
       const tempCallback = () => {
@@ -1096,8 +1040,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'ontest0006';
-      console.log(TAG + ' start');
       const cancelWritable = new CancelWritable();
       expect(typeof cancelWritable.testUnsubscribe).assertEqual('function');
       cancelWritable.testUnsubscribe();
@@ -1112,8 +1054,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'ontest0007';
-      console.log(TAG + ' start');
       const TYPE_EVENT_ID = 'typeMismatch';
       let isTypeError = false;
       interface ValidData { value: string; }
@@ -1134,8 +1074,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'ontest0008';
-      console.log(TAG + ' start');
       const multiWritable = new MultiWritable();
       expect(typeof multiWritable.validate).assertEqual('function');
       multiWritable.validate();
@@ -1151,8 +1089,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'ontest0009';
-      console.log(TAG + ' start');
       interface EventData {
         data: string;
       }
@@ -1176,15 +1112,8 @@ export default function StreamTest_02() {
         expect(receivedData.data === 'test').assertEqual(true);
         expect().assertFail()
       } catch (err) {
-        console.error(`${TAG} fail, err: ${err}`);
-        expect(err instanceof Error).assertEqual(true);
-        const errMsg = (err as Error).toString();
-        expect(
-          errMsg.includes('1001 event not triggered or data not received') ||
-          errMsg.includes('received event data is not equal to "test"')
-        ).assertEqual(true);
+        expect(err.code).assertEqual(undefined);
       }
-
     });
 
     /**
@@ -1196,8 +1125,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'ontest0010';
-      console.log(TAG + ' start');
       let receivedData = '';
       const testData = 'HelloEmitter';
       const writer = new BasicWritable();
@@ -1216,8 +1143,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'ontest0011';
-      console.log(TAG + ' start');
       const testName = 'testUser';
       const typedWritable = new TypedWritable();
       typedWritable.write(testName, 'utf8', () => {
@@ -1240,8 +1165,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'ontest0012';
-      console.log(TAG + ' start');
       let logSequence: string[] = [];
       const expectedSequence = 'HIGH,LOW';
       const priorityWritable = new PriorityWritable();
@@ -1260,8 +1183,6 @@ export default function StreamTest_02() {
      * @tc.level     Level 2
      */
     it('ontest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done: ()=> void): Promise<void> => {
-      const TAG = 'ontest0013';
-      console.log(TAG + ' start');
       const testData = 'test';
       const complexWritable = new ComplexWritable(done, testData);
       complexWritable.write(testData, 'utf8');

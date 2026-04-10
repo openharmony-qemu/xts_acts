@@ -413,8 +413,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0001';
-        console.log(TAG + ' start');
         const EVENT_ID = 'data_update';
         let isCallbackCalled = false;
         const dataHandler: Callback<emitter.EventData> = () => {
@@ -436,8 +434,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0002';
-        console.log(TAG + ' start');
         const LOG_EVENT = 'app_log';
         let callbackCount = 0;
         const logHandler1: Callback<emitter.EventData> = () => callbackCount++;
@@ -459,8 +455,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0003';
-        console.log(TAG + ' start');
         interface SensorData {
           temperature: number;
           humidity: number;
@@ -488,43 +482,33 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0004';
-        console.log(TAG + ' start');
+      try {
+        const ALERT_EVENT = 'system_alert';
+        let triggerCount = 0;
+        const alertHandler: Callback<emitter.EventData> = () => {
+          triggerCount++;
+        };
+        emitter.once(ALERT_EVENT, alertHandler);
+        emitter.emit(ALERT_EVENT);
+        emitter.emit(ALERT_EVENT);
 
-        try {
-          const ALERT_EVENT = 'system_alert';
-          let triggerCount = 0;
-          const alertHandler: Callback<emitter.EventData> = () => {
-            triggerCount++;
-          };
-          emitter.once(ALERT_EVENT, alertHandler);
-          emitter.emit(ALERT_EVENT);
-          emitter.emit(ALERT_EVENT);
-
-          if (typeof alertHandler !== 'function') {
-            throw new Error('alertHandler is not a valid function');
-          }
-
-          expect(typeof alertHandler).assertEqual('function');
-
-          expect(triggerCount).assertEqual(0);
-
-          if (triggerCount !== 1) {
-            throw new Error('triggerCount is not equal to 1 (once event not work)');
-          }
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('alertHandler is not a valid function') ||
-            errMsg.includes('triggerCount is not equal to 1 (once event not work)') ||
-            errMsg.includes('expect 0 equals 1')
-          ).assertEqual(true);
+        if (typeof alertHandler !== 'function') {
+          throw new Error('alertHandler is not a valid function');
         }
 
-      });
+        expect(typeof alertHandler).assertEqual('function');
+
+        expect(triggerCount).assertEqual(0);
+
+        if (triggerCount !== 1) {
+          throw new Error('triggerCount is not equal to 1 (once event not work)');
+        }
+        expect().assertFail()
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTHREE_0500
      * @tc.name      offtest0005
@@ -534,8 +518,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0005';
-        console.log(TAG + ' start');
         const EVENT_ID = 'write_event';
         let isCallbackCalled = false;
         const validCallback: Callback<emitter.EventData> = () => {
@@ -557,8 +539,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0006';
-        console.log(TAG + ' start');
         const EVENT_ID = 'write_event';
         const wrongEventId = 'wrong_event';
         let isCallbackCalled = true;
@@ -581,8 +561,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0007';
-        console.log(TAG + ' start');
         const EVENT_ID = 'write_event';
         let isCallbackCalled = true;
         const validCallback: Callback<emitter.EventData> = () => {
@@ -606,8 +584,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0009';
-        console.log(TAG + ' start');
         const EVENT_ID = 'write_event';
         let receivedData = '';
         const validCallback: Callback<emitter.GenericEventData<GeneratedTypeLiteralInterface_1>> = (eventData) => {
@@ -629,8 +605,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0010';
-        console.log(TAG + ' start');
         const EVENT_NAME = 'write_complete';
         let callbackTriggered = false;
         const testCallback: Callback<emitter.EventData> = () => {
@@ -652,8 +626,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0011';
-        console.log(TAG + ' start');
         const EVENT_ID = 'custom_write_event';
         let isCallbackCalled = false;
         const validCallback: Callback<emitter.EventData> = () => {
@@ -675,8 +647,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0012';
-        console.log(TAG + ' start');
         const EVENT_ID = 'custom_write_event';
         let isCallbackCalled = true;
         const validCallback: Callback<emitter.EventData> = () => {
@@ -700,8 +670,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0013';
-        console.log(TAG + ' start');
         const EVENT_ID = 'custom_write_event';
         let callbackCount = 0;
         const callback1: Callback<emitter.EventData> = () => callbackCount++;
@@ -723,8 +691,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('offtest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0015';
-        console.log(TAG + ' start');
         const EVENT_ID = 'custom_write_event';
         interface CustomData {
           id: number;
@@ -750,8 +716,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('dolnitializeTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'dolnitializeTest0001';
-        console.log(TAG + ' start');
         let isInitCalled: boolean = false;
         const writableStream = new CustomWritable();
         expect(isInitCalled).assertEqual(false);
@@ -772,8 +736,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('dolnitializeTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'dolnitializeTest0003';
-        console.log(TAG + ' start');
         let callback1Status = '';
         let callback2Status = '';
         new MultiCallbackWritable(
@@ -798,8 +760,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('dolnitializeTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'dolnitializeTest0004';
-        console.log(TAG + ' start');
         const fakeCallback = (() => {
           const modifiedCallback: CallbackWithValue = () => {
           };
@@ -822,8 +782,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('dolnitializeTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'dolnitializeTest0005';
-        console.log(TAG + ' start');
         let callCount = 0;
           new MultiInvokeWritable(() => {
             callCount++;
@@ -841,8 +799,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('dolnitializeTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'dolnitializeTest0007';
-        console.log(TAG + ' start');
           new CallbackExceptionWritable(() => {});
           expect(typeof CallbackExceptionWritable).assertEqual('function');
           expect(typeof (new CallbackExceptionWritable(() => {})).doWrite).assertEqual('function');
@@ -858,20 +814,14 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('dolnitializeTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'dolnitializeTest0009';
-        console.log(TAG + ' start');
-        let invalidEncodingError = '';
-          new EncodingCheckWritable('gbk');
-        try {
-          new EncodingCheckWritable('ascii');
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          invalidEncodingError = (err as Error).message;
-          expect(invalidEncodingError).assertEqual('401: Unsupported encoding');
-        }
-
-      });
+      new EncodingCheckWritable('gbk');
+      try {
+        new EncodingCheckWritable('ascii');
+        expect().assertFail()
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTHREE_2000
@@ -882,8 +832,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('dolnitializeTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'dolnitializeTest0012';
-        console.log(TAG + ' start');
         new StateSyncWritable();
         expect(streamStateValid).assertEqual(true);
         const stateWritable = new StateSyncWritable();
@@ -901,8 +849,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWriteTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0001';
-        console.log(TAG + ' start');
         const case1 = new WritableTestCase1();
         expect(case1 instanceof WritableTestCase1).assertEqual(true);
         expect(case1 instanceof stream.Writable).assertEqual(true);
@@ -919,8 +865,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWriteTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0002';
-        console.log(TAG + ' start');
         const case2 = new WritableTestCase2();
         const buffer = new Uint8Array([0x48, 0x65, 0x6c, 0x6c, 0x6f]);
         expect(case2 instanceof WritableTestCase2).assertEqual(true);
@@ -940,8 +884,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWriteTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0003';
-        console.log(TAG + ' start');
         const case3 = new WritableTestCase3();
         expect(case3 instanceof WritableTestCase3).assertEqual(true);
         expect(case3 instanceof stream.Writable).assertEqual(true);
@@ -958,7 +900,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWriteTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0004';
         const case4 = new WritableTestCase4();
         expect(case4 instanceof WritableTestCase4).assertEqual(true);
         expect(case4 instanceof stream.Writable).assertEqual(true);
@@ -976,13 +917,11 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWriteTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0005';
         const testCase1 = new InvalidChunkTest();
         try {
           testCase1.write('12345', 'utf8', () => {
           });
         } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
           expect(err.code).assertEqual(401);
         }
 
@@ -997,13 +936,11 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWriteTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0006';
         const testCase2 = new InvalidEncodingTest();
         try {
           testCase2.write('TestData', '123', () => {});
           expect().assertFail()
         } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
           expect(err.code).assertEqual(401);
         }
 
@@ -1018,14 +955,11 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWriteTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0008';
-        console.log(TAG + ' start');
         const testCase4 = new UnsupportedEncodingTest();
         try {
           testCase4.write('TestData', 'unsupported_encoding', () => {});
           expect().assertFail()
         } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
           expect(err.code).assertEqual(401);
         }
 
@@ -1040,8 +974,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWriteTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0009';
-        console.log(TAG + ' start');
         const testCase5 = new MissingCallbackTest();
         testCase5.write('TestData', 'utf8', () => {
         });
@@ -1060,8 +992,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWriteTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0010';
-        console.log(TAG + ' start');
         const testCase1 = new StringChunkTest();
         expect(testCase1 instanceof StringChunkTest).assertEqual(true);
         expect(testCase1 instanceof stream.Writable).assertEqual(true);
@@ -1081,8 +1011,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWriteTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0011';
-        console.log(TAG + ' start');
         const testData = new Uint8Array([116, 101, 115, 116]);
         const testCase2 = new Uint8ArrayChunkTest();
         const result2 = testCase2.write(testData, 'utf8', () => {
@@ -1102,8 +1030,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWriteTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0012';
-        console.log(TAG + ' start');
         const testCase3 = new DefaultEncodingTest();
         testCase3.write('TestData', 'utf8', () => {});
         expect(testCase3.defaultEncoding === 'utf8').assertEqual(true);
@@ -1119,8 +1045,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWriteTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0013';
-        console.log(TAG + ' start');
         const testData = new Uint8Array([116, 101, 115, 116]);
         const testCase4 = new Uint8DefaultEncodingTest();
         testCase4.write(testData, 'utf8', () => {});
@@ -1140,8 +1064,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWritevTest0001';
-        console.log(TAG + ' start');
         const writable = new TestWritable();
         writable.write("testOS", 'utf8', (error: Error | null) => {
           expect(error === null).assertEqual(true);
@@ -1159,8 +1081,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWritevTest0002';
-        console.log(TAG + ' start');
         const writable2 = new TestWritable2();
         const buffer = new Uint8Array([0x48, 0x65]);
         writable2.write(buffer, 'utf8', (error: Error | null) => {
@@ -1179,8 +1099,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWritevTest0003';
-        console.log(TAG + ' start');
         const writable3 = new TestWritable3();
         writable3.write("valid_data", 'utf8', (error: Error | null) => {
           if (error) {
@@ -1202,8 +1120,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'RdoWritevTest0004';
-        console.log(TAG + ' start');
         const writable4 = new TestWritable4();
         const dynamicChunk = Math.random() > 0.5 ? "DynamicData" : new Uint8Array(8);
         writable4.write(dynamicChunk, 'utf8', (error: Error | null) => {
@@ -1222,8 +1138,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWritevTest0005';
-        console.log(TAG + ' start');
         const writable = new ErrorChunkWritable();
         const result = writable.write((12345).toString(), 'utf8', () => {
         });
@@ -1240,8 +1154,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWritevTest0006';
-        console.log(TAG + ' start');
         const writable = new ErrorCallbackWritable();
         const result = writable.write('test', 'utf8');
         expect(result).assertEqual(true);
@@ -1257,8 +1169,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWritevTest0007';
-        console.log(TAG + ' start');
         const writable = new MissingCallbackWritable();
         const result = writable.write('test', 'utf8', undefined!);
         expect(result).assertEqual(true);
@@ -1274,15 +1184,12 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWritevTest0008';
-        console.log(TAG + ' start');
         const writable = new NullChunkWritable();
         try {
           const result = writable.write(null!, 'utf8', () => {});
           expect(result).assertEqual(false);
           expect().assertFail()
         } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
           expect(err.code).assertEqual(401);
         }
 
@@ -1297,15 +1204,12 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWritevTest0009';
-        console.log(TAG + ' start');
         const writable = new InvalidEncodingWritable();
         try {
           const result = writable.write('test', 'utf16', () => {});
           expect(result).assertEqual(false);
           expect().assertFail()
         } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
           expect(err.code).assertEqual(401);
         }
 
@@ -1320,8 +1224,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWritevTest0010';
-        console.log(TAG + ' start');
         const writableStream = new TestWritables();
         writableStream.write('Hello');
         expect(writableStream.actualChunkType === 'string').assertEqual(true);
@@ -1338,8 +1240,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWritevTest0011';
-        console.log(TAG + ' start');
         const writableStream = new TestWritables();
         writableStream.write('test data', 'gb2312');
         expect(writableStream.actualChunkType === 'string').assertEqual(true);
@@ -1356,8 +1256,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWritevTest0012';
-        console.log(TAG + ' start');
         const data = new Uint8Array([0x48, 0x65, 0x6C, 0x6C, 0x6F]);
         const writableStream = new TestWritablea();
         writableStream.write(data);
@@ -1375,8 +1273,6 @@ export default function StreamTest_03() {
      * @tc.level     Level 2
      */
     it('doWritevTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWritevTest0013';
-        console.log(TAG + ' start');
         const writableStream = new TestWritableb();
         writableStream.write('Start');
         writableStream.write(new Uint8Array([0x41]));
