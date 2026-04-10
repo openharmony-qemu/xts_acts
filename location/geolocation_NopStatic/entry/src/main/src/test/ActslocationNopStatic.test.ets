@@ -811,28 +811,28 @@ export default function actslocationTest() {
     });
 
     /**
-     * @tc.number  Sub_Location_nop_onCachedGnssLocationsChange_0100
-     * @tc.name  Sub_Location_nop_onCachedGnssLocationsChange_0100
-     * @tc.desc  onCachedGnssLocationsChange(request: CachedGnssLocationsRequest, callback: Callback<Array<Location>>): void - Verify parameter error
+     * @tc.number  SUB_Location_nop_onCachedGnssLocationsChange_0100
+     * @tc.name  SUB_Location_nop_onCachedGnssLocationsChange_0100
+     * @tc.desc  onCachedGnssLocationsChange(request: CachedGnssLocationsRequest, callback: Callback<Array<Location>>): void
      * @tc.level  Level 0
      * @tc.type  Function
      * @tc.size  MEDIUMTEST
      */
-    it('Sub_Location_nop_onCachedGnssLocationsChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Location_nop_onCachedGnssLocationsChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let request: geoLocationManager.CachedGnssLocationsRequest = {
           'reportingPeriodSec': 1000,
           'wakeUpCacheQueueFull': true
       };
       
       let callback = (result: Array<geoLocationManager.Location>): void => {
-          console.info('Sub_Location_nop_onCachedGnssLocationsChange_0100: locations=' + JSON.stringify(result));
+          console.info('SUB_Location_nop_onCachedGnssLocationsChange_0100: locations=' + JSON.stringify(result));
       };
       
       try {
           geoLocationManager.onCachedGnssLocationsChange(request, callback);
           expect().assertFail();
       } catch (err) {
-          console.error("Sub_Location_nop_onCachedGnssLocationsChange_0100 errCode:" + err.code + ", message:" + err.message);
+          console.error("SUB_Location_nop_onCachedGnssLocationsChange_0100 errCode:" + err.code + ", message:" + err.message);
           expect(err.code).assertEqual(201);
       }
       await Utils.msSleep(1000);
