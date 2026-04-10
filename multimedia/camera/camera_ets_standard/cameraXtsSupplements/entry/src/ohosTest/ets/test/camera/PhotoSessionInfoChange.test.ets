@@ -254,7 +254,7 @@ export default function PhotoSessIsoInfoChangeTest() {
      * @tc.size: MediumTest
      * @tc.level: Level1
      */
-    it('SUB_MULTIMEDIA_CAMERA_isoInfoChange_callback_triggered_0100',0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_isoInfoChange_callback_triggered_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_MULTIMEDIA_CAMERA_isoInfoChange_callback_triggered_0100';
       console.info(TAG, testName + ' begin.');
       // ========== 预制过程 ==========
@@ -300,7 +300,7 @@ export default function PhotoSessIsoInfoChangeTest() {
      * @tc.size: MediumTest
      * @tc.level: Level1
      */
-    it('SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_0100',0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const testName: string = 'SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_0100';
       console.info(TAG, testName + ' begin.');
       // ========== 预制过程 ==========
