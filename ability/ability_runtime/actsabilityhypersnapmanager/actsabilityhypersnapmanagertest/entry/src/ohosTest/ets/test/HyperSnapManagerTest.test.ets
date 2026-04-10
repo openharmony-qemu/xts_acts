@@ -79,7 +79,7 @@ export default function HyperSnapManagerTest() {
      */
     it('SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0100', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0100 supprot ' + supportUse);
-      if(supportUse){
+      if(!supportUse){
         try{
           hyperSnapManager.setHyperSnapEnabled(false);
           hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0100 success');
@@ -115,7 +115,7 @@ export default function HyperSnapManagerTest() {
      */
     it('SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0200', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0200 supprot ' + supportUse);
-      if(supportUse){
+      if(!supportUse){
         try{
           hyperSnapManager.setHyperSnapEnabled(true);
           hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0200 success');
@@ -150,7 +150,7 @@ export default function HyperSnapManagerTest() {
      */
     it('SUB_Ability_AbilityRuntime_HyperSnapManager_RequestRebuildHyperSnap_0100', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_RequestRebuildHyperSnap_0100 supprot ' + supportUse);
-      if(supportUse){
+      if(!supportUse){
         try{
           hyperSnapManager.requestRebuildHyperSnap();
           hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_RequestRebuildHyperSnap_0100 success');

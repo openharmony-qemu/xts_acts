@@ -27,7 +27,7 @@ export default function abilityTest() {
   let TAG = "";
 
   describe('HyperSnapManagerTest', () => {
-    
+
     beforeAll(async (done: () => void): Promise<void> => {
       console.log('HyperSnapManagerTest' + "beforeAll called");
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
@@ -37,6 +37,11 @@ export default function abilityTest() {
         if(result?.stdResult.indexOf('libforkall_plugin.z.so') != -1){
           supportUse = true;
         }
+      })
+      let cmd = 'aa start -a EntryAbility -b com.acts.actsabilityhypersnapmanagertest.static';
+      await abilityDelegator.executeShellCommand(cmd).then((result:ShellCmdResult|undefined): void => {
+        hilog.info(0x0000, 'testTag', 'executeShellCommand : aa : %{public}s', result?.stdResult ?? '');
+        hilog.info(0x0000, 'testTag', 'executeShellCommand : aa : %{public}s', result?.exitCode ?? '');
       })
       done();
     })
@@ -86,7 +91,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_static_0100";
       hilog.info(0x0000, 'testTag', TAG + 'supprot ' + supportUse);
-      if(supportUse){
+      if(!supportUse){
         try{
           hyperSnapManager.setHyperSnapEnabled(false);
           hilog.info(0x0000, 'testTag', TAG + ' success');
@@ -122,7 +127,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_static_0200";
       hilog.info(0x0000, 'testTag', TAG + 'supprot ' + supportUse);
-      if(supportUse){
+      if(!supportUse){
         try{
           hyperSnapManager.setHyperSnapEnabled(true);
           hilog.info(0x0000, 'testTag', TAG + ' success');
@@ -158,7 +163,7 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_HyperSnapManager_RequestRebuildHyperSnap_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "SUB_Ability_AbilityRuntime_HyperSnapManager_RequestRebuildHyperSnap_static_0100";
       hilog.info(0x0000, 'testTag', TAG + ' supprot ' + supportUse);
-      if(supportUse){
+      if(!supportUse){
         try{
           hyperSnapManager.requestRebuildHyperSnap();
           hilog.info(0x0000, 'testTag', TAG + ' success');
