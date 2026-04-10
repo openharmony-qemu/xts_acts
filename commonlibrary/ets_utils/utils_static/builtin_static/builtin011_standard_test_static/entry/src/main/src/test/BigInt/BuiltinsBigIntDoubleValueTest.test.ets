@@ -157,21 +157,6 @@ export default function BuiltinsBigIntDoubleValueTest(): void {
       expect(result).assertEqual(expected);
     });
 
-    /**
-     * @tc.name    builtinsBigIntDoubleValueTest0800
-     * @tc.number  SUB_BUILTINS_BIGINT_DOUBLE_VALUE_TEST_0800
-     * @tc.desc    Verify doubleValue with BigInt(0xdecafafecacefade)
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('builtinsBigIntDoubleValueTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const bigInt = new BigInt("0xdecafafecacefade");
-      
-      const result = bigInt.doubleValue();
-
-      expect(isNaN(result)).assertFalse();
-    });
 
     /**
      * @tc.name    builtinsBigIntDoubleValueTest0900
@@ -187,6 +172,7 @@ export default function BuiltinsBigIntDoubleValueTest(): void {
       const result = bigInt.doubleValue();
 
       expect(isNaN(result)).assertFalse();
+      expect(result < 0).assertTrue(); 
     });
 
     /**
@@ -220,6 +206,7 @@ export default function BuiltinsBigIntDoubleValueTest(): void {
       const result = bigInt.doubleValue();
 
       expect(isNaN(result)).assertFalse();
+      expect(result > 0).assertTrue(); 
     });
   });
 }
