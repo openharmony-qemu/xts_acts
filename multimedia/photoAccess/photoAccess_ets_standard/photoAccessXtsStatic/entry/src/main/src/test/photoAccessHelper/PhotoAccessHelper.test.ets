@@ -73,7 +73,7 @@ export default function getAssetsTest(): void {
         });
       } catch (error) {
         console.error(TAG, `getAssets catch failed2; error: ${error?.code}, ${error?.message}`);
-        expect(error!.code == 13900020).assertTrue();
+        expect().assertFail();
         done();
       }
     })
@@ -106,7 +106,7 @@ export default function getAssetsTest(): void {
         });
       } catch (error) {
         console.error(TAG, `getAssets catch failed2; error: ${error?.code}, ${error?.message}`);
-        expect(error!.code === 13900020).assertTrue();
+        expect().assertFail();
         done();
       }
     })
@@ -130,8 +130,9 @@ export default function getAssetsTest(): void {
         helper!.getAssets(fetchOptions, (error: BusinessError<void> | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           console.info(TAG, `getAssets success`);
-            expect(fetchResult !== undefined).assertTrue();
-            done();
+          expect(fetchResult !== undefined).assertTrue();
+          fetchResult!.close();
+          done();
         });
       } catch (error) {
         console.error(TAG, `getAssets catch failed2; error: ${error?.code}, ${error?.message}`);
@@ -160,6 +161,7 @@ export default function getAssetsTest(): void {
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           console.info(TAG, `getAssets success`);
           expect(fetchResult != undefined).assertTrue();
+          fetchResult!.close();
           done();
         });
       } catch (error) {
@@ -179,6 +181,14 @@ export default function getAssetsTest(): void {
     it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_GET_ASSETS_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_GET_ASSETS_PROMISE_STATIC_0100';
       console.info(TAG, testName);
+      let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension: string = 'jpg';
+      let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null= photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      let fileUri = testContext.filesDir + '/test_mov_1.jpg';
+      if (assetChangeRequest !== null) {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, fileUri);
+        await helper!.applyChanges(assetChangeRequest);
+      }
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       let fetchOptions: photoAccessHelper.FetchOptions = {
         fetchColumns: [],
@@ -188,6 +198,7 @@ export default function getAssetsTest(): void {
         let fetchResult = await helper!.getAssets(fetchOptions);
         console.info(TAG, `getAssets success`);
         expect(fetchResult.getCount() > 0).assertTrue();
+        fetchResult.close();
         done();
       } catch (error) {
         console.error(TAG, `getAssets catch failed2; error: ${error?.code}, ${error?.message}`);
@@ -213,7 +224,7 @@ export default function getAssetsTest(): void {
         predicates: predicates
       };
       try {
-        let fetchResult = await helper!.getAssets(fetchOptions);
+        await helper!.getAssets(fetchOptions);
         console.info(TAG, `getAssets success`);
         expect().assertFail();
         done();
@@ -241,7 +252,7 @@ export default function getAssetsTest(): void {
         predicates: predicates
       };
       try {
-        let fetchResult = await helper!.getAssets(fetchOptions);
+        await helper!.getAssets(fetchOptions);
         console.info(TAG, `getAssets success`);
         expect().assertFail();
         done();
@@ -271,6 +282,7 @@ export default function getAssetsTest(): void {
         let fetchResult = await helper!.getAssets(fetchOptions);
         console.info(TAG, `getAssets success`);
         expect(fetchResult != undefined).assertTrue();
+        fetchResult.close();
         done();
       } catch (error) {
         console.error(TAG, `getAssets catch failed2; error: ${error?.code}, ${error?.message}`);
@@ -295,7 +307,7 @@ export default function getAssetsTest(): void {
         predicates: predicates
       };
       try {
-        let fetchResult = await helper!.getAssets(fetchOptions);
+        await helper!.getAssets(fetchOptions);
         console.info(TAG, `getAssets success`);
         expect().assertFail();
         done();
@@ -409,10 +421,8 @@ export default function getAssetsTest(): void {
       };
       try {
         let burstKey: string = 'e719d696-09fa-44f8-8e9e-ec3f215aa62a';
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await
-        helper!.getBurstAssets(burstKey, fetchOptions);
+        await helper!.getBurstAssets(burstKey, fetchOptions);
         expect().assertFail();
-        fetchResult.close();
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -474,7 +484,7 @@ export default function getAssetsTest(): void {
           done();
         } catch (error) {
           console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-          expect(Number(error.code)).assertEqual(401);
+          expect().assertFail();
           done();
         }
       })
@@ -766,7 +776,7 @@ export default function getAssetsTest(): void {
           });
         } catch (error) {
           console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
-          expect(Number(error.code)).assertEqual(401);
+          expect().assertFail();
           done();
         }
       });
@@ -818,7 +828,7 @@ export default function getAssetsTest(): void {
           });
         } catch (error) {
           console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
-          expect(Number(error.code)).assertEqual(401);
+          expect().assertFail();
           done();
         }
       });
@@ -833,21 +843,21 @@ export default function getAssetsTest(): void {
     it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_CREATE_ASSET_OPT_CALLBACK_STATIC_0100', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_CREATE_ASSET_OPT_CALLBACK_STATIC_0100';
-          try {
-            let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-            let options: photoAccessHelper.CreateOptions = {
-              title: 'testPhoto',
-            }
-            helper!.createAsset(photoType, 'jpg', options,
-              (error: BusinessError<void> | null, uri: string | undefined) => {
-                expect(uri !== undefined).assertTrue();
-                done();
-              });
-          } catch (error) {
-            console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
-            expect().assertFail();
-            done();
+        try {
+          let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+          let options: photoAccessHelper.CreateOptions = {
+            title: 'testPhoto',
           }
+          helper!.createAsset(photoType, 'jpg', options,
+            (error: BusinessError<void> | null, uri: string | undefined) => {
+              expect(uri !== undefined).assertTrue();
+              done();
+            });
+        } catch (error) {
+          console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
+          expect().assertFail();
+          done();
+        }
       })
     /**
      * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_CREATE_ASSET_OPT_CALLBACK_STATIC_0200
@@ -860,23 +870,23 @@ export default function getAssetsTest(): void {
     it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_CREATE_ASSET_OPT_CALLBACK_STATIC_0200', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_CREATE_ASSET_OPT_CALLBACK_STATIC_0200';
-          try {
-            let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
-            let extension: string = 'mp4';
-            let options: photoAccessHelper.CreateOptions = {
-              title: 'testPhoto',
-              subtype: photoAccessHelper.PhotoSubtype.DEFAULT
-            }
-            helper!.createAsset(photoType, extension, options,
-              (error: BusinessError<void> | null, uri: string | undefined) => {
-                expect(uri!.length > 0).assertTrue();
-                done();
-              });
-          } catch (error) {
-            console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
-            expect().assertFail();
-            done();
+        try {
+          let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
+          let extension: string = 'mp4';
+          let options: photoAccessHelper.CreateOptions = {
+            title: 'testPhoto',
+            subtype: photoAccessHelper.PhotoSubtype.DEFAULT
           }
+          helper!.createAsset(photoType, extension, options,
+            (error: BusinessError<void> | null, uri: string | undefined) => {
+              expect(uri!.length > 0).assertTrue();
+              done();
+            });
+        } catch (error) {
+          console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
+          expect().assertFail();
+          done();
+        }
 
       })
     /**
@@ -901,11 +911,14 @@ export default function getAssetsTest(): void {
               if(error != undefined){
                 expect(Number(error.code)).assertEqual(401);
                 done();
+              }else {
+                expect().assertFail();
+                done();
               }
             });
         } catch (error) {
           console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
-          expect(Number(error.code)).assertEqual(401);
+          expect().assertFail();
           done();
         }
       })
@@ -928,14 +941,17 @@ export default function getAssetsTest(): void {
           }
           helper!.createAsset(photoType, extension, options,
             (error: BusinessError<void> | null, uri: string | undefined) => {
-            if(error != undefined){
-              expect(Number(error.code)).assertEqual(401);
-              done();
-            }
-          })
+              if(error != undefined){
+                expect(Number(error.code)).assertEqual(401);
+                done();
+              }else {
+                expect().assertFail();
+                done();
+              }
+            })
         } catch (error) {
           console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
-          expect(Number(error.code)).assertEqual(401);
+          expect().assertFail();
           done();
         }
       })
@@ -1007,7 +1023,7 @@ export default function getAssetsTest(): void {
             (error: BusinessError<void> | null, fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
               expect(fetchResult !== undefined).assertTrue();
               done();
-          });
+            });
         } catch (error) {
           console.error(TAG, testName, 'Failed applyChanges', JSON.stringify(error), error.code);
           expect().assertFail();
@@ -1270,7 +1286,7 @@ export default function getAssetsTest(): void {
       }
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+          await helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
           await album.getAssets(fetchOptions);
@@ -1427,6 +1443,14 @@ export default function getAssetsTest(): void {
         fetchColumns: [],
         predicates: predicates
       };
+      let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension: string = 'jpg';
+      let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null= photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      let fileUri = testContext.filesDir + '/test_mov_1.jpg';
+      if (assetChangeRequest !== null) {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, fileUri);
+        await helper!.applyChanges(assetChangeRequest);
+      }
       let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
         console.info(TAG, testName, 'onCallback1 success, changeData: ' + JSON.stringify(changeData));
         expect(changeData.type == 1).assertTrue();
@@ -1436,7 +1460,7 @@ export default function getAssetsTest(): void {
       }
       try {
         let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+          await helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
         let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
           await album.getAssets(fetchOptions);
@@ -1455,6 +1479,5 @@ export default function getAssetsTest(): void {
         done();
       }
     });
-
   })
 }
