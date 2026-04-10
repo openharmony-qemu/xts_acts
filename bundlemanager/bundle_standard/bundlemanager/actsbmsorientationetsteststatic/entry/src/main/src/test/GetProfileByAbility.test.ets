@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,9 +46,9 @@ export default function getProfileByAbility() {
      * @tc.desc   Check the invalid moduleName (by promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getProfileByAbilityInvalidModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('getProfileByAbilityInvalidModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       await manager.getProfileByAbility(MODULE_NAME_TEST, ABILITY_NAME, METADATA_NAME).then((data: Array<string>): void => {
         hilog.info(domain, tag, "getProfileByAbilityInvalidModulePro_static success" + JSON.stringify(data))
         expect(data).assertFail()
@@ -66,9 +66,9 @@ export default function getProfileByAbility() {
      * @tc.desc   Check the empty moduleName (by promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getProfileByAbilityEmptyModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('getProfileByAbilityEmptyModulePro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       await manager.getProfileByAbility('', ABILITY_NAME, METADATA_NAME).then((data: Array<string>): void => {
         hilog.info(domain, tag, "getProfileByAbilityEmptyModulePro_static success" + JSON.stringify(data))
         expect(data).assertFail()
@@ -288,7 +288,8 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync('INVALID_NAME', ABILITY_NAME, METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "testGetProfileByAbilitySyncByInvalidModuleName_static failed" + JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
         done();
@@ -308,7 +309,8 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync(MODULE_NAME_TEST, 'INVALID_NAME', METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "testGetProfileByAbilitySyncByInvalidAbilityName_static failed" + JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
         done();
@@ -328,7 +330,8 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync(MODULE_NAME, ABILITY_NAME, METADATA_NAME_TEST);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "getProfileByAbilitySyncNoProfile_static failed" + JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_PROFILE_NOT_EXIST);
         done();
@@ -348,7 +351,8 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync('', ABILITY_NAME, METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "getProfileByAbilitySyncByEmptyModuleName_static failed" + JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_MODULE_NOT_EXIST);
         done();
@@ -368,12 +372,173 @@ export default function getProfileByAbility() {
         manager.getProfileByAbilitySync(MODULE_NAME_TEST, '', METADATA_NAME);
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "getProfileByAbilitySyncByEmptyAbilityName_static failed" + JSON.stringify(err));
         expect(err.code).assertEqual(ERROR_ABILITY_NOT_EXIST);
         done();
       }
     })
 
+    /**
+     * @tc.name   testGetProfileByAbilitySyncSuccessEmptyMetaData_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_7000
+     * @tc.desc   profile is json (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetProfileByAbilitySyncSuccessEmptyMetaData_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let data = manager.getProfileByAbilitySync(MODULE_NAME, ABILITY_NAME, '');
+        expect(Array.isArray(data)).assertTrue();
+        expect(data.length).assertEqual(2);
+        expect(typeof data[0]).assertEqual("string");
+        expect(data[0]).assertEqual(PROFILE_JSON_STRING);
+        expect(typeof data[1]).assertEqual("string");
+        expect(data[1]).assertEqual(PROFILE_JSON_STRING);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.error(domain, tag, "testGetProfileByAbilitySyncSuccessEmptyMetaData_static failed" + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   getProfileByAbilityEmptyMetaDataCall_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_3400
+     * @tc.desc   Check the empty metadataName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getProfileByAbilityEmptyMetaDataCall_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, '', (err: BusinessError<void> | null, data) => {
+          if(err){
+            hilog.info(domain, tag, 'getProfileByAbilityEmptyMetaDataCall_static   ====> err' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          } else if (data !== undefined){
+            hilog.info(domain, tag, "getProfileByAbilityEmptyMetaDataCall_static success" + JSON.stringify(data))
+            expect(Array.isArray(data)).assertTrue();
+            expect(data.length).assertEqual(2);
+            expect(typeof data[0]).assertEqual("string");
+            expect(data[0]).assertEqual(PROFILE_JSON_STRING);
+            expect(typeof data[1]).assertEqual("string");
+            expect(data[1]).assertEqual(PROFILE_JSON_STRING);
+            done()
+          } else {
+            hilog.info(domain, tag, 'getProfileByAbilityEmptyMetaDataCall_static  ====> Fail');
+            expect().assertFail();
+            done();
+          }
+        });
+    })
+
+    /**
+     * @tc.name   getProfileByAbilityEmptyMetaDataPro_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_2800
+     * @tc.desc   Check the empty metadataName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getProfileByAbilityEmptyMetaDataPro_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, '').then((data: Array<string>): void => {
+        hilog.info(domain, tag, "getProfileByAbilityEmptyMetaDataPro_static success" + JSON.stringify(data))
+        expect(Array.isArray(data)).assertTrue();
+        expect(data.length).assertEqual(2);
+        expect(typeof data[0]).assertEqual("string");
+        expect(data[0]).assertEqual(PROFILE_JSON_STRING);
+        expect(typeof data[1]).assertEqual("string");
+        expect(data[1]).assertEqual(PROFILE_JSON_STRING);
+        done();
+      }).catch((err: Error): void => {
+        hilog.error(domain, tag, "getProfileByAbilityEmptyMetaDataPro_static failed" + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      })
+    })
+
+    /**
+     * @tc.name   testGetProfileByAbilitySyncSuccess_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_6200
+     * @tc.desc   profile is json (by sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetProfileByAbilitySyncSuccess_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let data = manager.getProfileByAbilitySync(MODULE_NAME, ABILITY_NAME, METADATA_NAME);
+        expect(Array.isArray(data)).assertTrue();
+        expect(data.length).assertEqual(1);
+        expect(data.length).assertLarger(0);
+        expect(typeof data[0]).assertEqual("string");
+        expect(data[0]).assertEqual(PROFILE_JSON_STRING);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.error(domain, tag, "testGetProfileByAbilitySyncSuccess_static failed" + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   getProfileByAbilityPromise_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_0100
+     * @tc.desc   Check the valid metadataName (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getProfileByAbilityPromise_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME).then((data: Array<string>): void => {
+        hilog.info(domain, tag, "getProfileByAbilityPromise_static success" + JSON.stringify(data))
+        expect(Array.isArray(data)).assertTrue();
+        expect(data.length).assertEqual(1);
+        expect(data.length).assertLarger(0);
+        expect(typeof data[0]).assertEqual("string");
+        expect(data[0]).assertEqual(PROFILE_JSON_STRING);
+        done();
+      }).catch((err: Error): void => {
+        hilog.error(domain, tag, "getProfileByAbilityPromise_static failed" + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      })
+    })
+
+    /**
+     * @tc.name   getProfileByAbilityCallback_static
+     * @tc.number Sub_Bms_Framework_Query_Profile_static_2200
+     * @tc.desc   Check the valid metadataName (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('getProfileByAbilityCallback_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        manager.getProfileByAbility(MODULE_NAME, ABILITY_NAME, METADATA_NAME, (err: BusinessError<void> | null, data) => {
+          if(err){
+            hilog.info(domain, tag, 'getProfileByAbilityCallback_static   ====> err' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          } else if (data !== undefined){
+            hilog.info(domain, tag, "getProfileByAbilityCallback_static success" + JSON.stringify(data))
+            expect(Array.isArray(data)).assertTrue();
+            expect(data.length).assertEqual(1);
+            expect(data.length).assertLarger(0);
+            expect(typeof data[0]).assertEqual("string");
+            expect(data[0]).assertEqual(PROFILE_JSON_STRING);
+            done()
+          } else {
+            hilog.info(domain, tag, 'getProfileByAbilityCallback_static  ====> Fail');
+            expect().assertFail();
+            done();
+          }
+        });
+      })
   })
 }

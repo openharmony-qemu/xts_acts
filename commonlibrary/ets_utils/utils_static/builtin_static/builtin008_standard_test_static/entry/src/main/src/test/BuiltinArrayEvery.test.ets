@@ -25,7 +25,7 @@ export default function BuiltinArrayEveryTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -142,17 +142,17 @@ export default function BuiltinArrayEveryTest() {
 
     /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_7100
-     * @tc.name   testBuiltinArrayTypeOf0071
-     * @tc.desc   Testing Type.of with string.
+     * @tc.name   testBuiltinArrayClassOf0071
+     * @tc.desc   Testing Class.of with string.
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0071";
+    it('testBuiltinArrayClassOf0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0071";
       try {
-        let a = Type.of("ArkTS");
-        expect(String(a)).assertEqual("string");
+        let a = Class.of("ArkTS");
+        expect(a).assertEqual(Class.from<string>());
       } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
@@ -161,17 +161,17 @@ export default function BuiltinArrayEveryTest() {
 
     /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_7200
-     * @tc.name   testBuiltinArrayTypeOf0072
-     * @tc.desc   Testing Type.of with boolean.
+     * @tc.name   testBuiltinArrayClassOf0072
+     * @tc.desc   Testing Class.of with boolean.
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0072";
+    it('testBuiltinArrayClassOf0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0072";
       try {
-        let a = Type.of(true);
-        expect(String(a)).assertEqual("boolean");
+        let a = Class.of(true);
+        expect(a).assertEqual(Class.from<boolean>());
       } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
@@ -180,18 +180,18 @@ export default function BuiltinArrayEveryTest() {
 
     /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_7400
-     * @tc.name   testBuiltinArrayTypeOf0074
-     * @tc.desc   Testing Type.of with number.
+     * @tc.name   testBuiltinArrayClassOf0074
+     * @tc.desc   Testing Class.of with number.
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0074";
+    it('testBuiltinArrayClassOf0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0074";
       try {
         let num = 123;
-        let typeStr = String(Type.of(num));
-        expect(typeStr === "number" || typeStr === "int").assertTrue();
+        let typeClass = Class.of(num);
+        expect(typeClass == Class.from<int>()).assertTrue();
       } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
@@ -200,18 +200,18 @@ export default function BuiltinArrayEveryTest() {
 
     /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_7500
-     * @tc.name   testBuiltinArrayTypeOf0075
-     * @tc.desc   Testing Type.of with string.
+     * @tc.name   testBuiltinArrayClassOf0075
+     * @tc.desc   Testing Class.of with string.
      * @tc.size    MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0075";
+    it('testBuiltinArrayClassOf0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0075";
       try {
         let str = "Hello World";
-        let a = Type.of(str);
-        expect(String(a)).assertEqual("string");
+        let a = Class.of(str);
+        expect(a).assertEqual(Class.from<string>());
       } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
@@ -220,18 +220,18 @@ export default function BuiltinArrayEveryTest() {
 
     /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_7600
-     * @tc.name   testBuiltinArrayTypeOf0076
-     * @tc.desc   Testing Type.of with boolean.
+     * @tc.name   testBuiltinArrayClassOf0076
+     * @tc.desc   Testing Class.of with boolean.
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0076";
+    it('testBuiltinArrayClassOf0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0076";
       try {
         let bool = true;
-        let a = Type.of(bool);
-        expect(String(a)).assertEqual("boolean");
+        let a = Class.of(bool);
+        expect(a).assertEqual(Class.from<boolean>());
       } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
@@ -240,37 +240,17 @@ export default function BuiltinArrayEveryTest() {
 
     /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_7700
-     * @tc.name   testBuiltinArrayTypeOf0077
-     * @tc.desc   Testing Type.of with null.
+     * @tc.name   testBuiltinArrayClassOf0077
+     * @tc.desc   Testing Class.of with null.
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0077";
+    it('testBuiltinArrayClassOf0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0077";
       try {
-        let a = Type.of(null);
-        expect(String(a)).assertEqual("null");
-      } catch (err) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_7800
-     * @tc.name   testBuiltinArrayTypeOf0078
-     * @tc.desc   Testing Type.of with undefined.
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayTypeOf0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0078";
-      try {
-        let val = undefined;
-        let a = Type.of(val);
-        expect(String(a)).assertEqual("undefined");
+        let a = Class.of(null);
+        expect(a).assertEqual(Class.from<null>());
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
@@ -279,17 +259,17 @@ export default function BuiltinArrayEveryTest() {
 
     /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_7900
-     * @tc.name   testBuiltinArrayTypeOf0079
-     * @tc.desc   Testing Type.of with string type.
+     * @tc.name   testBuiltinArrayClassOf0079
+     * @tc.desc   Testing Class.of with string type.
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0079";
+    it('testBuiltinArrayClassOf0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0079";
       try {
-        let a = Type.of("Hello");
-        expect(String(a)).assertEqual("string");
+        let a = Class.of("Hello");
+        expect(a).assertEqual(Class.from<string>());
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
@@ -298,17 +278,17 @@ export default function BuiltinArrayEveryTest() {
 
     /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_8100
-     * @tc.name   testBuiltinArrayTypeOf0081
-     * @tc.desc   Testing Type.of with boolean type.
+     * @tc.name   testBuiltinArrayClassOf0081
+     * @tc.desc   Testing Class.of with boolean type.
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0081";
+    it('testBuiltinArrayClassOf0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0081";
       try {
-        let a = Type.of(true);
-        expect(String(a)).assertEqual("boolean");
+        let a = Class.of(true);
+        expect(a).assertEqual(Class.from<boolean>());
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
@@ -317,36 +297,17 @@ export default function BuiltinArrayEveryTest() {
 
     /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_8200
-     * @tc.name   testBuiltinArrayTypeOf0082
-     * @tc.desc   Testing Type.of with null.
+     * @tc.name   testBuiltinArrayClassOf0082
+     * @tc.desc   Testing Class.of with null.
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0082";
+    it('testBuiltinArrayClassOf0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0082";
       try {
-        let a = Type.of(null);
-        expect(String(a)).assertEqual("null");
-      } catch (err) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_8300
-     * @tc.name   testBuiltinArrayTypeOf0083
-     * @tc.desc   Testing Type.of with undefined.
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayTypeOf0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0083";
-      try {
-        let a = Type.of(undefined);
-        expect(String(a)).assertEqual("undefined");
+        let a = Class.of(null);
+        expect(a).assertEqual(Class.from<null>());
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
@@ -355,17 +316,17 @@ export default function BuiltinArrayEveryTest() {
 
     /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_8600
-     * @tc.name   testBuiltinArrayTypeOf0086
-     * @tc.desc   Testing Type.of with string type.
+     * @tc.name   testBuiltinArrayClassOf0086
+     * @tc.desc   Testing Class.of with string type.
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0086";
+    it('testBuiltinArrayClassOf0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0086";
       try {
-        let a = Type.of("OpenHarmony");
-        expect(String(a)).assertEqual("string");
+        let a = Class.of("OpenHarmony");
+        expect(a).assertEqual(Class.from<string>());
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
@@ -374,19 +335,18 @@ export default function BuiltinArrayEveryTest() {
 
     /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_8700
-     * @tc.name   testBuiltinArrayTypeOf0087
+     * @tc.name   testBuiltinArrayClassOf0087
      * @tc.desc   Testing number type detection
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0087";
+    it('testBuiltinArrayClassOf0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0087";
       try {
         const num = 3.14;
-        const typeDesc = String(Type.of(num));
-        const validTypes = ["number", "double", "Number"];
-        expect(validTypes.includes(typeDesc)).assertTrue();
+        const typeClass = Class.of(num);
+        expect(typeClass).assertEqual(Class.from<double>());
         expect(typeof num === "number").assertTrue();
         expect(num > 3.13 && num < 3.15).assertTrue();
       } catch (err) {
@@ -397,17 +357,17 @@ export default function BuiltinArrayEveryTest() {
 
     /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_8800
-     * @tc.name   testBuiltinArrayTypeOf0088
-     * @tc.desc   Testing Type.of with boolean type.
+     * @tc.name   testBuiltinArrayClassOf0088
+     * @tc.desc   Testing Class.of with boolean type.
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0088";
+    it('testBuiltinArrayClassOf0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0088";
       try {
-        let a = Type.of(true);
-        expect(String(a)).assertEqual("boolean");
+        let a = Class.of(true);
+        expect(a).assertEqual(Class.from<boolean>());
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
@@ -415,40 +375,18 @@ export default function BuiltinArrayEveryTest() {
     });
 
     /**
-     * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_8900
-     * @tc.name   testBuiltinArrayTypeOf0089
-     * @tc.desc   Testing Type.of with function type (specific signature).
-     * @tc.size   MEDIUMTEST
-     * @tc.type   FUNCTION
-     * @tc.level  LEVEL1
-     */
-    it('testBuiltinArrayTypeOf0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0089";
-      try {
-        let func = () => {
-          console.log("test");
-        };
-        let a = Type.of(func);
-        expect(String(a)).assertEqual("(): void");
-      } catch (err) {
-        console.error(`${TAG} is fail, err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.number COMMONLIBRARY_UTIL_BASE_TYPE_OF_9000
-     * @tc.name   testBuiltinArrayTypeOf0090
-     * @tc.desc   Testing Type.of with null type.
+     * @tc.name   testBuiltinArrayClassOf0090
+     * @tc.desc   Testing Class.of with null type.
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
      * @tc.level  LEVEL1
      */
-    it('testBuiltinArrayTypeOf0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testBuiltinArrayTypeOf0090";
+    it('testBuiltinArrayClassOf0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayClassOf0090";
       try {
-        let a = Type.of(null);
-        expect(String(a)).assertEqual("null");
+        let a = Class.of(null);
+        expect(a).assertEqual(Class.from<null>());
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();

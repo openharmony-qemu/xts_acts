@@ -965,9 +965,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = "[1,,2]";
       let hasError: boolean = false;
 
@@ -985,9 +985,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "Hello 😊 World 🌟";
       const jsonStr: string = JSON.stringify(originalStr);
       let typ: Type = Type.of(new String());
@@ -1004,9 +1004,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: RootNestedReplaceObj = {
         container: { value: '123' }
       };
@@ -1029,9 +1029,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"num": 1e-}';
       let hasError: boolean = false;
       let typ: Type = Type.of(new String());
@@ -1050,9 +1050,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"a": {"b": {"c": 1, "c": 2}}}';
       let typ: Type = Type.of(new DeepKeyConflictObj());
       const parsedObj: DeepKeyConflictObj = JSON.parse<DeepKeyConflictObj>(jsonStr, typ) as DeepKeyConflictObj;
@@ -1065,9 +1065,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"valid": tru}';
       let hasError: boolean = false;
       let typ: Type = Type.of(new String());
@@ -1085,9 +1085,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "é (e\u0301)";
       const jsonStr: string = JSON.stringify(originalStr);
       let typ: Type = Type.of(new String());
@@ -1104,9 +1104,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: Test14_Obj2 = { a: 5, b: 10, sum: 0 };
       const jsonStr: string = JSON.stringify(originalObj);
       let values: Test14_Obj2 = {
@@ -1138,9 +1138,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = "[() => {}]";
       let hasError: boolean = false;
       let typ: Type = Type.of(new String());
@@ -1158,9 +1158,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: StrTruncateObj = {
         shortTest: "hello",
         longTest: "this is a very long string"
@@ -1183,9 +1183,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"num": ++123}';
       let hasError: boolean = false;
       let typ: Type = Type.of(new String());
@@ -1204,9 +1204,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: NestedNewlineObj = {
         level1: { level2: "Line1\nLine2\nLine3" }
       };
@@ -1224,9 +1224,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: Test20_Obj2 = { temp: "value" };
       const jsonStr: string = JSON.stringify(originalObj, (key: string, value: Any) => {
         if (key === "temp") {
@@ -1249,9 +1249,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: string[] = ["10", "20", "30"];
       const jsonStr: string = JSON.stringify(originalArr);
       const parsedArr: jsonx.JsonElement = JSON.parseJsonElement(jsonStr,
@@ -1269,9 +1269,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         const invalidJson: string = '{"a":1}}extra';
         let typ: Type = Type.of(new String());
@@ -1287,9 +1287,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: SpecialCharArr = [
         ["!@#", "$%^"],
         ["&*()", "[]{}"]
@@ -1307,9 +1307,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"str": "test"string"}';
       let hasError: boolean = false;
       let typ: Type = Type.of(new String());
@@ -1328,9 +1328,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = "[1, undefined, 3]";
       let hasError: boolean = false;
       let typ: Type = Type.of(new String());
@@ -1349,9 +1349,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: MultiLangObj = {
         en: "Hello",
         zh: "你好",
@@ -1372,9 +1372,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: number[] = [1, 2, 3, 4, 5];
       const jsonStr: string = JSON.stringify(originalArr, (key: string, value: Any) => {
         if (key === "" && Array.isArray(value) && (value as Array<number>).length > 3) {
@@ -1395,9 +1395,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: ProductCompare = { numbers: [2, 3, 4], product: 0 };
       const json = JSON.stringify(obj);
       const parsed: jsonx.JsonElement = JSON.parseJsonElement(json, (k: string, v: jsonx.JsonElement) => {
@@ -1420,9 +1420,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"num": 123+}';
       let typ: Type = Type.of(new String());
       try {
@@ -1437,9 +1437,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "a\u200Cb";
       const jsonStr: string = JSON.stringify(originalStr);
       let typ: Type = Type.of(new String());
@@ -1456,9 +1456,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: string[] = ["\x01Start", "End\x04"];
       const jsonStr: string = JSON.stringify(originalArr);
       const parsedArr: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
@@ -1474,9 +1474,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = "{key name: 1}";
       let typ: Type = Type.of(new String());
       try {
@@ -1484,7 +1484,7 @@ export default function Json4Test() {
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("SyntaxError");
-        expect(error.message).assertContain('Unexpected char "k" at 1:3');
+        expect(error.message).assertContain('Unterminated string at 13 at 2..13');
       }
     });
 
@@ -1494,9 +1494,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: Test39_Obj2 = {
         logs: [
           { event: "login", time: "2024-01-01T00:00:00Z" },
@@ -1521,9 +1521,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"valid": TRUE}';
       let typ: Type = Type.of(new String());
       try {
@@ -1531,7 +1531,7 @@ export default function Json4Test() {
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("SyntaxError");
-        expect(error.message).assertContain('Unexpected char "T" at 1:12');
+        expect(error.message).assertContain('Unexpected character \'T\' at 10 at 10..10');
       }
 
     });
@@ -1542,9 +1542,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "👨‍👩‍👧‍👦 Family: 👨‍💻 Developer";
       const jsonStr: string = JSON.stringify(originalStr);
       let typ: Type = Type.of(new String());
@@ -1560,9 +1560,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const validJson: string = '{"score": 85}';
       const invalidJson: string = '{"score": 150}';
       let validResult: ValidatedObj | null = null;
@@ -1596,17 +1596,17 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
 
       const invalidJson: string = "[{\"a\":1}";
       try {
         JSON.parseJsonElement(invalidJson);
         expect().assertFail();
       } catch (error) {
-        expect(error.name).assertEqual("Error");
-        expect(error.message).assertContain("Unexpected end of input at 0..0");
+        expect(error.name).assertEqual("SyntaxError");
+        expect(error.message).assertContain("Expected \',\' or \']\' at 8 at 8..8");
       }
     });
 
@@ -1616,9 +1616,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: CubeRootCompare = { numbers: [8, 27, 64], roots: [] };
       const json = JSON.stringify(obj);
       const parsed: jsonx.JsonElement = JSON.parseJsonElement(json, (k: string, v: jsonx.JsonElement) => {
@@ -1643,9 +1643,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"num": a123}';
       let typ: Type = Type.of(new String());
       try {
@@ -1653,7 +1653,7 @@ export default function Json4Test() {
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("SyntaxError");
-        expect(error.message).assertContain('Unexpected char "a" at 1:10');
+        expect(error.message).assertContain('Unexpected character \'a\' at 8 at 8..8');
       }
     });
 
@@ -1663,9 +1663,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "Line1\r\nLine2\nLine3";
       const jsonStr: string = JSON.stringify(originalStr);
       let typ: Type = Type.of(new String());
@@ -1681,9 +1681,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: EncryptedObj = {
         username: "user456",
         email: "user@example.com"
@@ -1706,9 +1706,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: DeepSpecialCharObj = {
         level1: {
           key401: "value$1",
@@ -1729,9 +1729,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: EmptyArrFilterObj = {
         valid: [1, 2],
         empty: []
@@ -1752,9 +1752,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: MultiPunctObj = {
         en: "Hello! How are you?",
         de: "Hallo! Wie geht es dir?",
@@ -1775,9 +1775,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: number[][] = [[1, 2], [3, 4], [5, 6]];
       const jsonStr: string = JSON.stringify(originalArr);
       const parsedObj: jsonx.JsonElement = JSON.parseJsonElement(jsonStr, (key: string, value: jsonx.JsonElement) => {
@@ -1801,9 +1801,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: string[][] = [
         ["a\u200B", "b"],
         ["c", "d\u200B"]
@@ -1822,9 +1822,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: ArrSensitiveObj = {
         users: [
           { id: 1, name: "Dave", password: "pass1" },
@@ -1845,9 +1845,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: NumToStringObj = { a: '10', b: '20', c: '30' };
       const jsonStr: string = JSON.stringify(originalObj,
         (key: string, value: Any) => typeof value === "number" ? (value as NumToStringObj).toString() : value
@@ -1866,9 +1866,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "🇨🇳 China 🇺🇸 USA";
       const jsonStr: string = JSON.stringify(originalStr);
       let typ: Type = Type.of(new String());
@@ -1885,9 +1885,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: MaskedObj = {
         phone: "13800138000",
         email: "user@example.com"
@@ -1914,9 +1914,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"a": 1, "a": "2"}';
       let typ: Type = Type.of(new MixedTypeKeyObj());
       const parsedObj: MixedTypeKeyObj = JSON.parse<MixedTypeKeyObj>(jsonStr, typ) as MixedTypeKeyObj;
@@ -1931,9 +1931,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "a\u200Db";
       const jsonStr: string = JSON.stringify(originalStr);
       let typ: Type = Type.of(new String());
@@ -1949,9 +1949,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: Test82_Obj1 = {
         nan: NaN,
         inf: Infinity,
@@ -1972,9 +1972,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: Test83_Obj3 = {
         level1: {
           nan: NaN,
@@ -1996,9 +1996,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "👨🏿‍💻 Dark skin developer";
       const jsonStr: string = JSON.stringify(originalStr);
       let typ: Type = Type.of(new String());
@@ -2014,9 +2014,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: MathSymbolObj = {
         formulas: {
           axToBb: "sum",
@@ -2037,9 +2037,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: MultiBracketObj = {
         text: "中文（括号）、英文()、日文（かっこ）"
       };
@@ -2057,9 +2057,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: ValueClampObj = { score: 150, age: -5 };
       const jsonStr: string = JSON.stringify(originalObj, (key: string, value: Any) => {
         if (key === "score") {
@@ -2083,9 +2083,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "🏴󠁧󠁢󠁥󠁮󠁧󠁿 UK 🇪🇸 Spain";
       const jsonStr: string = JSON.stringify(originalStr);
       let typ: Type = Type.of(new String());
@@ -2102,9 +2102,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: PartialMaskObj = {
         cardNumber: "6222021234567890123",
         phone: "13800138000"
@@ -2127,9 +2127,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: MultiQuoteObj = {
         text: '中文“引号”、英文"引号"、日文「引用」'
       };
@@ -2147,9 +2147,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: DeepZeroWidthObj = {
         level1: {
           keyy: "value\u200C1",
@@ -2170,9 +2170,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: ApiResponse = {
         code: 200,
         data: { message: "success", timestamp: Date.now() }
@@ -2198,9 +2198,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "🍕 Pizza 🍟 Fries 🍔 Burger";
       const jsonStr: string = JSON.stringify(originalStr);
       let typ: Type = Type.of(new String());
@@ -2217,9 +2217,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: ChemicalSymbolObj = {
         elements: {
           H2O: "Water",
@@ -2240,9 +2240,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: MusicSymbolObj = {
         notes: {
           Cx23: "Middle C Sharp",
@@ -2263,9 +2263,9 @@ export default function Json4Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json4Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json4Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "✈️ Travel 🏨 Hotel 🌍 World";
       const jsonStr: string = JSON.stringify(originalStr);
       let typ: Type = Type.of(new String());

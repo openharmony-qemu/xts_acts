@@ -87,6 +87,19 @@
         "MainAbility/pages/NodeReturn/ComponentContentIsDisposedTest",
         "MainAbility/pages/NodeReturn/FrameNodeIsDisposedTest",
         "MainAbility/pages/NodeReturn/RenderNodeIsDisposedTest",
-        "MainAbility/pages/NodeReturn/NodeAdapterIsDisposedTest"
+        "MainAbility/pages/NodeReturn/NodeAdapterIsDisposedTest",
+
+        "MainAbility/pages/Graphics/graphicsApiNullUndefined",
+        "MainAbility/pages/RenderNode/renderNodeApiNullUndefined",
+        "MainAbility/pages/NodeContent/nodeContentApiNullUndefined",
+        "MainAbility/pages/BuilderNode/builderNodeBuildNullUndefined",
+        "MainAbility/pages/BuilderNode/builderNodeUpdateNullUndefined",
+        "MainAbility/pages/BuilderNode/builderNodeReuseNullUndefined",
+        "MainAbility/pages/BuilderNode/ReactiveBuilderNodeReuseNullUndefined",
+        "MainAbility/pages/BuilderNode/builderNodeInheritFreezeOptionsFalse",
+
+        "MainAbility/pages/ComponentContent/componentContentUpdateNullUndefined",
+        "MainAbility/pages/ComponentContent/ComponentContentInheritFreezeOptionsFalse",
+        "MainAbility/pages/NodeAdapter/NodeAdapterApiNullUndefined"
     ]
 }

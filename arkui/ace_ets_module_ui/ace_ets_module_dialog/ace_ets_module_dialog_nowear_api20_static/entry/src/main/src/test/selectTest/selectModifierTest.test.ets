@@ -36,7 +36,7 @@ let tag: string = 'testTag';
 export default function SelectModifierTest() {
   describe('SelectModifierTest', () => {
     const SLEEP_TIME_1000 = 1000;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SelectModifierTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api20.static", "EntryAbility")
     });

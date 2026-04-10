@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,12 +37,12 @@ let g_context: common.UIAbilityContext;
 
 export default function audioRendererTest() {
   describe('getUnderflowCount', () => {
-    let audioRen: audio.AudioRenderer | null;
+    let audioRen: audio.AudioRenderer | null = null;
     let TagFrmwkRender = "audioRendererEnhanceTest";
 
     beforeAll(async (): Promise<void> => {
       try {
-        console.info(' beforeAll start');
+        console.info('beforeAll start');
         g_context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
         let atManager = abilityAccessCtrl.createAtManager();
         let arr: Array<Permissions> = new Array<Permissions>();
@@ -54,12 +54,14 @@ export default function audioRendererTest() {
             console.info("getPermissionRequestResult err" + JSON.stringify(err));
           });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
+        await Utils.msSleep(1000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        await Utils.msSleep(1000);
         if (permissionButton != null) {
           await permissionButton.click();
         }
       } catch (err) {
-        console.error(' beforeAll failed, err: ' + err);
+        console.error('beforeAll failed, err: ' + err);
       }
       console.info(`${TagFrmwkRender}: beforeAll: Prerequisites at the test suite level`);
     })
@@ -89,10 +91,10 @@ export default function audioRendererTest() {
           Object.keys(data!));
           console.info('audioRendererEnhanceTest: AudioRender Created : Success : Stream Type: SUCCESS data value: ' +
           JSON.stringify(data));
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info('audioRendererEnhanceTest: AudioRender Created : ERROR : ' + err.message);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info('audioRendererEnhanceTest: AudioRender Created : catch ERROR : ' + error.code + error.message);
       }
     })
@@ -102,7 +104,7 @@ export default function audioRendererTest() {
       try {
         await audioRen!.release();
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
     })
@@ -194,7 +196,7 @@ export default function audioRendererTest() {
         console.info(`${TagFrmwkRender}: getUnderflowCount :SUCCESS ${value}`);
         expect(value).assertEqual(testConst.OUTPUT_NUMBER_0);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log("${TagFrmwkRender}:getUnderflowCount : error = " + err);
         expect(false).assertTrue();
         done();
@@ -221,19 +223,18 @@ export default function audioRendererTest() {
           await audioRen!.drain();
           try {
             await audioRen!.stop();
-            expect(true).assertTrue();
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.info(`${TagFrmwkRender}:  Renderer stop:ERROR : ${err.message}`);
             expect(false).assertTrue();
             done();
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`${TagFrmwkRender}:  Renderer drain: ERROR : ${err.message}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log("${TagFrmwkRender}:getUnderflowCount : error = " + err);
         expect(false).assertTrue();
         done();
@@ -255,7 +256,7 @@ export default function audioRendererTest() {
           console.info(`${TagFrmwkRender}: getUnderflowCount :SUCCESS ${data}`);
           expect(data).assertEqual(testConst.OUTPUT_NUMBER_0);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log("${TagFrmwkRender}:getUnderflowCount : error = " + error);
           expect(false).assertTrue();
           done();
@@ -287,24 +288,23 @@ export default function audioRendererTest() {
             await audioRen!.drain();
             try {
               await audioRen!.stop();
-              expect(true).assertTrue();
               done();
-            } catch (err: BusinessError) {
+            } catch (err) {
               console.info(`${TagFrmwkRender}:  Renderer stop:ERROR : ${err.message}`);
               expect(false).assertTrue();
               done();
             }
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.error(`${TagFrmwkRender}:  Renderer drain: ERROR : ${err.message}`);
             expect(false).assertTrue();
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log("${TagFrmwkRender}: getUnderflowCount : error = " + error);
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log("GETUNDERFLOWCOUNT catch unknown error = " + error);
         expect(false).assertTrue();
         done();
@@ -322,7 +322,7 @@ export default function audioRendererTest() {
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         for (let index = 0; index < testConst.StreamUsage.length; index++) {
-          let audioRender: audio.AudioRenderer | null;
+          let audioRender: audio.AudioRenderer | null = null;
           let AudioStreamInfo: audio.AudioStreamInfo = {
             samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
             channels: audio.AudioChannel.CHANNEL_2,
@@ -342,17 +342,17 @@ export default function audioRendererTest() {
               let data = await audio.createAudioRenderer(AudioRendererOptions);
               audioRender = data;
               console.info(`${TagFrmwkRender}:  AudioRender Created : Stream Type: ${testConst.StreamUsage[index]} success`);
-            } catch (err: BusinessError) {
+            } catch (err) {
               console.info(`${TagFrmwkRender}:  AudioRender Created : ERROR : ` + err.code + err.message);
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.info(`${TagFrmwkRender}:  AudioRender Created : catch ERROR : ` + error.code + error.message);
           }
           try {
             let data = await audioRender!.getUnderflowCount();
             console.info(`${TagFrmwkRender}:  getUnderflowCount SUCCESS! ${testConst.StreamUsage[index]}  data ${data}:, now release audiorender`);
             expect(data).assertEqual(testConst.OUTPUT_NUMBER_0);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.info(`${TagFrmwkRender}:  getUnderflowCount: ERROR : code: ${error.code}, mesage: ${error.message}`);
             expect(false).assertTrue();
             done();
@@ -361,7 +361,7 @@ export default function audioRendererTest() {
           try {
             await audioRender!.release()
             console.info(`${TagFrmwkRender}:  Renderer ${testConst.StreamUsage[index]} release  SUCCESS! `);
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.info(`${TagFrmwkRender}:  Renderer release ERROR: ${err.message}`);
           }
         }
@@ -420,17 +420,17 @@ export default function audioRendererTest() {
           try {
             await audioRen!.stop();
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.info(`${TagFrmwkRender}:  Renderer stop:ERROR : ${err.message}`);
             expect(false).assertTrue();
             done();
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`${TagFrmwkRender}:  Renderer drain: ERROR : ${err.message}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${TagFrmwkRender}:  getUnderflowCount unknown error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
         done();
@@ -448,7 +448,7 @@ export default function audioRendererTest() {
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         for (let index = 0; index < testConst.StreamUsage.length; index++) {
-          let audioRender: audio.AudioRenderer | null;
+          let audioRender: audio.AudioRenderer | null = null;
           let AudioStreamInfo: audio.AudioStreamInfo = {
             samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
             channels: audio.AudioChannel.CHANNEL_2,
@@ -469,10 +469,10 @@ export default function audioRendererTest() {
               audioRender = data;
               console.info(`${TagFrmwkRender}:  AudioRender Created : Stream Type: ${testConst.StreamUsage[index]} SUCCESS data state: ` +
               Object.keys(data!));
-            } catch (err: BusinessError) {
+            } catch (err) {
               console.info(`${TagFrmwkRender}:  AudioRender Created : ERROR : ` + err.message);
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.info(`${TagFrmwkRender}:  AudioRender Created : catch ERROR : ` + error.code + error.message);
           }
           audioRen!.getUnderflowCount((error: BusinessError<void> | null, data: long | undefined) => {
@@ -488,7 +488,7 @@ export default function audioRendererTest() {
           try {
             await audioRender!.release();
             console.info(`${TagFrmwkRender}:  Renderer ${testConst.StreamUsage[index]} release : SUCCESS`);
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.info(`${TagFrmwkRender}:  Renderer release :ERROR : ${err.message}`);
           }
         }

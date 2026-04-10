@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -81,7 +81,7 @@ struct PaddingBasePage_Length {
       this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
       this.parentComponentKey = routerParamOptions.view.parentComponentKey
       console.log('wj--onPageShow--',this._padding);
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -145,7 +145,7 @@ struct PaddingBasePage_Length {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity as int,
+          loop: Infinity.toInt(),
           fromStart: true,
           src: this.src
         }).applyStyles(this.commonStyle)

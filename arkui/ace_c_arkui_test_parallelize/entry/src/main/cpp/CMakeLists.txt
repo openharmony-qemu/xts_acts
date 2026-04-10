@@ -20,6 +20,12 @@ add_library(nativerender SHARED
     xcomponent/XcomponentTextureTest.cpp
     xcomponent/XcomponentTest.cpp
     xcomponent/NodeXtsTest.cpp
+    button/ButtonTest.cpp
+    checkbox/CheckboxTest.cpp
+    checkboxgroup/CheckboxgroupTest.cpp
+    radio/RadioTest.cpp
+    slider/SliderTest.cpp
+    toggle/ToggleTest.cpp
 )
 
 add_library(nativefunc SHARED

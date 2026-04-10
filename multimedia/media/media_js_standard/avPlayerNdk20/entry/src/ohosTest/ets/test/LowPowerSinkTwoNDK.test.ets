@@ -860,6 +860,171 @@ export default function LowPowerSinkNdk2Test() {
         }
       })
 
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_SetEosListener0101
+     * @tc.number SUB_MULTIMEIDA_OH_SetEosListener0101
+     * @tc.desc   test OH_LowPowerVideoSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_SetEosListener0101',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+          try {
+            console.info("====>SUB_MULTIMEIDA_OH_SetEosListener0101 start====");
+            let result: number = lowpoweraudiosinkndk.OH_SetEosListener0101();
+            expect(0).assertEqual(result);
+            done()
+          } catch (err) {
+            console.error("====>SUB_MULTIMEIDA_OH_SetEosListener0101 catch err: " +
+              err);
+            expect(false).assertEqual(true);
+            done()
+          }
+        } else {
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_SetRenderStartListener0101
+     * @tc.number SUB_MULTIMEIDA_OH_SetRenderStartListener0101
+     * @tc.desc   test OH_LowPowerVideoSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_SetRenderStartListener0101',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+          try {
+            console.info("====>SUB_MULTIMEIDA_OH_SetRenderStartListener0101 start====");
+            let result: number = lowpoweraudiosinkndk.OH_SetRenderStartListener0101();
+            expect(0).assertEqual(result);
+            done()
+          } catch (err) {
+            console.error("====>SUB_MULTIMEIDA_OH_SetRenderStartListener0101 catch err: " +
+              err);
+            expect(false).assertEqual(true);
+            done()
+          }
+        } else {
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_SetErrorListener0101
+     * @tc.number SUB_MULTIMEIDA_OH_SetErrorListener0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_SetErrorListener0101',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+          try {
+            console.info("====>SUB_MULTIMEIDA_OH_SetErrorListener0101 start====");
+            let result: number = lowpoweraudiosinkndk.OH_SetErrorListener0101();
+            expect(0).assertEqual(result);
+            done()
+          } catch (err) {
+            console.error("====>SUB_MULTIMEIDA_OH_SetErrorListener0101 catch err: " +
+              err);
+            expect(false).assertEqual(true);
+            done()
+          }
+        } else {
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+          try {
+            console.info("====>SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0100 start====");
+            let result: number = lowpoweraudiosinkndk.OH_LowPowerAudioSink_GetParameter0100();
+            expect(0).assertEqual(result);
+            done()
+          } catch (err) {
+            console.error("====>SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0100 catch err: " + err);
+            expect(false).assertEqual(true);
+            done()
+          }
+        } else {
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0200
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0200
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+          try {
+            console.info("====>SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0200 start====");
+            let result: number = lowpoweraudiosinkndk.OH_LowPowerAudioSink_GetParameter0200();
+            expect(0).assertEqual(result);
+            done()
+          } catch (err) {
+            console.error("====>SUB_MULTIMEIDA_OH_LowPowerAudioSink_GetParameter0200 catch err: " + err);
+            expect(false).assertEqual(true);
+            done()
+          }
+        } else {
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVSamplesBuffer_GetRemainedCapacity0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVSamplesBuffer_GetRemainedCapacity0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVSamplesBuffer_GetRemainedCapacity0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+          try {
+            console.info("====>SUB_MULTIMEIDA_OH_AVSamplesBuffer_GetRemainedCapacity0100 start====");
+            let result: number = lowpoweraudiosinkndk.OH_AVSamplesBuffer_GetRemainedCapacity0100();
+            expect(0).assertEqual(result);
+            done()
+          } catch (err) {
+            console.error("====>SUB_MULTIMEIDA_OH_AVSamplesBuffer_GetRemainedCapacity0100 catch err: " + err);
+            expect(false).assertEqual(true);
+            done()
+          }
+        } else {
+          done()
+        }
+      })
+
 
   })
 }

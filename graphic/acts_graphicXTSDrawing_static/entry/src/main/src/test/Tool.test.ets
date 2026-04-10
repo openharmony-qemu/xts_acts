@@ -63,9 +63,12 @@ export default function toolTest() {
       const msg = 'testMakeColorFromResourceColorNormal01Static';
       try {
         let color1: common2D.Color | undefined = drawing.Tool.makeColorFromResourceColor(Color.Orange);
-        console.info(msg + ' makeColorFromResourceColor Color.Orange successed');
         if (color1) {
-          expect(color1 != null).assertTrue();
+          console.info(msg + ' makeColorFromResourceColor Color.Orange successed' + JSON.stringify(color1));
+          expect(color1.green).assertEqual(165);
+          expect(color1.alpha).assertEqual(255);
+          expect(color1.blue).assertEqual(0);
+          expect(color1.red).assertEqual(255);
         }
         if(color1 == undefined){
           console.info(msg + ' 1 test failed');
@@ -81,7 +84,11 @@ export default function toolTest() {
         let color2: common2D.Color | undefined = drawing.Tool.makeColorFromResourceColor(0xff0000);
         console.info(msg + ' makeColorFromResourceColor 0xff0000 successed');
         if (color2) {
-          expect(color2 != null).assertTrue();
+          console.info(msg + ' makeColorFromResourceColor color2 successed' + JSON.stringify(color2));
+          expect(color2.green).assertEqual(0);
+          expect(color2.alpha).assertEqual(255);
+          expect(color2.blue).assertEqual(0);
+          expect(color2.red).assertEqual(255);
         }
         if(color2 == undefined){
           console.info(msg + ' 2 test failed');
@@ -96,7 +103,11 @@ export default function toolTest() {
         let color3: common2D.Color | undefined = drawing.Tool.makeColorFromResourceColor(0x5500ff00);
         console.info(msg + ' makeColorFromResourceColor 0x5500ff00 successed');
         if (color3) {
-          expect(color3 != null).assertTrue();
+          console.info(msg + ' makeColorFromResourceColor color3 successed' + JSON.stringify(color3));
+          expect(color3.green).assertEqual(255);
+          expect(color3.alpha).assertEqual(85);
+          expect(color3.blue).assertEqual(0);
+          expect(color3.red).assertEqual(0);
         }
         if(color3 == undefined){
           console.info(msg + ' 3 test failed');
@@ -112,7 +123,11 @@ export default function toolTest() {
         let color4: common2D.Color | undefined = drawing.Tool.makeColorFromResourceColor("#0223fa");
         console.info(msg + ' makeColorFromResourceColor #0223fa successed');
         if (color4) {
-          expect(color4 != null).assertTrue();
+          console.info(msg + ' makeColorFromResourceColor color4 successed' + JSON.stringify(color4));
+          expect(color4.green).assertEqual(35);
+          expect(color4.alpha).assertEqual(255);
+          expect(color4.blue).assertEqual(250);
+          expect(color4.red).assertEqual(2);
         }
         if(color4 == undefined){
           console.info(msg + ' 4 test failed');
@@ -127,7 +142,11 @@ export default function toolTest() {
         let color5: common2D.Color | undefined = drawing.Tool.makeColorFromResourceColor("#ffaca5e5");
         console.info(msg + ' makeColorFromResourceColor #ffaca5e5 successed');
         if (color5) {
-          expect(color5 != null).assertTrue();
+          console.info(msg + ' makeColorFromResourceColor color5 successed' + JSON.stringify(color5));
+          expect(color5.green).assertEqual(165);
+          expect(color5.alpha).assertEqual(255);
+          expect(color5.blue).assertEqual(229);
+          expect(color5.red).assertEqual(172);
         }
         if(color5 == undefined){
           console.info(msg + ' 5 test failed');
@@ -143,7 +162,11 @@ export default function toolTest() {
         let color6: common2D.Color | undefined = drawing.Tool.makeColorFromResourceColor("#1f0");
         console.info(msg + ' makeColorFromResourceColor #1f0 successed');
         if (color6) {
-          expect(color6 != null).assertTrue();
+          console.info(msg + ' makeColorFromResourceColor color6 successed' + JSON.stringify(color6));
+          expect(color6.green).assertEqual(255);
+          expect(color6.alpha).assertEqual(255);
+          expect(color6.blue).assertEqual(0);
+          expect(color6.red).assertEqual(17);
         }
         if(color6 == undefined){
           console.info(msg + ' 6 test failed');
@@ -158,7 +181,11 @@ export default function toolTest() {
         let color7: common2D.Color | undefined = drawing.Tool.makeColorFromResourceColor("#5ff0");
         console.info(msg + ' makeColorFromResourceColor #5ff0 successed');
         if (color7) {
-          expect(color7 != null).assertTrue();
+          console.info(msg + ' makeColorFromResourceColor color7 successed' + JSON.stringify(color7));
+          expect(color7.green).assertEqual(255);
+          expect(color7.alpha).assertEqual(85);
+          expect(color7.blue).assertEqual(0);
+          expect(color7.red).assertEqual(255);
         }
         if(color7 == undefined){
           console.info(msg + ' 7 test failed');
@@ -173,7 +200,11 @@ export default function toolTest() {
         let color8: common2D.Color | undefined = drawing.Tool.makeColorFromResourceColor('rgb(255, 100, 255)');
         console.info(msg + ' makeColorFromResourceColor rgb(255, 100, 255) successed');
         if (color8) {
-          expect(color8 != null).assertTrue();
+          console.info(msg + ' makeColorFromResourceColor color8 successed' + JSON.stringify(color8));
+          expect(color8.green).assertEqual(100);
+          expect(color8.alpha).assertEqual(255);
+          expect(color8.blue).assertEqual(255);
+          expect(color8.red).assertEqual(255);
         }
         if(color8 == undefined){
           console.info(msg + ' 8 test failed');
@@ -189,7 +220,11 @@ export default function toolTest() {
         let color9: common2D.Color | undefined = drawing.Tool.makeColorFromResourceColor('rgba(255, 100, 255, 0.20)');
         console.info(msg + ' makeColorFromResourceColor rgba(255, 100, 255, 0.20) successed');
         if (color9) {
-          expect(color9 != null).assertTrue();
+          console.info(msg + ' makeColorFromResourceColor color9 successed' + JSON.stringify(color9));
+          expect(color9.green).assertEqual(100);
+          expect(color9.alpha).assertEqual(51);
+          expect(color9.blue).assertEqual(255);
+          expect(color9.red).assertEqual(255);
         }
         if(color9 == undefined){
           console.info(msg + ' 9 test failed');
@@ -206,7 +241,11 @@ export default function toolTest() {
           drawing.Tool.makeColorFromResourceColor($r('sys.color.ohos_id_color_button_normal'));
         console.info(msg + ' makeColorFromResourceColor sys.color.ohos_id_color_button_normal successed');
         if (color10) {
-          expect(color10 != null).assertTrue();
+          console.info(msg + ' makeColorFromResourceColor color10 successed' + JSON.stringify(color10));
+          expect(color10.green).assertEqual(36);
+          expect(color10.alpha).assertEqual(12);
+          expect(color10.blue).assertEqual(49);
+          expect(color10.red).assertEqual(24);
         }
         if(color10 == undefined){
           console.info(msg + ' 10 test failed');
@@ -223,7 +262,11 @@ export default function toolTest() {
           drawing.Tool.makeColorFromResourceColor($r('app.color.appColorTest1'));
         console.info(msg + ' makeColorFromResourceColor app.color.appColorTest1 successed');
         if (color11) {
-          expect(color11 != null).assertTrue();
+          console.info(msg + ' makeColorFromResourceColor color11 successed' + JSON.stringify(color11));
+          expect(color11.green).assertEqual(255);
+          expect(color11.alpha).assertEqual(255);
+          expect(color11.blue).assertEqual(255);
+          expect(color11.red).assertEqual(255);
         }
         if(color11 == undefined){
           console.info(msg + ' 11 test failed');

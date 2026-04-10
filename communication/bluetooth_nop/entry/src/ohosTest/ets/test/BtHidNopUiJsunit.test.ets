@@ -81,7 +81,13 @@ export default function btHidNopUiJsunit() {
           expect().assertFail();
         } catch (error) {
           console.error(`[bluetooth_js]registerHidDevice  is failed, code is ${error.code},message is ${error.message}`);
-          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+          if (error.code === 801) {
+            console.info('[bluetooth_js] all devices except smartphones interface is not support');
+            expect(Number(error.code) == 801).assertTrue();
+          } else {
+            console.info('[bluetooth_js] PERMISSION_DENIED_CODE 201');
+            expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+          }
         }
         done();
       })
@@ -100,7 +106,13 @@ export default function btHidNopUiJsunit() {
           expect().assertFail();
         } catch (error) {
           console.error(`[bluetooth_js]unregisterHidDevice  is failed, code is ${error.code},message is ${error.message}`);
-          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+          if (error.code === 801) {
+            console.info('[bluetooth_js] all devices except smartphones interface is not support');
+            expect(Number(error.code) == 801).assertTrue();
+          } else {
+            console.info('[bluetooth_js] PERMISSION_DENIED_CODE 201');
+            expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+          }
         }
         done();
       })
@@ -123,7 +135,13 @@ export default function btHidNopUiJsunit() {
           expect().assertFail();
         } catch (error) {
           console.error(`[bluetooth_js]connect  is failed, code is ${error.code},message is ${error.message}`);
-          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+          if (error.code === 801) {
+            console.info('[bluetooth_js] all devices except smartphones interface is not support');
+            expect(Number(error.code) == 801).assertTrue();
+          } else {
+            console.info('[bluetooth_js] PERMISSION_DENIED_CODE 201');
+            expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+          }
         }
         done();
       })
@@ -143,7 +161,13 @@ export default function btHidNopUiJsunit() {
           expect().assertFail();
         } catch (error) {
           console.error(`[bluetooth_js]disconnect  is failed, code is ${error.code},message is ${error.message}`);
-          expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+          if (error.code === 801) {
+            console.info('[bluetooth_js] all devices except smartphones interface is not support');
+            expect(Number(error.code) == 801).assertTrue();
+          } else {
+            console.info('[bluetooth_js] PERMISSION_DENIED_CODE 201');
+            expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+          }
         }
         done();
       })
@@ -164,8 +188,14 @@ export default function btHidNopUiJsunit() {
           console.info("[bluetooth_js]hid sendReport is success ");
           expect().assertFail();
         } catch (error) {
-            console.error(`[bluetooth_js]sendReport  is failed, code is ${error.code},message is ${error.message}`);
+          console.error(`[bluetooth_js]sendReport  is failed, code is ${error.code},message is ${error.message}`);
+          if (error.code === 801) {
+            console.info('[bluetooth_js] all devices except smartphones interface is not support');
+            expect(Number(error.code) == 801).assertTrue();
+          } else {
+            console.info('[bluetooth_js] PERMISSION_DENIED_CODE 201');
             expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+          }
         }
         done();
     })	
@@ -186,8 +216,14 @@ export default function btHidNopUiJsunit() {
           console.info("[bluetooth_js]hid replyReport is success ");
           expect().assertFail();
         } catch (error) {
-            console.error(`[bluetooth_js] replyReport is failed, code is ${error.code},message is ${error.message}`);
+          console.error(`[bluetooth_js] replyReport is failed, code is ${error.code},message is ${error.message}`);
+          if (error.code === 801) {
+            console.info('[bluetooth_js] all devices except smartphones interface is not support');
+            expect(Number(error.code) == 801).assertTrue();
+          } else {
+            console.info('[bluetooth_js] PERMISSION_DENIED_CODE 201');
             expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+          }
         }
         done();
     })	
@@ -206,11 +242,16 @@ export default function btHidNopUiJsunit() {
           console.info("[bluetooth_js]hid reportError is success ");
           expect().assertFail();
         } catch (error) {
-            console.error(`[bluetooth_js]reportError is failed, code is ${error.code},message is ${error.message}`);
+          console.error(`[bluetooth_js]reportError is failed, code is ${error.code},message is ${error.message}`);
+          if (error.code === 801) {
+            console.info('[bluetooth_js] all devices except smartphones interface is not support');
+            expect(Number(error.code) == 801).assertTrue();
+          } else {
+            console.info('[bluetooth_js] PERMISSION_DENIED_CODE 201');
             expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+          } 
         }
         done();
     })
   })
 }
-

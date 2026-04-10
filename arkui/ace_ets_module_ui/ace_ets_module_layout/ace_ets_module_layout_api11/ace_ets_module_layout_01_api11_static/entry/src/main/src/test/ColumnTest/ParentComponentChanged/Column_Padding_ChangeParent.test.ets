@@ -40,7 +40,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function column_Padding_ChangeParent() {
 
   describe('Column_Padding_ChangeParentTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Column_Padding_ChangeParentTest beforeEach start");
 
 

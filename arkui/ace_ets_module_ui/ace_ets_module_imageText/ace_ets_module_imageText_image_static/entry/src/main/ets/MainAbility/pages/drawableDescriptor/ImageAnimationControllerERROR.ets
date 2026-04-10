@@ -57,55 +57,55 @@ struct ImageAnimationControllerERROR {
   build() {
     Column(undefined) {
       Row() {
-      Button('animated')
-        .id('animated')
-        .height('6%')
-        .onClick((e: ClickEvent) => {
-          let resManager = this.getUIContext().getHostContext()?.resourceManager;
-          if (resManager) {
-            try {
-              hilog.info(0x0000, 'testTag', '1');
-              let drawableDescriptor1: DrawableDescriptor =
-                resManager.getDrawableDescriptor($r('app.media.startIcon').id);
-              let pixelmap = drawableDescriptor1.getPixelMap() as PixelMap;
-              let drawableDescriptor2: DrawableDescriptor =
-                resManager.getDrawableDescriptor($r('app.media.apple').id);
-              let pixelmap2 = drawableDescriptor2.getPixelMap() as PixelMap;
-              let drawableDescriptor3: DrawableDescriptor =
-                resManager.getDrawableDescriptor($r('app.media.flower').id);
-              let pixelmap3 = drawableDescriptor3.getPixelMap() as PixelMap;
-              let pixelMaps: image.PixelMap[] = [];
-              let options: AnimationOptions = {
-                duration: 1000,
-                iterations: -1,
-                autoPlay: false,
-                frameDurations: [1000, 4000, 3000]
-              };
-              let options1: AnimationOptions = {
-                duration: 1000,
-                iterations: -1,
-                autoPlay: true,
-                frameDurations: [1000, 4000, 3000]
-              };
-              pixelMaps.push(pixelmap);
-              pixelMaps.push(pixelmap2);
-              pixelMaps.push(pixelmap3);
-              hilog.info(0x0000, 'testTag', 'AnimatedDrawable 2');
-              let animated: AnimatedDrawableDescriptor =
-                new AnimatedDrawableDescriptor(pixelMaps as Array<image.PixelMap>, options);
-              hilog.info(0x0000, 'testTag', 'AnimatedDrawable 2.5');
-              this.animated_ = animated;
-              let animated1: AnimatedDrawableDescriptor =
-                new AnimatedDrawableDescriptor(pixelMaps as Array<image.PixelMap>, options1);
-              hilog.info(0x0000, 'testTag', 'AnimatedDrawable 2.5');
-              this.animated_1 = animated1;
+        Button('animated')
+          .id('animatedUndefined')
+          .height('6%')
+          .onClick((e: ClickEvent) => {
+            let resManager = this.getUIContext().getHostContext()?.resourceManager;
+            if (resManager) {
+              try {
+                hilog.info(0x0000, 'testTag', '1');
+                let drawableDescriptor1: DrawableDescriptor =
+                  resManager.getDrawableDescriptor($r('app.media.startIcon').id);
+                let pixelmap = drawableDescriptor1.getPixelMap() as PixelMap;
+                let drawableDescriptor2: DrawableDescriptor =
+                  resManager.getDrawableDescriptor($r('app.media.apple').id);
+                let pixelmap2 = drawableDescriptor2.getPixelMap() as PixelMap;
+                let drawableDescriptor3: DrawableDescriptor =
+                  resManager.getDrawableDescriptor($r('app.media.flower').id);
+                let pixelmap3 = drawableDescriptor3.getPixelMap() as PixelMap;
+                let pixelMaps: image.PixelMap[] = [];
+                let options: AnimationOptions = {
+                  duration: 1000,
+                  iterations: -1,
+                  autoPlay: false,
+                  frameDurations: [1000, 4000, 3000]
+                };
+                let options1: AnimationOptions = {
+                  duration: 1000,
+                  iterations: -1,
+                  autoPlay: true,
+                  frameDurations: [1000, 4000, 3000]
+                };
+                pixelMaps.push(pixelmap);
+                pixelMaps.push(pixelmap2);
+                pixelMaps.push(pixelmap3);
+                hilog.info(0x0000, 'testTag', 'AnimatedDrawable 2');
+                let animated: AnimatedDrawableDescriptor =
+                  new AnimatedDrawableDescriptor(pixelMaps as Array<image.PixelMap>, options);
+                hilog.info(0x0000, 'testTag', 'AnimatedDrawable 2.5');
+                this.animated_ = animated;
+                let animated1: AnimatedDrawableDescriptor =
+                  new AnimatedDrawableDescriptor(pixelMaps as Array<image.PixelMap>, options1);
+                hilog.info(0x0000, 'testTag', 'AnimatedDrawable 2.5');
+                this.animated_1 = animated1;
 
-              hilog.info(0x0000, 'testTag', 'AnimatedDrawable end');
-            } catch (e: Error) {
-              console.log('更新图片 catch error：-----------' + e.message);
+                hilog.info(0x0000, 'testTag', 'AnimatedDrawable end');
+              } catch (e) {
+                console.log('更新图片 catch error：-----------' + e.message);
+              }
             }
-          }
-        })
+          })
         Button('C2')
           .id('Controller2')
           .onClick((e: ClickEvent) => {
@@ -117,11 +117,11 @@ struct ImageAnimationControllerERROR {
                 console.log('Result catch result：-----------' + result);
                 this.controllerText = JSON.stringify(result)
               }
-            } catch (e: Error) {
+            } catch (e) {
               console.log('Result catch error：-----------' + e.message);
             }
           })
-    }.width('80%')
+      }.width('80%')
       Row() {
         Button('c1')
           .id('c3start')

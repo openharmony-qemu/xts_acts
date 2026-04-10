@@ -136,16 +136,20 @@ export default function SetFontSizeTest() {
           } catch (e) {
             hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
-          let setFontSizeScaleButton: Component = await driver.findComponent(ON.id('setFontSizeScaleButton'));
+          let setFontSizeScaleButton: Component = await driver.waitForComponent(ON.id('setFontSizeScaleButton'), 2000);
+          hilog.info(0x0000, TAG, `setFontSizeScaleButton: ${!!setFontSizeScaleButton}`);
           await setFontSizeScaleButton.click();
           await driver.delayMs(1000);
-          let startFeatureButton: Component = await driver.findComponent(ON.id('startFeatureButton'));
+          let startFeatureButton: Component = await driver.waitForComponent(ON.id('startFeatureButton'), 2000);
+          hilog.info(0x0000, TAG, `startFeatureButton: ${!!startFeatureButton}`);
           await startFeatureButton.click();
           await driver.delayMs(1000);
-          let getFontSizeScaleButton: Component = await driver.findComponent(ON.id('getFontSizeScaleButton'));
+          let getFontSizeScaleButton: Component = await driver.waitForComponent(ON.id('getFontSizeScaleButton'), 2000);
+          hilog.info(0x0000, TAG, `getFontSizeScaleButton: ${!!getFontSizeScaleButton}`);
           await getFontSizeScaleButton.click();
           await sleep(2000);
-          let terminateEntryButton: Component = await driver.findComponent(ON.id('terminateEntryButton'));
+          let terminateEntryButton: Component = await driver.waitForComponent(ON.id('terminateEntryButton'), 2000);
+          hilog.info(0x0000, TAG, `terminateEntryButton: ${!!terminateEntryButton}`);
           await terminateEntryButton.click();
           hilog.info(0x0000, TAG, "[%{public}s] Flags: entryFlag = %{public}s, featureFlag = %{public}s", TAG, entryFlag, featureFlag);
           try {

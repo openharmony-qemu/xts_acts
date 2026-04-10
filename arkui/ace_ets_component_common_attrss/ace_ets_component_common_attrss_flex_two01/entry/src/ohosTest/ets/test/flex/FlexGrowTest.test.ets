@@ -62,8 +62,8 @@ function expectForFlexGrow(space: number, countFlexGrow: number, realRect: numbe
   //Verify based on different parent container spindle directions
   let ratio = countFlexGrow / (flexGrow + compareFlexGrow);
   console.info('[' + data.caseTag + '] (space * ratio) + targetSize : ' + ((space * ratio) + targetSize));
-  expect(Math.abs(Math.round(realRect) - Math.round(vp2px((space * ratio) + targetSize))) <= 2).assertTrue();
-  console.info('[' + data.caseTag + '] (space * ratio) + targetSize : ' + ((space * ratio) + targetSize));
+  console.info('[' + data.caseTag + '] vp2px((space * ratio) + targetSize) : ' + vp2px((space * ratio) + targetSize));
+  expect(Math.abs(realRect - vp2px((space * ratio) + targetSize)) <= 2).assertTrue();
 }
 
 
@@ -172,13 +172,13 @@ export default function flexGrowTest() {
       if (data.testValue.describe == 'SpaceNotEnough') {
         if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow'
           || data.pageConfig.containerView == 'FlexRowReverse') {
-          console.info('[SpaceNotEnough1] rect.right - rect.left : ' + Math.round(rect.right - rect.left));
-          console.info('[SpaceNotEnough1] vp2px(targetWidth) : ' + Math.round(vp2px(targetWidth)));
-          expect(Math.abs(Math.round(rect.right - rect.left) - Math.round(vp2px(targetWidth))) <= 3).assertTrue();
+          console.info('[SpaceNotEnough1] rect.right - rect.left : ' + (rect.right - rect.left));
+          console.info('[SpaceNotEnough1] vp2px(targetWidth) : ' + vp2px(targetWidth));
+          expect(Math.abs((rect.right - rect.left) - vp2px(targetWidth)) <= 3).assertTrue();
         } else {
-          console.info('[SpaceNotEnough2] rect.bottom - rect.top : ' + Math.round(rect.bottom - rect.top));
-          console.info('[SpaceNotEnough2] vp2px(targetHeight) : ' + Math.round(vp2px(targetHeight)));
-          expect(Math.abs(Math.round(rect.bottom - rect.top) - Math.round(vp2px(targetHeight))) <= 3).assertTrue();
+          console.info('[SpaceNotEnough2] rect.bottom - rect.top : ' + (rect.bottom - rect.top));
+          console.info('[SpaceNotEnough2] vp2px(targetHeight) : ' + vp2px(targetHeight));
+          expect(Math.abs((rect.bottom - rect.top) - vp2px(targetHeight)) <= 3).assertTrue();
         }
       } else {
         //Verify the standard component not be changed

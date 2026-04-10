@@ -119,8 +119,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_1400', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(0);
+    it('SUB_MEDIA_DEMUXER_PROCESS_1400', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(0);
       expect(result).assertEqual(0);
     });
 
@@ -132,8 +132,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_1500', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(1);
+    it('SUB_MEDIA_DEMUXER_PROCESS_1500', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(1);
       expect(result).assertEqual(0);
     });
 
@@ -145,8 +145,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_1600', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(2);
+    it('SUB_MEDIA_DEMUXER_PROCESS_1600', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(2);
       expect(result).assertEqual(0);
     });
 
@@ -158,8 +158,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_1700', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(3);
+    it('SUB_MEDIA_DEMUXER_PROCESS_1700', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(3);
       expect(result).assertEqual(0);
     });
 
@@ -171,8 +171,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_1800', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(4);
+    it('SUB_MEDIA_DEMUXER_PROCESS_1800', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(4);
       expect(result).assertEqual(0);
     });
 
@@ -184,8 +184,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_1900', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(5);
+    it('SUB_MEDIA_DEMUXER_PROCESS_1900', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(5);
       expect(result).assertEqual(0);
     });
 
@@ -197,8 +197,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_2000', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(6);
+    it('SUB_MEDIA_DEMUXER_PROCESS_2000', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(6);
       expect(result).assertEqual(0);
     });
 
@@ -210,8 +210,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_2100', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(7);
+    it('SUB_MEDIA_DEMUXER_PROCESS_2100', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(7);
       expect(result).assertEqual(0);
     });
 
@@ -223,8 +223,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_2200', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(8);
+    it('SUB_MEDIA_DEMUXER_PROCESS_2200', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(8);
       expect(result).assertEqual(0);
     });
 
@@ -236,8 +236,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_2300', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(9);
+    it('SUB_MEDIA_DEMUXER_PROCESS_2300', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(9);
       expect(result).assertEqual(0);
     });
 
@@ -249,8 +249,21 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_2400', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(10);
+    it('SUB_MEDIA_DEMUXER_PROCESS_2400', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(10);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name SUB_MEDIA_DEMUXER_PROCESS_2500
+     * @tc.number SUB_MEDIA_DEMUXER_PROCESS_2500
+     * @tc.desc   process test
+     * @tc.type   PROCESS
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_DEMUXER_PROCESS_2500', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(11);
       expect(result).assertEqual(0);
     });
 
@@ -262,8 +275,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_2600', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(11);
+    it('SUB_MEDIA_DEMUXER_PROCESS_2600', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(12);
       expect(result).assertEqual(0);
     });
 
@@ -275,8 +288,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_2700', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(12);
+    it('SUB_MEDIA_DEMUXER_PROCESS_2700', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(13);
       expect(result).assertEqual(0);
     });
 
@@ -288,8 +301,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_2800', Level.LEVEL2, () => {
-      let result:number = testNapi.runProcTest(13);
+    it('SUB_MEDIA_DEMUXER_PROCESS_2800', Level.LEVEL2, async () => {
+      let result:number = await testNapi.runProcTest(14);
       expect(result).assertEqual(0);
     });
 
@@ -301,8 +314,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_2900', Level.LEVEL2, () => {
-      let result:number = testNapi.runProcTest(14);
+    it('SUB_MEDIA_DEMUXER_PROCESS_2900', Level.LEVEL2, async () => {
+      let result:number = await testNapi.runProcTest(15);
       expect(result).assertEqual(0);
     });
 
@@ -314,8 +327,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_3000', Level.LEVEL2, () => {
-      let result:number = testNapi.runProcTest(15);
+    it('SUB_MEDIA_DEMUXER_PROCESS_3000', Level.LEVEL2, async () => {
+      let result:number = await testNapi.runProcTest(16);
       expect(result).assertEqual(0);
     });
 
@@ -327,8 +340,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_3100', Level.LEVEL2, () => {
-      let result:number = testNapi.runProcTest(16);
+    it('SUB_MEDIA_DEMUXER_PROCESS_3100', Level.LEVEL2, async () => {
+      let result:number = await testNapi.runProcTest(17);
       expect(result).assertEqual(0);
     });
 
@@ -340,8 +353,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_3200', Level.LEVEL2, () => {
-      let result:number = testNapi.runProcTest(17);
+    it('SUB_MEDIA_DEMUXER_PROCESS_3200', Level.LEVEL2, async () => {
+      let result:number = await testNapi.runProcTest(18);
       expect(result).assertEqual(0);
     });
 
@@ -353,8 +366,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_3300', Level.LEVEL2, () => {
-      let result:number = testNapi.runProcTest(18);
+    it('SUB_MEDIA_DEMUXER_PROCESS_3300', Level.LEVEL2, async () => {
+      let result:number = await testNapi.runProcTest(19);
       expect(result).assertEqual(0);
     });
 
@@ -366,8 +379,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_3400', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(19);
+    it('SUB_MEDIA_DEMUXER_PROCESS_3400', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(20);
       expect(result).assertEqual(0);
     });
 
@@ -379,8 +392,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_3800', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(20);
+    it('SUB_MEDIA_DEMUXER_PROCESS_3800', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(21);
       expect(result).assertEqual(0);
     });
 
@@ -392,8 +405,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_3700', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(21);
+    it('SUB_MEDIA_DEMUXER_PROCESS_3700', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(22);
       expect(result).assertEqual(0);
     });
 
@@ -405,8 +418,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_3600', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(22);
+    it('SUB_MEDIA_DEMUXER_PROCESS_3600', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(23);
       expect(result).assertEqual(0);
     });
 
@@ -418,8 +431,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_3510', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(23);
+    it('SUB_MEDIA_DEMUXER_PROCESS_3510', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(24);
       expect(result).assertEqual(0);
     });
 
@@ -431,8 +444,8 @@ export default function DemuxerProcTestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_DEMUXER_PROCESS_3500', Level.LEVEL0, () => {
-      let result:number = testNapi.runProcTest(24);
+    it('SUB_MEDIA_DEMUXER_PROCESS_3500', Level.LEVEL0, async () => {
+      let result:number = await testNapi.runProcTest(25);
       expect(result).assertEqual(0);
     });
 

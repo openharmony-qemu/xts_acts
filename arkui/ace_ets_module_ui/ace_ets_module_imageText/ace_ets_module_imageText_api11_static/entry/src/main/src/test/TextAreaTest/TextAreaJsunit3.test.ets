@@ -38,7 +38,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function textAreaJsunit3() {
   describe('appInfoTest_four_10', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_10 beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -115,7 +115,7 @@ export default function textAreaJsunit3() {
         }
         console.info("[textAreaTest_static_02] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -169,7 +169,7 @@ export default function textAreaJsunit3() {
         }
         console.info("[textAreaTest_static_04] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -223,7 +223,7 @@ export default function textAreaJsunit3() {
         }
         console.info("[textAreaTest_static_06] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -280,7 +280,7 @@ export default function textAreaJsunit3() {
         }
         console.info("[textAreaTest_static_08] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -336,7 +336,7 @@ export default function textAreaJsunit3() {
         }
         console.info("[textAreaTest_static_10] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_10] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -392,7 +392,7 @@ export default function textAreaJsunit3() {
         }
         console.info("[textAreaTest_static_12] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_12] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -429,7 +429,7 @@ export default function textAreaJsunit3() {
         }
         console.info("[textAreaTest_static_13] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_13] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

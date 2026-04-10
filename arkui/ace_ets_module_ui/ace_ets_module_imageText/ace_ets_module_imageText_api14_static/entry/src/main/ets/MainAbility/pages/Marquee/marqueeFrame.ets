@@ -28,7 +28,7 @@ struct Frame {
   @State setFlag: string = 'init'
   @State getFlag: string = 'init'
   @State requireFlag: string = 'init'
-  private scenes: MarqueeDynamicSyncScene[] = [] as MarqueeDynamicSyncScene[]
+  private scenes: DynamicSyncScene[] = [] as DynamicSyncScene[]
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Start }) {
@@ -53,7 +53,7 @@ struct Frame {
           if (currentUIContext) {
             let dynamicMarquee = currentUIContext.requireDynamicSyncScene('dynamicMarquee');
             if (dynamicMarquee) {
-              // this.scenes = dynamicMarquee as DynamicSyncScene[];
+              this.scenes = dynamicMarquee as DynamicSyncScene[];
               if (this.scenes) {
                 this.requireFlag = 'MarqueerequireDynamicSyncScene succ';
               }
@@ -68,7 +68,7 @@ struct Frame {
           .key('MarqueegetGetFrameRateRange_id')
           .onClick(():void => {
             this.start = true
-            this.scenes.forEach((scenes: MarqueeDynamicSyncScene) => {
+            this.scenes.forEach((scenes: DynamicSyncScene) => {
               scenes.setFrameRateRange({ min: 0, max: 120, expected: 30 })
               this.setFlag = 'MarqueesetFrameRateRange succ'
               this.getFlag = '' + JSON.stringify(scenes.getFrameRateRange())

@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function textShadowTest() {
   describe('textShadowTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textShadowTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")

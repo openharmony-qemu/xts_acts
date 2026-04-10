@@ -27,7 +27,7 @@ const SLEEP_TIME = 1000;
 
 export default function badgeResourceTest() {
   describe('badgeResourceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("badgeResourceTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.information02.static", "EntryAbility")
     });

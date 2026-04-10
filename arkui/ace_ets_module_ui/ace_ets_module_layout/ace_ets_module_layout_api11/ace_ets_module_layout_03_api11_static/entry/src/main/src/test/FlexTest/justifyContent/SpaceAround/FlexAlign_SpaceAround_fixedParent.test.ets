@@ -38,7 +38,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function flexAlign_SpaceAround_fixedParent() {
   describe('FlexAlign_SpaceAround_fixedParent', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexAlign_SpaceAround_fixedParent beforeEach start");
       
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")

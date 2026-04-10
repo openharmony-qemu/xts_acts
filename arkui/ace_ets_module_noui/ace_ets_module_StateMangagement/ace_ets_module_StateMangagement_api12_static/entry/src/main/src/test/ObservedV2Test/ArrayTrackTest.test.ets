@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ArrayTrackTest() {
   describe('ArrayTrackTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ArrayTrackTest beforeEach start");
 
 

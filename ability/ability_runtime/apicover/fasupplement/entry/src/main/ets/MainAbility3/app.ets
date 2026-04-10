@@ -25,19 +25,17 @@ class Test {
     console.info(printLog1 + 'onCreate');
 
     let list = ["ohos.permission.MICROPHONE"]
-    ability_featureAbility.getContext().requestPermissionsFromUser(list, 1).then((permissionRequestResult) => {
+    ability_featureAbility.getContext().requestPermissionsFromUser(list, 1, (err, permissionRequestResult)=>{
       console.info(printLog1 + "requestPermissionsFromUser data = " + JSON.stringify(permissionRequestResult));
       let CommonEventPublishData: CommonEventManager.CommonEventPublishData = {
         parameters: {
           permissionRequestResult: permissionRequestResult
         }
       }
-      commonEvent.publish(listPush1 + "onCreate", CommonEventPublishData, (err: Base.BusinessError) => {
+      commonEvent.publish("Fa_MainAbility3_onCreate", CommonEventPublishData, (err: Base.BusinessError) => {
         console.info(printLog1 + listPush1 + "onCreate");
       });
-    }).catch((err: Base.BusinessError) => {
-      console.info(printLog1 + "requestPermissionsFromUser err = " + JSON.stringify(err));
-    });
+    })
 
     setTimeout(()=>{
       ability_featureAbility.terminateSelf().then((data) => {
@@ -50,7 +48,7 @@ class Test {
   onDestroy() {
     console.info(printLog1 + 'onDestroy');
 
-    commonEvent.publish(listPush1 + "onDestroy", (err: Base.BusinessError) => {
+    commonEvent.publish("Fa_MainAbility3_onDestroy", (err: Base.BusinessError) => {
       console.info(printLog1 + listPush1 + "onDestroy");
     });
   }

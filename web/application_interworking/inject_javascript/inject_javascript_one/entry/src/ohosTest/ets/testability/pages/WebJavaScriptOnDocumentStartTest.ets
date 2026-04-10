@@ -31,8 +31,14 @@ struct WebJavaScriptOnDocumentStartTest {
       "   localStorage.setItem('color', 'Red');" +
       "}", scriptRules: ["*"] }
   ];
+  @State nullScripts: Array<ScriptItem> | null = null;
+  @State undefinedScripts: Array<ScriptItem> | undefined = undefined;
+  @State emptyScripts: Array<ScriptItem> = [];
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
+  @State useNullScripts: boolean = false;
+  @State useUndefinedScripts: boolean = false;
+  @State useEmptyScripts: boolean = false;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -63,8 +69,8 @@ struct WebJavaScriptOnDocumentStartTest {
         Button("WebJavaScriptOnDocumentStartTest click")
           .key('WebJavaScriptOnDocumentStartTestButton')
           .onClick(async () => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             switch (this.str) {
@@ -95,7 +101,7 @@ struct WebJavaScriptOnDocumentStartTest {
                   ];
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('javaScriptOnDocumentStart.html'))
-                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                   this.controller.runJavaScript("getResult()", (error, result) => {
                     if (error) {
                       console.info('getResult() return error: ' + error)
@@ -111,6 +117,81 @@ struct WebJavaScriptOnDocumentStartTest {
                 break;
               }
 
+              case "testJavaScriptOnDocumentStart003": {
+                try {
+                  // Test with null parameter
+                  this.useNullScripts = true;
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('javaScriptOnDocumentStart.html'))
+                  await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+                  this.controller.runJavaScript("getResult()", (error, result) => {
+                    if (error) {
+                      console.info('getResult() return error: ' + error)
+                    }
+                    if (result) {
+                      console.info('getResult() return result: ' + result)
+                      // When null/undefined is passed, no script should be injected
+                      Utils.emitEvent('"No script injected"', 20230312)
+                    }
+                  })
+                  // Reset flag after test
+                  this.useNullScripts = false;
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
+              case "testJavaScriptOnDocumentStart004": {
+                try {
+                  // Test with undefined parameter
+                  this.useUndefinedScripts = true;
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('javaScriptOnDocumentStart.html'))
+                  await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+                  this.controller.runJavaScript("getResult()", (error, result) => {
+                    if (error) {
+                      console.info('getResult() return error: ' + error)
+                    }
+                    if (result) {
+                      console.info('getResult() return result: ' + result)
+                      // When undefined is passed, no script should be injected
+                      Utils.emitEvent('"No script injected"', 20230313)
+                    }
+                  })
+                  // Reset flag after test
+                  this.useUndefinedScripts = false;
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
+              case "testJavaScriptOnDocumentStart005": {
+                try {
+                  // Test with empty array parameter
+                  this.useEmptyScripts = true;
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('javaScriptOnDocumentStart.html'))
+                  await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+                  this.controller.runJavaScript("getResult()", (error, result) => {
+                    if (error) {
+                      console.info('getResult() return error: ' + error)
+                    }
+                    if (result) {
+                      console.info('getResult() return result: ' + result)
+                      // When empty array is passed, no script should be injected
+                      Utils.emitEvent('"No script injected"', 20230314)
+                    }
+                  })
+                  // Reset flag after test
+                  this.useEmptyScripts = false;
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
             }
           })
       }
@@ -119,7 +200,7 @@ struct WebJavaScriptOnDocumentStartTest {
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .backgroundColor(Color.Grey)
-        .javaScriptOnDocumentStart(this.scripts)
+        .javaScriptOnDocumentStart(this.useNullScripts ? this.nullScripts : (this.useUndefinedScripts ? this.undefinedScripts : (this.useEmptyScripts ? this.emptyScripts : this.scripts)))
         .onPageEnd((event) => {
           if (event) {
             this.isPageEnd = 0;

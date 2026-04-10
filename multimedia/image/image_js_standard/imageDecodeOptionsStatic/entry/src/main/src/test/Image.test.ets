@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,9 +37,9 @@ export default function imageDecodeOptions() {
     let filesDir: string | undefined | null;
     let filePath: string;
 
-    let globalpixelmap: image.PixelMap;
-    let globalimageSource: image.ImageSource;
-    beforeAll(() => {
+    let globalpixelmap: image.PixelMap | undefined;
+    let globalimageSource: image.ImageSource | undefined;
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
     })
@@ -48,7 +48,7 @@ export default function imageDecodeOptions() {
       if (globalpixelmap != undefined) {
         console.info('globalpixelmap release start');
         try {
-          await globalpixelmap.release();
+          await globalpixelmap!.release();
         } catch (error) {
           console.info('globalpixelmap release fail');
         }
@@ -56,7 +56,7 @@ export default function imageDecodeOptions() {
       if (globalimageSource != undefined) {
         console.info('globalimageSource release start');
         try {
-          await globalimageSource.release();
+          await globalimageSource!.release();
         } catch (error) {
           console.info('globalimageSource release fail');
         }
@@ -123,35 +123,39 @@ export default function imageDecodeOptions() {
             }
           } else if (flag == 'Callback') {
             imageSourceApi.getImageInfo((err: BusinessError | null, imageInfo) => {
-              if (err && err.code) {
-                expect(false).assertTrue();
-                logger.log("getImageInfo error: " + err);
-              }
-              if (imageInfo != undefined && imageInfo != null) {
-                expect(imageInfo!.mimeType == expectedMimetype).assertTrue();
-                logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
-              } else {
-                expect(false).assertTrue();
-                logger.log("getImageInfo failed.");
-              }
-              await imageSourceApi.release();
-              done();
+              waitForCompletion(async () => {
+                if (err && err.code) {
+                  expect(false).assertTrue();
+                  logger.log("getImageInfo error: " + err);
+                }
+                if (imageInfo != undefined && imageInfo != null) {
+                  expect(imageInfo!.mimeType == expectedMimetype).assertTrue();
+                  logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
+                } else {
+                  expect(false).assertTrue();
+                  logger.log("getImageInfo failed.");
+                }
+                await imageSourceApi!.release();
+                done();
+              })
             });
           } else if (flag == 'CallbackNumber') {
             imageSourceApi.getImageInfo(0, (err: BusinessError | null, imageInfo) => {
-              if (err && err.code) {
-                expect(false).assertTrue();
-                logger.log("getImageInfo error: " + err);
-              }
-              if (imageInfo != undefined && imageInfo != null) {
-                expect(imageInfo!.mimeType == expectedMimetype).assertTrue();
-                logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
-              } else {
-                expect(false).assertTrue();
-                logger.log("getImageInfo failed.");
-              }
-              await imageSourceApi.release();
-              done();
+              waitForCompletion(async () => {
+                if (err && err.code) {
+                  expect(false).assertTrue();
+                  logger.log("getImageInfo error: " + err);
+                }
+                if (imageInfo != undefined && imageInfo != null) {
+                  expect(imageInfo!.mimeType == expectedMimetype).assertTrue();
+                  logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
+                } else {
+                  expect(false).assertTrue();
+                  logger.log("getImageInfo failed.");
+                }
+                await imageSourceApi!.release();
+                done();
+              })
             });
           }
         }
@@ -387,32 +391,34 @@ export default function imageDecodeOptions() {
             index: 0,
           };
           imageSourceApi.createPixelMap(decodingOptions, (err: BusinessError|null, pixelmap) => {
-            if (err && err.code) {
-              console.info(
-                "SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0200 createPixelMap err " +
-                JSON.stringify(err)
-              );
-              expect(false).assertTrue();
-              done();
-            } else {
-              expect(pixelmap != undefined).assertTrue();
-              globalpixelmap = pixelmap!;
-              try {
-                let imageInfo = await pixelmap!.getImageInfo();
-                expect(imageInfo.size.height == 2).assertTrue();
-                expect(imageInfo.size.width == 1).assertTrue();
+            waitForCompletion(async () => {
+              if (err && err.code) {
                 console.info(
-                  "SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0200 success "
+                  "SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0200 createPixelMap err " +
+                  JSON.stringify(err)
                 );
-                console.info("imageInfo height :" + imageInfo.size.height);
-                console.info("imageInfo width : " + imageInfo.size.width);
-                done();
-              } catch (err) {
-                console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0200 getimageInfo err " + err);
                 expect(false).assertTrue();
                 done();
+              } else {
+                expect(pixelmap != undefined).assertTrue();
+                globalpixelmap = pixelmap!;
+                try {
+                  let imageInfo = await pixelmap!.getImageInfo();
+                  expect(imageInfo.size.height == 2).assertTrue();
+                  expect(imageInfo.size.width == 1).assertTrue();
+                  console.info(
+                    "SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0200 success "
+                  );
+                  console.info("imageInfo height :" + imageInfo.size.height);
+                  console.info("imageInfo width : " + imageInfo.size.width);
+                  done();
+                } catch (err) {
+                  console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0200 getimageInfo err " + err);
+                  expect(false).assertTrue();
+                  done();
+                }
               }
-            }
+            })
           });
         }
       } catch (error) {
@@ -445,7 +451,7 @@ export default function imageDecodeOptions() {
             console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0100 success ");
             expect(pixelmap != undefined).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.log("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0100 error: " + error);
             expect().assertFail();
             done();
@@ -663,27 +669,29 @@ export default function imageDecodeOptions() {
           index: 0,
         };
         imageSourceApi.createPixelMap(decodingOptions, (err: BusinessError|null, pixelmap) => {
-          if (err && err.code) {
-            console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400 createPixelMap error " + JSON.stringify(err));
-            expect(false).assertTrue();
-            done();
-          } else {
-            globalpixelmap = pixelmap!;
-            try {
-              let imageInfo = await pixelmap!.getImageInfo();
-              expect(imageInfo.size.height == 2).assertTrue();
-              expect(imageInfo.size.width == 1).assertTrue();
-              console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400 success ");
-              console.info("imageInfo height :" + imageInfo.size.height);
-              console.info("imageInfo width : " + imageInfo.size.width);
+          waitForCompletion(async () => {
+            if (err && err.code) {
+              console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400 createPixelMap error " + JSON.stringify(err));
+              expect(false).assertTrue();
               done();
-            } catch (error: BusinessError) {
-              console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400 getimageInfo err " +
-              JSON.stringify(err));
-              expect().assertFail();
-              done();
+            } else {
+              globalpixelmap = pixelmap!;
+              try {
+                let imageInfo = await pixelmap!.getImageInfo();
+                expect(imageInfo.size.height == 2).assertTrue();
+                expect(imageInfo.size.width == 1).assertTrue();
+                console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400 success ");
+                console.info("imageInfo height :" + imageInfo.size.height);
+                console.info("imageInfo width : " + imageInfo.size.width);
+                done();
+              } catch (error) {
+                console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400 getimageInfo err " +
+                JSON.stringify(err));
+                expect().assertFail();
+                done();
+              }
             }
-          }
+          })
         });
       }
     });
@@ -710,7 +718,7 @@ export default function imageDecodeOptions() {
           console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0200 success ");
           expect(pixelmap !== undefined).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0200 error: " + error);
           expect().assertFail();
           done();
@@ -892,27 +900,29 @@ export default function imageDecodeOptions() {
           index: 0,
         };
         imageSourceApi.createPixelMap(decodingOptions, (err: BusinessError|null, pixelmap) => {
-          if (err && err.code) {
-            console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600 createPixelMap error " + JSON.stringify(err));
-            expect(false).assertTrue();
-            done();
-          } else {
-            globalpixelmap = pixelmap!;
-            try {
-              let imageInfo = await pixelmap!.getImageInfo();
-              expect(imageInfo.size.height == 2).assertTrue();
-              expect(imageInfo.size.width == 1).assertTrue();
-              console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600 success ");
-              console.info("imageInfo height :" + imageInfo.size.height);
-              console.info("imageInfo width : " + imageInfo.size.width);
+          waitForCompletion(async () => {
+            if (err && err.code) {
+              console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600 createPixelMap error " + JSON.stringify(err));
+              expect(false).assertTrue();
               done();
-            } catch (error: BusinessError) {
-              console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600 getimageInfo err " +
-              JSON.stringify(err));
-              expect().assertFail();
-              done();
+            } else {
+              globalpixelmap = pixelmap!;
+              try {
+                let imageInfo = await pixelmap!.getImageInfo();
+                expect(imageInfo.size.height == 2).assertTrue();
+                expect(imageInfo.size.width == 1).assertTrue();
+                console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600 success ");
+                console.info("imageInfo height :" + imageInfo.size.height);
+                console.info("imageInfo width : " + imageInfo.size.width);
+                done();
+              } catch (error) {
+                console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600 getimageInfo err " +
+                JSON.stringify(err));
+                expect().assertFail();
+                done();
+              }
             }
-          }
+          })
         });
       }
     });
@@ -1067,27 +1077,29 @@ export default function imageDecodeOptions() {
           index: 0,
         };
         imageSourceApi.createPixelMap(decodingOptions, (err: BusinessError|null, pixelmap) => {
-          if (err && err.code) {
-            console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800 createPixelMap error " + JSON.stringify(err));
-            expect(false).assertTrue();
-            done();
-          } else {
-            globalpixelmap = pixelmap!;
-            try {
-              let imageInfo = await pixelmap!.getImageInfo();
-              expect(imageInfo.size.height == 2).assertTrue();
-              expect(imageInfo.size.width == 1).assertTrue();
-              console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800 success ");
-              console.info("imageInfo height :" + imageInfo.size.height);
-              console.info("imageInfo width : " + imageInfo.size.width);
+          waitForCompletion(async () => {
+            if (err && err.code) {
+              console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800 createPixelMap error " + JSON.stringify(err));
+              expect(false).assertTrue();
               done();
-            } catch (error: BusinessError) {
-              console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800 getimageInfo err " +
-              JSON.stringify(err));
-              expect().assertFail();
-              done();
+            } else {
+              globalpixelmap = pixelmap!;
+              try {
+                let imageInfo = await pixelmap!.getImageInfo();
+                expect(imageInfo.size.height == 2).assertTrue();
+                expect(imageInfo.size.width == 1).assertTrue();
+                console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800 success ");
+                console.info("imageInfo height :" + imageInfo.size.height);
+                console.info("imageInfo width : " + imageInfo.size.width);
+                done();
+              } catch (error) {
+                console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800 getimageInfo err " +
+                JSON.stringify(err));
+                expect().assertFail();
+                done();
+              }
             }
-          }
+          })
         });
       }
     });

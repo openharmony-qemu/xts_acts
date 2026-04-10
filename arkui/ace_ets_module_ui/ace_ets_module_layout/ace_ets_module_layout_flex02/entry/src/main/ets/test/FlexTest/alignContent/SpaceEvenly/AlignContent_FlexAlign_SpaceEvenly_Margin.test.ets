@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -82,42 +82,53 @@ export default function AlignContent_FlexAlign_SpaceEvenly_Margin() {
       console.log('AlignContentFlexSpaceEvenlyMargin_flex_4 rect_value is:' +
       JSON.stringify(AlignContentFlexSpaceEvenly_4));
 
-      expect(Math.abs(AlignContentFlexSpaceEvenly_1.bottom - AlignContentFlexSpaceEvenly_1.top - vp2px(50)) <= 1)
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi1:'+Math.floor(Math.abs(AlignContentFlexSpaceEvenly_1.bottom - AlignContentFlexSpaceEvenly_1.top - vp2px(50))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_1.bottom - AlignContentFlexSpaceEvenly_1.top - vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexSpaceEvenly_2.bottom - AlignContentFlexSpaceEvenly_2.top - vp2px(100)) <= 1)
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi2:'+ Math.floor(Math.abs(AlignContentFlexSpaceEvenly_2.bottom - AlignContentFlexSpaceEvenly_2.top - vp2px(100))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_2.bottom - AlignContentFlexSpaceEvenly_2.top - vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexSpaceEvenly_3.bottom - AlignContentFlexSpaceEvenly_3.top - vp2px(150)) <= 1)
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi3:'+ Math.floor(Math.abs(AlignContentFlexSpaceEvenly_3.bottom - AlignContentFlexSpaceEvenly_3.top - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_3.bottom - AlignContentFlexSpaceEvenly_3.top - vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexSpaceEvenly_4.bottom - AlignContentFlexSpaceEvenly_4.top - vp2px(200)) <= 1)
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi4:'+ Math.floor(Math.abs(AlignContentFlexSpaceEvenly_4.bottom - AlignContentFlexSpaceEvenly_4.top - vp2px(200))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_4.bottom - AlignContentFlexSpaceEvenly_4.top - vp2px(200))) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexSpaceEvenly_1.right - AlignContentFlexSpaceEvenly_1.left - vp2px(150)) <= 1)
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi5:'+ Math.floor(Math.abs(AlignContentFlexSpaceEvenly_1.right - AlignContentFlexSpaceEvenly_1.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_1.right - AlignContentFlexSpaceEvenly_1.left - vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexSpaceEvenly_2.right - AlignContentFlexSpaceEvenly_2.left - vp2px(150)) <= 1)
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi6:'+ Math.floor(Math.abs(AlignContentFlexSpaceEvenly_2.right - AlignContentFlexSpaceEvenly_2.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_2.right - AlignContentFlexSpaceEvenly_2.left - vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexSpaceEvenly_3.right - AlignContentFlexSpaceEvenly_3.left - vp2px(150)) <= 1)
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi7:'+ Math.floor(Math.abs(AlignContentFlexSpaceEvenly_3.right - AlignContentFlexSpaceEvenly_3.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_3.right - AlignContentFlexSpaceEvenly_3.left - vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left - vp2px(150)) <= 1)
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi8:'+ Math.floor(Math.abs(AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left - vp2px(150))) <= 1)
         .assertTrue();
 
       expect(JSON.parse(strJson).$attrs.constructor.direction).assertEqual("FlexDirection.Row");
       expect(JSON.parse(strJson).$attrs.constructor.alignContent).assertEqual("FlexAlign.SpaceEvenly");
 
-      expect(Math.abs(AlignContentFlexSpaceEvenly_flex001.top - SpaceEvenly_Margin_Column.top - vp2px(15)) <= 1)
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi9:'+ Math.floor(Math.abs(AlignContentFlexSpaceEvenly_flex001.top - SpaceEvenly_Margin_Column.top - vp2px(15))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_flex001.top - SpaceEvenly_Margin_Column.top - vp2px(15))) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexSpaceEvenly_1.top - SpaceEvenly_Margin_Column.top - vp2px(35)) <= 1)
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi10:'+ Math.floor(Math.abs(AlignContentFlexSpaceEvenly_1.top - SpaceEvenly_Margin_Column.top - vp2px(35))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_1.top - SpaceEvenly_Margin_Column.top - vp2px(35))) <= 1)
         .assertTrue();
-
-      expect(Math.abs(AlignContentFlexSpaceEvenly_flex001.bottom - AlignContentFlexSpaceEvenly_4.bottom - 
-      (AlignContentFlexSpaceEvenly_1.top - AlignContentFlexSpaceEvenly_flex001.top)) <= 1).assertTrue();
-
-      expect(Math.abs(AlignContentFlexSpaceEvenly_4.top - AlignContentFlexSpaceEvenly_2.bottom - 
-      (AlignContentFlexSpaceEvenly_1.top - AlignContentFlexSpaceEvenly_flex001.top)) <= 1).assertTrue();
-
-      expect(Math.abs(AlignContentFlexSpaceEvenly_4.top - AlignContentFlexSpaceEvenly_2.bottom - vp2px(20)) <= 1)
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi11:'+ Math.floor(Math.abs(AlignContentFlexSpaceEvenly_flex001.bottom - AlignContentFlexSpaceEvenly_4.bottom - (AlignContentFlexSpaceEvenly_1.top - AlignContentFlexSpaceEvenly_flex001.top))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_flex001.bottom - AlignContentFlexSpaceEvenly_4.bottom - (AlignContentFlexSpaceEvenly_1.top - AlignContentFlexSpaceEvenly_flex001.top))) <= 1)
+        .assertTrue();
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi12:'+ Math.floor(Math.abs(AlignContentFlexSpaceEvenly_4.top - AlignContentFlexSpaceEvenly_2.bottom - (AlignContentFlexSpaceEvenly_1.top - AlignContentFlexSpaceEvenly_flex001.top))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_4.top - AlignContentFlexSpaceEvenly_2.bottom - (AlignContentFlexSpaceEvenly_1.top - AlignContentFlexSpaceEvenly_flex001.top))) <= 1)
+        .assertTrue();
+      console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy_chazhi13:'+ Math.floor(Math.abs(AlignContentFlexSpaceEvenly_4.top - AlignContentFlexSpaceEvenly_2.bottom - vp2px(20))))
+      expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_4.top - AlignContentFlexSpaceEvenly_2.bottom - vp2px(20))) <= 1)
         .assertTrue();
 
       console.info('testAlignContentSpaceEvenlyFlexMarginSatisfy END');
-
     });
+
   })
 }
+

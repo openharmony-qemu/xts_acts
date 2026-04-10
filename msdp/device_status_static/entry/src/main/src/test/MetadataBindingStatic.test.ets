@@ -43,10 +43,10 @@ export default function metadataBindingTest() {
           });
           hilog.info(domain, tag, `${caseName} onOperationSubmitMetadata success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          if(error.code == 32100004) {
+          if(e.code == 32100004) {
             hilog.info(domain, tag, `${caseName} The device does not support this API.`);
           } else {
             hilog.info(domain, tag, `${caseName} onOperationSubmitMetadata fail`);
@@ -75,10 +75,10 @@ export default function metadataBindingTest() {
           hilog.info(domain, tag, `${caseName} onOperationSubmitMetadata success`);
           expect().assertFail();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          expect(error.code == 401).assertTrue();
+          expect(e.code == 401).assertTrue();
           done();
         }
         hilog.info(domain, tag, `${caseName} end`);
@@ -102,10 +102,10 @@ export default function metadataBindingTest() {
           hilog.info(domain, tag, `${caseName} submitMetadata success`);
           expect().assertFail();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          expect(error.code == 32100001).assertTrue();
+          expect(e.code == 32100001).assertTrue();
           done();
         }
         hilog.info(domain, tag, `${caseName} end`);
@@ -130,7 +130,7 @@ export default function metadataBindingTest() {
           });
           hilog.info(domain, tag, `${caseName} offOperationSubmitMetadata success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
           expect().assertFail();
@@ -155,7 +155,7 @@ export default function metadataBindingTest() {
           metadataBinding.offOperationSubmitMetadata('com.example.mydevicestatusappStatic');
           hilog.info(domain, tag, `${caseName} offOperationSubmitMetadata success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
           expect().assertFail();
@@ -181,10 +181,10 @@ export default function metadataBindingTest() {
           hilog.info(domain, tag, `${caseName} offOperationSubmitMetadata success`);
           expect().assertFail();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          expect(error.code == 401).assertTrue();
+          expect(e.code == 401).assertTrue();
           done();
         }
         hilog.info(domain, tag, `${caseName} end`);

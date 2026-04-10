@@ -27,7 +27,7 @@ let libUtil: LibUtil = new LibUtil();
 
 export default function FocusControlTest4(){
   describe('FocusControlTest4',  () =>{
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_nowear_api15_static", "EntryAbility")
     });
      beforeEach(async (): Promise<void> => {

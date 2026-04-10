@@ -26,6 +26,10 @@ import timePickerOnChangeModifierTest from './timePickerTest/timePickerOnChangeM
 import timePickerAddApiTest from './timePickerTest/TimePickerAddApi.test';
 import timePickerDateTimeOptionsTest from './timePickerTest/timePickerDateTimeOptions.test';
 import timePickerEnableHapticFeedbackTest from './timePickerTest/timePickerEnableHapticFeedbackTest.test';
+import TimePickerUseMilitaryTimeUndefinedAndNullTest from './timePickerUndefinedAndNullTest/TimePickerUseMilitaryTimeUndefinedAndNull.test';
+import TimePickerDisappearTextStyleUndefinedAndNullTest from './timePickerUndefinedAndNullTest/TimePickerDisappearTextStyleUndefinedAndNull.test';
+import TimePickerSelectedTextStyleUndefinedAndNullTest from './timePickerUndefinedAndNullTest/TimePickerSelectedTextStyleUndefinedAndNull.test';
+import TimePickerTextStyleUndefinedAndNullTest from './timePickerUndefinedAndNullTest/TimePickerTextStyleUndefinedAndNull.test';
 
 export default function testsuite() {
   stageTimePickerDialog();
@@ -42,4 +46,8 @@ export default function testsuite() {
   timePickerAddApiTest();
   timePickerDateTimeOptionsTest();
   timePickerEnableHapticFeedbackTest();
+  TimePickerUseMilitaryTimeUndefinedAndNullTest();
+  TimePickerDisappearTextStyleUndefinedAndNullTest();
+  TimePickerSelectedTextStyleUndefinedAndNullTest();
+  TimePickerTextStyleUndefinedAndNullTest();
 }

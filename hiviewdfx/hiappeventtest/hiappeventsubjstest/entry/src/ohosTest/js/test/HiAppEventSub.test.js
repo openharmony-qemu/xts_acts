@@ -308,7 +308,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         console.info("HiAppEventSub_result" + result)
@@ -443,19 +442,24 @@ describe('HiAppEventSubTest', function () {
                 }
             });
         sleep(3000)
-        if (holder != null) {
-            let eventPkg = holder.takeNext();
-            if (eventPkg == null) {
-                return;
+        try {
+            if (holder != null) {
+                let eventPkg = holder.takeNext();
+                if (eventPkg == null) {
+                    return;
+                }
+                console.info("eventPkg.packageId=" + eventPkg.packageId);
+                console.info("eventPkg.row=" + eventPkg.row);
+                console.info("eventPkg.size=" + eventPkg.size);
+                for (const eventInfo of eventPkg.data) {
+                    console.info("eventPkg.data=" + eventInfo);
+                }
             }
-            console.info("eventPkg.packageId=" + eventPkg.packageId);
-            console.info("eventPkg.row=" + eventPkg.row);
-            console.info("eventPkg.size=" + eventPkg.size);
-            for (const eventInfo of eventPkg.data) {
-                console.info("eventPkg.data=" + eventInfo);
-            }
-            expect(true).assertTrue()
-        }
+        } catch (error) {
+			console.error(`error code: ${error.code}, error msg: ${error.message}`);
+			expect(false).assertTrue()
+			done()
+		}
         setTimeout(() => {
             HiAppEventV9.removeWatcher({"name":"watcher2"})
             done()
@@ -498,7 +502,6 @@ describe('HiAppEventSubTest', function () {
                     for (const eventInfo of eventPkg.data) {
                         console.info("eventPkg.data=" + eventInfo);
                     }
-                    expect(true).assertTrue()
                 }
             })
             console.info("HiAppEventSub_result" + result)
@@ -593,7 +596,6 @@ describe('HiAppEventSubTest', function () {
                     for (const eventInfo of eventPkg.data) {
                         console.info("eventPkg.data=" + eventInfo);
                     }
-                    expect(true).assertTrue()
                 }
             })
             expect(result == null).assertTrue();
@@ -684,7 +686,6 @@ describe('HiAppEventSubTest', function () {
                     for (const eventInfo of eventPkg.data) {
                         console.info("eventPkg.data=" + eventInfo);
                     }
-                    expect(true).assertTrue()
                 }
             })
             expect(result == null).assertTrue();
@@ -777,7 +778,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -868,7 +868,6 @@ describe('HiAppEventSubTest', function () {
                     for (const eventInfo of eventPkg.data) {
                         console.info("eventPkg.data=" + eventInfo);
                     }
-                    expect(true).assertTrue()
                 }
             })
             expect(result == null).assertTrue();
@@ -928,7 +927,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         console.info("HiAppEventSub_result" + result)
@@ -985,7 +983,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         console.info("HiAppEventSub_result" + result)
@@ -1075,7 +1072,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -1163,7 +1159,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -1251,7 +1246,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -1341,7 +1335,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -1431,7 +1424,6 @@ describe('HiAppEventSubTest', function () {
                     for (const eventInfo of eventPkg.data) {
                         console.info("eventPkg.data=" + eventInfo);
                     }
-                    expect(true).assertTrue()
                 }
             })
             expect(result == null).assertTrue();
@@ -1525,7 +1517,6 @@ describe('HiAppEventSubTest', function () {
                     for (const eventInfo of eventPkg.data) {
                         console.info("eventPkg.data=" + eventInfo);
                     }
-                    expect(true).assertTrue()
                 }
             })
             expect(result == null).assertTrue();
@@ -1623,7 +1614,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         console.info("HiAppEventSub_result" + result)
@@ -1709,7 +1699,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         console.info("HiAppEventSub_result" + result)
@@ -1790,7 +1779,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -1845,7 +1833,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -1900,7 +1887,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -1957,7 +1943,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -2021,7 +2006,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -2085,7 +2069,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -2146,7 +2129,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -2212,7 +2194,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -2267,7 +2248,6 @@ describe('HiAppEventSubTest', function () {
                 for (const eventInfo of eventPkg.data) {
                     console.info("eventPkg.data=" + eventInfo);
                 }
-                expect(true).assertTrue()
             }
         })
         expect(result != null).assertTrue();
@@ -2392,14 +2372,14 @@ describe('HiAppEventSubTest', function () {
     })
 
     /**
-     * @tc.name   HiAppEventSub28
+     * @tc.name   HiAppEventSub28Adapt001
      * @tc.number DFX_DFT_HiAppEvent_Sub_2700
      * @tc.desc   HiAppEvent write interface test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('HiAppEventSub28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('HiAppEventSub28Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub28 start')
         try {
             HiAppEventV9.removeWatcher(true);
@@ -2412,14 +2392,14 @@ describe('HiAppEventSubTest', function () {
     })
 
     /**
-     * @tc.name   HiAppEventSub29
+     * @tc.name   HiAppEventSub29Adapt001
      * @tc.number DFX_DFT_HiAppEvent_Sub_2900
      * @tc.desc   HiAppEvent write interface test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('HiAppEventSub29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('HiAppEventSub29Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub29 start')
         try {
             HiAppEventV9.removeWatcher(123);
@@ -2522,9 +2502,15 @@ describe('HiAppEventSubTest', function () {
      */
     it('HiAppEventSub34',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info('testHiAppEventSub34 start')
-        HiAppEventV9.clearData()
-        expect(true).assertTrue()
-        console.info('HiAppEventSub34 end')
+        try {
+            HiAppEventV9.clearData()
+            console.info('HiAppEventSub34 end')
+        } catch (error) {
+            console.error(`error code: ${error.code}, error msg: ${error.message}`);
+            expect(false).assertTrue()
+            done()
+		}
     })
+
 })
 }

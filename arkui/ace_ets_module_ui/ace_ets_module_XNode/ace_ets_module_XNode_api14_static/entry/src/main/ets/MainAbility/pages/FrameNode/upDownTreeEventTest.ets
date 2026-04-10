@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,7 +68,7 @@ function buttonBuilder2(params: Params) {
   }
 }
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public attachValue: string = '0';
   public detachValue: string = '0';
   public bindValue: string = '0';
@@ -88,26 +88,26 @@ class MyNodeController extends NodeController {
     return this.buttonNode!.getFrameNode();
   }
 
-  onBind(containerId: number): void {
+  onBind(containerId: long): void {
     console.log('test666666 on bind1: '+containerId);
-    this.bindValue = 'bind';
-  }
-
-  onUnbind(containerId: number): void {
-    console.log('test666666 on unbind1: '+containerId);
-    this.unbindValue = 'unbind';
-
-  }
-
-  onWillBind(containerId: number): void {
-    console.log('test666666 about to bind1: '+containerId);
-    this.willBindValue = 'willBind';
-  }
-
-  onWillUnbind(containerId: number): void {
-    console.log('test666666 about to unbind1: '+containerId);
-    this.willUnbindValue = 'willUnbind';
-  }
+ 	  this.bindValue = 'bind';
+ 	}
+ 	 
+ 	onUnbind(containerId: long): void {
+ 	  console.log('test666666 on unbind1: '+containerId);
+ 	  this.unbindValue = 'unbind';
+ 	 
+ 	}
+ 	 
+ 	onWillBind(containerId: long): void {
+ 	  console.log('test666666 about to bind1: '+containerId);
+ 	  this.willBindValue = 'willBind';
+ 	}
+ 	 
+ 	onWillUnbind(containerId: long): void {
+ 	  console.log('test666666 about to unbind1: '+containerId);
+ 	  this.willUnbindValue = 'willUnbind';
+ 	}
 
   onAttach(): void {
     console.log('test666666 on attach1111111');
@@ -120,7 +120,7 @@ class MyNodeController extends NodeController {
   }
 }
 
-class MyNodeController2 extends NodeController {
+export class MyNodeController2 extends NodeController {
   public attachValue: string = '0';
   public detachValue: string = '0';
   public bindValue: string = '0';

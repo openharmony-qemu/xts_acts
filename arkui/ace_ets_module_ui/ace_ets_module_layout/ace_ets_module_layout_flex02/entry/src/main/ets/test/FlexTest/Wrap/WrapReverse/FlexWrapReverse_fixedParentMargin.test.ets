@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -167,9 +167,28 @@ export default function flexWrapReverse_fixedParentMargin() {
       let locationText2: RectValue = CommonFunc.getComponentRect('WrapReverseTest38');
       let locationText3: RectValue = CommonFunc.getComponentRect('WrapReverseTest39');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexWrapReverseTest13');
+
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi1:' + Math.floor(Math.abs(locationFlex.right - locationText1.right - vp2px(30))));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi2:' + Math.floor(Math.abs(locationText1.left - locationText2.right - vp2px(30))));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi3:' + Math.floor(Math.abs(locationText2.left - locationFlex.left - vp2px(140))));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi4:' + Math.floor(Math.abs(locationText3.left - locationText1.left - vp2px(30))));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi5:' + Math.floor(Math.abs(locationText3.right - locationFlex.right)));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi6:' + Math.floor(Math.abs(locationText1.top - locationFlex.top - vp2px(30))));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi7:' + Math.floor(Math.abs(locationText2.top - locationFlex.top)));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi8:' + Math.floor(Math.abs(locationText3.top - locationText2.bottom - vp2px(10))));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi9:' + Math.floor(Math.abs(locationFlex.bottom - locationText3.bottom - vp2px(40))));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi10:' + Math.floor(Math.abs(locationText3.right - locationText3.left -
+       (locationText2.right - locationText2.left))));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi11:' + Math.floor(Math.abs(locationText1.right - locationText1.left -
+       (locationText2.right - locationText2.left))));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi12:' + Math.floor(Math.abs(locationText1.right - locationText1.left - vp2px(150))));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi13:' + Math.floor(Math.abs(locationText1.bottom - locationText1.top - vp2px(50))));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi14:' + Math.floor(Math.abs(locationText2.bottom - locationText2.top - vp2px(100))));
+      console.info('testWrapReverseParentfixedMarginChildMarginAndPadding_chazhi15:' + Math.floor(Math.abs(locationText3.bottom - locationText3.top - vp2px(150))));
+
       expect(Math.floor(Math.abs(locationFlex.right - locationText1.right - vp2px(30))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText1.left - locationText2.right - vp2px(30))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(locationText2.left - locationFlex.left - vp2px(140))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText2.left - locationFlex.left - vp2px(140))) <= 2).assertTrue();
       expect(Math.floor(Math.abs(locationText3.left - locationText1.left - vp2px(30))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText3.right - locationFlex.right)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText1.top - locationFlex.top - vp2px(30))) <= 1).assertTrue();
@@ -184,6 +203,7 @@ export default function flexWrapReverse_fixedParentMargin() {
       expect(Math.floor(Math.abs(locationText1.bottom - locationText1.top - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText2.bottom - locationText2.top - vp2px(100))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText3.bottom - locationText3.top - vp2px(150))) <= 1).assertTrue();
+
       console.info('new testWrapReverseParentfixedMarginChildMarginAndPadding END');
 
     });

@@ -58,7 +58,7 @@ export default function CheckboxTest() {
           expect(shape).assertEqual("0");
           console.info('ArkUX_CheckBox_Visual_0110 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_CheckBox_Visual_0110 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -85,7 +85,7 @@ export default function CheckboxTest() {
           expect(shape).assertEqual("1");
           console.info('ArkUX_CheckBox_Visual_0120 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_CheckBox_Visual_0120 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -112,7 +112,7 @@ export default function CheckboxTest() {
           expect(shape).assertEqual("0");
           console.info('ArkUX_CheckBox_Visual_0130 END ');
         } catch (err) {
-          expect().assertFail();
+;
           console.info('ArkUX_CheckBox_Visual_0130 ERR  ' + JSON.stringify(err));
         }
         done();

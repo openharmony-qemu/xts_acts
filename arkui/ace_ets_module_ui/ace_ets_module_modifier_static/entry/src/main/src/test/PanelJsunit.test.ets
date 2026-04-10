@@ -32,7 +32,7 @@ import bundle from '@ohos.bundle.bundleManager';
 
 export default function panelJsunit() {
   describe('panelTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 

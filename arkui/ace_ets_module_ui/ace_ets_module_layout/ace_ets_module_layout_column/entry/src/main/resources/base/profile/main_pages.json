@@ -51,6 +51,7 @@
         "MainAbility/pages/Column/ColumnMatchParent",
         "MainAbility/pages/Column/ColumnWrapContent",
         "MainAbility/pages/Column/ColumnFixAtIdealSizePage",
-        "MainAbility/pages/Column/columnPage"
+        "MainAbility/pages/Column/columnPage",
+        "MainAbility/pages/Column/ColumnNullUndefined"
     ]
 }

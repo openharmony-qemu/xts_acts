@@ -8,7 +8,7 @@ import webView from '@ohos.web.webview';
 import { Utils } from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 import { Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest';
-import { RecordData } from '@ohos.base';
+import { RecordData,BusinessError } from '@ohos.base';
 
 class TestObj {
   constructor() {
@@ -35,6 +35,7 @@ struct MyStateSample {
   }
 
   webviewController: webView.WebviewController = new webView.WebviewController(undefined);
+  webviewControllerOne: webView.WebviewController = new webView.WebviewController(undefined);
   @State progress: string = ""
   @State pageBegin: string = ""
   @State pageEnd: string = ""
@@ -167,6 +168,32 @@ struct MyStateSample {
                 Utils.emitEvent(url, 106);
               } catch (error) {
                 hilog.info(0x0000, 'testTag', 'ErrorCode: error');
+              }
+              break;
+            }
+
+            case "PostUrl002": {
+              try {
+                let postData = this.testObjtest.test("Name=test&Password=test");
+                this.webviewController.postUrl('', postData);
+                let url: string = this.webviewController.getUrl();
+                Utils.emitEvent(url, 10636161);
+              } catch (error) {
+                hilog.info(0x0000, 'testTag', 'ErrorCode: error');
+              }
+              break;
+            }
+
+            case "PostUrl003": {
+              try {
+                let postData = this.testObjtest.test("Name=test&Password=test");
+                this.webviewControllerOne.postUrl('resource://rawfile/second.html', postData);
+                let url: string = this.webviewControllerOne.getUrl();
+                Utils.emitEvent(url, 10636162);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 10636162);
               }
               break;
             }

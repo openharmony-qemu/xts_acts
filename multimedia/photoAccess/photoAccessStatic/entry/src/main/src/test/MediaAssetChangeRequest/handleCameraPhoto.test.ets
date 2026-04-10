@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -94,7 +94,7 @@ export default function handleCameraPhotoTest() {
           expect(date_modified_after).assertEqual(date_modified_before);
           expect(size_after).assertEqual(size_before);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`${testNum} :: handleCameraPhotoByExistPhotoAsset failed with error: ${error.code}, ${error.message}`);
           expect(false).assertTrue();
           done();
@@ -149,7 +149,7 @@ export default function handleCameraPhotoTest() {
         expect(size_before).assertEqual(size_after);
         expect(count_before).assertEqual(count_after);
         done()
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`${testNum} :: saveCameraPhotoException failed with error: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
         done();

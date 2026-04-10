@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,41 +17,41 @@ import { Entry, Component, AttributeModifier, TabsAttribute, Resource, Color, Ta
     BarPosition, Tabs, Button, TabContent, $r, Text } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-class TabsSecModifier1 implements AttributeModifier<TabsAttribute>{
+export class TabsSecModifier1 implements AttributeModifier<TabsAttribute>{
     barOverlap: boolean = true
     applyNormalAttribute(instance: TabsAttribute): void {
 
         instance.barOverlap(this.barOverlap)
     }
 }
-class TabsSecModifier2 implements AttributeModifier<TabsAttribute>{
+export class TabsSecModifier2 implements AttributeModifier<TabsAttribute>{
     applyNormalAttribute(instance: TabsAttribute): void {
 
         instance.barOverlap(undefined)
     }
 }
-class TabsSecModifier3 implements AttributeModifier<TabsAttribute>{
+export class TabsSecModifier3 implements AttributeModifier<TabsAttribute>{
     barBackgroundColorColor: Color = Color.Red
     applyNormalAttribute(instance: TabsAttribute): void {
 
         instance.barBackgroundColor(this.barBackgroundColorColor)
     }
 }
-class TabsSecModifier4 implements AttributeModifier<TabsAttribute>{
+export class TabsSecModifier4 implements AttributeModifier<TabsAttribute>{
     barBackgroundColorNumber: int = 0
     applyNormalAttribute(instance: TabsAttribute): void {
 
         instance.barBackgroundColor(this.barBackgroundColorNumber)
     }
 }
-class TabsSecModifier5 implements AttributeModifier<TabsAttribute>{
+export class TabsSecModifier5 implements AttributeModifier<TabsAttribute>{
     barBackgroundColorString: string = "#00000000"
     applyNormalAttribute(instance: TabsAttribute): void {
 
         instance.barBackgroundColor(this.barBackgroundColorString)
     }
 }
-class TabsSecModifier6 implements AttributeModifier<TabsAttribute>{
+export class TabsSecModifier6 implements AttributeModifier<TabsAttribute>{
     applyNormalAttribute(instance: TabsAttribute): void {
 
         instance.barPosition(BarPosition.Start)

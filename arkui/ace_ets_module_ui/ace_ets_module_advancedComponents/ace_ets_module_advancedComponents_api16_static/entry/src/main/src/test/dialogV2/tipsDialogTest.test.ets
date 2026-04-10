@@ -26,7 +26,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 export default function tipsDialogTest() {
   describe('tipsDialogTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("tipsDialogTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
 

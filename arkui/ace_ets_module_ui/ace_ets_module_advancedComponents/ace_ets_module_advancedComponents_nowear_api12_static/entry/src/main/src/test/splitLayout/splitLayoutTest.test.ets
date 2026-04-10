@@ -29,7 +29,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 export default function splitLayoutTest() {
   describe('splitLayoutTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("splitLayoutTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.test.static", "EntryAbility")
 

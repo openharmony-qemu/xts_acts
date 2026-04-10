@@ -31,9 +31,9 @@ export default class MainAbility13 extends UIAbility {
         hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory', '%{public}s', 'Ability onCreate' + JSON.stringify(type));
     }
 
-    onDestroy() {
+    async onDestroy(): Promise<void> {
         hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory', '%{public}s', 'Ability onDestroy, onWindowStageWillDestoryExecutCount: ' + onWindowStageWillDestoryExecutCount);
-        commonEventManager.publish("MainAbility13onDestroy", {
+        commonEventManager.publish('MainAbility13onDestroy', {
             parameters: {
                 'onWindowStageWillDestoryExecutCount': onWindowStageWillDestoryExecutCount,
                 'offCatchError': offCatchError
@@ -41,7 +41,7 @@ export default class MainAbility13 extends UIAbility {
         }, (err, data)=>{
             hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory', '%{public}s', 'publish err: ' + err);
             hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory', '%{public}s', 'publish err: ' + data);
-        })
+        });
     }
 
     onWindowStageCreate(windowStage: window.WindowStage) {
@@ -89,16 +89,14 @@ export default class MainAbility13 extends UIAbility {
             this.terminateSelfTimeout();
         }
         if (type == 1) {
-            setTimeout(()=>{
-                commonEventManager.publish("MainAbility13onForeground", {
-                    parameters:{
-                        'mainAbility13onForeground':mainAbility13onForeground
-                    }
-                }, (err, data)=>{
-                    hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory onForeground', '%{public}s', 'publish err: ' + err);
-                    hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory onForeground', '%{public}s', 'publish err: ' + data);
-                })
-            }, 1000)
+            commonEventManager.publish('MainAbility13onForeground', {
+                parameters:{
+                    'mainAbility13onForeground':mainAbility13onForeground
+                }
+            }, (err, data)=>{
+                hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory onForeground', '%{public}s', 'publish err: ' + err);
+                hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory onForeground', '%{public}s', 'publish err: ' + data);
+            });
             if (mainAbility13onForeground == 2) {
                 this.terminateSelfTimeout();
             }
@@ -107,21 +105,17 @@ export default class MainAbility13 extends UIAbility {
     }
 
     terminateSelfTimeout(){
-        setTimeout(()=>{
-            this.context.terminateSelf()
-        }, 1500)
+        this.context.terminateSelf();
     }
 
     onBackground() {
         // Ability has back to background
         hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory', '%{public}s', 'Ability onBackground');
         if (type == 1) {
-            setTimeout(()=>{
-                commonEventManager.publish("MainAbility13onBackground", (err, data)=>{
-                    hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory onBackground', '%{public}s', 'publish err: ' + err);
-                    hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory onBackground', '%{public}s', 'publish err: ' + data);
-                })
-            }, 1000)
+            commonEventManager.publish('MainAbility13onBackground', (err, data)=>{
+                hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory onBackground', '%{public}s', 'publish err: ' + err);
+                hilog.info(0x0000, 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestory onBackground', '%{public}s', 'publish err: ' + data);
+            });
         }
     }
 }

@@ -31,7 +31,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SearchKeyboardAppearanceTest() {
   describe('SearchKeyboardAppearanceTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchKeyboardAppearanceTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")

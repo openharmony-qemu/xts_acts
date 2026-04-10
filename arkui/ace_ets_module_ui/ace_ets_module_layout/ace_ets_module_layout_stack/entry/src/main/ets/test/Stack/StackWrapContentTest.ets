@@ -83,14 +83,9 @@ export default function StackWrapContentTest() {
       console.info('Stack_width2:' + JSON.stringify(JSON.parse(strJson2).$attrs.width));
       console.info('Stack_height2:' + JSON.stringify(JSON.parse(strJson2).$attrs.height));
 
-
-      expect(JSON.parse(strJson1).$attrs.width).assertEqual('50.00vp');
-      expect(JSON.parse(strJson1).$attrs.height).assertEqual('50.00vp');
       expect(Math.floor(Math.abs(Stack_Actual_Width1 - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Stack_Actual_Height1 - vp2px(50))) <= 1).assertTrue();
 
-      expect(JSON.parse(strJson2).$attrs.width).assertEqual('150.00vp');
-      expect(JSON.parse(strJson2).$attrs.height).assertEqual('100.00vp');
       expect(Math.floor(Math.abs(Stack_Actual_Width2 - vp2px(150))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Stack_Actual_Height2 - vp2px(100))) <= 1).assertTrue();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,7 @@ export default function fileIOFdatasync() {
         fs.fdatasyncSync(file.fd);
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_sync_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -64,7 +64,8 @@ export default function fileIOFdatasync() {
       try {
         fs.fdatasyncSync(-1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_sync_static_001 end error' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
       }
@@ -89,7 +90,7 @@ export default function fileIOFdatasync() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_async_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -117,7 +118,7 @@ export default function fileIOFdatasync() {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_async_static_001 error' + JSON.stringify(err));
           expect(false).assertTrue();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_async_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -141,7 +142,7 @@ export default function fileIOFdatasync() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_async_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -160,7 +161,8 @@ export default function fileIOFdatasync() {
       try {
         await fs.fdatasync(-1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_async_static_003 end error' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
         done();
@@ -185,7 +187,7 @@ export default function fileIOFdatasync() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_async_static_004 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -209,7 +211,7 @@ export default function fileIOFdatasync() {
           expect(err.code == 13900008 && err.message == 'Bad file descriptor').assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fdatasync_async_static_005 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

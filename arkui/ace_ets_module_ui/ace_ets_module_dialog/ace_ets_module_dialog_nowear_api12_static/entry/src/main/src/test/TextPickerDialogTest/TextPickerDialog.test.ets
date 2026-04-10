@@ -30,7 +30,7 @@ import { UtilsTest } from '../Util.test';
 export default function TextPickerDialog() {
   describe('TextPickerDialog', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerDialog beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
 

@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
+import {KeyCode} from '@ohos.multimodalInput.keyCode';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
 export default function onSelectionChange3() {
@@ -66,13 +67,7 @@ export default function onSelectionChange3() {
       let Obj1_1: ESObject = JSON.parse(text1_1);
       expect(Obj1_1.$attrs.content).assertEqual('1');
 
-      let copy = await driver.findComponent(ON.text('复制'))
-      if (!copy) {
-        richEditor.click();
-        await CommonFunc.sleep(1000);
-        copy = await driver.findComponent(ON.text('复制'))
-      }
-      await copy.click()
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);
       await CommonFunc.sleep(1000);
       let text1_2 = getInspectorByKey('onSelectionChange3_text1');
       let Obj1_2: ESObject = JSON.parse(text1_2);
@@ -81,13 +76,7 @@ export default function onSelectionChange3() {
 
       await richEditor.longClick();
       await CommonFunc.sleep(1000);
-      let paste = await driver.findComponent(ON.text('粘贴'))
-      if (!paste) {
-        richEditor.click();
-        await CommonFunc.sleep(1000);
-        paste = await driver.findComponent(ON.text('粘贴'))
-      }
-      await paste.click()
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
       await CommonFunc.sleep(1000);
       let text1_3 = getInspectorByKey('onSelectionChange3_text1');
       let Obj1_3: ESObject = JSON.parse(text1_3);

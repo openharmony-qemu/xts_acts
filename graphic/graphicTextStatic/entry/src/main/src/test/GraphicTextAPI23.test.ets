@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ export default function GraphicTextAPI23() {
         try {
           fontCollection.loadFontSyncWithCheck(fontFamily, 'file:///system/fonts/HarmonyOS_Sans.ttf', 0);
           console.info('www data success to do loadFontSyncWithCheck');
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`www data Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(err)}`);
           expect().assertFail();
         }
@@ -65,7 +65,8 @@ export default function GraphicTextAPI23() {
           fontCollection.loadFontSyncWithCheck(fontFamily, '/system/fonts/HarmonyOS_Sans.ttf', 1);
           console.info('www data success to do loadFontSyncWithCheck');
           expect().assertFail();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
           expect(Number(e.code) == 25900001).assertTrue();
         }
@@ -88,7 +89,8 @@ export default function GraphicTextAPI23() {
           fontCollection.loadFontSyncWithCheck(fontFamily, 'file:///system/fonts/HarmonyOS_Sans.ttf', 1);
           console.info('www data success to do loadFontSyncWithCheck');
           expect().assertFail();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
           expect(Number(e.code) == 25900008).assertTrue();
         }
@@ -110,7 +112,7 @@ export default function GraphicTextAPI23() {
         try {
           fontCollection.loadFontSyncWithCheck(fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc', 1);
           console.info('www data success to do loadFontSyncWithCheck');
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(`Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
           expect().assertFail();
         }
@@ -132,7 +134,7 @@ export default function GraphicTextAPI23() {
         try {
           fontCollection.loadFontSyncWithCheck(fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc', 0);
           console.info('www data success to do loadFontSyncWithCheck');
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(`Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
           expect().assertFail();
         }
@@ -155,7 +157,8 @@ export default function GraphicTextAPI23() {
           fontCollection.loadFontSyncWithCheck(fontFamily, 'file:///system/fonts/HarmonyOS_Sans111.ttf', 1);
           console.info('www data success to do loadFontSyncWithCheck');
           expect().assertFail();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
           expect(Number(e.code) == 25900002).assertTrue();
         }
@@ -177,7 +180,7 @@ export default function GraphicTextAPI23() {
         try {
           fontCollection.loadFontSyncWithCheck(fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc', 2);
           console.info('www data success to do loadFontSyncWithCheck');
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(`Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
           expect().assertFail();
         }
@@ -200,7 +203,8 @@ export default function GraphicTextAPI23() {
           fontCollection.loadFontSyncWithCheck(fontFamily, 'file:///system/fonts/NotoSansCJK-Regular.ttc', 2000);
           console.info('www data success to do loadFontSyncWithCheck');
           expect().assertFail();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
           expect(Number(e.code) == 25900008).assertTrue();
         }
@@ -397,7 +401,7 @@ export default function GraphicTextAPI23() {
      */
     it('testParagraphStyleStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msg  = "====testParagraphStyleStatic_0100===="
+        let msg  = "====www data testParagraphStyleStatic_0100===="
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
           let fontFamilies: Array<string> = ["Clock_01"]
@@ -650,7 +654,6 @@ export default function GraphicTextAPI23() {
         await fontCollection.unloadFont(fontFamily);
         done();
     })
-
-
+    
   })
 }

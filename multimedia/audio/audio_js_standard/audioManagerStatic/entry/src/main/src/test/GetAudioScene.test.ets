@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,7 +21,7 @@ import audio from '@ohos.multimedia.audio';
 let TagFrmwk: string = "getAudioSceneApi12";
 let AudioSceneRinging: audio.AudioScene = audio.AudioScene.AUDIO_SCENE_RINGING;
 let AudioScenePhoneCall: audio.AudioScene = audio.AudioScene.AUDIO_SCENE_PHONE_CALL;
-let audioManager: audio.AudioManager;
+let audioManager: audio.AudioManager | undefined;
 
 async function getAudioManager() {
   audioManager = audio.getAudioManager();
@@ -67,7 +67,7 @@ export default function getAudioSceneApi12() {
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  (done: () => void): void => {
       try {
-        audioManager.getAudioScene( (err: BusinessError<void> | null, getValue: audio.AudioScene | undefined) => {
+        audioManager!.getAudioScene( (err: BusinessError<void> | null, getValue: audio.AudioScene | undefined) => {
           if (err) {
             console.error(`Failed to obtain the audio scene mode. ${err}`);
             return;
@@ -87,7 +87,7 @@ export default function getAudioSceneApi12() {
           }
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TagFrmwk} SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0100 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -104,7 +104,7 @@ export default function getAudioSceneApi12() {
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let value = await audioManager.getAudioScene();
+        let value = await audioManager!.getAudioScene();
         if (value === AudioSceneRinging) {
           console.info(`${TagFrmwk} Promise invoked to indicate that the audio scene mode is obtained ${value}.`);
           expect(value).assertEqual(1);
@@ -119,7 +119,7 @@ export default function getAudioSceneApi12() {
           expect(value).assertEqual(3);
         }
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TagFrmwk} SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0200 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -136,7 +136,7 @@ export default function getAudioSceneApi12() {
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  (done: () => void): void => {
       try {
-        let value = audioManager.getAudioSceneSync();
+        let value = audioManager!.getAudioSceneSync();
         if (value === AudioSceneRinging) {
           console.info(`${TagFrmwk} Promise invoked to indicate that the audio scene mode is obtained ${value}.`);
           expect(value).assertEqual(1);
@@ -151,7 +151,7 @@ export default function getAudioSceneApi12() {
           expect(value).assertEqual(3);
         }
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(`${TagFrmwk} SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0300 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -187,7 +187,7 @@ export default function getAudioSceneApi12() {
         audioManager.onAudioSceneChange(audioSceneChangeCallback);
         audioManager.offAudioSceneChange(audioSceneChangeCallback);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log('audioSceneChange failed, err :' + err.message)
         expect(false).assertTrue();
         done();

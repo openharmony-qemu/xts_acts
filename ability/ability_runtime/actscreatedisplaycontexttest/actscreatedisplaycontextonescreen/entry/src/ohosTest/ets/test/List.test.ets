@@ -14,8 +14,10 @@
 */
 import abilityTest from './Ability.test';
 import transfercontextinworkertest from './TransferContextInWorkerTest.test';
+import CreateAreaModeContext from './CreateAreaModeContext.test';
 
 export default function testsuite() {
   abilityTest();
   transfercontextinworkertest();
+  CreateAreaModeContext();
 }

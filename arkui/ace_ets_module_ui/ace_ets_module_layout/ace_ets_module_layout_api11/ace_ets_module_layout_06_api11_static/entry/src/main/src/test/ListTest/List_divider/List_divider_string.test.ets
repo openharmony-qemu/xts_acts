@@ -48,7 +48,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function List_divider_string() {
   describe('List_divider_string', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("List_divider_string beforeAll start");
             
       await UtilsTest.msSleep(4000)

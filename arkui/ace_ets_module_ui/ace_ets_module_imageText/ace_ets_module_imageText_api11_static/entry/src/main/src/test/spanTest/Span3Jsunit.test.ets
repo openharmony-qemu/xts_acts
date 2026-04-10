@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function span3Jsunit() {
   describe('span3Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("span3Jsunit beforeEach start");
 
 
@@ -57,7 +57,7 @@ export default function span3Jsunit() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push span page error " + JSON.stringify(err));
       }
     });
@@ -114,7 +114,7 @@ export default function span3Jsunit() {
       try {
         const message: MessageManagerBase<TextCase|undefined> = AppStorage.get<MessageManagerBase<TextCase|undefined>>("messageManagerTextCase")!
         message.notify({name:'textCaseValue',value:TextCase.UpperCase});
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testSpan003] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -157,7 +157,7 @@ export default function span3Jsunit() {
       try {
         const message: MessageManagerBase<string> = AppStorage.get<MessageManagerBase<string>>("messageManagerColor")!
         message.notify({name:'fontColorValue',value:'#FF000990'});
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testSpan005] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -181,7 +181,7 @@ export default function span3Jsunit() {
     //   try {
     //     const message: MessageManagerBase<TextCase|undefined> = AppStorage.get<MessageManagerBase<TextCase|undefined>>("messageManagerTextCase")!
     //     message.notify({name:'textCaseValue',value:undefined});
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[testSpan006] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
@@ -205,7 +205,7 @@ export default function span3Jsunit() {
     //   try {
     //     const message: MessageManagerBase<TextCase> = AppStorage.get<MessageManagerBase<TextCase>>("messageManagerTextCase")!
     //     message.notify({name:'textCaseValue',value:-1});
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("[testSpan007] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);

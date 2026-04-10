@@ -33,7 +33,7 @@ const COMPLETED = 'completed';
 const STOPPED = 'stopped';
 const RELEASED = 'released';
 const ERROR = 'error';
-let fileDescriptor: media.AVFileDescriptor;
+let fileDescriptor: media.AVFileDescriptor | undefined;
 let avPlayer: media.AVPlayer | undefined;
 let mediaTestBase = new MediaTestBase()
 
@@ -115,8 +115,10 @@ async function testPostProcessor(fd: media.AVFileDescriptor, initializedOp: Asyn
   }).catch(mediaTestBase.catchCallback);
 
   avPlayer!!.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
-    console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
-    await handleState(state.toString(), initializedOp, preparedOp, playedOp, stoppedOp, done);
+    waitForCompletion(async () => {
+      console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
+      await handleState(state.toString(), initializedOp, preparedOp, playedOp, stoppedOp, done);
+    })
   });
   avPlayer!!.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
@@ -164,7 +166,7 @@ export default function AVPlayerPostProcessorTest() {
     });
     afterAll(async () => {
       console.info('afterAll case');
-      await mediaTestBase.closeFdNumber(fileDescriptor.fd)
+      await mediaTestBase.closeFdNumber(fileDescriptor!.fd)
     });
 
     /**
@@ -219,7 +221,7 @@ export default function AVPlayerPostProcessorTest() {
         await resetAndCallbackOff();
         done();
       }
-      await testPostProcessor(fileDescriptor, initializedOperation, preparedOperation, playedOperation, stoppedOperation, undefined, done);
+      await testPostProcessor(fileDescriptor!, initializedOperation, preparedOperation, playedOperation, stoppedOperation, undefined, done);
     });
 
     /**
@@ -270,7 +272,7 @@ export default function AVPlayerPostProcessorTest() {
         done();
       }
 
-      await testPostProcessor(fileDescriptor, initializedOperation, preparedOperation, playedOperation, stoppedOperation, undefined, done);
+      await testPostProcessor(fileDescriptor!, initializedOperation, preparedOperation, playedOperation, stoppedOperation, undefined, done);
     });
 
 
@@ -311,7 +313,7 @@ export default function AVPlayerPostProcessorTest() {
         done();
       }
 
-      await testPostProcessor(fileDescriptor, initializedOperation, preparedOperation, playedOperation, stoppedOperation, undefined, done);
+      await testPostProcessor(fileDescriptor!, initializedOperation, preparedOperation, playedOperation, stoppedOperation, undefined, done);
     });
   })
 }

@@ -39,7 +39,7 @@ function test(time:number) {
 }
 
 export default function abilityStageMonitorTest() {
-  describe('ActsAbilityTest', () => {
+  describe('ActsAbilityTestAdapt001', () => {
 
     afterEach(async (done:Function) => {
       console.log("SUB_AA_AbilityStageMonitor afterEach called");

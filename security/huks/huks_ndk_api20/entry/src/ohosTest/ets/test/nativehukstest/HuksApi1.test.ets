@@ -35,7 +35,7 @@ export default function HuksApiTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOH_HUKS_KEY_PURPOSE_MAC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testOH_HUKS_KEY_PURPOSE_MAC0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_KEY_PURPOSE_MAC0100 start====");
@@ -58,7 +58,7 @@ export default function HuksApiTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testOH_HUKS_DIGEST_SM30100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testOH_HUKS_DIGEST_SM30100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           console.info("====>testOH_HUKS_DIGEST_SM30100 start====");

@@ -64,7 +64,7 @@ async function forKey(Key: string, text: string) {
 export default function TextPickerSec() {
   describe('TextPickerSec', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 

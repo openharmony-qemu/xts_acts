@@ -28,7 +28,7 @@ interface optionsObj {
 
 export default function getDragController() {
   describe('getDragController', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getDragController beforeEach start");
 
 

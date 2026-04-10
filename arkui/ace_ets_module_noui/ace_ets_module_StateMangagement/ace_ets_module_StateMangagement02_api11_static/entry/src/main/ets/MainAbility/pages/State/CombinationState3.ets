@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-class SubClass4 {
+export class SubClass4 {
   public value: number;
 
   constructor(value: number) {
@@ -43,7 +43,7 @@ class SubClass4 {
 }
 
 @Observed
-class ClassA3 {
+export class ClassA3 {
   public value: number;
   public sum: SubClass4 = new SubClass4(1) ;
   constructor(value: number, sum: SubClass4) {
@@ -166,7 +166,7 @@ struct CombinationState4 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('CombinationState3', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2024-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,7 +33,7 @@ interface ObjectType {}
 
 export default function MapTest() {
   describe('mapTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**
@@ -42,9 +42,9 @@ export default function MapTest() {
      * @tc.desc Test the function of the interface MapPrototypeClear.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testMapPrototypeClear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testMapPrototypeClear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapPrototypeClear0001";
       try {
         const map1: Map<string, string> = new Map<string, string>();
@@ -66,9 +66,9 @@ export default function MapTest() {
      * @tc.desc Test the function of the interface MapPrototypeClear.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testMapPrototypeClear0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testMapPrototypeClear0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapPrototypeClear0002";
       try {
         const map1: Map<string, string> = new Map<string, string>();
@@ -91,9 +91,9 @@ export default function MapTest() {
      * @tc.desc Test the function of the interface MapPrototypeClear.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testMapPrototypeClear0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testMapPrototypeClear0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapPrototypeClear0003";
       try {
         const map1: Map<string, string> = new Map<string, string>();
@@ -114,9 +114,9 @@ export default function MapTest() {
      * @tc.desc Test the function of the interface MapPrototypeDelete.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testMapPrototypeDelete0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testMapPrototypeDelete0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapPrototypeDelete0001";
       try {
         const map1: Map<string, string> = new Map<string, string>();
@@ -138,9 +138,9 @@ export default function MapTest() {
      * @tc.desc Test the function of the interface MapPrototypeDelete.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testMapPrototypeDelete0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testMapPrototypeDelete0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapPrototypeDelete0002";
       try {
         const map1: Map<string, string> = new Map<string, string>();
@@ -161,9 +161,9 @@ export default function MapTest() {
      * @tc.desc Test the function of the interface MapPrototypeDelete.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testMapPrototypeDelete0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testMapPrototypeDelete0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapPrototypeDelete0003";
       try {
         const map1: Map<string, string> = new Map<string, string>();
@@ -184,9 +184,9 @@ export default function MapTest() {
      * @tc.desc Test the function of the interface MapPrototypeEntries.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testMapPrototypeEntries0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testMapPrototypeEntries0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapPrototypeEntries0001";
       try {
         const map1: Map<string, string> = new Map<string, string>();
@@ -209,9 +209,9 @@ export default function MapTest() {
      * @tc.desc Test the function of the interface MapPrototypeForEach.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testMapPrototypeForEach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testMapPrototypeForEach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapPrototypeForEach0001";
       try {
         const logMapElements = (value: MapValueType, key: string, map: Map<string, MapValueType>): void => {
@@ -301,7 +301,8 @@ export default function MapTest() {
         const result = arr;
         console.log(`${TAG} result:` + JSON.stringify(result));
         expect(JSON.stringify(result)).assertEqual('["foo"]');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -325,7 +326,8 @@ export default function MapTest() {
         const result = myMap.get("bar");
         console.log(`${TAG} result:` + JSON.stringify(result));
         expect(JSON.stringify(result)).assertEqual('["foo"]');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -617,13 +619,13 @@ export default function MapTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_MAP_2500
-     * @tc.name testMapPrototype[Symbol.iterator]0001
+     * @tc.name testMapPrototypeSymboliterator0001Adapt001
      * @tc.desc Test the function of the interface MapPrototype[Symbol.iterator].
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testMapPrototype[Symbol.iterator]0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testMapPrototypeSymboliterator0001Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testMapPrototype[Symbol.iterator]0001";
       try {
         const map1: Map<string, string> = new Map<string, string>();

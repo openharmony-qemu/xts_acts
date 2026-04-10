@@ -52,7 +52,7 @@ export default function widthTest() {
    */
   describe('WidthTest', () => {
     //Generate test cases (it) through a loop based on the support view * test values.
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       console.info('WidthTest  ======= start')
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

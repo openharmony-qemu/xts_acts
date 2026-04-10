@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -97,7 +97,7 @@ struct WebComponent {
                 try {
                   console.log(this.webOptions.sharedRenderProcessToken)
                   Utils.emitEvent(true,1600)
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -110,11 +110,19 @@ struct WebComponent {
                     []
                   );
                   Utils.emitEvent(true,1601)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(false,1601)
                 }
                 break;
+              }
+
+              case 'emitonSwitchNextPage': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/webViewCookieTrack' })
+                console.log('push URL success')
               }
 
 

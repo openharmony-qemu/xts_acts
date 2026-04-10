@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ export default function SecurityCryptoFwX963TestUnit() {
             let secret: cryptoFramework.DataBlob = JsX963KdfSync(digestAlgName, kdfSpec);
             expect(secret.data.length).assertEqual(keySize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -69,7 +69,7 @@ export default function SecurityCryptoFwX963TestUnit() {
             let secret: cryptoFramework.DataBlob = JsX963KdfSync(digestAlgName, kdfSpec);
             expect(secret.data.length).assertEqual(keySize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -96,7 +96,7 @@ export default function SecurityCryptoFwX963TestUnit() {
             let secret: cryptoFramework.DataBlob = JsX963KdfSync(digestAlgName, kdfSpec);
             expect(secret.data.length).assertEqual(keySize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -123,7 +123,7 @@ export default function SecurityCryptoFwX963TestUnit() {
             let secret: cryptoFramework.DataBlob = JsX963KdfSync(digestAlgName, kdfSpec);
             expect(secret.data.length).assertEqual(keySize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -150,7 +150,7 @@ export default function SecurityCryptoFwX963TestUnit() {
             let secret: cryptoFramework.DataBlob = await JsX963KdfPromise(digestAlgName, kdfSpec);
             expect(secret.data.length).assertEqual(keySize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -177,7 +177,7 @@ export default function SecurityCryptoFwX963TestUnit() {
             let secret: cryptoFramework.DataBlob = await JsX963KdfPromise(digestAlgName, kdfSpec);
             expect(secret.data.length).assertEqual(keySize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -204,7 +204,7 @@ export default function SecurityCryptoFwX963TestUnit() {
             let secret: cryptoFramework.DataBlob = await JsX963KdfPromise(digestAlgName, kdfSpec);
             expect(secret.data.length).assertEqual(keySize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -231,7 +231,7 @@ export default function SecurityCryptoFwX963TestUnit() {
             let secret: cryptoFramework.DataBlob = await JsX963KdfPromise(digestAlgName, kdfSpec);
             expect(secret.data.length).assertEqual(keySize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -258,7 +258,7 @@ export default function SecurityCryptoFwX963TestUnit() {
             let secret: cryptoFramework.DataBlob = await JsX963KdfCallback(digestAlgName, kdfSpec);
             expect(secret.data.length).assertEqual(keySize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -285,7 +285,7 @@ export default function SecurityCryptoFwX963TestUnit() {
             let secret: cryptoFramework.DataBlob = await JsX963KdfCallback(digestAlgName, kdfSpec);
             expect(secret.data.length).assertEqual(keySize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -312,7 +312,7 @@ export default function SecurityCryptoFwX963TestUnit() {
             let secret: cryptoFramework.DataBlob = await JsX963KdfCallback(digestAlgName, kdfSpec);
             expect(secret.data.length).assertEqual(keySize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -339,7 +339,7 @@ export default function SecurityCryptoFwX963TestUnit() {
             let secret: cryptoFramework.DataBlob = await JsX963KdfCallback(digestAlgName, kdfSpec);
             expect(secret.data.length).assertEqual(keySize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -363,9 +363,9 @@ export default function SecurityCryptoFwX963TestUnit() {
           let keySize: int = 0;
           let kdfSpec: cryptoFramework.X963KdfSpec = JsX963Spec(z, info, keySize);
           await JsX963KdfCallback(digestAlgName, kdfSpec);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       });
@@ -387,9 +387,9 @@ export default function SecurityCryptoFwX963TestUnit() {
           let keySize: int = 16;
           let kdfSpec: cryptoFramework.X963KdfSpec = JsX963Spec(z, info, keySize);
           await JsX963KdfCallback(digestAlgName, kdfSpec);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(17620003);
+          expect((error as BusinessError).code).assertEqual(17620003);
         }
         done();
       });
@@ -411,9 +411,9 @@ export default function SecurityCryptoFwX963TestUnit() {
           let keySize: int = 16;
           let kdfSpec: cryptoFramework.X963KdfSpec = JsX963Spec(z, info, keySize, true);
           await JsX963KdfCallback(digestAlgName, kdfSpec);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(17620003);
+          expect((error as BusinessError).code).assertEqual(17620003);
         }
         done();
       });
@@ -435,9 +435,33 @@ export default function SecurityCryptoFwX963TestUnit() {
           let keySize: int = -1;
           let kdfSpec: cryptoFramework.X963KdfSpec = JsX963Spec(z, info, keySize);
           await JsX963KdfCallback(digestAlgName, kdfSpec);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`X963 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_X963_Func_1800
+     * @tc.number SUB_Security_CryptoFramework_X963_Func_1800
+     * @tc.desc   algorithm is kdf X963
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_CryptoFramework_X963_Func_1800",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        try {
+          let z: string = "0000000000000000";
+          let info: string = "00000000";
+          let digestAlgName: string = "SHA3-224";
+          let keySize: int = 16;
+          let kdfSpec: cryptoFramework.X963KdfSpec = JsX963Spec(z, info, keySize);
+          JsX963KdfSync(digestAlgName, kdfSpec);
+        } catch (error) {
+          console.error(`X963 “${error}“, error code: ${(error as BusinessError).code}`);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       });

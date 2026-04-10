@@ -27,7 +27,7 @@ import common from '@ohos.app.ability.common';
 import { RecordData } from '@ohos.base';
 export default function spanTest() {
   describe('spanTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FontSettingOptions beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -48,7 +48,7 @@ export default function spanTest() {
           await Utils.sleep(2000);
           console.info("push span page result success");
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push span page error: " + err);
       }
     });
@@ -84,7 +84,7 @@ export default function spanTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -106,7 +106,7 @@ export default function spanTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -148,7 +148,7 @@ export default function spanTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -189,7 +189,7 @@ export default function spanTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -211,7 +211,7 @@ export default function spanTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -253,7 +253,7 @@ export default function spanTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -293,7 +293,7 @@ export default function spanTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -334,7 +334,7 @@ export default function spanTest() {
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
 
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -377,7 +377,7 @@ export default function spanTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -419,7 +419,7 @@ export default function spanTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -461,7 +461,7 @@ export default function spanTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -507,7 +507,7 @@ export default function spanTest() {
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
 
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);

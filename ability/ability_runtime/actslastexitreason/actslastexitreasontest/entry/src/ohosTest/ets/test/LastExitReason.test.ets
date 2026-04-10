@@ -78,12 +78,14 @@ export default function lastExitReasonTest() {
             expect().assertFail();
             done();
           } else {
-            console.info(`receive event success, event:${data.event}`);
+            console.info(`receive event success, event:${data.event} ${JSON.stringify(data)}`);
             if (data.event == event1) {
               let lastExitReason: AbilityConstant.LastExitReason = data.parameters?.lastExitReason;
               let lastExitMessage: string = data.parameters?.lastExitMessage;
+              let lastExitDetailInfo: AbilityConstant.LastExitDetailInfo = data.parameters?.lastExitDetailInfo;
               expect(lastExitReason).assertEqual(AbilityConstant.LastExitReason.JS_ERROR);
               expect(lastExitMessage.length > 0).assertTrue();
+              expect(lastExitDetailInfo.killReason).assertEqual('Js Error');
               unSubscribe(subscriber, done);
             }
           }
@@ -318,6 +320,7 @@ export default function lastExitReasonTest() {
                 expect(lastExitDetailInfo?.uid).assertEqual(-1);
                 expect(lastExitDetailInfo?.processState).assertLarger(-1);
                 expect(launchReasonMessage).assertEqual("");
+                expect(lastExitDetailInfo.killReason).assertEqual(undefined);
               }catch{}
               unSubscribe(subscriber, done);
             }

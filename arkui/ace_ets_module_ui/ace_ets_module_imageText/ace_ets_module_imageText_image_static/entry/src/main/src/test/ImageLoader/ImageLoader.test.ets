@@ -29,7 +29,7 @@ const SLEEP_TIME_S = 100;
 
 export default function ImageLoaderTest() {
   describe('ImageLoaderTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageLoaderTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
     });

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,12 +31,12 @@ let g_context: common.UIAbilityContext;
 
 export default function audioRendererTest() {
   describe('setChannelBlendMode', () => {
-    let audioRen: audio.AudioRenderer | null;
+    let audioRen: audio.AudioRenderer | null = null;
     let Tag = "audioRendererEnhanceTest";
 
     beforeAll(async (): Promise<void> => {
       try {
-        console.info(' beforeAll start');
+        console.info('beforeAll start');
         g_context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
         let atManager = abilityAccessCtrl.createAtManager();
         let arr: Array<Permissions> = new Array<Permissions>();
@@ -48,12 +48,14 @@ export default function audioRendererTest() {
             console.info("getPermissionRequestResult err" + JSON.stringify(err));
           });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
+        await Utils.msSleep(1000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        await Utils.msSleep(1000);
         if (permissionButton != null) {
           await permissionButton.click();
         }
       } catch (err) {
-        console.error(' beforeAll failed, err: ' + err);
+        console.error('beforeAll failed, err: ' + err);
       }
     })
     beforeEach(async () => {
@@ -83,7 +85,7 @@ export default function audioRendererTest() {
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info('AudioFrameworkRenderLog: AudioRender Created : catch ERROR : ' + error.code + error.message);
       }
     })
@@ -144,7 +146,7 @@ export default function audioRendererTest() {
         try {
           await audioRen!.setVolume(inputVolume);
           console.info(`${Tag}: setVolume to 0.5 : Success`);
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(`${Tag}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
         }
 
@@ -173,9 +175,8 @@ export default function audioRendererTest() {
       try {
         audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_DEFAULT)
         console.info(`${Tag}: setChannelBlendMode :SUCCESS`);
-        expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: setChannelBlendMode : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -194,9 +195,8 @@ export default function audioRendererTest() {
       try {
         audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_BLEND_LR)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
-        expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -215,9 +215,8 @@ export default function audioRendererTest() {
       try {
         audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_ALL_LEFT)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
-        expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -236,9 +235,8 @@ export default function audioRendererTest() {
       try {
         audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_ALL_RIGHT)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
-        expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -270,11 +268,11 @@ export default function audioRendererTest() {
             streamInfo: AudioStreamInfo,
             rendererInfo: AudioRendererInfo
           }
-          let audioRender: audio.AudioRenderer | null;
+          let audioRender: audio.AudioRenderer | null = null;
           try {
             let data = await audio.createAudioRenderer(AudioRendererOptions);
             audioRender = data;
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.info(`${Tag}: createAudioRenderer : ${testConst.StreamUsage[index]} ERROR : ${err.message}, ${err.code}`);
           }
           let keysArray: audio.ChannelBlendMode[] = [
@@ -288,7 +286,7 @@ export default function audioRendererTest() {
               audioRender!.setChannelBlendMode(keysArray[index])
               await Utils.msSleep(20);
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.info(`${Tag}: setChannelBlendMode : ${testConst.StreamUsage[index]} error ${error.message}, ${error.code}`);
             expect(false).assertTrue();
             done();
@@ -302,9 +300,8 @@ export default function audioRendererTest() {
           }
           await Utils.msSleep(20);
         }
-        expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: setChannelBlendMode : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -325,7 +322,7 @@ export default function audioRendererTest() {
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
         await renderPlay();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();

@@ -241,7 +241,7 @@ export default function ConcurrencyModularImportPromiseTest() {
         const caseName = 'ConcurrencyModularImportPromiseTest0900';
         console.info(`${caseName} test start`);
         const result = await existingSendablePromise;
-        expect(result).assertContain('ExistingInstance');
+        expect(JSON.stringify(result)).assertContain('ExistingInstance');
         console.log(`${caseName} test end`);
         Done();
       });

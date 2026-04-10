@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,7 +30,7 @@ class InfoC {
 
 export default function TreeSetTest1() {
   describe("TreeSetTest1", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -45,7 +45,8 @@ export default function TreeSetTest1() {
       try {
         let treeSet = new TreeSet<string>();
         expect(String(treeSet != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200012);
         expect(err.message).assertEqual("The TreeSet's constructor cannot be directly invoked");
@@ -76,7 +77,8 @@ export default function TreeSetTest1() {
           let res = treeSet.remove(item)
           expect(String(res)).assertEqual('true');
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200012);
         expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");

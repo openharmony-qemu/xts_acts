@@ -44,7 +44,10 @@ export default function moveAbilityToBackgroundTest() {
     beforeEach(() => {
     });
     afterEach(async () => {
-      await globalThis.entryAbilityContext.terminateSelf();
+      if(globalThis.entryAbilityContext != undefined){
+        await globalThis.entryAbilityContext.terminateSelf();
+      }
+      
     });
     afterAll(() => {
     });
@@ -63,9 +66,7 @@ export default function moveAbilityToBackgroundTest() {
       if (mpEnable === 'true') {
         try {
           await abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a EntryAbility");
-          await sleep(1000);
-          let button = await driver.waitForComponent(ON.text("Move To background"), 3000);
-          await sleep(100);
+          let button = await driver.waitForComponent(ON.text("Move To background"), 4000);
           expect(button != null).assertTrue();
           let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
             events: ['Acts_onBackground_MoveAbilityToBackground_Event_1']

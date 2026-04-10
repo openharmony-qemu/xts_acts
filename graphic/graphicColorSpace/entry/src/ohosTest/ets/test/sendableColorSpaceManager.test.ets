@@ -507,5 +507,47 @@ export default function sendableColorSpaceManagerTest() {
       }
     })
 
+    /**
+     * @tc.name   getSendableColorSpaceEnum_0600
+     * @tc.number getSendableColorSpaceEnum_0600
+     * @tc.desc   test the interface of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getSendableColorSpaceEnum_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('test createcolorspacemanager08 begin');
+      try {
+        let primaries: colorSpaceManager.ColorSpacePrimaries = {
+          redX: 0.64,
+          redY: 0.33,
+          greenX: 0.3,
+          greenY: 0.6,
+          blueX: 0.15,
+          blueY: 0.06,
+          whitePointX: 0.3127,
+          whitePointY: 0.3290
+        };
+        let gamma = 2.875;
+        let colorSpaceMgr = sendableColorSpaceManager.create(primaries, gamma);
+        expect(colorSpaceMgr != null).assertTrue();
+        let colorSpaceName = colorSpaceMgr.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.CUSTOM);
+        console.info('www data sendableColorSpace ', colorSpaceName);
+        let ga = colorSpaceMgr.getGamma();
+        let gap = ga - gamma;
+        let wp = colorSpaceMgr.getWhitePoint();
+        console.info('www data num ', ga, gap, wp);
+        expect(gap == 0).assertTrue();
+        expect(Math.abs(primaries.whitePointX - wp[0]) <= 0.00001).assertTrue();
+        expect(Math.abs(primaries.whitePointY - wp[1]) <= 0.00001).assertTrue();
+        done();
+      } catch (err) {
+        console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
   })
 }

@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextMenuItemId() {
   describe('TextMenuItemId', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextMenuItemId beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api16.static", "EntryAbility")

@@ -65,7 +65,7 @@ export default function webJsunit() {
           expect().message('======> WLAN Network error').assertFail();
           done()
         }
-        if (data.chload >= 800 || data.rssi <= -80) {
+        if (data.chload >= 900 || data.rssi <= -80) {
           expect().message('======> WLAN Network error').assertFail();
           done();
         } else if (data.chload >= 500) {
@@ -103,7 +103,19 @@ export default function webJsunit() {
       Utils.registerBaseEvent("emitOnDownloadStart",
         "https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/mobileservices/2022/download/PC107f1b3947c942ffaa14334a879065d8.2107261020.exe",
         130400,
-        done, (backData: events_emitter.EventData, expected: Object) => {
+        null, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.registerBaseEvent("onDownloadStart", true, 26031017, null, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.registerBaseEvent("onDownloadStart", '', 26031018, null, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.registerBaseEvent("onDownloadStart", true, 26031019, null, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.registerBaseEvent("onDownloadStart", 'application/x-msdownload', 26031020, done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
       await Utils.waitAndClickComponent(driver, "webcomponent");

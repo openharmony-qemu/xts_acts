@@ -48,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ListLanes05() {
   describe('ListLanes05', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ListLanes05 beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")

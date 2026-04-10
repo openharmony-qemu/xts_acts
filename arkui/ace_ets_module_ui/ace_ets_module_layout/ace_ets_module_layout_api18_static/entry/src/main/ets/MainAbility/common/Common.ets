@@ -47,6 +47,7 @@ export default class CommonFunc {
     });
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
       "windowRect Top: " + AppStorage.get<number>("winTop"));
+    console.info(`${key} rectInfo left: ${rectInfo[0][0]}, top: ${rectInfo[0][1]}, right: ${rectInfo[1][0]}, bottom: ${rectInfo[1][1]}`);
     return {
       "left": Number(rectInfo[0][0] ?? 0),
       "top": Number(rectInfo[0][1] ?? 0),

@@ -53,7 +53,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function makeObserved0050Test() {
   describe('makeObserved0050Test', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("makeObserved0050Test beforeEach start");
 
 

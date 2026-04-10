@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,13 +23,13 @@ import { WantAgent } from '@ohos.app.ability.wantAgent';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 export default function AVSessionErrorCode() {
     describe('AVSessionErrorCode', () => {
         let tag = 'ApplicationA';
         let type = 'audio';
-        let session: avSession.AVSession | null;
-        let controller: avSession.AVSessionController;
+        let session: avSession.AVSession | null = null;
+        let controller: avSession.AVSessionController | undefined;
         const INVALID_STRING = "invalid string";
         const UPDATE_LYRICS_EVENT = "dynamic_lyrics";
         const UPDATE_LYRICS_WANT_PARAMS: Record<string, Object> = {
@@ -90,7 +90,7 @@ export default function AVSessionErrorCode() {
                 console.info('TestLog: session destroy success');
                 await validFunc();
 
-            }catch(err: BusinessError) {
+            }catch(err) {
                 console.info(`TestLog: session destroy error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
             }
@@ -107,20 +107,20 @@ export default function AVSessionErrorCode() {
         beforeEach(async () => {
             try{
                 console.info(`TestLog: createAVSession 1111`);
-                session = await avSession.createAVSession(context, tag, 'video_call');
-            }catch(err: BusinessError){
+                session = await avSession.createAVSession(context!, tag, 'video_call');
+            }catch(err){
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
             try{
                 await session!.activate();
                 console.info(`TestLog: Session activate`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: Session activate error: code: ${err.code}, message: ${err.message}`);
             };
             try {
                 controller = await session!.getController();
                 console.info(`TestLog: controller getController`);
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`TestLog: getController error: code: ${err.code}, message: ${err.message}`);
             }
             await Utils.msSleep(800);
@@ -133,7 +133,7 @@ export default function AVSessionErrorCode() {
                 try{
                     await session!.destroy()
                     console.info(`TestLog: Session destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`TestLog: Session destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -141,9 +141,9 @@ export default function AVSessionErrorCode() {
             }
             if (controller != null) {
                 try{
-                    await controller.destroy()
+                    await controller!.destroy()
                     console.info(`TestLog: Controller destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.info(`TestLog: Controller destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -171,7 +171,8 @@ export default function AVSessionErrorCode() {
                 console.info('TestLog: destroy 1');
                 await session!.destroy()
                 console.info('TestLog: destroy 2');
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`TestLog: Set AVMetadata error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -182,7 +183,8 @@ export default function AVSessionErrorCode() {
                 await session!.setAVMetadata(metadata)
                 console.info('TestLog: Set AVMetadata successfully');
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`TestLog: Set AVMetadata error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -214,7 +216,7 @@ export default function AVSessionErrorCode() {
                     }
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: Set AVMetadta error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -236,7 +238,8 @@ export default function AVSessionErrorCode() {
                 await session!.setAVPlaybackState({})
                 console.info('TestLog: Set playbackState successfully');
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -273,7 +276,7 @@ export default function AVSessionErrorCode() {
                     }
                     done();
                 })
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -309,7 +312,7 @@ export default function AVSessionErrorCode() {
                     }
                     done();
                 })
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -337,12 +340,12 @@ export default function AVSessionErrorCode() {
                 requestCode: 0,
                 actionFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
             };
-            let agent: WantAgent;
+            let agent: WantAgent | undefined;
             await wantAgent.getWantAgent(wantAgentInfo).then((callback) => {
                 agent = callback;
             });
             await invalidSession(async (): Promise<void> => {
-                await session!.setLaunchAbility(agent).then(() => {
+                await session!.setLaunchAbility(agent!).then(() => {
                     console.info('TestLog: AVSessionTest : Set LaunchAbility');
                     expect().assertFail();
                 }).catch((err: Error) => {
@@ -374,13 +377,13 @@ export default function AVSessionErrorCode() {
                 requestCode: 0,
                 actionFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
             };
-            let agent: WantAgent;
+            let agent: WantAgent | undefined;
             await wantAgent.getWantAgent(wantAgentInfo).then((callback) => {
                 agent = callback;
             });
             await session!.destroy()
             try {
-                session!.setLaunchAbility(agent, (err) => {
+                session!.setLaunchAbility(agent!, (err) => {
                     if (err) {
                         console.info(`TestLog: Set launchAbility error: code: ${err.code}, message: ${err.message}`);
                         expect(err?.code).assertEqual(6600102);
@@ -390,7 +393,7 @@ export default function AVSessionErrorCode() {
                     }
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: Set launchAbility error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -420,7 +423,7 @@ export default function AVSessionErrorCode() {
                     }
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: Session destroy error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -442,7 +445,8 @@ export default function AVSessionErrorCode() {
                 await session!.destroy()
                 console.info('TestLog: Session destroy success.');
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`TestLog: Session destroy error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -464,7 +468,8 @@ export default function AVSessionErrorCode() {
                 await session!.activate()
                 console.info('TestLog: Set session active successfully');
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -493,7 +498,7 @@ export default function AVSessionErrorCode() {
                     }
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -515,7 +520,8 @@ export default function AVSessionErrorCode() {
                 await session!.deactivate()
                 console.info('TestLog: Deactivate session success.');
                 expect(true).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err){
+                err = err as BusinessError;
                 console.info(`TestLog: Deactivate session error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -544,7 +550,7 @@ export default function AVSessionErrorCode() {
                     }
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: Deactivate session error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -565,7 +571,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.onPlay(callback1);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -585,7 +592,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.onStop(callback1);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -605,7 +613,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.onPause(callback1);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -625,7 +634,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.onPlayNext(callback1);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -645,7 +655,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.onPlayPrevious(callback1);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -665,7 +676,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.onFastForward(callback1);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -685,7 +697,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.onRewind(callback1);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -705,7 +718,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.onSeek(callback1);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -725,7 +739,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.onSetSpeed(callback1);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -745,7 +760,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.onSetLoopMode(callback1);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -765,7 +781,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.onToggleFavorite(callback1);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -785,7 +802,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.onHandleKeyEvent(callback1);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -805,7 +823,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.offPlay()
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -824,7 +843,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.offPause()
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -843,7 +863,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.offStop()
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -862,7 +883,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.offPlayNext()
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -882,7 +904,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.offPlayPrevious()
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -902,7 +925,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.offFastForward()
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -922,7 +946,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.offRewind()
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -942,7 +967,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.offSeek()
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -961,7 +987,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.offSetSpeed()
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -981,7 +1008,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.offSetLoopMode()
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -1001,7 +1029,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.offToggleFavorite()
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -1021,7 +1050,8 @@ export default function AVSessionErrorCode() {
             try {
                 session!.offHandleKeyEvent()
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600102);
             }
             done();
@@ -1064,7 +1094,8 @@ export default function AVSessionErrorCode() {
                  await session!.getOutputDevice()
                  console.info(`Get device success.`);
                  expect(true).assertFalse();
-             }catch(err: BusinessError) {
+             }catch(err) {
+                err = err as BusinessError;
                  console.info(`Get device BusinessError: ${err.code}, message: ${err.message}`);
                  expect(err.code).assertEqual(6600102);
              }
@@ -1086,7 +1117,8 @@ export default function AVSessionErrorCode() {
                 await session!.getController()
                 console.info('Get controller successfully');
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`Get controller BusinessError: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -1131,7 +1163,8 @@ export default function AVSessionErrorCode() {
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
                 console.info(`TestLog: dispatchSessionEvent success.`);
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`TestLog: dispatchSessionEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102)
             };
@@ -1160,7 +1193,7 @@ export default function AVSessionErrorCode() {
                     }
                     done();
                 })
-            }catch(err: BusinessError) {
+            }catch(err) {
                 console.info(`TestLog: dispatchSessionEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -1182,7 +1215,8 @@ export default function AVSessionErrorCode() {
                     await session!.setExtras(CUSTOM_EXTRAS)
                     console.info(`TestLog: setExtras success.`);
                     expect(true).assertFalse();
-                }catch(err: BusinessError) {
+                }catch(err) {
+                    err = err as BusinessError;
                     console.info(`TestLog: setExtras error: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 };
@@ -1212,7 +1246,7 @@ export default function AVSessionErrorCode() {
                         }
                         done();
                     })
-                }catch(err: BusinessError) {
+                }catch(err) {
                     console.info(`TestLog: setExtras error: code: ${err.code}, message: ${err.message}`);
                     expect(true).assertFalse();
                     done();
@@ -1234,7 +1268,8 @@ export default function AVSessionErrorCode() {
                 try {
                     session!.onCommonCommand(callback1);
                     expect(true).assertFalse();
-                }catch(err: BusinessError) {
+                }catch(err) {
+                    err = err as BusinessError;
                     expect(err.code).assertEqual(6600102);
                 }
             });
@@ -1255,7 +1290,8 @@ export default function AVSessionErrorCode() {
                 try {
                     session!.offCommonCommand()
                     expect(true).assertFalse();
-                }catch(err: BusinessError) {
+                }catch(err) {
+                    err = err as BusinessError;
                     expect(err.code).assertEqual(6600102);
                 }
             });
@@ -1276,7 +1312,8 @@ export default function AVSessionErrorCode() {
                 await session!.setAVQueueItems(ITEMS_ARRAY_ERROR)
                 console.info('setAVQueueItems Successfully');
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`TestLog: setAVQueueItems error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(401);
             };
@@ -1298,7 +1335,8 @@ export default function AVSessionErrorCode() {
                     await session!.setAVQueueItems(ITEMS_ARRAY)
                     console.info('setAVQueueItems Successfully');
                     expect(true).assertFalse();
-                }catch(err: BusinessError) {
+                }catch(err) {
+                    err = err as BusinessError;
                     console.info(`TestLog: setAVQueueItems error: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 };
@@ -1327,7 +1365,7 @@ export default function AVSessionErrorCode() {
                     }
                     done();
                 })
-            }catch(err: BusinessError) {
+            }catch(err) {
                 console.info(`TestLog: setAVQueueItems error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -1356,7 +1394,7 @@ export default function AVSessionErrorCode() {
                         }
                         done();
                     })
-                }catch(err: BusinessError) {
+                }catch(err) {
                     console.info(`TestLog: setAVQueueItems error: code: ${err.code}, message: ${err.message}`);
                     expect(true).assertFalse();
                     done();
@@ -1378,7 +1416,8 @@ export default function AVSessionErrorCode() {
                 await session!.setAVQueueTitle({})
                 console.info('setAVQueueTitle Successfully');
                 expect(true).assertFalse();
-            }catch(err: BusinessError) {
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`TestLog: setAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(401);
             };
@@ -1400,7 +1439,8 @@ export default function AVSessionErrorCode() {
                     await session!.setAVQueueTitle(QUEUE_TITLE)
                     console.info('setAVQueueTitle Successfully');
                     expect(true).assertFalse();
-                }catch(err: BusinessError) {
+                }catch(err) {
+                    err = err as BusinessError;
                     console.info(`TestLog: setAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 };
@@ -1429,7 +1469,7 @@ export default function AVSessionErrorCode() {
                     }
                     done();
                 })
-            }catch(err: BusinessError) {
+            }catch(err) {
                 console.info(`TestLog: setAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertFalse();
                 done();
@@ -1458,7 +1498,7 @@ export default function AVSessionErrorCode() {
                         }
                         done();
                     })
-                }catch(err: BusinessError) {
+                }catch(err) {
                     console.info(`TestLog: setAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
                     expect(true).assertFalse();
                     done();
@@ -1480,11 +1520,105 @@ export default function AVSessionErrorCode() {
                 try {
                     session!.onSkipToQueueItem(callback1);
                     expect(true).assertFalse();
-                }catch(err: BusinessError) {
+                }catch(err) {
+                    err = err as BusinessError;
                     expect(err.code).assertEqual(6600102);
                 }
             });
             done();
         })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONCASTDISPLAYCHANGE_ERRORCODE_STATIC_0102
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONCASTDISPLAYCHANGE_ERRORCODE_STATIC_0102
+         * @tc.desc   onCastDisplayChange with avsession does not exist(errcode 6600102)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONCASTDISPLAYCHANGE_ERRORCODE_STATIC_0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            await invalidSession(async (): Promise<void> => {
+                try {
+                    session!.onCastDisplayChange(callback1);
+                    expect(true).assertFalse();
+                }catch(err) {
+                    err = err as BusinessError;
+                    expect(err.code).assertEqual(6600102);
+                }
+            });
+            done();
+        })
+
+        /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_PROMISE_0109
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_PROMISE_0109
+     * @tc.desc   Testing call getavcastcontroller(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_PROMISE_0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+        try {
+            session!.getAVCastController().then((avcontroller: avSession.AVCastController| undefined) => {
+                console.info(`getAVCastController : SUCCESS `);
+                expect(true).assertFalse();
+            });
+        } catch (error) {
+            console.info(`getAVCastController failed: code: ${error.code}, message: ${error.message}`);
+            expect(error.code).assertEqual(6600109);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_CALLBACK_5900
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_CALLBACK_5900
+     * @tc.desc   Testing call getavcastcontroller(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_CALLBACK_5900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+        try {
+            let aVCastController: avSession.AVCastController| undefined;
+            session!.getAVCastController((err: BusinessError | null, avcontroller: avSession.AVCastController| undefined) => {
+              if (err) {
+                console.error(`getAVCastController BusinessError: code: ${err?.code}, message: ${err?.message}`);
+              } else {
+                aVCastController = avcontroller;
+                console.info('getAVCastController : SUCCESS');
+                expect(true).assertFalse();
+              }
+            });
+        } catch (error) {
+            console.error(`getAVCastController BusinessError: code: ${error?.code}, message: ${error?.message}`);
+            expect(error?.code).assertEqual(6600109);
+        }
+        done();
+    })
+
+    /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETALLSESSIONDESCRIPTORS_ERRORCODE_STATIC_0102
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETALLSESSIONDESCRIPTORS_ERRORCODE_STATIC_0102
+         * @tc.desc   onCastDisplayChange with avsession does not exist(errcode 6600102)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_GETALLSESSIONDESCRIPTORS_ERRORCODE_STATIC_0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            try {
+                avSession.getAllSessionDescriptors();
+            } catch (err) {
+                console.info(`TestLog: BusinessError: code:${err.code}, message:${err.message}`);
+                expect(err.code).assertEqual(201);
+            }
+        done();
+        })
+
+
     })
 }

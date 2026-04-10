@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function disableDateRangeAndMarkTodayTest() {
   describe('DisableDateRangeAndMarkToday', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DisableDateRangeAndMarkToday beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api19.static", "EntryAbility");
     });

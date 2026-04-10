@@ -447,7 +447,6 @@ export default function AudioRoutingManagerTest() {
         audioRoutingManager.off('availableDeviceChange', (data: ESObject) => {
           console.info(`${Tag}: off_availableDeviceChange 'availableDeviceChange': SUCCESS`);
         });
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${Tag}: on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
@@ -455,6 +454,73 @@ export default function AudioRoutingManagerTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0500
+     * @tc.desc   on - off - availableDeviceChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+      let flag: boolean = false;
+      try {
+        // 取消该事件的所有监听。
+        audioRoutingManager.off('availableDeviceChange');
+
+        // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+        let availableDeviceChangeCallback = (deviceChanged: audio.DeviceChangeAction) => {
+          console.info('device change type : ' + deviceChanged.type);
+          console.info('device descriptor size : ' + deviceChanged.deviceDescriptors.length);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceRole);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceType);
+        };
+
+        audioRoutingManager.on('availableDeviceChange', audio.DeviceUsage.MEDIA_OUTPUT_DEVICES, availableDeviceChangeCallback);
+
+        audioRoutingManager.off('availableDeviceChange', availableDeviceChangeCallback);
+        flag = true;
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0500 Fail, error: ${error}, ErrorCode: ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0600
+     * @tc.desc   on - off - availableDeviceChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+      let flag: boolean = false;
+      try {
+        // 同一监听事件中，on方法和off方法传入callback参数一致，off方法取消对应on方法订阅的监听。
+        let availableDeviceChangeCallback = (deviceChanged: audio.DeviceChangeAction) => {
+          console.info('device change type : ' + deviceChanged.type);
+          console.info('device descriptor size : ' + deviceChanged.deviceDescriptors.length);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceRole);
+          console.info('device change descriptor : ' + deviceChanged.deviceDescriptors[0].deviceType);
+        };
+
+        audioRoutingManager.on('availableDeviceChange', audio.DeviceUsage.MEDIA_OUTPUT_DEVICES, availableDeviceChangeCallback);
+
+        audioRoutingManager.off('availableDeviceChange');
+        flag = true;
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0600 Fail, error: ${error}, ErrorCode: ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_0100
@@ -472,7 +538,6 @@ export default function AudioRoutingManagerTest() {
             if (deviceBlockStatusInfo.DeviceBlockStatus == audioRoutingManager.blockStatus.BLOCKED ||
             deviceBlockStatusInfo.DeviceBlockStatus == audioRoutingManager.blockStatus.UNBLOCKED) {
               console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
-              expect(true).assertTrue();
             } else {
               console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
               expect(false).assertTrue();
@@ -480,7 +545,6 @@ export default function AudioRoutingManagerTest() {
           })
           audioRoutingManager.off('micBlockStatusChanged')
         }
-        expect(true).assertTrue();
       } catch (error) {
         console.error(`${Tag}: on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
@@ -640,7 +704,6 @@ export default function AudioRoutingManagerTest() {
               console.info(`${Tag}: audioDevices[0].id: ${audioDevices[0].id}`);
               expect(audioDevices[0].id).assertLargerOrEqual(0);
               console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
-              expect(true).assertTrue();
             } else {
               console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
               expect(false).assertTrue();
@@ -648,13 +711,198 @@ export default function AudioRoutingManagerTest() {
           })
           audioRoutingManager.off('micBlockStatusChanged')
         }
-        expect(true).assertTrue();
       } catch (error) {
         console.error(`${Tag}: on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
       }
       done();
     });
-
+     /**
+ 	      * @tc.name   AUDIO_ROUTING_MANAGER_GETDEVICESSYNC_ALLDEVICESFLAG_0100
+ 	      * @tc.number AUDIO_ROUTING_MANAGER_GETDEVICESSYNC_ALLDEVICESFLAG_0100
+ 	      * @tc.desc   getDevicesSync with ALL_DEVICES_FLAG test.
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL2
+ 	      */
+ 	     it('AUDIO_ROUTING_MANAGER_GETDEVICESSYNC_ALLDEVICESFLAG_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+ 	       try {
+ 	         let devices:ESObject = audioRoutingManager.getDevicesSync(audio.DeviceFlag.ALL_DEVICES_FLAG);
+ 	         console.info(`${Tag}: getDevicesSync with ALL_DEVICES_FLAG: PASS, device count: ${devices.length}`);
+ 	         done();
+ 	       } catch (err) {
+ 	         console.info(`${Tag}: getDevicesSync with ALL_DEVICES_FLAG: FAIL :${(err as BusinessError).message}`);
+ 	         expect(false).assertTrue();
+ 	       }
+ 	       done();
+ 	     })
+ 	 
+ 	     /**
+ 	      * @tc.name   AUDIO_ROUTING_MANAGER_ON_DEVICECHANGE_INPUTDEVICESFLAG_0100
+ 	      * @tc.number AUDIO_ROUTING_MANAGER_ON_DEVICECHANGE_INPUTDEVICESFLAG_0100
+ 	      * @tc.desc   on deviceChange with INPUT_DEVICES_FLAG test.
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL2
+ 	      */
+ 	     it('AUDIO_ROUTING_MANAGER_ON_DEVICECHANGE_INPUTDEVICESFLAG_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+ 	       try {
+ 	         let callback = (deviceChangeAction: audio.DeviceChangeAction) => {
+ 	           console.info(`${Tag}: deviceChange callback called`);
+ 	         };
+ 	         audioRoutingManager.on('deviceChange', audio.DeviceFlag.INPUT_DEVICES_FLAG, callback);
+ 	         console.info(`${Tag}: on deviceChange with INPUT_DEVICES_FLAG: PASS`);
+ 	         done();
+ 	         audioRoutingManager.off('deviceChange', callback);
+ 	       } catch (err) {
+ 	         console.info(`${Tag}: on deviceChange with INPUT_DEVICES_FLAG: FAIL :${(err as BusinessError).message}`);
+ 	         expect(false).assertTrue();
+ 	       }
+ 	       done();
+ 	     })
+ 	 
+ 	     /**
+ 	      * @tc.name   AUDIO_ROUTING_MANAGER_ON_DEVICECHANGE_ALLDEVICESFLAG_0100
+ 	      * @tc.number AUDIO_ROUTING_MANAGER_ON_DEVICECHANGE_ALLDEVICESFLAG_0100
+ 	      * @tc.desc   on deviceChange with ALL_DEVICES_FLAG test.
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL2
+ 	      */
+ 	     it('AUDIO_ROUTING_MANAGER_ON_DEVICECHANGE_ALLDEVICESFLAG_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+ 	       try {
+ 	         let callback = (deviceChangeAction: audio.DeviceChangeAction) => {
+ 	           console.info(`${Tag}: deviceChange callback called`);
+ 	         };
+ 	         audioRoutingManager.on('deviceChange', audio.DeviceFlag.ALL_DEVICES_FLAG, callback);
+ 	         console.info(`${Tag}: on deviceChange with ALL_DEVICES_FLAG: PASS`);
+ 	         done();
+ 	         audioRoutingManager.off('deviceChange', callback);
+ 	       } catch (err) {
+ 	         console.info(`${Tag}: on deviceChange with ALL_DEVICES_FLAG: FAIL :${(err as BusinessError).message}`);
+ 	         expect(false).assertTrue();
+ 	       }
+ 	       done();
+ 	     })
+ 	 
+ 	     /**
+ 	      * @tc.name   AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_MEDIAINPUTDEVICES_0100
+ 	      * @tc.number AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_MEDIAINPUTDEVICES_0100
+ 	      * @tc.desc   on availableDeviceChange with MEDIA_INPUT_DEVICES test.
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL2
+ 	      */
+ 	     it('AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_MEDIAINPUTDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+ 	       try {
+ 	         let callback = (deviceChangeAction: audio.DeviceChangeAction) => {
+ 	           console.info(`${Tag}: availableDeviceChange callback called`);
+ 	         };
+ 	         audioRoutingManager.on('availableDeviceChange', audio.DeviceUsage.MEDIA_INPUT_DEVICES, callback);
+ 	         console.info(`${Tag}: on availableDeviceChange with MEDIA_INPUT_DEVICES: PASS`);
+ 	         done();
+ 	         audioRoutingManager.off('availableDeviceChange', callback);
+ 	       } catch (err) {
+ 	         console.info(`${Tag}: on availableDeviceChange with MEDIA_INPUT_DEVICES: FAIL :${(err as BusinessError).message}`);
+ 	         expect(false).assertTrue();
+ 	       }
+ 	       done();
+ 	     })
+ 	 
+ 	     /**
+ 	      * @tc.name   AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_ALLMEDIADEVICES_0100
+ 	      * @tc.number AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_ALLMEDIADEVICES_0100
+ 	      * @tc.desc   on availableDeviceChange with ALL_MEDIA_DEVICES test.
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL2
+ 	      */
+ 	     it('AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_ALLMEDIADEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+ 	       try {
+ 	         let callback = (deviceChangeAction: audio.DeviceChangeAction) => {
+ 	           console.info(`${Tag}: availableDeviceChange callback called`);
+ 	         };
+ 	         audioRoutingManager.on('availableDeviceChange', audio.DeviceUsage.ALL_MEDIA_DEVICES, callback);
+ 	         console.info(`${Tag}: on availableDeviceChange with ALL_MEDIA_DEVICES: PASS`);
+ 	         done();
+ 	         audioRoutingManager.off('availableDeviceChange', callback);
+ 	       } catch (err) {
+ 	         console.info(`${Tag}: on availableDeviceChange with ALL_MEDIA_DEVICES: FAIL :${(err as BusinessError).message}`);
+ 	         expect(false).assertTrue();
+ 	       }
+ 	       done();
+ 	     })
+ 	 
+ 	     /**
+ 	      * @tc.name   AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_CALLOUTPUTDEVICES_0100
+ 	      * @tc.number AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_CALLOUTPUTDEVICES_0100
+ 	      * @tc.desc   on availableDeviceChange with CALL_OUTPUT_DEVICES test.
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL2
+ 	      */
+ 	     it('AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_CALLOUTPUTDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+ 	       try {
+ 	         let callback = (deviceChangeAction: audio.DeviceChangeAction) => {
+ 	           console.info(`${Tag}: availableDeviceChange callback called`);
+ 	         };
+ 	         audioRoutingManager.on('availableDeviceChange', audio.DeviceUsage.CALL_OUTPUT_DEVICES, callback);
+ 	         console.info(`${Tag}: on availableDeviceChange with CALL_OUTPUT_DEVICES PASS`);
+ 	         done();
+ 	         audioRoutingManager.off('availableDeviceChange', callback);
+ 	       } catch (err) {
+ 	         console.info(`${Tag}: on availableDeviceChange with CALL_OUTPUT_DEVICES: FAIL :${(err as BusinessError).message}`);
+ 	         expect(false).assertTrue();
+ 	       }
+ 	       done();
+ 	     })
+ 	 
+ 	     /**
+ 	      * @tc.name   AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_CALLINPUTDEVICES_0100
+ 	      * @tc.number AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_CALLINPUTDEVICES_0100
+ 	      * @tc.desc   on availableDeviceChange with CALL_INPUT_DEVICES test.
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL2
+ 	      */
+ 	     it('AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_CALLINPUTDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+ 	       try {
+ 	         let callback = (deviceChangeAction: audio.DeviceChangeAction) => {
+ 	           console.info(`${Tag}: availableDeviceChange callback called`);
+ 	         };
+ 	         audioRoutingManager.on('availableDeviceChange', audio.DeviceUsage.CALL_INPUT_DEVICES, callback);
+ 	         console.info(`${Tag}: on availableDeviceChange with CALL_INPUT_DEVICES: PASS`);
+ 	         done();
+ 	         audioRoutingManager.off('availableDeviceChange', callback);
+ 	       } catch (err) {
+ 	         console.info(`${Tag}: on availableDeviceChange with CALL_INPUT_DEVICES: FAIL :${(err as BusinessError).message}`);
+ 	         expect(false).assertTrue();
+ 	       }
+ 	       done();
+ 	     })
+ 	 
+ 	     /**
+ 	      * @tc.name   AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_ALLCALLDEVICES_0100
+ 	      * @tc.number AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_ALLCALLDEVICES_0100
+ 	      * @tc.desc   on availableDeviceChange with ALL_CALL_DEVICES test.
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL2
+ 	      */
+ 	     it('AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_ALLCALLDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+ 	       try {
+ 	         let callback = (deviceChangeAction: audio.DeviceChangeAction) => {
+ 	           console.info(`${Tag}: availableDeviceChange callback called`);
+ 	         };
+ 	         audioRoutingManager.on('availableDeviceChange', audio.DeviceUsage.ALL_CALL_DEVICES, callback);
+ 	         console.info(`${Tag}: on availableDeviceChange with ALL_CALL_DEVICES: PASS`);
+ 	         done();
+ 	         audioRoutingManager.off('availableDeviceChange', callback);
+ 	       } catch (err) {
+ 	         console.info(`${Tag}: on availableDeviceChange with ALL_CALL_DEVICES: FAIL :${(err as BusinessError).message}`);
+ 	         expect(false).assertTrue();
+ 	       }
+ 	       done();
+ 	     })
   })
 }

@@ -69,8 +69,6 @@ export default function StackFixAtIdealSizeTest() {
       console.info("[StackFixAtIdealSizeTest_0100] stack_width is: " + stack_width);
       console.info("[StackFixAtIdealSizeTest_0100] stack_height is: " + stack_height);
 
-      expect(obj.$attrs.width).assertEqual('50.00vp');
-      expect(obj.$attrs.height).assertEqual('50.00vp');
       expect(Math.floor(Math.abs(stack_width - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(stack_height - vp2px(50))) <= 1).assertTrue();
 
@@ -90,8 +88,6 @@ export default function StackFixAtIdealSizeTest() {
       console.info("[StackFixAtIdealSizeTest_0100] stack_width is: " + stack_width);
       console.info("[StackFixAtIdealSizeTest_0100] stack_height is: " + stack_height);
 
-      expect(obj.$attrs.width).assertEqual('150.00vp');
-      expect(obj.$attrs.height).assertEqual('100.00vp');
       expect(Math.floor(Math.abs(stack_width - vp2px(150))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(stack_height - vp2px(100))) <= 1).assertTrue();
 

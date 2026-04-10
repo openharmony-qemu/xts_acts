@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -203,7 +203,8 @@ export default function api16CertNoPermissionTestUnit() {
       try {
         await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
         expect(null).assertFail();
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_static_0100  Failed to open authorize dialog error.code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
       }
@@ -228,7 +229,8 @@ export default function api16CertNoPermissionTestUnit() {
       try {
         await certManager.getUkeyCertificate(keyUri, ukeyInfo);
         expect(null).assertFail();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         if (err.code == 801) {
           done();
         } else {
@@ -256,10 +258,37 @@ export default function api16CertNoPermissionTestUnit() {
       try {
         await certManagerDialog.openUkeyAuthDialog(context, ukeyAuthRequest);
         expect(null).assertFail();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_static_0900 Failed  Code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
       }
+      done();
+    });
+	
+	 /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_Static_0030
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_Static_0030
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 start');
+      let certBlob: certManager.CertBlob = {
+        certData: caCert,
+        certFormat: certManager.CertFileFormat.PEM_DER,
+        certScope: certManager.CertScope.CURRENT_USER
+      };
+      try{
+        certManager.installUserTrustedCertificate(certBlob);
+      }catch(err){
+        err = err as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 Failed  Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+      }
+	    hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 end');
       done();
     });
   })

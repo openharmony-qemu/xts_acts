@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,11 +47,11 @@ export default function AsyGetKeySpecBySpecJsunit() {
      * @tc.desc   the asyKeySpec is RSA key pair, Use the callback Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CryptoFramework_AsyKeySpec_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let rsaKeyPairSpec: cryptoFramework.RSAKeyPairSpec = genRsa2048KeyPairSpec();
         let asyKeyGeneratorSpec: cryptoFramework.AsyKeyGeneratorBySpec =
@@ -384,8 +384,8 @@ export default function AsyGetKeySpecBySpecJsunit() {
             cryptoFramework.AsyKeySpecItem.DSA_P_BN
           );
           expect(null).assertFalse();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(401);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(401);
         }
         done();
       }
@@ -412,8 +412,8 @@ export default function AsyGetKeySpecBySpecJsunit() {
             cryptoFramework.AsyKeySpecItem.DSA_P_BN
           );
           expect(null).assertFalse();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(401);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(401);
         }
         done();
       }

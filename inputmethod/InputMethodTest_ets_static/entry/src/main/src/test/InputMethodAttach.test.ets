@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -59,7 +59,7 @@ export default function inputMethodAttachTest() {
             };
             try {
                 inputMethod.getController().attach(true, ATTRIBUTE, CallBack);
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -72,9 +72,9 @@ export default function inputMethodAttachTest() {
          * @tc.desc   Call the attach interface in Async mode. Optional input parameter showkeyboard=false
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('SUB_Misc_inputMethod_attach_Async_static_0200', Level.LEVEL2, async (done: () => void) => {
+        it('SUB_Misc_inputMethod_attach_Async_static_0200', Level.LEVEL0, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_attach_Async_static_0200';
             const ATTRIBUTE: inputMethod.TextConfig = {
                 inputAttribute: {
@@ -93,7 +93,7 @@ export default function inputMethodAttachTest() {
             };
             try {
                 inputMethod.getController().attach(false, ATTRIBUTE, CallBack);
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -121,7 +121,7 @@ export default function inputMethodAttachTest() {
                 console.info(`${CASE_NAME} execution success`);
                 expect(ATTRIBUTE != null).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -149,7 +149,7 @@ export default function inputMethodAttachTest() {
                 console.info(`${CASE_NAME} execution success`);
                 expect(ATTRIBUTE != null).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -178,7 +178,7 @@ export default function inputMethodAttachTest() {
                 console.info(`${CASE_NAME} execution success`);
                 expect(ATTRIBUTE != null).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();

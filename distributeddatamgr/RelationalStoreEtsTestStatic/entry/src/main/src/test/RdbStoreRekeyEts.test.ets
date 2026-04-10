@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,7 +33,7 @@ import { BusinessError } from '@ohos.base';
 import data_relationalStore from '@ohos.data.relationalStore';
 
 let domain: int = 0x0000;
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 const TAG = "[RDB_REKEY_TEST]";
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -47,7 +47,7 @@ export default function RdbstoreRekeysEtsTest() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
-      hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+      hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
     });
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
@@ -75,7 +75,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
@@ -84,7 +84,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0001 end *************");
@@ -108,7 +109,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
@@ -117,7 +118,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0002 end *************");
@@ -141,7 +143,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
@@ -150,7 +152,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0003 end *************");
@@ -174,7 +177,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
@@ -183,7 +186,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0004 end *************");
@@ -207,7 +211,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
@@ -216,7 +220,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0005 end *************");
@@ -239,7 +244,7 @@ export default function RdbstoreRekeysEtsTest() {
         name: "testRekey0006.db",
         securityLevel: data_relationalStore.SecurityLevel.S2,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
@@ -248,7 +253,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0006 end *************");
@@ -272,7 +278,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
@@ -282,7 +288,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0007 end *************");
@@ -306,7 +313,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
@@ -316,7 +323,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0008 end *************");
@@ -340,7 +348,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
@@ -350,7 +358,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0009 end *************");
@@ -374,7 +383,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
@@ -384,7 +393,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0010 end *************");
@@ -408,7 +418,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
@@ -418,7 +428,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0011 end *************");
@@ -447,7 +458,7 @@ export default function RdbstoreRekeysEtsTest() {
         encrypt: true,
         cryptoParam: cryptoParam,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
       await rdbStore.executeSql(CREATE_TABLE_TEST);
 
       let cryptoParam1: data_relationalStore.CryptoParam = {
@@ -474,7 +485,8 @@ export default function RdbstoreRekeysEtsTest() {
         predicates.equalTo("NAME", "zhangsan");
         await rdbStore.update(valueBucket1, predicates)
         await rdbStore.delete(predicates);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(false).assertTrue();
         console.log(TAG + "************* testRekey0012 end *************");
@@ -498,7 +510,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam1: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array([6, 5, 4, 3, 2, 1]),
@@ -506,7 +518,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam1);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0013 end *************");
@@ -530,7 +543,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
       await rdbStore.executeSql(CREATE_TABLE_TEST);
 
       let cryptoParam1: data_relationalStore.CryptoParam = {
@@ -557,7 +570,8 @@ export default function RdbstoreRekeysEtsTest() {
         predicates.equalTo("NAME", "zhangsan");
         await rdbStore.update(valueBucket1, predicates)
         await rdbStore.delete(predicates);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(false).assertTrue();
         console.log(TAG + "************* testRekey0014 end *************");
@@ -586,7 +600,7 @@ export default function RdbstoreRekeysEtsTest() {
         encrypt: true,
         cryptoParam: cryptoParam,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam1: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
@@ -594,7 +608,8 @@ export default function RdbstoreRekeysEtsTest() {
 
       try {
         await rdbStore.rekey(cryptoParam1);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0015 end *************");
@@ -618,7 +633,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let SQL_CREATE_TABLE =
         'CREATE TABLE IF NOT EXISTS employee (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, age INTEGER)';
@@ -641,7 +656,8 @@ export default function RdbstoreRekeysEtsTest() {
         await transaction!.insert("employee", valueBucket)
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(14800015));
         console.log(TAG + "************* testRekey0016 end *************");
@@ -664,7 +680,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let SQL_CREATE_TABLE =
         'CREATE TABLE IF NOT EXISTS employee (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, age INTEGER)';
@@ -687,7 +703,8 @@ export default function RdbstoreRekeysEtsTest() {
         await transaction!.insert("employee", valueBucket)
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(14800015));
         console.log(TAG + "************* testRekey0017 end *************");
@@ -710,10 +727,11 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
       try {
         await rdbStore.rekey(undefined);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(false).assertTrue();
         console.log(TAG + "************* testRekey0018 end *************");
@@ -737,10 +755,11 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
       try {
         await rdbStore.rekey(undefined);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(false).assertTrue();
         console.log(TAG + "************* testRekey0019 end *************");
@@ -764,10 +783,11 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
       try {
         await rdbStore.rekey();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(false).assertTrue();
         console.log(TAG + "************* testRekey0020 end *************");
@@ -791,7 +811,7 @@ export default function RdbstoreRekeysEtsTest() {
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
       await rdbStore.executeSql(CREATE_TABLE_TEST);
 
       let cryptoParam1: data_relationalStore.CryptoParam = {
@@ -813,7 +833,8 @@ export default function RdbstoreRekeysEtsTest() {
         resultSet.goToNextRow();
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(14800015));
         console.log(TAG + "************* testRekey0021 end *************");
@@ -842,7 +863,7 @@ export default function RdbstoreRekeysEtsTest() {
         encrypt: true,
         cryptoParam: cryptoParam
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam1: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
@@ -852,7 +873,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0022 end *************");
@@ -881,7 +903,7 @@ export default function RdbstoreRekeysEtsTest() {
         encrypt: true,
         cryptoParam: cryptoParam
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam1: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
@@ -891,7 +913,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0023 end *************");
@@ -920,7 +943,7 @@ export default function RdbstoreRekeysEtsTest() {
         encrypt: true,
         cryptoParam: cryptoParam
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam1: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
@@ -930,7 +953,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0024 end *************");
@@ -959,7 +983,7 @@ export default function RdbstoreRekeysEtsTest() {
         encrypt: true,
         cryptoParam: cryptoParam
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
       let cryptoParam1: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
@@ -969,7 +993,8 @@ export default function RdbstoreRekeysEtsTest() {
       try {
         await rdbStore.rekey(cryptoParam1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log("catch err: failed, err: code=" + e.code + " message=" + e.message);
         expect(String(e.code)).assertEqual(String(801));
         console.log(TAG + "************* testRekey0025 end *************");
@@ -1002,7 +1027,7 @@ export default function RdbstoreRekeysEtsTest() {
         encrypt: true,
         cryptoParam: cryptoParam
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
       await rdbStore.executeSql(CREATE_TABLE_TEST);
       try {
         let cryptoParam1: data_relationalStore.CryptoParam = {
@@ -1036,7 +1061,8 @@ export default function RdbstoreRekeysEtsTest() {
         let num1 = await rdbStore.delete(predicates);
         console.log(TAG + "delete success,num:" + num1);
         expect(num1).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("catch err: failed, err: code=" + err.code + " message=" + err.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0026 end *************");
@@ -1068,7 +1094,7 @@ export default function RdbstoreRekeysEtsTest() {
         encrypt: true,
         cryptoParam: cryptoParam
       }
-      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
       await rdbStore.executeSql(CREATE_TABLE_TEST);
       try {
         let cryptoParam1: data_relationalStore.CryptoParam = {
@@ -1090,7 +1116,7 @@ export default function RdbstoreRekeysEtsTest() {
         await rdbStore.rekey(cryptoParam1);
         await rdbStore.close();
         storeConfig.cryptoParam = cryptoParam1;
-        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+        rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
 
         const valueBucket1: data_relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1106,13 +1132,85 @@ export default function RdbstoreRekeysEtsTest() {
         let num1 = await rdbStore.delete(predicates);
         console.log(TAG + "delete success,num:" + num1);
         expect(num1).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("catch err: failed, err: code=" + err.code + " message=" + err.message);
         expect().assertFail();
         console.log(TAG + "************* testRekey0027 end *************");
       }
       done();
     });
+
+    /**
+     * @tc.number testRekey0028
+     * @tc.name testRekey0028
+     * @tc.desc SHA256 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRekey0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: () => void): Promise<void> => {
+      console.log(TAG + "************* testRekey0028 start *************");
+      let storeConfig: data_relationalStore.StoreConfig = {
+        name: "testRekey0028.db",
+        securityLevel: data_relationalStore.SecurityLevel.S2,
+        encrypt: true,
+      }
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
+
+      let cryptoParam: data_relationalStore.CryptoParam = {
+        encryptionKey: new Uint8Array(),
+        hmacAlgo: data_relationalStore.HmacAlgo.SHA256,
+        kdfAlgo: data_relationalStore.KdfAlgo.KDF_SHA256
+      };
+
+      try {
+        await rdbStore.rekey(cryptoParam);
+      } catch (e) {
+        e = e as BusinessError;
+        console.log(TAG +"catch err: failed, err: code=" + e.code + " message=" + e.message);
+        expect().assertFail();
+        console.log(TAG + "************* testRekey0028 end *************");
+      }
+      done();
+      console.info(TAG + " ************* End*************");
+    });
+
+    /**
+     * @tc.number testRekey0029
+     * @tc.name testRekey0029
+     * @tc.desc exception hmacAlgo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRekey0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: () => void): Promise<void> => {
+      console.log(TAG + "************* testRekey0029 start *************");
+      let storeConfig: data_relationalStore.StoreConfig = {
+        name: "testRekey0029.db",
+        securityLevel: data_relationalStore.SecurityLevel.S2,
+        encrypt: true,
+      }
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
+
+      let cryptoParam: data_relationalStore.CryptoParam = {
+        encryptionKey: new Uint8Array(),
+        encryptionAlgo: data_relationalStore.EncryptionAlgo.PLAIN_TEXT,
+      };
+
+      try {
+        await rdbStore.rekey(cryptoParam);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.log(TAG +"catch err: failed, err: code=" + e.code + " message=" + e.message);
+        expect(String(e.code)).assertEqual(String(801));
+        console.log(TAG + "************* testRekey0029 end *************");
+      }
+      done();
+      console.info(TAG + " ************* End*************");
+    });
+
     console.log(TAG + "*************Unit Test End*************");
   })
 }

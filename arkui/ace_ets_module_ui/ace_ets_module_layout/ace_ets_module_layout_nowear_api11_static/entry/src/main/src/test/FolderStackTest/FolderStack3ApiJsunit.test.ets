@@ -53,7 +53,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function FolderStack3ApiJsunit() {
   describe('FolderStack3ApiJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FolderStack3ApiJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.nowear.api11.static", "EntryAbility")

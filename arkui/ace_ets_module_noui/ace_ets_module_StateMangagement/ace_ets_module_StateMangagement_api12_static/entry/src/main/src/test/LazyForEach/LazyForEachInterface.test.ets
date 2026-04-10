@@ -45,12 +45,9 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function LazyForEachInterface() {
   describe('LazyForEachInterface', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LazyForEachInterface beforeEach start");
-
-
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -68,7 +65,6 @@ export default function LazyForEachInterface() {
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push LazyForEachInterface page error:" + err);
@@ -76,14 +72,10 @@ export default function LazyForEachInterface() {
       console.info("LazyForEachInterface beforeEach end");
     });
 
-
-
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(500);
       console.info("LazyForEachInterface after each called");
     });
-
-    
     
     /**
      * @tc.number   LazyForEachInterface_static_001
@@ -91,35 +83,28 @@ export default function LazyForEachInterface() {
      * @tc.desc     LazyForEachInterface_static_001
      * @tc.level    Level.LEVEL1
      */
-it('LazyForEachInterface_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('LazyForEachInterface_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[LazyForEachInterface_static_001] START');
-      await CommonFunc.sleep(100);
+      await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
+
+      console.info('[LazyForEachInterface_static_001] click switch 1');
       let switch_btn = await (driver.findComponent(ON.id('switch'))as Promise<Component>)
+      await CommonFunc.sleep(1000);
       await ( switch_btn?.click() as Promise<void> );
+      await CommonFunc.sleep(1000);
       let info = await (driver.findComponent(ON.id('interfaceInfo'))as Promise<Component>);
       expect(await info.getText()).assertEqual('aboutToRecycle');
-      console.info('[LazyForEachInterface_static_001] END');
-      done();
-    });
 
-    
-    
-    /**
-     * @tc.number   LazyForEachInterface_static_002
-     * @tc.name     LazyForEachInterface_static_002
-     * @tc.desc     LazyForEachInterface_static_002
-     * @tc.level    Level.LEVEL1
-     */
-it('LazyForEachInterface_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[LazyForEachInterface_static_002] START');      
-      await CommonFunc.sleep(100);
-      let driver: Driver = Driver.create();
-      let switch_btn = await (driver.findComponent(ON.id('switch'))as Promise<Component>)
-      await ( switch_btn?.click() as Promise<void> );
-      let info = await (driver.findComponent(ON.id('interfaceInfo'))as Promise<Component>);
-      expect(await info.getText()).assertEqual('aboutToReuse');
-      console.info('[LazyForEachInterface_static_002] END');
+      console.info('[LazyForEachInterface_static_001] click switch 2');
+      let switch_btn2 = await (driver.findComponent(ON.id('switch'))as Promise<Component>)
+      await CommonFunc.sleep(1000);
+      await ( switch_btn2?.click() as Promise<void> );
+      await CommonFunc.sleep(1000);
+      let info2 = await (driver.findComponent(ON.id('interfaceInfo'))as Promise<Component>);
+      expect(await info2.getText()).assertEqual('aboutToReuse');
+
+      console.info('[LazyForEachInterface_static_001] END');
       done();
     });
   })

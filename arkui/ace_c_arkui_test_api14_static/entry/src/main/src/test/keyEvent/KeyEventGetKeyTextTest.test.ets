@@ -26,7 +26,7 @@ export default function KeyEventGetKeyTextTest() {
   describe('KeyEventGetKeyTextTest', (): void  => {
 
     let PAGE_TAG = 'KeyEventGetKeyTextTest';
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api14.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

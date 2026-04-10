@@ -36,7 +36,7 @@ const waitUiReadyMs = 1000;
 export default function textOneJsunit() {
   describe('textOneJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textOneJsunit beforeEach start");
 
 

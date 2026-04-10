@@ -642,7 +642,7 @@ export default function builtinsArrayFillTest() {
     it('builtinsArrayWithTest0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr: Array<number> = new Array(3);
       const result = arr.fill(NaN);
-      expect(result).assertDeepEquals([NaN, NaN, NaN]);
+      expect(JSON.stringify(result)).assertDeepEquals(JSON.stringify([NaN, NaN, NaN]));
     });
   })
 }

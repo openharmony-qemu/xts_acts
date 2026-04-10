@@ -95,9 +95,9 @@ export default function SetWebDebugAccess() {
      * @tc.desc   test SetWebDebugAccess enables debugging . set the port number to 65535
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testSetWebDebugAccessEnableDebugPortAllowedThreeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testSetWebDebugAccessEnableDebugPortAllowedThreeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitSetWebDebugAccessEnableDebugPortAllowedThree', 10)
       await Utils.msSleep(2000)
       Utils.registerEvent('testSetWebDebugAccessEnableDebugPortAllowedThree', true, 2025060903, done);

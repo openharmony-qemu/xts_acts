@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -87,7 +87,7 @@ struct SwipeGestureExample01 {
         .key('SwipeGestureExample01_Click')
         .translate({ x: this.offsetX, y: this.offsetY, z: 0 })
         .gesture(
-          SwipeGesture({ direction: (SwipeDirection.All | SwipeDirection.Vertical | SwipeDirection.Horizontal) as  SwipeDirection})
+          SwipeGesture({ direction: SwipeDirection.fromValue(SwipeDirection.All | SwipeDirection.Vertical | SwipeDirection.Horizontal)})
             .onAction((event: GestureEvent) => {
               console.log('SwipeGesture01 11111111111')
               if (event) {

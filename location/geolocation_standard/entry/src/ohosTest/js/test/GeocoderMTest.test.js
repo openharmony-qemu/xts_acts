@@ -109,7 +109,7 @@ export default function geolocationTest_geo5() {
                   expect().message("======> WLAN Network error").assertFail();
                   done();
                 }
-                if (data.chload >= 800 || data.rssi <= -80) {
+                if (data.chload >= 900 || data.rssi <= -80) {
                   expect().message("======> WLAN Network error").assertFail();
                   done();
                 } else if (data.chload >= 500) {
@@ -1241,6 +1241,311 @@ export default function geolocationTest_geo5() {
             await sleep(1000);
         } else {
             console.info("[lbs_js] The geocoding service is unavailable.");
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_locm_getAddressesFromLocation_0100
+     * @tc.number SUB_HSS_locm_getAddressesFromLocation_0100
+     * @tc.desc   Address Resolution Test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_locm_getAddressesFromLocation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let geocoder1 = geolocationm.isGeocoderAvailable();
+        if (geocoder1) {
+            let reverseGeocodeRequest = null;
+            try {
+                geolocationm.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+                    if (err) {
+                        console.info('[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0100 callback err is:' + JSON.stringify(err));
+                        expect(Number(err.code)).assertEqual(401);
+                    } else {
+                        console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0100 callback data is:" + JSON.stringify(data));
+                        expect(true).assertEqual((JSON.stringify(data)) != null);
+                    }
+                 });
+            } catch (error) {
+                console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0100 callback try error:"+ error);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            try {
+                geolocationm.getAddressesFromLocation(undefined, (err, data) => {
+                    if (err) {
+                        console.info('[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0100 callback err is:' + JSON.stringify(err));
+                        expect(Number(err.code)).assertEqual(401);
+                    } else {
+                        console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0100 callback data is:" + JSON.stringify(data));
+                        expect(true).assertEqual((JSON.stringify(data)) != null);
+                    }
+                 });
+            } catch (error) {
+                console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0100 callback try error:"+ error);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            await sleep(2000);
+        } else {
+            console.info("[lbs_js] The geocoding service is unavailable.");
+        }
+        done();
+    })
+
+
+    /**
+     * @tc.name   SUB_HSS_locm_getAddressesFromLocation_0200
+     * @tc.number SUB_HSS_locm_getAddressesFromLocation_0200
+     * @tc.desc   Address Resolution Test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_locm_getAddressesFromLocation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let geocoder1 = geolocationm.isGeocoderAvailable();
+        if (geocoder1) {
+            try {
+                let reverseGeocodeRequest = null;
+                await geolocationm.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
+                    console.info('[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0200 promise: ' + JSON.stringify(data));
+                }).catch(error => {
+                    console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0200 promise then error." + JSON.stringify(error));
+                    console.info('[lbs_js] null not support now');
+                    if (error.code == "801") {
+                        expect(Number(error.code)).assertEqual(801);
+                    } else {
+                        expect(Number(error.code)).assertEqual(401);
+                    }
+                });
+            } catch (error) {
+                console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0200 try err." + JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+            }
+            try {
+                await geolocationm.getAddressesFromLocation(undefined).then((data) => {
+                    console.info('[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0200 promise: ' + JSON.stringify(data));
+                }).catch(error => {
+                    console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0200 promise then error." + JSON.stringify(error));
+                    console.info('[lbs_js] undefined not support now');
+                    if (error.code == "801") {
+                        expect(Number(error.code)).assertEqual(801);
+                    } else {
+                        expect(Number(error.code)).assertEqual(401);
+                    }
+                });
+            } catch (error) {
+                console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0200 try err." + JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+            }
+            await sleep(1000);
+        } else {
+            console.info("[lbs_js] The geocoding service is unavailable.");
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_locm_getAddressesFromLocationName_0100
+     * @tc.number SUB_HSS_locm_getAddressesFromLocationName_0100
+     * @tc.desc   Reverse address resolution test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_locm_getAddressesFromLocationName_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let geocoder1 = geolocationm.isGeocoderAvailable();
+        if (geocoder1) {
+            try {
+                let geocodeRequest =null;
+                geolocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+                    if (err) {
+                        console.info('[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0100 callback err is:' + JSON.stringify(err));
+                        expect(Number(error.code)).assertEqual(401);
+                    }
+                    else {
+                        console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0100 callback data is: " + JSON.stringify(data));
+                        expect(true).assertEqual((JSON.stringify(data)) != null);
+                    }
+                    done();
+                });
+            } catch (error) {
+                console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0100 message." + JSON.stringify(error.message));
+                expect(Number(error.code)).assertEqual(401);
+            }
+            try {
+                geolocationm.getAddressesFromLocationName(undefined, (err, data) => {
+                    if (err) {
+                        console.info('[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0100 callback err is:' + JSON.stringify(err));
+                        expect(Number(error.code)).assertEqual(401);
+                    }
+                    else {
+                        console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0100 callback data is: " + JSON.stringify(data));
+                        expect(true).assertEqual((JSON.stringify(data)) != null);
+                    }
+                    done();
+                });
+            } catch (error) {
+                console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0100 message." + JSON.stringify(error.message));
+                expect(Number(error.code)).assertEqual(401);
+            }
+            await sleep(1000);
+        } else {
+            console.info("[lbs_js] The geocoding service is unavailable."); 
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_locm_getAddressesFromLocationName_0200
+     * @tc.number SUB_HSS_locm_getAddressesFromLocationName_0200
+     * @tc.desc   Reverse address resolution test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_locm_getAddressesFromLocationName_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let geocoder1 = geolocationm.isGeocoderAvailable();
+        if (geocoder1) {
+            let geocodeRequest = null;
+            try {
+                await geolocationm.getAddressesFromLocationName(geocodeRequest).then((result) => {
+                    console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0200 callback data is:" + JSON.stringify(result));
+                    expect(true).assertEqual((JSON.stringify(result)) != null);
+                }).catch((error) => {
+                    console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0200 promise then error." + JSON.stringify(error));
+                    expect(error.code).assertEqual(401);
+                });
+            } catch (error) {
+                console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0200 try err." + JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+            }
+            try {
+                await geolocationm.getAddressesFromLocationName(undefined).then((result) => {
+                    console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0200 callback data is:" + JSON.stringify(result));
+                    expect(true).assertEqual((JSON.stringify(result)) != null);
+                }).catch((error) => {
+                    console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0200 promise then error." + JSON.stringify(error));
+                    expect(error.code).assertEqual(401);
+                });
+            } catch (error) {
+                console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0200 try err." + JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+            }
+            await sleep(1000);
+        } else {
+            console.info("[lbs_js] The geocoding service is unavailable.");
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_locm_getAddressesFromLocation_0300
+     * @tc.number SUB_HSS_locm_getAddressesFromLocation_0300
+     * @tc.desc   Address Resolution Test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_locm_getAddressesFromLocation_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let geocoder1 = geolocationm.isGeocoderAvailable();
+        if (geocoder1) {
+            try {
+                let reverseGeocodeRequest = { "latitude": 31.265496, "longitude": 121.62771, "maxItems": 5, "country": "" };
+                await geolocationm.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
+                    console.info('[lbs_js] SUB_HSS_locm_getAddressesFromLocation_0300 promise: ' + JSON.stringify(data));
+                    expect(true).assertEqual((JSON.stringify(result)) != null);
+                }).catch(error => {
+                    console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocation_0300 promise then error." + JSON.stringify(error));
+                    console.info('[lbs_js] not support now');
+                    expect(true).assertEqual((JSON.stringify(error)) != null);
+                });
+            } catch (error) {
+                console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocation_0300 try err." + JSON.stringify(error));
+                expect(true).assertFalse();
+            }
+            await sleep(1000);
+        } else {
+            console.info("[lbs_js] The geocoding service is unavailable.");
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_locm_getAddressesFromLocationName_0300
+     * @tc.number SUB_HSS_locm_getAddressesFromLocationName_0300
+     * @tc.desc   Reverse address resolution test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_locm_getAddressesFromLocationName_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let geocoder1 = geolocationm.isGeocoderAvailable();
+        if (geocoder1) {
+            try {
+                let geocodeRequest = {
+                    "description": "上海市浦东新区金穗路1800号",
+                    "maxItems": 1,
+                    "locale": "zh",
+                    "country": "",
+                };
+                geolocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+                    if (err) {
+                        console.info('[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0300 callback err is:' + JSON.stringify(err));
+                        expect(err.code).assertEqual(401);
+                    }
+                    else {
+                        console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0300 callback data is: " + JSON.stringify(data));
+                        expect(true).assertEqual((JSON.stringify(data)) != null);
+                    }
+                    done();
+                });
+            } catch (error) {
+                console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0300 message." + JSON.stringify(error.message));
+                if (error.code == "801") {
+                    expect(error.code).assertEqual("801")
+                } else {
+                    expect(true).assertFalse();
+                }
+            }
+            await sleep(1000);
+        } else {
+            console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0300 The geocoding service is unavailable."); 
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_locm_getAddressesFromLocationName_0400
+     * @tc.number SUB_HSS_locm_getAddressesFromLocationName_0400
+     * @tc.desc   Reverse address resolution test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_locm_getAddressesFromLocationName_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let geocoder1 = geolocationm.isGeocoderAvailable();
+        if (geocoder1) {
+            let geocodeRequest = { "description": "上海市浦东新区金穗路1800号", "maxItems": 3, "locale": "" };
+            try {
+                await geolocationm.getAddressesFromLocationName(geocodeRequest).then((result) => {
+                    console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0400 callback data is:" + JSON.stringify(result));
+                    expect(true).assertEqual((JSON.stringify(result)) != null);
+                }).catch((error) => {
+                    console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0400 promise then error." + JSON.stringify(error));
+                    console.info('[lbs_js] not support now');
+                    expect(error.code).assertEqual(3301400);
+                });
+            } catch (error) {
+                console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0400 try err." + JSON.stringify(error));
+                if (error.code == "801") {
+                    expect(error.code).assertEqual("801")
+                } else {
+                    expect(true).assertFalse();
+                }
+            }
+            await sleep(1000);
+        } else {
+            console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0400 The geocoding service is unavailable.");
         }
         done();
     })

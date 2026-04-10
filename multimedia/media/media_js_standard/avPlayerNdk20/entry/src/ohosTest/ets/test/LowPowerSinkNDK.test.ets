@@ -1649,5 +1649,6 @@ export default function LowPowerSinkNdkTest() {
           done()
         }
       })
+
   })
 }

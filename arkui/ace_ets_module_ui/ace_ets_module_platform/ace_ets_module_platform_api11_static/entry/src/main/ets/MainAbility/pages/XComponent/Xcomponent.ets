@@ -64,7 +64,8 @@ struct XcomponentGetXComponentContext {
             }
             console.info("xcomponentController start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError
             console.info("xcomponentController emit action state err: " + JSON.stringify((err as BusinessError)?.message))
           }
         })

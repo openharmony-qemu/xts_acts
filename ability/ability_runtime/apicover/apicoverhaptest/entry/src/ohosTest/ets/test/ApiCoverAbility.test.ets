@@ -1063,7 +1063,7 @@ export default function ApiCoverTest() {
       let capablity = canIUse("SystemCapability.Ability.AbilityRuntime.Core")
       if(capablity){
         try{
-          AppStorage.get<common.ApplicationContext>("applicationContext")?.setSupportedProcessCache(false)
+          AppStorage.get<common.ApplicationContext>("applicationContext")?.setSupportedProcessCache(true)
         }catch(e){
           console.log(`${tag}, it end`);
           expect(e?.code).assertEqual(801)
@@ -1071,7 +1071,7 @@ export default function ApiCoverTest() {
         done();
       }else{
         try{
-          let result = AppStorage.get<common.ApplicationContext>("applicationContext")?.setSupportedProcessCache(false)
+          let result = AppStorage.get<common.ApplicationContext>("applicationContext")?.setSupportedProcessCache(true)
           expect(result).assertEqual(undefined)
         }catch(e){
           console.log(`${tag}, it end`);
@@ -1216,6 +1216,45 @@ export default function ApiCoverTest() {
     });
 
     /**
+      * @tc.name   testKillAllProcessesWithFalse0100
+      * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_3200
+      * @tc.desc   Test killAllProcesses with clearPageStack parameter as false
+      * @tc.type   FUNCTION
+      @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+     it('testKillAllProcessesWithFalse0100', Level.LEVEL0, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_ProcessCache_3200`;
+      console.log(`${tag}, test begin`);
+      await AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(
+              {
+                bundleName: 'ohos.acts.aafwk.test.stagesupplement',
+                abilityName: 'MainAbility',
+                action: 'SUB_Ability_AbilityRuntime_ProcessCache_3200'
+              }).then(data => {
+                console.debug('====>SUB_Ability_AbilityRuntime_ProcessCache_3200 startAbility err:' + JSON.stringify(data));
+              });
+      await sleep(1500);
+      await appManagerNew.getRunningProcessInformation().then((data : Array<appManagerNew.ProcessInformation>) => {
+        console.log(`The running process information is: ${JSON.stringify(data)}`);
+        data.forEach(item =>{
+          if (item.bundleNames[0].includes("ohos.acts.aafwk.test.stagesupplement")) {
+            console.log(`${tag}, getRunningProcessInformation include  stagesupplement app`);
+            expect().assertFail();
+            done();
+          }else{
+            console.log(`${tag}, getRunningProcessInformation no include  stagesupplement app`);
+            expect(true).assertTrue();
+            done();
+          }
+        })
+      }).catch((error: BusinessError) => {
+        console.error(`error: ${JSON.stringify(error)}`);
+      });
+      console.log(`${tag}, test end`);
+    });
+
+    /**
      * @tc.name   SUB_AA_Test_SetStartUpPage_0100
      * @tc.number SUB_AA_Test_SetStartUpPage_0100
      * @tc.desc   Function test
@@ -1287,6 +1326,35 @@ export default function ApiCoverTest() {
           done();
         }
       })
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetElementName_0100
+     * @tc.number SUB_Ability_AbilityRuntime_GetElementName_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_GetElementName_0100', Level.LEVEL0, async (done: Function) => {
+      
+      let stageContext: common.AbilityStageContext = AppStorage.get<common.AbilityStageContext>("stageContext")!;
+      let deviceId: string | undefined = stageContext.launchElement?.deviceId;
+      let uri: string | undefined = stageContext.launchElement?.uri;
+      let shortName: string | undefined = stageContext.launchElement?.shortName;
+      let bundleName: string | undefined = stageContext.launchElement?.bundleName;
+      let moduleName: string | undefined = stageContext.launchElement?.moduleName;
+      let abilityName: string | undefined = stageContext.launchElement?.abilityName;
+
+      console.info(`GetLaunchElement, deviceId is ${deviceId}, uri is ${uri}, shortName is ${shortName}`);
+      console.info(`GetLaunchElement, bundleName is ${bundleName}, moduleName is ${moduleName}, abilityName is ${abilityName}`);
+      expect(deviceId).assertEqual('0');
+      expect(uri).assertUndefined();
+      expect(shortName).assertUndefined();
+      expect(bundleName).assertEqual('com.example.apicoverhaptest');
+      expect(moduleName).assertEqual('entry_test');
+      expect(abilityName).assertEqual('TestAbility');
+      done();
     })
   })
 }

@@ -277,6 +277,54 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimHasOperaterPrivileges1000
+     * @tc.number SUB_Telephony_Sim_HasOperaterPrivileges_1000
+     * @tc.desc   SIMCard required Check if the application (caller) has been granted operator permissions. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testTelephonySimHasOperaterPrivileges1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimHasOperaterPrivileges1000';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName}:success has SimCard1,data->${JSON.stringify(data)}`);
+          try {
+            sim.hasOperatorPrivileges(undefined, (err: BusinessError, data: boolean) => {
+              if (err.code === 401) {
+                console.info(`${caseName}:Parameter error. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (error) {
+            if ((error as BusinessError).code === 401) {
+              console.info(`${caseName}:Parameter error. err->${JSON.stringify(error)}, data->${JSON.stringify(data)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
+        } else {
+          console.info(`${caseName}:fail Do not have SimCard1,data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
      * @tc.name   testTelephonySimHasOperaterPrivileges1600
      * @tc.number SUB_Telephony_Sim_HasOperaterPrivileges_1600
      * @tc.desc   SIMCard required Check if the application (caller) has been granted operator permissions. Use callback for asynchronous promise.
@@ -423,6 +471,61 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimHasOperaterPrivileges1900
+     * @tc.number SUB_Telephony_Sim_HasOperaterPrivileges_1900
+     * @tc.desc   SIMCard required Check if the application (caller) has been granted operator permissions. Use callback for asynchronous promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testTelephonySimHasOperaterPrivileges1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimHasOperaterPrivileges1900';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName}:success has  SimCard1,data->${JSON.stringify(data)}`);
+          try {
+            sim.hasOperatorPrivileges(undefined).then((data: boolean) => {
+              console.info(`${caseName} success , promise: data->${JSON.stringify(data)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }).catch((err: BusinessError) => {
+              if (err.code === 401) {
+                console.info(`${caseName}:Parameter error. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (error) {
+            if ((error as BusinessError).code === 401) {
+              console.info(`${caseName}:Parameter error. err->${JSON.stringify(error)}, data->${JSON.stringify(data)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              console.info(`${caseName} failed, promise: err->${JSON.stringify(error)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
+        } else {
+          console.info(`${caseName}:success has not SimCard1,data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
      * @tc.name   testTelephonySimGetISOCountryCodeForSim0100
      * @tc.number SUB_Telephony_Sim_GetISOCountryCodeForSim_0100
      * @tc.desc   SIMCard required Obtain the ISO country code for the specified SIM card slot. Using callback for asynchronous callback
@@ -510,6 +613,56 @@ export default function Sim2Public() {
           console.info(`${caseName}:success hasSimCard,data->${JSON.stringify(data)}`);
           try {
             sim.getISOCountryCodeForSim(null, (err: BusinessError, data: string) => {
+              if (err.code === 401) {
+                console.info(`${caseName}: Parameter error success  data->${JSON.stringify(data)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                console.info(`${caseName}: err->${JSON.stringify(err)}`);
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (error) {
+            if ((error as BusinessError).code === 401) {
+              console.info(`${caseName}: Parameter error success  data->${JSON.stringify(data)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              console.info(`${caseName}: err->${JSON.stringify(error)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
+        } else {
+          console.info(`${caseName} failed Dont have card: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimGetISOCountryCodeForSim0500
+     * @tc.number SUB_Telephony_Sim_GetISOCountryCodeForSim_0500
+     * @tc.desc   SIMCard required Obtain the ISO country code for the specified SIM card slot. Using callback for asynchronous callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testTelephonySimGetISOCountryCodeForSim0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetISOCountryCodeForSim0500';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName}:success hasSimCard,data->${JSON.stringify(data)}`);
+          try {
+            sim.getISOCountryCodeForSim(undefined, (err: BusinessError, data: string) => {
               if (err.code === 401) {
                 console.info(`${caseName}: Parameter error success  data->${JSON.stringify(data)}`);
                 ExpectTrue(true);
@@ -679,6 +832,60 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimGetISOCountryCodeForSim1200
+     * @tc.number SUB_Telephony_Sim_GetISOCountryCodeForSim_1200
+     * @tc.desc   SIMCard required Obtain the ISO country code for the specified SIM card slot. Using promise for asynchronous promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testTelephonySimGetISOCountryCodeForSim1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetISOCountryCodeForSim1200';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          try {
+            sim.getISOCountryCodeForSim(undefined).then((data: string) => {
+              console.info(`${caseName} false, promise: data->${JSON.stringify(data)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }).catch((err: BusinessError) => {
+              if (err.code === 401) {
+                console.info(`${caseName} success Parameter error, promise: err->${JSON.stringify(err)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                console.info(`${caseName} false , promise: err->${JSON.stringify(err)}`);
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (error) {
+            if ((error as BusinessError).code === 401) {
+              console.info(`${caseName} success Parameter error, promise: error->${JSON.stringify(error)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              console.info(`${caseName} false , promise: err->${JSON.stringify(error)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
+        } else {
+          console.info(`${caseName}:failed dont have card,data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
      * @tc.name   testTelephonySimGetISOCountryCodeForSimSync0100
      * @tc.number SUB_Telephony_Sim_GetISOCountryCodeForSimSync_0100
      * @tc.desc   SIMCard required Obtain the ISO country code for the specified SIM card slot
@@ -734,6 +941,86 @@ export default function Sim2Public() {
           console.info(`${caseName}:success hasSimCard,data->${JSON.stringify(data)}`);
           try {
             let countryCode: string = sim.getISOCountryCodeForSimSync(-1);
+            if (countryCode.length === 0) {
+              console.info(`${caseName} success:` + countryCode);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          } catch (err) {
+            ExpectFail();
+            console.info(`${caseName} test end `);
+            done();
+          }
+        } else {
+          console.info(`${caseName}:fail has not SimCard,data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimGetISOCountryCodeForSimSync0400
+     * @tc.number SUB_Telephony_Sim_GetISOCountryCodeForSimSync_0400
+     * @tc.desc   SIMCard required Obtain the ISO country code for the specified SIM card slot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testTelephonySimGetISOCountryCodeForSimSync0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetISOCountryCodeForSimSync0400';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName}:success hasSimCard,data->${JSON.stringify(data)}`);
+          try {
+            let countryCode: string = sim.getISOCountryCodeForSimSync(null);
+            if (countryCode.length === 0) {
+              console.info(`${caseName} success:` + countryCode);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          } catch (err) {
+            ExpectFail();
+            console.info(`${caseName} test end `);
+            done();
+          }
+        } else {
+          console.info(`${caseName}:fail has not SimCard,data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimGetISOCountryCodeForSimSync0500
+     * @tc.number SUB_Telephony_Sim_GetISOCountryCodeForSimSync_0500
+     * @tc.desc   SIMCard required Obtain the ISO country code for the specified SIM card slot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testTelephonySimGetISOCountryCodeForSimSync0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetISOCountryCodeForSimSync0500';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName}:success hasSimCard,data->${JSON.stringify(data)}`);
+          try {
+            let countryCode: string = sim.getISOCountryCodeForSimSync(undefined);
             if (countryCode.length === 0) {
               console.info(`${caseName} success:` + countryCode);
               ExpectTrue(true);
@@ -846,6 +1133,56 @@ export default function Sim2Public() {
           console.info(`${caseName}:success hasSimCard,data->${JSON.stringify(data)}`);
           try {
             sim.getSimOperatorNumeric(null, (err: BusinessError, data: string) => {
+              if (err.code === 401) {
+                console.info(`${caseName}: success Parameter error. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                console.info(`${caseName}: fail err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (error) {
+            if ((error as BusinessError).code === 401) {
+              console.info(`${caseName}: success Parameter error. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              console.info(`${caseName}: fail err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
+        } else {
+          console.info(`${caseName}:fail has not SimCard,data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimGetSimOperatorNumeric0500
+     * @tc.number SUB_Telephony_Sim_GetSimOperatorNumeric_0500
+     * @tc.desc   SIMCard required Obtain the Public Land Mobile Network (PLMN) number of the designated SIM card slot. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonySimGetSimOperatorNumeric0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimOperatorNumeric0500';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName}:success hasSimCard,data->${JSON.stringify(data)}`);
+          try {
+            sim.getSimOperatorNumeric(undefined, (err: BusinessError, data: string) => {
               if (err.code === 401) {
                 console.info(`${caseName}: success Parameter error. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
                 ExpectTrue(true);
@@ -1017,6 +1354,61 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimGetSimOperatorNumeric1200
+     * @tc.number SUB_Telephony_Sim_GetSimOperatorNumeric_1200
+     * @tc.desc   SIMCard required Obtain the Public Land Mobile Network (PLMN) number of the designated SIM card slot. Use callback for asynchronous promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonySimGetSimOperatorNumeric1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimOperatorNumeric1200';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName} :success hasSimCard,data->${JSON.stringify(data)}`);
+          try {
+            sim.getSimOperatorNumeric(undefined).then((data: string) => {
+              console.info(`${caseName}  success, promise: data->${JSON.stringify(data)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }).catch((err: BusinessError) => {
+              if (err.code === 401) {
+                console.info(`${caseName}  success Parameter value, promise: err->${JSON.stringify(err)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                console.info(`${caseName}  failed, promise: err->${JSON.stringify(err)}`);
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (error) {
+            if ((error as BusinessError).code === 401) {
+              console.info(`${caseName}  success Parameter value, promise: err->${JSON.stringify(err)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              console.info(`${caseName}  failed, promise: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
+        } else {
+          console.info(`${caseName} :failed hasSimCard,data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
      * @tc.name   testTelephonySimGetSimOperatorNumericSync0100
      * @tc.number SUB_Telephony_Sim_GetSimOperatorNumericSync_0100
      * @tc.desc   SIMCard required Obtain the Public Land Mobile Network (PLMN) number of the designated SIM card slot.
@@ -1064,6 +1456,74 @@ export default function Sim2Public() {
       sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
         if (data) {
           let numeric: string = sim.getSimOperatorNumericSync(-1);
+          if (numeric.length === 0) {
+            console.info(`${caseName}the sim operator numeric is success:` + numeric);
+            ExpectTrue(true);
+            console.info(`${caseName} test end `);
+            done();
+          } else {
+            console.info(`${caseName}the sim operator numeric  is:` + numeric);
+            ExpectFail();
+            console.info(`${caseName} test end `);
+            done();
+          }
+        } else {
+          console.info(`${caseName}:failed has not SimCard,data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimGetSimOperatorNumericSync0400
+     * @tc.number SUB_Telephony_Sim_GetSimOperatorNumericSync_0400
+     * @tc.desc   SIMCard required Obtain the Public Land Mobile Network (PLMN) number of the designated SIM card slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonySimGetSimOperatorNumericSync0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimOperatorNumericSync0400';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          let numeric: string = sim.getSimOperatorNumericSync(null);
+          if (numeric.length === 0) {
+            console.info(`${caseName}the sim operator numeric is success:` + numeric);
+            ExpectTrue(true);
+            console.info(`${caseName} test end `);
+            done();
+          } else {
+            console.info(`${caseName}the sim operator numeric  is:` + numeric);
+            ExpectFail();
+            console.info(`${caseName} test end `);
+            done();
+          }
+        } else {
+          console.info(`${caseName}:failed has not SimCard,data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimGetSimOperatorNumericSync0500
+     * @tc.number SUB_Telephony_Sim_GetSimOperatorNumericSync_0500
+     * @tc.desc   SIMCard required Obtain the Public Land Mobile Network (PLMN) number of the designated SIM card slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonySimGetSimOperatorNumericSync0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimOperatorNumericSync0500';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          let numeric: string = sim.getSimOperatorNumericSync(undefined);
           if (numeric.length === 0) {
             console.info(`${caseName}the sim operator numeric is success:` + numeric);
             ExpectTrue(true);
@@ -1208,6 +1668,53 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimGetSimState0500
+     * @tc.number SUB_Telephony_Sim_GetSimState_0500
+     * @tc.desc   SIMCard required Get the SIM card status of the specified slot. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonySimGetSimState0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimState0500';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName} success has card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          try {
+            sim.getSimState(undefined, (err: BusinessError, data: sim.SimState) => {
+              if (err.code === 401) {
+                console.info(`${caseName} 	Parameter error callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (error) {
+            if ((error as BusinessError).code === 401) {
+              console.info(`${caseName} 	Parameter error callback: err->${JSON.stringify(error)}, data->${JSON.stringify(data)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
+        } else {
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
      * @tc.name   testTelephonySimGetSimState0600
      * @tc.number SUB_Telephony_Sim_GetSimState_0600
      * @tc.desc   SIMCard required Get the SIM card status of the specified slot. Use promise for asynchronous callback.
@@ -1340,6 +1847,58 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimGetSimState1000
+     * @tc.number SUB_Telephony_Sim_GetSimState_1000
+     * @tc.desc   SIMCard required Get the SIM card status of the specified slot. Use promise for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonySimGetSimState1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimState1000';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName} success has card2: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          try {
+            sim.getSimState(undefined).then((data: sim.SimState) => {
+              console.info(`${caseName} getSimState success, promise: data->${JSON.stringify(data)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }).catch((err: BusinessError) => {
+              if (err.code === 401) {
+                console.info(`${caseName} getSimState failed Parameter error, promise: err->${JSON.stringify(err)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (error) {
+            if ((error as BusinessError).code === 401) {
+              console.info(`${caseName} getSimState failed Parameter error, promise: err->${JSON.stringify(error)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
+        } else {
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
      * @tc.name   testTelephonySimGetSimCardType0100
      * @tc.number SUB_Telephony_Sim_GetSimCardType_0100
      * @tc.desc   SIMCard required Obtain the SIM card type for the specified slot. Use callback for asynchronous callback..
@@ -1458,6 +2017,53 @@ export default function Sim2Public() {
               done();
             }
           });
+        } else {
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimGetSimCardType0500
+     * @tc.number SUB_Telephony_Sim_GetSimCardType_0500
+     * @tc.desc   SIMCard required Obtain the SIM card type for the specified slot. Use callback for asynchronous callback..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonySimGetSimCardType0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimCardType0500';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName} success has card2: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          try {
+            sim.getCardType(undefined, (err: BusinessError, data: sim.CardType) => {
+              if (err.code === 401) {
+                console.info(`${caseName} Parameter error. callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (error) {
+            if ((error as BusinessError).code === 401) {
+              console.info(`${caseName} Parameter error. callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
         } else {
           ExpectFail();
           console.info(`${caseName} test end `);
@@ -1610,6 +2216,58 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimGetSimCardType1200
+     * @tc.number SUB_Telephony_Sim_GetSimCardType_1200
+     * @tc.desc   SIMCard required Obtain the SIM card type for the specified slot. Use promise for asynchronous callback..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonySimGetSimCardType1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimCardType1200';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName} success has card2: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          try {
+            sim.getCardType(undefined).then((data: sim.CardType) => {
+              console.info(`${caseName} getCardType failed, promise: data->${JSON.stringify(data)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }).catch((err: BusinessError) => {
+              if (err.code === 401) {
+                console.info(`${caseName} Parameter error. getCardType success, promise: err->${JSON.stringify(err)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (error) {
+            if ((error as BusinessError).code === 401) {
+              console.info(`${caseName} Parameter error. getCardType success, promise: err->${JSON.stringify(error)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
+        } else {
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
      * @tc.name   testTelephonySimGetSimCardTypeSync0100
      * @tc.number SUB_Telephony_Sim_GetSimCardTypeSync_0100
      * @tc.desc   SIMCard required Obtain the SIM card type for the specified slot.
@@ -1635,6 +2293,82 @@ export default function Sim2Public() {
           sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
           sim.CardType.DUAL_MODE_UG_CARD,
           sim.CardType.SINGLE_MODE_ISIM_CARD
+          ];
+          ExpectTrue(simStateAry.includes(cardType));
+          console.info(`${caseName} the card type is:` + cardType);
+          done();
+        } else {
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimGetSimCardTypeSync0200
+     * @tc.number SUB_Telephony_Sim_GetSimCardTypeSync_0200
+     * @tc.desc   SIMCard required Obtain the SIM card type for the specified slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonySimGetSimCardTypeSync0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimCardTypeSync0200';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName} success has card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          let cardType: sim.CardType = sim.getCardTypeSync(null);
+          const simStateAry: number[] = [
+            sim.CardType.UNKNOWN_CARD,
+            sim.CardType.SINGLE_MODE_SIM_CARD,
+            sim.CardType.SINGLE_MODE_USIM_CARD,
+            sim.CardType.SINGLE_MODE_RUIM_CARD,
+            sim.CardType.DUAL_MODE_CG_CARD,
+            sim.CardType.CT_NATIONAL_ROAMING_CARD,
+            sim.CardType.CU_DUAL_MODE_CARD,
+            sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+            sim.CardType.DUAL_MODE_UG_CARD,
+            sim.CardType.SINGLE_MODE_ISIM_CARD
+          ];
+          ExpectTrue(simStateAry.includes(cardType));
+          console.info(`${caseName} the card type is:` + cardType);
+          done();
+        } else {
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimGetSimCardTypeSync0300
+     * @tc.number SUB_Telephony_Sim_GetSimCardTypeSync_0300
+     * @tc.desc   SIMCard required Obtain the SIM card type for the specified slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonySimGetSimCardTypeSync0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimCardTypeSync0300';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName} success has card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          let cardType: sim.CardType = sim.getCardTypeSync(undefined);
+          const simStateAry: number[] = [
+            sim.CardType.UNKNOWN_CARD,
+            sim.CardType.SINGLE_MODE_SIM_CARD,
+            sim.CardType.SINGLE_MODE_USIM_CARD,
+            sim.CardType.SINGLE_MODE_RUIM_CARD,
+            sim.CardType.DUAL_MODE_CG_CARD,
+            sim.CardType.CT_NATIONAL_ROAMING_CARD,
+            sim.CardType.CU_DUAL_MODE_CARD,
+            sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+            sim.CardType.DUAL_MODE_UG_CARD,
+            sim.CardType.SINGLE_MODE_ISIM_CARD
           ];
           ExpectTrue(simStateAry.includes(cardType));
           console.info(`${caseName} the card type is:` + cardType);
@@ -1847,6 +2581,53 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimGetSimAccountInfo0500
+     * @tc.number SUB_Telephony_Sim_GetSimAccountInfo_0500
+     * @tc.desc   SIMCard required Get SIM card account information. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonySimGetSimAccountInfo0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimAccountInfo0500';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName} success has  card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          try {
+            sim.getSimAccountInfo(undefined, (err: BusinessError, data: sim.IccAccountInfo) => {
+              if (err.code === 401) {
+                console.info(`${caseName} Parameter error: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (error) {
+            if ((error as BusinessError).code === 401) {
+              console.info(`${caseName} Parameter error: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
+        } else {
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
      * @tc.name   testTelephonySimGetSimAccountInfo0800
      * @tc.number SUB_Telephony_Sim_GetSimAccountInfo_0800
      * @tc.desc   SIMCard required Get SIM card account information. Use callback for asynchronous promise.
@@ -1972,6 +2753,60 @@ export default function Sim2Public() {
               done();
             }
           });
+        } else {
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimGetSimAccountInfo1200
+     * @tc.number SUB_Telephony_Sim_GetSimAccountInfo_1200
+     * @tc.desc   SIMCard required Get SIM card account information. Use callback for asynchronous promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonySimGetSimAccountInfo1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySimGetSimAccountInfo1200';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName} success has card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          try {
+            sim.getSimAccountInfo(undefined).then((data: sim.IccAccountInfo) => {
+              console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }).catch((err: BusinessError) => {
+              if (err.code === 401) {
+                console.info(`${caseName} Parameter error, promise: err->${JSON.stringify(err)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (error) {
+            if ((error as BusinessError).code === 401) {
+              console.info(`${caseName} Parameter error, promise: err->${JSON.stringify(err)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
         } else {
           ExpectFail();
           console.info(`${caseName} test end `);
@@ -2109,6 +2944,82 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimIsSimActive0200
+     * @tc.number SUB_Telephony_Sim_IsSimActive_0200
+     * @tc.desc   SIMCard required Obtain whether the specified SIM card slot is activated. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTelephonySimIsSimActive0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimIsSimActive0200';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName}:success hasSimCard,data->${JSON.stringify(data)}`);
+          try {
+            sim.isSimActive(null, (err: BusinessError, data: boolean) => {
+              console.info(`${caseName} failed: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            });
+          } catch (err){
+            console.info(`${caseName}:success, err->${JSON.stringify(err)}`);
+            if (err.code === 401) {
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
+        } else {
+          console.info(`${caseName} failed Dont have card1: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimIsSimActive0500
+     * @tc.number SUB_Telephony_Sim_IsSimActive_0500
+     * @tc.desc   SIMCard required Obtain whether the specified SIM card slot is activated. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTelephonySimIsSimActive0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimIsSimActive0500';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName}:success hasSimCard,data->${JSON.stringify(data)}`);
+          try {
+            sim.isSimActive(undefined, (err: BusinessError, data: boolean) => {
+              console.info(`${caseName} failed: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            });
+          } catch (err){
+            console.info(`${caseName}:success, err->${JSON.stringify(err)}`);
+            if (err.code === 401) {
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            }
+          }
+        } else {
+          console.info(`${caseName} failed Dont have card1: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
      * @tc.name   testTelephonySimIsSimActive0300
      * @tc.number SUB_Telephony_Sim_IsSimActive_0300
      * @tc.desc   SIMCard required Obtain whether the specified SIM card slot is activated. Use callback for asynchronous callback.
@@ -2234,6 +3145,116 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimIsSimActive0700
+     * @tc.number SUB_Telephony_Sim_IsSimActive_0700
+     * @tc.desc   SIMCard required Obtain whether the specified SIM card slot is activated. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonySimIsSimActive0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySimIsSimActive0700';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName}:success hasSimCard,data->${JSON.stringify(data)}`);
+          try {
+            sim.isSimActive(null).then((data: boolean) => {
+              console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }).catch((err: BusinessError) => {
+              if (err.code === 401){
+                console.info(`${caseName} successed, promise: err->${JSON.stringify(err)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (err) {
+            if (err.code === 401){
+              console.info(`${caseName} successed, promise: err->${JSON.stringify(err)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          };
+        } else {
+          console.info(`${caseName} failed Dont have card1: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimIsSimActive0800
+     * @tc.number SUB_Telephony_Sim_IsSimActive_0800
+     * @tc.desc   SIMCard required Obtain whether the specified SIM card slot is activated. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonySimIsSimActive0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySimIsSimActive0800';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName}:success hasSimCard,data->${JSON.stringify(data)}`);
+          try {
+            sim.isSimActive(undefined).then((data: boolean) => {
+              console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }).catch((err: BusinessError) => {
+              if (err.code === 401){
+                console.info(`${caseName} successed, promise: err->${JSON.stringify(err)}`);
+                ExpectTrue(true);
+                console.info(`${caseName} test end `);
+                done();
+              } else {
+                console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+                ExpectFail();
+                console.info(`${caseName} test end `);
+                done();
+              }
+            });
+          } catch (err) {
+            if (err.code === 401){
+              console.info(`${caseName} successed, promise: err->${JSON.stringify(err)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          };
+        } else {
+          console.info(`${caseName} failed Dont have card1: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
      * @tc.name   testTelephonySimIsSimActiveSync0100
      * @tc.number SUB_Telephony_Sim_IsSimActiveSync_0100
      * @tc.desc   SIMCard required Obtain whether the specified SIM card slot is activated.
@@ -2283,6 +3304,76 @@ export default function Sim2Public() {
           console.info(`${caseName} :success hasSimCard,data->${JSON.stringify(data)}`);
           let isSimActive: boolean = sim.isSimActiveSync(-1);
           if (isSimActive === false) {
+            console.info(`${caseName}  success:` + isSimActive);
+            ExpectTrue(true);
+            console.info(`${caseName} test end `);
+            done();
+          } else {
+            ExpectFail();
+            console.info(`${caseName} test end `);
+            done();
+          }
+        } else {
+          console.info(`${caseName}  failed Dont have card1: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimIsSimActiveSync0400
+     * @tc.number SUB_Telephony_Sim_IsSimActiveSync_0400
+     * @tc.desc   SIMCard required Obtain whether the specified SIM card slot is activated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testTelephonySimIsSimActiveSync0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimIsSimActiveSync0400';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName} :success hasSimCard,data->${JSON.stringify(data)}`);
+          let isSimActive: boolean = false;
+          isSimActive = sim.isSimActiveSync(null);
+          if (Boolean(isSimActive) === false) {
+            console.info(`${caseName}  success:` + isSimActive);
+            ExpectTrue(true);
+            console.info(`${caseName} test end `);
+            done();
+          } else {
+            ExpectFail();
+            console.info(`${caseName} test end `);
+            done();
+          }
+        } else {
+          console.info(`${caseName}  failed Dont have card1: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   testTelephonySimIsSimActiveSync0500
+     * @tc.number SUB_Telephony_Sim_IsSimActiveSync_0500
+     * @tc.desc   SIMCard required Obtain whether the specified SIM card slot is activated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testTelephonySimIsSimActiveSync0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimIsSimActiveSync0500';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName} :success hasSimCard,data->${JSON.stringify(data)}`);
+          let isSimActive: boolean = false;
+          isSimActive = sim.isSimActiveSync(undefined);
+          if (Boolean(isSimActive) === false) {
             console.info(`${caseName}  success:` + isSimActive);
             ExpectTrue(true);
             console.info(`${caseName} test end `);

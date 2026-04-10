@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function tabsSec() {
   describe('ActsAceTabsTestSec', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
@@ -51,10 +51,10 @@ export default function tabsSec() {
         if (!("IndexSec" == pages.name)) {
           console.info("get IndexSec state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options)
-          routerAlp.pushUrl(options)
+          routerAlp.replaceUrl(options)
           // console.info("push IndexSec page success " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push IndexSec page error " + JSON.stringify(err));
       }
 
@@ -80,7 +80,7 @@ export default function tabsSec() {
         }
         console.info("[ArkUI_Tabs] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -128,7 +128,7 @@ it('ArkUI_Tabs_BarOverlap_static_0200', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -165,7 +165,7 @@ it('ArkUI_Tabs_BarOverlap_static_0300', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0300] change component data error: " + err.message);
       }
 
@@ -203,7 +203,7 @@ it('ArkUI_Tabs_BarOverlap_static_0400', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -240,7 +240,7 @@ it('ArkUI_Tabs_BarOverlap_static_0500', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -277,7 +277,7 @@ it('ArkUI_Tabs_BarOverlap_static_0600', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -300,7 +300,7 @@ it('ArkUI_Tabs_BarOverlap_static_0600', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -337,7 +337,7 @@ it('ArkUI_Tabs_BarOverlap_static_0700', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -360,7 +360,7 @@ it('ArkUI_Tabs_BarOverlap_static_0700', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -397,7 +397,7 @@ it('ArkUI_Tabs_BarOverlap_static_0800', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -420,7 +420,7 @@ it('ArkUI_Tabs_BarOverlap_static_0800', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_Tabs_BarOverlap_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarOverlap_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -477,7 +477,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0200', Level.LEVEL0, async (done: () =>
         }
         console.info("[ArkUI_Tabs_BarBackgroundColor_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarBackgroundColor_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -514,7 +514,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0300', Level.LEVEL0, async (done: () =>
         }
         console.info("[ArkUI_Tabs_BarBackgroundColor_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarBackgroundColor_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -551,7 +551,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0400', Level.LEVEL0, async (done: () =>
         }
         console.info("[ArkUI_Tabs_BarBackgroundColor_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarBackgroundColor_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -588,7 +588,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0500', Level.LEVEL0, async (done: () =>
         }
         console.info("[ArkUI_Tabs_BarBackgroundColor_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarBackgroundColor_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -629,7 +629,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0600', Level.LEVEL0, async (done: () =>
         }
         console.info("[ArkUI_Tabs_BarBackgroundColor_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarBackgroundColor_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -666,7 +666,7 @@ it('ArkUI_Tabs_BarBackgroundColor_static_0700', Level.LEVEL0, async (done: () =>
         }
         console.info("[ArkUI_Tabs_BarBackgroundColor_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarBackgroundColor_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

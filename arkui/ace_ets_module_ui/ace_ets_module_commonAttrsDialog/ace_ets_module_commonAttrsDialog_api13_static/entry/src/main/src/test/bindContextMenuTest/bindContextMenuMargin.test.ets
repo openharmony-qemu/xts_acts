@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function bindContextMenuMargin() {
   describe('bindContextMenuMargin',  () =>{
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("activeTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api13.Static", "EntryAbility")
     });

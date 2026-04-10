@@ -53,7 +53,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSpaceResourceTest() {
   describe('ColumnSpaceResourceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")
       console.info("ColumnSpaceResourceTest beforeAll start");
     });

@@ -14,7 +14,13 @@
  */
 import graphicImagePixelMap from './GraphicImagePixelMap.test';
 import graphicImagePixelMap2 from './GraphicImagePixelMap2.test';
+import graphicImagePixelMap3 from './GraphicImagePixelMap3.test';
+import graphicImagePixelMap4 from './GraphicImagePixelMap4.test';
+import graphicImagePixelMap5 from './GraphicImagePixelMap5.test';
 export default function testsuite() {
   graphicImagePixelMap();
   graphicImagePixelMap2();
+  graphicImagePixelMap3();
+  graphicImagePixelMap4();
+  graphicImagePixelMap5();
 }

@@ -27,8 +27,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 const domain: int = 0x0000;
 const tag: string = 'StartSpecifiedProcessStaticTest';
 const TEST_SUITE_NAME: string = 'StartSpecifiedProcessStaticTest';
-let testAbilityContext: common.UIAbilityContext;
-let subscriber: CommonEventManager.CommonEventSubscriber;
+let testAbilityContext: common.UIAbilityContext | undefined;
+let subscriber: CommonEventManager.CommonEventSubscriber | undefined;
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
 async function startAbility(context: common.UIAbilityContext, want: Want) {
@@ -95,7 +95,7 @@ export default function StartSpecifiedProcessStaticTest() {
           } else {
             expect(16000115).assertEqual(commonEventData?.code);
           }
-          CommonEventManager.unsubscribe(subscriber, (err, data) => {
+          CommonEventManager.unsubscribe(subscriber!, (err, data) => {
             done();
           });
         }
@@ -103,7 +103,7 @@ export default function StartSpecifiedProcessStaticTest() {
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
           .then((data: CommonEventManager.CommonEventSubscriber | null) => {
             subscriber = data as CommonEventManager.CommonEventSubscriber;
-            CommonEventManager.subscribe(subscriber, SubscribeCallBack)
+            CommonEventManager.subscribe(subscriber!, SubscribeCallBack)
           })
         await Utils.msSleep(1000)
         let want : Want = {
@@ -117,7 +117,7 @@ export default function StartSpecifiedProcessStaticTest() {
             'isDemote': false,
           } as Record<String,RecordData>
         };
-        startAbility(testAbilityContext, want);
+        startAbility(testAbilityContext!, want);
         await Utils.msSleep(2000);
       }catch(err){
         console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
@@ -150,7 +150,7 @@ export default function StartSpecifiedProcessStaticTest() {
           } else {
             expect(16000117).assertEqual(commonEventData?.code);
           }
-          CommonEventManager.unsubscribe(subscriber, (err, data) => {
+          CommonEventManager.unsubscribe(subscriber!, (err, data) => {
             done();
           });
         }
@@ -158,7 +158,7 @@ export default function StartSpecifiedProcessStaticTest() {
         await CommonEventManager.createSubscriber(commonEventSubscribeInfo)
           .then((data: CommonEventManager.CommonEventSubscriber | null) => {
             subscriber = data as CommonEventManager.CommonEventSubscriber;
-            CommonEventManager.subscribe(subscriber, SubscribeCallBack)
+            CommonEventManager.subscribe(subscriber!, SubscribeCallBack)
           })
         let want : Want = {
           bundleName: 'com.example.actsspecifiedprocess.static',
@@ -171,7 +171,7 @@ export default function StartSpecifiedProcessStaticTest() {
             'isDemote': true,
           } as Record<String,RecordData>
         };
-        startAbility(testAbilityContext, want);
+        startAbility(testAbilityContext!, want);
         await Utils.msSleep(2000);
       }catch(err){
         console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
@@ -204,7 +204,7 @@ export default function StartSpecifiedProcessStaticTest() {
           } else {
             expect(0).assertEqual(commonEventData?.code);
           }
-          CommonEventManager.unsubscribe(subscriber, (err, data) => {
+          CommonEventManager.unsubscribe(subscriber!, (err, data) => {
             done();
           });
         }
@@ -212,7 +212,7 @@ export default function StartSpecifiedProcessStaticTest() {
         await CommonEventManager.createSubscriber(commonEventSubscribeInfo)
           .then((data: CommonEventManager.CommonEventSubscriber | null) => {
             subscriber = data as CommonEventManager.CommonEventSubscriber;
-            CommonEventManager.subscribe(subscriber, SubscribeCallBack)
+            CommonEventManager.subscribe(subscriber!, SubscribeCallBack)
           })
         let want : Want = {
           bundleName: 'com.example.actsspecifiedprocess.static',
@@ -225,7 +225,7 @@ export default function StartSpecifiedProcessStaticTest() {
             'isDemote': false,
           } as Record<String,RecordData>
         };
-        startAbility(testAbilityContext, want);
+        startAbility(testAbilityContext!, want);
         await Utils.msSleep(2000);
       }catch(err){
         console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
@@ -258,7 +258,7 @@ export default function StartSpecifiedProcessStaticTest() {
           } else {
             expect(16000116).assertEqual(commonEventData?.code);
           }
-          CommonEventManager.unsubscribe(subscriber, (err, data) => {
+          CommonEventManager.unsubscribe(subscriber!, (err, data) => {
             done();
           });
         }
@@ -266,7 +266,7 @@ export default function StartSpecifiedProcessStaticTest() {
         await CommonEventManager.createSubscriber(commonEventSubscribeInfo)
           .then((data: CommonEventManager.CommonEventSubscriber | null) => {
             subscriber = data as CommonEventManager.CommonEventSubscriber;
-            CommonEventManager.subscribe(subscriber, SubscribeCallBack)
+            CommonEventManager.subscribe(subscriber!, SubscribeCallBack)
           })
         let want : Want = {
           bundleName: 'com.example.actsspecifiedprocess.static',
@@ -279,7 +279,7 @@ export default function StartSpecifiedProcessStaticTest() {
             'isDemote': true,
           } as Record<String,RecordData>
         };
-        startAbility(testAbilityContext, want);
+        startAbility(testAbilityContext!, want);
         await Utils.msSleep(2000);
       }catch(err){
         console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
@@ -312,7 +312,7 @@ export default function StartSpecifiedProcessStaticTest() {
           } else {
             expect(16000118).assertEqual(commonEventData?.code);
           }
-          CommonEventManager.unsubscribe(subscriber, (err, data) => {
+          CommonEventManager.unsubscribe(subscriber!, (err, data) => {
             done();
           });
         }
@@ -320,7 +320,7 @@ export default function StartSpecifiedProcessStaticTest() {
         await CommonEventManager.createSubscriber(commonEventSubscribeInfo)
           .then((data: CommonEventManager.CommonEventSubscriber | null) => {
             subscriber = data as CommonEventManager.CommonEventSubscriber;
-            CommonEventManager.subscribe(subscriber, SubscribeCallBack)
+            CommonEventManager.subscribe(subscriber!, SubscribeCallBack)
           })
         let want : Want = {
           bundleName: 'com.example.actsspecifiedprocess.static',
@@ -334,7 +334,7 @@ export default function StartSpecifiedProcessStaticTest() {
             'isExit': true,
           } as Record<String,RecordData>
         };
-        startAbility(testAbilityContext, want);
+        startAbility(testAbilityContext!, want);
         await Utils.msSleep(2000);
       }catch(err){
         console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
@@ -367,7 +367,7 @@ export default function StartSpecifiedProcessStaticTest() {
           } else {
             expect(16000119).assertEqual(commonEventData?.code);
           }
-          CommonEventManager.unsubscribe(subscriber, (err, data) => {
+          CommonEventManager.unsubscribe(subscriber!, (err, data) => {
             done();
           });
         }
@@ -375,7 +375,7 @@ export default function StartSpecifiedProcessStaticTest() {
         await CommonEventManager.createSubscriber(commonEventSubscribeInfo)
           .then((data: CommonEventManager.CommonEventSubscriber | null) => {
             subscriber = data as CommonEventManager.CommonEventSubscriber;
-            CommonEventManager.subscribe(subscriber, SubscribeCallBack)
+            CommonEventManager.subscribe(subscriber!, SubscribeCallBack)
           })
         let want : Want = {
           bundleName: 'com.example.actsspecifiedprocess.static',
@@ -390,7 +390,7 @@ export default function StartSpecifiedProcessStaticTest() {
             'isOnNewProcessRequest': true,
           } as Record<String,RecordData>
         };
-        startAbility(testAbilityContext, want);
+        startAbility(testAbilityContext!, want);
         await Utils.msSleep(2000);
       }catch(err){
         console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)

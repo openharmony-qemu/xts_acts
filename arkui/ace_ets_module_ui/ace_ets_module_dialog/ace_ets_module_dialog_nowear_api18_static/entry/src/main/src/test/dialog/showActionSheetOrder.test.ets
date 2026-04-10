@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function showActionSheetOrder() {
   describe('showActionSheetOrder', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DismissReasonTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api18.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

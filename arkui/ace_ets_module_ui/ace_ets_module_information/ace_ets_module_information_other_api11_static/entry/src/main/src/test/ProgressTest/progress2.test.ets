@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function progressStyleJsunit() {
   describe('progressStyleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("progressStyleTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.other.static", "EntryAbility");
     });

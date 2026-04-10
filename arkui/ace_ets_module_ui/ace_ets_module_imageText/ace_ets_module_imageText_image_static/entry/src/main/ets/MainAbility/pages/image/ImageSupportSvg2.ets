@@ -17,17 +17,17 @@ import { Entry, Text, Column, Row, Component, Button, ClickEvent, Image, ImageAt
   AttributeModifier, Resource, $r} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
-class MyImageModifier1 implements AttributeModifier<ImageAttribute> {
+export class MyImageModifier1 implements AttributeModifier<ImageAttribute> {
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.supportSvg2(true)
   }
 }
-class MyImageModifier2 implements AttributeModifier<ImageAttribute> {
+export class MyImageModifier2 implements AttributeModifier<ImageAttribute> {
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.supportSvg2(false)
   }
 }
-class MyImageModifier3 implements AttributeModifier<ImageAttribute> {
+export class MyImageModifier3 implements AttributeModifier<ImageAttribute> {
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.supportSvg2(undefined)
   }

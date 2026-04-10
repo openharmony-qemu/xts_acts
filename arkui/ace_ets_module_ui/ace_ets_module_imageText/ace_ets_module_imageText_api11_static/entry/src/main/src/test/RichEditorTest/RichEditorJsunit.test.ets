@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,7 @@ export default function richEditorTest() {
       }
       console.info("richEditorTest beforeEach end");
     });
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("richEditorTest beforeEach start");
 
 
@@ -88,7 +88,7 @@ export default function richEditorTest() {
         AppStorage.get<MessageManagerBase<CopyOptions>>("messageManagerRichEditorPage")?.notify({
           name: 'typeValue', value: CopyOptions.None
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -117,7 +117,7 @@ export default function richEditorTest() {
         AppStorage.get<MessageManagerBase<CopyOptions>>("messageManagerRichEditorPage")?.notify({
           name: 'typeValue', value: CopyOptions.InApp
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -145,7 +145,7 @@ export default function richEditorTest() {
         AppStorage.get<MessageManagerBase<CopyOptions>>("messageManagerRichEditorPage")?.notify({
           name: 'typeValue', value: CopyOptions.LocalDevice
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -174,7 +174,7 @@ export default function richEditorTest() {
     //     AppStorage.get<MessageManagerBase<CopyOptions>>("messageManagerRichEditorPage")?.notify({
     //       name: 'typeValue', value: CopyOptions.CROSS_DEVICE // 不存在的枚举值
     //     });
-    //   } catch (err:Error) {
+    //   } catch (err) {
     //     console.log('[' + tagName + '] change component data error: ' + err.message);
     //   }
     //   await Utils.sleep(2000);

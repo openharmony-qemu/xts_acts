@@ -19,12 +19,13 @@ import themePageSliderTest from "./theme/themePageSliderTest.test";
 import APIFontPrimaryTest from "./theme/APIFontPrimaryTest.test";
 import themePageListTest from "./theme/themePageListTest.test";
 import DarkColorsTest from './theme/DarkColorsTest.test';
+import setDefaultThemeNullTest from './theme/setDefaultThemeNull.test';
 
 export default function testsuite() {
   APIFontPrimaryTest();
-  themePageTest();
   themePageToggleTest();
   themePageSliderTest();
   themePageListTest();
   DarkColorsTest();
+  setDefaultThemeNullTest();
 }

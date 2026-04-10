@@ -13,6 +13,12 @@
  * limitations under the License.
  */
 import WebViewControllerVideoMedia from './WebViewControllerVideoMedia.test';
+import WebViewNativeMediaPlayerSetVolume1 from './WebViewNativeMediaPlayerSetVolume1.test'
+import WebViewNativeMediaPlayerSetPlaybackRate1 from './WebViewNativeMediaPlayerSetPlaybackRate1.test'
+import WebViewNativeMediaPlayerSetPlaybackRate2 from './WebViewNativeMediaPlayerSetPlaybackRate2.test'
 export default function testsuite() {
   WebViewControllerVideoMedia()
+  WebViewNativeMediaPlayerSetVolume1()
+  WebViewNativeMediaPlayerSetPlaybackRate1()
+  WebViewNativeMediaPlayerSetPlaybackRate2()
 }

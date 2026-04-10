@@ -25,6 +25,7 @@ import exportStringTest from "./test/ExportStringTest.test";
 import exportTupleTest from "./test/ExportTupleTest.test";
 import exportUnionTest from "./test/ExportUnionTest.test";
 import exportDefaultTest from "./test/ExportDefaultsTest.test";
+import ExportSetTest from "./test/ExportSetTest.test";
 
 export default function testsuite() {
   exportTupleTest();
@@ -40,4 +41,5 @@ export default function testsuite() {
   exportBigIntTest();
   ExportFunctionTest();
   exportDefaultTest();
+  ExportSetTest();
 }

@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function datePickerJsunit() {
   describe('ActsAceDatePickerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("datePickerJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api12.static", "EntryAbility")
     });

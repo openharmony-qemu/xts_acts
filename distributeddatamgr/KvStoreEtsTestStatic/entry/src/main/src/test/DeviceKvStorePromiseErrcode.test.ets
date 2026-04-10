@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -87,7 +87,7 @@ async function CreateCorruptDb() {
     fs.fsyncSync(file.fd);
     fs.closeSync(file);
     console.info(TAG + "CreateCorruptDb succeed");
-  }catch (err: Error) {
+  }catch (err) {
     console.error(TAG + "CreateCorruptDb failed, errCode:" + err.code + "errMessage" + err.message);
     expect().assertFail();
   }
@@ -143,7 +143,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
       };
       console.info(TAG + 'beforeAll config:' + JSON.stringify(config));
       kvManager = factory.createKVManager(config);
-      await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
+      await kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
         kvStore = store;
         console.info(TAG + 'beforeAll getKVStore for getDeviceId success');
       }).catch((err: Error) => {
@@ -199,23 +199,25 @@ export default function deviceKvStorePromiseErrcodeTest(){
     beforeEach(async (done: () => void) => {
       console.info(TAG + 'beforeEach' + JSON.stringify(options));
 
-      await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
-        kvStore = store;
-        console.info(TAG + 'beforeEach getKVStore for getDeviceId success');
-        await kvStore!.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
-          expect(data == undefined).assertTrue();
-          console.info(TAG + 'beforeEach put success');
-        }).catch((err: Error) => {
-          console.error(TAG + 'beforeEach put err ' + `, error code is ${err.code}, message is ${err.message}`);
-          done();
-        });
-        await kvStore!.putBatch(entries).then(() => {
-          console.info(TAG + 'beforeEach putBatch success');
-          done();
-        }).catch((err: Error) => {
-          console.error(TAG + 'beforeEach putBatch err ' + `, error code is ${err.code}, message is ${err.message}`);
-          done();
-        });
+      await kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
+        waitForCompletion(async () => {
+          kvStore = store;
+          console.info(TAG + 'beforeEach getKVStore for getDeviceId success');
+          await kvStore!.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((data) => {
+            expect(data == undefined).assertTrue();
+            console.info(TAG + 'beforeEach put success');
+          }).catch((err: Error) => {
+            console.error(TAG + 'beforeEach put err ' + `, error code is ${err.code}, message is ${err.message}`);
+            done();
+          });
+          await kvStore!.putBatch(entries).then(() => {
+            console.info(TAG + 'beforeEach putBatch success');
+            done();
+          }).catch((err: Error) => {
+            console.error(TAG + 'beforeEach putBatch err ' + `, error code is ${err.code}, message is ${err.message}`);
+            done();
+          });
+        })
       }).catch((err: Error) => {
         console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
         done();
@@ -260,7 +262,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -290,7 +292,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -318,7 +320,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -346,7 +348,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100005).assertEqual(err.code);
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -374,7 +376,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -402,7 +404,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -431,7 +433,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           done();
         });
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -462,7 +464,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(null).assertFail();
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -491,7 +493,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(401).assertEqual(err.code);
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -519,7 +521,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100003).assertEqual(err.code);
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -548,7 +550,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100005).assertEqual(err.code);
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -576,7 +578,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100003).assertEqual(err.code);
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -605,7 +607,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100005).assertEqual(err.code);
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -637,7 +639,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(null).assertFail();
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -667,7 +669,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100003).assertEqual(err.code);
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -697,7 +699,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100005).assertEqual(err.code);
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -726,7 +728,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100003).assertEqual(err.code);
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -756,7 +758,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100005).assertEqual(err.code);
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -790,7 +792,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(null).assertFail();
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -818,7 +820,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(401).assertEqual(err.code);
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -842,33 +844,32 @@ export default function deviceKvStorePromiseErrcodeTest(){
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets!.push(result);
           }).catch((err: Error) => {
-            console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100001).assertEqual(err.code);
-            await sleep(1000);
-            for (let j=0; j<9; j++) {
-              try{
-                //await kvStore.closeResultSet(resultSets[j], (err) => {
-                await kvStore!.closeResultSet(resultSets[j]).then(() => {
-
-                  if (err == undefined) {
-                    console.info(TAG + ' closeResultSet success, j=' + j);
-                  } else {
-                    console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-                  }
-                })
-              }catch(er: Error){
-                console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+            waitForCompletion(async () => {
+              console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+              expect(15100001).assertEqual(err.code);
+              await sleep(1000);
+              for (let j=0; j<9; j++) {
+                try{
+                  //await kvStore.closeResultSet(resultSets[j], (err) => {
+                  await kvStore!.closeResultSet(resultSets[j]).then(() => {
+                    if (err == undefined) {
+                      console.info(TAG + ' closeResultSet success, j=' + j);
+                    } else {
+                      console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                    }
+                  })
+                }catch(er){
+                  console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+                }
               }
-            }
-
-            await sleep(2000);
-            done();
-
+              await sleep(2000);
+              done();
+            })
           });
         }
 
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -895,7 +896,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100005).assertEqual(err.code);
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -923,7 +924,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(401).assertEqual(err.code);
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -947,37 +948,36 @@ export default function deviceKvStorePromiseErrcodeTest(){
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets!.push(result);
           }).catch((err:Error) => {
-            console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100001).assertEqual(err.code);
-            await sleep(1000);
-            for (let j=0; j<9; j++) {
-              try{
-                // await kvStore.closeResultSet(resultSets[j], (err) => {
-                //   if (err == undefined) {
-                //     console.info(TAG + ' closeResultSet success, j=' + j);
-                //   } else {
-                //     console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-                //   }
-                // })
-                kvStore!.closeResultSet(resultSets[j]).then(() => {
-                  console.info(TAG + ' closeResultSet success, j=' + j);
-                }).catch((err: Error) => {
-                  console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-                });
-
-              }catch(er: Error){
-                console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+            waitForCompletion(async () => {
+              console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+              expect(15100001).assertEqual(err.code);
+              await sleep(1000);
+              for (let j=0; j<9; j++) {
+                try{
+                  // await kvStore.closeResultSet(resultSets[j], (err) => {
+                  //   if (err == undefined) {
+                  //     console.info(TAG + ' closeResultSet success, j=' + j);
+                  //   } else {
+                  //     console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                  //   }
+                  // })
+                  kvStore!.closeResultSet(resultSets[j]).then(() => {
+                    console.info(TAG + ' closeResultSet success, j=' + j);
+                  }).catch((err: Error) => {
+                    console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                  });
+                }catch(er){
+                  console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+                }
               }
-            }
-
-            await sleep(2000);
-            done();
-
+              await sleep(2000);
+              done();
+            })
           });
         }
 
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1004,7 +1004,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100005).assertEqual(err.code);
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1041,7 +1041,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(null).assertFail();
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1069,30 +1069,31 @@ export default function deviceKvStorePromiseErrcodeTest(){
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets!.push(result);
           }).catch((err:Error) => {
-            console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100001).assertEqual(err.code);
-            await sleep(1000);
-            for (let j=0; j<9; j++) {
-              try{
-                kvStore!.closeResultSet(resultSets[j], (err: BusinessError | null) => {
-                  if (err == undefined) {
-                    console.info(TAG + ' closeResultSet success, j=' + j);
-                  } else {
-                    console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-                  }
-                })
-              }catch(er: Error){
-                console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+            waitForCompletion(async () => {
+              console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+              expect(15100001).assertEqual(err.code);
+              await sleep(1000);
+              for (let j=0; j<9; j++) {
+                try{
+                  kvStore!.closeResultSet(resultSets[j], (err: BusinessError | null) => {
+                    if (err == undefined) {
+                      console.info(TAG + ' closeResultSet success, j=' + j);
+                    } else {
+                      console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                    }
+                  })
+                }catch(er){
+                  console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+                }
               }
-            }
-
-            await sleep(2000);
-            done();
+              await sleep(2000);
+              done();
+            })
           });
         }
 
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1122,7 +1123,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100005).assertEqual(err.code);
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1150,30 +1151,31 @@ export default function deviceKvStorePromiseErrcodeTest(){
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets!.push(result);
           }).catch((err:Error) => {
-            console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
-            expect(15100001).assertEqual(err.code);
-            await sleep(1000);
-            for (let j=0; j<9; j++) {
-              try{
-                kvStore!.closeResultSet(resultSets[j], (err: BusinessError | null) => {
-                  if (err == undefined) {
-                    console.info(TAG + ' closeResultSet success, j=' + j);
-                  } else {
-                    console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
-                  }
-                })
-              }catch(er: Error){
-                console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+            waitForCompletion(async () => {
+              console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+              expect(15100001).assertEqual(err.code);
+              await sleep(1000);
+              for (let j=0; j<9; j++) {
+                try{
+                  kvStore!.closeResultSet(resultSets[j], (err: BusinessError | null) => {
+                    if (err == undefined) {
+                      console.info(TAG + ' closeResultSet success, j=' + j);
+                    } else {
+                      console.error(TAG + ' closeResultSet fail' + `,  j is ${j}, error code is ${err.code}, message is ${err.message}`);
+                    }
+                  })
+                }catch(er){
+                  console.error(TAG + 'catch  closeResultSet fail' + `,  j is ${j}, error code is ${er.code}, message is ${er.message}`);
+                }
               }
-            }
-
-            await sleep(2000);
-            done();
+              await sleep(2000);
+              done();
+            })
           });
         }
 
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1203,7 +1205,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           expect(15100005).assertEqual(err.code);
         });
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch get e' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1229,7 +1231,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
         await kvStore!.getResultSize(localDeviceId, query);
         console.info(TAG + `Succeeded in getResultSize `);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + `Failed to getResultSize.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
       };
@@ -1286,7 +1288,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
         await kvStore!.getResultSize(query);
         console.info(TAG + `Succeeded in getResultSize `);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + `Failed to getResultSize.code is ${err.code},message is ${err.message}`);
         expect(err.code).assertEqual(15100005);
       };

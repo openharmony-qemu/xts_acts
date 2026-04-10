@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function PixelMapColorFilterTest() {
   describe('PixelMapColorFilterTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("PixelMapColorFilterTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")

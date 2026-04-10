@@ -44,7 +44,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function LazyForEachMove() {
   describe('LazyForEachMove', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LazyForEachMove beforeEach start");
 
 

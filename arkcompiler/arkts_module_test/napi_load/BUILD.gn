@@ -14,7 +14,7 @@
 import("//test/xts/tools/build/suite.gni")
 
 ohos_app_assist_suite("basic_scenario_main") {
-  hap_name = "ActsArkTsNapiLoadTest"
+  hap_name = "ActsArkTsNapiLoadLibTest"
   testonly = true
   part_name = "ets_runtime"
   subsystem_name = "arkcompiler"

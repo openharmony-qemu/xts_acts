@@ -197,7 +197,7 @@ describe('display_test', function () {
             done();
         } catch (err) {
             console.error('getDefaultDisplaySyncTest1 error ' + JSON.stringify(err));
-            expect.assertFail();
+            expect().assertFail();
             done();
         }
     })
@@ -232,7 +232,7 @@ describe('display_test', function () {
             done();
         } catch (err) {
             console.error('getDisplayByIdSyncTest1 error ' + JSON.stringify(err));
-            expect.assertFail();
+            expect().assertFail();
             done();
         }
     })
@@ -258,7 +258,7 @@ describe('display_test', function () {
             done();
         } catch (err) {
             console.error('test enum value of windowDisplayState error ' + JSON.stringify(err));
-            expect.assertFail();
+            expect().assertFail();
             done();
         }
     })
@@ -308,7 +308,7 @@ describe('display_test', function () {
             done();
         } catch (err) {
             console.error('test value of waterfallDisplayAreaRects error ' + JSON.stringify(err));
-            expect.assertFail();
+            expect().assertFail();
             done();
         }
     })
@@ -337,7 +337,7 @@ describe('display_test', function () {
             done();
         } catch (err) {
             console.error('test value of rect error ' + JSON.stringify(err));
-            expect.assertFail();
+            expect().assertFail();
             done();
         }
     })
@@ -506,9 +506,7 @@ describe('display_test', function () {
         } catch (error) {
             if (error.code) {
                 expect().assertFail()
-            } else {
-                expect(true).assertTrue()
-            }
+            } 
             done()
         }
     })

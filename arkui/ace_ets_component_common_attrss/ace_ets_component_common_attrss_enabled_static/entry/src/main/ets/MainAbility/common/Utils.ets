@@ -99,14 +99,14 @@ export default class Utils {
     });
   }
 
-  static getStringFromFile(fileName: string): Promise<string> {
+  static async getStringFromFile(fileName: string): Promise<string> {
     const abilityContext = AppStorage.get<common.Context>("abilityContext") as common.Context
     const fileData: Uint8Array = await abilityContext.resourceManager.getRawFileContent(fileName);
     return new Promise<string>((resolve, reject) => {
       if (fileData) {
         let result = '';
         for (let i = 0; i < fileData.length; i++) {
-          result += String.fromCharCode(fileData[i]);
+          result += String.fromCharCode(fileData[i].toInt());
         }
         resolve(result);
       } else {
@@ -182,7 +182,7 @@ export default class Utils {
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
     console.info("======================================= " + componentKey);
-    await Utils.sleep(2000)
+    waitForCompletion(async ()=>{await Utils.sleep(2000)})
     console.info('[' + componentKey + '] obj is: ' + strJson);
     return JSON.parseJsonElement(strJson);
   }
@@ -205,7 +205,7 @@ export default class Utils {
   static performClick(id: string): boolean {
     console.info('performClick id : ' + id);
     let result = inspector.sendEventByKey(id, 10, '');
-    await Utils.sleep(1000);
+    waitForCompletion(async ()=>{await Utils.sleep(1000)})
     console.info('performClick result : ' + result);
     return result
   }

@@ -134,6 +134,8 @@ async function getPhotoSession(testName: string, previewOutput: camera.PreviewOu
   console.info(TAG, testName + ' addOutput photoOutput passed.');
   await mPhotoSession.commitConfig();
   console.info(TAG, testName + ' commitConfig passed.');
+  await mPhotoSession.start();
+  console.info(TAG, testName + ' start passed.');
 }
 
 async function releasePhotoSession() {
@@ -667,7 +669,7 @@ export default function PhotoOutputBackTest() {
           });
           mPhotoOutput.capture();
           // 设置超时循环检查
-          const maxRetry = 30; // 最大重试次数
+          const maxRetry = 50; // 最大重试次数
           const interval = 200; // 检查间隔200ms
           for (let i = 0; i < maxRetry; i++) {
             await sleep(interval);
@@ -730,7 +732,7 @@ export default function PhotoOutputBackTest() {
           });
           mPhotoOutput.capture();
           // 设置超时循环检查
-          const maxRetry = 30; // 最大重试次数
+          const maxRetry = 50; // 最大重试次数
           const interval = 200; // 检查间隔200ms
           for (let i = 0; i < maxRetry; i++) {
             await sleep(interval);

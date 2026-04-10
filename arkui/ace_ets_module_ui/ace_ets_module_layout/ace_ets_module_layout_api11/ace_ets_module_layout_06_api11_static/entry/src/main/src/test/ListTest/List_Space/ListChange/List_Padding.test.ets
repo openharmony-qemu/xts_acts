@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function List_Padding() {
 
   describe('List_Padding', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("List_Padding beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")

@@ -27,6 +27,10 @@
     {
       "name":"red_1",
       "value":"#FFF04B3D"
+    },
+    {
+      "name": "my_color",
+      "value": "#FF00FF00"
     }
   ]
 }

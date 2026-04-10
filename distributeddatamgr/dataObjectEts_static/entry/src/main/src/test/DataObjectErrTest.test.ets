@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -174,7 +174,7 @@ export default function DataObjectErrTest() {
       try {
         await g_object.save("");
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'save fail: error code = ' + err.code)
         expect(err.code).assertEqual(401)
       }
@@ -197,7 +197,7 @@ export default function DataObjectErrTest() {
       try {
         g_object.bindAssetStore("attachment", bindInfo, () => { });
         console.info(TAG + 'bindAssetStore callback success');
-      } catch (err: Error) {
+      } catch (err) {
         if (err.code === 801) {
           console.error(TAG + 'This device type does not support. Code: ' + err.code + ',message: ' + err.message);
           expect(err.code).assertEqual(801);
@@ -225,7 +225,7 @@ export default function DataObjectErrTest() {
       try {
         g_object.bindAssetStore("attachment", bindInfo);
         console.info(TAG + 'bindAssetStore promise success');
-      } catch (err: Error) {
+      } catch (err) {
         if (err.code === 801) {
           console.error(TAG + 'This device type does not support. Code: ' + err.code + ',message: ' + err.message);
           expect(err.code).assertEqual(801);
@@ -254,7 +254,7 @@ export default function DataObjectErrTest() {
       try {
         await g_object.setAsset('file', uri);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAsset. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(15400003);
       }
@@ -278,7 +278,7 @@ export default function DataObjectErrTest() {
       try {
         await g_object.setAssets('file', uris);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAssets. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(15400003);
       }
@@ -300,7 +300,7 @@ export default function DataObjectErrTest() {
       try {
         g_object.onChange(changeCallback1);
         console.info(TAG + 'on20 success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on change20. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -323,7 +323,7 @@ export default function DataObjectErrTest() {
         g_object.onChange(changeCallback1);
         g_object.onChange(changeCallback1);
         console.info(TAG + 'on change 20 success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on change20. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -346,7 +346,7 @@ export default function DataObjectErrTest() {
         g_object.onChange(changeCallback1);
         g_object.onChange(changeCallback2);
         console.info(TAG + 'on change 20 success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on change20. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertFail();
       }
@@ -368,7 +368,7 @@ export default function DataObjectErrTest() {
       try {
         g_object.onStatus(statusCallback1);
         console.info(TAG + 'on status 20 success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on status20. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertFail();
       }
@@ -391,7 +391,7 @@ export default function DataObjectErrTest() {
         g_object.onStatus(statusCallback1);
         g_object.onStatus(statusCallback1);
         console.info(TAG + 'on status 20 success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on status20. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -414,7 +414,7 @@ export default function DataObjectErrTest() {
         g_object.onStatus(statusCallback1);
         g_object.onStatus(statusCallback2);
         console.info(TAG + 'on status 20 success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on status20. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -437,7 +437,7 @@ export default function DataObjectErrTest() {
         g_object.onChange(changeCallback1);
         g_object.offChange(changeCallback1);
         console.info(TAG + 'off change20 success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off change 20. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -461,7 +461,7 @@ export default function DataObjectErrTest() {
         g_object.onChange(changeCallback2);
         g_object.offChange();
         console.info(TAG + 'off change20 success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off change 20. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -484,7 +484,7 @@ export default function DataObjectErrTest() {
         g_object.onChange(changeCallback1);
         g_object.offChange(undefined);
         console.info(TAG + 'off change20 success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off change 20. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -506,7 +506,7 @@ export default function DataObjectErrTest() {
         g_object.onStatus(statusCallback1);
         g_object.offStatus(statusCallback1);
         console.info(TAG + 'off status20 success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off status20. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -530,7 +530,7 @@ export default function DataObjectErrTest() {
         g_object.onStatus(statusCallback2);
         g_object.offStatus();
         console.info(TAG + 'off status20 success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off status20. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -553,7 +553,7 @@ export default function DataObjectErrTest() {
         g_object.onStatus(statusCallback1);
         g_object.offStatus(undefined);
         console.info(TAG + 'off status20 success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off status20. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -575,7 +575,7 @@ export default function DataObjectErrTest() {
         let uri = 'file:1.txt';
         g_object.setAsset('attachment', uri);
         console.info(TAG + 'setAsset success.');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAsset. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -598,7 +598,7 @@ export default function DataObjectErrTest() {
         let uri = '';
         await g_object.setAsset('attachment', uri);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAsset. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(15400002);
       }
@@ -621,7 +621,7 @@ export default function DataObjectErrTest() {
         let uri = 'file:1.txt';
         await g_object.setAsset('', uri);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAsset. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(15400002);
       }
@@ -644,7 +644,7 @@ export default function DataObjectErrTest() {
         let uri = 'file:1.txt';
         await g_object.setAsset('', uri);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAsset. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(15400002);
       }
@@ -667,7 +667,7 @@ export default function DataObjectErrTest() {
         let uri = '';
         await g_object.setAsset('', uri);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAsset. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(15400002);
       }
@@ -692,7 +692,7 @@ export default function DataObjectErrTest() {
         g_object.setAsset('attachment', uri);
         g_object.setAsset('attachment', uri2);
         console.info(TAG + 'setAsset success.')
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAsset. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -715,7 +715,7 @@ export default function DataObjectErrTest() {
         let uris = ['file:1.txt'];
         g_object.setAssets('attachment', uris);
         console.info(TAG + 'setAssets success.')
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAssets. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -742,7 +742,7 @@ export default function DataObjectErrTest() {
         }
         g_object.setAssets('attachment', uris);
         console.info(TAG + 'setAssets success.')
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAssets. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -765,7 +765,7 @@ export default function DataObjectErrTest() {
         let uris: string[] = [];
         await g_object.setAssets('attachment', uris);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAssets. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(15400002);
       }
@@ -792,14 +792,14 @@ export default function DataObjectErrTest() {
         }
         await g_object.setAssets('attachment', uris);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAssets. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(15400002);
       }
       try {
         g_object.setAssets('attachment', ['file:1.txt'])
         console.info(TAG + 'setAssets success.')
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAssets. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -824,7 +824,7 @@ export default function DataObjectErrTest() {
         g_object.setAssets('attachment', uris1);
         g_object.setAssets('attachment', uris2);
         console.info(TAG + 'setAssets success.')
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAssets. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -854,7 +854,7 @@ export default function DataObjectErrTest() {
           expect(err.code).assertEqual(15400002);
           done();
         })
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAssets. code: ' + err.code + '.message:' + err.message);
       }
       console.info(TAG + '************ DataObjectErrTest47 end ************');
@@ -875,7 +875,7 @@ export default function DataObjectErrTest() {
         let uris: Array<string> = [];
         await g_object.setAssets('', uris);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAssets. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(15400002);
       }
@@ -898,7 +898,7 @@ export default function DataObjectErrTest() {
         let uris: Array<string> = [];
         await g_object.setAssets('attachment', uris);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to setAssets. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(15400002);
       }
@@ -920,7 +920,7 @@ export default function DataObjectErrTest() {
       try {
         g_object.onProgressChanged(progressCallback1);
         console.info(TAG + 'On progressChanged success');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on progressChanged. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -943,7 +943,7 @@ export default function DataObjectErrTest() {
         g_object.onProgressChanged(progressCallback1);
         g_object.onProgressChanged(progressCallback1);
         console.info(TAG + 'On progressChanged twice success');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on progressChanged. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -966,7 +966,7 @@ export default function DataObjectErrTest() {
         g_object.onProgressChanged(progressCallback1);
         g_object.onProgressChanged(progressCallback2);
         console.info(TAG + 'On progressChanged twice success');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on progressChanged. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -989,7 +989,7 @@ export default function DataObjectErrTest() {
         g_object.onProgressChanged(progressCallback1);
         g_object.offProgressChanged(progressCallback1);
         console.info(TAG + 'Off progressChanged success');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off progressChanged. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -1013,7 +1013,7 @@ export default function DataObjectErrTest() {
         g_object.onProgressChanged(progressCallback2);
         g_object.offProgressChanged(undefined);
         console.info(TAG + 'Off progressChanged success');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off progressChanged. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -1037,7 +1037,7 @@ export default function DataObjectErrTest() {
         g_object.onProgressChanged(progressCallback2);
         g_object.offProgressChanged();
         console.info(TAG + 'Off progressChanged success');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off progressChanged. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -1058,7 +1058,7 @@ export default function DataObjectErrTest() {
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context!, note);
       try {
         g_object.offChange(changeCallback1);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off change20. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(0);
       }
@@ -1079,7 +1079,7 @@ export default function DataObjectErrTest() {
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context!, note);
       try {
         g_object.offStatus(statusCallback1);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off status20. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(0);
       }
@@ -1100,7 +1100,7 @@ export default function DataObjectErrTest() {
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context!, note);
       try {
         g_object.offChange((sessionId: string, fields: Array<string>) => { });
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off change. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(0);
       }
@@ -1121,7 +1121,7 @@ export default function DataObjectErrTest() {
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context!, note);
       try {
         g_object.offStatus((sessionId: string, networkId: string, status: string) => { });
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off status. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(0);
       }
@@ -1142,7 +1142,7 @@ export default function DataObjectErrTest() {
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context!, note);
       try {
         g_object.offProgressChanged(progressCallback1);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off progress. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(0);
       }
@@ -1166,7 +1166,7 @@ export default function DataObjectErrTest() {
           g_object.onProgressChanged(progressCallback1);
         }
         console.info(TAG + 'On progressChanged 2000 end!');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on progressChanged. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -1190,7 +1190,7 @@ export default function DataObjectErrTest() {
           g_object.onStatus(statusCallback1);
         }
         console.info(TAG + 'On status 2000 end!');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on status. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -1214,7 +1214,7 @@ export default function DataObjectErrTest() {
           g_object.onChange(changeCallback1);
         }
         console.info(TAG + 'On status 2000 end!');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on status. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -1235,14 +1235,14 @@ export default function DataObjectErrTest() {
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context!, note);
       try {
         g_object.offProgressChanged(progressCallback1);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off progressChanged. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(0);
       }
       try {
         g_object.onProgressChanged(progressCallback1);
         console.info(TAG + 'on progressChanged success');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on progressChanged. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -1263,14 +1263,14 @@ export default function DataObjectErrTest() {
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context!, note);
       try {
         g_object.offStatus(statusCallback1);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off status. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(0);
       }
       try {
         g_object.onStatus(statusCallback1);
         console.info(TAG + 'on status success');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on status. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -1291,14 +1291,14 @@ export default function DataObjectErrTest() {
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context!, note);
       try {
         g_object.offChange(changeCallback1);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to off change. code: ' + err.code + '.message:' + err.message);
         expect(err.code).assertEqual(0);
       }
       try {
         g_object.onChange(changeCallback1);
         console.info(TAG + 'on change success');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'Failed to on change. code: ' + err.code + '.message:' + err.message);
         expect().assertFail();
       }
@@ -1323,7 +1323,7 @@ export default function DataObjectErrTest() {
         await g_object.setSessionId(sessionId);
         await sleep(2000);
         expect(sessionId == g_object["__sessionId"]).assertTrue();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
       console.info(TAG + '************ DataObjectErrTest70 end ************');
@@ -1345,7 +1345,7 @@ export default function DataObjectErrTest() {
       try {
         await g_object.setSessionId('123456@123');
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         expect(err.code).assertEqual(401);
       }
       console.info(TAG + '************ DataObjectErrTest71 end ************');

@@ -63,6 +63,20 @@ export default function userCertJsAPIFunctionTestUnit() {
         console.error(`SUB_Security_CertManager_UserCertJsApi_getUserTrustedCertificate_Func_0401 get error is: ${err.code}`)
         expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
       }
+      try {
+        await certManager.getUserTrustedCertificate(null);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_UserCertJsApi_getUserTrustedCertificate_Func_0401 get error is: ${err.code}`)
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+      try {
+        await certManager.getUserTrustedCertificate(undefined);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_UserCertJsApi_getUserTrustedCertificate_Func_0401 get error is: ${err.code}`)
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
       done();
     });
 

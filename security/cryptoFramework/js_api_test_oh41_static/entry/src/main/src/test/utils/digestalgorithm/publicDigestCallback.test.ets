@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -118,7 +118,7 @@ async function HmacDigestProcess(HMACAlgoName: string, keyAlgoName: string): Pro
     console.warn("[Callback]MAC len:" + macLen);
     symKey.clearMem();
     return { "output": macOutput, "macLength": macLen } as macData;
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error(`[Callback]HmacDigestProcess catch error: ${err}`);
     throw err as Error;
   }
@@ -141,7 +141,7 @@ async function HmacAnyLengthKeyDigestProcess(HMACAlgoName: string, dataBlob: cry
     console.warn("[Callback]MAC len:" + macLen);
     symKey.clearMem();
     return { "output": macOutput, "macLength": macLen } as macData;
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error(`[Callback]HmacDigestProcess catch error: ${err}`);
     throw err as Error;
   }

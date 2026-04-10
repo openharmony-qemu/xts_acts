@@ -25,16 +25,16 @@ import { BusinessError } from '@ohos.base';
 
 const TAG = "CameraSessionExposureTest: ";
 
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.VideoSession;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> = [];
+let mCameraSession: cameraObj.VideoSession | undefined;
 let mVideoRecorder: media.AVRecorder | undefined;
 let mVideoSurface: string | undefined;
 let mCameraNum: number;
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
-let mPhotoOutput: cameraObj.PhotoOutput;
-let mVideoOutput: cameraObj.VideoOutput;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
+let mPhotoOutput: cameraObj.PhotoOutput | undefined;
+let mVideoOutput: cameraObj.VideoOutput | undefined;
 let isVideoOutputCreated: boolean = false;
 let mIsExposureModeSupportedArray: Array<boolean> = new Array<boolean>();
 let mExposureBiasRangeArray: Array<Array<number>> = new Array<Array<number>>();
@@ -216,7 +216,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
 
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     /*
     mCameraManager.getSupportedCameras(async (err, data) => {
         console.info(TAG + "Entering getCameraSupportDevicesArray callback");
@@ -260,7 +260,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
     console.info('  Enter createCameraSessionInstance');
 
     try {
-      mCameraSession = mCameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
+      mCameraSession = mCameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
     } catch(err) {
       console.info('createCaptureSession FAILED');
     }
@@ -270,7 +270,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
       return false;
     }
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     console.info('  Exit createCameraSessionInstance');
 
@@ -278,7 +278,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
   }
 
   let releaseCameraSessionInstance = async (): Promise<void> => {
-    await mCameraSession.release();
+    await mCameraSession!.release();
   }
 
   let createInput = async (idx: int): Promise<boolean> => {
@@ -289,14 +289,14 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[idx.toInt()]);
 
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
     }
 
-    await mCameraInput.open();
+    await mCameraInput!.open();
 
     await Utils.msSleep(100);
 
@@ -311,7 +311,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
     console.info('Enter releaseInput');
 
     if (mCameraInput != undefined) {
-      await mCameraInput.close();
+      await mCameraInput!.close();
     }
 
     console.info('Exit releaseInput');
@@ -327,7 +327,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
     let j:int = 0;
     let k:int = 0;
     let equalFlag:boolean = false;
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_VIDEO);
+    let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_VIDEO);
 
     if (cameraOutputCap != undefined) {
       if (cameraOutputCap.previewProfiles != null && cameraOutputCap.photoProfiles !=null && cameraOutputCap.videoProfiles != null) {
@@ -356,18 +356,18 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
           }
         }
         if (equalFlag) {
-          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+          mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
           if (mPreviewOutput == undefined) {
             console.info(TAG + "createPreviewOutput FAILED");
           }
           console.info(TAG + "createPreviewOutput is: " + mPreviewOutput);
 
-          mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[j]);
+          mPhotoOutput = mCameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[j]);
           if (mPhotoOutput == undefined) {
             console.info(TAG + "createPhotoOutput FAILED");
           }
           console.info(TAG + "createPhotoOutput is: " + mPhotoOutput);
-          mVideoOutput = mCameraManager.createVideoOutput(cameraOutputCap.videoProfiles[k], mVideoSurface!);
+          mVideoOutput = mCameraManager!.createVideoOutput(cameraOutputCap.videoProfiles[k], mVideoSurface!);
           if (mVideoOutput == null || mVideoOutput == undefined) {
             console.info(TAG + "createVideoOutput FAILED");
           } else {
@@ -376,13 +376,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
           console.info(TAG + "createVideoOutput is: " + mVideoOutput);
 
         } else {
-          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceId);
+          mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceId);
           if (mPreviewOutput == undefined) {
             console.info(TAG + "createPreviewOutput FAILED");
           }
           console.info(TAG + "createPreviewOutput is: " + mPreviewOutput);
 
-          mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[0]);
+          mPhotoOutput = mCameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[0]);
           if (mPhotoOutput == undefined) {
             console.info(TAG + "createPhotoOutput FAILED");
           }
@@ -400,14 +400,14 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
     console.info('Enter releaseOutput');
 
     if (mPreviewOutput != undefined) {
-      await mPreviewOutput.release();
+      await mPreviewOutput!.release();
     }
 
     if (mPhotoOutput != undefined) {
-      await mPhotoOutput.release();
+      await mPhotoOutput!.release();
     }
     if (isVideoOutputCreated == true && mVideoOutput != null && mVideoOutput != undefined) {
-        await mVideoOutput.release();
+        await mVideoOutput!.release();
     }
     console.info('Exit releaseOutput');
 
@@ -424,27 +424,27 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to addInput");
-      mCameraSession.addInput(mCameraInput);
+      mCameraSession!.addInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to addOutput mPreviewOutput");
-      mCameraSession.addOutput(mPreviewOutput);
+      mCameraSession!.addOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to addOutput mPhotoOutput");
-      mCameraSession.addOutput(mPhotoOutput);
+      mCameraSession!.addOutput(mPhotoOutput!);
     }
     if (isVideoOutputCreated && mVideoOutput != null && mVideoOutput != undefined) {
         console.info(TAG + "Start to addOutput mVideoOutput");
-        mCameraSession.addOutput(mVideoOutput);
+        mCameraSession!.addOutput(mVideoOutput!);
     }
     await Utils.msSleep(1);
 
-    await mCameraSession.commitConfig();
+    await mCameraSession!.commitConfig();
     console.info(TAG + "commitConfig end");
-    await mCameraSession.start();
+    await mCameraSession!.start();
     console.info(TAG + "start end");
 
     await Utils.msSleep(1000);
@@ -456,31 +456,31 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
   let stopCameraSession = async (): Promise<boolean> => {
     console.info(TAG + "Enter stopCameraSession");
 
-    await mCameraSession.stop();
+    await mCameraSession!.stop();
     console.info(TAG + "stop end");
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
     console.info(TAG + "beginConfig end");
 
     await Utils.msSleep(100);
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to removeInput input");
-      mCameraSession.removeInput(mCameraInput);
+      mCameraSession!.removeInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPreviewOutput");
-      mCameraSession.removeOutput(mPreviewOutput);
+      mCameraSession!.removeOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPhotoOutput");
-      mCameraSession.removeOutput(mPhotoOutput);
+      mCameraSession!.removeOutput(mPhotoOutput!);
     }
     if (isVideoOutputCreated && mVideoOutput != null && mVideoOutput != undefined) {
         console.info(TAG + "Start to removeOutput mVideoOutput");
-        mCameraSession.removeOutput(mVideoOutput);
+        mCameraSession!.removeOutput(mVideoOutput!);
     }
     await releaseInput();
     await releaseOutput();
@@ -551,7 +551,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
           await startCameraSession(i);
 
           let isExposureModeSupported =
-            mCameraSession.isExposureModeSupported(cameraObj.ExposureMode.EXPOSURE_MODE_LOCKED);
+            mCameraSession!.isExposureModeSupported(cameraObj.ExposureMode.EXPOSURE_MODE_LOCKED);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_EXPOSURE_MODE_SUPPORT_PROMISE_STATIC_0100 finish");
           if (isExposureModeSupported != null || isExposureModeSupported != undefined) {
             console.info(TAG +
@@ -605,12 +605,12 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
           await startCameraSession(i);
 
           if (mIsExposureModeSupportedArray.length == mCameraNum) {
-            mCameraSession.setExposureMode(cameraObj.ExposureMode.EXPOSURE_MODE_LOCKED);
+            mCameraSession!.setExposureMode(cameraObj.ExposureMode.EXPOSURE_MODE_LOCKED);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_MODE_PROMISE_STATIC_0100 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_MODE_PROMISE_STATIC_0100 PASSED with ExposureMode is: " +
             cameraObj.ExposureMode.EXPOSURE_MODE_LOCKED);
-            let exposureMode = mCameraSession.getExposureMode();
+            let exposureMode = mCameraSession!.getExposureMode();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_MODE_PROMISE_STATIC_0100 finish");
             if (exposureMode == cameraObj.ExposureMode.EXPOSURE_MODE_LOCKED) {
               console.info(TAG +
@@ -664,7 +664,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
           await startCameraSession(i);
 
           let isExposureModeSupported =
-            mCameraSession.isExposureModeSupported(cameraObj.ExposureMode.EXPOSURE_MODE_AUTO);
+            mCameraSession!.isExposureModeSupported(cameraObj.ExposureMode.EXPOSURE_MODE_AUTO);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_EXPOSURE_MODE_SUPPORT_PROMISE_STATIC_0200 finish");
           if (isExposureModeSupported != null || isExposureModeSupported != undefined) {
             console.info(TAG +
@@ -713,13 +713,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
           await startCameraSession(i);
 
           if (mIsExposureModeSupportedArray.length == mCameraNum) {
-            mCameraSession.setExposureMode(cameraObj.ExposureMode.EXPOSURE_MODE_AUTO);
+            mCameraSession!.setExposureMode(cameraObj.ExposureMode.EXPOSURE_MODE_AUTO);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_MODE_PROMISE_STATIC_0200 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_MODE_PROMISE_STATIC_0200 PASSED with ExposureMode is: " +
             cameraObj.ExposureMode.EXPOSURE_MODE_AUTO);
 
-            let exposureMode = mCameraSession.getExposureMode();
+            let exposureMode = mCameraSession!.getExposureMode();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_MODE_PROMISE_STATIC_0200 finish");
             if (exposureMode == cameraObj.ExposureMode.EXPOSURE_MODE_AUTO) {
               console.info(TAG +
@@ -773,7 +773,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
           await startCameraSession(i);
 
           let isExposureModeSupported =
-            mCameraSession.isExposureModeSupported(cameraObj.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO);
+            mCameraSession!.isExposureModeSupported(cameraObj.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_EXPOSURE_MODE_SUPPORT_PROMISE_STATIC_0300 finish");
           if (isExposureModeSupported != null || isExposureModeSupported != undefined) {
             console.info(TAG +
@@ -823,15 +823,15 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
           await startCameraSession(i);
 
           if (mIsExposureModeSupportedArray.length == mCameraNum) {
-            if (mCameraSession.isExposureModeSupported(cameraObj.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO)) {
-              mCameraSession.setExposureMode(cameraObj.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO);
+            if (mCameraSession!.isExposureModeSupported(cameraObj.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO)) {
+              mCameraSession!.setExposureMode(cameraObj.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO);
               console.info(TAG +
                 "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_MODE_PROMISE_STATIC_0300 finish");
               console.info(TAG +
                 "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_MODE_PROMISE_STATIC_0300 PASSED with ExposureMode is: " +
               cameraObj.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO);
 
-              let exposureMode = mCameraSession.getExposureMode();
+              let exposureMode = mCameraSession!.getExposureMode();
               console.info(TAG +
                 "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_MODE_PROMISE_STATIC_0300 finish");
               if (exposureMode == cameraObj.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO) {
@@ -886,7 +886,7 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
           await startCameraSession(i);
 
-          let exposureBiasRange: Array<number> = mCameraSession.getExposureBiasRange();
+          let exposureBiasRange: Array<number> = mCameraSession!.getExposureBiasRange();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_EXPOSURE_BIAS_RANGE_PROMISE_STATIC_0100 finish");
           if (exposureBiasRange.length > 0) {
             mExposureBiasRangeArray[i] = exposureBiasRange;
@@ -945,13 +945,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0100 exposureBias is 0");
           } else {
             await startCameraSession(i);
-            mCameraSession.setExposureBias(exposureBias);
+            mCameraSession!.setExposureBias(exposureBias);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0100 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0100 PASSED with ExposureBias is: " +
             mExposureBiasRangeArray[i][0]);
 
-            let exposureValue = mCameraSession.getExposureValue();
+            let exposureValue = mCameraSession!.getExposureValue();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0100 finish");
             if (exposureValue == mExposureBiasRangeArray[i][0]) {
               console.info(TAG +
@@ -1002,13 +1002,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0200 exposureBias is 0");
           } else {
             await startCameraSession(i);
-            mCameraSession.setExposureBias(exposureBias - 1);
+            mCameraSession!.setExposureBias(exposureBias - 1);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0200 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0200 PASSED with ExposureBias is: " +
               (mExposureBiasMinArray[i] - 1));
 
-            let exposureValue = mCameraSession.getExposureValue();
+            let exposureValue = mCameraSession!.getExposureValue();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0200 finish");
             if (exposureValue != (exposureBias - 1)) {
               console.info(TAG +
@@ -1061,12 +1061,12 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0300 exposureBias is 0");
           } else {
             await startCameraSession(i);
-            mCameraSession.setExposureBias((exposureBias - 0.1) as number);
+            mCameraSession!.setExposureBias((exposureBias - 0.1) as number);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0300 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0300 PASSED with ExposureBias is: " +
               (mExposureBiasMinArray[i] - 0.1));
-            let exposureValue = mCameraSession.getExposureValue();
+            let exposureValue = mCameraSession!.getExposureValue();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0300 finish");
             if (exposureValue != (exposureBias - 0.1)) {
               console.info(TAG +
@@ -1118,13 +1118,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
           } else {
             await startCameraSession(i);
 
-            mCameraSession.setExposureBias(exposureBias + 1);
+            mCameraSession!.setExposureBias(exposureBias + 1);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0400 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0400 PASSED with ExposureBias is: " +
               (mExposureBiasMaxArray[i] + 1));
 
-            let exposureValue = mCameraSession.getExposureValue();
+            let exposureValue = mCameraSession!.getExposureValue();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0400 finish");
             if (exposureValue != (exposureBias + 1)) {
               console.info(TAG +
@@ -1179,13 +1179,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
           } else {
             await startCameraSession(i);
 
-            mCameraSession.setExposureBias((exposureBias + 0.1) as number);
+            mCameraSession!.setExposureBias((exposureBias + 0.1) as number);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0500 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0500 PASSED with ExposureBias is: " +
               (mExposureBiasMaxArray[i] + 0.1));
 
-            let exposureValue = mCameraSession.getExposureValue();
+            let exposureValue = mCameraSession!.getExposureValue();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_EXPOSURE_BIAS_PROMISE_STATIC_0500 finish");
             if (exposureValue != (exposureBias + 0.1)) {
               console.info(TAG +
@@ -1235,13 +1235,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
           await startCameraSession(i);
 
-          mCameraSession.setMeteringPoint(mMETERINGPoint);
+          mCameraSession!.setMeteringPoint(mMETERINGPoint);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0100 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0100 PASSED with METERINGPoint is: " +
           mMETERINGPoint.x + ", " + mMETERINGPoint.y);
 
-          let METERINGPoint = mCameraSession.getMeteringPoint();
+          let METERINGPoint = mCameraSession!.getMeteringPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0100 finish");
           if ((METERINGPoint.x == mMETERINGPoint.x) && (METERINGPoint.y == mMETERINGPoint.y)) {
             console.info(TAG +
@@ -1287,13 +1287,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
           await startCameraSession(i);
 
-          mCameraSession.setMeteringPoint(mMETERINGPointLT);
+          mCameraSession!.setMeteringPoint(mMETERINGPointLT);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0200 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0200 PASSED with METERINGPoint is: " +
           mMETERINGPointLT.x + ", " + mMETERINGPointLT.y);
 
-          let METERINGPoint = mCameraSession.getMeteringPoint();
+          let METERINGPoint = mCameraSession!.getMeteringPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0200 finish");
           if ((Math.abs(METERINGPoint.x - mMETERINGPointLT.x) >= 0) &&
             (Math.abs(METERINGPoint.y - mMETERINGPointLT.y) >= 0)) {
@@ -1343,13 +1343,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
           await startCameraSession(i);
 
-          mCameraSession.setMeteringPoint(mMETERINGPointRT);
+          mCameraSession!.setMeteringPoint(mMETERINGPointRT);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0300 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0300 PASSED with METERINGPoint is: " +
           mMETERINGPointRT.x + ", " + mMETERINGPointRT.y);
 
-          let METERINGPoint = mCameraSession.getMeteringPoint();
+          let METERINGPoint = mCameraSession!.getMeteringPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0300 finish");
           if ((Math.abs(METERINGPoint.x - mMETERINGPointRT.x) >= 0) &&
             (Math.abs(METERINGPoint.y - mMETERINGPointRT.y) >= 0)) {
@@ -1399,13 +1399,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
           await startCameraSession(i);
 
-          mCameraSession.setMeteringPoint(mMETERINGPointLB);
+          mCameraSession!.setMeteringPoint(mMETERINGPointLB);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0400 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0400 PASSED with METERINGPoint is: " +
           mMETERINGPointLB.x + ", " + mMETERINGPointRB.y);
 
-          let METERINGPoint = mCameraSession.getMeteringPoint();
+          let METERINGPoint = mCameraSession!.getMeteringPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0400 finish");
           if ((Math.abs(METERINGPoint.x - mMETERINGPointLB.x) >= 0) &&
             (Math.abs(METERINGPoint.y - mMETERINGPointLB.y) >= 0)) {
@@ -1455,13 +1455,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
           await startCameraSession(i);
 
-          mCameraSession.setMeteringPoint(mMETERINGPointRB);
+          mCameraSession!.setMeteringPoint(mMETERINGPointRB);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0500 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0500 PASSED with METERINGPoint is: " +
           mMETERINGPointRB.x + ", " + mMETERINGPointRB.y);
 
-          let METERINGPoint = mCameraSession.getMeteringPoint();
+          let METERINGPoint = mCameraSession!.getMeteringPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0500 finish");
           if ((METERINGPoint.x == mMETERINGPointRB.x) && (METERINGPoint.y == mMETERINGPointRB.y)) {
             console.info(TAG +
@@ -1509,13 +1509,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
           await startCameraSession(i);
 
-          mCameraSession.setMeteringPoint(mMETERINGPointInvalidLT);
+          mCameraSession!.setMeteringPoint(mMETERINGPointInvalidLT);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0600 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0600 PASSED with METERINGPoint is: " +
           mMETERINGPointInvalidLT.x + ", " + mMETERINGPointInvalidLT.y);
 
-          let METERINGPoint = mCameraSession.getMeteringPoint();
+          let METERINGPoint = mCameraSession!.getMeteringPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0600 finish");
           if (((METERINGPoint.x != mMETERINGPointInvalidLT.x) && (METERINGPoint.y != mMETERINGPointInvalidLT.y)) ||
             (mEnableCheckInvalidMETERINGPoint == false)) {
@@ -1565,13 +1565,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
           await startCameraSession(i);
 
-          mCameraSession.setMeteringPoint(mMETERINGPointInvalidRT);
+          mCameraSession!.setMeteringPoint(mMETERINGPointInvalidRT);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0700 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0700 PASSED with METERINGPoint is: " +
           mMETERINGPointInvalidRT.x + ", " + mMETERINGPointInvalidRT.y);
 
-          let METERINGPoint = mCameraSession.getMeteringPoint();
+          let METERINGPoint = mCameraSession!.getMeteringPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0700 finish");
           if (((METERINGPoint.x != mMETERINGPointInvalidRT.x) && (METERINGPoint.y != mMETERINGPointInvalidRT.y)) ||
             (mEnableCheckInvalidMETERINGPoint == false)) {
@@ -1621,13 +1621,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
           await startCameraSession(i);
 
-          mCameraSession.setMeteringPoint(mMETERINGPointInvalidLB);
+          mCameraSession!.setMeteringPoint(mMETERINGPointInvalidLB);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0800 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0800 PASSED with METERINGPoint is: " +
           mMETERINGPointInvalidLB.x + ", " + mMETERINGPointInvalidRB.y);
 
-          let METERINGPoint = mCameraSession.getMeteringPoint();
+          let METERINGPoint = mCameraSession!.getMeteringPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0800 finish");
           if (((METERINGPoint.x != mMETERINGPointInvalidLB.x) && (METERINGPoint.y != mMETERINGPointInvalidLB.y)) ||
             (mEnableCheckInvalidMETERINGPoint == false)) {
@@ -1676,13 +1676,13 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
           await startCameraSession(i);
 
-          mCameraSession.setMeteringPoint(mMETERINGPointInvalidRB);
+          mCameraSession!.setMeteringPoint(mMETERINGPointInvalidRB);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0900 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0900 PASSED with METERINGPoint is: " +
           mMETERINGPointInvalidRB.x + ", " + mMETERINGPointInvalidRB.y);
 
-          let METERINGPoint = mCameraSession.getMeteringPoint();
+          let METERINGPoint = mCameraSession!.getMeteringPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_METERING_POINT_PROMISE_STATIC_0900 finish");
           if (((METERINGPoint.x != mMETERINGPointInvalidRB.x) && (METERINGPoint.y != mMETERINGPointInvalidRB.y)) ||
             (mEnableCheckInvalidMETERINGPoint == false)) {

@@ -42,6 +42,8 @@
 #include "textTest/TextTest.h"
 #include "textTest/TextInputTest.h"
 #include "textTest/TextAreaTest.h"
+#include "swiper/SwiperFakeTest.h"
+#include "textLayoutManager/TextLayoutManager.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -112,6 +114,26 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TextTest", nullptr, TextTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextInputTest", nullptr, TextInputTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextAreaTest", nullptr, TextAreaTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CreateNativeSwiperNode", nullptr, SwiperFakeTest::CreateNativeSwiperNode, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"TextLayoutManagerTest001", nullptr, TextLayoutManagerTest::TextLayoutManagerTest001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"TextLayoutManagerTest002", nullptr, TextLayoutManagerTest::TextLayoutManagerTest002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"check_TextLayoutManagerTest002", nullptr, TextLayoutManagerTest::check_TextLayoutManagerTest002, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"TextLayoutManagerTest003", nullptr, TextLayoutManagerTest::TextLayoutManagerTest003, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"TextLayoutManagerTest004", nullptr, TextLayoutManagerTest::TextLayoutManagerTest004, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"TextLayoutManagerTest005", nullptr, TextLayoutManagerTest::TextLayoutManagerTest005, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"check_g_GetRectsForRange_ret", nullptr, TextLayoutManagerTest::check_g_GetRectsForRange_ret, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"check_g_GetGlyphPositionAtCoordinate_ret", nullptr, TextLayoutManagerTest::check_g_GetGlyphPositionAtCoordinate_ret, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"check_g_GetLineMetrics_ret", nullptr, TextLayoutManagerTest::check_g_GetLineMetrics_ret, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

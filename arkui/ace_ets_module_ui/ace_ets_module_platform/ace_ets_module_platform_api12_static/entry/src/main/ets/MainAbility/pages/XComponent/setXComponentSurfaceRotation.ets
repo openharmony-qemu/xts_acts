@@ -37,10 +37,11 @@ import {
   Video,
   VideoController,
   XComponent,
+  XComponentOptions,
   XComponentController,
   XComponentParameters,
   XComponentType
-} from '@ohos.arkui.component';
+} from '@kit.ArkUI';
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -56,12 +57,10 @@ struct SetXComponentSurfaceRotation1 {
       Text(JSON.stringify(this.SurfaceRotation)).id("setXComponentSurfaceRotation_text")
         .fontSize(12)
       XComponent({
-        id: 'xcomponent',
         type: XComponentType.TEXTURE,
-        nativeXComponentHandler: ((value0: long): void => {
-        }),
         controller: this.xComponentController
-      } as XComponentParameters)
+      } as XComponentOptions)
+        .id('xcomponent')
         .onLoad((): void => {
           this.SurfaceRotation = { lock: false }
           this.xComponentController.setXComponentSurfaceRotation(this.SurfaceRotation as SurfaceRotationOptions)

@@ -40,27 +40,27 @@ export default function DialogDismissEventTest() {
     })
 
     /**
-     * @tc.name   DialogModelTest_001
+     * @tc.name   DialogModelTest_001Adapt001
      * @tc.number SUB_DIALOG_CAPI_0200
      * @tc.desc   testing DialogDismissEvent_GetUserData
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('DialogModelTest_001', Level.LEVEL1, async (done: Function) => {
+    it('DialogModelTest_001Adapt001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArkUI002()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   DialogModelTest_001
+     * @tc.name   DialogModelTest_001Adapt002
      * @tc.number SUB_DIALOG_CAPI_0300
      * @tc.desc   testing OH_ArkUI_DialogDismissEvent_GetDissReason
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('DialogModelTest_001', Level.LEVEL1, async (done: Function) => {
+    it('DialogModelTest_001Adapt002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArkUI003()).assertEqual(0)
       done()
     })

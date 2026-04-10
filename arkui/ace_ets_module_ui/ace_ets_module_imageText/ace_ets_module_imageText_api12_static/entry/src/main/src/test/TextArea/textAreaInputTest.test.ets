@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaInputTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -74,13 +74,13 @@ export default function textAreaInputTest() {
      * @tc.level   Level.LEVEL0
      */
     it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
+      let driver = Driver.create();
+      console.info('textAreaInputTest textAreaInputTest0001 START');
+      await CommonFunc.sleep(1000);
+      let textArea1 = await (driver.findComponent(ON.id('textArea1')) as Promise<Component>);
+      await CommonFunc.sleep(500);
+      let textArea2 = await (driver.findComponent(ON.id('textArea2')) as Promise<Component>);
       if (AppStorage.get<number>("winLeft") == 0) {
-        let driver = Driver.create();
-        console.info('textAreaInputTest textAreaInputTest0001 START');
-        await CommonFunc.sleep(1000);
-        let textArea1 = await (driver.findComponent(ON.id('textArea1')) as Promise<Component>);
-        await CommonFunc.sleep(500);
-        let textArea2 = await (driver.findComponent(ON.id('textArea2')) as Promise<Component>);
         await CommonFunc.sleep(500);
         await textArea2.click()
         await CommonFunc.sleep(500);
@@ -91,7 +91,7 @@ export default function textAreaInputTest() {
           await CommonFunc.sleep(500);
           await button1.click();
           await CommonFunc.sleep(500);
-        }catch(e: Error){
+        }catch(e){
           console.log('下一步 error')
         }
           await textArea1.longClick();
@@ -100,7 +100,7 @@ export default function textAreaInputTest() {
             let button3 = await (driver.findComponent(ON.text('全选')) as Promise<Component>);
             await CommonFunc.sleep(500);
             await button3.click();
-          }catch(e: Error){
+          }catch(e){
             console.log('全选1 error')
           }
           console.info('textAreaInputTest0001 全选 success');
@@ -113,7 +113,7 @@ export default function textAreaInputTest() {
             let button4 = await (driver.findComponent(ON.text('取消')) as Promise<Component>);
             await CommonFunc.sleep(500);
             await button4.click();
-          }catch(e: Error){
+          }catch(e){
             console.log('取消 error')
           }
           await CommonFunc.sleep(500);
@@ -125,7 +125,7 @@ export default function textAreaInputTest() {
            let button5 = await (driver.findComponent(ON.text('全选')) as Promise<Component>);
            await CommonFunc.sleep(500);
            await button5.click();
-         }catch(e: Error){
+         }catch(e){
            console.log('全选2 error')
          }
           await CommonFunc.sleep(500);
@@ -134,7 +134,7 @@ export default function textAreaInputTest() {
             let button6 = await (driver.findComponent(ON.text('复制')) as Promise<Component>);
             await CommonFunc.sleep(500);
             await button6.click();
-          }catch(e: Error){
+          }catch(e){
             console.log('复制 error')
           }
           await CommonFunc.sleep(500);
@@ -146,11 +146,18 @@ export default function textAreaInputTest() {
             let button7 = await (driver.findComponent(ON.type('Button')) as Promise<Component>);
             await CommonFunc.sleep(500);
             await button7.click();
-          }catch(e: Error){
+          }catch(e){
             console.log('复制 error')
           }
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 2 Button success');
+      }else {
+        await textArea2.inputText('aaa');
+        await CommonFunc.sleep(500);
+        let area2Text = await textArea2.getText();
+        if(area2Text != 'aaa'){
+          await driver.triggerKey(2047)
+        }
       }
       
       expect("").assertEqual("");

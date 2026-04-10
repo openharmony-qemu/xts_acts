@@ -36,7 +36,7 @@ import { RecordData } from '@ohos.base';
 export default function select() {
   describe('ActsAceBasicSelectTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("select beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.select.api12.static", "EntryAbility")
       

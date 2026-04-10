@@ -17,6 +17,12 @@
 #include "swiper/SwiperTest.h"
 #include "publicAttribute/XtsTestCaseTest.cpp"
 #include "xcomponent/XcomponentTest.h"
+#include "button/ButtonTest.h"
+#include "checkbox/CheckboxTest.h"
+#include "checkboxgroup/CheckboxgroupTest.h"
+#include "radio//RadioTest.h"
+#include "slider/SliderTest.h"
+#include "toggle/ToggleTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -46,6 +52,12 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"XComponentTextureCreateNativeNode", nullptr, ArkUIXComponentCApiDemo::XComponentTextureTest::CreateNativeNode,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"buttonTest", nullptr, ButtonTest::buttonTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"checkBoxTest", nullptr, CheckBoxTest::checkBoxTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"checkBoxGroupTest", nullptr, CheckBoxGroupTest::checkBoxGroupTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"radioTest", nullptr, RadioTest::radioTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"sliderTest", nullptr, SliderTest::sliderTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"toggleTest", nullptr, ToggleTest::toggleTest, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

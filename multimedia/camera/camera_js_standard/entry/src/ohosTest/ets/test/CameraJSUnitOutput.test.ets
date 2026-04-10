@@ -2785,14 +2785,14 @@ export default function cameraJSUnitOutput() {
 
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MOVING_PHOTO_0300
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MOVING_PHOTO_0300Adapt001
      * @tc.number SUB_MULTIMEDIA_CAMERA_FRAME_SHUTTER_END_INFO_0100
      * @tc.desc   frame shutter end info
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MOVING_PHOTO_0300', Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MOVING_PHOTO_0300Adapt001', Level.LEVEL2, async (done: Function) => {
 
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MOVING_PHOTO_0300--------------");
       // 创建相机
@@ -2979,14 +2979,14 @@ export default function cameraJSUnitOutput() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100Adapt001
      * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100
      * @tc.desc   video output get supported frame rates
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100', Level.LEVEL1, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100Adapt001', Level.LEVEL1, async (done: Function) => {
       console.info("--------------BEGIN SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100--------------");    
 
       // 创建一个Video会话
@@ -3661,6 +3661,58 @@ export default function cameraJSUnitOutput() {
         console.info('previewOutput release failed: ' + err.code)
         expect().assertFail()
       }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100
+     * @tc.desc   preview output set frame rate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100--------------");
+      cameraManager = cameraObj.getCameraManager(context);
+      let camerasArray = cameraManager.getSupportedCameras();
+      if (isEmpty(cameraManager)) {
+          console.info(TAG + "mCameraManager == null || undefined");
+          expect().assertFail();
+      }
+      let captureSession = cameraManager.createSession(cameraObj.SceneMode.NORMAL_PHOTO);
+      if (isEmpty(captureSession)) {
+          console.info(TAG + "captureSession == null || undefined");
+          expect().assertFail();
+      }
+      console.info("SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100 camera:" + camerasArray[0].cameraId);
+      let cameraOutputCap = getSupportedOutputCapabilityInPromise(camerasArray[0], cameraObj.SceneMode.NORMAL_PHOTO);
+      if (isEmpty(cameraOutputCap)) {
+          console.info(TAG + "Entering cameraOutputCap == null || undefined");
+          expect().assertFail();
+      }
+      let cameraInput = cameraManager.createCameraInput(camerasArray[0]);
+      if (isEmpty(cameraInput)) {
+          console.info(TAG + "Entering cameraInput == null || undefined");
+          expect().assertFail();
+      }
+      let previewProfiles = cameraOutputCap?.previewProfiles[0];
+      previewOutput = cameraManager.createDeferredPreviewOutput(previewProfiles)
+      await cameraInput.open();
+      captureSession.beginConfig();
+      if (!isEmpty(cameraInput)) {
+          console.info(TAG + "Start to addInput");
+          captureSession.addInput(cameraInput);
+      }
+      if (!isEmpty(previewOutput)) {
+          console.info(TAG + "Start to addOutput previewOutput");
+          captureSession.addOutput(previewOutput);
+      }
+      await captureSession.commitConfig();
+      await previewOutput.addDeferredSurface(surfaceIds);
+      await captureSession.release();
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100 PASS");
+      await sleep(1000);
       done();
     })
   })

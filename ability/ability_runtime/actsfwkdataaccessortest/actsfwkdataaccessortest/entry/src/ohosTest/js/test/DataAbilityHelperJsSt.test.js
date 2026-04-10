@@ -180,6 +180,29 @@ describe('ActsDataAbilityHelperTest', function () {
     })
 
     /**
+     * @tc.name   ACTS_AcquireDataAbilityHelper_0600
+     * @tc.number ACTS_AcquireDataAbilityHelper_0600
+     * @tc.desc   Check the return value of the interface (null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_AcquireDataAbilityHelper_0600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_AcquireDataAbilityHelper_0600====<begin');
+      try {
+        var abilityHelper = featureAbility.acquireDataAbilityHelper(null)
+        console.log('ACTS_AcquireDataAbilityHelper_0600 abilityHelper ====>: '
+          + abilityHelper + " ,JSON. " + JSON.stringify(abilityHelper))
+        expect(JSON.stringify(abilityHelper)).assertEqual("null");
+      } catch (err) {
+        console.error('=ACTS_GetDataAbilityHelper_0600 acquireDataAbilityHelper catch(err)====>:' + err);
+        expect(false).assertTrue();
+      }
+      done();
+      console.log('ACTS_AcquireDataAbilityHelper_0600====<end')
+    })
+
+    /**
      * @tc.name   ACTS_Insert_0100
      * @tc.number ACTS_Insert_0100
      * @tc.desc   Check the return value of the interface (by Promise)
@@ -9035,4 +9058,3175 @@ describe('ActsDataAbilityHelperTest', function () {
             done();
         }
     })
-})}
+
+
+    /**
+     * @tc.name   ACTS_Query_1900
+     * @tc.number ACTS_Query_1900
+     * @tc.desc   Test query with empty array columns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_Query_1900', Level.LEVEL0, async function (done) {
+      console.log('ACTS_Query_1900====<begin');
+      try {
+        expect(typeof (DAHelper)).assertEqual("object");
+        DAHelper.query(dataAbilityUri, [])
+          .then((data) => {
+            console.log("=ACTS_Query_1900 query then data====>" + JSON.stringify(data));
+            expect(true).assertTrue();
+            done();
+          }).catch((err) => {
+          console.log("=ACTS_Query_1900 query catch err ====>" + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (err) {
+        console.log('=ACTS_Query_1900 catch(err)====>:' + JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   ACTS_Query_2000
+     * @tc.number ACTS_Query_2000
+     * @tc.desc   Test query with null array columns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_Query_2000', Level.LEVEL0, async function (done) {
+      console.log('ACTS_Query_2000====<begin');
+      try {
+        expect(typeof (DAHelper)).assertEqual("object");
+        DAHelper.query(dataAbilityUri, null)
+          .then((data) => {
+            console.log("=ACTS_Query_2000 query then data====>" + JSON.stringify(data));
+            expect(true).assertTrue();
+            done();
+          }).catch((err) => {
+          console.log("=ACTS_Query_2000 query catch err ====>" + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (err) {
+        console.log('=ACTS_Query_2000 catch(err)====>:' + JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   ACTS_OPENFILE_2100
+     * @tc.number ACTS_OPENFILE_2100
+     * @tc.desc   Test openFile with uri="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_OPENFILE_2100', Level.LEVEL0, async function (done) {
+      console.log('ACTS_OPENFILE_2100====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const mode = "r";
+
+        DAHelper.openFile(uri, mode, (err, data) => {
+          try {
+            console.log('=ACTS_OPENFILE_2100 err ====>:' + JSON.stringify(err))
+            if (err) {
+              expect(err.code).assertEqual(-1)
+            } else {
+              console.log("=ACTS_OPENFILE_2100 data=====>" + JSON.stringify(data))
+            }
+            done()
+          } catch (error) {
+            console.log('=ACTS_OPENFILE_2100 catch error ====>:' + JSON.stringify(error))
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.log('=ACTS_OPENFILE_2100 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_OPENFILE_2100====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_OPENFILE_2200
+     * @tc.number ACTS_OPENFILE_2200
+     * @tc.desc   Test openFile with mode="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_OPENFILE_2200', Level.LEVEL0, async function (done) {
+      console.log('ACTS_OPENFILE_2200====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const mode = "";
+
+        DAHelper.openFile(uri, mode, (err, data) => {
+          try {
+            console.log('=ACTS_OPENFILE_2200 err ====>:' + JSON.stringify(err))
+            if (err) {
+              expect(err.code).assertEqual(0)
+            } else {
+              console.log("=ACTS_OPENFILE_2200 data=====>" + JSON.stringify(data))
+            }
+            done()
+          } catch (error) {
+            console.log('=ACTS_OPENFILE_2200 catch error ====>:' + JSON.stringify(error))
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.log('=ACTS_OPENFILE_2200 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_OPENFILE_2200====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_OPENFILE_2300
+     * @tc.number ACTS_OPENFILE_2300
+     * @tc.desc   Test openFile with uri=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_OPENFILE_2300', Level.LEVEL0, async function (done) {
+      console.log('ACTS_OPENFILE_2300====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const mode = "r";
+
+        DAHelper.openFile(uri, mode, (err, data) => {
+          try {
+            console.log('=ACTS_OPENFILE_2300 err ====>:' + JSON.stringify(err))
+            if (err) {
+              expect(err.code).assertEqual(-1)
+            } else {
+              console.log("=ACTS_OPENFILE_2300 data=====>" + JSON.stringify(data))
+            }
+            done()
+          } catch (error) {
+            console.log('=ACTS_OPENFILE_2300 catch error ====>:' + JSON.stringify(error))
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.log('=ACTS_OPENFILE_2300 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_OPENFILE_2300====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_OPENFILE_2400
+     * @tc.number ACTS_OPENFILE_2400
+     * @tc.desc   Test openFile with mode=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_OPENFILE_2400', Level.LEVEL0, async function (done) {
+      console.log('ACTS_OPENFILE_2400====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const mode = undefined;
+
+        DAHelper.openFile(uri, mode, (err, data) => {
+          try {
+            console.log('=ACTS_OPENFILE_2400 err ====>:' + JSON.stringify(err))
+            if (err) {
+              expect(err.code).assertEqual(0)
+            } else {
+              console.log("=ACTS_OPENFILE_2400 data=====>" + JSON.stringify(data))
+            }
+            done()
+          } catch (error) {
+            console.log('=ACTS_OPENFILE_2400 catch error ====>:' + JSON.stringify(error))
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.log('=ACTS_OPENFILE_2400 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_OPENFILE_2400====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_OPENFILE_2500
+     * @tc.number ACTS_OPENFILE_2500
+     * @tc.desc   Test openFile with uri=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_OPENFILE_2500', Level.LEVEL0, async function (done) {
+      console.log('ACTS_OPENFILE_2500====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const mode = "r";
+
+        DAHelper.openFile(uri, mode, (err, data) => {
+          try {
+            console.log('=ACTS_OPENFILE_2500 err ====>:' + JSON.stringify(err))
+            if (err) {
+              expect(err.code).assertEqual(-1)
+            } else {
+              console.log("=ACTS_OPENFILE_2500 data=====>" + JSON.stringify(data))
+            }
+            done()
+          } catch (error) {
+            console.log('=ACTS_OPENFILE_2500 catch error ====>:' + JSON.stringify(error))
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.log('=ACTS_OPENFILE_2500 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_OPENFILE_2500====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_OPENFILE_2600
+     * @tc.number ACTS_OPENFILE_2600
+     * @tc.desc   Test openFile with mode=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_OPENFILE_2600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_OPENFILE_2600====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const mode = null;
+
+        DAHelper.openFile(uri, mode, (err, data) => {
+          try {
+            console.log('=ACTS_OPENFILE_2600 err ====>:' + JSON.stringify(err))
+            if (err) {
+              expect(err.code).assertEqual(0)
+            } else {
+              console.log("=ACTS_OPENFILE_2600 data=====>" + JSON.stringify(data))
+            }
+            done()
+          } catch (error) {
+            console.log('=ACTS_OPENFILE_2600 catch error ====>:' + JSON.stringify(error))
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.log('=ACTS_OPENFILE_2600 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_OPENFILE_2600====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETTYPE_2700
+     * @tc.number ACTS_GETTYPE_2700
+     * @tc.desc   Test getType with uri="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETTYPE_2700', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETTYPE_2700====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+
+        DAHelper.getType(uri, (err, data) => {
+          try {
+            console.log('=ACTS_GETTYPE_2700 err ====>:' + JSON.stringify(err))
+            if (err) {
+              expect(err.code).assertEqual(-1)
+            } else {
+              console.log("=ACTS_GETTYPE_2700 data=====>" + JSON.stringify(data))
+            }
+            done()
+          } catch (error) {
+            console.log('=ACTS_GETTYPE_2700 catch error ====>:' + JSON.stringify(error))
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.log('=ACTS_GETTYPE_2700 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_GETTYPE_2700====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETTYPE_2800
+     * @tc.number ACTS_GETTYPE_2800
+     * @tc.desc   Test getType with uri=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETTYPE_2800', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETTYPE_2800====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+
+        DAHelper.getType(uri, (err, data) => {
+          try {
+            console.log('=ACTS_GETTYPE_2800 err ====>:' + JSON.stringify(err))
+            if (err) {
+              expect(err.code).assertEqual(-1)
+            } else {
+              console.log("=ACTS_GETTYPE_2800 data=====>" + JSON.stringify(data))
+            }
+            done()
+          } catch (error) {
+            console.log('=ACTS_GETTYPE_2800 catch error ====>:' + JSON.stringify(error))
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.log('=ACTS_GETTYPE_2800 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_GETTYPE_2800====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETTYPE_2900
+     * @tc.number ACTS_GETTYPE_2900
+     * @tc.desc   Test getType with uri=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETTYPE_2900', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETTYPE_2900====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+
+        DAHelper.getType(uri, (err, data) => {
+          try {
+            console.log('=ACTS_GETTYPE_2900 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_GETTYPE_2900 catch error ====>:' + JSON.stringify(error))
+
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_GETTYPE_2900 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_GETTYPE_2900====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETFILETYPES_3000
+     * @tc.number ACTS_GETFILETYPES_3000
+     * @tc.desc   Test getFileTypes with uri="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETFILETYPES_3000', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETFILETYPES_3000====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const mimeTypeFilter = "*/*";
+
+        DAHelper.getFileTypes(uri, mimeTypeFilter, (err, data) => {
+          try {
+            console.log('=ACTS_GETFILETYPES_3000 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_GETFILETYPES_3000 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_GETFILETYPES_3000 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_GETFILETYPES_3000====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETFILETYPES_3100
+     * @tc.number ACTS_GETFILETYPES_3100
+     * @tc.desc   Test getFileTypes with mimeTypeFilter="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETFILETYPES_3100', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETFILETYPES_3100====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const mimeTypeFilter = "";
+
+        DAHelper.getFileTypes(uri, mimeTypeFilter, (err, data) => {
+          console.log('=ACTS_GETFILETYPES_3100 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_GETFILETYPES_3100 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+
+        })
+      } catch (err) {
+        console.log('=ACTS_GETFILETYPES_3100 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_GETFILETYPES_3100====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETFILETYPES_3200
+     * @tc.number ACTS_GETFILETYPES_3200
+     * @tc.desc   Test getFileTypes with uri=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETFILETYPES_3200', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETFILETYPES_3200====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const mimeTypeFilter = "*/*";
+
+        DAHelper.getFileTypes(uri, mimeTypeFilter, (err, data) => {
+          console.log('=ACTS_GETFILETYPES_3200 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_GETFILETYPES_3200 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+
+        })
+      } catch (err) {
+        console.log('=ACTS_GETFILETYPES_3200 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_GETFILETYPES_3200====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETFILETYPES_3300
+     * @tc.number ACTS_GETFILETYPES_3300
+     * @tc.desc   Test getFileTypes with mimeTypeFilter=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETFILETYPES_3300', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETFILETYPES_3300====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const mimeTypeFilter = undefined;
+
+        DAHelper.getFileTypes(uri, mimeTypeFilter, (err, data) => {
+          console.log('=ACTS_GETFILETYPES_3300 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_GETFILETYPES_3300 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+
+        })
+      } catch (err) {
+        console.log('=ACTS_GETFILETYPES_3300 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_GETFILETYPES_3300====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETFILETYPES_3400
+     * @tc.number ACTS_GETFILETYPES_3400
+     * @tc.desc   Test getFileTypes with uri=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETFILETYPES_3400', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETFILETYPES_3400====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const mimeTypeFilter = "*/*";
+
+        DAHelper.getFileTypes(uri, mimeTypeFilter, (err, data) => {
+          try {
+            console.log('=ACTS_GETFILETYPES_3400 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_GETFILETYPES_3400 catch error ====>:' + JSON.stringify(error))
+
+          }
+          done()
+
+        })
+      } catch (err) {
+        console.log('=ACTS_GETFILETYPES_3400 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_GETFILETYPES_3400====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETFILETYPES_3500
+     * @tc.number ACTS_GETFILETYPES_3500
+     * @tc.desc   Test getFileTypes with mimeTypeFilter=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETFILETYPES_3500', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETFILETYPES_3500====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const mimeTypeFilter = null;
+
+        DAHelper.getFileTypes(uri, mimeTypeFilter, (err, data) => {
+          console.log('=ACTS_GETFILETYPES_3500 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_GETFILETYPES_3500 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+
+        })
+      } catch (err) {
+        console.log('=ACTS_GETFILETYPES_3500 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_GETFILETYPES_3500====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_NORMALIZEURI_3600
+     * @tc.number ACTS_NORMALIZEURI_3600
+     * @tc.desc   Test normalizeUri with uri="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_NORMALIZEURI_3600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_NORMALIZEURI_3600====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+
+        DAHelper.normalizeUri(uri, (err, data) => {
+          try {
+            console.log('=ACTS_NORMALIZEURI_3600 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_NORMALIZEURI_3600 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+
+        })
+      } catch (err) {
+        console.log('=ACTS_NORMALIZEURI_3600 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_NORMALIZEURI_3600====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_NORMALIZEURI_3700
+     * @tc.number ACTS_NORMALIZEURI_3700
+     * @tc.desc   Test normalizeUri with uri=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_NORMALIZEURI_3700', Level.LEVEL0, async function (done) {
+      console.log('ACTS_NORMALIZEURI_3700====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+
+        DAHelper.normalizeUri(uri, (err, data) => {
+          try {
+            console.log('=ACTS_NORMALIZEURI_3700 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_NORMALIZEURI_3700 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+
+        })
+      } catch (err) {
+        console.log('=ACTS_NORMALIZEURI_3700 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_NORMALIZEURI_3700====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_NORMALIZEURI_3800
+     * @tc.number ACTS_NORMALIZEURI_3800
+     * @tc.desc   Test normalizeUri with uri=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_NORMALIZEURI_3800', Level.LEVEL0, async function (done) {
+      console.log('ACTS_NORMALIZEURI_3800====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+
+        DAHelper.normalizeUri(uri, (err, data) => {
+          try {
+            console.log('=ACTS_NORMALIZEURI_3800 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_NORMALIZEURI_3800 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+
+        })
+      } catch (err) {
+        console.log('=ACTS_NORMALIZEURI_3800 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_NORMALIZEURI_3800====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_DENORMALIZEURI_3900
+     * @tc.number ACTS_DENORMALIZEURI_3900
+     * @tc.desc   Test denormalizeUri with uri="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_DENORMALIZEURI_3900', Level.LEVEL0, async function (done) {
+      console.log('ACTS_DENORMALIZEURI_3900====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+
+        DAHelper.denormalizeUri(uri, (err, data) => {
+          try {
+            console.log('=ACTS_DENORMALIZEURI_3900 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_DENORMALIZEURI_3900 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+
+        })
+      } catch (err) {
+        console.log('=ACTS_DENORMALIZEURI_3900 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_DENORMALIZEURI_3900====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_DENORMALIZEURI_4000
+     * @tc.number ACTS_DENORMALIZEURI_4000
+     * @tc.desc   Test denormalizeUri with uri=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_DENORMALIZEURI_4000', Level.LEVEL0, async function (done) {
+      console.log('ACTS_DENORMALIZEURI_4000====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+
+        DAHelper.denormalizeUri(uri, (err, data) => {
+          try {
+            console.log('=ACTS_DENORMALIZEURI_4000 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_DENORMALIZEURI_4000 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+
+        })
+      } catch (err) {
+        console.log('=ACTS_DENORMALIZEURI_4000 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_DENORMALIZEURI_4000====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_DENORMALIZEURI_4100
+     * @tc.number ACTS_DENORMALIZEURI_4100
+     * @tc.desc   Test denormalizeUri with uri=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_DENORMALIZEURI_4100', Level.LEVEL0, async function (done) {
+      console.log('ACTS_DENORMALIZEURI_4100====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+
+        DAHelper.denormalizeUri(uri, (err, data) => {
+          try {
+            console.log('=ACTS_DENORMALIZEURI_4100 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_DENORMALIZEURI_4100 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+
+        })
+      } catch (err) {
+        console.log('=ACTS_DENORMALIZEURI_4100 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_DENORMALIZEURI_4100====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_NOTIFYCHANGE_4200
+     * @tc.number ACTS_NOTIFYCHANGE_4200
+     * @tc.desc   Test notifyChange with uri="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_NOTIFYCHANGE_4200', Level.LEVEL0, async function (done) {
+      console.log('ACTS_NOTIFYCHANGE_4200====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+
+        DAHelper.notifyChange(uri, (err, data) => {
+          try {
+            console.log('=ACTS_NOTIFYCHANGE_4200 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_NOTIFYCHANGE_4200 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+
+        })
+      } catch (err) {
+        console.log('=ACTS_NOTIFYCHANGE_4200 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_NOTIFYCHANGE_4200====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_NOTIFYCHANGE_4300
+     * @tc.number ACTS_NOTIFYCHANGE_4300
+     * @tc.desc   Test notifyChange with uri=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_NOTIFYCHANGE_4300', Level.LEVEL0, async function (done) {
+      console.log('ACTS_NOTIFYCHANGE_4300====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        DAHelper.notifyChange(uri, (err, data) => {
+          try {
+            console.log('=ACTS_NOTIFYCHANGE_4300 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_NOTIFYCHANGE_4300 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_NOTIFYCHANGE_4300 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_NOTIFYCHANGE_4300====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_NOTIFYCHANGE_4400
+     * @tc.number ACTS_NOTIFYCHANGE_4400
+     * @tc.desc   Test notifyChange with uri=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_NOTIFYCHANGE_4400', Level.LEVEL0, async function (done) {
+      console.log('ACTS_NOTIFYCHANGE_4400====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+
+        DAHelper.notifyChange(uri, (err, data) => {
+          try {
+            console.log('=ACTS_NOTIFYCHANGE_4400 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_NOTIFYCHANGE_4400 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_NOTIFYCHANGE_4400 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_NOTIFYCHANGE_4400====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_INSERT_4500
+     * @tc.number ACTS_INSERT_4500
+     * @tc.desc   Test insert with uri="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_INSERT_4500', Level.LEVEL0, async function (done) {
+      console.log('ACTS_INSERT_4500====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const valuesBucket = { "name": "test", "age": 24 };
+
+        DAHelper.insert(uri, valuesBucket, (err, data) => {
+          try {
+            console.log('=ACTS_INSERT_4500 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_INSERT_4500 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_INSERT_4500 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_INSERT_4500====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_INSERT_4600
+     * @tc.number ACTS_INSERT_4600
+     * @tc.desc   Test insert with valuesBucket="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_INSERT_4600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_INSERT_4600====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBucket = "";
+
+        DAHelper.insert(uri, valuesBucket, (err, data) => {
+          console.log('=ACTS_INSERT_4600 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_INSERT_4600 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_INSERT_4600 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_INSERT_4600====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_INSERT_4700
+     * @tc.number ACTS_INSERT_4700
+     * @tc.desc   Test insert with uri=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_INSERT_4700', Level.LEVEL0, async function (done) {
+      console.log('ACTS_INSERT_4700====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const valuesBucket = { "name": "test", "age": 24 };
+
+        DAHelper.insert(uri, valuesBucket, (err, data) => {
+          try {
+            console.log('=ACTS_INSERT_4700 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_INSERT_4700 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_INSERT_4700 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_INSERT_4700====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_INSERT_4800
+     * @tc.number ACTS_INSERT_4800
+     * @tc.desc   Test insert with valuesBucket=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_INSERT_4800', Level.LEVEL0, async function (done) {
+      console.log('ACTS_INSERT_4800====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBucket = undefined;
+
+        DAHelper.insert(uri, valuesBucket, (err, data) => {
+          console.log('=ACTS_INSERT_4800 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_INSERT_4800 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_INSERT_4800 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_INSERT_4800====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_INSERT_4900
+     * @tc.number ACTS_INSERT_4900
+     * @tc.desc   Test insert with uri=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_INSERT_4900', Level.LEVEL0, async function (done) {
+      console.log('ACTS_INSERT_4900====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const valuesBucket = { "name": "test", "age": 24 };
+
+        DAHelper.insert(uri, valuesBucket, (err, data) => {
+          try {
+            console.log('=ACTS_INSERT_4900 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_INSERT_4900 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_INSERT_4900 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_INSERT_4900====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_INSERT_5000
+     * @tc.number ACTS_INSERT_5000
+     * @tc.desc   Test insert with valuesBucket=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_INSERT_5000', Level.LEVEL0, async function (done) {
+      console.log('ACTS_INSERT_5000====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBucket = null;
+
+        DAHelper.insert(uri, valuesBucket, (err, data) => {
+          console.log('=ACTS_INSERT_5000 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_INSERT_5000 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_INSERT_5000 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_INSERT_5000====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_5100
+     * @tc.number ACTS_BATCHINSERT_5100
+     * @tc.desc   Test batchInsert with uri="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_5100', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_5100====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const valuesBuckets = [{ "name": "test", "age": 24 }];
+
+        DAHelper.batchInsert(uri, valuesBuckets, (err, data) => {
+          try {
+            console.log('=ACTS_BATCHINSERT_5100 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_BATCHINSERT_5100 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_5100 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_BATCHINSERT_5100====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_5200
+     * @tc.number ACTS_BATCHINSERT_5200
+     * @tc.desc   Test batchInsert with valuesBuckets="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_5200', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_5200====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBuckets = "";
+
+        DAHelper.batchInsert(uri, valuesBuckets, (err, data) => {
+          console.log('=ACTS_BATCHINSERT_5200 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_BATCHINSERT_5200 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_5200 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_BATCHINSERT_5200====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_5300
+     * @tc.number ACTS_BATCHINSERT_5300
+     * @tc.desc   Test batchInsert with uri=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_5300', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_5300====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const valuesBuckets = [{ "name": "test", "age": 24 }];
+
+        DAHelper.batchInsert(uri, valuesBuckets, (err, data) => {
+          console.log('=ACTS_BATCHINSERT_5300 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_BATCHINSERT_5300 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_5300 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_BATCHINSERT_5300====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_5400
+     * @tc.number ACTS_BATCHINSERT_5400
+     * @tc.desc   Test batchInsert with valuesBuckets=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_5400', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_5400====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBuckets = undefined;
+
+        DAHelper.batchInsert(uri, valuesBuckets, (err, data) => {
+          console.log('=ACTS_BATCHINSERT_5400 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_BATCHINSERT_5400 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_5400 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_BATCHINSERT_5400====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_5500
+     * @tc.number ACTS_BATCHINSERT_5500
+     * @tc.desc   Test batchInsert with uri=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_5500', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_5500====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const valuesBuckets = [{ "name": "test", "age": 24 }];
+
+        DAHelper.batchInsert(uri, valuesBuckets, (err, data) => {
+          console.log('=ACTS_BATCHINSERT_5500 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(-1)
+          } catch (error) {
+            console.log('=ACTS_BATCHINSERT_5500 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_5500 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_BATCHINSERT_5500====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_5600
+     * @tc.number ACTS_BATCHINSERT_5600
+     * @tc.desc   Test batchInsert with valuesBuckets=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_5600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_5600====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBuckets = null;
+
+        DAHelper.batchInsert(uri, valuesBuckets, (err, data) => {
+          console.log('=ACTS_BATCHINSERT_5600 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_BATCHINSERT_5600 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_5600 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_BATCHINSERT_5600====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_5700
+     * @tc.number ACTS_BATCHINSERT_5700
+     * @tc.desc   Test batchInsert with valuesBuckets=[] (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_5700', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_5700====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBuckets = [];
+
+        DAHelper.batchInsert(uri, valuesBuckets, (err, data) => {
+          console.log('=ACTS_BATCHINSERT_5700 err ====>:' + JSON.stringify(err))
+          try {
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_BATCHINSERT_5700 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_5700 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_BATCHINSERT_5700====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_8200
+     * @tc.number ACTS_EXECUTEBATCH_8200
+     * @tc.desc   Test executeBatch with uri="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_8200', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_8200====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const operations = [];
+
+        DAHelper.executeBatch(uri, operations, (err, data) => {
+          try {
+            console.log('=ACTS_EXECUTEBATCH_8200 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_EXECUTEBATCH_8200 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_8200 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_EXECUTEBATCH_8200====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_8300
+     * @tc.number ACTS_EXECUTEBATCH_8300
+     * @tc.desc   Test executeBatch with operations="" (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_8300', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_8300====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const operations = "";
+
+        DAHelper.executeBatch(uri, operations, (err, data) => {
+          try {
+            console.log('=ACTS_EXECUTEBATCH_8300 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_EXECUTEBATCH_8300 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_8300 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_EXECUTEBATCH_8300====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_8400
+     * @tc.number ACTS_EXECUTEBATCH_8400
+     * @tc.desc   Test executeBatch with uri=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_8400', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_8400====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const operations = [];
+
+        DAHelper.executeBatch(uri, operations, (err, data) => {
+          try {
+            console.log('=ACTS_EXECUTEBATCH_8400 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_EXECUTEBATCH_8400 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_8400 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_EXECUTEBATCH_8400====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_8500
+     * @tc.number ACTS_EXECUTEBATCH_8500
+     * @tc.desc   Test executeBatch with operations=undefined (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_8500', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_8500====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const operations = undefined;
+
+        DAHelper.executeBatch(uri, operations, (err, data) => {
+          try {
+            console.log('=ACTS_EXECUTEBATCH_8500 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_EXECUTEBATCH_8500 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_8500 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_EXECUTEBATCH_8500====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_8600
+     * @tc.number ACTS_EXECUTEBATCH_8600
+     * @tc.desc   Test executeBatch with uri=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_8600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_8600====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const operations = [];
+
+        DAHelper.executeBatch(uri, operations, (err, data) => {
+          try {
+            console.log('=ACTS_EXECUTEBATCH_8600 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_EXECUTEBATCH_8600 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_8600 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_EXECUTEBATCH_8600====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_8700
+     * @tc.number ACTS_EXECUTEBATCH_8700
+     * @tc.desc   Test executeBatch with operations=null (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_8700', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_8700====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const operations = null;
+
+        DAHelper.executeBatch(uri, operations, (err, data) => {
+          try {
+            console.log('=ACTS_EXECUTEBATCH_8700 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_EXECUTEBATCH_8700 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_8700 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_EXECUTEBATCH_8700====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_8800
+     * @tc.number ACTS_EXECUTEBATCH_8800
+     * @tc.desc   Test executeBatch with operations=[] (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_8800', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_8800====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const operations = [];
+
+        DAHelper.executeBatch(uri, operations, (err, data) => {
+          try {
+            console.log('=ACTS_EXECUTEBATCH_8800 err ====>:' + JSON.stringify(err))
+            expect(err.code).assertEqual(0)
+          } catch (error) {
+            console.log('=ACTS_EXECUTEBATCH_8800 catch error ====>:' + JSON.stringify(error))
+          }
+          done()
+        })
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_8800 catch(err)====>:' + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+      console.log('ACTS_EXECUTEBATCH_8800====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_OPENFILE_8900
+     * @tc.number ACTS_OPENFILE_8900
+     * @tc.desc   Test openFile with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_OPENFILE_8900', Level.LEVEL0, async function (done) {
+      console.log('ACTS_OPENFILE_8900====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const mode = "r";
+
+        const data = await DAHelper.openFile(uri, mode)
+        console.log("=ACTS_OPENFILE_8900 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_OPENFILE_8900 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_OPENFILE_8900====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_OPENFILE_9000
+     * @tc.number ACTS_OPENFILE_9000
+     * @tc.desc   Test openFile with mode="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_OPENFILE_9000', Level.LEVEL0, async function (done) {
+      console.log('ACTS_OPENFILE_9000====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const mode = "";
+
+        const data = await DAHelper.openFile(uri, mode)
+        console.log("=ACTS_OPENFILE_9000 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_OPENFILE_9000 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_OPENFILE_9000====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_OPENFILE_9100
+     * @tc.number ACTS_OPENFILE_9100
+     * @tc.desc   Test openFile with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_OPENFILE_9100', Level.LEVEL0, async function (done) {
+      console.log('ACTS_OPENFILE_9100====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const mode = "r";
+
+        const data = await DAHelper.openFile(uri, mode)
+        console.log("=ACTS_OPENFILE_9100 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_OPENFILE_9100 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_OPENFILE_9100====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_OPENFILE_9200
+     * @tc.number ACTS_OPENFILE_9200
+     * @tc.desc   Test openFile with mode=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_OPENFILE_9200', Level.LEVEL0, async function (done) {
+      console.log('ACTS_OPENFILE_9200====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const mode = undefined;
+
+        const data = await DAHelper.openFile(uri, mode)
+        console.log("=ACTS_OPENFILE_9200 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_OPENFILE_9200 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_OPENFILE_9200====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_OPENFILE_9300
+     * @tc.number ACTS_OPENFILE_9300
+     * @tc.desc   Test openFile with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_OPENFILE_9300', Level.LEVEL0, async function (done) {
+      console.log('ACTS_OPENFILE_9300====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const mode = "r";
+
+        const data = await DAHelper.openFile(uri, mode)
+        console.log("=ACTS_OPENFILE_9300 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_OPENFILE_9300 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_OPENFILE_9300====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_OPENFILE_9400
+     * @tc.number ACTS_OPENFILE_9400
+     * @tc.desc   Test openFile with mode=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_OPENFILE_9400', Level.LEVEL0, async function (done) {
+      console.log('ACTS_OPENFILE_9400====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const mode = null;
+
+        const data = await DAHelper.openFile(uri, mode)
+        console.log("=ACTS_OPENFILE_9400 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_OPENFILE_9400 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_OPENFILE_9400====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETTYPE_9500
+     * @tc.number ACTS_GETTYPE_9500
+     * @tc.desc   Test getType with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETTYPE_9500', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETTYPE_9500====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+
+        const data = await DAHelper.getType(uri)
+        console.log("=ACTS_GETTYPE_9500 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_GETTYPE_9500 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_GETTYPE_9500====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETTYPE_9600
+     * @tc.number ACTS_GETTYPE_9600
+     * @tc.desc   Test getType with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETTYPE_9600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETTYPE_9600====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+
+        const data = await DAHelper.getType(uri)
+        console.log("=ACTS_GETTYPE_9600 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_GETTYPE_9600 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_GETTYPE_9600====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETTYPE_9700
+     * @tc.number ACTS_GETTYPE_9700
+     * @tc.desc   Test getType with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETTYPE_9700', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETTYPE_9700====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+
+        const data = await DAHelper.getType(uri)
+        console.log("=ACTS_GETTYPE_9700 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_GETTYPE_9700 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_GETTYPE_9700====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETFILETYPES_9800
+     * @tc.number ACTS_GETFILETYPES_9800
+     * @tc.desc   Test getFileTypes with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETFILETYPES_9800', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETFILETYPES_9800====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const mimeTypeFilter = "*/*";
+
+        const data = await DAHelper.getFileTypes(uri, mimeTypeFilter)
+        console.log("=ACTS_GETFILETYPES_9800 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_GETFILETYPES_9800 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_GETFILETYPES_9800====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETFILETYPES_9900
+     * @tc.number ACTS_GETFILETYPES_9900
+     * @tc.desc   Test getFileTypes with mimeTypeFilter="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETFILETYPES_9900', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETFILETYPES_9900====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const mimeTypeFilter = "";
+
+        const data = await DAHelper.getFileTypes(uri, mimeTypeFilter)
+        console.log("=ACTS_GETFILETYPES_9900 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_GETFILETYPES_9900 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_GETFILETYPES_9900====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETFILETYPES_10000
+     * @tc.number ACTS_GETFILETYPES_10000
+     * @tc.desc   Test getFileTypes with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETFILETYPES_10000', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETFILETYPES_10000====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const mimeTypeFilter = "*/*";
+
+        const data = await DAHelper.getFileTypes(uri, mimeTypeFilter)
+        console.log("=ACTS_GETFILETYPES_10000 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_GETFILETYPES_10000 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_GETFILETYPES_10000====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETFILETYPES_10100
+     * @tc.number ACTS_GETFILETYPES_10100
+     * @tc.desc   Test getFileTypes with mimeTypeFilter=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETFILETYPES_10100', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETFILETYPES_10100====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const mimeTypeFilter = undefined;
+
+        const data = await DAHelper.getFileTypes(uri, mimeTypeFilter)
+        console.log("=ACTS_GETFILETYPES_10100 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_GETFILETYPES_10100 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_GETFILETYPES_10100====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETFILETYPES_10200
+     * @tc.number ACTS_GETFILETYPES_10200
+     * @tc.desc   Test getFileTypes with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETFILETYPES_10200', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETFILETYPES_10200====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const mimeTypeFilter = "*/*";
+
+        const data = await DAHelper.getFileTypes(uri, mimeTypeFilter)
+        console.log("=ACTS_GETFILETYPES_10200 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_GETFILETYPES_10200 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_GETFILETYPES_10200====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_GETFILETYPES_10300
+     * @tc.number ACTS_GETFILETYPES_10300
+     * @tc.desc   Test getFileTypes with mimeTypeFilter=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GETFILETYPES_10300', Level.LEVEL0, async function (done) {
+      console.log('ACTS_GETFILETYPES_10300====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const mimeTypeFilter = null;
+
+        const data = await DAHelper.getFileTypes(uri, mimeTypeFilter)
+        console.log("=ACTS_GETFILETYPES_10300 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_GETFILETYPES_10300 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_GETFILETYPES_10300====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_NORMALIZEURI_10400
+     * @tc.number ACTS_NORMALIZEURI_10400
+     * @tc.desc   Test normalizeUri with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_NORMALIZEURI_10400', Level.LEVEL0, async function (done) {
+      console.log('ACTS_NORMALIZEURI_10400====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const data = await DAHelper.normalizeUri(uri)
+        console.log("=ACTS_NORMALIZEURI_10400 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_NORMALIZEURI_10400 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_NORMALIZEURI_10400====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_NORMALIZEURI_10500
+     * @tc.number ACTS_NORMALIZEURI_10500
+     * @tc.desc   Test normalizeUri with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_NORMALIZEURI_10500', Level.LEVEL0, async function (done) {
+      console.log('ACTS_NORMALIZEURI_10500====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const data = await DAHelper.normalizeUri(uri)
+        console.log("=ACTS_NORMALIZEURI_10500 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_NORMALIZEURI_10500 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_NORMALIZEURI_10500====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_NORMALIZEURI_10600
+     * @tc.number ACTS_NORMALIZEURI_10600
+     * @tc.desc   Test normalizeUri with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_NORMALIZEURI_10600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_NORMALIZEURI_10600====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const data = await DAHelper.normalizeUri(uri)
+        console.log("=ACTS_NORMALIZEURI_10600 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_NORMALIZEURI_10600 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_NORMALIZEURI_10600====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_DENORMALIZEURI_10700
+     * @tc.number ACTS_DENORMALIZEURI_10700
+     * @tc.desc   Test denormalizeUri with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_DENORMALIZEURI_10700', Level.LEVEL0, async function (done) {
+      console.log('ACTS_DENORMALIZEURI_10700====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const data = await DAHelper.denormalizeUri(uri)
+        console.log("=ACTS_DENORMALIZEURI_10700 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_DENORMALIZEURI_10700 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_DENORMALIZEURI_10700====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_DENORMALIZEURI_10800
+     * @tc.number ACTS_DENORMALIZEURI_10800
+     * @tc.desc   Test denormalizeUri with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_DENORMALIZEURI_10800', Level.LEVEL0, async function (done) {
+      console.log('ACTS_DENORMALIZEURI_10800====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const data = await DAHelper.denormalizeUri(uri)
+        console.log("=ACTS_DENORMALIZEURI_10800 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_DENORMALIZEURI_10800 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_DENORMALIZEURI_10800====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_DENORMALIZEURI_10900
+     * @tc.number ACTS_DENORMALIZEURI_10900
+     * @tc.desc   Test denormalizeUri with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_DENORMALIZEURI_10900', Level.LEVEL0, async function (done) {
+      console.log('ACTS_DENORMALIZEURI_10900====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const data = await DAHelper.denormalizeUri(uri)
+        console.log("=ACTS_DENORMALIZEURI_10900 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_DENORMALIZEURI_10900 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_DENORMALIZEURI_10900====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_NOTIFYCHANGE_11000
+     * @tc.number ACTS_NOTIFYCHANGE_11000
+     * @tc.desc   Test notifyChange with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_NOTIFYCHANGE_11000', Level.LEVEL0, async function (done) {
+      console.log('ACTS_NOTIFYCHANGE_11000====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const data = await DAHelper.notifyChange(uri)
+        console.log("=ACTS_NOTIFYCHANGE_11000 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_NOTIFYCHANGE_11000 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_NOTIFYCHANGE_11000====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_NOTIFYCHANGE_11100
+     * @tc.number ACTS_NOTIFYCHANGE_11100
+     * @tc.desc   Test notifyChange with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_NOTIFYCHANGE_11100', Level.LEVEL0, async function (done) {
+      console.log('ACTS_NOTIFYCHANGE_11100====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const data = await DAHelper.notifyChange(uri)
+        console.log("=ACTS_NOTIFYCHANGE_11100 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_NOTIFYCHANGE_11100 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_NOTIFYCHANGE_11100====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_NOTIFYCHANGE_11200
+     * @tc.number ACTS_NOTIFYCHANGE_11200
+     * @tc.desc   Test notifyChange with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_NOTIFYCHANGE_11200', Level.LEVEL0, async function (done) {
+      console.log('ACTS_NOTIFYCHANGE_11200====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const data = await DAHelper.notifyChange(uri)
+        console.log("=ACTS_NOTIFYCHANGE_11200 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_NOTIFYCHANGE_11200 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_NOTIFYCHANGE_11200====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_INSERT_11300
+     * @tc.number ACTS_INSERT_11300
+     * @tc.desc   Test insert with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_INSERT_11300', Level.LEVEL0, async function (done) {
+      console.log('ACTS_INSERT_11300====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const valuesBucket = { "name": "test", "age": 24 };
+        const data = await DAHelper.insert(uri, valuesBucket)
+        console.log("=ACTS_INSERT_11300 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_INSERT_11300 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_INSERT_11300====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_INSERT_11400
+     * @tc.number ACTS_INSERT_11400
+     * @tc.desc   Test insert with valuesBucket="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_INSERT_11400', Level.LEVEL0, async function (done) {
+      console.log('ACTS_INSERT_11400====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBucket = "";
+        const data = await DAHelper.insert(uri, valuesBucket)
+        console.log("=ACTS_INSERT_11400 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_INSERT_11400 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_INSERT_11400====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_INSERT_11500
+     * @tc.number ACTS_INSERT_11500
+     * @tc.desc   Test insert with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_INSERT_11500', Level.LEVEL0, async function (done) {
+      console.log('ACTS_INSERT_11500====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const valuesBucket = { "name": "test", "age": 24 };
+        const data = await DAHelper.insert(uri, valuesBucket)
+        console.log("=ACTS_INSERT_11500 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_INSERT_11500 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_INSERT_11500====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_INSERT_11600
+     * @tc.number ACTS_INSERT_11600
+     * @tc.desc   Test insert with valuesBucket=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_INSERT_11600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_INSERT_11600====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBucket = undefined;
+        const data = await DAHelper.insert(uri, valuesBucket)
+        console.log("=ACTS_INSERT_11600 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_INSERT_11600 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_INSERT_11600====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_INSERT_11700
+     * @tc.number ACTS_INSERT_11700
+     * @tc.desc   Test insert with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_INSERT_11700', Level.LEVEL0, async function (done) {
+      console.log('ACTS_INSERT_11700====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const valuesBucket = { "name": "test", "age": 24 };
+        const data = await DAHelper.insert(uri, valuesBucket)
+        console.log("=ACTS_INSERT_11700 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_INSERT_11700 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_INSERT_11700====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_INSERT_11800
+     * @tc.number ACTS_INSERT_11800
+     * @tc.desc   Test insert with valuesBucket=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_INSERT_11800', Level.LEVEL0, async function (done) {
+      console.log('ACTS_INSERT_11800====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBucket = null;
+        const data = await DAHelper.insert(uri, valuesBucket)
+        console.log("=ACTS_INSERT_11800 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_INSERT_11800 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_INSERT_11800====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_11900
+     * @tc.number ACTS_BATCHINSERT_11900
+     * @tc.desc   Test batchInsert with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_11900', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_11900====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const valuesBuckets = [{ "name": "test", "age": 24 }];
+        const data = await DAHelper.batchInsert(uri, valuesBuckets)
+        console.log("=ACTS_BATCHINSERT_11900 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_11900 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_BATCHINSERT_11900====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_12000
+     * @tc.number ACTS_BATCHINSERT_12000
+     * @tc.desc   Test batchInsert with valuesBuckets="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_12000', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_12000====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBuckets = "";
+        const data = await DAHelper.batchInsert(uri, valuesBuckets)
+        console.log("=ACTS_BATCHINSERT_12000 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_12000 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_BATCHINSERT_12000====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_12100
+     * @tc.number ACTS_BATCHINSERT_12100
+     * @tc.desc   Test batchInsert with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_12100', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_12100====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const valuesBuckets = [{ "name": "test", "age": 24 }];
+        const data = await DAHelper.batchInsert(uri, valuesBuckets)
+        console.log("=ACTS_BATCHINSERT_12100 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_12100 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_BATCHINSERT_12100====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_12200
+     * @tc.number ACTS_BATCHINSERT_12200
+     * @tc.desc   Test batchInsert with valuesBuckets=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_12200', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_12200====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBuckets = undefined;
+        const data = await DAHelper.batchInsert(uri, valuesBuckets)
+        console.log("=ACTS_BATCHINSERT_12200 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_12200 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_BATCHINSERT_12200====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_12300
+     * @tc.number ACTS_BATCHINSERT_12300
+     * @tc.desc   Test batchInsert with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_12300', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_12300====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const valuesBuckets = [{ "name": "test", "age": 24 }];
+        const data = await DAHelper.batchInsert(uri, valuesBuckets)
+        console.log("=ACTS_BATCHINSERT_12300 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_12300 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_BATCHINSERT_12300====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_12400
+     * @tc.number ACTS_BATCHINSERT_12400
+     * @tc.desc   Test batchInsert with valuesBuckets=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_12400', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_12400====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBuckets = null;
+        const data = await DAHelper.batchInsert(uri, valuesBuckets)
+        console.log("=ACTS_BATCHINSERT_12400 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_12400 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_BATCHINSERT_12400====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_BATCHINSERT_12500
+     * @tc.number ACTS_BATCHINSERT_12500
+     * @tc.desc   Test batchInsert with valuesBuckets=[] (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_BATCHINSERT_12500', Level.LEVEL0, async function (done) {
+      console.log('ACTS_BATCHINSERT_12500====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBuckets = [];
+        const data = await DAHelper.batchInsert(uri, valuesBuckets)
+        console.log("=ACTS_BATCHINSERT_12500 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_BATCHINSERT_12500 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_BATCHINSERT_12500====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_DELETE_12600
+     * @tc.number ACTS_DELETE_12600
+     * @tc.desc   Test delete with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_DELETE_12600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_DELETE_12600====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const data = await DAHelper.delete(uri)
+        console.log("=ACTS_DELETE_12600 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_DELETE_12600 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_DELETE_12600====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_DELETE_12700
+     * @tc.number ACTS_DELETE_12700
+     * @tc.desc   Test delete with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_DELETE_12700', Level.LEVEL0, async function (done) {
+      console.log('ACTS_DELETE_12700====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const data = await DAHelper.delete(uri)
+        console.log("=ACTS_DELETE_12700 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_DELETE_12700 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_DELETE_12700====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_DELETE_12800
+     * @tc.number ACTS_DELETE_12800
+     * @tc.desc   Test delete with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_DELETE_12800', Level.LEVEL0, async function (done) {
+      console.log('ACTS_DELETE_12800====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const data = await DAHelper.delete(uri)
+        console.log("=ACTS_DELETE_12800 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_DELETE_12800 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_DELETE_12800====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_UPDATE_12900
+     * @tc.number ACTS_UPDATE_12900
+     * @tc.desc   Test update with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_UPDATE_12900', Level.LEVEL0, async function (done) {
+      console.log('ACTS_UPDATE_12900====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const valuesBucket = { "name": "test", "age": 24 };
+        const data = await DAHelper.update(uri, valuesBucket)
+        console.log("=ACTS_UPDATE_12900 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_UPDATE_12900 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_UPDATE_12900====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_UPDATE_13000
+     * @tc.number ACTS_UPDATE_13000
+     * @tc.desc   Test update with valuesBucket="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_UPDATE_13000', Level.LEVEL0, async function (done) {
+      console.log('ACTS_UPDATE_13000====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBucket = "";
+        const data = await DAHelper.update(uri, valuesBucket)
+        console.log("=ACTS_UPDATE_13000 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_UPDATE_13000 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_UPDATE_13000====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_UPDATE_13100
+     * @tc.number ACTS_UPDATE_13100
+     * @tc.desc   Test update with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_UPDATE_13100', Level.LEVEL0, async function (done) {
+      console.log('ACTS_UPDATE_13100====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const valuesBucket = { "name": "test", "age": 24 };
+        const data = await DAHelper.update(uri, valuesBucket)
+        console.log("=ACTS_UPDATE_13100 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_UPDATE_13100 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_UPDATE_13100====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_UPDATE_13200
+     * @tc.number ACTS_UPDATE_13200
+     * @tc.desc   Test update with valuesBucket=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_UPDATE_13200', Level.LEVEL0, async function (done) {
+      console.log('ACTS_UPDATE_13200====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBucket = undefined;
+        const data = await DAHelper.update(uri, valuesBucket)
+        console.log("=ACTS_UPDATE_13200 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_UPDATE_13200 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_UPDATE_13200====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_UPDATE_13300
+     * @tc.number ACTS_UPDATE_13300
+     * @tc.desc   Test update with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_UPDATE_13300', Level.LEVEL0, async function (done) {
+      console.log('ACTS_UPDATE_13300====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const valuesBucket = { "name": "test", "age": 24 };
+        const data = await DAHelper.update(uri, valuesBucket)
+        console.log("=ACTS_UPDATE_13300 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_UPDATE_13300 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_UPDATE_13300====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_UPDATE_13400
+     * @tc.number ACTS_UPDATE_13400
+     * @tc.desc   Test update with valuesBucket=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_UPDATE_13400', Level.LEVEL0, async function (done) {
+      console.log('ACTS_UPDATE_13400====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const valuesBucket = null;
+        const data = await DAHelper.update(uri, valuesBucket)
+        console.log("=ACTS_UPDATE_13400 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_UPDATE_13400 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_UPDATE_13400====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_QUERY_13500
+     * @tc.number ACTS_QUERY_13500
+     * @tc.desc   Test query with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_QUERY_13500', Level.LEVEL0, async function (done) {
+      console.log('ACTS_QUERY_13500====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const data = await DAHelper.query(uri)
+        console.log("=ACTS_QUERY_13500 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_QUERY_13500 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_QUERY_13500====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_QUERY_13600
+     * @tc.number ACTS_QUERY_13600
+     * @tc.desc   Test query with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_QUERY_13600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_QUERY_13600====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const data = await DAHelper.query(uri)
+        console.log("=ACTS_QUERY_13600 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_QUERY_13600 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_QUERY_13600====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_QUERY_13700
+     * @tc.number ACTS_QUERY_13700
+     * @tc.desc   Test query with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_QUERY_13700', Level.LEVEL0, async function (done) {
+      console.log('ACTS_QUERY_13700====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const data = await DAHelper.query(uri)
+        console.log("=ACTS_QUERY_13700 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_QUERY_13700 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_QUERY_13700====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_CALL_13800
+     * @tc.number ACTS_CALL_13800
+     * @tc.desc   Test call with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CALL_13800', Level.LEVEL0, async function (done) {
+      console.log('ACTS_CALL_13800====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const method = "testMethod";
+        const arg = "testArg";
+        const extras = { "key": "value" };
+        const data = await DAHelper.call(uri, method, arg, extras)
+        console.log("=ACTS_CALL_13800 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_CALL_13800 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_CALL_13800====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_CALL_13900
+     * @tc.number ACTS_CALL_13900
+     * @tc.desc   Test call with method="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CALL_13900', Level.LEVEL0, async function (done) {
+      console.log('ACTS_CALL_13900====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const method = "";
+        const arg = "testArg";
+        const extras = { "key": "value" };
+        const data = await DAHelper.call(uri, method, arg, extras)
+        console.log("=ACTS_CALL_13900 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_CALL_13900 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_CALL_13900====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_CALL_14000
+     * @tc.number ACTS_CALL_14000
+     * @tc.desc   Test call with arg="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CALL_14000', Level.LEVEL0, async function (done) {
+      console.log('ACTS_CALL_14000====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const method = "testMethod";
+        const arg = "";
+        const extras = { "key": "value" };
+        const data = await DAHelper.call(uri, method, arg, extras)
+        console.log("=ACTS_CALL_14000 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_CALL_14000 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_CALL_14000====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_CALL_14100
+     * @tc.number ACTS_CALL_14100
+     * @tc.desc   Test call with extras="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CALL_14100', Level.LEVEL0, async function (done) {
+      console.log('ACTS_CALL_14100====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const method = "testMethod";
+        const arg = "testArg";
+        const extras = "";
+        const data = await DAHelper.call(uri, method, arg, extras)
+        console.log("=ACTS_CALL_14100 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_CALL_14100 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_CALL_14100====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_CALL_14200
+     * @tc.number ACTS_CALL_14200
+     * @tc.desc   Test call with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CALL_14200', Level.LEVEL0, async function (done) {
+      console.log('ACTS_CALL_14200====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const method = "testMethod";
+        const arg = "testArg";
+        const extras = { "key": "value" };
+        const data = await DAHelper.call(uri, method, arg, extras)
+        console.log("=ACTS_CALL_14200 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_CALL_14200 catch(err)====>:' + JSON.stringify(err))
+        expect(err).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_CALL_14200====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_CALL_14300
+     * @tc.number ACTS_CALL_14300
+     * @tc.desc   Test call with method=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CALL_14300', Level.LEVEL0, async function (done) {
+      console.log('ACTS_CALL_14300====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const method = undefined;
+        const arg = "testArg";
+        const extras = { "key": "value" };
+        const data = await DAHelper.call(uri, method, arg, extras)
+        console.log("=ACTS_CALL_14300 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_CALL_14300 catch(err)====>:' + JSON.stringify(err))
+        expect(err).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_CALL_14300====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_CALL_14400
+     * @tc.number ACTS_CALL_14400
+     * @tc.desc   Test call with arg=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CALL_14400', Level.LEVEL0, async function (done) {
+      console.log('ACTS_CALL_14400====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const method = "testMethod";
+        const arg = undefined;
+        const extras = { "key": "value" };
+
+        const data = await DAHelper.call(uri, method, arg, extras)
+        console.log("=ACTS_CALL_14400 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_CALL_14400 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_CALL_14400====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_CALL_14500
+     * @tc.number ACTS_CALL_14500
+     * @tc.desc   Test call with extras=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CALL_14500', Level.LEVEL0, async function (done) {
+      console.log('ACTS_CALL_14500====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const method = "testMethod";
+        const arg = "testArg";
+        const extras = undefined;
+        const data = await DAHelper.call(uri, method, arg, extras)
+        console.log("=ACTS_CALL_14500 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_CALL_14500 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_CALL_14500====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_CALL_14600
+     * @tc.number ACTS_CALL_14600
+     * @tc.desc   Test call with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CALL_14600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_CALL_14600====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const method = "testMethod";
+        const arg = "testArg";
+        const extras = { "key": "value" };
+        const data = await DAHelper.call(uri, method, arg, extras)
+        console.log("=ACTS_CALL_14600 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_CALL_14600 catch(err)====>:' + err)
+        expect(err).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_CALL_14600====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_CALL_14700
+     * @tc.number ACTS_CALL_14700
+     * @tc.desc   Test call with method=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CALL_14700', Level.LEVEL0, async function (done) {
+      console.log('ACTS_CALL_14700====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const method = null;
+        const arg = "testArg";
+        const extras = { "key": "value" };
+        const data = await DAHelper.call(uri, method, arg, extras)
+        console.log("=ACTS_CALL_14700 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_CALL_14700 catch(err)====>:' + err)
+        expect(err).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_CALL_14700====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_CALL_14800
+     * @tc.number ACTS_CALL_14800
+     * @tc.desc   Test call with arg=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CALL_14800', Level.LEVEL0, async function (done) {
+      console.log('ACTS_CALL_14800====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const method = "testMethod";
+        const arg = null;
+        const extras = { "key": "value" };
+        const data = await DAHelper.call(uri, method, arg, extras)
+        console.log("=ACTS_CALL_14800 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_CALL_14800 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_CALL_14800====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_CALL_14900
+     * @tc.number ACTS_CALL_14900
+     * @tc.desc   Test call with extras=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CALL_14900', Level.LEVEL0, async function (done) {
+      console.log('ACTS_CALL_14900====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const method = "testMethod";
+        const arg = "testArg";
+        const extras = null;
+        const data = await DAHelper.call(uri, method, arg, extras)
+        console.log("=ACTS_CALL_14900 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_CALL_14900 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_CALL_14900====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_15000
+     * @tc.number ACTS_EXECUTEBATCH_15000
+     * @tc.desc   Test executeBatch with uri="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_15000', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_15000====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = "";
+        const operations = [];
+        const data = await DAHelper.executeBatch(uri, operations)
+        console.log("=ACTS_EXECUTEBATCH_15000 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_15000 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_EXECUTEBATCH_15000====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_15100
+     * @tc.number ACTS_EXECUTEBATCH_15100
+     * @tc.desc   Test executeBatch with operations="" (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_15100', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_15100====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const operations = "";
+        const data = await DAHelper.executeBatch(uri, operations)
+        console.log("=ACTS_EXECUTEBATCH_15100 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_15100 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_EXECUTEBATCH_15100====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_15200
+     * @tc.number ACTS_EXECUTEBATCH_15200
+     * @tc.desc   Test executeBatch with uri=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_15200', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_15200====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = undefined;
+        const operations = [];
+        const data = await DAHelper.executeBatch(uri, operations)
+        console.log("=ACTS_EXECUTEBATCH_15200 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_15200 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_EXECUTEBATCH_15200====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_15300
+     * @tc.number ACTS_EXECUTEBATCH_15300
+     * @tc.desc   Test executeBatch with operations=undefined (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_15300', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_15300====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const operations = undefined;
+        const data = await DAHelper.executeBatch(uri, operations)
+        console.log("=ACTS_EXECUTEBATCH_15300 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_15300 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_EXECUTEBATCH_15300====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_15400
+     * @tc.number ACTS_EXECUTEBATCH_15400
+     * @tc.desc   Test executeBatch with uri=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_15400', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_15400====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = null;
+        const operations = [];
+        const data = await DAHelper.executeBatch(uri, operations)
+        console.log("=ACTS_EXECUTEBATCH_15400 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_15400 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_EXECUTEBATCH_15400====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_15500
+     * @tc.number ACTS_EXECUTEBATCH_15500
+     * @tc.desc   Test executeBatch with operations=null (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_15500', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_15500====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const operations = null;
+        const data = await DAHelper.executeBatch(uri, operations)
+        console.log("=ACTS_EXECUTEBATCH_15500 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_15500 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_EXECUTEBATCH_15500====<end')
+    })
+
+    /**
+     * @tc.name   ACTS_EXECUTEBATCH_15600
+     * @tc.number ACTS_EXECUTEBATCH_15600
+     * @tc.desc   Test executeBatch with operations=[] (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_EXECUTEBATCH_15600', Level.LEVEL0, async function (done) {
+      console.log('ACTS_EXECUTEBATCH_15600====<begin')
+      expect(typeof (DAHelper)).assertEqual("object")
+      try {
+        const uri = dataAbilityUri;
+        const operations = [];
+        const data = await DAHelper.executeBatch(uri, operations)
+        console.log("=ACTS_EXECUTEBATCH_15600 data=====>" + JSON.stringify(data))
+      } catch (err) {
+        console.log('=ACTS_EXECUTEBATCH_15600 catch(err)====>:' + JSON.stringify(err))
+        expect(err.code).assertEqual(-1)
+      }
+      done()
+      console.log('ACTS_EXECUTEBATCH_15600====<end')
+    })
+  })
+}
+

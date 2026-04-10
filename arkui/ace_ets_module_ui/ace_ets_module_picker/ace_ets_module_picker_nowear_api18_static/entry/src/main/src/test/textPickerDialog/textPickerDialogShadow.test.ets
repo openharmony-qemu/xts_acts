@@ -26,7 +26,7 @@ import Utils from '../../../ets/MainAbility/common/Utils'
 
 export default function TextPickerDialogShadowTest() {
   describe('TextPickerDialogShadowTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerDialogShadowTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
     });

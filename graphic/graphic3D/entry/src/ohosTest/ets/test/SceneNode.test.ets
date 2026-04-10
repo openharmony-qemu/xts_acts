@@ -31,15 +31,15 @@ export default function sceneNodeTest() {
     let directionalLight: DirectionalLight;
 
     /**
-     * @tc.name   testGetNodeByPath
+     * @tc.name   testNodeGetNodeByPath
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0100
      * @tc.desc   Used to obtain the node according to the path, and return empty if it cannot be obtained
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let msg = "============================testGetNodeByPath";
+    it('testNodeGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testNodeGetNodeByPath";
       console.info(msg + ' begin ');
       try {
         scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
@@ -50,6 +50,34 @@ export default function sceneNodeTest() {
         console.info(msg + " Succeed in scene.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') ");
         let node1 = scene.root?.getNodeByPath('Scene/node_123');
         expect(node1).assertNull();
+
+        // Test null parameter
+        try {
+          let nullNode = scene.root?.getNodeByPath(null);
+          console.info(msg + " getNodeByPath with null parameter: " + JSON.stringify(nullNode));
+          expect(nullNode).assertUndefined();
+        } catch (nullErr) {
+          console.info(msg + " getNodeByPath with null parameter threw error: " + JSON.stringify(nullErr));
+        }
+
+        // Test undefined parameter
+        try {
+          let undefinedNode = scene.root?.getNodeByPath(undefined);
+          console.info(msg + " getNodeByPath with undefined parameter: " + JSON.stringify(undefinedNode));
+          expect(undefinedNode).assertUndefined();
+        } catch (undefinedErr) {
+          console.info(msg + " getNodeByPath with undefined parameter threw error: " + JSON.stringify(undefinedErr));
+        }
+
+        // Test empty string parameter
+        try {
+          let emptyStringNode = scene.root?.getNodeByPath("");
+          console.info(msg + " getNodeByPath with empty string: " + JSON.stringify(emptyStringNode));
+          expect(emptyStringNode != null).assertTrue();
+        } catch (emptyStringErr) {
+          console.info(msg + " getNodeByPath with empty string threw error: " + JSON.stringify(emptyStringErr));
+        }
+
         done();
       } catch (err) {
         console.info(msg + " Failed in scene.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') " +
@@ -123,6 +151,23 @@ export default function sceneNodeTest() {
         container.remove(node);
         expect(container.count()).assertEqual(count);
         console.info(msg + " Succeed in scene.root?.children.remove(node) ");
+
+        // Test null parameter for remove
+        try {
+          container.remove(null);
+          console.info(msg + " remove with null parameter executed");
+        } catch (nullErr) {
+          console.info(msg + " remove with null parameter threw error: " + JSON.stringify(nullErr));
+        }
+
+        // Test undefined parameter for remove
+        try {
+          container.remove(undefined);
+          console.info(msg + " remove with undefined parameter executed");
+        } catch (undefinedErr) {
+          console.info(msg + " remove with undefined parameter threw error: " + JSON.stringify(undefinedErr));
+        }
+
         done();
       } catch (err) {
         console.info(msg + " Failed in scene.root?.children.remove(node) " + JSON.stringify(err));
@@ -146,9 +191,81 @@ export default function sceneNodeTest() {
         scene?.root?.children.insertAfter(node, null);
         expect(scene?.root?.children.count()).assertEqual(count + 1);
         console.info(msg + " Succeed in scene.root?.children.insertAfter(node,null) ");
+
+        // Test null parameter for item (first parameter)
+        try {
+          scene?.root?.children.insertAfter(null, node);
+          console.info(msg + " insertAfter with null item executed");
+        } catch (nullErr) {
+          console.info(msg + " insertAfter with null item threw error: " + JSON.stringify(nullErr));
+        }
+
+        // Test undefined parameter for item (first parameter)
+        try {
+          scene?.root?.children.insertAfter(undefined, node);
+          console.info(msg + " insertAfter with undefined item executed");
+        } catch (undefinedErr) {
+          console.info(msg + " insertAfter with undefined item threw error: " + JSON.stringify(undefinedErr));
+        }
+
+        // Test null parameter for sibling (second parameter)
+        try {
+          scene?.root?.children.insertAfter(node, null);
+          console.info(msg + " insertAfter with null sibling executed (already tested above)");
+        } catch (nullSiblingErr) {
+          console.info(msg + " insertAfter with null sibling threw error: " + JSON.stringify(nullSiblingErr));
+        }
+
+        // Test undefined parameter for sibling (second parameter)
+        try {
+          scene?.root?.children.insertAfter(node, undefined);
+          console.info(msg + " insertAfter with undefined sibling executed");
+        } catch (undefinedSiblingErr) {
+          console.info(msg + " insertAfter with undefined sibling threw error: " + JSON.stringify(undefinedSiblingErr));
+        }
+
         done();
       } catch (err) {
         console.info(msg + " Failed in scene.root?.children.insertAfter(node,null) " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testAppend
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0115
+     * @tc.desc   Used to append an object to container with null/undefined coverage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testAppend', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testAppend";
+      console.info(msg + ' begin ');
+      try {
+        let container: Container<Node>;
+        container = scene?.root?.children as Container<Node>;
+        let count = container.count();
+
+        // Test null parameter for append
+        try {
+          container.append(null);
+          console.info(msg + " append with null parameter executed");
+        } catch (nullErr) {
+          console.info(msg + " append with null parameter threw error: " + JSON.stringify(nullErr));
+        }
+
+        // Test undefined parameter for append
+        try {
+          container.append(undefined);
+          console.info(msg + " append with undefined parameter executed");
+        } catch (undefinedErr) {
+          console.info(msg + " append with undefined parameter threw error: " + JSON.stringify(undefinedErr));
+        }
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testAppend " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
@@ -174,6 +291,25 @@ export default function sceneNodeTest() {
         let node2 =scene?.root?.children.get(count);
         console.info(msg + "node2: " + JSON.stringify(node2));
         expect(node2).assertNull();
+
+        // Test null parameter for get
+        try {
+          let nullResult = scene?.root?.children.get(null);
+          console.info(msg + " get with null parameter: " + JSON.stringify(nullResult));
+          expect(nullResult).assertUndefined();
+        } catch (nullErr) {
+          console.info(msg + " get with null parameter threw error: " + JSON.stringify(nullErr));
+        }
+
+        // Test undefined parameter for get
+        try {
+          let undefinedResult = scene?.root?.children.get(undefined);
+          console.info(msg + " get with undefined parameter: " + JSON.stringify(undefinedResult));
+          expect(undefinedResult).assertUndefined();
+        } catch (undefinedErr) {
+          console.info(msg + " get with undefined parameter threw error: " + JSON.stringify(undefinedErr));
+        }
+
         done();
       } catch (err) {
         console.info(msg + " Failed in scene.root?.children.get(count - 1) " + JSON.stringify(err));
@@ -203,6 +339,41 @@ export default function sceneNodeTest() {
         node?.layerMask.setEnabled(3, true);
         expect(node?.layerMask.getEnabled(3)).assertTrue();
         console.info(msg + " Succeed in node?.layerMask.setEnabled(3, true) ");
+
+        // Test null parameter for getEnabled
+        try {
+          let nullGetResult = node?.layerMask.getEnabled(null);
+          console.info(msg + " getEnabled with null parameter: " + JSON.stringify(nullGetResult));
+          expect(nullGetResult).assertUndefined();
+        } catch (nullErr) {
+          console.info(msg + " getEnabled with null parameter threw error: " + JSON.stringify(nullErr));
+        }
+
+        // Test undefined parameter for getEnabled
+        try {
+          let undefinedGetResult = node?.layerMask.getEnabled(undefined);
+          console.info(msg + " getEnabled with undefined parameter: " + JSON.stringify(undefinedGetResult));
+          expect(undefinedGetResult).assertUndefined();
+        } catch (undefinedErr) {
+          console.info(msg + " getEnabled with undefined parameter threw error: " + JSON.stringify(undefinedErr));
+        }
+
+        // Test null parameter for setEnabled (index)
+        try {
+          node?.layerMask.setEnabled(null, true);
+          console.info(msg + " setEnabled with null index executed");
+        } catch (nullErr) {
+          console.info(msg + " setEnabled with null index threw error: " + JSON.stringify(nullErr));
+        }
+
+        // Test undefined parameter for setEnabled (index)
+        try {
+          node?.layerMask.setEnabled(undefined, true);
+          console.info(msg + " setEnabled with undefined index executed");
+        } catch (undefinedErr) {
+          console.info(msg + " setEnabled with undefined index threw error: " + JSON.stringify(undefinedErr));
+        }
+
         done();
       } catch (err) {
         console.info(msg + " Failed in node?.layerMask.setEnabled(3, false) " + JSON.stringify(err));
@@ -762,9 +933,226 @@ export default function sceneNodeTest() {
         expect(geometry1 != null).assertTrue();
         console.info(msg + " Succeed in createGeometry ");
         scene?.root?.children.append(geometry1);
+
+        // Test both parameters with null
+        try {
+          let nullNullMesh = await rf.createMesh(null, null);
+          console.info(msg + " createMesh with (null, null): " + JSON.stringify(nullNullMesh));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createMesh with (null, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test both parameters with undefined
+        try {
+          let undefinedUndefinedMesh = await rf.createMesh(undefined, undefined);
+          console.info(msg + " createMesh with (undefined, undefined): " + JSON.stringify(undefinedUndefinedMesh));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createMesh with (undefined, undefined) threw error: " + JSON.stringify(err));
+        }
+
+        // Test geometry parameter with null
+        try {
+          let paramsNullMesh = await rf.createMesh({ name: "test" }, null);
+          console.info(msg + " createMesh with (params, null): " + JSON.stringify(paramsNullMesh));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createMesh with (params, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test geometry parameter with undefined
+        try {
+          let paramsUndefinedMesh = await rf.createMesh({ name: "test" }, undefined);
+          console.info(msg + " createMesh with (params, undefined): " + JSON.stringify(paramsUndefinedMesh));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createMesh with (params, undefined) threw error: " + JSON.stringify(err));
+        }
+       
+        let nullGeomMesh = await rf.createMesh(null, cubeGeom);
+        expect(nullGeomMesh != null).assertTrue();
+        console.info(msg + " createMesh with (null, geometry) returned mesh");
+
+        let undefinedGeomMesh = await rf.createMesh(undefined, cubeGeom);
+        expect(undefinedGeomMesh != null).assertTrue();
+        console.info(msg + " createMesh with (undefined, geometry) returned mesh");
+
+        console.info(msg + " test completed successfully");
         done();
       } catch (err) {
         console.info(msg + " Failed in testCreateGeometryCUBE " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCreateGeometryNull
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1046
+     * @tc.desc   Test createGeometry with null/undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateGeometryNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCreateGeometryNull";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        let cubeGeom = new scene3d.CubeGeometry();
+        cubeGeom.size = {x: 1, y: 1, z: 1};
+        let meshRes = await rf.createMesh({ name: "MeshName" }, cubeGeom);
+        expect(meshRes != null).assertTrue();
+        console.info(msg + " mesh created successfully");
+
+        // Test null parameter for createGeometry 1
+        try {
+          let nullGeometry = await rf.createGeometry(null, meshRes);
+          expect(nullGeometry != null).assertTrue();
+          console.info(msg + " createGeometry with (null, meshRes) returned null");
+        } catch (err) {
+          console.info(msg + " createGeometry with (null, meshRes) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createGeometry 1
+        try {
+          let undefinedGeometry = await rf.createGeometry(undefined, meshRes);
+          expect(undefinedGeometry != null).assertTrue();
+          console.info(msg + " createGeometry with (undefined, meshRes) returned null");
+        } catch (err) {
+          console.info(msg + " createGeometry with (undefined, meshRes) threw error: " + JSON.stringify(err));
+        }
+
+        // Test null parameter for createGeometry 2
+        try {
+          let nullGeometry = await rf.createGeometry({ name: "GeometryName", path: "" }, null);
+          expect(nullGeometry).assertUndefined();
+          console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, null) returned undefined");
+        } catch (err) {
+          console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createGeometry 2
+        try {
+          let undefinedGeometry = await rf.createGeometry({ name: "GeometryName", path: "" }, undefined);
+          expect(undefinedGeometry).assertUndefined();
+          console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, undefined) returned undefined");
+        } catch (err) {
+          console.info(msg + " createGeometry with ({ name: \"GeometryName\", path: \"\" }, undefined) threw error: " + JSON.stringify(err));
+        }
+
+        // Test empty path for createGeometry
+        try {
+          let emptyPathGeometry = await rf.createGeometry({ name: "GeometryName", path: "" }, meshRes);
+          expect(emptyPathGeometry != null).assertTrue();
+          console.info(msg + " createGeometry with empty path returned successfully");
+        } catch (err) {
+          console.info(msg + " createGeometry with empty path threw error: " + JSON.stringify(err));
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateGeometryNull " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateLightNull
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1045
+     * @tc.desc   Test createLight with null/undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateLightNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCreateLightNull";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory obtained successfully");
+
+        // Test null parameter for createLight 1
+        try {
+          let nullLight = await rf.createLight(null, LightType.DIRECTIONAL);
+          expect(nullLight != null).assertTrue();
+          console.info(msg + " createLight with (null, LightType.DIRECTIONAL) returned null");
+        } catch (err) {
+          console.info(msg + " createLight with (null, LightType.DIRECTIONAL) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createLight 1
+        try {
+          let undefinedLight = await rf.createLight(undefined, LightType.DIRECTIONAL);
+          expect(undefinedLight != null).assertTrue();
+          console.info(msg + " createLight with (undefined, LightType.DIRECTIONAL) returned null");
+        } catch (err) {
+          console.info(msg + " createLight with (undefined, LightType.DIRECTIONAL) threw error: " + JSON.stringify(err));
+        }
+
+        // Test null parameter for createLight 2
+        try {
+          let nullLight = await rf.createLight({ name: "Light", path: "" }, null);
+          expect(nullLight).assertUndefined();
+          console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, null) returned undefined");
+        } catch (err) {
+          console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createLight 2
+        try {
+          let undefinedLight = await rf.createLight({ name: "Light", path: "" }, undefined);
+          expect(undefinedLight).assertUndefined();
+          console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, undefined) returned undefined");
+        } catch (err) {
+          console.info(msg + " createLight with ({ name: \"Light\", path: \"\" }, undefined) threw error: " + JSON.stringify(err));
+        }
+
+        // Test null parameter for createLight
+        try {
+          let nullLight = await rf.createLight(null, null);
+          expect(nullLight).assertUndefined();
+          console.info(msg + " createLight with (null, null) returned undefined");
+        } catch (err) {
+          console.info(msg + " createLight with (null, null) threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter for createLight
+        try {
+          let undefinedLight = await rf.createLight(undefined, undefined);
+          expect(undefinedLight).assertUndefined();
+          console.info(msg + " createLight with (undefined, undefined) returned undefined");
+        } catch (err) {
+          console.info(msg + " createLight with (undefined, undefined) threw error: " + JSON.stringify(err));
+        }
+
+        // Test empty path for createLight
+        try {
+          let emptyPathLight = await rf.createLight({ name: "Light", path: "" }, LightType.DIRECTIONAL);
+          expect(emptyPathLight != null).assertTrue();
+          console.info(msg + " createLight with empty path returned successfully");
+        } catch (err) {
+          console.info(msg + " createLight with empty path threw error: " + JSON.stringify(err));
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateLightNull " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
@@ -816,6 +1204,70 @@ export default function sceneNodeTest() {
         let node2: scene3d.Node | null | undefined = null;
         node2 = scene?.importNode("scene2", node1, scene.root);
         expect(node2 != null).assertTrue();
+
+        // Test name parameter with empty string
+        try {
+          let emptyNameNode = scene?.importNode("", node1, scene.root);
+          console.info(msg + " importNode with empty string name: " + JSON.stringify(emptyNameNode));
+          expect(emptyNameNode != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importNode with empty string name threw error: " + JSON.stringify(err));
+        }
+
+        // Test name parameter with null
+        try {
+          let nullNameNode = scene?.importNode(null, node1, scene.root);
+          console.info(msg + " importNode with null name: " + JSON.stringify(nullNameNode));
+          expect(nullNameNode).assertUndefined();
+        } catch (err) {
+          console.info(msg + " importNode with null name threw error: " + JSON.stringify(err));
+        }
+
+        // Test name parameter with undefined
+        try {
+          let undefinedNameNode = scene?.importNode(undefined, node1, scene.root);
+          console.info(msg + " importNode with undefined name: " + JSON.stringify(undefinedNameNode));
+          expect(undefinedNameNode).assertUndefined();
+        } catch (err) {
+          console.info(msg + " importNode with undefined name threw error: " + JSON.stringify(err));
+        }
+
+        // Test node parameter with null
+        try {
+          let nullNodeParamNode = scene?.importNode("testNullNode", null, scene.root);
+          console.info(msg + " importNode with null node parameter: " + JSON.stringify(nullNodeParamNode));
+          expect(nullNodeParamNode).assertNull();
+        } catch (err) {
+          console.info(msg + " importNode with null node parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test node parameter with undefined
+        try {
+          let undefinedNodeParamNode = scene?.importNode("testUndefinedNode", undefined, scene.root);
+          console.info(msg + " importNode with undefined node parameter: " + JSON.stringify(undefinedNodeParamNode));
+          expect(undefinedNodeParamNode).assertNull();
+        } catch (err) {
+          console.info(msg + " importNode with undefined node parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test parent parameter with null
+        try {
+          let nullParentNode = scene?.importNode("testNullParent", node1, null);
+          console.info(msg + " importNode with null parent: " + JSON.stringify(nullParentNode));
+          expect(nullParentNode != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importNode with null parent threw error: " + JSON.stringify(err));
+        }
+
+        // Test parent parameter with undefined
+        try {
+          let undefinedParentNode = scene?.importNode("testUndefinedParent", node1, undefined);
+          console.info(msg + " importNode with undefined parent: " + JSON.stringify(undefinedParentNode));
+          expect(undefinedParentNode != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importNode with undefined parent threw error: " + JSON.stringify(err));
+        }
+
         done();
       } catch (err) {
         console.info(msg + " Failed in testImportNode " + JSON.stringify(err));
@@ -838,6 +1290,70 @@ export default function sceneNodeTest() {
         let node2: scene3d.Node | null | undefined = null;
         node2 = scene?.importScene("scene1", scene1, null);
         expect(node2 != null).assertTrue();
+
+        // Test name parameter with empty string
+        try {
+          let emptyNameScene = scene?.importScene("", scene1, null);
+          console.info(msg + " importScene with empty string name: " + JSON.stringify(emptyNameScene));
+          expect(emptyNameScene != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importScene with empty string name threw error: " + JSON.stringify(err));
+        }
+
+        // Test name parameter with null
+        try {
+          let nullNameScene = scene?.importScene(null, scene1, null);
+          console.info(msg + " importScene with null name: " + JSON.stringify(nullNameScene));
+          expect(nullNameScene).assertUndefined();
+        } catch (err) {
+          console.info(msg + " importScene with null name threw error: " + JSON.stringify(err));
+        }
+
+        // Test name parameter with undefined
+        try {
+          let undefinedNameScene = scene?.importScene(undefined, scene1, null);
+          console.info(msg + " importScene with undefined name: " + JSON.stringify(undefinedNameScene));
+          expect(undefinedNameScene).assertUndefined();
+        } catch (err) {
+          console.info(msg + " importScene with undefined name threw error: " + JSON.stringify(err));
+        }
+
+        // Test scene parameter with null
+        try {
+          let nullSceneScene = scene?.importScene("testNullScene", null, null);
+          console.info(msg + " importScene with null scene parameter: " + JSON.stringify(nullSceneScene));
+          expect(nullSceneScene).assertNull();
+        } catch (err) {
+          console.info(msg + " importScene with null scene parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test scene parameter with undefined
+        try {
+          let undefinedSceneScene = scene?.importScene("testUndefinedScene", undefined, null);
+          console.info(msg + " importScene with undefined scene parameter: " + JSON.stringify(undefinedSceneScene));
+          expect(undefinedSceneScene).assertNull();
+        } catch (err) {
+          console.info(msg + " importScene with undefined scene parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test parent parameter with null
+        try {
+          let nullParentScene = scene?.importScene("testNullParent", scene1, null);
+          console.info(msg + " importScene with null parent: " + JSON.stringify(nullParentScene));
+          expect(nullParentScene != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importScene with null parent threw error: " + JSON.stringify(err));
+        }
+
+        // Test parent parameter with undefined
+        try {
+          let undefinedParentScene = scene?.importScene("testUndefinedParent", scene1, undefined);
+          console.info(msg + " importScene with undefined parent: " + JSON.stringify(undefinedParentScene));
+          expect(undefinedParentScene != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " importScene with undefined parent threw error: " + JSON.stringify(err));
+        }
+
         done();
       } catch (err) {
         console.info(msg + " Failed in testImportScene " + JSON.stringify(err));
@@ -939,6 +1455,42 @@ export default function sceneNodeTest() {
         viewPos = {x: -1, y: 1};
         results = await camera.raycast(viewPos, { rootNode: raycastNode });
         expect(results.length).assertEqual(0);
+
+        // Test null parameter for viewPosition (first parameter)
+        try {
+          let nullViewPosResults = await camera.raycast(null, { rootNode: raycastNode });
+          console.info(msg + " raycast with null viewPosition: " + JSON.stringify(nullViewPosResults));
+          expect(nullViewPosResults != null).assertTrue();
+        } catch (nullErr) {
+          console.info(msg + " raycast with null viewPosition threw error: " + JSON.stringify(nullErr));
+        }
+
+        // Test undefined parameter for viewPosition (first parameter)
+        try {
+          let undefinedViewPosResults = await camera.raycast(undefined, { rootNode: raycastNode });
+          console.info(msg + " raycast with undefined viewPosition: " + JSON.stringify(undefinedViewPosResults));
+          expect(undefinedViewPosResults != null).assertTrue();
+        } catch (undefinedErr) {
+          console.info(msg + " raycast with undefined viewPosition threw error: " + JSON.stringify(undefinedErr));
+        }
+
+        // Test null parameter for params (second parameter)
+        try {
+          let nullParamsResults = await camera.raycast(viewPos, null);
+          console.info(msg + " raycast with null params: " + JSON.stringify(nullParamsResults));
+          expect(nullParamsResults != null).assertTrue();
+        } catch (nullParamsErr) {
+          console.info(msg + " raycast with null params threw error: " + JSON.stringify(nullParamsErr));
+        }
+
+        // Test undefined parameter for params (second parameter)
+        try {
+          let undefinedParamsResults = await camera.raycast(viewPos, undefined);
+          console.info(msg + " raycast with undefined params: " + JSON.stringify(undefinedParamsResults));
+          expect(undefinedParamsResults != null).assertTrue();
+        } catch (undefinedParamsErr) {
+          console.info(msg + " raycast with undefined params threw error: " + JSON.stringify(undefinedParamsErr));
+        }
 
         console.info(msg + " test completed successfully");
         done();

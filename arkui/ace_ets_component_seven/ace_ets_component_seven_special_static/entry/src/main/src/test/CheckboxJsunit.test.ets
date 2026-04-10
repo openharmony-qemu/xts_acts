@@ -24,7 +24,7 @@ import { UtilsTest, startAbility } from './Util.test'
 
 export default function checkboxJsunit() {
   describe('checkboxJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("checkboxJsunit beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

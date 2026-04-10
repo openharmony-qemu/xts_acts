@@ -42,6 +42,7 @@
         "MainAbility/pages/Row/RowSpaceResourcePage",
         "MainAbility/pages/Row/RowFixAtIdealSizePage",
         "MainAbility/pages/Row/RowMatchParent",
-        "MainAbility/pages/Row/RowWrapContent"
+        "MainAbility/pages/Row/RowWrapContent",
+        "MainAbility/pages/Row/RowAlignItemsJustifyContentReverseNullUndefined"
     ]
 }

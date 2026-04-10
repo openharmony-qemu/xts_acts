@@ -31,7 +31,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextCommonTextComputing5() {
   describe('TextCommonTextComputing5', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextCommonTextComputing5 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

@@ -36,7 +36,7 @@ let uiContext = AppStorage.get<UIContext>('uiContext');
 
 export default function EnableSwipeBackRouter() {
   describe('EnableSwipeBackRouter', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("EnableSwipeBackRouter beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigationwear18.static", "EntryAbility");

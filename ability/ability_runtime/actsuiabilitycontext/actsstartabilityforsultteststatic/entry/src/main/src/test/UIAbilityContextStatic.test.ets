@@ -31,7 +31,7 @@ let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context: common.UIAbilityContext
+let context: common.UIAbilityContext | undefined;
 
 let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
 let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
@@ -55,7 +55,7 @@ export default function UIAbilityContextStatic() {
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'start success');
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
-      await context.revokeDelegator().then(() => {
+      await context!.revokeDelegator().then(() => {
         hilog.info(domain, tag, 'revokeDelegator success');
       }).catch((err: Error): void => {
         if (err.code == 801) {
@@ -63,7 +63,7 @@ export default function UIAbilityContextStatic() {
         }
         hilog.info(domain, tag, `beforeAll revokeDelegator failed, code is ${err.code}, message is ${err.message}`);
       });
-      hilog.info(domain, tag, 'getcontext success, context: ' + context);
+      hilog.info(domain, tag, 'getcontext success, context: ' + context!);
     })
 
     /**
@@ -72,15 +72,15 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   Call UIAbilityContext showAbility succeeded.(promise),
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_showAbility_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let want: Want = {
         bundleName: 'com.acts.startabilityforresulttest.static',
         abilityName: 'MainAbility1'
       };
       try {
-        context.startAbility(want, (err: BusinessError<void>|null) => {
+        context?.startAbility(want, (err: BusinessError<void>|null) => {
           if (err?.code) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             return;
@@ -93,7 +93,7 @@ export default function UIAbilityContextStatic() {
         hilog.info(domain, tag,`startAbility failed, code is ${code}, message is ${message}`);
       }
       let info: string;
-      context.showAbility().then(() => {
+      context?.showAbility().then(() => {
         hilog.info(domain, tag,`showAbility success`);
       }).catch((err: Error): void => {
         hilog.info(domain, tag,`showAbility fail, err: ${JSON.stringify(err)}`);
@@ -122,15 +122,15 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   Call UIAbilityContext hideAbility succeeded.(promise),
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_hideAbility_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let want: Want = {
         bundleName: 'com.acts.startabilityforresulttest.static',
         abilityName: 'MainAbility1'
       };
       try {
-        context.startAbility(want, (err: BusinessError<void>|null) => {
+        context?.startAbility(want, (err: BusinessError<void>|null) => {
           if (err?.code) {
             hilog.info(domain, tag,`startAbility failed, code is ${err?.code}, message is ${err?.message}`);
             return;
@@ -143,7 +143,7 @@ export default function UIAbilityContextStatic() {
         hilog.info(domain, tag,`startAbility failed, code is ${code}, message is ${message}`);
       }
       let info: string;
-      context.hideAbility().then(() => {
+      context?.hideAbility().then(() => {
         hilog.info(domain, tag,`highAbility success`);
       }).catch((err: Error): void => {
         hilog.info(domain, tag,`highAbility fail, err: ${JSON.stringify(err)}`);
@@ -172,12 +172,12 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   API test for context.setRestoreEnabled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let par: boolean = true
       try {
-        context.setRestoreEnabled(par);
+        context?.setRestoreEnabled(par);
         hilog.info(domain, tag, 'setRestoreEnabled success ');
         expect(par).assertTrue()
         done();
@@ -190,17 +190,40 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0900
+     * @tc.number SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0900
+     * @tc.desc   API test for context.setRestoreEnabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let flag: boolean = false
+      try {
+        context?.setRestoreEnabled(false);
+        hilog.info(domain, tag, 'setRestoreEnabled success ');
+        flag = true
+        expect(flag).assertTrue()
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, 'setRestoreEnabled failed ' + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300
      * @tc.desc   API test for context.SetAbilityInstanceInfo errcode 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "it begin");
       try {
-        await context.setAbilityInstanceInfo('', pixelMap);
+        await context!.setAbilityInstanceInfo('', pixelMap);
         hilog.info(domain, tag, "fail");
         try { expect().assertFail(); } catch (err) {}
         done();
@@ -219,12 +242,12 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   API test for context.SetAbilityInstanceInfo errcode 801, 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag , "it begin");
       try {
-        await context.setAbilityInstanceInfo('instance label', pixelMap)
+        await context!.setAbilityInstanceInfo('instance label', pixelMap)
           .catch((err: Error): void => {
             hilog.info(domain, tag , "setAbilityInstanceInfo failed: " + JSON.stringify(err))
             let code = err?.code;
@@ -250,15 +273,15 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   API test for context.revokeDelegator.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_HookAbility_Static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_HookAbility_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain,  tag , " it begin");
       if (disable) {
         done();
         return;
       }
-      context.revokeDelegator().then(() => {
+      context?.revokeDelegator().then(() => {
         hilog.info(domain,  tag ,'%{public}s', 'revokeDelegator success');
       }).catch((err: Error): void => {
         expect(err.code).assertEqual(16000084);
@@ -274,11 +297,11 @@ export default function UIAbilityContextStatic() {
      * @tc.desc   Expect: failed with code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_PluginAbility_Static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_PluginAbility_Static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        application.createPluginModuleContext(context, '', '')
+        application.createPluginModuleContext(context!, '', '')
           .then((data: common.Context): void => {
             hilog.info(0x0000, 'testTag', 'createPluginModuleContext success data:' + JSON.stringify(data));
           })
@@ -293,5 +316,36 @@ export default function UIAbilityContextStatic() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startUIServiceExtensionAbility_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_startUIServiceExtensionAbility_Static_0100
+     * @tc.desc   Expect: failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_startUIServiceExtensionAbility_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let tag: string = 'SUB_Ability_AbilityRuntime_startUIServiceExtensionAbility_Static_0100'
+      console.log(`${tag} begin`);
+      let want: Want = {
+        bundleName: 'com.acts.startabilityforresulttest.static',
+        abilityName: 'UIServiceAbility'
+      }
+      context?.startUIServiceExtensionAbility(want)
+        .then(() => {
+          console.log(`${tag} success`);
+          expect().assertFail();
+          done();
+        })
+        .catch((err: Error) => {
+          hilog.info(0x0000, 'testTag', `startUIServiceExtensionAbility faiiled code: ${err.code}, message: ${err.message}`);
+          if( err.code !== 801 ) {
+            expect(err.code).assertEqual(16000001);
+          }
+          done();
+      });
+    })
+
   })
 }

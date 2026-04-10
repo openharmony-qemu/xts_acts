@@ -15,8 +15,12 @@
 
 import MessageTest from "./Message.test";
 import MessageTest2 from "./Message2.test";
+import MessageTest3 from "./Message3.test";
+import MessageEqualsTest from "./MessageEquals.test";
 
 export default function testsuite() {
   MessageTest();
   MessageTest2();
+  MessageTest3();
+  MessageEqualsTest();
 }

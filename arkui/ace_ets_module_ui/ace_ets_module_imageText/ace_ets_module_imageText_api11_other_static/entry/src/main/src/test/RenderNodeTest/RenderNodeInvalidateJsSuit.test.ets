@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function RenderNodeInvalidateJsSuit() {
   describe('RenderNodeInvalidateJsSuit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RenderNodeInvalidateJsSuit beforeEach start");
 
       
@@ -73,7 +73,7 @@ export default function RenderNodeInvalidateJsSuit() {
           await CommonFunc.sleep(2000);
           // console.info("push MarqueeDynamicSyncSceneTest page result:" + JSON.stringify(result));
         }
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push MarqueeDynamicSyncSceneTest page error:" + err);
       }
       console.info("MarqueeDynamicSyncSceneTest beforeEach end");

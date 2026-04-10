@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +51,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
           let mdSize: number = digestSyncUtils.getMdSize(algName);
           expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -80,7 +80,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
           expect(dataResSpilt.mdObj.getMdLength()).assertEqual(mdSize);
           expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -102,7 +102,7 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
           let mdSize: number = digestSyncUtils.getMdSize(algName);
           expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -128,13 +128,13 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
           let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
           try {
             md.updateSync(message);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`Digest Update “${error}“, error code: ${error.code}`);
-            expect(error.code).assertEqual(401); // 1.1: 30001
+            expect((error as BusinessError).code).assertEqual(401); // 1.1: 30001
           }
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -154,13 +154,132 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
         let algName: string = "SHA3-224";
         cryptoFramework.createMd(algName);
         expect(null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`Digest “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
 
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_DigestSync_Func_0700
+     * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0700
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_DigestSync_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        for(let algName of digestSyncUtils.DIGEST_SPEC) {
+          let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
+          let data: cryptoFramework.DataBlob = await md.digest();
+          console.error("############ " + algName + ":" + commonUtils.decToHexString(data));
+        }
+      } catch (error) {
+        console.error(`Digest “${error}“, error code: ${error.code}`);
+        expect(null).assertTrue();
+      }
+      done();
+    });
 
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_DigestSync_Func_0800
+     * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0800
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_DigestSync_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let messageLen: int = 128;
+        let message: cryptoFramework.DataBlob = await commonUtils.createData(messageLen);
+        for(let algName of digestSyncUtils.DIGEST_SPEC) {
+          let dataRes: digestSyncUtils.mdInfo = await digestSyncUtils.doMdCallback(algName, message);
+          let mdSize: number = digestSyncUtils.getMdSize(algName);
+          expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
+        }
+      } catch (error) {
+        console.error(`Digest “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_DigestSync_Func_0900
+     * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0900
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_DigestSync_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let messageLen: int = 128;
+        let message: cryptoFramework.DataBlob = await commonUtils.createData(messageLen);
+        for(let algName of digestSyncUtils.DIGEST_SPEC) {
+          let dataRes: digestSyncUtils.mdInfo = await digestSyncUtils.doMdPromise(algName, message);
+          let mdSize: number = digestSyncUtils.getMdSize(algName);
+          expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
+        }
+      } catch (error) {
+        console.error(`Digest “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_DigestSync_Func_1000
+     * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_1000
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_DigestSync_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        for(let algName of digestSyncUtils.DIGEST_SPEC) {
+          let dataRes: digestSyncUtils.mdInfo = await digestSyncUtils.doMdWithNoUpdatePromise(algName);
+          let mdSize: number = digestSyncUtils.getMdSize(algName);
+          expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
+        }
+      } catch (error) {
+        console.error(`Digest “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_DigestSync_Func_1100
+     * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_1100
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_DigestSync_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let messageLen: int = 128;
+        let blockSize: int = 20;
+        let message: cryptoFramework.DataBlob = await commonUtils.createData(messageLen);
+        for(let algName of digestSyncUtils.DIGEST_SPEC) {
+          let dataResSpilt: digestSyncUtils.mdInfo = await digestSyncUtils.doMdPromiseSplit(algName, message, blockSize);
+          let dataRes: digestSyncUtils.mdInfo = await digestSyncUtils.doMdPromise(algName, message);
+          let ret: boolean = commonUtils.compareDataBlob(dataRes.dataRes, dataResSpilt.dataRes);
+          let mdSize: number = digestSyncUtils.getMdSize(algName);
+          expect(ret).assertTrue();
+          expect(dataResSpilt.mdObj.getMdLength()).assertEqual(mdSize);
+          expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
+        }
+      } catch (error) {
+        console.error(`Digest “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
   });
 }

@@ -26,7 +26,7 @@ import Utils from '../../../ets/MainAbility/common/Utils'
 
 export default function enableCascadeTest() {
   describe('TimePickerDialogApienableCascade', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TimePickerDialogApienableCascade beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
     });
@@ -52,112 +52,84 @@ export default function enableCascadeTest() {
       console.info('TimePickerDialogApienableCascade beforeEach end');
     });
 
-    
-/**
+    /**
      * @tc.number   TimePickerDialog_EnableCascade_static_001
      * @tc.name     TimePickerDialog_EnableCascade_static_001
      * @tc.desc     TimePickerDialog_EnableCascade_static_001
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerDialog_EnableCascade_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableCascade_static_001';
-      console.info('[' + tagName + '] START============================');
+    it('TimePickerDialog_EnableCascade_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TimePickerDialog_EnableCascade_static_001 START ===========================');
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('TimePickerDialog1'));
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('TimePickerDialog1', 10, "")
-      await CommonFunc.sleep(1000);
-      let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let timePicker = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      console.info("[TimePickerDialog_EnableCascade_static_001] obj1 is: " + timePicker);
-      console.info("[TimePickerDialog_EnableCascade_static_001] obj1 is: " +
-      JSON.stringify(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')));
-      inspector.sendEventByKey('TimePickerDialog1', 10, "")
-      expect(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')).assertEqual(true);
-      console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
+
+      let timePicker = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1];
+      let enableCascadeValue = timePicker.getElement('$attrs').getBoolean('enableCascade');
+
+      console.info("[TimePickerDialog_EnableCascade_static_001] tree enableCascadeValue is: " + enableCascadeValue);
+      expect(enableCascadeValue).assertEqual(true);
+      console.info('TimePickerDialog_EnableCascade_static_001 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
       done();
     });
 
-    
-
-    
-/**
+    /**
      * @tc.number   TimePickerDialog_EnableCascade_static_002
      * @tc.name     TimePickerDialog_EnableCascade_static_002
      * @tc.desc     TimePickerDialog_EnableCascade_static_002
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerDialog_EnableCascade_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableCascade_static_002';
-      console.info('[' + tagName + '] START============================');
+    it('TimePickerDialog_EnableCascade_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TimePickerDialog_EnableCascade_static_002 START ===========================');
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('TimePickerDialog2'));
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('TimePickerDialog2', 10, "")
-      await CommonFunc.sleep(1000);
-      let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let timePicker = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      console.info("[TimePickerDialog_EnableCascade_static_002] obj1 is: " + timePicker);
-      console.info("[TimePickerDialog_EnableCascade_static_002] obj1 is: " +
-      JSON.stringify(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')));
-      inspector.sendEventByKey('TimePickerDialog2', 10, "")
-      expect(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')).assertEqual(false);
-      console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
+
+      let timePicker = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1];
+      let enableCascadeValue = timePicker.getElement('$attrs').getBoolean('enableCascade');
+
+      console.info("[TimePickerDialog_EnableCascade_static_002] tree enableCascadeValue is: " + enableCascadeValue);
+      expect(enableCascadeValue).assertEqual(false);
+      console.info('TimePickerDialog_EnableCascade_static_002 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
       done();
     });
 
-    
-    
-/**
-     * @tc.number   TimePickerDialog_EnableCascade_static_003
-     * @tc.name     TimePickerDialog_EnableCascade_static_003
-     * @tc.desc     TimePickerDialog_EnableCascade_static_003
-     * @tc.level    Level.LEVEL1
-     */
-it('TimePickerDialog_EnableCascade_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableCascade_static_003';
-      console.info('[' + tagName + '] START============================');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('TimePickerDialog3', 10, "")
-      await CommonFunc.sleep(1000);
-      let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await CommonFunc.sleep(2000);
-      let timePicker = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      console.info("[TimePickerDialog_EnableCascade_static_003] obj1 is: " + timePicker);
-      console.info("[TimePickerDialog_EnableCascade_static_003] obj1 is: " +
-      JSON.stringify(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')));
-      inspector.sendEventByKey('TimePickerDialog3', 10, "")
-      expect(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')).assertEqual(false);
-      console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
-      done();
-    });
-
-    
-
-    
-/**
+    /**
      * @tc.number   TimePickerDialog_EnableCascade_static_004
      * @tc.name     TimePickerDialog_EnableCascade_static_004
      * @tc.desc     TimePickerDialog_EnableCascade_static_004
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerDialog_EnableCascade_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableCascade_static_004';
-      console.info('[' + tagName + '] START============================');
+    it('TimePickerDialog_EnableCascade_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TimePickerDialog_EnableCascade_static_004 START ===========================');
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('TimePickerDialog4'));
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('TimePickerDialog4', 10, "")
-      await CommonFunc.sleep(1000);
-      let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      let timePicker = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      console.info("[TimePickerDialog_EnableCascade_static_004] obj1 is: " + timePicker);
-      console.info("[TimePickerDialog_EnableCascade_static_004] obj1 is: " +
-      JSON.stringify(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')));
-      inspector.sendEventByKey('TimePickerDialog4', 10, "")
-      expect(JSON.parseJsonElement(timePicker).getElement('$attrs').getBoolean('enableCascade')).assertEqual(false);
-      console.info('[' + tagName + '] END ===========================');
-      await CommonFunc.sleep(2000);
+
+      let timePicker = tree.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1];
+      let enableCascadeValue = timePicker.getElement('$attrs').getBoolean('enableCascade');
+
+      console.info("[TimePickerDialog_EnableCascade_static_004] tree enableCascadeValue is: " + enableCascadeValue);
+      expect(enableCascadeValue).assertEqual(false);
+      console.info('TimePickerDialog_EnableCascade_static_004 END ===========================');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000); 
       done();
     });
   })

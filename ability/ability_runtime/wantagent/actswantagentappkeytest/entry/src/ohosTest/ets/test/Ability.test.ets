@@ -72,7 +72,7 @@ export default function abilityTest() {
             (err: BusinessError, data: wantAgent.CompleteData) => {
               if (err) {
                 console.error(`${caseName} trigger fail, error:${JSON.stringify(err)}`);
-                expect.assertFail();
+                expect().assertFail();
                 done();
               } else {
                 console.info(`${caseName} trigger success, data:${JSON.stringify(data)}`);
@@ -83,7 +83,7 @@ export default function abilityTest() {
             await Utils.sleep(500);
         }).catch((err: BusinessError) => {
           console.error(`${caseName} getWantAgent fail, error: ${JSON.stringify(err)}`);
-          expect.assertFail();
+          expect().assertFail();
           done();
         });
       console.info(`${caseName} End`);
@@ -129,7 +129,7 @@ export default function abilityTest() {
             (err: BusinessError, data: wantAgent.CompleteData) => {
               if (err) {
                 console.error(`${caseName} trigger fail, error:${JSON.stringify(err)}`);
-                expect.assertFail();
+                expect().assertFail();
                 done();
               } else {
                 console.info(`${caseName} trigger success, data:${JSON.stringify(data)}`);
@@ -139,7 +139,7 @@ export default function abilityTest() {
             });
         }).catch((err: BusinessError) => {
           console.error(`${caseName} getWantAgent fail, error: ${JSON.stringify(err)}`);
-          expect.assertFail();
+          expect().assertFail();
           done();
         });
       console.info(`${caseName} End`);
@@ -186,7 +186,7 @@ export default function abilityTest() {
             (err: BusinessError, data: wantAgent.CompleteData) => {
               if (err) {
                 console.error(`${caseName} trigger fail, error:${JSON.stringify(err)}`);
-                expect.assertFail();
+                expect().assertFail();
                 done();
               } else {
                 console.info(`${caseName} trigger success, data:${JSON.stringify(data)}`);
@@ -196,7 +196,7 @@ export default function abilityTest() {
             });
         }).catch((err: BusinessError) => {
           console.error(`${caseName} getWantAgent fail, error: ${JSON.stringify(err)}`);
-          expect.assertFail();
+          expect().assertFail();
           done();
         });
       console.info(`${caseName} End`);
@@ -243,7 +243,7 @@ export default function abilityTest() {
             (err: BusinessError, data: wantAgent.CompleteData) => {
               if (err) {
                 console.error(`${caseName} trigger fail, error:${JSON.stringify(err)}`);
-                expect.assertFail();
+                expect().assertFail();
                 done();
               } else {
                 console.info(`${caseName} trigger success, data:${JSON.stringify(data)}`);
@@ -253,7 +253,7 @@ export default function abilityTest() {
             });
         }).catch((err: BusinessError) => {
           console.error(`${caseName} getWantAgent fail, error: ${JSON.stringify(err)}`);
-          expect.assertFail();
+          expect().assertFail();
           done();
         });
       console.info(`${caseName} End`);
@@ -304,7 +304,7 @@ export default function abilityTest() {
               (err: BusinessError, data: wantAgent.CompleteData) => {
                 if (err) {
                   console.error(`${caseName} trigger fail, error:${JSON.stringify(err)}`);
-                  expect.assertFail();
+                  expect().assertFail();
                 } else {
                   console.info(`${caseName} trigger success, data:${JSON.stringify(data)}`);
                   expect(data.finalCode).assertEqual(0);
@@ -313,7 +313,7 @@ export default function abilityTest() {
               });
           }).catch((err: BusinessError) => {
             console.error(`${caseName} getWantAgent fail, error: ${JSON.stringify(err)}`);
-            expect.assertFail();
+            expect().assertFail();
             done();
           });
         console.info(`${caseName} End`);
@@ -391,7 +391,7 @@ export default function abilityTest() {
             (err: BusinessError, data: wantAgent.CompleteData) => {
               if (err) {
                 console.error(`${caseName} trigger fail, error:${JSON.stringify(err)}`);
-                expect.assertFail();
+                expect().assertFail();
                 done();
               } else {
                 console.info(`${caseName} trigger success, data:${JSON.stringify(data)}`);
@@ -428,14 +428,14 @@ export default function abilityTest() {
                     }
                   }).catch((err: BusinessError) => {
                     console.error(`${caseName} getWantAgent fail, error: ${JSON.stringify(err)}`);
-                    expect.assertFail();
+                    expect().assertFail();
                     done();
                   });
               }
             });
         }).catch((err: BusinessError) => {
           console.error(`${caseName} getWantAgent fail, error: ${JSON.stringify(err)}`);
-          expect.assertFail();
+          expect().assertFail();
           done();
         });
       console.info(`${caseName} End`);
@@ -506,7 +506,7 @@ export default function abilityTest() {
             (err: BusinessError, data: wantAgent.CompleteData) => {
               if (err) {
                 console.error(`${caseName} trigger fail, error:${JSON.stringify(err)}`);
-                expect.assertFail();
+                expect().assertFail();
                 done();
               } else {
                 console.info(`${caseName} trigger success, data:${JSON.stringify(data)}`);
@@ -545,14 +545,14 @@ export default function abilityTest() {
                     }
                   }).catch((err: BusinessError) => {
                     console.error(`${caseName} getWantAgent fail, error: ${JSON.stringify(err)}`);
-                    expect.assertFail();
+                    expect().assertFail();
                     done();
                   });
               }
             });
         }).catch((err: BusinessError) => {
           console.error(`${caseName} getWantAgent fail, error: ${JSON.stringify(err)}`);
-          expect.assertFail();
+          expect().assertFail();
           done();
         });
       console.info(`${caseName} End`);

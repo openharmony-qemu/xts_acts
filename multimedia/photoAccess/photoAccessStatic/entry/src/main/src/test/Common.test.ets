@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -72,7 +72,7 @@ export async function getFileAsset(testNum: string, fetchOps: photoAccessHelper.
     hilog.info(0x0000, testTag, '%{public}s', `${testNum} getFileAsset fetchResult: ${fetchResult.getCount()}`);
     asset = await fetchResult.getFirstObject();
     fetchResult.close();
-  } catch (error: Error) {
+  } catch (error) {
     hilog.info(0x0000, testTag, '%{public}s', `${testNum} getFileAsset error: ${error}`);
     throw error;
   }
@@ -232,7 +232,7 @@ export async function getPermission(name?: Permissions): Promise<void> {
         hilog.info(0x0000, testTag, 'requestPermissionsFromUser data dialogShownResults:' + data?.dialogShownResults);
       }
     });
-  } catch (error: Error) {
+  } catch (error) {
     hilog.info(0x0000, testTag,
       ' createAsset failed' + ", error.name:" + error.name + ", error.message:" + error.message);
   }
@@ -372,7 +372,7 @@ export async function startAbility(bundleName: string, abilityName: string): Pro
       await abilityDelegatorRegistry.getAbilityDelegator()
         .executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
     console.info(`[picker] start abilityFinished: ${result}`);
-  } catch (err: Error) {
+  } catch (err) {
     console.error(`[picker] start abilityFailed: ${err}`);
   }
 }
@@ -382,7 +382,7 @@ export async function stopAbility(bundleName: string): Promise<void> {
     let result =
       await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(`aa force-stop ${bundleName}`);
     console.info(`[picker] stop abilityFinished: ${result}`);
-  } catch (err: Error) {
+  } catch (err) {
     console.error(`[picker] stop abilityFailed: ${err}`);
   }
 }

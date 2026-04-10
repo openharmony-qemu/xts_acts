@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -59,7 +59,7 @@ struct webViewControllerPart2 {
               try {
                 console.log('testNativeEmbedStatus001 :'+NativeEmbedStatus.ENTER_BFCACHE)
                 Utils.emitEvent(NativeEmbedStatus.ENTER_BFCACHE, 37021);
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -69,13 +69,13 @@ struct webViewControllerPart2 {
               try {
                 console.log('testNativeEmbedStatus002 :'+NativeEmbedStatus.LEAVE_BFCACHE)
                 Utils.emitEvent(NativeEmbedStatus.LEAVE_BFCACHE, 37022);
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
               break;
             }
 
-            case 'emitonSwitchNextPage1': {
+            case 'emitSwitchNextPage2': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
               router.pushUrl({ url: 'pages/webViewRegisterNativeEmbedRule' })

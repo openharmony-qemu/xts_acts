@@ -15,7 +15,7 @@
 
 import {
     fileIO, FILE_CONTENT, prepareFile, nextFileName, isIntNum, isBigInt,
-    describe, it, expect,
+    describe, it, expect, sleep
   } from '../Common';
 import { TestType, Size, Level } from '@ohos/hypium';
 import fileUri from '@ohos.file.fileuri';
@@ -71,7 +71,7 @@ describe('fileIO_fs_stat', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_stat_sync_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -90,7 +90,7 @@ describe('fileIO_fs_stat', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_stat_sync_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -113,7 +113,7 @@ describe('fileIO_fs_stat', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_stat_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
+      expect(e.code === 13900008 && e.message == 'Bad file descriptor').assertTrue();
     }
   });
 
@@ -182,7 +182,84 @@ describe('fileIO_fs_stat', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_stat_sync_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_sync_007
+   * @tc.number SUB_DF_FILEIO_STAT_SYNC_0700
+   * @tc.desc   Test statSync() for uri interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_stat_sync_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    try {
+      fileIO.statSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_stat_sync_007 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_sync_008
+   * @tc.number SUB_DF_FILEIO_STAT_SYNC_0800
+   * @tc.desc   Test statSync() for uri interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_stat_sync_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    try {
+      fileIO.statSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_stat_sync_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_sync_009
+   * @tc.number SUB_DF_FILEIO_STAT_SYNC_0900
+   * @tc.desc   Test statSync() for uri interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_stat_sync_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    try {
+      fileIO.statSync("");
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_stat_sync_009 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_sync_010
+   * @tc.number SUB_DF_FILEIO_STAT_SYNC_1000
+   * @tc.desc   Test statSync() for uri interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_stat_sync_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_stat_sync_004');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath);
+    try {
+      let stat = fileIO.statSync(file.fd);
+      expect(stat !== null).assertTrue();
+      console.log('fileIO_stat_sync_010 stat ' + stat.size);
+      fileIO.unlinkSync(fpath);
+    } catch (e) {
+      console.log('fileIO_stat_sync_010 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
     }
   });
 
@@ -447,7 +524,7 @@ describe('fileIO_fs_stat', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_stat_sync_is_block_device_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -471,7 +548,7 @@ describe('fileIO_fs_stat', function () {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_stat_sync_is_block_device_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       
     }
   });
@@ -521,7 +598,7 @@ describe('fileIO_fs_stat', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_stat_sync_is_character_device_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -545,7 +622,7 @@ describe('fileIO_fs_stat', function () {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_stat_sync_is_character_device_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -621,7 +698,7 @@ describe('fileIO_fs_stat', function () {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_stat_sync_is_directory_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -645,7 +722,7 @@ describe('fileIO_fs_stat', function () {
       fileIO.closeSync(file);
       fileIO.rmdirSync(dpath);
       console.log('fileIO_stat_sync_is_directory_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -694,7 +771,7 @@ describe('fileIO_fs_stat', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_stat_sync_is_fifo_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -718,7 +795,7 @@ describe('fileIO_fs_stat', function () {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_stat_sync_is_fifo_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
   /**
@@ -793,7 +870,7 @@ describe('fileIO_fs_stat', function () {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_stat_sync_is_file_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -817,7 +894,7 @@ describe('fileIO_fs_stat', function () {
       fileIO.closeSync(file);
       fileIO.rmdirSync(dpath);
       console.log('fileIO_stat_sync_is_file_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -866,7 +943,7 @@ describe('fileIO_fs_stat', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_stat_sync_is_socket_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -890,7 +967,7 @@ describe('fileIO_fs_stat', function () {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_stat_sync_is_socket_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
   /**
@@ -938,7 +1015,7 @@ describe('fileIO_fs_stat', function () {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_stat_sync_is_symbolic_link_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -962,7 +1039,7 @@ describe('fileIO_fs_stat', function () {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_stat_sync_is_symbolic_link_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -1042,6 +1119,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat !== null).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1075,7 +1153,7 @@ describe('fileIO_fs_stat', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_stat_async_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -1095,7 +1173,7 @@ describe('fileIO_fs_stat', function () {
       fileIO.stat(fpath, (err) => {
         if (err) {
           console.log('fileIO_stat_async_004 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+          expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
           done();
         }
       });
@@ -1120,7 +1198,7 @@ describe('fileIO_fs_stat', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_stat_async_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -1140,7 +1218,7 @@ describe('fileIO_fs_stat', function () {
       });
     } catch (e) {
       console.log('fileIO_stat_async_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -1165,7 +1243,7 @@ describe('fileIO_fs_stat', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_stat_async_007 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
+      expect(e.code === 13900008 && e.message == 'Bad file descriptor').assertTrue();
       fileIO.unlinkSync(fpath);
       done();
     }
@@ -1189,7 +1267,7 @@ describe('fileIO_fs_stat', function () {
       fileIO.stat(file.fd, (err) => {
         if (err) {
           console.log('fileIO_stat_async_008 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code == 13900008 && err.message == 'Bad file descriptor').assertTrue();
+          expect(err.code === 13900008 && err.message == 'Bad file descriptor').assertTrue();
           done();
         }
       });
@@ -1271,7 +1349,79 @@ describe('fileIO_fs_stat', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_stat_async_011 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_async_012
+   * @tc.number SUB_DF_FILEIO_STAT_ASYNC_1200
+   * @tc.desc   Test stat() interface for uri. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+   it('fileIO_stat_async_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    try {
+      fileIO.stat(null, (err, stat) => {
+        if(err) {
+          console.log('fileIO_stat_async_012 error package1: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_stat_async_012 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_async_013
+   * @tc.number SUB_DF_FILEIO_STAT_ASYNC_1200
+   * @tc.desc   Test stat() interface for uri. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+   it('fileIO_stat_async_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    try {
+      fileIO.stat(undefined, (err, stat) => {
+        if(err) {
+          console.log('fileIO_stat_async_013 error package1: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_stat_async_013 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_stat_async_014
+   * @tc.number SUB_DF_FILEIO_STAT_ASYNC_1400
+   * @tc.desc   Test stat() interface for uri. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+   it('fileIO_stat_async_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    try {
+      fileIO.stat("", (err, stat) => {
+        if(err) {
+          console.log('fileIO_stat_async_014 error package1: ' + JSON.stringify(err));
+          expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_stat_async_014 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
       done();
     }
   });
@@ -1325,6 +1475,7 @@ describe('fileIO_fs_stat', function () {
         expect(isBigInt(stat.ino)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1391,6 +1542,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.mode)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1457,6 +1609,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.uid)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1524,6 +1677,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.gid)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1590,6 +1744,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.size)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1656,6 +1811,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.atime)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1722,6 +1878,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.mtime)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1788,6 +1945,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.ctime)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1854,6 +2012,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isBlockDevice() === false).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1920,6 +2079,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isCharacterDevice() === false).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2014,6 +2174,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isDirectory() === true).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(dpath, fileIO.OpenMode.DIR);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2080,6 +2241,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isFIFO() === false).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2146,6 +2308,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isFile() === true).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2239,6 +2402,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isSocket() === false).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2305,6 +2469,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isSymbolicLink() === false).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2435,6 +2600,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.location == 1).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2555,6 +2721,7 @@ describe('fileIO_fs_stat', function () {
         expect(typeof stat.atimeNs == 'bigint').assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2648,6 +2815,7 @@ describe('fileIO_fs_stat', function () {
         expect(typeof stat.mtimeNs == 'bigint').assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2741,6 +2909,7 @@ describe('fileIO_fs_stat', function () {
         expect(typeof stat.ctimeNs == 'bigint').assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {

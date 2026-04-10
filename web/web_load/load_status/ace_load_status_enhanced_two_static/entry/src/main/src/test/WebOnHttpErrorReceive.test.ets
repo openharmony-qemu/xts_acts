@@ -50,15 +50,15 @@ export default function webOnHttpErrorReceiveTest() {
       console.info('web beforeEach start');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONHTTPERRORRECEIVE_0200
-    * @tc.name        : testOnHttpErrorReceiveStatic002
-    * @tc.desc        : test onHttpErrorReceive not callback when returned error code is 204
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    /**
+    * @tc.name         testOnHttpErrorReceiveStatic002
+    * @tc.number       SUB_WEB_ONHTTPERRORRECEIVE_0200
+    * @tc.desc         test onHttpErrorReceive not callback when returned error code is 204
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
     */
-    it('testOnHttpErrorReceiveStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testOnHttpErrorReceiveStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('testOnHttpErrorReceive002', 10)
       await Utils.msSleep(3000);
@@ -69,15 +69,15 @@ export default function webOnHttpErrorReceiveTest() {
       done()
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONHTTPERRORRECEIVE_0300
-    * @tc.name        : testOnHttpErrorReceiveStatic003
-    * @tc.desc        : test onHttpErrorReceive not callback when returned error code is 301
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    /**
+    * @tc.name         testOnHttpErrorReceiveStatic003
+    * @tc.number       SUB_WEB_ONHTTPERRORRECEIVE_0300
+    * @tc.desc         test onHttpErrorReceive not callback when returned error code is 301
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
     */
-    it('testOnHttpErrorReceiveStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testOnHttpErrorReceiveStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testOnHttpErrorReceive003', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testOnHttpErrorReceive003', 0, 60602, done);
@@ -87,15 +87,15 @@ export default function webOnHttpErrorReceiveTest() {
       done()
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONHTTPERRORRECEIVE_0400
-    * @tc.name        : testOnHttpErrorReceiveStatic004
-    * @tc.desc        : test onHttpErrorReceive callback when returned error code is 500
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    /**
+    * @tc.name         testOnHttpErrorReceiveStatic004
+    * @tc.number       SUB_WEB_ONHTTPERRORRECEIVE_0400
+    * @tc.desc         test onHttpErrorReceive callback when returned error code is 500
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
     */
-    it('testOnHttpErrorReceiveStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testOnHttpErrorReceiveStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testOnHttpErrorReceive004', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testOnHttpErrorReceive004', 404, 60604, done);
@@ -105,15 +105,15 @@ export default function webOnHttpErrorReceiveTest() {
       done()
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONHTTPERRORRECEIVE_0500
-    * @tc.name        : testOnHttpErrorReceiveStatic005
-    * @tc.desc        : test onHttpErrorReceive callback when returned error code is 500
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
+    /**
+    * @tc.name         SwitchNextPageStatic
+    * @tc.number       SUB_WEB_SwitchNextPageStatic
+    * @tc.desc         test SwitchNextPageStatic
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
     */
-    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent('SwitchNextPageStatic', 10)

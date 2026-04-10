@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function List_scrollToIndex1() {
   describe('List_scrollToIndex1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("List_scrollToIndex1 beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")

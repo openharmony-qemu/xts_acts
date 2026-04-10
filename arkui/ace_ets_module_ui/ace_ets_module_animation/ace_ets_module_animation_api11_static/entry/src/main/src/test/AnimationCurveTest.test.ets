@@ -55,7 +55,7 @@ const interpolate4 = (fraction: number) => {
 export default function animationCurveTest() {
   describe('animationCurveTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("playModeReverseTest beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
@@ -86,11 +86,11 @@ export default function animationCurveTest() {
     
     /**
      * @tc.number   ArkUX_ohos.curves_customCurve_static_1000
-     * @tc.name     ArkUX_ohos.curves_customCurve_static_1000
+     * @tc.name     ArkUX_ohoscurves_customCurve_static_1000Adapt001
      * @tc.desc     ArkUX_ohos.curves_customCurve_static_1000
      * @tc.level    Level.LEVEL0
      */
-it('ArkUX_ohos.curves_customCurve_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_ohoscurves_customCurve_static_1000Adapt001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_ohos.curves_customCurve_static_1000 START');
       let fraction: number
       setTimeout(() => {
@@ -113,11 +113,11 @@ it('ArkUX_ohos.curves_customCurve_static_1000', Level.LEVEL0, async (done: () =>
     
     /**
      * @tc.number   ArkUX_ohos.curves_customCurve_static_1100
-     * @tc.name     ArkUX_ohos.curves_customCurve_static_1100
+     * @tc.name     ArkUX_ohoscurves_customCurve_static_1100Adapt001
      * @tc.desc     ArkUX_ohos.curves_customCurve_static_1100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUX_ohos.curves_customCurve_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_ohoscurves_customCurve_static_1100Adapt001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_ohos.curves_customCurve_static_1000 START');
       let fraction1: number
       setTimeout((): void => {
@@ -141,11 +141,11 @@ it('ArkUX_ohos.curves_customCurve_static_1100', Level.LEVEL0, async (done: () =>
     
     /**
      * @tc.number   ArkUX_ohos.curves_customCurve_static_1200
-     * @tc.name     ArkUX_ohos.curves_customCurve_static_1200
+     * @tc.name     ArkUX_ohoscurves_customCurve_static_1200Adapt001
      * @tc.desc     ArkUX_ohos.curves_customCurve_static_1200
      * @tc.level    Level.LEVEL0
      */
-it('ArkUX_ohos.curves_customCurve_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_ohoscurves_customCurve_static_1200Adapt001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_ohos.curves_customCurve_static_1200 START');
       let fraction2: number
       setTimeout(() => {
@@ -169,11 +169,11 @@ it('ArkUX_ohos.curves_customCurve_static_1200', Level.LEVEL0, async (done: () =>
     
     /**
      * @tc.number   ArkUX_ohos.curves_customCurve_static_1300
-     * @tc.name     ArkUX_ohos.curves_customCurve_static_1300
+     * @tc.name     ArkUX_ohoscurves_customCurve_static_1300Adapt001
      * @tc.desc     ArkUX_ohos.curves_customCurve_static_1300
      * @tc.level    Level.LEVEL0
      */
-it('ArkUX_ohos.curves_customCurve_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_ohoscurves_customCurve_static_1300Adapt001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_ohos.curves_customCurve_static_1300 START');
       let fraction3: number
       let fraction4: number
@@ -201,11 +201,11 @@ it('ArkUX_ohos.curves_customCurve_static_1300', Level.LEVEL0, async (done: () =>
     
     /**
      * @tc.number   ArkUX_ohos.curves_customCurve_static_1400
-     * @tc.name     ArkUX_ohos.curves_customCurve_static_1400
+     * @tc.name     ArkUX_ohoscurves_customCurve_static_1400Adapt001
      * @tc.desc     ArkUX_ohos.curves_customCurve_static_1400
      * @tc.level    Level.LEVEL0
      */
-it('ArkUX_ohos.curves_customCurve_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_ohoscurves_customCurve_static_1400Adapt001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_ohos.curves_customCurve_static_1400 START');
       let fraction5: number
       setTimeout(() => {

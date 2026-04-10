@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,7 +24,7 @@ export async function normalProcess(signVerifyAlgName: string, isSpec:boolean, s
     signVerifyKeyPair = await asyKeyGenPromiseFunc.genKeyPair(isSpec, spec, algName);
     console.log("[Promise] signVerifyPromiseNormalProcess: generateKeyPair succeed");
     return await keyPairProcess(signVerifyAlgName, signVerifyKeyPair);
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Promise] signVerifyPromiseNormalProcess: signVerify failed:" + err + "errCode: " + err.code);
     throw err as Error;
   }
@@ -48,7 +48,7 @@ export async function keyPairProcess(signVerifyAlgName: string, signVerifyKeyPai
     await verify.update(input1);
     console.log("[Promise] signVerifyPromiseNormalProcess: verify update succeed");
     return await verify.verify(input2, signedText);
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Promise] signVerifyPromiseNormalProcess: signVerify failed:" + err + "errCode: " + err.code);
     throw err as Error;
   }
@@ -70,7 +70,7 @@ export async function ECCCurveProcess(signVerifyAlgName: string, isSpec:boolean,
     await verify.init(signVerifyKeyPair.pubKey);
     console.log("[Promise] signVerifyPromiseNormalProcess: verify init succeed");
     return await verify.verify(input, signedText);
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Promise] signVerifyPromiseNormalProcess: signVerify failed:" + err + "errCode: " + err.code);
     throw err as Error;
   }
@@ -94,7 +94,7 @@ export async function ECCCurveErrProcess(signVerifyAlgName: string, isSpec:boole
     await verify.init(signVerifyKeyPair2.pubKey);
     console.log("[Promise] signVerifyPromiseNormalProcess: verify init succeed");
     return await verify.verify(input, signedText);
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Promise] signVerifyPromiseNormalProcess: signVerify failed:" + err + "errCode: " + err.code);
     throw err as Error;
   }
@@ -130,7 +130,7 @@ export async function setUseridProcess(signVerifyAlgName: string,
     await verify.update(input1);
     console.log("[Promise] signVerifySetUseridProcess: verify update succeed");
     return await verify.verify(input2, signedText);
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("[Promise] signVerifySetUseridProcess: signVerify failed:" + err + "errCode: " + err.code);
     throw err as Error;
   }

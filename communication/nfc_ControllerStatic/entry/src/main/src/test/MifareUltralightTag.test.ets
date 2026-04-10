@@ -52,7 +52,8 @@ export default function nfcMifareUltralightTagTest() {
     beforeAll(() => {
       try {
         nfcmifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         if (error.code === 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] beforeAll error is ' + error.code + " - " + error);
           expect(801).assertEqual(error.code)
@@ -83,13 +84,20 @@ export default function nfcMifareUltralightTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
         if (nfcmifareUltralightTag != null && nfcmifareUltralightTag != undefined) {
           let pageIndex: int = 1;
           try {
             await nfcmifareUltralightTag.readMultiplePages(pageIndex).then((data) => {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0100 data ');
+              if (data.length > 0) {
+                  expect(data.length > 0).assertTrue();
+              } else {
+                  expect(data.length == 0).assertTrue();
+              }
             });
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0100 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -120,14 +128,23 @@ export default function nfcMifareUltralightTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
         if (nfcmifareUltralightTag != null && nfcmifareUltralightTag != undefined) {
           let pageIndex: int = 1;
           let AsyncCallback:(err:BusinessError<void>|null, data: Array<int> | undefined) => void = (err:BusinessError<void>|null,data: Array<int> | undefined) => {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0200 readSingleBlock finish ');
+            if (data != undefined) {
+              if (data.length > 0) {
+                  expect(data.length > 0).assertTrue();
+              } else {
+                  expect(data.length == 0).assertTrue();
+              }
+            }
           }
           try {
             nfcmifareUltralightTag.readMultiplePages(pageIndex, AsyncCallback);
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0200 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -158,6 +175,7 @@ export default function nfcMifareUltralightTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
         if (nfcmifareUltralightTag != null && nfcmifareUltralightTag != undefined) {
           let pageIndex: int = 1;
           let rawData: Array<int> = [0x01, 0x02];
@@ -165,7 +183,8 @@ export default function nfcMifareUltralightTagTest() {
             await nfcmifareUltralightTag.writeSinglePage(pageIndex, rawData).then((data) => {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0300 data ');
             });
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0300 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -188,6 +207,40 @@ export default function nfcMifareUltralightTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0301
+     * @tc.name SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0301
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0301', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
+        if (nfcmifareUltralightTag != null && nfcmifareUltralightTag != undefined) {
+          let pageIndex: int = 1;
+          let rawData: Array<int> = [];
+          try {
+            await nfcmifareUltralightTag.writeSinglePage(pageIndex, rawData).then((data) => {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0301 data ');
+            });
+          } catch (error){
+            error = error as BusinessError;
+            if (error.code === 401) {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0301 error is ' + error.code + " - " + error);
+              expect(401).assertEqual(error.code)
+            } else {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0301 error is ' + error.code + " - " + error);
+              expect().assertFail();
+            }
+          }
+        } else {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] nfcmifareUltralightTag = null & = undefined: ');
+          expect(true).assertFalse();
+        }
+        done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0400
      * @tc.name SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0400
      * @tc.desc Check whether the NFC function is enabled.
@@ -196,6 +249,7 @@ export default function nfcMifareUltralightTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
         if (nfcmifareUltralightTag != null && nfcmifareUltralightTag != undefined) {
           let pageIndex: int = 1;
           let rawData: Array<int> = [0x01, 0x02];
@@ -205,7 +259,8 @@ export default function nfcMifareUltralightTagTest() {
           }
           try {
             nfcmifareUltralightTag.writeSinglePage(pageIndex, rawData, AsyncCallback);
-          } catch (error: BusinessError){
+          } catch (error){
+            error = error as BusinessError;
             if (error.code === 201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0400 error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code)
@@ -228,6 +283,42 @@ export default function nfcMifareUltralightTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0401
+     * @tc.name SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0401
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
+        if (nfcmifareUltralightTag != null && nfcmifareUltralightTag != undefined) {
+          let pageIndex: int = 1;
+          let rawData: Array<int> = [];
+          let AsyncCallback:(err: BusinessError<void> | null, data: Array<int> | undefined) => void = (
+            err: BusinessError<void>|null, data: Array<int> | undefined) => {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0401 readSingleBlock finish ');
+          }
+          try {
+            nfcmifareUltralightTag.writeSinglePage(pageIndex, rawData, AsyncCallback);
+          } catch (error){
+            error = error as BusinessError;
+            if (error.code === 401) {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0401 error is ' + error.code + " - " + error);
+              expect(201).assertEqual(error.code)
+            } else {
+              hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0401 error is ' + error.code + " - " + error);
+              expect().assertFail();
+            }
+          }
+        } else {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] nfcmifareUltralightTag = null & = undefined: ');
+          expect().assertFail();
+        }
+        done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0500
      * @tc.name SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0500
      * @tc.desc Check whether the NFC function is enabled.
@@ -236,11 +327,54 @@ export default function nfcMifareUltralightTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let nfcmifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
       if (nfcmifareUltralightTag != null && nfcmifareUltralightTag != undefined) {
         try {
           let getType: tag.MifareUltralightType = nfcmifareUltralightTag.getType();
-        } catch (error: BusinessError) {
+          expect(getType).assertEqual(tag.MifareUltralightType.TYPE_UNKNOWN);
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0500 getType error is ' + error.code + " - " + error);
+          expect().assertFail();
+        }
+      } else {
+        hilog.info(domain, tag1,'{public}s','[NFC_test] nfcmifareUltralightTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0501
+     * @tc.name SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0501
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0501', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let mifareUltralightTaginfo: tag.TagInfo = {
+        "uid": [0x04],
+        "technology": [1, 9],
+        "extrasData": [
+          {
+            "Sak": 0x00, "Atqa": "B000",
+          },
+          {
+            "MifareUltralightC": "ture",
+          },
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      let nfcmifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
+      if (nfcmifareUltralightTag != null && nfcmifareUltralightTag != undefined) {
+        try {
+          let getType: tag.MifareUltralightType = nfcmifareUltralightTag.getType();
+          expect(getType).assertEqual(tag.MifareUltralightType.TYPE_ULTRALIGHT);
+        } catch (error) {
+          error = error as BusinessError;
+          hilog.info(domain, tag1,'{public}s','[NFC_test] SUB_COMMUNICATION_NFC_MifareUltralightTag_static_0501 getType error is ' + error.code + " - " + error);
           expect().assertFail();
         }
       } else {

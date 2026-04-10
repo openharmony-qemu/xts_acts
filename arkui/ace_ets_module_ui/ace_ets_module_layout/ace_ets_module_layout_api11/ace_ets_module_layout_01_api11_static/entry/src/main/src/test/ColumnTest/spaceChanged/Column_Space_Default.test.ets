@@ -35,7 +35,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function Column_Space_Default() {
   describe('Column_Space_Default', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Column_Space_Default beforeEach start");
 
 

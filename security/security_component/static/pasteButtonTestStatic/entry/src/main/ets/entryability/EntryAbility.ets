@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import UIAbility from '@ohos.app.ability.UIAbility';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import Want from '@ohos.app.ability.Want';
@@ -20,7 +20,8 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext } from '@ohos.arkui.UIContext'
+import { UIContext } from '@ohos.arkui.UIContext';
+import common from '@ohos.app.ability.common';
 
 
 class EntryAbility extends UIAbility {
@@ -41,15 +42,21 @@ class EntryAbility extends UIAbility {
       let windowClass: window.Window | undefined = undefined;
       windowStage.getMainWindow((err: BusinessError<void> | null, data: window.Window | undefined) => {
         if (err?.code) {
-          console.error(`Failed to obtain the main window. Cause code: ${err?.code}, message: ${err?.message}`);
+          hilog.error(0x0000, 'testTag EntryAbility', `Failed to obtain the main window. Cause code: ${err?.code}, message: ${err?.message}`);
           return;
         }
         windowClass = data;
-        console.info('Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
+        hilog.info(0x0000, 'testTag EntryAbility', 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
         // 获取UIContext实例。
         let uiContext: UIContext | null = null;
         uiContext = windowClass!.getUIContext();
-        AppStorage.setOrCreate<UIContext>('UIContext', uiContext)
+        if (uiContext) {
+          hilog.info(0x0000, 'testTag EntryAbility', 'UIContext ok');
+          AppStorage.setOrCreate<UIContext>('UIContext', uiContext);
+          hilog.info(0x0000, 'testTag EntryAbility', 'setOrCreate UIContext seccess');
+        } else {
+          hilog.info(0x0000, 'testTag EntryAbility', 'UIContext is undefined');
+        }
       });
     });
   }
@@ -65,6 +72,13 @@ class EntryAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onForeground');
+    if (this.context) {
+      hilog.info(0x0000, 'testTag EntryAbility', 'context ok');
+      AppStorage.setOrCreate<common.UIAbilityContext>('UIAbilityContext', this.context);
+      hilog.info(0x0000, 'testTag EntryAbility', 'setOrCreate UIAbilityContext seccess');
+    } else {
+      hilog.info(0x0000, 'testTag EntryAbility', 'context is undefined');
+    }
   }
 
   onBackground() {

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,7 @@ import Utils from './Util.test';
 
 export default function Float32ArrayTest() {
   describe('Float32ArrayTest', ():void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     // let value: string;
@@ -3169,7 +3169,7 @@ export default function Float32ArrayTest() {
      * @tc.type         Function
      * @tc.level        Level 1
      */
-it('testFloat32Constructor0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFloat32Constructor0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testFloat32Constructor0159";
       try {
         // creat bigInt64Array

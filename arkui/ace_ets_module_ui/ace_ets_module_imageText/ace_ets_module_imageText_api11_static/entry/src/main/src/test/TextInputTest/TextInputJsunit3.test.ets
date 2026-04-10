@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function textInputJsunit3() {
   describe('appInfoTest_four_12', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_12 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
 
@@ -99,7 +99,7 @@ export default function textInputJsunit3() {
       console.info('[textInputTest_static_02] START');
       try {
         AppStorage.setOrCreate<number>("fontSize", 16)
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textInputTest_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -137,7 +137,7 @@ export default function textInputJsunit3() {
       console.info('[textInputTest_static_04] START');
       try {
         AppStorage.setOrCreate<Color>("fontColor", Color.Red)
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textInputTest_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -174,7 +174,7 @@ export default function textInputJsunit3() {
       console.info('[textInputTest_static_06] START');
       try {
         AppStorage.setOrCreate<InputType>("inputType", InputType.Email)
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textInputTest_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -212,7 +212,7 @@ export default function textInputJsunit3() {
       console.info('[textInputTest_static_08] START');
       try {
         AppStorage.setOrCreate<TextAlign>("textAlign", TextAlign.Start)
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textInputTest_static_08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -256,7 +256,7 @@ export default function textInputJsunit3() {
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<string>("text2", '123456789')
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textInputTest_static_10] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -283,7 +283,7 @@ export default function textInputJsunit3() {
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<string>("text2", '1234567890abc')
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textInputTest_static_11] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

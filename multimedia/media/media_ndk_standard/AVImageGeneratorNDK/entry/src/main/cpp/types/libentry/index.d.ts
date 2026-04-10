@@ -16,6 +16,7 @@
 export const OhAvImageGeneratorCreate: () => number;
 export const OhAvImageGeneratorSetFdSource: (fileDescribe : number) => number;
 export const OhAvImageGeneratorFetchFrameByTime: (fileDescribe : number, timeus : number, options : number) => number;
+export const OhAvImageGeneratorFetchFrameByTimeError: (fileDescribe : number, timeus : number, options : number) => number;
 export const OhAvImageGeneratorRelease: () => number;
 export const OhAVImageGeneratorSetFdPathSourceTwo: () => number
 export const OhAvImageGeneratorReleaseTwo: () => number;

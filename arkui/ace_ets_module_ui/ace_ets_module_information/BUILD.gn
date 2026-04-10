@@ -30,6 +30,8 @@ group("ActsAceEtsModuleInformationTest") {
     "ace_ets_module_information_api16_static:ActsAceEtsModuleInformationApi16StaticTest",
     "ace_ets_module_information_api20_static:ActsAceEtsModuleInformationApi20StaticTest",
     "ace_ets_module_information_other_api11_static:ActsAceEtsModuleInformationOtherApi11StaticTest",
+    "ace_ets_module_information_undefined_static:ActsAceEtsModuleInformationUndefinedStaticTest",
     "ace_ets_module_information02_static:ActsAceEtsModuleInformation02StaticTest",
+    "ace_ets_module_information01_undefined_static:ActsAceEtsModuleInformation01UndefinedStaticTest",
   ]
 }

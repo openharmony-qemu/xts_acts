@@ -18,6 +18,8 @@ import clientAuthenticationHandler from './ClientAuthenticationHandler.test'
 import clientAuthenticationHandlerTwo from './ClientAuthenticationHandlerTwo.test'
 import clientAuthenticationHandlerThree from './ClientAuthenticationHandlerThree.test'
 import clientAuthenticationHandlerFour from './ClientAuthenticationHandlerFour.test'
+import clientAuthenticationHandlerFive from './ClientAuthenticationHandlerFive.test'
+import clientAuthenticationHandlerSix from './ClientAuthenticationHandlerSix.test'
 
 export default function testsuite() {
   webJsunit();
@@ -25,5 +27,7 @@ export default function testsuite() {
   clientAuthenticationHandlerTwo();
   clientAuthenticationHandlerThree();
   clientAuthenticationHandlerFour();
+  clientAuthenticationHandlerFive();
+  clientAuthenticationHandlerSix();
   certChainData();
 }

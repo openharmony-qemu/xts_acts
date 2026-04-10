@@ -48,7 +48,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditor023() {
   describe('RichEditor023', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });

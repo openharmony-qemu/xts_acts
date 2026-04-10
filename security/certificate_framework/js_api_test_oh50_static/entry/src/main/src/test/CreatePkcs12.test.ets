@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,7 +60,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_0100 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -91,7 +91,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 创建p12时，如果未添加私钥，只添加了公钥证书和其他证书，p12解析后该公钥证书存放在其他证书里面 */
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, !NEED_PRIV_KEY, !NEED_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_0200 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -122,7 +122,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 创建p12时，如果未添加公钥证书，只添加了私钥，和1本私钥签发的其他证书1本其他证书，p12解析后该私钥签发的其他证书存放在证书里面 */
         let ret: boolean = await map.checkPkcs12(algName, p12);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_0300 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -152,7 +152,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, NEED_PRIV_KEY, NEED_CA, !NEED_OTHER_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_0400 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -181,7 +181,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, NEED_PRIV_KEY, !NEED_CA, !NEED_OTHER_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_0500 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -213,7 +213,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 创建p12时，只添加了公钥证书，p12解析后该证书存放在其他证书里面 */
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, !NEED_PRIV_KEY, !NEED_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_0600 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -244,7 +244,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, ONLY_OTHER, !NEED_PRIV_KEY, !NEED_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_0700 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -280,7 +280,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_0800 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -317,7 +317,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 创建p12时，如果未添加私钥，只添加了公钥证书和其他证书，p12解析后该公钥证书存放在其他证书里面 */
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, !NEED_PRIV_KEY, !NEED_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_0900 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -354,7 +354,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 创建p12时，如果未添加公钥证书，只添加了私钥，和1本私钥签发的其他证书1本其他证书，p12解析后该私钥签发的其他证书存放在证书里面 */
         let ret: boolean = await map.checkPkcs12(algName, p12);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_1000 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -390,7 +390,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, NEED_PRIV_KEY, NEED_CA, !NEED_OTHER_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_1100 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -425,7 +425,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, NEED_PRIV_KEY, !NEED_CA, !NEED_OTHER_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_1200 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -462,7 +462,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 创建p12时，只添加了公钥证书，p12解析后该证书存放在其他证书里面 */
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, !NEED_PRIV_KEY, !NEED_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_1300 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -498,7 +498,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, ONLY_OTHER, !NEED_PRIV_KEY, !NEED_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_1400 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -528,7 +528,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_1500 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -559,7 +559,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 创建p12时，如果未添加私钥，只添加了公钥证书和其他证书，p12解析后该公钥证书存放在其他证书里面 */
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, !NEED_PRIV_KEY, !NEED_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_1600 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -590,7 +590,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 创建p12时，如果未添加公钥证书，只添加了私钥，和1本私钥签发的其他证书1本其他证书，p12解析后该私钥签发的其他证书存放在证书里面 */
         let ret: boolean = await map.checkPkcs12(algName, p12);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_1700 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -620,7 +620,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, NEED_PRIV_KEY, NEED_CA, !NEED_OTHER_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_1800 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -649,7 +649,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, NEED_PRIV_KEY, !NEED_CA, !NEED_OTHER_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_1900 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -680,7 +680,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 创建p12时，只添加了公钥证书，p12解析后该证书存放在其他证书里面 */
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, !NEED_PRIV_KEY, !NEED_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_2000 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -710,7 +710,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, ONLY_OTHER, !NEED_PRIV_KEY, !NEED_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_2100 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -746,7 +746,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_2200 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -783,7 +783,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 创建p12时，如果未添加私钥，只添加了公钥证书和其他证书，p12解析后该公钥证书存放在其他证书里面 */
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, !NEED_PRIV_KEY, !NEED_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_2300 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -820,7 +820,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 创建p12时，如果未添加公钥证书，只添加了私钥，和1本私钥签发的其他证书1本其他证书，p12解析后该私钥签发的其他证书存放在证书里面 */
         let ret: boolean = await map.checkPkcs12(algName, p12);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_2400 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -856,7 +856,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, NEED_PRIV_KEY, NEED_CA, !NEED_OTHER_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_2500 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -891,7 +891,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, NEED_PRIV_KEY, !NEED_CA, !NEED_OTHER_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_2600 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -928,7 +928,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 创建p12时，只添加了公钥证书，p12解析后该证书存放在其他证书里面 */
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, !ONLY_OTHER, !NEED_PRIV_KEY, !NEED_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_2700 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -964,7 +964,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM, ONLY_OTHER, !NEED_PRIV_KEY, !NEED_CA);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_2800 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -989,16 +989,16 @@ export default function certFrameworkCreateP12CertTestUnit() {
       try {
         await cert.createPkcs12(pkcs12Data, createConfig)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_2900 Promise ${error}, error code: ${error.code}`);
-        expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+        expect((error as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       try {
         cert.createPkcs12Sync(pkcs12Data, createConfig)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_2900 Sync ${error}, error code: ${error.code}`);
-        expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+        expect((error as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -1024,8 +1024,8 @@ export default function certFrameworkCreateP12CertTestUnit() {
         createConfig.keyEncParams = pbesParams;
         await cert.createPkcs12(pkcs12Data, createConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
-        expect(error.code).assertEqual(19020003);
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(19020003);
       }
       try {
         /* 盐值长度异常，规格里最小值为8 */
@@ -1033,9 +1033,9 @@ export default function certFrameworkCreateP12CertTestUnit() {
         createConfig.keyEncParams = pbesParams;
         await cert.createPkcs12(pkcs12Data, createConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         // cert.CertResult.ERR_PARAMETER_CHECK_FAILED
-        expect(error.code).assertEqual(19020003);
+        expect((error as BusinessError).code).assertEqual(19020003);
       }
       try {
         /* 迭代次数异常，异常值-1 */
@@ -1043,9 +1043,9 @@ export default function certFrameworkCreateP12CertTestUnit() {
         createConfig.keyEncParams = pbesParams;
         await cert.createPkcs12(pkcs12Data, createConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         // cert.CertResult.ERR_PARAMETER_CHECK_FAILED
-        expect(error.code).assertEqual(19020003);
+        expect((error as BusinessError).code).assertEqual(19020003);
       }
       done();
     });
@@ -1069,7 +1069,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
           encodingFormat: cert.EncodingFormat.FORMAT_PEM
         };
         caCert = await cert.createX509Cert(encodingBlob);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`createX509Cert ${error}, error code: ${error.code}`);
         throw error as Error;
       }
@@ -1082,8 +1082,8 @@ export default function certFrameworkCreateP12CertTestUnit() {
         createConfig.certEncParams = pbesParams;
         await cert.createPkcs12(pkcs12Data, createConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
-        expect(error.code).assertEqual(19020003);
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(19020003);
       }
       try {
         /* 盐值长度异常，规格里最小值为8 */
@@ -1091,9 +1091,9 @@ export default function certFrameworkCreateP12CertTestUnit() {
         createConfig.certEncParams = pbesParams;
         await cert.createPkcs12(pkcs12Data, createConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         // cert.CertResult.ERR_PARAMETER_CHECK_FAILED
-        expect(error.code).assertEqual(19020003);
+        expect((error as BusinessError).code).assertEqual(19020003);
       }
       try {
         /* 迭代次数异常，异常值-1 */
@@ -1101,9 +1101,9 @@ export default function certFrameworkCreateP12CertTestUnit() {
         createConfig.certEncParams = pbesParams;
         await cert.createPkcs12(pkcs12Data, createConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         // cert.CertResult.ERR_PARAMETER_CHECK_FAILED
-        expect(error.code).assertEqual(19020003);
+        expect((error as BusinessError).code).assertEqual(19020003);
       }
       done();
     });
@@ -1125,16 +1125,16 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let createConfig : cert.Pkcs12CreationConfig = setMacParams(7);
         await cert.createPkcs12(pkcs12Data, createConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
-        expect(error.code).assertEqual(19020003);
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(19020003);
       }
       try {
         /* 迭代次数异常，异常值-1 */
         let createConfig : cert.Pkcs12CreationConfig = setMacParams(16, -1);
         await cert.createPkcs12(pkcs12Data, createConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
-        expect(error.code).assertEqual(19020003);
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(19020003);
       }
       done();
     });
@@ -1158,15 +1158,15 @@ export default function certFrameworkCreateP12CertTestUnit() {
         /* 原始口令长度异常，规格里最小长度为4 */
         await cert.createPkcs12(pkcs12Data, createConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
-        expect(error.code).assertEqual(19020003);
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(19020003);
       }
       try {
         /* 原始口令长度异常，规格里最小长度为4 */
         cert.createPkcs12Sync(pkcs12Data, createConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
-        expect(error.code).assertEqual(19020003);
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(19020003);
       }
       done();
     });
@@ -1190,7 +1190,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
           encodingFormat: cert.EncodingFormat.FORMAT_PEM
         };
         caCert = await cert.createX509Cert(encodingBlob);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`createX509Cert ${error}, error code: ${error.code}`);
         throw error as Error;
       }
@@ -1201,15 +1201,15 @@ export default function certFrameworkCreateP12CertTestUnit() {
       try {
         await cert.createPkcs12(pkcs12Data, createConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
-        expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
       }
       try {
 
         cert.createPkcs12Sync(pkcs12Data, createConfig);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
-        expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -1238,7 +1238,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, IS_PEM);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_3500 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1269,7 +1269,7 @@ export default function certFrameworkCreateP12CertTestUnit() {
         let p12: cert.Pkcs12Data = await map.parsePkcs12(pkcs12Data, parsingConfig);
         let ret: boolean = await map.checkPkcs12(algName, p12, !IS_PEM);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CreateP12_Func_3600 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }

@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function NavigationApi2() {
   describe('NavigationApi2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });

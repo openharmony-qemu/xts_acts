@@ -35,7 +35,7 @@ let tag: string = 'testTag';
 export default function scrollAniUn() {
   describe('scrollAniUn', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("scrollAniUn beforeEach start");
 
       

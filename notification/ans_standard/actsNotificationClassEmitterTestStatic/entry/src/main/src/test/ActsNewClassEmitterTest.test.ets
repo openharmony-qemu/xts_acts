@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -72,7 +72,7 @@ export default function ActsNewClassEmitterTest() {
         try {
           hilog.info(0x001, 'testTag', 'test case begin');
           emitter1.onEventData("event", callback);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x001, 'testTag', `on failed,data is: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
@@ -80,7 +80,7 @@ export default function ActsNewClassEmitterTest() {
         try {
           hilog.info(0x001, 'testTag', 'test case begin');
           emitter2.onEventData("event", callback);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x001, 'testTag', `on failed,data is: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
@@ -89,7 +89,7 @@ export default function ActsNewClassEmitterTest() {
           hilog.info(0x001, 'testTag', 'test emit1 success');
           emitter1.emit("event",eventData);
           await Utils.msSleep(5000);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x001, 'testTag', `on failed,data is: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
@@ -129,7 +129,7 @@ export default function ActsNewClassEmitterTest() {
         try {
           hilog.info(0x0000,'testTag', 'test case begin');
           emitter1.onGenericEventData("event1", callbackT);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x001, 'testTag', `on failed,data is: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
@@ -137,7 +137,7 @@ export default function ActsNewClassEmitterTest() {
         try {
           hilog.info( 0x0000,'testTag', 'test case begin');
           emitter2.onGenericEventData("event1", callbackT);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x001, 'testTag', `on failed,data is: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
@@ -146,7 +146,7 @@ export default function ActsNewClassEmitterTest() {
           hilog.info(0x0000,'testTag', 'test emit success');
           emitter2.emit("event1", eventDataT);
           await Utils.msSleep(5000);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000,'testTag',
             `emitter1.emit failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -181,7 +181,7 @@ export default function ActsNewClassEmitterTest() {
         try {
           hilog.info(0x001, 'testTag',  'test case start');
           emitter1.onceEventData("eventOnce", callback);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `emitter1.emit failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -190,7 +190,7 @@ export default function ActsNewClassEmitterTest() {
         try {
           hilog.info(0x001, 'testTag',  'test case start');
           emitter2.onceEventData("eventOnce", callback);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `emitter1.emit failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -201,7 +201,7 @@ export default function ActsNewClassEmitterTest() {
           hilog.info(0x001, 'testTag',  'emit success');
           emitter1.emit("eventOnce");
           await Utils.msSleep(6000);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `emitter1.emit failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -246,7 +246,7 @@ export default function ActsNewClassEmitterTest() {
         try {
           hilog.info(0x001, 'testTag',  'test case start');
           emitter3.onceGenericEventData("eventOnce2", callbackT);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `emitter1.emit failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -255,7 +255,7 @@ export default function ActsNewClassEmitterTest() {
         try {
           hilog.info(0x001, 'testTag',  'test case start');
           emitter4.onceGenericEventData("eventOnce2", callbackT);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `emitter1.emit failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -265,7 +265,7 @@ export default function ActsNewClassEmitterTest() {
           hilog.info(0x001, 'testTag',  'emit success');
           emitter3.emit("eventOnce2");
           await Utils.msSleep(6000);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `emitter1.emit failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -320,7 +320,7 @@ export default function ActsNewClassEmitterTest() {
           emitter1.onEventData("event1", callback4);
           emitter2.onEventData("event1", callback);
           emitter2.onEventData("event1", callback1);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `onEventData failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -331,7 +331,7 @@ export default function ActsNewClassEmitterTest() {
           emitter1.offEventData("event1", callback);
           emitter1.offEventData("event1", callback1);
           emitter2.offEventData("event1", callback1);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `offEventData failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -365,7 +365,7 @@ export default function ActsNewClassEmitterTest() {
           hilog.info(0x001, 'testTag',  'test case begin');
           emitter1.onEventData("event1", callback);
           emitter2.onEventData("event1", callback);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `emitter1.emit failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -375,7 +375,7 @@ export default function ActsNewClassEmitterTest() {
           emitter1.off("event1");
           emitter2.off("event1");
           hilog.info(0x0000, 'testTag', 'emitter1 off success!');
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `emitter1.emit failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -416,7 +416,7 @@ export default function ActsNewClassEmitterTest() {
           hilog.info(0x001, 'testTag',  'test case begin');
           emitter1.onEventData("event1", callback);
           emitter2.onEventData("event2", callback);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `onEventData failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -427,7 +427,7 @@ export default function ActsNewClassEmitterTest() {
           emitter1.offEventData("event1", callback);
           emitter2.offEventData("event2", callback);
           hilog.info(0x0000, 'testTag','emitter1 off success!');
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `offEventData failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -472,7 +472,7 @@ export default function ActsNewClassEmitterTest() {
           hilog.info(0x001, 'testTag',  'test case begin');
           emitter1.onGenericEventData("event1", callbackT);
           emitter2.onGenericEventData("event2", callbackT);
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `emitter1.emit failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();
@@ -483,7 +483,7 @@ export default function ActsNewClassEmitterTest() {
           emitter1.offGenericEventData("event1", callbackT);
           emitter2.offGenericEventData("event2", callbackT);
           hilog.info(0x0000, 'testTag', 'emitter1 off success!');
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag',
             `emitter1.emit failed, error.code: ${err.code}, error.message: ${err.message}`);
           expect().assertFail();

@@ -401,6 +401,19 @@ static napi_value OH_Udmf_SetPropertiesTag001(napi_env env, napi_callback_info i
     return result;
 }
 
+static napi_value OH_Udmf_SetPropertiesTag002(napi_env env, napi_callback_info info)
+{
+    OH_UdmfData *data = OH_UdmfData_Create();
+    OH_UdmfProperty *properties = OH_UdmfProperty_Create(data);
+    int ret = OH_UdmfProperty_SetTag(properties, "");
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret == UDMF_E_OK, &result);
+    OH_UdmfData_Destroy(data);
+    OH_UdmfProperty_Destroy(properties);
+    return result;
+}
+
 static napi_value OH_Udmf_GetPropertiesTag001(napi_env env, napi_callback_info info)
 {
     OH_UdmfData *data = OH_UdmfData_Create();
@@ -494,6 +507,19 @@ static napi_value OH_Udmf_SetPropertiesExtrasIntParam001(napi_env env, napi_call
     return result;
 }
 
+static napi_value OH_Udmf_SetPropertiesExtrasIntParam002(napi_env env, napi_callback_info info)
+{
+    OH_UdmfData *data = OH_UdmfData_Create();
+    OH_UdmfProperty *properties = OH_UdmfProperty_Create(data);
+    int ret = OH_UdmfProperty_SetExtrasIntParam(properties, "", 3);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret == UDMF_E_OK, &result);
+    OH_UdmfData_Destroy(data);
+    OH_UdmfProperty_Destroy(properties);
+    return result;
+}
+
 static napi_value OH_Udmf_GetPropertiesExtrasIntParam001(napi_env env, napi_callback_info info)
 {
     OH_UdmfData *data = OH_UdmfData_Create();
@@ -521,6 +547,32 @@ static napi_value OH_Udmf_SetPropertiesExtrasStringParam001(napi_env env, napi_c
     return result;
 }
 
+static napi_value OH_Udmf_SetPropertiesExtrasStringParam002(napi_env env, napi_callback_info info)
+{
+    OH_UdmfData *data = OH_UdmfData_Create();
+    OH_UdmfProperty *properties = OH_UdmfProperty_Create(data);
+    int ret = OH_UdmfProperty_SetExtrasStringParam(properties, "", "str");
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret == UDMF_E_OK, &result);
+    OH_UdmfData_Destroy(data);
+    OH_UdmfProperty_Destroy(properties);
+    return result;
+}
+
+static napi_value OH_Udmf_SetPropertiesExtrasStringParam003(napi_env env, napi_callback_info info)
+{
+    OH_UdmfData *data = OH_UdmfData_Create();
+    OH_UdmfProperty *properties = OH_UdmfProperty_Create(data);
+    int ret = OH_UdmfProperty_SetExtrasStringParam(properties, "keyStr", "");
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret == UDMF_E_OK, &result);
+    OH_UdmfData_Destroy(data);
+    OH_UdmfProperty_Destroy(properties);
+    return result;
+}
+
 static napi_value OH_Udmf_GetPropertiesExtrasStringParam001(napi_env env, napi_callback_info info)
 {
     OH_UdmfData *data = OH_UdmfData_Create();
@@ -534,6 +586,21 @@ static napi_value OH_Udmf_GetPropertiesExtrasStringParam001(napi_env env, napi_c
     OH_UdmfProperty_Destroy(properties);
     return result;
 }
+
+static napi_value OH_Udmf_GetPropertiesExtrasStringParam002(napi_env env, napi_callback_info info)
+{
+    OH_UdmfData *data = OH_UdmfData_Create();
+    OH_UdmfProperty *properties = OH_UdmfProperty_Create(data);
+    OH_UdmfProperty_SetExtrasStringParam(properties, "keyStr", "str");
+    const char* pf = OH_UdmfProperty_GetExtrasStringParam(properties, "");
+
+    napi_value result = nullptr;
+    napi_create_int32(env, strcmp(pf, "str") != 0, &result);
+    OH_UdmfData_Destroy(data);
+    OH_UdmfProperty_Destroy(properties);
+    return result;
+}
+
 static napi_value OH_Udmf_SetAndGetUnifiedData003(napi_env env, napi_callback_info info)
 {
     OH_UdmfData *udmfUnifiedData = OH_UdmfData_Create();
@@ -673,6 +740,32 @@ static napi_value OH_Udmf_SetAndGetUnifiedData006(napi_env env, napi_callback_in
     OH_UdmfData_Destroy(udmfUnifiedData);
 
     OH_UdsPlainText_Destroy(getPlainText);
+    OH_UdmfData_Destroy(readUnifiedData);
+    return result;
+}
+
+static napi_value OH_Udmf_SetAndGetUnifiedData008(napi_env env, napi_callback_info info)
+{
+    OH_UdmfData *udmfUnifiedData = OH_UdmfData_Create();
+    OH_UdmfRecord *record = OH_UdmfRecord_Create();
+    OH_UdsPlainText *plainText = OH_UdsPlainText_Create();
+    char content[] = "hello world";
+    OH_UdsPlainText_SetContent(plainText, content);
+    OH_UdmfRecord_AddPlainText(record, plainText);
+    OH_UdmfData_AddRecord(udmfUnifiedData, record);
+
+    Udmf_Intention intention = UDMF_INTENTION_DRAG;
+    char key[UDMF_KEY_BUFFER_LEN];
+    OH_Udmf_SetUnifiedData(intention, udmfUnifiedData, key, UDMF_KEY_BUFFER_LEN);
+    char key2[] = "";
+    OH_UdmfData *readUnifiedData = OH_UdmfData_Create();
+    int getRes = OH_Udmf_GetUnifiedData(key2, intention, readUnifiedData);    
+
+    napi_value result = nullptr;
+    napi_create_int32(env, getRes == UDMF_ERR, &result);
+    OH_UdsPlainText_Destroy(plainText);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(udmfUnifiedData);
     OH_UdmfData_Destroy(readUnifiedData);
     return result;
 }
@@ -2835,6 +2928,167 @@ static napi_value OH_Udmf_GetDataElementAt_001(napi_env env, napi_callback_info 
     return res;
 }
 
+
+static napi_value OH_UdmfData_Udmf_ListenerStatus_0001(napi_env env, napi_callback_info info)
+{
+    int result = 0;
+    napi_value returnCode;
+    napi_create_int32(env, result == UDMF_FINISHED, &returnCode);
+    return returnCode;
+}
+
+static napi_value OH_UdmfData_Udmf_ListenerStatus_0002(napi_env env, napi_callback_info info)
+{
+    int result = 1;
+    napi_value returnCode;
+    napi_create_int32(env, result == UDMF_PROCESSING, &returnCode);
+    return returnCode;
+}
+
+static napi_value OH_UdmfData_Udmf_ListenerStatus_0003(napi_env env, napi_callback_info info)
+{
+    int result = 2;
+    napi_value returnCode;
+    napi_create_int32(env, result == UDMF_CANCELED, &returnCode);
+    return returnCode;
+}
+
+static napi_value OH_UdmfData_Udmf_ListenerStatus_0004(napi_env env, napi_callback_info info)
+{
+    int result = 200;
+    napi_value returnCode;
+    napi_create_int32(env, result == UDMF_INNER_ERROR, &returnCode);
+    return returnCode;
+}
+
+static napi_value OH_UdmfData_Udmf_ListenerStatus_0005(napi_env env, napi_callback_info info)
+{
+    int result = 201;
+    napi_value returnCode;
+    napi_create_int32(env, result == UDMF_INVALID_PARAMETERS, &returnCode);
+    return returnCode;
+}
+
+static napi_value OH_UdmfData_Udmf_ListenerStatus_0006(napi_env env, napi_callback_info info)
+{
+    int result = 202;
+    napi_value returnCode;
+    napi_create_int32(env, result == UDMF_DATA_NOT_FOUND, &returnCode);
+    return returnCode;
+}
+
+static napi_value OH_UdmfData_Udmf_ListenerStatus_0007(napi_env env, napi_callback_info info)
+{
+    int result = 203;
+    napi_value returnCode;
+    napi_create_int32(env, result == UDMF_SYNC_FAILED, &returnCode);
+    return returnCode;
+}
+
+static napi_value OH_UdmfData_Udmf_ListenerStatus_0008(napi_env env, napi_callback_info info)
+{
+    int result = 204;
+    napi_value returnCode;
+    napi_create_int32(env, result == UDMF_COPY_FILE_FAILED, &returnCode);
+    return returnCode;
+}
+
+static napi_value OH_UdmfData_AddRecord_001(napi_env env, napi_callback_info info)
+{
+    OH_UdmfRecord *record = OH_UdmfRecord_Create();
+    OH_UdmfData *unifiedData = OH_UdmfData_Create();
+    int status = OH_UdmfData_AddRecord(unifiedData, record);
+    napi_value result;
+    napi_create_int32(env, status == UDMF_E_OK, &result);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfData_Destroy(unifiedData);
+    return result;
+}
+
+static napi_value OH_UdmfData_AddRecord_002(napi_env env, napi_callback_info info)
+{
+    OH_UdmfRecord *record = nullptr;
+    OH_UdmfData *unifiedData = OH_UdmfData_Create();
+    int status = OH_UdmfData_AddRecord(unifiedData, record);
+    napi_value result;
+    napi_create_int32(env, status == UDMF_E_INVALID_PARAM, &result);
+    OH_UdmfData_Destroy(unifiedData);
+    return result;
+}
+
+static napi_value OH_UdmfData_AddRecord_003(napi_env env, napi_callback_info info)
+{
+    OH_UdmfRecord *record = OH_UdmfRecord_Create();
+    OH_UdmfData *unifiedData = nullptr;
+    int status = OH_UdmfData_AddRecord(unifiedData, record);
+    napi_value result;
+    napi_create_int32(env, status == UDMF_E_INVALID_PARAM, &result);
+    OH_UdmfRecord_Destroy(record);
+    return result;
+}
+
+static napi_value OH_UdmfData_UdmfProgressInfo_GetStatus_001(napi_env env, napi_callback_info info)
+{
+    OH_Udmf_ProgressInfo *progressInfo = nullptr;
+    int status = OH_UdmfProgressInfo_GetStatus(progressInfo);
+    napi_value result;
+    napi_create_int32(env, status == UDMF_E_INVALID_PARAM, &result);
+    return result;
+}
+
+static napi_value OH_UdmfData_UdmfProgressInfo_GetProgress_001(napi_env env, napi_callback_info info)
+{
+    OH_Udmf_ProgressInfo *progressInfo = nullptr;
+    int status = OH_UdmfProgressInfo_GetProgress(progressInfo);
+    napi_value result;
+    napi_create_int32(env, status == UDMF_E_INVALID_PARAM, &result);
+    return result;
+}
+
+static napi_value OH_UdmfProperty_GetExtrasIntParam001(napi_env env, napi_callback_info info)
+{
+    OH_UdmfData *data = OH_UdmfData_Create();
+    OH_UdmfProperty *properties = OH_UdmfProperty_Create(data);
+    OH_UdmfProperty_SetExtrasIntParam(properties, "keyInt", 0);
+    int ret = OH_UdmfProperty_GetExtrasIntParam(properties, "", -1);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret == -1, &result);
+    OH_UdmfData_Destroy(data);
+    OH_UdmfProperty_Destroy(properties);
+    return result;
+}
+
+static napi_value OH_UdmfRecord_GetGeneralEntry001(napi_env env, napi_callback_info info)
+{
+    OH_UdmfRecord *record = OH_UdmfRecord_Create();
+
+    char typeId[] = "";
+    unsigned char *entry;
+    unsigned int count = 0;
+
+    napi_value result = nullptr;
+    int ret = OH_UdmfRecord_GetGeneralEntry(record, typeId, &entry, &count);
+    napi_create_int32(env, ret == Udmf_ErrCode::UDMF_ERR, &result);
+    OH_UdmfRecord_Destroy(record);
+    return result;
+}
+
+static napi_value OH_UdmfGetDataParams_SetDestUri001(napi_env env, napi_callback_info info)
+{
+    OH_UdmfGetDataParams *param = OH_UdmfGetDataParams_Create();
+    OH_UdmfGetDataParams_SetDestUri(param, "");
+
+    int ret = -1;
+    if (param) {
+        ret = 1;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    OH_UdmfGetDataParams_Destroy(param);
+    return result;
+}
+
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
@@ -3068,6 +3322,50 @@ EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
         nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_Udmf_GetDataElementAt_001", nullptr, OH_Udmf_GetDataElementAt_001, nullptr, 
         nullptr, nullptr, napi_default, nullptr},
+        {"OH_UdmfData_Udmf_ListenerStatus_0001", nullptr, OH_UdmfData_Udmf_ListenerStatus_0001, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"OH_UdmfData_Udmf_ListenerStatus_0002", nullptr, OH_UdmfData_Udmf_ListenerStatus_0002, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"OH_UdmfData_Udmf_ListenerStatus_0003", nullptr, OH_UdmfData_Udmf_ListenerStatus_0002, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"OH_UdmfData_Udmf_ListenerStatus_0004", nullptr, OH_UdmfData_Udmf_ListenerStatus_0004, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"OH_UdmfData_Udmf_ListenerStatus_0005", nullptr, OH_UdmfData_Udmf_ListenerStatus_0005, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"OH_UdmfData_Udmf_ListenerStatus_0006", nullptr, OH_UdmfData_Udmf_ListenerStatus_0006, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"OH_UdmfData_Udmf_ListenerStatus_0007", nullptr, OH_UdmfData_Udmf_ListenerStatus_0007, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"OH_UdmfData_Udmf_ListenerStatus_0008", nullptr, OH_UdmfData_Udmf_ListenerStatus_0008, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"OH_UdmfData_AddRecord_001", nullptr, OH_UdmfData_AddRecord_001, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"OH_UdmfData_AddRecord_002", nullptr, OH_UdmfData_AddRecord_002, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"OH_UdmfData_AddRecord_003", nullptr, OH_UdmfData_AddRecord_003, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"OH_UdmfData_UdmfProgressInfo_GetStatus_001", nullptr, OH_UdmfData_UdmfProgressInfo_GetStatus_001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_UdmfData_UdmfProgressInfo_GetProgress_001", nullptr, OH_UdmfData_UdmfProgressInfo_GetProgress_001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_UdmfRecord_GetGeneralEntry001", nullptr, OH_UdmfRecord_GetGeneralEntry001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_UdmfProperty_GetExtrasIntParam001", nullptr, OH_UdmfProperty_GetExtrasIntParam001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Udmf_GetPropertiesExtrasStringParam002", nullptr, OH_Udmf_GetPropertiesExtrasStringParam002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Udmf_SetPropertiesTag002", nullptr, OH_Udmf_SetPropertiesTag002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Udmf_SetPropertiesExtrasIntParam002", nullptr, OH_Udmf_SetPropertiesExtrasIntParam002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Udmf_SetPropertiesExtrasStringParam002", nullptr, OH_Udmf_SetPropertiesExtrasStringParam002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Udmf_SetPropertiesExtrasStringParam003", nullptr, OH_Udmf_SetPropertiesExtrasStringParam003,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Udmf_SetAndGetUnifiedData008", nullptr, OH_Udmf_SetAndGetUnifiedData008,
+         nullptr, nullptr, nullptr, napi_default, nullptr}, 
+        {"OH_UdmfGetDataParams_SetDestUri001", nullptr, OH_UdmfGetDataParams_SetDestUri001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},  
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

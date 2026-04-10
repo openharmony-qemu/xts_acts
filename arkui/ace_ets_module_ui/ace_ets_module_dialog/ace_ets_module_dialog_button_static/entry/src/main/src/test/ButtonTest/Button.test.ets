@@ -35,7 +35,7 @@ let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegat
 export default function ButtonTest() {
   describe('ActsButtonTest', () => {
     //Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info('TextLineSpacingTest beforeAll start');
       await UtilsTest.startAbility('com.arkui.ace.dialog.button.static', 'EntryAbility');
     })
@@ -246,7 +246,7 @@ export default function ButtonTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('modifier', Level.LEVEL1, (done: () => void) => {
+    it('modifier', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('uitest: modifier begin');
       let driver = Driver.create();
       let buttonComponent = await driver.findComponent(ON.text('modifier', MatchPattern.CONTAINS));
@@ -280,7 +280,7 @@ export default function ButtonTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('modifier1', Level.LEVEL1, (done: () => void) => {
+    it('modifier1', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('uitest: modifier1 begin');
       let driver = Driver.create();
       let buttonComponent = await driver.findComponent(ON.text('modifier', MatchPattern.CONTAINS));
@@ -314,7 +314,7 @@ export default function ButtonTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('modifierDiff', Level.LEVEL1, (done: () => void) => {
+    it('modifierDiff', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('uitest: modifierDiff begin');
       let driver = Driver.create();
       let buttonComponent = await driver.findComponent(ON.text('modifier', MatchPattern.CONTAINS));

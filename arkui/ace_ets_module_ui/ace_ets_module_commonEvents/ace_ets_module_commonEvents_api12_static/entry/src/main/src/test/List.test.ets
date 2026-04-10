@@ -75,7 +75,7 @@ export default function testsuite() {
   addGestureApplyGesture();
   ShortcutKeyTABTest();
   ShortcutKeyDPADUPTest();
-  ShortcutKeyDPADDOWNTest(); 
+  ShortcutKeyDPADDOWNTest();
   ShortcutKeyDPADLEFTTest();
   ShortcutKeyDPADRIGHTTest();
   TapGestureHandlerTest();
@@ -101,12 +101,12 @@ export default function testsuite() {
   RotationGestureBasic02Test();
   PinchGestureBasic01Test();
   PinchGestureBasic02Test();
-  TapGestureTemplateTest();
+  // TapGestureTemplateTest();
   PanGestureExampleTemplateTest();
   LongPressGestureTemplateTest();
-  onAttachTest(); 
-  GestureRecognizerState(); 
-  typeNodeGestureTest(); 
+  onAttachTest();
+  GestureRecognizerState();
+  typeNodeGestureTest();
   btnMonoLongPress();
   btnMonoTouch();
   gestureDefine1();

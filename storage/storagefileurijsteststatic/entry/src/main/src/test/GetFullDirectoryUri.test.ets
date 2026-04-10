@@ -42,7 +42,7 @@ export default function filegetFullDirectoryUri_test() {
         let uriOBJ = new fileUri.FileUri(fileuristr);
         let TorF = uriOBJ.isRemoteUri();
         expect(TorF == true).assertTrue();
-      }catch(e: BusinessError){
+      }catch(e){
         hilog.error(domain, tag, 'test_Fileuri_Isremoteuri_static_001 has failed for:' + e.message);
         expect(false).assertTrue();
       }
@@ -63,7 +63,7 @@ export default function filegetFullDirectoryUri_test() {
         let uriOBJ = new fileUri.FileUri(fileuristr);
         let TorF = uriOBJ.isRemoteUri();
         expect(TorF == true).assertTrue();
-      }catch(e: BusinessError){
+      }catch(e){
         hilog.error(domain, tag, 'test_Fileuri_Isremoteuri_static_002 has failed for:' + e.message);
         expect(false).assertTrue();
       };
@@ -85,7 +85,7 @@ export default function filegetFullDirectoryUri_test() {
         let uriOBJ = new fileUri.FileUri(fileuristr);
         let TorF = uriOBJ.isRemoteUri();
         expect(TorF == true).assertTrue();
-      }catch(e: BusinessError){
+      }catch(e){
         hilog.error(domain, tag, 'test_Fileuri_Isremoteuri_static_003 has failed for:' + e.message);
         expect(false).assertTrue();
       }
@@ -112,7 +112,7 @@ export default function filegetFullDirectoryUri_test() {
         let uriOBJ = new fileUri.FileUri(fileuri100);
         let TorF = uriOBJ.isRemoteUri();
         expect(TorF == true).assertTrue();
-      }catch(e: BusinessError){
+      }catch(e){
         hilog.error(domain, tag, 'test_Fileuri_Isremoteuri_static_004 has failed for:' + e.message);
         expect(false).assertTrue();
       }
@@ -134,7 +134,7 @@ export default function filegetFullDirectoryUri_test() {
         let uriOBJ = new fileUri.FileUri(fileuristr);
         let TorF = uriOBJ.isRemoteUri();
         expect(TorF == false).assertTrue();
-      }catch(e: BusinessError){
+      }catch(e){
         hilog.error(domain, tag, 'test_Fileuri_Isremoteuri_static_005 has failed for:' + e.message);
         expect(false).assertTrue();
       }
@@ -155,7 +155,7 @@ export default function filegetFullDirectoryUri_test() {
         let uriOBJ = new fileUri.FileUri(fileuristr);
         let TorF = uriOBJ.isRemoteUri();
         expect(TorF == false).assertTrue();
-      }catch(e: BusinessError){
+      }catch(e){
         hilog.error(domain, tag, 'test_Fileuri_Isremoteuri_static_006 has failed for:' + e.message);
         expect(false).assertTrue();
       }
@@ -178,7 +178,7 @@ export default function filegetFullDirectoryUri_test() {
         let fileUriObject = new fileUri.FileUri(fpath);
         let directoryUri = fileUriObject.getFullDirectoryUri();
         expect(directoryUri + '/test_Fileuri_GetFullDirectoryUri_static_001' == fileUriObject.toString()).assertTrue();
-      } catch(e: BusinessError) {
+      } catch(e) {
         hilog.error(domain, tag, 'test_Fileuri_GetFullDirectoryUri_static_001 has failed for ' + e);
         expect(false).assertTrue();
       }
@@ -201,7 +201,7 @@ export default function filegetFullDirectoryUri_test() {
         let fileUriObject = new fileUri.FileUri(dpath);
         let directoryUri = fileUriObject.getFullDirectoryUri();
         expect(directoryUri == fileUriObject.toString()).assertTrue();
-      } catch(e: BusinessError) {
+      } catch(e) {
         hilog.error(domain, tag, 'test_Fileuri_GetFullDirectoryUri_static_002 has failed for ' + e);
         expect(false).assertTrue();
       }
@@ -223,7 +223,8 @@ export default function filegetFullDirectoryUri_test() {
         let fileUriObject = new fileUri.FileUri(fpath);
         fileUriObject.getFullDirectoryUri();
         expect(false).assertTrue();
-      } catch(e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         hilog.error(domain, tag, 'test_Fileuri_GetFullDirectoryUri_static_003 has failed for ' + e);
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }

@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RollAngle() {
   describe('RollAngle', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RollAngle beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi17.static", "EntryAbility")

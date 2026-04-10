@@ -47,7 +47,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorQueryLayout020() {
   describe('RichEditorQueryLayout020', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorQueryLayout020 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });

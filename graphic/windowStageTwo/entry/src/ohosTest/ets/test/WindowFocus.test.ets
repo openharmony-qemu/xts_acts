@@ -429,7 +429,6 @@ export default function windowFocusTest() {
       try{
         windowClass.isWindowHighlighted();
         await windowClass.destroyWindow();
-        expect(true).assertTrue()
         done();
       } catch(err) {
         console.log(`${caseName} :sub window setSubWindowZLevel fail1:`+err.code);
@@ -618,7 +617,7 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -649,13 +648,13 @@ export default function windowFocusTest() {
         });
         windowClass.off('noInteractionDetected');
         await sleep(3000);
-        expect(true).assertTrue();
+       
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -706,7 +705,7 @@ export default function windowFocusTest() {
           subWindowClass.destroyWindow();
           if (err.code == 801) {
             console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-            expect(true).assertTrue();
+           
             done();
           } else {
             console.log(msgStr + 'Failed to setWindowMask');
@@ -718,7 +717,7 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -775,7 +774,7 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -833,7 +832,7 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -890,7 +889,7 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -901,14 +900,14 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.name    test_mainWindow_on_noInteractionDetected_Not_triggered
+     * @tc.name   test_mainWindow_on_noInteractionDetected_Not_triggeredAdapt001
      * @tc.number  test_mainWindow_on_noInteractionDetected_Not_triggered
      * @tc.desc    test_mainWindow_on_noInteractionDetected_Not_triggered
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it(" test_mainWindow_on_noInteractionDetected_Not_triggered", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("test_mainWindow_on_noInteractionDetected_Not_triggeredAdapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_Not_triggered";
       console.log(msgStr + "begin");
       let flag = false;
@@ -930,7 +929,7 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -941,14 +940,14 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.name    test_mainWindow_on_noInteractionDetected_0_5
+     * @tc.name   test_mainWindow_on_noInteractionDetected_0_5Adapt001
      * @tc.number  test_mainWindow_on_noInteractionDetected_0_5
      * @tc.desc    test_mainWindow_on_noInteractionDetected_0_5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it(" test_mainWindow_on_noInteractionDetected_0_5", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("test_mainWindow_on_noInteractionDetected_0_5Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_0.5";
       console.log(msgStr + "begin");
       let flag = false;
@@ -965,11 +964,11 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else if (error.code == 401) {
           console.log(msgStr + '入参错误，不支持0.5');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -980,14 +979,14 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.name    test_mainWindow_on_noInteractionDetected__1
+     * @tc.name   test_mainWindow_on_noInteractionDetected__1Adapt001
      * @tc.number  test_mainWindow_on_noInteractionDetected__1
      * @tc.desc    test_mainWindow_on_noInteractionDetected__1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it(" test_mainWindow_on_noInteractionDetected__1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("test_mainWindow_on_noInteractionDetected__1Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_-1";
       console.log(msgStr + "begin");
       let windowClass = await windowStage.getMainWindow();
@@ -1002,11 +1001,11 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else if (error.code == 401) {
           console.log(msgStr + '入参错误，不支持-1');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -1392,6 +1391,7 @@ export default function windowFocusTest() {
         done()
       }
     });
+    
 
     /**
      * @tc.name   test_SHOWWINDOW_FOCUSONSHOW_0100
@@ -1776,6 +1776,154 @@ export default function windowFocusTest() {
           expect().assertFail();
           done()
         }
+      }
+    });
+
+    /**
+     * @tc.name   testOnApplicationFocusStateChange_one_0100
+     * @tc.number SUB_BASIC_WMS_ON_APPLICATIONFOCUSSTATECHANGE_ONE_0100
+     * @tc.desc   监听一次应用焦点变化
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnApplicationFocusStateChange_one_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnApplicationFocusStateChange_one_0100 ';
+      console.log(caseName + 'begin');
+      let flag = true;
+
+      window.onApplicationFocusStateChange((data) => {
+        console.info(`${caseName} onApplicationFocusStateChange1 ${data}`);
+        flag = data;
+      })
+
+      try {
+        await windowClass.setWindowFocusable(false);
+        await sleep(300);
+        expect(flag).assertFalse();
+        await windowClass.setWindowFocusable(true);
+        let subWindowClass = await windowStage.createSubWindow('ApplicationFocus1');
+        console.error(`${caseName} Succeeded in creating the sub window.`);
+        await subWindowClass.setUIContent('testability/pages/First/index2');
+        await subWindowClass.showWindow();
+        await sleep(300);
+        expect(flag).assertTrue();
+        await subWindowClass.destroyWindow();
+        window.offApplicationFocusStateChange();
+        done();
+      } catch (err) {
+        console.info(`${caseName} setWindowFocusable err, message: ${err.message} code:${err.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testOnApplicationFocusStateChange_Two_0100
+     * @tc.number SUB_BASIC_WMS_ON_APPLICATIONFOCUSSTATECHANGE_TWO_0100
+     * @tc.desc   监听两次应用焦点变化
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnApplicationFocusStateChange_Two_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnApplicationFocusStateChange_Two_0100 ';
+      console.log(caseName + 'begin');
+      let count = 0;
+
+      window.onApplicationFocusStateChange((data) => {
+        console.info(`${caseName} onApplicationFocusStateChange1 ${data}`);
+        if (data === true) {
+          count++;
+        } else {
+          count--;
+        }
+      })
+
+      window.onApplicationFocusStateChange((data) => {
+        console.info(`${caseName} onApplicationFocusStateChange1 ${data}`);
+        if (data === true) {
+          count++;
+        } else {
+          count--;
+        }
+      })
+
+      try {
+        await windowClass.setWindowFocusable(false);
+        await sleep(300);
+        expect(count === -2).assertTrue();
+        await windowClass.setWindowFocusable(true);
+        let subWindowClass = await windowStage.createSubWindow('ApplicationFocus2');
+        console.error(`${caseName} Succeeded in creating the sub window.`);
+        await subWindowClass.setUIContent('testability/pages/First/index2');
+        await subWindowClass.showWindow();
+        await sleep(300);
+        expect(count === 0).assertTrue();
+        await subWindowClass.destroyWindow();
+        window.offApplicationFocusStateChange();
+        done();
+      } catch (err) {
+        console.info(`${caseName} setWindowFocusable err, message: ${err.message} code:${err.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testOffApplicationFocusStateChange_one_0100
+     * @tc.number SUB_BASIC_WMS_OFF_APPLICATIONFOCUSSTATECHANGE_ONE_0100
+     * @tc.desc   取消监听一次应用焦点变化
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOffApplicationFocusStateChange_one_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOffApplicationFocusStateChange_one_0100 ';
+      console.log(caseName + 'begin');
+      let count = 0;
+
+      let callback1 = (data: boolean) => {
+        console.info(`${caseName} onApplicationFocusStateChange1 ${data}`);
+        if (data === true) {
+          count++;
+        } else {
+          count--;
+        }
+      };
+
+      let callback2 = (data: boolean) => {
+        console.info(`${caseName} onApplicationFocusStateChange2 ${data}`);
+        if (data === true) {
+          count++;
+        } else {
+          count--;
+        }
+      }
+
+      window.onApplicationFocusStateChange(callback1);
+      window.onApplicationFocusStateChange(callback2);
+      window.offApplicationFocusStateChange(callback2);
+
+      try {
+        await windowClass.setWindowFocusable(false);
+        await sleep(300);
+        expect(count === -1).assertTrue();
+        await windowClass.setWindowFocusable(true);
+        let subWindowClass = await windowStage.createSubWindow('ApplicationFocus3');
+        console.error(`${caseName} Succeeded in creating the sub window.`);
+        await subWindowClass.setUIContent('testability/pages/First/index2');
+        await subWindowClass.showWindow();
+        await sleep(300);
+        expect(count === 0).assertTrue();
+        await subWindowClass.destroyWindow();
+        window.offApplicationFocusStateChange();
+        done();
+      } catch (err) {
+        console.info(`${caseName} setWindowFocusable err, message: ${err.message} code:${err.code}`);
+        expect().assertFail();
+        done();
       }
     });
 

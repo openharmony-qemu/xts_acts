@@ -22,7 +22,7 @@ export default function DecimalTest027() {
     beforeAll(() => {
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(200)
       console.info("beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.");
     });
@@ -40,9 +40,9 @@ export default function DecimalTest027() {
      * @tc.desc   Test powSqrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("Decimal_powSqrt_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it("Decimal_powSqrt_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       Decimal.set ({
         toExpNeg: -7,
         toExpPos: 21,

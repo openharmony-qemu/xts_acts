@@ -29,7 +29,7 @@ let mifareUltralightTaginfo = {
             "Sak": 0x08, "Atqa": "B000",
         },
         {
-            "MifareUltralightC": "ture",
+            "MifareUltralightC": "true",
         },
     ],
     "tagRfDiscId": 1,
@@ -41,6 +41,20 @@ let MifareUltralightType = {
     TYPE_ULTRALIGHT_C : 2,
 }
 
+let mifareUltralightTaginfo1 = {
+    "uid": [0x04],
+    "technology": [1, 9],
+    "extrasData": [
+        {
+            "Sak": 0x00, "Atqa": "B000",
+        },
+        {
+            "MifareUltralightC": "true",
+        },
+    ],
+    "tagRfDiscId": 1,
+};
+
 let MifareUltralightTag = null;
 
 export default function nfcMifareUltralightTag() {
@@ -51,7 +65,7 @@ export default function nfcMifareUltralightTag() {
         beforeEach(function() {
             try {
                 MifareUltralightTag = tag.getMifareUltralight(mifareUltralightTaginfo);
-                console.info(' mifareUltralight is' + mifareUltralight)
+                console.info(' mifareUltralight is' + MifareUltralightTag)
             } catch (error) {
                 console.info(' mifareUltralight error' + error)
             }
@@ -85,24 +99,89 @@ export default function nfcMifareUltralightTag() {
                     expect(data).assertInstanceOf('Array')
                     done();
                 }).catch((err)=> {
-                    if (err.code == 201) {
+                    const code = Number(err.code);
+                    if (code === 201) {
                         console.info("[NFC_test] mifareUltralight1 readMultiplePages1 err: " + err);
-                        expect(true).assertTrue();
-                    } else if (err.code == 3100201) {
+                        expect(201).assertEqual(code);
+                    } else if (code === 3100201) {
                         console.info("[NFC_test] mifareUltralight1 readMultiplePages1 err: " + err);
-                        expect(true).assertTrue();
-                    } else if (err.code == 3100204) {
+                        expect(3100201).assertEqual(code);
+                    } else if (code === 3100204) {
                         console.info("[NFC_test] mifareUltralight1 readMultiplePages1 err: " + err);
-                        expect(true).assertTrue();
+                        expect(3100204).assertEqual(code);
                     } else {
                         console.info("[NFC_test] mifareUltralight1 readMultiplePages1 err: " + err);
-                        expect(true).assertTrue();
+                        expect().assertFail();
                     }
                     done();
                 });
                 sleep(3000);
             } else {
                 console.info("[NFC_test]mifareUltralight1 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0101
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0101
+         * @tc.desc   Test readMultiplePages api by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0101', Level.LEVEL0, async function (done) {
+            if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
+                try {
+                    await MifareUltralightTag.readMultiplePages(null).then((data) => {
+                        console.info("[NFC_test] MifareClassicTag1 readMultiplePages1 data: " + data + "json1:" + JSON.stringify(data));
+                        expect(data != 0).assertTrue();
+                        done();
+                    });
+                } catch (err) {
+                    if (err.code === 401) {
+                        console.info("[NFC_test] MifareClassicTag1 readMultiplePages1 err: " + err);
+                        expect(401).assertEqual(err.code);
+                    } else {
+                        console.info("[NFC_test] MifareClassicTag1 readMultiplePages1 err: " + err);
+                        expect().assertFail();
+                    }
+                    done();
+                }
+            } else {
+                console.info("[NFC_test]MifareClassicTag1 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0102
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0102
+         * @tc.desc   Test readMultiplePages api by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0102', Level.LEVEL0, async function (done) {
+            if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
+                try {
+                    await MifareUltralightTag.readMultiplePages(undefined).then((data) => {
+                        console.info("[NFC_test] MifareClassicTag1 readMultiplePages1 data: " + data + "json1:" + JSON.stringify(data));
+                        expect(data != 0).assertTrue();
+                        done();
+                    });
+                } catch (err) {
+                    if (err.code === 401) {
+                        console.info("[NFC_test] MifareClassicTag1 readMultiplePages1 err: " + err);
+                        expect(401).assertEqual(err.code);
+                    } else {
+                        console.info("[NFC_test] MifareClassicTag1 readMultiplePages1 err: " + err);
+                        expect().assertFail();
+                    }
+                    done();
+                }
+            } else {
+                console.info("[NFC_test]MifareClassicTag1 = null & = undefined: ");
                 expect().assertFail();
             }
         })
@@ -119,15 +198,16 @@ export default function nfcMifareUltralightTag() {
             if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
                 let pageIndex = 1;
                 MifareUltralightTag.readMultiplePages(pageIndex, (err, data)=> {
-                    if (err.code == 201) {
+                    const code = Number(err.code);
+                    if (code === 201) {
                         console.info("[NFC_test] mifareUltralight2 readMultiplePages2 err: " + err);
-                        expect(true).assertTrue();
-                    } else if (err.code == 3100201) {
+                        expect(201).assertEqual(code);
+                    } else if (code === 3100201) {
                         console.info("[NFC_test] mifareUltralight2 readMultiplePages2 err: " + err);
-                        expect(true).assertTrue();
-                    } else if (err.code == 3100204) {
+                        expect(3100201).assertEqual(code);
+                    } else if (code === 3100204) {
                         console.info("[NFC_test] mifareUltralight2 readMultiplePages2 err: " + err);
-                        expect(true).assertTrue();
+                        expect(3100204).assertEqual(code);
                     } else {
                         console.info("[NFC_test] mifareUltralight2 readMultiplePages2 data: " + data + "json2:" + JSON.stringify(data));
                         if (data.length > 0) {
@@ -142,6 +222,90 @@ export default function nfcMifareUltralightTag() {
                 sleep(3000);
             } else {
                 console.info("[NFC_test]mifareUltralight2 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0201
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0201
+         * @tc.desc   Test readMultiplePages api by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0201', Level.LEVEL0, async function (done) {
+            if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
+                function readMultiplePages_callback() {
+                    return new Promise((resolve, reject) => {
+                        MifareUltralightTag.readMultiplePages(null, (err, data)=> {
+                            if (err) {
+                                reject(err.code);
+                            } else {
+                                console.info("[NFC_test] MifareUltralight2 readMultiplePages data: " + data);
+                                resolve();
+                                done();
+                            }
+                        });
+                    });
+                }
+                await readMultiplePages_callback().then((data) => {
+                    console.info("[NFC_test] MifareUltralight2 readMultiplePages done: ");
+                })
+                .catch ((err) => {
+                    if (err.code === 401) {
+                        console.info("[NFC_test] MifareUltralight2 readMultiplePages2 err: " + err);
+                        expect(401).assertEqual(err.code);
+                    } else {
+                        console.info("[NFC_test] MifareUltralight2 readMultiplePages2 err: " + err);
+                        expect().assertFail();
+                    }
+                    done();
+                })
+            } else {
+                console.info("[NFC_test]MifareUltralight2 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0202
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0202
+         * @tc.desc   Test readMultiplePages api by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0202', Level.LEVEL0, async function (done) {
+            if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
+                function readMultiplePages_callback() {
+                    return new Promise((resolve, reject) => {
+                        MifareUltralightTag.readMultiplePages(undefined, (err, data)=> {
+                            if (err) {
+                                reject(err.code);
+                            } else {
+                                console.info("[NFC_test] MifareUltralight2 readMultiplePages data: " + data);
+                                resolve();
+                                done();
+                            }
+                        });
+                    });
+                }
+                await readMultiplePages_callback().then((data) => {
+                    console.info("[NFC_test] MifareUltralight2 readMultiplePages2 done ");
+                })
+                .catch (err => {
+                    if (err.code === 401) {
+                        console.info("[NFC_test] MifareUltralight2 readMultiplePages2 err: " + err);
+                        expect(401).assertEqual(err.code);
+                    } else {
+                        console.info("[NFC_test] MifareUltralight2 readMultiplePages2 err: " + err);
+                        expect().assertFail();
+                    }
+                    done();
+                })
+            } else {
+                console.info("[NFC_test]MifareUltralight2 = null & = undefined: ");
                 expect().assertFail();
             }
         })
@@ -163,22 +327,120 @@ export default function nfcMifareUltralightTag() {
                     expect(data >= 0).assertTrue();
                     done();
                 }).catch((err)=> {
-                    if (err.code == 201) {
+                    const code = Number(err.code);
+                    if (code === 201) {
                         console.info("[NFC_test] mifareUltralight3 writeSinglePages1 err: " + err);
-                        expect(true).assertTrue();
-                    } else if (err.code == 3100201) {
+                        expect(201).assertEqual(code);
+                    } else if (code === 3100201) {
                         console.info("[NFC_test] mifareUltralight3 writeSinglePages1 err: " + err);
-                        expect(true).assertTrue();
-                    } else if (err.code == 3100204) {
+                        expect(3100201).assertEqual(code);
+                    } else if (code === 3100204) {
                         console.info("[NFC_test] mifareUltralight3 writeSinglePages1 err: " + err);
-                        expect(true).assertTrue();
+                        expect(3100204).assertEqual(code);
                     } else {
                         console.info("[NFC_test] mifareUltralight3 writeSinglePages1 err: " + err);
-                        expect(true).assertTrue();
+                        expect().assertFail();
                     }
                     done();
                 });
                 sleep(3000);
+            } else {
+                console.info("[NFC_test]mifareUltralight3 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0301
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0301
+         * @tc.desc   Test writeSinglePage api by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0301', Level.LEVEL0, async function (done) {
+            if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
+                try {
+                    await MifareUltralightTag.writeSinglePage(null, null).then((data) => {
+                        console.info("[NFC_test] MifareUltralight3 writeSinglePages1 data: " + data + "json1:" + JSON.stringify(data));
+                        expect(data >= 0).assertTrue();
+                        done();
+                    });
+                } catch (err) {
+                    if (err.code === 401) {
+                        console.info("[NFC_test] MifareUltralight3 writeSinglePages1 err: " + err);
+                        expect(401).assertEqual(err.code);
+                    } else {
+                        console.info("[NFC_test] MifareUltralight3 writeSinglePages1 err: " + err);
+                        expect().assertFail();
+                    }
+                    done();
+                }
+            } else {
+                console.info("[NFC_test]mifareUltralight3 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0302
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0302
+         * @tc.desc   Test writeSinglePage api by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0302', Level.LEVEL0, async function (done) {
+            if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
+                try {
+                    await MifareUltralightTag.writeSinglePage(undefined, undefined).then((data) => {
+                        console.info("[NFC_test] MifareUltralight3 writeSinglePages1 data: " + data + "json1:" + JSON.stringify(data));
+                        expect(data != 0).assertTrue();
+                        done();
+                    });
+                } catch (err) {
+                    if (err.code === 401) {
+                        console.info("[NFC_test] MifareUltralight3 writeSinglePages1 err: " + err);
+                        expect(401).assertEqual(err.code);
+                    } else {
+                        console.info("[NFC_test] MifareUltralight3 writeSinglePages1 err: " + err);
+                        expect().assertFail();
+                    }
+                    done();
+                }
+            } else {
+                console.info("[NFC_test]mifareUltralight3 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0303
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0303
+         * @tc.desc   Test writeSinglePage api by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0303', Level.LEVEL0, async function (done) {
+            let array = [];
+            if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
+                try {
+                    await MifareUltralightTag.writeSinglePage(null, array).then((data) => {
+                        console.info("[NFC_test] MifareUltralight3 writeSinglePages1 data: " + data + "json1:" + JSON.stringify(data));
+                        expect(data != 0).assertTrue();
+                        done();
+                    });
+                } catch (err) {
+                    if (err.code === 401) {
+                        console.info("[NFC_test] MifareUltralight3 writeSinglePages1 err: " + err);
+                        expect(401).assertEqual(err.code);
+                    } else {
+                        console.info("[NFC_test] MifareUltralight3 writeSinglePages1 err: " + err);
+                        expect().assertFail();
+                    }
+                    done();
+                }
             } else {
                 console.info("[NFC_test]mifareUltralight3 = null & = undefined: ");
                 expect().assertFail();
@@ -198,15 +460,16 @@ export default function nfcMifareUltralightTag() {
                 let pageIndex = 1;
                 let rawData = [0x01, 0x02];
                 MifareUltralightTag.writeSinglePage(pageIndex, rawData, (err, data)=> {
-                    if (err.code == 201) {
+                    const code = Number(err.code);
+                    if (code === 201) {
                         console.info("[NFC_test] mifareUltralight4 writeSinglePages2 err: " + err);
-                        expect(true).assertTrue();
-                    } else if (err.code == 3100201) {
+                        expect(201).assertEqual(code);
+                    } else if (code === 3100201) {
                         console.info("[NFC_test] mifareUltralight4 writeSinglePages2 err: " + err);
-                        expect(true).assertTrue();
-                    } else if (err.code == 3100204) {
+                        expect(3100201).assertEqual(code);
+                    } else if (code === 3100204) {
                         console.info("[NFC_test] mifareUltralight4 writeSinglePages2 err: " + err);
-                        expect(true).assertTrue();
+                        expect(3100204).assertEqual(code);
                     } else {
                         console.info("[NFC_test] mifareUltralight4 writeSinglePages2 data: " + data + "json2:" + JSON.stringify(data));
                         expect(data >= 0).assertTrue();
@@ -216,6 +479,134 @@ export default function nfcMifareUltralightTag() {
                 sleep(3000);
             } else {
                 console.info("[NFC_test]mifareUltralight4 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0401
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0401
+         * @tc.desc   Test writeSinglePage api by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0401', Level.LEVEL0, async function (done) {
+            if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
+                function writeSinglePage_callback() {
+                    return new Promise((resolve, reject) => {
+                        MifareUltralightTag.writeSinglePage(null, null, (err, data)=> {
+                            if (err) {
+                                reject(err.code);
+                            } else {
+                                console.info("[NFC_test] mifareUltralight4 writeSinglePages2 data: " + data);
+                                resolve();
+                                done();
+                            }
+                        });
+                    });
+                }
+                await writeSinglePage_callback().then((data) => {
+                    console.info("[NFC_test] MifareUltralight4 writeSinglePages2 done: ");
+                })
+                .catch (err => {
+                    if (err.code === 401) {
+                        console.info("[NFC_test] MifareUltralight4 writeSinglePages2 err: " + err);
+                        expect(401).assertEqual(err.code);
+                    } else {
+                        console.info("[NFC_test] MifareUltralight4 writeSinglePages2 err: " + err);
+                        expect().assertFail();
+                    }
+                    done();
+                })
+            } else {
+                console.info("[NFC_test]MifareUltralight4 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0402
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0402
+         * @tc.desc   Test writeSinglePage api by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0402', Level.LEVEL0, async function (done) {
+            if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
+                function writeSinglePage_callback() {
+                    return new Promise((resolve, reject) => {
+                        MifareUltralightTag.writeSinglePage(undefined, undefined, (err, data)=> {
+                            if (err) {
+                                reject(err.code);
+                            } else {
+                                console.info("[NFC_test] mifareUltralight4 writeSinglePages2 data: " + data);
+                                resolve();
+                                done();
+                            }
+                        });
+                    });
+                }
+                await writeSinglePage_callback().then((data) => {
+                    console.info("[NFC_test] MifareUltralight4 writeSinglePages2 done: ");
+                })
+                .catch ((err) => {
+                    if (err.code === 401) {
+                        console.info("[NFC_test] MifareUltralight4 writeSinglePages2 err: " + err);
+                        expect(401).assertEqual(err.code);
+                    } else {
+                        console.info("[NFC_test] mifareUltralight4 writeSinglePages2 err: " + err);
+                        expect().assertFail();
+                    }
+                    done();
+                })
+            } else {
+                console.info("[NFC_test]MifareUltralight4 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0403
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0403
+         * @tc.desc   Test writeSinglePage api by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0403', Level.LEVEL0, async function (done) {
+            if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
+                let pageIndex = 1;
+                let rawData = [];
+                function writeSinglePage_callback() {
+                    return new Promise((resolve, reject) => {
+                        MifareUltralightTag.writeSinglePage(pageIndex, rawData, (err, data)=> {
+                            if (err) {
+                                reject(err.code);
+                            } else {
+                                console.info("[NFC_test] mifareUltralight4 writeSinglePages2 data: " + data);
+                                resolve();
+                                done();
+                            }
+                        });
+                    });
+                }
+                await writeSinglePage_callback().then((data) => {
+                    console.info("[NFC_test] MifareUltralight4 writeSinglePages2 done: ");
+                })
+                .catch (err => {
+                    if (err.code === 401) {
+                        console.info("[NFC_test] MifareUltralight4 writeSinglePages2 err: " + err);
+                        expect(401).assertEqual(err.code);
+                    } else {
+                        console.info("[NFC_test] MifareUltralight4 writeSinglePages2 err: " + err);
+                        expect().assertFail();
+                    }
+                    done();
+                })
+            } else {
+                console.info("[NFC_test]MifareUltralight4 = null & = undefined: ");
                 expect().assertFail();
             }
         })
@@ -239,9 +630,27 @@ export default function nfcMifareUltralightTag() {
             }
         })
 
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0501
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0501
+         * @tc.desc   Gets the type of Mifare Ultralight label
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0501', Level.LEVEL0, function ()  {
+            let MifareUltralightTag1 = tag.getMifareUltralight(mifareUltralightTaginfo1);
+            if (MifareUltralightTag1 != null && MifareUltralightTag1 != undefined) {
+                let getType = MifareUltralightTag1.getType();
+                console.info("[NFC_test] mifareUltralight5 getType: " + getType);
+                expect(getType).assertEqual(MifareUltralightType.TYPE_ULTRALIGHT);
+            } else {
+                console.info("[NFC_test]mifareUltralight5 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })	
 
 }
-
-

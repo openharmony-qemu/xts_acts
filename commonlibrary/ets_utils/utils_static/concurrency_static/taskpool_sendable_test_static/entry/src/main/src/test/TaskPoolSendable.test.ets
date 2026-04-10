@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,7 +68,7 @@ async function sendableAFunc(sendAble: SendableA): Promise<Number> {
   try {
     const result = await taskpool.execute(task1);
     console.info(`task1 result: ${JSON.stringify(result)}`);
-  } catch (e: BusinessError) {
+  } catch (e) {
     console.info(`task1 error: ${JSON.stringify(e)}`);
   }
   return new Promise<Number>((res) => {
@@ -134,9 +134,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0100";
         console.log(`${caseName} test start `);
@@ -151,7 +151,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -166,9 +166,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0200";
         console.log(`${caseName} test start `);
@@ -183,7 +183,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -197,9 +197,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0300";
         console.log(`${caseName} test start `);
@@ -214,7 +214,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -228,9 +228,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0400";
         console.log(`${caseName} test start `);
@@ -245,7 +245,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -259,9 +259,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0500";
         console.log(`${caseName} test start `);
@@ -277,7 +277,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -291,9 +291,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0600";
         console.log(`${caseName} test start `);
@@ -313,7 +313,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           hilog.info(0x0000, caseName, '%{public}s', `error========${error}`);
           expect(false).assertTrue();
@@ -328,9 +328,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0700";
         console.log(`${caseName} test start `);
@@ -348,7 +348,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           hilog.info(0x0000, caseName, '%{public}s', `error========${error}`);
           expect(false).assertTrue();
@@ -363,9 +363,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0800";
         console.log(`${caseName} test start `);
@@ -379,7 +379,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -393,9 +393,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0900";
         console.log(`${caseName} test start `);
@@ -410,7 +410,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -424,9 +424,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_1000";
         console.log(`${caseName} test start `);
@@ -441,7 +441,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -455,9 +455,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_1100";
         console.log(`${caseName} test start `);
@@ -479,7 +479,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -493,9 +493,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_1200";
         console.log(`${caseName} test start `);
@@ -518,7 +518,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -532,9 +532,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_1300";
         console.log(`${caseName} test start `);
@@ -549,7 +549,7 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();

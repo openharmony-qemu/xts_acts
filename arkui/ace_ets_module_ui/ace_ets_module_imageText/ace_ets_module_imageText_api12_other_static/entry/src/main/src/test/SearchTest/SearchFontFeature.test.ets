@@ -41,7 +41,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SearchFontFeatureTest() {
   describe('SearchFontFeatureTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchFontFeatureTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")

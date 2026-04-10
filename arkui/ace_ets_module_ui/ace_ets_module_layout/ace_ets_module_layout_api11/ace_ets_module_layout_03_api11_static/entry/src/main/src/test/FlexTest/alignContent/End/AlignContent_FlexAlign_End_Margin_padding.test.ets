@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignContent_FlexAlign_End_Margin_padding() {
 
   describe('AlignContent_FlexAlign_End_Margin_padding', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignContent_FlexAlign_End_Margin_padding beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

@@ -21,10 +21,21 @@ import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
+import want from '@ohos.app.ability.Want';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { LocalStorage } from '@ohos.arkui.stateManagement';
 
 class EntryAbility2 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag EntryAbility2', 'EntryAbility2 onCreate');
+    const fds : string = JSON.stringify(want.fds);
+    hilog.info(0x0000, 'testTag EntryAbility2', 'EntryAbility2 fds' + fds);
+    AppStorage.setOrCreate<string>('fds', fds);
+    hilog.info(0x0000, 'testTag', '%{public}s', 'EntryAbility2== onCreate want 1111');
+    let storage : LocalStorage = new LocalStorage();
+    hilog.info(0x0000, 'testTag', '%{public}s', 'EntryAbility2== onCreate want 2222');
+    this.context.restoreWindowStage(storage)
+    hilog.info(0x0000, 'testTag', '%{public}s', 'EntryAbility2== onCreate want 3333');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -53,7 +64,7 @@ class EntryAbility2 extends UIAbility {
     hilog.info(0x0000, 'testTag EntryAbility2', 'EntryAbility2 launchWant' + this.launchWant);
     AppStorage.setOrCreate<Want>('launchWant', this.launchWant)
     hilog.info(0x0000, 'testTag EntryAbility2', 'EntryAbility2 lastRequestWant' + this.lastRequestWant);
-    AppStorage.setOrCreate<Want>('lastRequestWant', this.lastRequestWant)
+    AppStorage.setOrCreate<Want>('lastRequestWant', this.lastRequestWant);
   }
 
   onDestroy(): Promise<void> | undefined {

@@ -15,8 +15,16 @@
 
 import HttpRequestOnTest from './HttpRequestOn.test';
 import HttpRequestOffTest from './HttpRequestOff.test';
-
+import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
+import connection from '@ohos.net.connection';
+ 	 
+let netHandle = connection.getDefaultNetSync();
+ 	 
 export default function testsuite() {
-  HttpRequestOnTest();
-  HttpRequestOffTest();
+  if(netHandle.netId != 0){
+    HttpRequestOnTest();
+    HttpRequestOffTest();
+  } else {
+    EmptyTestCheckNetwork();
+  }
 }

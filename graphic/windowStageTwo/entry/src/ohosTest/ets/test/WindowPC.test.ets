@@ -22,6 +22,7 @@ import settings from '@ohos.settings';
 import type Want from '@ohos.app.ability.Want';
 import { StartOptions, bundleManager } from '@kit.AbilityKit';
 import display from '@ohos.display';
+import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
 
@@ -103,6 +104,11 @@ export default function windowPCTest() {
     let isPCStatus: string = '';
     let mainWindowClass: window.Window;
     let isFreeWindowMode = false;
+    let isSyscapSessionManagerSupported = false;
+    let deviceType: string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
+    let isPCMode: boolean = false;
+	let isSupportFreeWindowMode: boolean = false;
     let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -123,6 +129,18 @@ export default function windowPCTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
+      let promise = mainWindowClass.getWindowStateSnapshot();
+      promise.then((data) => {
+        let jsonObj: object = JSON.parse(data);
+        console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
+        isPCMode = jsonObj["isPcMode"];
+		isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
+      }).catch((err: BusinessError) => {
+        console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
+      console.info(`beforeAll: isPCMode=${isPCMode}`);
       driver = Driver.create();
     });
     beforeEach(() => {
@@ -187,7 +205,7 @@ export default function windowPCTest() {
       } catch (exception) {
         if (exception.code == 801) {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-          expect(true).assertTrue();
+
           done();
         } else {
           console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
@@ -238,7 +256,7 @@ export default function windowPCTest() {
       } catch (exception) {
         if (exception.code == 801) {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-          expect(true).assertTrue();
+
           done();
         } else {
           console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
@@ -291,7 +309,7 @@ export default function windowPCTest() {
         } catch (exception) {
           if (exception.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+
             done();
           } else {
             console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
@@ -304,10 +322,11 @@ export default function windowPCTest() {
       }).catch((err: BusinessError) => {
         if (err.code == 801) {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-          expect(false).assertFalse();
-        } else {
+        } else if(!isSyscapSessionManagerSupported){
+          expect(err.code).assertEqual(1300002);
+        }else {
           console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-          expect(false).assertFalse();
+          expect(true).assertFalse();
         }
         done();
       })
@@ -329,59 +348,63 @@ export default function windowPCTest() {
         decorEnabled: true
       };
       try {
-        windowClass.createSubWindowWithOptions('setWindowTitleMoveEnabledTest_0400', options).then(async (data) => {
-          let windowClass = data
-          windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
-          windowClass.resize(1000, 1200)
-          windowClass.showWindow()
-          await sleep(1000)
-          let driver = Driver.create()
-          let windowPoint = windowClass.getWindowProperties().windowRect
-          console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-          await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
-          await sleep(1000)
-          windowPoint = windowClass.getWindowProperties().windowRect
-          console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-          try {
-            windowClass.setWindowDecorVisible(false)
-            windowClass.setWindowTitleMoveEnabled(false);
-            console.info(`${message} setWindowTitleMoveEnabled`)
-            await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200,
-              windowPoint.top + 150)
+        if (isFreeWindowMode) {
+          windowClass.createSubWindowWithOptions('setWindowTitleMoveEnabledTest_0400', options).then(async (data) => {
+            let windowClass = data
+            windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
+            windowClass.resize(1000, 1200)
+            windowClass.showWindow()
             await sleep(1000)
-            let windowPointDragged = windowClass.getWindowProperties().windowRect
-            console.info(`${message} windowPoiisWindowRectAutoSaventDragged = ${JSON.stringify(windowPointDragged)}`)
-            expect(JSON.stringify(windowPointDragged)).assertEqual(JSON.stringify(windowPoint));
-            await driver.doubleClick(windowPointDragged.left + 100, windowPointDragged.top + 50)
-            let windowPointClicked = windowClass.getWindowProperties().windowRect
-            console.info(`${message} windowPoiisWindowRectAutoSaventDragged = ${JSON.stringify(windowPointDragged)}`)
-            expect(JSON.stringify(windowPointClicked)).assertEqual(JSON.stringify(windowPoint));
-          } catch (exception) {
-            if (exception.code == 801) {
-              console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-              expect(true).assertTrue();
-              done();
-            } else {
-              console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-              expect().assertFail()
-              done();
+            let driver = Driver.create()
+            let windowPoint = windowClass.getWindowProperties().windowRect
+            console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
+            await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
+            await sleep(1000)
+            windowPoint = windowClass.getWindowProperties().windowRect
+            console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
+            try {
+              windowClass.setWindowDecorVisible(false)
+              windowClass.setWindowTitleMoveEnabled(false);
+              console.info(`${message} setWindowTitleMoveEnabled`)
+              await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200,
+                windowPoint.top + 150)
+              await sleep(1000)
+              let windowPointDragged = windowClass.getWindowProperties().windowRect
+              console.info(`${message} windowPoiisWindowRectAutoSaventDragged = ${JSON.stringify(windowPointDragged)}`)
+              expect(JSON.stringify(windowPointDragged)).assertEqual(JSON.stringify(windowPoint));
+              await driver.doubleClick(windowPointDragged.left + 100, windowPointDragged.top + 50)
+              let windowPointClicked = windowClass.getWindowProperties().windowRect
+              console.info(`${message} windowPoiisWindowRectAutoSaventDragged = ${JSON.stringify(windowPointDragged)}`)
+              expect(JSON.stringify(windowPointClicked)).assertEqual(JSON.stringify(windowPoint));
+            } catch (exception) {
+              if (exception.code == 801) {
+                console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
+
+                done();
+              } else {
+                console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+                expect().assertFail()
+                done();
+              }
             }
-          }
-          windowClass.destroyWindow()
+            windowClass.destroyWindow()
+            done();
+          }).catch((err: BusinessError) => {
+            if (err.code == 801) {
+              console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
+            } else {
+              console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+              expect(true).assertFalse();
+            }
+            done();
+          })
+        } else {
           done();
-        }).catch((err: BusinessError) => {
-          if (err.code == 801) {
-            console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(false).assertFalse();
-          } else {
-            console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertFalse();
-          }
-          done();
-        })
+        }
+
       } catch (exception) {
         console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect(false).assertFalse();
+        expect(true).assertFalse();
         done();
       }
     })
@@ -402,50 +425,54 @@ export default function windowPCTest() {
         decorEnabled: false
       };
       try {
-        windowClass.createSubWindowWithOptions('setWindowTitleMoveEnabledTest_0500', options).then(async (data) => {
-          let windowClass = data
-          windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
-          windowClass.resize(1000, 1200)
-          windowClass.showWindow()
-          await sleep(1000)
-          let driver = Driver.create()
-          let windowPoint = windowClass.getWindowProperties().windowRect
-          console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-          try {
-            windowClass.setWindowTitleMoveEnabled(true);
-            console.info(`${message} setWindowTitleMoveEnabled`)
-            await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200,
-              windowPoint.top + 150)
+        if (isFreeWindowMode) {
+          windowClass.createSubWindowWithOptions('setWindowTitleMoveEnabledTest_0500', options).then(async (data) => {
+            let windowClass = data
+            windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
+            windowClass.resize(1000, 1200)
+            windowClass.showWindow()
             await sleep(1000)
-            let windowPointDragged = windowClass.getWindowProperties().windowRect
-            console.info(`${message} windowPointDragged = ${JSON.stringify(windowPointDragged)}`)
-            expect(JSON.stringify(windowPointDragged)).assertEqual(JSON.stringify(windowPoint));
-          } catch (exception) {
-            if (exception.code == 801) {
-              console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-              expect(true).assertTrue();
-              done();
-            } else {
-              console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-              expect().assertFail()
-              done();
+            let driver = Driver.create()
+            let windowPoint = windowClass.getWindowProperties().windowRect
+            console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
+            try {
+              windowClass.setWindowTitleMoveEnabled(true);
+              console.info(`${message} setWindowTitleMoveEnabled`)
+              await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200,
+                windowPoint.top + 150)
+              await sleep(1000)
+              let windowPointDragged = windowClass.getWindowProperties().windowRect
+              console.info(`${message} windowPointDragged = ${JSON.stringify(windowPointDragged)}`)
+              expect(JSON.stringify(windowPointDragged)).assertEqual(JSON.stringify(windowPoint));
+            } catch (exception) {
+              if (exception.code == 801) {
+                console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
+
+                done();
+              } else {
+                console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+                expect().assertFail()
+                done();
+              }
             }
-          }
-          windowClass.destroyWindow()
+            windowClass.destroyWindow()
+            done();
+          }).catch((err: BusinessError) => {
+            if (err.code == 801) {
+              console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
+            } else {
+              console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+              expect(true).assertFalse();
+            }
+            done();
+          })
+        } else {
           done();
-        }).catch((err: BusinessError) => {
-          if (err.code == 801) {
-            console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(false).assertFalse();
-          } else {
-            console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertFalse();
-          }
-          done();
-        })
+        }
+
       } catch (exception) {
         console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect(false).assertFalse();
+        expect(true).assertFalse();
         done();
       }
     })
@@ -489,7 +516,7 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
           if (err.code == 801 || err.code == 401) {
-            expect(true).assertTrue();
+
             console.error(`The device not support createSubWindowWithOptions`);
           } else {
             expect().assertFail();
@@ -499,11 +526,11 @@ export default function windowPCTest() {
       } catch (err) {
         console.error(`Failed to create the subwindow, Cause code ${err.code}, message ${err.message} `);
         if (err.code == 801 || err.code == 401) {
-          expect(true).assertTrue()
+          done();
         } else {
           expect().assertFail()
+          done();
         }
-        done();
       }
       ;
     });
@@ -549,7 +576,7 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
           if (err.code == 801) {
-            expect(true).assertTrue();
+
             console.error(`The device not support createSubWindowWithOptions`);
           } else {
             expect().assertFail();
@@ -559,11 +586,12 @@ export default function windowPCTest() {
       } catch (err) {
         console.error(`Failed to create the subwindow, Cause code ${err.code}, message ${err.message} `);
         if (err.code == 801) {
-          expect(true).assertTrue()
+          done();
         } else {
           expect().assertFail()
+          done();
         }
-        done();
+
       }
       ;
     });
@@ -606,7 +634,7 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
           if (err.code == 801 || err.code == 1300002) {
-            expect(true).assertTrue();
+
             console.error(`The device not support createSubWindowWithOptions`);
           } else {
             expect().assertFail();
@@ -660,7 +688,7 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
           if (err.code == 801) {
-            expect(true).assertTrue();
+
             console.error(`The device not support createSubWindowWithOptions`);
           } else {
             expect().assertFail();
@@ -670,11 +698,11 @@ export default function windowPCTest() {
       } catch (err) {
         console.error(`Failed to create the subwindow, Cause code ${err.code}, message ${err.message} `);
         if (err.code == 801) {
-          expect(true).assertTrue()
+          done();
         } else {
           expect().assertFail()
+          done();
         }
-        done();
       }
       ;
     });
@@ -713,7 +741,7 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
           if (err.code == 801) {
-            expect(true).assertTrue();
+
             console.error(`The device not support createSubWindowWithOptions`);
           } else {
             expect().assertFail();
@@ -723,11 +751,12 @@ export default function windowPCTest() {
       } catch (err) {
         console.error(`Failed to create the subwindow, Cause code ${err.code}, message ${err.message} `);
         if (err.code == 401 || err.code == 801) {
-          expect(true).assertTrue();
+          done();
         } else {
           expect().assertFail();
+          done();
         }
-        done();
+
       }
       ;
     });
@@ -771,7 +800,7 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
           if (err.code == 801) {
-            expect(true).assertTrue();
+
             console.error(`The device not support createSubWindowWithOptions`);
           } else {
             expect().assertFail();
@@ -781,7 +810,7 @@ export default function windowPCTest() {
       } catch (err) {
         console.error(`Failed to create the subwindow, Cause code ${err.code}, message ${err.message} `);
         if (err.code == 801) {
-          expect(true).assertTrue();
+
           console.error(`The device not support getWindowLimits`);
         } else {
           expect().assertFail();
@@ -833,7 +862,7 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
           if (err.code == 801) {
-            expect(true).assertTrue();
+
             console.error(`The device not support createSubWindowWithOptions`);
           } else {
             expect().assertFail();
@@ -843,11 +872,12 @@ export default function windowPCTest() {
       } catch (err) {
         console.error(`Failed to create the subwindow, Cause code ${err.code}, message ${err.message} `);
         if (err.code == 801) {
-          expect(true).assertTrue()
+          done();
         } else {
           expect().assertFail()
+          done();
         }
-        done();
+
       }
       ;
     });
@@ -885,7 +915,7 @@ export default function windowPCTest() {
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
           if (err.code == 801) {
-            expect(true).assertTrue();
+
             console.error(`The device not support createSubWindowWithOptions`);
           } else {
             expect().assertFail();
@@ -895,11 +925,12 @@ export default function windowPCTest() {
       } catch (err) {
         console.error(`Failed to create the subwindow, Cause code ${err.code}, message ${err.message} `);
         if (err.code == 401) {
-          expect(true).assertTrue()
+          done();
         } else {
           expect().assertFail()
+          done();
         }
-        done();
+
       }
       ;
     });
@@ -918,7 +949,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FULL_SCREEN,
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1' || (deviceType === 'tablet' && isFreeWindowMode === true)) {
         // startAbility - SupportWindowMode.FULL_SCREEN
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -955,7 +986,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.SPLIT,
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1' || (deviceType === 'tablet' && isFreeWindowMode === true)) {
         // startAbility - SupportWindowMode.SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -1004,7 +1035,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FLOATING
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1' || isPCMode == true) {
         // startAbility - SupportWindowMode.FLOATING
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -1054,7 +1085,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.SPLIT
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1' || isPCMode == true) {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -1105,7 +1136,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FULL_SCREEN
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1' || isPCMode == true) {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -1156,7 +1187,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FULL_SCREEN
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1' || (deviceType === 'tablet' && isFreeWindowMode === true)) {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -1197,7 +1228,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FLOATING
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1' || isPCMode == true) {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -1259,22 +1290,22 @@ export default function windowPCTest() {
         const message = 'test_setSupportedWindowModes_threeElement'
         let windowStageStart = await startAbility(message, context)
         let promise = windowStageStart.setSupportedWindowModes([bundleManager.SupportWindowMode.FULL_SCREEN,
-        bundleManager.SupportWindowMode.SPLIT, bundleManager.SupportWindowMode.FLOATING]);
+          bundleManager.SupportWindowMode.SPLIT, bundleManager.SupportWindowMode.FLOATING]);
         promise.then(() => {
           console.info('Succeed in setting window support modes');
-          expect(true).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-            expect(true).assertTrue();
             done();
-          } else {
+          }else {
             expect().assertFail();
+            done();
           }
-          done();
         });
+
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
         expect().assertFail();
@@ -1300,18 +1331,17 @@ export default function windowPCTest() {
         bundleManager.SupportWindowMode.FULL_SCREEN]);
         promise.then(() => {
           console.info('Succeed in setting window support modes');
-          expect(true).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-            expect(true).assertTrue();
             done();
-          } else {
+          }else {
             expect().assertFail();
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
@@ -1342,14 +1372,15 @@ export default function windowPCTest() {
           done()
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801 || err.code == 401) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-            expect(true).assertTrue();
             done();
           } else {
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
+            console.error(`setSupportedWindowModes with same windowmode`);
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
@@ -1378,14 +1409,15 @@ export default function windowPCTest() {
           done()
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801 || err.code == 401) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-            expect(true).assertTrue();
             done();
-          } else {
-            expect().assertFail();
+          }else {
+            expect(err.code).assertEqual(401);
+            console.error(`setSupportedWindowModes with null windowmode`);
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
@@ -1394,6 +1426,7 @@ export default function windowPCTest() {
       }
       ;
     });
+
 
     /**
      * @tc.name   test_setSupportedWindowModes_onlySplit
@@ -1414,14 +1447,15 @@ export default function windowPCTest() {
           done()
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801 || err.code == 401) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-            expect(true).assertTrue();
             done();
-          } else {
-            expect().assertFail();
+          }else {
+            expect(err.code).assertEqual(401);
+            console.error(`setSupportedWindowModes with null windowmode`);
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
@@ -1452,22 +1486,25 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801 || err.code == 1300002) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported){
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-            expect(true).assertTrue();
-          } else {
-            expect().assertFail();
+            done();
+          }else {
+            expect(err.code).assertEqual(1300002);
+            console.error(`windowstage used to setSupportedWindowModes is null`);
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
         if (err.code == 1300002) {
-          expect(true).assertTrue();
+          console.error(`try catch the error: windowstage used to setSupportedWindowModes is null`);
+          done();
         } else {
           expect().assertFail();
+          done();
         }
-        done();
       }
       ;
     });
@@ -1499,13 +1536,14 @@ export default function windowPCTest() {
           }
         }).catch((err: BusinessError) => {
           console.error(`${message} primary Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-            expect(true).assertTrue();
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
 
         let promise_float = windowStageStart.setSupportedWindowModes([bundleManager.SupportWindowMode.FLOATING]);
@@ -1520,20 +1558,21 @@ export default function windowPCTest() {
           }
         }).catch((err: BusinessError) => {
           console.error(`${message} float Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-            expect(true).assertTrue();
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
 
         let promise_fullscreen =
           windowStageStart.setSupportedWindowModes([bundleManager.SupportWindowMode.FULL_SCREEN]);
         promise_fullscreen.then(() => {
           console.info('Succeed in setting window support modes');
-          expect(true).assertTrue();
+
           let status_fullscreen = windowStageStart.getMainWindowSync().getWindowStatus();
           console.info(`${message} status_fullscreen:${status_fullscreen}, window.WindowStatusType.FULL_SCREEN:${window.WindowStatusType.FULL_SCREEN}`);
           expect(status_fullscreen).assertEqual(window.WindowStatusType.FULL_SCREEN);
@@ -1548,13 +1587,14 @@ export default function windowPCTest() {
           }
         }).catch((err: BusinessError) => {
           console.error(`${message} fullscreen Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
-          if (err.code == 801) {
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.error(`The device not support setSupportedWindowModes`);
-            expect(true).assertTrue();
+            done();
           } else {
             expect().assertFail();
+            done();
           }
-          done();
         });
       } catch (err) {
         console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
@@ -1564,7 +1604,76 @@ export default function windowPCTest() {
       ;
 
     });
-
+    /**
+         * @tc.name   test_setSupportedWindowModes_null
+         * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0800
+         * @tc.desc   传参[]，验证401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+    it('test_setSupportedWindowModes_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        const message = 'test_setSupportedWindowModes_null'
+        let windowStageStart = await startAbility(message, context)
+        let promise = windowStageStart.setSupportedWindowModes(null);
+        promise.then(() => {
+          console.info('Succeed in setting window support modes');
+          expect().assertFail()
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
+            console.error(`The device not support setSupportedWindowModes`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+      ;
+    });
+    /**
+     * @tc.name   test_setSupportedWindowModes_undefined
+     * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_0900
+     * @tc.desc   传参[]，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setSupportedWindowModes_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        const message = 'test_setSupportedWindowModes_undefined'
+        let windowStageStart = await startAbility(message, context)
+        let promise = windowStageStart.setSupportedWindowModes(undefined);
+        promise.then(() => {
+          console.info('Succeed in setting window support modes');
+          expect().assertFail()
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+          if (!isSupportFreeWindowMode || !isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
+            console.error(`The device not support setSupportedWindowModes`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+      ;
+    });
 
     /**
      * @tc.name   test_on_windowWillClose_resolve_true
@@ -1609,7 +1718,7 @@ export default function windowPCTest() {
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
         if (err.code == 801) {
-          expect(true).assertTrue();
+
           console.error(`The device not support on(windowWillClose)`);
         } else {
           expect().assertFail();
@@ -1675,7 +1784,7 @@ export default function windowPCTest() {
           console.info(`The window does not exist`);
         }
         if (err.code == 801) {
-          expect(true).assertTrue();
+
           console.error(`The device not support on(windowWillClose)`);
         } else {
           expect().assertFail();
@@ -1727,7 +1836,7 @@ export default function windowPCTest() {
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
         if (err.code == 1300002 || err.code == 801) {
-          expect(true).assertTrue();
+
           console.error(`The device not support on(windowWillClose)`);
         } else {
           expect().assertFail();
@@ -1749,7 +1858,7 @@ export default function windowPCTest() {
     it('test_on_windowWillClose_offWithoutOn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_offWithoutOn'
       if (isFreeWindowMode == false) {
-        expect(true).assertTrue();
+
         done();
       } else {
         try {
@@ -1775,7 +1884,7 @@ export default function windowPCTest() {
         } catch (err) {
           console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
           if (err.code == 801) {
-            expect(true).assertTrue();
+
             console.error(`The device not support on(windowWillClose)`);
           } else {
             expect().assertFail();
@@ -1837,7 +1946,7 @@ export default function windowPCTest() {
           console.info(`The window does not exist`);
         }
         if (err.code == 801) {
-          expect(true).assertTrue();
+
           console.error(`The device not support on(windowWillClose)`);
         } else {
           expect().assertFail();
@@ -1911,7 +2020,7 @@ export default function windowPCTest() {
           console.info(`The window does not exist`);
         }
         if (err.code == 801) {
-          expect(true).assertTrue();
+
           console.error(`The device not support on(windowWillClose)`);
         } else {
           expect().assertFail();
@@ -1985,7 +2094,7 @@ export default function windowPCTest() {
           console.info(`The window does not exist`);
         }
         if (err.code == 801) {
-          expect(true).assertTrue();
+
           console.error(`The device not support on(windowWillClose)`);
         } else {
           expect().assertFail();
@@ -2056,7 +2165,7 @@ export default function windowPCTest() {
             console.info(`${message} The window does not exist`);
           }
           if (err.code == 801 || err.code == 1300002) {
-            expect(true).assertTrue();
+
             console.error(`${message} The device not support on(windowWillClose)`);
           } else {
             expect().assertFail();
@@ -2128,7 +2237,7 @@ export default function windowPCTest() {
             console.info(`The window does not exist`);
           }
           if (err.code == 801 || err.code == 1300002) {
-            expect(true).assertTrue();
+
             console.error(`The device not support on(windowWillClose)`);
           } else {
             expect().assertFail();
@@ -2183,7 +2292,7 @@ export default function windowPCTest() {
               expect().assertFail();
             } catch (exception) {
               console.info(`subwindow0 is not existing`);
-              expect(true).assertTrue();
+
             };
           }
           done();
@@ -2197,7 +2306,7 @@ export default function windowPCTest() {
             console.info(`The window does not exist`);
           }
           if (err.code == 801 || err.code == 1300002) {
-            expect(true).assertTrue();
+
             console.error(`The device not support on(windowWillClose)`);
           } else {
             expect().assertFail();
@@ -2246,7 +2355,7 @@ export default function windowPCTest() {
           let promise1 = windowClassStart.minimize();
           await promise1.then(() => {
             console.info(`${message} succeed minimize window`);
-            expect(true).assertTrue();
+
           }).catch((err: BusinessError) => {
             console.error(`${message} Failed to minimize window, Cause code ${err.code}, message ${err.message} `);
             expect().assertFail();
@@ -2255,7 +2364,7 @@ export default function windowPCTest() {
           let promise2 = windowClassStart.maximize();
           await promise2.then(() => {
             console.info(`${message} succeed maximize window`);
-            expect(true).assertTrue();
+
           }).catch((err: BusinessError) => {
             console.error(`${message} Failed to maximize window, Cause code ${err.code}, message ${err.message} `);
             expect().assertFail();
@@ -2264,7 +2373,7 @@ export default function windowPCTest() {
           let promise3 = windowClassStart.recover();
           await promise3.then(() => {
             console.info(`${message} succeed recover window`);
-            expect(true).assertTrue();
+
           }).catch((err: BusinessError) => {
             console.error(`${message} Failed to recover window, Cause code ${err.code}, message ${err.message} `);
             expect().assertFail();
@@ -2298,7 +2407,7 @@ export default function windowPCTest() {
           console.info(`${message} The window does not exist`);
         }
         if (err.code == 801) {
-          expect(true).assertTrue();
+
           console.error(`${message} The device not support on(windowWillClose)`);
         } else {
           expect().assertFail();
@@ -2319,7 +2428,7 @@ export default function windowPCTest() {
      */
     it('test_MoveConfiguration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isFreeWindowMode == false) {
-        expect(true).assertTrue();
+
         done();
       } else {
         const message = 'test_MoveConfiguration!'
@@ -2363,7 +2472,7 @@ export default function windowPCTest() {
      */
     it('test_on_subWindowClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (isFreeWindowMode == false) {
-        expect(true).assertTrue();
+
         done();
       } else {
         const message = 'test_on_subWindowClose!'
@@ -2400,7 +2509,7 @@ export default function windowPCTest() {
               expect().assertFail();
             } catch (exception) {
               console.info(`subwindow0 is not existing`);
-              expect(true).assertTrue();
+
             }
             ;
             done();
@@ -2435,7 +2544,7 @@ export default function windowPCTest() {
      */
     it('test_off_subWindowClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       if (isFreeWindowMode == false) {
-        expect(true).assertTrue();
+
         done();
       } else {
         const message = 'test_off_subWindowClose!'
@@ -2469,7 +2578,7 @@ export default function windowPCTest() {
               window.findWindow('subwindow0');
               console.info(`subwindow0 is still existing`);
               subWindowClass.off('windowWillClose');
-              expect(true).assertTrue();
+
             } catch (exception) {
               console.error(`subwindow0 is not existing`);
               expect().assertFail();
@@ -2730,7 +2839,7 @@ export default function windowPCTest() {
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       if (isFreeWindowMode == false) {
-        expect(true).assertTrue();
+
         done();
       } else {
         try {
@@ -2786,7 +2895,7 @@ export default function windowPCTest() {
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       if (isFreeWindowMode == false) {
-        expect(true).assertTrue();
+
         done();
       } else {
         try {
@@ -2840,7 +2949,7 @@ export default function windowPCTest() {
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       if (isFreeWindowMode == false) {
-        expect(true).assertTrue();
+
         done();
       } else {
         try {
@@ -2938,7 +3047,7 @@ export default function windowPCTest() {
           bundleManager.SupportWindowMode.FLOATING
         ]
       };
-      if (isPCStatus != '') {
+      if (deviceType === '2in1' || isPCMode == true) {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -3077,9 +3186,9 @@ export default function windowPCTest() {
           if (textDragged == 'success') {
             expect(true).assertFalse()
           } else if (textDragged == 'startMoving 801' || textDragged == '801') {
-            expect(true).assertTrue();
+            done();
           } else if (textDragged == '1300002') {
-            expect(true).assertTrue();
+            done();
           } else {
             console.error(`${caseName} Error.`);
             expect(true).assertFalse()
@@ -3145,9 +3254,9 @@ export default function windowPCTest() {
           if (textDragged == 'success') {
             expect(true).assertFalse()
           } else if (textDragged == 'startMoving 801' || textDragged == '801') {
-            expect(true).assertTrue();
+            done();
           } else if (textDragged == '1300016') {
-            expect(true).assertTrue();
+            done();
           } else {
             console.error(`${caseName} Error.`);
             expect(true).assertFalse()
@@ -3218,9 +3327,9 @@ export default function windowPCTest() {
           if (textDragged == 'success') {
             expect(true).assertFalse()
           } else if (textDragged == 'startMoving 801' || textDragged == '801') {
-            expect(true).assertTrue();
+            done();
           } else if (textDragged == '1300004') {
-            expect(true).assertTrue();
+            done();
           } else {
             console.error(`${caseName} Error.`);
             expect(true).assertFalse()
@@ -3269,15 +3378,18 @@ export default function windowPCTest() {
         await windowClass.showWindow()
         await sleep(500)
         await windowClass.destroyWindow()
-        expect(true).assertTrue();
+
         done();
       }).catch(async (err: BusinessError) => {
         console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-        if (err.code == 801 || err.code == 1300002) {
+        if (err.code === 801) {
+          console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
+          done();
+        } else if (err.code === 1300002) {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           done();
         } else {
-          expect(false).assertFalse();
+          expect(true).assertFalse();
           done();
         }
       })
@@ -3306,7 +3418,7 @@ export default function windowPCTest() {
         await windowClass.showWindow()
         await sleep(500)
         await windowClass.destroyWindow()
-        expect(true).assertTrue();
+
         done();
       }).catch(async (err: BusinessError) => {
         console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
@@ -3314,7 +3426,7 @@ export default function windowPCTest() {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           done();
         } else {
-          expect(false).assertFalse();
+          expect(false).assertTrue();
           done();
         }
       })
@@ -3343,7 +3455,7 @@ export default function windowPCTest() {
         await windowClass.showWindow()
         await sleep(500)
         await windowClass.destroyWindow()
-        expect(true).assertTrue();
+
         done();
       }).catch(async (err: BusinessError) => {
         console.error(`${message} Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
@@ -3351,7 +3463,7 @@ export default function windowPCTest() {
           console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           done();
         } else {
-          expect(false).assertFalse();
+          expect(false).assertTrue();
           done();
         }
       })
@@ -3367,12 +3479,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_EnableWithDefaultValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_EnableWithDefaultValue';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true
       };
@@ -3381,10 +3487,12 @@ export default function windowPCTest() {
         windowClass.setDragKeyFramePolicy(keyFramePolicy).then((ret: window.KeyFramePolicy) => {
           console.info(`${message} Succeeded in setting key frame: ${JSON.stringify(ret)}`);
           expect(ret.enable).assertEqual(keyFramePolicy.enable);
+          expect(ret.enable).assertEqual(true);
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect().assertFail();
@@ -3408,12 +3516,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_EnableWithNotDefaultValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_EnableWithNotDefaultValue';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true,
         interval: 200,
@@ -3433,7 +3535,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect().assertFail();
@@ -3457,12 +3560,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_EnableWithFloatValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_EnableWithFloatValue';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true,
         interval: 200.0,
@@ -3482,7 +3579,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect().assertFail();
@@ -3506,12 +3604,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_NegativeValueFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_NegativeValueFail';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true,
         interval: -200,
@@ -3527,7 +3619,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect().assertFail();
@@ -3551,12 +3644,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_ZeroValueFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_ZeroValueFail';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true,
         interval: 0,
@@ -3572,7 +3659,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect().assertFail();
@@ -3596,12 +3684,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_SubWindowFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_SubWindowFail';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true
       };
@@ -3619,7 +3701,8 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect(err.code).assertEqual(1300004);
@@ -3646,12 +3729,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_1300002';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: true
       };
@@ -3671,11 +3748,7 @@ export default function windowPCTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
-            console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-          } else {
-            expect(err.code).assertEqual(1300002);
-          }
+          expect(err.code).assertEqual(1300002);
           done();
         });
       } catch (err) {
@@ -3695,12 +3768,6 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_Disable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_Disable';
       console.log(message + ' begin.');
-      if (isPCStatus != '') {
-        console.info(`${message} not pc, skip`);
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let keyFramePolicy: window.KeyFramePolicy = {
         enable: false
       };
@@ -3708,11 +3775,12 @@ export default function windowPCTest() {
         let windowClass: window.Window = windowStage.getMainWindowSync();
         windowClass.setDragKeyFramePolicy(keyFramePolicy).then((ret: window.KeyFramePolicy) => {
           console.info(`${message} Succeeded in setting key frame: ${JSON.stringify(ret)}`);
-          expect(ret.enable).assertEqual(keyFramePolicy.enable);
+          expect(ret.enable).assertEqual(false);
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to set key frame, error: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801);
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
             expect().assertFail();
@@ -3743,7 +3811,7 @@ export default function windowPCTest() {
         ]
       };
       let windowStatusChange: window.WindowStatusType | undefined = undefined;
-      if (isPCStatus != '') {
+      if (deviceType === '2in1' || isPCMode === true) {
         // startAbility - SupportWindowMode.SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
@@ -3787,7 +3855,7 @@ export default function windowPCTest() {
     it('testWindowStatusChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testWindowStatusChange_0200';
       let windowStatusChange: window.WindowStatusType | undefined = undefined;
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         let windowClass = windowStage.getMainWindowSync()
         // 获取窗口状态 - 自由窗口
         let windowStatusType = windowClass.getWindowStatus();

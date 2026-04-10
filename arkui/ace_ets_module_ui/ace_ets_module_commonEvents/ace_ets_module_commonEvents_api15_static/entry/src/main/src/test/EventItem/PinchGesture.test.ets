@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function pinchGestureEventTest() {
   describe('pinchGestureEvent', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi15.static", "EntryAbility")
       

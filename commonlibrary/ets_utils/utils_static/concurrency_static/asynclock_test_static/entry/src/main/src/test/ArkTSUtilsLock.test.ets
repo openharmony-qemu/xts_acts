@@ -68,7 +68,7 @@ class Obj {
 
 export default function arkTSUtilsLockTest() {
   describe('arkTSUtilsLockTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await sleep(20);
     })
     /**
@@ -78,7 +78,7 @@ export default function arkTSUtilsLockTest() {
      *                 resulting in no information with length=0.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
     it('testTaskLocksQueryAll_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -101,7 +101,7 @@ export default function arkTSUtilsLockTest() {
      *                 returning information on existing asynchronous locks and validating each item in the AsyncLockState results.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
     it('testTaskLocksQueryAll_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -124,7 +124,7 @@ export default function arkTSUtilsLockTest() {
      *                 performs a query, and validates each item in the AsyncLockState results.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
     it('testTaskLocksQueryAll_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -151,7 +151,7 @@ export default function arkTSUtilsLockTest() {
      *                 is a creation operation at this point, and it returns a newly created asynchronous lock.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
     it('testTaskLocksConstructor_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -173,7 +173,7 @@ export default function arkTSUtilsLockTest() {
      * @tc.desc The request operation of AsyncLock has not been created before, resulting in an error.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
     it('testTaskLocksQuery_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -195,7 +195,7 @@ export default function arkTSUtilsLockTest() {
      * @tc.desc The query operation of AsyncLock has not been created before, error.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
     it('testTaskLocksQuery_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -218,7 +218,7 @@ export default function arkTSUtilsLockTest() {
      *                 is a creation operation at this point, and it returns a newly created asynchronous lock.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
     it('testTaskLocksRequest_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -242,7 +242,7 @@ export default function arkTSUtilsLockTest() {
      *                 Here, it is a lookup operation that returns an already existing asynchronous lock.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
     it('testTaskLocksRequest_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -267,7 +267,7 @@ export default function arkTSUtilsLockTest() {
      *                 Here, it is a creation operation that returns a newly created asynchronous lock.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
     it('testTaskLocksRequest_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -291,7 +291,7 @@ export default function arkTSUtilsLockTest() {
      *                 Here, it is a lookup operation that returns an existing asynchronous lock.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
     it('testTaskLocksRequest_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -317,7 +317,7 @@ export default function arkTSUtilsLockTest() {
      *                 it actually returns a newly created async lock.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
     it('testTaskLocksRequest_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -420,10 +420,11 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1500
      * @tc.name testLockAsync_static_0001
-     * @tc.desc Test the function of the interface LockAsync.
+     * @tc.desc Test
+     * function of the interface LockAsync.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testLockAsync_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -444,10 +445,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1600
      * @tc.name testLockAsync_static_0006
-     * @tc.desc Test the function of the interface LockAsync.
+     * @tc.desc Test function of the interface LockAsync.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testLockAsync_static_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -491,10 +492,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1700
      * @tc.name testLockAsync_static_0007
-     * @tc.desc Test the function of the interface LockAsync.
+     * @tc.desc Test function of the interface LockAsync.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testLockAsync_static_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -522,10 +523,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1800
      * @tc.name testLockAsync_static_0008
-     * @tc.desc Test the function of the interface LockAsync.
+     * @tc.desc Test function of the interface LockAsync.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testLockAsync_static_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -560,10 +561,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_1900
      * @tc.name testLockAsync_static_0009
-     * @tc.desc Test the function of the interface LockAsync.
+     * @tc.desc Test function of the interface LockAsync.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testLockAsync_static_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -639,10 +640,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2100
      * @tc.name testLockAsync_static_0011
-     * @tc.desc Test the function of the interface LockAsync.
+     * @tc.desc Test function of the interface LockAsync.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testLockAsync_static_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -716,11 +717,11 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2300
      * @tc.name testLockAsync_static_0013
-     * @tc.desc Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     * @tc.desc Perform operations exclusively under the acquired locks. The method first acquires lock, then calls the callback,
      *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testLockAsync_static_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -764,11 +765,11 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2400
      * @tc.name testLockAsync_static_0014
-     * @tc.desc Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     * @tc.desc Perform operations exclusively under the acquired locks. The method first acquires lock, then calls the callback,
      *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testLockAsync_static_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -810,11 +811,11 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2500
      * @tc.name testLockAsync_static_0015
-     * @tc.desc Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     * @tc.desc Perform operations exclusively under the acquired locks. The method first acquires lock, then calls the callback,
      *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testLockAsync_static_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -854,11 +855,11 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2600
      * @tc.name testLockAsync_static_0016
-     * @tc.desc Perform operations exclusively under the acquired locks. The method first acquires the lock, then calls the callback,
+     * @tc.desc Perform operations exclusively under the acquired locks. The method first acquires lock, then calls the callback,
      *                 and finally releases the lock. The callback is executed asynchronously in the same thread that calls lockAsync.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testLockAsync_static_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1003,12 +1004,12 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_2900
      * @tc.name testLockAsync_static_0019
-     * @tc.desc Test the function of the interface LockAsync.
+     * @tc.desc Test function of the interface LockAsync.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testLockAsync_static_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testLockAsync_static_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG = "testLockAsync_static_0019";
         try {
@@ -1047,12 +1048,12 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3_static_000
      * @tc.name testLockAsync_static_0020
-     * @tc.desc Test the function of the interface LockAsync.
+     * @tc.desc Test function of the interface LockAsync.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testLockAsync_static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testLockAsync_static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG = "testLockAsync_static_0020";
         try {
@@ -1222,12 +1223,12 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3400
      * @tc.name testLockAsync_static_0024
-     * @tc.desc Test the function of the interface LockAsync.
+     * @tc.desc Test function of the interface LockAsync.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testLockAsync_static_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testLockAsync_static_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG = "testLockAsync_static_0024";
         try {
@@ -1261,10 +1262,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3500
      * @tc.name testAsyncLockMode_static_0001
-     * @tc.desc Test the function of the interface LockAsyncMode.
+     * @tc.desc Test function of the interface LockAsyncMode.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockMode_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1300,10 +1301,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3600
      * @tc.name testAsyncLockMode_static_0002
-     * @tc.desc Test the function of the interface LockAsyncMode.
+     * @tc.desc Test function of the interface LockAsyncMode.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockMode_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1342,10 +1343,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3700
      * @tc.name testAsyncLockOptions_static_0001
-     * @tc.desc Test the function of the interface LockAsyncOptions.
+     * @tc.desc Test function of the interface LockAsyncOptions.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockOptions_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1367,10 +1368,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3800
      * @tc.name testAsyncLockOptions_static_0002
-     * @tc.desc Test the function of the interface LockAsyncOptions.
+     * @tc.desc Test function of the interface LockAsyncOptions.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockOptions_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1406,10 +1407,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_3900
      * @tc.name testAsyncLockOptions_static_0003
-     * @tc.desc Test the function of the interface LockAsyncOptions.
+     * @tc.desc Test function of the interface LockAsyncOptions.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockOptions_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1435,10 +1436,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4_static_000
      * @tc.name testAsyncLockOptions_static_0004
-     * @tc.desc Test the function of the interface LockAsyncOptions.
+     * @tc.desc Test function of the interface LockAsyncOptions.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockOptions_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1464,10 +1465,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4100
      * @tc.name testAsyncLockOptions_static_0005
-     * @tc.desc Test the function of the interface LockAsyncOptions.
+     * @tc.desc Test function of the interface LockAsyncOptions.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockOptions_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1496,10 +1497,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4200
      * @tc.name testAsyncLockOptions_static_0006
-     * @tc.desc Test the function of the interface LockAsyncOptions.
+     * @tc.desc Test function of the interface LockAsyncOptions.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockOptions_static_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1528,10 +1529,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4300
      * @tc.name testAsyncLockOptions_static_0007
-     * @tc.desc Test the function of the interface LockAsyncOptions.
+     * @tc.desc Test function of the interface LockAsyncOptions.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockOptions_static_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1557,10 +1558,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4400
      * @tc.name testAsyncLockOptions_static_0008
-     * @tc.desc Test the function of the interface LockAsyncOptions.
+     * @tc.desc Test function of the interface LockAsyncOptions.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockOptions_static_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1586,10 +1587,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4500
      * @tc.name testAsyncLockState_static_0001
-     * @tc.desc Test the function of the interface LockAsyncState.
+     * @tc.desc Test function of the interface LockAsyncState.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockState_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1619,10 +1620,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4600
      * @tc.name testAsyncLockState_static_0002
-     * @tc.desc Test the function of the interface LockAsyncState.
+     * @tc.desc Test function of the interface LockAsyncState.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockState_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1652,10 +1653,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4700
      * @tc.name testAsyncLockState_static_0003
-     * @tc.desc Test the function of the interface LockAsyncState.
+     * @tc.desc Test function of the interface LockAsyncState.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockState_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1685,10 +1686,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4800
      * @tc.name testAsyncLockState_static_0004
-     * @tc.desc Test the function of the interface LockAsyncState.
+     * @tc.desc Test function of the interface LockAsyncState.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockState_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1718,10 +1719,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_4900
      * @tc.name testAsyncLockState_static_0005
-     * @tc.desc Test the function of the interface LockAsyncState.
+     * @tc.desc Test function of the interface LockAsyncState.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockState_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1753,10 +1754,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5_static_000
      * @tc.name testAsyncLockState_static_0006
-     * @tc.desc Test the function of the interface LockAsyncState.
+     * @tc.desc Test function of the interface LockAsyncState.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockState_static_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1788,10 +1789,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5100
      * @tc.name testAsyncLockState_static_0007
-     * @tc.desc Test the function of the interface LockAsyncState.
+     * @tc.desc Test function of the interface LockAsyncState.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockState_static_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1823,10 +1824,10 @@ export default function arkTSUtilsLockTest() {
     /**
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5200
      * @tc.name testAsyncLockState_static_0008
-     * @tc.desc Test the function of the interface LockAsyncState.
+     * @tc.desc Test function of the interface LockAsyncState.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('testAsyncLockState_static_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

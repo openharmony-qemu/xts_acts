@@ -26,7 +26,7 @@ const SLEEP_TIME = 1000;
 
 export default function arcSliderTest() {
   describe('arcSliderTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("arcSliderTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.arcslider.api23.static", "EntryAbility")
     });

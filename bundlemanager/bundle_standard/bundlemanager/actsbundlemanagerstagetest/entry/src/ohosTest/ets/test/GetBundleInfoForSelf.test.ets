@@ -122,7 +122,7 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo.iconId).assertLarger(0);
         expect(data.appInfo.process).assertEqual(BUNDLE_NAME);
         expect(data.appInfo.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test");
-        expect(data.appInfo.removable).assertTrue(0);
+        expect(data.appInfo.removable).assertTrue();
         expect(data.appInfo.accessTokenId).assertLarger(0);
         expect(data.appInfo.uid).assertLarger(0);
         expect(data.appInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME);
@@ -177,7 +177,7 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo.iconId).assertLarger(0);
         expect(data.appInfo.process).assertEqual(BUNDLE_NAME);
         expect(data.appInfo.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test");
-        expect(data.appInfo.removable).assertTrue(0);
+        expect(data.appInfo.removable).assertTrue();
         expect(data.appInfo.accessTokenId).assertLarger(0);
         expect(data.appInfo.uid).assertLarger(0);
         expect(data.appInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME);
@@ -554,7 +554,7 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo).assertEqual(null);
         expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
         let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-        expect(extensionList.length).assertEqual(31);
+        expect(extensionList.length).assertEqual(32);
         let count = 0;
         for (let i = 0;i < extensionList.length; i++) {
           switch (extensionList[i].name) {
@@ -725,6 +725,11 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.NOTIFICATION_SUBSCRIBER)
               count = count + 30
               break;
+            case 'selection':
+              console.info("selection" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.SELECTION)
+              count = count + 31
+              break;
             case 'crypto':
               console.info("crypto" + JSON.stringify(extensionList[i].extensionAbilityType));
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CRYPTO)
@@ -738,7 +743,7 @@ export default function getBundleInfoForSelf() {
           }
           console.info("count" + JSON.stringify(count));
         }
-        expect(count).assertEqual(501);
+        expect(count).assertEqual(532);
         expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
         expect(data.reqPermissionDetails.length).assertEqual(0);
         expect(data.permissionGrantStates.length).assertEqual(0);
@@ -769,7 +774,7 @@ export default function getBundleInfoForSelf() {
           expect(data.appInfo).assertEqual(null);
           expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
           let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-          expect(extensionList.length).assertEqual(31);
+          expect(extensionList.length).assertEqual(32);
           let count = 0;
           for (let i = 0;i < extensionList.length; i++) {
             switch (extensionList[i].name) {
@@ -940,6 +945,11 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.NOTIFICATION_SUBSCRIBER)
               count = count + 30
               break;
+            case 'selection':
+              console.info("selection" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.SELECTION)
+              count = count + 31
+              break;
             case 'crypto':
               console.info("crypto" + JSON.stringify(extensionList[i].extensionAbilityType));
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CRYPTO)
@@ -953,7 +963,7 @@ export default function getBundleInfoForSelf() {
             }
             console.info("count" + JSON.stringify(count));
           }
-          expect(count).assertEqual(501);
+          expect(count).assertEqual(532);
           expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
           expect(data.reqPermissionDetails.length).assertEqual(0);
           expect(data.permissionGrantStates.length).assertEqual(0);
@@ -1376,7 +1386,7 @@ export default function getBundleInfoForSelf() {
       expect(data.appInfo.iconId).assertLarger(0);
       expect(data.appInfo.process).assertEqual(BUNDLE_NAME);
       expect(data.appInfo.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test");
-      expect(data.appInfo.removable).assertTrue(0);
+      expect(data.appInfo.removable).assertTrue();
       expect(data.appInfo.accessTokenId).assertLarger(0);
       expect(data.appInfo.uid).assertLarger(0);
       expect(data.appInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME);
@@ -1548,7 +1558,7 @@ export default function getBundleInfoForSelf() {
       expect(data.appInfo).assertEqual(null);
       expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0);
       let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-      expect(extensionList.length).assertEqual(31);
+      expect(extensionList.length).assertEqual(32);
       let count = 0;
       for (let i = 0;i < extensionList.length; i++) {
         switch (extensionList[i].name) {
@@ -1721,6 +1731,11 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.NOTIFICATION_SUBSCRIBER)
               count = count + 30
               break;
+          case 'selection':
+              console.info("selection" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.SELECTION)
+              count = count + 31
+              break;
           case 'crypto':
               console.info("crypto" + JSON.stringify(extensionList[i].extensionAbilityType));
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.CRYPTO)
@@ -1734,7 +1749,7 @@ export default function getBundleInfoForSelf() {
         }
         console.info("count" + JSON.stringify(count));
       }
-      expect(count).assertEqual(501);
+      expect(count).assertEqual(532);
       expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
       expect(data.reqPermissionDetails.length).assertEqual(0);
       expect(data.permissionGrantStates.length).assertEqual(0);
@@ -1939,7 +1954,7 @@ export default function getBundleInfoForSelf() {
       expect(data.appInfo.iconId).assertLarger(0);
       expect(data.appInfo.process).assertEqual(BUNDLE_NAME);
       expect(data.appInfo.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundle.stage.test");
-      expect(data.appInfo.removable).assertTrue(0);
+      expect(data.appInfo.removable).assertTrue();
       expect(data.appInfo.accessTokenId).assertLarger(0);
       expect(data.appInfo.uid).assertLarger(0);
       expect(data.appInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME);

@@ -143,7 +143,7 @@ struct Index {
             };
             console.info("ArkUX_Model_Visual_0150 start to emit action state");
             emitter.emit(backEvent, backData);
-          } catch (err: Error) {
+          } catch (err) {
             console.info("ArkUX_Model_Visual_0150 emit action state err: " + JSON.stringify(err.message));
           }
         })
@@ -184,7 +184,7 @@ struct Index {
             };
             console.info("ArkUX_Model_Visual_0160 start to emit action state");
             emitter.emit(backEvent, backData);
-          } catch (err: Error) {
+          } catch (err) {
             console.info("ArkUX_Model_Visual_0160 emit action state err: " + JSON.stringify(err.message));
           }
         })
@@ -224,7 +224,7 @@ struct Index {
             };
             console.info("ArkUX_Model_Visual_0170 start to emit action state");
             emitter.emit(backEvent, backData);
-          } catch (err: Error) {
+          } catch (err) {
             console.info("ArkUX_Model_Visual_0170 emit action state err: " + JSON.stringify(err.message));
           }
         })
@@ -264,7 +264,7 @@ struct Index {
             };
             console.info("ArkUX_Model_Visual_0180 start to emit action state");
             emitter.emit(backEvent, backData);
-          } catch (err: Error) {
+          } catch (err) {
             console.info("ArkUX_Model_Visual_0180 emit action state err: " + JSON.stringify(err.message));
           }
         })
@@ -303,7 +303,7 @@ struct Index {
             };
             console.info("ArkUX_Model_Visual_0190 start to emit action state");
             emitter.emit(backEvent, backData);
-          } catch (err: Error) {
+          } catch (err) {
             console.info("ArkUX_Model_Visual_0190 emit action state err: " + JSON.stringify(err.message));
           }
         })
@@ -339,7 +339,7 @@ struct Index {
             };
             console.info("ArkUX_Model_Visual_0200 start to emit action state");
             emitter.emit(backEvent, backData);
-          } catch (err: Error) {
+          } catch (err) {
             console.info("ArkUX_Model_Visual_0200 emit action state err: " + JSON.stringify(err.message));
           }
         })
@@ -378,7 +378,7 @@ struct Index {
             };
             console.info("ArkUX_Model_Visual_0210 start to emit action state");
             emitter.emit(backEvent, backData);
-          } catch (err: Error) {
+          } catch (err) {
             console.info("ArkUX_Model_Visual_0210 emit action state err: " + JSON.stringify(err.message));
           }
         })
@@ -417,7 +417,7 @@ struct Index {
             };
             console.info("ArkUX_Model_Visual_0220 start to emit action state");
             emitter.emit(backEvent, backData);
-          } catch (err: Error) {
+          } catch (err) {
             console.info("ArkUX_Model_Visual_0220 emit action state err: " + JSON.stringify(err.message));
           }
         })

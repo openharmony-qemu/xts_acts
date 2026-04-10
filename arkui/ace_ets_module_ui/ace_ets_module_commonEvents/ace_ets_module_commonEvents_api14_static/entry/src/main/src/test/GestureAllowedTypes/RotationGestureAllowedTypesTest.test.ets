@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RotationGestureAllowedTypesTest() {
   describe('RotationGestureAllowedTypesTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
 

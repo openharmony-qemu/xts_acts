@@ -16,7 +16,6 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { BusinessError } from '@ohos.base';
 import runningLock from '@ohos.runningLock';
 
-const PERMISSION_DENIED_CODE = 201
 
 export default function RunningLockPermissionTest() {
   describe('RunningLockPermissionTest', () => {
@@ -54,7 +53,7 @@ export default function RunningLockPermissionTest() {
         console.info(`${TAG} lock:${lock}`);
         if (lock === undefined) {
           console.error(TAG + ` err: ${error.code}  ${error.message}`);
-          expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+          expect(error.code).assertEqual(201);
           done();
         } else {
           expect().assertFail();
@@ -82,7 +81,7 @@ export default function RunningLockPermissionTest() {
           })
           .catch((error: BusinessError) => {
             console.error(TAG + ` err: ${error.code}  ${error.message}`);
-            expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+            expect(error.code).assertEqual(201);
             done();
           })
           .finally(() => {
@@ -90,7 +89,7 @@ export default function RunningLockPermissionTest() {
           })
       } catch (error) {
         console.error(TAG + ` err: ${error.code}  ${error.message}`);
-        expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+        expect(error.code).assertEqual(201);
         done();
       }
     });
@@ -117,7 +116,7 @@ export default function RunningLockPermissionTest() {
           done();
         } catch (error) {
           console.error(TAG + ` err: ${error.code}  ${error.message}`);
-          expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+          expect(error.code).assertEqual(201);
           done();
         }
       } else {
@@ -147,7 +146,7 @@ export default function RunningLockPermissionTest() {
           done();
         } catch (error) {
           console.error(TAG + ` err: ${error.code}  ${error.message}`);
-          expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+          expect(error.code).assertEqual(201);
           done();
         }
       } else {
@@ -235,7 +234,7 @@ export default function RunningLockPermissionTest() {
           done();
         } catch (error) {
           console.error(TAG + ` err: ${error.code}  ${error.message}`);
-          expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+          expect(error.code).assertEqual(201);
           done();
         }
       }else {
@@ -265,7 +264,7 @@ export default function RunningLockPermissionTest() {
           done();
         } catch (error) {
           console.error(TAG + ` err: ${error.code}  ${error.message}`);
-          expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+          expect(error.code).assertEqual(201);
           done();
         }
       } else {

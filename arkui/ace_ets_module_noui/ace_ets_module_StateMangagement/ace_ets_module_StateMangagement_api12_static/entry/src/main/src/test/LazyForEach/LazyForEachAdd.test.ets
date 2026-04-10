@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function LazyForEachAdd() {
   describe('LazyForEachAdd', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LazyForEachAdd beforeEach start");
 
 

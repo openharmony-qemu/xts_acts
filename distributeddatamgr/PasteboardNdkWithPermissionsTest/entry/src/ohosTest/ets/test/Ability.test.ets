@@ -51,17 +51,25 @@ let drivenFn = async () => {
     console.info('driver is ${JSON.stringify(driver)}');
     await sleep(1000);
     let button = await driver.findComponent(ON.text('始终允许'));
-    if (button) {
-      console.info('button is $ {JSON.stringify(button)}');
+    let button1 = await driver.findComponent(ON.text('仅本次允许'));
+    let button2 = await driver.findComponent(ON.text('本次使用允许'));
+    if (button !== null) {
+      console.info('button is ${JSON.stringify(button)}');
       await sleep(1000);
       await button.click();
       await  sleep(1000);
-    } else {
-      let button1 = await driver.findComponent(ON.text('仅本次允许'));
-      console.info('button is $ {JSON.stringify(button)}');
+    } else if(button1 !== null) {
+      console.info('button1 is ${JSON.stringify(button)}');
       await sleep(1000);
       await button1.click();
       await  sleep(1000);
+    } else if(button2 !== null) {
+      console.info('button2 is ${JSON.stringify(button)}');
+      await sleep(1000);
+      await button2.click();
+      await  sleep(1000);
+    } else {
+      console.info("No control matches the clipboard pop-up");
     }
   } catch (err) {
     console.info('err is' + err);

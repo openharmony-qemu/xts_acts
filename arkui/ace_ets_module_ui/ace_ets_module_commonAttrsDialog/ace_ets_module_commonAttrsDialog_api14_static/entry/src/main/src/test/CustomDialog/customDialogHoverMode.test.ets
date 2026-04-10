@@ -48,7 +48,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function customDialogHoverMode() {
   describe('customDialogHoverMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("customDialogHoverMode beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api14.static", "EntryAbility")
     });

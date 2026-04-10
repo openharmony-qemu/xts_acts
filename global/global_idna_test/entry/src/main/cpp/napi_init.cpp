@@ -39,7 +39,7 @@
 #include "i18n/timezone.h"
 #include "i18n/errorcode.h"
 
-
+const static int32_t PREV_RAW_OFFSET = 28800000;
 
 static napi_value TestUidna_openUTS46(napi_env env, napi_callback_info)
 {
@@ -3050,11 +3050,13 @@ static napi_value testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500(napi_e
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
     TimeArrayTimeZoneRule rule = rules.timeArrayRules[0];
-    TimeZoneRuleQuery query;
-    errCode = OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(&rule, &query);
-    bool flag = (errCode == I18n_ErrorCode::SUCCESS && query.result == 527014800000);
+    TimeZoneRuleQuery *query = new TimeZoneRuleQuery{0.0, PREV_RAW_OFFSET, 0, false, 0.0};
+    errCode = OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(&rule, query);
     napi_value nValue;
-    napi_get_boolean(env, flag, &nValue);
+    int64_t queryResult = static_cast<int64_t>(query->result);
+    std::string resultStr = std::to_string(queryResult) + "," + std::to_string((int)errCode);
+    napi_create_string_utf8(env, resultStr.c_str(), NAPI_AUTO_LENGTH, &nValue);
+    delete query;
     return nValue;
 }
 
@@ -3063,11 +3065,13 @@ static napi_value testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600(napi_e
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
     TimeArrayTimeZoneRule rule = rules.timeArrayRules[0];
-    TimeZoneRuleQuery query;
-    errCode = OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(&rule, &query);
-    bool flag = (errCode == I18n_ErrorCode::SUCCESS && query.result == -650019600000);
+    TimeZoneRuleQuery *query = new TimeZoneRuleQuery{0.0, PREV_RAW_OFFSET, 0, false, 0.0};
+    errCode = OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(&rule, query);
     napi_value nValue;
-    napi_get_boolean(env, flag, &nValue);
+    int64_t queryResult = static_cast<int64_t>(query->result);
+    std::string resultStr = std::to_string(queryResult) + "," + std::to_string((int)errCode);
+    napi_create_string_utf8(env, resultStr.c_str(), NAPI_AUTO_LENGTH, &nValue);
+    delete query;
     return nValue;
 }
 

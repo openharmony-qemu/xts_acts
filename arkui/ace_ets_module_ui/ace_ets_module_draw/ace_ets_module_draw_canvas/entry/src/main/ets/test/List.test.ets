@@ -48,6 +48,48 @@ import CanvasParamsUnitTest from './Canvas/CanvasParamsUnitTest.test';
 import CanvasParamsImageAnalyzerTest from './Canvas/CanvasParamsImageAnalyzerTest.test';
 import CanvasParamsVisibilityTest from './Canvas/CanvasParamsVisibilityTest.test';
 import CanvasParamsAntialiasTest from './Canvas/CanvasParamsAntialiasTest.test';
+import path2DArcArcToNullUndefinedTest from './path2D/Path2DArcArcToNullUndefined.test';
+import path2DBezierCurveToEllipseNullUndefinedTest from './path2D/Path2DBezierCurveToEllipseNullUndefined.test';
+import path2DLineToMoveToNullUndefinedTest from './path2D/Path2DLineToMoveToNullUndefined.test';
+import path2DQuadraticCurveToRectNullUndefinedTest from './path2D/Path2DQuadraticCurveToRectNullUndefined.test';
+import path2DAddPathNullUndefinedTest from './path2D/Path2DAddPathNullUndefined.test';
+import canvasRenderingContext2DNullUndefinedTest from './Canvas/CanvasRenderingContext2DNullUndefined.test';
+
+import canvasClipNullUndefinedTest from './CanvasNullUndefined/canvasClipNullUndefinedTest.test';
+import canvasCreateImageDataNullUndefinedTest from './CanvasNullUndefined/canvasCreateImageDataNullUndefinedTest.test';
+import canvasCreatePatternNullUndefinedTest from './CanvasNullUndefined/canvasCreatePatternNullUndefinedTest.test';
+import canvasSetTransformNullUndefinedTest from './CanvasNullUndefined/canvasSetTransformNullUndefinedTest.test';
+import canvasStrokeNullUndefinedTest from './CanvasNullUndefined/canvasStrokeNullUndefinedTest.test';
+
+import canvasGetImageDataNullUndefinedTest from './CanvasNullUndefined/canvasGetImageDataNullUndefinedTest.test';
+import canvasGetPixelMapNullUndefinedTest from './CanvasNullUndefined/canvasGetPixelMapNullUndefinedTest.test';
+import canvasPutImageDataNullUndefinedTest from './CanvasNullUndefined/canvasPutImageDataNullUndefinedTest.test';
+
+import canvasClearRectNullUndefinedTest from './CanvasNullUndefined/canvasClearRectNullUndefinedTest.test';
+import canvasCreateLinearGradientNullUndefinedTest from './CanvasNullUndefined/canvasCreateLinearGradientNullUndefinedTest.test';
+import canvasCreateRadialGradientNullUndefinedTest from './CanvasNullUndefined/canvasCreateRadialGradientNullUndefinedTest.test';
+import canvasFillRectNullUndefinedTest from './CanvasNullUndefined/canvasFillRectNullUndefinedTest.test';
+import canvasFillTextNullUndefinedTest from './CanvasNullUndefined/canvasFillTextNullUndefinedTest.test';
+import canvasMeasureTextNullUndefinedTest from './CanvasNullUndefined/canvasMeasureTextNullUndefinedTest.test';
+import canvasRotateNullUndefinedTest from './CanvasNullUndefined/canvasRotateNullUndefinedTest.test';
+import canvasSetLineDashNullUndefinedTest from './CanvasNullUndefined/canvasSetLineDashNullUndefinedTest.test';
+import canvasStrokeRectNullUndefinedTest from './CanvasNullUndefined/canvasStrokeRectNullUndefinedTest.test';
+import canvasStrokeTextNullUndefinedTest from './CanvasNullUndefined/canvasStrokeTextNullUndefinedTest.test';
+
+import canvasTransformNullUndefinedTest from './CanvasNullUndefined/canvasTransformNullUndefinedTest.test';
+import canvasTranslateNullUndefinedTest from './CanvasNullUndefined/canvasTranslateNullUndefinedTest.test';
+import canvasSetPixelMapNullUndefinedTest from './CanvasNullUndefined/canvasSetPixelMapNullUndefinedTest.test';
+import canvasTransferFromImageBitmapNullUndefinedTest from './CanvasNullUndefined/canvasTransferFromImageBitmapNullUndefinedTest.test';
+import canvasToDataURLNullUndefinedTest from './CanvasNullUndefined/canvasToDataURLNullUndefinedTest.test';
+import canvasStartImageAnalyzerNullUndefinedTest from './CanvasNullUndefined/canvasStartImageAnalyzerNullUndefinedTest.test';
+import canvasOnAttachNullUndefinedTest from './CanvasNullUndefined/canvasOnAttachNullUndefinedTest.test';
+import canvasOnDetachNullUndefinedTest from './CanvasNullUndefined/canvasOnDetachNullUndefinedTest.test';
+import canvasPatternSetTransformNullUndefinedTest from './CanvasNullUndefined/canvasPatternSetTransformNullUndefinedTest.test';
+import offCanvasToDataURLNullUndefinedTest from './CanvasNullUndefined/offCanvasToDataURLNullUndefinedTest.test';
+import canvasOnReadyNullUndefinedTest from './CanvasNullUndefined/canvasOnReadyNullUndefinedTest.test';
+import canvasMatrixRotateNullUndefinedTest from './CanvasNullUndefined/canvasMatrixRotateNullUndefinedTest.test';
+import CanvasRendererAntialiasTest from './migratedActs/CanvasRendererAntialias.test';
+import AntialiasTest from './CanvasRenderingContext2D/Antialias.test';
 
 export default function testsuite() {
 
@@ -87,4 +129,46 @@ export default function testsuite() {
   CanvasParamsImageAnalyzerTest();
   CanvasParamsVisibilityTest();
   CanvasParamsAntialiasTest();
+
+  path2DArcArcToNullUndefinedTest();
+  path2DBezierCurveToEllipseNullUndefinedTest();
+  path2DLineToMoveToNullUndefinedTest();
+  path2DQuadraticCurveToRectNullUndefinedTest();
+  path2DAddPathNullUndefinedTest();
+  canvasRenderingContext2DNullUndefinedTest();
+  canvasClipNullUndefinedTest();
+  canvasCreateImageDataNullUndefinedTest();
+  canvasCreatePatternNullUndefinedTest();
+  canvasSetTransformNullUndefinedTest();
+  canvasStrokeNullUndefinedTest();
+
+  canvasGetImageDataNullUndefinedTest();
+  canvasGetPixelMapNullUndefinedTest();
+  canvasPutImageDataNullUndefinedTest();
+
+  canvasClearRectNullUndefinedTest();
+  canvasCreateLinearGradientNullUndefinedTest();
+  canvasCreateRadialGradientNullUndefinedTest();
+  canvasFillRectNullUndefinedTest();
+  canvasFillTextNullUndefinedTest();
+  canvasMeasureTextNullUndefinedTest();
+  canvasRotateNullUndefinedTest();
+  canvasSetLineDashNullUndefinedTest();
+  canvasStrokeRectNullUndefinedTest();
+  canvasStrokeTextNullUndefinedTest();
+
+  canvasTransformNullUndefinedTest();
+  canvasTranslateNullUndefinedTest();
+  canvasSetPixelMapNullUndefinedTest();
+  canvasTransferFromImageBitmapNullUndefinedTest();
+  canvasToDataURLNullUndefinedTest();
+  canvasStartImageAnalyzerNullUndefinedTest();
+  canvasOnAttachNullUndefinedTest();
+  canvasOnDetachNullUndefinedTest();
+  canvasPatternSetTransformNullUndefinedTest();
+  offCanvasToDataURLNullUndefinedTest();
+  canvasOnReadyNullUndefinedTest();
+  canvasMatrixRotateNullUndefinedTest();
+  CanvasRendererAntialiasTest();
+  AntialiasTest();
 }

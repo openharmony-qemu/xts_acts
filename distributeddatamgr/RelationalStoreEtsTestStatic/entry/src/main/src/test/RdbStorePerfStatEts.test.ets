@@ -35,7 +35,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
 const TAG = "[STAGE_RELATIONAL_STORE_JSKITS_TEST]";
-let rdbStore:relationalStore.RdbStore;
+let rdbStore:relationalStore.RdbStore | undefined;
 
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL)";
@@ -45,7 +45,7 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   securityLevel: relationalStore.SecurityLevel.S1,
 }
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
 export default function PerfStatEtsTest() {
@@ -58,26 +58,26 @@ export default function PerfStatEtsTest() {
     })
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       expect(rdbStore != undefined).assertTrue();
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST);
       const valueBucket: relationalStore.ValuesBucket = {
         'name': 'zhangsan',
         'age': 18 as long,
         'salary': 25000 as long,
       };
-      await rdbStore.insert('test', valueBucket);
+      await rdbStore!.insert('test', valueBucket);
       await Utils.msSleep(1000);
     })
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach');
       try {
-        rdbStore.offPerfStat();
-        rdbStore.offStatistics();
+        rdbStore!.offPerfStat();
+        rdbStore!.offStatistics();
       } catch (err) {
         expect(err.code).assertEqual(14800014);
       }
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
     afterAll(async (): Promise<void> => {
       console.info(TAG + 'afterAll');
@@ -95,7 +95,7 @@ export default function PerfStatEtsTest() {
     it('testRdbStorePerfStat_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStorePerfStat_0001 start *************");
-      rdbStore.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
+      rdbStore!.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
         expect('INSERT INTO test(age,name,salary) VALUES (?,?,?)').assertEqual(SqlExeInfo.sql[0]);
         expect(1).assertEqual(SqlExeInfo.sql.length);
       })
@@ -104,7 +104,7 @@ export default function PerfStatEtsTest() {
         'age': 18 as long,
         'salary': 25000 as long,
       };
-      let rowId = await rdbStore.insert('test', valueBucket);
+      let rowId = await rdbStore!.insert('test', valueBucket);
       expect(2).assertEqual(rowId);
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0001 end *************");
@@ -121,7 +121,7 @@ export default function PerfStatEtsTest() {
     it('testRdbStorePerfStat_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStorePerfStat_0002 start *************");
-      rdbStore.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
+      rdbStore!.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
         expect('UPDATE test SET age=?,name=?,salary=? WHERE id = ? ').assertEqual(SqlExeInfo.sql[0]);
         expect(1).assertEqual(SqlExeInfo.sql.length);
       })
@@ -133,7 +133,7 @@ export default function PerfStatEtsTest() {
       };
       let predicates = new relationalStore.RdbPredicates('test');
       predicates.equalTo('id', 1 as long);
-      let rowId = await rdbStore.update(valueBucket, predicates);
+      let rowId = await rdbStore!.update(valueBucket, predicates);
       expect(1).assertEqual(rowId);
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0002 end *************");
@@ -150,13 +150,13 @@ export default function PerfStatEtsTest() {
     it('testRdbStorePerfStat_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStorePerfStat_0003 start *************");
-      rdbStore.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
+      rdbStore!.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
         expect('DELETE FROM test WHERE id = ? ').assertEqual(SqlExeInfo.sql[0]);
         expect(1).assertEqual(SqlExeInfo.sql.length);
       })
       let predicates = new relationalStore.RdbPredicates('test');
       predicates.equalTo('id', 1 as long);
-      let rowId = await rdbStore.delete(predicates);
+      let rowId = await rdbStore!.delete(predicates);
       expect(1).assertEqual(rowId);
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0003 end *************");
@@ -173,14 +173,14 @@ export default function PerfStatEtsTest() {
     it('testRdbStorePerfStat_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStorePerfStat_0004 start *************");
-      rdbStore.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
+      rdbStore!.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
         expect('CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL)').assertEqual(SqlExeInfo.sql[0]);
         expect(1).assertEqual(SqlExeInfo.sql.length);
       })
 
       const SQL_CREATE_TABLE1 = "CREATE TABLE IF NOT EXISTS EMPLOYEE (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
         "name TEXT NOT NULL)"; // 建表Sql语句
-      await rdbStore.executeSql(SQL_CREATE_TABLE1);
+      await rdbStore!.executeSql(SQL_CREATE_TABLE1);
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0004 end *************");
     })
@@ -196,11 +196,11 @@ export default function PerfStatEtsTest() {
     it('testRdbStorePerfStat_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStorePerfStat_0005 start *************");
-      rdbStore.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
+      rdbStore!.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
         expect('PRAGMA quick_check').assertEqual(SqlExeInfo.sql[0]);
         expect(1).assertEqual(SqlExeInfo.sql.length);
       })
-      await rdbStore.execute("PRAGMA quick_check");
+      await rdbStore!.execute("PRAGMA quick_check");
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0005 end *************");
     })
@@ -216,12 +216,12 @@ export default function PerfStatEtsTest() {
     it('testRdbStorePerfStat_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStorePerfStat_0006 start *************");
-      rdbStore.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
+      rdbStore!.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
         expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
         expect(1).assertEqual(SqlExeInfo.sql.length);
       })
       let predicates = new relationalStore.RdbPredicates('test');
-      await rdbStore.query(predicates);
+      await rdbStore!.query(predicates);
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0006 end *************");
     })
@@ -237,11 +237,11 @@ export default function PerfStatEtsTest() {
     it('testRdbStorePerfStat_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStorePerfStat_0007 start *************");
-      rdbStore.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
+      rdbStore!.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
         expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
         expect(1).assertEqual(SqlExeInfo.sql.length);
       })
-      await rdbStore.querySql("SELECT * FROM test");
+      await rdbStore!.querySql("SELECT * FROM test");
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0007 end *************");
     })
@@ -257,11 +257,11 @@ export default function PerfStatEtsTest() {
     it('testRdbStorePerfStat_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStorePerfStat_0008 start *************");
-      rdbStore.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
+      rdbStore!.onPerfStat((SqlExeInfo: relationalStore.SqlExecutionInfo) => {
         expect('with test1 as (select * from test) select * from test').assertEqual(SqlExeInfo.sql[0]);
         expect(1).assertEqual(SqlExeInfo.sql.length);
       })
-      await rdbStore.querySql("with test1 as (select * from test) select * from test");
+      await rdbStore!.querySql("with test1 as (select * from test) select * from test");
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0008 end *************");
     })
@@ -287,8 +287,8 @@ export default function PerfStatEtsTest() {
         expect().assertFail();
       };
 
-      rdbStore.onPerfStat(observer1)
-      await rdbStore.querySql("SELECT * FROM test");
+      rdbStore!.onPerfStat(observer1)
+      await rdbStore!.querySql("SELECT * FROM test");
       done()
       console.log(TAG + "************* testRdbStorePerfStat_0009 end *************");
     })
@@ -305,20 +305,24 @@ export default function PerfStatEtsTest() {
       async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStorePerfStat_0010 start *************");
       let observer1 = (SqlExeInfo : relationalStore.SqlExecutionInfo) => {
-        expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
-        expect(1).assertEqual(SqlExeInfo.sql.length);
-        await Utils.msSleep(2000);
+        waitForCompletion(async () => {
+          expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
+          expect(1).assertEqual(SqlExeInfo.sql.length);
+          await Utils.msSleep(2000);
+        })
       };
 
       let observer2 = (SqlExeInfo : relationalStore.SqlExecutionInfo) => {
-        expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
-        expect(1).assertEqual(SqlExeInfo.sql.length);
-        await Utils.msSleep(2000);
+        waitForCompletion(async () => {
+          expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
+          expect(1).assertEqual(SqlExeInfo.sql.length);
+          await Utils.msSleep(2000);
+        })
       };
 
-      rdbStore.onPerfStat(observer1)
-      rdbStore.onPerfStat(observer2)
-      await rdbStore.querySql("SELECT * FROM test");
+      rdbStore!.onPerfStat(observer1)
+      rdbStore!.onPerfStat(observer2)
+      await rdbStore!.querySql("SELECT * FROM test");
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0010 end *************");
     })
@@ -342,15 +346,15 @@ export default function PerfStatEtsTest() {
         expect('INSERT INTO test(age,name,salary) VALUES (?,?,?)').assertEqual(SqlExeInfo.sql[0]);
         expect(1).assertEqual(SqlExeInfo.sql.length);
       };
-      rdbStore.onPerfStat(observer)
-      rdbStore.onStatistics(observer1)
+      rdbStore!.onPerfStat(observer)
+      rdbStore!.onStatistics(observer1)
       const valueBucket1: relationalStore.ValuesBucket = {
         "name": "zhangsan",
         "age": 18 as long,
         "salary": 100.5 as long,
       }
-      await rdbStore.insert("test", valueBucket1)
-      rdbStore.offStatistics();
+      await rdbStore!.insert("test", valueBucket1)
+      rdbStore!.offStatistics();
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0011 end *************");
     })
@@ -373,16 +377,16 @@ export default function PerfStatEtsTest() {
       let observer1 = (SqlExeInfo : relationalStore.SqlExecutionInfo) => {
         expect().assertFail();
       };
-      rdbStore.onStatistics(observer1)
-      rdbStore.offStatistics()
+      rdbStore!.onStatistics(observer1)
+      rdbStore!.offStatistics()
       await Utils.msSleep(1000);
-      rdbStore.onPerfStat(observer)
+      rdbStore!.onPerfStat(observer)
       const valueBucket1: relationalStore.ValuesBucket = {
         "name": "zhangsan",
         "age": 18 as long,
         "salary": 100.5 as long,
       }
-      await rdbStore.insert("test", valueBucket1);
+      await rdbStore!.insert("test", valueBucket1);
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0012 end *************");
     })
@@ -404,17 +408,17 @@ export default function PerfStatEtsTest() {
       let observer1 = (SqlExeInfo : relationalStore.SqlExecutionInfo) => {
         expect().assertFail();
       };
-      rdbStore.onPerfStat(observer1)
-      rdbStore.offPerfStat()
-      rdbStore.onStatistics(observer)
+      rdbStore!.onPerfStat(observer1)
+      rdbStore!.offPerfStat()
+      rdbStore!.onStatistics(observer)
       const valueBucket1: relationalStore.ValuesBucket = {
         "name": "zhangsan",
         "age": 18 as long,
         "salary": 100.5 as long,
       }
-      await rdbStore.insert("test", valueBucket1)
+      await rdbStore!.insert("test", valueBucket1)
       await Utils.msSleep(1000);
-      rdbStore.offStatistics();
+      rdbStore!.offStatistics();
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0013 end *************");
     })
@@ -437,12 +441,12 @@ export default function PerfStatEtsTest() {
         expect().assertFail();
       };
 
-      rdbStore.onPerfStat(observer1)
-      rdbStore.offPerfStat()
-      rdbStore.onPerfStat(observer2)
-      rdbStore.offPerfStat()
+      rdbStore!.onPerfStat(observer1)
+      rdbStore!.offPerfStat()
+      rdbStore!.onPerfStat(observer2)
+      rdbStore!.offPerfStat()
       await Utils.msSleep(1000);
-      await rdbStore.querySql("SELECT * FROM test");
+      await rdbStore!.querySql("SELECT * FROM test");
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0014 end *************");
     })
@@ -466,11 +470,11 @@ export default function PerfStatEtsTest() {
         expect(1).assertEqual(SqlExeInfo.sql.length);
       };
 
-      rdbStore.onPerfStat(observer1)
-      rdbStore.offPerfStat(observer1)
-      rdbStore.onPerfStat(observer2)
+      rdbStore!.onPerfStat(observer1)
+      rdbStore!.offPerfStat(observer1)
+      rdbStore!.onPerfStat(observer2)
       await Utils.msSleep(1000);
-      await rdbStore.querySql("SELECT * FROM test");
+      await rdbStore!.querySql("SELECT * FROM test");
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0015 end *************");
     })
@@ -491,7 +495,7 @@ export default function PerfStatEtsTest() {
         name: 'test2.db',
         securityLevel: relationalStore.SecurityLevel.S1
       };
-      store2 = await relationalStore.getRdbStore(context, STORE_CONFIG2)
+      store2 = await relationalStore.getRdbStore(context!, STORE_CONFIG2)
       await store2.executeSql(CREATE_TABLE_TEST);
       let timerId = -1;
       let observer1 = (sqlExecutionInfo : relationalStore.SqlExecutionInfo) => {
@@ -503,14 +507,14 @@ export default function PerfStatEtsTest() {
         }
         timerId = setTimeout(done, 2000);
       };
-      rdbStore.onPerfStat(observer1)
+      rdbStore!.onPerfStat(observer1)
 
       const valueBucket: relationalStore.ValuesBucket = {
         'name': 'zhangsan',
         'age': 18 as long,
         'salary': 25000 as long,
       };
-      let rowId = await rdbStore.insert('test', valueBucket);
+      let rowId = await rdbStore!.insert('test', valueBucket);
       expect(2).assertEqual(rowId);
       let rowId2 = await store2.insert('test', valueBucket);
       expect(1).assertEqual(rowId2);
@@ -541,8 +545,8 @@ export default function PerfStatEtsTest() {
           expect().assertFail();
         }
       };
-      rdbStore.onPerfStat(observer1)
-      store2 = await relationalStore.getRdbStore(context, STORE_CONFIG2)
+      rdbStore!.onPerfStat(observer1)
+      store2 = await relationalStore.getRdbStore(context!, STORE_CONFIG2)
       timerId = setTimeout(done, 2000);
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0017 end *************");
@@ -562,9 +566,9 @@ export default function PerfStatEtsTest() {
       let observer1 = (sqlExecutionInfo : relationalStore.SqlExecutionInfo) => {
         expect(4).assertEqual(sqlExecutionInfo.sql.length);
       };
-      rdbStore.onPerfStat(observer1)
+      rdbStore!.onPerfStat(observer1)
 
-      const rdbTrans = await rdbStore.createTransaction();
+      const rdbTrans = await rdbStore!.createTransaction();
       const valueBucket1: relationalStore.ValuesBucket = {
         'name': 'zhangsan',
         'age': 18 as long,
@@ -592,9 +596,9 @@ export default function PerfStatEtsTest() {
         expect().assertFail();
       };
 
-      await rdbStore.close();
+      await rdbStore!.close();
       try {
-        rdbStore.onPerfStat(observer);
+        rdbStore!.onPerfStat(observer);
       } catch (err) {
         expect(err.code).assertEqual(14800014);
       }
@@ -617,7 +621,7 @@ export default function PerfStatEtsTest() {
       let observer = (sqlExecutionInfo : relationalStore.SqlExecutionInfo) => {
         expect(1).assertEqual(sqlExecutionInfo.sql.length);
       };
-      rdbStore.onPerfStat(observer);
+      rdbStore!.onPerfStat(observer);
       const valueBucket1: relationalStore.ValuesBucket = {
         'id': 1 as long,
         'name': 'zhangsan',
@@ -634,7 +638,7 @@ export default function PerfStatEtsTest() {
         'age': 13 as long,
       };
       let valueBuckets = new Array<relationalStore.ValuesBucket>(valueBucket1, valueBucket2, valueBucket3);
-      await rdbStore.batchInsert("test", valueBuckets);
+      await rdbStore!.batchInsert("test", valueBuckets);
       done();
       console.log(TAG + "************* testRdbStorePerfStat_0020 end *************");
     })
@@ -654,8 +658,8 @@ export default function PerfStatEtsTest() {
         expect('INSERT OR REPLACE INTO test (age,id,name) VALUES (?,?,?),...,3').assertEqual(sqlExecutionInfo.sql[1]);
         expect(3).assertEqual(sqlExecutionInfo.sql.length);
       };
-      rdbStore.onPerfStat(observer);
-      const rdbTrans = await rdbStore.createTransaction();
+      rdbStore!.onPerfStat(observer);
+      const rdbTrans = await rdbStore!.createTransaction();
       const valueBucket1: relationalStore.ValuesBucket = {
         'id': 1 as long,
         'name': 'zhangsan',
@@ -693,8 +697,8 @@ export default function PerfStatEtsTest() {
         expect('INSERT OR REPLACE INTO test (age,name) VALUES (?,?),...,30000').assertEqual(sqlExecutionInfo.sql[1]);
         expect(3).assertEqual(sqlExecutionInfo.sql.length);
       };
-      rdbStore.onPerfStat(observer);
-      const rdbTrans = await rdbStore.createTransaction();
+      rdbStore!.onPerfStat(observer);
+      const rdbTrans = await rdbStore!.createTransaction();
 
       let valueBuckets : relationalStore.ValuesBucket[] = new Array<relationalStore.ValuesBucket>();
       const valueBucket1: relationalStore.ValuesBucket = {
@@ -733,7 +737,7 @@ export default function PerfStatEtsTest() {
         securityLevel: relationalStore.SecurityLevel.S1,
         vector: true,
       };
-      let rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG1)
+      let rdbStore1 = await relationalStore.getRdbStore(context!, STORE_CONFIG1)
       try{
         rdbStore1.onPerfStat(observer);
         expect().assertFail();
@@ -767,7 +771,7 @@ export default function PerfStatEtsTest() {
         securityLevel: relationalStore.SecurityLevel.S1,
         vector: true,
       };
-      let rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG1)
+      let rdbStore1 = await relationalStore.getRdbStore(context!, STORE_CONFIG1)
       try{
         rdbStore1.offPerfStat(observer);
         expect().assertFail();

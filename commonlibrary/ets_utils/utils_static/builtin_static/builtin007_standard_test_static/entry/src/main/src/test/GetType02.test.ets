@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,7 +24,7 @@ export default function getType02Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -51,7 +51,7 @@ export default function getType02Test() {
     it('testValueGetType80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType80001';
       try {
-        const floatType: FloatType;
+        const floatType: FloatType = FloatType.REF;
         const floatValue = new FloatValue(floatType, 3.14159 as float);
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
@@ -72,7 +72,7 @@ export default function getType02Test() {
     it('testValueGetType80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType80002';
       try {
-        const floatType: FloatType;
+        const floatType: FloatType = FloatType.REF;
         const floatValue = new FloatValue(floatType, -2.71828 as float);
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
@@ -93,7 +93,7 @@ export default function getType02Test() {
     it('testValueGetType80003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType80003';
       try {
-        const floatType: FloatType;
+        const floatType: FloatType = FloatType.REF;
         const floatValue = new FloatValue(floatType, 0.0 as float);
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
@@ -114,7 +114,7 @@ export default function getType02Test() {
     it('testValueGetType80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType80004';
       try {
-        const floatType: FloatType;
+        const floatType: FloatType = FloatType.REF;
         const floatValue = new FloatValue(floatType, Number.MAX_VALUE as float);
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
@@ -135,7 +135,7 @@ export default function getType02Test() {
     it('testValueGetType80005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType80005';
       try {
-        const floatType: FloatType;
+        const floatType: FloatType = FloatType.REF;
         const floatValue = new FloatValue(floatType, Number.MIN_VALUE as float);
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
@@ -156,7 +156,7 @@ export default function getType02Test() {
     it('testValueGetType80006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType80006';
       try {
-        const floatType: FloatType;
+        const floatType: FloatType = FloatType.REF;
         const floatValue = new FloatValue(floatType, Number.NaN as float);
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
@@ -177,7 +177,7 @@ export default function getType02Test() {
     it('testValueGetType80007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType80007';
       try {
-        const floatType: FloatType;
+        const floatType: FloatType = FloatType.REF;
         const floatValue = new FloatValue(floatType, Number.POSITIVE_INFINITY as float);
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
@@ -198,7 +198,7 @@ export default function getType02Test() {
     it('testValueGetType80008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType80008';
       try {
-        const floatType: FloatType;
+        const floatType: FloatType = FloatType.REF;
         const floatValue = new FloatValue(floatType, Number.NEGATIVE_INFINITY as float);
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
@@ -219,7 +219,7 @@ export default function getType02Test() {
     it('testValueGetType80009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType80009';
       try {
-        const floatType: FloatType;
+        const floatType: FloatType = FloatType.REF;
         const floatValue = new FloatValue(floatType, 1.618 as float);
         const firstCall = floatValue.getType();
         const secondCall = floatValue.getType();
@@ -241,7 +241,7 @@ export default function getType02Test() {
     it('testValueGetType110001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType110001';
       try {
-        const byteType: ByteType;
+        const byteType: ByteType = ByteType.REF;
         const byteValue = new ByteValue(byteType, 42 as byte);
         const result = byteValue.getType();
         expect(typeof result).assertEqual(typeof byteType);
@@ -262,7 +262,7 @@ export default function getType02Test() {
     it('testValueGetType110002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType110002';
       try {
-        const byteType: ByteType;
+        const byteType: ByteType = ByteType.REF;
         const byteValue = new ByteValue(byteType, -128 as byte);
         const result = byteValue.getType();
         expect(typeof result).assertEqual(typeof byteType);
@@ -283,7 +283,7 @@ export default function getType02Test() {
     it('testValueGetType110003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType110003';
       try {
-        const byteType: ByteType;
+        const byteType: ByteType = ByteType.REF;
         const byteValue = new ByteValue(byteType, 127 as byte);
         const result = byteValue.getType();
         expect(typeof result).assertEqual(typeof byteType);
@@ -304,7 +304,7 @@ export default function getType02Test() {
     it('testValueGetType110004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType110004';
       try {
-        const byteType: ByteType;
+        const byteType: ByteType = ByteType.REF;
         const byteValue = new ByteValue(byteType, 0 as byte);
         const result = byteValue.getType();
         expect(typeof result).assertEqual(typeof byteType);
@@ -325,7 +325,7 @@ export default function getType02Test() {
     it('testValueGetType110005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType110005';
       try {
-        const byteType: ByteType;
+        const byteType: ByteType = ByteType.REF;
         const byteValue = new ByteValue(byteType, 10 as byte);
         const firstCall = byteValue.getType();
         const secondCall = byteValue.getType();
@@ -347,7 +347,7 @@ export default function getType02Test() {
     it('testValueGetType110006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType110006';
       try {
-        const byteType: ByteType;
+        const byteType: ByteType = ByteType.REF;
         const byteValue = new ByteValue(byteType, 10 as byte);
         const result = byteValue.getType();
         expect(typeof result).assertEqual(typeof byteType);
@@ -368,7 +368,7 @@ export default function getType02Test() {
     it('testValueGetType110007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType110007';
       try {
-        const byteType: ByteType;
+        const byteType: ByteType = ByteType.REF;
         const byteValue = new ByteValue(byteType, 10 as byte);
         const result = byteValue.getType();
         expect(typeof result).assertEqual(typeof byteType);
@@ -389,8 +389,8 @@ export default function getType02Test() {
     it('testValueGetType110008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType110008';
       try {
-        const byteType1: ByteType;
-        const byteType2: ByteType;
+        const byteType1: ByteType = ByteType.REF;
+        const byteType2: ByteType = ByteType.REF;
         const byteValue1 = new ByteValue(byteType1, 10 as byte);
         const byteValue2 = new ByteValue(byteType2, 20 as byte);
         const result1 = byteValue1.getType();
@@ -413,7 +413,7 @@ export default function getType02Test() {
     it('testValueGetType110009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType110009';
       try {
-        const byteType: ByteType;
+        const byteType: ByteType = ByteType.REF;
         const byteValue = new ByteValue(byteType, -50 as byte);
         const result = byteValue.getType();
         expect(typeof result).assertEqual(typeof byteType);
@@ -434,7 +434,7 @@ export default function getType02Test() {
     it('testValueGetType110010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType110010';
       try {
-        const byteType: ByteType;
+        const byteType: ByteType = ByteType.REF;
         const byteValue = new ByteValue(byteType, 100 as byte);
         const result = byteValue.getType();
         expect(typeof result).assertEqual(typeof byteType);
@@ -455,7 +455,7 @@ export default function getType02Test() {
     it('testValueGetType120001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType120001';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const booleanValue = new BooleanValue(booleanType, true);
         const result = booleanValue.getType();
         expect(typeof result).assertEqual(typeof booleanType);
@@ -476,7 +476,7 @@ export default function getType02Test() {
     it('testValueGetType120002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType120002';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const booleanValue = new BooleanValue(booleanType, false);
         const result = booleanValue.getType();
         expect(typeof result).assertEqual(typeof booleanType);
@@ -497,7 +497,7 @@ export default function getType02Test() {
     it('testValueGetType120003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType120003';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const booleanValue = new BooleanValue(booleanType, true);
         const firstCall = booleanValue.getType();
         const secondCall = booleanValue.getType();
@@ -519,7 +519,7 @@ export default function getType02Test() {
     it('testValueGetType120004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType120004';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const booleanValue = new BooleanValue(booleanType, false);
         const result = booleanValue.getType();
         expect(typeof result).assertEqual(typeof booleanType);
@@ -540,7 +540,7 @@ export default function getType02Test() {
     it('testValueGetType120005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType120005';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const booleanValue = new BooleanValue(booleanType, true);
         const result = booleanValue.getType();
         expect(typeof result).assertEqual(typeof booleanType);
@@ -561,8 +561,8 @@ export default function getType02Test() {
     it('testValueGetType120006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType120006';
       try {
-        const booleanType1: BooleanType;
-        const booleanType2: BooleanType;
+        const booleanType1: BooleanType = BooleanType.REF;
+        const booleanType2: BooleanType = BooleanType.REF;
         const booleanValue1 = new BooleanValue(booleanType1, true);
         const booleanValue2 = new BooleanValue(booleanType2, false);
         const result1 = booleanValue1.getType();
@@ -585,7 +585,7 @@ export default function getType02Test() {
     it('testValueGetType120007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType120007';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const value1 = new BooleanValue(booleanType, true);
         const value2 = new BooleanValue(booleanType, false);
         const value3 = new BooleanValue(booleanType, new Boolean(true));
@@ -617,7 +617,7 @@ export default function getType02Test() {
     it('testValueGetType120008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType120008';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const booleanValue = new BooleanValue(booleanType, true);
         const result = booleanValue.getType();
         expect(typeof result).assertEqual(typeof booleanType);
@@ -638,7 +638,7 @@ export default function getType02Test() {
     it('testValueGetType120009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType120009';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const booleanValue = new BooleanValue(booleanType, false);
         const result = booleanValue.getType();
         expect(typeof result).assertEqual(typeof booleanType);
@@ -659,7 +659,7 @@ export default function getType02Test() {
     it('testValueGetType130001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType130001';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.INT_REF;
         const arrayData = [1, 2, 3];
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const result = arrayValue.getType();
@@ -681,7 +681,7 @@ export default function getType02Test() {
     it('testValueGetType130002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType130002';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.CHAR_REF;
         const arrayData = ["a", "b", "c"];
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const result = arrayValue.getType();
@@ -703,7 +703,7 @@ export default function getType02Test() {
     it('testValueGetType130003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType130003';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.BOOLEAN_REF;
         const arrayData = [true, false, true];
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const firstCall = arrayValue.getType();
@@ -726,7 +726,7 @@ export default function getType02Test() {
     it('testValueGetType130004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType130004';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.FLOAT_REF;
         const arrayData = [1.1, 2.2, 3.3];
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const result = arrayValue.getType();
@@ -748,7 +748,7 @@ export default function getType02Test() {
     it('testValueGetType130005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType130005';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.CHAR_REF;
         const arrayData = ['a', 'b', 'c'];
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const result = arrayValue.getType();
@@ -770,7 +770,7 @@ export default function getType02Test() {
     it('testValueGetType130006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType130006';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.DOUBLE_REF;
         const arrayData: number[] = [];
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const result = arrayValue.getType();
@@ -792,7 +792,7 @@ export default function getType02Test() {
     it('testValueGetType130007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType130007';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.LONG_REF;
         const arrayData = [[1n, 2n], [3n, 4n]];
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const result = arrayValue.getType();
@@ -814,8 +814,8 @@ export default function getType02Test() {
     it('testValueGetType130008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType130008';
       try {
-        const arrayType: ArrayType;
-        const arrayData: number[] = new Array<number>(10000).fill(1);
+        const arrayType: ArrayType = ArrayType.DOUBLE_REF;
+        const arrayData: number[] = Array.create<number>(10000, 1);
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const result = arrayValue.getType();
         expect(typeof result).assertEqual(typeof arrayType);
@@ -836,7 +836,7 @@ export default function getType02Test() {
     it('testValueGetType130009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType130009';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.INT_REF;
         const arrayData = [[1, 2], [3, 4]];
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const result = arrayValue.getType();
@@ -858,7 +858,7 @@ export default function getType02Test() {
     it('testValueGetType140001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140001';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, 3.14159);
         const result = doubleValue.getType();
         expect(typeof result).assertEqual(typeof doubleType);
@@ -879,7 +879,7 @@ export default function getType02Test() {
     it('testValueGetType140002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140002';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, -2.71828);
         const result = doubleValue.getType();
         expect(typeof result).assertEqual(typeof doubleType);
@@ -900,7 +900,7 @@ export default function getType02Test() {
     it('testValueGetType140003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140003';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, 0.0);
         const result = doubleValue.getType();
         expect(typeof result).assertEqual(typeof doubleType);
@@ -921,7 +921,7 @@ export default function getType02Test() {
     it('testValueGetType140004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140004';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, 1.23456);
         const firstCall = doubleValue.getType();
         const secondCall = doubleValue.getType();
@@ -943,7 +943,7 @@ export default function getType02Test() {
     it('testValueGetType140005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140005';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, 5.4321);
         const result = doubleValue.getType();
         expect(typeof result).assertEqual(typeof doubleType);
@@ -964,7 +964,7 @@ export default function getType02Test() {
     it('testValueGetType140006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140006';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, 9.87654);
         const result = doubleValue.getType();
         expect(typeof result).assertEqual(typeof doubleType);
@@ -985,7 +985,7 @@ export default function getType02Test() {
     it('testValueGetType140007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140007';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, Number.MAX_VALUE);
         const result = doubleValue.getType();
         expect(typeof result).assertEqual(typeof doubleType);
@@ -1006,7 +1006,7 @@ export default function getType02Test() {
     it('testValueGetType140008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140008';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, Number.MIN_VALUE);
         const result = doubleValue.getType();
         expect(typeof result).assertEqual(typeof doubleType);
@@ -1027,7 +1027,7 @@ export default function getType02Test() {
     it('testValueGetType140009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140009';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, NaN);
         const result = doubleValue.getType();
         expect(typeof result).assertEqual(typeof doubleType);
@@ -1048,7 +1048,7 @@ export default function getType02Test() {
     it('testValueGetType140010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140010';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const posInfValue = new DoubleValue(doubleType, Infinity);
         const result = posInfValue.getType();
         expect(typeof result).assertEqual(typeof doubleType);
@@ -1069,7 +1069,7 @@ export default function getType02Test() {
     it('testValueGetType140011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140011';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const subnormalValue = new DoubleValue(doubleType, Number.MIN_VALUE / 2);
         const result = subnormalValue.getType();
         expect(typeof result).assertEqual(typeof doubleType);
@@ -1090,8 +1090,8 @@ export default function getType02Test() {
     it('testValueGetType140012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140012';
       try {
-        const doubleType1: DoubleType;
-        const doubleType2: DoubleType;
+        const doubleType1: DoubleType = DoubleType.REF;
+        const doubleType2: DoubleType = DoubleType.REF;
         const value1 = new DoubleValue(doubleType1, 1.23);
         const value2 = new DoubleValue(doubleType2, 4.56);
         const result1 = value1.getType();
@@ -1115,7 +1115,7 @@ export default function getType02Test() {
     it('testValueGetType140013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType140013';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const negInfValue = new DoubleValue(doubleType, -Infinity);
         const result = negInfValue.getType();
         expect(typeof result).assertEqual(typeof doubleType);
@@ -1136,7 +1136,7 @@ export default function getType02Test() {
     it('testValueGetData130001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData130001';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.INT_REF;
         const arrayData = [1, 2, 3];
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const result = arrayValue.getData();
@@ -1158,7 +1158,7 @@ export default function getType02Test() {
     it('testValueGetData130002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData130002';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.CHAR_REF;
         const arrayData = [
           new Object(),
           new Object(),
@@ -1184,7 +1184,7 @@ export default function getType02Test() {
     it('testValueGetData130003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData130003';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.CHAR_REF;
         const arrayData: string[] = [];
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const result = arrayValue.getData();
@@ -1206,7 +1206,7 @@ export default function getType02Test() {
     it('testValueGetData130004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData130004';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.FLOAT_REF;
         const arrayData = [1.1, 2.2, 3.3];
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const firstCall = arrayValue.getData();
@@ -1229,7 +1229,7 @@ export default function getType02Test() {
     it('testValueGetData130005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData130005';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.CHAR_REF;
         const emptyArray: Object[] = [];
         const arrayValue = new ArrayValue(arrayType, emptyArray);
         const result = arrayValue.getData();
@@ -1251,7 +1251,7 @@ export default function getType02Test() {
     it('testValueGetData130006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData130006';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.CHAR_REF;
         const initializedEmptyArray = new Array<String>();
         const arrayValue = new ArrayValue(arrayType, initializedEmptyArray);
         const result = arrayValue.getData();
@@ -1273,7 +1273,7 @@ export default function getType02Test() {
     it('testValueGetData130007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData130007';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.CHAR_REF;
         const arrayData: (Object | null)[] = [null, new Object(), null];
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const result = arrayValue.getData();
@@ -1295,7 +1295,7 @@ export default function getType02Test() {
     it('testValueGetData120001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData120001';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const booleanValue = new BooleanValue(booleanType, true);
         const result = booleanValue.getData();
         expect(result === true).assertTrue();
@@ -1316,7 +1316,7 @@ export default function getType02Test() {
     it('testValueGetData120002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData120002';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const booleanValue = new BooleanValue(booleanType, false);
         const result = booleanValue.getData();
         expect(result === false).assertTrue();
@@ -1337,7 +1337,7 @@ export default function getType02Test() {
     it('testValueGetData120003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData120003';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const booleanValue = new BooleanValue(booleanType, true);
         const firstCall = booleanValue.getData();
         const secondCall = booleanValue.getData();
@@ -1359,8 +1359,8 @@ export default function getType02Test() {
     it('testValueGetData120004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData120004';
       try {
-        const booleanType1: BooleanType;
-        const booleanType2: BooleanType;
+        const booleanType1: BooleanType = BooleanType.REF;
+        const booleanType2: BooleanType = BooleanType.REF;
         const value1 = new BooleanValue(booleanType1, true);
         const value2 = new BooleanValue(booleanType2, false);
         const result1 = value1.getData();
@@ -1383,7 +1383,7 @@ export default function getType02Test() {
     it('testValueGetData120005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData120005';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const booleanValue = new BooleanValue(booleanType, false);
         for (let i = 0; i < 10; i++) {
           const result = booleanValue.getData();
@@ -1407,7 +1407,7 @@ export default function getType02Test() {
     it('testValueGetData120006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData120006';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const value1 = new BooleanValue(booleanType, true);
         const value2 = new BooleanValue(booleanType, false);
         expect((value1.getData() as Boolean).valueOf()).assertTrue();
@@ -1429,8 +1429,8 @@ export default function getType02Test() {
     it('testValueGetData120007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData120007';
       try {
-        const booleanType1: BooleanType;
-        const booleanType2: BooleanType;
+        const booleanType1: BooleanType = BooleanType.REF;
+        const booleanType2: BooleanType = BooleanType.REF;
         const value1 = new BooleanValue(booleanType1, true);
         const value2 = new BooleanValue(booleanType2, true);
         expect((value1.getData() as Boolean).valueOf()).assertTrue();
@@ -1452,7 +1452,7 @@ export default function getType02Test() {
     it('testValueGetData140001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData140001';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const testValue = 3.1415926;
         const doubleValue = new DoubleValue(doubleType, testValue);
         const result = doubleValue.getData();
@@ -1475,7 +1475,7 @@ export default function getType02Test() {
     it('testValueGetData140002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData140002';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const testValue = -2.71828;
         const doubleValue = new DoubleValue(doubleType, testValue);
         const result = doubleValue.getData();
@@ -1498,7 +1498,7 @@ export default function getType02Test() {
     it('testValueGetData140003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData140003';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, 0.0);
         const result = doubleValue.getData();
         expect(typeof result === 'number').assertTrue();
@@ -1520,7 +1520,7 @@ export default function getType02Test() {
     it('testValueGetData140004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData140004';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const maxValue = Number.MAX_VALUE;
         const doubleValue = new DoubleValue(doubleType, maxValue);
         const result = doubleValue.getData();
@@ -1543,7 +1543,7 @@ export default function getType02Test() {
     it('testValueGetData140005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData140005';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const minValue = Number.MIN_VALUE;
         const doubleValue = new DoubleValue(doubleType, minValue);
         const result = doubleValue.getData();
@@ -1566,7 +1566,7 @@ export default function getType02Test() {
     it('testValueGetData140006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData140006';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, NaN);
         const result = doubleValue.getData();
         expect(typeof result === 'number').assertTrue();
@@ -1588,7 +1588,7 @@ export default function getType02Test() {
     it('testValueGetData140007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData140007';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const infValue = Infinity;
         const doubleValue = new DoubleValue(doubleType, infValue);
         const result = doubleValue.getData();
@@ -1611,7 +1611,7 @@ export default function getType02Test() {
     it('testValueGetData140008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData140008';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, -Infinity);
         const result = doubleValue.getData();
         expect(typeof result === 'number').assertTrue();
@@ -1633,124 +1633,11 @@ export default function getType02Test() {
     it('testValueGetData140009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetData140009';
       try {
-        const doubleType: DoubleType;
+        const doubleType: DoubleType = DoubleType.REF;
         const doubleValue = new DoubleValue(doubleType, Number.EPSILON);
         const result = doubleValue.getData();
         expect(typeof result === 'number').assertTrue();
         expect(result as number).assertEqual(Number.EPSILON);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_LAMBDAVALUE_GETTYPE_0100
-     * @tc.name    testValueGetType60001
-     * @tc.desc    Verify getType() returns correct LambdaType instance
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testValueGetType60001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testValueGetType60001';
-      try {
-        const lambdaType: LambdaType;
-        const func = (x: number) => x * 2;
-        const lambdaValue = new LambdaValue(lambdaType, func);
-        const result = lambdaValue.getType();
-        expect(result === lambdaType).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_LAMBDAVALUE_GETTYPE_0200
-     * @tc.name    testValueGetType60002
-     * @tc.desc    Verify getType() returns LambdaType instance
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testValueGetType60002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testValueGetType60002';
-      try {
-        const lambdaType: LambdaType;
-        const func = (): void => {
-        };
-        const lambdaValue = new LambdaValue(lambdaType, func);
-        const result = lambdaValue.getType();
-        expect(typeof result).assertEqual(typeof lambdaType);
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_LAMBDAVALUE_GETTYPE_0500
-     * @tc.name    testValueGetType60005
-     * @tc.desc    Verify getType() with different LambdaType instances
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testValueGetType60005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testValueGetType60005';
-      try {
-        const lambdaType1: LambdaType;
-        const lambdaType2: LambdaType;
-        const func1 = (n: number) => n.toString();
-        const func2 = (s: string) => s.length;
-        const lambdaValue1 = new LambdaValue(lambdaType1, func1);
-        const lambdaValue2 = new LambdaValue(lambdaType2, func2);
-        expect(lambdaValue1.getType() === lambdaType1).assertTrue();
-        expect(lambdaValue2.getType() === lambdaType2).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_LAMBDAVALUE_GETTYPE_0600
-     * @tc.name    testValueGetType60006
-     * @tc.desc    Verify getType() with arrow function
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testValueGetType60006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testValueGetType60006';
-      try {
-        const lambdaType: LambdaType;
-        const arrowFunc = (n: number) => n > 0;
-        const lambdaValue = new LambdaValue(lambdaType, arrowFunc);
-        const result = lambdaValue.getType();
-        expect(result === lambdaType).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} failed: ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_LAMBDAVALUE_GETTYPE_0700
-     * @tc.name    testValueGetType60007
-     * @tc.desc    Verify getType() with complex nested function type
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('testValueGetType60007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testValueGetType60007';
-      try {
-        const lambdaType: LambdaType;
-        const func = (fn: (n: number) => boolean) => fn(10).toString();
-        const lambdaValue = new LambdaValue(lambdaType, func);
-        expect(lambdaValue.getType() === lambdaType).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -1768,7 +1655,7 @@ export default function getType02Test() {
     it('testValueGetType90001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType90001';
       try {
-        const classType: ClassType;
+        const classType: ClassType = Type.of(new Object()) as ClassType;
         const emptyObj = new Object();
         const classValue = new ClassValue(classType, emptyObj);
         const result = classValue.getType();
@@ -1790,7 +1677,7 @@ export default function getType02Test() {
     it('testValueGetType90002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType90002';
       try {
-        const classType: ClassType;
+        const classType: ClassType = Type.of(new Object()) as ClassType;
         const dateObj = new Date();
         const dateValue = new ClassValue(classType, dateObj);
         const result = dateValue.getType();
@@ -1812,9 +1699,9 @@ export default function getType02Test() {
     it('testValueGetType90003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType90003';
       try {
-        const stringType: ClassType;
+        const stringType: ClassType = Type.of(new Object()) as ClassType;
         const stringValue = new ClassValue(stringType, "test");
-        expect(typeof stringValue.getType()).assertEqual(typeof stringType);
+        expect(typeof stringValue.getType()).assertEqual(typeof stringType!);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -1832,9 +1719,9 @@ export default function getType02Test() {
     it('testValueGetType90004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType90004';
       try {
-        const numberType: ClassType;
+        const numberType: ClassType = Type.of(new Object()) as ClassType;
         const numberValue = new ClassValue(numberType, 123);
-        expect(typeof numberValue.getType()).assertEqual(typeof numberType);
+        expect(typeof numberValue.getType()).assertEqual(typeof numberType!);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -1852,9 +1739,9 @@ export default function getType02Test() {
     it('testValueGetType90005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType90005';
       try {
-        const booleanType: ClassType;
+        const booleanType: ClassType = Type.of(new Object()) as ClassType;
         const booleanValue = new ClassValue(booleanType, true);
-        expect(typeof booleanValue.getType()).assertEqual(typeof booleanType);
+        expect(typeof booleanValue.getType()).assertEqual(typeof booleanType!);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -1872,9 +1759,9 @@ export default function getType02Test() {
     it('testValueGetType90006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType90006';
       try {
-        const emptyType: ClassType;
+        const emptyType: ClassType = Type.of(new Object()) as ClassType;
         const emptyValue = new ClassValue(emptyType, {});
-        expect(typeof emptyValue.getType()).assertEqual(typeof emptyType);
+        expect(typeof emptyValue.getType()).assertEqual(typeof emptyType!);
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
@@ -1892,7 +1779,7 @@ export default function getType02Test() {
     it('testValueGetType90007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType90007';
       try {
-        const longType: ClassType;
+        const longType: ClassType = Type.of(new Object()) as ClassType;
         const longValue = new ClassValue(longType, {});
         expect(typeof longValue.getType()).assertEqual(typeof longType);
       } catch (err) {
@@ -1912,7 +1799,7 @@ export default function getType02Test() {
     it('testValueGetType90008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType90008';
       try {
-        const arrayType: ClassType;
+        const arrayType: ClassType = Type.of(new Object()) as ClassType;
         const testArray: string[] = ["test"];
         const arrayValue = new ClassValue(arrayType, testArray);
         expect(typeof arrayValue.getType()).assertEqual(typeof arrayType);
@@ -2436,7 +2323,7 @@ export default function getType02Test() {
     it('testValueGetType30008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType30008';
       try {
-        const shortType: ShortType;
+        const shortType: ShortType = ShortType.REF;
         const value1 = new ShortValue(shortType, 10);
         const value2 = new ShortValue(shortType, 20);
         const resultType1 = value1.getType();
@@ -2459,7 +2346,7 @@ export default function getType02Test() {
     it('testValueGetType30009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType30009';
       try {
-        const shortType: ShortType;
+        const shortType: ShortType = ShortType.REF;
         const shortValue = new ShortValue(shortType, 0);
         const originalType = shortValue.getType();
         expect(typeof originalType).assertEqual(typeof shortType);
@@ -2480,7 +2367,7 @@ export default function getType02Test() {
     it('testValueGetType30010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType30010';
       try {
-        const shortType: ShortType;
+        const shortType: ShortType = ShortType.REF;
         const shortValue = new ShortValue(shortType, 10);
         const resultType = shortValue.getType();
         expect(typeof resultType).assertEqual(typeof shortType);
@@ -2501,7 +2388,7 @@ export default function getType02Test() {
     it('testValueGetType30011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType30011';
       try {
-        const shortType: ShortType;
+        const shortType: ShortType = ShortType.REF;
         const shortValue = new ShortValue(shortType, 15);
         const resultType = shortValue.getType();
         expect(typeof resultType).assertEqual(typeof shortType);
@@ -2522,7 +2409,7 @@ export default function getType02Test() {
     it('testValueGetType30012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType30012';
       try {
-        const shortType: ShortType;
+        const shortType: ShortType = ShortType.REF;
         const type = new ShortValue(shortType, 0).getType();
         expect(type != null).assertTrue();
       } catch (err) {
@@ -2542,7 +2429,7 @@ export default function getType02Test() {
     it('testValueGetType30013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType30013';
       try {
-        const shortType: ShortType;
+        const shortType: ShortType = ShortType.REF;
         const v1 = new ShortValue(shortType, 32767);
         const v2 = new ShortValue(shortType, -32768);
         expect(v1.getType() === v2.getType()).assertTrue();
@@ -2563,7 +2450,7 @@ export default function getType02Test() {
     it('testValueGetType50007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType50007';
       try {
-        const longType: LongType;
+        const longType: LongType = LongType.REF;
         const longValue = new LongValue(longType, 0);
         const originalType = longValue.getType();
         expect(longValue.getType()).assertEqual(originalType);
@@ -2584,7 +2471,7 @@ export default function getType02Test() {
     it('testValueGetType50008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType50008';
       try {
-        const longType: LongType;
+        const longType: LongType = LongType.REF;
         const longValue = new LongValue(longType, 10);
         const resultType = longValue.getType();
         expect(typeof resultType).assertEqual(typeof longType);
@@ -2605,7 +2492,7 @@ export default function getType02Test() {
     it('testValueGetType70007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType70007';
       try {
-        const intType: IntType;
+        const intType: IntType = IntType.REF;
         const v1 = new IntValue(intType, 1);
         const v2 = new IntValue(intType, 2);
         expect(v1.getType() === v2.getType()).assertTrue();
@@ -2626,7 +2513,7 @@ export default function getType02Test() {
     it('testValueGetType70008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType70008';
       try {
-        const intType: IntType;
+        const intType: IntType = IntType.REF;
         const type = new IntValue(intType, 0).getType();
         expect(type != null).assertTrue();
       } catch (err) {
@@ -2646,7 +2533,7 @@ export default function getType02Test() {
     it('testValueGetType80010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType80010';
       try {
-        const floatType: FloatType;
+        const floatType: FloatType = FloatType.REF;
         const v1 = new FloatValue(floatType, 1.0);
         const v2 = new FloatValue(floatType, 2.0);
         expect(v1.getType() === v2.getType()).assertTrue();
@@ -2667,7 +2554,7 @@ export default function getType02Test() {
     it('testValueGetType80011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType80011';
       try {
-        const floatType: FloatType;
+        const floatType: FloatType = FloatType.REF;
         const floatValue = new FloatValue(floatType, 0.0 as float);
         const result = floatValue.getType();
         expect(result != null).assertTrue();
@@ -2688,7 +2575,7 @@ export default function getType02Test() {
     it('testValueGetType120010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType120010';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const v1 = new BooleanValue(booleanType, true);
         const v2 = new BooleanValue(booleanType, false);
         expect(v1.getType() === v2.getType()).assertTrue();
@@ -2709,7 +2596,7 @@ export default function getType02Test() {
     it('testValueGetType120011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType120011';
       try {
-        const booleanType: BooleanType;
+        const booleanType: BooleanType = BooleanType.REF;
         const booleanValue = new BooleanValue(booleanType, false);
         const result = booleanValue.getType();
         expect(result != null).assertTrue();
@@ -2730,7 +2617,7 @@ export default function getType02Test() {
     it('testValueGetType130010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testValueGetType130010';
       try {
-        const arrayType: ArrayType;
+        const arrayType: ArrayType = ArrayType.INT_REF;
         const v1 = new ArrayValue(arrayType, [1, 2, 3]);
         const v2 = new ArrayValue(arrayType, [4, 5]);
         expect(v1.getType() === v2.getType()).assertTrue();

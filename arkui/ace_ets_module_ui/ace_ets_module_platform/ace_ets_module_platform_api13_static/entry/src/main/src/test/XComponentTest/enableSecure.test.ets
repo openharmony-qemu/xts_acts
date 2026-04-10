@@ -44,7 +44,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function enableSecureTest() {
   describe('enableSecureTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.platform.api13.static", "EntryAbility")

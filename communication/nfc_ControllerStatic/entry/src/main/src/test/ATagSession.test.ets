@@ -65,7 +65,8 @@ export default function nfcATagSessionTest() {
         beforeAll(() => {
           try {
             nfcAtag = tag.getNfcA(aTag);
-          }catch(error: BusinessError){
+          }catch(error){
+            error = error as BusinessError;
             if (error.code === 801) {
               hilog.info(domain,tag1,'%{public}s','[NFC_test] beforeAll getNfcA error is :  ' + error + " - " + error.code);
               expect(801).assertEqual(error.code);
@@ -96,11 +97,13 @@ export default function nfcATagSessionTest() {
        * @tc.level Level 1
        */
       it('SUB_COMMUNICATION_NFC_TagSession_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let nfcAtag = tag.getNfcA(aTag);
         if ((nfcAtag != null) && (nfcAtag != undefined)) {
           try {
             nfcAtag.connect();
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0100 NfcConnected pass ');
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             if (error.code === 3100201) {
               hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0100 NfcConnected error：  ' + error + ' - ' + error.code);
               expect(3100201).assertEqual(error.code);
@@ -131,10 +134,12 @@ export default function nfcATagSessionTest() {
        * @tc.level Level 1
        */
       it('SUB_COMMUNICATION_NFC_TagSession_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let nfcAtag = tag.getNfcA(aTag);
         try {
           nfcAtag.resetConnection();
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0200 resetConnection pass ');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           if (error.code === 3100201) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0200 resetConnection error：  ' + error + ' - ' + error.code);
             expect(3100201).assertEqual(error.code);
@@ -164,7 +169,13 @@ export default function nfcATagSessionTest() {
         if (nfcAtag != null && nfcAtag != undefined) {
           try {
             let istagConnected: boolean = tag.getIsoDep(isoDepTaginfo).isConnected();
-          } catch (error: BusinessError) {
+            if (istagConnected == true) {
+              expect(istagConnected).assertTrue();
+            } else {
+              expect(istagConnected).assertFalse();
+            }
+          } catch (error) {
+            error = error as BusinessError;
             if (error.code === 801) {
               hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0300 getIsoDep error：  ' + error + ' - ' + error.code);
               expect(801).assertEqual(error.code);
@@ -189,11 +200,13 @@ export default function nfcATagSessionTest() {
        * @tc.level Level 1
        */
       it('SUB_COMMUNICATION_NFC_TagSession_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let nfcAtag = tag.getNfcA(aTag);
         if (nfcAtag != null && nfcAtag != undefined) {
           try {
             let timeoutMs: int = 1000;
             nfcAtag.setTimeout(timeoutMs);
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             if (error.code === 201) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0400 setTimeout error：  ' + error + ' - ' + error.code);
             expect(201).assertEqual(error.code);
@@ -224,10 +237,12 @@ export default function nfcATagSessionTest() {
        * @tc.level Level 1
        */
       it('SUB_COMMUNICATION_NFC_TagSession_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let nfcAtag = tag.getNfcA(aTag);
         let gettime: int;
         try {
           gettime = nfcAtag.getTimeout();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           if (error.code === 201) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0500 getTimeout error：  ' + error + ' - ' + error.code);
             expect(201).assertEqual(error.code);
@@ -258,8 +273,14 @@ export default function nfcATagSessionTest() {
         try {
           await tag.getNfcA(aTag).transmit(sendDatas).then((data) => {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0600 data ');
+            if (data.length > 0) {
+                expect(data.length > 0).assertTrue();
+            } else {
+                expect(data.length == 0).assertTrue();
+            }
           });
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           if (error.code === 201) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0600 transmit error：  ' + error + ' - ' + error.code);
             expect(201).assertEqual(error.code);
@@ -285,6 +306,38 @@ export default function nfcATagSessionTest() {
       })
 
       /**
+       * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0601
+       * @tc.name SUB_COMMUNICATION_NFC_TagSession_static_0601
+       * @tc.desc Check whether the NFC function is enabled.
+       * @tc.size since 7
+       * @tc.type Function
+       * @tc.level Level 1
+       */
+      it('SUB_COMMUNICATION_NFC_TagSession_static_0601', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let sendDatas: Array<int> = [];
+        try {
+          await tag.getNfcA(aTag).transmit(sendDatas).then((data) => {
+            hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0601 data ');
+            if (data.length > 0) {
+                expect(data.length > 0).assertTrue();
+            } else {
+                expect(data.length == 0).assertTrue();
+            }
+          });
+        } catch(error) {
+          error = error as BusinessError;
+          if (error.code === 401) {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0601 transmit error：  ' + error + ' - ' + error.code);
+            expect(401).assertEqual(error.code);
+          } else {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0601 transmit fail：  ');
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+      /**
        * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0700
        * @tc.name SUB_COMMUNICATION_NFC_TagSession_static_0700
        * @tc.desc Check whether the NFC function is enabled.
@@ -297,10 +350,18 @@ export default function nfcATagSessionTest() {
         let AsyncCallback:(err: BusinessError<void> | null, data: Array<int> | undefined) => void = (
           err: BusinessError<void> | null, data: Array<int> | undefined) => {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0700 transmit finish ');
+          if (data != undefined) {
+            if (data.length > 0) {
+                expect(data.length > 0).assertTrue();
+            } else {
+                expect(data.length == 0).assertTrue();
+            }
+          }
         }
         try {
           tag.getNfcA(aTag).transmit(sendDatas, AsyncCallback);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           if (error.code === 201) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0700 transmit error：  ' + error + ' - ' + error.code);
             expect(201).assertEqual(error.code);
@@ -326,6 +387,42 @@ export default function nfcATagSessionTest() {
       })
 
       /**
+       * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0701
+       * @tc.name SUB_COMMUNICATION_NFC_TagSession_static_0701
+       * @tc.desc Check whether the NFC function is enabled.
+       * @tc.size since 7
+       * @tc.type Function
+       * @tc.level Level 1
+       */
+      it('SUB_COMMUNICATION_NFC_TagSession_static_0701', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let sendDatas: Array<int> = [];
+        let AsyncCallback:(err: BusinessError<void> | null, data: Array<int> | undefined) => void = (
+          err: BusinessError<void> | null, data: Array<int> | undefined) => {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0701 transmit finish ');
+          if (data != undefined) {
+            if (data.length > 0) {
+                expect(data.length > 0).assertTrue();
+            } else {
+                expect(data.length == 0).assertTrue();
+            }
+          }
+        }
+        try {
+          tag.getNfcA(aTag).transmit(sendDatas, AsyncCallback);
+        } catch (error) {
+          error = error as BusinessError;
+          if (error.code === 401) {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0701 transmit error：  ' + error + ' - ' + error.code);
+            expect(401).assertEqual(error.code);
+          } else {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0701 transmit fail：  ');
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+      /**
        * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0800
        * @tc.name SUB_COMMUNICATION_NFC_TagSession_static_0800
        * @tc.desc Check whether the NFC function is enabled.
@@ -334,10 +431,12 @@ export default function nfcATagSessionTest() {
        * @tc.level Level 1
        */
       it('SUB_COMMUNICATION_NFC_TagSession_static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let nfcAtag = tag.getNfcA(aTag);
         let mazSendLen: int;
         try {
             mazSendLen  = nfcAtag.getMaxTransmitSize();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           if (error.code === 201) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0800 getMaxTransmitSize error：  ' + error + ' - ' + error.code);
             expect(201).assertEqual(error.code);

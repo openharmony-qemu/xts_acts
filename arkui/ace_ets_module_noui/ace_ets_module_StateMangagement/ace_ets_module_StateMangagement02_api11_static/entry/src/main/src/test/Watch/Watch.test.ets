@@ -42,7 +42,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function WatchTest() {
   describe('WatchTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("WatchTest beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

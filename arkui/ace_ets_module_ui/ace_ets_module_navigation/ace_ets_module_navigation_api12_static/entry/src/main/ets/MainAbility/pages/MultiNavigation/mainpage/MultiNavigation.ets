@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -914,7 +914,7 @@ export class MultiNavPathStack extends NavPathStack {
   }
 }
 
-interface HomeChangeListener {
+export interface HomeChangeListener {
   onHomeShowInTop: (name: string) => void;
 }
 
@@ -933,7 +933,7 @@ export class NeedRenderDisplayMode {
   displayMode: number = 0;
 }
 
-class MultiNavPolicyInfo {
+export class MultiNavPolicyInfo {
   policy: SplitPolicy = SplitPolicy.DETAIL_PAGE;
   navInfo: NavPathInfo | undefined = undefined;
   isFullScreen: boolean | undefined = undefined;
@@ -991,17 +991,17 @@ export class MyNavPathStack extends NavPathStack {
   }
 }
 
-interface NavPathStackOperate{
+export interface NavPathStackOperate{
   onSystemPop: ()=>void;
 }
 
-interface MultiNavPathStackOperate{
+export interface MultiNavPathStackOperate{
   onPrimaryPop: ()=>void;
   onSecondaryPop: ()=>void;
 }
 
 
-class SubNavigationStack {
+export class SubNavigationStack {
   primaryStack: MyNavPathStack = new MyNavPathStack();
   secondaryStack: MyNavPathStack = new MyNavPathStack();
   needRenderIsFullScreen: NeedRenderIsFullScreen = new NeedRenderIsFullScreen();

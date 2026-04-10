@@ -36,7 +36,7 @@ interface EventMessage {
 }
 export default function videoOnFullscreenChangeJsunit() {
   describe('videoOnFullscreenChangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.platform.static", "EntryAbility")
     });

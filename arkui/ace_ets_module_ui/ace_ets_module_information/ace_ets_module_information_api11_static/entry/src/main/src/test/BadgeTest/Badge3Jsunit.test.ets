@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function badge3Jsunit() {
   describe('badge3Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("badge3Jsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

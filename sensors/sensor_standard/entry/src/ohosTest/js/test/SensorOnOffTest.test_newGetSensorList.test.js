@@ -52,6 +52,7 @@ describe("SensorJsTest_sensor_35", function () {
 
     let errMessage;
     let invild = -1;
+    let sensortempcode = true;
     const PARAMETER_ERROR_CODE = 401
     const SERVICE_EXCEPTION_CODE = 14500101
     const SENSOR_NO_SUPPORT_CODE = 14500102
@@ -133,7 +134,7 @@ describe("SensorJsTest_sensor_35", function () {
                 for (let i = 0; i < data.length; i++) {
                     console.info(TAG + ' Callback in!' + JSON.stringify(data[i]));
                 }
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }, (error) => {
                 console.info(TAG + ' error:' + error);
@@ -161,7 +162,7 @@ it("getSensorLists_SensorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level
             for (let i = 0; i < data.length; i++) {
                 console.info(TAG + ' Callback in!' + JSON.stringify(data[i]));
             }
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, (error) => {
             console.info(TAG + ' error:' + error);
@@ -190,7 +191,7 @@ it("getSensorLists_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level
             for (let i = 0; i < data.length; i++) {
                 console.info(TAG + ' Callback in!' + JSON.stringify(data[i]));
             }
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, (error) => {
             console.info(TAG + ' error:' + error);
@@ -219,7 +220,7 @@ it("getSensorLists_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level
                 for (let i = 0; i < data.length; i++) {
                     console.info(TAG + ' Callback in!' + JSON.stringify(data[i]));
                 }
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }, (error) => {
                 console.info(TAG + ' error:' + error);
@@ -248,7 +249,7 @@ it("getSensorLists_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level
                 for (let i = 0; i < data.length; i++) {
                     console.info(TAG + ' Callback in!' + JSON.stringify(data[i]));
                 }
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }, (error) => {
                 console.info(TAG + ' error:' + error);
@@ -275,7 +276,7 @@ it("getSensorLists_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level
                 for (let i = 0; i < data.length; i++) {
                     console.info(TAG + ' Callback in!' + JSON.stringify(data[i]));
                 }
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }, (error) => {
                 console.info(TAG + ' error:' + error);
@@ -303,7 +304,7 @@ it("getSensorLists_SensorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level
                 for (let i = 0; i < data.length; i++) {
                     console.info(TAG + ' Callback in!' + JSON.stringify(data[i]));
                 }
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done();
             }, (error) => {
                 console.info(TAG + ' error:' + error);

@@ -40,7 +40,7 @@ export default function AbilityStaticTest() {
   describe('AbilityStaticTest', (): void => {
     const abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
     const BUNDLE_NAME: string = 'com.example.systemcalltest.static';
-    let caller: Caller;
+    let caller: Caller | undefined;
 
     beforeAll(async () => {
       hilog.info(domain, tag, 'beforeAll start');
@@ -48,7 +48,7 @@ export default function AbilityStaticTest() {
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
       await Utils.msSleep(5000)
       caller = AppStorage.get<Caller>('Caller') as Caller;
-      hilog.info(domain, tag, `beforeAll Caller: ${!!caller}`);
+      hilog.info(domain, tag, `beforeAll Caller: ${!!caller!}`);
       hilog.info(domain, tag, 'beforeAll end');
     })
 
@@ -64,7 +64,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0100';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.release();
+        caller?.release();
         done();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
@@ -87,7 +87,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0200';
       hilog.info(domain, tag, `${itName} start`);
       const data = new CustomParcelable();
-      caller.call('testCall', data).then(() => {
+      caller?.call('testCall', data).then(() => {
         hilog.info(domain, tag, `${itName} caller call success`);
         expect().assertFail();
       }).catch((e: Error) => {
@@ -111,13 +111,37 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0300';
       hilog.info(domain, tag, `${itName} start`);
       const data = new CustomParcelable();
-      caller.callWithResult('testCall', data).then((message: rpc.MessageSequence) => {
+      caller?.callWithResult('testCall', data).then((message: rpc.MessageSequence) => {
         hilog.info(domain, tag, `${itName} caller call success`);
         expect().assertFail();
       }).catch((e: Error) => {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller callWithResult fail error code: ${err?.code}, msg: ${err?.message}`);
         expect(`${err?.code}`).assertEqual('16200001');
+        done();
+        hilog.info(domain, tag, `${itName} end`);
+      })
+    })
+
+    /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_0301
+     * @tc.number ACTS_CommonComponent_Call_Static_0301
+     * @tc.desc   test callWithResult ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CommonComponent_Call_Static_0301', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const itName = 'ACTS_CommonComponent_Call_Static_0301';
+      hilog.info(domain, tag, `${itName} start`);
+      const data = new CustomParcelable();
+      caller?.callWithResult('', data).then((message: rpc.MessageSequence) => {
+        hilog.info(domain, tag, `${itName} caller call success`);
+        expect().assertFail();
+      }).catch((e: Error) => {
+        const err = e as BusinessError;
+        hilog.info(domain, tag, `${itName} caller callWithResult fail error code: ${err?.code}, msg: ${err?.message}`);
+        expect(`${err?.code}`).assertEqual('401');
         done();
         hilog.info(domain, tag, `${itName} end`);
       })
@@ -136,7 +160,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0400';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.onRelease((msg) => {});
+        caller?.onRelease((msg) => {});
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
@@ -160,7 +184,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0500';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.onRemoteStateChange((msg) => {});
+        caller?.onRemoteStateChange((msg) => {});
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
@@ -184,7 +208,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0600';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.onRelease((msg) => {});
+        caller?.onRelease((msg) => {});
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
@@ -208,7 +232,7 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0700';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.offRelease((msg) => {});
+        caller?.offRelease((msg) => {});
         done();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
@@ -231,13 +255,63 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0800';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.offRelease();
+        caller?.offRelease();
         done();
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller off release fail error code: ${err?.code}, msg: ${err?.message}`);
         expect().assertFail();
+        hilog.info(domain, tag, `${itName} end`);
+      }
+    })
+    /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_3100
+     * @tc.number ACTS_CommonComponent_Call_Static_3100
+     * @tc.desc   Verify that the parameter method of the Callee.on function is an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CommonComponent_Call_Static_3100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const itName = 'ACTS_CommonComponent_Call_Static_3100';
+      hilog.info(domain, tag, `${itName} start`);
+      try {
+        let errmsg = AppStorage.get<string>("oncode") as string;
+        hilog.info(domain, tag, `${itName} errmsg：${errmsg} `);
+        expect(errmsg).assertEqual('401:Invalid input parameter.');
+        done();
+        hilog.info(domain, tag, `${itName} end`);
+      } catch (err) {
+        const e = err as BusinessError;
+        hilog.info(domain, tag, `${itName} callee on release fail error code: ${e?.code}, msg: ${e?.message}`);
+        expect().assertFail();
+        done();
+        hilog.info(domain, tag, `${itName} end`);
+      }
+    })
+    /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_3400
+     * @tc.number ACTS_CommonComponent_Call_Static_3400
+     * @tc.desc   Verify that the parameter method of the Callee.off function is an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CommonComponent_Call_Static_3400',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const itName = 'ACTS_CommonComponent_Call_Static_3400';
+      hilog.info(domain, tag, `${itName} start`);
+      try {
+        let errmsg = AppStorage.get<string>("offcode") as string;
+        hilog.info(domain, tag, `${itName} errmsg：${errmsg} `);
+        expect(errmsg).assertEqual('401:Invalid input parameter.');
+        done();
+        hilog.info(domain, tag, `${itName} end`);
+      } catch (err) {
+        const e = err as BusinessError;
+        hilog.info(domain, tag, `${itName} callee off release fail error code: ${e?.code}, msg: ${e?.message}`);
+        expect().assertFail();
+        done();
         hilog.info(domain, tag, `${itName} end`);
       }
     })

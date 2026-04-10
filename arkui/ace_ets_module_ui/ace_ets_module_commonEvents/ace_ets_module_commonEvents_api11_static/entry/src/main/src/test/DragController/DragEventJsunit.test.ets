@@ -38,7 +38,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function dragEventJsunit() {
   describe('dragEventTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
       
@@ -103,7 +103,7 @@ it('dragEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("dragEventTest_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0100 END');
@@ -143,7 +143,7 @@ it('dragEventTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("dragEventTest_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0200 END');
@@ -182,7 +182,7 @@ it('dragEventTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("dragEventTest_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0300 END');
@@ -219,7 +219,7 @@ it('dragEventTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("dragEventTest_0400 on emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0400 END');
@@ -258,7 +258,7 @@ it('dragEventTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("dragEventTest_0500 on emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0500 END');

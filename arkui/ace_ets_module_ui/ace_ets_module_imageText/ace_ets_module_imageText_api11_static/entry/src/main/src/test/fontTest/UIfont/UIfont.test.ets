@@ -24,7 +24,7 @@ import inspector from '@ohos.arkui.inspector'
 
 export default function UIfont() {
   describe('UIfont', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UIfont beforeEach start");
 
 

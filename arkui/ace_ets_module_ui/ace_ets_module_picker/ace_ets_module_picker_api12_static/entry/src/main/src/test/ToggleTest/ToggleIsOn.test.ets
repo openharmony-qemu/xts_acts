@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ToggleContentIsOn() {
   describe('ToggleContentIsOn', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("enableHapticFeedbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

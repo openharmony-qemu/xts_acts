@@ -60,7 +60,7 @@ export default function zIndexTest() {
    * Create test suite.
    */
   describe('zIndexTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("beforeAll start");
 
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

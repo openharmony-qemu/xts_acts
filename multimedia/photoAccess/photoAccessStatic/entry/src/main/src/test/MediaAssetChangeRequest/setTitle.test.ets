@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,7 +60,8 @@ export default function setTitleChangeRequestTest() {
           await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(assetChangeRequest);
           expect(false).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error}`);
           expect(error.code).assertEqual(401);
           done();

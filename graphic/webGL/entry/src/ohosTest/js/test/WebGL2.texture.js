@@ -106,6 +106,79 @@ export default function webgl2_texture() {
             gl.deleteProgram(p.program);
         }
         /**
+         * @tc.name   webgl2_test_readPixels_2
+         * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0066
+         * @tc.desc   Test readPixels.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('webgl2_test_readPixels_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("webgl2test [webgl2_test_readPixels_2] readPixels");
+            let srcViewport = gl.getParameter(gl.VIEWPORT);
+            let p = createProgram(gl, `#version 300 es
+                in vec4 a_position;
+                in vec3 a_color;
+                out vec3 v_color;
+                void main(){
+                    gl_Position = a_position;
+                    gl_PointSize = 1.0;
+                    v_color = a_color;
+                }
+            `, `#version 300 es
+                precision mediump float;
+                in vec3 v_color;
+                out vec4 color;
+                void main(){
+                    color = vec4(v_color,1.0);
+                }
+            `);
+            let source = new Float32Array([
+                -0.5, -0.5, 1.0, 0.0, 0.0,
+                0.5, -0.5, 0.0, 0.0, 0.0,
+                -0.5, 0.5, 0.0, 1.0, 0.0,
+                0.5, 0.5, 0.0, 0.0, 1.0,
+            ]);
+            let num = 4;
+            let FSIZE = source.BYTES_PER_ELEMENT;
+            let buffer = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+            gl.bufferData(gl.ARRAY_BUFFER, source, gl.STATIC_READ, 0, 20);
+            expect(checkError(gl)).assertEqual(gl.NO_ERROR);
+            let a_position = gl.getAttribLocation(p.program, 'a_position');
+            gl.vertexAttribPointer(a_position, 2, gl.FLOAT, false, 5 * FSIZE, 0);
+            gl.enableVertexAttribArray(a_position);
+            let a_color = gl.getAttribLocation(p.program, 'a_color');
+            gl.vertexAttribPointer(a_color, 3, gl.FLOAT, false, 5 * FSIZE, 2 * FSIZE);
+            gl.enableVertexAttribArray(a_color);
+            gl.clearColor(0, 0, 0, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl.viewport(0, 0, 2, 2);
+            gl.drawArrays(gl.POINTS, 0, 4);
+            let result = new Uint8Array(2 * 2 * 4);
+            gl.readPixels(0, 0, 2, 2, gl.RGBA, gl.UNSIGNED_BYTE, result);
+            console.info("webgltest ", result);
+            console.info("www data webgltest ", 
+                result[0],result[1],result[2],result[3],result[4],result[5],result[6],result[7]);
+            expect(result[0]).assertEqual(255);
+            expect(result[1]).assertEqual(0);
+            expect(result[2]).assertEqual(0);
+            expect(result[3]).assertEqual(255);
+            expect(result[4]).assertEqual(0);
+            expect(result[5]).assertEqual(0);
+            expect(result[6]).assertEqual(0);
+            expect(result[7]).assertEqual(255);
+            gl.deleteBuffer(buffer);
+            gl.deleteShader(p.vertexShader);
+            gl.deleteShader(p.fragmentShader);
+            gl.deleteProgram(p.program);
+            gl.disableVertexAttribArray(a_color);
+            gl.disableVertexAttribArray(a_position);
+            gl.viewport(srcViewport[0], srcViewport[1], srcViewport[2], srcViewport[3]);
+            checkError(gl);
+            done();
+        });
+        /**
          * @tc.name   webgl2_test_texStorage2D
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0001
          * @tc.desc   Test texStorage2D.
@@ -1966,77 +2039,6 @@ export default function webgl2_texture() {
             expect(result[2]).assertEqual(0);
             expect(result[3]).assertEqual(0);
             expect(result[4]).assertEqual(255);
-            expect(result[5]).assertEqual(0);
-            expect(result[6]).assertEqual(0);
-            expect(result[7]).assertEqual(255);
-            gl.deleteBuffer(buffer);
-            gl.deleteShader(p.vertexShader);
-            gl.deleteShader(p.fragmentShader);
-            gl.deleteProgram(p.program);
-            gl.disableVertexAttribArray(a_color);
-            gl.disableVertexAttribArray(a_position);
-            gl.viewport(srcViewport[0], srcViewport[1], srcViewport[2], srcViewport[3]);
-            checkError(gl);
-            done();
-        });
-        /**
-         * @tc.name   webgl2_test_readPixels_2
-         * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_TEXTURE_0066
-         * @tc.desc   Test readPixels.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('webgl2_test_readPixels_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info("webgl2test [webgl2_test_readPixels_2] readPixels");
-            let srcViewport = gl.getParameter(gl.VIEWPORT);
-            let p = createProgram(gl, `#version 300 es
-                in vec4 a_position;
-                in vec3 a_color;
-                out vec3 v_color;
-                void main(){
-                    gl_Position = a_position;
-                    gl_PointSize = 1.0;
-                    v_color = a_color;
-                }
-            `, `#version 300 es
-                precision mediump float;
-                in vec3 v_color;
-                out vec4 color;
-                void main(){
-                    color = vec4(v_color,1.0);
-                }
-            `);
-            let source = new Float32Array([
-                -0.5, -0.5, 1.0, 0.0, 0.0,
-                0.5, -0.5, 0.0, 0.0, 0.0,
-                -0.5, 0.5, 0.0, 1.0, 0.0,
-                0.5, 0.5, 0.0, 0.0, 1.0,
-            ]);
-            let num = 4;
-            let FSIZE = source.BYTES_PER_ELEMENT;
-            let buffer = gl.createBuffer();
-            gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-            gl.bufferData(gl.ARRAY_BUFFER, source, gl.STATIC_READ, 0, 20);
-            expect(checkError(gl)).assertEqual(gl.NO_ERROR);
-            let a_position = gl.getAttribLocation(p.program, 'a_position');
-            gl.vertexAttribPointer(a_position, 2, gl.FLOAT, false, 5 * FSIZE, 0);
-            gl.enableVertexAttribArray(a_position);
-            let a_color = gl.getAttribLocation(p.program, 'a_color');
-            gl.vertexAttribPointer(a_color, 3, gl.FLOAT, false, 5 * FSIZE, 2 * FSIZE);
-            gl.enableVertexAttribArray(a_color);
-            gl.clearColor(0, 0, 0, 1.0);
-            gl.clear(gl.COLOR_BUFFER_BIT);
-            gl.viewport(0, 0, 2, 2);
-            gl.drawArrays(gl.POINTS, 0, 4);
-            let result = new Uint8Array(2 * 2 * 4);
-            gl.readPixels(0, 0, 2, 2, gl.RGBA, gl.UNSIGNED_BYTE, result);
-            console.info("webgltest ", result);
-            expect(result[0]).assertEqual(255);
-            expect(result[1]).assertEqual(0);
-            expect(result[2]).assertEqual(0);
-            expect(result[3]).assertEqual(255);
-            expect(result[4]).assertEqual(0);
             expect(result[5]).assertEqual(0);
             expect(result[6]).assertEqual(0);
             expect(result[7]).assertEqual(255);

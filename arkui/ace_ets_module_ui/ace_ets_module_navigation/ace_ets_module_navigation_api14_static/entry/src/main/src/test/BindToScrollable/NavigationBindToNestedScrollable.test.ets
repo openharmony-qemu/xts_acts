@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function NavigationBindToNestedScrollable() {
   describe('NavigationBindToNestedScrollable', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("NavigationBindToNestedScrollable beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
       await UtilsTest.msSleep(4000);

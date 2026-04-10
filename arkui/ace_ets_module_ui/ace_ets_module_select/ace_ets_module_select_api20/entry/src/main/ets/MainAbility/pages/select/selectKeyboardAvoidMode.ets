@@ -7,24 +7,6 @@ struct Index {
   private inputController: inputMethod.InputMethodController = inputMethod.getController();
   @State private selectOptions: SelectOption[] = [
     {
-      value: 'aaa',
-    },
-    {
-      value: 'bbb',
-    },
-    {
-      value: 'ccc',
-    },
-    {
-      value: 'bbb',
-    },
-    {
-      value: 'bbb',
-    },
-    {
-      value: 'bbb',
-    },
-    {
       value: 'ccc',
     },
     {
@@ -49,6 +31,27 @@ struct Index {
       value: 'bbb',
     },
     {
+      value: 'ddd',
+    },
+    {
+      value: '123',
+    },
+    {
+      value: '456',
+    },
+    {
+      value: '789',
+    },
+    {
+      value: 'bbr',
+    }
+
+  ];
+  @State private selectOptions1: SelectOption[] = [
+    {
+      value: 'bbb',
+    },
+    {
       value: 'ccc',
     },
     {
@@ -56,14 +59,28 @@ struct Index {
     },
     {
       value: 'ccc',
+    },
+    {
+      value: 'bbb',
     },
     {
       value: 'ddd',
     }
+
   ];
 
   build() {
-    Column () {
+    Flex () {
+      Button('显示软键盘')
+        .width('80%')
+        .height(60)
+        .fontSize(20)
+        .margin(20)
+        .onClick(() => {
+          // 显示软键盘
+          this.hideKeyboard();
+        })
+        .id('hideBtn')
       Select(this.selectOptions)
         .value('1111')
         .id('select01')
@@ -85,8 +102,9 @@ struct Index {
             this.attachAndListener()
           }, 2000)
         })
-      Select(this.selectOptions)
+      Select(this.selectOptions1)
         .value('Click Show Options')
+        .selected(17)
         .id('select03')
         .keyboardAvoidMode(MenuKeyboardAvoidMode.TRANSLATE_AND_RESIZE)
         .minKeyboardAvoidDistance(LengthMetrics.vp(20))
@@ -96,7 +114,8 @@ struct Index {
           }, 2000)
         })
     }
-    .height('100%')
+    .position({ bottom: 20 })
+    .height('50%')
     .width('100%')
   }
 
@@ -111,6 +130,18 @@ struct Index {
       })
     } catch (err) {
       console.error('Fail to attach')
+    }
+  }
+  async hideKeyboard() {
+    try {
+      // 隐藏软键盘
+      //await this.inputController.hide();
+
+      // 可选：断开输入法连接以完全释放资源
+      await this.inputController.detach();
+
+    } catch (err) {
+      console.error('Fail to hide keyboard: ' + JSON.stringify(err));
     }
   }
 }

@@ -17,7 +17,7 @@
 @Component
 struct RichEditorSingleLineDemo {
   controller: RichEditorController = new RichEditorController();
-  textSpanOptions: RichEditorTextSpanOptions = { style: { fontSize: 30 } };
+  textSpanOptions: RichEditorTextSpanOptions = { style: { fontSize: 10 } };
   exampleText: string = '这是一段示例文本\n这是一段示例文本\n这是一段示例文本';
   @State enableSingleLine: boolean | undefined | null = undefined;
 
@@ -31,24 +31,23 @@ struct RichEditorSingleLineDemo {
           })
           .singleLine(this.enableSingleLine)
           .border({ width: 1, color: Color.Black })
-          .margin(10)
       }
       Row() {
         Button('切换单行模式')
           .id('RichEditor_enableSingleLine_true')
           .onClick((event: ClickEvent) => {
             this.enableSingleLine = true
-          }).margin(5)
+          }).width('33%')
         Button('切换多行模式')
           .id('RichEditor_enableSingleLine_false')
           .onClick((event: ClickEvent) => {
             this.enableSingleLine = false
-          }).margin(5)
+          }).width('33%')
         Button('set null')
           .id('RichEditor_enableSingleLine_null')
           .onClick((event: ClickEvent) => {
             this.enableSingleLine = null
-          }).margin(5)
+          }).width('33%')
       }
     }
   }

@@ -76,6 +76,54 @@ export default function systemTimeAuthorityJsunit() {
     });
 
     /**
+     * @tc.name   SUB_systemTime_setTime_JS_API_0101
+     * @tc.number SUB_systemTime_setTime_JS_API_0101
+     * @tc.desc   Test systemTime_setTime API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setTime_JS_API_0101', Level.LEVEL3, async (done: Function) => {
+      console.info("====>SUB_systemTime_setTime_JS_API_0101 start");
+      try{
+        systemTime.setTime(null, (err) => {
+          console.info('====>SUB_systemTime_setTime_JS_API_0101 success');
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>SUB_systemTime_setTime_JS_API_0101 catch err.code: ${err.code}, err.message: ${err.message} `);
+        expect(err.code).assertEqual(-1);
+        done();
+      }
+      console.info("====>SUB_systemTime_setTime_JS_API_0101 end");
+    });
+
+    /**
+     * @tc.name   SUB_systemTime_setTime_JS_API_0102
+     * @tc.number SUB_systemTime_setTime_JS_API_0102
+     * @tc.desc   Test systemTime_setTime API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setTime_JS_API_0102', Level.LEVEL3, async (done: Function) => {
+      console.info("====>SUB_systemTime_setTime_JS_API_0102 start");
+      try{
+        systemTime.setTime(undefined, (err) => {
+          console.info('====>SUB_systemTime_setTime_JS_API_0102 success');
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>SUB_systemTime_setTime_JS_API_0102 catch err.code: ${err.code}, err.message: ${err.message} `);
+        expect(err.code).assertEqual(-1);
+        done();
+      }
+      console.info("====>SUB_systemTime_setTime_JS_API_0102 end");
+    });
+
+    /**
      * @tc.name   SUB_systemTime_setTime_JS_API_0200
      * @tc.number SUB_systemTime_setTime_JS_API_0200
      * @tc.desc   Test systemTime_setTime API functionality.
@@ -121,6 +169,52 @@ export default function systemTimeAuthorityJsunit() {
     });
 
     /**
+     * @tc.name   SUB_systemTime_setTime_JS_API_0301
+     * @tc.number SUB_systemTime_setTime_JS_API_0301
+     * @tc.desc   Test systemTime_setTime API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setTime_JS_API_0301', Level.LEVEL3, async (done: Function) => {
+      console.info("====>SUB_systemTime_setTime_JS_API_0301 start");
+      try{
+        await systemTime.setTime(null);
+        console.info('====>SUB_systemTime_setTime_JS_API_0301 success');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_systemTime_setTime_JS_API_0301 catch err.code: ${err.code}, err.message: ${err.message} `);
+        expect(err.code).assertEqual(-1);
+        done();
+      }
+      console.info("====>SUB_systemTime_setTime_JS_API_0301 end");
+    });
+
+    /**
+     * @tc.name   SUB_systemTime_setTime_JS_API_0302
+     * @tc.number SUB_systemTime_setTime_JS_API_0302
+     * @tc.desc   Test systemTime_setTime API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setTime_JS_API_0302', Level.LEVEL3, async (done: Function) => {
+      console.info("====>SUB_systemTime_setTime_JS_API_0302 start");
+      try{
+        await systemTime.setTime(undefined);
+        console.info('====>SUB_systemTime_setTime_JS_API_0302 success');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_systemTime_setTime_JS_API_0302 catch err.code: ${err.code}, err.message: ${err.message} `);
+        expect(err.code).assertEqual(-1);
+        done();
+      }
+      console.info("====>SUB_systemTime_setTime_JS_API_0302 end");
+    });
+
+    /**
      * @tc.name   SUB_systemTime_setTime_JS_API_0400
      * @tc.number SUB_systemTime_setTime_JS_API_0400
      * @tc.desc   Test systemTime_setTime API functionality.
@@ -161,6 +255,100 @@ export default function systemTimeAuthorityJsunit() {
         expect(error.code).assertEqual(-1);
         done();
       });
+    });
+
+    /**
+     * @tc.name   SUB_systemTime_setDate_JS_API_0201
+     * @tc.number SUB_systemTime_setDate_JS_API_0201
+     * @tc.desc   Test systemTime_setDate API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setDate_JS_API_0201', Level.LEVEL3, async (done: Function) => {
+      console.info("====>SUB_systemTime_setDate_JS_API_0201 start");
+      try{
+        await systemTime.setDate(null);
+        console.info('====>SUB_systemTime_setDate_JS_API_0201 success');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_systemTime_setDate_JS_API_0201 catch err.code: ${err.code}, err.message: ${err.message} `);
+        expect(err.code).assertEqual(-1);
+        done();
+      }
+      console.info("====>SUB_systemTime_setDate_JS_API_0201 end");
+    });
+
+    /**
+     * @tc.name   SUB_systemTime_setDate_JS_API_0202
+     * @tc.number SUB_systemTime_setDate_JS_API_0202
+     * @tc.desc   Test systemTime_setDate API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setDate_JS_API_0202', Level.LEVEL3, async (done: Function) => {
+      console.info("====>SUB_systemTime_setDate_JS_API_0202 start");
+      try{
+        await systemTime.setDate(undefined);
+        console.info('====>SUB_systemTime_setDate_JS_API_0202 success');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_systemTime_setDate_JS_API_0202 catch err.code: ${err.code}, err.message: ${err.message} `);
+        expect(err.code).assertEqual(-1);
+        done();
+      }
+      console.info("====>SUB_systemTime_setDate_JS_API_0202 end");
+    });
+
+    /**
+     * @tc.name   SUB_systemTime_setDate_JS_API_0203
+     * @tc.number SUB_systemTime_setDate_JS_API_0203
+     * @tc.desc   Test systemTime_setDate API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setDate_JS_API_0203', Level.LEVEL3, async (done: Function) => {
+      console.info("====>SUB_systemTime_setDate_JS_API_0203 start");
+      try{
+        systemTime.setDate(null, (err) => {
+          console.info('====>SUB_systemTime_setTime_JS_API_0102 success');
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>SUB_systemTime_setDate_JS_API_0203 catch err.code: ${err.code}, err.message: ${err.message} `);
+        expect(err.code).assertEqual(-1);
+        done();
+      }
+      console.info("====>SUB_systemTime_setDate_JS_API_0203 end");
+    });
+
+    /**
+     * @tc.name   SUB_systemTime_setDate_JS_API_0204
+     * @tc.number SUB_systemTime_setDate_JS_API_0204
+     * @tc.desc   Test systemTime_setDate API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setDate_JS_API_0204', Level.LEVEL3, async (done: Function) => {
+      console.info("====>SUB_systemTime_setDate_JS_API_0204 start");
+      try{
+        systemTime.setDate(undefined, (err) => {
+          console.info('====>SUB_systemTime_setDate_JS_API_0204 success');
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>SUB_systemTime_setDate_JS_API_0204 catch err.code: ${err.code}, err.message: ${err.message} `);
+        expect(err.code).assertEqual(-1);
+        done();
+      }
+      console.info("====>SUB_systemTime_setDate_JS_API_0204 end");
     });
 
     /**
@@ -254,6 +442,144 @@ export default function systemTimeAuthorityJsunit() {
         expect(error.code).assertEqual(-1);
         done();
       });
+    });
+
+    /**
+     * @tc.name   SUB_systemTime_setTimezone_JS_API_0101
+     * @tc.number SUB_systemTime_setTimezone_JS_API_0101
+     * @tc.desc   Test systemTime_setTimezone API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_systemTime_setTimezone_JS_API_0101', Level.LEVEL2, async (done: Function) => {
+      console.info("====>SUB_systemTime_setTimezone_JS_API_0101 start");
+      systemTime.setTimezone('').then(() => {
+        console.info("====>SUB_systemTime_setTimezone_JS_API_0101 setTimezone fail");
+        expect().assertFail();
+        done();
+      }).catch((error: BusinessError) => {
+        console.info("====>SUB_systemTime_setTimezone_JS_API_0101 error " + JSON.stringify(error));
+        expect(error.code).assertEqual(-1);
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   SUB_systemTime_setTimezone_JS_API_0102
+     * @tc.number SUB_systemTime_setTimezone_JS_API_0102
+     * @tc.desc   Test systemTime_setTimezone API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setTimezone_JS_API_0102', Level.LEVEL3, async (done: Function) => {
+      console.info("====>SUB_systemTime_setTimezone_JS_API_0102 start");
+      try{
+        await systemTime.setTimezone(null);
+        console.info('====>SUB_systemTime_setTimezone_JS_API_0102 success');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_systemTime_setTimezone_JS_API_0102 catch err.code: ${err.code}, err.message: ${err.message} `);
+        expect(err.code).assertEqual(-1);
+        done();
+      }
+      console.info("====>SUB_systemTime_setTimezone_JS_API_0102 end");
+    });
+
+    /**
+     * @tc.name   SUB_systemTime_setTimezone_JS_API_0103
+     * @tc.number SUB_systemTime_setTimezone_JS_API_0103
+     * @tc.desc   Test systemTime_setTimezone API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setTimezone_JS_API_0103', Level.LEVEL3, async (done: Function) => {
+      console.info("====>SUB_systemTime_setTimezone_JS_API_0103 start");
+      try{
+        await systemTime.setTimezone(undefined);
+        console.info('====>SUB_systemTime_setTimezone_JS_API_0103 success');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_systemTime_setTimezone_JS_API_0103 catch err.code: ${err.code}, err.message: ${err.message} `);
+        expect(err.code).assertEqual(-1);
+        done();
+      }
+      console.info("====>SUB_systemTime_setTimezone_JS_API_0103 end");
+    });
+
+    /**
+     * @tc.name   SUB_systemTime_setTimezone_JS_API_0104
+     * @tc.number SUB_systemTime_setTimezone_JS_API_0104
+     * @tc.desc   Test systemTime_setTimezone API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setTimezone_JS_API_0104', Level.LEVEL3, (done: Function) => {
+      console.info("====>SUB_systemTime_setTimezone_JS_API_0104 start");
+      systemTime.setTimezone('',async (err) => {
+        try{ 
+          console.info(`====>SUB_systemTime_setTimezone_JS_API_0104 failed err.code: ${err.code}, err.message: ${err.message} `);
+          expect(err.code).assertEqual(-1);
+          done();
+        } catch (err) {
+          console.info(`====>SUB_systemTime_setTimezone_JS_API_0104 catch err.code: ${err.code}, err.message: ${err.message} `);
+          expect().assertFail();
+          done();
+        }
+      })
+    });
+
+    /**
+     * @tc.name   SUB_systemTime_setTimezone_JS_API_0105
+     * @tc.number SUB_systemTime_setTimezone_JS_API_0105
+     * @tc.desc   Test systemTime_setTimezone API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setTimezone_JS_API_0105', Level.LEVEL3, async (done: Function) => {
+      console.info("====>SUB_systemTime_setTimezone_JS_API_0105 start");
+      try{
+        systemTime.setTimezone(null, (err) => {
+          console.info('====>SUB_systemTime_setTimezone_JS_API_0105 success');
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>SUB_systemTime_setTimezone_JS_API_0105 catch err.code: ${err.code}, err.message: ${err.message} `);
+        expect(err.code).assertEqual(-1);
+        done();
+      }
+      console.info("====>SUB_systemTime_setTimezone_JS_API_0105 end");
+    });
+
+    /**
+     * @tc.name   SUB_systemTime_setTimezone_JS_API_0106
+     * @tc.number SUB_systemTime_setTimezone_JS_API_0106
+     * @tc.desc   Test systemTime_setTimezone API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_systemTime_setTimezone_JS_API_0106', Level.LEVEL3, async (done: Function) => {
+      console.info("====>SUB_systemTime_setTimezone_JS_API_0106 start");
+      try{
+        systemTime.setTimezone(undefined, (err) => {
+          console.info('====>SUB_systemTime_setTimezone_JS_API_0106 success');
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>SUB_systemTime_setTimezone_JS_API_0106 catch err.code: ${err.code}, err.message: ${err.message} `);
+        expect(err.code).assertEqual(-1);
+        done();
+      }
+      console.info("====>SUB_systemTime_setTimezone_JS_API_0106 end");
     });
 
     /**

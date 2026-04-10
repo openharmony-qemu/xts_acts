@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,8 @@ export default function addProcessorTest() {
                 hiAppEvent.removeProcessor(processorId)
                 done()
             }
-            catch (err: BusinessError) {
+            catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, `testHiAppEvent008 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(false).assertTrue()
                 done();
@@ -71,7 +72,8 @@ export default function addProcessorTest() {
                 hiAppEvent.removeProcessor(processorId)
                 done()
             }
-            catch (err: BusinessError) {
+            catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, `testHiAppEvent009 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 401).assertTrue()
                 done();
@@ -117,10 +119,10 @@ export default function addProcessorTest() {
                 let processorId = hiAppEvent.addProcessor(processor);
                 hilog.info(domain, tag, `testHiAppEvent010 > processorId: ${processorId}`)
                 hiAppEvent.removeProcessor(processorId)
-                expect(true).assertTrue()
                 done()
             }
-            catch (err: BusinessError) {
+            catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, `testHiAppEvent010 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(false).assertTrue()
                 done();

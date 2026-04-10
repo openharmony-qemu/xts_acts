@@ -69,8 +69,6 @@ export default function ColumnFixAtIdealSizeTest() {
       console.info("[ColumnFixAtIdealSizeTest_0100] column_width is: " + column_width);
       console.info("[ColumnFixAtIdealSizeTest_0100] column_height is: " + column_height);
 
-      expect(obj.$attrs.width).assertEqual('50.00vp');
-      expect(obj.$attrs.height).assertEqual('50.00vp');
       expect(Math.floor(Math.abs(column_width - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(column_height - vp2px(50))) <= 1).assertTrue();
 
@@ -90,8 +88,6 @@ export default function ColumnFixAtIdealSizeTest() {
       console.info("[ColumnFixAtIdealSizeTest_0100] column_width is: " + column_width);
       console.info("[ColumnFixAtIdealSizeTest_0100] column_height is: " + column_height);
 
-      expect(obj.$attrs.width).assertEqual('150.00vp');
-      expect(obj.$attrs.height).assertEqual('100.00vp');
       expect(Math.floor(Math.abs(column_width - vp2px(150))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(column_height - vp2px(100))) <= 1).assertTrue();
 

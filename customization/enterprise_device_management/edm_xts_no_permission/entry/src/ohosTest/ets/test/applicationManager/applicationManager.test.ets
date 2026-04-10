@@ -442,7 +442,11 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 201 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -470,7 +474,11 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 201 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -491,7 +499,11 @@ export default function applicationManagerTest() {
         applicationManager.getFreezeExemptedApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 201 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -519,7 +531,11 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 201 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -547,7 +563,11 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 201 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -568,7 +588,11 @@ export default function applicationManagerTest() {
         applicationManager.getUserNonStopApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 201 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -653,6 +677,8 @@ export default function applicationManagerTest() {
         let kioskFeatures: Array<applicationManager.KioskFeature> = [];
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_NOTIFICATION_CENTER);
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_CONTROL_CENTER);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_GESTURE_CONTROL);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_SIDE_DOCK);
         applicationManager.setKioskFeatures(SELFWANT, kioskFeatures);
         expect(false).assertTrue();
       } catch (error) {
@@ -727,6 +753,81 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.name   test_addDockApp_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP
+     * @tc.desc   test addDockApp method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addDockApp_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.addDockApp(SELFWANT, TEST_BUNDLENAME, TEST_BUNDLENAME, 2);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeDockApp_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDOCKAPP
+     * @tc.desc   test removeDockApp method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeDockApp_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.removeDockApp(SELFWANT, TEST_BUNDLENAME, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getDockApps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDOCKAPP
+     * @tc.desc   test removeDockApp method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getDockApps_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.getDockApps(SELFWANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_setAbilityDisabled_001
      * @tc.number SUB_CUSTOMIZATION_EDM_SETABILITYDISABLED_001
      * @tc.desc   test setAbilityDisabled method with normal admin
@@ -789,6 +890,69 @@ export default function applicationManagerTest() {
         let accountId: number = 100;
         let abilityName: string = "EntryAbility";
         applicationManager.isAbilityDisabled(SELFWANT, bundleName, accountId, abilityName);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_0100
+     * @tc.desc   test addAllowedNotificationBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0100
+     * @tc.desc   test removeAllowedNotificationBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAllowedNotificationBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDNOTIFICATIONBUNDLES_0100
+     * @tc.desc   test getAllowedNotificationBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllowedNotificationBundles_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.getAllowedNotificationBundles(SELFWANT, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 201).assertTrue();

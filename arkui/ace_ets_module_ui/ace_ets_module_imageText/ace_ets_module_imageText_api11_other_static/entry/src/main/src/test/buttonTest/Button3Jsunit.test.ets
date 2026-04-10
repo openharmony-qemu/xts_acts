@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -96,7 +96,7 @@ export default function button3Jsunit() {
           // console.info("push button page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push button page error: " + err);
       }
 
@@ -190,7 +190,7 @@ it('testButton_static_05', Level.LEVEL1, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<ButtonType>('buttonTypeValue',ButtonType.ROUNDED_RECTANGLE);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -213,7 +213,7 @@ it('testButton_static_06', Level.LEVEL1, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<string>('fontSizeValue','30px');
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -236,7 +236,7 @@ it('testButton_static_07', Level.LEVEL1, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<number>('fontSizeValue', -1);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_07] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -261,7 +261,7 @@ it('testButton_static_08', Level.LEVEL1, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<string | number>('fontSizeValue', "121212121px");
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -284,7 +284,7 @@ it('testButton_static_09', Level.LEVEL1, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<string | number>('fontSizeValue', "121212121px");
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_09] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -306,7 +306,7 @@ it('testButton_static_10', Level.LEVEL1, async (done: () => void): Promise<void>
       console.info('[testButton_static_10] START');
       try {
         AppStorage.setOrCreate<Color | string>('fontColorValue', Color.Pink);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testButton_static_10 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -329,7 +329,7 @@ it('testButton_static_11', Level.LEVEL1, async (done: () => void): Promise<void>
       console.info('[testButton_static_11] START');
       try {
         AppStorage.setOrCreate<Color | string | number>('fontColorValue', 332);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testButton_static_11 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -378,7 +378,7 @@ it('testButton_static_12', Level.LEVEL1, async (done: () => void): Promise<void>
           expect(Math.abs(UIContext.resolveUIContext()!.vp2px(ScreenY) - point.y + Number(AppStorage.get<number>("winTop"))) <= 1).assertTrue()
           expect(Math.trunc(JSON.parseJsonElement((eventData.data as ESObject).getProperty('event').toString()).getInteger('x'))).assertEqual(100)
           expect(Math.trunc(JSON.parseJsonElement((eventData.data as ESObject).getProperty('event').toString()).getInteger('y'))).assertEqual(50)
-        } catch (err:Error) {
+        } catch (err) {
           console.info("[testButton_static_12_] expection err : " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -390,7 +390,7 @@ it('testButton_static_12', Level.LEVEL1, async (done: () => void): Promise<void>
       }
       try {
         events_emitter.on(innerEvent, callback)
-      } catch (err:Error) {
+      } catch (err) {
         console.info("[testButton_static_12] on events_emitter err : " + JSON.stringify(err));
       }
       console.info('[testButton_static_12] sendEventByKey ' + JSON.stringify(inspector.sendEventByKey('buttonClick', 10, "")));
@@ -411,7 +411,7 @@ it('testButton_static_13', Level.LEVEL1, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<string>('buttonTypeValue', 'qaq');
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_13] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -437,7 +437,7 @@ it('testButton_static_14', Level.LEVEL1, async (done: () => void): Promise<void>
       try {
         // 1.2强类型 不能传递数字
         AppStorage.setOrCreate<ButtonType | undefined>('buttonTypeValue', undefined);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_14] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -463,7 +463,7 @@ it('testButton_static_15', Level.LEVEL1, async (done: () => void): Promise<void>
       try {
         AppStorage.setOrCreate<Color | string>('fontColorValue', "ab996");
 
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testButton_static_15 change component data error: " + err.message);
       }
       await CommonFunc.sleep(500);

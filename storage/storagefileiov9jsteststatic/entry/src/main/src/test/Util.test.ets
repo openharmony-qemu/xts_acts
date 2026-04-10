@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,7 +54,7 @@ export default class Utils{
         fs.closeSync(file)
         resolve(true);
       }
-      catch (e: BusinessError) {
+      catch (e) {
         hilog.info(domain, tag, '%{public}s', 'prepareFile has failed for' + JSON.stringify(e));
         resolve(false);
       }
@@ -75,7 +75,7 @@ export default class Utils{
         fs.closeSync(file)
         resolve(true);
       }
-      catch (e: BusinessError) {
+      catch (e) {
         hilog.info(domain, tag, '%{public}s', 'prepare200MFile has failed for' + JSON.stringify(e));
         resolve(false);
       }

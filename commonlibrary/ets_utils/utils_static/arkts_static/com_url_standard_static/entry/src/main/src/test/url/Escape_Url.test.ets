@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,7 +31,7 @@ import Utils from '../Util.test';
 
 export default function Escape_Url() {
   describe('Escape_Url', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
 
@@ -1812,7 +1812,8 @@ export default function Escape_Url() {
         let searchParamsObject= new Url.URLParams("\b=backspace&key1=value1");
         let keys = Array.from(searchParamsObject.keys());
         expect(keys.toString()).assertEqual("\b,key1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1832,7 +1833,8 @@ export default function Escape_Url() {
         let searchParamsObject = new Url.URLParams("\f=formFeed&key2=value2");
         let keys = Array.from(searchParamsObject.keys());
         expect(keys.toString()).assertEqual("\f,key2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1852,7 +1854,8 @@ export default function Escape_Url() {
         let searchParamsObject = new Url.URLParams("\n=newline&key3=value3");
         let keys = Array.from(searchParamsObject.keys());
         expect(keys.toString()).assertEqual("\n,key3");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1872,7 +1875,8 @@ export default function Escape_Url() {
         let searchParamsObject = new Url.URLParams("\r=carriageReturn&key4=value4");
         let keys = Array.from(searchParamsObject.keys());
         expect(keys.toString()).assertEqual("\r,key4");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1892,7 +1896,8 @@ export default function Escape_Url() {
         let searchParamsObject = new Url.URLParams("\t=tab&key5=value5");
         let keys = Array.from(searchParamsObject.keys());
         expect(keys.toString()).assertEqual("\t,key5");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1912,7 +1917,8 @@ export default function Escape_Url() {
         let searchParamsObject = new Url.URLParams("\v=verticalTab&key6=value6");
         let keys = Array.from(searchParamsObject.keys());
         expect(keys.toString()).assertEqual("\v,key6");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1932,7 +1938,8 @@ export default function Escape_Url() {
         let searchParamsObject = new Url.URLParams("\x24=dollarSign&key7=value7");
         let keys = Array.from(searchParamsObject.keys());
         expect(keys.toString()).assertEqual("\x24,key7");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1952,7 +1959,8 @@ export default function Escape_Url() {
         let searchParamsObject = new Url.URLParams("\开=escapeOpen&key8=value8");
         let keys = Array.from(searchParamsObject.keys());
         expect(keys.toString()).assertEqual("\开,key8");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1972,7 +1980,8 @@ export default function Escape_Url() {
         let searchParamsObject = new Url.URLParams("\😊=emoji&key9=value9");
         let keys = Array.from(searchParamsObject.keys());
         expect(keys.toString()).assertEqual("\😊,key9");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1992,7 +2001,8 @@ export default function Escape_Url() {
         let searchParamsObject = new Url.URLParams("\0=nullChar&key10=value10");
         let keys = Array.from(searchParamsObject.keys());
         expect(keys.toString()).assertEqual("\0,key10");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2012,7 +2022,8 @@ export default function Escape_Url() {
         let searchParamsObject = new Url.URLParams("\\b=backslashB&key11=value11");
         let keys = Array.from(searchParamsObject.keys());
         expect(keys.toString()).assertEqual("\\b,key11");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2032,7 +2043,8 @@ export default function Escape_Url() {
         let searchParams = new Url.URLParams("key1=\b&key2=value2");
         let values = Array.from(searchParams.values());
         expect(values.toString()).assertEqual("\b,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2052,7 +2064,8 @@ export default function Escape_Url() {
         let searchParams = new Url.URLParams("key1=\f&key2=value2");
         let values = Array.from(searchParams.values());
         expect(values.toString()).assertEqual("\f,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2072,7 +2085,8 @@ export default function Escape_Url() {
         let searchParams = new Url.URLParams("key1=\n&key2=value2");
         let values = Array.from(searchParams.values());
         expect(values.toString()).assertEqual("\n,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2092,7 +2106,8 @@ export default function Escape_Url() {
         let searchParams = new Url.URLParams("key1=\r&key2=value2");
         let values = Array.from(searchParams.values());
         expect(values.toString()).assertEqual("\r,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2112,7 +2127,8 @@ export default function Escape_Url() {
         let searchParams = new Url.URLParams("key1=\t&key2=value2");
         let values = Array.from(searchParams.values());
         expect(values.toString()).assertEqual("\t,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2132,7 +2148,8 @@ export default function Escape_Url() {
         let searchParams = new Url.URLParams("key1=\v&key2=value2");
         let values = Array.from(searchParams.values());
         expect(values.toString()).assertEqual("\v,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2152,7 +2169,8 @@ export default function Escape_Url() {
         let searchParams = new Url.URLParams("key1=\x24&key2=value2");
         let values = Array.from(searchParams.values());
         expect(values.toString()).assertEqual("\x24,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2172,7 +2190,8 @@ export default function Escape_Url() {
         let searchParams = new Url.URLParams("key1=\开&key2=value2");
         let values = Array.from(searchParams.values());
         expect(values.toString()).assertEqual("\开,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2192,7 +2211,8 @@ export default function Escape_Url() {
         let searchParams = new Url.URLParams("key1=\😊&key2=value2");
         let values = Array.from(searchParams.values());
         expect(values.toString()).assertEqual("\😊,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2211,7 +2231,8 @@ export default function Escape_Url() {
         let searchParams = new Url.URLParams("key1=\0&key2=value2");
         let values = Array.from(searchParams.values());
         expect(values.toString()).assertEqual("\0,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2231,7 +2252,8 @@ export default function Escape_Url() {
         let searchParams = new Url.URLParams("key1=\\b&key2=value2");
         let values = Array.from(searchParams.values());
         expect(values.toString()).assertEqual("\\b,value2");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1352,7 +1352,7 @@ async function createAsyKeySync(algName: string): Promise<cryptoFramework.KeyPai
     }
 
     return syncAsyKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -1365,7 +1365,7 @@ function convertAsyKeySync(algName: string, pubKeyData: cryptoFramework.DataBlob
     let syncAsyKey: cryptoFramework.KeyPair = asyKeyGenerator.convertKeySync(pubKeyData, priKeyData);
 
     return syncAsyKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -1377,7 +1377,7 @@ async function createAsyKeyPromise(algName: string): Promise<cryptoFramework.Key
     let syncAsyKey: cryptoFramework.KeyPair = await asyKeyGenerator.generateKeyPair();
 
     return syncAsyKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -1389,7 +1389,7 @@ async function convertAsyKeyPromise(algName: string, pubKeyData: cryptoFramework
     let syncAsyKey: cryptoFramework.KeyPair = await  asyKeyGenerator.convertKey(pubKeyData, priKeyData);
 
     return syncAsyKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -1519,7 +1519,7 @@ function showEccSpecDetailInfo(key: cryptoFramework.PubKey | cryptoFramework.Pri
     //   let pkY = key.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_PK_Y_BN);
     //   showBigIntInfo('--- pkY', pkY);
     // }
-  } catch (e: BusinessError) {
+  } catch (e) {
     console.error(`getAsyKeySpec failed, ${e.code}, ${e.message}`);
   }
 }

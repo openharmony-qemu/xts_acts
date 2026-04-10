@@ -46,9 +46,6 @@
       }
     ],
     "requestPermissions": [
-      {
-        "name": "ohos.permission.CLEAN_BACKGROUND_PROCESSES"
-      }
     ]
   }
 }

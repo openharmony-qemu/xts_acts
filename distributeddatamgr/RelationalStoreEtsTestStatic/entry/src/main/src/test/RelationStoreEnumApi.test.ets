@@ -25,7 +25,7 @@ import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let store: data_relationalStore.RdbStore | undefined = undefined;
@@ -83,7 +83,7 @@ export default function RelationalStoreEnumTest(){
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await Utils.msSleep(2000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
     });
     /**
      * @tc.name       RelationalStoreEnumerateTest001
@@ -100,15 +100,15 @@ export default function RelationalStoreEnumTest(){
         securityLevel: data_relationalStore.SecurityLevel.S1,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest001, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* testGetColumnIndex0001 end *************');
@@ -129,15 +129,15 @@ export default function RelationalStoreEnumTest(){
         securityLevel: data_relationalStore.SecurityLevel.S2,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest002 end *************');
@@ -159,15 +159,15 @@ export default function RelationalStoreEnumTest(){
         encrypt: false,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`Get RdbStore failed, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest003 end *************');
@@ -190,15 +190,15 @@ export default function RelationalStoreEnumTest(){
         dataGroupId: "",
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest004, code is ${err.code},message is ${err.message}`);
         expect(err != null ).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest004 end *************');
@@ -220,15 +220,15 @@ export default function RelationalStoreEnumTest(){
         customDir: "relationalstore/rdb",
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest005, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest005 end *************');
@@ -252,15 +252,15 @@ export default function RelationalStoreEnumTest(){
         allowRebuild: false,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest006, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest006 end *************');
@@ -284,15 +284,15 @@ export default function RelationalStoreEnumTest(){
         allowRebuild: false,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest007, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest007 end *************');
@@ -313,15 +313,15 @@ export default function RelationalStoreEnumTest(){
         isReadOnly: false,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest008, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest008 end *************');
@@ -341,7 +341,7 @@ export default function RelationalStoreEnumTest(){
         securityLevel: data_relationalStore.SecurityLevel.S1,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         let CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
           "data1 asset, "  + "data2 assets )";
         let  DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
@@ -365,14 +365,14 @@ export default function RelationalStoreEnumTest(){
         let num = await (store as data_relationalStore.RdbStore).insert("test", valueBucket);
         console.error(`Get RdbStore failed, num` + num);
         expect(num == 1).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         hilog.error(domain, tag, 'getrdb llll error' + err.stack);
         console.error(`Get RdbStore failed, code is ${err.code},message is ${err.message}`);
         expect().assertFail();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest009 end *************');
@@ -392,7 +392,7 @@ export default function RelationalStoreEnumTest(){
         securityLevel: data_relationalStore.SecurityLevel.S1,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         let CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
           "data1 text," + "data2 INTEGER, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
           "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
@@ -456,15 +456,15 @@ export default function RelationalStoreEnumTest(){
         securityLevel: data_relationalStore.SecurityLevel.S3,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0011 end *************');
@@ -485,15 +485,15 @@ export default function RelationalStoreEnumTest(){
         securityLevel: data_relationalStore.SecurityLevel.S4,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0012 end *************');
@@ -515,15 +515,15 @@ export default function RelationalStoreEnumTest(){
         pluginLibs: []
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0013 end *************');
@@ -545,15 +545,15 @@ export default function RelationalStoreEnumTest(){
         vector: false
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0014 end *************');
@@ -584,15 +584,15 @@ export default function RelationalStoreEnumTest(){
         cryptoParam: cryptoParam
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0015 end *************');
@@ -623,15 +623,15 @@ export default function RelationalStoreEnumTest(){
         cryptoParam: cryptoParam
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0016 end *************');
@@ -662,15 +662,15 @@ export default function RelationalStoreEnumTest(){
         cryptoParam: cryptoParam
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0017 end *************');
@@ -701,15 +701,15 @@ export default function RelationalStoreEnumTest(){
         cryptoParam: cryptoParam
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0018 end *************');
@@ -739,15 +739,15 @@ export default function RelationalStoreEnumTest(){
         cryptoParam: cryptoParam
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0019 end *************');
@@ -778,15 +778,15 @@ export default function RelationalStoreEnumTest(){
         cryptoParam: cryptoParam
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         expect(store != undefined).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0015 end *************');
@@ -809,23 +809,23 @@ export default function RelationalStoreEnumTest(){
         allowRebuild: false,
       };
       let STORE_CONFIG: data_relationalStore.StoreConfig = {
-        name: "MyStore1.db",
+        name: "MyStore2.db",
         securityLevel: data_relationalStore.SecurityLevel.S1,
         allowRebuild: true,
 
       };
       let dbName = "MyStore3.db";
-      dbPath = context.databaseDir + "/rdb/" + dbName;
-      dbPathWal = context.databaseDir + "/rdb/" + dbName + "-wal";
-      dbPathShm = context.databaseDir + "/rdb/" + dbName + "-shm";
-      store = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+      dbPath = context!.databaseDir + "/rdb/" + dbName;
+      dbPathWal = context!.databaseDir + "/rdb/" + dbName + "-wal";
+      dbPathShm = context!.databaseDir + "/rdb/" + dbName + "-shm";
+      store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
       try {
         let fileExist = fs.accessSync(dbPath);
         console.info(tag + "fileExist:"+fileExist)
         expect(fileExist).assertTrue();
         fs.truncateSync(dbPathWal, 4)
         fs.truncateSync(dbPathShm, 4)
-        let file = fs.openSync(dbPath, fs.OpenMode.READ_ONLY | fs.OpenMode.SYNC | fs.OpenMode.TRUNC );
+        let file = fs.openSync(dbPath, fs.OpenMode.READ_WRITE | fs.OpenMode.SYNC | fs.OpenMode.TRUNC );
         fs.truncateSync(file.fd, 4);
         fs.fsyncSync(file.fd)
         fs.closeSync(file)
@@ -833,20 +833,22 @@ export default function RelationalStoreEnumTest(){
         err = err as BusinessError;
         console.info(tag, `RelationalStoreEnumerateTest0021 err.code ${err.code}, err.message ${err.message}`)
       }
-      (store as data_relationalStore.RdbStore).close();
+      await (store as data_relationalStore.RdbStore).close();
       store = undefined;
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         console.log(`RelationalStoreEnumerateTest0021, (store as data_relationalStore.RdbStore).rebuilt` + (store as data_relationalStore.RdbStore).rebuilt);
         expect((store as data_relationalStore.RdbStore).rebuilt == data_relationalStore.RebuildType.NONE).assertEqual(true);
         expect( data_relationalStore.RebuildType.REPAIRED == 2).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest0021, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG1);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG1);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0021 end *************');
@@ -868,10 +870,10 @@ export default function RelationalStoreEnumTest(){
         allowRebuild: false,
       };
       let dbName = "MyStore2.db";
-      dbPath = context.databaseDir + "/rdb/" + dbName;
-      dbPathWal = context.databaseDir + "/rdb/" + dbName + "-wal";
-      dbPathShm = context.databaseDir + "/rdb/" + dbName + "-shm";
-      store = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+      dbPath = context!.databaseDir + "/rdb/" + dbName;
+      dbPathWal = context!.databaseDir + "/rdb/" + dbName + "-wal";
+      dbPathShm = context!.databaseDir + "/rdb/" + dbName + "-shm";
+      store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
       try {
         let fileExist = fs.accessSync(dbPath);
         console.info(tag + "fileExist:"+fileExist)
@@ -887,7 +889,7 @@ export default function RelationalStoreEnumTest(){
         console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
       }
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
         console.log(`RelationalStoreEnumerateTest0022, (store as data_relationalStore.RdbStore).rebuilt` + (store as data_relationalStore.RdbStore).rebuilt);
         console.log(`RelationalStoreEnumerateTest0022, data_relationalStore.RebuildType.NONE` + data_relationalStore.RebuildType.NONE);
         console.log(`RelationalStoreEnumerateTest0022, data_relationalStore.RebuildType.REBUILT` + data_relationalStore.RebuildType.REBUILT);
@@ -895,13 +897,13 @@ export default function RelationalStoreEnumTest(){
         expect((store as data_relationalStore.RdbStore).rebuilt == data_relationalStore.RebuildType.NONE).assertEqual(true);
         expect(data_relationalStore.RebuildType.REBUILT == 1).assertEqual(true);
         expect(data_relationalStore.RebuildType.REPAIRED == 2).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest0022, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG1);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG1);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0022 end *************');
@@ -927,10 +929,10 @@ export default function RelationalStoreEnumTest(){
         allowRebuild: true,
       };
       let dbName = "MyStore1.db";
-      dbPath = context.databaseDir + "/rdb/" + dbName;
-      dbPathWal = context.databaseDir + "/rdb/" + dbName + "-wal";
-      dbPathShm = context.databaseDir + "/rdb/" + dbName + "-shm";
-      store = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+      dbPath = context!.databaseDir + "/rdb/" + dbName;
+      dbPathWal = context!.databaseDir + "/rdb/" + dbName + "-wal";
+      dbPathShm = context!.databaseDir + "/rdb/" + dbName + "-shm";
+      store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG1);
       try {
         let fileExist = fs.accessSync(dbPath);
         console.info(tag + "fileExist:"+fileExist)
@@ -945,19 +947,19 @@ export default function RelationalStoreEnumTest(){
         err = err as BusinessError;
         console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
       }
-      (store as data_relationalStore.RdbStore).close();
+      await (store as data_relationalStore.RdbStore).close();
       store = undefined;
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         console.error(`RelationalStoreEnumerateTest0023, (store as data_relationalStore.RdbStore).rebuilt` + (store as data_relationalStore.RdbStore).rebuilt);
-        expect((store as data_relationalStore.RdbStore).rebuilt == data_relationalStore.RebuildType.NONE).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
+        expect((store as data_relationalStore.RdbStore).rebuilt == data_relationalStore.RebuildType.REBUILT).assertEqual(true);
+        await data_relationalStore.deleteRdbStore(context!, STORE_CONFIG1);
         done();
       } catch(err) {
         err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest0023, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG1);
+        await data_relationalStore.deleteRdbStore(context!,STORE_CONFIG1);
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0023 end *************');
@@ -985,7 +987,7 @@ export default function RelationalStoreEnumTest(){
         "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
 
       let DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
-      let rdbStore: data_relationalStore.RdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      let rdbStore: data_relationalStore.RdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       await rdbStore.insert("test", valueBucket0);
@@ -1034,7 +1036,7 @@ export default function RelationalStoreEnumTest(){
         "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
 
       let DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
-      let rdbStore: data_relationalStore.RdbStore  = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      let rdbStore: data_relationalStore.RdbStore  = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       await rdbStore.insert("test", valueBucket0);
@@ -1074,7 +1076,7 @@ export default function RelationalStoreEnumTest(){
         securityLevel: data_relationalStore.SecurityLevel.S1,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         let CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
           "data1 text," + "data2 INTEGER, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
           "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
@@ -1136,7 +1138,7 @@ export default function RelationalStoreEnumTest(){
         securityLevel: data_relationalStore.SecurityLevel.S1,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         let CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
           "data1 text," + "data2 INTEGER, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
           "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
@@ -1199,7 +1201,7 @@ export default function RelationalStoreEnumTest(){
         securityLevel: data_relationalStore.SecurityLevel.S1,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         let CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
           "data1 text," + "data2 INTEGER, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
           "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
@@ -1261,7 +1263,7 @@ export default function RelationalStoreEnumTest(){
         securityLevel: data_relationalStore.SecurityLevel.S1,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         let CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
           "data1 text," + "data2 INTEGER, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
           "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
@@ -1324,7 +1326,7 @@ export default function RelationalStoreEnumTest(){
         securityLevel: data_relationalStore.SecurityLevel.S1,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         let CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
           "data1 text," + "data2 INTEGER, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
           "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
@@ -1387,7 +1389,7 @@ export default function RelationalStoreEnumTest(){
         securityLevel: data_relationalStore.SecurityLevel.S1,
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         let CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
           "data1 text," + "data2 INTEGER, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
           "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
@@ -1451,7 +1453,7 @@ export default function RelationalStoreEnumTest(){
         vector:false
       };
       try{
-        store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+        store = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
         let CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
           "data1 text," + "data2 INTEGER, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
           "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
@@ -1522,7 +1524,7 @@ export default function RelationalStoreEnumTest(){
         "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
 
       let DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
-      let rdbStore: data_relationalStore.RdbStore  = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      let rdbStore: data_relationalStore.RdbStore  = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
       await rdbStore.execute(DROP_TABLE_TEST);
       await rdbStore.execute(CREATE_TABLE_TEST);
       await rdbStore.insert("test", valueBucket0);
@@ -1545,7 +1547,5 @@ export default function RelationalStoreEnumTest(){
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0033 end *************');
     })
-
-
   })
 }

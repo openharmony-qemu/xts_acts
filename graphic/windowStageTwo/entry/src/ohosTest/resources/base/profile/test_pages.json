@@ -19,6 +19,8 @@
     "testability/pages/WindowTest/StartMoving5",
     "testability/pages/WindowTest/StartMoving6",
     "testability/pages/WindowTest/StartMoving7",
+    "testability/pages/WindowTest/StartMoving8",
+    "testability/pages/WindowTest/StartMoving9",
     "testability/pages/WindowTest/Modality",
     "testability/pages/WindowTest/extension",
     "testability/pages/WindowTest/EmbeddedComponentPage",
@@ -37,6 +39,8 @@
     "testability/pages/WindowTest/EmbeddedComponentCreateSubWindowOptionsFalsePage",
     "testability/pages/WindowTest/extensionCreateSubWindowWithFalseOpt",
     "testability/pages/WindowTest/EmbeddedComponentCreateSubWindowOptionsTruePage",
-    "testability/pages/WindowTest/extensionCreateSubWindowWithTrueOpt"
+    "testability/pages/WindowTest/extensionCreateSubWindowWithTrueOpt",
+    "testability/pages/WindowTest/EmbeddedComponentGetWindowAvoidAreaPage",
+    "testability/pages/WindowTest/extensionGetWindowAvoidArea"
   ]
 }

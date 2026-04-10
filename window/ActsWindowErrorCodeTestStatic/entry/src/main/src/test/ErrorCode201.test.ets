@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,6 +17,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 
 import display from '@ohos.display';
+import floatingBall from '@ohos.window.floatingBall';
 import { BusinessError } from '@ohos.base';
 // import { MyCallback } from '../models/MyCallback';
 import window from '@ohos.window'
@@ -52,7 +53,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -68,7 +69,7 @@ async function terminateAbility(caseName: string) {
         }).catch((err: Error):PromiseLike<void>|undefined => {
             hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
-    } catch (e: BusinessError) {
+    } catch (e) {
         hilog.error(domain, tag,`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
@@ -79,9 +80,9 @@ export default function ErrorCode201() {
         hilog.info(domain, tag, '%{public}s', 'ErrorCode201 describe start');
         hilog.info(domain, tag, 'DisplayTest start');
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-        let windowStage: window.WindowStage;
-        let win: window.Window;
-        let context: common.UIAbilityContext;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
+        let context: common.UIAbilityContext | undefined;
         let isPCStatus: string = '';
         beforeAll(async () => {
             hilog.info(domain, tag, 'beforeAll start');
@@ -96,7 +97,7 @@ export default function ErrorCode201() {
                 hilog.info(domain, tag, 'jsUnittest beforeAll win =' + win);
                 context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
                 hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
-                isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
+                isPCStatus = settings.getValueSync(context!, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
                 //isPCStatus == '' 非PC设备
                 //isPCStatus == '1' PC设备状态栏dock未融合
                 //isPCStatus == '0' PC设备状态栏dock融合
@@ -122,7 +123,7 @@ export default function ErrorCode201() {
             let caseName :string = "testSetWindowPrivacyModePromiseErrCode201_static_0100";
             let msgStr :string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
-            let win: window.Window = windowStage.getMainWindowSync();
+            let win: window.Window = windowStage!.getMainWindowSync();
             try {
                 win!.setWindowPrivacyMode(true).then(async () => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowPrivacyMode.');
@@ -134,7 +135,7 @@ export default function ErrorCode201() {
                     done()
                 });
 
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
                 expect().assertFail();
                 done()
@@ -152,7 +153,7 @@ export default function ErrorCode201() {
             let caseName :string = "testSetWindowPrivacyModeCallbackErrCode201_static_0200";
             let msgStr :string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
-            let win: window.Window = windowStage.getMainWindowSync();
+            let win: window.Window = windowStage!.getMainWindowSync();
             try {
                 win!.setWindowPrivacyMode(false,(err: BusinessError<void>|null):void => {
                     const errCode: number = err!.code;
@@ -167,7 +168,8 @@ export default function ErrorCode201() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
                 expect().assertFail();
                 done()
@@ -188,7 +190,7 @@ export default function ErrorCode201() {
             let windowConfig: window.Configuration = {
                 name: "testCreateFloatWindowPermission_Promise_static_0100",
                 windowType: window.WindowType.TYPE_FLOAT,
-                ctx: context,
+                ctx: context!,
             };
             try {
                  window.createWindow(windowConfig).then((data:window.Window) => {
@@ -200,7 +202,8 @@ export default function ErrorCode201() {
                     expect(err.code).assertEqual(201);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(201);
                 done();
@@ -222,7 +225,7 @@ export default function ErrorCode201() {
             let windowConfig: window.Configuration = {
                 name: "testCreateFloatWindowPermission_Callback_static_0100",
                 windowType: window.WindowType.TYPE_FLOAT,
-                ctx: context,
+                ctx: context!,
             };
             try {
                 window.createWindow(windowConfig, (err: BusinessError<void>|null, data:window.Window|undefined):void => {
@@ -237,7 +240,8 @@ export default function ErrorCode201() {
                     expect().assertFail();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(201);
                 done()
@@ -254,18 +258,16 @@ export default function ErrorCode201() {
         it('testSetWindowTopmost201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testSetWindowTopmost201_static';
             try {
-                let windowClass:window.Window = windowStage.getMainWindowSync();
+                let windowClass:window.Window = windowStage!.getMainWindowSync();
                 hilog.info(domain, tag,caseName+'Succeeded in getMainWindowSync' );
                 windowClass.setWindowTopmost(false).then(() => {
                     hilog.info(domain, tag,caseName+'Succeeded in setting the window to be top most.' );
-                    expect(true).assertTrue();
                     done();
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.error(domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${err!.code}, message: ${err!.message}`);
                     if (err!.code === 801) {
                         done();
                     } else if(err!.code === 201){
-                        expect(true).assertTrue();
                         done();
                     } else {
                         expect(false).assertTrue();
@@ -346,13 +348,18 @@ export default function ErrorCode201() {
                     done()
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                      hilog.info(domain, tag,caseName + 'Failed to capture, err: ' + JSON.stringify(err));
-                     expect(err.code == 801 || err.code == 201).assertTrue()
-                     done();
+                     if (err.code === 801) {
+                        expect(err.code).assertEqual(801);
+                     } else {
+                        expect(err.code).assertEqual(201);
+                     }
+                    done();
                  })
             } catch (exception) {
                 exception = exception as BusinessError;
                 hilog.error(domain, tag,caseName + 'Failed to pick Code: ' + JSON.stringify(exception.code)+':msg:'+ JSON.stringify(exception.message));
                 expect(exception.message!=null).assertTrue();
+                
                 expect(exception.code == 801 || exception.code == 201).assertTrue()
                 done()
             };
@@ -370,7 +377,7 @@ export default function ErrorCode201() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin.');
             try {
-                let windowClass:window.Window = windowStage.getMainWindowSync();
+                let windowClass:window.Window = windowStage!.getMainWindowSync();
                 windowClass.setWindowShadowEnabled(true).then(() => {
                     hilog.info(domain, tag,`${caseName} Succeeded in calling setWindowShadowEnabled.`);
                     expect(false).assertTrue();
@@ -385,7 +392,7 @@ export default function ErrorCode201() {
                         done()
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -402,14 +409,15 @@ export default function ErrorCode201() {
         it('testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static';
             hilog.info(domain, tag,caseName + 'begin');
-            let windowStageStart = await startAbility(caseName, context);
+            let windowStageStart = await startAbility(caseName, context!);
             try {
                 let windowClass = windowStageStart.getMainWindowSync();
                 windowClass.setWindowContainerColor("#0099FF","#CCCCCC");
                 await terminateAbility(caseName);
                 expect(false).assertTrue()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,caseName + 'Failed. Cause: ' + JSON.stringify(err));
                 await terminateAbility(caseName);
                 if (isPCStatus == '') {
@@ -423,18 +431,285 @@ export default function ErrorCode201() {
             }
         });
 
+        /**
+     * @tc.name   test_Create_oneFloatingBallNoPermissonCorrectParam_Static
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_ERRORCODE_0100
+     * @tc.desc   test_Create_oneFloatingBall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_Create_oneFloatingBallNoPermissonCorrectParam_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let CaseName:string = 'test_Create_oneFloatingBallNoPermissonCorrectParam_Static';
+        let config: floatingBall.FloatingBallConfiguration = {
+          context: context!,
+        };
+        let startParams: floatingBall.FloatingBallParams = {
+          template: floatingBall.FloatingBallTemplate.EMPHATIC,
+          title: 'title',
+          content: 'content'
+        };
+  
+        let issupportFloatingBall: boolean = floatingBall.isFloatingBallEnabled();
+        try {
+          floatingBall.create(config).then((data: floatingBall.FloatingBallController) => {
+            let floatingBallController: floatingBall.FloatingBallController = data;
+            console.info(CaseName+ ` Succeeded in creating floating ball controller. Data: ${data}`);
+            floatingBallController.startFloatingBall(startParams).then(() => {
+              console.info(CaseName+' Succeeded in starting floating ball.');
+              expect(issupportFloatingBall).assertEqual(true);
+              floatingBallController.stopFloatingBall().then(() => {
+                console.info(CaseName+ 'Succeeded in stopping floating ball.');
+                done();
+              }).catch((err: Error):void => {
+                console.error(CaseName+ `Failed to stop floating ball. Cause:${err.code}, message:${err.message}`);
+                expect(false).assertTrue();
+                done();
+              });
+            }).catch((err: Error):void => {
+              console.error(CaseName+ ` Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(err.code).assertEqual(201);
+              done();
+            });
+  
+          }).catch((err: Error):void => {
+            console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
+            expect(err.message!=null).assertTrue();
+            if(err.code == 801){
+              expect(issupportFloatingBall).assertEqual(false);
+              done();
+            }else{
+              expect(false).assertTrue();
+              done();
+            }
+  
+          });
+        } catch (error) {
+          let exception: BusinessError = error as BusinessError;
+          console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      })
 
 
+      /**
+         * @tc.number     testSetWindowTopmostPromiseErrCode201_static_0100
+         * @tc.name       testSetWindowTopmostPromiseErrCode201_static_0100
+         * @tc.desc       testSetWindowTopmostPromiseErrCode201_static_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+      it('testSetWindowTopmostPromiseErrCode201_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName :string = "testSetWindowTopmostPromiseErrCode201_static_0100";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag,msgStr + 'begin.');
+        try {
+            win!.setWindowTopmost(true).then(() => {
+                hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowTopmost.');
+                expect(false).assertTrue();
+                done()
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.error(domain, tag,msgStr + 'Failed to call setWindowTopmost. Cause: ' + JSON.stringify(err));
+                if (err.code === 801) {
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(201);
+                }
+                done()
+            });
+        } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+            expect(false).assertTrue();
+            done()
+        }
+    
+    
+    })
 
+    /**
+    * @tc.number    SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_201_static_0100
+    * @tc.name      test_DestroyVirtualScreenErrorcode201_static
+    * @tc.desc      test_DestroyVirtualScreenErrorcode_201 when no permisson
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 3
+    */
+    it('test_DestroyVirtualScreenErrorcode201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_DestroyVirtualScreenErrorcode201 ';
+        try {
+                display.destroyVirtualScreen(0).then(() => {
+                hilog.info(domain, tag,caseName + 'succeeded in destroy virtual screen, data : ');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
+                    expect(err!.code === 201).assertTrue();
+                done();
+            })
+        } catch (err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+            expect(err.code === 801).assertTrue();
+            done();
+        }
+    });
 
+    /**
+    * @tc.number    SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_201_static_0100
+    * @tc.name      test_MakeUniqueErrorcode_201_static
+    * @tc.desc      test_MakeUniqueErrorcode_401 when no permisson
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 3
+    */
+    it('test_MakeUniqueErrorcode_201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_MakeUniqueErrorcode_201_static ';
+        try {
+                display.makeUnique(0).then(()=>{
+                hilog.info(domain, tag,caseName + 'Succeeded in makeUnique');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error) :PromiseLike<void>|undefined => {
+                hilog.info(domain, tag,caseName + 'Error in makeUnique, err: ' + JSON.stringify(err));
+                if (err!.code === 801) {
+                    done();
+                } else {
+                    expect(err!.code === 201).assertTrue();
+                    done();
+                }
+            })
+        } catch (err) {
+            err = err as BusinessError;
+            hilog.info(domain, tag,caseName + 'error in makeUnique, err : ' + JSON.stringify(err));
+            if (err!.code === 801) {
+                done();
+            } else {
+                expect(err!.code === 201).assertTrue();
+                done();
+            }
+        }
+    });
 
+    /**
+    * @tc.number    SUB_BASIC_WMS_GET_VISIBLEWINDOWINFO_ERRORCODE_201_static_0200
+    * @tc.name      test_GET_VISIBLEWINDOWINFO_ERRORCODE_201_static
+    * @tc.desc      getVisibleWindowInfo测试错误码返回值201覆盖
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 0
+    */
+    it('test_GET_VISIBLEWINDOWINFO_ERRORCODE_201_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+        let caseName: string = 'test_GET_VISIBLEWINDOWINFO_ERRORCODE_201_static ';
+        hilog.info(domain, tag, caseName + 'begin');
+        let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+        try {
+        let windowClass2: window.Window = windowStageStart.getMainWindowSync();
+        let res = windowClass2.getWindowProperties()
+        window.getVisibleWindowInfo().then((infos: Array<window.WindowInfo>) => {
+            waitForCompletion(async () => {
+            hilog.info(domain, tag, caseName + 'Succeeded in calling getVisibleWindowInfo.');
+            expect(false).assertTrue();
+            await terminateAbility(caseName);
+            done();
+            })
+        }).catch((err: Error): PromiseLike<void> | undefined => {
+            waitForCompletion(async () => {
+            hilog.error(domain, tag,
+            caseName + 'Failed to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err.code));
+            expect(err.code === 201).assertTrue();
+            await terminateAbility(caseName);
+            done()
+            })
+        });
+        } catch (err) {
+        err = err as BusinessError;
+        hilog.error(domain, tag, caseName + 'Failed2 to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err));
+        await terminateAbility(caseName);
+        if (err.code === 201) {
+            console.error(caseName + ' getMainWindowSnapshot failed. Cause: ' + JSON.stringify(err.code))
+            done();
+        } else {
+            expect(err.code === 801)
+            console.error(caseName + ' device not support. Cause: ' + JSON.stringify(err.code))
+            done();
+        }
+        }
+    });
 
+    /**
+    * @tc.name   testGetAllMainWindowInfo_ERRORCODE_201_static_0200
+    * @tc.number testGetAllMainWindowInfo_ERRORCODE_201_static_0200
+    * @tc.desc   getAllMainWindowInfo测试错误码返回值201覆盖
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it("testGetAllMainWindowInfo_ERRORCODE_201_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+        let caseName: string = "testGetAllMainWindowInfo_ERRORCODE_201_static_0200";
+        console.log(caseName + " begin");
+        try {
+        let windowClass: window.Window = windowStage!.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(caseName + ' windowId: ' + windowId);
+        let windowInfoArray = await window.getAllMainWindowInfo();
+        console.info(caseName + ' getAllMainWindowInfo windowInfoArray.length: ' +
+        JSON.stringify(windowInfoArray.length));
+        console.info(caseName + ' getAllMainWindowInfo windowInfoArray: ' + JSON.stringify(windowInfoArray));
+        expect(false).assertTrue();
+        done();
+        } catch (err) {
+        err = err as BusinessError;
+        if (err.code === 201) {
+            console.error(caseName + ' getMainWindowSnapshot failed. Cause: ' + JSON.stringify(err.code))
+            done();
+        } else {
+            expect(err.code === 801)
+            console.error(caseName + ' device not support. Cause: ' + JSON.stringify(err.code))
+            done();
+        }
+        }
+    });
 
-
-
-
-
-
+    /**
+    * @tc.name   testGetMainWindowSnapshot_ERRORCODE_201_static_0400
+    * @tc.number testGetMainWindowSnapshot_ERRORCODE_201_static_0400
+    * @tc.desc   getMainWindowSnapshot测试返回值201覆盖
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it("testGetMainWindowSnapshot_ERRORCODE_201_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void): Promise<void> => {
+        let caseName: string = "testGetMainWindowSnapshot_ERRORCODE_201_static_0400";
+        console.log(caseName + " begin");
+        try {
+        let windowClass: window.Window = windowStage!.getMainWindowSync();
+        let windowId: int = windowClass.getWindowProperties().id;
+        console.info(caseName + ' windowId: ' + windowId);
+        let windowIdArray: Array<int> = [windowId];
+        let configs: window.WindowSnapshotConfiguration = {
+            useCache: true
+        }
+        await window.getMainWindowSnapshot(windowIdArray, configs)
+        expect(true).assertFail();
+        done()
+        } catch (err) {
+        err = err as BusinessError;
+        if (err.code === 201) {
+            console.error(caseName + ' getMainWindowSnapshot failed. Cause: ' + JSON.stringify(err.code))
+            done();
+        } else {
+            expect(err.code === 801)
+            console.error(caseName + ' device not support. Cause: ' + JSON.stringify(err.code))
+            done();
+        }
+        }
+    });
 
     })
 

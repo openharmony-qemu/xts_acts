@@ -15,15 +15,15 @@
 
 import connectedTag from '@ohos.connectedTag';
 import parameter from '@ohos.systemparameter';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 
 function sleep(delay) {
     return new Promise(resovle => setTimeout(resolve, delay))
 }
 
 let NfcRfType = {
-    NFC_RF_LEAVE : 0,
-    NFC_RF_ENTER : 1,
+    NFC_RF_LEAVE: 0,
+    NFC_RF_ENTER: 1,
 }
 
 export default function ConnectedTagTest() {
@@ -31,7 +31,7 @@ export default function ConnectedTagTest() {
         beforeAll(function () {
             console.info('rbeforeAll called')
         })
-        beforeEach(function() {
+        beforeEach(function () {
             console.info('beforeEach called')
         })
         afterEach(function () {
@@ -49,7 +49,7 @@ export default function ConnectedTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcConnectedTag_js_0100', Level.LEVEL0, function (done)  {
+        it('SUB_Communication_NFC_nfcConnectedTag_js_0100', Level.LEVEL0, function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
             console.info("testSysCaps01 test.syscap.param.001 : " + isAccessToken);
             if (!isAccessToken) {
@@ -57,8 +57,8 @@ export default function ConnectedTagTest() {
                 expect(isAccessToken).assertFalse()
             } else {
                 let inittag = connectedTag.init();
-                console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0100 inittag: " + inittag );
-                expect(true).assertTrue();
+                console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0100 inittag: " + inittag);
+
             }
             done();
         })
@@ -79,11 +79,11 @@ export default function ConnectedTagTest() {
                 expect(isAccessToken).assertFalse()
             } else {
                 await connectedTag.readNdefTag().then(result => {
-                    console.info("[NFC_test] ConnectedTag2 readNdefTag result: " + result );
-                    expect(true).assertTrue();
-                }).catch((err)=> {
+                    console.info("[NFC_test] ConnectedTag2 readNdefTag result: " + result);
+
+                }).catch((err) => {
                     console.info("[NFC_test] ConnectedTag2 readNdefTag err: " + err);
-                    expect(true).assertTrue();
+
                 });
             }
             done();
@@ -105,13 +105,13 @@ export default function ConnectedTagTest() {
                 expect(isAccessToken).assertFalse()
                 done();
             } else {
-                connectedTag.readNdefTag((err, result)=> {
+                connectedTag.readNdefTag((err, result) => {
                     if (err) {
                         console.info("[NFC_test] ConnectedTag3 readNdefTag err: " + err);
-                        expect(true).assertTrue();
+
                     } else {
                         console.info("[NFC_test] ConnectedTag3 readNdefTag result: " + result);
-                        expect(result!==null).assertTrue();
+                        expect(result !== null).assertTrue();
                     }
                 });
             }
@@ -134,13 +134,13 @@ export default function ConnectedTagTest() {
                 expect(isAccessToken).assertFalse()
                 done();
             } else {
-                let rawData="";
+                let rawData = "";
                 await connectedTag.writeNdefTag(rawData).then(result => {
-                    console.info("[NFC_test] ConnectedTag4 writeNdefTag result: " + result );
-                    expect(true).assertTrue();
-                }).catch((err)=> {
+                    console.info("[NFC_test] ConnectedTag4 writeNdefTag result: " + result);
+
+                }).catch((err) => {
                     console.info("[NFC_test] ConnectedTag4 writeNdefTag err: " + err);
-                    expect(true).assertTrue();                    
+
                 });
                 sleep(3000);
             }
@@ -162,14 +162,14 @@ export default function ConnectedTagTest() {
                 console.info("The device does not support active label chips.");
                 expect(isAccessToken).assertFalse();
             } else {
-                let rawData="";
-                connectedTag.writeNdefTag(rawData,(err, result)=> {
+                let rawData = "";
+                connectedTag.writeNdefTag(rawData, (err, result) => {
                     if (err) {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0500 writeNdefTag err: " + err);
-                        expect(true).assertTrue();
+
                     } else {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0500 writeNdefTag result: " + result);
-                        expect(result!==null).assertTrue();
+                        expect(result !== null).assertTrue();
                     }
                 });
             }
@@ -195,12 +195,12 @@ export default function ConnectedTagTest() {
                     console.info("[NFC_test] ConnectedTag6 nfc state receive state ->" + result);
                     expect(result != null).assertTrue();
                 }
-                try{
-                    connectedTag.on('notify',recvNfcRfNotifyFunc)
-                    connectedTag.off('notify',recvNfcRfNotifyFunc)
-                }catch(error){
+                try {
+                    connectedTag.on('notify', recvNfcRfNotifyFunc)
+                    connectedTag.off('notify', recvNfcRfNotifyFunc)
+                } catch (error) {
                     console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0600 notify failed,code is ${error.code}, message is ${error.message}");
-                    expect(true).assertTrue();
+
                 }
             }
             done();
@@ -221,40 +221,40 @@ export default function ConnectedTagTest() {
                 console.info("The device does not support active label chips.")
                 expect(isAccessToken).assertFalse()
             } else {
-                try{
+                try {
                     let uninittag = connectedTag.uninit();
-                    console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0700 uninit success: " + uninittag );
-                    expect(true).assertTrue();
-                }catch(error){
+                    console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0700 uninit success: " + uninittag);
+
+                } catch (error) {
                     console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0700 uninit failed,code is ${error.code}, message is ${error.message}");
                 }
             }
             done();
         })
 
-         /**
-          * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_0800
-          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_0800
-          * @tc.desc   Initializes the active label chip.
-          * @tc.type   FUNCTION
-          * @tc.size   MEDIUMTEST
-          * @tc.level  LEVEL0
-          */
-         it('SUB_Communication_NFC_nfcConnectedTag_js_0800', Level.LEVEL0, function (done)  {
+        /**
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_0800
+         * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_0800
+         * @tc.desc   Initializes the active label chip.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfcConnectedTag_js_0800', Level.LEVEL0, function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
             console.info("testSysCaps08 test.syscap.param.001 : " + isAccessToken);
             if (!isAccessToken) {
                 console.info("The device does not support active label chips.")
                 expect(isAccessToken).assertFalse()
             }
-            else{
-                try{
+            else {
+                try {
                     let inittag = connectedTag.initialize();
-                    console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0800 initialize successs: " + inittag );
-                    expect(true).assertTrue();
-                }catch(error){
+                    console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0800 initialize successs: " + inittag);
+
+                } catch (error) {
                     console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0800 initialize failed,code is ${error.code}, message is ${error.message}");
-                    expect(true).assertTrue();
+
                 }
             }
             done();
@@ -275,14 +275,14 @@ export default function ConnectedTagTest() {
                 console.info("The device does not support active label chips.")
                 expect(isAccessToken).assertFalse()
             }
-            else{
-                try{
+            else {
+                try {
                     let uninittag = connectedTag.uninitialize();
-                    console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0900 uninitialize success: " + uninittag );
-                    expect(true).assertTrue();
-                }catch(error){
+                    console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0900 uninitialize success: " + uninittag);
+
+                } catch (error) {
                     console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_0900 uninitialize failed,code is ${error.code}, message is ${error.message}");
-                    expect(true).assertTrue();
+
                 }
             }
             done();
@@ -304,18 +304,18 @@ export default function ConnectedTagTest() {
                 expect(isAccessToken).assertFalse()
                 done();
             }
-            else{
-                try{
+            else {
+                try {
                     await connectedTag.read().then(result => {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1000 read result: " + result);
                         expect(result.length == 0).assertTrue();
                         done();
-                    }).catch((err)=> {
+                    }).catch((err) => {
                         console.info("[NFC_test] ConnectedTag10 readMultiplePages1 err: " + err);
-                        expect(true).assertTrue();
+
                         done();
                     });
-                }catch(error){
+                } catch (error) {
                     console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1000 read failed,code is ${error.code}, message is ${error.message}");
                 }
             }
@@ -338,24 +338,24 @@ export default function ConnectedTagTest() {
                 expect(isAccessToken).assertFalse()
                 done();
             }
-            else{
-                try{
-                    const result = await new Promise((resolve,reject) => {
-                      connectedTag.read((err, result)=> {
-                          if (err) {
-                              console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1100 read err: " + err);
-                              reject(err);
-                          } else {
-                              console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1100 read success result: " + result);
-                              expect(result.length == 0).assertTrue();
-                              resolve(result);
-                          }
-                      });
+            else {
+                try {
+                    const result = await new Promise((resolve, reject) => {
+                        connectedTag.read((err, result) => {
+                            if (err) {
+                                console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1100 read err: " + err);
+                                reject(err);
+                            } else {
+                                console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1100 read success result: " + result);
+                                expect(result.length == 0).assertTrue();
+                                resolve(result);
+                            }
+                        });
                     })
-                    expect(true).assertTrue();
-                }catch(error){
+
+                } catch (error) {
                     console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1100 read failed,code is ${error.code}, message is ${error.message}");
-                    expect(true).assertTrue();
+
                 }
             }
             done();
@@ -377,18 +377,18 @@ export default function ConnectedTagTest() {
                 expect(isAccessToken).assertFalse()
                 done();
             }
-            else{
-                try{
-                    let rawData = [0x00,0x01,0xFF];
+            else {
+                try {
+                    let rawData = [0x00, 0x01, 0xFF];
                     await connectedTag.write(rawData).then(result => {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1200 write result: " + result);
-                        expect(true).assertTrue();
-                    }).catch((err)=> {
+
+                    }).catch((err) => {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1200 write err: " + err);
-                        expect(true).assertTrue();
-                    
+
+
                     });
-                }catch(error){
+                } catch (error) {
                     console.error("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1200 write failed,code is ${error.code}, message is ${error.message}");
                 }
             }
@@ -411,11 +411,11 @@ export default function ConnectedTagTest() {
                 expect(isAccessToken).assertFalse()
                 done();
             }
-            else{
-                try{
-                    let rawData = [0x00,0x01,0xFF];
-                    const result = await new Promise((resolve,reject) => {
-                        connectedTag.write((err, result)=> {
+            else {
+                try {
+                    let rawData = [0x00, 0x01, 0xFF];
+                    const result = await new Promise((resolve, reject) => {
+                        connectedTag.write((err, result) => {
                             if (err) {
                                 console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1300 write err: " + err);
                                 reject(err);
@@ -425,10 +425,10 @@ export default function ConnectedTagTest() {
                             }
                         });
                     });
-                    expect(true).assertTrue();    
-                }catch(error){
+
+                } catch (error) {
                     console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1200 write ,code is ${error.code}, message is ${error.message}");
-                    expect(true).assertTrue();
+
                 }
             }
             done();
@@ -441,17 +441,17 @@ export default function ConnectedTagTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfcConnectedTag_js_1400', Level.LEVEL0,function (done)  {
-            try{
-              console.info('[nfc_test]1 NfcRfType value test ')
-              expect(connectedTag.NfcRfType.NFC_RF_ENTER).assertEqual(1);
-              console.info('[nfc_test]2 NfcRfType value test ' )
-              expect(connectedTag.NfcRfType.NFC_RF_LEAVE).assertEqual(0);
-            }catch(error){
+        it('SUB_Communication_NFC_nfcConnectedTag_js_1400', Level.LEVEL0, function (done) {
+            try {
+                console.info('[nfc_test]1 NfcRfType value test ')
+                expect(connectedTag.NfcRfType.NFC_RF_ENTER).assertEqual(1);
+                console.info('[nfc_test]2 NfcRfType value test ')
+                expect(connectedTag.NfcRfType.NFC_RF_LEAVE).assertEqual(0);
+            } catch (error) {
                 console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1400 get NfcRfType failed,code is ${error.code}, message is ${error.message}");
-              expect().assertFail();
+                expect().assertFail();
             }
-          done();
+            done();
         })
         /**
          * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_1500
@@ -469,24 +469,24 @@ export default function ConnectedTagTest() {
                 expect(isAccessToken).assertFalse()
                 done();
             }
-            else{
-                try{
-                    let rawData = [0x03,0x01,0x00];
+            else {
+                try {
+                    let rawData = [0x03, 0x01, 0x00];
                     await connectedTag.write(rawData).then(result => {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1500 write result: " + result);
-                        expect(true).assertTrue();
-                    }).catch((err)=> {
+
+                    }).catch((err) => {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1500 write err: " + err);
-                        expect(true).assertTrue();
+
                     });
                     await connectedTag.read().then(result => {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1500 read result: " + result);
                         expect(result.length > 0).assertTrue();
-                    }).catch((err)=> {
+                    }).catch((err) => {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1500 read err: " + err);
-                        expect(true).assertTrue();
+
                     });
-                }catch(error){
+                } catch (error) {
                     console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1500 write ,code is ${error.code}, message is ${error.message}");
                 }
             }
@@ -508,30 +508,30 @@ export default function ConnectedTagTest() {
                 expect(isAccessToken).assertFalse()
                 done();
             }
-            else{
-                try{
-                    let rawData = [0x03,0x01,0x00];
+            else {
+                try {
+                    let rawData = [0x03, 0x01, 0x00];
                     await connectedTag.write(rawData).then(result => {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1600 write result: " + result);
-                        expect(true).assertTrue();
-                    }).catch((err)=> {
+
+                    }).catch((err) => {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1600 write err: " + err);
-                        expect(true).assertTrue();
+
                     });
-                    const result = await new Promise((resolve,reject) => {
-                      connectedTag.read((err, result)=> {
-                          if (err) {
-                              console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1600 read err: " + err);
-                              reject(err);
-                          } else {
-                              console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1600 read success result: " + result);
-                              resolve(result);
-                              expect(result.length > 0).assertTrue();
-                          }
-                      });
+                    const result = await new Promise((resolve, reject) => {
+                        connectedTag.read((err, result) => {
+                            if (err) {
+                                console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1600 read err: " + err);
+                                reject(err);
+                            } else {
+                                console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1600 read success result: " + result);
+                                resolve(result);
+                                expect(result.length > 0).assertTrue();
+                            }
+                        });
                     })
-                    expect(true).assertTrue();
-                }catch(error){
+
+                } catch (error) {
                     console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1600 write ,code is ${error.code}, message is ${error.message}");
                 }
             }
@@ -553,13 +553,13 @@ export default function ConnectedTagTest() {
                 expect(isAccessToken).assertFalse()
                 done();
             } else {
-                let rawData="0".repeat(1024);
+                let rawData = "0".repeat(1024);
                 await connectedTag.writeNdefTag(rawData).then(result => {
-                    console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1700 writeNdefTag result: " + result );
-                    expect(true).assertTrue();
-                }).catch((err)=> {
+                    console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1700 writeNdefTag result: " + result);
+
+                }).catch((err) => {
                     console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1700 writeNdefTag err: " + err);
-                    expect(true).assertTrue();                    
+
                 });
                 sleep(3000);
             }
@@ -581,19 +581,19 @@ export default function ConnectedTagTest() {
                 expect(isAccessToken).assertFalse()
                 done();
             } else {
-                let rawData="0".repeat(1025);
+                let rawData = "0".repeat(1025);
                 await connectedTag.writeNdefTag(rawData).then(result => {
-                    console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1800 writeNdefTag result: " + result );
-                    expect(true).assertTrue();
-                }).catch((err)=> {
+                    console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1800 writeNdefTag result: " + result);
+
+                }).catch((err) => {
                     console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1800 writeNdefTag err: " + err);
-                    expect(true).assertTrue();                    
+
                 });
                 sleep(3000);
             }
             done();
         })
-        
+
         /**
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_1900
          * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_1900
@@ -609,14 +609,14 @@ export default function ConnectedTagTest() {
                 console.info("The device does not support active label chips.");
                 expect(isAccessToken).assertFalse();
             } else {
-                let rawData="0".repeat(1024);
-                connectedTag.writeNdefTag(rawData,(err, result)=> {
+                let rawData = "0".repeat(1024);
+                connectedTag.writeNdefTag(rawData, (err, result) => {
                     if (err) {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1900 writeNdefTag err: " + err);
-                        expect(true).assertTrue();
+
                     } else {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_1900 writeNdefTag result: " + result);
-                        expect(result!==null).assertTrue();
+                        expect(result !== null).assertTrue();
                     }
                 });
             }
@@ -637,20 +637,20 @@ export default function ConnectedTagTest() {
                 console.info("The device does not support active label chips.");
                 expect(isAccessToken).assertFalse();
             } else {
-                let rawData="0".repeat(1025);
-                connectedTag.writeNdefTag(rawData,(err, result)=> {
+                let rawData = "0".repeat(1025);
+                connectedTag.writeNdefTag(rawData, (err, result) => {
                     if (err) {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_2000 writeNdefTag err: " + err);
-                        expect(true).assertTrue();
+
                     } else {
                         console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_js_2000 writeNdefTag result: " + result);
-                        expect(result!==null).assertTrue();
+                        expect(result !== null).assertTrue();
                     }
                 });
             }
             done();
         })
-    
+
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })
 }

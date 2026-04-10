@@ -27,12 +27,6 @@ interface BaseI8 {
   active: boolean
 }
 
-interface BaseI14 {
-  elem: number,
-  idx: int,
-  arr: number[]
-}
-
 interface BaseI26 {
   id: number
 }
@@ -137,14 +131,13 @@ interface BaseI125 {
   valueObj: Base125
 }
 
-interface BaseI157 {
-  a: number
-}
-
 interface BaseI159 {
   a: number,
   b: number,
   c: number
+}
+class BaseI157 {
+    a: number = 1
 }
 
 export default function ArrayEveryTest() {
@@ -175,9 +168,9 @@ export default function ArrayEveryTest() {
      * @tc.desc All elements > 10, return true
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: number[] = [12, 15, 20, 18];
       const callback = (num: number) => num > 10;
       const result = arr.every(callback);
@@ -192,9 +185,9 @@ export default function ArrayEveryTest() {
      * @tc.desc Exists element <= 10, return false
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: number[] = [12, 5, 20, 18];
       const callback = (num: number) => num > 10;
       const result = arr.every(callback);
@@ -208,9 +201,9 @@ export default function ArrayEveryTest() {
      * @tc.desc Empty array, return true
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: boolean[] = [];
       let callbackCalled = false;
       const callback = () => {
@@ -229,9 +222,9 @@ export default function ArrayEveryTest() {
      * @tc.desc Single-element array, element passes test (return true)
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: number[] = [15];
       const callback = (num: number) => num > 10;
       const result = arr.every(callback);
@@ -245,9 +238,9 @@ export default function ArrayEveryTest() {
      * @tc.desc Single-element array, element fails test (return false)
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: number[] = [5];
       const callback = (num: number) => num > 10;
       const result = arr.every(callback);
@@ -261,9 +254,9 @@ export default function ArrayEveryTest() {
      * @tc.desc All strings have length <= 6
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr = ["spray", "elite", "quick"];
       const callback = (str: string) => str.length <= 6;
       const result = arr.every(callback);
@@ -277,9 +270,9 @@ export default function ArrayEveryTest() {
      * @tc.desc All objects have active: true
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: BaseI7[] = [
         { id: 1, active: true },
         { id: 2, active: true },
@@ -297,9 +290,9 @@ export default function ArrayEveryTest() {
      * @tc.desc Exists object with active: false, return false
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: BaseI8[] = [
         { id: 1, active: true },
         { id: 2, active: false },
@@ -317,9 +310,9 @@ export default function ArrayEveryTest() {
      * @tc.desc All elements are not null
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: number[] = [1, 2, 3];
       const callback = (elem: number) => elem !== null;
       const result = arr.every(callback);
@@ -333,9 +326,9 @@ export default function ArrayEveryTest() {
      * @tc.desc Exists null element, return false
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: (number | null)[] = [1, null, 3];
       const callback = (elem: number | null) => elem !== null;
       const result = arr.every(callback);
@@ -407,37 +400,6 @@ export default function ArrayEveryTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1400
-     * @tc.name ArrayEveryTest014
-     * @tc.desc Verify callback parameters (element, index, array)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // todo
-    // it('ArrayEveryTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-    //   interface BaseI {
-    //     elem: number,
-    //     idx: number,
-    //     arr: number[]
-    //   }
-    //
-    //   const arr = [10, 20, 30];
-    //   const paramsLog: BaseI[] = [];
-    //   const callback = (elem: number, idx: number, arr: number[]) => {
-    //     paramsLog.push({ elem, idx, arr });
-    //     return elem >= 10;
-    //   };
-    //   const result = arr.every(callback);
-    //
-    //   expect(result).assertEqual(true);
-    //   expect(paramsLog.length).assertEqual(3);
-    //   expect(paramsLog[0]).assertDeepEquals({ elem: 10, idx: 0, arr: arr });
-    //   expect(paramsLog[1]).assertDeepEquals({ elem: 20, idx: 1, arr: arr });
-    //   expect(paramsLog[2]).assertDeepEquals({ elem: 30, idx: 2, arr: arr });
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1500
      * @tc.name ArrayEveryTest015
      * @tc.desc Every() on sparse array (empty slots skipped)
@@ -457,42 +419,6 @@ export default function ArrayEveryTest() {
       expect(result).assertEqual(false);
       expect(callCount).assertEqual(2);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1600
-     * @tc.name ArrayEveryTest016
-     * @tc.desc Every() on non-array object (class array) via call()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('ArrayEveryTest016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-    //   expect(ArrayEveryTest016()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1800
-     * @tc.name ArrayEveryTest018
-     * @tc.desc Use thisArg to bind this in callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('ArrayEveryTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-    //   expect(ArrayEveryTest018()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1900
-     * @tc.name ArrayEveryTest019
-     * @tc.desc No thisArg: this is undefined in strict mode callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('ArrayEveryTest019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-    //   expect(ArrayEveryTest019()).assertEqual(undefined);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2000
@@ -593,34 +519,6 @@ export default function ArrayEveryTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2400
-     * @tc.name ArrayEveryTest024
-     * @tc.desc Delete unvisited element during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const result = ArrayEveryTest024();
-    //
-    //   expect(result[0]).assertEqual(true);
-    //   expect(result[1]).assertEqual(2);
-    //   expect(result[2]).assertEqual(undefined);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2500
-     * @tc.name ArrayEveryTest025
-     * @tc.desc Every() with Symbol elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest025()).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2600
      * @tc.name ArrayEveryTest026
      * @tc.desc Every() with nested objects (check reference equality)
@@ -643,39 +541,6 @@ export default function ArrayEveryTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2700
-     * @tc.name ArrayEveryTest027
-     * @tc.desc Callback is non-function (throws TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr: number[] = [1, 2];
-    //   let errorThrown = false;
-    //
-    //   try {
-    //     ArrayEveryTest027(arr);
-    //   } catch (e) {
-    //     errorThrown = e instanceof TypeError;
-    //   }
-    //
-    //   expect(errorThrown).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2800
-     * @tc.name ArrayEveryTest028
-     * @tc.desc Every() on non-array object without length (returns true)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest028()).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2900
      * @tc.name ArrayEveryTest029
      * @tc.desc Every() with NaN elements (check if all are not NaN)
@@ -695,21 +560,6 @@ export default function ArrayEveryTest() {
       const resultWithNaN = arrWithNaN.every(callback);
       expect(resultWithNaN).assertEqual(false);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_3000
-     * @tc.name ArrayEveryTest030
-     * @tc.desc Comprehensive test: mixed types + dynamic modification + thisArg
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-    //   const result = ArrayEveryTest030();
-    //
-    //   expect(result[0]).assertEqual(false);
-    //   expect(result[1]).assertEqual(4);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_3100
@@ -899,45 +749,8 @@ export default function ArrayEveryTest() {
       const callback = (item: Set<number>) => item instanceof Set;
 
       const result = arr.every(callback);
-
       expect(result).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4100
-     * @tc.name ArrayEveryTest041
-     * @tc.desc Every() with generator function elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest041()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4200
-     * @tc.name ArrayEveryTest042
-     * @tc.desc Every() with async function elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest042()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4300
-     * @tc.name ArrayEveryTest043
-     * @tc.desc Every() with Proxy elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest043()).assertEqual(true);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4500
@@ -950,29 +763,9 @@ export default function ArrayEveryTest() {
     it('ArrayEveryTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [Math.sqrt, Math.floor];
       const callback = (item: Function) => typeof item === 'function';
-
       const result = arr.every(callback);
-
       expect(result).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4600
-     * @tc.name ArrayEveryTest046
-     * @tc.desc Every() with JSON objects (methods)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // todo
-    // it('ArrayEveryTest046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr = [JSON.parse, JSON.stringify];
-    //   const callback = (item: Function) => typeof item === 'function';
-    //
-    //   const result = arr.every(callback);
-    //
-    //   expect(result).assertEqual(true);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4700
@@ -988,9 +781,7 @@ export default function ArrayEveryTest() {
       const collator = new Intl.Collator('en-US');
       const arr = [df, nf, collator];
       const callback = (item: (Intl.DateTimeFormat | Intl.NumberFormat | Intl.Collator)) => item instanceof Object;
-
       const result = arr.every(callback);
-
       expect(result).assertEqual(true);
     });
 
@@ -1009,7 +800,6 @@ export default function ArrayEveryTest() {
       const callback = (item: RegExp) => item instanceof RegExp;
 
       const result = arr.every(callback);
-
       expect(result).assertEqual(true);
     });
 
@@ -1028,75 +818,8 @@ export default function ArrayEveryTest() {
       const callback = (item: Date) => item instanceof Date;
 
       const result = arr.every(callback);
-
       expect(result).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_6800
-     * @tc.name ArrayEveryTest068
-     * @tc.desc Every() with console objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // todo
-    // it('ArrayEveryTest068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr = [console.log, console.error, console.warn];
-    //   const callback = (item: Function) => typeof item === 'function';
-    //
-    //   const result = arr.every(callback);
-    //
-    //   expect(result).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7100
-     * @tc.name ArrayEveryTest071
-     * @tc.desc Every() with null prototype objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest071()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7200
-     * @tc.name ArrayEveryTest072
-     * @tc.desc Every() with frozen objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest072()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7300
-     * @tc.name ArrayEveryTest073
-     * @tc.desc Every() with sealed objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest073()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7400
-     * @tc.name ArrayEveryTest074
-     * @tc.desc Every() with configurable: false properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest074()).assertEqual(true);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7500
@@ -1119,138 +842,6 @@ export default function ArrayEveryTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7600
-     * @tc.name ArrayEveryTest076
-     * @tc.desc Every() with setter-only properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest076()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7700
-     * @tc.name ArrayEveryTest077
-     * @tc.desc Every() with non-writable properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest077()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7800
-     * @tc.name ArrayEveryTest078
-     * @tc.desc Every() with enumerable: false properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest078()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7900
-     * @tc.name ArrayEveryTest079
-     * @tc.desc Every() with inherited properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest079()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8000
-     * @tc.name ArrayEveryTest080
-     * @tc.desc Every() with Symbols as property keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest080()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8100
-     * @tc.name ArrayEveryTest081
-     * @tc.desc Every() with large integer keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest081()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8200
-     * @tc.name ArrayEveryTest082
-     * @tc.desc Every() with negative integer keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest082()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8300
-     * @tc.name ArrayEveryTest083
-     * @tc.desc Every() with string keys that look like numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest083()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8400
-     * @tc.name ArrayEveryTest084
-     * @tc.desc Every() with empty string keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest084()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8500
-     * @tc.name ArrayEveryTest085
-     * @tc.desc Every() with whitespace-only keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest085()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8600
-     * @tc.name ArrayEveryTest086
-     * @tc.desc Every() with special character keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest086()).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8700
      * @tc.name ArrayEveryTest087
      * @tc.desc Every() with Unicode character keys
@@ -1269,30 +860,6 @@ export default function ArrayEveryTest() {
 
       expect(result).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8800
-     * @tc.name ArrayEveryTest088
-     * @tc.desc Every() with emoji keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest088()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8900
-     * @tc.name ArrayEveryTest089
-     * @tc.desc Every() with nested objects with Symbols
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest089()).assertEqual(true);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9000
@@ -1353,18 +920,6 @@ export default function ArrayEveryTest() {
 
       expect(result).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9300
-     * @tc.name ArrayEveryTest093
-     * @tc.desc Every() with generator functions as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest093()).assertEqual(true);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9400
@@ -1616,18 +1171,6 @@ export default function ArrayEveryTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_10600
-     * @tc.name ArrayEveryTest106
-     * @tc.desc Every() with Proxy objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest106()).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_11100
      * @tc.name ArrayEveryTest111
      * @tc.desc Every() with Intl.DateTimeFormat objects as property values
@@ -1688,54 +1231,6 @@ export default function ArrayEveryTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12100
-     * @tc.name ArrayEveryTest121
-     * @tc.desc Every() with null prototype objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest121()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12200
-     * @tc.name ArrayEveryTest122
-     * @tc.desc Every() with frozen objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest122()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12300
-     * @tc.name ArrayEveryTest123
-     * @tc.desc Every() with sealed objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest123()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12400
-     * @tc.name ArrayEveryTest124
-     * @tc.desc Every() with configurable: false properties in nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest124()).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12500
      * @tc.name ArrayEveryTest125
      * @tc.desc Every() with getter-only properties in nested objects
@@ -1763,66 +1258,6 @@ export default function ArrayEveryTest() {
 
       expect(result).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12600
-     * @tc.name ArrayEveryTest126
-     * @tc.desc Every() with non-writable properties in nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest126()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12700
-     * @tc.name ArrayEveryTest127
-     * @tc.desc Every() with enumerable: false properties in nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest127()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12800
-     * @tc.name ArrayEveryTest128
-     * @tc.desc Every() with inherited properties in nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest128()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12900
-     * @tc.name ArrayEveryTest129
-     * @tc.desc Every() with Symbols as property keys in nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest129()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_13000
-     * @tc.name ArrayEveryTest130
-     * @tc.desc Every() with deeply nested objects with various property descriptors
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest130()).assertEqual(true);
-    // });
 
     // ==============================================
     // Level 3: Advanced Edge Scenarios (131-140)
@@ -1965,42 +1400,6 @@ export default function ArrayEveryTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_13900
-     * @tc.name ArrayEveryTest139
-     * @tc.desc Every() with array-like object (arguments)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest139()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_14300
-     * @tc.name ArrayEveryTest143
-     * @tc.desc Every() with array-like object missing some indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest143()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_14400
-     * @tc.name ArrayEveryTest144
-     * @tc.desc Every() with array-like object containing undefined values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest144()).assertEqual(false);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_14500
      * @tc.name ArrayEveryTest145
      * @tc.desc Every() with TypedArray
@@ -2081,30 +1480,6 @@ export default function ArrayEveryTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_14900
-     * @tc.name ArrayEveryTest149
-     * @tc.desc Every() with generator output
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(ArrayEveryTest149()).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15000
-     * @tc.name ArrayEveryTest150
-     * @tc.desc Every() with async generator output
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('ArrayEveryTest150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   expect(await ArrayEveryTest150()).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15100
      * @tc.name ArrayEveryTest151
      * @tc.desc Every() with Promise.all output
@@ -2121,46 +1496,6 @@ export default function ArrayEveryTest() {
 
       expect(result).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15200
-     * @tc.name ArrayEveryTest152
-     * @tc.desc Every() with Promise.allSettled output
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // todo
-    // it('ArrayEveryTest152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const promises = [Promise.resolve(1), Promise.resolve(2), Promise.reject(new Error('test'))];
-    //   const results = await Promise.allSettled(promises);
-    //   const callback =
-    //     (result: PromiseSettledResult<number>) => result.status === 'fulfilled' || result.status === 'rejected';
-    //
-    //   const result = results.every(callback);
-    //
-    //   expect(result).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15300
-     * @tc.name ArrayEveryTest153
-     * @tc.desc Every() with Promise.race output (wrapped in array)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // todo
-    // it('ArrayEveryTest153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const promises = [Promise.resolve(1), new Promise<number>(resolve => setTimeout(() => resolve(2), 10))];
-    //   const value = await Promise.race(promises);
-    //   const arr = [value];
-    //   const callback = (item: number) => item === 1;
-    //
-    //   const result = arr.every(callback);
-    //
-    //   expect(result).assertEqual(true);
-    // });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15600
@@ -2193,20 +1528,13 @@ export default function ArrayEveryTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    // todo
-    // it('ArrayEveryTest157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   interface BaseI {
-    //     a: number
-    //   }
-    //
-    //   const jsonStrings = ['{"a":1}', '{"b":2}', '{"c":3}'];
-    //   const arr = jsonStrings.map(str => JSON.parse(str) as BaseI);
-    //   const callback = (obj: BaseI) => typeof obj === 'object' && obj !== null;
-    //
-    //   const result = arr.every(callback);
-    //
-    //   expect(result).assertEqual(true);
-    // });
+    it('ArrayEveryTest157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const jsonStrings = ['{"a":1}', '{"a":2}', '{"a":3}'];
+      const arr = jsonStrings.map(str => JSON.parse<BaseI157>(str,Class.from<BaseI157>()) as BaseI157);
+      const callback = (obj: BaseI157) => typeof obj === 'object' && obj !== null;
+      const result = arr.every(callback);
+      expect(result).assertEqual(true);
+    });
 
     /**
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15800

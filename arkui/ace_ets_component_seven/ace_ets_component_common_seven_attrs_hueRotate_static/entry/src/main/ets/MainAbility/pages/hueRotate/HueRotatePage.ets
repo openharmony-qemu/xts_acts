@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,265 +37,258 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
    SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mHueRotate: number | string = 10
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-    console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
-    instance.hueRotate(this.mHueRotate)
-  }
-}
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
@@ -316,238 +309,238 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
     instance.hueRotate(this.mHueRotate)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mHueRotate: number | string = 10
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`hueRotate page show ${JSON.stringify(this.mHueRotate)}`)
@@ -576,7 +569,6 @@ struct hueRotatePage {
   @State _hueRotateFlexMod: FlexModifier = new FlexModifier()
   @State _hueRotateFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _hueRotateFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _hueRotateFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _hueRotateGaugeMod: GaugeModifier = new GaugeModifier()
   @State _hueRotateGridMod: GridModifier = new GridModifier()
   @State _hueRotateGridColMod: GridColModifier = new GridColModifier()
@@ -669,7 +661,6 @@ struct hueRotatePage {
       this._hueRotateFlexMod.mHueRotate = value.hueRotate
       this._hueRotateFlowItemMod.mHueRotate = value.hueRotate
       this._hueRotateFormComponentMod.mHueRotate = value.hueRotate
-      this._hueRotateFormLinkMod.mHueRotate = value.hueRotate
       this._hueRotateGaugeMod.mHueRotate = value.hueRotate
       this._hueRotateGridMod.mHueRotate = value.hueRotate
       this._hueRotateGridColMod.mHueRotate = value.hueRotate

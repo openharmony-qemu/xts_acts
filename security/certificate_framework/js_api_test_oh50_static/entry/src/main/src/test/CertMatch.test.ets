@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
   describe("certFrameworkCertMatchJsAPIFunctionTestUnit", () => {
     let pemCert0: cert.X509Cert;
-    let pemCert1: cert.X509Cert;
+    let pemCert1: cert.X509Cert | undefined;
     let pemCert7: cert.X509Cert;
     console.info("##########start certFrameworkCertMatchJsAPIFunctionTestUnit##########");
     beforeAll(async () => {
@@ -47,7 +47,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         pemCert1 = await certFunc.createCustomizedX509CertPromise(PEM, 1);
         pemCert7 = await certFunc.createCustomizedX509CertPromise(PEM, 7);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCustomizedX509CertPromise error");
         expect(null).assertFail();
       }
@@ -135,7 +135,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 12, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -162,7 +162,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 2, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -190,7 +190,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 1, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -209,11 +209,11 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         subjectAlternativeNames: []
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -301,7 +301,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 12, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -370,7 +370,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 2, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -404,7 +404,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 12, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -431,7 +431,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 10, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -458,7 +458,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 2, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -485,7 +485,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 1, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -504,11 +504,11 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         authorityKeyIdentifier: new Uint8Array()
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -529,7 +529,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 1, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -551,7 +551,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 11, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertTrue();
       }
       done();
@@ -573,7 +573,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 1, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -595,7 +595,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 13, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertTrue();
       }
       done();
@@ -617,7 +617,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 1, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -639,7 +639,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 2, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -661,7 +661,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 11, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -683,7 +683,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 1, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -705,7 +705,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 2, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -727,7 +727,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 1, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -751,7 +751,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 1, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -773,7 +773,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 12, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -797,7 +797,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 12, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -819,7 +819,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 2, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -843,7 +843,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 2, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -865,7 +865,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 6, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -884,11 +884,11 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         extendedKeyUsage: []
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -909,7 +909,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 2, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -931,7 +931,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 2, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -954,7 +954,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 5, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -973,11 +973,11 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         nameConstraints: new Uint8Array()
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -998,7 +998,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 12, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1020,7 +1020,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 2, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1042,7 +1042,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 2, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1061,11 +1061,11 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         certPolicy: []
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -1086,7 +1086,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 1, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1108,7 +1108,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 1, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1130,7 +1130,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 5, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1149,11 +1149,11 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         privateKeyValid: ''
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -1175,7 +1175,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 12, param);
         expect(result).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1198,7 +1198,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 3, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1221,7 +1221,7 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         const result = await certFunc.checkCertMatchParam(PEM, 5, param);
         expect(result).assertFalse();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1240,11 +1240,11 @@ export default function certFrameworkCertMatchJsAPIFunctionTestUnit() {
         subjectKeyIdentifier: new Uint8Array()
       };
       try {
-        pemCert1.match(param);
+        pemCert1!.match(param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });

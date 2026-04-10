@@ -27,19 +27,19 @@ import { BusinessError } from '@ohos.base';
 
 const TAG = "CameraSessionVideoStabilizationTest: ";
 
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.VideoSession;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> | undefined;
+let mCameraSession: cameraObj.VideoSession | undefined;
 let mVideoRecorder: media.AVRecorder | undefined;
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
-let mPhotoOutput: cameraObj.PhotoOutput;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
+let mPhotoOutput: cameraObj.PhotoOutput | undefined;
 let receiver: image.ImageReceiver | undefined;
 let mPhotoSurface: string;
 let mVideoSurface: string | undefined;
 let mFdPath: string;
 let mCameraNum: number;
-let mIsVideoStabilizationModeSupportedArray: Array<boolean>;
+let mIsVideoStabilizationModeSupportedArray: Array<boolean> = [];
 let mPicWidthMax = 8192;
 let mPicHeightMax = 8192;
 
@@ -66,7 +66,7 @@ let mVideoConfig: media.AVRecorderConfig = {
 export default function cameraSessionVideoStabilizationTest() {
 
   let fdNumber: int;
-  let fdPath: string;
+  let fdPath: string = '';
   let surfaceId: string = '';
 
   let getFd = async (pathName: string) => {
@@ -166,7 +166,7 @@ export default function cameraSessionVideoStabilizationTest() {
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
 
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     /*
     mCameraManager.getSupportedCameras(async (err, data) => {
         console.info(TAG + "Entering getCameraSupportDevicesArray callback");
@@ -189,7 +189,7 @@ export default function cameraSessionVideoStabilizationTest() {
     }
 
 
-    mCameraNum = mCameraDevicesArray.length;
+    mCameraNum = mCameraDevicesArray!.length;
 
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
 
@@ -204,7 +204,7 @@ export default function cameraSessionVideoStabilizationTest() {
     console.info('Enter createCameraSessionInstance');
 
     try {
-      mCameraSession = mCameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
+      mCameraSession = mCameraManager?.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
     } catch(err) {
       console.info('createCaptureSession FAILED');
     }
@@ -214,7 +214,7 @@ export default function cameraSessionVideoStabilizationTest() {
       return false;
     }
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     console.info('Exit createCameraSessionInstance');
 
@@ -222,7 +222,7 @@ export default function cameraSessionVideoStabilizationTest() {
   }
 
   let releaseCameraSessionInstance = async () => {
-    await mCameraSession.release();
+    await mCameraSession!.release();
   }
 
   let createInput = async (idx: int): Promise<boolean> => {
@@ -233,14 +233,14 @@ export default function cameraSessionVideoStabilizationTest() {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray![idx.toInt()]);
 
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
     }
 
-    await mCameraInput.open();
+    await mCameraInput!.open();
 
     await Utils.msSleep(100);
 
@@ -255,7 +255,7 @@ export default function cameraSessionVideoStabilizationTest() {
     console.info('Enter releaseInput');
 
     if (mCameraInput != undefined) {
-      await mCameraInput.close();
+      await mCameraInput!.close();
     }
 
     console.info('Exit releaseInput');
@@ -266,13 +266,13 @@ export default function cameraSessionVideoStabilizationTest() {
   let createOutput = (idx: int) => {
     console.info('Enter createOutput');
 
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[0], cameraObj.SceneMode.NORMAL_VIDEO);
+    let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray![idx.toInt()], cameraObj.SceneMode.NORMAL_VIDEO);
 
     if (cameraOutputCap != undefined) {
       if (cameraOutputCap.previewProfiles != null) {
         console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
         for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
-          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+          mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
           if (mPreviewOutput != undefined) {
             break;
           }
@@ -289,7 +289,7 @@ export default function cameraSessionVideoStabilizationTest() {
         console.info(TAG + "cameraOutputCap.photoProfiles.length: " + cameraOutputCap.photoProfiles.length);
 
         for (let i = 0; i < cameraOutputCap.photoProfiles.length; i++) {
-          mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
+          mPhotoOutput = mCameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
           if (mPhotoOutput != undefined) {
             break;
           }
@@ -334,11 +334,11 @@ export default function cameraSessionVideoStabilizationTest() {
     console.info('Enter releaseOutput');
 
     if (mPreviewOutput != undefined) {
-      await mPreviewOutput.release();
+      await mPreviewOutput!.release();
     }
 
     if (mPhotoOutput != undefined) {
-      await mPhotoOutput.release();
+      await mPhotoOutput!.release();
     }
     /*
     if (!isEmpty(mVideoOutput)) {
@@ -361,17 +361,17 @@ export default function cameraSessionVideoStabilizationTest() {
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to addInput");
-      mCameraSession.addInput(mCameraInput);
+      mCameraSession!.addInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to addOutput mPreviewOutput");
-      mCameraSession.addOutput(mPreviewOutput);
+      mCameraSession!.addOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to addOutput mPhotoOutput");
-      mCameraSession.addOutput(mPhotoOutput);
+      mCameraSession!.addOutput(mPhotoOutput!);
     }
     /*
     if (!isEmpty(mVideoOutput)) {
@@ -381,7 +381,7 @@ export default function cameraSessionVideoStabilizationTest() {
     */
     await Utils.msSleep(1);
 
-    await mCameraSession.commitConfig();
+    await mCameraSession!.commitConfig();
 
     /*
     await mCameraSession.start(async (err) => {
@@ -403,7 +403,7 @@ export default function cameraSessionVideoStabilizationTest() {
   let stopCameraSession = async (): Promise<boolean> => {
     console.info(TAG + "Enter stopCameraSession");
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
     /*
     mCameraSession.stop(async (err) => {
         console.info(TAG + "Entering mCameraSession stop callback");
@@ -419,17 +419,17 @@ export default function cameraSessionVideoStabilizationTest() {
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to removeInput input");
-      mCameraSession.removeInput(mCameraInput);
+      mCameraSession!.removeInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPreviewOutput");
-      mCameraSession.removeOutput(mPreviewOutput);
+      mCameraSession!.removeOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPhotoOutput");
-      mCameraSession.removeOutput(mPhotoOutput);
+      mCameraSession!.removeOutput(mPhotoOutput!);
     }
     /*
     if (!isEmpty(mVideoOutput)) {
@@ -447,7 +447,7 @@ export default function cameraSessionVideoStabilizationTest() {
 
   describe('cameraSessionVideoStabilizationTest', () => {
     console.info(TAG + '----------cameraSessionVideoStabilizationTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -469,7 +469,7 @@ export default function cameraSessionVideoStabilizationTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);
@@ -501,7 +501,7 @@ export default function cameraSessionVideoStabilizationTest() {
           await startCameraSession(i);
 
           let isVideoStabilizationModeSupported =
-            mCameraSession.isVideoStabilizationModeSupported(cameraObj.VideoStabilizationMode.OFF);
+            mCameraSession!.isVideoStabilizationModeSupported(cameraObj.VideoStabilizationMode.OFF);
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0100 finish");
           if (isVideoStabilizationModeSupported != null || isVideoStabilizationModeSupported != undefined) {
@@ -553,14 +553,14 @@ export default function cameraSessionVideoStabilizationTest() {
           await startCameraSession(i);
 
           if (mIsVideoStabilizationModeSupportedArray.length < mCameraNum) {
-            mCameraSession.setVideoStabilizationMode(cameraObj.VideoStabilizationMode.OFF);
+            mCameraSession!.setVideoStabilizationMode(cameraObj.VideoStabilizationMode.OFF);
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0100 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0100 PASSED with VideoStabilizationMode is: " +
             cameraObj.VideoStabilizationMode.OFF);
 
-            let vdeoStabilizationMode = mCameraSession.getActiveVideoStabilizationMode();
+            let vdeoStabilizationMode = mCameraSession!.getActiveVideoStabilizationMode();
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0100 finish");
             if (vdeoStabilizationMode == cameraObj.VideoStabilizationMode.OFF) {
@@ -616,7 +616,7 @@ export default function cameraSessionVideoStabilizationTest() {
           await startCameraSession(i);
 
           let isVideoStabilizationModeSupported =
-            mCameraSession.isVideoStabilizationModeSupported(cameraObj.VideoStabilizationMode.LOW);
+            mCameraSession!.isVideoStabilizationModeSupported(cameraObj.VideoStabilizationMode.LOW);
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0200 finish");
           if (isVideoStabilizationModeSupported != null || isVideoStabilizationModeSupported != undefined) {
@@ -668,14 +668,14 @@ export default function cameraSessionVideoStabilizationTest() {
           await startCameraSession(i);
 
           if (mIsVideoStabilizationModeSupportedArray.length < mCameraNum) {
-            mCameraSession.setVideoStabilizationMode(cameraObj.VideoStabilizationMode.LOW);
+            mCameraSession!.setVideoStabilizationMode(cameraObj.VideoStabilizationMode.LOW);
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0200 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0200 PASSED with VideoStabilizationMode is: " +
             cameraObj.VideoStabilizationMode.LOW);
 
-            let vdeoStabilizationMode = mCameraSession.getActiveVideoStabilizationMode();
+            let vdeoStabilizationMode = mCameraSession!.getActiveVideoStabilizationMode();
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0200 finish");
             if (vdeoStabilizationMode == cameraObj.VideoStabilizationMode.LOW) {
@@ -731,7 +731,7 @@ export default function cameraSessionVideoStabilizationTest() {
           await startCameraSession(i);
 
           let isVideoStabilizationModeSupported =
-            mCameraSession.isVideoStabilizationModeSupported(cameraObj.VideoStabilizationMode.MIDDLE);
+            mCameraSession!.isVideoStabilizationModeSupported(cameraObj.VideoStabilizationMode.MIDDLE);
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0300 finish");
           if (isVideoStabilizationModeSupported != null || isVideoStabilizationModeSupported != undefined) {
@@ -783,14 +783,14 @@ export default function cameraSessionVideoStabilizationTest() {
           await startCameraSession(i);
 
           if (mIsVideoStabilizationModeSupportedArray.length < mCameraNum) {
-            mCameraSession.setVideoStabilizationMode(cameraObj.VideoStabilizationMode.MIDDLE);
+            mCameraSession!.setVideoStabilizationMode(cameraObj.VideoStabilizationMode.MIDDLE);
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0300 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0300 PASSED with VideoStabilizationMode is: " +
             cameraObj.VideoStabilizationMode.MIDDLE);
 
-            let vdeoStabilizationMode = mCameraSession.getActiveVideoStabilizationMode();
+            let vdeoStabilizationMode = mCameraSession!.getActiveVideoStabilizationMode();
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0300 finish");
             if (vdeoStabilizationMode == cameraObj.VideoStabilizationMode.MIDDLE) {
@@ -846,7 +846,7 @@ export default function cameraSessionVideoStabilizationTest() {
           await startCameraSession(i);
 
           let isVideoStabilizationModeSupported =
-            mCameraSession.isVideoStabilizationModeSupported(cameraObj.VideoStabilizationMode.HIGH);
+            mCameraSession!.isVideoStabilizationModeSupported(cameraObj.VideoStabilizationMode.HIGH);
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0400 finish");
           if (isVideoStabilizationModeSupported != null || isVideoStabilizationModeSupported != undefined) {
@@ -898,14 +898,14 @@ export default function cameraSessionVideoStabilizationTest() {
           await startCameraSession(i);
 
           if (mIsVideoStabilizationModeSupportedArray.length < mCameraNum) {
-            mCameraSession.setVideoStabilizationMode(cameraObj.VideoStabilizationMode.HIGH);
+            mCameraSession!.setVideoStabilizationMode(cameraObj.VideoStabilizationMode.HIGH);
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0400 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0400 PASSED with VideoStabilizationMode is: " +
             cameraObj.VideoStabilizationMode.HIGH);
 
-            let vdeoStabilizationMode = mCameraSession.getActiveVideoStabilizationMode();
+            let vdeoStabilizationMode = mCameraSession!.getActiveVideoStabilizationMode();
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0400 finish");
             if (vdeoStabilizationMode == cameraObj.VideoStabilizationMode.HIGH) {
@@ -961,7 +961,7 @@ export default function cameraSessionVideoStabilizationTest() {
           await startCameraSession(i);
 
           let isVideoStabilizationModeSupported =
-            mCameraSession.isVideoStabilizationModeSupported(cameraObj.VideoStabilizationMode.AUTO);
+            mCameraSession!.isVideoStabilizationModeSupported(cameraObj.VideoStabilizationMode.AUTO);
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0500 finish");
           if (isVideoStabilizationModeSupported != null || isVideoStabilizationModeSupported != undefined) {
@@ -1013,14 +1013,14 @@ export default function cameraSessionVideoStabilizationTest() {
           await startCameraSession(i);
 
           if (mIsVideoStabilizationModeSupportedArray.length < mCameraNum) {
-            mCameraSession.setVideoStabilizationMode(cameraObj.VideoStabilizationMode.AUTO);
+            mCameraSession!.setVideoStabilizationMode(cameraObj.VideoStabilizationMode.AUTO);
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0500 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0500 PASSED with VideoStabilizationMode is: " +
             cameraObj.VideoStabilizationMode.AUTO);
 
-            let vdeoStabilizationMode = mCameraSession.getActiveVideoStabilizationMode();
+            let vdeoStabilizationMode = mCameraSession!.getActiveVideoStabilizationMode();
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0500 finish");
             if (vdeoStabilizationMode == cameraObj.VideoStabilizationMode.AUTO) {

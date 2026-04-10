@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,7 +40,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function flexVisibility_StartJsunit() {
   describe('flexItemAlignStartTest8', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexItemAlignStartTest8 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });
@@ -114,7 +114,7 @@ it('testFlexItemAlignStartSubSetVisibilityNone_static', Level.LEVEL0, async () :
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Visible");
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Start')
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexItemAlignBaselineSubSetVisibilityNone_static] failed');
         expect().assertFail();
       }
@@ -168,7 +168,7 @@ it('testFlexItemAlignStartSubSetVisibilityHidden_static', Level.LEVEL0, async ()
           .assertTrue();
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Start')
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexItemAlignBaselineSubSetVisibilityHidden_static] failed');
         expect().assertFail();
       }

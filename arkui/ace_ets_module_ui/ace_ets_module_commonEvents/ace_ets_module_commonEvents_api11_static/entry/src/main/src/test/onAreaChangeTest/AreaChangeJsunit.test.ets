@@ -38,7 +38,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function areaChangeJsunit() {
   describe('areaChangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 
@@ -96,7 +96,7 @@ it('areaChangeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise
       }
       try {
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("areaChangeTest_0300 on emitter err : " + JSON.stringify(err));
       }
 
@@ -114,7 +114,7 @@ it('areaChangeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise
       }
       try {
         emitter.on(indexEvent1, callback1);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("areaChangeTest_0400 on emitter err : " + JSON.stringify(err));
       }
       console.info("areaChangeTest_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('text1', 10, "")));

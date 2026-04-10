@@ -29,8 +29,8 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   securityLevel: relationalStore.SecurityLevel.S1,
 }
 
-let context: common.UIAbilityContext;
-let rdbStore: relationalStore.RdbStore;
+let context: common.UIAbilityContext | undefined;
+let rdbStore: relationalStore.RdbStore | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 export default function RdbErrorCode14801002() {
@@ -42,13 +42,13 @@ export default function RdbErrorCode14801002() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
     });
 
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+      await rdbStore!.executeSql(CREATE_TABLE_TEST);
       let u8 = new Uint8Array([3, 4, 5])
       const valueBucket: relationalStore.ValuesBucket = {
         "name": "Jim",
@@ -56,12 +56,12 @@ export default function RdbErrorCode14801002() {
         "salary": 2000.0,
         "data4": u8
       }
-      await rdbStore.insert("employee", valueBucket);
+      await rdbStore!.insert("employee", valueBucket);
     })
 
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
 
     afterAll(async (): Promise<void> => {
@@ -90,7 +90,7 @@ export default function RdbErrorCode14801002() {
       }
       const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
         "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)";
-      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       await store!.executeSql(CREATE_TABLE_TEST);
       let u8 = new Uint8Array([1, 2, 3]);
       const valueBucket: relationalStore.ValuesBucket = {
@@ -106,7 +106,7 @@ export default function RdbErrorCode14801002() {
         expect().assertFail()
       }
       try {
-        let num = await store.attach(context, STORE_CONFIG1, "attachDB", 2);
+        let num = await store.attach(context!, STORE_CONFIG1, "attachDB", 2);
         expect(1 as Int).assertEqual(num);
       } catch (e) {
         console.error(TAG + `deleteRdbStore failed, code is ${e.code},message is ${e.message}`);

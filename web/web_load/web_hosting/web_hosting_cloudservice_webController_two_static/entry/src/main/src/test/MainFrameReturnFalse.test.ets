@@ -56,15 +56,15 @@ export default function ActsWebViewTest4() {
       console.info('beforeEach start');
     })
 
-    /*
-     * @tc.number SUB_ACE_WEB_LoadCommittedDetails_SDK_Static_0200
-     * @tc.name SUB_ACE_WEB_isMainFrame_return_false
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+    /**
+     * @tc.name        SUB_ACE_WEB_LoadCommittedDetails_SDK_Static_0200
+     * @tc.number      SUB_ACE_WEB_LoadCommittedDetails_SDK_0200
+     * @tc.desc        test Arguments
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
      */
-    it('SUB_ACE_WEB_LoadCommittedDetails_SDK_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_WEB_LoadCommittedDetails_SDK_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('LoadCommittedDetails', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('LoadCommittedDetails', true, 5010, done);

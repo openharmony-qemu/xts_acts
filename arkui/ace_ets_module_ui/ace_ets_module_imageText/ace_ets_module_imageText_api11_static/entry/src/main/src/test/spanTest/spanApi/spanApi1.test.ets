@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,7 +43,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function spanApi1() {
   describe('spanApi1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageLoadResultTest beforeEach start");
 
 
@@ -68,7 +68,7 @@ export default function spanApi1() {
           await CommonFunc.sleep(2000);
           // console.info("push spanApi1 page result:" + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push spanApi1 page error:" + err);
       }
       console.info("spanApi1 beforeEach end");

@@ -14,9 +14,9 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
+import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@kit.TestKit'
 import { BusinessError } from '@ohos.base';
-import display from '@ohos.display';
+import { display } from '@kit.ArkUI'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 const delegator: AbilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -672,21 +672,48 @@ export default function uiUiWindowTest() {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
         let scbCom = await driver.findComponent(ON.id('SCBDividerFlex1'))
+        await driver.delayMs(waitUiReadyMs)
+        // Non-free multi-window mode
         if (scbCom != null) {
-          await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
-          await driver.delayMs(waitUiReadyMs)
-          let direction = await driver.getDisplayRotation()
-          console.log(`${TestTag}, testWindowResizeB_split1 setDisplayRotation success ,${JSON.stringify(direction)}`);
-          await driver.delayMs(waitUiReadyMs)
-          expect(direction == 1).assertTrue()
-          let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
-          let bounds1 = await window2.getBounds()
-          await window2.resize(0, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
-          await driver.delayMs(waitUiReadyMs * 5)
-          let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
-          console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
-          expect(window3 == null).assertTrue()
-        } else {
+          let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let bounds = await window.getBounds()
+          let point = await driver.getDisplaySize()
+          // The device's screen splitting mode is left-right split screen.
+          if (bounds.right != point.x) {
+            console.log("The device's screen splitting mode is left-right split screen.")
+            await window.resize(0, bounds.bottom - bounds.top, ResizeDirection.RIGHT)
+            await driver.delayMs(waitUiReadyMs * 5)
+            let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+            console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
+            expect(window3 == null).assertTrue()
+          }
+          // The device's screen splitting method is top and bottom split.
+          else {
+            console.log("The device's screen splitting method is top and bottom split.")
+            await driver.setDisplayRotationEnabled(true)
+            await driver.delayMs(waitUiReadyMs)
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
+            await driver.delayMs(waitUiReadyMs)
+            let direction0 = await driver.getDisplayRotation()
+            console.log("getDisplayRotation success direction0 = " + direction0)
+            if (direction0 == DisplayRotation.ROTATION_0) {
+              await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+              await driver.delayMs(waitUiReadyMs)
+              let direction = await driver.getDisplayRotation()
+              console.log(`${TestTag}, testWindowResizeB_split1 setDisplayRotation success ,${JSON.stringify(direction)}`);
+              expect(direction == 1).assertTrue()
+            }
+            let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+            let bounds1 = await window2.getBounds()
+            await window2.resize(0, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
+            await driver.delayMs(waitUiReadyMs * 5)
+            let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+            console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
+            expect(window3 == null).assertTrue()
+          }
+        }
+        // Free Multi-Window Mode
+        else {
           let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
           let bounds1 = await window2.getBounds()
           await window2.resize(500, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)

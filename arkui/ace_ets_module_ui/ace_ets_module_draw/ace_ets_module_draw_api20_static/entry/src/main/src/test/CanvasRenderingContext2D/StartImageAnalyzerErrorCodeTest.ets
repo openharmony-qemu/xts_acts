@@ -24,7 +24,7 @@ import inspector from '@ohos.arkui.inspector'
 
 export default function StartImageAnalyzerErrorCodeTest() {
   describe('StartImageAnalyzerErrorCodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StartImageAnalyzerErrorCodeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")

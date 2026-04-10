@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -90,7 +90,7 @@ it('drawCanvas_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
         try {
           let value: drawing.Canvas | undefined =
             AppStorage.get<drawing.Canvas | undefined>("canvas");
-          // expect(value).assertNotEqual(undefined)
+          // expect(value).not().assertEqual(undefined)
           expect(value !== undefined).assertEqual(true);
         } catch (err) {
           console.error("push drawCanvas page error" + JSON.stringify(err));
@@ -98,7 +98,7 @@ it('drawCanvas_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
 
         console.info('[drawCanvas_static_0100] END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });

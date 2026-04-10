@@ -32,7 +32,7 @@ import { UtilsTest } from '../Util.test';
 export default function textPickerOnScrollStop() {
   describe('textPickerOnScrollStop', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textpickerCanLoop beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.textPickerDialog.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

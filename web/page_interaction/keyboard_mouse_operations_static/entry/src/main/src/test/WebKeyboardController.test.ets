@@ -21,6 +21,7 @@ import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver, ON } from '@ohos.UiTest';
+import wifiMg from '@ohos.wifiManager';
 
 let testAbilityContext:common.UIAbilityContext;
 
@@ -32,9 +33,39 @@ export default function webHitTestTypeEnumTest() {
       console.log('beforeAll end,%s', 'Succeed!')
     });
 
-    beforeEach(async () => {
+beforeEach(async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      console.info('web beforeEach start');
+      console.info('webOnFirstContFour beforeEach start');
+      if(!wifiMg.isWifiActive()){
+        let state:boolean = wifiMg.isWifiActive();
+        console.info("======> wifi_test/enable wifi: enabled " + state);
+        await Utils.msSleep(2000);
+      }
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          throw new Error("======> WLAN Network error");//方式二
+          done();
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          throw new Error("======> WLAN Network error");//方式二
+          done();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+        done();
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
     })
 
     afterEach(async () => {
@@ -48,9 +79,9 @@ export default function webHitTestTypeEnumTest() {
      * @tc.desc   test the value of WebHitTestType.EditText is 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('webKeyboardControllerStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('webKeyboardControllerStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       await startAbility('com.pageInteractionFive.test.static', 'EntryAbility');
       await Utils.msSleep(9000);

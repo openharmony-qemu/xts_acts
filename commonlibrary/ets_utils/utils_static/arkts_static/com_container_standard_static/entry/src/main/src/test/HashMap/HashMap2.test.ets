@@ -34,7 +34,7 @@ class Temp1 {
 
 export default function HashMapTest2() {
   describe('hashMapTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

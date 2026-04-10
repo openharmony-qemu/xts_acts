@@ -40,7 +40,7 @@ const waitUiReadyMs = 1000;
 
 export default function  datalPanelUIJsunit() {
   describe('datalPanelUIJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("datalPanelUIJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

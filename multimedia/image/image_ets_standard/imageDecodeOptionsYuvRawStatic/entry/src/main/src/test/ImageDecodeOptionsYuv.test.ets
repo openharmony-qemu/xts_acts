@@ -1,5 +1,5 @@
-﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+/*
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,7 +22,7 @@ import common from '@ohos.app.ability.common';
 import colorSpaceManager from '@ohos.graphics.colorSpaceManager';
 import { initialize } from './AbilityContextHelper.test';
 
-let testContext: common.UIAbilityContext;
+let testContext: common.UIAbilityContext | undefined;
 let filesDir: string | undefined | null;
 
 let g_callbackResult = false;
@@ -39,10 +39,10 @@ let waitCallback = () => {
   const date = Date.now();
   while ((Date.now() - date) < 1000) {
     if (g_callbackResult) {
-      await sleep(50);
+      waitForCompletion(async () => {await sleep(50);})
       return;
     } else {
-      await sleep(50);
+      waitForCompletion(async () => {await sleep(50);})
     }
   }
   expect().assertFail();
@@ -73,9 +73,10 @@ export default function imageDecodeOptionsYuvTest() {
         const filePath = filesDir + '/' + fileName
         imageSourceApi = image.createImageSource(filePath)
       } else if (type === "rawfile") {
-        const resourceMgr: resourceManager.ResourceManager = testContext.resourceManager;
-        const rawFileDescriptor = await resourceMgr.getRawFd(fileName)
-        imageSourceApi = image.createImageSource(rawFileDescriptor)
+        const resourceMgr: resourceManager.ResourceManager = testContext!.resourceManager;
+        let rawFileDescriptor: resourceManager.RawFileDescriptor | undefined;
+        waitForCompletion(async () => {rawFileDescriptor = await resourceMgr.getRawFd(fileName);})
+        imageSourceApi = image.createImageSource(rawFileDescriptor as resourceManager.RawFileDescriptor)
       } else if (type === "incremental") {
         const picBuffer = getBuffer(fileName)
         imageSourceApi = image.createIncrementalSource(picBuffer)
@@ -84,7 +85,7 @@ export default function imageDecodeOptionsYuvTest() {
         const file = fs.openSync(filePath)
         imageSourceApi = image.createImageSource(file.fd as int);
       }
-      await sleep(100);
+      waitForCompletion(async () => {await sleep(100);})
       if (imageSourceApi == undefined) {
         expect().assertFail();
       }
@@ -131,30 +132,32 @@ export default function imageDecodeOptionsYuvTest() {
       decodingOptions: image.DecodingOptions
     ) => {
       imageSourceApi.createPixelMap(decodingOptions, (err : BusinessError|null, pixelMap : image.PixelMap|undefined) => {
-        if (err && err.code) {
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
-          await imageSourceApi.release();
-        } else {
-          globalPixelMap = pixelMap!;
-          await imageSourceApi.release();
-          let imageInfo = await pixelMap!.getImageInfo();
-          if (imageInfo != undefined) {
-            g_callbackResult = true;
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` decodingOptions:${JSON.stringify(decodingOptions)};`);
-            let colorSpaceManager = decodingOptions.desiredColorSpace as colorSpaceManager.ColorSpaceManager
-            let desiredPixelFormat = decodingOptions.desiredPixelFormat
-            let desiredSize = decodingOptions.desiredSize as image.Size
-            let fitDensity = decodingOptions.fitDensity
-            if (imageInfo.pixelFormat === desiredPixelFormat &&
-              imageInfo.size.width === desiredSize.width &&
-              imageInfo.size.height === desiredSize.height &&
-              imageInfo.density === fitDensity &&
-              pixelMap!.getColorSpace().getColorSpaceName() === colorSpaceManager.getColorSpaceName()) {
-              result = true
+        waitForCompletion(async () => {
+          if (err && err.code) {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
+            await imageSourceApi.release();
+          } else {
+            globalPixelMap = pixelMap!;
+            await imageSourceApi.release();
+            let imageInfo = await pixelMap!.getImageInfo();
+            if (imageInfo != undefined) {
+              g_callbackResult = true;
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` decodingOptions:${JSON.stringify(decodingOptions)};`);
+              let colorSpaceManager = decodingOptions.desiredColorSpace as colorSpaceManager.ColorSpaceManager
+              let desiredPixelFormat = decodingOptions.desiredPixelFormat
+              let desiredSize = decodingOptions.desiredSize as image.Size
+              let fitDensity = decodingOptions.fitDensity
+              if (imageInfo.pixelFormat === desiredPixelFormat &&
+                imageInfo.size.width === desiredSize.width &&
+                imageInfo.size.height === desiredSize.height &&
+                imageInfo.density === fitDensity &&
+                pixelMap!.getColorSpace().getColorSpaceName() === colorSpaceManager.getColorSpaceName()) {
+                result = true
+              }
             }
           }
-        }
+        })
       })
     }
 
@@ -209,7 +212,7 @@ export default function imageDecodeOptionsYuvTest() {
           index: 0,
           fitDensity: 240,
           desiredColorSpace: desiredColorSpace,
-          desiredDynamicRange: 0 as image.DecodingDynamicRange
+          desiredDynamicRange: image.DecodingDynamicRange.fromValue(0)
         };
         switch (serviceName){
           case 'promiseCreate':
@@ -252,7 +255,7 @@ export default function imageDecodeOptionsYuvTest() {
           index: 0,
           fitDensity: 240,
           desiredColorSpace: desiredColorSpace,
-          desiredDynamicRange: 0 as image.DecodingDynamicRange
+          desiredDynamicRange: image.DecodingDynamicRange.fromValue(0)
         };
         switch (serviceName) {
           case 'promiseCreate':
@@ -314,7 +317,7 @@ export default function imageDecodeOptionsYuvTest() {
       }
     }
 
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       testContext = Hypium.get('context') as common.UIAbilityContext;

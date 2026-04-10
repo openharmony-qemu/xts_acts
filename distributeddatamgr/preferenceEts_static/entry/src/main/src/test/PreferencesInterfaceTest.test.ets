@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -138,7 +138,7 @@ export default function PreferencesInterfaceTest() {
             console.info(TAG + '0600 try success' + mPreference1);
             expect(mPreference1 == null).assertTrue();
             done();
-          } catch (err: Error) {
+          } catch (err) {
             console.log(TAG + "0600 try catch err =" + err + ", code =" + err.code + ", message =" + err.message);
             console.info("====>testPreferencesStorageType0600 success")
             expect().assertFail();
@@ -177,7 +177,7 @@ export default function PreferencesInterfaceTest() {
             expect(sp != null).assertTrue();
             data_preferences.removePreferencesFromCacheSync(context, Options);
             done();
-          } catch (err: Error) {
+          } catch (err) {
             console.log("try catch err =" + err + ", code =" + err.code + ", message =" + err.message);
             expect().assertFail();
             done();

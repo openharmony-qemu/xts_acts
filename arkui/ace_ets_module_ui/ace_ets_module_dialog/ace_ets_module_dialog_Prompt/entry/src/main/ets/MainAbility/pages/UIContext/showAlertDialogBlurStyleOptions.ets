@@ -17,9 +17,11 @@ import { UIContext } from '@kit.ArkUI';
 @Component
 struct showAlertDialog1 {
   build() {
-    Column({ space: 10 }){
+    Row(){
       Button('ShowAlertDialog_Options001')
         .id('ShowAlertDialog_Options001')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           let uiContext: UIContext = this.getUIContext();
           uiContext.showAlertDialog(
@@ -39,20 +41,22 @@ struct showAlertDialog1 {
               cancel: () => {
                 console.info('Closed callbacks')
               },
-            backgroundBlurStyleOptions: {
-              policy:BlurStyleActivePolicy.FOLLOWS_WINDOW_ACTIVE_STATE,
-              adaptiveColor:AdaptiveColor.AVERAGE,
-              scale:0,
-              colorMode:ThemeColorMode.LIGHT,
-              inactiveColor:Color.Pink,
-              blurOptions:{
-                grayscale:[20,100]
+              backgroundBlurStyleOptions: {
+                policy:BlurStyleActivePolicy.FOLLOWS_WINDOW_ACTIVE_STATE,
+                adaptiveColor:AdaptiveColor.AVERAGE,
+                scale:0,
+                colorMode:ThemeColorMode.LIGHT,
+                inactiveColor:Color.Pink,
+                blurOptions:{
+                  grayscale:[20,100]
+                }
               }
-            }
-          })
+            })
         })
       Button('ShowAlertDialog_Options002')
         .id('ShowAlertDialog_Options002')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           let uiContext: UIContext = this.getUIContext();
           uiContext.showAlertDialog(
@@ -72,18 +76,20 @@ struct showAlertDialog1 {
               cancel: () => {
                 console.info('Closed callbacks')
               },
-            backgroundBlurStyleOptions: {
-              policy:undefined,
-              adaptiveColor:undefined,
-              scale:undefined,
-              colorMode:undefined,
-              inactiveColor:undefined,
-              blurOptions:undefined,
-            }
-          })
+              backgroundBlurStyleOptions: {
+                policy:undefined,
+                adaptiveColor:undefined,
+                scale:undefined,
+                colorMode:undefined,
+                inactiveColor:undefined,
+                blurOptions:undefined,
+              }
+            })
         })
       Button('ShowAlertDialog_Options003')
         .id('ShowAlertDialog_Options003')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           let uiContext: UIContext = this.getUIContext();
           uiContext.showAlertDialog(
@@ -103,20 +109,23 @@ struct showAlertDialog1 {
               cancel: () => {
                 console.info('Closed callbacks')
               },
-            backgroundBlurStyleOptions: {
-              policy:null,
-              adaptiveColor:null,
-              scale:null,
-              colorMode:null,
-              inactiveColor:null,
-              blurOptions:null,
-            }
-          })
+              backgroundBlurStyleOptions: {
+                policy:null,
+                adaptiveColor:null,
+                scale:null,
+                colorMode:null,
+                inactiveColor:null,
+                blurOptions:null,
+              }
+            })
         })
     }
     .height('100%')
     .width('100%')
     .backgroundImage($r('app.media.icon'))
     .backgroundImageSize({ width: '100%', height: '100%' })
+    .margin({top:30,left:20})
+    .alignItems(VerticalAlign.Top)
+    .justifyContent(FlexAlign.Start)
   }
 }

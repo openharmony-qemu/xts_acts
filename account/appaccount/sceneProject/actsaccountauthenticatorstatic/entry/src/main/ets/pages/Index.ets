@@ -42,32 +42,34 @@ struct Index {
   }
 
   aboutToAppear(){
-    console.info('====>ServiceAbility onStart');
-    let accountMgr = account_appAccount.createAppAccountManager();
-    hilog.info(0x0000, 'testTag', '====>ServiceAbility addAccount 01 onStart');
-    await accountMgr.createAccount('zhangsan');
-    hilog.info(0x0000, 'testTag', '====>ServiceAbility setAppAccess accounttstest.static zhangsan');
-    await accountMgr.setAppAccess('zhangsan', 'com.example.accounttstest.static', true);
-    hilog.info(0x0000, 'testTag', '====>ServiceAbility addAccount 02 onStart');
-    await accountMgr.createAccount('lisi');
-    hilog.info(0x0000, 'testTag', '====>ServiceAbility setAppAccess accounttstest.static lisi');
-    await accountMgr.setAppAccess('lisi', 'com.example.accounttstest.static', true);
-    hilog.info(0x0000, 'testTag', '====>ServiceAbility addAccount 03 onStart');
-    await accountMgr.createAccount('wangwu');
-    hilog.info(0x0000, 'testTag', '====>ServiceAbility setAppAccess accounttstest.static wangwu');
-    await accountMgr.setAppAccess('wangwu', 'com.example.accounttstest.static', true);
-    hilog.info(0x0000, tag, '====>AppStorage get');
-    gContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
-    if (gContext) {
-      hilog.info(0x0000, tag, '====>terminateSelfWithResult start')
-      gContext.terminateSelfWithResult({
-        resultCode: 1,
-        want: wantInfo
-      });
-    } else {
-      hilog.error(0x0000, tag, '====>context is undefined====');
-    }
-    hilog.info(0x0000, 'testTag', '====>ServiceAbility onStart end');
+    waitForCompletion(async () => {
+      console.info('====>ServiceAbility onStart');
+      let accountMgr = account_appAccount.createAppAccountManager();
+      hilog.info(0x0000, 'testTag', '====>ServiceAbility addAccount 01 onStart');
+      await accountMgr.createAccount('zhangsan');
+      hilog.info(0x0000, 'testTag', '====>ServiceAbility setAppAccess accounttstest.static zhangsan');
+      await accountMgr.setAppAccess('zhangsan', 'com.example.accounttstest.static', true);
+      hilog.info(0x0000, 'testTag', '====>ServiceAbility addAccount 02 onStart');
+      await accountMgr.createAccount('lisi');
+      hilog.info(0x0000, 'testTag', '====>ServiceAbility setAppAccess accounttstest.static lisi');
+      await accountMgr.setAppAccess('lisi', 'com.example.accounttstest.static', true);
+      hilog.info(0x0000, 'testTag', '====>ServiceAbility addAccount 03 onStart');
+      await accountMgr.createAccount('wangwu');
+      hilog.info(0x0000, 'testTag', '====>ServiceAbility setAppAccess accounttstest.static wangwu');
+      await accountMgr.setAppAccess('wangwu', 'com.example.accounttstest.static', true);
+      hilog.info(0x0000, tag, '====>AppStorage get');
+      gContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
+      if (gContext) {
+        hilog.info(0x0000, tag, '====>terminateSelfWithResult start')
+        gContext.terminateSelfWithResult({
+          resultCode: 1,
+          want: wantInfo
+        });
+      } else {
+        hilog.error(0x0000, tag, '====>context is undefined====');
+      }
+      hilog.info(0x0000, 'testTag', '====>ServiceAbility onStart end');
+    });
   }
 
   build() {

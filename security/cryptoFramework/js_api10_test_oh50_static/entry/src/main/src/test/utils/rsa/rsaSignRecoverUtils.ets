@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,7 +25,7 @@ async function signPromise(signAlg: string,
     let signData: cryptoFramework.DataBlob = await signer.sign(rawData);
 
     return signData;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sign sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -39,7 +39,7 @@ async function signPromiseWithUpdate(signAlg: string,
     await signer.update(rawData);
     let signData: cryptoFramework.DataBlob = await signer.sign(rawData);
     return signData;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -53,7 +53,7 @@ async function verifyRSARecover(verifyAlg: string,
     let rawSignData: cryptoFramework.DataBlob|null = await verifier.recover(signData);
 
     return rawSignData;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('recover sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -68,7 +68,7 @@ async function verifyRSARecoverWithUpdate(verifyAlg: string,
     let rawSignData: cryptoFramework.DataBlob|null = await verifier.recover(signData);
 
     return rawSignData;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -82,7 +82,7 @@ async function verifyRSARecoverSync(verifyAlg: string,
     let rawSignData: cryptoFramework.DataBlob|null = verifier.recoverSync(signData);
 
     return rawSignData;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('recover sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -93,18 +93,15 @@ async function doMd(mdName: string, rawData: cryptoFramework.DataBlob): Promise<
     let md: cryptoFramework.Md = cryptoFramework.createMd(mdName);
     let mdResult: cryptoFramework.DataBlob = await md.digest();
     return mdResult;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
 }
 
-async function createSignRecover(algName: string, paddingName: string, mdName: string,
-  dataLen: int, isOnlySign: boolean, isSync: boolean, isPadding: boolean): Promise<boolean> {
-  let rawData: cryptoFramework.DataBlob;
+async function generateKeyPair(algName: string): Promise<cryptoFramework.KeyPair> {
   let keyPair: cryptoFramework.KeyPair;
   try {
-    rawData = await commonUtil.createData(dataLen);
     let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     if (algName === "RSA1024") {
       keyPair = await generator.convertPemKey(rsa.pubKeyPkcs1Str1024, rsa.priKeyPkcs1Str1024);
@@ -119,7 +116,22 @@ async function createSignRecover(algName: string, paddingName: string, mdName: s
     } else {
       keyPair = await generator.generateKeyPair();
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
+    console.error('sync error, ' + error.code + " errorMsg " + error.message);
+    throw error as Error;
+  }
+
+  return keyPair;
+}
+
+async function createSignRecover(algName: string, paddingName: string, mdName: string,
+  dataLen: int, isOnlySign: boolean, isSync: boolean, isPadding: boolean): Promise<boolean> {
+  let rawData: cryptoFramework.DataBlob;
+  let keyPair: cryptoFramework.KeyPair;
+  try {
+    rawData = await commonUtil.createData(dataLen);
+    keyPair = await generateKeyPair(algName);
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -149,8 +161,50 @@ async function createSignRecover(algName: string, paddingName: string, mdName: s
     } else {
       return ret;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('1sync error, ' + error.code + " errorMsg " + error.message);
+    throw error as Error;
+  }
+}
+
+async function createDigestDataSignVerify(algName: string, paddingName: string, mdName: string,
+  dataLen: int, isOnlySign: boolean, isSync: boolean, isPadding: boolean) {
+  let rawData: cryptoFramework.DataBlob;
+  let keyPair: cryptoFramework.KeyPair;
+  try {
+    rawData = await commonUtil.createData(dataLen);
+    keyPair = await generateKeyPair(algName);
+  } catch (error) {
+    console.error('sync error, ' + error.code + " errorMsg " + error.message);
+    throw error as Error;
+  }
+  try {
+    let signAlg: string = "";
+    if (isPadding) {
+      signAlg = algName + "|" + paddingName + "|" + mdName;
+    } else {
+      signAlg = algName + "|" + mdName;
+    }
+    let algSignType: string = signAlg;
+    let algVerifyType: string = signAlg + "|OnlyVerify";
+    let ret: boolean = false;
+    if (isOnlySign) {
+      algSignType = algSignType + "|OnlySign";
+    }
+    let signData: cryptoFramework.DataBlob = await signPromise(algSignType, keyPair.priKey, rawData);
+    let verifier: cryptoFramework.Verify = cryptoFramework.createVerify(algVerifyType);
+    await verifier.init(keyPair.pubKey);
+    if (isSync) {
+      ret = verifier.verifySync(rawData, signData);
+    } else {
+      ret = await verifier.verify(rawData, signData);;
+    }
+
+    console.error("############### name:" + algSignType + ":" + ret);
+
+    return ret;
+  } catch (error) {
+    console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
 }
@@ -162,4 +216,5 @@ export {
   verifyRSARecoverWithUpdate,
   doMd,
   createSignRecover,
+  createDigestDataSignVerify,
 }

@@ -92,7 +92,7 @@ export default function windowZindexTest() {
           if (errCode) {
             console.error(msgStr+` Failed to raise the window to app top. Cause code: ${err.code}, message: ${err.message}`);
             if(errCode == 1300009){
-              expect(true).assertTrue();
+              
               done();
             }else if(errCode == 801){
               done();
@@ -813,7 +813,7 @@ export default function windowZindexTest() {
             if(err.code == 801){
               done();
             }else if(err.code == 1300002){
-              expect(true).assertTrue();
+              
               done();
             } else{
               expect().assertFail();
@@ -877,7 +877,7 @@ export default function windowZindexTest() {
             if(err.code == 801){
               done();
             }else if(err.code == 1300004){
-              expect(true).assertTrue();
+              
               done();
             } else{
               expect().assertFail();
@@ -932,7 +932,7 @@ export default function windowZindexTest() {
           promise2.then(async () => {
             console.info(caseName+ ' Succeeded in shifting app window pointer event');
             await subWindowClass.destroyWindow();
-            expect(true).assertTrue();
+            
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} :Failed to shift app window pointer event. Cause code: ${err.code}, message: ${err.message}`);
@@ -1210,7 +1210,7 @@ export default function windowZindexTest() {
       try{
         windowClass.setWindowDelayRaiseOnDrag(true);
         console.log(`${caseName} :setWindowDelayRaiseOnDrag success`);
-        expect(true).assertTrue();
+        
         done();
       }catch(err){
         console.log(`${caseName} :setWindowDelayRaiseOnDrag fail:`+err.code);
@@ -1237,7 +1237,7 @@ export default function windowZindexTest() {
       try{
         windowClass.setWindowDelayRaiseOnDrag(false);
         console.log(`${caseName} :setWindowDelayRaiseOnDrag success`);
-        expect(true).assertTrue();
+        
         done();
       }catch(err){
         console.log(`${caseName} :setWindowDelayRaiseOnDrag fail:`+err.code);
@@ -1571,7 +1571,11 @@ export default function windowZindexTest() {
         done();
       } catch (err) {
         console.log(`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
-        expect(err.code == 1300004 || err.code == 801).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(1300004);
+        }
         done();
       }
     });
@@ -1664,7 +1668,7 @@ export default function windowZindexTest() {
      */
     it('testSetResizeByDragEnabledTrue_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledTrueTest_0200';
-      if (isPCStatus != '') {
+      if (isFreeWindowMode === true) {
         try {
           let options: window.SubWindowOptions = {
             title: 'subWindow',
@@ -1694,7 +1698,6 @@ export default function windowZindexTest() {
             }).catch((err: BusinessError) => {
               if (err.code == 801) {
                 console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-                expect(false).assertFalse();
                 done();
               } else {
                 console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`)
@@ -1725,7 +1728,7 @@ export default function windowZindexTest() {
     it('testSetResizeByDragEnabledFalse_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledFalseTest_0100';
       let windowClass = windowStage.getMainWindowSync()
-      if (isPCStatus != '') {
+      if (isFreeWindowMode === true) {
         try {
           let enabled = false;
           let promise = windowClass.setResizeByDragEnabled(enabled);
@@ -1746,7 +1749,6 @@ export default function windowZindexTest() {
           }).catch((err: BusinessError) => {
             if (err.code == 801) {
               console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-              expect(false).assertFalse();
               done();
             } else {
               console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`)
@@ -1775,7 +1777,7 @@ export default function windowZindexTest() {
      */
     it('testSetResizeByDragEnabledFalse_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledFalseTest_0200';
-      if (isPCStatus != '') {
+      if (isFreeWindowMode === true) {
         let options: window.SubWindowOptions = {
           title: 'subWindow',
           decorEnabled: true
@@ -1790,7 +1792,6 @@ export default function windowZindexTest() {
             subWindowClass.setResizeByDragEnabled(enabled, async (err) => {
               if (err.code == 801) {
                 console.error(`${message}  Capability not supported. Failed to call the API due to limited device capabilities`);
-                expect(false).assertFalse();
                 done();
               } else if (err.code && err.code != 801) {
                 console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`)
@@ -2110,7 +2111,7 @@ export default function windowZindexTest() {
         promise.then(async () => {
           console.info(caseName+ ' Succeeded in setting sub window zLevel');
           await subWindow.destroyWindow();
-          expect(true).assertTrue();
+          
           done();
         }).catch(async (err: BusinessError) => {
           console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
@@ -2147,7 +2148,7 @@ export default function windowZindexTest() {
         promise.then(async () => {
           console.info(caseName+ ' Succeeded in setting sub window zLevel');
           await subWindow.destroyWindow();
-          expect(true).assertTrue();
+          
           done();
         }).catch(async (err: BusinessError) => {
           console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
@@ -2206,6 +2207,64 @@ export default function windowZindexTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number  testGetLastWindowCallbackwithContextUndefined
+     * @tc.name    testGetLastWindowCallbackwithContextUndefined
+     * @tc.desc   调用getLastWindow callback接口，ctx设置为undefined，返回1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetLastWindowCallbackwithContextUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testGetLastWindowCallbackwithContextUndefined';
+      try {
+        window.getLastWindow(undefined, (err: BusinessError, data: window.Window) => {
+          if (err && err.code) {
+            console.error(`${caseName} Failed to get last window. Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(1300002);
+            expect((err.message as string).length > 0).assertTrue();
+            done();
+          } else {
+            console.info(`${caseName} Succeeded in getting last window. Data: ${JSON.stringify(data)}`);
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  testGetLastWindowPromisewithContextUndefined
+     * @tc.name    testGetLastWindowPromisewithContextUndefined
+     * @tc.desc   调用getLastWindow promise接口，ctx设置为undefined，返回1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetLastWindowPromisewithContextUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testGetLastWindowPromisewithContextUndefined';
+      try {
+        window.getLastWindow(undefined).then((data: window.Window) => {
+          console.info(`${caseName} Succeeded in getting last window. Data: ${JSON.stringify(data)}`);
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed to get last window. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1300002);
+          expect((err.message as string).length > 0).assertTrue();
+          done();
+        });
+      } catch (err) {
+        console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
 
 
   })

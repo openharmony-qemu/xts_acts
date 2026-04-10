@@ -55,7 +55,7 @@ const waitUiReadyMs = 1000;
 
 export default function SwiperMinSize() {
   describe('SwiperMinSize', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SwiperMinSize beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

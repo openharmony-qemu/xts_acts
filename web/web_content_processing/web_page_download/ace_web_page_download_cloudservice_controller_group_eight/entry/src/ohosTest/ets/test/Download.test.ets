@@ -62,7 +62,7 @@ export default function Download() {
           expect().message('======> WLAN Network error').assertFail();
           done()
         }
-        if (data.chload >= 800 || data.rssi <= -80) {
+        if (data.chload >= 900 || data.rssi <= -80) {
           expect().message('======> WLAN Network error').assertFail();
           done();
         } else if (data.chload >= 500) {
@@ -167,7 +167,7 @@ export default function Download() {
      */
     it("testWebView_setDownloadDelegate1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("startDownload1", 130860);
-      Utils.registerBaseEvent('testWebView_setDownloadDelegate1004', '17100002URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.', 130910, done,
+      Utils.registerBaseEvent('testWebView_setDownloadDelegate1004', '17100002URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.', 130910, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

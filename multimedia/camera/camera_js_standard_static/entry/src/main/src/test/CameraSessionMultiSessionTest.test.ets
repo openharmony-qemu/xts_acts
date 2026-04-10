@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,8 +24,8 @@ import { BusinessError } from '@ohos.base';
 
 const TAG = "CameraSessionMultiSessionTest: ";
 
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> = [];
 
 export default function cameraSessionMultiSessionTest() {
 
@@ -43,7 +43,7 @@ export default function cameraSessionMultiSessionTest() {
 
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     if (mCameraDevicesArray == undefined) {
       console.info(TAG + "getSupportedCameras FAILED");
       return false;
@@ -55,22 +55,22 @@ export default function cameraSessionMultiSessionTest() {
 
   describe('CameraSessionMultiSessionTest', () => {
     console.info(TAG + '----------CameraSessionMultiSessionTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getCameraManagerInstance();
-      mCameraManager.offCameraStatus();
-      mCameraManager.offTorchStatusChange();
+      mCameraManager!.offCameraStatus();
+      mCameraManager!.offTorchStatusChange();
       getCameraSupportDevicesArray();
       console.info('beforeAll case');
       await Utils.msSleep(500);
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(100);
       console.info('beforeEach case');
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info('afterEach case');
       await Utils.msSleep(100);
     })
@@ -90,13 +90,13 @@ export default function cameraSessionMultiSessionTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100--------------");
-      let cameraInput: cameraObj.CameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[0]);
+      let cameraInput: cameraObj.CameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[0]);
       let cameraConcurrentInfos: Array<cameraObj.CameraConcurrentInfo> = [];
-      cameraConcurrentInfos = mCameraManager.getCameraConcurrentInfos(mCameraDevicesArray);
+      cameraConcurrentInfos = mCameraManager!.getCameraConcurrentInfos(mCameraDevicesArray);
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100 cameraConcurrentInfos = "+ JSON.stringify(cameraConcurrentInfos));
       if (cameraConcurrentInfos.length > 0) {
         await cameraInput.open(cameraObj.CameraConcurrentType.CAMERA_LIMITED_CAPABILITY);
-        let firstSession: cameraObj.PhotoSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+        let firstSession: cameraObj.PhotoSession = mCameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
         if (firstSession == null || firstSession === undefined) {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100 create first session FAILED");
           expect().assertFail();
@@ -104,13 +104,13 @@ export default function cameraSessionMultiSessionTest() {
         }
         try {
           firstSession.beginConfig();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100 first session beginConfig FAILED" + err.code);
           expect().assertFail();
           done();
         }
 
-        let secondSession: cameraObj.PhotoSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+        let secondSession: cameraObj.PhotoSession = mCameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
         if (secondSession == null || secondSession === undefined) {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100 create second session FAILED");
           expect().assertFail();
@@ -118,7 +118,7 @@ export default function cameraSessionMultiSessionTest() {
         }
         try {
           secondSession.beginConfig();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100 second session beginConfig FAILED" + err.code);
           expect().assertFail();
           done();
@@ -144,7 +144,7 @@ export default function cameraSessionMultiSessionTest() {
     it('SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_STATIC_0100--------------");
       let isTriggerStatusCallback = false;
-      mCameraManager.onCameraStatus((err: BusinessError | null, data: cameraObj.CameraStatusInfo | undefined) => {
+      mCameraManager!.onCameraStatus((err: BusinessError | null, data: cameraObj.CameraStatusInfo | undefined) => {
         if (!err || err!.code == 0) {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_STATIC_0100 camera:" +
           JSON.stringify(data!.camera));
@@ -158,7 +158,7 @@ export default function cameraSessionMultiSessionTest() {
         }
       })
       await Utils.msSleep(500);
-      mCameraManager.offCameraStatus();
+      mCameraManager!.offCameraStatus();
       expect(isTriggerStatusCallback).assertTrue();
       done();
     })
@@ -174,7 +174,7 @@ export default function cameraSessionMultiSessionTest() {
     it('SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_STATIC_0100--------------");
       let isTriggerTorchStatusCallback = false;
-      mCameraManager.onTorchStatusChange((err: BusinessError | null, data: cameraObj.TorchStatusInfo | undefined) => {
+      mCameraManager!.onTorchStatusChange((err: BusinessError | null, data: cameraObj.TorchStatusInfo | undefined) => {
         if (!err || err!.code == 0) {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_STATIC_0100 status:" +
           JSON.stringify(data));
@@ -186,7 +186,7 @@ export default function cameraSessionMultiSessionTest() {
         }
       })
       await Utils.msSleep(500);
-      mCameraManager.offTorchStatusChange();
+      mCameraManager!.offTorchStatusChange();
       expect(isTriggerTorchStatusCallback).assertTrue();
       done();
     })

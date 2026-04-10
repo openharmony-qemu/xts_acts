@@ -1417,6 +1417,31 @@ static napi_value OHPhotoOutputUnregisterCallback(napi_env env, napi_callback_in
     napi_create_int32(env, code, &result);
     return result;
 }
+static napi_value OHPhotoOutputIsMovingPhotoSupported(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = g_ndkCamera->IsMovingPhotoSupported(index);
+
+    napi_value movingPhoto = nullptr;
+    napi_create_object(env, &movingPhoto);
+    napi_value jsValue = nullptr;
+
+    bool isMovingPhoto = g_ndkCamera->isMovingPhotoSupported_;
+    napi_get_boolean(env, isMovingPhoto, &jsValue);
+    napi_set_named_property(env, movingPhoto, "isMovingPhotoSupported", jsValue);
+
+    napi_create_int32(env, code, &jsValue);
+    napi_set_named_property(env, movingPhoto, "errorCode", jsValue);
+
+    return movingPhoto;
+}
 static napi_value OHPhotoOutputIsMirrorSupported(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -1718,6 +1743,8 @@ napi_property_descriptor desc3[] = {
     {"oHPhotoOutputRegisterCallback", nullptr, OHPhotoOutputRegisterCallback, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"oHPhotoOutputUnregisterCallback", nullptr, OHPhotoOutputUnregisterCallback, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHPhotoOutputIsMovingPhotoSupported", nullptr, OHPhotoOutputIsMovingPhotoSupported, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"oHPhotoOutputIsMirrorSupported", nullptr, OHPhotoOutputIsMirrorSupported, nullptr, nullptr, nullptr,
      napi_default, nullptr},

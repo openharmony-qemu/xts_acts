@@ -84,7 +84,7 @@ export default function FocusOnTouchTest() {
      */
 
     describe("FocusOnTouchTest", () => {
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             console.info("FocusOnTouchTest beforeEach start");
 
             

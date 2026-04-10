@@ -38,7 +38,7 @@ let tag: string = 'testTag';
 
 export default function checkBoxGroupSelectAllJsunit() {
   describe('checkBoxGroupSelectAllTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
@@ -113,7 +113,7 @@ it('testcheckBoxGroupSelectAll_static_0002', Level.LEVEL0, async () => {
         }
         console.info("[testcheckBoxGroupSelectAll0002] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testcheckBoxGroupSelectAll0002] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

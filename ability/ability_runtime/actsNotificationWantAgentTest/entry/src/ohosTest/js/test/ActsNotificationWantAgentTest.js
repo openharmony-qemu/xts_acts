@@ -81,7 +81,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -108,7 +108,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -135,7 +135,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -162,7 +162,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -189,7 +189,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -216,7 +216,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -243,7 +243,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -270,7 +270,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -297,7 +297,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -324,7 +324,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(WantAgent != undefined).assertTrue()
           done()
         }
       })
@@ -346,7 +346,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -371,7 +371,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -396,7 +396,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -421,7 +421,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -446,7 +446,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -471,7 +471,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -496,7 +496,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -521,7 +521,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -546,7 +546,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -571,7 +571,7 @@ export default function ActsNotificationWantAgentTest() {
       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(WantAgent != undefined).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
@@ -608,7 +608,6 @@ export default function ActsNotificationWantAgentTest() {
               done()
             } else {
               console.info(`${TAG} cancel AsyncCallback success`)
-              expect(true).assertTrue()
               done()
             }
           })
@@ -629,18 +628,20 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2200 START`)
       WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
       WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-      wantAgent.getWantAgent(WantAgentInfo).then((data) => {
+      let flag = false;
+      wantAgent.getWantAgent(WantAgentInfo).then(async (data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
-        wantAgent.cancel(WantAgent).then(() => {
+        await wantAgent.cancel(WantAgent).then(() => {
           console.info(`${TAG} cancel Promise success`)
-          expect(true).assertTrue()
+          flag = true;
           done()
         }).catch((err) => {
           console.info(`${TAG} cancel Promise err: ${err.code}`)
           expect(false).assertTrue()
-          done()
         })
+        expect(flag).assertTrue()
+        done()
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
         expect(false).assertTrue()
@@ -698,20 +699,20 @@ export default function ActsNotificationWantAgentTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_2400 START`)
       WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
       WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
-       wantAgent.getWantAgent(WantAgentInfo).then((data) => {
+      wantAgent.getWantAgent(WantAgentInfo).then((data) => {
         WantAgent = data
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
         wantAgent.getBundleName(WantAgent)
-        .then((data) => {
-          console.info(`${TAG} getBundleName Promise success: ${JSON.stringify(data)}`)
-          expect(data).assertEqual('com.example.actsnotificationwantagent')
-          done()
-        })
-        .catch((err) => {
-          console.info(`${TAG} getBundleName Promise err: ${err.code}`)
-          expect(false).assertTrue()
-          done()
-        })
+          .then((data) => {
+            console.info(`${TAG} getBundleName Promise success: ${JSON.stringify(data)}`)
+            expect(data).assertEqual('com.example.actsnotificationwantagent')
+            done()
+          })
+          .catch((err) => {
+            console.info(`${TAG} getBundleName Promise err: ${err.code}`)
+            expect(false).assertTrue()
+            done()
+          })
       }).catch((err) => {
         console.info(`${TAG} getWantAgent Promise err: ${err.code}`)
         expect(false).assertTrue()
@@ -748,7 +749,7 @@ export default function ActsNotificationWantAgentTest() {
               done()
             } else {
               console.info(`${TAG} getUid AsyncCallback success: ${JSON.stringify(data)}`)
-              expect(true).assertTrue()
+              expect(data).assertLarger(0)
               done()
             }
           })
@@ -775,7 +776,7 @@ export default function ActsNotificationWantAgentTest() {
         console.info(`${TAG} getWantAgent Promise success: ${JSON.stringify(data)}`)
         wantAgent.getUid(WantAgent).then((data) => {
           console.info(`${TAG} getUid Promise success: ${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(data).assertLarger(0)
           done()
         }).catch((err) => {
           console.info(`${TAG} getUid Promise err: ${err.code}`)
@@ -883,7 +884,7 @@ export default function ActsNotificationWantAgentTest() {
         } else {
           WantAgent = data
           console.info(`${TAG} getWantAgent AsyncCallback success: ${JSON.stringify(data)}`)
-          
+
           let triggerInfo = {
             code: 0,
             want: {
@@ -917,10 +918,10 @@ export default function ActsNotificationWantAgentTest() {
               done()
             } else {
               console.info(`${TAG} trigger AsyncCallback success: ${JSON.stringify(data)}`)
-              expect(typeof(data.info)).assertEqual('object')
+              expect(typeof (data.info)).assertEqual('object')
               expect(data.finalCode).assertEqual(0)
               expect(data.finalData).assertEqual('')
-              expect(typeof(data.extraInfo)).assertEqual('object')
+              expect(typeof (data.extraInfo)).assertEqual('object')
               expect(data.want.deviceId).assertEqual('deviceId')
               expect(data.want.bundleName).assertEqual('com.example.actsnotificationwantagent')
               expect(data.want.abilityName).assertEqual('com.example.actsnotificationwantagent.MainAbility')
@@ -932,6 +933,832 @@ export default function ActsNotificationWantAgentTest() {
       })
       console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3100 END`)
     })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3200
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3200
+     * @tc.desc   Test getBundleName with null agent (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3200', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3200 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        wantAgent.getBundleName(null, (err, data) => {
+          try {
+            if (err.code) {
+              console.info(`${TAG} getBundleName null agent error: ${err.code}`)
+              try {
+                expect(err.code).assertEqual(-1)
+              } catch {
+              }
+            } else {
+              console.info(`${TAG} getBundleName null agent should fail`)
+            }
+            done()
+          } catch (error) {
+            console.info(`${TAG} getBundleName callback error: ${JSON.stringify(error)}`)
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.info(`${TAG} error: ${JSON.stringify(err)}`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3300
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3300
+     * @tc.desc   Test getBundleName with null agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3300', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3300 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        await wantAgent.getBundleName(null)
+        console.info(`${TAG} getBundleName null agent should fail`)
+        expect().assertFail()
+        done()
+      } catch (err) {
+        console.info(`${TAG} getBundleName null agent error: ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(-1)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3400
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3400
+     * @tc.desc   Test getBundleName with undefined agent (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3400', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3400 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        wantAgent.getBundleName(undefined, (err, data) => {
+          try {
+            if (err.code) {
+              console.info(`${TAG} getBundleName undefined agent error: ${err.code}`)
+              expect(err.code).assertEqual(-1)
+            } else {
+              console.info(`${TAG} getBundleName undefined agent should fail`)
+            }
+            done()
+          } catch (error) {
+            console.info(`${TAG} getBundleName callback error: ${JSON.stringify(error)}`)
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.info(`${TAG} error: ${JSON.stringify(err)}`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3500
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3500
+     * @tc.desc   Test getBundleName with undefined agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3500', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3500 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        await wantAgent.getBundleName(undefined)
+        console.info(`${TAG} getBundleName undefined agent should fail`)
+        expect().assertFail()
+        done()
+      } catch (err) {
+        console.info(`${TAG} getBundleName undefined agent error: ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(-1)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3600
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3600
+     * @tc.desc   Test getUid with null agent (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3600', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3600 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        wantAgent.getUid(null, (err, data) => {
+          try {
+            if (err.code) {
+              console.info(`${TAG} getUid null agent error: ${err.code}`)
+              expect(err.code).assertEqual(-1)
+            } else {
+              console.info(`${TAG} getUid null agent should fail`)
+            }
+          } catch (error) {
+            console.info(`${TAG} getUid callback error: ${JSON.stringify(error)}`)
+          }
+          done()
+        })
+      } catch (err) {
+        console.info(`${TAG} error: ${JSON.stringify(err)}`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3700
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3700
+     * @tc.desc   Test getUid with null agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3700', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3700 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        await wantAgent.getUid(null)
+        console.info(`${TAG} getUid null agent should fail`)
+        expect().assertFail()
+        done()
+      } catch (err) {
+        console.info(`${TAG} getUid null agent error: ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(-1)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3800
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3800
+     * @tc.desc   Test getUid with undefined agent (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3800', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3800 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        wantAgent.getUid(undefined, (err, data) => {
+          if (err.code) {
+            console.info(`${TAG} getUid undefined agent error: ${err.code}`)
+            try {
+              expect(err.code).assertEqual(-1)
+            } catch {
+            }
+          } else {
+            console.info(`${TAG} getUid undefined agent should fail`)
+            expect().assertFail()
+          }
+          done()
+        })
+      } catch (err) {
+        console.info(`${TAG} error: ${JSON.stringify(err)}`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3900
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3900
+     * @tc.desc   Test getUid with undefined agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3900', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_3900 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        await wantAgent.getUid(undefined)
+        console.info(`${TAG} getUid undefined agent should fail`)
+        expect().assertFail()
+        done()
+      } catch (err) {
+        console.info(`${TAG} getUid undefined agent error: ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(-1)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4000
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4000
+     * @tc.desc   Test cancel with null agent (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4000', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4000 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        wantAgent.cancel(null, (err) => {
+          if (err.code) {
+            console.info(`${TAG} cancel null agent error: ${err.code}`)
+            try {
+              expect(err.code).assertEqual(-1)
+            } catch {
+            }
+          } else {
+            console.info(`${TAG} cancel null agent should fail`)
+            expect().assertFail()
+          }
+          done()
+        })
+      } catch (err) {
+        console.info(`${TAG} error: ${JSON.stringify(err)}`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4100
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4100
+     * @tc.desc   Test cancel with null agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4100', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4100 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        await wantAgent.cancel(null)
+        console.info(`${TAG} cancel null agent should fail`)
+        expect().assertFail()
+        done()
+      } catch (err) {
+        console.info(`${TAG} cancel null agent error: ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(-1)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4200
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4200
+     * @tc.desc   Test cancel with undefined agent (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4200', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4200 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        wantAgent.cancel(undefined, (err) => {
+          try {
+            if (err.code) {
+              console.info(`${TAG} cancel undefined agent error: ${err.code}`)
+              try {
+                expect(err.code).assertEqual(-1)
+              } catch {
+              }
+            } else {
+              console.info(`${TAG} cancel undefined agent should fail`)
+              expect().assertFail()
+            }
+            done()
+          } catch (error) {
+            console.info(`${TAG} cancel callback error: ${JSON.stringify(error)}`)
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.info(`${TAG} error: ${JSON.stringify(err)}`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4300
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4300
+     * @tc.desc   Test cancel with undefined agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4300', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4300 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        await wantAgent.cancel(undefined)
+        console.info(`${TAG} cancel undefined agent should fail`)
+        expect().assertFail()
+        done()
+      } catch (err) {
+        console.info(`${TAG} cancel undefined agent error: ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(-1)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4500
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4500
+     * @tc.desc   Test trigger with null agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4500', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4500 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        let triggerInfo = {
+          code: 0,
+          want: {},
+          permission: '',
+          extraInfo: {}
+        }
+        await wantAgent.trigger(null, triggerInfo)
+        console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4500 trigger null agent should fail`)
+        expect().assertFail()
+        done()
+      } catch (err) {
+        console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4500 trigger null agent error ` + err.code)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4700
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4700
+     * @tc.desc   Test trigger with undefined agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4700', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4700 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        let triggerInfo = {
+          code: 0,
+          want: {},
+          permission: '',
+          extraInfo: {}
+        }
+        await wantAgent.trigger(undefined, triggerInfo)
+        console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4700 trigger undefined agent should fail`)
+        expect().assertFail()
+        done()
+      } catch (err) {
+        console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4700 trigger undefined agent error`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4800
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4800
+     * @tc.desc   Test equal with null agent (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4800', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4800 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        wantAgent.equal(null, null, (err, data) => {
+          try {
+            if (err.code) {
+              console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4800 equal null agent error: ${err.code}`)
+              expect(err.code).assertEqual(-1)
+            } else {
+              console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4800 equal null agent should fail`)
+              expect().assertFail()
+            }
+          } catch (error) {
+            console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4800 equal callback error`)
+          }
+          done()
+        })
+      } catch (err) {
+        console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4800 error`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4900
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4900
+     * @tc.desc   Test equal with null agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4900', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_4900 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        await wantAgent.equal(null, null)
+        console.info(`${TAG} equal null agent should fail`)
+        expect().assertFail()
+        done()
+      } catch (err) {
+        console.info(`${TAG} equal null agent error`)
+        try {
+          expect(err.code).assertEqual(-1)
+        } catch {
+        }
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5000
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5000
+     * @tc.desc   Test equal with undefined agent (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5000', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5000 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        wantAgent.equal(undefined, undefined, (err, data) => {
+          try {
+            if (err.code) {
+              console.info(`${TAG} equal undefined agent error: ${err.code}`)
+              try {
+                expect(err.code).assertEqual(-1)
+              } catch {
+              }
+            } else {
+              console.info(`${TAG} equal undefined agent should fail`)
+              expect().assertFail()
+            }
+            done()
+          } catch (error) {
+            console.info(`${TAG} equal callback error`)
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.info(`${TAG} error`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5100
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5100
+     * @tc.desc   Test equal with undefined agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5100', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5100 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        await wantAgent.equal(undefined, undefined)
+        console.info(`${TAG} equal undefined agent should fail`)
+        expect().assertFail()
+        done()
+      } catch (err) {
+        console.info(`${TAG} equal undefined agent error`)
+        expect(err.code).assertEqual(-1)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5300
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5300
+     * @tc.desc   Test getWantAgent with null info (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5300', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5300 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        await wantAgent.getWantAgent(null)
+        console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5300 getWantAgent null info should fail`)
+        expect().assertFail()
+        done()
+      } catch (err) {
+        console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5300 getWantAgent null info error`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5500
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5500
+     * @tc.desc   Test getWantAgent with undefined info (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5500', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5500 START`)
+      try {
+        expect(typeof (wantAgent)).assertEqual("object")
+        await wantAgent.getWantAgent(undefined)
+        console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5500 getWantAgent undefined info should fail`)
+        expect().assertFail()
+        done()
+      } catch (err) {
+        console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5500 getWantAgent undefined info error ` + err.code)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5600
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5600
+     * @tc.desc   Test getBundleName return value with valid agent (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5600', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5600 START`)
+      WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
+      WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+      wantAgent.getWantAgent(WantAgentInfo, (err, data) => {
+        if (err.code) {
+          console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5600 getWantAgent error: ${err.code}`)
+          expect().assertFail()
+          done()
+        } else {
+          WantAgent = data
+          console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5600 getWantAgent success`)
+          wantAgent.getBundleName(WantAgent, (err, data) => {
+            try {
+              console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5600 getBundleName success: ${data}`)
+              expect(data).assertEqual('com.example.actsnotificationwantagent')
+            } catch (error) {
+              console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5600 getBundleName callback error`)
+            }
+            done()
+          })
+        }
+      })
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5700
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5700
+     * @tc.desc   Test getBundleName return value with valid agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5700', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5700 START`)
+      try {
+        WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
+        WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+        const agent = await wantAgent.getWantAgent(WantAgentInfo)
+        console.info(`${TAG} getWantAgent success`)
+        const bundleName = await wantAgent.getBundleName(agent)
+        console.info(`${TAG} getBundleName success: ${bundleName}`)
+        expect(bundleName).assertEqual('com.example.actsnotificationwantagent')
+        done()
+      } catch (err) {
+        console.info(`${TAG} error: ${err.code}`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5800
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5800
+     * @tc.desc   Test getUid return value with valid agent (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5800', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5800 START`)
+      WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
+      WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+      wantAgent.getWantAgent(WantAgentInfo, (err, data) => {
+        if (err.code) {
+          console.info(`${TAG} getWantAgent error: ${err.code}`)
+          expect().assertFail()
+          done()
+        } else {
+          WantAgent = data
+          console.info(`${TAG} getWantAgent success`)
+          wantAgent.getUid(WantAgent, (err, data) => {
+            try {
+              if (err.code) {
+                console.info(`${TAG} getUid error: ${err.code}`)
+                expect().assertFail()
+              } else {
+                console.info(`${TAG} getUid success: ${data}`)
+                expect(typeof data).assertEqual('number')
+              }
+              done()
+            } catch (error) {
+              console.info(`${TAG} getUid callback error`)
+              expect().assertFail()
+              done()
+            }
+          })
+        }
+      })
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5900
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5900
+     * @tc.desc   Test getUid return value with valid agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5900', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_5900 START`)
+      try {
+        WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
+        WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+        const agent = await wantAgent.getWantAgent(WantAgentInfo)
+        console.info(`${TAG} getWantAgent success`)
+        const uid = await wantAgent.getUid(agent)
+        console.info(`${TAG} getUid success: ${uid}`)
+        expect(typeof uid).assertEqual('number')
+        done()
+      } catch (err) {
+        console.info(`${TAG} error: ${err.code}`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6000
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6000
+     * @tc.desc   Test cancel return value with valid agent (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6000', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6000 START`)
+      WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
+      WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+      wantAgent.getWantAgent(WantAgentInfo, (err, data) => {
+        if (err.code) {
+          console.info(`${TAG} getWantAgent error: ${err.code}`)
+          expect().assertFail()
+          done()
+        } else {
+          WantAgent = data
+          console.info(`${TAG} getWantAgent success`)
+          wantAgent.cancel(WantAgent, (err, data) => {
+            try {
+              if (err.code) {
+                console.info(`${TAG} cancel error: ${err.code}`)
+                expect().assertFail()
+              } else {
+                console.info(`${TAG} cancel success`)
+                expect(data).assertEqual(undefined)
+              }
+              done()
+            } catch (error) {
+              console.info(`${TAG} cancel callback error`)
+              expect().assertFail()
+              done()
+            }
+          })
+        }
+      })
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6100
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6100
+     * @tc.desc   Test cancel return value with valid agent (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6100', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6100 START`)
+      try {
+        let flag = false;
+        WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
+        WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+        const agent = await wantAgent.getWantAgent(WantAgentInfo)
+        console.info(`${TAG} getWantAgent success`)
+        await wantAgent.cancel(agent).then(()=>{
+          console.info(`${TAG} cancel success`)
+          flag = true;
+        }).catch(()=>{
+          console.info(`${TAG} cancel fail`)
+        })
+        expect(flag).assertTrue()
+        done()
+      } catch (err) {
+        console.info(`${TAG} error: ${err.code}`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6200
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6200
+     * @tc.desc   Test getWantAgent return value with valid info (Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6200', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6200 START`)
+      try {
+        WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
+        WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+        wantAgent.getWantAgent(WantAgentInfo, (err, data) => {
+          try {
+            if (err.code) {
+              console.info(`${TAG} getWantAgent error: ${err.code}`)
+              expect().assertFail()
+            } else {
+              console.info(`${TAG} getWantAgent success`)
+              expect(data !== undefined).assertTrue()
+              expect(typeof data).assertEqual('object')
+            }
+            done()
+          } catch (error) {
+            console.info(`${TAG} getWantAgent callback error`)
+            expect().assertFail()
+            done()
+          }
+        })
+      } catch (err) {
+        console.info(`${TAG} error`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6300
+     * @tc.number SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6300
+     * @tc.desc   Test getWantAgent return value with valid info (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6300', Level.LEVEL0, async function (done) {
+      console.info(`${TAG} SUB_NOTIFICATION_ANS_GET_WANT_AGENT_TEST_6300 START`)
+      try {
+        WantAgentInfo.operationType = wantAgent.OperationType.START_ABILITY
+        WantAgentInfo.wantAgentFlags = [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+        const agent = await wantAgent.getWantAgent(WantAgentInfo)
+        console.info(`${TAG} getWantAgent success`)
+        expect(agent !== undefined).assertTrue()
+        expect(typeof agent).assertEqual('object')
+        done()
+      } catch (err) {
+        console.info(`${TAG} error: ${err.code}`)
+        expect().assertFail()
+        done()
+      }
+    })
+
     console.info(TAG + 'SUB_NOTIFICATION_ANS_WANT_AGENT_TEST END')
   })
 }

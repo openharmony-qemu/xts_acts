@@ -64,13 +64,52 @@ export default function webTwoJsunit() {
      * @tc.desc   test WarmupServiceWorker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWebViewWarmupServiceWorker',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testWebViewWarmupServiceWorker',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("emitWebViewWarmupServiceWorker", 10)
       await Utils.msSleep(2000);
       Utils.registerEvent("testWebViewWarmupServiceWorker", true, 1342, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewWarmupServiceWorker', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+     * @tc.name   testWebViewWarmupServiceWorker02
+     * @tc.number SUB_ACE_WEB_WarmupServiceWorker_API_0002
+     * @tc.desc   test WarmupServiceWorker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebViewWarmupServiceWorker02',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent("emitWebViewWarmupServiceWorker02", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testWebViewWarmupServiceWorker02", "17100002", 13423161, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewWarmupServiceWorker', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+
+    /**
+     * @tc.name   testWebViewWarmupServiceWorker03
+     * @tc.number SUB_ACE_WEB_WarmupServiceWorker_API_0003
+     * @tc.desc   test WarmupServiceWorker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebViewWarmupServiceWorker03',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent("emitWebViewWarmupServiceWorker03", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testWebViewWarmupServiceWorker03", "17100002", 13423162, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewWarmupServiceWorker', 10, '');
       await Utils.msSleep(6000);

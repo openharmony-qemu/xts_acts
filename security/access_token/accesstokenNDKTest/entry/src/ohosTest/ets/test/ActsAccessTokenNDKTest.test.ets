@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,13 +16,16 @@ import hilog from '@ohos.hilog';
 import testNapi from 'libentry.so';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import { On, Driver, ON, Component} from "@ohos.UiTest";
+import { abilityAccessCtrl, PermissionRequestResult, Permissions, common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function ActsAccessTokenNDKTest() {
   describe('ActsAccessTokenNDKTest', () => {
+    let testContext: common.UIAbilityContext;
     
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      
+      testContext = AppStorage.get('context') as common.UIAbilityContext;
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -58,6 +61,28 @@ export default function ActsAccessTokenNDKTest() {
         done();
       } catch (error) {
         console.info("=======>SUB_Access_Token_CheckPermission_0100 catch error：" + error);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Access_Token_CheckPermission_0200
+     * @tc.number SUB_Access_Token_CheckPermission_0200
+     * @tc.desc   Checks whether this application has been granted the given permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Access_Token_CheckPermission_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try{
+        console.info('=======> SUB_Access_Token_CheckPermission_0200 start ==========');
+        let result: boolean = testNapi.osCheckSelfPermissionB('ohos.permission.GET_BUNDLE_INFO');
+        console.info('=======>SUB_Access_Token_CheckPermission_0200 result：' + result);
+        expect(result).assertTrue();
+        done();
+      } catch (error) {
+        console.info('=======>SUB_Access_Token_CheckPermission_0200 catch error：' + error);
         expect(false).assertTrue();
         done();
       }

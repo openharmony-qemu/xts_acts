@@ -107,7 +107,7 @@ struct Common_ts_ets_apiStaticClear {
         .textOverflow({ overflow: TextOverflow.None })
         .key("EnvPropText")
         .onClick((e: ClickEvent) => {
-          let enable: boolean | undefined = AppStorage.get("accessibilityEnabled");
+          let enable: boolean | undefined = AppStorage.get<Boolean>("accessibilityEnabled");
           try {
             let backData: events_emitter.EventData = {
               data: {
@@ -120,7 +120,7 @@ struct Common_ts_ets_apiStaticClear {
             }
             console.info("PersistProp start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("PersistProp emit action state err: " + JSON.stringify((err as Error)?.message))
           }
 
@@ -153,7 +153,7 @@ struct Common_ts_ets_apiStaticClear {
             }
             console.info("PersistProp start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("PersistProp emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

@@ -48,7 +48,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function List_strokeWidth() {
   describe('List_strokeWidth', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("List_strokeWidth beforeAll start");
             
       await UtilsTest.msSleep(4000)

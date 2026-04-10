@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function searchEnterKeyTypeTest() {
   describe('searchEnterKeyTypeTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("searchEnterKeyTypeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")
@@ -98,7 +98,7 @@ it('searchEnterKeyType_static_0100', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -142,7 +142,7 @@ it('searchEnterKeyType_static_0200', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -186,7 +186,7 @@ it('searchEnterKeyType_static_0300', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -230,7 +230,7 @@ it('searchEnterKeyType_static_0400', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -274,7 +274,7 @@ it('searchEnterKeyType_static_0500', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -318,7 +318,7 @@ it('searchEnterKeyType_static_0600', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -361,7 +361,7 @@ it('searchEnterKeyType_static_0700', Level.LEVEL1, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -403,7 +403,7 @@ it('searchEnterKeyType_static_0800', Level.LEVEL1, async (done: () => void): Pro
           }
           console.info('[' + tagName + '] start to publish emit');
           events_emitter.emit(innerEvent, eventData);
-        } catch (err:Error) {
+        } catch (err) {
           console.log('[' + tagName + '] change component data error: ' + err.message);
         }
         CommonFunc.sleep(2000);

@@ -24,7 +24,7 @@ export default function buttonFontColorTest() {
 
   describe('ButtonFontColorTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_ani_test.static", "EntryAbility");
     });
 

@@ -29,7 +29,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
- 
+
 export default function LayoutChildrenTest() {
   describe('LayoutChildrenTest', () => {
     beforeEach(async (done: Function) => {
@@ -40,10 +40,10 @@ export default function LayoutChildrenTest() {
       try {
         router.clear();
         let pages = router.getState();
+        let result = await router.replaceUrl(options);
         console.info("get LayoutChildrenTest state pages: " + JSON.stringify(pages));
         if (!("frameNode" == pages.name)) {
           console.info("get LayoutChildrenTest state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
           console.info("push LayoutChildrenTest success: " + JSON.stringify(result));
         }
@@ -53,7 +53,12 @@ export default function LayoutChildrenTest() {
       }
       done();
     });
- 
+    afterEach(async () => {
+      await CommonFunc.sleep(1000);
+      console.info('BindControllerErrorCodeTest after each called');
+    });
+
+
     /**
      * @tc.name   LayoutChildrenTest_0100
      * @tc.number LayoutChildrenTest_0100
@@ -69,26 +74,36 @@ export default function LayoutChildrenTest() {
       let btn = await driver.findComponent(ON.id('Button1'));
       await btn.click();
       await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('Button3'));
+      let btn1 = await driver.findComponent(ON.id('Button5'));
       await btn1.click();
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('layoutChildrenState')).assertEqual('onLayoutChildrenByID');
-      AppStorage.delete('layoutChildrenState')
-      let btn2 = await driver.findComponent(ON.id('Button2'));
+      let strJson = getInspectorByKey('initid2');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('LayoutChildrenTest_0100 component obj is: ' + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('init11');
+      let btn2 = await driver.findComponent(ON.id('Button3'));
       await btn2.click();
-      let btn3 = await driver.findComponent(ON.id('Button3'));
+      let btn3 = await driver.findComponent(ON.id('Button5'));
       await btn3.click();
+      console.info("click btn3 complete")
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('layoutChildrenState')).assertEqual('offLayoutChildrenByID');
-      AppStorage.delete('layoutChildrenState')
+      strJson = getInspectorByKey('initid2');
+      let obj2: ESObject = JSON.parse(strJson);
+      console.info('LayoutChildrenTest_0100 component obj2 is: ' + obj2.$attrs.content);
+      expect(obj2.$attrs.content).assertEqual('init11');
+      let strJson1 = getInspectorByKey('initid1');
+      let obj1: ESObject = JSON.parse(strJson1);
+      console.info('LayoutChildrenTest_0100 component obj1 is: ' + obj1.$attrs.content);
+      expect(obj1.$attrs.content).assertEqual('offLayoutChildrenByID');
       console.info('[LayoutChildrenTest_0100] END');
       done();
     });
 
+
     /**
      * @tc.name   LayoutChildrenTest_0200
      * @tc.number LayoutChildrenTest_0200
-     * @tc.desc   api23
+     * @tc.desc   api
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -99,19 +114,41 @@ export default function LayoutChildrenTest() {
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('Button1'));
       await btn.click();
-      await CommonFunc.sleep(500);
-      let btn1 = await driver.findComponent(ON.id('Button3'));
-      await btn1.click();
-      await CommonFunc.sleep(500);
-      expect(AppStorage.get('layoutChildrenState')).assertEqual('onLayoutChildrenByID');
-      AppStorage.delete('layoutChildrenState')
-      let btn2 = await driver.findComponent(ON.id('Button4'));
-      await btn2.click();
-      let btn3 = await driver.findComponent(ON.id('Button3'));
-      await btn3.click();
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('layoutChildrenState')).assertEqual('offLayoutChildrencomplete');
-      AppStorage.delete('layoutChildrenState')
+      let btn1 = await driver.findComponent(ON.id('Button2'));
+      await btn1.click();
+      await CommonFunc.sleep(1000);
+      let btn2 = await driver.findComponent(ON.id('Button5'));
+      await btn2.click();
+      await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('initid2');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('LayoutChildrenTest_0200 component obj is: ' + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('init11');
+      let strJson1 = getInspectorByKey('initid3');
+      let obj1: ESObject = JSON.parse(strJson1);
+      console.info('LayoutChildrenTest_0200 component obj1 is: ' + obj1.$attrs.content);
+      expect(obj1.$attrs.content).assertEqual('init21');
+      let btn3 = await driver.findComponent(ON.id('Button4'));
+      await btn3.click();
+      console.info("click btn3 complete")
+      await CommonFunc.sleep(500);
+      let btn4 = await driver.findComponent(ON.id('Button5'));
+      await btn4.click();
+      console.info("click btn4 complete")
+      await CommonFunc.sleep(1000);
+      strJson = getInspectorByKey('initid2');
+      obj = JSON.parse(strJson);
+      console.info('LayoutChildrenTest_0200 component obj is: ' + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('init11');
+      strJson1 = getInspectorByKey('initid3');
+      obj1 = JSON.parse(strJson1);
+      console.info('LayoutChildrenTest_0200 component obj1 is: ' + obj1.$attrs.content);
+      expect(obj1.$attrs.content).assertEqual('init21');
+      let strJson2 = getInspectorByKey('initid1');
+      let obj2: ESObject = JSON.parse(strJson2);
+      console.info('LayoutChildrenTest_0200 component obj2 is: ' + obj2.$attrs.content);
+      expect(obj2.$attrs.content).assertEqual('offLayoutChildrencomplete');
       console.info('[LayoutChildrenTest_0200] END');
       done();
     });

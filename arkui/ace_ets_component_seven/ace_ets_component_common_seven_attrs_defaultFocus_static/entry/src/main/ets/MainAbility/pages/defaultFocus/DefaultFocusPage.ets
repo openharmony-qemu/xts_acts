@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,228 +37,222 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: BadgeAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: BlankAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: ButtonAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: CheckboxAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: ColumnAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: CounterAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: DataPanelAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: DatePickerAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: DividerAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: EffectComponentAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: FlexAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: FlowItemAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: FormComponentAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mDefaultFocus: boolean = true
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-   instance.defaultFocus(this.mDefaultFocus)
-  }
-}
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: GaugeAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: GridAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: GridColAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: GridItemAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: GridRowAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: HyperlinkAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: ImageSpanAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: ImageAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: ListAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: ListItemAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: MarqueeAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: MenuAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: MenuItemAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: NavDestinationAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: NavigationAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
@@ -276,205 +270,205 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: PatternLockAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: PluginComponentAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: QRCodeAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: RadioAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: RatingAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: RefreshAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: RichEditorAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: RichTextAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: RowAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: RowSplitAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: ScrollAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: ScrollBarAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: SearchAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: SelectAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: SliderAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: StackAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: SwiperAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: TabContentAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: TabsAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: TextAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: TextAreaAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: TextClockAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: TextInputAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: TextPickerAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: TextTimerAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: TimePickerAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: ToggleAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: WaterFlowAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: WebAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mDefaultFocus: boolean = true
   applyNormalAttribute(instance: XComponentAttribute): void {
    instance.defaultFocus(this.mDefaultFocus)
@@ -502,7 +496,6 @@ struct defaultFocusPage {
   @State _defaultFocusFlexMod: FlexModifier = new FlexModifier()
   @State _defaultFocusFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _defaultFocusFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _defaultFocusFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _defaultFocusGaugeMod: GaugeModifier = new GaugeModifier()
   @State _defaultFocusGridMod: GridModifier = new GridModifier()
   @State _defaultFocusGridColMod: GridColModifier = new GridColModifier()
@@ -596,7 +589,6 @@ struct defaultFocusPage {
       this._defaultFocusFlexMod.mDefaultFocus = value.defaultFocus
       this._defaultFocusFlowItemMod.mDefaultFocus = value.defaultFocus
       this._defaultFocusFormComponentMod.mDefaultFocus = value.defaultFocus
-      this._defaultFocusFormLinkMod.mDefaultFocus = value.defaultFocus
       this._defaultFocusGaugeMod.mDefaultFocus = value.defaultFocus
       this._defaultFocusGridMod.mDefaultFocus = value.defaultFocus
       this._defaultFocusGridColMod.mDefaultFocus = value.defaultFocus

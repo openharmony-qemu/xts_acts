@@ -23,22 +23,28 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
 let PERMISSION_TEXT:string = "允许";
 let OPEN_BT_TEXT:string = "开启";
 let hidDevice: hid.HidDeviceProfile;
+let deviceId: common.BluetoothAddress = {
+    "address": "11:22:33:44:55:66",
+    "addressType": common.BluetoothAddressType.REAL,
+    "rawAddressType": common.BluetoothRawAddressType.PUBLIC
+};
+let deviceId1: common.BluetoothAddress = {
+    "address": "11:22:33:44:55:66",
+    "addressType": common.BluetoothAddressType.VIRTUAL,
+    "rawAddressType": common.BluetoothRawAddressType.RANDOM
+};
+let deviceId2: common.BluetoothAddress = {
+    "address": "11:22:33:44:55:66",
+    "addressType": common.BluetoothAddressType.VIRTUAL
+};
+let deviceId401: common.BluetoothAddress = {
+    "address": "11:22:33",
+    "addressType": common.BluetoothAddressType.VIRTUAL,
+};
 function sleep(delay : number) : Promise<void> {
     return new Promise(resolve => setTimeout(resolve, delay));
 }
-async function openPhone() {
-    try{
-        let drivers = Driver.create();
-        console.info('[bluetooth_js] bt driver create:'+ drivers);            
-        await drivers.delayMs(1000);
-        await drivers.wakeUpDisplay();
-        await drivers.delayMs(5000);
-        await drivers.swipe(1500, 1000, 1500, 100);
-        await drivers.delayMs(10000);
-    } catch (error) {
-        console.info('[bluetooth_js] driver error info:'+ error);
-    }
-}
+
 async function tryToEnableBt() {
     let sta = btAccess.getState();
     switch (sta) {
@@ -90,10 +96,6 @@ async function clickRequestPermission(text:string) {
 }
 function onReceiveEvent_void(){
     console.info('[bluetooth_js] BLEscan device result_viod');
-}
-function onReceiveEvent_boolean(data : boolean){
-    console.info('[bluetooth_js]hid registerHidDevice result'+ JSON.stringify(data));
-    expect(data).assertTrue();
 }
 function onReceiveEvent_GetReportData(data : hid.GetReportData){
     console.info('[bluetooth_js]hid on/offGetReport result'+ JSON.stringify(data));
@@ -174,6 +176,194 @@ let inqos: hid.HidDeviceQos = {
     "latency": -1,
     "delayVariation": -1,
 };
+let sdp1: hid.HidDeviceSdp = {
+    "name": "testName",
+    "description": "testDescription",
+    "provider": "testProvoder",
+    "subclass": hid.Subclass.SUBCLASS_UNCATEGORIZED,
+    "descriptors": descriptors,
+};
+let sdp2: hid.HidDeviceSdp = {
+    "name": "testName",
+    "description": "testDescription",
+    "provider": "testProvoder",
+    "subclass": hid.Subclass.SUBCLASS_JOYSTICK,
+    "descriptors": descriptors,
+};
+let sdp3: hid.HidDeviceSdp = {
+    "name": "testName",
+    "description": "testDescription",
+    "provider": "testProvoder",
+    "subclass": hid.Subclass.SUBCLASS_GAMEPAD,
+    "descriptors": descriptors,
+};
+let sdp4: hid.HidDeviceSdp = {
+    "name": "testName",
+    "description": "testDescription",
+    "provider": "testProvoder",
+    "subclass": hid.Subclass.SUBCLASS_REMOTE_CONTROL,
+    "descriptors": descriptors,
+};
+let sdp5: hid.HidDeviceSdp = {
+    "name": "testName",
+    "description": "testDescription",
+    "provider": "testProvoder",
+    "subclass": hid.Subclass.SUBCLASS_SENSING_DEVICE,
+    "descriptors": descriptors,
+};
+let sdp6: hid.HidDeviceSdp = {
+    "name": "testName",
+    "description": "testDescription",
+    "provider": "testProvoder",
+    "subclass": hid.Subclass.SUBCLASS_DIGITIZER_TABLET,
+    "descriptors": descriptors,
+};
+let sdp7: hid.HidDeviceSdp = {
+    "name": "testName",
+    "description": "testDescription",
+    "provider": "testProvoder",
+    "subclass": hid.Subclass.SUBCLASS_CARD_READER,
+    "descriptors": descriptors,
+};
+let sdp8: hid.HidDeviceSdp = {
+    "name": "testName",
+    "description": "testDescription",
+    "provider": "testProvoder",
+    "subclass": hid.Subclass.SUBCLASS_MOUSE,
+    "descriptors": descriptors,
+};
+let sdp9: hid.HidDeviceSdp = {
+    "name": "testName",
+    "description": "testDescription",
+    "provider": "testProvoder",
+    "subclass": hid.Subclass.SUBCLASS_COMBO,
+    "descriptors": descriptors,
+};
+
+let inqos1: hid.HidDeviceQos = {
+    "serviceType": hid.ServiceType.SERVICE_NO_TRAFFIC,
+    "tokenRate": 0,
+    "tokenBucketSize": 0,
+    "peakBandwidth": 0,
+    "latency": -1,
+    "delayVariation": -1,
+};
+let inqos2: hid.HidDeviceQos = {
+    "serviceType": hid.ServiceType.SERVICE_GUARANTEED,
+    "tokenRate": 0,
+    "tokenBucketSize": 0,
+    "peakBandwidth": 0,
+    "latency": -1,
+    "delayVariation": -1,
+};
+function registerHidDeviceAsync1(): Promise<boolean> {
+	return new Promise((resolve,reject) => {
+		const timeout = setTimeout(() => {
+			reject(new Error("[bluetooth_js]registerHidDeviceAsync timeout"));
+		}, 20000);
+		hidDevice.registerHidDevice(sdp1, inqos1, outqos,(data: boolean) => {
+			clearTimeout(timeout)
+			console.info('[bluetooth_js] registerHidDeviceAsync success'+ JSON.stringify(data));
+			resolve(data);
+		});
+	});
+}
+function registerHidDeviceAsync2(): Promise<boolean> {
+	return new Promise((resolve,reject) => {
+		const timeout = setTimeout(() => {
+			reject(new Error("[bluetooth_js]registerHidDeviceAsync timeout"));
+		}, 20000);
+		hidDevice.registerHidDevice(sdp2, inqos2, outqos,(data: boolean) => {
+			clearTimeout(timeout)
+			console.info('[bluetooth_js] registerHidDeviceAsync success'+ JSON.stringify(data));
+			resolve(data);
+		});
+	});
+}
+function registerHidDeviceAsync3(): Promise<boolean> {
+	return new Promise((resolve,reject) => {
+		const timeout = setTimeout(() => {
+			reject(new Error("[bluetooth_js]registerHidDeviceAsync timeout"));
+		}, 20000);
+		hidDevice.registerHidDevice(sdp3, inqos2, outqos,(data: boolean) => {
+			clearTimeout(timeout)
+			console.info('[bluetooth_js] registerHidDeviceAsync success'+ JSON.stringify(data));
+			resolve(data);
+		});
+	});
+}
+function registerHidDeviceAsync4(): Promise<boolean> {
+	return new Promise((resolve,reject) => {
+		const timeout = setTimeout(() => {
+			reject(new Error("[bluetooth_js]registerHidDeviceAsync timeout"));
+		}, 20000);
+		hidDevice.registerHidDevice(sdp4, inqos1, outqos,(data: boolean) => {
+			clearTimeout(timeout)
+			console.info('[bluetooth_js] registerHidDeviceAsync success'+ JSON.stringify(data));
+			resolve(data);
+		});
+	});
+}
+function registerHidDeviceAsync5(): Promise<boolean> {
+	return new Promise((resolve,reject) => {
+		const timeout = setTimeout(() => {
+			reject(new Error("[bluetooth_js]registerHidDeviceAsync timeout"));
+		}, 20000);
+		hidDevice.registerHidDevice(sdp5, inqos2, outqos,(data: boolean) => {
+			clearTimeout(timeout)
+			console.info('[bluetooth_js] registerHidDeviceAsync success'+ JSON.stringify(data));
+			resolve(data);
+		});
+	});
+}
+function registerHidDeviceAsync6(): Promise<boolean> {
+	return new Promise((resolve,reject) => {
+		const timeout = setTimeout(() => {
+			reject(new Error("[bluetooth_js]registerHidDeviceAsync timeout"));
+		}, 20000);
+		hidDevice.registerHidDevice(sdp6, inqos1, outqos,(data: boolean) => {
+			clearTimeout(timeout)
+			console.info('[bluetooth_js] registerHidDeviceAsync success'+ JSON.stringify(data));
+			resolve(data);
+		});
+	});
+}
+function registerHidDeviceAsync7(): Promise<boolean> {
+	return new Promise((resolve,reject) => {
+		const timeout = setTimeout(() => {
+			reject(new Error("[bluetooth_js]registerHidDeviceAsync timeout"));
+		}, 20000);
+		hidDevice.registerHidDevice(sdp7, inqos2, outqos,(data: boolean) => {
+			clearTimeout(timeout)
+			console.info('[bluetooth_js] registerHidDeviceAsync success'+ JSON.stringify(data));
+			resolve(data);
+		});
+	});
+}
+function registerHidDeviceAsync8(): Promise<boolean> {
+	return new Promise((resolve,reject) => {
+		const timeout = setTimeout(() => {
+			reject(new Error("[bluetooth_js]registerHidDeviceAsync timeout"));
+		}, 20000);
+		hidDevice.registerHidDevice(sdp8, inqos1, outqos,(data: boolean) => {
+			clearTimeout(timeout)
+			console.info('[bluetooth_js] registerHidDeviceAsync success'+ JSON.stringify(data));
+			resolve(data);
+		});
+	});
+}
+function registerHidDeviceAsync9(): Promise<boolean> {
+	return new Promise((resolve,reject) => {
+		const timeout = setTimeout(() => {
+			reject(new Error("[bluetooth_js]registerHidDeviceAsync timeout"));
+		}, 20000);
+		hidDevice.registerHidDevice(sdp9, inqos2, outqos,(data: boolean) => {
+			clearTimeout(timeout)
+			console.info('[bluetooth_js] registerHidDeviceAsync success'+ JSON.stringify(data));
+			resolve(data);
+		});
+	});
+}
 let outqos: hid.HidDeviceQos = {};
 
 function registerHidDeviceAsync(): Promise<boolean> {
@@ -188,12 +378,21 @@ function registerHidDeviceAsync(): Promise<boolean> {
         });
     });
 }
+let unregisterHidDeviceaftereach = async () => {
+    console.info('unregisterHidDevice after each:');
+    try {
+        hidDevice.unregisterHidDevice();
+        console.info("[bluetooth_js]afterEach unregisterHidDevice is success ");
+    } catch (err) {
+        console.info("[bluetooth_js]rk板不支持" + JSON.stringify(err.code));
+        expect(Number(err.code)).assertEqual(801);
+    }
+}
 export default function btHidTest() {
 describe('btHidTest', () => {
     beforeAll(async (done : Function) =>  {
         console.info('beforeAll called')
         await clickRequestPermission(PERMISSION_TEXT);
-        await openPhone();
         hidDevice = hid.createHidDeviceProfile();
         console.info('[bluetooth_js]beforeAll createHidDeviceProfile success'+ JSON.stringify(hidDevice));
         done();
@@ -205,12 +404,13 @@ describe('btHidTest', () => {
     })
     afterEach(async (done : Function) =>  {
         console.info('afterEach called')
-        hidDevice.unregisterHidDevice();
-        console.info("[bluetooth_js]afterEach unregisterHidDevice is success ");
+        await unregisterHidDeviceaftereach();
         done();
     })
-    afterAll(() => {
-        console.info('afterAll called')
+    afterAll(async (done : Function) =>  {
+        console.info('afterAll called');
+        await tryToEnableBt();
+        done();
     })
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ENUMVALUE_0100
@@ -218,7 +418,7 @@ describe('btHidTest', () => {
      * @tc.desc   Test Subclass EnumValue api23.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ENUMVALUE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -264,7 +464,7 @@ describe('btHidTest', () => {
      * @tc.desc   Test ReportType EnumValue api23.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ENUMVALUE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -290,7 +490,7 @@ describe('btHidTest', () => {
      * @tc.desc   Test ServiceType EnumValue api23.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ENUMVALUE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -315,7 +515,7 @@ describe('btHidTest', () => {
      * @tc.desc   Test ErrorReason EnumValue api23.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ENUMVALUE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -349,7 +549,7 @@ describe('btHidTest', () => {
      * @tc.desc   Test ProtocolType EnumValue api23.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ENUMVALUE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         try {
@@ -366,14 +566,14 @@ describe('btHidTest', () => {
         done();
     })
     /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ENUMVALUE_3300
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ENUMVALUE_3300
-     * @tc.desc   Test ReportType EnumValue api23.
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_APPID_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_APPID_0100
+     * @tc.desc   Test 此用例用于查看测试套HAP是都有APPID.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL4
      */
-     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_ENUMVALUE_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_APPID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_SIGNATURE_INFO;
         try {
             bundleManager.getBundleInfoForSelf(bundleFlags).then((bundleInfo:bundleManager.BundleInfo) => {
@@ -393,18 +593,18 @@ describe('btHidTest', () => {
      * @tc.desc   Test function createHidDeviceProfile(): HidDeviceProfile;api23.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_CREAT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             hidDevice = hid.createHidDeviceProfile();
             console.info("[bluetooth_js]hid createHidDeviceProfile is success ");
-            expect(true).assertEqual(hidDevice != null);
+            expect(hidDevice != null).assertTrue();
         } catch (err) {
             console.error("[bluetooth_js]hid createHidDeviceProfile is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            if (Number(err.code) == 801) {
-                console.info("RK板 is not support.");
-                expect(Number(err.code)).assertTrue(801);
+            if (Number(err.code) === 801) {
+                console.info("设备 is not support.");
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect().assertFail();
             }
@@ -412,56 +612,6 @@ describe('btHidTest', () => {
         done();
     })
 
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0100
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0100
-     * @tc.desc   Test 注册 /去注册 -正常场景api23.normal
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            let result: boolean = await registerHidDeviceAsync();
-            console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
-            expect(result).assertTrue();
-            hidDevice.unregisterHidDevice();
-            console.info("[bluetooth_js]hid unregisterHidDevice is success ");
-        } catch (err) {
-            console.error("[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            if (Number(err.code) == 801) {
-                console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
-            } else {
-                expect().assertFail();
-            }
-        }
-        done();
-    })
-
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_HIDPROFILE_0300
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_HIDPROFILE_0300
-     * @tc.desc   Test unregisterHidDevice(): void; api23.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-     it('SUB_COMMUNICATION_BLUETOOTH_BASEPROFILE_HIDPROFILE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-        try {
-            hidDevice.unregisterHidDevice();
-            console.info("[bluetooth_js]hid unregisterHidDevice is success ");
-        } catch (err) {
-            console.error("[bluetooth_js]hid unregisterHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            if (Number(err.code) == 801) {
-                console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
-            } else {
-                expect().assertFail();
-            }
-        }
-        done();
-    })
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOR_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOR_0100
@@ -472,19 +622,14 @@ describe('btHidTest', () => {
      */
      it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
-			let deviceId: common.BluetoothAddress = {
-				"address": "11:22:33:44:55:66",
-				"addressType": common.BluetoothAddressType.REAL,
-                "rawAddressType": common.BluetoothRawAddressType.PUBLIC
-			};
             hidDevice.connect(deviceId);
             console.info("[bluetooth_js]hid connect is success ");
             expect().assertFail();
         } catch (err) {
             console.error("[bluetooth_js]hid connect is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            if (Number(err.code) == 801) {
+            if (Number(err.code) === 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2903052);
             }
@@ -495,7 +640,7 @@ describe('btHidTest', () => {
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOR_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOR_0200
-     * @tc.desc   Test disconnect() 未注册 2903052 api23.
+     * @tc.desc   Test disconnect 未注册 2903052 api23.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -507,9 +652,9 @@ describe('btHidTest', () => {
             expect().assertFail();
         } catch (err) {
             console.error("[bluetooth_js]hid disconnect is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            if (Number(err.code) == 801) {
+            if (Number(err.code) === 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2903052);
             }
@@ -533,9 +678,9 @@ describe('btHidTest', () => {
             expect().assertFail();
         } catch (err) {
             console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            if (Number(err.code) == 801) {
+            if (Number(err.code) === 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2903052);
             }
@@ -560,9 +705,9 @@ describe('btHidTest', () => {
             expect().assertFail();
         } catch (err) {
             console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            if (Number(err.code) == 801) {
+            if (Number(err.code) === 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2903052);
             }
@@ -585,9 +730,9 @@ describe('btHidTest', () => {
             expect().assertFail();
         } catch (err) {
             console.error("[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            if (Number(err.code) == 801) {
+            if (Number(err.code) === 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2903052);
             }
@@ -595,15 +740,388 @@ describe('btHidTest', () => {
         done();
     })
 
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RR_0500
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RR_0500
-     * @tc.desc   Test registerHidDevice  api23.重复注册2903051
+	/**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOC_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOC_0100
+     * @tc.desc   Test sendReport 已注册未连接 2903053 api23.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RR_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+			let result: boolean = await registerHidDeviceAsync1();
+			console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+            expect(result).assertTrue();
+			let id: number = 1;
+			let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+            hidDevice.sendReport(id,reportData);
+            console.info("[bluetooth_js]hid sendReport is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903053);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOC_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOC_0200
+     * @tc.desc   Test replyReport 已注册未连接 2903053 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+			let result: boolean = await registerHidDeviceAsync2();
+			console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+            expect(result).assertTrue();
+			let type1: hid.ReportType = hid.ReportType.REPORT_TYPE_INPUT;
+			let id: number = 1;
+			let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+            hidDevice.replyReport(type1,id,reportData);
+            console.info("[bluetooth_js]hid replyReport is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903053);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOC_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOC_0300
+     * @tc.desc   Test reportError 已注册未连接 2903053 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let result: boolean = await registerHidDeviceAsync3();
+            console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+            expect(result).assertTrue();
+			let error: hid.ErrorReason = hid.ErrorReason.RSP_SUCCESS;
+            hidDevice.reportError(error);
+            console.info("[bluetooth_js]hid reportError is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903053);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0100
+     * @tc.desc   Test 注册 /去注册 -正常场景api23.normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let result: boolean = await registerHidDeviceAsync();
+            console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+            expect(result).assertTrue();
+        } catch (err) {
+            console.error("[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0200
+     * @tc.desc   Test unregisterHidDevice(): void; api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            hidDevice.unregisterHidDevice();
+            console.info("[bluetooth_js]hid unregisterHidDevice is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]hid unregisterHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
+        }
+        done();
+    })
+
+	/**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0300
+     * @tc.desc   Test connect 已注册 连接 正常场景 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let result: boolean = await registerHidDeviceAsync4();
+            console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));	
+			hidDevice.connect(deviceId);
+            console.info("[bluetooth_js]hid connect is success ");
+            await sleep(1000);
+			hidDevice.disconnect();
+            console.info("[bluetooth_js]hid disconnect is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903053);
+            }
+        }
+        done();
+    })
+
+	/**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0400
+     * @tc.desc   Test sendReport 已注册已连接 正常场景 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let result: boolean = await registerHidDeviceAsync5();
+		    console.info("[bluetooth_js]hid registerHidDevice is success "+ JSON.stringify(result));
+            hidDevice.connect(deviceId);
+            console.info("[bluetooth_js]hid connect is success ");
+			let id: number = 1;
+			let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+            hidDevice.sendReport(id,reportData);
+            console.info("[bluetooth_js]hid sendReport is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903053);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_ADD_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_ADD_0100
+     * @tc.desc   Test sendReport 已注册已连接 正常场景 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+        let result: boolean = await registerHidDeviceAsync5();
+        console.info("[bluetooth_js]hid registerHidDevice is success "+ JSON.stringify(result));
+        hidDevice.connect(deviceId);
+        console.info("[bluetooth_js]hid connect is success ");
+        let id: number = 1;
+        let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+        hidDevice.sendReport(null,reportData);
+        console.info("[bluetooth_js]hid sendReport is success ");
+        } catch (err) {
+        console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+        if (Number(err.code) === 801) {
+            console.info("设备（除手机外） is not support.");
+            expect(Number(err.code)).assertEqual(801);
+        } else {
+            expect(Number(err.code)).assertEqual(401);
+        }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_ADD_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_ADD_0200
+     * @tc.desc   Test sendReport 已注册已连接 正常场景 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+        let result: boolean = await registerHidDeviceAsync5();
+        console.info("[bluetooth_js]hid registerHidDevice is success "+ JSON.stringify(result));
+        hidDevice.connect(deviceId);
+        console.info("[bluetooth_js]hid connect is success ");
+        let id: number = 1;
+        let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+        hidDevice.sendReport(undefined,reportData);
+        console.info("[bluetooth_js]hid sendReport is success ");
+        } catch (err) {
+        console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+        if (Number(err.code) === 801) {
+            console.info("设备（除手机外） is not support.");
+            expect(Number(err.code)).assertEqual(801);
+        } else {
+            expect(Number(err.code)).assertEqual(401);
+        }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_ADD_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_ADD_0300
+     * @tc.desc   Test sendReport 已注册已连接 正常场景 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+        let result: boolean = await registerHidDeviceAsync5();
+        console.info("[bluetooth_js]hid registerHidDevice is success "+ JSON.stringify(result));
+        hidDevice.connect(deviceId);
+        console.info("[bluetooth_js]hid connect is success ");
+        let id: number = 1;
+        let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+        hidDevice.sendReport(id,null);
+        console.info("[bluetooth_js]hid sendReport is success ");
+        } catch (err) {
+        console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+        if (Number(err.code) === 801) {
+            console.info("设备（除手机外） is not support.");
+            expect(Number(err.code)).assertEqual(801);
+        } else {
+            expect(Number(err.code)).assertEqual(401);
+        }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_ADD_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_ADD_0400
+     * @tc.desc   Test sendReport 已注册已连接 正常场景 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+        let result: boolean = await registerHidDeviceAsync5();
+        console.info("[bluetooth_js]hid registerHidDevice is success "+ JSON.stringify(result));
+        hidDevice.connect(deviceId);
+        console.info("[bluetooth_js]hid connect is success ");
+        let id: number = 1;
+        let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+        hidDevice.sendReport(id,undefined);
+        console.info("[bluetooth_js]hid sendReport is success ");
+        } catch (err) {
+        console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+        if (Number(err.code) === 801) {
+            console.info("设备（除手机外） is not support.");
+            expect(Number(err.code)).assertEqual(801);
+        } else {
+            expect(Number(err.code)).assertEqual(401);
+        }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0500
+     * @tc.desc   Test replyReport 已注册已连接 正常场景 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let result: boolean = await registerHidDeviceAsync6();
+            console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+            hidDevice.connect(deviceId);
+            console.info("[bluetooth_js]hid connect is success ");
+			let type1: hid.ReportType = hid.ReportType.REPORT_TYPE_INPUT;
+			let id: number = 1;
+			let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+            hidDevice.replyReport(type1,id,reportData);
+            console.info("[bluetooth_js]hid replyReport is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903053);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0600
+     * @tc.desc   Test reportError 已注册已连接 正常场景 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NORMAL_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let result: boolean = await registerHidDeviceAsync7();
+		    console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+            hidDevice.connect(deviceId);
+            console.info("[bluetooth_js]hid connect is success ");
+            let error: hid.ErrorReason = hid.ErrorReason.RSP_SUCCESS;
+            hidDevice.reportError(error);
+            console.info("[bluetooth_js]hid reportError is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903053);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RR_0600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RR_0600
+     * @tc.desc   Test registerHidDevice 重复注册2903051 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             let result: boolean = await registerHidDeviceAsync();
             let result2: boolean = await registerHidDeviceAsync();
@@ -611,10 +1129,10 @@ describe('btHidTest', () => {
             console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result2));
             expect().assertFail();
         } catch (err) {
-            console.error("[bluetooth_js]hid unregisterHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);            
-            if (Number(err.code) == 801) {
+            console.error("[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);            
+            if (Number(err.code) === 801) {
                 console.info("设备（除手机外） is not support.");
-                expect(Number(err.code)).assertTrue(801);
+                expect(Number(err.code)).assertEqual(801);
             } else {
                 expect(Number(err.code)).assertEqual(2903051);
             }
@@ -815,6 +1333,561 @@ describe('btHidTest', () => {
             expect().assertFail();
         }
         done();
-    })    
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0100
+     * @tc.desc   Test reportError 枚举值参数覆盖 未注册 2903052 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+			let error: hid.ErrorReason = hid.ErrorReason.RSP_NOT_READY;
+            hidDevice.reportError(error);
+            console.info("[bluetooth_js]hid reportError is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903052);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0200
+     * @tc.desc   Test reportError 枚举值参数覆盖 未注册 2903052 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+			let error: hid.ErrorReason = hid.ErrorReason.RSP_INVALID_REPORT_ID;
+            hidDevice.reportError(error);
+            console.info("[bluetooth_js]hid reportError is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903052);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0300
+     * @tc.desc   Test reportError 枚举值参数覆盖 未注册 2903052 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+			let error: hid.ErrorReason = hid.ErrorReason.RSP_UNSUPPORTED_REQ;
+            hidDevice.reportError(error);
+            console.info("[bluetooth_js]hid reportError is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903052);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0400
+     * @tc.desc   Test reportError 枚举值参数覆盖 未注册 2903052 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+			let error: hid.ErrorReason = hid.ErrorReason.RSP_INVALID_PARAM;
+            hidDevice.reportError(error);
+            console.info("[bluetooth_js]hid reportError is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903052);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0500
+     * @tc.desc   Test reportError 枚举值参数覆盖 未注册 2903052 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+			let error: hid.ErrorReason = hid.ErrorReason.RSP_UNKNOWN;
+            hidDevice.reportError(error);
+            console.info("[bluetooth_js]hid reportError is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903052);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0600
+     * @tc.desc   Test reportError 参数NULL 401 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            hidDevice.reportError(null);
+            console.info("[bluetooth_js]hid reportError is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(401);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0700
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0700
+     * @tc.desc   Test reportError 参数NULL 401 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            hidDevice.reportError(undefined);
+            console.info("[bluetooth_js]hid reportError is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(401);
+            }
+        }
+        done();
+    })
+
+
+	/**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0800
+     * @tc.desc   Test  已注册 connect 入参错误 401 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {			
+            let result: boolean = await registerHidDeviceAsync();
+		    console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+			hidDevice.connect(deviceId401);
+            console.info("[bluetooth_js]hid connect is success ");
+            await sleep(1000);
+			hidDevice.disconnect();
+            console.info("[bluetooth_js]hid disconnect is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(401);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0900
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0900
+     * @tc.desc   Test replyReport 参数覆盖 未注册 2903052 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+			let type: hid.ReportType = hid.ReportType.REPORT_TYPE_OUTPUT;
+			let id: number = 1;
+			let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+            hidDevice.replyReport(type,id,reportData);
+            console.info("[bluetooth_js]hid replyReport is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903052);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1000
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1000
+     * @tc.desc   Test replyReport 参数覆盖 未注册 2903052 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+			let type: hid.ReportType = hid.ReportType.REPORT_TYPE_FEATURE;
+			let id: number = 1;
+			let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+            hidDevice.replyReport(type,id,reportData);
+            console.info("[bluetooth_js]hid replyReport is success ");
+            expect().assertFail();
+        } catch (err) {
+            console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2903052);
+            }
+        }
+        done();
+    })
+
+	/**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1100
+     * @tc.desc   Test connect 参数为virtual时，转为真实地址失败，返回2900099 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let result: boolean = await registerHidDeviceAsync();
+		    console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));		
+			hidDevice.connect(deviceId1);
+            console.info("[bluetooth_js]hid connect is success ");
+            await sleep(1000);
+			hidDevice.disconnect();
+            console.info("[bluetooth_js]hid disconnect is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+        }
+        done();
+    })
+	/**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1200
+     * @tc.desc   Test connect 参数为virtual时，转为真实地址失败，返回2900099 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let result: boolean = await registerHidDeviceAsync();
+		    console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));		
+			hidDevice.connect(deviceId2);
+            console.info("[bluetooth_js]hid connect is success ");
+            await sleep(1000);
+			hidDevice.disconnect();
+            console.info("[bluetooth_js]hid disconnect is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+        }
+        done();
+    })
+	/**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1300
+     * @tc.desc   Test 已注册 connect 参数报错 401 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let result: boolean = await registerHidDeviceAsync();
+		    console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+			hidDevice.connect(deviceId401);
+            console.info("[bluetooth_js]hid connect is success ");
+            await sleep(1000);
+			hidDevice.disconnect();
+            console.info("[bluetooth_js]hid disconnect is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect(Number(err.code)).assertEqual(401);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1600
+     * @tc.desc   Test 已注册 connect 参数报错 401 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+          let result: boolean = await registerHidDeviceAsync();
+          console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+          hidDevice.connect(null);
+          console.info("[bluetooth_js]hid connect is success ");
+        } catch (err) {
+          console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+          if (Number(err.code) === 801) {
+            console.info("设备（除手机外） is not support.");
+            expect(Number(err.code)).assertEqual(801);
+          } else {
+            expect(Number(err.code)).assertEqual(401);
+          }
+        }
+        done();
+      })
+      /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1700
+       * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1700
+       * @tc.desc   Test 已注册 connect 参数报错 401 api23.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+          let result: boolean = await registerHidDeviceAsync();
+          console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+          hidDevice.connect(undefined);
+          console.info("[bluetooth_js]hid connect is success ");
+        } catch (err) {
+          console.error("[bluetooth_js]hid sendReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+          if (Number(err.code) === 801) {
+            console.info("设备（除手机外） is not support.");
+            expect(Number(err.code)).assertEqual(801);
+          } else {
+            expect(Number(err.code)).assertEqual(401);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1400
+     * @tc.desc   Test 注册 参数覆盖 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let result: boolean = await registerHidDeviceAsync8();
+            console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+            expect(result).assertTrue();
+        } catch (err) {
+            console.error("[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1500
+     * @tc.desc   Test 注册 参数覆盖 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            let result: boolean = await registerHidDeviceAsync9();
+            console.info("[bluetooth_js]hid registerHidDevice 0100 is success "+ JSON.stringify(result));
+            expect(result).assertTrue();
+        } catch (err) {
+            console.error("[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) === 801) {
+                console.info("设备（除手机外） is not support.");
+                expect(Number(err.code)).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1800
+     * @tc.desc   Test replyReport 参数覆盖 未注册 2903052 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+        let type: hid.ReportType = hid.ReportType.REPORT_TYPE_FEATURE;
+        let id: number = 1;
+        let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+        hidDevice.replyReport(type,null,reportData);
+        console.info("[bluetooth_js]hid replyReport is success ");
+        expect().assertFail();
+        } catch (err) {
+        console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+        if (Number(err.code) === 801) {
+            console.info("设备（除手机外） is not support.");
+            expect(Number(err.code)).assertEqual(801);
+        } else {
+            expect(Number(err.code)).assertEqual(401);
+        }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1900
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1900
+     * @tc.desc   Test replyReport 参数覆盖 未注册 2903052 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+        let type: hid.ReportType = hid.ReportType.REPORT_TYPE_FEATURE;
+        let id: number = 1;
+        let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+        hidDevice.replyReport(type,undefined,reportData);
+        console.info("[bluetooth_js]hid replyReport is success ");
+        expect().assertFail();
+        } catch (err) {
+        console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+        if (Number(err.code) === 801) {
+            console.info("设备（除手机外） is not support.");
+            expect(Number(err.code)).assertEqual(801);
+        } else {
+            expect(Number(err.code)).assertEqual(401);
+        }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_2000
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_2000
+     * @tc.desc   Test replyReport 参数覆盖 未注册 2903052 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+        let type: hid.ReportType = hid.ReportType.REPORT_TYPE_FEATURE;
+        let id: number = 1;
+        let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+        hidDevice.replyReport(type,id,null);
+        console.info("[bluetooth_js]hid replyReport is success ");
+        expect().assertFail();
+        } catch (err) {
+        console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+        if (Number(err.code) === 801) {
+            console.info("设备（除手机外） is not support.");
+            expect(Number(err.code)).assertEqual(801);
+        } else {
+            expect(Number(err.code)).assertEqual(401);
+        }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_2100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_2100
+     * @tc.desc   Test replyReport 参数覆盖 未注册 2903052 api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+        let type: hid.ReportType = hid.ReportType.REPORT_TYPE_FEATURE;
+        let id: number = 1;
+        let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
+        hidDevice.replyReport(type,id,undefined);
+        console.info("[bluetooth_js]hid replyReport is success ");
+        expect().assertFail();
+        } catch (err) {
+        console.error("[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
+        if (Number(err.code) === 801) {
+            console.info("设备（除手机外） is not support.");
+            expect(Number(err.code)).assertEqual(801);
+        } else {
+            expect(Number(err.code)).assertEqual(401);
+        }
+        }
+        done();
+    })
+
  })
 }

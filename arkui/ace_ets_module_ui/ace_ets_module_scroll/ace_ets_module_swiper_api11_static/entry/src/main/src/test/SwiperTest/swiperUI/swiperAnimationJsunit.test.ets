@@ -64,7 +64,7 @@ export interface Data2 {
 
 export default function swiperAnimationJsunit() {
   describe('swiperAnimationJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperAnimationJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

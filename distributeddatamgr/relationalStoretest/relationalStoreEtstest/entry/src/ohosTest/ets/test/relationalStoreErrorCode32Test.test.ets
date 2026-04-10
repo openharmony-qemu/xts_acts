@@ -188,6 +188,7 @@ export default function relationalStoreErrorCode32Test() {
         if (err) {
           console.error(TAG + `batchInsert is failed, code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(14800032);
+          done();
         }
         console.info(TAG + `batchInsert is successful, the number of values that were inserted = ${insertNum}`);
         done();
@@ -293,6 +294,7 @@ export default function relationalStoreErrorCode32Test() {
         if (err) {
           console.error(TAG + `relationalStoreTest009 Updated failed, code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(14800032);
+          done();
         }
         console.info(TAG + `relationalStoreTest009 Updated row count: ${rows}`);
         done()

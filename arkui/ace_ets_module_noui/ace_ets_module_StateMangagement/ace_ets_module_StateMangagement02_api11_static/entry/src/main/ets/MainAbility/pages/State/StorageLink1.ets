@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,9 +60,9 @@ const router = AppStorage.get<Router>("router") as Router
 AppStorage.clear()
 AppStorage.setOrCreate<Router>('router', router);
 
-enum ABC{A= 1,B=2,C=3}
+export enum ABC{A= 1,B=2,C=3}
 
-class ModelLink1Person {
+export class ModelLink1Person {
   name: string = ''
   age?: number
   sex?: string
@@ -77,10 +77,10 @@ class ModelLink1Person {
   }
 }
 
-interface ModelLink1 {
+export interface ModelLink1 {
   value: string
 }
-class Model {
+export class Model {
   value: string = ''
 
   constructor(value: string) {

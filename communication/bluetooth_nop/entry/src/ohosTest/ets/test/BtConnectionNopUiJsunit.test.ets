@@ -23,7 +23,17 @@ const PARAM_ERROR_CODE = 401
 const OPERATION_FAILED_CODE = 2900099
 const TAG: string = 'BtConnectionTestTag';
 const Domain: number = 0x0000;
-
+function onReceiveEvent_ScanMode_real(data : connection.ScanMode){
+  console.info('[bluetooth_js]hid onReceiveEvent_ScanMode result'+ JSON.stringify(data));
+  if(data === connection.ScanMode.SCAN_MODE_NONE){
+      console.info('[bluetooth_js]hid onReceiveEvent_ScanMode success');
+      expect(data === connection.ScanMode.SCAN_MODE_NONE).assertTrue();
+      connection.offScanModeChange()
+  }else{
+      expect().assertFail();
+      connection.offScanModeChange()
+  }
+}
 export default function btConnectionNopUiJsunit() {
   describe('btConnectionNopUiJsunit', () => {
 
@@ -699,7 +709,65 @@ export default function btConnectionNopUiJsunit() {
         expect(true).assertFalse();
       } catch (e) {
         hilog.error(Domain, TAG, `setLocalName promise error, error code is: ${e.code}, error message is: ${e.message}`);
-        expect(Number(e.code)).assertEqual(PERMISSION_DENIED_CODE);
+        if (Number(e.code) === 801) {
+          console.info('[bluetooth_js] RK板 is not support');
+          expect(Number(e.code) == 801).assertTrue();
+        } else {
+          console.info('[bluetooth_js] PERMISSION_DENIED_CODE 201');
+          expect(Number(e.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
+      }
+      done();
+    })
+    /**
+ 	      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTION_NOP_0100
+ 	      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTION_NOP_0100
+ 	      * @tc.desc   Test setLocalName api10
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL3
+ 	      */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTION_NOP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+      try {
+        let oldScanMode = connection.getBluetoothScanMode();
+        console.info('[bluetooth_js] ScanMode_0300 oldScanMode = '+ JSON.stringify(oldScanMode));
+        connection.onScanModeChange(onReceiveEvent_ScanMode_real);
+        connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_NONE,0);
+        console.info("[bluetooth_js]connection on/offScanModeChange  is success ");
+        expect(true).assertFalse();
+      } catch (e) {
+        console.error("[bluetooth_js]connection on/offScanModeChange is fail , errCode:" + e.code + ",errMessage:" + e.message);
+        if (Number(e.code) === 801) {
+          console.info('[bluetooth_js] RK板 is not support');
+          expect(Number(e.code) == 801).assertTrue();
+        } else {
+          console.info('[bluetooth_js] PERMISSION_DENIED_CODE 201');
+          expect(Number(e.code)).assertEqual(PERMISSION_DENIED_CODE);
+        }
+      }
+      done();
+    })
+   /**
+    * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTION_HASH_NOP_0100
+    * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTION_HASH_NOP_0100
+    * @tc.desc   Test setLocalName api10
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONNECTION_HASH_NOP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+      let hashValue: string = "c10b57deb2e1aafd255596e0d4fd6789";
+      try {
+        let addr: string = connection.getVirtualAddressByHash(connection.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue)
+        expect().assertFail();
+      } catch (e) {
+        if (e.code === 801) {
+          console.info('[bluetooth_js] RK板 is not support');
+          expect(e.code === 801).assertTrue();
+        } else {
+          console.info('[bluetooth_js] getVirtualAddressByHash fail 201');
+          expect(e.code).assertEqual(201);
+        }
       }
       done();
     })

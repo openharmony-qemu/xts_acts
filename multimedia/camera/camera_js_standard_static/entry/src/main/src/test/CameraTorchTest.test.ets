@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 
 const TAG = "CameraModuleTest: ";
 
-let mCameraManager: camera.CameraManager;
+let mCameraManager: camera.CameraManager | undefined;
 let mCameraDevicesArray: Array<camera.CameraDevice>;
 let mCameraNum: number;
 
@@ -45,7 +45,7 @@ export default function cameraTorchTest() {
   let getCameraSupportDevicesArray = () => {
     hilog.info(0x0000, 'testTag', 'Enter getCameraSupportDevicesArray');
 
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     /*
     mCameraManager.getSupportedCameras(async (err, data) => {
         hilog.info(0x0000, 'testTag', TAG + "Entering getCameraSupportDevicesArray callback");
@@ -79,7 +79,7 @@ export default function cameraTorchTest() {
     hilog.info(0x0000, 'testTag', 'Enter getCameraManagerInstance');
     let appContext: Context = Hypium.get("Context") as Context;
     mCameraManager = camera.getCameraManager(appContext);
-    if (isEmpty01(mCameraManager)) {
+    if (isEmpty01(mCameraManager!)) {
       hilog.info(0x0000, 'testTag', TAG + "getCameraManager FAILED");
       return false;
     }
@@ -121,14 +121,14 @@ export default function cameraTorchTest() {
         done();
       } else {
         try {
-          let isTorchSupportedStatus = mCameraManager.isTorchSupported();
+          let isTorchSupportedStatus = mCameraManager!.isTorchSupported();
           hilog.info(0x0000, 'testTag', `${TAG} isTorchSupportedStatus: ${isTorchSupportedStatus}`);
           if (isTorchSupportedStatus) {
-            let isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.ON);
+            let isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.ON);
             hilog.info(0x0000, 'testTag', `${TAG} isTorchModeSupported: ${isTorchModeSupported}`);
             if (isTorchModeSupported) {
-              mCameraManager.setTorchMode(camera.TorchMode.ON);
-              let torchMode = mCameraManager.getTorchMode()
+              mCameraManager!.setTorchMode(camera.TorchMode.ON);
+              let torchMode = mCameraManager!.getTorchMode()
               hilog.info(0x0000, 'testTag', `${TAG} torchMode: ${torchMode}`);
               expect(torchMode === camera.TorchMode.ON).assertTrue()
             }
@@ -157,14 +157,14 @@ export default function cameraTorchTest() {
         done();
       } else {
         try {
-          let isTorchSupportedStatus = mCameraManager.isTorchSupported();
+          let isTorchSupportedStatus = mCameraManager!.isTorchSupported();
           hilog.info(0x0000, 'testTag', `${TAG} isTorchSupportedStatus: ${isTorchSupportedStatus}`);
           if (isTorchSupportedStatus) {
-            let isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.OFF);
+            let isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.OFF);
             hilog.info(0x0000, 'testTag', `${TAG} isTorchModeSupported: ${isTorchModeSupported}`);
             if (isTorchModeSupported) {
-              mCameraManager.setTorchMode(camera.TorchMode.OFF);
-              let torchMode = mCameraManager.getTorchMode()
+              mCameraManager!.setTorchMode(camera.TorchMode.OFF);
+              let torchMode = mCameraManager!.getTorchMode()
               hilog.info(0x0000, 'testTag', `${TAG} torchMode: ${torchMode}`);
               expect(torchMode === camera.TorchMode.OFF).assertTrue()
             }
@@ -193,14 +193,14 @@ export default function cameraTorchTest() {
         done();
       } else {
         try {
-          let isTorchSupportedStatus = mCameraManager.isTorchSupported();
+          let isTorchSupportedStatus = mCameraManager!.isTorchSupported();
           hilog.info(0x0000, 'testTag', `${TAG} isTorchSupportedStatus: ${isTorchSupportedStatus}`);
           if (isTorchSupportedStatus) {
-            let isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.AUTO);
+            let isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.AUTO);
             hilog.info(0x0000, 'testTag', `${TAG} isTorchModeSupported: ${isTorchModeSupported}`);
             if (isTorchModeSupported) {
-              mCameraManager.setTorchMode(camera.TorchMode.AUTO);
-              let torchMode = mCameraManager.getTorchMode()
+              mCameraManager!.setTorchMode(camera.TorchMode.AUTO);
+              let torchMode = mCameraManager!.getTorchMode()
               hilog.info(0x0000, 'testTag', `${TAG} torchMode: ${torchMode}`);
               expect(torchMode === camera.TorchMode.AUTO).assertTrue()
             }
@@ -229,15 +229,15 @@ export default function cameraTorchTest() {
         done();
       } else {
         try {
-          let isTorchSupportedStatus = mCameraManager.isTorchSupported();
+          let isTorchSupportedStatus = mCameraManager!.isTorchSupported();
           console.info(`${TAG} isTorchSupportedStatus: ${isTorchSupportedStatus}`);
           if (isTorchSupportedStatus) {
-            let isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.OFF);
+            let isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.OFF);
             console.info(`${TAG} isTorchModeSupported: ${isTorchModeSupported}`);
             if (isTorchModeSupported) {
-              mCameraManager.setTorchMode(camera.TorchMode.OFF);
+              mCameraManager!.setTorchMode(camera.TorchMode.OFF);
               console.info(`${TAG} setTorchMode OFF success`);
-              mCameraManager.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(`${TAG} torchStatusChange err:` + JSON.stringify(err));
                   expect().assertFail();
@@ -247,12 +247,12 @@ export default function cameraTorchTest() {
                 console.info(`${TAG} torchStatusInfo.isTorchActive: ${torchStatusInfo!.isTorchActive}`);
                 console.info(`${TAG} torchStatusInfo.torchLevel: ${torchStatusInfo!.torchLevel}`);
               });
-              isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.ON);
+              isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.ON);
               if (isTorchModeSupported) {
-                mCameraManager.setTorchMode(camera.TorchMode.ON);
+                mCameraManager!.setTorchMode(camera.TorchMode.ON);
                 console.info(`${TAG} setTorchMode ON success`);
               }
-              mCameraManager.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(TAG + "enter torchStatusChange fail" + err);
                   expect().assertFail();
@@ -287,15 +287,15 @@ export default function cameraTorchTest() {
         done();
       } else {
         try {
-          let isTorchSupportedStatus = mCameraManager.isTorchSupported();
+          let isTorchSupportedStatus = mCameraManager!.isTorchSupported();
           console.info(`${TAG} isTorchSupportedStatus: ${isTorchSupportedStatus}`);
           if (isTorchSupportedStatus) {
-            let isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.OFF);
+            let isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.OFF);
             console.info(`${TAG} isTorchModeSupported: ${isTorchModeSupported}`);
             if (isTorchModeSupported) {
-              mCameraManager.setTorchMode(camera.TorchMode.OFF);
+              mCameraManager!.setTorchMode(camera.TorchMode.OFF);
               console.info(`${TAG} setTorchMode OFF success`);
-              mCameraManager.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(`${TAG} torchStatusChange err:` + JSON.stringify(err));
                   expect().assertFail();
@@ -305,12 +305,12 @@ export default function cameraTorchTest() {
                 console.info(`${TAG} torchStatusInfo.isTorchActive: ${torchStatusInfo!.isTorchActive}`);
                 console.info(`${TAG} torchStatusInfo.torchLevel: ${torchStatusInfo!.torchLevel}`);
               });
-              isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.AUTO);
+              isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.AUTO);
               if (isTorchModeSupported) {
-                mCameraManager.setTorchMode(camera.TorchMode.AUTO);
+                mCameraManager!.setTorchMode(camera.TorchMode.AUTO);
                 console.info(`${TAG} setTorchMode ON success`);
               }
-              mCameraManager.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(TAG + "enter torchStatusChange fail" + err);
                   expect().assertFail();
@@ -343,15 +343,15 @@ export default function cameraTorchTest() {
         done();
       } else {
         try {
-          let isTorchSupportedStatus = mCameraManager.isTorchSupported();
+          let isTorchSupportedStatus = mCameraManager!.isTorchSupported();
           console.info(`${TAG} isTorchSupportedStatus: ${isTorchSupportedStatus}`);
           if (isTorchSupportedStatus) {
-            let isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.ON);
+            let isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.ON);
             console.info(`${TAG} isTorchModeSupported: ${isTorchModeSupported}`);
             if (isTorchModeSupported) {
-              mCameraManager.setTorchMode(camera.TorchMode.ON);
+              mCameraManager!.setTorchMode(camera.TorchMode.ON);
               console.info(`${TAG} setTorchMode OFF success`);
-              mCameraManager.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(`${TAG} torchStatusChange err:` + JSON.stringify(err));
                   expect().assertFail();
@@ -361,12 +361,12 @@ export default function cameraTorchTest() {
                 console.info(`${TAG} torchStatusInfo.isTorchActive: ${torchStatusInfo!.isTorchActive}`);
                 console.info(`${TAG} torchStatusInfo.torchLevel: ${torchStatusInfo!.torchLevel}`);
               });
-              isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.OFF);
+              isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.OFF);
               if (isTorchModeSupported) {
-                mCameraManager.setTorchMode(camera.TorchMode.OFF);
+                mCameraManager!.setTorchMode(camera.TorchMode.OFF);
                 console.info(`${TAG} setTorchMode ON success`);
               }
-              mCameraManager.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(TAG + "enter torchStatusChange fail" + err);
                   expect().assertFail();
@@ -399,30 +399,30 @@ export default function cameraTorchTest() {
         done();
       } else {
         try {
-          let isTorchSupportedStatus = mCameraManager.isTorchSupported();
+          let isTorchSupportedStatus = mCameraManager!.isTorchSupported();
           console.info(`${TAG} isTorchSupportedStatus: ${isTorchSupportedStatus}`);
           if (isTorchSupportedStatus) {
-            let isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.ON);
+            let isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.ON);
             console.info(`${TAG} isTorchModeSupported: ${isTorchModeSupported}`);
             if (isTorchModeSupported) {
-              mCameraManager.setTorchMode(camera.TorchMode.ON);
+              mCameraManager!.setTorchMode(camera.TorchMode.ON);
               console.info(`${TAG} setTorchMode OFF success`);
-              mCameraManager.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(`${TAG} torchStatusChange err:` + JSON.stringify(err));
-                  mCameraManager.offTorchStatusChange();
+                  mCameraManager!.offTorchStatusChange();
                   expect().assertFail();
                 }
                 console.info(`${TAG} torchStatusInfo.isTorchAvailable: ${torchStatusInfo!.isTorchAvailable}`);
                 console.info(`${TAG} torchStatusInfo.isTorchActive: ${torchStatusInfo!.isTorchActive}`);
                 console.info(`${TAG} torchStatusInfo.torchLevel: ${torchStatusInfo!.torchLevel}`);
               });
-              isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.AUTO);
+              isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.AUTO);
               if (isTorchModeSupported) {
-                mCameraManager.setTorchMode(camera.TorchMode.AUTO);
+                mCameraManager!.setTorchMode(camera.TorchMode.AUTO);
                 console.info(`${TAG} setTorchMode ON success`);
               }
-              mCameraManager.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(TAG + "enter torchStatusChange fail" + err);
                   expect().assertFail();
@@ -453,15 +453,15 @@ export default function cameraTorchTest() {
         done();
       } else {
         try {
-          let isTorchSupportedStatus = mCameraManager.isTorchSupported();
+          let isTorchSupportedStatus = mCameraManager!.isTorchSupported();
           console.info(`${TAG} isTorchSupportedStatus: ${isTorchSupportedStatus}`);
           if (isTorchSupportedStatus) {
-            let isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.AUTO);
+            let isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.AUTO);
             console.info(`${TAG} isTorchModeSupported: ${isTorchModeSupported}`);
             if (isTorchModeSupported) {
-              mCameraManager.setTorchMode(camera.TorchMode.AUTO);
+              mCameraManager!.setTorchMode(camera.TorchMode.AUTO);
               console.info(`${TAG} setTorchMode OFF success`);
-              mCameraManager.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(`${TAG} torchStatusChange err:` + JSON.stringify(err));
                   expect().assertFail();
@@ -471,12 +471,12 @@ export default function cameraTorchTest() {
                 console.info(`${TAG} torchStatusInfo.isTorchActive: ${torchStatusInfo!.isTorchActive}`);
                 console.info(`${TAG} torchStatusInfo.torchLevel: ${torchStatusInfo!.torchLevel}`);
               });
-              isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.OFF);
+              isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.OFF);
               if (isTorchModeSupported) {
-                mCameraManager.setTorchMode(camera.TorchMode.OFF);
+                mCameraManager!.setTorchMode(camera.TorchMode.OFF);
                 console.info(`${TAG} setTorchMode ON success`);
               }
-              mCameraManager.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(TAG + "enter torchStatusChange fail" + err);
                   expect().assertFail();
@@ -509,15 +509,15 @@ export default function cameraTorchTest() {
         done();
       } else {
         try {
-          let isTorchSupportedStatus = mCameraManager.isTorchSupported();
+          let isTorchSupportedStatus = mCameraManager!.isTorchSupported();
           console.info(`${TAG} isTorchSupportedStatus: ${isTorchSupportedStatus}`);
           if (isTorchSupportedStatus) {
-            let isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.AUTO);
+            let isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.AUTO);
             console.info(`${TAG} isTorchModeSupported: ${isTorchModeSupported}`);
             if (isTorchModeSupported) {
-              mCameraManager.setTorchMode(camera.TorchMode.AUTO);
+              mCameraManager!.setTorchMode(camera.TorchMode.AUTO);
               console.info(`${TAG} setTorchMode OFF success`);
-              mCameraManager.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(`${TAG} torchStatusChange err:` + JSON.stringify(err));
                   expect().assertFail();
@@ -527,12 +527,12 @@ export default function cameraTorchTest() {
                 console.info(`${TAG} torchStatusInfo.isTorchActive: ${torchStatusInfo!.isTorchActive}`);
                 console.info(`${TAG} torchStatusInfo.torchLevel: ${torchStatusInfo!.torchLevel}`);
               });
-              isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.ON);
+              isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.ON);
               if (isTorchModeSupported) {
-                mCameraManager.setTorchMode(camera.TorchMode.ON);
+                mCameraManager!.setTorchMode(camera.TorchMode.ON);
                 console.info(`${TAG} setTorchMode ON success`);
               }
-              mCameraManager.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(TAG + "enter torchStatusChange fail" + err);
                   expect().assertFail();
@@ -565,27 +565,27 @@ export default function cameraTorchTest() {
         done();
       } else {
         try {
-          let isTorchSupportedStatus = mCameraManager.isTorchSupported();
+          let isTorchSupportedStatus = mCameraManager!.isTorchSupported();
           console.info(`${TAG} isTorchSupportedStatus: ${isTorchSupportedStatus}`);
           if (isTorchSupportedStatus) {
-            let isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.AUTO);
+            let isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.AUTO);
             console.info(`${TAG} isTorchModeSupported: ${isTorchModeSupported}`);
             if (isTorchModeSupported) {
-              mCameraManager.setTorchMode(camera.TorchMode.AUTO);
+              mCameraManager!.setTorchMode(camera.TorchMode.AUTO);
               console.info(`${TAG} setTorchMode OFF success`);
-              mCameraManager.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.onTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 expect().assertFail();
               });
-              mCameraManager.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
+              mCameraManager!.offTorchStatusChange((err: BusinessError | null, torchStatusInfo: camera.TorchStatusInfo | undefined) => {
                 if (err !== undefined && err!.code !== 0) {
                   console.info(TAG + "enter torchStatusChange fail" + err);
                   expect().assertFail();
                   done();
                 }
               });
-              isTorchModeSupported = mCameraManager.isTorchModeSupported(camera.TorchMode.ON);
+              isTorchModeSupported = mCameraManager!.isTorchModeSupported(camera.TorchMode.ON);
               if (isTorchModeSupported) {
-                mCameraManager.setTorchMode(camera.TorchMode.ON);
+                mCameraManager!.setTorchMode(camera.TorchMode.ON);
                 console.info(`${TAG} setTorchMode ON success`);
               }
             }

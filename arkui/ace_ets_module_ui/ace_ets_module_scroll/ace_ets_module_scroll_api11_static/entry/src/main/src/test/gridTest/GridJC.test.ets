@@ -23,7 +23,7 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 export default function ActsGridTest() {
   describe('ActsGridTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
 

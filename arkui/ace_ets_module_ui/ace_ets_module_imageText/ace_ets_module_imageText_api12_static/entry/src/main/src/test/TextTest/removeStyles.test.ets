@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function removeStyles() {
   describe('removeStyles', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("removeStyles beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

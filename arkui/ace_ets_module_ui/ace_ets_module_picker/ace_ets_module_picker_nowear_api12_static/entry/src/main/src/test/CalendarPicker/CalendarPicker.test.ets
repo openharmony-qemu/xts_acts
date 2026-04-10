@@ -32,7 +32,7 @@ import { UtilsTest } from '../Util.test';
 export default function calendarPickerJsunit() {
   describe('ActsAceCalendarPickerTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("calendarPickerJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api12.static", "EntryAbility")
     });

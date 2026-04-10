@@ -18,6 +18,7 @@ import osaccount from '@ohos.account.osAccount'
 import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
+import EventBusPlus from '../lib/EventBusPlus';
 
 let subscriberInfo_MainAbility: commonEventManager.CommonEventSubscribeInfo = {
   events: [
@@ -58,13 +59,14 @@ export default function abilityTest() {
       let startresult = false
       TAG = "ACTS_ThirdPartyStartAbility_0100";
       console.info(TAG + " start");
-      let SubscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData): void => {
+      let SubscribeCallBack = async(err: BusinessError, data: commonEventManager.CommonEventData): Promise<void> => {
         console.info(TAG + " data is " + JSON.stringify(data));
         expect(data.event == "ACTS_InterfaceMultiUsers_0100_Start_CommonEvent" || data.event == "ACTS_TerminateSelf_CommonEvent")
           .assertTrue();
         if (data.event === "ACTS_InterfaceMultiUsers_0100_Start_CommonEvent") {
           console.info(TAG + " MainAbility2 is onWindowStageCreate");
           startresult = true
+          await EventBusPlus.emit('ACTS_InterfaceMultiUsers_0100_Start_CommonEvent_Done');
         } else if (data.event === "ACTS_TerminateSelf_CommonEvent") {
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
           Subscriber = undefined;
@@ -137,13 +139,14 @@ export default function abilityTest() {
       console.info(TAG + " start");
       let Subscriber: commonEventManager.CommonEventSubscriber | undefined = undefined;
       let startresult = false;
-      let SubscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData): void => {
+      let SubscribeCallBack = async(err: BusinessError, data: commonEventManager.CommonEventData): Promise<void> => {
         expect(data.event == "ACTS_InterfaceMultiUsers_0100_Start_CommonEvent" || data.event == "ACTS_TerminateSelf_CommonEvent")
           .assertTrue();
         console.info(TAG + "====> Subscribe CallBack data:====>" + JSON.stringify(data));
         if (data.event === "ACTS_InterfaceMultiUsers_0100_Start_CommonEvent") {
           console.info(TAG + " MainAbility2 is onWindowStageCreate");
           startresult = true
+          await EventBusPlus.emit('ACTS_InterfaceMultiUsers_0100_Start_CommonEvent_Done');
         } else if (data.event === "ACTS_TerminateSelf_CommonEvent") {
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
           Subscriber = undefined;
@@ -219,13 +222,14 @@ export default function abilityTest() {
       console.info(TAG + " start");
       let Subscriber: commonEventManager.CommonEventSubscriber | undefined = undefined;
       let startresult = false;
-      let SubscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData): void => {
+      let SubscribeCallBack = async(err: BusinessError, data: commonEventManager.CommonEventData): Promise<void> => {
         expect(data.event == "ACTS_InterfaceMultiUsers_0100_Start_CommonEvent" || data.event == "ACTS_TerminateSelf_CommonEvent")
           .assertTrue();
         console.info(TAG + "====> Subscribe CallBack data:====>" + JSON.stringify(data));
         if (data.event === "ACTS_InterfaceMultiUsers_0100_Start_CommonEvent") {
           console.info(TAG + " MainAbility2 is onWindowStageCreate");
           startresult = true
+          await EventBusPlus.emit('ACTS_InterfaceMultiUsers_0100_Start_CommonEvent_Done');
         } else if (data.event === "ACTS_TerminateSelf_CommonEvent") {
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
           Subscriber = undefined;
@@ -294,13 +298,14 @@ export default function abilityTest() {
       console.info(TAG + " start");
       let Subscriber: commonEventManager.CommonEventSubscriber | undefined = undefined;
       let startresult = false;
-      let SubscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData): void => {
+      let SubscribeCallBack = async(err: BusinessError, data: commonEventManager.CommonEventData): Promise<void> => {
         expect(data.event == "ACTS_InterfaceMultiUsers_0100_Start_CommonEvent" || data.event == "ACTS_TerminateSelf_CommonEvent")
           .assertTrue();
         console.info(TAG + "====> Subscribe CallBack data:====>" + JSON.stringify(data));
         if (data.event === "ACTS_InterfaceMultiUsers_0100_Start_CommonEvent") {
           console.info(TAG + " MainAbility2 is onWindowStageCreate");
           startresult = true
+          await EventBusPlus.emit('ACTS_InterfaceMultiUsers_0100_Start_CommonEvent_Done');
         } else if (data.event === "ACTS_TerminateSelf_CommonEvent") {
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
           Subscriber = undefined;
@@ -579,13 +584,14 @@ export default function abilityTest() {
       console.info(TAG + "====>start startAbilityForResult====>");
       let Subscriber: commonEventManager.CommonEventSubscriber | undefined = undefined;
       let terminateresult = false;
-      let SubscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData): void => {
+      let SubscribeCallBack = async(err: BusinessError, data: commonEventManager.CommonEventData): Promise<void> => {
         console.info(TAG + "====>0100 Subscribe CallBack data:====>" + JSON.stringify(data));
         expect(data.event == "ACTS_InterfaceMultiUsers_0100_Start_CommonEvent" || data.event == "ACTS_TerminateSelf_CommonEvent")
           .assertTrue();
         if (data.event === "ACTS_InterfaceMultiUsers_0100_Start_CommonEvent") {
           console.info(TAG + " MainAbility2 is onWindowStageCreate");
           terminateresult = true;
+          await EventBusPlus.emit('ACTS_InterfaceMultiUsers_0100_Start_CommonEvent_Done');
         } else if (data.event === "ACTS_TerminateSelf_CommonEvent") {
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
           Subscriber = undefined;
@@ -630,13 +636,14 @@ export default function abilityTest() {
       console.info(TAG + "====>start startAbilityForResult====>");
       let Subscriber: commonEventManager.CommonEventSubscriber | undefined = undefined;
       let terminateresult = false;
-      let SubscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData): void => {
+      let SubscribeCallBack = async(err: BusinessError, data: commonEventManager.CommonEventData): Promise<void> => {
         console.info("====>0300 Subscribe CallBack data:====>" + JSON.stringify(data));
         expect(data.event == "ACTS_InterfaceMultiUsers_0100_Start_CommonEvent" || data.event == "ACTS_TerminateSelf_CommonEvent")
           .assertTrue();
         if (data.event === "ACTS_InterfaceMultiUsers_0100_Start_CommonEvent") {
           console.info(TAG + " MainAbility2 is onWindowStageCreate");
           terminateresult = true
+          await EventBusPlus.emit('ACTS_InterfaceMultiUsers_0100_Start_CommonEvent_Done');
         } else if (data.event === "ACTS_TerminateSelf_CommonEvent") {
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
           Subscriber = undefined;
@@ -679,7 +686,6 @@ export default function abilityTest() {
     it('ACTS_TerminateSelfWithResult_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_TerminateSelfWithResult_0100";
       console.info(TAG + "====>start startAbilityForResult====>");
-      await sleep(2000);
       await globalThis.abilityContext.startAbilityForResult(
         {
           bundleName: 'com.acts.actsinterfacemultiusersthirdtest',
@@ -704,7 +710,6 @@ export default function abilityTest() {
     it('ACTS_TerminateSelfWithResult_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_TerminateSelfWithResult_0300";
       console.info(TAG + "====>start startAbilityForResult====>");
-      await sleep(2000)
       await globalThis.abilityContext.startAbilityForResult(
         {
           bundleName: 'com.acts.actsinterfacemultiusersthirdtest',

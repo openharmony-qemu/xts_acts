@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ export default function CertificateJsunit() {
         expect(data != null).assertTrue();
         let data2: cert.X509Cert = await certCallback.createX509CertInstanceCallback("der");
         expect(data2 != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -61,7 +61,7 @@ export default function CertificateJsunit() {
         expect(data != null).assertTrue();
         let data2: cert.X509Cert = await certCallback.createX509CertInstanceCallback("pem");
         expect(data2 != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -80,7 +80,7 @@ export default function CertificateJsunit() {
       try {
         await certPromise.verifyX509CertPromise("pem");
         await certCallback.verifyX509CertCallback("pem");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -99,7 +99,7 @@ export default function CertificateJsunit() {
       try {
         await certPromise.verifyX509CertPromise("der");
         await certCallback.verifyX509CertCallback("der");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -117,13 +117,13 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.verifyX509CertPromise("pem", "NULL");
-      } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == 401).assertTrue();
       }
       try {
         await certCallback.verifyX509CertCallback("pem", "000");
-      } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == 401).assertTrue();
       }
       done();
     });
@@ -140,8 +140,8 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.verifyX509CertPromise("pem", "wrong");
-      } catch (err: BusinessError) {
-        expect(err.code == 401).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == 401).assertTrue();
       }
       done();
     });
@@ -159,7 +159,7 @@ export default function CertificateJsunit() {
       try {
         await certPromise.checkGetEncodedX509CertPromise("der");
         await certCallback.checkGetEncodedX509CertCallback("der");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -178,7 +178,7 @@ export default function CertificateJsunit() {
       try {
         await certPromise.checkGetPublicKeyX509CertPromise("der");
         await certCallback.checkGetPublicKeyX509CertCallback("der");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -196,7 +196,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.checkValidityX509CertPromise("der", "20220830000000+0800");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -215,8 +215,8 @@ export default function CertificateJsunit() {
         try {
           await certCallback.checkValidityX509CertCallback("der", "20330830000000+0800");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code == cert.CertResult.ERR_CERT_HAS_EXPIRED).assertTrue();
+        } catch (err) {
+          expect((err as BusinessError).code == cert.CertResult.ERR_CERT_HAS_EXPIRED).assertTrue();
         }
       done();
     });
@@ -234,14 +234,14 @@ export default function CertificateJsunit() {
       try {
         await certCallback.checkValidityX509CertCallback("der", "NULL");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
       }
       try {
         await certCallback.checkValidityX509CertCallback("der", "string");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
+      } catch (err) {
+        expect((err as BusinessError).code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
       }
       done();
     });
@@ -258,7 +258,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.getX509CertInfoCallback("der", "getVersion");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -276,7 +276,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.getX509CertInfoCallback("der", "getSerialNumber");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -294,7 +294,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.getX509CertInfoCallback("der", "getIssuerName");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -312,7 +312,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CertInfoPromise("der", "getSubjectName");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -330,7 +330,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CertInfoPromise("der", "getNotBeforeTime");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -348,7 +348,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CertInfoPromise("der", "getNotAfterTime");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -366,7 +366,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CertInfoPromise("der", "getSignature");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -384,7 +384,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CertInfoPromise("der", "getSignatureAlgName");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -402,7 +402,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.getX509CertInfoCallback("der", "getSignatureAlgOid");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -420,7 +420,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.getX509CertInfoCallback("der", "getSignatureAlgParams");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -438,7 +438,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.getX509CertInfoCallback("der", "getKeyUsage");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -456,7 +456,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.getX509CertInfoCallback("der", "getExtKeyUsage");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -474,7 +474,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.getX509CertInfoCallback("der", "getBasicConstraints");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -492,7 +492,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CertInfoPromise("der", "getSubjectAltNames");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -510,7 +510,7 @@ export default function CertificateJsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CertInfoPromise("der", "getIssuerAltNames");
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -529,7 +529,7 @@ export default function CertificateJsunit() {
         try {
           await certPromise.checkValidateOfCertChainValidatorPromise("PKIX");
           await certCallback.checkValidateOfCertChainValidatorCallback("PKIX");
-        } catch (err: BusinessError) {
+        } catch (err) {
           expect(null).assertFail();
         }
         done();
@@ -549,8 +549,8 @@ export default function CertificateJsunit() {
         try {
           await certPromise.checkValidateOfCertChainValidatorPromise("PKI111");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code == 801).assertTrue();
+        } catch (err) {
+          expect((err as BusinessError).code == 801).assertTrue();
         }
         done();
       }
@@ -569,14 +569,14 @@ export default function CertificateJsunit() {
         try {
           await certPromise.checkValidateOfCertChainValidatorPromise("PKIX", "error");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(401);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(401);
         }
         try {
           await certCallback.checkValidateOfCertChainValidatorCallback("PKIX", "error");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(401);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(401);
         }
         done();
       }

@@ -60,8 +60,28 @@ group("ans_standard") {
       "actsNotificationWantUriTestStatic:ActsNotificationWantUriStaticTest",
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest",
-      "actsAnsNotificationBadgeNoSystemTest:ActsNotificationAnsBadgeNoSystemTest",
-      "actsAnsNotificationBadgeNoSystemTestStatic:ActsNotificationAnsBadgeNoSystemStaticTest"
+      "actsNotificationAnsPrioritySettingRefactoringNoSystem:ActsNotificationAnsPrioritySettingRefactoringNoSystemTest",
+      "actsNotificationPriorityRefactorNosystemTestStatic:ActsNotificationPriorityRefactorNoSystemStaticTest",
+      "actsNotificationAnsCoveredTest:ActsNotificationAnsCoveredTest",
+      "actsNotificationAnsCoveredTestStatic:ActsNotificationAnsCoverStaticTest",
+      "actsNotificationAnsThreePartyWatchWithOutAbilityNoPermissionTestStatic:ActsNotificationAnsThreePartyWatchStaticWithOutAbilityNoPermissionTest",
+      "actsNotificationAnsThreePartyWatchWithInAbilityTestStatic:ActsNotificationAnsThreePartyWatchWithInAbilityStaticTest",
+      "actsNotificationAnsThreePartyWatchWithOutAbilityTestStatic:ActsNotificationAnsThreePartyWatchWithOutAbilityStaticTest",
+      "actsNotificationAnsDisableNotificationNoSystemTestStatic:ActsNotificationAnsDisableNotificationNoSystemStaticTest",
+      "actsNotificationAnsEnableBatchNoSystemTestStatic:ActsNotificationAnsEnableBatchNoSystemStaticTest",
+      "actsNotificationAnsGetNotificationParametersTest:ActsNotificationAnsGetNotificationParametersTest",
+      "actsNotificationAnsGetNotificationParametersTestStatic:ActsNotificationAnsGetNotificationParametersStaticTest",
+      "actsNotificationAnsPriorityNotificationNoSystemTestStatic:ActsNotificationAnsPriorityNotificationNoSystemStaticTest",
+      "actsNotificationAnsPriorityNotificationTest:ActsNotificationAnsPriorityNotificationTest",
+      "actsNotificationEmitterLittleTestStatic:ActsNotificationEmitterLittleStaticTest",
+      "actsNotificationAnsEnableBatchNoSystemTest:ActsNotificationAnsEnableBatchNoSystemTest",
+      "actsNotificationAnsPCPADsoftbusNoSystemTestStatic:ActsNotificationAnsPCPADsoftbusNoSystemStaticTest",
+      "actsNotificationAnsPCPADsoftbusTest:ActsNotificationAnsPCPADSoftBusTest",
+      "actsNotificationAnsThreePartyWatchNoSystemNoPermissionTest:ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest",
+      "actsNotificationCesMoreInstanceTest:ActsNotificationCesMoreInstanceTest",
+      "actsNotificationCesMoreInstanceTestStatic:ActsNotificationCesMoreInstanceStaticTest",
+      "actsNotificationAnsGetNotificationSettingTest:ActsNotificationAnsGetNotificationSettingTest",
+      "actsNotificationAnsGetNotificationSettingTestStatic:ActsNotificationAnsGetNotificationSettingStaticTest"
     ]
   }
 }

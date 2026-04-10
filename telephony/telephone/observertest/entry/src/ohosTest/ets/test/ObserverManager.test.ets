@@ -446,6 +446,37 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end `);
     });
 
+     /**
+     * @tc.name   testTelephonyObserverCallStateChangeOff0500
+     * @tc.number SUB_Telephony_Observer_CallStateChangeOff_0500
+     * @tc.desc   Unsubscribe to call status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('testTelephonyObserverCallStateChangeOff0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverCallStateChangeOff0500';
+      console.info(`${caseName} test start `);
+      try {
+        // Indicates that there is no call in progress
+        class Value {
+          state: call.CallState = call.CallState.CALL_STATE_UNKNOWN
+          number: string = ""
+        };
+        let callback: (value: Value) => void = (value: Value) => {
+          console.info(`${caseName} data ${JSON.stringify(value)}}`);
+          ExpectTrue(value !== null);
+        };
+        observer.on('callStateChange', callback);
+        observer.off(undefined, callback);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
 
     /**
      * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOn0500
@@ -731,6 +762,31 @@ export default function observerManagerTest() {
         done();
       }
       await data.enableCellularData();
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOn0400
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOn_0400
+     * @tc.desc   Subscribe to the uplink and downlink data flow status of cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverCellularDataFlowChangeOn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOn0400';
+      console.info(`${caseName} test start `);
+      try {
+        await observer.on("cellularDataFlowChange", (data: observer.DataFlowType) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(data != null);
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
+        done();
+      }
       console.info(`${caseName} test end `);
     });
 
@@ -1299,7 +1355,30 @@ export default function observerManagerTest() {
       console.info(`${caseName} test end`);
     });
 
-
+    /**
+     * @tc.name   testTelephonyObserverIccAccountInfoChangeOn1000
+     * @tc.number SUB_Telephony_Observer_IccAccountInfoChangeOn_1000
+     * @tc.desc   Subscribe to accountInfo of icc change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverIccAccountInfoChangeOn1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOn1000';
+      console.info(`${caseName} test start`);
+      try {
+        observer.on(undefined, () => {
+          console.info(`${caseName} data`);
+          ExpectTrue(false);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
 
     /**
      * @tc.name   testTelephonyObserverIccAccountInfoChangeOff0400
@@ -1348,6 +1427,186 @@ export default function observerManagerTest() {
         done();
       }
       console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverIccAccountInfoChangeOff0600
+     * @tc.number SUB_Telephony_Observer_IccAccountInfoChangeOff_0600
+     * @tc.desc   Unsubscribe to accountInfo of icc change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverIccAccountInfoChangeOff0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverIccAccountInfoChangeOff0600';
+      console.info(`${caseName} test start`);
+      try {
+        observer.off(undefined);
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        let e = error as BusinessError;
+        ExpectTrue(e.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOn0400
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOn_0400
+     * @tc.desc   Subscribe to network state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyObserverNetworkStateChangeOn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverNetworkStateChangeOn0400';
+      console.info(`${caseName} test start `);
+      try {
+        observer.on(undefined, (data: observer.NetworkState) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(false);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOnId0800
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOnId_0800
+     * @tc.desc   Subscribe to network state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverNetworkStateChangeOnId0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverNetworkStateChangeOnId0800';
+      console.info(`${caseName} test start `);
+      try {
+        observer.on(undefined, {
+          slotId: 0
+        }, (data: observer.NetworkState) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(false);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverNetworkStateChangeOff0500
+     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOff_0500
+     * @tc.desc   Unsubscribe to network state change events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTelephonyObserverNetworkStateChangeOff0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverNetworkStateChangeOff0500';
+      console.info(`${caseName} test start `);
+      try {
+        observer.on('networkStateChange', (data: observer.NetworkState) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(data !== null);
+        });
+        observer.off(undefined);
+        ExpectTrue(false);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOn0600
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOn_0600
+     * @tc.desc   Subscribe signal status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverSignalInfoChangeOn0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverSignalInfoChangeOn0600';
+      console.info(`${caseName} test start `);
+      try {
+        observer.on(undefined, (data: Array<radio.SignalInformation>) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(false);
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOnId0400
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOnId_0400
+     * @tc.desc   Subscribe to the signal state change event of the specified card slot.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverSignalInfoChangeOnId0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverSignalInfoChangeOnId0400';
+      console.info(`${caseName} test start `);
+      try {
+        observer.on(undefined, {
+          slotId: 0
+        }, (data: Array<radio.SignalInformation>) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(false);
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverSignalInfoChangeOff0500
+     * @tc.number SUB_Telephony_Observer_SignalInfoChangeOff_0500
+     * @tc.desc   Unsubscribe signal status change event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverSignalInfoChangeOff0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverSignalInfoChangeOff0500';
+      console.info(`${caseName} test start `);
+      try {
+        let callback: (data: Array<radio.SignalInformation>) => void = (data: Array<radio.SignalInformation>) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(false);
+        }
+        observer.on('signalInfoChange', callback);
+        observer.off(undefined, callback);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
     });
   });
 }

@@ -173,6 +173,19 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0104 Failed1 to uninstall private certificate. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
+      try {
+        await certManager.uninstallPrivateCertificate("").then((): void => {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_PriCertJsApi_Func_Static_0104 Succeeded in uninstalling private certificate.');
+          expect(null).assertFail();
+        }).catch((err: Error): void => {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0104 Failed to uninstall private certificate. Code: ${err.code}, message: ${err.message}`);
+          expect(null).assertFail();
+        })
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0104 Failed1 to uninstall private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
       done();
     });
 
@@ -188,6 +201,21 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       let keyUri: string | undefined = "";
       try {
         certManager.uninstallPrivateCertificate(keyUri, (err: BusinessError<void> | null) => {
+          if (err != null) {
+            hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0105 Failed to uninstall private certificate. Code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+          } else {
+            hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_PriCertJsApi_Func_Static_0105 Succeeded in uninstalling private certificate.');
+            expect(null).assertFail();
+          }
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0105 Failed to uninstall private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      try {
+        certManager.uninstallPrivateCertificate("", (err: BusinessError<void> | null) => {
           if (err != null) {
             hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0105 Failed to uninstall private certificate. Code: ${err.code}, message: ${err.message}`);
             expect(null).assertFail();

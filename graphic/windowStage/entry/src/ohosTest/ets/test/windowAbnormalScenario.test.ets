@@ -1528,7 +1528,10 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
         statusBarColor: '#ff00ff',
         navigationBarColor: '#00ff00',
         statusBarContentColor: '#ffffff',
-        navigationBarContentColor: '#00ffff'
+        navigationBarContentColor: '#00ffff',
+        enableStatusBarAnimation:false,
+        enableNavigationBarAnimation:false,
+        isStatusBarLightIcon:false
       };
       try {
         (win as ohosWindow.Window).setWindowSystemBarProperties(SystemBarProperties, (err: BusinessError) => {
@@ -3435,6 +3438,9 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       await (win as ohosWindow.Window).destroyWindow();
       let SystemBarProperties: ohosWindow.SystemBarProperties = {
         statusBarColor: '#ff00ff',
+        isStatusBarLightIcon: false,
+        enableStatusBarAnimation: true,
+        enableNavigationBarAnimation: true,
         navigationBarColor: '#00ff00',
         statusBarContentColor: '#ffffff',
         navigationBarContentColor: '#00ffff'
@@ -3458,6 +3464,7 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
         done();
       }
     })
+    
     /**
      * @tc.name   testSetSystemBarProperties_WinStateAb_Promise
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3300
@@ -3482,7 +3489,10 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
         statusBarColor: '#ff00ff',
         navigationBarColor: '#00ff00',
         statusBarContentColor: '#ffffff',
-        navigationBarContentColor: '#00ffff'
+        navigationBarContentColor: '#00ffff',
+        isStatusBarLightIcon:false,
+        enableStatusBarAnimation:true,
+        enableNavigationBarAnimation:true
       };
       try {
         await (win as ohosWindow.Window).setSystemBarProperties(SystemBarProperties).then(() => {

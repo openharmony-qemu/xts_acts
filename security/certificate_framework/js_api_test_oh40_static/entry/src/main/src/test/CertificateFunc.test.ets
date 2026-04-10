@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,7 +53,7 @@ export default function CertFrameworkFuncTestJSUnit() {
         try {
           certCommon.certificateEnumTypeTest();
           certCommon.certificateEnumTypeTest2();
-        } catch (err: BusinessError) {
+        } catch (err) {
           expect(null).assertFail();
         }
         done();
@@ -82,7 +82,7 @@ export default function CertFrameworkFuncTestJSUnit() {
           console.warn(
             "getX509CertItem TBS: " + uInt8ArrayToShowStr(TBS.data)
           );
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(
             "getX509CertItem TBS error, error code is: " + err.code
           );
@@ -114,7 +114,7 @@ export default function CertFrameworkFuncTestJSUnit() {
           console.log(
             "getX509CertItem pubKey: " + uInt8ArrayToShowStr(pubKey.data)
           );
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(
             "getX509CertItem pubKey error, error code is: " + err.code
           );
@@ -149,7 +149,7 @@ export default function CertFrameworkFuncTestJSUnit() {
             "getX509CertItem issuerUniqueID: " +
             uInt8ArrayToShowStr(issuerUniqueID.data)
           );
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(
             "getX509CertItem issuerUniqueID error, error code is: " +
             err.code
@@ -185,7 +185,7 @@ export default function CertFrameworkFuncTestJSUnit() {
             "getX509CertItem subjectUniqueID: " +
             uInt8ArrayToShowStr(subjectUniqueID.data)
           );
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(
             "getX509CertItem subjectUniqueID error, error code is: " +
             err.code
@@ -221,7 +221,7 @@ export default function CertFrameworkFuncTestJSUnit() {
             "getX509CertItem extensions: " +
             uInt8ArrayToShowStr(extensions.data)
           );
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(
             "getX509CertItem extensions error, error code is: " + err.code
           );
@@ -256,7 +256,7 @@ export default function CertFrameworkFuncTestJSUnit() {
           console.warn(
             "encodedObj encodingFormat is: " + encodedObj.encodingFormat
           );
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("getEncoded error, error code is: " + err.code);
           expect(null).assertFail();
         }
@@ -308,7 +308,7 @@ export default function CertFrameworkFuncTestJSUnit() {
           );
           expect(entryObj1 != null && entryObj1 != undefined).assertTrue();
           console.warn("entryObj1 data is: " + entryObj1.data);
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("getEntry error, error code is: " + err.code);
           expect(null).assertFail();
         }
@@ -360,7 +360,7 @@ export default function CertFrameworkFuncTestJSUnit() {
           );
           expect(entryObj2 != null && entryObj2 != undefined).assertTrue();
           console.warn("entryObj2 data is: " + entryObj2.data);
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("getEntry error, error code is: " + err.code);
           expect(null).assertFail();
         }
@@ -416,7 +416,7 @@ export default function CertFrameworkFuncTestJSUnit() {
           console.warn(
             "entryObj2 data is: " + uInt8ArrayToShowStr(entryObj2.data)
           );
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("getEntry error, error code is: " + err.code);
           expect(null).assertFail();
         }
@@ -442,7 +442,7 @@ export default function CertFrameworkFuncTestJSUnit() {
           let caStatus = extensionObj.checkCA();
           console.warn("caStatus  is: " + caStatus);
           expect(caStatus > 0).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("checkCA error, error code is: " + err.code);
           expect(null).assertFail();
         }
@@ -467,7 +467,8 @@ export default function CertFrameworkFuncTestJSUnit() {
           expect(
             extensionObj != null && extensionObj != undefined
           ).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(
             "createX509CertExtensionNormalPromise error, error code is: " +
             err.code
@@ -505,7 +506,8 @@ export default function CertFrameworkFuncTestJSUnit() {
             oidDataBlob
           );
           expect(entryObj != null && entryObj != undefined).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("getEntry error , error code is: " + err.code);
           expect(err.code).assertEqual(401);
         }
@@ -541,7 +543,8 @@ export default function CertFrameworkFuncTestJSUnit() {
             oidDataBlob1
           );
           expect(entryObj != null && entryObj != undefined).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("getEntry error , error code is: " + err.code);
           expect(err.code).assertEqual(401);
         }
@@ -569,7 +572,8 @@ export default function CertFrameworkFuncTestJSUnit() {
           ).assertTrue();
           let encodedObj = extensionObj.getEncoded();
           expect(encodedObj != null && encodedObj != undefined).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("getEncoded error , error code is: " + err.code);
           expect(err.code).assertEqual(401);
         }
@@ -597,7 +601,8 @@ export default function CertFrameworkFuncTestJSUnit() {
           ).assertTrue();
           let encodedObj: int = extensionObj.checkCA();
           expect(encodedObj != null && encodedObj != undefined).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("checkCA error , error code is: " + err.code);
           expect(err.code).assertEqual(401);
         }
@@ -625,7 +630,8 @@ export default function CertFrameworkFuncTestJSUnit() {
           ).assertTrue();
           let encodedObj = extensionObj.checkCA();
           expect(encodedObj != null && encodedObj != undefined).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("checkCA error , error code is: " + err.code);
           expect(err.code).assertEqual(19030001);
         }

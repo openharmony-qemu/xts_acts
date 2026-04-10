@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,7 +58,7 @@ export default function addResource() {
           expect(resultTwo.getCount()).assertEqual(count + 1);
           console.info(`${testNum} succeed to add resource by ArrayBuffer`);
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${testNum} failed; error: ${err}`);
           expect(false).assertTrue();
           done();
@@ -90,7 +90,7 @@ export default function addResource() {
           console.error(`${testNum} failed; error: succeed to add resource with invalid fileUri`);
           expect(false).assertTrue();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.info(`${testNum} succeed to detect invalid fileUri`);
           done();
         }
@@ -118,7 +118,8 @@ export default function addResource() {
           console.info(`${testNum} succeed to add resource by ArrayBuffer`);
           expect(false).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error}, ${error.code}`);
           expect(error.code == 13900002 || error.code == 401).assertTrue();
           done();

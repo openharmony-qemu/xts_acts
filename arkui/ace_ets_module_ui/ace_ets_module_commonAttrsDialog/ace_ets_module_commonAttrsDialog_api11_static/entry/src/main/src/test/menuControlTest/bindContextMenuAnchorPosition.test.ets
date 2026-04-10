@@ -37,7 +37,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function bindContextMenuAnchorPosition() {
   describe('bindContextMenuAnchorPosition', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
     });
 
@@ -75,10 +75,10 @@ it('bindContextMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () =>
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindContextMenuAnchorPosition1'));
-      button?.longClick();
+      button?.click();
       await CommonFunc.sleep(3000);
 
-      driver?.click(20, 20);
+      driver?.click(2, 500);
       await CommonFunc.sleep(2000);
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
       let menuPositionX = Number.parseFloat(await (text1?.getText() as Promise<String>));
@@ -93,9 +93,8 @@ it('bindContextMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () =>
       let textPositionY = Number.parseFloat(await (text4?.getText() as Promise<String>));
       expect(textPositionX).assertLess(menuPositionX)
       expect(textPositionY).assertLess(menuPositionY)
-
       await CommonFunc.sleep(1000);
-      await driver.click(200, 200);
+      await driver.click(2, 500);
       await CommonFunc.sleep(2000);
       console.info('[bindContextMenuAnchorPosition_static_0100] END');
       done();
@@ -114,10 +113,10 @@ it('bindContextMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () =>
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindContextMenuAnchorPosition2'));
-      button?.longClick();
+      button?.click();
       await CommonFunc.sleep(3000);
 
-      driver?.click(20, 20);
+      driver?.click(2, 500);
       await CommonFunc.sleep(2000);
 
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
@@ -134,7 +133,7 @@ it('bindContextMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () =>
       expect(textPositionY).assertLess(menuPositionY)
 
       await CommonFunc.sleep(1000);
-      await driver.click(200, 200);
+      await driver.click(2, 500);
       await CommonFunc.sleep(2000);
       console.info('[bindContextMenuAnchorPosition_static_0200] END');
       done();
@@ -153,10 +152,10 @@ it('bindContextMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () =>
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindContextMenuAnchorPosition3'));
-      button?.longClick();
+      button?.click();
       await CommonFunc.sleep(3000);
 
-      driver?.click(20, 20);
+      driver?.click(2, 500);
       await CommonFunc.sleep(2000);
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
       let menuPositionX = Number.parseFloat(await (text1?.getText() as Promise<String>));
@@ -173,7 +172,7 @@ it('bindContextMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () =>
       expect(textPositionY).assertLess(menuPositionY)
 
       await CommonFunc.sleep(1000);
-      await driver.click(200, 200);
+      await driver.click(2, 500);
       await CommonFunc.sleep(2000);
       console.info('[bindContextMenuAnchorPosition_static_0300] END');
       done();

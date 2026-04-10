@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,7 +58,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Observed
-class ArrayLinkObject {
+export class ArrayLinkObject {
   public id: number = 1
   public value: string = ''
 
@@ -107,7 +107,7 @@ struct LinkArrayObjectChild {
           this.value.shift()
         })
 
-      ForEach(Array.from(this.value.entries()), (item: [number, ArrayLinkObject]) => {
+      ForEach(Array.from(this.value.entries()), (item: [int, ArrayLinkObject]) => {
         Text(`${item[1].id}:${item[1].value} index:${item[0]}`).fontSize(9).height('5%')
           .id('LinkArrayObject_value_' + item[0])
         Divider()
@@ -127,7 +127,7 @@ struct LinkArrayObject {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LinkArrayObject', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

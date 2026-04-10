@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -63,7 +63,7 @@ export default function systemPasteBoardTest() {
             let bHasType: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
             expect(bHasType).assertTrue();
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.error(domain, tag, `test hasDataType err    ${JSON.stringify(err)}`);
             expect().assertFail();
             done();
@@ -93,7 +93,7 @@ export default function systemPasteBoardTest() {
               let bHasType: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
               expect(bHasType == false).assertTrue();
               done();
-            } catch (err: BusinessError) {
+            } catch (err) {
               hilog.error(domain, tag, `test hasDataType err    ${JSON.stringify(err)}`);
               expect().assertFail();
               done();
@@ -123,7 +123,7 @@ export default function systemPasteBoardTest() {
         let result: pasteboard.PasteData = systemPb.getDataSync();
         hilog.info(domain, tag, `Get the pasteboard from system PasteBoard success. Result: ${result}`);
         expect(result.getRecord(0).uri).assertEqual("file:///C:/Users/Documents/report.pdf");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
         expect(err).assertEqual(null);
       }
@@ -150,7 +150,8 @@ export default function systemPasteBoardTest() {
         expect(result.getRecord(0).uri).assertEqual("file:///C:/Users/Documents/report.pdf");
         hilog.info(domain, tag, '----------Succeeded in getting PasteData.');
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `catch error ${err.code}`);
         expect(err.code == 12900005).assertTrue();
         done();
@@ -178,7 +179,8 @@ export default function systemPasteBoardTest() {
           expect(recordCount).assertEqual(1);
           hilog.info(domain, tag, '----------Succeeded in getting recordCount.');
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+        err = err as BusinessError;
           hilog.info(domain, tag, `catch error ${err.code}`);
           expect(err.code == 12900005).assertTrue();
           done();
@@ -241,7 +243,8 @@ export default function systemPasteBoardTest() {
         hilog.info(domain, tag, `Succeeded in checking the RemoteData. Result: ${result}`);
         expect(result == 'label').assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `Failed to getDataSource. Cause: ${err.message + err.code}`);
         expect(err.code == 12900005).assertTrue();
         done();
@@ -268,7 +271,7 @@ export default function systemPasteBoardTest() {
         pasteData.setProperty(prop);
         hilog.info(domain, tag, '----------PasteDataProperty shareOption is: ' + prop.shareOption);
         expect(prop.shareOption == 1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
         expect(err).assertEqual(null);
       }
@@ -352,7 +355,7 @@ export default function systemPasteBoardTest() {
         });
         let bool_ret: boolean = systemPb.hasDataType('string');
         expect(bool_ret == false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
         expect(err).assertEqual(null);
       }
@@ -377,7 +380,7 @@ export default function systemPasteBoardTest() {
         await systemPb.setData(pasteData);
         let bool_ret: boolean = systemPb.hasDataType('text/want');
         expect(bool_ret == true).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
         expect(err).assertEqual(null);
       }
@@ -403,7 +406,7 @@ export default function systemPasteBoardTest() {
           await systemPb.setData(pasteData);
           let bool_ret: boolean = systemPb.hasDataType('pixelMap');
           expect(bool_ret == true).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -431,7 +434,7 @@ export default function systemPasteBoardTest() {
           let bool_ret: boolean = systemPb.hasDataType(pasteboard.MIMETYPE_TEXT_URI);
           let bool_ret1: boolean = systemPb.hasDataType('selfDefined');
           expect(bool_ret == true && bool_ret1 == true).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -459,7 +462,7 @@ export default function systemPasteBoardTest() {
             expect(bool_ret == true).assertTrue();
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -485,7 +488,7 @@ export default function systemPasteBoardTest() {
             expect(bool_ret == true).assertTrue();
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -511,7 +514,7 @@ export default function systemPasteBoardTest() {
             expect(bool_ret == true).assertTrue();
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -537,7 +540,7 @@ export default function systemPasteBoardTest() {
             expect(bool_ret == true).assertTrue();
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -563,7 +566,7 @@ export default function systemPasteBoardTest() {
             expect(bool_ret == true).assertTrue();
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -589,7 +592,7 @@ export default function systemPasteBoardTest() {
             expect(bool_ret == true).assertTrue();
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -618,7 +621,7 @@ export default function systemPasteBoardTest() {
           hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0210----------');
           done();
         })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -647,7 +650,7 @@ export default function systemPasteBoardTest() {
             hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0220----------');
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -675,7 +678,7 @@ export default function systemPasteBoardTest() {
             hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0230----------');
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -702,7 +705,7 @@ export default function systemPasteBoardTest() {
             expect(bool_set == true && bool_clear == false).assertTrue();
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -730,7 +733,7 @@ export default function systemPasteBoardTest() {
             expect(bool_set == true && bool_clear == false).assertTrue();
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -758,7 +761,7 @@ export default function systemPasteBoardTest() {
             expect(bool_set == true && bool_clear == false).assertTrue();
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -787,7 +790,7 @@ export default function systemPasteBoardTest() {
             expect(bool_set == true && bool_clear == false).assertTrue();
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -818,7 +821,7 @@ export default function systemPasteBoardTest() {
             expect(bool_set == true && bool_set1 && bool_clear == false && bool_clear1 == false).assertTrue();
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -847,7 +850,7 @@ export default function systemPasteBoardTest() {
           expect(bool_set == true && bool_clear == false).assertTrue();
           hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0290----------');
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -874,7 +877,7 @@ export default function systemPasteBoardTest() {
           expect(bool_set == true && bool_clear == false).assertTrue();
           hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0300----------');
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -901,7 +904,7 @@ export default function systemPasteBoardTest() {
           expect(bool_set == true && bool_clear == false).assertTrue();
           hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0310----------');
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -928,7 +931,7 @@ export default function systemPasteBoardTest() {
           expect(bool_set == true && bool_clear == false).assertTrue();
           hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0320----------');
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -955,7 +958,7 @@ export default function systemPasteBoardTest() {
           expect(bool_set == true && bool_clear == false).assertTrue();
           hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0330----------');
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -982,7 +985,7 @@ export default function systemPasteBoardTest() {
           expect(bool_set == true && bool_clear == false).assertTrue();
           hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0340----------');
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }
@@ -1012,7 +1015,7 @@ export default function systemPasteBoardTest() {
           expect(bool_set == true && bool_set1 == true && bool_clear == false && bool_clear1 == false).assertTrue();
           hilog.info(domain, tag, '----------SUB_Pasteboard_Local_SystemPasteboard_Static_0350----------');
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("SUB_Pasteboard_Local_SystemPasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
         }

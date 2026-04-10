@@ -373,7 +373,7 @@ export default function abilityTest() {
         it("DFX_DFR_AppRecovery_Interface_Static_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1600 start--------------------");
             try{
-                let content: UIAbilityContext;
+                let content: UIAbilityContext = {};
                 appRecovery.saveAppState(content);
             }catch(error){
                 console.info("DFX_DFR_AppRecovery_Interface_Static_1600 err = " + error);

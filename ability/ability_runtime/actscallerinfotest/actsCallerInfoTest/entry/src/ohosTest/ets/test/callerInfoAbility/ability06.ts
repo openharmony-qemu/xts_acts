@@ -58,10 +58,7 @@ export default class CallerInfo06 extends UIAbility {
 
   onForeground():void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'CallerInfo06 onForeground');
-
-    setTimeout( () => {
-      globalThis.CallerInfo06.terminateSelf();
-    }, 2000);
+    commonEventManager.publish('CallerInfo06_onForeground', () => {});
   }
 
   onBackground():void {

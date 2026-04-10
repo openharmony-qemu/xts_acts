@@ -32,11 +32,11 @@ export default function AsymmetricCryptographyJsunit() {
      * @tc.desc   Use the Callback Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_crypto_framework_ASymmetric_Encryption_RSA_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await asyCallback
           .encryptAndDecryptNormalProcess(

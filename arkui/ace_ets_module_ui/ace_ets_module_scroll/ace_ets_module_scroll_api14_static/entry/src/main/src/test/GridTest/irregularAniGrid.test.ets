@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function irregularAniGrid() {
   describe('irregularAniGrid', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("irregularAniGrid beforeEach start");
 
       

@@ -74,7 +74,7 @@ export default function webRequestHeaderList() {
         flg = true
         console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
         expect(error.code).assertEqual("17100002")
-        expect(error.message).assertEqual("URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
+        expect(error.message).assertEqual("URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
       }
       expect(flg).assertTrue()
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_WarmupServiceWorker_0002 end')
@@ -100,7 +100,7 @@ export default function webRequestHeaderList() {
         flg = true
         console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
         expect(error.code).assertEqual("17100002")
-        expect(error.message).assertEqual("URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
+        expect(error.message).assertEqual("URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
       }
 
       expect(flg).assertTrue()

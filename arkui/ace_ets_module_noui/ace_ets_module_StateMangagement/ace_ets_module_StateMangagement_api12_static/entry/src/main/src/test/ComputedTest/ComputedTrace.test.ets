@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ComputedTraceTest() {
   describe('ComputedTraceTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ComputedTraceTest beforeEach start");
 
 

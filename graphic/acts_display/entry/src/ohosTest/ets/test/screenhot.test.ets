@@ -59,7 +59,11 @@ export default function screenHotTest() {
             } catch (exception) {
                 console.error(caseName + 'Failed to pick Code: ' + JSON.stringify(exception.code)+':msg:'+ JSON.stringify(exception.message));
                 expect(exception.message!=null).assertTrue();
-                expect(exception.code == 801 || exception.code == 201).assertTrue()
+                if (exception.code === 801) {
+                    expect(exception.code).assertEqual(801);
+                } else {
+                    expect(exception.code).assertEqual(201);
+                }
                 done()
             };
         })
@@ -89,7 +93,6 @@ export default function screenHotTest() {
         //             console.log(msgStr + 'pick Pixel bytes number: ' + pickInfo.pixelMap.getPixelBytesNumber());
         //             console.log(msgStr + 'pick Rect: ' + pickInfo.pickRect);
         //             pickInfo.pixelMap.release(); // PixelMap使用完后及时释放内存
-        //             expect(true).assertTrue();
         //             done();
         //         }).catch((err) => {
         //             console.log(msgStr + 'Failed to pick. Code: ' + JSON.stringify(err));

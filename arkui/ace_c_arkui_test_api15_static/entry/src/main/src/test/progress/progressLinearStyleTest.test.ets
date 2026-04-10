@@ -25,7 +25,7 @@ import { UtilsTest } from '../Util.test'
 export default function ProgressLinearStyleTest(){
 
   describe('ProgressLinearStyleTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api15.static", "EntryAbility")
     });
     afterEach(async (): Promise<void> => {

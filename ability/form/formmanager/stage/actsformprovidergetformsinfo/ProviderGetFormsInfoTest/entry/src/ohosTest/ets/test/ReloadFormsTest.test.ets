@@ -77,6 +77,28 @@ export default function ReloadFormsTest() {
     });
 
     /**
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadAllForms_0300
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadAllForms_0300
+     * @tc.desc   reloadAllForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_AA_OpenHarmony_ProviderReloadAllForms_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadAllForms_0300';
+      console.info(`${name} start`);
+      try {
+        await formProvider.reloadAllForms(null);
+      } catch (err) {
+        const businessError = err as BusinessError;
+        console.error(`${name} formProvider::reloadAllForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        expect(businessError.code).assertEqual(401);
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**
      * @tc.name   SUB_AA_OpenHarmony_ProviderReloadForms_0100
      * @tc.number SUB_AA_OpenHarmony_ProviderReloadForms_0100
      * @tc.desc   reloadForms()
@@ -276,5 +298,78 @@ export default function ReloadFormsTest() {
       })
       console.info(`${name} end`);
     });
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadForms_0900
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadForms_0900
+     * @tc.desc   reloadForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_AA_OpenHarmony_ProviderReloadForms_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0900';
+      console.info(`${name} start`);
+      let context: common.UIAbilityContext | undefined = await AppStorage.get<common.UIAbilityContext>("abilityContext");
+      try {
+        formProvider.reloadForms(null, '', '', '');
+        await sleep(1000);
+        done();
+      } catch (err) {
+        const businessError = err as BusinessError;
+        console.error(`${name} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        expect(businessError.code).assertEqual(401);
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadForms_1000
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadForms_1000
+     * @tc.desc   reloadForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_AA_OpenHarmony_ProviderReloadForms_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_1000';
+      console.info(`${name} start`);
+      try {
+        formProvider.reloadForms(null, null, null, null);
+        await sleep(1000);
+        done();
+      } catch (err) {
+        const businessError = err as BusinessError;
+        console.error(`${name} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        expect(businessError.code).assertEqual(401);
+        done();
+      }
+      console.info(`${name} end`);
+    });    
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadForms_1100
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadForms_1100
+     * @tc.desc   reloadForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_AA_OpenHarmony_ProviderReloadForms_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_1100';
+      console.info(`${name} start`);
+      try {
+        formProvider.reloadForms(undefined, undefined, undefined, undefined);
+        await sleep(1000);
+        done();
+      } catch (err) {
+        const businessError = err as BusinessError;
+        console.error(`${name} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        expect(businessError.code).assertEqual(401);
+        done();
+      }
+      console.info(`${name} end`);
+    }); 
   })
 }

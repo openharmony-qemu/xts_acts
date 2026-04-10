@@ -201,7 +201,7 @@ export default class MediaTestBase {
           }
         }
 
-        this.driveFnNoSleep(1)
+        await this.driveFnNoSleep(1)
         setTimeout(() => {
           this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         }, recorderTime);
@@ -219,7 +219,7 @@ export default class MediaTestBase {
           });
         }
 
-        this.driveFnNoSleep(1)
+        await this.driveFnNoSleep(1)
         setTimeout(() => {
           this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         }, recorderTime);
@@ -236,7 +236,7 @@ export default class MediaTestBase {
           });
         }
 
-        this.driveFnNoSleep(1)
+        await this.driveFnNoSleep(1)
         setTimeout(() => {
           this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         }, recorderTime);
@@ -381,7 +381,7 @@ export default class MediaTestBase {
           expect().assertFail()
         })
 
-        this.driveFnNoSleep(1)
+        await this.driveFnNoSleep(1)
         setTimeout(() => {
           this.toNextStep2(avScreenCaptureRecorder, avConfig2, recorderTime, steps, done);
         }, recorderTime);
@@ -568,7 +568,7 @@ export default class MediaTestBase {
     let driver = await UiDriver.create()
     console.info(`driver is ${JSON.stringify(driver)}`)
     console.info(`UiDriver start`)
-    await this.msleepAsync(500)
+    await this.msleepAsync(3000)
     for (let i = 0; i < num; i++) {
       let button = await driver.findComponent(BY.text('允许'))
       if (button == null) {

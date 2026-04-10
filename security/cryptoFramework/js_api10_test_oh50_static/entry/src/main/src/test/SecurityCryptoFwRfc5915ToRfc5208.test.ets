@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,7 +49,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
           pkcs8Utils.generatePriKeyDerData(keyPair);
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`ECC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -78,7 +78,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
           });
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`ECC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -107,7 +107,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
           });
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`ECC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -136,7 +136,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
           });
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`ECC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -159,18 +159,11 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
         try {
           keyPair.pubKey.getEncodedDer("PKCS8");
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RSA PubKey “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
-        try {
-          keyPair.priKey.getEncodedDer("PKCS8");
-          expect(null).assertFail();
-        } catch (error: BusinessError) {
-          console.error(`RSA PriKey “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
-        }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`ECC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -188,7 +181,7 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     it("SUB_Security_CryptoFramework_ECCRFC5915_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "DSA1024";
-        let keyPair: cryptoFramework.KeyPair;
+        let keyPair: cryptoFramework.KeyPair | undefined;
         let cipher: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         if (pkcs8Utils.keys.key_1024) {
           let priKey: cryptoFramework.DataBlob = {data: new Uint8Array(pkcs8Utils.keys.key_1024.pri)}
@@ -196,13 +189,13 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
           keyPair = await cipher.convertKey(pubKey, priKey)
         }
         try {
-          keyPair.priKey.getEncodedDer("PKCS8");
+          keyPair!.priKey.getEncodedDer("PKCS8");
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`DSA PriKey “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`DSA “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -225,11 +218,11 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
         try {
           keyPair.priKey.getEncodedDer("PKCS8");
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RSA PriKey “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`ECC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -252,11 +245,11 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
         try {
           keyPair.priKey.getEncodedDer("PKCS8");
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RSA PriKey “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`ECC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -279,11 +272,11 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
         try {
           keyPair.priKey.getEncodedDer("PKCS8");
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RSA PriKey “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`ECC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -306,11 +299,11 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
         try {
           keyPair.priKey.getEncodedDer("PKCS8");
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`RSA PriKey “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`ECC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }

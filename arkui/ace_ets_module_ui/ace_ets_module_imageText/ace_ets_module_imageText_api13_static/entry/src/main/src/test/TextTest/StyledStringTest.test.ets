@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function StyledStringUrl() {
   describe('StyledStringUrl', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StyledStringUrl beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api13.static", "EntryAbility")

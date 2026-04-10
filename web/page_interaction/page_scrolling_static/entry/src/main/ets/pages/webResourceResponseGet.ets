@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -106,7 +106,7 @@ struct webResourceResponseGet {
               try {
                 console.log('testScrollType001 :'+webView.ScrollType.EVENT)
                 Utils.emitEvent(webView.ScrollType.EVENT, 37023);
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -118,9 +118,24 @@ struct webResourceResponseGet {
                 let result = this.controller.scrollByWithResult(200, 200);
                 console.log('original result: ' + result);
                 Utils.emitEvent(result, 37024);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent('error', 37024);
+              }
+              break;
+            }
+
+            case 'testscrollByWithResult002': {
+              try {
+                this.controllerone.loadUrl('resource://rawfile/theScrolltwo.html');
+                let result = this.controllerone.scrollByWithResult(200, 200);
+                console.log('original result: ' + result);
+                Utils.emitEvent(result, 370241);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 370241);
               }
               break;
             }

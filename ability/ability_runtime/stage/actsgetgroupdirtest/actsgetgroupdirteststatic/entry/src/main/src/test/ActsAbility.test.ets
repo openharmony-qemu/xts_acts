@@ -24,7 +24,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let abilityContext: common.UIAbilityContext;
+let abilityContext: common.UIAbilityContext | undefined;
 
 export default function abilityTest() {
 
@@ -61,7 +61,7 @@ export default function abilityTest() {
         it('Context_getGroupDir_Static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.log("start Context_getGroupDir_Static_002 =====>");
             await Utils.msSleep(1000);
-            abilityContext.getGroupDir("111").then(data => {
+            abilityContext?.getGroupDir("111").then(data => {
                 console.error("getGroupDir Context_getGroupDir_Static_002 ====> result data" + data);
                 expect(data).assertEqual("");
             }).catch((error: Error): void => {
@@ -82,7 +82,7 @@ export default function abilityTest() {
         it('Context_getGroupDir_Static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.log("start Context_getGroupDir_Static_003 =====>");
             await Utils.msSleep(1000);
-            abilityContext.getGroupDir("context_hap1").then(data => {
+            abilityContext?.getGroupDir("context_hap1").then(data => {
                 console.error("getGroupDir Context_getGroupDir_Static_003 ====> result data" + data);
                 expect(data).assertEqual("");
             }).catch((error: Error): void => {
@@ -103,7 +103,7 @@ export default function abilityTest() {
         it('Context_getGroupDir_Static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.log("start Context_getGroupDir_Static_005 =====>");
             await Utils.msSleep(1000);
-            abilityContext.getGroupDir("", (err, data) => {
+            abilityContext?.getGroupDir("", (err, data) => {
                 console.error("Context_getGroupDir_Static_005 ====> result data" + data);
                 console.error("Context_getGroupDir_Static_005 ====> result err" + JSON.stringify(err));
                 expect(data).assertEqual("");
@@ -123,13 +123,34 @@ export default function abilityTest() {
         it('Context_getGroupDir_Static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.log("start Context_getGroupDir_Static_006 =====>");
             await Utils.msSleep(1000);
-            abilityContext.getGroupDir("context_hap1", (err, data) => {
+            abilityContext?.getGroupDir("context_hap1", (err, data) => {
                 console.error("Context_getGroupDir_Static_006 ====> result data" + data);
                 console.error("Context_getGroupDir_Static_006 ====> result err" + JSON.stringify(err));
                 expect(data).assertEqual("");
                 expect(err?.code).assertEqual(0);
                 done();
             })
+        })
+
+        /**
+         * @tc.name   Context_getGroupDir_Static_007
+         * @tc.number Context_getGroupDir_Static_007
+         * @tc.desc   Function test,getGroupDir
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('Context_getGroupDir_Static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+            console.log("start Context_getGroupDir_Static_007 =====>");
+            await Utils.msSleep(1000);
+            abilityContext?.getGroupDir("").then(data => {
+                console.error("getGroupDir Context_getGroupDir_Static_007 ====> result data" + data);
+                expect(data).assertEqual("");
+            }).catch((error: Error): void => {
+                console.error("getGroupDir Context_getGroupDir_Static_007 ====> result err" + JSON.stringify(error));
+                expect().assertFail();
+            });
+            done();
         })
     })
 }

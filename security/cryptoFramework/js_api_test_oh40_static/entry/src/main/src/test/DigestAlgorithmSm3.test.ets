@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,10 +33,10 @@ export default function DigestAlgorithmSm3Jsunit() {
      * @tc.desc   the asyAlgoName is "SM3", Use the Promise Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it("Security_CryptoFramework_MDSM3_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await DigPromise.testMDDigestPromise("SM3")
         .then((result: boolean) => {
           expect(result).assertTrue();
@@ -63,9 +63,9 @@ export default function DigestAlgorithmSm3Jsunit() {
       try {
         cryptoFramework.createMd("SM4");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("CreateMd catch err: " + err);
-        expect(err.code).assertEqual(401);
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -94,6 +94,7 @@ export default function DigestAlgorithmSm3Jsunit() {
 
       try {
         let result = await new Promise<boolean>((resolve, reject) => {
+          waitForCompletion(async () => {
           globalMd = cryptoFramework.createMd("SM3");
           console.log("Md= " + globalMd);
           console.log("MD algName is: " + globalMd.algName);
@@ -119,9 +120,10 @@ export default function DigestAlgorithmSm3Jsunit() {
               console.error("testMDDigestCallback catch error: " + err);
               reject(err);
             });
+          })
         });
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -140,10 +142,10 @@ export default function DigestAlgorithmSm3Jsunit() {
       let globalMd: cryptoFramework.Md;
       try {
         let result: boolean = await new Promise<boolean>((resolve, reject) => {
+          waitForCompletion(async () => {
           globalMd = cryptoFramework.createMd("SM3");
           console.log("Md= " + globalMd);
           console.log("MD algName is: " + globalMd.algName);
-
           await globalMd
             .digest()
             .then((digestBlob: cryptoFramework.DataBlob) => {
@@ -160,9 +162,10 @@ export default function DigestAlgorithmSm3Jsunit() {
               console.error("testMDDigest catch err: " + err);
               reject(err);
             });
+          })
         });
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -181,7 +184,7 @@ export default function DigestAlgorithmSm3Jsunit() {
       try {
         let globalMd: cryptoFramework.Md = cryptoFramework.createMd("SM3");
         expect(globalMd.algName == "SM3").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("testMDDigest catch err: " + err);
         expect(null).assertFail();
       }
@@ -306,9 +309,9 @@ export default function DigestAlgorithmSm3Jsunit() {
       try {
         cryptoFramework.createMac("SHA5");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("CreateMac catch 1 err: " + err);
-        expect(err.code).assertEqual(401);
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -323,7 +326,7 @@ export default function DigestAlgorithmSm3Jsunit() {
      */
     it("Security_CryptoFramework_HMACSM3_Func_0700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let globalHMAC: cryptoFramework.Mac;
+      let globalHMAC: cryptoFramework.Mac | undefined;
       let globalText: string = "";
       let globalSymKeyGenerator: cryptoFramework.SymKeyGenerator;
       let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz";
@@ -337,22 +340,23 @@ export default function DigestAlgorithmSm3Jsunit() {
       };
       try {
         let result: boolean = await new Promise<boolean>((resolve, reject) => {
+          waitForCompletion(async () => {
           globalHMAC = cryptoFramework.createMac("SM3");
           globalSymKeyGenerator =
             cryptoFramework.createSymKeyGenerator("AES128");
           await globalSymKeyGenerator
             .generateSymKey()
             .then((symKey: cryptoFramework.SymKey) => {
-              return globalHMAC.init(symKey);
+              return globalHMAC!.init(symKey);
             })
             .then(() => {
-              return globalHMAC.update(ginBlob);
+              return globalHMAC!.update(ginBlob);
             })
             .then<cryptoFramework.DataBlob>(() => {
-              return globalHMAC.doFinal();
+              return globalHMAC!.doFinal();
             })
             .then((doFinalBlob: cryptoFramework.DataBlob) => {
-              let mdLen: int = globalHMAC.getMacLength();
+              let mdLen: int = globalHMAC!.getMacLength();
               console.log("HMAC HMAC len: " + mdLen);
               if (doFinalBlob != null && mdLen != 0 && mdLen != null) {
                 resolve(true);
@@ -363,9 +367,10 @@ export default function DigestAlgorithmSm3Jsunit() {
             .catch((err: Error) => {
               reject(err);
             });
+          })
         });
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -383,7 +388,7 @@ export default function DigestAlgorithmSm3Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let signGenerator: cryptoFramework.Sign = cryptoFramework.createSign("SM2_256|SM3");
       let rsaGenerator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("RSA1024");
-      let rsaKeyPair: cryptoFramework.KeyPair;
+      let rsaKeyPair: cryptoFramework.KeyPair | undefined;
       await new Promise<void>((resolve, reject) => {
         rsaGenerator.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
           if (err || tmp === undefined) { // success: error is null, failed: data is undefined
@@ -395,10 +400,10 @@ export default function DigestAlgorithmSm3Jsunit() {
         });
       });
       try {
-        await signGenerator.init(rsaKeyPair.priKey);
+        await signGenerator.init(rsaKeyPair!.priKey);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -421,7 +426,7 @@ export default function DigestAlgorithmSm3Jsunit() {
       let globalSymKeyGenerator: cryptoFramework.SymKeyGenerator =
         cryptoFramework.createSymKeyGenerator("SM4_128");
 
-      let globalSymKey: cryptoFramework.SymKey;
+      let globalSymKey: cryptoFramework.SymKey | undefined;
       await new Promise<void>((resolve, reject) => {
         globalSymKeyGenerator.generateSymKey((err: BusinessError<void>|null, tmp: cryptoFramework.SymKey|undefined) => {
           if (err || tmp === undefined) { // success: error is null, failed: data is undefined
@@ -435,10 +440,10 @@ export default function DigestAlgorithmSm3Jsunit() {
       try {
         await globalHMAC.update(ginBlob);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(17630001);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(17630001);
       }
-      await globalHMAC.init(globalSymKey);
+      await globalHMAC.init(globalSymKey!);
       done();
     });
 
@@ -455,7 +460,7 @@ export default function DigestAlgorithmSm3Jsunit() {
       try {
         let globalMac: cryptoFramework.Md = cryptoFramework.createMd("SM3");
         expect(globalMac.algName == "SM3").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("MacDigestAlgoName catch err: " + err);
         expect(null).assertFail();
       }

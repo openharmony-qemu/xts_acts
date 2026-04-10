@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ export let currentWorker = EAWorker.current()
 
 export default function CombLockTest() {
   describe('CombLockTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(200);
     })
     /**
@@ -44,9 +44,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('CombLockTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('CombLockTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest001';
         console.info(`${tag} test start`);
@@ -83,9 +83,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('CombLockTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('CombLockTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest002';
         console.info(`${tag} test start`);
@@ -142,9 +142,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('CombLockTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('CombLockTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest003';
         console.info(`${tag} test start`);
@@ -192,9 +192,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('CombLockTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('CombLockTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest004';
         console.info(`${tag} test start`);
@@ -244,9 +244,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('CombLockTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('CombLockTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest005';
         console.info(`${tag} test start`);
@@ -298,9 +298,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('CombLockTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('CombLockTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest006';
         console.info(`${tag} test start`);
@@ -350,9 +350,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('CombLockTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('CombLockTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest007';
         console.info(`${tag} test start`);
@@ -407,9 +407,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('CombLockTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('CombLockTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest008';
         console.info(`${tag} test start`);
@@ -477,9 +477,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('CombLockTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('CombLockTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest009';
         console.info(`${tag} test start`);
@@ -555,9 +555,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('CombLockTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('CombLockTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest010';
         console.info(`${tag} test start`);
@@ -626,9 +626,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('CombLockTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('CombLockTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest011';
         console.info(`${tag} test start`);
@@ -706,9 +706,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('CombLockTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('CombLockTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest012';
         console.info(`${tag} test start`);
@@ -790,9 +790,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('CombLockTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('CombLockTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest013';
         console.info(`${tag} test start`);
@@ -872,9 +872,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('CombLockTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('CombLockTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest014';
         console.info(`${tag} test start`);
@@ -964,9 +964,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('CombLockTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('CombLockTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest015';
         console.info(`${tag} test start`);
@@ -1053,9 +1053,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('CombLockTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('CombLockTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest016';
         console.info(`${tag} test start`);
@@ -1145,9 +1145,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('CombLockTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('CombLockTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest017';
         console.info(`${tag} test start`);
@@ -1241,7 +1241,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -1252,22 +1252,20 @@ export default function CombLockTest() {
         const workload = 1000;
 
         let count = 0;
-        let jobs = new Array<Job<void>>(coroutines);
-        let workers = new Array<EAWorker>(coroutines);
+        let jobs = new Array<Job<void>>();
+        let workers = new Array<EAWorker>(coroutines, (i: int) => new EAWorker(`Worker-${i}`));
 
         for (let i = 0; i < coroutines; ++i) {
-          const id = i;
-          workers[i] = new EAWorker(`Worker-${id}`);
           workers[i].start();
 
-          jobs[i] = workers[i].run<void>(() => {
+          jobs.push(workers[i].run<void>(() => {
             for (let j = 0; j < workload; ++j) {
               mutexLock.lock();
               // 临界区资源
               count++;
               mutexLock.unlock();
             }
-          });
+          }));
         }
         // 等待所有任务完成
         let sharedJob = new SharedJob<Job<void>>(jobs);
@@ -1288,7 +1286,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -1299,22 +1297,20 @@ export default function CombLockTest() {
         const workload = 1000;
 
         let count = 0;
-        let jobs = new Array<Job<void>>(coroutines);
-        let workers = new Array<EAWorker>(coroutines);
+        let jobs = new Array<Job<void>>();
+        let workers = new Array<EAWorker>(coroutines, (i: int) => new EAWorker(`Worker-${i}`));
 
         for (let i = 0; i < coroutines; ++i) {
-          const id = i.toInt();
-          workers[i] = new EAWorker(`Worker-${id}`);
           workers[i].start();
 
-          jobs[id] = workers[i].run<void>(() => {
+          jobs.push(workers[i].run<void>(() => {
             for (let j = 0; j < workload; ++j) {
               readLock.lock();
               //临界区资源
               count++;
               readLock.unlock();
             }
-          });
+          }));
         }
 
         // 等待所有任务完成
@@ -1335,7 +1331,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -1346,22 +1342,20 @@ export default function CombLockTest() {
         const workload = 1000;
 
         let count = 0;
-        let jobs = new Array<Job<void>>(coroutines);
-        let workers = new Array<EAWorker>(coroutines);
+        let jobs = new Array<Job<void>>();
+        let workers = new Array<EAWorker>(coroutines, (i: int) => new EAWorker(`Worker-${i}`));
 
         for (let i = 0; i < coroutines; ++i) {
-          const id = i.toInt();
-          workers[i] = new EAWorker(`Worker-${id}`);
           workers[i].start();
 
-          jobs[id] = workers[i].run<void>(() => {
+          jobs.push(workers[i].run<void>(() => {
             for (let j = 0; j < workload; ++j) {
               writeLock.lock();
               //临界区资源
               count++;
               writeLock.unlock();
             }
-          });
+          }));
         }
 
         // 等待所有任务完成
@@ -1381,9 +1375,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('CombLockTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('CombLockTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest021';
         console.info(`${tag} test start`);
@@ -1438,9 +1432,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('CombLockTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('CombLockTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest022';
         console.info(`${tag} test start`);
@@ -1490,9 +1484,9 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('CombLockTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('CombLockTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'CombLockTest023';
         console.info(`${tag} test start`);
@@ -1542,7 +1536,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -1596,7 +1590,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -1649,7 +1643,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -1701,7 +1695,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -1753,7 +1747,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -1804,7 +1798,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -1855,7 +1849,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -1907,7 +1901,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -1959,7 +1953,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -2011,7 +2005,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -2063,7 +2057,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -2114,7 +2108,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -2170,7 +2164,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -2226,7 +2220,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -2282,7 +2276,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -2337,7 +2331,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -2392,7 +2386,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -2445,7 +2439,7 @@ export default function CombLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('CombLockTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {

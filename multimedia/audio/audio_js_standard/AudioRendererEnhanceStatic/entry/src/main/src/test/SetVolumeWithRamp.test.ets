@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,11 +31,11 @@ let g_context: common.UIAbilityContext;
 
 export default function audioRendererEnhanceTest() {
   describe('SetVolumeWithRampTest', () => {
-    let audioRen: audio.AudioRenderer | null;
+    let audioRen: audio.AudioRenderer | null = null;
     let Tag = "SetVolumeWithRampTest";
     beforeAll(async () => {
       try {
-        console.info('%{public}s', ' beforeAll start');
+        console.info('beforeAll start');
         g_context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
         let atManager = abilityAccessCtrl.createAtManager();
         let arr: Array<Permissions> = new Array<Permissions>();
@@ -47,12 +47,14 @@ export default function audioRendererEnhanceTest() {
             console.info("getPermissionRequestResult err" + JSON.stringify(err));
           });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
+        await Utils.msSleep(1000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        await Utils.msSleep(1000);
         if (permissionButton != null) {
           await permissionButton.click();
         }
       } catch (err) {
-        console.error(' beforeAll failed, err: ' + err);
+        console.error('beforeAll failed, err: ' + err);
       }
     })
     beforeEach(async () => {
@@ -81,7 +83,7 @@ export default function audioRendererEnhanceTest() {
         }).catch((err: Error) => {
           console.info(`${Tag}: AudioRender Created : ERROR : ` + err.message);
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: AudioRender Created : catch ERROR : ` + error.code + error.message);
       }
     })
@@ -98,7 +100,7 @@ export default function audioRendererEnhanceTest() {
       console.info(`${Tag}: afterAll: Test suite-level cleanup condition`);
     })
 
-    let filePath: string;
+    let filePath: string = '';
     let renderPlay = async () => {
       let bufferSize: long;
       try {
@@ -117,7 +119,7 @@ export default function audioRendererEnhanceTest() {
       try {
         filePath = testContext.filesDir;
         console.info(`${Tag}:  case2 dirPath is  ${JSON.stringify(filePath)}`);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`audioRenderer err:` + err);
       }
 
@@ -169,15 +171,14 @@ export default function audioRendererEnhanceTest() {
       try {
         await audioRen!.setVolume(0);
         console.info(`${Tag}: setVolume 0: SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
         audioRen!.setVolumeWithRamp(1, 1000);
         console.info(`${Tag}: setVolumeWithRamp 1,1000 :SUCCESS`);
-        expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: setVolumeWithRamp catch error: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -196,15 +197,14 @@ export default function audioRendererEnhanceTest() {
       try {
         await audioRen!.setVolume(1);
         console.info(`${Tag}: setVolume 1: SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
         audioRen!.setVolumeWithRamp(0, 100)
         console.info(`${Tag}: setVolumeWithRamp 0,100 : SUCCESS`);
-        expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: attachVolumeRamp catch error: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -223,15 +223,14 @@ export default function audioRendererEnhanceTest() {
       try {
         await audioRen!.setVolume(1);
         console.info(`${Tag}: setVolume 1: SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
         audioRen!.setVolumeWithRamp(0.5, 10)
         console.info(`${Tag}: setVolumeWithRamp 0.5,10 : SUCCESS`);
-        expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: attachVolumeRamp catch error: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -250,15 +249,14 @@ export default function audioRendererEnhanceTest() {
       try {
         await audioRen!.setVolume(0);
         console.info(`${Tag}: setVolume 0: SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
         audioRen!.setVolumeWithRamp(0.5, 10)
         console.info(`${Tag}: setVolumeWithRamp 0.5,10 : SUCCESS`);
-        expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: attachVolumeRamp catch error: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -277,15 +275,14 @@ export default function audioRendererEnhanceTest() {
       try {
         await audioRen!.setVolume(0);
         console.info(`${Tag}: setVolume 0: SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
         audioRen!.setVolumeWithRamp(0, 10)
         console.info(`${Tag}: setVolumeWithRamp 0,10 : SUCCESS`);
-        expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: attachVolumeRamp catch error: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -304,7 +301,7 @@ export default function audioRendererEnhanceTest() {
       try {
         await audioRen!.setVolume(1);
         console.info(`${Tag}: setVolume 1: SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
@@ -312,7 +309,8 @@ export default function audioRendererEnhanceTest() {
         console.info(`${Tag}: setVolumeWithRamp -1,1000: SUCCESS`);
         expect(false).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}: setVolumeWithRamp -1,1000 : error.code:${error.code}, error.message:${error.message}`);
         expect(Number(error.code)).assertEqual(testConst.INVALID_INPUT_PARAMETER_6800101);
         done();
@@ -331,7 +329,7 @@ export default function audioRendererEnhanceTest() {
       try {
         await audioRen!.setVolume(1);
         console.info(`${Tag}: setVolume 1: SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
@@ -339,7 +337,8 @@ export default function audioRendererEnhanceTest() {
         console.info(`${Tag}: setVolumeWithRamp 1.2,1000: SUCCESS`);
         expect(false).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}: setVolumeWithRamp 1.2,1000 : error.code:${error.code}, error.message:${error.message}`);
         expect(Number(error.code)).assertEqual(testConst.INVALID_INPUT_PARAMETER_6800101);
         done();
@@ -363,12 +362,13 @@ export default function audioRendererEnhanceTest() {
           console.info(`${Tag}: attachVolumeRamp after stop: SUCCESS`);
           expect(false).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${Tag}: attachVolumeRamp after stop: error.code:${err.code}, error.message:${err.message}`);
           expect(Number(err.code)).assertEqual(testConst.UNSUPORTED_OPTION_6800103);
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: attachVolumeRamp no unkown: error.code:${error.code}, error.message:${error.message}`);
         expect(false).assertTrue();
         done();
@@ -391,12 +391,13 @@ export default function audioRendererEnhanceTest() {
           console.info(`${Tag}: attachVolumeRamp after stop: SUCCESS`);
           expect(false).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${Tag}: attachVolumeRamp after stop: error.code:${err.code}, error.message:${err.message}`);
           expect(Number(err.code)).assertEqual(testConst.UNSUPORTED_OPTION_6800103);
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: attachVolumeRamp no unkown: error.code:${error.code}, error.message:${error.message}`);
         expect(false).assertTrue();
         done();
@@ -428,25 +429,25 @@ export default function audioRendererEnhanceTest() {
             streamInfo: AudioStreamInfo,
             rendererInfo: AudioRendererInfo
           }
-          let audioRender: audio.AudioRenderer | null;
+          let audioRender: audio.AudioRenderer | null = null;
           try {
             let data = await audio.createAudioRenderer(AudioRendererOptions);
             audioRender = data;
             console.info(`${Tag}: createAudioRenderer : ${testConst.StreamUsage[index]} success`);
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.info(`${Tag}: createAudioRenderer : ${testConst.StreamUsage[index]} ERROR : ${err.message}, ${err.code}`);
           }
           try {
             await audioRen!.setVolume(1);
             console.info(`${Tag}: setVolume 1: SUCCESS`);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
           }
           try {
             audioRen!.setVolumeWithRamp(0, 1000);
             console.info(`${Tag}: setVolumeWithRamp : ${testConst.StreamUsage[index]} success`);
             await Utils.msSleep(20);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.info(`${Tag}: setVolumeWithRamp : ${testConst.StreamUsage[index]} ERROR : ${error.message}, ${error.code}`);
             expect(false).assertTrue();
             done();
@@ -460,9 +461,8 @@ export default function audioRendererEnhanceTest() {
           }
           await Utils.msSleep(20);
         }
-        expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}:  setVolumeWithRamp : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -484,18 +484,18 @@ export default function audioRendererEnhanceTest() {
           try {
             await audioRen!.setVolume(1);
             console.info(`${Tag}: setVolume 1: SUCCESS`);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
           }
           audioRen!.setVolumeWithRamp(0, 1);
           console.info(`${Tag}: attachVolumeRamp renderPlay: SUCCESS`);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(`${Tag}: attachVolumeRamp on renderPlay: error.code:${err.code}, error.message:${err.message}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag}: attachVolumeRamp no unkown: error.code:${error.code}, error.message:${error.message}`);
         expect(false).assertTrue();
         done();

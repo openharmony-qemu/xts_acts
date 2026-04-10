@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -115,7 +115,7 @@ export default function uitestComponentTest() {
           let msg = await bottom.getText();
           hilog.info(domain, tag, `testScrollToBottom_static msg, ${JSON.stringify(msg)} `);
         }
-      } catch (error : Error) {
+      } catch (error) {
         hilog.info(domain, tag, `testScrollToBottom_static error, ${JSON.stringify(error)} `);
         expect().assertFail();
       }
@@ -152,7 +152,7 @@ export default function uitestComponentTest() {
           let msg = await bottom.getText();
           hilog.info(domain, tag, `testScrollToBottom_speed_static msg, ${JSON.stringify(msg)} `);
         }
-      } catch (error : Error) {
+      } catch (error) {
         hilog.info(domain, tag, `testScrollToBottom_speed_static error, ${JSON.stringify(error)} `);
         expect().assertFail();
       }
@@ -227,7 +227,7 @@ export default function uitestComponentTest() {
         let bottom = await driver.findComponent(ON.text('next page'));
         hilog.info(domain, tag, `testScrollToTop_speed_static bottom, ${JSON.stringify(bottom)} `);
         expect(bottom != null).assertTrue();
-      } catch (error : Error) {
+      } catch (error) {
         hilog.info(domain, tag, `testScrollToTop_speed_static error, ${JSON.stringify(error)} `);
       }
       await stopApplication('com.uitestScene.acts');
@@ -372,6 +372,13 @@ export default function uitestComponentTest() {
             let bounds2 = await image2.getBounds();
             hilog.info(domain, tag, `testPinch_static bounds2, ${JSON.stringify(bounds2)} `);
             expect(bounds1 != bounds2).assertTrue();
+            let bound1Width = bounds1.right - bounds1.left;
+            let bound2Width = bounds2.right - bounds2.left;
+            expect(bound1Width != bound2Width).assertTrue();
+            let bound1Height = bounds1.bottom - bounds1.top;
+            let bound2Height = bounds2.bottom - bounds2.top;
+            expect(bound1Height != bound2Height).assertTrue();
+            expect(bounds1.displayId == bounds2.displayId).assertTrue();
           }
         }
       } catch(error) {
@@ -510,6 +517,31 @@ export default function uitestComponentTest() {
           hilog.info(domain, tag, `testInputText_static inputText, ${ JSON.stringify(inputText) }`);
           expect(inputText).assertEqual('123');
         }
+        await driver.delayMs(1000);
+        let text2 = await driver.findComponent(ON.type('TextInput'));
+        if (text2 == null) {
+          let scrollBar = await driver.findComponent(ON.type('Scroll'));
+          if (scrollBar != null) {
+            text2 = await scrollBar.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testInputText_static text2, ${ JSON.stringify(text2) }`);
+        expect(text2 != null).assertTrue()
+        if (text2 != null) {
+          await text2.inputText('');
+        }
+
+        await driver.delayMs(1000);
+        await exitInputMethod()
+        await driver.delayMs(2000)
+        let text3 = await driver.findComponent(ON.type('TextInput'));
+        hilog.info(domain, tag, `testInputText_static text3, ${ JSON.stringify(text3) }`);
+        expect(text3 != null).assertTrue()
+        if (text3 != null) {
+          let inputText1 = await text3.getText();
+          hilog.info(domain, tag, `testInputText_static inputText1, ${ JSON.stringify(inputText1) }`);
+          expect(inputText1).assertEqual('');
+        }
       } catch(error) {
         hilog.info(domain, tag, `testInputText_static error, ${ JSON.stringify(error) }`);
         expect().assertFail();
@@ -539,6 +571,9 @@ export default function uitestComponentTest() {
           let center = await button.getBoundsCenter();
           hilog.info(domain, tag, `testGetUiComponentBoundsCenter_static center, ${ JSON.stringify(center) }`);
           expect(center instanceof Point).assertTrue();
+          expect(center.x > 0).assertTrue();
+          expect(center.y > 0).assertTrue();
+          expect(center.displayId != null).assertTrue();
         }
       } catch(error) {
         hilog.info(domain, tag, `testGetUiComponentBoundsCenter_static error, ${ JSON.stringify(error) }`);
@@ -596,8 +631,9 @@ export default function uitestComponentTest() {
         expect(button != null).assertTrue()
         if (button != null) {
           await button.doubleClick();
+          await driver.delayMs(2000);
           hilog.info(domain, tag, `testUiComponentDoubleClick_static longClick`);
-          let newButton = await driver.findComponent(ON.text('doubleClick'));
+          let newButton = await driver.findComponent(ON.text('doubleClick'));        
           hilog.info(domain, tag, `testUiComponentDoubleClick_static newButton, ${ JSON.stringify(newButton)} }`);
           expect(newButton != null).assertTrue();
           await driver.delayMs(1000);
@@ -693,6 +729,36 @@ export default function uitestComponentTest() {
           let msg = await text1.getText();
           hilog.info(domain, tag, `testComponentInputText_static msg, ${JSON.stringify(msg)}`);
           expect(msg == '123').assertTrue()
+        }
+        await driver.delayMs(1000)
+        let text2 = await driver.findComponent(ON.type('TextInput'))
+        if (text2 == null) {
+          let scroll = await driver.findComponent(ON.type('Scroll'))
+          if (scroll != null) {
+            text2 = await scroll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText_static text2, ${JSON.stringify(text2)}`);
+        expect(text2 != null).assertTrue()
+        if (text2 != null) {
+          await text2.inputText('', {paste:false, addition:false})
+        }
+        await driver.delayMs(2000)
+        await exitInputMethod()
+        await driver.delayMs(2000)
+        let text3 = await driver.findComponent(ON.type('TextInput'))
+        if (text3 == null) {
+          let scroll = await driver.findComponent(ON.type('Scroll'))
+          if (scroll != null) {
+            text3 = await scroll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText_static text3, ${JSON.stringify(text3)}`);
+        expect(text3 != null).assertTrue()
+        if (text3 != null) {
+          let msg = await text3.getText();
+          hilog.info(domain, tag, `testComponentInputText_static msg, ${JSON.stringify(msg)}`);
+          expect(msg == '').assertTrue()
         }
       } catch(error) {
         hilog.info(domain, tag, `testComponentInputText_static error, ${JSON.stringify(error)}`);

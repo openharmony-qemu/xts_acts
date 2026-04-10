@@ -49,7 +49,7 @@ export default function OpenPopupAvoidTargetTest() {
   describe('OpenPopupAvoidTargetTest', () => {
     const SLEEP_TIME_1000 = 1000;
     const SLEEP_TIME_3000 = 3000;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("OpenPopupAvoidTargetTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api20.static", "EntryAbility")
     });
@@ -108,7 +108,7 @@ export default function OpenPopupAvoidTargetTest() {
         `[OpenPopup_AvoidTargetPopup_0010] + ${buttonRect.left}, ${buttonRect.top}, ${buttonRect.right},
               ${buttonRect.bottom}`
       );
-      expect(popupRect.top).assertLargerOrEqual(buttonRect.bottom);
+      expect(popupRect.right).assertLargerOrEqual(buttonRect.right);
       await (button?.click() as Promise<void>);
       console.info('[' + tagName + '] END ===========================');
       done();

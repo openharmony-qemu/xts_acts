@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function MarqueeModifierTest() {
   describe('MarqueeModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("MarqueeModifierTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")

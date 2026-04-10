@@ -95,10 +95,10 @@ export default function testsuite() {
   initializeModifierTest();
   addParallelGestureTest1();
   clearGestureTest();
-  
-  getModifierKeyStateTest();
+
   getModifierKeyState2Test();
   getModifierKeyState3Test();
+  getModifierKeyStateTest();
   TapGestureBasicClickTest();
   TapGestureBasicDoubleClickTest();
   LongPressGestureLongClickTest();

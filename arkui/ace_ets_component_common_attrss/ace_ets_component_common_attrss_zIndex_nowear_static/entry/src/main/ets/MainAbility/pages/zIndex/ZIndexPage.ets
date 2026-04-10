@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -154,13 +154,13 @@ struct ZIndexPage {
       this.targetComponentHeight = routerParamOptions.view.targetComponentHeight
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
       console.info('[TabIndexPage] end router ');
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
 
   commonStyle(instance: CommonMethod){
-    instance.zIndex(this._zIndex as Int)
+    instance.zIndex(this._zIndex.toInt())
     instance.width(this.targetComponentWidth)
     instance.height(this.targetComponentHeight)
     instance.key(this.componentKey)

@@ -178,7 +178,11 @@ export default function httpFetchTest() {
       runFetchTestCase(caseName, {
         url: TEST_URL
       }, done, (data: FetchResponse) => {
-        ExpectTrue(data.code === 200);
+        if (data) {
+          ExpectTrue(data.code === 200);
+        } else {
+          ExpectTrue(false);
+        }
       }, () => {
         ExpectTrue(false);
       });
@@ -197,7 +201,11 @@ export default function httpFetchTest() {
       runFetchTestCase(caseName, {
         url: `${TEST_URL_FOR_FETCH}/view`
       }, done, (data: FetchResponse) => {
-        ExpectTrue(data.code === 404);
+        if (data) {
+          ExpectTrue(data.code === 404);
+        } else {
+          ExpectTrue(false);
+        }
       }, () => {
         ExpectTrue(false);
       });
@@ -216,8 +224,15 @@ export default function httpFetchTest() {
       runFetchTestCase(caseName, {
         url: 'http://www.kuaidi100.com/query'
       }, done, (data: FetchResponse) => {
-        let resp: object = JSON.parse(data.data as string);
-        ExpectTrue(resp['status'] === '400');
+        try {
+          let resp: object = JSON.parse(data.data as string);
+          ExpectTrue(resp['status'] === '400');
+        } catch (error) {
+          console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+          ExpectTrue(false);
+          done();
+          console.info(`${caseName} test end `);
+        }
       }, () => {
         ExpectTrue(false);
       });
@@ -236,7 +251,11 @@ export default function httpFetchTest() {
       runFetchTestCase(caseName, {
         url: TEST_URL, responseType: 'text'
       }, done, (data: FetchResponse) => {
-        ExpectTrue(typeof data.data === 'string');
+        if (data) {
+          ExpectTrue(typeof data.data === 'string');
+        } else {
+          ExpectTrue(false);
+        }
       }, () => {
         ExpectTrue(false);
       });
@@ -255,7 +274,11 @@ export default function httpFetchTest() {
       runFetchTestCase(caseName, {
         url: TEST_URL, responseType: 'json'
       }, done, (data: FetchResponse) => {
-        ExpectTrue(typeof data.data === 'object');
+        if (data) {
+          ExpectTrue(typeof data.data === 'object');
+        } else {
+          ExpectTrue(false);
+        }
       }, () => {
         ExpectTrue(false);
       });
@@ -274,7 +297,11 @@ export default function httpFetchTest() {
       runFetchTestCase(caseName, {
         url: TEST_URL
       }, done, (data: FetchResponse) => {
-        ExpectTrue(typeof data.data === 'string');
+        if (data) {
+          ExpectTrue(typeof data.data === 'string');
+        } else {
+          ExpectTrue(false);
+        }
       }, () => {
         ExpectTrue(false);
       });
@@ -293,7 +320,11 @@ export default function httpFetchTest() {
       runFetchTestCase(caseName, {
         url: TEST_URL, responseType: 'hello'
       }, done, (data: FetchResponse) => {
-        ExpectTrue(typeof data.data === 'string');
+        if (data) {
+          ExpectTrue(typeof data.data === 'string');
+        } else {
+          ExpectTrue(false);
+        }
       }, () => {
         ExpectTrue(false);
       });
@@ -335,8 +366,15 @@ export default function httpFetchTest() {
       runFetchTestCase(caseName, {
         url: TEST_URL, method: 'DELETE'
       }, done, (data: FetchResponse) => {
-        let resp: object = JSON.parse(data.data as string);
-        ExpectTrue(resp['method'] === 'DELETE');
+        try {
+          let resp: object = JSON.parse(data.data as string);
+          ExpectTrue(resp['method'] === 'DELETE');
+        } catch (error) {
+          console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+          ExpectTrue(false);
+          done();
+          console.info(`${caseName} test end `);
+        }
       }, () => {
         ExpectTrue(false);
       });
@@ -355,7 +393,11 @@ export default function httpFetchTest() {
       runFetchTestCase(caseName, {
         url: TEST_URL, data: [123]
       }, done, (data: FetchResponse) => {
-        ExpectTrue(data.code === 200);
+        if (data) {
+          ExpectTrue(data.code === 200);
+        } else {
+          ExpectTrue(false);
+        }
       }, () => {
         ExpectTrue(false);
       });
@@ -374,7 +416,11 @@ export default function httpFetchTest() {
       runFetchTestCase(caseName, {
         url: TEST_URL, data: ''
       }, done, (data: FetchResponse) => {
-        ExpectTrue(data.code === 200);
+        if (data) {
+          ExpectTrue(data.code === 200);
+        } else {
+          ExpectTrue(false);
+        }
       }, () => {
         ExpectTrue(false);
       });
@@ -422,7 +468,11 @@ export default function httpFetchTest() {
       runFetchTestCase(caseName, {
         url: "www.baidu.com",
       }, done, (data: FetchResponse) => {
-        ExpectTrue(data.headers != undefined)
+        if (data) {
+          ExpectTrue(data.headers != undefined)
+        } else {
+          ExpectTrue(false);
+        }
       }, () => {
         ExpectTrue(false);
       });

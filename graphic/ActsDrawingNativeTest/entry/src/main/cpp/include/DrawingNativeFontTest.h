@@ -196,7 +196,7 @@ int TestFontMeasureSingleChaWithFeaturesCalls();
 // Font Features related functions
 int TestFontFeaturesAddFeatureNormal();
 int TestFontFeaturesAddFeatureAbNormal();
-int TestFontFeaturesandFeatureDestroyNULL();
+int TestFontFeaturesandFeatureDestroyNull();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

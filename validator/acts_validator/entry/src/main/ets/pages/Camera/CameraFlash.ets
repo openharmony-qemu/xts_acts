@@ -94,14 +94,14 @@ struct cameraOrientation {
           Text(this.name)
             .fontColor(Color.White)
             .fontSize('18fp')
-            .margin({ left: '-20vp' })
+            .margin({ left: '1vp' })
           Text('hello')
             .fontColor(Color.White)
             .visibility(Visibility.Hidden)
         }
         .backgroundColor(Color.Black)
-        .height('20%')
-        .width('160%')
+        .height('10%')
+        .width('100%')
         .justifyContent(FlexAlign.Center)
       }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
 
@@ -115,10 +115,7 @@ struct cameraOrientation {
             Logger.info(this.tag, 'onLoad is called')
             this.cameraInit()
           })
-        Row()
-          .backgroundColor(Color.Black)
-          .size({ width: '100%', height: '100%' })
-      }.size({ width: '10%', height: '30%' })
+      }.size({ width: '30%', height: '15%' })
 
       Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.Start, direction: FlexDirection.Column }) {
         Scroll() {
@@ -144,7 +141,7 @@ struct cameraOrientation {
         .scrollBarWidth(10)
       }
       .width('80%')
-      .height('30%')
+      .height('60%')
       .margin({ bottom: '-10vp' })
       CustomContainer({
         title: this.name,

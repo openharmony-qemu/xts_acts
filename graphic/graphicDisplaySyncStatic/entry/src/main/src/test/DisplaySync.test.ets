@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -172,6 +172,8 @@ export default function displaySyncTest() {
                     let callback = (frameInfo: displaySync.IntervalInfo) => {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
+                        expect(frameInfo.timestamp !== undefined).assertTrue();
+                        expect(frameInfo.targetTimestamp !== undefined).assertTrue();
                     }
                     backDisplaySync?.onFrame(callback)
                     // 开始每帧回调
@@ -208,6 +210,8 @@ export default function displaySyncTest() {
                     let callback = (frameInfo: displaySync.IntervalInfo) => {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
+                        expect(frameInfo.timestamp !== undefined).assertTrue();
+                        expect(frameInfo.targetTimestamp !== undefined).assertTrue();
                     }
                     backDisplaySync?.onFrame(callback)
                     // 停止每帧回调
@@ -244,6 +248,8 @@ export default function displaySyncTest() {
                     let callback = (frameInfo: displaySync.IntervalInfo) => {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
+                        expect(frameInfo.timestamp !== undefined).assertTrue();
+                        expect(frameInfo.targetTimestamp !== undefined).assertTrue();
                     }
                     backDisplaySync?.onFrame(callback)
                     backDisplaySync?.start()
@@ -281,7 +287,8 @@ export default function displaySyncTest() {
                     console.error(msg + 'www data success in testDisplaySyncErrorCode_0100:');
                     expect().assertFail();
                     done();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.error(msg + 'www data Failed to onoff. Cause:' + JSON.stringify(err));
                     console.error(msg + 'Failed to onoff. Cause:' + err.code);
                     expect(err.code == 401).assertTrue();
@@ -307,9 +314,12 @@ export default function displaySyncTest() {
                         console.info("www data data DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                         expect(frameInfo != null).assertTrue();
+                        expect(frameInfo.timestamp !== undefined).assertTrue();
+                        expect(frameInfo.targetTimestamp !== undefined).assertTrue();
                     }
                     backDisplaySync?.onFrame(callback);
                     console.info(msg + 'Succeeded in on.');
+                    backDisplaySync?.start()
                     backDisplaySync?.offFrame();
                     done()
                 } catch (exception) {

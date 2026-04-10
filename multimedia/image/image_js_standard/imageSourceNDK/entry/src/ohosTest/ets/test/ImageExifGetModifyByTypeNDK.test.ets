@@ -55,7 +55,7 @@ const testArrayBuffer: ArrayBuffer = testArrayBufferU8.buffer as ArrayBuffer;
 async function getPropertyValue(
   fd: number,
   type: string,
-  key: image.PropertyKey
+  key: image.PropertyKey | image.DngPropertyKey
 ): Promise<number | Array<number> | Array<number | null> | ArrayBuffer | string> {
   let task = new taskpool.Task(getPropertyValueTest, fd, type, key);
   let ret = (await taskpool.execute(task)) as number | Array<number> | Array<number | null> | ArrayBuffer | string;
@@ -66,7 +66,7 @@ async function getPropertyValue(
 async function getPropertyValueTest(
   fd: number,
   type: string,
-  key: image.PropertyKey
+  key: image.PropertyKey | image.DngPropertyKey
 ): Promise<number | Array<number> | Array<number | null> | ArrayBuffer | string> {
   console.log("start first time");
   // 模拟异步操作
@@ -5474,5 +5474,413 @@ export default function ImageExifGetModifyByTypeNDK() {
       done();
     });
 
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0100
+     * @tc.desc        Verify reading short type property CFA_LAYOUT from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read property as short type through C API
+     *                 3.Verify returned value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0100"
+      let result = true;
+      let key: image.DngPropertyKey = image.DngPropertyKey.CFA_LAYOUT
+      const expectedValue = 1;
+      let fd: number = await getFd("test_fake.dng");
+      const actualValue = await getPropertyValue(fd, "short", key);
+      if (!compareValues(actualValue, expectedValue)) {
+        console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0200
+     * @tc.desc        Verify reading long type property CALIBRATION_ILLUMINANT1 from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read property as long type through C API
+     *                 3.Verify returned value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0200", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0200"
+      let result = true;
+      let key: image.DngPropertyKey = image.DngPropertyKey.CALIBRATION_ILLUMINANT1
+      console.info(`${testTag} Testing key: ${key}`);
+      const expectedValue = 21;
+      let fd: number = await getFd("test_fake.dng");
+      const actualValue = await getPropertyValue(fd, "long", key);
+      if (!compareValues(actualValue, expectedValue)) {
+        console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0300
+     * @tc.desc        Verify reading double type property CALIBRATION_ILLUMINANT2 from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read property as double type through C API
+     *                 3.Verify returned value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0300", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0300"
+      let result = true;
+      let key: image.DngPropertyKey = image.DngPropertyKey.CHROMA_BLUR_RADIUS
+      const expectedValue = 0;
+      let fd: number = await getFd("test_fake.dng");
+      const actualValue = await getPropertyValue(fd, "double", key);
+      if (!compareValues(actualValue, expectedValue)) {
+        console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0400
+     * @tc.desc        Verify reading string type property UNIQUE_CAMERA_MODEL from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read property as string type through C API
+     *                 3.Verify returned value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0400", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0400"
+      let result = true;
+      let key: image.DngPropertyKey = image.DngPropertyKey.UNIQUE_CAMERA_MODEL
+      const expectedValue = "FakeCamera ModelX";
+      let fd: number = await getFd("test_fake.dng");
+      const actualValue = await getPropertyValue(fd, "string", key);
+      if (!compareValues(actualValue, expectedValue)) {
+        console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0500
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0500
+     * @tc.desc        Verify reading string type property UNIQUE_CAMERA_MODEL from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read property as string type through C API
+     *                 3.Verify returned value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0500", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0500"
+      let result = true;
+      let key: image.DngPropertyKey = image.DngPropertyKey.DNG_VERSION;
+      const expectedValue = [1, 4, 0, 0];
+      let fd: number = await getFd("test_fake.dng");
+      const actualValue = await getPropertyValue(fd, "intArray", key);
+      if (!compareValues(actualValue, expectedValue)) {
+        console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0600
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0600
+     * @tc.desc        Verify reading string type property UNIQUE_CAMERA_MODEL from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read property as string type through C API
+     *                 3.Verify returned value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0600", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0600"
+      let result = true;
+      let key: image.DngPropertyKey = image.DngPropertyKey.CAMERA_CALIBRATION1;
+      const expectedValue = [1, 0, 0, 0, 1, 0, 0, 0, 1];
+      let fd: number = await getFd("test_fake.dng");
+      const actualValue = await getPropertyValue(fd, "doubleArray", key);
+      if (!compareValues(actualValue, expectedValue)) {
+        console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0700
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0700
+     * @tc.desc        Verify reading string type property UNIQUE_CAMERA_MODEL from DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read property as string type through C API
+     *                 3.Verify returned value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0700", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_DNG_0700"
+      let result = true;
+      let key: image.DngPropertyKey = image.DngPropertyKey.OPCODE_LIST1;
+      const expectedValue = [0,0,0,4,0,0,0,9,1,3,0,0,0,0,0,1,0,0,20,40];
+      let fd: number = await getFd("test_fake.dng");
+      const actualValue = await getPropertyValue(fd, "arrayBuffer", key);
+      if (actualValue instanceof ArrayBuffer) {
+        if (!compareArrayBuffer(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      } else {
+        console.info(`${testTag} Actual value is not an ArrayBuffer for key: ${key}`);
+        result = false;
+      }
+      fs.closeSync(fd);
+      console.info(`${testTag} TestGetImagePropertyByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_0100
+     * @tc.desc        Verify creating image raw data from DNG file
+     *                1.Create image raw data from DNG file using fd
+     *                2.Verify returned object has expected properties (length, bitsPerPixel)
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_0100";
+      let result = true;
+      let fd: number = await getFd("test_fake.dng");
+      let obj: mdkTest.myRawData = mdkTest.TestCreateImageRawData(fd);
+      console.info(`${testTag} Raw data length: ${obj.length}, bits per pixel: ${obj.bitsPerPixel}`);
+      fs.closeSync(fd);
+      let dngMetadataArray = new Uint16Array(obj.buffer);
+      console.info(`${testTag} dngMetadataArray length = ${dngMetadataArray.length}`);
+      const actualNumberArray = Array.from(dngMetadataArray).slice(0, 10);
+      let exceptNumberArray = [0, 0, 32, 512, 4, 64, 0, 6150, 0, 512];
+      console.info(`${testTag} actualNumberArray: ${JSON.stringify(actualNumberArray)}`);
+      console.info(`${testTag} exceptNumberArray: ${JSON.stringify(exceptNumberArray)}`);
+      result = compareValues(actualNumberArray, exceptNumberArray);
+      console.info(`${testTag} TestCreateImageRawData result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_ERROR_0100
+     * @tc.desc        Verify creating image raw data from DNG file
+     *                 1.Create image raw data from DNG file using fd
+     *                 2.Verify returned object has expected properties (length, bitsPerPixel)
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_ERROR_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_ERROR_0100";
+      let result = true;
+      let ret = mdkTest.TestCreateImageRawDataNullptr();
+      console.info(`${testTag} TestCreateImageRawDataNullptr result is: ${JSON.stringify(ret)}`);
+      expect(ret.errcode1 == 7700204).assertTrue();
+      expect(ret.errcode2 == 7700204).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_ERROR_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_ERROR_0200
+     * @tc.desc        Verify creating image raw data from DNG file
+     *                 1.Create image raw data from DNG file using fd
+     *                 2.Verify returned object has expected properties (length, bitsPerPixel)
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_ERROR_0200", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_ERROR_0200";
+      let fd: number = await getFd("test.ico");
+      let ret = mdkTest.TestCreateImageRawData(fd);
+      fs.closeSync(fd);
+      if (typeof ret == 'number') {
+        expect(ret == 7700102).assertTrue();
+      } else {
+        console.info(`${testTag} TestCreateImageRawData result is not a number: ${JSON.stringify(ret)}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_ERROR_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_ERROR_0300
+     * @tc.desc        Verify creating image raw data from DNG file
+     *                 1.Create image raw data from DNG file using fd
+     *                 2.Verify returned object has expected properties (length, bitsPerPixel)
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_ERROR_0300", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_DNG_ERROR_0300";
+      let fd: number = await getFd("test_fake_error_0.dng");
+      let ret = mdkTest.TestCreateImageRawData(fd);
+      fs.closeSync(fd);
+      if (typeof ret == 'number') {
+        expect(ret == 7700101).assertTrue();
+      } else {
+        console.info(`${testTag} TestCreateImageRawData result is not a number: ${JSON.stringify(ret)}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GET_BUFFER_FROM_RAW_DATA_DNG_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GET_BUFFER_FROM_RAW_DATA_DNG_ERROR_0100
+     * @tc.desc        Verify creating image raw data from DNG file
+     *                 1.Create image raw data from DNG file using fd
+     *                 2.Verify returned object has expected properties (length, bitsPerPixel)
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GET_BUFFER_FROM_RAW_DATA_DNG_ERROR_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GET_BUFFER_FROM_RAW_DATA_DNG_ERROR_0100";
+      let ret = mdkTest.TestGetBufferFromRawDataNullptr();
+      console.info(`${testTag} TestGetBufferFromRawDataNullptr result is: ${JSON.stringify(ret)}`);
+      expect(ret.errcode1 == 7700204).assertTrue();
+      expect(ret.errcode2 == 7700204).assertTrue();
+      expect(ret.errcode3 == 7700204).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GET_BITS_PERPIXEL_FROM_RAW_DATA_DNG_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GET_BITS_PERPIXEL_FROM_RAW_DATA_DNG_ERROR_0100
+     * @tc.desc        Verify creating image raw data from DNG file
+     *                 1.Create image raw data from DNG file using fd
+     *                 2.Verify returned object has expected properties (length, bitsPerPixel)
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GET_BITS_PERPIXEL_FROM_RAW_DATA_DNG_ERROR_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GET_BITS_PERPIXEL_FROM_RAW_DATA_DNG_ERROR_0100";
+      let ret = mdkTest.TestGetBitsPerPixelFromRawDataNullptr();
+      console.info(`${testTag} TestGetBitsPerPixelFromRawDataNullptr result is: ${JSON.stringify(ret)}`);
+      expect(ret.errcode1 == 7700204).assertTrue();
+      expect(ret.errcode2 == 7700204).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_0100
+     * @tc.desc        Test OH_ImageSourceNative_CreateImageRawData IMAGE_SUCCESS
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAWDATA_0100";
+      let fd: number = await getFd("test_fake.dng");
+      let result = mdkTest.TestCreateImageRawDataSucc(fd);
+      console.info(`${testTag} TestCreateImageRawDataSucc result is: ${result}`);
+      fs.closeSync(fd);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GET_BUFFER_FROM_RAWDATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GET_BUFFER_FROM_RAWDATA_0100
+     * @tc.desc        Test OH_ImageSourceNative_CreateImageRawData IMAGE_SUCCESS
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GET_BUFFER_FROM_RAWDATA_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GET_BUFFER_FROM_RAWDATA_0100";
+      let fd: number = await getFd("test_fake.dng");
+      let result = mdkTest.TestGetBufferFromRawDataSucc(fd);
+      console.info(`${testTag} TestGetBufferFromRawDataSucc result is: ${result}`);
+      fs.closeSync(fd);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0100
+     * @tc.desc        Test OH_ImageSourceNative_DestroyImageRawData IMAGE_SUCCESS
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0100", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0100";
+      let fd: number = await getFd("test_fake.dng");
+      let result = mdkTest.TestDestroyImageRawDataSucc(fd);
+      console.info(`${testTag} TestGetBufferFromRawDataSucc result is: ${result}`);
+      fs.closeSync(fd);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0200
+     * @tc.desc        Test OH_ImageSourceNative_DestroyImageRawData IMAGE_SOURCE_INVALID_PARAMETER
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0200", Level.LEVEL0, async (done: Function) => {
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_DESTROY_IMAGE_RAWDATA_0200";
+      let result = mdkTest.TestDestroyImageRawDataInvalidParam();
+      console.info(`${testTag} TestDestroyImageRawDataInvalidParam result is: ${result}`);
+      expect(result).assertEqual(7700204);
+      done();
+    });
+    
   })
 }

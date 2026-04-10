@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -27,10 +27,10 @@ const tag = "TestTag";
 
 const TEST_BUNDLE_NAME = 'com.example.kvstoreetstest.static';
 const TEST_STORE_ID = 'SingleKvStoreReturnValueId';
-let kvManager: factory.KVManager| null = null;
-let kvStore : factory.SingleKVStore| null = null;
+let kvManager: factory.KVManager | null = null;
+let kvStore: factory.SingleKVStore | null = null;
 let resultSet : factory.KVStoreResultSet | null = null;
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 const TAG = "[Kv_KVStoreResultSet_Ets_TEST >>>>>> ]"
@@ -58,17 +58,17 @@ export default function KVStoreResultSetReturnValue(){
         // });
         await Utils.msSleep(8000)
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============beforeAll context e: " + e);
         hilog.info(domain, tag, '%{public}s', '================ beforeAll context end==========');
       }
       const config: factory.KVManagerConfig = {
         bundleName: TEST_BUNDLE_NAME,
-        context: context
+        context: context!
       };
 
-      console.info(TAG + 'beforeAll context.databaseDir=' + context.databaseDir);
+      console.info(TAG + 'beforeAll context.databaseDir=' + context!.databaseDir);
       kvManager = factory.createKVManager(config);
       console.info(TAG + 'beforeAll end, kvManager=' + kvManager);
       console.info(TAG + 'beforeAll end');
@@ -79,7 +79,7 @@ export default function KVStoreResultSetReturnValue(){
     beforeEach(async (done: () => void): Promise<void> =>  {
       console.info(TAG + 'beforeEach' + JSON.stringify(options));
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
         kvStore = store;
         console.info(TAG + 'beforeEach getKVStore success');
 
@@ -120,7 +120,7 @@ export default function KVStoreResultSetReturnValue(){
             console.error(TAG +'beforeEach getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           let error = e as BusinessError;
           console.error(TAG +`An unexpected error occurred.code is ${error.code},message is ${error.message} `);
           done();
@@ -180,7 +180,7 @@ export default function KVStoreResultSetReturnValue(){
           let count: number = resultSet!.getCount();
           console.info(TAG +"DisKVResultReturnValueTest0100 " + count);
           expect(count).assertEqual(10);
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest0100 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -209,7 +209,7 @@ export default function KVStoreResultSetReturnValue(){
           position = resultSet!.getPosition();
           console.info(TAG +"DisKVResultReturnValueTest0200 " + position);
           expect(position).assertEqual(0);
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest0200 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -231,7 +231,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved: boolean = resultSet!.moveToFirst();
           console.info(TAG +"DisKVResultReturnValueTest0300 " + moved);
           expect(moved).assertEqual(true);
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest0300 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -284,7 +284,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved: boolean = resultSet!.moveToLast();
           console.info(TAG +"DisKVResultReturnValueTest0500 " + moved);
           expect(moved).assertEqual(true);
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest0500 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -337,7 +337,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved: boolean = resultSet!.moveToNext();
           console.info(TAG +"DisKVResultReturnValueTest0700 " + moved);
           expect(moved).assertEqual(true);
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest0700 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -354,7 +354,7 @@ export default function KVStoreResultSetReturnValue(){
      * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let resultSet1 : factory.KVStoreResultSet;
+      let resultSet1 : factory.KVStoreResultSet | null = null;
       if (kvStore !== null) {
         await kvStore!.getResultSet('AA').then((result) => {
           console.info(TAG +' getResultSet success');
@@ -367,7 +367,7 @@ export default function KVStoreResultSetReturnValue(){
           expect(null).assertFail();
         });
 
-        await kvStore!.closeResultSet(resultSet1).then((err) => {
+        await kvStore!.closeResultSet(resultSet1!).then((err) => {
           console.info(TAG +' closeResultSet success');
         }).catch((err: Error) => {
           console.error(TAG +' closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
@@ -392,7 +392,7 @@ export default function KVStoreResultSetReturnValue(){
           moved = resultSet!.moveToPrevious();
           console.info(TAG +"DisKVResultReturnValueTest0900 " + moved);
           expect(moved).assertEqual(true);
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest0900 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -445,7 +445,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved = resultSet!.move(2);
           console.info(TAG +"DisKVResultReturnValueTest1100 " + moved);
           expect(moved).assertEqual(true);
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest1100 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -467,7 +467,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved = resultSet!.move(11);
           console.info(TAG +"DisKVResultReturnValueTest1200 " + moved);
           expect(moved).assertFalse();
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest1200 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -489,7 +489,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved = resultSet!.moveToPosition(1);
           console.info(TAG +"DisKVResultReturnValueTest1400 " + moved);
           expect(moved).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest1400 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -511,7 +511,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved = resultSet!.moveToPosition(11);
           console.info(TAG +"DisKVResultReturnValueTest1500 " + moved);
           expect(moved).assertFalse();
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest1500 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -535,7 +535,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved = resultSet!.isFirst();
           console.info(TAG +"DisKVResultReturnValueTest1700 " + moved);
           expect(moved).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest1700 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -557,7 +557,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved = resultSet!.isFirst();
           console.info(TAG +"DisKVResultReturnValueTest1800 " + moved);
           expect(moved).assertFalse();
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest1800 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -581,7 +581,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved = resultSet!.isLast();
           console.info(TAG +"DisKVResultReturnValueTest1900 " + moved);
           expect(moved).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest1900 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -603,7 +603,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved = resultSet!.isLast();
           console.info(TAG +"DisKVResultReturnValueTest2000 " + moved);
           expect(moved).assertFalse();
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest2000 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -625,7 +625,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved = resultSet!.isBeforeFirst();
           console.info(TAG +"DisKVResultReturnValueTest2100 " + moved);
           expect(moved).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest2100 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -649,7 +649,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved = resultSet!.isBeforeFirst();
           console.info(TAG +"DisKVResultReturnValueTest2200 " + moved);
           expect(moved).assertFalse();
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest2200 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -677,7 +677,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved = resultSet!.isAfterLast();
           console.info(TAG +"DisKVResultReturnValueTest2300 " + moved);
           expect(moved).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest2300 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -701,7 +701,7 @@ export default function KVStoreResultSetReturnValue(){
           let moved = resultSet!.isAfterLast();
           console.info(TAG +"DisKVResultReturnValueTest2400 " + moved);
           expect(moved).assertFalse();
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest2400 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }
@@ -726,7 +726,7 @@ export default function KVStoreResultSetReturnValue(){
           console.info(TAG +"DisKVResultReturnValueTest2500 " + entry);
           expect(entry.key).assertEqual('batch_test_string_key0');
           expect(entry.value.value).assertEqual('batch_test_string_value');
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG +"DisKVResultReturnValueTest2500 fail " + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
         }

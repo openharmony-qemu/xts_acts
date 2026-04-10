@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -99,7 +99,7 @@ export default function taskPoolAsyncRunnerMultipleTest() {
               console.info('======error', JSON.stringify((e as BusinessError).message)); // 若需访问BusinessError属性，可做类型断言
             });
           }
-        } catch (e: Error) {
+        } catch (e) {
           console.info('======error2', JSON.stringify((e as BusinessError).message));
         }
         while (count < 1) {

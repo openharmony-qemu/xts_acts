@@ -40,6 +40,14 @@ import CommonFunc from '../common/Common';
 @Component
 struct APIParticleEmitter {
   @State text: string = 'start'
+  @State emitterProperties: Array<EmitterProperty> = [
+    {
+      index: 0,
+      emitRate: 100,
+      position: { x: 60, y: 80 },
+      size: { width: 200, height: 200 }
+    } as EmitterProperty
+  ]
 
   aboutToAppear() {
     console.log('test start page')
@@ -107,14 +115,7 @@ struct APIParticleEmitter {
         })
           .width('50%')
           .height('50%')
-          .emitter([
-            {
-              index: 0,
-              emitRate: 100,
-              position: { x: 60, y: 80 },
-              size: { width: 200, height: 200 }
-            }
-          ])
+          .emitter(this.emitterProperties)
           .key('APIParticleEmitter_Particle')
       }
 
@@ -122,14 +123,15 @@ struct APIParticleEmitter {
         .onClick((e: ClickEvent) => {
           console.log('APIParticleEmitter_Button11')
           let strJson = inspector.getInspectorByKey('APIParticleEmitter_Particle');
-          await CommonFunc.sleep(2000);
-          console.log('APIParticleEmitter_Button11 ' + JSON.stringify(JSON.parseJsonElement(strJson)))
-          if (JSON.parseJsonElement(JSON.stringify(JSON.parseJsonElement(strJson)
-            .getElement('$attrs')))?.getElement('emitter')
-            && (JSON.parseJsonElement(JSON.stringify(JSON.parseJsonElement(strJson)
-              .getElement('$attrs')))?.getElement('emitter')?.getDouble('length') as number) > 0) {
-            this.text = JSON.parseJsonElement(JSON.stringify(JSON.parseJsonElement(strJson)
-              .getElement('$attrs'))).getElement('emitter')[0].getString('index') + ''
+          waitForCompletion(async ()=>{
+            await CommonFunc.sleep(2000);
+          })
+          if (JSON.parseJsonElement(strJson)
+            .getElement('$attrs')?.getArray('emitter')
+            && (JSON.parseJsonElement(strJson)
+              .getElement('$attrs')?.getArray('emitter')?.length as Int) > 0) {
+            this.text = JSON.parseJsonElement(strJson)
+              .getElement('$attrs').getArray('emitter')[0].getString('index') + ''
           } else {
             this.text = 'does not exist'
           }

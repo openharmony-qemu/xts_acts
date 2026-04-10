@@ -35,7 +35,7 @@ export default function HidebuggwpasanTest() {
                 hidebug.disableGwpAsanGrayscale();
                 console.info("testHidebuggwpasan_0100 start 04");
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`testHidebuggwpasan_0100 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFail();
                 done();
@@ -69,7 +69,7 @@ export default function HidebuggwpasanTest() {
                 hidebug.disableGwpAsanGrayscale();
                 console.info("testHidebuggwpasan_0200 start 04");
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`testHidebuggwpasan_0200 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFail();
                 done();
@@ -98,7 +98,7 @@ export default function HidebuggwpasanTest() {
                 hidebug.disableGwpAsanGrayscale();
                 console.info("testHidebuggwpasan_0400 start 04");
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`testHidebuggwpasan_0400 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFail();
                 done();
@@ -125,7 +125,8 @@ export default function HidebuggwpasanTest() {
                 hidebug.enableGwpAsanGrayscale(options6,5);
                 expect().assertFail()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`testHidebuggwpasan_0500 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 401).assertTrue();
                 done();
@@ -152,7 +153,7 @@ export default function HidebuggwpasanTest() {
                 console.info("testHidebuggwpasan_0600 start 02");
                 hidebug.disableGwpAsanGrayscale();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`testHidebuggwpasan_0600 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFalse();
                 done();
@@ -181,7 +182,7 @@ export default function HidebuggwpasanTest() {
                 console.info("testHidebuggwpasan_0700 start 02");
                 hidebug.disableGwpAsanGrayscale();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`testHidebuggwpasan_0700 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFalse();
                 done();
@@ -209,7 +210,8 @@ export default function HidebuggwpasanTest() {
                 hidebug.enableGwpAsanGrayscale(options8);
                 expect().assertFalse()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`testHidebuggwpasan_0800 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 401).assertTrue();
                 done();
@@ -238,7 +240,8 @@ export default function HidebuggwpasanTest() {
                 hidebug.enableGwpAsanGrayscale(options9);
                 expect().assertFalse()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`testHidebuggwpasan_0900 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 401).assertTrue();
                 done();
@@ -264,7 +267,8 @@ export default function HidebuggwpasanTest() {
                 hidebug.enableGwpAsanGrayscale(options10,0);
                 expect().assertFalse()
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`testHidebuggwpasan_1000 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 401).assertTrue();
                 done();

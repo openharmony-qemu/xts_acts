@@ -19,7 +19,7 @@ import { Driver, On, ON, Component, Point } from '@kit.TestKit';
 import Utils from '../../MainAbility/common/Utils';
 
 export default function bindTips1Test() {
-  describe('ActsbindTips', () => {
+  describe('ActsbindTipsAdapt001', () => {
 
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {

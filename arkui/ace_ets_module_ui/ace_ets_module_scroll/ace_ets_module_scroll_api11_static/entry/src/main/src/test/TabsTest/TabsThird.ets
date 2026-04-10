@@ -56,7 +56,7 @@ function tabsDefaultFontSize(sysWidth: Resource) {
 export default function tabsThird() {
   describe('ActsAceTabsTestThird', () => {
     let count: int = 0
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
@@ -71,11 +71,11 @@ export default function tabsThird() {
         if (!("IndexThird" == pages.name)) {
           console.info("get IndexThird state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options)
-          routerAlp.pushUrl(options)
+          routerAlp.replaceUrl(options)
           await Utils.sleep(2000);
           // console.info("push IndexThird page success " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push IndexThird page error " + JSON.stringify(err));
       }
 
@@ -132,7 +132,7 @@ export default function tabsThird() {
         }
         console.info("[ArkUI_Tabs] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -191,7 +191,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0200', 0, async (done: () => void): Promise<v
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -227,7 +227,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0300', 0, async (done: () => void): Promise<v
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -263,7 +263,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0400', 0, async (done: () => void): Promise<v
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -300,7 +300,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0500', 0, async (done: () => void): Promise<v
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -337,7 +337,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0600', 0, async (done: () => void): Promise<v
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -374,7 +374,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0700', 0, async (done: () => void): Promise<v
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -411,7 +411,7 @@ it('ArkUI_Tabs_BarGridAlign_static_0800', 0, async (done: () => void): Promise<v
         }
         console.info("[ArkUI_Tabs_BarGridAlign_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -467,7 +467,7 @@ it('ArkUI_Tabs_BarGridAlign_1000', 0, async (done: () => void): Promise<void> =>
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -504,7 +504,7 @@ it('ArkUI_Tabs_BarGridAlign_1100', 0, async (done: () => void): Promise<void> =>
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_1100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -541,7 +541,7 @@ it('ArkUI_Tabs_BarGridAlign_1200', 0, async (done: () => void): Promise<void> =>
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -578,7 +578,7 @@ it('ArkUI_Tabs_BarGridAlign_1300', 0, async (done: () => void): Promise<void> =>
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_1300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -615,7 +615,7 @@ it('ArkUI_Tabs_BarGridAlign_1400', 0, async (done: () => void): Promise<void> =>
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_1400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -652,7 +652,7 @@ it('ArkUI_Tabs_BarGridAlign_1500', 0, async (done: () => void): Promise<void> =>
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_1500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -689,7 +689,7 @@ it('ArkUI_Tabs_BarGridAlign_1600', 0, async (done: () => void): Promise<void> =>
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_1600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -726,7 +726,7 @@ it('ArkUI_Tabs_BarGridAlign_1700', 0, async (done: () => void): Promise<void> =>
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_1700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -763,7 +763,7 @@ it('ArkUI_Tabs_BarGridAlign_1800', 0, async (done: () => void): Promise<void> =>
         }
         console.info("[ArkUI_Tabs_BarGridAlign_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_1800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -820,7 +820,7 @@ it('ArkUI_Tabs_BarGridAlign_2000', 0, async (done: () => void): Promise<void> =>
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_2000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -857,7 +857,7 @@ it('ArkUI_Tabs_BarGridAlign_2100', 0, async (done: () => void): Promise<void> =>
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_2100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -896,7 +896,7 @@ it('[ArkUI_Tabs_BarGridAlign_2200]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_2200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -939,7 +939,7 @@ it('[ArkUI_Tabs_BarGridAlign_2300]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_2300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -982,7 +982,7 @@ it('[ArkUI_Tabs_BarGridAlign_2400]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_2400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1025,7 +1025,7 @@ it('[ArkUI_Tabs_BarGridAlign_2500]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_2500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1068,7 +1068,7 @@ it('[ArkUI_Tabs_BarGridAlign_2600]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_2600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1111,7 +1111,7 @@ it('ArkUI_Tabs_BarGridAlign_2700', 0, async (done: () => void): Promise<void> =>
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1154,7 +1154,7 @@ it('[ArkUI_Tabs_BarGridAlign_2800]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_2800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1197,7 +1197,7 @@ it('[ArkUI_Tabs_BarGridAlign_2900]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_2900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_2900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1240,7 +1240,7 @@ it('[ArkUI_Tabs_BarGridAlign_3000]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_3000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1283,7 +1283,7 @@ it('[ArkUI_Tabs_BarGridAlign_3100]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_3100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1326,7 +1326,7 @@ it('[ArkUI_Tabs_BarGridAlign_3200]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_3200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1369,7 +1369,7 @@ it('[ArkUI_Tabs_BarGridAlign_3300]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_3300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1412,7 +1412,7 @@ it('[ArkUI_Tabs_BarGridAlign_3400]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_3400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1455,7 +1455,7 @@ it('[ArkUI_Tabs_BarGridAlign_3500]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_3500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1498,7 +1498,7 @@ it('[ArkUI_Tabs_BarGridAlign_3600]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_3600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1541,7 +1541,7 @@ it('[ArkUI_Tabs_BarGridAlign_3700]', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarGridAlign_3700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarGridAlign_3700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1582,7 +1582,7 @@ it('ArkUI_Tabs_BarHeight_0100', 0, async (done: () => void): Promise<void> => {
         }
         console.info("[ArkUI_Tabs_BarHeight_0100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarHeight_0100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1636,7 +1636,7 @@ it('ArkUI_Tabs_BarMode_static_0200', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarMode_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1672,7 +1672,7 @@ it('ArkUI_Tabs_BarMode_static_0300', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarMode_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1709,7 +1709,7 @@ it('ArkUI_Tabs_BarMode_static_0400', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarMode_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1746,7 +1746,7 @@ it('ArkUI_Tabs_BarMode_static_0500', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarMode_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1783,7 +1783,7 @@ it('ArkUI_Tabs_BarMode_static_0600', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarMode_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1820,7 +1820,7 @@ it('ArkUI_Tabs_BarMode_static_0700', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarMode_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1857,7 +1857,7 @@ it('ArkUI_Tabs_BarMode_static_0800', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarMode_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1894,7 +1894,7 @@ it('ArkUI_Tabs_BarMode_static_0900', 0, async (done: () => void): Promise<void> 
         }
         console.info("[ArkUI_Tabs_BarMode_static_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_static_0900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1931,7 +1931,7 @@ it('ArkUI_Tabs_BarMode_1000', 0, async (done: () => void): Promise<void> => {
         }
         console.info("[ArkUI_Tabs_BarMode_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1967,7 +1967,7 @@ it('ArkUI_Tabs_BarMode_1100', 0, async (done: () => void): Promise<void> => {
         }
         console.info("[ArkUI_Tabs_BarMode_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2004,7 +2004,7 @@ it('ArkUI_Tabs_BarMode_1200', 0, async (done: () => void): Promise<void> => {
         }
         console.info("[ArkUI_Tabs_BarMode_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2041,7 +2041,7 @@ it('ArkUI_Tabs_BarMode_1300', 0, async (done: () => void): Promise<void> => {
         }
         console.info("[ArkUI_Tabs_BarMode_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_1300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2078,7 +2078,7 @@ it('ArkUI_Tabs_BarMode_1400', 0, async (done: () => void): Promise<void> => {
         }
         console.info("[ArkUI_Tabs_BarMode_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_1400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2115,7 +2115,7 @@ it('ArkUI_Tabs_BarMode_1500', 0, async (done: () => void): Promise<void> => {
         }
         console.info("[ArkUI_Tabs_BarMode_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_1500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2152,7 +2152,7 @@ it('ArkUI_Tabs_BarMode_1600', 0, async (done: () => void): Promise<void> => {
         }
         console.info("[ArkUI_Tabs_BarMode_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_1600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2189,7 +2189,7 @@ it('ArkUI_Tabs_BarMode_1700', 0, async (done: () => void): Promise<void> => {
         }
         console.info("[ArkUI_Tabs_BarMode_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_1700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2226,7 +2226,7 @@ it('ArkUI_Tabs_BarMode_1800', 0, async (done: () => void): Promise<void> => {
         }
         console.info("[ArkUI_Tabs_BarMode_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_1800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2264,7 +2264,7 @@ it('ArkUI_Tabs_BarMode_1900', 0, async (done: () => void): Promise<void> => {
         }
         console.info("[ArkUI_Tabs_BarMode_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BarMode_1900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2329,7 +2329,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0200', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2366,7 +2366,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0300', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2423,7 +2423,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0500', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2469,7 +2469,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0600', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2506,7 +2506,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0700', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2552,7 +2552,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0800', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2601,7 +2601,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_0900', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_0900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2641,7 +2641,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1000', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2701,7 +2701,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1200', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2744,7 +2744,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1300', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2785,7 +2785,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1400', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2828,7 +2828,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1500', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2871,7 +2871,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1600', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2914,7 +2914,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1700', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2955,7 +2955,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1800', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2998,7 +2998,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_1900', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_1900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3041,7 +3041,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2000', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3084,7 +3084,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2100', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3125,7 +3125,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2200', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3168,7 +3168,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2300', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3211,7 +3211,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2400', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3254,7 +3254,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2500', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3295,7 +3295,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2600', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3338,7 +3338,7 @@ it('ArkUI_Tabs_SubTabBarStylePadding_2700', 0, async (done: () => void): Promise
         }
         console.info("[ArkUI_Tabs_SubTabBarStylePadding_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBarStylePadding_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3400,7 +3400,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0200', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3437,7 +3437,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0300', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3494,7 +3494,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0500', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3531,7 +3531,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0600', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3568,7 +3568,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0700', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3605,7 +3605,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0800', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3645,7 +3645,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_0900', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_0900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3685,7 +3685,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1000', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3745,7 +3745,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1200', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3785,7 +3785,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1300', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3825,7 +3825,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1400', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3865,7 +3865,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1500', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3905,7 +3905,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1600', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3945,7 +3945,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1700', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -3985,7 +3985,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1800', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4025,7 +4025,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_1900', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_1900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4065,7 +4065,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2000', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4105,7 +4105,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2100', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4145,7 +4145,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2200', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4185,7 +4185,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2300', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4225,7 +4225,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2400', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4265,7 +4265,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2500', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4305,7 +4305,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2600', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4345,7 +4345,7 @@ it('ArkUI_Tabs_BottomTabBarStylePadding_2700', 0, async (done: () => void): Prom
         }
         console.info("[ArkUI_Tabs_BottomTabBarStylePadding_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStylePadding_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4402,7 +4402,7 @@ it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200', 0, async (done: () =
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4439,7 +4439,7 @@ it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300', 0, async (done: () =
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4476,7 +4476,7 @@ it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400', 0, async (done: () =
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4513,7 +4513,7 @@ it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500', 0, async (done: () =
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4550,7 +4550,7 @@ it('ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600', 0, async (done: () =
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleVerticalAlign_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4607,7 +4607,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4644,7 +4644,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4681,7 +4681,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4718,7 +4718,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4755,7 +4755,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLayoutMode_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4812,7 +4812,7 @@ it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200', 0, async (done
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4849,7 +4849,7 @@ it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300', 0, async (done
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4886,7 +4886,7 @@ it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400', 0, async (done
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -4923,7 +4923,7 @@ it('ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500', 0, async (done
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleSymmetricExtensible_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5009,7 +5009,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5047,7 +5047,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5085,7 +5085,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5123,7 +5123,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5161,7 +5161,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5199,7 +5199,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5237,7 +5237,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5275,7 +5275,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_0900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5313,7 +5313,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5351,7 +5351,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5389,7 +5389,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5427,7 +5427,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5465,7 +5465,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5524,7 +5524,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5562,7 +5562,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5600,7 +5600,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5638,7 +5638,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_1900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5676,7 +5676,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5714,7 +5714,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5773,7 +5773,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5811,7 +5811,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5849,7 +5849,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5887,7 +5887,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5925,7 +5925,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -5963,7 +5963,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2800', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6001,7 +6001,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2900', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6039,7 +6039,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3000', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6077,7 +6077,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3100', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_2700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6115,7 +6115,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6154,7 +6154,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6215,7 +6215,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6262,7 +6262,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6301,7 +6301,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6348,7 +6348,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6395,7 +6395,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_3900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6434,7 +6434,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6473,7 +6473,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6512,7 +6512,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6551,7 +6551,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6590,7 +6590,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6629,7 +6629,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6668,7 +6668,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6707,7 +6707,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6746,7 +6746,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6785,7 +6785,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_4900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6824,7 +6824,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6863,7 +6863,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6902,7 +6902,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -6963,7 +6963,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5400] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7002,7 +7002,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7041,7 +7041,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7080,7 +7080,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7119,7 +7119,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -7158,7 +7158,7 @@ it('ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900', 0, async (done: () => v
         }
         console.info("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_BottomTabBarStyleLabelStyle_static_5900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

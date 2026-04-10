@@ -149,6 +149,7 @@
         "MainAbility/pages/Navigation/NavigationLevel/NavigationLevelTest21",
         "MainAbility/pages/Navigation/NavigationLevel/NavigationLevelTest22",
         "MainAbility/pages/Navigation/NavigationLevel/NavigationLevelTest23",
+        "MainAbility/pages/Navigation/MultiNavPathStackPushPath",
         "MainAbility/pages/Navigation/NavPathInfoIsEntry",
         "MainAbility/pages/UIObserver/GetStateByIndexPage",
         "MainAbility/pages/UIObserver/UIObserverObserver4Page",

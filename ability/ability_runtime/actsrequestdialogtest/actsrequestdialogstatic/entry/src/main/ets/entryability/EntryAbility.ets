@@ -55,24 +55,41 @@ class EntryAbility extends UIAbility {
         console.log("EntryAbility1 requestInfo is invalid");
       }
 
-      let requestCallback = dialogRequest.getRequestCallback(want);
-      if (requestCallback) {
-        console.log("EntryAbility1 requestCallback is valid");
-        AppStorage.setOrCreate<boolean>("validRequestCallback", true);
-        let resultCode: dialogRequest.RequestResult = {
-          result: dialogRequest.ResultCode.RESULT_CANCEL,
-          want:{
-            bundleName: 'com.acts.example.requestdialog.static',
-            abilityName: 'EntryAbility1'
-          } as Want
-        };
-        let resultCode2: dialogRequest.RequestResult = {
-          result: dialogRequest.ResultCode.RESULT_OK,
-        };
-        console.log(`resultCjode1 is ${JSON.stringify(resultCode2)}`);
-        requestCallback.setRequestResult(resultCode);
-      } else {
-        console.log("EntryAbility1 requestCallback is invalid");
+      if(want?.action == 'RESULT_CANCEL'){
+        let requestCallback = dialogRequest.getRequestCallback(want);
+        if (requestCallback) {
+          console.log("EntryAbility1 requestCallback is valid");
+          AppStorage.setOrCreate<boolean>("validRequestCallback", true);
+          let resultCode: dialogRequest.RequestResult = {
+            result: dialogRequest.ResultCode.RESULT_CANCEL,
+            want:{
+              bundleName: 'com.acts.example.requestdialog.static',
+              abilityName: 'EntryAbility1'
+            } as Want
+          };
+          console.log(`resultCjode1 is ${JSON.stringify(resultCode)}`);
+          requestCallback.setRequestResult(resultCode);
+        } else {
+          console.log("EntryAbility1 requestCallback is invalid");
+        }
+      }
+      if(want?.action == 'RESULT_OK'){
+        let requestCallback = dialogRequest.getRequestCallback(want);
+        if (requestCallback) {
+          console.log("EntryAbility1 requestCallback is valid");
+          AppStorage.setOrCreate<boolean>("validRequestCallback", true);
+          let resultCode2: dialogRequest.RequestResult = {
+            result: dialogRequest.ResultCode.RESULT_OK,
+            want:{
+              bundleName: 'com.acts.example.requestdialog.static',
+              abilityName: 'EntryAbility1'
+            } as Want
+          };
+          console.log(`resultCjode1 is ${JSON.stringify(resultCode2)}`);
+          requestCallback.setRequestResult(resultCode2);
+        } else {
+          console.log("EntryAbility1 requestCallback is invalid");
+        }
       }
       publishEvent();
     } catch (error) {

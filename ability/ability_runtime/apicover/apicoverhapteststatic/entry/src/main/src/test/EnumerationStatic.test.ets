@@ -21,6 +21,8 @@ import wantAgent from '@ohos.app.ability.wantAgent';
 import { Driver, ON } from '@ohos.UiTest';
 import contextConstant from '@ohos.app.ability.contextConstant';
 import { FailureCode } from '@ohos.app.ability.CompletionHandlerForAtomicService';
+import { AbilityStartFailureCode } from '@ohos.app.ability.CompletionHandlerForAbilityStartCallback';
+import bundleManager from '@ohos.bundle.bundleManager';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
@@ -567,6 +569,19 @@ export default function EnumerationStaticTest() {
      */
     it('SUB_Ability_AbilityBase_AbilityConstant_Static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect('11').assertEqual(abilityConstant.LaunchReason.PRELOAD + '');
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_Static_4300
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_Static_4300
+     * @tc.desc   Test abilityConstant.REASON_MESSAGE_DESKTOP_SHORTCUT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_Static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('ReasonMessage_DesktopShortcut').assertEqual(abilityConstant.REASON_MESSAGE_DESKTOP_SHORTCUT);
       done();
     })
 
@@ -1236,5 +1251,109 @@ export default function EnumerationStaticTest() {
         expect(2).assertEqual(FailureCode.FAILURE_CODE_USER_REFUSE);
         done();
       })
+
+      /**
+       * @tc.name   SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0100
+       * @tc.number SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0100
+       * @tc.desc   Test AbilityStartFailureCode AbilityStartFailureCode.FAILURE_CODE_SYSTEM_MALFUNCTION
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it('SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        expect(0).assertEqual(AbilityStartFailureCode.FAILURE_CODE_SYSTEM_MALFUNCTION);
+        done();
+      })
+
+      /**
+       * @tc.name   SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0200
+       * @tc.number SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0200
+       * @tc.desc   Test AbilityStartFailureCode AbilityStartFailureCode.FAILURE_CODE_USER_CANCEL
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+       it('SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+         expect(1).assertEqual(AbilityStartFailureCode.FAILURE_CODE_USER_CANCEL);
+         done();
+       })
+
+       /**
+        * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_Static_4400
+        * @tc.number SUB_Ability_AbilityBase_AbilityConstant_Static_4400
+        * @tc.desc   Test abilityConstant MemoryLevel.MEMORY_LEVEL_UI_HIDDEN.
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL3
+        */
+       it('SUB_Ability_AbilityBase_AbilityConstant_Static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+         expect(3).assertEqual(abilityConstant.MemoryLevel.MEMORY_LEVEL_UI_HIDDEN);
+         done();
+       })
+
+       /**
+        * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_Static_4500
+        * @tc.number SUB_Ability_AbilityBase_AbilityConstant_Static_4500
+        * @tc.desc   Test abilityConstant MemoryLevel.MEMORY_LEVEL_BACKGROUND_MODERATE.
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL3
+        */
+       it('SUB_Ability_AbilityBase_AbilityConstant_Static_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+         expect(4).assertEqual(abilityConstant.MemoryLevel.MEMORY_LEVEL_BACKGROUND_MODERATE);
+         done();
+       })
+
+       /**
+        * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_Static_4600
+        * @tc.number SUB_Ability_AbilityBase_AbilityConstant_Static_4600
+        * @tc.desc   Test abilityConstant MemoryLevel.MEMORY_LEVEL_BACKGROUND_LOW.
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL3
+        */
+       it('SUB_Ability_AbilityBase_AbilityConstant_Static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+         expect(5).assertEqual(abilityConstant.MemoryLevel.MEMORY_LEVEL_BACKGROUND_LOW);
+         done();
+       })
+
+       /**
+        * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_Static_4700
+        * @tc.number SUB_Ability_AbilityBase_AbilityConstant_Static_4700
+        * @tc.desc   Test abilityConstant MemoryLevel.MEMORY_LEVEL_BACKGROUND_CRITICAL.
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL3
+        */
+       it('SUB_Ability_AbilityBase_AbilityConstant_Static_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+         expect(6).assertEqual(abilityConstant.MemoryLevel.MEMORY_LEVEL_BACKGROUND_CRITICAL);
+         done();
+       })
+
+       /**
+        * @tc.name   SUB_Ability_BundleManager_ExtensionAbilityType_Static_0100
+        * @tc.number SUB_Ability_BundleManager_ExtensionAbilityType_Static_0100
+        * @tc.desc   Test bundleManager ExtensionAbilityType.AGENT.
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL3
+        */
+       it('SUB_Ability_BundleManager_ExtensionAbilityType_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+         expect(37).assertEqual(bundleManager.ExtensionAbilityType.AGENT);
+         done();
+       })
+
+       /**
+        * @tc.name   SUB_Ability_BundleManager_ExtensionAbilityType_Static_0200
+        * @tc.number SUB_Ability_BundleManager_ExtensionAbilityType_Static_0200
+        * @tc.desc   Test bundleManager ExtensionAbilityType.AGENT_UI.
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL3
+        */
+       it('SUB_Ability_BundleManager_ExtensionAbilityType_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+         expect(38).assertEqual(bundleManager.ExtensionAbilityType.AGENT_UI);
+         done();
+       })
   })
 }

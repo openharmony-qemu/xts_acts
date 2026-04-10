@@ -35,7 +35,7 @@ const waitUiReadyMs = 1000;
 
 export default function ImageOrientationTest() {
   describe('ImageOrientationTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageOrientationTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility");

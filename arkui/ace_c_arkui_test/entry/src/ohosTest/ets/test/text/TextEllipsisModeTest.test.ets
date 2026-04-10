@@ -116,7 +116,5 @@ export default function textEllipsisModeTest() {
       expect(nativeFunc.testTextEllipsisMode007()).assertEqual(0)
       done()
     })
-
-
   })
 }

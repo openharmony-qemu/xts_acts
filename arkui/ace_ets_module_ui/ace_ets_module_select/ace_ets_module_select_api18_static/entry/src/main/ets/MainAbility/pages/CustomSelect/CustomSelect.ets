@@ -36,7 +36,6 @@ import {
   WrappedBuilder,
   ContentModifier,
   GestureEvent,
-  SymbolGlyphModifier,
   SelectOption,
   AvoidanceMode,
   NavDestination,
@@ -57,6 +56,7 @@ import {
   Curve,
   CustomBuilderT
 } from '@ohos.arkui.component';
+import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
@@ -187,7 +187,7 @@ export struct CustomSelectionPage {
   ];
   private displayWidth: number = 0;
   private displayHeight: number = 0;
-  private listener: mediaquery.MediaQueryListener = mediaquery.matchMediaSync('(orientation: landscape)') // 监听横屏事件
+  private listener: mediaquery.MediaQueryListener = this.getUIContext().getMediaQuery().matchMediaSync('(orientation: landscape)') // 监听横屏事件
   private avoidanceModeArr: (AvoidanceMode | undefined)[] =
     [ undefined, AvoidanceMode.COVER_TARGET, AvoidanceMode.AVOID_AROUND_TARGET] as (AvoidanceMode | undefined)[];
   @State private modeIndex: int = 0;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,16 +27,16 @@ let tag: string = 'CameraSessionSystemPressureTest: '
 const TAG = "CameraSessionSystemPressureTest: ";
 
 // Define global letiables
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.Session;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> = [];
+let mCameraSession: cameraObj.Session | undefined;
 let isCameraSessionCreated: boolean = false;
 
 // CAMERA-0 letiables
 let mCameraNum: number;
 
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
 let isPreviewOutputCreated: boolean = false;
 
 export default function cameraSessionSystemPressureTest() {
@@ -86,7 +86,7 @@ export default function cameraSessionSystemPressureTest() {
         console.info('Enter mgetCameraManagerInstance');
         let appContext: Context = Hypium.get("Context") as Context;
         mCameraManager = cameraObj.getCameraManager(appContext);
-        if (isEmpty01(mCameraManager)) {
+        if (isEmpty01(mCameraManager!)) {
             console.info(TAG + "getCameraManager FAILED");
             return false;
         }
@@ -96,7 +96,7 @@ export default function cameraSessionSystemPressureTest() {
 
     let getCameraSupportDevicesArray = () => {
         console.info('Enter getCameraSupportDevicesArray');
-        mCameraDevicesArray = mCameraManager.getSupportedCameras();
+        mCameraDevicesArray = mCameraManager!.getSupportedCameras();
         if (isEmpty02(mCameraDevicesArray)) {
             console.info(TAG + "getSupportedCameras FAILED");
             return false;
@@ -112,16 +112,16 @@ export default function cameraSessionSystemPressureTest() {
         try {
             if (mode == cameraObj.SceneMode.NORMAL_PHOTO) {
                 console.info('create photo session');
-                mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO) as cameraObj.PhotoSession;
+                mCameraSession = mCameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO) as cameraObj.PhotoSession;
             } else if (mode == cameraObj.SceneMode.NORMAL_VIDEO) {
                 console.info('create video session');
-                mCameraSession = mCameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO) as cameraObj.VideoSession;
+                mCameraSession = mCameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO) as cameraObj.VideoSession;
             } else {
                 console.error('createCameraSessionWithMode unknown sceneMode');
                 return;
             }
             isCameraSessionCreated = true;
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.info('createCaptureSession FAILED, err: ' + err);
             expect().assertFail();
         }
@@ -131,7 +131,7 @@ export default function cameraSessionSystemPressureTest() {
         console.info('Enter releaseCameraSessionInstance');
         if (isCameraSessionCreated && mCameraSession != undefined) {
             try {
-                await mCameraSession.release();
+                await mCameraSession!.release();
                 isCameraSessionCreated = false;
             } catch (err) {
                 let error = err as BusinessError;
@@ -146,12 +146,12 @@ export default function cameraSessionSystemPressureTest() {
             console.info(TAG + "Entering createInputs FAILED with NoCamera");
             return false;
         }
-        mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx]);
-        if (isEmpty04(mCameraInput)) {
+        mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[idx]);
+        if (isEmpty04(mCameraInput!)) {
             console.info(TAG + "createCameraInput FAILED");
             return false;
         }
-        await mCameraInput.open();
+        await mCameraInput!.open();
         console.info(idx + 'th CameraInput is: ' + mCameraInput);
         console.info('Exit createInput');
         return true;
@@ -159,19 +159,19 @@ export default function cameraSessionSystemPressureTest() {
 
     let createOutput = (idx: int) => {
         console.info('Enter createOutput');
-        let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx], cameraObj.SceneMode.NORMAL_PHOTO);
+        let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray[idx], cameraObj.SceneMode.NORMAL_PHOTO);
         if (!isEmpty05(cameraOutputCap)) {
             if (!isEmpty06(cameraOutputCap.previewProfiles)) {
                 console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
                 for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
                     let surfaceIds = Hypium.get('SurfaceId') as string;
-                    mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceIds);
-                    if (!isEmpty07(mPreviewOutput)) {
+                    mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceIds);
+                    if (!isEmpty07(mPreviewOutput!)) {
                         isPreviewOutputCreated = true;
                         break;
                     }
                 }
-                if (isEmpty07(mPreviewOutput)) {
+                if (isEmpty07(mPreviewOutput!)) {
                     console.info(TAG + "createPreviewOutput FAILED");
                 }
                 console.info(TAG + "createPreviewOutput: " + mPreviewOutput);
@@ -208,8 +208,8 @@ export default function cameraSessionSystemPressureTest() {
     let isAVRecorderCreated: boolean = false;
     let videoSurfaceId: string | undefined = '';
     let fdNumber: int;
-    let fdPath: string;
-    let mVideoOutput: cameraObj.VideoOutput;
+    let fdPath: string = '';
+    let mVideoOutput: cameraObj.VideoOutput | undefined;
     let isVideoOutputCreated: boolean = false;
 
     let getFd = async (pathName: string) => {
@@ -267,7 +267,7 @@ export default function cameraSessionSystemPressureTest() {
         let previewIndex:int = 0;
         let videoIndex:int = 0;
         let equalFlag: boolean = false;
-        let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx], cameraObj.SceneMode.NORMAL_VIDEO);
+        let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray[idx], cameraObj.SceneMode.NORMAL_VIDEO);
 
         if (cameraOutputCap != undefined) {
             if (cameraOutputCap.previewProfiles != null && cameraOutputCap.photoProfiles !=null && cameraOutputCap.videoProfiles != null) {
@@ -287,14 +287,14 @@ export default function cameraSessionSystemPressureTest() {
                 }
 		let surfaceIds = Hypium.get('SurfaceId') as string;
                 if (equalFlag) {
-                    mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[previewIndex], surfaceIds);
+                    mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[previewIndex], surfaceIds);
                     if (mPreviewOutput == undefined) {
                         console.info(TAG + "createPreviewOutput FAILED");
                     } else {
                         isPreviewOutputCreated = true;
                     }
                     console.info(TAG + "createPreviewOutput is: " + mPreviewOutput);
-                    mVideoOutput = mCameraManager.createVideoOutput(cameraOutputCap.videoProfiles[videoIndex], videoSurfaceId!);
+                    mVideoOutput = mCameraManager!.createVideoOutput(cameraOutputCap.videoProfiles[videoIndex], videoSurfaceId!);
                     if (mVideoOutput == null || mVideoOutput == undefined) {
                         console.info(TAG + "createVideoOutput FAILED");
                     } else {
@@ -303,7 +303,7 @@ export default function cameraSessionSystemPressureTest() {
                     console.info(TAG + "createVideoOutput is: " + mVideoOutput);
                 } else {
                     console.info(TAG + "No same profile size for preview and video");
-                    mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceIds);
+                    mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceIds);
                     if (mPreviewOutput == undefined) {
                         console.info(TAG + "createPreviewOutput FAILED");
                     } else {
@@ -321,7 +321,7 @@ export default function cameraSessionSystemPressureTest() {
         console.info('Enter releaseOutput');
         if (isPreviewOutputCreated && mPreviewOutput != undefined) {
             try {
-                await mPreviewOutput.release();
+                await mPreviewOutput!.release();
                 isPreviewOutputCreated = false;
             } catch (err) {
                 let error = err as BusinessError;
@@ -330,7 +330,7 @@ export default function cameraSessionSystemPressureTest() {
         }
         if (isVideoOutputCreated && mVideoOutput != undefined) {
             try {
-                await mVideoOutput.release();
+                await mVideoOutput!.release();
                 isVideoOutputCreated = false;
             } catch (err) {
                 let error = err as BusinessError;
@@ -386,20 +386,20 @@ export default function cameraSessionSystemPressureTest() {
                     await createInput(i);
                     createOutput(i);
                     createCameraSessionWithMode(cameraObj.SceneMode.NORMAL_PHOTO);
-                    mCameraSession.beginConfig();
-                    if (isEmpty04(mCameraInput)) {
+                    mCameraSession!.beginConfig();
+                    if (isEmpty04(mCameraInput!)) {
                         console.info(TAG + "cameraInput is null.");
                         expect().assertFail();
                         done();
                     }
-                    mCameraSession.addInput(mCameraInput);
-                    if (isEmpty07(mPreviewOutput)) {
+                    mCameraSession!.addInput(mCameraInput!);
+                    if (isEmpty07(mPreviewOutput!)) {
                         console.info(TAG + "Start to addOutput mPreviewOutput");
                         expect().assertFail();
                         done();
                     }
-                    mCameraSession.addOutput(mPreviewOutput);
-                    await mCameraSession.commitConfig();
+                    mCameraSession!.addOutput(mPreviewOutput!);
+                    await mCameraSession!.commitConfig();
 
                     (mCameraSession as cameraObj.PhotoSession).onSystemPressureLevelChange((error: BusinessError | null, pressureState: cameraObj.SystemPressureLevel | undefined) => {
                         if (error !== undefined && error!.code !== 0) {
@@ -408,9 +408,9 @@ export default function cameraSessionSystemPressureTest() {
                         done();
                     })
 
-                    await mCameraSession.start();
-                    await mCameraSession.stop();
-                    await mCameraInput.close();
+                    await mCameraSession!.start();
+                    await mCameraSession!.stop();
+                    await mCameraInput!.close();
                     await releaseCameraSessionInstance();
                     console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100 end for camera[" +
                         i + "]");
@@ -442,26 +442,26 @@ export default function cameraSessionSystemPressureTest() {
                     await createInput(i);
                     createOutput(i);
                     createCameraSessionWithMode(cameraObj.SceneMode.NORMAL_PHOTO);
-                    mCameraSession.beginConfig();
-                    if (isEmpty04(mCameraInput)) {
+                    mCameraSession!.beginConfig();
+                    if (isEmpty04(mCameraInput!)) {
                         console.info(TAG + "cameraInput is null.");
                         expect().assertFail();
                         done();
                     }
-                    mCameraSession.addInput(mCameraInput);
-                    if (isEmpty07(mPreviewOutput)) {
+                    mCameraSession!.addInput(mCameraInput!);
+                    if (isEmpty07(mPreviewOutput!)) {
                         console.info(TAG + "Start to addOutput mPreviewOutput");
                         expect().assertFail();
                         done();
                     }
-                    mCameraSession.addOutput(mPreviewOutput);
-                    await mCameraSession.commitConfig();
+                    mCameraSession!.addOutput(mPreviewOutput!);
+                    await mCameraSession!.commitConfig();
 
                     (mCameraSession as cameraObj.PhotoSession).offSystemPressureLevelChange();
 
-                    await mCameraSession.start();
-                    await mCameraSession.stop();
-                    await mCameraInput.close();
+                    await mCameraSession!.start();
+                    await mCameraSession!.stop();
+                    await mCameraInput!.close();
                     await releaseCameraSessionInstance();
                     console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100 end for camera[" +
                         i + "]");
@@ -493,23 +493,23 @@ export default function cameraSessionSystemPressureTest() {
                     await createInput(i);
                     createVideoAndPreviewOutput(i);
                     createCameraSessionWithMode(cameraObj.SceneMode.NORMAL_VIDEO);
-                    mCameraSession.beginConfig();
-                    if (isEmpty04(mCameraInput)) {
+                    mCameraSession!.beginConfig();
+                    if (isEmpty04(mCameraInput!)) {
                         console.info(TAG + "cameraInput is null.");
                         expect().assertFail();
                         done();
                     }
-                    mCameraSession.addInput(mCameraInput);
-                    if (isEmpty07(mPreviewOutput)) {
+                    mCameraSession!.addInput(mCameraInput!);
+                    if (isEmpty07(mPreviewOutput!)) {
                         console.info(TAG + "Start to addOutput mPreviewOutput");
                         expect().assertFail();
                         done();
                     }
-                    mCameraSession.addOutput(mPreviewOutput);
-                    if (isVideoOutputCreated && mVideoOutput != undefined && mCameraSession.canAddOutput(mVideoOutput) == true) {
-                        mCameraSession.addOutput(mVideoOutput);
+                    mCameraSession!.addOutput(mPreviewOutput!);
+                    if (isVideoOutputCreated && mVideoOutput != undefined && mCameraSession!.canAddOutput(mVideoOutput) == true) {
+                        mCameraSession!.addOutput(mVideoOutput!);
                     }
-                    await mCameraSession.commitConfig();
+                    await mCameraSession!.commitConfig();
 
                     (mCameraSession as cameraObj.VideoSession).onSystemPressureLevelChange((error: BusinessError | null, pressureState: cameraObj.SystemPressureLevel | undefined) => {
                         if (error !== undefined && error!.code !== 0) {
@@ -518,9 +518,9 @@ export default function cameraSessionSystemPressureTest() {
                         done();
                     })
 
-                    await mCameraSession.start();
-                    await mCameraSession.stop();
-                    await mCameraInput.close();
+                    await mCameraSession!.start();
+                    await mCameraSession!.stop();
+                    await mCameraInput!.close();
                     await releaseCameraSessionInstance();
                     console.info(TAG + "Entering SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_ON_STATIC_0100 end for camera[" +
                         i + "]");
@@ -552,29 +552,29 @@ export default function cameraSessionSystemPressureTest() {
                     await createInput(i);
                     createVideoAndPreviewOutput(i);
                     createCameraSessionWithMode(cameraObj.SceneMode.NORMAL_VIDEO);
-                    mCameraSession.beginConfig();
-                    if (isEmpty04(mCameraInput)) {
+                    mCameraSession!.beginConfig();
+                    if (isEmpty04(mCameraInput!)) {
                         console.info(TAG + "cameraInput is null.");
                         expect().assertFail();
                         done();
                     }
-                    mCameraSession.addInput(mCameraInput);
-                    if (isEmpty07(mPreviewOutput)) {
+                    mCameraSession!.addInput(mCameraInput!);
+                    if (isEmpty07(mPreviewOutput!)) {
                         console.info(TAG + "Start to addOutput mPreviewOutput");
                         expect().assertFail();
                         done();
                     }
-                    mCameraSession.addOutput(mPreviewOutput);
-                    if (isVideoOutputCreated && mVideoOutput != undefined && mCameraSession.canAddOutput(mVideoOutput) == true) {
-                        mCameraSession.addOutput(mVideoOutput);
+                    mCameraSession!.addOutput(mPreviewOutput!);
+                    if (isVideoOutputCreated && mVideoOutput != undefined && mCameraSession!.canAddOutput(mVideoOutput) == true) {
+                        mCameraSession!.addOutput(mVideoOutput!);
                     }
-                    await mCameraSession.commitConfig();
+                    await mCameraSession!.commitConfig();
 
                     (mCameraSession as cameraObj.VideoSession).offSystemPressureLevelChange();
 
-                    await mCameraSession.start();
-                    await mCameraSession.stop();
-                    await mCameraInput.close();
+                    await mCameraSession!.start();
+                    await mCameraSession!.stop();
+                    await mCameraInput!.close();
                     await releaseCameraSessionInstance();
                     console.info(TAG + "Entering SUB_MULTIMEDIA_VIDEO_SESSION_SYSTEM_PRESSURE_LEVEL_OFF_STATIC_0100 end for camera[" +
                         i + "]");

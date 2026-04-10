@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function textTimerJsunit() {
   describe('appInfoTest_four_14', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_14 beforeEach start");
 
 

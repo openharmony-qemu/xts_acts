@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,7 +58,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Observed
-class MyProvideObject {
+export class MyProvideObject {
   public id: number = 1
   public value: string = ''
 
@@ -111,7 +111,7 @@ struct ConsumeArrayObjectChild {
           this.message.pop()
         })
 
-      ForEach(Array.from(this.message.entries()), (item: [number, MyProvideObject]) => {
+      ForEach(Array.from(this.message.entries()), (item: [int, MyProvideObject]) => {
         Text(`Item ${item[1].id}: ${item[1].value} index: ${item[0]}`).fontSize(9)
           .id('provideArrayObject_value_' + item[0]).height('5%')
         Divider()
@@ -131,7 +131,7 @@ struct ConsumeArrayObject {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ProvideArrayObject', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

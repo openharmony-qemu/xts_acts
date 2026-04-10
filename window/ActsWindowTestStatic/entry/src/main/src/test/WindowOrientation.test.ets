@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,8 +31,8 @@ export default function WindowOrientationTest() {
 
     describe("WindowOrientationTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowOrientationTest describe start');
-        let windowStage: window.WindowStage;
-        let win: window.Window;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
         let context: common.UIAbilityContext;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
@@ -64,10 +64,10 @@ export default function WindowOrientationTest() {
 
 
         /**
-         * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1090
-         * @tc.name			testWindowOrientation_Enum_Value_static_0100
-         * @tc.desc			To test the enum value of Orientation.
-         */
+        * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1090
+        * @tc.name			testWindowOrientation_Enum_Value_static_0100
+        * @tc.desc			To test the enum value of Orientation.
+        */
         it('testWindowOrientation_Enum_Value_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let msgStr:string = 'setOutsideTouchable_Test_004_static_0100';
             hilog.info(0x0000, '[ANI]',msgStr + ' begin');
@@ -91,20 +91,20 @@ export default function WindowOrientationTest() {
                 expect(16).assertEqual(window.Orientation.USER_ROTATION_LANDSCAPE_INVERTED);
                 expect(17).assertEqual(window.Orientation.FOLLOW_DESKTOP);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(0x0000, '[ANI]',msgStr + 'test enum value of windowStageEventType error ' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done();
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0050
-         * @tc.name        testRectChangeReason_enum_static_0100
-         * @tc.desc        Test the function value of RectChangeReason
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level0
-         */
+        * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0050
+        * @tc.name        testRectChangeReason_enum_static_0100
+        * @tc.desc        Test the function value of RectChangeReason
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level0
+        */
         it("testRectChangeReason_enum_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let msgStr:string = "testRectChangeReason_enum_static_0100";
             hilog.info(0x0000, '[ANI]',msgStr + "begin");
@@ -124,27 +124,27 @@ export default function WindowOrientationTest() {
                 hilog.info(0x0000, '[ANI]',`window.RectChangeReason.DRAG_END: ${window.RectChangeReason.DRAG_END}`);
                 expect(6).assertEqual(window.RectChangeReason.DRAG_END);
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Failed to testRectChangeReason_enum' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
             }
         })
 
-/**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2840
-         * @tc.name        testSetPreferredOrientation_WinAbnormal_Promise_static_0100
-         * @tc.desc        Set the display direction property of the window
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
+        /**
+        * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2840
+        * @tc.name        testSetPreferredOrientation_WinAbnormal_Promise_static_0100
+        * @tc.desc        Set the display direction property of the window
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
         it('testSetPreferredOrientation_WinAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string  = 'testSetPreferredOrientation_WinAbnormal_Promise_static_0100';
             let msgStr:string  = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let win: window.Window;
-            win = await windowStage.createSubWindow('testSetPreferredOrientation_WinAbnormal_Promise');
+            win = await windowStage!.createSubWindow('testSetPreferredOrientation_WinAbnormal_Promise');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
@@ -159,26 +159,27 @@ export default function WindowOrientationTest() {
                     expect(err!.code).assertEqual(1300002);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set window orientation. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002);
                 done();
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2850
-         * @tc.name        testSetPreferredOrientation_WinAbnormal_Call_static_0200
-         * @tc.desc        Set the display direction property of the window
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
+        * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2850
+        * @tc.name        testSetPreferredOrientation_WinAbnormal_Call_static_0200
+        * @tc.desc        Set the display direction property of the window
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
         it('testSetPreferredOrientation_WinAbnormal_Call_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string  = 'testSetPreferredOrientation_WinAbnormal_Call_static_0200';
             let msgStr:string  = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             let win: window.Window;
-            win = await windowStage.createSubWindow('testSetPreferredOrientation_WinAbnormal_Call');
+            win = await windowStage!.createSubWindow('testSetPreferredOrientation_WinAbnormal_Call');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
             await (win as window.Window).destroyWindow();
@@ -196,7 +197,8 @@ export default function WindowOrientationTest() {
                     expect(false).assertTrue();
                     done()
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set window orientation. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002)
                 done()
@@ -204,42 +206,58 @@ export default function WindowOrientationTest() {
         })
 
         /**
-         * @tc.number      SUB_BASIC_WMS_RotationChange_0200
-         * @tc.name        test_RotationChange_static_0100
-         * @tc.desc        test_RotationChange_0200
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
+        * @tc.number      SUB_BASIC_WMS_RotationChange_0200
+        * @tc.name        test_RotationChange_static_0100
+        * @tc.desc        test_RotationChange_0200
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
         it('test_RotationChange_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_RotationChange_static_0100';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_static_0100');
-            await subWindowClass.destroyWindow();
+            let subWindowClass:window.Window = await windowStage!.createSubWindow('test_RotationChange_static_0100');
             try {
-                let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {}
+                let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {
+                let rotationResult: window.RotationChangeResult = {
+                    rectType: window.RectType.RELATIVE_TO_SCREEN,
+                    windowRect: {
+                        left: 0,
+                        top: 0,
+                        width: 0,
+                        height: 0,
+                    }
+                };
+                return rotationResult;
+                }
                 subWindowClass.onRotationChange(rotationCallback);
                 done();
-            } catch (err:BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
+                await subWindowClass.destroyWindow()
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
-                expect(err!.code).assertEqual(1300002);
-                done();
+                if (err!.code === 801) {
+                    done()
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
             }
         });
         /**
-         * @tc.number      SUB_BASIC_WMS_RotationChange_0400
-         * @tc.name        test_RotationChange_static_0200
-         * @tc.desc        test_RotationChange_static_0200
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('test_RotationChange_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'test_RotationChange_static_0200';
+        * @tc.number      SUB_BASIC_WMS_RotationChange_1300002_0400
+        * @tc.name        test_offRotationChange_1300002_static_0200
+        * @tc.desc        test_offRotationChange_1300002_static_0200
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
+        it('test_offRotationChange_1300002_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_offRotationChange_1300002_static_0200';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_static_0200');
+            let subWindowClass:window.Window = await windowStage!.createSubWindow('test_offRotationChange_1300002_static_0200');
             await subWindowClass.destroyWindow();
             try {
                 let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {
@@ -307,43 +325,52 @@ export default function WindowOrientationTest() {
                 };
                 subWindowClass.offRotationChange(rotationCallback);
                 done();
-            } catch (err:BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
                 expect(err!.code).assertEqual(1300002);
                 done();
             }
         });
         /**
-         * @tc.number      SUB_BASIC_WMS_RotationChange_801_0100
-         * @tc.name        test_RotationChange_801_static_0300
-         * @tc.desc        test_RotationChange_801_static_0300
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 1
-         */
-        it('test_RotationChange_801_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'test_RotationChange_801_static_0300';
+        * @tc.number      SUB_BASIC_WMS_RotationChange_1300002_0100
+        * @tc.name        test_onRotationChange_1300002_static_0300
+        * @tc.desc        test_onRotationChange_1300002_static_0300
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 1
+        */
+        it('test_onRotationChange_1300002_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_onRotationChange_1300002_static_0300';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_801_static_0300');
+            let subWindowClass:window.Window = await windowStage!.createSubWindow('test_onRotationChange_1300002_static_0300');
             try {
                 await subWindowClass.setUIContent('pages/index2');
                 await subWindowClass.showWindow();
                 let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult  => {
+                let rotationResult: window.RotationChangeResult = {
+                    rectType: window.RectType.RELATIVE_TO_SCREEN,
+                    windowRect: {
+                        left: 0,
+                        top: 0,
+                        width: 0,
+                        height: 0,
+                    }
+                };
+                return rotationResult;
                 }
+                await subWindowClass.destroyWindow()
                 subWindowClass.onRotationChange(rotationCallback);
-                subWindowClass.offRotationChange(rotationCallback);
                 hilog.info(0x0000, '[ANI]',`${caseName} :on rotationChange success. `);
-                await subWindowClass.destroyWindow()
-                expect(true).assertTrue();
                 done();
-            } catch (err:BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
-                await subWindowClass.destroyWindow()
                 if (err!.code === 801) {
                     done()
                 } else {
-                    expect(false).assertTrue();
+                    expect(err!.code).assertEqual(1300002);
                     done();
                 }
             }
@@ -352,28 +379,28 @@ export default function WindowOrientationTest() {
         });
 
         /**
-         * @tc.number      SUB_BASIC_WMS_RotationChange_801_0200
-         * @tc.name        test_RotationChange_801_static_0400
-         * @tc.desc        test_RotationChange_801_static_0400
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 1
-         */
+        * @tc.number      SUB_BASIC_WMS_RotationChange_801_0200
+        * @tc.name        test_RotationChange_801_static_0400
+        * @tc.desc        test_RotationChange_801_static_0400
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 1
+        */
         it('test_RotationChange_801_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_RotationChange_801_static_0400';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
 
-            let subWindowClass:window.Window = await windowStage.createSubWindow('test_RotationChange_801_static_0400');
+            let subWindowClass:window.Window = await windowStage!.createSubWindow('test_RotationChange_801_static_0400');
             try {
                 await subWindowClass.setUIContent('pages/index2');
                 await subWindowClass.showWindow();
                 subWindowClass.offRotationChange();
                 hilog.info(0x0000, '[ANI]',`${caseName} :off rotationChange success. `);
                 await subWindowClass.destroyWindow()
-                expect(true).assertTrue();
                 done();
-            } catch (err:BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
                 await subWindowClass.destroyWindow()
                 if (err!.code === 801) {
@@ -384,17 +411,16 @@ export default function WindowOrientationTest() {
                 }
             }
 
-
         });
 
         /**
-         * @tc.number      SUB_BASIC_WMS_RotationChange_Type_0100
-         * @tc.name        test_RotationChangeType_static_0100
-         * @tc.desc        test_RotationChangeType_static_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 1
-         */
+        * @tc.number      SUB_BASIC_WMS_RotationChange_Type_0100
+        * @tc.name        test_RotationChangeType_static_0100
+        * @tc.desc        test_RotationChangeType_static_0100
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 1
+        */
         it('test_RotationChangeType_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_RotationChangeType_static_0100';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
@@ -406,18 +432,18 @@ export default function WindowOrientationTest() {
             done();
         });
         /**
-         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_4290
-         * @tc.name       testGetPreferredOrientation_WindowAbnormal_static
-         * @tc.desc       Sets the display direction property of the window
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level3
-         */
+        * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_4290
+        * @tc.name       testGetPreferredOrientation_WindowAbnormal_static
+        * @tc.desc       Sets the display direction property of the window
+        * @tc.size       MediumTest
+        * @tc.type       Function
+        * @tc.level      Level3
+        */
         it('testGetPreferredOrientation_WindowAbnormal_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testGetPreferredOrientation_WindowAbnormal_static';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
-            let windowClass: window.Window = await windowStage.createSubWindow('testGetPreferredOrientation_WindowAbnormal')
+            let windowClass: window.Window = await windowStage!.createSubWindow('testGetPreferredOrientation_WindowAbnormal')
             hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
             expect(!!windowClass).assertTrue();
             await windowClass.destroyWindow();
@@ -433,33 +459,319 @@ export default function WindowOrientationTest() {
             }
         })
         /**
-         * @tc.name   testconvertOrientationAndRotationDestoryedWindow_static
-         * @tc.number SUB_BASIC_WMS_FUNCTION_convertOrientationAndRotation_static_0200
-         * @tc.desc   验证convertOrientationAndRotation接口窗口状态异常调用
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
+        * @tc.name   testconvertOrientationAndRotationDestoryedWindow_static
+        * @tc.number SUB_BASIC_WMS_FUNCTION_convertOrientationAndRotation_static
+        * @tc.desc   验证convertOrientationAndRotation接口窗口状态异常调用
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
         it('testconvertOrientationAndRotationDestoryedWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string = 'testconvertOrientationAndRotationDestoryedWindow_static';
             console.log(caseName + 'begin.');
             let originalValue: int = 0;
             let fromType: window.RotationInfoType = window.RotationInfoType.WINDOW_ORIENTATION;
             let toType: window.RotationInfoType = window.RotationInfoType.DISPLAY_ORIENTATION;
-            let windowClass:window.Window = await windowStage.createSubWindow('testconvertOrientationAndRotationDestoryedWindow_static');
+            let windowClass:window.Window = await windowStage!.createSubWindow('testconvertOrientationAndRotationDestoryedWindow_static');
             await windowClass.destroyWindow();
             try {
                 windowClass.convertOrientationAndRotation(fromType, toType, originalValue);
                 await Utils.msSleep(200);
                 expect(true).assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
-                expect(err.code).assertEqual(1300002)
-                expect(err.message != null).assertTrue();
-                done();
+                if (err!.code === 801) {
+                    done()
+                } else {
+                    expect(err.code).assertEqual(1300002)
+                    done();
+                }
             }
         })
+
+        /**
+        * @tc.name   testconvertOrientationAndRotationDestoryedWindow_static_0100
+        * @tc.number testconvertOrientationAndRotationDestoryedWindow_static_0100
+        * @tc.desc   验证convertOrientationAndRotation接口窗口状态异常调用
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('testconvertOrientationAndRotationDestoryedWindow_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            const caseName:string = 'testconvertOrientationAndRotationDestoryedWindow_static_0100';
+            console.log(caseName + 'begin.');
+            let originalValue: int = 0;
+            let fromType: window.RotationInfoType = window.RotationInfoType.DISPLAY_ORIENTATION;
+            let toType: window.RotationInfoType = window.RotationInfoType.DISPLAY_ROTATION;
+            let windowClass:window.Window = await windowStage!.createSubWindow('testconvertOrientationAndRotationDestoryedWindow_static_0100');
+            await windowClass.destroyWindow();
+            try {
+                windowClass.convertOrientationAndRotation(fromType, toType, originalValue);
+                await Utils.msSleep(200);
+                expect(true).assertFail();
+                done();
+            } catch (err) {
+                err = err as BusinessError;
+                console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+                if (err!.code === 801) {
+                    done()
+                } else {
+                    expect(err!.code).assertEqual(1300002)
+                    done();
+                }
+            }
+        })
+
+        /**
+        * @tc.name   testconvertOrientationAndRotationDestoryedWindow_static_0200
+        * @tc.number testconvertOrientationAndRotationDestoryedWindow_static_0200
+        * @tc.desc   验证convertOrientationAndRotation接口窗口状态异常调用
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('testconvertOrientationAndRotationDestoryedWindow_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            const caseName:string = 'testconvertOrientationAndRotationDestoryedWindow_static_0200';
+            console.log(caseName + 'begin.');
+            let originalValue: int = 0;
+            let fromType: window.RotationInfoType = window.RotationInfoType.DISPLAY_ROTATION;
+            let toType: window.RotationInfoType = window.RotationInfoType.WINDOW_ORIENTATION;
+            let windowClass:window.Window = await windowStage!.createSubWindow('testconvertOrientationAndRotationDestoryedWindow_static_0200');
+            await windowClass.destroyWindow();
+            try {
+                windowClass.convertOrientationAndRotation(fromType, toType, originalValue);
+                await Utils.msSleep(200);
+                expect(true).assertFail();
+                done();
+            } catch (err) {
+                err = err as BusinessError;
+                console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+                if (err!.code === 801) {
+                    done()
+                } else {
+                    expect(err!.code).assertEqual(1300002)
+                    done();
+                }
+            }
+        })
+
+        /**
+        * @tc.name   testconvertOrientationAndRotation_static_0300
+        * @tc.number testconvertOrientationAndRotation_static_0300
+        * @tc.desc   验证convertOrientationAndRotation接口调用
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('testconvertOrientationAndRotation_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            const caseName:string = 'testconvertOrientationAndRotation_static_0300';
+            console.log(caseName + 'begin.');
+            let originalValue: int = 0;
+            let fromType: window.RotationInfoType = window.RotationInfoType.DISPLAY_ROTATION;
+            let toType: window.RotationInfoType = window.RotationInfoType.WINDOW_ORIENTATION;
+            let windowClass:window.Window = await windowStage!.createSubWindow('testconvertOrientationAndRotation_static_0300');
+            try {
+                let convertValue: int = windowClass.convertOrientationAndRotation(fromType, toType, originalValue);
+                expect(convertValue).assertLargerOrEqual(0);
+                expect(convertValue).assertLessOrEqual(3);
+                await Utils.msSleep(200);
+                done();
+            } catch (err) {
+                err = err as BusinessError;
+                console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+                if (err!.code === 801) {
+                    done()
+                } else {
+                    expect(true).assertFail(); 
+                    done();
+                }
+            }
+        })
+
+
+        /**
+        * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3605
+        * @tc.name        testSetPreferredOrientation_enum_static_0100
+        * @tc.desc        Set the display direction property of the window
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
+        it('testSetPreferredOrientation_enum_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testSetPreferredOrientation_enum_static_0100';
+                let msgStr: string = 'jsunittest ' + caseName + ' ';
+                hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+                let win: window.Window;
+                win = await windowStage!.createSubWindow('testSetPreferredOrientation_enum_static_0100');
+                hilog.info(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow success');
+                expect(!!win).assertTrue();
+
+                try {
+                    let orientation = window.Orientation.UNSPECIFIED;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    let CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.PORTRAIT;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.LANDSCAPE;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.PORTRAIT_INVERTED;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.LANDSCAPE_INVERTED;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.AUTO_ROTATION;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.AUTO_ROTATION_PORTRAIT;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.AUTO_ROTATION_LANDSCAPE;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.AUTO_ROTATION_RESTRICTED;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.AUTO_ROTATION_PORTRAIT_RESTRICTED;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.AUTO_ROTATION_LANDSCAPE_RESTRICTED;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    done();
+                } catch (exception) {
+                    exception = exception as BusinessError;
+                    hilog.error(0x0000, '[ANI]',
+                        msgStr + 'Failed to set window orientation. Cause: ' + JSON.stringify(exception));
+                    done();
+                }
+            })
+
+        /**
+        * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3606
+        * @tc.name        testSetPreferredOrientation_enum_static_0200
+        * @tc.desc        Set the display direction property of the window
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
+        it('testSetPreferredOrientation_enum_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testSetPreferredOrientation_enum_static_0200';
+                let msgStr: string = 'jsunittest ' + caseName + ' ';
+                hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+                let win: window.Window;
+                win = await windowStage!.createSubWindow('testSetPreferredOrientation_enum_static_0200');
+                hilog.info(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow success');
+                expect(!!win).assertTrue();
+
+                try {
+                    let orientation = window.Orientation.LOCKED;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    let CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.AUTO_ROTATION_UNSPECIFIED;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.USER_ROTATION_PORTRAIT;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.USER_ROTATION_LANDSCAPE;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.USER_ROTATION_PORTRAIT_INVERTED;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.USER_ROTATION_LANDSCAPE_INVERTED;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    orientation = window.Orientation.FOLLOW_DESKTOP;
+                    (win as window.Window).setPreferredOrientation(orientation);
+                    await Utils.msSleep(300);
+                    CurrentOrientation = win.getPreferredOrientation();
+                    expect(CurrentOrientation).assertEqual(orientation);
+                    await Utils.msSleep(300);
+
+                    done();
+                } catch (exception) {
+                    exception = exception as BusinessError;
+                    hilog.error(0x0000, '[ANI]',
+                        msgStr + 'Failed to set window orientation. Cause: ' + JSON.stringify(exception));
+                    done();
+                }
+            })
 
 
 

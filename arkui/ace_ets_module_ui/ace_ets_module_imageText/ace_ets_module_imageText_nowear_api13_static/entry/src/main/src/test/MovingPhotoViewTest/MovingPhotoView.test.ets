@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function MovingPhotoViewTest() {
   describe('MovingPhotoViewTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("MovingPhotoViewTest beforeEach start");
 
       await UtilsTest.msSleep(4000);
@@ -80,7 +80,7 @@ it('MovingPhotoViewTest_static_0010', Level.LEVEL2, async (done: () => void): Pr
       let button1 = await driver.findComponent(ON.id('MovingPhotoView_setAutoPlayPeriod'));
       await CommonFunc.sleep(500);
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
 
         let strJson = inspector.getInspectorByKey('MovingPhotoView_complete');
@@ -111,7 +111,7 @@ it('MovingPhotoViewTest_static_0020', Level.LEVEL2, async (done: () => void): Pr
       let button1 = await driver.findComponent(ON.id('MovingPhotoView_autoPlay'));
       await CommonFunc.sleep(500);
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(10000);
 
 
         let strJson = inspector.getInspectorByKey('MovingPhotoView_start');
@@ -145,7 +145,7 @@ it('MovingPhotoViewTest_static_0030', Level.LEVEL2, async (done: () => void): Pr
       let button2 = await driver.findComponent(ON.id('MovingPhotoView_playButton'));
       await CommonFunc.sleep(500);
       await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
 
         let strJson = inspector.getInspectorByKey('MovingPhotoView_play');
@@ -170,7 +170,7 @@ it('MovingPhotoViewTest_static_0040', Level.LEVEL2, async (done: () => void): Pr
       let button2 = await driver.findComponent(ON.id('MovingPhotoView_stopPlay'));
       await CommonFunc.sleep(500);
       await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
 
         let strJson = inspector.getInspectorByKey('MovingPhotoView_stopPlay1');
@@ -195,7 +195,7 @@ it('MovingPhotoViewTest_static_0050', Level.LEVEL2, async (done: () => void): Pr
       let button2 = await driver.findComponent(ON.id('MovingPhotoView_stopButton'));
       await CommonFunc.sleep(500);
       await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
 
         let strJson = inspector.getInspectorByKey('MovingPhotoView_stop');
@@ -239,7 +239,7 @@ it('MovingPhotoViewTest_static_0070', Level.LEVEL2, async (done: () => void): Pr
       let button1 = await driver.findComponent(ON.id('MovingPhotoView_true'));
       await CommonFunc.sleep(500);
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
 
         let strJson = inspector.getInspectorByKey('MovingPhotoView_mute');
@@ -265,7 +265,7 @@ it('MovingPhotoViewTest_static_0080', Level.LEVEL2, async (done: () => void): Pr
       let button1 = await driver.findComponent(ON.id('MovingPhotoView_errorButton'));
       await CommonFunc.sleep(500);
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
 
         let strJson = inspector.getInspectorByKey('MovingPhotoView_error');
@@ -290,7 +290,7 @@ it('MovingPhotoViewTest_static_0090', Level.LEVEL2, async (done: () => void): Pr
       let button1 = await driver.findComponent(ON.id('MovingPhotoView_playButton'));
       await CommonFunc.sleep(500);
       await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
 
         let strJson = inspector.getInspectorByKey('MovingPhotoView_complete');
@@ -334,7 +334,7 @@ it('MovingPhotoViewTest_static_0110', Level.LEVEL2, async (done: () => void): Pr
       let button = await driver.findComponent(ON.id('MovingPhotoView_repeatPlay_true'));
       await CommonFunc.sleep(500);
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(2000);
 
 
         let strJson = inspector.getInspectorByKey('MovingPhotoView_repeatPlay');

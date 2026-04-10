@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,14 +28,14 @@ const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.org/anything";
 const ExpectFail = () => {
     try {
         expect().assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
         console.info("expectInfo", `test failed`);
     }
 }
 const ExpectTrue = (n: boolean) => {
     try {
         expect(n).assertTrue();
-    } catch (err: BusinessError) {
+    } catch (err) {
         console.info("expectInfo", `test sucess`);
     }
 }
@@ -93,7 +93,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -149,7 +149,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -207,7 +207,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -264,7 +264,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -320,7 +320,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -374,7 +374,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -427,7 +427,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -481,7 +481,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -531,7 +531,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -584,7 +584,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -644,7 +644,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -696,7 +696,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -750,7 +750,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -805,7 +805,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -859,7 +859,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -913,7 +913,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -963,7 +963,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1014,7 +1014,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1064,7 +1064,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1116,7 +1116,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1168,7 +1168,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1220,7 +1220,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1271,7 +1271,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1322,7 +1322,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1374,7 +1374,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1425,7 +1425,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1477,7 +1477,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1530,7 +1530,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1583,7 +1583,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1636,7 +1636,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1733,7 +1733,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1780,7 +1780,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1829,7 +1829,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -1876,7 +1876,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1924,7 +1924,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -1979,7 +1979,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -2083,7 +2083,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -2137,7 +2137,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -2192,7 +2192,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -2244,7 +2244,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -2296,7 +2296,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -2349,7 +2349,7 @@ export default function HttpResponsePropertiesTest() {
                         }
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();

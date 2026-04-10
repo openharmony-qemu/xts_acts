@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -62,9 +62,9 @@ export default function ConnectionPublicNopTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -94,9 +94,9 @@ export default function ConnectionPublicNopTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         })
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -119,9 +119,9 @@ export default function ConnectionPublicNopTest() {
         ExpectFail();
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -150,9 +150,9 @@ export default function ConnectionPublicNopTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -181,9 +181,9 @@ export default function ConnectionPublicNopTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         })
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -206,9 +206,9 @@ export default function ConnectionPublicNopTest() {
         ExpectFail();
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -237,9 +237,9 @@ export default function ConnectionPublicNopTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -268,9 +268,9 @@ export default function ConnectionPublicNopTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         })
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -293,9 +293,9 @@ export default function ConnectionPublicNopTest() {
         ExpectFail();
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -324,9 +324,9 @@ export default function ConnectionPublicNopTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -356,9 +356,9 @@ export default function ConnectionPublicNopTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         })
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -381,9 +381,9 @@ export default function ConnectionPublicNopTest() {
         ExpectFail();
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -413,9 +413,9 @@ export default function ConnectionPublicNopTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -445,9 +445,9 @@ export default function ConnectionPublicNopTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         })
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
@@ -471,9 +471,9 @@ export default function ConnectionPublicNopTest() {
         ExpectFail();
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      }catch (err:BusinessError) {
+      }catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-        ExpectTrue(err.code == 201);
+        ExpectTrue((err as BusinessError).code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }

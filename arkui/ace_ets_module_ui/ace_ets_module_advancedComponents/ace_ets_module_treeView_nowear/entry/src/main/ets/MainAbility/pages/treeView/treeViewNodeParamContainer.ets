@@ -168,6 +168,7 @@ struct TreeViewDemo {
       })
       .addNode({ parentNodeId: 33, currentNodeId: 34, isFolder: false, primaryTitle: '项目8' })
       .addNode({ parentNodeId: -1, currentNodeId: 36, isFolder: false, primaryTitle: '项目9' })
+      .addNode(undefined)
       .buildDone();
     this.treeController.refreshNode(-1, '父节点', '子节点');
   }

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -66,7 +66,7 @@ struct ListFlingError {
         .onClick(() => {
           try {
             this.scroller2.fling(-1000)
-          } catch (error: Error) {
+          } catch (error) {
             this.textResult = JSON.stringify(error.code) //'100004'
             console.info('Get error code: %{public}s', JSON.stringify(error.code));
             console.error('error fling failed, error code: ' + error.code + ', error message: ' + error.message)

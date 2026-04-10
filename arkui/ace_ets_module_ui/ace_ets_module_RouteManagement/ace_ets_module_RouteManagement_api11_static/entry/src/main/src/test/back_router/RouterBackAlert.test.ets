@@ -28,7 +28,7 @@ import events_emitter from '@ohos.events.emitter'
 
 export default function RouterBackAlert() {
   describe('RouterBackAlert', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
     });

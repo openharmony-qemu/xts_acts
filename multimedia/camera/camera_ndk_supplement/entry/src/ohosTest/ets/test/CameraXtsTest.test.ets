@@ -23,7 +23,7 @@ import { abilityAccessCtrl, PermissionRequestResult, Permissions, common} from '
 
 const TAG = "CAMERA_XTS_TEST_TAG ";
 const TEST_OK = 0;
-const SLEEP_500 = 500;
+const SLEEP_TIME = 500;
 let receiver: image.ImageReceiver;
 let mPhotoSurface: string;
 
@@ -60,32 +60,36 @@ function sleep(ms: number) {
 
 let driveFn = async () => {
   let dr = Driver.create();
-  await sleep(SLEEP_500);
-  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), SLEEP_500);
-  await sleep(SLEEP_500);
-  await power?.click();
+  await sleep(SLEEP_TIME);
+  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), SLEEP_TIME);
+  if (power != undefined && power != null) {
+    await power?.click();
+  }
 }
 
 function releaseCamera() {
   return cameraObj.releaseCameraManger();
 }
 
-let getPermissions = () => {
+let getPermissions = async () => {
   let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-  let permissions: Array<Permissions> = ['ohos.permission.CAMERA'];
+  let permissions: Array<Permissions> =
+    ['ohos.permission.CAMERA', 'ohos.permission.MICROPHONE', 'ohos.permission.WRITE_MEDIA', 'ohos.permission.READ_MEDIA'];
   let testContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext
   atManager.requestPermissionsFromUser(testContext, permissions).then((data: PermissionRequestResult) => {
     console.info(TAG + 'data permissions:' + data.permissions)
   }).catch((err: BusinessError<number>) => {
     console.error(TAG + 'data:' + JSON.stringify(err))
   })
+  for (let i = 0; i < permissions.length; i++) {
+    driveFn();
+  }
 }
 
 export default function CameraXtsTest() {
   describe("CameraXtsTest", () => {
     beforeAll(async () => {
       await getPermissions()
-      await driveFn();
       await getPhotoReceiverSurface()
       getCameraManagerInstance()
       console.info(TAG + "beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.")

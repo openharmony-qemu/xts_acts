@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function enableJsunit() {
   describe('enableTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("enableJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
     });
@@ -107,7 +107,7 @@ it('testEnable_static_03', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info("[testEnable03] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testEnable03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -139,7 +139,7 @@ it('testEnable_static_04', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info("testEnable04 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testEnable04 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -171,7 +171,7 @@ it('testEnable_static_02', Level.LEVEL0, async (done: () => void): Promise<void>
         }
         console.info("[testEnable02] start to publish emit",eventData.data);
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testEnable02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

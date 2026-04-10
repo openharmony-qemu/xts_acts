@@ -35,7 +35,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function SymbolGlyphTest() {
   describe("SymbolGlyphTest", () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SymbolGlyphTest beforeEach start");
 
       

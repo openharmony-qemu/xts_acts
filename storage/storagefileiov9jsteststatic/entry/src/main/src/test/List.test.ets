@@ -15,6 +15,7 @@
 
 import fileIOAccess from "./Access.test";
 import fileIOClose from "./Close.test";
+import fileIOCopy from "./Copy.test";
 import fileIOCopyDir from "./CopyDir.test";
 import fileIOCopyfile from "./CopyFile.test";
 import fileIOCreateStream from "./CreateStream.test";
@@ -62,6 +63,7 @@ import fileIODfsConnect from './DfsConnect.test';
 export default function testsuite() {
     fileIOAccess();
     fileIOClose();
+    fileIOCopy();
     fileIOCopyDir();
     fileIOCopyfile();
     fileIOCreateStream();

@@ -44,7 +44,7 @@ export default function webJsunitTwo() {
       } catch (err) {
         console.error('push webtwo error: ' + err);
       }
-      await driver.waitForComponent(ON.id("webtwocomponent"), 10000);
+      await Utils.waitForComponent(driver, 'webtwocomponent');
       done()
     });
 

@@ -23,7 +23,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function WaterFlowSectionDemo17Jsunit() {
   describe('WaterFlowSectionDemo17Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

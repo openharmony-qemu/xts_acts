@@ -312,7 +312,7 @@ describe('StartAbilityTest', function () {
         let parameter = {}
         await featureAbility.startAbilityForResult(parameter).then((data) => {
             console.log('testAblity1500 data: ' + JSON.stringify(data))
-            expect.assertFail()
+            expect().assertFail()
         }).catch((error) => {
             console.log('testAblity1500' + JSON.stringify(error));
             expect(errCode1).assertEqual(error.code)
@@ -350,7 +350,7 @@ describe('StartAbilityTest', function () {
     it("SUB_AA_JsApi_Ability_1700", Level.LEVEL0, async function (done) {
         await featureAbility.startAbilityForResult(undefined).then((data) => {
             console.log('testAblity1700 data: ' + JSON.stringify(data))
-            expect.assertFail()
+            expect().assertFail()
         }).catch((error) => {
             console.log('testAblity1700' + JSON.stringify(error));
             expect(errCode1).assertEqual(error.code)
@@ -395,7 +395,7 @@ describe('StartAbilityTest', function () {
         }
         await featureAbility.startAbilityForResult(startAbilityParameter).then((data) => {
             console.log('testAblity1900 data: ' + JSON.stringify(data))
-            expect.assertFail()
+            expect().assertFail()
         }).catch((error) => {
             console.log('testAblity1900 err:' + JSON.stringify(error));
             expect(errCode).assertEqual(error.code)
@@ -451,7 +451,7 @@ describe('StartAbilityTest', function () {
         }
         await featureAbility.startAbilityForResult(parameter).then((data) => {
             console.log('testAblity2100 data: ' + JSON.stringify(data))
-            expect.assertFail()
+            expect().assertFail()
         }).catch((error) => {
             console.log('testAblity2100' + JSON.stringify(error));
             expect(errCode).assertEqual(error.code)

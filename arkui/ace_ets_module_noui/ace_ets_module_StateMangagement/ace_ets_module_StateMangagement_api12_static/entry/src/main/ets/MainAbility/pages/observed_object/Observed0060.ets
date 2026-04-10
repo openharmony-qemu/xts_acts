@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,20 +35,20 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-class Observed0060Model {
+export class Observed0060Model {
   value: string =''
   constructor(value: string) {
     this.value = value
   }
 }
 
-enum Observed0060Enum {
+export enum Observed0060Enum {
   A = 'A',
   B = 'B'
 }
 
 @Observed
-class Observed0060Class {
+export class Observed0060Class {
   id: number = 1
   name: string = ''
   isType: boolean = false
@@ -93,7 +93,7 @@ struct Observed0060 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('Observed0060', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

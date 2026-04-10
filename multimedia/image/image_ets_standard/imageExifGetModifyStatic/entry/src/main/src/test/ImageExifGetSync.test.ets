@@ -37,7 +37,7 @@ interface errorCode {
 }
 
 export default function imageExifGetSyncTest() {
-  let context: common.UIAbilityContext;
+  let context: common.UIAbilityContext | undefined;
   let filesDir: string | undefined | null;
 
   describe('ImageExifGetSync', () => {
@@ -76,7 +76,7 @@ export default function imageExifGetSyncTest() {
         const filePath = filesDir + '/' + fileName
         imageSourceApi = image.createImageSource(filePath)
       }else if(type === "rawfile"){
-        const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+        const resourceMgr: resourceManager.ResourceManager = context!.resourceManager;
         const rawFileDescriptor = await resourceMgr.getRawFd(fileName);
         imageSourceApi = image.createImageSource(rawFileDescriptor);
       }else if(type === "incremental") {

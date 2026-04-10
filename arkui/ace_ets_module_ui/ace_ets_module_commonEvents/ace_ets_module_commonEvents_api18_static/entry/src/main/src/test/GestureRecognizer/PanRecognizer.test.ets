@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function PanRecognizerTest() {
   describe('PanRecognizerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi18.static", "EntryAbility")

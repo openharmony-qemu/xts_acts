@@ -42,6 +42,7 @@ import expressionTest4 from './expression/ExpressionTest4.test';
 import expressionTest5 from './expression/ExpressionTest5.test';
 import expressionTest6 from './expression/ExpressionTest6.test';
 import expressionTest7 from './expression/ExpressionTest7.test';
+import expressionTest8 from './expression/ExpressionTest8.test';
 import looper1Test from './looper/Looper1.test';
 import looper2Test from './looper/Looper2.test';
 import looper3Test from './looper/Looper3.test';
@@ -83,6 +84,7 @@ export default function testsuite() {
   expressionTest5();
   expressionTest6();
   expressionTest7();
+  expressionTest8();
   looper1Test();
   looper2Test();
   looper3Test();

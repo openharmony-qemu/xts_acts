@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,265 +37,258 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderImageOption, EffectComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, BorderImageOption, EffectComponentAttribute,
   FormComponentAttribute, ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mBrightness: number = 10
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-    console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
-    instance.brightness(this.mBrightness)
-  }
-}
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
@@ -316,238 +309,238 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
     instance.brightness(this.mBrightness)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mBrightness: number = 10
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`brightness page show ${JSON.stringify(this.mBrightness)}`)
@@ -576,7 +569,6 @@ struct brightnessPage {
   @State _brightnessFlexMod: FlexModifier = new FlexModifier()
   @State _brightnessFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _brightnessFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _brightnessFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _brightnessGaugeMod: GaugeModifier = new GaugeModifier()
   @State _brightnessGridMod: GridModifier = new GridModifier()
   @State _brightnessGridColMod: GridColModifier = new GridColModifier()
@@ -669,7 +661,6 @@ struct brightnessPage {
       this._brightnessFlexMod.mBrightness = value.brightness
       this._brightnessFlowItemMod.mBrightness = value.brightness
       this._brightnessFormComponentMod.mBrightness = value.brightness
-      this._brightnessFormLinkMod.mBrightness = value.brightness
       this._brightnessGaugeMod.mBrightness = value.brightness
       this._brightnessGridMod.mBrightness = value.brightness
       this._brightnessGridColMod.mBrightness = value.brightness

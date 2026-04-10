@@ -20,4 +20,7 @@ ohos_js_app_static_suite("ActsBaseErrorCodeMethodStaticTest") {
   hap_name = "ActsBaseErrorCodeMethodStaticTest"
   part_name = "ability_runtime"
   subsystem_name = "ability"
+  deps = [
+    "../actsbaseerrorrelystatic:ActsBaseErrorRelyStatic"
+  ]
 }

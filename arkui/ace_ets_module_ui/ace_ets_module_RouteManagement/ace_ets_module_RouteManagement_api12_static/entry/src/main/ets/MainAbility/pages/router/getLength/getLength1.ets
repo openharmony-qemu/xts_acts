@@ -52,8 +52,10 @@ struct getLength1 {
         .onClick((e:ClickEvent)=>{
           for(let i=1;i<30;i++){
             try {
-              await this.getUIContext().getRouter().pushUrl({
-                url: 'MainAbility/pages/router/getLength/getLength1'
+              waitForCompletion(async ()=>{
+                await this.getUIContext().getRouter().pushUrl({
+                  url: 'MainAbility/pages/router/getLength/getLength1'
+                })
               })
             } catch (err) {
               console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as BusinessError).message}`);

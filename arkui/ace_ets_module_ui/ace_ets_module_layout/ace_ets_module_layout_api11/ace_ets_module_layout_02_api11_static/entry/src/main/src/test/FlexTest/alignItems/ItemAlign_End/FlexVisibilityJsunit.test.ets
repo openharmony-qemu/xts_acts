@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexVisibility_EndJsunit() {
   describe('flexItemAlignEndTest8', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchTypeTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });
@@ -112,7 +112,7 @@ it('testFlexItemAlignEndSubSetVisibilityNone_static', Level.LEVEL0, async () : P
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Visible");
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.End')
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexItemAlignBaselineSubSetVisibilityNone_static] failed');
         expect().assertFail();
       }
@@ -160,7 +160,7 @@ it('testFlexItemAlignEndSubSetVisibilityHidden_static', Level.LEVEL0, async () :
         expect(Math.abs(textVisible03.right - textVisible03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.End')
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexItemAlignBaselineSubSetVisibilityNone_static] failed');
         expect().assertFail();
       }

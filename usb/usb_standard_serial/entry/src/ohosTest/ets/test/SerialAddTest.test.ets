@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -104,6 +104,7 @@ export default function SerialAddTest() {
               console.error(TAG, 'getPermission catch err name: ', err.name, ', message: ', err.message);
             }
           }
+          done();
         } else {
           done();
         }
@@ -1077,6 +1078,82 @@ export default function SerialAddTest() {
       } catch (error) {
         console.error(TAG, 'testGetAttribute034 catch err code: ', error.code, ', message: ', error.message);
         expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   testGetAttribute035
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3800
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetAttribute035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testGetAttribute035 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        let res = serial.getPortList();
+        let portId = res[0].portId;
+        await serial.requestSerialRight(portId);
+        serial.open(portId);
+        const baudRates = [
+          serial.BaudRates.BAUDRATE_50, serial.BaudRates.BAUDRATE_75,
+          serial.BaudRates.BAUDRATE_110, serial.BaudRates.BAUDRATE_134,
+          serial.BaudRates.BAUDRATE_150, serial.BaudRates.BAUDRATE_200,
+          serial.BaudRates.BAUDRATE_300, serial.BaudRates.BAUDRATE_600,
+          serial.BaudRates.BAUDRATE_1200, serial.BaudRates.BAUDRATE_1800,
+          serial.BaudRates.BAUDRATE_2400, serial.BaudRates.BAUDRATE_4800,
+          serial.BaudRates.BAUDRATE_9600, serial.BaudRates.BAUDRATE_19200,
+          serial.BaudRates.BAUDRATE_38400, serial.BaudRates.BAUDRATE_57600,
+          serial.BaudRates.BAUDRATE_115200, serial.BaudRates.BAUDRATE_230400,
+          serial.BaudRates.BAUDRATE_460800, serial.BaudRates.BAUDRATE_500000,
+          serial.BaudRates.BAUDRATE_576000, serial.BaudRates.BAUDRATE_921600,
+          serial.BaudRates.BAUDRATE_1000000, serial.BaudRates.BAUDRATE_1152000,
+          serial.BaudRates.BAUDRATE_1500000, serial.BaudRates.BAUDRATE_2000000,
+          serial.BaudRates.BAUDRATE_2500000, serial.BaudRates.BAUDRATE_3000000,
+          serial.BaudRates.BAUDRATE_3500000, serial.BaudRates.BAUDRATE_4000000
+        ];
+        const dataBits = [
+          serial.DataBits.DATABIT_8, serial.DataBits.DATABIT_7,
+          serial.DataBits.DATABIT_6, serial.DataBits.DATABIT_5
+        ];
+        const parities = [
+          serial.Parity.PARITY_NONE, serial.Parity.PARITY_ODD,
+          serial.Parity.PARITY_EVEN, serial.Parity.PARITY_MARK,
+          serial.Parity.PARITY_SPACE
+        ];
+        const stopBits = [serial.StopBits.STOPBIT_1, serial.StopBits.STOPBIT_2];
+        for (const bR of baudRates) {
+          for (const dB of dataBits) {
+            for (const ps of parities) {
+              for (const sB of stopBits) {
+                let attribute: serial.SerialAttribute = {
+                  baudRate: bR,
+                  dataBits: dB,
+                  parity: ps,
+                  stopBits: sB
+                };
+                serial.setAttribute(portId, attribute);
+                let ret = serial.getAttribute(portId);
+                console.info(TAG, 'testGetAttribute035 ret:' + JSON.stringify(ret));
+                expect(ret.baudRate == attribute.baudRate).assertTrue();
+                expect(ret.dataBits == attribute.dataBits).assertTrue();
+                expect(ret.parity == attribute.parity).assertTrue();
+                expect(ret.stopBits == attribute.stopBits).assertTrue();
+              }
+            }
+          }
+        }
+        serial.close(portId);
+        done();
+      } catch (error) {
+        console.error(TAG, 'testGetAttribute035 catch err code: ', error.code, ', message: ', error.message);
+        expect().assertFail();
+        done();
       }
     })
   })

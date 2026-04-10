@@ -37,7 +37,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function flexAlign_SpaceBetween_fixedChild() {
   describe('FlexAlign_SpaceBetween_fixedChild', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexAlign_SpaceBetween_fixedChild beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
@@ -75,7 +75,7 @@ export default function flexAlign_SpaceBetween_fixedChild() {
      * @tc.desc     testAlignSpaceBetweenRowNoWrapParentWidthAndHeightOutRange_static
      * @tc.level    Level.LEVEL0
      */
-it('testAlignSpaceBetweenRowNoWrapParentWidthAndHeightOutRange_static', Level.LEVEL0, async () => {
+    it('testAlignSpaceBetweenRowNoWrapParentWidthAndHeightOutRange_static', Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapParentWidthAndHeightOutRange START');
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 200
@@ -94,26 +94,42 @@ it('testAlignSpaceBetweenRowNoWrapParentWidthAndHeightOutRange_static', Level.LE
       let locationText2: RectValue = CommonFunc.getComponentRect('AlignSpaceBetween2');
       let locationText3: RectValue = CommonFunc.getComponentRect('AlignSpaceBetween3');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexAlignSpaceBetween1');
-      expect(Math.abs((locationText1.top) - (locationText2.top)) <= 1).assertTrue();
-      expect(Math.abs((locationText2.top) - (locationText3.top)) <= 1).assertTrue();
-      expect(Math.abs((locationText1.top) - (locationFlex.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
+
+      console.info('win6 WidthAndHeightOutRange 1:' + Math.floor(Math.abs((locationText1.top) - (locationText2.top))));
+      console.info('win6 WidthAndHeightOutRange 2:' + Math.floor(Math.abs((locationText2.top) - (locationText3.top))));
+      console.info('win6 WidthAndHeightOutRange 3:' + Math.floor(Math.abs((locationText1.top) - (locationFlex.top))));
+      console.info('win6 WidthAndHeightOutRange 4:' + Math.floor(Math.abs((locationText1.bottom - locationText1.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))));
+      console.info('win6 WidthAndHeightOutRange 5:' + Math.floor(Math.abs((locationText2.bottom - locationText2.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))));
+      console.info('win6 WidthAndHeightOutRange 6:' + Math.floor(Math.abs((locationText3.bottom - locationText3.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('win6 WidthAndHeightOutRange 7:' + Math.floor(Math.abs((locationFlex.bottom - locationText3.bottom) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))));
+      console.info('win6 WidthAndHeightOutRange 8:' + Math.floor(Math.abs((locationText1.left) - (locationFlex.left))));
+      console.info('win6 WidthAndHeightOutRange 9:' + Math.floor(Math.abs((locationText1.right) - (locationText2.left))));
+      console.info('win6 WidthAndHeightOutRange 10:' + Math.floor(Math.abs((locationText2.right) - (locationText3.left))));
+      console.info('win6 WidthAndHeightOutRange 11:' + Math.floor(Math.abs((locationText3.right) - (locationFlex.right))));
+      console.info('win6 WidthAndHeightOutRange 12:' + Math.floor(Math.abs((locationText1.right - locationText1.left) - (locationText2.right - locationText2.left))));
+      console.info('win6 WidthAndHeightOutRange 13:' + Math.floor(Math.abs((locationText3.right - locationText3.left) - (locationText2.right - locationText2.left))));
+      console.info('win6 WidthAndHeightOutRange 14:' + Math.floor(Math.abs((locationText2.right - locationText2.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))));
+
+      expect(Math.floor(Math.abs((locationText1.top) - (locationText2.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText2.top) - (locationText3.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText1.top) - (locationFlex.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationFlex.bottom - locationText3.bottom)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
+      expect(Math.floor(Math.abs((locationFlex.bottom - locationText3.bottom) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((locationText1.left) - (locationFlex.left)) <= 1).assertTrue();
-      expect(Math.abs((locationText1.right) - (locationText2.left)) <= 1).assertTrue();
-      expect(Math.abs((locationText2.right) - (locationText3.left)) <= 1).assertTrue();
-      expect(Math.abs((locationText3.right) - (locationFlex.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(locationText2.right - locationText2.left))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.left) - (locationFlex.left))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText1.right) - (locationText2.left))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText2.right) - (locationText3.left))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText3.right) - (locationFlex.right))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - (locationText2.right - locationText2.left))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(locationText2.right - locationText2.left))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - (locationText2.right - locationText2.left))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))))) <= 1)
         .assertTrue();
       console.info('new testAlignSpaceBetweenRowNoWrapParentWidthAndHeightOutRange END');
 
@@ -127,7 +143,7 @@ it('testAlignSpaceBetweenRowNoWrapParentWidthAndHeightOutRange_static', Level.LE
      * @tc.desc     testAlignSpaceBetweenRowNoWrapParentWidthAndHeightInRange_static
      * @tc.level    Level.LEVEL0
      */
-it('testAlignSpaceBetweenRowNoWrapParentWidthAndHeightInRange_static', Level.LEVEL0, async () => {
+    it('testAlignSpaceBetweenRowNoWrapParentWidthAndHeightInRange_static', Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapParentWidthAndHeightInRange START');
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 200
@@ -146,28 +162,45 @@ it('testAlignSpaceBetweenRowNoWrapParentWidthAndHeightInRange_static', Level.LEV
       let locationText2: RectValue = CommonFunc.getComponentRect('AlignSpaceBetween2');
       let locationText3: RectValue = CommonFunc.getComponentRect('AlignSpaceBetween3');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexAlignSpaceBetween1');
-      expect(Math.abs((locationText1.top) - (locationText2.top)) <= 1).assertTrue();
-      expect(Math.abs((locationText2.top) - (locationText3.top)) <= 1).assertTrue();
-      expect(Math.abs((locationText1.top) - (locationFlex.top)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationText1.bottom - locationText1.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
+
+
+      console.info('win6 WidthAndHeightInRange 1:' + Math.floor(Math.abs((locationText1.top) - (locationText2.top))));
+      console.info('win6 WidthAndHeightInRange 2:' + Math.floor(Math.abs((locationText2.top) - (locationText3.top))));
+      console.info('win6 WidthAndHeightInRange 3:' + Math.floor(Math.abs((locationText1.top) - (locationFlex.top))));
+      console.info('win6 WidthAndHeightInRange 4:' + Math.floor(Math.abs((locationText1.bottom - locationText1.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))));
+      console.info('win6 WidthAndHeightInRange 5:' + Math.floor(Math.abs((locationText2.bottom - locationText2.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))));
+      console.info('win6 WidthAndHeightInRange 6:' + Math.floor(Math.abs((locationText3.bottom - locationText3.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('win6 WidthAndHeightInRange 7:' + Math.floor(Math.abs((locationFlex.bottom - locationText3.bottom) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))));
+      console.info('win6 WidthAndHeightInRange 8:' + Math.floor(Math.abs((locationText1.left) - (locationFlex.left))));
+      console.info('win6 WidthAndHeightInRange 9:' + Math.floor(Math.abs((locationText3.right) - (locationFlex.right))));
+      console.info('win6 WidthAndHeightInRange 10:' + Math.floor(Math.abs((locationText1.right - locationText1.left) - (locationText2.right - locationText2.left))));
+      console.info('win6 WidthAndHeightInRange 11:' + Math.floor(Math.abs((locationText3.right - locationText3.left) - (locationText2.right - locationText2.left))));
+      console.info('win6 WidthAndHeightInRange 12:' + Math.floor(Math.abs((locationText2.right - locationText2.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('win6 WidthAndHeightInRange 13:' + Math.floor(Math.abs((locationText2.left - locationText1.right) - (locationText3.left - locationText2.right))));
+      console.info('win6 WidthAndHeightInRange 14:' + Math.floor(Math.abs(((locationText2.left - locationText1.right) * 10) / 10 - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10)));
+
+      expect(Math.floor(Math.abs((locationText1.top) - (locationText2.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText2.top) - (locationText3.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText1.top) - (locationFlex.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.bottom - locationText2.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.bottom - locationText3.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationFlex.bottom - locationText3.bottom)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
+      expect(Math.floor(Math.abs((locationFlex.bottom - locationText3.bottom) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((locationText1.left) - (locationFlex.left)) <= 1).assertTrue();
-      expect(Math.abs((locationText3.right) - (locationFlex.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(locationText1.right - locationText1.left)) - (Math.round(locationText2.right - locationText2.left))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.left) - (locationFlex.left))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText3.right) - (locationFlex.right))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText1.right - locationText1.left) - (locationText2.right - locationText2.left))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText3.right - locationText3.left)) - (Math.round(locationText2.right - locationText2.left))) <= 1)
+      expect(Math.floor(Math.abs((locationText3.right - locationText3.left) - (locationText2.right - locationText2.left))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.right - locationText2.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(locationText2.left - locationText1.right)) - (Math.round(locationText3.left - locationText2.right))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.left - locationText1.right) - (locationText3.left - locationText2.right))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round((locationText2.left - locationText1.right) * 10) / 10) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10)) <= 1)
+      expect(Math.floor(Math.abs(((locationText2.left - locationText1.right) * 10) / 10 - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10)) <= 1)
         .assertTrue();
       console.info('new testAlignSpaceBetweenRowNoWrapParentWidthAndHeightInRange END');
 

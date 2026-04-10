@@ -38,7 +38,8 @@ struct Index {
               abilityName: "UIExtAbility1",
               parameters:{
                 "case":testAbilityWant?.parameters?.case as string,
-                "caseName":testAbilityWant?.parameters?.caseName as string
+                "caseName":testAbilityWant?.parameters?.caseName as string,
+                "param":testAbilityWant?.parameters?.param
               }
             }, EmbeddedType.EMBEDDED_UI_EXTENSION)
             .width('100%')

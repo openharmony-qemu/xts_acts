@@ -67,7 +67,7 @@ export default function HidebugnewTest() {
           + "sharedClean: " + nativeMemInfo.sharedClean + "\n"
           + "privateClean: " + nativeMemInfo.privateClean);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_2500 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -105,7 +105,7 @@ export default function HidebugnewTest() {
           + "sharedClean: " + nativeMemInfo.sharedClean + "\n"
           + "privateClean: " + nativeMemInfo.privateClean);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_2600 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -142,7 +142,7 @@ export default function HidebugnewTest() {
           + "sharedClean: " + nativeMemInfo.sharedClean + "\n"
           + "privateClean: " + nativeMemInfo.privateClean);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_2700 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -179,7 +179,7 @@ export default function HidebugnewTest() {
           + "sharedClean: " + nativeMemInfo.sharedClean + "\n"
           + "privateClean: " + nativeMemInfo.privateClean);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_2900 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -232,7 +232,7 @@ export default function HidebugnewTest() {
           + "sharedClean: " + nativeMemInfo3.sharedClean + "\n"
           + "privateClean: " + nativeMemInfo3.privateClean);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_3000 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -281,7 +281,7 @@ export default function HidebugnewTest() {
           + "sharedClean: " + nativeMemInfo3.sharedClean + "\n"
           + "privateClean: " + nativeMemInfo3.privateClean);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_3100 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -320,7 +320,7 @@ export default function HidebugnewTest() {
         }
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_3300 true 100 times success")
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_3300 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -359,7 +359,7 @@ export default function HidebugnewTest() {
         }
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_3400 false 100 times success")
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_3400 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -383,7 +383,7 @@ export default function HidebugnewTest() {
         expect(appVMObjectUsed >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4100 success");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_4100 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -411,7 +411,7 @@ export default function HidebugnewTest() {
         expect(appVMObjectUsed2 >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4200 success");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_4200 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -438,7 +438,7 @@ export default function HidebugnewTest() {
         expect(appVMObjectUsed2 >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4300 success");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_4300 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -464,7 +464,7 @@ export default function HidebugnewTest() {
         }
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4400 100 times success");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_4400 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -493,7 +493,7 @@ export default function HidebugnewTest() {
         expect(graph >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4500 success");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_4500 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -520,7 +520,7 @@ export default function HidebugnewTest() {
         expect(graph >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4600 success");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_4600 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -547,7 +547,7 @@ export default function HidebugnewTest() {
         expect(graph >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4700 success");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_4700 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -574,7 +574,7 @@ export default function HidebugnewTest() {
         expect(graph >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4800 success");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_4800 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -601,7 +601,7 @@ export default function HidebugnewTest() {
         expect(graph >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_4900 success");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_4900 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -628,7 +628,7 @@ export default function HidebugnewTest() {
         expect(graph >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_5000 success");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_5000 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -655,7 +655,7 @@ export default function HidebugnewTest() {
         expect(graph >= 0).assertTrue();
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_5300 success");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_5300 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
@@ -684,7 +684,7 @@ export default function HidebugnewTest() {
         }
         console.info("SUB_DFX_DFR_Hiprofiler_Interface_5400 100 times success");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`SUB_DFX_DFR_Hiprofiler_Interface_5400 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();

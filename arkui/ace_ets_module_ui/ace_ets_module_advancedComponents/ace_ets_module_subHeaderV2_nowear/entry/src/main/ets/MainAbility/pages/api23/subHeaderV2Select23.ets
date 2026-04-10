@@ -22,52 +22,78 @@ import {
   Prompt
 } from '@kit.ArkUI';
 
+import {
+  SubHeaderV2TitleOptions,
+  SubHeaderV2SelectOptions,
+  SubHeaderV2OperationItemOptions
+} from '@ohos.arkui.advanced.SubHeaderV2';
+
 @Entry
 @ComponentV2
 struct SubHeaderExample {
   @Local selectedValue: ResourceStr = $r('app.string.download');
   @Local selectedIndex: number = 0;
-  @Local title: SubHeaderV2Title = new SubHeaderV2Title({ primaryTitle: '一级标题', secondaryTitle: '二级标题' });
+  @Local title: SubHeaderV2Title = new SubHeaderV2Title({id: 'subHeaderV2Title', primaryTitle: '一级标题', secondaryTitle: '二级标题', titleAccessibilityText: '自定义内容'});
   @Local operationItems: SubHeaderV2OperationItem[] = [];
   @Local select: SubHeaderV2Select =
-    new SubHeaderV2Select({ options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }] });
+    new SubHeaderV2Select({ id: 'selectOptionsId', options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }] });
+  @Local select2: SubHeaderV2Select =
+    new SubHeaderV2Select({ id: 'selectOptionsId', options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }] });
+
+  @Local subHeaderV2TitleOptions: SubHeaderV2TitleOptions ={
+    id: 'subHeaderV2TitleOptionsId', primaryTitle: '一级标题', secondaryTitle: '二级标题', titleAccessibilityText: '自定义内容'};
+  @Local subHeaderV2SelectOptions: SubHeaderV2SelectOptions = {
+    id: 'subHeaderV2SelectOptionsId',
+    options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }],
+    selectedContent: '下载2',
+    selectedIndex: 0,
+    onSelect: (index: number, value?: string) => {
+      Prompt.showToast({ message: 'selectdemo' })
+    }
+  };
+  @Local subHeaderV2OperationItemOptions: SubHeaderV2OperationItemOptions = {
+    id: 'subHeaderV2OperationItemOptions03',
+    content: $r('sys.media.ohos_ic_public_email'),
+    action: () => {
+      Prompt.showToast({ message: 'demo' })
+    },
+    accessibilityText: 'access text',
+    accessibilityLevel: 'auto',
+    accessibilityDescription: '',
+    defaultFocus: false
+  }
+
 
   aboutToAppear(): void {
 
-    this.title = new SubHeaderV2Title({
-      primaryTitle: '一级标题',
-      secondaryTitle: '二级标题',
-      titleAccessibilityText: '自定义内容'
-    });
+    this.title = new SubHeaderV2Title(this.subHeaderV2TitleOptions);
 
     this.select = new SubHeaderV2Select({
-      options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }],
+      id: 'selectOptionsId',
       selectedContent: this.selectedValue,
       selectedIndex: this.selectedIndex,
-      onSelect: (index: number, value?: string) => {
-        Prompt.showToast({ message: 'selectdemo' })
-      }
+      options: [{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }] 
     })
+
+    this.select2 = new SubHeaderV2Select(this.subHeaderV2SelectOptions)
 
     this.operationItems = [
       new SubHeaderV2OperationItem({
+        id: 'subHeaderV2OperationItem01',
         content: $r('sys.media.ohos_ic_public_email'),
         action: () => {
           Prompt.showToast({ message: 'demo' })
         }
       }),
       new SubHeaderV2OperationItem({
+        id: 'subHeaderV2OperationItem02',
         content: $r('sys.media.ohos_ic_public_email'),
         action: () => {
           Prompt.showToast({ message: 'demo' })
         }
       }),
-      new SubHeaderV2OperationItem({
-        content: $r('sys.media.ohos_ic_public_email'),
-        action: () => {
-          Prompt.showToast({ message: 'demo' })
-        }
-      })]
+      new SubHeaderV2OperationItem(this.subHeaderV2OperationItemOptions)
+    ]
   }
 
   build() {
@@ -75,6 +101,16 @@ struct SubHeaderExample {
       Column() {
         SubHeaderV2({
           select: this.select,
+          operationType: SubHeaderV2OperationType.ICON_GROUP,
+          operationItems: this.operationItems
+        })
+        SubHeaderV2({
+          select: this.select2,
+          operationType: SubHeaderV2OperationType.ICON_GROUP,
+          operationItems: this.operationItems
+        })
+        SubHeaderV2({
+          title: this.title,
           operationType: SubHeaderV2OperationType.ICON_GROUP,
           operationItems: this.operationItems
         })

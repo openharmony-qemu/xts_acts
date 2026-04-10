@@ -24,7 +24,7 @@ export default function dragEventGetDisplayIdTest() {
   let PAGE_TAG = 'dragEventGetDisplayId';
 
   describe('dragEventGetDisplayIdTest', (): void  => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api20.static", "EntryAbility")
     });
     afterEach(async (): Promise<void> => {

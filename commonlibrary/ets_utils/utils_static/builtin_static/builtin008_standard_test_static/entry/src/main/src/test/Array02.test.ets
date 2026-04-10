@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ export default function Array_02Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -70,7 +70,7 @@ export default function Array_02Test() {
       try {
         let a = Type.of(null);
         expect(String(a)).assertEqual(String(null));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -451,7 +451,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0, 1, 2]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -472,7 +472,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -491,7 +491,7 @@ export default function Array_02Test() {
       try {
         const emptyIterator = keys([] as FixedArray<boolean>);
         expect(Array.from(emptyIterator).length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -512,7 +512,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0, 1, 2]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -533,7 +533,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -552,7 +552,7 @@ export default function Array_02Test() {
       try {
         const emptyIterator = keys([] as FixedArray<byte>);
         expect(Array.from(emptyIterator).length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -571,7 +571,7 @@ export default function Array_02Test() {
       try {
         const emptyIterator = keys([] as FixedArray<char>);
         expect(Array.from(emptyIterator).length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -592,7 +592,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0, 1, 2]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -613,7 +613,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -632,7 +632,7 @@ export default function Array_02Test() {
       try {
         const emptyIterator = keys([] as FixedArray<double>);
         expect(Array.from(emptyIterator).length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -653,7 +653,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -672,7 +672,7 @@ export default function Array_02Test() {
       try {
         const emptyIterator = keys([] as FixedArray<float>);
         expect(Array.from(emptyIterator).length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -693,7 +693,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0, 1, 2]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -714,7 +714,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -733,7 +733,7 @@ export default function Array_02Test() {
       try {
         const emptyIterator = keys([] as FixedArray<int>);
         expect(Array.from(emptyIterator).length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -754,7 +754,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0, 1, 2]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -775,7 +775,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -794,7 +794,7 @@ export default function Array_02Test() {
       try {
         const emptyIterator = keys([] as FixedArray<long>);
         expect(Array.from(emptyIterator).length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -815,7 +815,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0, 1, 2]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -836,7 +836,7 @@ export default function Array_02Test() {
         const iterator = keys(testArray);
         const result = Array.from(iterator);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -855,7 +855,7 @@ export default function Array_02Test() {
       try {
         const emptyIterator = keys([] as FixedArray<short>);
         expect(Array.from(emptyIterator).length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -877,7 +877,7 @@ export default function Array_02Test() {
         const result = map(original, invert);
         const expected: FixedArray<boolean> = [false, true, false] as FixedArray<boolean>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -894,14 +894,14 @@ export default function Array_02Test() {
     it('testMapBoolean0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapBoolean0003";
       try {
-        const emptyArray = new boolean[0] as FixedArray<boolean>;
+        const emptyArray = new FixedArray<boolean>(0);
         const callback = (val: boolean): boolean => {
           expect().assertFail();
           return val;
         };
         const result = map(emptyArray, callback);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -923,7 +923,7 @@ export default function Array_02Test() {
         const result = map(input, increment);
         const expected: FixedArray<byte> = [15, 25, 35] as FixedArray<byte>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -940,14 +940,14 @@ export default function Array_02Test() {
     it('testMapByte0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapByte0002";
       try {
-        const empty: FixedArray<byte> = new byte[0] as FixedArray<byte>;
+        const empty: FixedArray<byte> = new FixedArray<byte>(0);
         const callback = (val: byte): byte => {
           expect().assertFail();
           return val;
         };
         const result = map(empty, callback);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -969,7 +969,7 @@ export default function Array_02Test() {
         const result = map(input, increment);
         const expected: FixedArray<byte> = [5, 15, 25] as FixedArray<byte>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -986,14 +986,14 @@ export default function Array_02Test() {
     it('testMapChar0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapChar0001";
       try {
-        const empty: FixedArray<char> = new char[0] as FixedArray<char>;
+        const empty: FixedArray<char> = new FixedArray<char>(0);
         const callback = (val: char): char => {
           expect().assertFail();
           return val;
         };
         const result = map(empty, callback);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1017,7 +1017,7 @@ export default function Array_02Test() {
           result.push(val);
         }
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1.5, 2.3, 3.7]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1034,14 +1034,14 @@ export default function Array_02Test() {
     it('testMapDouble0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapDouble0002";
       try {
-        const empty: FixedArray<double> = new double[0] as FixedArray<double>;
+        const empty: FixedArray<double> = new FixedArray<double>(0);
         const callback = (val: double): double => {
           expect().assertFail();
           return val;
         };
         const result = map(empty, callback);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1065,7 +1065,7 @@ export default function Array_02Test() {
         for (let i = 0; i < result.length; i++) {
           expect(Math.abs(result[i] - expected[i]) < 1e-10).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1087,7 +1087,7 @@ export default function Array_02Test() {
         const result = map(input, square);
         const expected: FixedArray<double> = [1.0, 4.0, 9.0] as FixedArray<double>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1104,14 +1104,14 @@ export default function Array_02Test() {
     it('testMapFloat0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapFloat0001";
       try {
-        const empty: FixedArray<float> = new float[0] as FixedArray<float>;
+        const empty: FixedArray<float> = new FixedArray<float>(0);
         const callback = (val: float): float => {
           expect().assertFail();
           return val;
         };
         const result = map(empty, callback);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1133,7 +1133,7 @@ export default function Array_02Test() {
         const result = map(input, square);
         const expected: FixedArray<float> = [1.0, 4.0, 9.0] as FixedArray<float>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1157,7 +1157,7 @@ export default function Array_02Test() {
           result.push(val);
         }
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([5, 10, 15]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1174,14 +1174,14 @@ export default function Array_02Test() {
     it('testMapInt0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapInt0002";
       try {
-        const empty: FixedArray<int> = new int[0] as FixedArray<int>;
+        const empty: FixedArray<int> = new FixedArray<int>(0);
         const callback = (val: int): int => {
           expect().assertFail(); // 确保回调不被执行
           return val;
         };
         const result = map(empty, callback);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1205,7 +1205,7 @@ export default function Array_02Test() {
         for (let i = 0; i < result.length; i++) {
           expect(result[i]).assertEqual(expected[i]);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1229,7 +1229,7 @@ export default function Array_02Test() {
         for (let i = 0; i < result.length; i++) {
           expect(result[i]).assertEqual(expected[i]);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1251,7 +1251,7 @@ export default function Array_02Test() {
         const result = map(input, square);
         const expected: FixedArray<int> = [4, 9, 16] as FixedArray<int>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1275,7 +1275,7 @@ export default function Array_02Test() {
           result.push(val);
         }
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1000000000, 2000000000, 3000000000]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1292,14 +1292,14 @@ export default function Array_02Test() {
     it('testMapLong0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapLong0002";
       try {
-        const empty: FixedArray<long> = new long[0] as FixedArray<long>;
+        const empty: FixedArray<long> = new FixedArray<long>(0);
         const callback = (val: long): long => {
           expect().assertFail();
           return val;
         };
         const result = map(empty, callback);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1323,7 +1323,7 @@ export default function Array_02Test() {
         for (let i = 0; i < result.length; i++) {
           expect(result[i]).assertEqual(expected[i]);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1347,7 +1347,7 @@ export default function Array_02Test() {
         for (let i = 0; i < result.length; i++) {
           expect(result[i]).assertEqual(expected[i]);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1369,7 +1369,7 @@ export default function Array_02Test() {
         const result = map(input, multiply);
         const expected: FixedArray<long> = [10000, 20000, 30000] as FixedArray<long>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1391,7 +1391,7 @@ export default function Array_02Test() {
         const result = map(input, increment);
         const expected: FixedArray<short> = [150, 250, 350] as FixedArray<short>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1408,14 +1408,14 @@ export default function Array_02Test() {
     it('testMapShort0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
       const TAG = "testMapShort0002";
       try {
-        const empty: FixedArray<short> = new short[0] as FixedArray<short>;
+        const empty: FixedArray<short> = new FixedArray<short>(0);
         const callback = (val: short): short => {
           expect().assertFail();
           return val;
         };
         const result = map(empty, callback);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1437,7 +1437,7 @@ export default function Array_02Test() {
         const result = map(input, decrement);
         const expected: FixedArray<short> = [400, 900, 1400] as FixedArray<short>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1460,7 +1460,7 @@ export default function Array_02Test() {
         expect(result).assertFalse();
         const orCallback = (acc: boolean, curr: boolean) => acc || curr;
         expect(reduce(testArray, orCallback)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1481,7 +1481,7 @@ export default function Array_02Test() {
         const andCallback = (acc: boolean, curr: boolean) => acc && curr;
         const result = reduce(testArray, andCallback);
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1502,7 +1502,7 @@ export default function Array_02Test() {
         const andCallback = (acc: boolean, curr: boolean) => acc || curr;
         const result = reduce(testArray, andCallback);
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1524,7 +1524,7 @@ export default function Array_02Test() {
         const result = reduce(testArray, sumCallback);
         // 1.5 + 2.5 + 3.5 + 4.5 = 12.0
         expect(result).assertClose(12.0, 0.0001);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1545,7 +1545,7 @@ export default function Array_02Test() {
         const callback = (acc: double, curr: double) => acc * 2; // Shouldn't execute
         const result = reduce(testArray, callback);
         expect(result).assertClose(3.14159, 0.00001);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1566,7 +1566,7 @@ export default function Array_02Test() {
         const productCallback = (acc: double, curr: double) => acc * curr;
         const result = reduce(testArray, productCallback);
         expect(result).assertClose(36.0, 0.0001);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1588,7 +1588,7 @@ export default function Array_02Test() {
         const result = reduce(testArray, sumCallback);
         // 0.1 + 0.2 + 0.3 = 0.6 (with floating point precision)
         expect(result).assertClose(0.6, 0.0000001);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1609,7 +1609,7 @@ export default function Array_02Test() {
         const maxCallback = (acc: double, curr: double) => acc > curr ? acc : curr;
         const result = reduce(testArray, maxCallback);
         expect(result).assertClose(10.8, 0.0001);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1633,7 +1633,7 @@ export default function Array_02Test() {
           }
         );
         expect(result).assertEqual(24.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1657,7 +1657,7 @@ export default function Array_02Test() {
           }
         );
         expect(result).assertEqual(7.5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1681,7 +1681,7 @@ export default function Array_02Test() {
           }
         );
         expect(result).assertEqual(6.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1702,7 +1702,7 @@ export default function Array_02Test() {
         const sumCallback = (acc: int, curr: int) => acc + curr;
         const result = reduce(testArray, sumCallback);
         expect(result).assertEqual(15); // 1+2+3+4+5=15
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1723,7 +1723,7 @@ export default function Array_02Test() {
         const callback = (acc: int, curr: int) => acc * 2; // Shouldn't execute
         const result = reduce(testArray, callback);
         expect(result).assertEqual(100);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1744,7 +1744,7 @@ export default function Array_02Test() {
         const productCallback = (acc: int, curr: int) => acc * curr;
         const result = reduce(testArray, productCallback);
         expect(result).assertEqual(120);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1765,7 +1765,7 @@ export default function Array_02Test() {
         const bitwiseOrCallback = (acc: int, curr: int) => acc | curr;
         const result = reduce(testArray, bitwiseOrCallback);
         expect(result).assertEqual(15); // 0b0001 | 0b0010 | 0b0100 | 0b1000 = 0b1111 (15)
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1786,7 +1786,7 @@ export default function Array_02Test() {
         const sumCallback = (acc: int, curr: int) => acc + curr;
         const result = reduce(testArray, sumCallback);
         expect(result).assertEqual(10000000); // 1M + 2M + 3M + 4M = 10M
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1807,7 +1807,7 @@ export default function Array_02Test() {
         const productCallback = (acc: int, curr: int) => acc * curr;
         const result = reduce(testArray, productCallback);
         expect(result).assertEqual(120); // (-2)*3*(-4)*5 = 120
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1828,7 +1828,7 @@ export default function Array_02Test() {
         const sumCallback = (acc: long, curr: long) => acc + curr;
         const result = reduce(testArray, sumCallback);
         expect(result).assertEqual(100000000000); // 10B + 20B + 30B + 40B = 100B
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1849,7 +1849,7 @@ export default function Array_02Test() {
         const callback = (acc: long, curr: long) => acc * 2; // Shouldn't execute
         const result = reduce(testArray, callback);
         expect(result).assertEqual(9223372036854775807);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1870,7 +1870,7 @@ export default function Array_02Test() {
         const productCallback = (acc: long, curr: long) => acc * curr;
         const result = reduce(testArray, productCallback);
         expect(result).assertEqual(6000000000000000000); // 1B * 2B * 3 = 6e18
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1891,7 +1891,7 @@ export default function Array_02Test() {
         const bitwiseOrCallback = (acc: long, curr: long) => acc | curr;
         const result = reduce(testArray, bitwiseOrCallback);
         expect(result).assertEqual(15); // 0b0001 | 0b0010 | 0b0100 | 0b1000 = 0b1111 (15)
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1912,7 +1912,7 @@ export default function Array_02Test() {
         const sumCallback = (acc: long, curr: long) => acc + curr;
         const result = reduce(testArray, sumCallback);
         expect(result).assertEqual(-60000000000); // -10B + -20B + -30B = -60B
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1938,7 +1938,7 @@ export default function Array_02Test() {
         const sumCallback = (acc: long, curr: long) => acc + curr;
         const result = reduce(testArray, sumCallback);
         expect(result).assertEqual(20000000000); // -10B + 20B -30B +40B = 20B
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -1958,7 +1958,7 @@ export default function Array_02Test() {
         const testArray: number[] = [1, 2, 3, 4, 5];
         const result = testArray.reduce((acc: number, curr: number) => acc + curr);
         expect(result).assertEqual(15);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1978,7 +1978,7 @@ export default function Array_02Test() {
         const testArray: number[] = [1, 2, 6];
         const result = testArray.reduce((acc: number, curr: number) => acc * curr);
         expect(result).assertEqual(12);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }

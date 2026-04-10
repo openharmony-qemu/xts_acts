@@ -35,7 +35,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let testAbilityContext: common.UIAbilityContext
+let testAbilityContext: common.UIAbilityContext | undefined;
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let count: int = 0;
@@ -44,7 +44,7 @@ export default function ActsDenyTest() {
   describe('ActsDenyTest', () => {
     const TAG = 'SUB_ACTS_DENY_TEST ===>';
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -66,7 +66,7 @@ export default function ActsDenyTest() {
       async (done: () => void) => {
         let TAG = 'Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Deny_Test_Static_0100'
         count = 0;
-        notificationManager.requestEnableNotification(testAbilityContext).then(() => {
+        notificationManager.requestEnableNotification(testAbilityContext!).then(() => {
           console.info(`${TAG} requestEnableNotification should failed`);
           expect(false).assertTrue()
           done()

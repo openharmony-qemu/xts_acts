@@ -27,7 +27,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function textClockFormatTest() {
   describe('textClockFormatTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextClockFormatTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.information02.static", "EntryAbility")
     });

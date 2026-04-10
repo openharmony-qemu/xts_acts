@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,8 +49,8 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         cryptoFramework.createAsyKeyGenerator("ECC_BrainPoolP160r11");
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0100: createAsyKeyGenerator succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0100 catch error: “${err}“, error code: ${err.code}`);
       }
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0100: success.");
@@ -85,7 +85,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         //     console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0300: getPubParam " + i + " succeed.");
         //   }
         // } // 构建失败
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -107,7 +107,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0500: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -129,7 +129,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0600: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0600 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -151,7 +151,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0700: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0700 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -173,7 +173,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0800: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0800 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -195,7 +195,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0900: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_0900 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -217,7 +217,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1000: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1000 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -239,7 +239,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1100: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1100 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -261,7 +261,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1200: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1200 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -283,7 +283,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1300: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -305,7 +305,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1400: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1400 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -327,7 +327,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1500: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -349,7 +349,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1600: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1600 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -371,7 +371,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenPromiseFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1700: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1700 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -393,7 +393,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
       try {
         await asyKeyGenCallbackFunc.convertKey(algName);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1800: convertKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1800 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -415,7 +415,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP160r1KeySpec(cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC);
         await asyKeyGenPromiseFunc.genKeyPair(true, spec, "ECC");
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1900: genKeyPair succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_1900 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -437,7 +437,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP192r1KeySpec(cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC);
         await asyKeyGenPromiseFunc.genKeyPair(true, spec, "ECC");
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2000: genKeyPair succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2000 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -459,7 +459,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP224r1KeySpec(cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC);
         await asyKeyGenPromiseFunc.genKeyPair(true, spec, "ECC");
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2100: genKeyPair succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2100 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -481,7 +481,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP256r1KeySpec(cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC);
         await asyKeyGenPromiseFunc.genKeyPair(true, spec, "ECC");
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2200: genKeyPair succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2200 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -503,7 +503,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP320t1KeySpec(cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC);
         await asyKeyGenPromiseFunc.genKeyPair(true, spec, "ECC");
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2300: genKeyPair succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -525,7 +525,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP384t1KeySpec(cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC);
         await asyKeyGenPromiseFunc.genKeyPair(true, spec, "ECC");
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2400: genKeyPair succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2400 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -547,7 +547,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP512t1KeySpec(cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC);
         await asyKeyGenCallbackFunc.genKeyPair(true, spec, "ECC");
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2500: genKeyPair succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -571,8 +571,8 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         await asyKeyGenCallbackFunc.genKeyPair(true, spec, "ECC");
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2600: genKeyPair succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2600 catch error: “${err}“, error code: ${err.code}`);
       }
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2600: success.");
@@ -595,8 +595,8 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         await asyKeyGenCallbackFunc.genKeyPair(true, spec, "ECC");
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2700: genKeyPair succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2700 catch error: “${err}“, error code: ${err.code}`);
       }
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2700: success.");
@@ -617,7 +617,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP160r1KeySpec(cryptoFramework.AsyKeySpecType.PRIVATE_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2800: genPriKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2800 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -639,7 +639,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP192t1KeySpec(cryptoFramework.AsyKeySpecType.PRIVATE_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2900: genPriKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_2900 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -661,7 +661,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP224r1KeySpec(cryptoFramework.AsyKeySpecType.PRIVATE_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3000: genPriKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3000 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -683,7 +683,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP256t1KeySpec(cryptoFramework.AsyKeySpecType.PRIVATE_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3100: genPriKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3100 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -705,7 +705,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP320r1KeySpec(cryptoFramework.AsyKeySpecType.PRIVATE_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3200: genPriKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3200 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -727,7 +727,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP384t1KeySpec(cryptoFramework.AsyKeySpecType.PRIVATE_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3300: genPriKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -749,7 +749,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP512r1KeySpec(cryptoFramework.AsyKeySpecType.PRIVATE_KEY_SPEC);
         await asyKeyGenCallbackFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3400: genPriKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3400 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -771,7 +771,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP160t1KeySpec(cryptoFramework.AsyKeySpecType.PUBLIC_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPubKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3500: genPubKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -793,7 +793,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP192r1KeySpec(cryptoFramework.AsyKeySpecType.PUBLIC_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPubKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3600: genPubKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3600 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -815,7 +815,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP224t1KeySpec(cryptoFramework.AsyKeySpecType.PUBLIC_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPubKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3700: genPubKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3700 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -837,7 +837,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP256r1KeySpec(cryptoFramework.AsyKeySpecType.PUBLIC_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPubKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3800: genPubKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3800 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -859,7 +859,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP320t1KeySpec(cryptoFramework.AsyKeySpecType.PUBLIC_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPubKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3900: genPubKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_3900 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -881,7 +881,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP384r1KeySpec(cryptoFramework.AsyKeySpecType.PUBLIC_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPubKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4000: genPubKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4000 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -903,7 +903,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genP512t1KeySpec(cryptoFramework.AsyKeySpecType.PUBLIC_KEY_SPEC);
         await asyKeyGenCallbackFunc.genPubKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4100: genPubKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4100 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -926,8 +926,8 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4200: genPriKey succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4200 catch error: “${err}“, error code: ${err.code}`);
       }
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4200: success.");
@@ -949,8 +949,8 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4300: genPriKey succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4300 catch error: “${err}“, error code: ${err.code}`);
       }
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4300: success.");
@@ -972,8 +972,8 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4400: genPriKey succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4400 catch error: “${err}“, error code: ${err.code}`);
       }
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4400: success.");
@@ -995,8 +995,8 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4500: genPriKey succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4500 catch error: “${err}“, error code: ${err.code}`);
       }
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4500: success.");
@@ -1018,8 +1018,8 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4600: genPriKey succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4600 catch error: “${err}“, error code: ${err.code}`);
       }
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4600: success.");
@@ -1041,8 +1041,8 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4700: genPriKey succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4700 catch error: “${err}“, error code: ${err.code}`);
       }
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4700: success.");
@@ -1064,8 +1064,8 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         await asyKeyGenCallbackFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4800: genPriKey succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
-        expect(err.code).assertEqual(401);
+      } catch (err) {
+        expect((err as BusinessError).code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4800 catch error: “${err}“, error code: ${err.code}`);
       }
       console.log("Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_4800: success.");
@@ -1096,7 +1096,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         //     console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1000: getPubParam " + i + " succeed.");
         //   }
         // } // 构建失败
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_AsyKeyGenerator_BrainPool_Func_5000 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -1126,7 +1126,7 @@ export default function SecurityCryptoFwKeyGenerateECCBrainPoolTestUnit() {
         expect(keyPair.pubKey.algName == "EC").assertTrue();
         expect(keyPair.priKey.format == "PKCS#8").assertTrue();
         expect(keyPair.priKey.algName == "EC").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(testNumber + `: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }

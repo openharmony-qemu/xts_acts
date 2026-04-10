@@ -50,7 +50,7 @@ import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
 
 // 自己声明的接口
-interface Num{
+export interface Num{
   number:number
 }
 

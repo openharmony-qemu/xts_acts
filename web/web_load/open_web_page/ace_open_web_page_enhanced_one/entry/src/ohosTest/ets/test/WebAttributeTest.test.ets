@@ -45,7 +45,7 @@ export default function webAttributeTest() {
       } catch (err) {
         console.error("push WebAttributeTest page error: " + err);
       }
-      await driver.waitForComponent(ON.id('WebAttributeTestButton'),10000);
+      await Utils.waitForComponent(driver, 'WebAttributeTestButton');
       console.log('waitForComponent WebAttributeTestButton==>');
       done()
     });
@@ -64,7 +64,7 @@ export default function webAttributeTest() {
           expect().message('======> WLAN Network error').assertFail();
           done()
         }
-        if (data.chload >= 800 || data.rssi <= -80) {
+        if (data.chload >= 900 || data.rssi <= -80) {
           expect().message('======> WLAN Network error').assertFail();
           done();
         } else if (data.chload >= 500) {

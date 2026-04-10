@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "XTS_DEMO.hap"
+            "ActsXTS_DEMOAdapt001StaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true

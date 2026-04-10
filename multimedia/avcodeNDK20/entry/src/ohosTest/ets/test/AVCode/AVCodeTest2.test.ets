@@ -1696,7 +1696,7 @@ export default function AVCodeTest2() {
           expect(result).assertEqual(0);
           done()
         } catch (err) {
-          console.error("====>testOHAVBufferDestroy002 catch err: " + err);
+          console.error("====>testOHAVBufferGetBufferAttr001 catch err: " + err);
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });

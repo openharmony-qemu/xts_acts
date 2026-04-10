@@ -22,6 +22,7 @@ import settings from '@ohos.settings';
 import { image } from '@kit.ImageKit';
 import { ColorMetrics, screenshot } from '@kit.ArkUI';
 import { StartOptions } from '@kit.AbilityKit';
+import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -132,6 +133,8 @@ export default function windowPropertiesTest2() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let fileDir: string = '';
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       fileDir = AppStorage.get('filePath') as string;
@@ -404,7 +407,7 @@ export default function windowPropertiesTest2() {
       await windowClass.setUIContent('testability/pages/First/index2');
       try {
         windowClass!.setWindowBackgroundColor(ColorMetrics.numeric(0x112233))
-        expect(true).assertTrue();
+        
         console.info(msgStr + 'Succeeded in calling setWindowBackgroundColor.');
         done()
       } catch (exception) {
@@ -435,7 +438,7 @@ export default function windowPropertiesTest2() {
       await sleep(1000);
       try {
         subWindowClass!.setWindowBackgroundColor(ColorMetrics.numeric(0x112233))
-        expect(true).assertTrue();
+        
         console.info(msgStr + 'Succeeded in calling setWindowBackgroundColor.');
         await subWindowClass.destroyWindow();
         done()
@@ -591,7 +594,7 @@ export default function windowPropertiesTest2() {
 
       try {
         subWindowClass!.setWindowShadowRadius(0)
-        expect(true).assertTrue();
+        
         console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
         await subWindowClass.destroyWindow();
         done()
@@ -631,7 +634,7 @@ export default function windowPropertiesTest2() {
 
       try {
         subWindowClass!.setWindowShadowRadius(4)
-        expect(true).assertTrue();
+        
         console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
         await subWindowClass.destroyWindow();
         done()
@@ -671,7 +674,7 @@ export default function windowPropertiesTest2() {
 
       try {
         subWindowClass!.setWindowShadowRadius(10000)
-        expect(true).assertTrue();
+        
         console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
         await subWindowClass.destroyWindow();
         done()
@@ -714,7 +717,7 @@ export default function windowPropertiesTest2() {
           await sleep(1000);
           expect(!!windowClass).assertTrue();
           await windowClass!.setWindowShadowRadius(0)
-          expect(true).assertTrue();
+          
           console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
           await windowClass!.destroyWindow();
           done()
@@ -769,7 +772,7 @@ export default function windowPropertiesTest2() {
           await sleep(1000);
           expect(!!windowClass).assertTrue();
           await windowClass!.setWindowShadowRadius(4)
-          expect(true).assertTrue();
+          
           console.info(msgStr + 'Succeeded in calling setWindowShadowRadius.');
           await windowClass!.destroyWindow();
           done()
@@ -1480,9 +1483,11 @@ export default function windowPropertiesTest2() {
           let heightBefore: number = windowClass!.getWindowProperties().windowRect.height;
           console.info(`${caseName} windowHeight: ${heightBefore}, windowWidth: ${widthBefore}`);
           let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
-          console.info(`${caseName} pixelMapHeight: ${imageInfo.size.height}, pixelMapWidth: ${imageInfo.size.width}`);
+          console.info(`${caseName} pixelMapHeight: ${imageInfo.size.height}, pixelMapWidth: ${imageInfo.size.width},pixelMap.isEditable:${pixelMap.isEditable},pixelMap.isStrideAlignment:${pixelMap.isStrideAlignment}`);
           expect(Math.abs(widthBefore-imageInfo.size.width)).assertLessOrEqual(1);
           expect(Math.abs(heightBefore-imageInfo.size.height)).assertLessOrEqual(1);
+          expect(pixelMap.isEditable).assertEqual(false);
+          expect(pixelMap.isStrideAlignment).assertEqual(false);
           pixelMap.release();
           done();
         }).catch(async (err: BusinessError) => {
@@ -1758,7 +1763,7 @@ export default function windowPropertiesTest2() {
         }
         windowStageStart.on('windowStageEvent', callback)
         // 3、被拉起的主窗minimize
-        if (isPCStatus != '') {
+        if (deviceType === '2in1') {
           await windowClass.minimize();
           await sleep(2000);
         }
@@ -1861,6 +1866,119 @@ export default function windowPropertiesTest2() {
     })
 
     /**
+    * @tc.name    test_setWindowShadowEnabled
+    * @tc.number  SUB_BASIC_WMS_SetWindowShadowEnabled
+    * @tc.desc    SetWindowShadowEnabled多设备
+    * @tc.type    FUNCTION
+    * @tc.size    MEDIUMTEST
+    * @tc.level   LEVEL0
+    */
+    it('test_setWindowShadowEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'test_setWindowShadowEnabled';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      let isFreeWindowMode = false;
+      let isSupportRotate = false;
+      console.log(msgStr + 'begin');
+
+      let on_setWindowShadowEnabled_Supported = async () => {
+        try {
+          let windowStage = AppStorage.get('windowStage') as window.WindowStage;
+          let mainWindowClass: window.Window = await windowStage.getMainWindow();
+          console.info(msgStr + ' getMainWindow success');
+
+          let enable = true;
+          let promise = mainWindowClass.setWindowShadowEnabled(enable);
+          promise.then(() => {
+            console.info(msgStr + ' Succeeded in setting window shadow.');
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(msgStr + `Failed to set window shadow. Cause code: ${err.code}, message:${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (exception) {
+          console.error(msgStr + `Failed to set window shadow. Cause code: ${exception.code}, message:${exception.message}`);
+          expect().assertFail();
+          done();
+        }
+      };
+
+
+      let on_setWindowShadowEnabled_notSupported_801 = async () => {
+        try {
+          let windowStage = AppStorage.get('windowStage') as window.WindowStage;
+          let mainWindowClass: window.Window = await windowStage.getMainWindow();
+          console.info(msgStr + ' getMainWindow success');
+
+          let enable = true;
+          let promise = mainWindowClass.setWindowShadowEnabled(enable);
+          promise.then(() => {
+            console.error(msgStr + ' Unexpected success on unsupported device.');
+            expect().assertFail();
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(msgStr + `Expected error on unsupported device. Code: ${err.code}, message:${err.message}`);
+            expect(err.code).assertEqual(801);
+            done();
+          });
+        } catch (exception) {
+          console.error(msgStr + `Failed to set window shadow. Cause code: ${exception.code}, message:${exception.message}`);
+          expect().assertFail();
+          done();
+        }
+      };
+
+      let on_setWindowShadowEnabled_notSupported = async () => {
+        try {
+          let windowStage = AppStorage.get('windowStage') as window.WindowStage;
+          let mainWindowClass: window.Window = await windowStage.getMainWindow();
+          console.info(msgStr + ' getMainWindow success');
+
+          let enable = true;
+          let promise = mainWindowClass.setWindowShadowEnabled(enable);
+          promise.then(() => {
+            console.error(msgStr + ' Unexpected success on unsupported device.');
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(msgStr + `Expected error on unsupported device. Code: ${err.code}, message:${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (exception) {
+          console.error(msgStr + `Failed to set window shadow. Cause code: ${exception.code}, message:${exception.message}`);
+          expect().assertFail();
+          done();
+        }
+      };
+
+
+      if (deviceInfo.deviceType === '2in1') {
+        await on_setWindowShadowEnabled_Supported();
+      } else if (deviceInfo.deviceType === 'tablet') {
+        let windowStage = AppStorage.get('windowStage') as window.WindowStage;
+        let windowClass: window.Window = windowStage.getMainWindowSync();
+        let isFreeWindowMode = windowClass.isInFreeWindowMode();
+        if (isFreeWindowMode) {
+          await on_setWindowShadowEnabled_Supported();
+        } else {
+          await on_setWindowShadowEnabled_notSupported();
+        }
+      } else if (deviceInfo.deviceType === 'tv') {
+        await on_setWindowShadowEnabled_notSupported_801();
+      } else if (deviceInfo.deviceType === 'wearable') {
+        await on_setWindowShadowEnabled_notSupported_801();
+      } else if (deviceInfo.deviceType === 'phone') {
+        await on_setWindowShadowEnabled_notSupported_801();
+      } else if (deviceInfo.deviceType === 'car') {
+        await on_setWindowShadowEnabled_notSupported_801();
+      } else {
+        console.info(`====>${caseName} end fail====` + deviceInfo.deviceType);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testSetWindowShadowEnabledwithPermission
      * @tc.number SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0100
      * @tc.desc   验证非2in1设备调用接口报801，2in1设备调用成功
@@ -1876,13 +1994,11 @@ export default function windowPropertiesTest2() {
         let windowClass = windowStage.getMainWindowSync();
         windowClass.setWindowShadowEnabled(true).then(() => {
           console.info(`${caseName} Succeeded in calling setWindowShadowEnabled.`);
-          expect(true).assertTrue()
           done()
         }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
           if (err.code === 801) {
             expect(err.message!=null).assertTrue();
-            expect(true).assertTrue()
             done();
           } else {
             expect().assertFail();
@@ -1920,7 +2036,6 @@ export default function windowPropertiesTest2() {
           await windowClass.destroyWindow()
           expect(err.message!=null).assertTrue();
           if (err.code === 801) {
-            expect(true).assertTrue()
             done();
           } else {
             expect(err.code).assertEqual(1300004);
@@ -1959,7 +2074,7 @@ export default function windowPropertiesTest2() {
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           console.log(`${caseName} createWindow success.`);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           done()
         }).catch(async (err: BusinessError) => {
@@ -2006,7 +2121,7 @@ export default function windowPropertiesTest2() {
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           console.log(`${caseName} createWindow success.`);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           done()
         }).catch(async (err: BusinessError) => {
@@ -2053,7 +2168,7 @@ export default function windowPropertiesTest2() {
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           console.log(`${caseName} createWindow success.`);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           done()
         }).catch(async (err: BusinessError) => {
@@ -2100,7 +2215,7 @@ export default function windowPropertiesTest2() {
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           console.log(`${caseName} createWindow success.`);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           done()
         }).catch(async (err: BusinessError) => {
@@ -2166,17 +2281,17 @@ export default function windowPropertiesTest2() {
           console.info(`${caseName} subWindowInfo: ${subWindowInfo}`);
           // expect(subWindowInfo).assertEqual(2);
           expect(subWindowInfo).assertEqual(subWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           let dialogWindowInfo = dialogWindowClass.getWindowDensityInfo().customDensity;
           console.info(`${caseName} dialogWindowInfo: ${dialogWindowInfo}`);
           // expect(dialogWindowInfo).assertEqual(2);
           expect(dialogWindowInfo).assertEqual(dialogWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           let floatWindowInfo = floatWindowClass.getWindowDensityInfo().customDensity;
           console.info(`${caseName} floatWindowInfo: ${floatWindowInfo}`);
           // expect(floatWindowInfo).assertEqual(2);
           expect(floatWindowInfo).assertEqual(floatWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           await dialogWindowClass?.destroyWindow();
           await floatWindowClass?.destroyWindow();
@@ -2247,17 +2362,17 @@ export default function windowPropertiesTest2() {
           console.info(`${caseName} subWindowInfo: ${subWindowInfo}`);
           // expect(subWindowInfo).assertEqual(1);
           expect(subWindowInfo).assertEqual(subWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           let dialogWindowInfo = dialogWindowClass.getWindowDensityInfo().customDensity;
           console.info(`${caseName} dialogWindowInfo: ${dialogWindowInfo}`);
           // expect(dialogWindowInfo).assertEqual(1);
           expect(dialogWindowInfo).assertEqual(dialogWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           let floatWindowInfo = floatWindowClass.getWindowDensityInfo().customDensity;
           console.info(`${caseName} floatWindowInfo: ${floatWindowInfo}`);
           // expect(floatWindowInfo).assertEqual(1);
           expect(floatWindowInfo).assertEqual(floatWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           await dialogWindowClass?.destroyWindow();
           await floatWindowClass?.destroyWindow();
@@ -2328,17 +2443,17 @@ export default function windowPropertiesTest2() {
           console.info(`${caseName} subWindowInfo: ${subWindowInfo}`);
           // expect(subWindowInfo).assertEqual(1);
           expect(subWindowInfo).assertEqual(subWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           let dialogWindowInfo = dialogWindowClass.getWindowDensityInfo().customDensity;
           console.info(`${caseName} dialogWindowInfo: ${dialogWindowInfo}`);
           // expect(dialogWindowInfo).assertEqual(1);
           expect(dialogWindowInfo).assertEqual(dialogWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           let floatWindowInfo = floatWindowClass.getWindowDensityInfo().customDensity;
           console.info(`${caseName} floatWindowInfo: ${floatWindowInfo}`);
           // expect(floatWindowInfo).assertEqual(1);
           expect(floatWindowInfo).assertEqual(floatWindowClass.getWindowDensityInfo().systemDensity);
-          expect(true).assertTrue();
+          
           await subWindowClass?.destroyWindow();
           await dialogWindowClass?.destroyWindow();
           await floatWindowClass?.destroyWindow();
@@ -2475,7 +2590,7 @@ export default function windowPropertiesTest2() {
       }).catch((err: BusinessError) => {
         if (err.code == 801) {
           console.info(`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
-          expect(true).assertTrue();
+          
           done();
         } else {
           console.error(`${caseName}: Failed to obtain physical resolution. Code: ${err.code}, message: ${err.message}`);
@@ -2513,7 +2628,7 @@ export default function windowPropertiesTest2() {
       }).catch((err: BusinessError) => {
         if (err.code == 801) {
           console.info(`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
-          expect(true).assertTrue();
+          
           done();
         } else {
           console.error(`${caseName}: Failed to obtain physical resolution. Code: ${err.code}, message: ${err.message}`);
@@ -2616,7 +2731,7 @@ export default function windowPropertiesTest2() {
         console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
         await subWindowClass.destroyWindow();
         if (err.code == 801) {
-          expect(true).assertTrue();
+          
           done();
         } else {
           expect().assertFail()
@@ -2659,7 +2774,7 @@ export default function windowPropertiesTest2() {
         console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
         await subWindowClass.destroyWindow();
         if (err.code == 801) {
-          expect(true).assertTrue();
+          
           done();
         } else {
           expect().assertFail()
@@ -3077,22 +3192,68 @@ export default function windowPropertiesTest2() {
     it('testSetWindowContainerColorPermissionwithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorPermissionwithMainWindow ';
       let windowStageStart = await startAbility3(caseName, context);
-      try {
-        let windowClass = windowStageStart.getMainWindowSync();
-        windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+
+      let testSetWindowContainerColorPermissionwithMainWindow_CheckReturnSuccess = async () => {
+        try {
+          let windowClass = windowStageStart.getMainWindowSync();
+          windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+            await terminateAbility3(caseName);
+            done();
+        } catch (err) {
+          console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
           await terminateAbility3(caseName);
-          done();
-      } catch (err) {
-        console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
-        await terminateAbility3(caseName);
-        if (err.code == 801) {
-          expect(err.code).assertEqual(801)
-          done();
-        } else {
-          expect().assertFail()
-          done();
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801)
+            expect().assertFail()
+            done();
+          } else {
+            expect().assertFail()
+            done();
+          }
         }
       }
+
+      let testSetWindowContainerColorPermissionwithMainWindow_CheckReturnFail801 = async () => {
+        console.error(msgStr + 'Failed to enable SetWindowContainerColor Cause: CheckReturnFail' 
+          + 'deviceType: '+ JSON.stringify(deviceInfo.deviceType));
+        try {
+          let windowClass = windowStageStart.getMainWindowSync();
+          windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+            await terminateAbility3(caseName);
+            expect(true).assertFail()
+            done();
+        } catch (err) {
+          console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+          await terminateAbility3(caseName);
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            expect().assertFail()
+            done();
+          }
+        }
+      }
+
+      if (deviceInfo.deviceType === '2in1') {
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'phone') {
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnFail801();
+      } else if (deviceInfo.deviceType === 'tv') {
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnFail801();
+      } else if (deviceInfo.deviceType === 'wearable') {
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnFail801();
+      } else if (deviceInfo.deviceType === 'tablet') {
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'car') {
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnFail801();
+      } else {
+        console.info(`====>${msgStr} end fail====`);
+        expect().assertFail();
+      }
+
+      done();
     });
 
     /**

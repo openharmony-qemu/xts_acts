@@ -40,6 +40,7 @@ let nzoomRatioRange: Array<number> = [];
 
 let receiver: image.ImageReceiver;
 let context = getContext();
+let isSupportHEICEncode: boolean;
 
 let permission = ['ohos.permission.GRANT_SENSITIVE_PERMISSIONS',
   'ohos.permission.REVOKE_SENSITIVE_PERMISSIONS',
@@ -368,6 +369,10 @@ export default function CameraPhotoSessionTest() {
  
     mCameraSession.beginConfig();
  
+    if (mCameraInput == undefined && mPreviewOutput == undefined) {
+      console.info(TAG + "no supported output");
+      return -1;
+    }
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to addInput");
       mCameraSession.addInput(mCameraInput);
@@ -427,6 +432,8 @@ export default function CameraPhotoSessionTest() {
         power = null;
         await sleep(500);
       }
+      isSupportHEICEncode = image.createImagePacker().supportedFormats.includes("image/heic");
+      console.info('isSupportHEICEncode result is ' + isSupportHEICEncode);
     })
 
     beforeEach(async () => {
@@ -2026,7 +2033,7 @@ export default function CameraPhotoSessionTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100
-     * @tc.desc   white balance api
+     * @tc.desc   test heif camera session
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2044,6 +2051,11 @@ export default function CameraPhotoSessionTest() {
         while(i != -1){
           try{            
             createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+            if (!isSupportHEICEncode) {
+              console.info("device is not support heif encode");
+              done();
+              return
+            }
             i = await startHeifCameraSession(0, i);
             await sleep(100);
             if(i!= -1){
@@ -2059,33 +2071,5 @@ export default function CameraPhotoSessionTest() {
       }
     })
 
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100
-     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100
-     * @tc.desc   Create photo session setSmoothZoom errorcode
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    // it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
-    //     console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100--------------");
-    //     if (mCameraNum == 0) {
-    //     console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100 FAILED with NoCamera");
-    //     expect(true).assertFail();
-    //     done();
-    //     return;
-    //     }
-    //     createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
-    //     //await startCameraSession(0);
-    //     try {
-    //         mCameraSession.setSmoothZoom(nzoomRatioRange[0]+0.1,camera.SmoothZoomMode.NORMAL);
-    //         console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100 FAILED " );
-    //         expect(true).assertFalse();
-    //     } catch (err) {
-    //         console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETSMOOTHZOOM_ERRORCODE_0100  err.code = " + err.code);
-    //         expect(err.code == camera.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
-    //     } 
-    //     done();
-    // })
   })
 }

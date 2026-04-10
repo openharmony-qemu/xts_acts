@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,7 +49,7 @@ export default function SecurityCryptoFwSM2TestUnit() {
         let ret: boolean = compareDataBlob({data: asn1}, dataSign);
         ret = ret && doVerifySync(signAlgName, keyPair.pubKey, msg, {data: asn1});
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(` “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -79,7 +79,7 @@ export default function SecurityCryptoFwSM2TestUnit() {
           let ret: boolean = compareDataBlob({data: asn1}, dataSign);
           ret = ret && doVerifySync(signAlgName, keyPair.pubKey, msg, {data: asn1});
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -108,7 +108,7 @@ export default function SecurityCryptoFwSM2TestUnit() {
           let RSToAsn1: Uint8Array = cryptoFramework.SignatureUtils.genEccSignature(RS);
           let ret: boolean = compareDataBlob({data: RSToAsn1}, {data: asn1ToRS});
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -137,7 +137,7 @@ export default function SecurityCryptoFwSM2TestUnit() {
           let RSToAsn1: Uint8Array = cryptoFramework.SignatureUtils.genEccSignature(RS);
           let ret: boolean = compareDataBlob({data: RSToAsn1}, {data: asn1ToRS});
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -166,7 +166,7 @@ export default function SecurityCryptoFwSM2TestUnit() {
           let RSToAsn1: Uint8Array = cryptoFramework.SignatureUtils.genEccSignature(RS);
           let ret: boolean = compareDataBlob({data: RSToAsn1}, {data: asn1ToRS});
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -195,7 +195,7 @@ export default function SecurityCryptoFwSM2TestUnit() {
           let RSToAsn1: Uint8Array = cryptoFramework.SignatureUtils.genEccSignature(RS);
           let ret: boolean = compareDataBlob({data: RSToAsn1}, {data: asn1ToRS});
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -221,9 +221,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
             0xBC, 0xB4, 0xB1, 0xF1, 0x59, 0xE8
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -248,9 +248,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         try {
           let asn1ToRS: Uint8Array = new Uint8Array([
@@ -262,9 +262,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -289,9 +289,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -316,9 +316,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -343,9 +343,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -370,9 +370,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         try {
           let asn1ToRS: Uint8Array = new Uint8Array([
@@ -384,9 +384,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -411,9 +411,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         try {
           let asn1ToRS: Uint8Array = new Uint8Array([
@@ -425,9 +425,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -452,9 +452,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         try {
           let asn1ToRS: Uint8Array = new Uint8Array([
@@ -466,9 +466,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -493,9 +493,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -520,9 +520,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -547,9 +547,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -578,7 +578,7 @@ export default function SecurityCryptoFwSM2TestUnit() {
           let RS: cryptoFramework.EccSignatureSpec = cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(RS.r === expect_r).assertTrue();
           expect(RS.s === expect_s).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -608,9 +608,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -635,9 +635,9 @@ export default function SecurityCryptoFwSM2TestUnit() {
           ]);
           cryptoFramework.SignatureUtils.genEccSignatureSpec(asn1ToRS);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(` “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });

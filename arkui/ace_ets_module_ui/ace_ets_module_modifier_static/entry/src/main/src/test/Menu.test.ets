@@ -30,7 +30,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function MenuJsunit() {
   describe('menuTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 

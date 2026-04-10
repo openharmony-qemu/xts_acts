@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -116,7 +116,7 @@ struct LayoutWeightPageFlex {
       this.childHeight = routerParamOptions.view.childHeight
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -192,7 +192,7 @@ struct LayoutWeightPageFlex {
           Marquee({
             start: true,
             step: 50,
-            loop: Number.MAX_VALUE as Int,
+            loop: Number.MAX_VALUE.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           })

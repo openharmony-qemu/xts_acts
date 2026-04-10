@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function popupArrowJsunit() {
   describe('popupArrowJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
     });
 

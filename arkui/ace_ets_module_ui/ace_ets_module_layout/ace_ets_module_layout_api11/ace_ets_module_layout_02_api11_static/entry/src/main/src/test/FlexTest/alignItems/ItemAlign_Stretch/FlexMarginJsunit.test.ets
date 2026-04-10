@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function flexMargin_StretchJsunit() {
   describe('flexMargin_StretchJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexMargin_StretchJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")

@@ -89,13 +89,13 @@ struct Index {
       Row() {
         Button('0013')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "e","host": "f", "port": "", "path": "" } ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -113,13 +113,13 @@ struct Index {
 
         Button('0014')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [{ "scheme": "e","host": "f", "port": "", "path": ""}, { "scheme": "j","host": "f", "port": "", "path": ""}], "methodList": [{ "methodName": "test", "urlPermissionList": [] }] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -139,13 +139,13 @@ struct Index {
       Row() {
         Button('0015')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "X&X","port": "", "path": "" } ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -163,13 +163,13 @@ struct Index {
 
         Button('0016')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile","port":"X&X","path": ""} ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -189,13 +189,13 @@ struct Index {
       Row() {
         Button('0017')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile", "port": "", "path": ""} ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -213,13 +213,13 @@ struct Index {
 
         Button('0018')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile", "port": "X&X", "path": ""} ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -239,13 +239,13 @@ struct Index {
       Row() {
         Button('0019')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile", "port": "", "path": ""} ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -263,13 +263,13 @@ struct Index {
 
         Button('0020')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile", "port": "", "path": "X&X"} ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -287,13 +287,13 @@ struct Index {
 
         Button('0021')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile", "port": "", "path": ""} ], "methodList": [ { "methodName": "test", "urlPermissionList": [] } ] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -313,13 +313,13 @@ struct Index {
       Row() {
         Button('0022')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [ { "scheme": "resource", "host": "rawfile", "port": "", "path": ""} ], "methodList": [ { "methodName": "test", "urlPermissionList": [{ "scheme": "X&X", "host": "X&X", "port": "X&X", "path": "X&X" }] } ] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -337,13 +337,13 @@ struct Index {
 
         Button('0023')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [{ "scheme": "X&X", "host": "X&X", "port": "", "path": "" }], "methodList": [{ "methodName": "test", "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }] }] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -363,13 +363,13 @@ struct Index {
       Row() {
         Button('0024')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }], "methodList": [{ "methodName": "test", "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }] }] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -387,13 +387,13 @@ struct Index {
 
         Button('0025')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }], "methodList": [{ "methodName": "test", "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }, { "scheme": "X&X", "host": "X&X", "port": "", "path": "" }] }, { "methodName": "test2", "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }, { "scheme": "X&X", "host": "X&X", "port": "", "path": "" }] }] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {
@@ -413,13 +413,13 @@ struct Index {
       Row() {
         Button('0026')
           .onClick(async (event: ClickEvent) => {
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+            await waitForExist(() => this.isReceive, this.str, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.str)
             this.isPageEnd = -1;
             this.InitJavaScriptProxyTest('{ "javascriptProxyPermission": { "urlPermissionList": [{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" },{ "scheme": "resource", "host": "rawfile", "port": "", "path": "" }], "methodList": [{ "methodName": "test", "urlPermissionList": [] }] } }')
-            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewController.runJavaScript(
                 'callArkTS()',
                 (error, result) => {

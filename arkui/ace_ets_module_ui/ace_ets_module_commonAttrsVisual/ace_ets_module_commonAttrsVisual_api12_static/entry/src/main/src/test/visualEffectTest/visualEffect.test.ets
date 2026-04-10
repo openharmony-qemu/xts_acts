@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function visualEffectTest() {
   describe('visualEffectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("visualEffectTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api12.static", "EntryAbility")

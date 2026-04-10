@@ -183,19 +183,15 @@ struct TextPickerDemo {
             console.info('TextPicker 省市区联动:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index))
             let regex: RegExp = new RegExp(',', 'g');
             this.address = value.toString().replace(regex, '-')
-          })
-          .margin({ top: 48 })
+          }).height('60%').width('80%')
 
         Column() {
           Text('您选择的订单地址为:')
-            .fontSize(24)
-            .margin({ left: 12, right: 12 })
+            .fontSize(12).fontColor(Color.Red)
 
           Text(this.address)
-            .fontSize(24)
-            .margin({ left: 12, right: 12, top: 18 })
+            .fontSize(12).fontColor(Color.Red)
         }
-        .margin({ top: 48 })
         .borderWidth(2)
         .borderRadius(24)
         .borderColor(Color.Black)
@@ -203,6 +199,7 @@ struct TextPickerDemo {
       .height('80%')
       .width('100%')
       .backgroundColor(Color.White)
+      .justifyContent(FlexAlign.Center)
 
       Row() {
         this.PassBtn($r('app.string.btn_fullscreen'), true);

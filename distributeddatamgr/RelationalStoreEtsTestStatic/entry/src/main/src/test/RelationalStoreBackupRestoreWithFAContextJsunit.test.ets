@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
 
-let context:common.UIAbilityContext;
+let context:common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 let domain: int  = 0x0000;
@@ -32,7 +32,7 @@ let tag: string = 'testTag';
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
   + "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)"
 const DATABASE_DIR = "/data/storage/el2/database/entry/rdb/"
-let RdbStore: relationalStore.RdbStore;
+let RdbStore: relationalStore.RdbStore | undefined;
 
 const DATABASE_BACKUP_NAME: string = "Backup.db"
 const STORE_CONFIG: relationalStore.StoreConfig = {
@@ -50,7 +50,7 @@ const STORE_CONFIG_BACKUP2: relationalStore.StoreConfig = {
 
 async function CreatRdbStore(context: common.UIAbilityContext, StoreConfig: relationalStore.StoreConfig): Promise<relationalStore.RdbStore> {
   let RdbStore = await relationalStore.getRdbStore(context, StoreConfig)
-  await RdbStore.executeSql(CREATE_TABLE_TEST)
+  await RdbStore!.executeSql(CREATE_TABLE_TEST)
   let u8 = new Uint8Array([1, 2, 3])
 
   const valueBucket1: relationalStore.ValuesBucket = {
@@ -59,7 +59,7 @@ async function CreatRdbStore(context: common.UIAbilityContext, StoreConfig: rela
     "salary": 100.5,
     "blobType": u8,
   }
-  await RdbStore.insert("test", valueBucket1)
+  await RdbStore!.insert("test", valueBucket1)
 
 
   const valueBucket2: relationalStore.ValuesBucket = {
@@ -68,7 +68,7 @@ async function CreatRdbStore(context: common.UIAbilityContext, StoreConfig: rela
     "salary": 100.5,
     "blobType": u8,
   }
-  await RdbStore.insert("test", valueBucket2)
+  await RdbStore!.insert("test", valueBucket2)
 
 
   const valueBucket3: relationalStore.ValuesBucket = {
@@ -77,7 +77,7 @@ async function CreatRdbStore(context: common.UIAbilityContext, StoreConfig: rela
     "salary": 90.0,
     "blobType": u8,
   }
-  await RdbStore.insert("test", valueBucket3)
+  await RdbStore!.insert("test", valueBucket3)
 
   return RdbStore
 }
@@ -94,16 +94,16 @@ export default function relationalStoreBackupRestorePromiseTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info(tag + 'beforeEach')
-      RdbStore = await CreatRdbStore(context, STORE_CONFIG)
+      RdbStore = await CreatRdbStore(context!, STORE_CONFIG)
     })
 
     afterEach(async (): Promise<void> => {
       console.info(tag + 'afterEach')
       try {
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG)
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG_BACKUP1)
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG_BACKUP2)
-      } catch (err: BusinessError) {
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG)
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG_BACKUP1)
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG_BACKUP2)
+      } catch (err) {
         console.info(tag + "deleteRdbStore err" + JSON.stringify(err))
       }
     })
@@ -130,7 +130,7 @@ export default function relationalStoreBackupRestorePromiseTest() {
       try {
         fileio.accessSync(DATABASE_DIR + DATABASE_BACKUP_NAME)
         fileio.accessSync(DATABASE_DIR + STORE_CONFIG.name)
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info("RdbBackupRestoreTest_0010 backup success")
         expect(false).assertTrue()
       }
@@ -144,13 +144,13 @@ export default function relationalStoreBackupRestorePromiseTest() {
       try {
         fileio.accessSync(DATABASE_DIR + DATABASE_BACKUP_NAME)
         console.info(tag + "RdbBackupRestoreTest_0010 restore success")
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(false).assertTrue()
       }
 
       try {
         fileio.accessSync(DATABASE_DIR + STORE_CONFIG.name)
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(false).assertTrue()
       }
       // RDB after restored, data query test
@@ -171,7 +171,7 @@ export default function relationalStoreBackupRestorePromiseTest() {
         expect(1).assertEqual(id)
         expect("zhangsan").assertEqual(name)
         expect(1).assertEqual(blobType[0])
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(tag + 'RdbBackupRestoreTest_0010 accessSync err4:  ' + err)
         expect(false).assertTrue()
       }
@@ -196,7 +196,7 @@ export default function relationalStoreBackupRestorePromiseTest() {
       try {
         await RdbStore!.backup(backupName)
         console.log(tag + "backup success")
-      }catch (err: BusinessError) {
+      }catch (err) {
         expect(true).assertFail()
         console.log(tag + "err" + err.code + err.message)
       }
@@ -225,11 +225,12 @@ export default function relationalStoreBackupRestorePromiseTest() {
         try {
           await RdbStore!.restore(dbName);
           expect().assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(tag + "err:" + err.code + err.message);
           expect("14800010").assertEqual(String(err.code))
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(false).assertTrue()
       }
       done()
@@ -251,14 +252,14 @@ export default function relationalStoreBackupRestorePromiseTest() {
         await RdbStore!.backup(DATABASE_BACKUP_NAME);
         fileio.accessSync(DATABASE_DIR + DATABASE_BACKUP_NAME);
         console.info(tag + 'Backup database success');
-      } catch (err: BusinessError) {
+      } catch (err) {
         expect(false).assertTrue();
       }
 
       try {
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG_BACKUP1);
+        await relationalStore.deleteRdbStore(context!, STORE_CONFIG_BACKUP1);
         fileio.accessSync(DATABASE_DIR + DATABASE_BACKUP_NAME);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(tag + 'error2  ' + err);
         expect(false).assertTrue();
       }
@@ -267,7 +268,7 @@ export default function relationalStoreBackupRestorePromiseTest() {
         await RdbStore!.backup(DATABASE_BACKUP_NAME);
         console.info(tag + 'Backup database success');
         fileio.accessSync(DATABASE_DIR + DATABASE_BACKUP_NAME)
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(tag + 'error3  ' + err);
         expect(false).assertTrue();
       }

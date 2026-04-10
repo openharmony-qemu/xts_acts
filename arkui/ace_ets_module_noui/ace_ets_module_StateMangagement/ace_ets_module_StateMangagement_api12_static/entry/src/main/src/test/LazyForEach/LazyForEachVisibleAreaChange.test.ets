@@ -43,7 +43,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function LazyForEachVisibleAreaChange() {
   describe('LazyForEachVisibleAreaChange', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LazyForEachVisibleAreaChange beforeEach start");
 
 

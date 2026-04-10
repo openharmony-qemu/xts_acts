@@ -252,7 +252,7 @@ export default function AlignRulesTest() {
 
   describe('AlignRulesTest', () => {
     console.info('AlignRulesTest function start ...');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignRulesTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

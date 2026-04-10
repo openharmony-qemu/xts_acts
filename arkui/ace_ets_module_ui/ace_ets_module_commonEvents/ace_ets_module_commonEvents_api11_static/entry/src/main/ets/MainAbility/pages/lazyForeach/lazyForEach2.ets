@@ -54,7 +54,7 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { RecordData } from '@ohos.base';
 
-class BasicDataSource implements IDataSource<string> {
+export class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = []
 
   public totalCount(): int {
@@ -111,7 +111,7 @@ class BasicDataSource implements IDataSource<string> {
   }
 }
 
-class MyDataSource extends BasicDataSource {
+export class MyDataSource extends BasicDataSource {
   private dataArray: string[] = ['/path/image0']
 
   public totalCount(): int {
@@ -250,7 +250,7 @@ struct LazyForEachOnDataAdd {
                   try {
                     this.data.pushData('/path/image' + this.data.totalCount())
                     console.info("this.data.totalCount() is :" + this.data.totalCount())
-                  } catch (err: Error) {
+                  } catch (err) {
                     this.result_101 = false
                     console.info("LazyForEachOnDataAdd_101 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
@@ -268,7 +268,7 @@ struct LazyForEachOnDataAdd {
                     }
                     console.info("LazyForEachOnDataAdd_101 onClick start to emit action")
                     emitter.emit(backEvent1, backData1)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("LazyForEachOnDataAdd_101 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }
@@ -302,7 +302,7 @@ struct LazyForEachOnDataAdd {
                 .onClick((e: ClickEvent) => {
                   try {
                     this.data.moveData(3, 1)
-                  } catch (err: Error) {
+                  } catch (err) {
                     this.result_102 = false
                     console.info("LazyForEachOnDataAdd_102 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
@@ -320,7 +320,7 @@ struct LazyForEachOnDataAdd {
                     }
                     console.info("LazyForEachOnDataAdd_102 onClick start to emit action")
                     emitter.emit(backEvent2, backData2)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("LazyForEachOnDataAdd_102 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }
@@ -354,7 +354,7 @@ struct LazyForEachOnDataAdd {
                 .onClick((e: ClickEvent) => {
                   try {
                     this.data.popData()
-                  } catch (err: Error) {
+                  } catch (err) {
                     this.result_103 = false
                     console.info("LazyForEachOnDataAdd_103 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
@@ -372,7 +372,7 @@ struct LazyForEachOnDataAdd {
                     }
                     console.info("LazyForEachOnDataAdd_103 onClick start to emit action")
                     emitter.emit(backEvent3, backData3)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("LazyForEachOnDataAdd_103 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }
@@ -407,7 +407,7 @@ struct LazyForEachOnDataAdd {
                 .onClick((e: ClickEvent) => {
                   try {
                     this.data.changeData(2)
-                  } catch (err: Error) {
+                  } catch (err) {
                     this.result_104 = false
                     console.info("LazyForEachOnDataAdd_104 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
@@ -425,7 +425,7 @@ struct LazyForEachOnDataAdd {
                     }
                     console.info("LazyForEachOnDataAdd_104 onClick start to emit action")
                     emitter.emit(backEvent4, backData4)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("LazyForEachOnDataAdd_104 onClick emit action err: " +
                     JSON.stringify((err as Error)?.message))
                   }

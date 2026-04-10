@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On } from '@ohos.UiTest'
+import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On, WindowChangeType } from '@kit.TestKit'
 import ability_featureAbility from '@ohos.ability.featureAbility';
 import { BusinessError } from '@ohos.base';
 import display from '@ohos.display';
@@ -66,6 +66,12 @@ async function exitInputMethod() {
     let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
     console.log(`${TestTag},softKeyBoard: ${JSON.stringify(softKeyBoard)}`);
     if (softKeyBoard != null) {
+        await driver.pressBack()
+    }
+    await driver.delayMs(2000)
+    let keyCanvasKeyboard = await driver.findComponent(ON.id('KeyCanvasKeyboard'))
+    console.log(`${TestTag},keyCanvasKeyboard: ${JSON.stringify(keyCanvasKeyboard)}`);
+    if (keyCanvasKeyboard != null) {
         await driver.pressBack()
     }
 }
@@ -156,6 +162,9 @@ export default function UiTest() {
                     expect(elementInfo.type == 'Button').assertTrue()
                     expect(elementInfo.componentEventType == 1).assertTrue();
                     expect(elementInfo.componentId).assertEqual('toastBtn');
+                    expect(elementInfo.windowChangeType == WindowChangeType.WINDOW_UNDEFINED).assertTrue();
+                    expect(elementInfo.windowId != null).assertTrue();
+                    expect(elementInfo.componentRect != null).assertTrue();
                 } catch (err) {
                     console.log(`${TestTag}, testComponentEventOccurOptionsClickMonitor callback error ,${JSON.stringify(err)}`);
                 }
@@ -991,6 +1000,7 @@ export default function UiTest() {
             let center = await text.getBoundsCenter()
             await driver.delayMs(2000);
             await driver.inputText(center, '123', { paste: false, addition: false })
+            await driver.delayMs(2000);
             await exitInputMethod();
             await driver.delayMs(2000);
             let text1 = await driver.findComponent(ON.type('TextInput'))
@@ -1162,6 +1172,23 @@ export default function UiTest() {
                 text1 = await scorll.scrollSearch(ON.type('TextInput'))
             }
             expect(await text1.getText() == '123').assertTrue()
+            let text2 = await driver.findComponent(ON.type('TextInput'))
+            if (text2 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                text2 = await scroll.scrollSearch(ON.type('TextInput'))
+            }
+            await text2.inputText('', { paste: false, addition: false })
+            await driver.delayMs(2000)
+            await exitInputMethod()
+            await driver.delayMs(2000)
+            let text3 = await driver.findComponent(ON.type('TextInput'))
+            if (text3 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                text3 = await scroll.scrollSearch(ON.type('TextInput'))
+            }
+            let text3Msg = await text3.getText();
+            console.log(`${TestTag}, testComponentInputText text3Msg,${JSON.stringify(text3Msg)}`)
+            expect(text3Msg).assertEqual('')
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testComponentInputText over');
         })
@@ -1907,6 +1934,24 @@ export default function UiTest() {
             let originText1 = await button2.getOriginalText();
             console.log(`${TestTag}, test_origin originText1: ${JSON.stringify(originText1)}`);
             expect(originText1 == 'next page').assertTrue()
+            let button3 = await driver.findComponent(ON.originalText('', MatchPattern.EQUALS).text('next page'))
+            expect(button3).assertNull()
+            let button4 = await driver.findComponent(ON.originalText('next page', MatchPattern.CONTAINS))
+            let originText4 = await button4.getOriginalText();
+            console.log(`${TestTag}, test_origin originText4: ${JSON.stringify(originText4)}`);
+            expect(originText4).assertEqual('next page')     
+            let button5 = await driver.findComponent(ON.originalText('page', MatchPattern.ENDS_WITH))
+            let originText5 = await button5.getOriginalText();
+            console.log(`${TestTag}, test_origin originText5: ${JSON.stringify(originText5)}`);
+            expect(originText5).assertEqual('next page')
+            let button6 = await driver.findComponent(ON.originalText('next page', MatchPattern.REG_EXP))
+            let originText6 = await button6.getOriginalText();
+            console.log(`${TestTag}, test_origin originText6: ${JSON.stringify(originText6)}`);
+            expect(originText6).assertEqual('next page')
+            let button7 = await driver.findComponent(ON.originalText('next page', MatchPattern.REG_EXP_ICASE))
+            let originText7 = await button7.getOriginalText();
+            console.log(`${TestTag}, test_origin originText7: ${JSON.stringify(originText7)}`);
+            expect(originText7).assertEqual('next page')
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_origin end');
         })
@@ -3055,6 +3100,66 @@ export default function UiTest() {
             let hint1 = await button1.getHint();
             await driver.delayMs(waitUiReadyMs);
             expect(hint1 == 'welcome').assertTrue();
+            let button2 = await driver.findComponent(ON.hint('', MatchPattern.EQUALS).text('next page'));
+            if (button2 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                button2 = await scroll.scrollSearch(ON.hint('', MatchPattern.EQUALS).text('next page'))
+            }
+            await driver.delayMs(waitUiReadyMs);
+            let hint2 = await button2.getHint();
+            await driver.delayMs(waitUiReadyMs);
+            console.log(`${TestTag}, testGetHint hint2, ${JSON.stringify(hint2)}`)
+            expect(hint2).assertEqual('');            
+            let button3 = await driver.findComponent(ON.hint('welcome', MatchPattern.CONTAINS));
+            if (button3 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                button3 = await scroll.scrollSearch(ON.hint('welcome', MatchPattern.CONTAINS))
+            }
+            await driver.delayMs(waitUiReadyMs);
+            let hint3 = await button3.getHint();
+            await driver.delayMs(waitUiReadyMs);
+            console.log(`${TestTag}, testGetHint hint3, ${JSON.stringify(hint3)}`)
+            expect(hint3).assertEqual('welcome');  
+            let button4 = await driver.findComponent(ON.hint('wel', MatchPattern.STARTS_WITH));
+            if (button4 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                button4 = await scroll.scrollSearch(ON.hint('wel', MatchPattern.STARTS_WITH))
+            }
+            await driver.delayMs(waitUiReadyMs);
+            let hint4 = await button4.getHint();
+            await driver.delayMs(waitUiReadyMs);
+            console.log(`${TestTag}, testGetHint hint4, ${JSON.stringify(hint4)}`)
+            expect(hint4).assertEqual('welcome'); 
+            let button5 = await driver.findComponent(ON.hint('come', MatchPattern.ENDS_WITH));
+            if (button5 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                button5 = await scroll.scrollSearch(ON.hint('come', MatchPattern.ENDS_WITH))
+            }
+            await driver.delayMs(waitUiReadyMs);
+            let hint5 = await button5.getHint();
+            await driver.delayMs(waitUiReadyMs);
+            console.log(`${TestTag}, testGetHint hint5, ${JSON.stringify(hint5)}`)
+            expect(hint5).assertEqual('welcome'); 
+            let button6 = await driver.findComponent(ON.hint('welcome', MatchPattern.REG_EXP));
+            if (button6 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                button6 = await scroll.scrollSearch(ON.hint('welcome', MatchPattern.REG_EXP))
+            }
+            await driver.delayMs(waitUiReadyMs);
+            let hint6 = await button6.getHint();
+            await driver.delayMs(waitUiReadyMs);
+            console.log(`${TestTag}, testGetHint hint6, ${JSON.stringify(hint6)}`)
+            expect(hint6).assertEqual('welcome'); 
+            let button7 = await driver.findComponent(ON.hint('welcome', MatchPattern.REG_EXP_ICASE));
+            if (button7 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                button7 = await scroll.scrollSearch(ON.hint('welcome', MatchPattern.REG_EXP_ICASE))
+            }
+            await driver.delayMs(waitUiReadyMs);
+            let hint7 = await button7.getHint();
+            await driver.delayMs(waitUiReadyMs);
+            console.log(`${TestTag}, testGetHint hint7, ${JSON.stringify(hint7)}`)
+            expect(hint7).assertEqual('welcome'); 
             await stopApplication('com.uitestScene.acts');
         })
 
@@ -3261,14 +3366,14 @@ export default function UiTest() {
 
 
         /**
-         * @tc.name   testDriverInputText
+         * @tc.name   testDriverInputTextAdapt001
          * @tc.number uiTest_11005
          * @tc.desc   inject text on the specified location.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testDriverInputText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testDriverInputTextAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let inputText = await driver.findComponent(ON.type('TextInput'))
@@ -3377,6 +3482,26 @@ export default function UiTest() {
             }
             let description = await text.getDescription()
             expect(description == '').assertTrue()
+            let text1 = await driver.findComponent(ON.description('toast', MatchPattern.CONTAINS))
+            let text1Des = await text1.getDescription()
+            console.log(`${TestTag},testDescription  text1Des, ${JSON.stringify(text1Des)}`)
+            expect(text1Des).assertEqual('toast')
+            let text2 = await driver.findComponent(ON.description('toa', MatchPattern.STARTS_WITH))
+            let text2Des = await text2.getDescription()
+            console.log(`${TestTag},testDescription  text2Des, ${JSON.stringify(text2Des)}`)
+            expect(text2Des).assertEqual('toast')
+            let text3 = await driver.findComponent(ON.description('ast', MatchPattern.ENDS_WITH))
+            let text3Des = await text3.getDescription()
+            console.log(`${TestTag},testDescription  text3Des, ${JSON.stringify(text3Des)}`)
+            expect(text3Des).assertEqual('toast')
+            let text4 = await driver.findComponent(ON.description('toast', MatchPattern.REG_EXP))
+            let text4Des = await text4.getDescription()
+            console.log(`${TestTag},testDescription  text4Des, ${JSON.stringify(text4Des)}`)
+            expect(text4Des).assertEqual('toast')
+            let text5 = await driver.findComponent(ON.description('toast', MatchPattern.REG_EXP_ICASE))
+            let text5Des = await text5.getDescription()
+            console.log(`${TestTag},testDescription  text5Des, ${JSON.stringify(text5Des)}`)
+            expect(text5Des).assertEqual('toast')
             await stopApplication('com.uitestScene.acts')
         })
     })
@@ -3509,14 +3634,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testMouseScroll
+         * @tc.name   testMouseScrollAdapt001
          * @tc.number uiTest_10006
          * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testMouseScroll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testMouseScrollAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let btn = await driver.findComponent(ON.id('jump'))
@@ -3564,6 +3689,8 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             let btn = await driver.findComponent(ON.inWindow('com.uitestScene.acts').text('next page'))
             expect(btn != null).assertTrue()
+            let btn1 = await driver.findComponent(ON.inWindow('').text('next page'))
+            expect(btn1 != null).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3579,14 +3706,21 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let observer = await driver.createUIEventObserver()
-            let callback = (UiElementInfo: UIElementInfo) => {
+            let callback = (uiElementInfo: UIElementInfo) => {
+               console.log(`${TestTag}, testMonitor1 uiElementInfo,${JSON.stringify(uiElementInfo)}`);
                 try {
-                    console.info('UIElementInfo bundleName:' + UiElementInfo.bundleName)
-                    console.info('UIElementInfo text:' + UiElementInfo.text)
-                    console.info('UIElementInfo type:' + UiElementInfo.type)
-                    expect(UiElementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
-                    expect(UiElementInfo.text == 'toastShow').assertTrue()
-                    expect(UiElementInfo.type == 'Toast').assertTrue()
+                    console.info('UIElementInfo bundleName:' + uiElementInfo.bundleName)
+                    console.info('UIElementInfo text:' + uiElementInfo.text)
+                    console.info('UIElementInfo type:' + uiElementInfo.type)
+                    expect(uiElementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
+                    expect(uiElementInfo.text == 'toastShow').assertTrue()
+                    expect(uiElementInfo.type == 'Toast').assertTrue()
+                    expect(uiElementInfo.windowChangeType == WindowChangeType.WINDOW_UNDEFINED).assertTrue();
+                    expect(uiElementInfo.componentEventType == ComponentEventType.COMPONENT_UNDEFINED).assertTrue();
+                    expect(uiElementInfo.windowId != null).assertTrue();
+                    expect(uiElementInfo.componentId == '').assertTrue();
+                    expect(uiElementInfo.componentRect != null).assertTrue();
+
                 } catch (err) {
                     console.info(err)
                 }
@@ -3611,14 +3745,20 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let observer = await driver.createUIEventObserver()
-            let callback = (UiElementInfo: UIElementInfo) => {
+            let callback = (uiElementInfo: UIElementInfo) => {
+               console.log(`${TestTag}, testMonitor2 uiElementInfo,${JSON.stringify(uiElementInfo)}`);
                 try {
-                    console.info('UIElementInfo bundleName:' + UiElementInfo.bundleName)
-                    console.info('UIElementInfo text:' + UiElementInfo.text)
-                    console.info('UIElementInfo type:' + UiElementInfo.type)
-                    expect(UiElementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
-                    expect(UiElementInfo.text == 'dialogShow').assertTrue()
-                    expect(UiElementInfo.type == 'AlertDialog').assertTrue()
+                    console.info('UIElementInfo bundleName:' + uiElementInfo.bundleName)
+                    console.info('UIElementInfo text:' + uiElementInfo.text)
+                    console.info('UIElementInfo type:' + uiElementInfo.type)
+                    expect(uiElementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
+                    expect(uiElementInfo.text == 'dialogShow').assertTrue()
+                    expect(uiElementInfo.type == 'AlertDialog').assertTrue()
+                    expect(uiElementInfo.windowChangeType == WindowChangeType.WINDOW_UNDEFINED).assertTrue();
+                    expect(uiElementInfo.componentEventType == ComponentEventType.COMPONENT_UNDEFINED).assertTrue();
+                    expect(uiElementInfo.windowId != null).assertTrue();
+                    expect(uiElementInfo.componentId == '').assertTrue();
+                    expect(uiElementInfo.componentRect != null).assertTrue();
                 } catch (err) {
                     console.info(err)
                 }
@@ -3672,6 +3812,23 @@ export default function UiTest() {
             let text = await input_new.getText()
             console.info("testInputText result :" + text)
             expect(text == '123').assertTrue()
+            let input1 = await driver.findComponent(ON.type('TextInput'))
+            if (input1 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                input1 = await scroll.scrollSearch(ON.type('TextInput'))
+            }
+            await input.inputText('')
+            await driver.delayMs(2000)
+            await exitInputMethod()
+            await driver.delayMs(2000)
+            let input_new1 = await driver.findComponent(ON.type('TextInput'))
+            if (input_new1 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                input_new1 = await scroll.scrollSearch(ON.type('TextInput'))
+            }
+            let text1 = await input_new1.getText()
+            console.log(`${TestTag}, testInputText text1, ${JSON.stringify(text1)}`)
+            expect(text1).assertEqual('')
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3790,6 +3947,8 @@ export default function UiTest() {
             expect(await Button3.getText() == 'next page').assertTrue()
             let Button4 = await driver.findComponent(ON.text('ext', MatchPattern.CONTAINS))
             expect(await Button4.getText() == 'next page').assertTrue()
+            let Button5 = await driver.findComponent(ON.text(''))
+            expect(Button5 != null).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3943,6 +4102,34 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(ON.id('my-key'))
             expect(await button.getId() == 'my-key').assertTrue()
+            let button1 = await driver.findComponent(ON.id('').text('next page'));
+            let button1Id = await button1.getId();
+            console.log(`${TestTag}, testKey button1Id, ${JSON.stringify(button1Id)}`);
+            expect(button1Id).assertEqual('');
+            let button2 = await driver.findComponent(ON.id('', MatchPattern.EQUALS).text('next page'))
+            let button2Id = await button2.getId();
+            console.log(`${TestTag}, testKey button2Id, ${JSON.stringify(button2Id)}`);
+            expect(button2Id).assertEqual('')
+            let button3 = await driver.findComponent(ON.id('my-key', MatchPattern.CONTAINS))
+            let button3Id = await button3.getId();
+            console.log(`${TestTag}, testKey button3Id, ${JSON.stringify(button3Id)}`);
+            expect(button3Id).assertEqual('my-key')
+            let button4 = await driver.findComponent(ON.id('my-', MatchPattern.STARTS_WITH))
+            let button4Id = await button4.getId();
+            console.log(`${TestTag}, testKey button4Id, ${JSON.stringify(button4Id)}`);
+            expect(button4Id).assertEqual('my-key')
+            let button5 = await driver.findComponent(ON.id('-key', MatchPattern.ENDS_WITH))
+            let button5Id = await button5.getId();
+            console.log(`${TestTag}, testKey button5Id, ${JSON.stringify(button5Id)}`);
+            expect(button5Id).assertEqual('my-key')
+            let button6 = await driver.findComponent(ON.id('my-key', MatchPattern.REG_EXP))
+            let button6Id = await button6.getId();
+            console.log(`${TestTag}, testKey button6Id, ${JSON.stringify(button6Id)}`);
+            expect(button6Id).assertEqual('my-key')
+            let button7 = await driver.findComponent(ON.id('my-key', MatchPattern.REG_EXP_ICASE))
+            let button7Id = await button7.getId();
+            console.log(`${TestTag}, testKey button7Id, ${JSON.stringify(button7Id)}`);
+            expect(button7Id).assertEqual('my-key')
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3960,9 +4147,32 @@ export default function UiTest() {
             let text = await driver.findComponent(ON.type('Text'))
             let type = await text.getType()
             expect(type == 'Text').assertTrue()
-            let text1 = await driver.findComponent(ON.type('Text', MatchPattern.EQUALS))
-            let type1 = await text1.getType()
-            expect(type1 == 'Text').assertTrue()
+            let text1 = await driver.findComponent(ON.type('').text('next page'))
+            console.log(`${TestTag}, testType text2,${JSON.stringify(text1)}`)
+            expect(text1).assertNull()
+            let text2 = await driver.findComponent(ON.type('Text', MatchPattern.CONTAINS).text('next page'))
+            let type2 = await text2.getType()
+            console.log(`${TestTag}, testType type2,${JSON.stringify(type2)}`)
+            expect(type2 == 'Text').assertTrue()
+            let text3 = await driver.findComponent(ON.type('', MatchPattern.EQUALS).text('next page'))
+            console.log(`${TestTag}, testType text3,${JSON.stringify(text3)}`)
+            expect(text3).assertNull()
+            let text4 = await driver.findComponent(ON.type('Tex', MatchPattern.STARTS_WITH).text('next page'))
+            let type4 = await text4.getType()
+            console.log(`${TestTag}, testType type4,${JSON.stringify(type4)}`)
+            expect(type4 == 'Text').assertTrue()
+            let text5 = await driver.findComponent(ON.type('ext', MatchPattern.ENDS_WITH).text('next page'))
+            let type5 = await text5.getType()
+            console.log(`${TestTag}, testType type5,${JSON.stringify(type5)}`)
+            expect(type5 == 'Text').assertTrue()
+            let text6 = await driver.findComponent(ON.type('Text', MatchPattern.REG_EXP).text('next page'))
+            let type6 = await text6.getType()
+            console.log(`${TestTag}, testType type6,${JSON.stringify(type6)}`)
+            expect(type6 == 'Text').assertTrue()
+            let text7 = await driver.findComponent(ON.type('Text', MatchPattern.REG_EXP_ICASE).text('next page'))
+            let type7 = await text7.getType()
+            console.log(`${TestTag}, testType type7,${JSON.stringify(type7)}`)
+            expect(type7 == 'Text').assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -4032,6 +4242,10 @@ export default function UiTest() {
             let scrollBar1 = await driver.findComponent(ON.type('Button').scrollable(false))
             let scrollable1 = await scrollBar1.isScrollable()
             expect(scrollable1 == false).assertTrue()
+            let scrollBar2 = await driver.findComponent(ON.type('Scroll').scrollable(true))
+            let scrollable2 = await scrollBar2.isScrollable()
+            console.log(`${TestTag}, testScrollable scrollable2, ${JSON.stringify(scrollable2)}`)
+            expect(scrollable2 == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -4613,14 +4827,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testInputText
+         * @tc.name   testInputTextAdapt001
          * @tc.number uiTest_8001
          * @tc.desc   inject text to the target UiComponent
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testInputText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testInputTextAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let input = await driver.findComponent(BY.type('TextInput'))
@@ -4640,18 +4854,35 @@ export default function UiTest() {
             let text = await input_new.getText()
             console.info("testInputText result :" + text)
             expect(text == '123').assertTrue()
+            let input1 = await driver.findComponent(BY.type('TextInput'))
+            if (input1 == null) {
+                let scorll = await driver.findComponent(BY.type('Scroll'))
+                input1 = await scorll.scrollSearch(BY.type('TextInput'))
+            }
+            await input1.inputText('')
+            await driver.delayMs(2000)
+            await exitInputMethod()
+            await driver.delayMs(2000)
+            let input_new1 = await driver.findComponent(BY.type('TextInput'))
+            if (input_new1 == null) {
+                let scorll = await driver.findComponent(BY.type('Scroll'))
+                input_new1 = await scorll.scrollSearch(BY.type('TextInput'))
+            }
+            let text1 = await input_new1.getText()
+            console.info("testInputText result :" + text1)
+            expect(text1).assertEqual('')
             await stopApplication('com.uitestScene.acts')
         })
 
         /**
-         * @tc.name   testMatchPattern
+         * @tc.name   testMatchPatternAdapt001
          * @tc.number uiTest_8002
          * @tc.desc   specifies the string value match pattern.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testMatchPattern', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testMatchPatternAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let Button1 = await driver.findComponent(BY.text('next page', MatchPattern.EQUALS))
@@ -4662,18 +4893,30 @@ export default function UiTest() {
             expect(await Button3.getText() == 'next page').assertTrue()
             let Button4 = await driver.findComponent(BY.text('ext', MatchPattern.CONTAINS))
             expect(await Button4.getText() == 'next page').assertTrue()
+            let btn5 = await driver.findComponent(BY.text('').type('Button'))
+            let btn5Msg = await btn5.getText()
+            console.log(`#{TestTag}, testMatchPattern btn5Msg，${JSON.stringify(btn5Msg)}`)
+            expect(btn5Msg).assertEqual('')
+            let btn6 = await driver.findComponent(BY.text('next page', MatchPattern.REG_EXP))
+            let btn6Msg = await btn6.getText()
+             console.log(`#{TestTag}, testMatchPattern btn6Msg${JSON.stringify(btn6Msg)}`)           
+            expect(btn6Msg).assertEqual('next page')
+            let btn7 = await driver.findComponent(BY.text('next page', MatchPattern.REG_EXP_ICASE))
+            let btn7Msg = await btn7.getText()
+             console.log(`#{TestTag}, testMatchPattern btn7Msg${JSON.stringify(btn7Msg)}`)           
+            expect(btn7Msg).assertEqual('next page')
             await stopApplication('com.uitestScene.acts')
         })
 
         /**
-         * @tc.name   testUiComponentClick
+         * @tc.name   testUiComponentClickAdapt001
          * @tc.number uiTest_8003
          * @tc.desc   click this UiComponentClick.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testUiComponentClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testUiComponentClickAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(BY.text('next page'))
@@ -4687,14 +4930,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testUiComponentDoubleClick
+         * @tc.name   testUiComponentDoubleClickAdapt001
          * @tc.number uiTest_8004
          * @tc.desc   doubleClick this UiComponentClick.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testUiComponentDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testUiComponentDoubleClickAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(BY.text('Click twice'))
@@ -4712,14 +4955,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testUiComponentLongClick
+         * @tc.name   testUiComponentLongClickAdapt001
          * @tc.number uiTest_8005
          * @tc.desc   longClick this UiComponentClick.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testUiComponentLongClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testUiComponentLongClickAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(BY.text('next page'))
@@ -4733,18 +4976,23 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testKey
+         * @tc.name   testKeyAdapt001
          * @tc.number uiTest_8006
          * @tc.desc   find UiComponent by key attribute and get it's key attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testKeyAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(BY.key('my-key'))
             expect(await button.getKey() == 'my-key').assertTrue()
+            let keyBtn = await driver.findComponent(BY.key('').text('next page'))
+            console.log(`${TestTag}, testKey keyBtn， ${JSON.stringify(keyBtn)}`)
+            let btnkey = await keyBtn.getKey()
+            console.log(`${TestTag}, testKey btnkey ${JSON.stringify(btnkey)}`)
+            expect(btnkey).assertEqual('')   
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -4767,31 +5015,34 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testType
+         * @tc.name   testTypeAdapt001
          * @tc.number uiTest_8008
          * @tc.desc   find UiComponent by type attribute and get it's type attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testTypeAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let text = await driver.findComponent(BY.type('Text'))
             let type = await text.getType()
             expect(type == 'Text').assertTrue()
+            let typeCom = await driver.findComponent(BY.type(''))
+            console.log(`${TestTag}, testType typeCom,${JSON.stringify(typeCom)}`)
+            expect(typeCom).assertNull()     
             await stopApplication('com.uitestScene.acts')
         })
 
         /**
-         * @tc.name   testClickable
+         * @tc.name   testClickableAdapt001
          * @tc.number uiTest_8009
          * @tc.desc   find UiComponent by clickable attribute and get it's clickable attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testClickable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testClickableAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(BY.text('next page').clickable())
@@ -4807,19 +5058,19 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testScrollable
+         * @tc.name   testScrollableAdapt001
          * @tc.number uiTest_8010
          * @tc.desc   find UiComponent by scrollable attribute and get it's scrollable attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testScrollable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testScrollableAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
-            let scrollBar = await driver.findComponent(BY.type('Scroll').scrollable(false))
+            let scrollBar = await driver.findComponent(BY.type('Scroll').scrollable())
             if (scrollBar == null) {
-                scrollBar = await driver.findComponent(BY.type('Scroll').scrollable())
+                scrollBar = await driver.findComponent(BY.type('Scroll').scrollable(true))
             }
             let scrollable = await scrollBar.isScrollable()
             expect(scrollable == true).assertTrue()
@@ -4830,14 +5081,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testEnabled
+         * @tc.name   testEnabledAdapt001
          * @tc.number uiTest_8011
          * @tc.desc   find UiComponent by enabled attribute and get it's enabled attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testEnabledAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(BY.text('next page').enabled(false))
@@ -4857,14 +5108,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testFocused
+         * @tc.name   testFocusedAdapt001
          * @tc.number uiTest_8012
          * @tc.desc   find UiComponent by focused attribute and get it's focused attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testFocused', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testFocusedAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(BY.text('next page').focused())
@@ -4880,14 +5131,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testSelected
+         * @tc.name   testSelectedAdapt001
          * @tc.number uiTest_8013
          * @tc.desc   find UiComponent by selected attribute and get it's selected attribute.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSelected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testSelectedAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(BY.text('next page').selected())
@@ -4907,14 +5158,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testPressBack
+         * @tc.name   testPressBackAdapt001
          * @tc.number uiTest_8014
          * @tc.desc   Press the BACK key.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testPressBack', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testPressBackAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(BY.text('next page'))
@@ -4928,30 +5179,32 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testFindComponents
+         * @tc.name   testFindComponentsAdapt001
          * @tc.number uiTest_8015
          * @tc.desc   find all the matched UiComponents on current UI
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testFindComponents', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testFindComponentsAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let buttons = await driver.findComponents(BY.type('Button'))
             expect(await buttons[0].getText() != null).assertTrue()
+            let notCCom = await driver.findComponents(BY.text('NotTest'))
+            expect(notCCom).assertNull()
             await stopApplication('com.uitestScene.acts')
         })
 
         /**
-         * @tc.name   testTriggerKey
+         * @tc.name   testTriggerKeyAdapt001
          * @tc.number uiTest_8016
          * @tc.desc   press the specified key.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testTriggerKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testTriggerKeyAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(BY.text('next page'))
@@ -4966,14 +5219,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testScreenCap
+         * @tc.name   testScreenCapAdapt001
          * @tc.number uiTest_8017
          * @tc.desc   capture current screen.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testScreenCap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testScreenCapAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let savePath = '/data/storage/el2/base/cache/1.png'
@@ -4983,14 +5236,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testAssertComponentExist
+         * @tc.name   testAssertComponentExistAdapt001
          * @tc.number uiTest_8018
          * @tc.desc   Assert whether the matched UiComponent exists on current UI;.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testAssertComponentExist', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testAssertComponentExistAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             await driver.assertComponentExist(BY.text('next page'))
@@ -4998,14 +5251,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testIsBefore
+         * @tc.name   testIsBeforeAdapt001
          * @tc.number uiTest_8019
          * @tc.desc   find uiComponent which is before another UiComponent that specified by given.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testIsBefore', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testIsBeforeAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(BY.isBefore(BY.text('next page')).type('Button'))
@@ -5014,14 +5267,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testIsAfter
+         * @tc.name   testIsAfterAdapt001
          * @tc.number uiTest_8020
          * @tc.desc   find uiComponent which is after another UiComponent that specified by given.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testIsAfter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testIsAfterAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let button = await driver.findComponent(BY.isAfter(BY.text('dialog')).type('Text'))
@@ -5030,14 +5283,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testSwipe
+         * @tc.name   testSwipeAdapt001
          * @tc.number uiTest_8021
          * @tc.desc   swipe on the screen between the specified points.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSwipe', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testSwipeAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             let driver1 = Driver.create();
             await driver.delayMs(waitUiReadyMs);
@@ -5069,14 +5322,14 @@ export default function UiTest() {
         })
 
         /**
-         * @tc.name   testScrollSearch
+         * @tc.name   testScrollSearchAdapt001
          * @tc.number uiTest_8022
          * @tc.desc   scroll on this UiComponent to find matched UiComponent.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testScrollSearch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+        it('testScrollSearchAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let scrollBar = await driver.findComponent(BY.type('Scroll'))

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,7 +40,7 @@ export default function Array_01Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -71,7 +71,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected : FixedArray<boolean> = [false, true];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -92,7 +92,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         expect(result.length).assertEqual(0);
         expect(array.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -113,7 +113,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         expect(result[0]).assertEqual(true);
         expect(array[0]).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -137,7 +137,7 @@ export default function Array_01Test() {
           expect(result[i]).assertEqual(expected[i]);
         }
         expect(result[1]).assertEqual(array[1]);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -158,7 +158,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected : FixedArray<boolean> = [true, true, true];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -179,7 +179,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected : FixedArray<boolean> = [false, false, false];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -200,7 +200,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<byte> = [127, 0, -128];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -221,7 +221,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<byte> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -245,7 +245,7 @@ export default function Array_01Test() {
           expect(result[i]).assertEqual(expected[i]);
         }
         expect(result[2]).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -266,7 +266,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<char> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -287,7 +287,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<double> = [1.1, 0, -1.1];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -308,7 +308,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<double> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -333,7 +333,7 @@ export default function Array_01Test() {
         expect(Number.isNaN(result[3])).assertTrue();
         expect(Number.isFinite(result[0])).assertTrue();
         expect(Number.isFinite(result[1])).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -359,7 +359,7 @@ export default function Array_01Test() {
         expect(result[2]).assertEqual(MAX);
         expect(result[1]).assertEqual(MIN);
         expect(result[2]).assertEqual(MAX);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -380,7 +380,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<float> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -402,7 +402,7 @@ export default function Array_01Test() {
         expect(oddArray[1]).assertEqual(1.5);
         let expected: FixedArray<float> = [2.5, 1.5, 0.5];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -423,7 +423,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<int> = [2147483647, 0, -2147483648];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -444,7 +444,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<int> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -465,7 +465,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<int> = [4, 3, 2, 1];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -490,7 +490,7 @@ export default function Array_01Test() {
         reverse(mixed);
         let test: FixedArray<int> = [1, 2, 2, 1];
         expect(mixed.toString()).assertDeepEquals(test.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -511,7 +511,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<long> = [9223372036854775807, 0, -9223372036854775808];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -532,7 +532,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<long> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -553,7 +553,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<long> = [5, 3, 0, -4];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -574,7 +574,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<short> = [32767, 0, -32768];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -595,7 +595,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<short> = [];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -616,7 +616,7 @@ export default function Array_01Test() {
         let result = reverse(array);
         let expected: FixedArray<short> = [6, 3, 0, -1];
         expect(result.toString()).assertEqual(expected.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -637,7 +637,7 @@ export default function Array_01Test() {
         const andCallback = (acc: boolean, curr: boolean)=> acc && curr;
         const result = reduceRight(array, andCallback);
         expect(result).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -658,7 +658,7 @@ export default function Array_01Test() {
         const andCallback = (acc: boolean, curr: boolean)=> acc || curr;
         const result = reduceRight(array, andCallback);
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }

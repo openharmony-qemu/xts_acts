@@ -14,11 +14,11 @@
  */
 import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { GenParam, SetParam } from './utils/huks/HuksOptionsUtils.ets';
-import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils.ets';
-import { Cipher, CipherData } from './utils/huks/CipherUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
-import { GetRsaGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
+import { GenParam, SetParam } from './utils/huks/HuksOptionsUtils';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
+import { Cipher, CipherData } from './utils/huks/CipherUtils';
+import { Logger } from './utils/common/Logger';
+import { GetRsaGenerateOptions } from './utils/huks/GenerateKeyUtils';
 
 
 export default function SecurityHuksCipherRSATest() {

@@ -33,7 +33,7 @@ let tag: string = 'testTag';
 
 export default function showDatePickerDialogBackgroundEffectTest() {
   describe('ShowDatePickerDialogBackgroundEffectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ShowDatePickerDialogBackgroundEffectTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
     });

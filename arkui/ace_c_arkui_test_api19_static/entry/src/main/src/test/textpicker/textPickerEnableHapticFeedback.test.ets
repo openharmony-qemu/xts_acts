@@ -23,7 +23,7 @@ import inspector from '@ohos.arkui.inspector';
 export default function textPickerEnableHapticFeedbackTest() {
 
   describe('textPickerEnableHapticFeedbackTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api19.static", "EntryAbility")
     });
     afterEach(async (): Promise<void> => {

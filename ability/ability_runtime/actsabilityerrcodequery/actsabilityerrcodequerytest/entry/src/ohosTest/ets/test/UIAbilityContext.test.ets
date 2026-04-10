@@ -20,7 +20,10 @@ import { AtomicServiceOptions,
   common, contextConstant,
   OpenLinkOptions,
   StartOptions, startupManager,
-  UIAbility, dialogRequest  } from '@kit.AbilityKit';
+  UIAbility, dialogRequest,
+  CompletionHandlerForAbilityStartCallback,
+  AbilityStartFailureCode
+} from '@kit.AbilityKit';
 import { BusinessError ,systemParameterEnhance} from '@kit.BasicServicesKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { image } from '@kit.ImageKit';
@@ -32,7 +35,7 @@ const DOMAIN = 0xeeee;
 const TAG: string = '[openLinkDemo]';
 let buffer = new ArrayBuffer(640 * 1024);
 
-const TWO_HUNDRED_KB = 200 * 1024;
+const FIVE_HUNDRED_KB = 500 * 1024;
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
 // 生成一个指定长度的字符串
 function generateLargeString(length: number): string {
@@ -121,6 +124,56 @@ export default function UIAbilityContext() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_run_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_run_0200
+     * @tc.desc   run parameter error, pass null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_run_0200', Level.LEVEL0, async (done: Function) => {
+      try {
+        startupManager.run(null).then(() => {
+          console.log('StartupTest startupManager run then with null');
+        }).catch((error: BusinessError) => {
+          console.info("StartupTest promise catch error, error = " + JSON.stringify(error));
+        })
+      } catch (error) {
+        let errMsg = JSON.stringify(error);
+        let errCode: number = error.code;
+        console.log('Startup catch error , errCode= ' + errCode);
+        console.log('Startup catch error ,error= ' + errMsg);
+        expect(error.code).assertEqual(401)
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_run_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_run_0300
+     * @tc.desc   run parameter error, pass empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_run_0300', Level.LEVEL0, async (done: Function) => {
+      try {
+        startupManager.run([]).then(() => {
+          console.log('StartupTest startupManager run then with empty array');
+        }).catch((error: BusinessError) => {
+          console.info("StartupTest promise catch error, error = " + JSON.stringify(error));
+        })
+      } catch (error) {
+        let errMsg = JSON.stringify(error);
+        let errCode: number = error.code;
+        console.log('Startup catch error , errCode= ' + errCode);
+        console.log('Startup catch error ,error= ' + errMsg);
+        expect(error.code).assertEqual(16000050)
+      }
+      done();
+    })
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0100
      * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0100
      * @tc.desc   getStartupTaskResult parameter error, pass undefined
@@ -131,6 +184,42 @@ export default function UIAbilityContext() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0100', Level.LEVEL0, async (done: Function) => {
       try {
         const data = startupManager.getStartupTaskResult(undefined)
+      } catch (error) {
+        console.log(`Error occurred while getStartupTaskResult:  ${JSON.stringify(error.code)}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0200
+     * @tc.desc   getStartupTaskResult parameter error, pass null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0200', Level.LEVEL0, async (done: Function) => {
+      try {
+        const data = startupManager.getStartupTaskResult(null)
+      } catch (error) {
+        console.log(`Error occurred while getStartupTaskResult:  ${JSON.stringify(error.code)}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0300
+     * @tc.desc   getStartupTaskResult parameter error, pass empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_getStartupTaskResult_0300', Level.LEVEL0, async (done: Function) => {
+      try {
+        const data = startupManager.getStartupTaskResult("")
       } catch (error) {
         console.log(`Error occurred while getStartupTaskResult:  ${JSON.stringify(error.code)}`);
         expect(error.code).assertEqual(401);
@@ -159,6 +248,44 @@ export default function UIAbilityContext() {
       })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_isStartupTaskInitialized_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_isStartupTaskInitialized_0200
+     * @tc.desc   isStartupTaskInitialized parameter error, pass null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_isStartupTaskInitialized_0200', Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          const data = startupManager.isStartupTaskInitialized(null)
+        } catch (error) {
+          console.log(`Error occurred while isStartupTaskInitialized:  ${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_isStartupTaskInitialized_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_isStartupTaskInitialized_0300
+     * @tc.desc   isStartupTaskInitialized parameter error, pass empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_isStartupTaskInitialized_0300', Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          const data = startupManager.isStartupTaskInitialized("")
+        } catch (error) {
+          console.log(`Error occurred while isStartupTaskInitialized:  ${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      })
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0100
      * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0100
      * @tc.desc   removeStartupTaskResult parameter error, pass undefined
@@ -178,6 +305,44 @@ export default function UIAbilityContext() {
       })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0200
+     * @tc.desc   removeStartupTaskResult parameter error, pass null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0200', Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          const data = startupManager.removeStartupTaskResult(null)
+        } catch (error) {
+          console.log(`Error occurred while removeStartupTaskResult:  ${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0300
+     * @tc.desc   removeStartupTaskResult parameter error, pass empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ErrorCode_startupManager_removeStartupTaskResult_0300', Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          const data = startupManager.removeStartupTaskResult("")
+        } catch (error) {
+          console.log(`Error occurred while removeStartupTaskResult:  ${JSON.stringify(error.code)}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      })
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityByType_0100
      * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbilityByType_0100
      * @tc.desc   startAbilityByType parameter error, pass undefined Async
@@ -189,13 +354,25 @@ export default function UIAbilityContext() {
       let wantParam: Record<string, Object> = {
         'time': '2023-10-23 20:45'
       };
+      let completionHandler: CompletionHandlerForAbilityStartCallback = {
+        onRequestSuccess: (name: string) => {
+          console.info(`testTag onRequestSuccess name` + name);
+          expect().assertFail();
+        },
+        onRequestFailure: (name: string, failureCode: AbilityStartFailureCode, failureMessage: string) => {
+          console.info(`testTag onRequestFailure name: ` + name + `, failureCode:` + failureCode + `, failureMessage:` +
+            failureMessage);
+          expect().assertFail();
+        }
+      };
       let abilityStartCallback: common.AbilityStartCallback = {
         onError: (code: number, name: string, message: string) => {
           console.log(`code:` + code + `name:` + name + `message:` + message);
         },
         onResult: (abilityResult: common.AbilityResult) => {
           console.log(`resultCode:` + abilityResult.resultCode + `bundleName:` + abilityResult.want?.bundleName);
-        }
+        },
+        completionHandler: completionHandler
       };
       try {
         globalThis.context.startAbilityByType(undefined, wantParam, abilityStartCallback).then(() => {
@@ -585,7 +762,7 @@ export default function UIAbilityContext() {
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_startAbility_0500', Level.LEVEL0, async (done: Function) => {
       // 构造一个超过 200KB 的对象
-      const largeObject = generateLargeString(TWO_HUNDRED_KB + 100)
+      const largeObject = generateLargeString(FIVE_HUNDRED_KB + 100)
       let startWant: Want = {
         bundleName: 'com.test.actsabilityerrcodequerytest',
         abilityName: 'MainAbility1',
@@ -1142,6 +1319,36 @@ export default function UIAbilityContext() {
         let message = (err as BusinessError).message;
         console.error(`startAbilityForResult failed, code is ${code}, message is ${message}`);
       }
-    })
-  })
+     })
+
+    /**
+      * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0200
+      * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0200
+      * @tc.desc   openAtomicService parameter error, pass null Promise
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_openAtomicService_0200', Level.LEVEL0, async (done: Function) => {
+       let appId: string = '6918661953712445909';
+       let options: AtomicServiceOptions = {
+         displayId: 0
+       };
+       try {
+         globalThis.context.openAtomicService(null, options)
+           .then((result: common.AbilityResult) => {
+             console.info('openAtomicService succeed');
+           })
+           .catch((err: BusinessError) => {
+             console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
+           });
+       } catch (err) {
+         let code = (err as BusinessError).code;
+         let message = (err as BusinessError).message;
+         expect(err.code).assertEqual(401)
+         console.error(`startAbility failed, code is ${code}, message is ${message}`);
+         done();
+       }
+     })
+   })
 }

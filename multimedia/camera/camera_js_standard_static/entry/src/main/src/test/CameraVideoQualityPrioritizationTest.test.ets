@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,13 +24,13 @@ import { BusinessError } from '@ohos.base';
 
 const TAG = "CameraVideoQualityPrioritizationTest: ";
 
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.VideoSession;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> = [];
+let mCameraSession: cameraObj.VideoSession | undefined;
 let mVideoRecorder: media.AVRecorder | undefined;
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
-let mPhotoOutput: cameraObj.PhotoOutput;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
+let mPhotoOutput: cameraObj.PhotoOutput | undefined;
 let receiver: image.ImageReceiver | undefined;
 let mPhotoSurface: string;
 let mVideoSurface: string | undefined;
@@ -59,7 +59,7 @@ let mVideoConfig: media.AVRecorderConfig = {
 export default function cameraVideoQualityPrioritizationTest() {
 
   let fdNumber: int;
-  let fdPath: string;
+  let fdPath: string = '';
   let surfaceId: string = '';
 
   let getFd = async (pathName: string) => {
@@ -159,7 +159,7 @@ export default function cameraVideoQualityPrioritizationTest() {
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
 
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     /*
     mCameraManager.getSupportedCameras(async (err, data) => {
         console.info(TAG + "Entering getCameraSupportDevicesArray callback");
@@ -194,7 +194,7 @@ export default function cameraVideoQualityPrioritizationTest() {
     console.info('Enter createCameraSessionInstance');
 
     try {
-      mCameraSession = mCameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
+      mCameraSession = mCameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
     } catch(err) {
       console.info('createCaptureSession FAILED');
     }
@@ -204,7 +204,7 @@ export default function cameraVideoQualityPrioritizationTest() {
       return false;
     }
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     console.info('Exit createCameraSessionInstance');
 
@@ -212,7 +212,7 @@ export default function cameraVideoQualityPrioritizationTest() {
   }
 
   let releaseCameraSessionInstance = async () => {
-    await mCameraSession.release();
+    await mCameraSession!.release();
   }
 
   let createInput = async (idx: int): Promise<boolean> => {
@@ -223,14 +223,14 @@ export default function cameraVideoQualityPrioritizationTest() {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[idx.toInt()]);
 
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
     }
 
-    await mCameraInput.open();
+    await mCameraInput!.open();
 
     await Utils.msSleep(100);
 
@@ -245,7 +245,7 @@ export default function cameraVideoQualityPrioritizationTest() {
     console.info('Enter releaseInput');
 
     if (mCameraInput != undefined) {
-      await mCameraInput.close();
+      await mCameraInput!.close();
     }
 
     console.info('Exit releaseInput');
@@ -256,13 +256,13 @@ export default function cameraVideoQualityPrioritizationTest() {
   let createOutput = (idx: int) => {
     console.info('Enter createOutput');
 
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[0], cameraObj.SceneMode.NORMAL_VIDEO);
+    let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray![idx.toInt()], cameraObj.SceneMode.NORMAL_VIDEO);
 
     if (cameraOutputCap != undefined) {
       if (cameraOutputCap.previewProfiles != null) {
         console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
         for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
-          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+          mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
           if (mPreviewOutput != undefined) {
             break;
           }
@@ -279,7 +279,7 @@ export default function cameraVideoQualityPrioritizationTest() {
         console.info(TAG + "cameraOutputCap.photoProfiles.length: " + cameraOutputCap.photoProfiles.length);
 
         for (let i = 0; i < cameraOutputCap.photoProfiles.length; i++) {
-          mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
+          mPhotoOutput = mCameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
           if (mPhotoOutput != undefined) {
             break;
           }
@@ -324,11 +324,11 @@ export default function cameraVideoQualityPrioritizationTest() {
     console.info('Enter releaseOutput');
 
     if (mPreviewOutput != undefined) {
-      await mPreviewOutput.release();
+      await mPreviewOutput!.release();
     }
 
     if (mPhotoOutput != undefined) {
-      await mPhotoOutput.release();
+      await mPhotoOutput!.release();
     }
     /*
     if (!isEmpty(mVideoOutput)) {
@@ -351,17 +351,17 @@ export default function cameraVideoQualityPrioritizationTest() {
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to addInput");
-      mCameraSession.addInput(mCameraInput);
+      mCameraSession!.addInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to addOutput mPreviewOutput");
-      mCameraSession.addOutput(mPreviewOutput);
+      mCameraSession!.addOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to addOutput mPhotoOutput");
-      mCameraSession.addOutput(mPhotoOutput);
+      mCameraSession!.addOutput(mPhotoOutput!);
     }
     /*
     if (!isEmpty(mVideoOutput)) {
@@ -371,7 +371,7 @@ export default function cameraVideoQualityPrioritizationTest() {
     */
     await Utils.msSleep(1);
 
-    await mCameraSession.commitConfig();
+    await mCameraSession!.commitConfig();
 
     /*
     await mCameraSession.start(async (err) => {
@@ -393,7 +393,7 @@ export default function cameraVideoQualityPrioritizationTest() {
   let stopCameraSession = async (): Promise<boolean> => {
     console.info(TAG + "Enter stopCameraSession");
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
     /*
     mCameraSession.stop(async (err) => {
         console.info(TAG + "Entering mCameraSession stop callback");
@@ -409,17 +409,17 @@ export default function cameraVideoQualityPrioritizationTest() {
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to removeInput input");
-      mCameraSession.removeInput(mCameraInput);
+      mCameraSession!.removeInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPreviewOutput");
-      mCameraSession.removeOutput(mPreviewOutput);
+      mCameraSession!.removeOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPhotoOutput");
-      mCameraSession.removeOutput(mPhotoOutput);
+      mCameraSession!.removeOutput(mPhotoOutput!);
     }
     /*
     if (!isEmpty(mVideoOutput)) {
@@ -437,7 +437,7 @@ export default function cameraVideoQualityPrioritizationTest() {
 
   describe('CameraVideoQualityPrioritizationTest', () => {
     console.info(TAG + '----------CameraVideoQualityPrioritizationTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -458,7 +458,7 @@ export default function cameraVideoQualityPrioritizationTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);
@@ -489,8 +489,8 @@ export default function cameraVideoQualityPrioritizationTest() {
 
           await startCameraSession(i);
           try {
-            mCameraSession.setQualityPrioritization(cameraObj.QualityPrioritization.HIGH_QUALITY);
-          } catch (err: BusinessError) {
+            mCameraSession!.setQualityPrioritization(cameraObj.QualityPrioritization.HIGH_QUALITY);
+          } catch (err) {
             console.info(TAG +
               `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0100 error: ${err}, ${err.code}, ${err.message}`);
             expect().assertFail();
@@ -540,8 +540,8 @@ export default function cameraVideoQualityPrioritizationTest() {
 
           await startCameraSession(i);
           try {
-            mCameraSession.setQualityPrioritization(cameraObj.QualityPrioritization.POWER_BALANCE);
-          } catch (err: BusinessError) {
+            mCameraSession!.setQualityPrioritization(cameraObj.QualityPrioritization.POWER_BALANCE);
+          } catch (err) {
             console.info(TAG +
               `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0400 error: ${err}, ${err.code}, ${err.message}`);
             expect().assertFail();

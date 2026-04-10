@@ -64,7 +64,6 @@ export default function GraphicTextParagraphBuilder() {
           let paragraph = paragraphBuilder.build();
           expect(paragraph !== undefined).assertTrue()
           hilog.info(domain, tag, 'Succeed in fontCollection.loadFontSync.');
-          expect(true).assertTrue();
           done()
         } catch (err) {
           hilog.error(domain, tag, `Failed in fontCollection.loadFontSync. Cause:${JSON.stringify(err)}`);

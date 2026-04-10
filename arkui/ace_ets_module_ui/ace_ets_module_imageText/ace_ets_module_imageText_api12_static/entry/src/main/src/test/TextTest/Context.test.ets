@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Context() {
   describe('Context', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Context beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

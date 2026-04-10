@@ -17,6 +17,7 @@ import MediaTestBase from './MediaTestBase';
 import media from '@ohos.multimedia.media'
 import { setSource } from './AVPlayerTestBase';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 const VIDEO_SOURCE = 'H264_AAC_AAC_multiAudio.mp4';
 const PLAY_TIME = 3000;
@@ -419,6 +420,126 @@ export default function AVPlayerSelectTrackTest() {
       } catch (err) {
         console.error(`case SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0300 errMessage is ${err.message}`);
         console.info('case SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0300 error code is' + err.code)
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0400
+     * @tc.desc   test change default audio track
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      await media.createAVPlayer().then((video) => {
+        if (typeof (video) != 'undefined') {
+          console.info('case createAVPlayer success');
+          avPlayer = video;
+        } else {
+          console.error('case createAVPlayer failed');
+          expect().assertFail();
+          done();
+        }
+      }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+
+      await avPlayer.selectTrack(null, media.SwitchMode.SMOOTH).then(() => {
+        console.info('selectTrack success')
+      }).catch((error: BusinessError) => {
+        console.error('Failed to selectTrack null, error:${error}');
+        done();
+      })
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0500
+     * @tc.desc   test change default audio track
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      await media.createAVPlayer().then((video) => {
+        if (typeof (video) != 'undefined') {
+          console.info('case createAVPlayer success');
+          avPlayer = video;
+        } else {
+          console.error('case createAVPlayer failed');
+          expect().assertFail();
+          done();
+        }
+      }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+
+      await avPlayer.selectTrack(undefined, media.SwitchMode.SMOOTH).then(() => {
+        console.info('selectTrack success')
+      }).catch((error: BusinessError) => {
+        console.error('Failed to selectTrack undefined, error:${error}');
+        done();
+      })
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0600
+     * @tc.desc   test change default audio track
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      await media.createAVPlayer().then((video) => {
+        if (typeof (video) != 'undefined') {
+          console.info('case createAVPlayer success');
+          avPlayer = video;
+        } else {
+          console.error('case createAVPlayer failed');
+          expect().assertFail();
+          done();
+        }
+      }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+      try {
+        avPlayer.on('error', async (err) => {
+          console.error(`case avPlayer.deselectTrack error called, errMessage is ${err.message}`);
+          console.info('avPlayer.deselectTrack 401 error code is' + err.code)
+          expect(err.code).assertEqual(401)
+          avPlayer.off('error')
+        });
+        avPlayer.deselectTrack(null);
+      } catch (err) {
+        console.error(`case SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0600 errMessage is ${err.message}`);
+        console.info('case SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0600 error code is' + err.code)
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0700
+     * @tc.desc   test change default audio track
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      await media.createAVPlayer().then((video) => {
+        if (typeof (video) != 'undefined') {
+          console.info('case createAVPlayer success');
+          avPlayer = video;
+        } else {
+          console.error('case createAVPlayer failed');
+          expect().assertFail();
+          done();
+        }
+      }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+      try {
+        avPlayer.on('error', async (err) => {
+          console.error(`case avPlayer.deselectTrack error called, errMessage is ${err.message}`);
+          console.info('avPlayer.deselectTrack 401 error code is' + err.code)
+          expect(err.code).assertEqual(401)
+          avPlayer.off('error')
+        });
+        avPlayer.deselectTrack(undefined);
+      } catch (err) {
+        console.error(`case SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0700 errMessage is ${err.message}`);
+        console.info('case SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0700 error code is' + err.code)
       }
       done();
     });

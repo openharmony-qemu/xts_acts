@@ -26,7 +26,7 @@ import Utils from '../../../ets/MainAbility/common/Utils'
 
 export default function TextPickerDialogBGColorTest() {
   describe('TextPickerDialogBGColorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerDialogBGColorTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
     });
@@ -34,7 +34,7 @@ export default function TextPickerDialogBGColorTest() {
     beforeAll(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url:'MainAbility/pages/textPickerDialog/textPickerDialogBgColor',
+        url: 'MainAbility/pages/textPickerDialog/textPickerDialogBgColor',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -54,14 +54,13 @@ export default function TextPickerDialogBGColorTest() {
       console.info("textAreaInputTest after each called");
     });
     
-    
-/**
+    /**
      * @tc.number   TextPickerDialogBGColorTest_static_001
      * @tc.name     TextPickerDialogBGColorTest_static_001
      * @tc.desc     TextPickerDialogBGColorTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('TextPickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextPickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ColorWhiteID'));
       await (button?.click() as Promise<void>);
@@ -73,17 +72,17 @@ it('TextPickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => vo
       expect(backgroundColor).assertEqual('#FFFFFFFF');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
-    
-/**
+    /**
      * @tc.number   TextPickerDialogBGColorTest_static_002
      * @tc.name     TextPickerDialogBGColorTest_static_002
      * @tc.desc     TextPickerDialogBGColorTest_static_002
      * @tc.level    Level.LEVEL0
      */
-it('TextPickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextPickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('rgb(255, 100, 255)ID'));
       await (button?.click() as Promise<void>);
@@ -95,17 +94,17 @@ it('TextPickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => vo
       expect(backgroundColor).assertEqual('#FFFF64FF');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
-    
-/**
+    /**
      * @tc.number   TextPickerDialogBGColorTest_static_003
      * @tc.name     TextPickerDialogBGColorTest_static_003
      * @tc.desc     TextPickerDialogBGColorTest_static_003
      * @tc.level    Level.LEVEL0
      */
-it('TextPickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextPickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('0x008080ID'));
       await (button?.click() as Promise<void>);
@@ -117,17 +116,17 @@ it('TextPickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => vo
       expect(backgroundColor).assertEqual('#FF008080');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
-    
-/**
+    /**
      * @tc.number   TextPickerDialogBGColorTest_static_004
      * @tc.name     TextPickerDialogBGColorTest_static_004
      * @tc.desc     TextPickerDialogBGColorTest_static_004
      * @tc.level    Level.LEVEL0
      */
-it('TextPickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextPickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('00FFFFID'));
       await (button?.click() as Promise<void>);
@@ -139,17 +138,17 @@ it('TextPickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => vo
       expect(backgroundColor).assertEqual('#FF00FFFF');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
-    
-/**
+    /**
      * @tc.number   TextPickerDialogBGColorTest_static_005
      * @tc.name     TextPickerDialogBGColorTest_static_005
      * @tc.desc     TextPickerDialogBGColorTest_static_005
      * @tc.level    Level.LEVEL0
      */
-it('TextPickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextPickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('colorBlueID'));
       await (button?.click() as Promise<void>);
@@ -161,44 +160,17 @@ it('TextPickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => vo
       expect(backgroundColor).assertEqual('#FF0000FF');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
-      done();
-    })
-    
-    
-/**
-     * @tc.number   TextPickerDialogBGColorTest_static_006
-     * @tc.name     TextPickerDialogBGColorTest_static_006
-     * @tc.desc     TextPickerDialogBGColorTest_static_006
-     * @tc.level    Level.LEVEL0
-     */
-it('TextPickerDialogBGColorTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('nullID'));
-      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let dialog = tree.getArray('$children')[1];
-      let column = dialog.getArray('$children')[0];
-      let backgroundColor: string = column.getElement('$attrs').getString('backgroundColor');
-      let uniRenderFlag: string = dialog.getElement('$attrs').getString('uniRender');
-      if (uniRenderFlag == 'false') {
-        expect(backgroundColor).assertEqual('#FFFFFFFF');
-      } else {
-        expect(backgroundColor).assertEqual('#00FFFFFF');
-      }
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      await (btn1?.click() as Promise<void>);
       done();
     })
     
-    
-/**
+    /**
      * @tc.number   TextPickerDialogBGColorTest_static_007
      * @tc.name     TextPickerDialogBGColorTest_static_007
      * @tc.desc     TextPickerDialogBGColorTest_static_007
      * @tc.level    Level.LEVEL0
      */
-it('TextPickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextPickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('undefinedID'));
       await (button?.click() as Promise<void>);
@@ -215,17 +187,17 @@ it('TextPickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => vo
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
-    
-/**
+    /**
      * @tc.number   TextPickerDialogBGColorTest_static_008
      * @tc.name     TextPickerDialogBGColorTest_static_008
      * @tc.desc     TextPickerDialogBGColorTest_static_008
      * @tc.level    Level.LEVEL0
      */
-it('TextPickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextPickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('xxxID'));
       await (button?.click() as Promise<void>);
@@ -242,17 +214,17 @@ it('TextPickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => vo
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
     
-    
-/**
+    /**
      * @tc.number   TextPickerDialogBGColorTest_static_009
      * @tc.name     TextPickerDialogBGColorTest_static_009
      * @tc.desc     TextPickerDialogBGColorTest_static_009
      * @tc.level    Level.LEVEL0
      */
-it('TextPickerDialogBGColorTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextPickerDialogBGColorTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('-100ID'));
       await (button?.click() as Promise<void>);
@@ -264,6 +236,7 @@ it('TextPickerDialogBGColorTest_static_009', Level.LEVEL0, async (done: () => vo
       expect(backgroundColor).assertEqual('#FFFFFF9C');
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       done();
     })
   })

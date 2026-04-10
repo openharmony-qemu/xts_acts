@@ -62,14 +62,94 @@ export default function ActsAceWebViewGetSecurityLevel() {
      */
     it('testWebViewGetSecurityLevelNoneStatic',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-      emitKey = 'emitWebViewGetSecurityLevel01'
-      Utils.emitEvent(emitKey, 10);
-      await Utils.msSleep(2000)
-      Utils.registerEvent('testWebViewGetSecurityLevelNone', 'success', 8008, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('webViewGetSecurityLevelButton', 10, '');
-      await Utils.msSleep(6000)
-      done();
-    })
+        emitKey = 'emitWebViewGetSecurityLevel01'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000)
+        Utils.registerEvent('testWebViewGetSecurityLevelNone', 'success', 8008, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webViewGetSecurityLevelButton', 10, '');
+        await Utils.msSleep(6000)
+        done();
+      })
+
+    /**
+     * @tc.name   testWebViewGetSecurityLevelNoneStatic02
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0002
+     * @tc.desc   test getSecurityLevel 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebViewGetSecurityLevelNoneStatic02',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewGetSecurityLevel02'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000)
+        Utils.registerEvent('testWebViewGetSecurityLevel02', 1, 80081, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webViewGetSecurityLevelButton', 10, '');
+        await Utils.msSleep(6000)
+        done();
+      })
+
+    /**
+     * @tc.name   testWebViewGetSecurityLevelNoneStatic03
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0003
+     * @tc.desc   test getSecurityLevel 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebViewGetSecurityLevelNoneStatic03',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewGetSecurityLevel03'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000)
+        Utils.registerEvent('testWebViewGetSecurityLevel03', 2, 80082, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webViewGetSecurityLevelButton', 10, '');
+        await Utils.msSleep(6000)
+        done();
+      })
+
+    /**
+     * @tc.name   testWebViewGetSecurityLevelNoneStatic04
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0004
+     * @tc.desc   test getSecurityLevel 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebViewGetSecurityLevelNoneStatic04',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewGetSecurityLevel04'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000)
+        Utils.registerEvent('testWebViewGetSecurityLevel04', 3, 80083, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webViewGetSecurityLevelButton', 10, '');
+        await Utils.msSleep(6000)
+        done();
+      })
+
+    /**
+     * @tc.name   testWebViewGetSecurityLevelNoneStatic05
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0005
+     * @tc.desc   test getSecurityLevel 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebViewGetSecurityLevelNoneStatic05',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewGetSecurityLevel05'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000)
+        Utils.registerEvent('testWebViewGetSecurityLevel05', "17100001", 80084, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webViewGetSecurityLevelButton', 10, '');
+        await Utils.msSleep(6000)
+        done();
+      })
   })
 }

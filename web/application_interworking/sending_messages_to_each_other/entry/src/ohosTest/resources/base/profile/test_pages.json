@@ -4,6 +4,8 @@
     "testability/pages/webMessageExtErrorCode",
     "testability/pages/WebMessagePortIsExtentionTypeTest",
     "testability/pages/WebViewEnumAndFontLibrary",
-    "testability/pages/WebViewControllerPart3"
+    "testability/pages/WebViewControllerPart3",
+	"testability/pages/WebMessageExtSetArray",
+    "testability/pages/runJavaScriptErrorCode"
   ]
 }

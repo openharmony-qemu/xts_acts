@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ export default function fileIORandomAccessFileWrite() {
         expect(bytesWritten == length).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_000 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -73,7 +73,7 @@ export default function fileIORandomAccessFileWrite() {
         expect(bytesWritten == length).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_001 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -99,7 +99,7 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.close();
         fs.closeSync(file.fd);
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_002 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -124,7 +124,7 @@ export default function fileIORandomAccessFileWrite() {
         expect(bytesWritten == 10).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_003 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -157,7 +157,7 @@ export default function fileIORandomAccessFileWrite() {
         expect(readLength == len).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_004 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -182,7 +182,7 @@ export default function fileIORandomAccessFileWrite() {
         expect(bytesWritten == length).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_005 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -199,13 +199,14 @@ export default function fileIORandomAccessFileWrite() {
     it('fileIO_randomaccessfile_write_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_006');
       let randomaccessfile = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+      let length = 4095;
 
       try {
-        randomaccessfile.writeSync(new ArrayBuffer(4096), { offset: 5, length: 4095 });
-        expect(true).assertTrue();
+        let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(4096), { offset: 5, length: 4095 });
+        expect(bytesWritten == length).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_006 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -225,11 +226,11 @@ export default function fileIORandomAccessFileWrite() {
 
       try {
         let length = 4096;
-        randomaccessfile.writeSync(new ArrayBuffer(length), { offset: length + 1 });
-        expect(true).assertTrue();
+        let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(length), { offset: length + 1 });
+        expect(bytesWritten == length).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_007 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -251,7 +252,8 @@ export default function fileIORandomAccessFileWrite() {
       try {
         randomaccessfile.writeSync(new ArrayBuffer(4096), { offset: -1 });
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_008 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.closeSync(file.fd);
@@ -276,7 +278,8 @@ export default function fileIORandomAccessFileWrite() {
         let length = 100;
         randomaccessfile.writeSync(new ArrayBuffer(length), { offset: 1, length: -1 });
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_009 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -300,7 +303,8 @@ export default function fileIORandomAccessFileWrite() {
         let length = 4096;
         randomaccessfile.writeSync(new ArrayBuffer(length), { length: length + 1 });
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_010 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -333,7 +337,7 @@ export default function fileIORandomAccessFileWrite() {
           });
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_000 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -361,7 +365,7 @@ export default function fileIORandomAccessFileWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_001 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -386,7 +390,7 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_002 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -411,7 +415,7 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_003 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -445,7 +449,7 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_004 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -471,7 +475,7 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_005 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -492,11 +496,11 @@ export default function fileIORandomAccessFileWrite() {
       try {
         let length = 4096;
         await randomaccessfile.write(new ArrayBuffer(length), { offset: 5, length: 4095 });
-        expect(true).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_006 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -525,7 +529,7 @@ export default function fileIORandomAccessFileWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_007 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -547,7 +551,8 @@ export default function fileIORandomAccessFileWrite() {
       try {
         await randomaccessfile.write(new ArrayBuffer(4096), { offset: -1 });
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_008 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.closeSync(file.fd);
@@ -573,7 +578,8 @@ export default function fileIORandomAccessFileWrite() {
         let length = 100;
         await randomaccessfile.write(new ArrayBuffer(length), { offset: 1, length: -1 });
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_009 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -598,7 +604,8 @@ export default function fileIORandomAccessFileWrite() {
         let length = 4096;
         await randomaccessfile.write(new ArrayBuffer(length), { length: length + 1 });
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_010 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -610,7 +617,7 @@ export default function fileIORandomAccessFileWrite() {
     /**
      * @tc.name   fileIO_randomaccessfile_write_async_static_011
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_1100
-     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously and checkout filePointer.
+     * @tc.desc   Test write() interface. return in callback mode. When offset is 1. Test write data asynchronously and checkout filePointer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -635,8 +642,159 @@ export default function fileIORandomAccessFileWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_011 has failed for ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_012
+     * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_1200
+     * @tc.desc   Test write() interface. return in promise mode. When buffer is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_012');
+
+      try {
+        let randomaccessfile = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let bytesWritten = await randomaccessfile.write("");
+        expect(bytesWritten == 0).assertTrue();
+        randomaccessfile.close();
+        fs.unlinkSync(fpath);
+        done();
+      } catch(err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_012 has failed for ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_013
+     * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_1300
+     * @tc.desc   Test write() interface. return in promise mode. When options is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_013');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let randomaccessfile = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let length = 20;
+        let bytesWritten = await randomaccessfile.write(new ArrayBuffer(length), undefined);
+        expect(bytesWritten == length).assertTrue();
+        randomaccessfile.close();
+        fs.unlinkSync(fpath);
+        done();
+      } catch(err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_013 has failed for ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_014
+     * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_1400
+     * @tc.desc   Test write() interface. return in callback mode. When buffer is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_014');
+
+      try {
+        let randomaccessfile = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        randomaccessfile.write("", (err: BusinessError | null, bytesWritten: long | undefined) => {
+          expect(bytesWritten == 0).assertTrue();
+          randomaccessfile.close();
+          fs.unlinkSync(fpath);
+          done();
+        });
+      } catch(err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_014 has failed for ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_015
+     * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_1500
+     * @tc.desc   Test write() interface. return in callback mode. When buffer is empty string with options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_015');
+
+      try {
+        let randomaccessfile = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let options: WriteOptions = {
+          offset: 0
+        };
+        randomaccessfile.write("", options, (err: BusinessError | null, bytesWritten: long | undefined) => {
+          expect(bytesWritten == 0).assertTrue();
+          randomaccessfile.close();
+          fs.unlinkSync(fpath);
+          done();
+        });
+      } catch(err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_015 has failed for ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_011
+     * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_1100
+     * @tc.desc   Test writeSync() interface. When buffer is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_sync_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_011');
+
+      try {
+        let randomaccessfile = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let bytesWritten = randomaccessfile.writeSync("");
+        expect(bytesWritten == 0).assertTrue();
+        randomaccessfile.close();
+        fs.unlinkSync(fpath);
+      } catch(err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_011 has failed for ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_012
+     * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_1200
+     * @tc.desc   Test writeSync() interface. When options is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_sync_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_012');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let randomaccessfile = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let length = 20;
+        let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(length), undefined);
+        expect(bytesWritten == length).assertTrue();
+        randomaccessfile.close();
+        fs.unlinkSync(fpath);
+      } catch(err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_012 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
     });

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,7 +23,7 @@ async function pbkdf2NormalProcess(algName: string, pbkdf2Spec: crypto.PBKDF2Spe
     console.log(`[Promise] dataBlob is: ${dataBlob.data}`);
     console.log(`[Promise] dataBlob is: ${uInt8ArrayToShowStr(dataBlob.data)}`);
     return dataBlob;
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.log(`[Promise] pbkdf2NormalProcess catch error: ${err}`);
     throw err as Error;
   }

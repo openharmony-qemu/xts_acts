@@ -179,7 +179,6 @@ export default function stateManagementGetSharedJsunit() {
 
       } catch (err) {
         console.info("test_font_registerFont_0001  err : " + JSON.stringify(err));
-        expect(true).assertTrue();
 
       }
     });

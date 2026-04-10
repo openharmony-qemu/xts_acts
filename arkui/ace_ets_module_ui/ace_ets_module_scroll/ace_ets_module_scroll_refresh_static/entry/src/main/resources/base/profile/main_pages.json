@@ -3,6 +3,8 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/index/second",
     "MainAbility/pages/Refresh/refresh",
-    "MainAbility/pages/Refresh/refresh_modifier"
+    "MainAbility/pages/Refresh/refresh_modifier",
+    "MainAbility/pages/Refresh/Refresh",
+    "MainAbility/pages/refreshAttribute/refreshAttribute"
   ]
 }

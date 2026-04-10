@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Row_Space_String() {
   describe('Row_Space_String', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Row_Space_String beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

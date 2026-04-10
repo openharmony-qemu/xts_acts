@@ -64,7 +64,7 @@ export default function webViewControllerDownloadTest() {
           expect().message('======> WLAN Network error').assertFail();
           done()
         }
-        if (data.chload >= 800 || data.rssi <= -80) {
+        if (data.chload >= 900 || data.rssi <= -80) {
           expect().message('======> WLAN Network error').assertFail();
           done();
         } else if (data.chload >= 500) {

@@ -1,6 +1,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { ArkTSUtils, collections, lang } from '@kit.ArkTS';
+import { sleep } from '../../testability/TestUtils';
 
 @Sendable
 export class ImplISendableClass implements lang.ISendable {
@@ -17,10 +18,9 @@ export default function ArrayTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
+    beforeEach(async () => {
+      // Add delay to ensure resources from the previous test case are released
+      await sleep(20);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -6148,5 +6148,250 @@ export default function ArrayTest() {
       }
       done()
     });
+
+    /**
+     * @tc.name   testConcatArrayMissing0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCATARRAY_MISSING_0100
+     * @tc.desc   Test ConcatArray slice() with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testConcatArrayMissing0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let concatArray : collections.ConcatArray<number> = new collections.Array<number>(1, 2, 3, 4, 5);
+      let slicedArray = concatArray.slice(2, undefined);
+      expect(slicedArray.toString()).assertEqual('3,4,5');
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_0100
+     * @tc.desc   Test Array.from() with empty arrayLike and mapFn.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let arrayLike: ArrayLike<number> = [];
+      let array: collections.Array<number> = collections.Array.from<number>(arrayLike, (value: number, index: number) => value + index);
+      expect(array.length).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_0200
+     * @tc.desc   Test Array.from() with empty arrayLike and string concatenation mapFn.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let arrayLike: ArrayLike<number> = [];
+      let array: collections.Array<string> = collections.Array.from<number, string>(arrayLike, (value: number, index: number) => value + "." + index);
+      expect(array.length).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_0300
+     * @tc.desc   Test Array slice() with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array = new collections.Array(1, 2, 3, 4, 5);
+      const result = array.slice(4, undefined);
+      expect(result.toString()).assertEqual('5');
+      expect(result[0]).assertEqual(5);
+      done()
+    })
+
+    /**
+     * @tc.name   testArrayMissing0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_0400
+     * @tc.desc   Test empty Array slice() with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array = new collections.Array<number>();
+      const result = array.slice(4, undefined);
+      expect(result.length).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_0500
+     * @tc.desc   Test Array indexOf() with undefined fromIndex parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array = new collections.Array(1, 2, 3, 4, 5);
+      const result = array.indexOf(3, undefined);
+      expect(result).assertEqual(2);
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_0600
+     * @tc.desc   Test Array includes() with undefined fromIndex parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array = new collections.Array(1, 2, 3, 4, 5);
+      const result = array.includes(3, undefined);
+      expect(result).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_0700
+     * @tc.desc   Test Array fill() with undefined start parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array = new collections.Array(1, 2, 3, 4, 5);
+      let result = array.fill(9, undefined, 3);
+      expect(array[1]).assertEqual(9);
+      expect(result.toString()).assertEqual('9,9,9,4,5');
+      array = new collections.Array();
+      result = array.fill(9, undefined, 3);
+      expect(result.length).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_0800
+     * @tc.desc   Test Array fill() with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array = new collections.Array(1, 2, 3, 4, 5);
+      array.fill(9, 1, undefined);
+      expect(array.toString()).assertEqual('1,9,9,9,9');
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_0900
+     * @tc.desc   Test Array fill() with undefined start and end parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array = new collections.Array(1, 2, 3, 4, 5);
+      array.fill(9, undefined, undefined);
+      expect(array.toString()).assertEqual('9,9,9,9,9');
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_1000
+     * @tc.desc   Test Array.isArray() with null and undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      expect(collections.Array.isArray(null)).assertEqual(false);
+      expect(collections.Array.isArray(undefined)).assertEqual(false);
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_1100
+     * @tc.desc   Test Array copyWithin() with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array = new collections.Array(1, 2, 3, 4, 5);
+      array.copyWithin(0, 3, undefined);
+      expect(array.toString()).assertEqual('4,5,3,4,5');
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_1200
+     * @tc.desc   Test Array lastIndexOf() with undefined fromIndex parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array = new collections.Array(1, 2, 3, 4, 5);
+      const result = array.lastIndexOf(3, undefined);
+      expect(result).assertEqual(-1);
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_1300
+     * @tc.desc   Test ArrayBuffer slice() with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let arrayBuffer: collections.ArrayBuffer = new collections.ArrayBuffer(5);
+      let slicedBuffer: collections.ArrayBuffer = arrayBuffer.slice(1,undefined);
+      console.info("slicedBuffer Length: " + slicedBuffer.byteLength);
+      expect(slicedBuffer.byteLength).assertEqual(4);
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_1400
+     * @tc.desc   Test empty Array concat().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array = new collections.Array<number>();
+      let concatArray = array.concat();
+      expect(concatArray.length).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testArrayMissing0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_MISSING_1500
+     * @tc.desc   Test empty Array copyWithin() with undefined end parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayMissing0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let array = new collections.Array<number>();
+      array.copyWithin(0, 3, undefined);
+      expect(array.toString()).assertEqual('');
+      done();
+    })
   })
 }

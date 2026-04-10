@@ -18,15 +18,11 @@ import btBaseProfileTest from './BtBaseProfile.test';
 import btConnectionTest from './BtConnection.test';
 import parameter from '@ohos.systemparameter';
 import btHidTest from './BtHid.test';
-import fusionAgentTest from './FusionpartnerAgent.test';
 
-let info = parameter.getSync("const.SystemCapability.Communication.Bluetooth.Core", "false");
 export default function testsuite() {
-    if (info != "false") {
-        btBaseProfileTest();
-        btConnectionTest();
-        btA2dpTest();
-        btHidTest();
- 	    fusionAgentTest();
-    }
+    btBaseProfileTest();
+    btConnectionTest();
+    btA2dpTest();
+    btHidTest();
+
 }

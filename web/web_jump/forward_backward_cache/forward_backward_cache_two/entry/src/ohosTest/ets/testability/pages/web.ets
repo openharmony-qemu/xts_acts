@@ -76,13 +76,13 @@ struct Index {
   private async execTestPre() {
     this.isPageEnd = -1;
     this.controller.loadUrl(Constants.EXAMPLE_URL);
-    await waitForExist(() => this.isPageEnd, this.str, 0);
+    await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
 
     this.controller.clearHistory();
 
     this.isPageEnd = -1;
     this.controller.loadUrl($rawfile('index.html'));
-    await waitForExist(() => this.isPageEnd, this.str, 0);
+    await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
 
     let title = this.controller.getTitle();
     console.info('title:' + title);
@@ -93,7 +93,7 @@ struct Index {
       'text/html',
       'UTF-8',
     );
-    await waitForExist(() => this.isPageEnd, this.str, 0);
+    await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
     let title1 = this.controller.getTitle();
     console.info('title1:' + title1);
   }
@@ -102,8 +102,8 @@ struct Index {
     Column() {
       Row() {
         Button('web click').key('webcomponent').onClick(async () => {
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
+          await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
           this.isReceive = -1;
           console.info('key==>' + this.str);
           switch (this.str) {
@@ -113,7 +113,7 @@ struct Index {
 
                 this.isPageEnd = -1;
                 this.controller.backward();
-                await waitForExist(() => this.isPageEnd, this.str, 0);
+                await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
 
                 let title2 = this.controller.getTitle();
                 Utils.emitEvent(title2, 135310);
@@ -128,11 +128,11 @@ struct Index {
 
                 this.isPageEnd = -1;
                 this.controller.backward();
-                await waitForExist(() => this.isPageEnd, this.str, 0);
+                await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
 
                 this.isPageEnd = -1;
                 this.controller.forward();
-                await waitForExist(() => this.isPageEnd, this.str, 0);
+                await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
 
                 let title3 = this.controller.getTitle();
                 Utils.emitEvent(title3, 135320);
@@ -209,6 +209,24 @@ struct Index {
                 Utils.emitEvent(item.title, 135380);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'emitAccessStepNull': {
+              try {
+                this.controller.accessStep(null);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 26022701);
+              }
+              break;
+            }
+            case 'emitAccessStepUndefined': {
+              try {
+                this.controller.accessStep(undefined);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 26022702);
               }
               break;
             }

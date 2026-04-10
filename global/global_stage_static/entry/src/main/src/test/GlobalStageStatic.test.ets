@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ export default function globalStageTest() {
   describe("globalStageTest", (): void => {
     hilog.info(0x0000, 'testTag', '%{public}s', '*************start globalStageTest*************');
     let resContext: Context;
-    let res: resourceManager.ResourceManager;
+    let res: resourceManager.ResourceManager | undefined;
 
     beforeAll(async () => {
       console.info("beforeAll case");
@@ -71,13 +71,13 @@ export default function globalStageTest() {
     it("getMediaContent_stage_test_static_0100", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getStringArrayValue_callback_res_9001001 start');
       try {
-        res.getMediaContent(0x01234567, (err: BusinessError<void> | null, data: Uint8Array | undefined): void => {
+        res!.getMediaContent(0x01234567, (err: BusinessError<void> | null, data: Uint8Array | undefined): void => {
           hilog.info(domain, tag, 'getMediaContent callback 9001001 data ' + JSON.stringify(data));
           hilog.info(domain, tag, 'getMediaContent callback 9001001 err ' + JSON.stringify(err));
           expect(err?.code).assertEqual(9001001);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContent callback 9001001 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -96,13 +96,13 @@ export default function globalStageTest() {
     it("getMediaContent_stage_test_static_0200", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getMediaContent_callback_9001002 start');
       try {
-        res.getMediaContent(0x01000014, (err: BusinessError<void> | null, data: Uint8Array | undefined): void => {
+        res!.getMediaContent(0x01000014, (err: BusinessError<void> | null, data: Uint8Array | undefined): void => {
           hilog.info(domain, tag, 'getMediaContent callback 9001002 data ' + JSON.stringify(data));
           hilog.info(domain, tag, 'getMediaContent callback 9001002 err ' + JSON.stringify(err));
           expect(err?.code).assertEqual(9001002);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContent callback 9001002 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -121,13 +121,13 @@ export default function globalStageTest() {
     it("getMediaContent_stage_test_static_0300", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getMediaContent_callback_9001002 start');
       try {
-        res.getMediaContent(0x01000014, (err: BusinessError<void> | null, data: Uint8Array | undefined): void => {
+        res!.getMediaContent(0x01000014, (err: BusinessError<void> | null, data: Uint8Array | undefined): void => {
           hilog.info(domain, tag, 'getMediaContent callback 9001002 data ' + JSON.stringify(data));
           hilog.info(domain, tag, 'getMediaContent callback 9001002 err ' + JSON.stringify(err));
           expect(err?.code).assertEqual(9001002);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContent callback 9001002 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -144,7 +144,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContent(0x01234567).then(() => {
+      res!.getMediaContent(0x01234567).then(() => {
         expect().assertFail();
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
@@ -165,7 +165,7 @@ export default function globalStageTest() {
      */
     it('getRawFileContentSync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let value: Uint8Array =
-        res.getRawFileContentSync('rawfiletest.xml');
+        res!.getRawFileContentSync('rawfiletest.xml');
       hilog.info(0x0000, 'testTag', '%{public}s', 'getRawFileContentSync_stagetest_static_0100 1' + value);
       expect(value !== null).assertTrue();
       done();
@@ -180,7 +180,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('getMediaByNameSync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: Uint8Array = res.getMediaByNameSync('app_icon');
+      let value: Uint8Array = res!.getMediaByNameSync('app_icon');
       console.log('getMediaByNameSync_stagetest_static_0100 1' + value);
       expect(value !== null).assertTrue();
       done();
@@ -195,7 +195,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('getConfigurationSync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: resourceManager.Configuration = res.getConfigurationSync();
+      let value: resourceManager.Configuration = res!.getConfigurationSync();
       console.log('getConfigurationSync_stagetest_static_0100 1' + JSON.stringify(value));
       expect(value !== null).assertTrue();
       done();
@@ -211,8 +211,9 @@ export default function globalStageTest() {
      */
     it('getMediaByNameSync_stagetest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try{
-        res.getMediaByNameSync('invalidName', 0);
-      } catch (error: BusinessError) {
+        res!.getMediaByNameSync('invalidName', 0);
+      } catch (error) {
+        error = error as BusinessError;
         console.log('getMediaByNameSync_stagetest_static_0200 error code:' + error.code);
         expect(error.code).assertEqual(9001003);
         done();
@@ -228,7 +229,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('getDeviceCapabilitySync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: resourceManager.DeviceCapability = res.getDeviceCapabilitySync();
+      let value: resourceManager.DeviceCapability = res!.getDeviceCapabilitySync();
       console.log('getDeviceCapabilitySync_stagetest_static_0100 1' + JSON.stringify(value));
       expect(value !== null).assertTrue();
       done();
@@ -243,7 +244,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_GetLocales_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let value: string = res.getLocales().toString();
+      let value: string = res!.getLocales().toString();
       console.log('SUB_GLOBAL_GetLocales_static_0010' + value);
       expect(value).assertEqual("");
       done();
@@ -258,7 +259,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_GOLBAL_REMSGR_isRawDir_static_0010', Level.LEVEL0, async (): Promise<void> => {
-      let value: boolean = res.isRawDir('rawfiletest.xml');
+      let value: boolean = res!.isRawDir('rawfiletest.xml');
       console.log('SUB_GOLBAL_REMSGR_isRawDir_static_0010_value' + value);
       expect(value == false).assertTrue();
     })
@@ -272,7 +273,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_GOLBAL_REMSGR_getOverrideConfiguration_static_0010', Level.LEVEL0, async (): Promise<void> => {
-      let value: resourceManager.Configuration = res.getOverrideConfiguration();
+      let value: resourceManager.Configuration = res!.getOverrideConfiguration();
       console.log('SUB_GOLBAL_REMSGR_getOverrideConfiguration_static_0010_value' + value.mnc);
       expect(value.mnc == 0).assertTrue();
     })
@@ -297,7 +298,7 @@ export default function globalStageTest() {
         screenDensity: resourceManager.ScreenDensity.SCREEN_SDPI
       }
       let value =
-        res.getOverrideResourceManager(completeOverrideConfiguration);
+        res!.getOverrideResourceManager(completeOverrideConfiguration);
       console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0010_value' +
       value.getOverrideConfiguration().mcc);
       expect(value.getOverrideConfiguration().mcc == 460).assertTrue();
@@ -321,7 +322,7 @@ export default function globalStageTest() {
         colorMode: resourceManager.ColorMode.DARK,
         screenDensity: resourceManager.ScreenDensity.SCREEN_SDPI
       }
-      let value = res.getOverrideResourceManager();
+      let value = res!.getOverrideResourceManager();
       console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0010_value-before' +
       value.getOverrideConfiguration().mcc);
       expect(value.getOverrideConfiguration().mcc != 461).assertTrue();
@@ -340,7 +341,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0010', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x0100001b, "format string", 10, "TestTest");
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0010 value_one:' + value_one);
@@ -356,7 +357,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0020', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x0100002a, "format string", 1.234568E+16);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0020 value_one:' + value_one);
@@ -372,7 +373,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0030', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000022, "format string", 10.01);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0030 value_one:' + value_one);
@@ -388,7 +389,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0040', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000015, "format string", 1.234568e-08);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0040 value_one:' + value_one);
@@ -404,7 +405,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0050', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000014, "format string", 12, "测试测试");
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0050 value_one:' + value_one);
@@ -420,7 +421,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0060', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x0100001e, "format string", 12, "TestTest");
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0060 value_one:' + value_one);
@@ -436,7 +437,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0070', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x0100001c, "format string", 12, "TestTest", 20);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0070 value_one:' + value_one);
@@ -452,7 +453,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0080', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000010, "format string", 12, "TestTest", 1.234568E+16);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0080 value_one:' + value_one);
@@ -468,7 +469,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0090', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000020, "format string", 12, "TestTest", 20.01);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0090 value_one:' + value_one);
@@ -484,7 +485,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0100', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000020, "format string", 12, "TestTest", 1.234568e-08);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0100 value_one:' + value_one);
@@ -500,7 +501,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0110', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000012, 12);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0110 value_one:' + value_one);
@@ -516,7 +517,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0120', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000023, "format string", 12, "TestTest", 1.234568e-08);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0120 value_one:' + value_one);
@@ -532,7 +533,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0130', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000021, 12.01);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0130 value_one:' + value_one);
@@ -548,7 +549,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0140', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000016,
         "format string", 10, "测试测试", 98.78);
       hilog.info(0x0000, 'testTag', '%{public}s',
@@ -565,7 +566,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0150', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000013,
         "format string", 1.234568E+16, "TestTest", 1.234568e-08);
       hilog.info(0x0000, 'testTag', '%{public}s',
@@ -582,7 +583,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0160', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x0100001d);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0160 value_one:' + value_one);
@@ -598,7 +599,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0170', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x0100001d);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0170 value_one:' + value_one);
@@ -614,7 +615,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0180', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000011, "format string", 30, "测试测试", 98.78, 1.234568E+16, "TestTest",
         1.234568e-08);
       hilog.info(0x0000, 'testTag', '%{public}s',
@@ -631,7 +632,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0190', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x0100001a, 40);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0190 value_one:' + value_one);
@@ -647,7 +648,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0200', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000024, 40);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0200 value_one:' + value_one);
@@ -663,7 +664,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0210', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one = resMgr.getStringSync(0x01000027, 50, 1.234568E+16, "测试测试", "TestTest", 98.78, 1.234568e-08);
       hilog.info(0x0000, 'testTag', '%{public}s',
         'resourceManager_test_getStringSync_static_0210 value_one:' + value_one);
@@ -679,7 +680,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_static_0220', Level.LEVEL2, () => {
-      let resMgr = res;
+      let resMgr = res!;
       let value_one =
         resMgr.getStringSync(0x01000029, 50, 1.234568E+16, "测试测试", "TestTest", 98.78, 1.234568e-08, 15,
           "format string", 15.01);
@@ -697,10 +698,11 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringSync_static_0230', Level.LEVEL3, () => {
-      let resMgr = res;
+      let resMgr = res!;
       try {
         resMgr.getStringSync(0x0100002a);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s',
           'resourceManager_test_getStringSync_static_0230' + error.code + error.message);
         expect(error.code).assertEqual(9001007);
@@ -716,10 +718,11 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringSync_static_0260', Level.LEVEL3, () => {
-      let resMgr = res;
+      let resMgr = res!;
       try {
         resMgr.getStringSync(0x01000028, "format string", "format", "1.5", "string");
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s',
           'resourceManager_test_getStringSync_static_0260' + error.code + error.message);
         expect(error.code).assertEqual(9001007);
@@ -735,10 +738,11 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringSync_static_0290', Level.LEVEL3, () => {
-      let resMgr = res;
+      let resMgr = res!;
       try {
         resMgr.getStringSync(0x01000027);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s',
           'resourceManager_test_getStringSync_static_0290' + error.code + error.message);
         expect(error.code).assertEqual(9001007);
@@ -754,7 +758,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_GLOBAL_GetSymbol_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: long = res.getSymbol(0x0100003e);
+      let value: long = res!.getSymbol(0x0100003e);
       console.log('SUB_GLOBAL_Getsymbol_static_0010_value' + value);
       expect(value == 983043).assertTrue();
       done();
@@ -769,7 +773,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getSymbol_static_0020', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getSymbol(0x01000042);
+      let value = res!.getSymbol(0x01000042);
       console.log('resourceManager_test_getSymbol_static_0020:' + value);
       expect(value == 983043).assertTrue();
     })
@@ -784,7 +788,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getSymbol_static_0040', Level.LEVEL3, async (): Promise<void> => {
       try {
-        let value = res.getSymbol(0x01234567);
+        let value = res!.getSymbol(0x01234567);
         console.log('resourceManager_test_getSymbol_static_0040:' + value);
       } catch (err) {
         let error = err as BusinessError
@@ -805,9 +809,10 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getSymbol_static_0050', Level.LEVEL3, () => {
       try {
-        let value = res.getSymbol(0x01000002);
+        let value = res!.getSymbol(0x01000002);
         console.log('resourceManager_test_getSymbol_static_0050:' + value);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log('resourceManager_test_getSymbol_static_0050_errorCode' + error.code);
         console.log('resourceManager_test_getSymbol_static_0050_errorMessage' + error.message);
         expect(error.code == 9001002).assertTrue();
@@ -824,9 +829,10 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getSymbol_static_0060', Level.LEVEL3, () => {
       try {
-        let value = res.getSymbol(0x0100003e);
+        let value = res!.getSymbol(0x0100003e);
         console.log('resourceManager_test_getSymbol_static_0060:' + value);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log('resourceManager_test_getSymbol_static_0060' + error.code);
         console.log('resourceManager_test_getSymbol_0060_errorMessage' + error.message);
         expect(error.code == 9001006).assertTrue();
@@ -842,7 +848,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_GLOBAL_GetSymbol_static_0130', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: long = res.getSymbolByName('symbolTest1');
+      let value: long = res!.getSymbolByName('symbolTest1');
       console.log('SUB_GLOBAL_Getsymbol_static_0130' + value);
       expect(value == 983043).assertTrue();
       done();
@@ -857,7 +863,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getSymbol_static_0140', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getSymbolByName('symbolTestReference');
+      let value = res!.getSymbolByName('symbolTestReference');
       console.log('resourceManager_test_getSymbol_static_0140:' + value);
       expect(value == 983043).assertTrue();
     })
@@ -872,9 +878,10 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getSymbol_static_0160', Level.LEVEL3, async (): Promise<void> => {
       try {
-        let value = res.getSymbolByName('invalidName');
+        let value = res!.getSymbolByName('invalidName');
         console.log('resourceManager_test_getSymbol_static_0160:' + value);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('resourceManager_test_getSymbol_static_0160_errorCode' + e.code);
         console.log('resourceManager_test_getSymbol_static_0160_errorMessage' + e.message);
         expect(e.code == 9001003).assertTrue();
@@ -891,9 +898,10 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getSymbol_static_0180', Level.LEVEL3, async (): Promise<void> => {
       try {
-        let value = res.getSymbolByName('symbolTestB');
+        let value = res!.getSymbolByName('symbolTestB');
         console.log('resourceManager_test_getSymbol_static_0180:' + value);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('resourceManager_test_getSymbol_static_0180_errorCode' + e.code);
         console.log('resourceManager_test_getSymbol_static_0180_errorMessage' + e.message);
         expect(e.code == 9001006).assertTrue();
@@ -910,7 +918,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getSymbol_static_0190', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getSymbol(0x0100003f);
+      let value = res!.getSymbol(0x0100003f);
       console.log('resourceManager_test_getSymbol_static_0190:' + value);
       expect(value == 983041).assertTrue();
     })
@@ -924,7 +932,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getSymbol_static_0210', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getSymbolByName('symbolTest2');
+      let value = res!.getSymbolByName('symbolTest2');
       console.log('resourceManager_test_getSymbol_static_0210:' + value);
       expect(value == 983041).assertTrue();
     })
@@ -938,12 +946,12 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('resourceManager_test_getRawFdSync_static_0020', Level.LEVEL3, async (): Promise<void> => {
-      let value = res.getRawFdSync('A/test.txt');
+      let value = res!.getRawFdSync('A/test.txt');
       console.log('resourceManager_test_getRawFdSync_static_0020_fd' + value.fd);
       console.log('resourceManager_test_getRawFdSync_static_0020_offset' + value.offset);
       console.log('resourceManager_test_getRawFdSync_static_0020_length' + value.length);
       expect(value != null && value.length == 4).assertTrue();
-      res.closeRawFdSync('A/test.txt');
+      res!.closeRawFdSync('A/test.txt');
     })
 
     /**
@@ -955,12 +963,12 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('resourceManager_test_getRawFdSync_static_0030', Level.LEVEL3, async (): Promise<void> => {
-      let value = res.getRawFdSync('A/none.xml');
+      let value = res!.getRawFdSync('A/none.xml');
       console.log('resourceManager_test_getRawFdSync_static_0030_fd' + value.fd);
       console.log('resourceManager_test_getRawFdSync_static_0030_offset' + value.offset);
       console.log('resourceManager_test_getRawFdSync_static_0030_length' + value.length);
       expect(value != null && value.length == 0).assertTrue();
-      res.closeRawFdSync('A/none.xml');
+      res!.closeRawFdSync('A/none.xml');
     })
 
     /**
@@ -973,9 +981,10 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getRawFdSync_static_0050', Level.LEVEL3, async (): Promise<void> => {
       try {
-        let value = res.getRawFdSync('error_path.xml');
+        let value = res!.getRawFdSync('error_path.xml');
         console.log('resourceManager_test_getRawFdSync_static_0050:' + value);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('resourceManager_test_getRawFdSync_static_0050_errorCode' + e.code);
         console.log('resourceManager_test_getRawFdSync_static_0050_errorMessage' + e.message);
         expect(e.code == 9001005).assertTrue();
@@ -991,7 +1000,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getRawFileContentSync_static_0170', Level.LEVEL2, () => {
-      let value = res.getRawFileContentSync('A/none.xml');
+      let value = res!.getRawFileContentSync('A/none.xml');
       hilog.info(0x0000, 'testTag', '%{public}s', 'resourceManager_test_getRawFileContentSync_static_0170:' + value);
       expect(value.length == 0).assertTrue();
     })
@@ -1005,7 +1014,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getRawFileContentSync_static_0160', Level.LEVEL2, () => {
-      let value = res.getRawFileContentSync('A/test.txt');
+      let value = res!.getRawFileContentSync('A/test.txt');
       hilog.info(0x0000, 'testTag', '%{public}s', 'resourceManager_test_getRawFileContentSync_static_0160:' + value);
       expect(value.length == 4).assertTrue();
     })
@@ -1020,9 +1029,10 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getRawFileContentSync_static_0190', Level.LEVEL3, () => {
       try {
-        let value = res.getRawFileContentSync('error_path.xml');
+        let value = res!.getRawFileContentSync('error_path.xml');
         hilog.info(0x0000, 'testTag', '%{public}s', 'resourceManager_test_getRawFileContentSync_static_0190:' + value);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s',
           'resourceManager_test_getRawFileContentSync_static_0190_errorCode' + e.code);
         hilog.info(0x0000, 'testTag', '%{public}s',
@@ -1040,7 +1050,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('resourceManager_test_getRawFileListSync_static_0120', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getRawFileListSync('A');
+      let value = res!.getRawFileListSync('A');
       console.log('resourceManager_test_getRawFileListSync_static_0120:' + value);
       expect(value.length >= 102).assertTrue();
     })
@@ -1055,9 +1065,10 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getRawFileListSync_static_0140', Level.LEVEL3, async (): Promise<void> => {
       try {
-        let value = res.getRawFileListSync('error_path');
+        let value = res!.getRawFileListSync('error_path');
         console.log('resourceManager_test_getRawFileListSync_static_0140:' + value);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('resourceManager_test_getRawFileListSync_static_0140_errorCode' + e.code);
         console.log('resourceManager_test_getRawFileListSync_static_0140_errorMessage' + e.message);
         expect(e.code == 9001005).assertTrue();
@@ -1074,7 +1085,7 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_closeRawFdSync_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.closeRawFdSync('error_path.xml');
+        res!.closeRawFdSync('error_path.xml');
         console.log('resourceManager_test_closeRawFdSync_static_0100:');
       } catch (err) {
         let error = err as BusinessError
@@ -1093,7 +1104,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_static_1000', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayValue(0x01234567).then(() => {
+      res!.getStringArrayValue(0x01234567).then(() => {
         expect().assertFail();
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
@@ -1115,7 +1126,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_static_1011', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayValue(0x01000008).then(() => {
+      res!.getStringArrayValue(0x01000008).then(() => {
         expect().assertFail();
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
@@ -1136,7 +1147,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_static_1012', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayValue(0x0100002e).then(() => {
+      res!.getStringArrayValue(0x0100002e).then(() => {
         expect().assertFail();
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
@@ -1160,13 +1171,13 @@ export default function globalStageTest() {
     it("getStringArrayValue_stage_test_static_1013", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getStringArrayValue_callback_9001001 start');
       try {
-        res.getStringArrayValue(0x01234567, (err: BusinessError<void> | null, data: Array<string> | undefined) => {
+        res!.getStringArrayValue(0x01234567, (err: BusinessError<void> | null, data: Array<string> | undefined) => {
           hilog.info(domain, tag, 'getStringArrayValue resId callback 9001001 data ' + JSON.stringify(data));
           hilog.info(domain, tag, 'getStringArrayValue resId callback 9001001 err ' + JSON.stringify(err));
           expect(err?.code).assertEqual(9001001);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getStringArrayValue resId callback 9001001 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -1185,13 +1196,13 @@ export default function globalStageTest() {
     it("getStringArrayValue_stage_test_static_1014", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getStringArrayValue_callback_res_9001002 start');
       try {
-        res.getStringArrayValue(0x01000007, (err: BusinessError<void> | null, data: Array<string> | undefined) => {
+        res!.getStringArrayValue(0x01000007, (err: BusinessError<void> | null, data: Array<string> | undefined) => {
           hilog.info(domain, tag, 'getStringArrayValue resId callback 9001002 data ' + JSON.stringify(data));
           hilog.info(domain, tag, 'getStringArrayValue resId callback 9001002 err ' + JSON.stringify(err));
           expect(err?.code).assertEqual(9001002);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getStringArrayValue resId callback 9001002 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -1208,7 +1219,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_static_1100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayValue(0x01234567, (err: BusinessError<void> | null) => {
+      res!.getStringArrayValue(0x01234567, (err: BusinessError<void> | null) => {
         console.log('getStringArrayValue_stage_test_static_1100 error code:' + err?.code);
         expect(err?.code).assertEqual(9001001);
         done();
@@ -1224,7 +1235,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_static_1200', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayValue(0x0100000c, (err: BusinessError<void> | null) => {
+      res!.getStringArrayValue(0x0100000c, (err: BusinessError<void> | null) => {
         console.log('getStringArrayValue_stage_test_static_1200 error code:' + err?.code);
         expect(err?.code).assertEqual(9001002);
         done();
@@ -1240,7 +1251,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_static_1300', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayValue(0x0100002e, (err: BusinessError<void> | null) => {
+      res!.getStringArrayValue(0x0100002e, (err: BusinessError<void> | null) => {
         console.log('getStringArrayValue_stage_test_static_1300 error code:' + err?.code);
         expect(err?.code).assertEqual(9001006);
         done();
@@ -1256,7 +1267,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_static_1500', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayValue(0x0100000c).then(() => {
+      res!.getStringArrayValue(0x0100000c).then(() => {
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
         console.log('getStringArrayValue_stage_test_static_1500 error code:' + error.code);
@@ -1275,7 +1286,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_static_1600', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayValue(0x0100002e).then(() => {
+      res!.getStringArrayValue(0x0100002e).then(() => {
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
         console.log('getStringArrayValue_stage_test_static_1600 error code:' + error.code);
@@ -1295,13 +1306,13 @@ export default function globalStageTest() {
     it("getMediaContent_stage_test_static_0500", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getMediaContent  callback err code 9001001 start');
       try {
-        res.getMediaContent(0x01234567, 0, (err: BusinessError<void> | null, data: Uint8Array | undefined): void => {
+        res!.getMediaContent(0x01234567, 0, (err: BusinessError<void> | null, data: Uint8Array | undefined): void => {
           hilog.info(domain, tag, 'getMediaContent density callback 9001001 data ' + JSON.stringify(data));
           hilog.info(domain, tag, 'getMediaContent density callback 9001001 err ' + JSON.stringify(err));
           expect(err?.code).assertEqual(9001001);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContent density callback 9001001 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -1318,7 +1329,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_static_0600', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContent(0x0100000c).then(() => {
+      res!.getMediaContent(0x0100000c).then(() => {
         expect().assertFail();
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
@@ -1338,7 +1349,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_static_0800', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContent(0x01234567, 0).then(() => {
+      res!.getMediaContent(0x01234567, 0).then(() => {
         expect().assertFail();
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
@@ -1361,13 +1372,13 @@ export default function globalStageTest() {
     it("getMediaContent_stage_test_static_0900", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getMediaContent  density callback err code 9001002 start');
       try {
-        res.getMediaContent(0x0100000c, 0, (err: BusinessError<void> | null, data: Uint8Array | undefined): void => {
+        res!.getMediaContent(0x0100000c, 0, (err: BusinessError<void> | null, data: Uint8Array | undefined): void => {
           hilog.info(domain, tag, 'getMediaContent density callback 9001002 data ' + JSON.stringify(data));
           hilog.info(domain, tag, 'getMediaContent density callback 9001002 err ' + JSON.stringify(err));
           expect(err?.code).assertEqual(9001002);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContent density callback 9001002 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -1384,7 +1395,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_static_1200', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContent(0x0100000c, 0).then(() => {
+      res!.getMediaContent(0x0100000c, 0).then(() => {
         expect().assertFail();
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
@@ -1406,7 +1417,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_static_1400', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayValue(0x01234567).then(() => {
+      res!.getStringArrayValue(0x01234567).then(() => {
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_009 error.code' + error.code);
@@ -1425,7 +1436,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_static_1700', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContent(0x01234567, (err: BusinessError<void> | null) => {
+      res!.getMediaContent(0x01234567, (err: BusinessError<void> | null) => {
         console.log('getMediaContent_stage_test_static_1700 error code:' + err?.code);
         expect(err?.code).assertEqual(9001001);
         done();
@@ -1441,7 +1452,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_static_1800', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContent(0x01000005, (err: BusinessError<void> | null) => {
+      res!.getMediaContent(0x01000005, (err: BusinessError<void> | null) => {
         console.log('getMediaContent_stage_test_static_1800 error code:' + err?.code);
         expect(err?.code).assertEqual(9001002);
         done();
@@ -1457,7 +1468,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_static_1900', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContent(0x01234567, 0, (err: BusinessError<void> | null) => {
+      res!.getMediaContent(0x01234567, 0, (err: BusinessError<void> | null) => {
         console.log('getMediaContent_stage_test_static_1900 error code:' + err?.code);
         expect(err?.code).assertEqual(9001001);
         done();
@@ -1473,7 +1484,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_static_2000', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContent(0x01000005, 0, (err: BusinessError<void> | null) => {
+      res!.getMediaContent(0x01000005, 0, (err: BusinessError<void> | null) => {
         console.log('getMediaContent_stage_test_static_2000 error code:' + err?.code);
         expect(err?.code).assertEqual(9001002);
         done();
@@ -1489,7 +1500,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_static_2100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContent(0x01234567).then(() => {
+      res!.getMediaContent(0x01234567).then(() => {
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringValue_test_static_009 error.code' + error.code);
@@ -1509,8 +1520,9 @@ export default function globalStageTest() {
      */
     it('getMediaContent_stage_test_static_2200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let data = await res.getMediaContent(0x01000005)
-      } catch (err: BusinessError) {
+        let data = await res!.getMediaContent(0x01000005)
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContent_stage_test_static_2200 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
         done();
@@ -1527,8 +1539,9 @@ export default function globalStageTest() {
      */
     it('getMediaContent_stage_test_static_2300', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let data = await res.getMediaContent(0x01234567, 0)
-      } catch (err: BusinessError) {
+        let data = await res!.getMediaContent(0x01234567, 0)
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContent_stage_test_static_2300 error code:' + err.code);
         expect(err.code).assertEqual(9001001);
         done();
@@ -1545,8 +1558,9 @@ export default function globalStageTest() {
      */
     it('getMediaContent_stage_test_static_2400', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let data = await res.getMediaContent(0x01000005, 0)
-      } catch (err: BusinessError) {
+        let data = await res!.getMediaContent(0x01000005, 0)
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContent_stage_test_static_2400 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
         done();
@@ -1562,7 +1576,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_static_1100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContentBase64(0x01234567).then(() => {
+      res!.getMediaContentBase64(0x01234567).then(() => {
         expect().assertFail();
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
@@ -1584,7 +1598,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_static_1200', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContentBase64(0x01000031).then(() => {
+      res!.getMediaContentBase64(0x01000031).then(() => {
         expect().assertFail();
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
@@ -1608,13 +1622,13 @@ export default function globalStageTest() {
     it("getMediaContentBase64_stage_test_static_1300", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getMediaContentBase64 resId callback err code 201 start');
       try {
-        res.getMediaContentBase64(0x01234567, (err: BusinessError<void> | null, data: string | undefined) => {
+        res!.getMediaContentBase64(0x01234567, (err: BusinessError<void> | null, data: string | undefined) => {
           hilog.info(domain, tag, 'getMediaContentBase64 resId callback 9001001 data ' + JSON.stringify(data));
           hilog.info(domain, tag, 'getMediaContentBase64 resId callback 9001001 err ' + JSON.stringify(err));
           expect(err?.code).assertEqual(9001001);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContentBase64 resId callback 9001001 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -1633,13 +1647,13 @@ export default function globalStageTest() {
     it("getMediaContentBase64_stage_test_static_1400", Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'getMediaContentBase64 resId callback err code 9001002 start');
       try {
-        res.getMediaContentBase64(0x01000031, (err: BusinessError<void> | null, data: string | undefined) => {
+        res!.getMediaContentBase64(0x01000031, (err: BusinessError<void> | null, data: string | undefined) => {
           hilog.info(domain, tag, 'getMediaContentBase64 resId callback 9001002 data ' + JSON.stringify(data));
           hilog.info(domain, tag, 'getMediaContentBase64 resId callback 9001002 err ' + JSON.stringify(err));
           expect(err?.code).assertEqual(9001002);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, 'getMediaContentBase64 resId callback 9001002 ' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -1656,7 +1670,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_static_1700', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContentBase64(0x01234567, (err: BusinessError<void> | null) => {
+      res!.getMediaContentBase64(0x01234567, (err: BusinessError<void> | null) => {
         console.log('getMediaContentBase64_stage_test_static_1700 error code:' + err?.code);
         expect(err?.code).assertEqual(9001001);
         done();
@@ -1672,7 +1686,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_static_1800', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContentBase64(0x01000031, (err: BusinessError<void> | null) => {
+      res!.getMediaContentBase64(0x01000031, (err: BusinessError<void> | null) => {
         console.log('getMediaContentBase64_stage_test_static_1800 error code:' + err?.code);
         expect(err?.code).assertEqual(9001002);
         done();
@@ -1688,7 +1702,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_static_1900', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContentBase64(0x01234567, 0, (err: BusinessError<void> | null) => {
+      res!.getMediaContentBase64(0x01234567, 0, (err: BusinessError<void> | null) => {
         console.log('getMediaContentBase64_stage_test_static_1900 error code:' + err?.code);
         expect(err?.code).assertEqual(9001001);
         done();
@@ -1705,7 +1719,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_static_2000', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaContentBase64(0x01000031, 0, (err: BusinessError<void> | null) => {
+      res!.getMediaContentBase64(0x01000031, 0, (err: BusinessError<void> | null) => {
         console.log('getMediaContentBase64_stage_test_static_2000 error code:' + err?.code);
         expect(err?.code).assertEqual(9001002);
         done();
@@ -1722,8 +1736,9 @@ export default function globalStageTest() {
      */
     it('getMediaContentBase64_stage_test_static_2100', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let data = await res.getMediaContentBase64(0x01234567)
-      } catch (err: BusinessError) {
+        let data = await res!.getMediaContentBase64(0x01234567)
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContentBase64_stage_test_static_2100 error code:' + err.code);
         expect(err.code).assertEqual(9001001);
         done();
@@ -1740,8 +1755,9 @@ export default function globalStageTest() {
      */
     it('getMediaContentBase64_stage_test_static_2200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let data = await res.getMediaContentBase64(0x01000031)
-      } catch (err: BusinessError) {
+        let data = await res!.getMediaContentBase64(0x01000031)
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContentBase64_stage_test_static_2200 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
         done();
@@ -1758,8 +1774,9 @@ export default function globalStageTest() {
      */
     it('getMediaContentBase64_stage_test_static_2300', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let data = await res.getMediaContentBase64(0x01234567, 0)
-      } catch (err: BusinessError) {
+        let data = await res!.getMediaContentBase64(0x01234567, 0)
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContentBase64_stage_test_static_2300 error code:' + err.code);
         expect(err.code).assertEqual(9001001);
         done();
@@ -1776,8 +1793,9 @@ export default function globalStageTest() {
      */
     it('getMediaContentBase64_stage_test_static_2400', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        let data = await res.getMediaContentBase64(0x01000031, 0)
-      } catch (err: BusinessError) {
+        let data = await res!.getMediaContentBase64(0x01000031, 0)
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContentBase64_stage_test_static_2400 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
         done();
@@ -1793,7 +1811,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringByName_stage_test_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringByName('', (err: BusinessError<void> | null) => {
+      res!.getStringByName('', (err: BusinessError<void> | null) => {
         console.log('getStringByName_stage_test_static_0100 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
         done();
@@ -1809,7 +1827,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayByName_stage_test_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayByName('', (err: BusinessError<void> | null) => {
+      res!.getStringArrayByName('', (err: BusinessError<void> | null) => {
         console.log('getStringArrayByName_stage_test_static_0100 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
         done();
@@ -1825,7 +1843,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaByName_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaByName('', (err: BusinessError<void> | null) => {
+      res!.getMediaByName('', (err: BusinessError<void> | null) => {
         console.log('getMediaByName_test_static_0300 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
         done();
@@ -1842,7 +1860,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringByName_stage_test_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringByName('test_stringLoopA', (err: BusinessError<void> | null) => {
+      res!.getStringByName('test_stringLoopA', (err: BusinessError<void> | null) => {
         console.log('getStringByName_stage_test_static_0200 error code:' + err?.code);
         expect(err?.code).assertEqual(9001006);
         done();
@@ -1859,7 +1877,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringByName_stage_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringByName('').then(() => {
+      res!.getStringByName('').then(() => {
       }).catch((err: Error): void => {
         console.log('getStringByName_stage_test_static_0300 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
@@ -1876,7 +1894,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringByName_stage_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringByName('test_stringLoopA').then(() => {
+      res!.getStringByName('test_stringLoopA').then(() => {
       }).catch((err: Error): void => {
         console.log('getStringByName_stage_test_static_0400 error code:' + err?.code);
         expect(err?.code).assertEqual(9001006);
@@ -1893,7 +1911,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaBase64ByName_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaBase64ByName('', 0, (err: BusinessError<void> | null) => {
+      res!.getMediaBase64ByName('', 0, (err: BusinessError<void> | null) => {
         console.log('getMediaBase64ByName_test_static_0400 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
         done();
@@ -1910,8 +1928,9 @@ export default function globalStageTest() {
      */
     it('getStringSync_test_static_0100', Level.LEVEL3, () => {
       try {
-        res.getStringSync(0x01000034)
-      } catch (err: BusinessError) {
+        res!.getStringSync(0x01000034)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0100 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001002');
       }
@@ -1927,8 +1946,9 @@ export default function globalStageTest() {
      */
     it('getStringSync_test_static_0200', Level.LEVEL3, () => {
       try {
-        res.getStringSync(0x01000019)
-      } catch (err: BusinessError) {
+        res!.getStringSync(0x01000019)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0200 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001006');
       }
@@ -1944,8 +1964,9 @@ export default function globalStageTest() {
      */
     it('getStringSync_test_static_0300', Level.LEVEL3, () => {
       try {
-        res.getStringSync(0x01000034, 'test', 1)
-      } catch (err: BusinessError) {
+        res!.getStringSync(0x01000034, 'test', 1)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0300 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001002');
       }
@@ -1961,8 +1982,9 @@ export default function globalStageTest() {
      */
     it('getStringSync_test_static_0400', Level.LEVEL3, () => {
       try {
-        res.getStringSync(0x01000012, 'test', 1)
-      } catch (err: BusinessError) {
+        res!.getStringSync(0x01000012, 'test', 1)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0400 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001006');
       }
@@ -1978,8 +2000,9 @@ export default function globalStageTest() {
      */
     it('getStringSync_test_static_0500', Level.LEVEL3, () => {
       try {
-        res.getStringSync(0x0100002a, 'test', 1)
-      } catch (err: BusinessError) {
+        res!.getStringSync(0x0100002a, 'test', 1)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0500 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001007');
       }
@@ -1995,8 +2018,9 @@ export default function globalStageTest() {
      */
     it('getStringSync_test_static_0600', Level.LEVEL3, () => {
       try {
-        res.getStringSync(0x01234567)
-      } catch (err: BusinessError) {
+        res!.getStringSync(0x01234567)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0600 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001001');
       }
@@ -2012,8 +2036,9 @@ export default function globalStageTest() {
      */
     it('getStringSync_test_static_0700', Level.LEVEL3, () => {
       try {
-        res.getStringSync(0x01234567, 'aaa', 0)
-      } catch (err: BusinessError) {
+        res!.getStringSync(0x01234567, 'aaa', 0)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_0700 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001001');
       }
@@ -2029,8 +2054,9 @@ export default function globalStageTest() {
      */
     it('getStringByNameSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getStringByNameSync('test_stringLoopB')
-      } catch (err: BusinessError) {
+        res!.getStringByNameSync('test_stringLoopB')
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getStringByNameSync_test_static_0100 error code:' + err.code);
         expect(err.code).assertEqual(9001006);
       }
@@ -2046,7 +2072,7 @@ export default function globalStageTest() {
      */
     it('getStringByNameSync_test_static_0300', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getStringByNameSync('boolean_static_2', 'aaa', 1)
+        res!.getStringByNameSync('boolean_static_2', 'aaa', 1)
       } catch (err) {
         let error = err as BusinessError
         console.log('getStringByNameSync_test_static_0300 error code:' + error.code);
@@ -2064,8 +2090,9 @@ export default function globalStageTest() {
      */
     it('getStringByNameSync_test_static_0400', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getStringByNameSync('test_stringLoopB', 'aaa', 1)
-      } catch (err:BusinessError) {
+        res!.getStringByNameSync('test_stringLoopB', 'aaa', 1)
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getStringByNameSync_test_static_0400 error code:' + err.code);
         expect(err.code).assertEqual(9001006);
       }
@@ -2082,7 +2109,7 @@ export default function globalStageTest() {
      */
     it('getBoolean_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getBoolean(0x01000031)
+        res!.getBoolean(0x01000031)
       } catch (err) {
         let error = err as BusinessError
         console.log('getBoolean_test_static_0100 error code:' + error.code);
@@ -2100,7 +2127,7 @@ export default function globalStageTest() {
      */
     it('getBoolean_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getBoolean(0x01234567)
+        res!.getBoolean(0x01234567)
       } catch (err) {
         let error = err as BusinessError
         console.log('getBoolean_test_static_0200 error code:' + error.code);
@@ -2118,7 +2145,7 @@ export default function globalStageTest() {
      */
     it('getBoolean_test_static_0500', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getBoolean(0x01000006)
+        res!.getBoolean(0x01000006)
       } catch (err) {
         let error = err as BusinessError
         console.log('getBoolean_test_0500 error code:' + error.code);
@@ -2136,7 +2163,7 @@ export default function globalStageTest() {
      */
     it('getBooleanByName_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getBooleanByName("")
+        res!.getBooleanByName("")
       } catch (err) {
         let error = err as BusinessError
         console.log('getBooleanByName_test_static_0200 error code:' + error.code);
@@ -2154,7 +2181,7 @@ export default function globalStageTest() {
      */
     it('getBooleanByName_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getBooleanByName("boolean_4")
+        res!.getBooleanByName("boolean_4")
       } catch (err) {
         let error = err as BusinessError
         console.log('getBooleanByName_test_0200 error code:' + error.code);
@@ -2172,8 +2199,9 @@ export default function globalStageTest() {
      */
     it('getInt_test_static_0100', Level.LEVEL3, () => {
       try {
-        res.getInt(0x01234567)
-      } catch (err: BusinessError) {
+        res!.getInt(0x01234567)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getInt_test_static_0100 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001001');
       }
@@ -2189,8 +2217,9 @@ export default function globalStageTest() {
      */
     it('getDouble_test_static_0100', Level.LEVEL3, () => {
       try {
-        res.getDouble(0x01234567)
-      } catch (err: BusinessError) {
+        res!.getDouble(0x01234567)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getDouble_test_static_0100 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001001');
       }
@@ -2206,8 +2235,9 @@ export default function globalStageTest() {
      */
     it('getInt_test_static_0200', Level.LEVEL3, () => {
       try {
-        res.getInt(0x01000034)
-      } catch (err: BusinessError) {
+        res!.getInt(0x01000034)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getInt_test_static_0200 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001002');
       }
@@ -2223,8 +2253,9 @@ export default function globalStageTest() {
      */
     it('getDouble_test_static_0200', Level.LEVEL3, () => {
       try {
-        res.getDouble(0x01000034)
-      } catch (err: BusinessError) {
+        res!.getDouble(0x01000034)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getDouble_test_static_0200 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001002');
       }
@@ -2240,8 +2271,9 @@ export default function globalStageTest() {
      */
     it('getInt_test_static_0300', Level.LEVEL3, () => {
       try {
-        res.getInt(0x01000004)
-      } catch (err: BusinessError) {
+        res!.getInt(0x01000004)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getInt_test_static_0300 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001006');
       }
@@ -2257,8 +2289,9 @@ export default function globalStageTest() {
      */
     it('getDouble_test_static_0300', Level.LEVEL3, () => {
       try {
-        res.getDouble(0x0100003b)
-      } catch (err: BusinessError) {
+        res!.getDouble(0x0100003b)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getDouble_test_static_0300 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001006');
       }
@@ -2274,7 +2307,7 @@ export default function globalStageTest() {
      */
     it('getIntByName_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getIntByName('')
+        res!.getIntByName('')
       } catch (err) {
         let error = err as BusinessError
         console.log('getIntByName_test_static_0100 error code:' + error.code);
@@ -2292,7 +2325,7 @@ export default function globalStageTest() {
      */
     it('getDoubleByName_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDoubleByName('')
+        res!.getDoubleByName('')
       } catch (err) {
         let error = err as BusinessError
         console.log('getDoubleByName_test_static_0100 error code:' + error.code);
@@ -2310,7 +2343,7 @@ export default function globalStageTest() {
      */
     it('getIntByName_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getIntByName('integer_loopA')
+        res!.getIntByName('integer_loopA')
       } catch (err) {
         let error = err as BusinessError
         console.log('getIntByName_test_static_0200 error code:' + error.code);
@@ -2328,7 +2361,7 @@ export default function globalStageTest() {
      */
     it('getDoubleByName_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDoubleByName('float_loopA')
+        res!.getDoubleByName('float_loopA')
       } catch (err) {
         let error = err as BusinessError
         console.log('getDoubleByName_test_static_0200 error code:' + error.code);
@@ -2345,7 +2378,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getRawFileContent_test_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getRawFileContent('plural_name_loop', (err: BusinessError<void> | null) => {
+      res!.getRawFileContent('plural_name_loop', (err: BusinessError<void> | null) => {
         hilog.info(0x0000, 'testTag', '%{public}s', 'getRawFileContent_test_static_0100 error code:' + err?.code);
         expect(JSON.stringify(err?.code)).assertEqual('9001005');
         done();
@@ -2361,7 +2394,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getRawFileContent_test_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getRawFileContent('plural_name_loop').then(() => {
+      res!.getRawFileContent('plural_name_loop').then(() => {
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError
         hilog.info(0x0000, 'testTag', '%{public}s', 'getRawFileContent_test_static_0200 error code:' + error.code);
@@ -2380,8 +2413,9 @@ export default function globalStageTest() {
      */
     it('getDrawableDescriptor_stage_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDrawableDescriptor(0x01234567)
-      } catch (err: BusinessError) {
+        res!.getDrawableDescriptor(0x01234567)
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptor_stage_test_static_0200 error code:' + err.code);
         expect(err.code).assertEqual(9001001);
       }
@@ -2397,8 +2431,9 @@ export default function globalStageTest() {
      */
     it('getDrawableDescriptor_stage_test_static_0300', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDrawableDescriptor(0x01000035)
-       } catch (err:BusinessError) {
+        res!.getDrawableDescriptor(0x01000035)
+       } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptor_stage_test_static_0300 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
       }
@@ -2414,8 +2449,9 @@ export default function globalStageTest() {
      */
     it('getDrawableDescriptor_stage_test_static_0400', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDrawableDescriptor(0x01234567, 0)
-       } catch (err:BusinessError) {
+        res!.getDrawableDescriptor(0x01234567, 0)
+       } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptor_stage_test_static_0400 error code:' + err.code);
         expect(err.code).assertEqual(9001001);
       }
@@ -2431,8 +2467,9 @@ export default function globalStageTest() {
      */
     it('getDrawableDescriptor_stage_test_static_0500', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDrawableDescriptor(0x01000035, 0)
-       } catch (err:BusinessError) {
+        res!.getDrawableDescriptor(0x01000035, 0)
+       } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptor_stage_test_static_0500 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
       }
@@ -2449,8 +2486,9 @@ export default function globalStageTest() {
      */
     it('getDrawableDescriptor_stage_test_static_0600', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDrawableDescriptor(0x01234567, 0, 1)
-       } catch (err:BusinessError) {
+        res!.getDrawableDescriptor(0x01234567, 0, 1)
+       } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptor_stage_test_static_0600 error code:' + err.code);
         expect(err.code).assertEqual(9001001);
       }
@@ -2466,8 +2504,9 @@ export default function globalStageTest() {
      */
     it('getDrawableDescriptor_stage_test_static_0700', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDrawableDescriptor(0x01000035, 0, 1)
-       } catch (err:BusinessError) {
+        res!.getDrawableDescriptor(0x01000035, 0, 1)
+       } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptor_stage_test_static_0700 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
       }
@@ -2483,8 +2522,9 @@ export default function globalStageTest() {
      */
     it('getDrawableDescriptorByName_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDrawableDescriptorByName('test_stringLoopA', 0, 1)
-      } catch (err: BusinessError) {
+        res!.getDrawableDescriptorByName('test_stringLoopA', 0, 1)
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptorByName_test_static_0100 error code:' + err.code);
         expect(err.code).assertEqual(9001003);
       }
@@ -2501,8 +2541,9 @@ export default function globalStageTest() {
      */
     it('getDrawableDescriptorByName_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getDrawableDescriptorByName('', 0)
-       } catch (err:BusinessError) {
+        res!.getDrawableDescriptorByName('', 0)
+       } catch (err) {
+        err = err as BusinessError;
         console.log('getDrawableDescriptorByName_test_static_0200 error code:' + err.code);
         expect(err.code).assertEqual(9001003);
       }
@@ -2518,7 +2559,7 @@ export default function globalStageTest() {
      */
     it('getRawFdSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getRawFdSync('notExist')
+        res!.getRawFdSync('notExist')
       } catch (err) {
         let error = err as BusinessError
         console.log('getRawFdSync_test_static_0100 error code:' + error.code);
@@ -2536,7 +2577,7 @@ export default function globalStageTest() {
      */
     it('getRawFileListSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getRawFileListSync('notExist')
+        res!.getRawFileListSync('notExist')
       } catch (err) {
         let error = err as BusinessError
         console.log('getRawFileListSync_test_static_0100 error code:' + error.code);
@@ -2554,8 +2595,9 @@ export default function globalStageTest() {
      */
     it('getRawFileContentSync_test_static_0100', Level.LEVEL3, () => {
       try {
-        res.getRawFileContentSync('notExist')
-      } catch (err: BusinessError) {
+        res!.getRawFileContentSync('notExist')
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getRawFileContentSync_test_static_0100 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001005');
       }
@@ -2571,7 +2613,7 @@ export default function globalStageTest() {
      */
     it('getMediaContentSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getMediaContentSync(0x01234567)
+        res!.getMediaContentSync(0x01234567)
       } catch (err) {
         let error = err as BusinessError
         console.log('getMediaContentSync_test_static_0100 error code:' + error.code);
@@ -2589,8 +2631,9 @@ export default function globalStageTest() {
      */
     it('getMediaContentSync_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getMediaContentSync(0x0100000c)
-      } catch (err: BusinessError) {
+        res!.getMediaContentSync(0x0100000c)
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContentSync_test_static_0200 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
       }
@@ -2605,7 +2648,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('getMediaContentSync_test_static_0500', Level.LEVEL2, async (): Promise<void> => {
-      let value: Uint8Array = res.getMediaContentSync(0x01000043, 0);
+      let value: Uint8Array = res!.getMediaContentSync(0x01000043, 0);
       console.log('getMediaContentSync_test_static_0500 1' + value);
       expect(value !== null).assertTrue();
     })
@@ -2619,7 +2662,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('getMediaContentBase64Sync_test_static_0100', Level.LEVEL2, async (): Promise<void> => {
-      let value: string = res.getMediaContentBase64Sync(0x01000043, 0);
+      let value: string = res!.getMediaContentBase64Sync(0x01000043, 0);
       console.log('getMediaContentBase64Sync_test_static_0100:' + value);
       expect(value !== null).assertTrue();
     })
@@ -2634,7 +2677,7 @@ export default function globalStageTest() {
      */
     it('getMediaContentBase64Sync_test_static_0300', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getMediaContentBase64Sync(0x01234567);
+        res!.getMediaContentBase64Sync(0x01234567);
       } catch (err) {
         let error = err as BusinessError
         console.log('getMediaContentBase64Sync_test_static_0300 error code:' + error.code);
@@ -2652,8 +2695,9 @@ export default function globalStageTest() {
      */
     it('getMediaContentBase64Sync_test_static_0500', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getMediaContentBase64Sync(0x01000005);
-      } catch (err: BusinessError) {
+        res!.getMediaContentBase64Sync(0x01000005);
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getMediaContentBase64Sync_test_static_0500 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
       }
@@ -2669,7 +2713,7 @@ export default function globalStageTest() {
      */
     it('getStringArrayValueSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getStringArrayValueSync(0x01234567);
+        res!.getStringArrayValueSync(0x01234567);
       } catch (err) {
         let error = err as BusinessError
         console.log('getStringArrayValueSync_test_static_0100 error code:' + error.code);
@@ -2688,8 +2732,9 @@ export default function globalStageTest() {
      */
     it('getStringArrayValueSync_test_static_0300', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getStringArrayValueSync(0x01000005);
-      } catch (err: BusinessError) {
+        res!.getStringArrayValueSync(0x01000005);
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getStringArrayValueSync_test_static_0300 error code:' + err.code);
         expect(err.code).assertEqual(9001002);
       }
@@ -2705,8 +2750,9 @@ export default function globalStageTest() {
      */
     it('getStringArrayValueSync_test_static_0500', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getStringArrayValueSync(0x0100002e);
-      } catch (err: BusinessError) {
+        res!.getStringArrayValueSync(0x0100002e);
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getStringArrayValueSync_test_static_0500 error code:' + err.code);
         expect(err.code).assertEqual(9001006);
       }
@@ -2721,7 +2767,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('getMediaByNameSync_test_static_0100', Level.LEVEL2, async (): Promise<void> => {
-      let value: Uint8Array = res.getMediaByNameSync('background', 0);
+      let value: Uint8Array = res!.getMediaByNameSync('background', 0);
       console.log('getMediaByNameSync_test_static_0100:' + value);
       expect(value !== null).assertTrue();
     })
@@ -2736,7 +2782,7 @@ export default function globalStageTest() {
      */
     it('getMediaByNameSync_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getMediaByNameSync('invalidName', 0);
+        res!.getMediaByNameSync('invalidName', 0);
       } catch (err) {
         let error = err as BusinessError
         console.log('getMediaByNameSync_test_static_0200 error code:' + error.code);
@@ -2753,7 +2799,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('getMediaBase64ByNameSync_test_static_0100', Level.LEVEL2, async (): Promise<void> => {
-      let value: string = res.getMediaBase64ByNameSync('background', 0);
+      let value: string = res!.getMediaBase64ByNameSync('background', 0);
       console.log('getMediaBase64ByNameSync_test_static_0100:' + value);
       expect(value !== null).assertTrue();
     })
@@ -2768,7 +2814,7 @@ export default function globalStageTest() {
      */
     it('getMediaBase64ByNameSync_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getMediaBase64ByNameSync('invalidName', 0);
+        res!.getMediaBase64ByNameSync('invalidName', 0);
       } catch (err) {
         let error = err as BusinessError
         console.log('getMediaBase64ByNameSync_test_static_0200 error code:' + error.code);
@@ -2786,7 +2832,7 @@ export default function globalStageTest() {
      */
     it('getStringArrayByNameSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getStringArrayByNameSync('invalidName');
+        res!.getStringArrayByNameSync('invalidName');
       } catch (err) {
         let error = err as BusinessError
         console.log('getStringArrayByNameSync_test_static_0100 error code:' + error.code);
@@ -2804,8 +2850,9 @@ export default function globalStageTest() {
      */
     it('getStringArrayByNameSync_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.getStringArrayByNameSync('sizeListThree');
-      } catch (err: BusinessError) {
+        res!.getStringArrayByNameSync('sizeListThree');
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getStringArrayByNameSync_test_static_0200 error code:' + err.code);
         expect(err.code).assertEqual(9001006);
       }
@@ -2820,7 +2867,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_GetLocales_static_0020', Level.LEVEL2, async (): Promise<void> => {
-      let value: string = res.getLocales(false).toString();
+      let value: string = res!.getLocales(false).toString();
       console.log('SUB_GLOBAL_GetLocales_static_0020:' + value);
       expect(value).assertEqual('');
     })
@@ -2835,8 +2882,9 @@ export default function globalStageTest() {
      */
     it('getStringSync_test_static_1400', Level.LEVEL3, () => {
       try {
-        res.getStringSync(0x0100002a, 'test', 0)
-      } catch (err: BusinessError) {
+        res!.getStringSync(0x0100002a, 'test', 0)
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', 'getStringSync_test_static_1400 error code:' + err.code);
         expect(JSON.stringify(err.code)).assertEqual('9001007');
       }
@@ -2852,7 +2900,7 @@ export default function globalStageTest() {
      */
     it('isRawDir_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.isRawDir('invalidPath');
+        res!.isRawDir('invalidPath');
       } catch (err) {
         let error = err as BusinessError
         console.log('isRawDir_test_static_0100 error code:' + error.code);
@@ -2870,7 +2918,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaBase64ByName_test_static_0500', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaBase64ByName('').then(() => {
+      res!.getMediaBase64ByName('').then(() => {
       }).catch((err: Error): void => {
         console.log('getMediaBase64ByName_test_static_0500 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
@@ -2887,7 +2935,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaBase64ByName_test_static_0600', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaBase64ByName('', 0).then(() => {
+      res!.getMediaBase64ByName('', 0).then(() => {
       }).catch((err: Error): void => {
         console.log('getMediaBase64ByName_test_static_0600 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
@@ -2904,7 +2952,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaByName_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaByName('', 0, (err: BusinessError<void> | null) => {
+      res!.getMediaByName('', 0, (err: BusinessError<void> | null) => {
         console.log('getMediaByName_test_static_0400 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
         done();
@@ -2920,7 +2968,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaByName_test_static_0500', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaByName('').then(() => {
+      res!.getMediaByName('').then(() => {
       }).catch((err: Error): void => {
         console.log('getMediaByName_test_static_0500 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
@@ -2937,7 +2985,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaByName_test_static_0600', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaByName('', 0).then(() => {
+      res!.getMediaByName('', 0).then(() => {
       }).catch((err: Error): void => {
         console.log('getMediaByName_test_static_0600 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
@@ -2954,7 +3002,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getMediaBase64ByName_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getMediaBase64ByName('', (err: BusinessError<void> | null) => {
+      res!.getMediaBase64ByName('', (err: BusinessError<void> | null) => {
         console.log('getMediaBase64ByName_test_static_0300 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
         done();
@@ -2970,7 +3018,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayByName_stage_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayByName('sizeListThree').then(() => {
+      res!.getStringArrayByName('sizeListThree').then(() => {
       }).catch((err: Error): void => {
         console.log('getStringArrayByName_stage_test_static_0400 error code:' + err?.code);
         expect(err?.code).assertEqual(9001006);
@@ -2987,7 +3035,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayByName_stage_test_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayByName('sizeListThree', (err: BusinessError<void> | null) => {
+      res!.getStringArrayByName('sizeListThree', (err: BusinessError<void> | null) => {
         console.log('getStringArrayByName_stage_test_static_0200 error code:' + err?.code);
         expect(err?.code).assertEqual(9001006);
         done();
@@ -3003,7 +3051,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL3
      */
     it('getStringArrayByName_stage_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getStringArrayByName('').then(() => {
+      res!.getStringArrayByName('').then(() => {
       }).catch((err: Error): void => {
         console.log('getStringArrayByName_stage_test_static_0300 error code:' + err?.code);
         expect(err?.code).assertEqual(9001003);
@@ -3020,7 +3068,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('getMediaBase64ByNameSync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: string = res.getMediaBase64ByNameSync('background');
+      let value: string = res!.getMediaBase64ByNameSync('background');
       console.log('getMediaBase64ByNameSync_stagetest_0100 1' + value);
       expect(value !== null).assertTrue();
       done();
@@ -3036,7 +3084,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('getStringByNameSync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: string = res.getStringByNameSync('app_name');
+      let value: string = res!.getStringByNameSync('app_name');
       console.log('getStringByNameSync_stagetest_static_0100 1' + value);
       expect(value).assertEqual('global_stage_static');
       done();
@@ -3051,7 +3099,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('getStringByNameSync_stagetest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: string = res.getStringByNameSync('app_name', 100);
+      let value: string = res!.getStringByNameSync('app_name', 100);
       console.log('getStringByNameSync_stagetest_static_0200 1' + value);
       expect(value).assertEqual('global_stage_static');
       done();
@@ -3066,11 +3114,11 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('getRawFdSync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: resourceManager.RawFileDescriptor = res.getRawFdSync('rawfiletest.xml');
+      let value: resourceManager.RawFileDescriptor = res!.getRawFdSync('rawfiletest.xml');
       console.log('getRawFdSync_stagetest_static_0100 1' + value.fd);
       console.log('getRawFdSync_stagetest_static_0100 1' + value.offset);
       expect(value !== null).assertTrue();
-      res.closeRawFdSync('rawfiletest.xml');
+      res!.closeRawFdSync('rawfiletest.xml');
       done();
     })
 
@@ -3083,7 +3131,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('getRawFileListSync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: Array<string> = res.getRawFileListSync('');
+      let value: Array<string> = res!.getRawFileListSync('');
       console.log('getRawFileListSync_stagetest_static_0100 1' + value);
       console.log('getRawFileListSync_stagetest_static_0100 1' + value.length);
       expect(value !== null).assertTrue();
@@ -3100,7 +3148,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('getMediaContentSync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: Uint8Array = res.getMediaContentSync(0x01000044);
+      let value: Uint8Array = res!.getMediaContentSync(0x01000044);
       console.log('getMediaContentSync_stagetest_static_0100 1' + value);
       expect(value !== null).assertTrue();
       done();
@@ -3115,7 +3163,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('getMediaContentBase64Sync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: string = res.getMediaContentBase64Sync(0x01000044);
+      let value: string = res!.getMediaContentBase64Sync(0x01000044);
       console.log('getMediaContentBase64Sync_stagetest_static_0100 1' + value);
       expect(value !== null).assertTrue();
       done();
@@ -3131,7 +3179,7 @@ export default function globalStageTest() {
      */
     it('getStringArrayValueSync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let value: Array<string> =
-        res.getStringArrayValueSync(0x0100002c);
+        res!.getStringArrayValueSync(0x0100002c);
       console.log('getStringArrayValueSync_stagetest_static_0100 1' + value);
       expect(value !== null).assertTrue();
       done();
@@ -3146,7 +3194,7 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('getStringArrayByNameSync_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let value: Array<string> = res.getStringArrayByNameSync('sizeList');
+      let value: Array<string> = res!.getStringArrayByNameSync('sizeList');
       console.log('getStringArrayByNameSync_stagetest_static_0100 1' + value);
       expect(value !== null).assertTrue();
       done();
@@ -3161,10 +3209,11 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('resourceManager_test_getStringByNameSync_static_0250', Level.LEVEL0, async (): Promise<void> => {
-      let resMgr = res;
+      let resMgr = res!;
       try {
         resMgr.getStringByNameSync('test_stringTwentyThree');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log('resourceManager_test_getStringByNameSync_static_0250' + error.code + error.message);
         expect(error.code).assertEqual(9001008);
       }
@@ -3180,10 +3229,11 @@ export default function globalStageTest() {
      * @tc.level  LEVEL0
      */
     it('resourceManager_test_getStringByNameSync_static_0310', Level.LEVEL0, async (): Promise<void> => {
-      let resMgr = res;
+      let resMgr = res!;
       try {
         resMgr.getStringByNameSync('test_stringTwentyFive');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log('resourceManager_test_getStringByNameSync_static_0310' + error.code + error.message);
         expect(error.code).assertEqual(9001008);
       }
@@ -3199,9 +3249,10 @@ export default function globalStageTest() {
      */
     it('resourceManager_test_getDrawable_static_0900', Level.LEVEL0, async (): Promise<void> => {
       try {
-        let value = res.getDrawableDescriptorByName('symbolTest2');
+        let value = res!.getDrawableDescriptorByName('symbolTest2');
         console.log('resourceManager_test_getDrawable_static_0900:' + value);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('resourceManager_test_getDrawable_static_0900_errorCode' + e.code);
         console.log('resourceManager_test_getDrawable_static_0900_errorMessage' + e.message);
         expect(e.code == 9001003).assertTrue();
@@ -3218,8 +3269,9 @@ export default function globalStageTest() {
      */
     it('closeRawFdSync_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
       try {
-        res.closeRawFdSync('notExist')
-       } catch (err:BusinessError) {
+        res!.closeRawFdSync('notExist')
+       } catch (err) {
+        err = err as BusinessError;
         console.log('closeRawFdSync_test_static_0100 error code:' + err.code);
         expect(err.code).assertEqual(9001005);
       }
@@ -3246,6 +3298,474 @@ export default function globalStageTest() {
       expect(resource.id).assertEqual(0x01234567);
       expect(resource.params != null).assertTrue();
       expect(resource.type).assertEqual(10001);
+    })
+
+    /**
+     * @tc.number   resourceManager_test_getStringSync_static_0300
+     * @tc.name     resourceManager_test_getStringSync_static_0300
+     * @tc.desc     second input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL2
+     */
+    it('resourceManager_test_getStringSync_static_0300', Level.LEVEL2, () => {
+      let resMgr = res!;
+      let value = resMgr.getStringSync(0x01000023, "");
+      console.log('resourceManager_test_getStringSync_static_0300 value:' + value);
+      expect(value).assertEqual('%');
+    })
+
+    /**
+     * @tc.number   getStringByNameSync_test_static_0600
+     * @tc.name     getStringByNameSync_test_static_0600
+     * @tc.desc     first input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getStringByNameSync_test_static_0600', Level.LEVEL3, () => {
+      try {
+        res!.getStringByNameSync('', 1);
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getStringByNameSync_test_static_0600 error code:' + err.code);
+        expect(err.code).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number   getStringByNameSync_test_static_0500
+     * @tc.name     getStringByNameSync_test_static_0500
+     * @tc.desc     second input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getStringByNameSync_test_static_0500', Level.LEVEL3, () => {
+      let resMgr = res!;
+      let value = resMgr.getStringByNameSync('test_stringTwelve', '');
+      console.log('getStringByNameSync_test_static_0500 value:' + value);
+      expect(value).assertEqual('%');
+    })
+
+    /**
+     * @tc.number   getIntPluralStringValueSync_test_static_0100
+     * @tc.name     getIntPluralStringValueSync_test_static_0100
+     * @tc.desc     third input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringValueSync_test_static_0100', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getIntPluralStringValueSync(0x01000037, 1, '');
+        console.log('getIntPluralStringValueSync_test_static_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getIntPluralStringValueSync_test_static_0100 error code:' + err.code);
+        expect(err.code).assertEqual(9001007);
+      }
+    })
+
+    /**
+     * @tc.number   getIntPluralStringByNameSync_test_static_0100
+     * @tc.name     getIntPluralStringByNameSync_test_static_0100
+     * @tc.desc     first input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringByNameSync_test_static_0100', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getIntPluralStringByNameSync('', 1, 10);
+        console.log('getIntPluralStringByNameSync_test_static_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getIntPluralStringByNameSync_test_static_0100 error code:' + err.code);
+        expect(err.code).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number   getIntPluralStringByNameSync_test_static_0200
+     * @tc.name     getIntPluralStringByNameSync_test_static_0200
+     * @tc.desc     third input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringByNameSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getIntPluralStringByNameSync('plural_name', 1, '');
+        console.log('getIntPluralStringByNameSync_test_static_0200 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getIntPluralStringByNameSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001008);
+      }
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringValueSync_test_static_0100
+     * @tc.name     getDoublePluralStringValueSync_test_static_0100
+     * @tc.desc     third input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringValueSync_test_static_0100', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getDoublePluralStringValueSync(0x01000037, 1.1, '');
+        console.log('getDoublePluralStringValueSync_test_static_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getDoublePluralStringValueSync_test_static_0100 error code:' + err.code);
+        expect(err.code).assertEqual(9001007);
+      }
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringByNameSync_test_static_0100
+     * @tc.name     getDoublePluralStringByNameSync_test_static_0100
+     * @tc.desc     first input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringByNameSync_test_static_0100', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getDoublePluralStringByNameSync('', 1.1, 10);
+        console.log('getDoublePluralStringByNameSync_test_static_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getDoublePluralStringByNameSync_test_static_0100 error code:' + err.code);
+        expect(err.code).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringByNameSync_test_static_0200
+     * @tc.name     getDoublePluralStringByNameSync_test_static_0200
+     * @tc.desc     third input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringByNameSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getDoublePluralStringByNameSync('plural_name', 1.1, '');
+        console.log('getDoublePluralStringByNameSync_test_static_0200 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getDoublePluralStringByNameSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001008);
+      }
+    })
+
+    /**
+     * @tc.number  getRawFileContent_test_static_0300
+     * @tc.name    getRawFileContent_test_static_0300
+     * @tc.desc    input void in callback mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('getRawFileContent_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res!.getRawFileContent('', (err: BusinessError<void> | null) => {
+        console.log('getRawFileContent_test_static_0300 error code:' + err?.code);
+        expect(err?.code).assertEqual(9001005);
+        done();
+      })
+    })
+
+    /**
+     * @tc.number  getRawFileContent_test_static_0400
+     * @tc.name    getRawFileContent_test_static_0400
+     * @tc.desc    input void in promise mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('getRawFileContent_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res!.getRawFileContent('').then(() => {
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError
+        console.log('getRawFileContent_test_static_0400 error code:' + error?.code);
+        expect(error.code).assertEqual(9001005);
+        done();
+      })
+    })
+
+    /**
+     * @tc.number  getRawFd_test_static_0300
+     * @tc.name    getRawFd_test_static_0300
+     * @tc.desc    input void in callback mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('getRawFd_test_static_0300', Level.LEVEL3, async (): Promise<void> => {
+      res?.getRawFd('', (error: BusinessError<void> | null) => {
+        console.log('getRawFd_test_static_0300 error code:' + error?.code);
+        expect(error?.code).assertEqual(9001005);
+      })
+    })
+
+    /**
+     * @tc.number  getRawFd_test_static_0400
+     * @tc.name    getRawFd_test_static_0400
+     * @tc.desc    input void in promise mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('getRawFd_test_static_0400', Level.LEVEL3, async (): Promise<void> => {
+      res?.getRawFd('').then(() => {
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError;
+        console.log('getRawFd_test_static_0400 error code:' + error.code);
+        expect(error.code).assertEqual(9001005);
+      })
+    })
+
+    /**
+     * @tc.number  closeRawFd_test_static_0100
+     * @tc.name    closeRawFd_test_static_0100
+     * @tc.desc    input void in callback mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('closeRawFd_test_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.closeRawFd('', (error: BusinessError<void> | null) => {
+        console.log('closeRawFd_test_static_0100 error code:' + error?.code);
+        expect(error?.code).assertEqual(9001005);
+        done();
+      })
+    })
+
+    /**
+     * @tc.number  closeRawFd_test_static_0200
+     * @tc.name    closeRawFd_test_static_0200
+     * @tc.desc    input void in promise mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('closeRawFd_test_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.closeRawFd('').then((): void => {
+        console.log('closeRawFd_test_static_0200 fail');
+        expect().assertFail();
+        done();
+      }).catch((err: Error): void => {
+        console.log('closeRawFd_test_static_0200 error code:' + err?.code);
+        expect(err?.code).assertEqual(9001005);
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   getRawFdSync_test_static_0200
+     * @tc.name     getRawFdSync_test_static_0200
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getRawFdSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        res!.getRawFdSync('');
+      } catch (err) {
+        let error = err as BusinessError;
+        console.log('getRawFdSync_test_static_0200 error code:' + error.code);
+        expect(error.code).assertEqual(9001005);
+      }
+    })
+
+    /**
+     * @tc.number   closeRawFdSync_test_static_0200
+     * @tc.name     closeRawFdSync_test_static_0200
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('closeRawFdSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        res!.closeRawFdSync('');
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('closeRawFdSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001005);
+      }
+    })
+
+    /**
+     * @tc.number   getRawFileContentSync_test_static_0200
+     * @tc.name     getRawFileContentSync_test_static_0200
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getRawFileContentSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        res!.getRawFileContentSync('');
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getRawFileContentSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001005);
+      }
+    })
+
+    /**
+     * @tc.number   getMediaByNameSync_test_static_0300
+     * @tc.name     getMediaByNameSync_test_static_0300
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getMediaByNameSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        res!.getMediaByNameSync('', 0);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.log('getMediaByNameSync_test_static_0300 error code:' + error.code);
+        expect(error.code).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number   getMediaBase64ByNameSync_test_static_0300
+     * @tc.name     getMediaBase64ByNameSync_test_static_0300
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getMediaBase64ByNameSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        res!.getMediaBase64ByNameSync('', 0);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.log('getMediaBase64ByNameSync_test_static_0300 error code:' + error.code);
+        expect(error.code).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number   getStringArrayByNameSync_test_static_0300
+     * @tc.name     getStringArrayByNameSync_test_static_0300
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getStringArrayByNameSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        res!.getStringArrayByNameSync('');
+      } catch (err) {
+        let error = err as BusinessError;
+        console.log('getStringArrayByNameSync_test_static_0300 error code:' + error.code);
+        expect(error.code).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number   getIntPluralStringValueSync_test_static_0200
+     * @tc.name     getIntPluralStringValueSync_test_static_0200
+     * @tc.desc     9001002
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringValueSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getIntPluralStringValueSync(0x0100002F, 1, 10);
+        console.log('getIntPluralStringValueSync_test_static_0200 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getIntPluralStringValueSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001002);
+      }
+    })
+
+    /**
+     * @tc.number   getIntPluralStringValueSync_test_static_0300
+     * @tc.name     getIntPluralStringValueSync_test_static_0300
+     * @tc.desc     9001006
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringValueSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getIntPluralStringValueSync(0x01000038, 1, 10);
+        console.log('getIntPluralStringValueSync_test_static_0300 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getIntPluralStringValueSync_test_static_0300 error code:' + err.code);
+        expect(err.code).assertEqual(9001006);
+      }
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringValueSync_test_static_0200
+     * @tc.name     getDoublePluralStringValueSync_test_static_0200
+     * @tc.desc     9001002
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringValueSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getDoublePluralStringValueSync(0x0100002F, 1.1, 10);
+        console.log('getDoublePluralStringValueSync_test_static_0200 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getDoublePluralStringValueSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001002);
+      }
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringValueSync_test_static_0300
+     * @tc.name     getDoublePluralStringValueSync_test_static_0300
+     * @tc.desc     9001006
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringValueSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getDoublePluralStringValueSync(0x01000038, 1.1, 10);
+        console.log('getDoublePluralStringValueSync_test_static_0300 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getDoublePluralStringValueSync_test_static_0300 error code:' + err.code);
+        expect(err.code).assertEqual(9001006);
+      }
     })
 
     console.log('*************end globalStageTest*************');

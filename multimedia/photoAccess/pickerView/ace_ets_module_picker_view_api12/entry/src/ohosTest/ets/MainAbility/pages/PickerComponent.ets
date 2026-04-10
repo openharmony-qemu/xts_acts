@@ -27,7 +27,7 @@ import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo } from '@ohos.file.
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
-import { EventType } from '../common/Common';
+import CommonFunc, { EventType } from '../common/Common';
 import { ClickInfo } from '../common/Common';
 import { PhotoPickerResult } from '../common/PhotoPickerResult';
 
@@ -86,7 +86,7 @@ struct PickerComponent {
     if (!itemInfo) {
       return;
     }
-  
+
     this.sendEvent({ itemInfo, clickType } as ClickInfo, EventType.ITEM_CLICKED_NOTIFY);
     console.info('onItemClickedNotify' + JSON.stringify(itemInfo));
   }
@@ -111,6 +111,7 @@ struct PickerComponent {
     result.autoPlayScenes = this.pickerOptions.autoPlayScenes ?? [];
     result.appAlbumFilters = this.pickerOptions.appAlbumFilters ?? [];
     result.preselectedUris = this.pickerOptions.preselectedUris ?? [];
+    result.backgroundOpacity = this.pickerOptions.backgroundOpacity ?? undefined;
     return result;
   }
 
@@ -135,6 +136,7 @@ struct PickerComponent {
     result.preselectedUris = config.preselectedUris ?? [];
     result.autoPlayScenes = config.autoPlayScenes ?? [];
     result.appAlbumFilters = config.appAlbumFilters ?? [];
+    result.backgroundOpacity = config.backgroundOpacity;
     return result;
   }
 
@@ -158,6 +160,8 @@ struct PickerComponent {
   private onPickerControllerReady(): void {
     console.info('onPickerControllerReady');
     let elements: number[] = [PhotoBrowserUIElement.CHECKBOX, PhotoBrowserUIElement.BACK_BUTTON];
+    this.pickerController.setPhotoBrowserUIElementVisibility([], true);
+    this.pickerController.setPhotoBrowserUIElementVisibility(elements, true);
     this.pickerController.setPhotoBrowserUIElementVisibility(elements, false);
   }
 
@@ -190,7 +194,7 @@ struct PickerComponent {
     console.info('onScrollStopAtEnd')
   }
 
-    private onScrollStopAtStartCallback(): void {
+  private onScrollStopAtStartCallback(): void {
     console.info('onScrollStopAtStart')
   }
 
@@ -200,6 +204,10 @@ struct PickerComponent {
     this.sendEvent(albumInfo, EventType.ALBUM_INFO);
     if (albumInfo?.uri) {
       this.pickerController.setData(DataType.SET_ALBUM_URI, albumInfo.uri);
+
+      this.pickerController.addData(DataType.SET_ALBUM_URI, albumInfo.uri);
+
+      this.pickerController.deleteData(DataType.SET_ALBUM_URI, albumInfo.uri);
       console.info('onALbumClick' + JSON.stringify(albumInfo.uri));
     }
     return true;
@@ -238,7 +246,7 @@ struct PickerComponent {
   }
 
   private onPhotoBrowserChangeStart(itemInfo: BaseItemInfo): void {
- 	  console.info('onPhotoBrowserChangeStart, itemInfo=' + JSON.stringify(itemInfo));
+    console.info('onPhotoBrowserChangeStart, itemInfo=' + JSON.stringify(itemInfo));
   }
 
   private onError(pickerError: PickerError): void {
@@ -247,7 +255,7 @@ struct PickerComponent {
     let message = pickerError?.message;
     console.info(`onError, functionName=${functionName}, errorCode=${errorCode}, message=${message}`);
   }
- 	 
+
 
   private onItemClicked(itemInfo: ItemInfo, clickType: ClickType): boolean {
     if (!itemInfo) {
@@ -320,11 +328,16 @@ struct PickerComponent {
   ButtonBar() {
     Row() {
       Button('视频和图片').width('50%').height('5%')
-        .onClick(() => {
+        .onClick(async () => {
           this.isShowAll = true;
           this.isShowVideo = false;
           this.isShowPhoto = false;
           this.pickerController.setData(DataType.SET_SELECTED_URIS, this.selectedUris);
+          await CommonFunc.sleep(500);
+          this.pickerController.addData(DataType.SET_SELECTED_URIS, this.selectedUris);
+          await CommonFunc.sleep(500);
+          this.pickerController.deleteData(DataType.SET_SELECTED_URIS, this.selectedUris);
+          await CommonFunc.sleep(500);
         })
       Button('全部相册').width('50%').height('5%')
         .onClick(() => {
@@ -367,8 +380,9 @@ struct PickerComponent {
             playMode: photoAccessHelper.PlayMode.AUTO_PLAY,
           }
         ];
-        updatedOptions.appAlbumFilters = 
- 	  	           ['com.example.sourceapp.album', 'com.example.sourceapp.album1', 'com.example.sourceapp.album2'];        
+        updatedOptions.appAlbumFilters =
+          ['com.example.sourceapp.album', 'com.example.sourceapp.album1', 'com.example.sourceapp.album2'];
+        updatedOptions.backgroundOpacity = 0.75;
         this.pickerController.updatePickerOptions(updatedOptions);
 
         let result: PhotoPickerResult = this.getUpdatablePickerResult(updatedOptions);
@@ -396,8 +410,8 @@ struct PickerComponent {
         onItemClicked: (itemInfo: ItemInfo, clickType: ClickType): boolean =>
         this.onItemClicked(itemInfo, clickType),
         onItemClickedNotify: this.isOnItemClickedNotifySet
-        ? (itemInfo: ItemInfo, clickType: ClickType): void => this.onItemClickedNotify(itemInfo, clickType)
-        : undefined,
+          ? (itemInfo: ItemInfo, clickType: ClickType): void => this.onItemClickedNotify(itemInfo, clickType)
+          : undefined,
         onEnterPhotoBrowser: (photoBrowserInfo: PhotoBrowserInfo): boolean =>
         this.onEnterPhotoBrowser(photoBrowserInfo),
         onExitPhotoBrowser: (photoBrowserInfo: PhotoBrowserInfo): boolean =>
@@ -413,7 +427,7 @@ struct PickerComponent {
         pickerController: this.pickerController,
         onPinchGridSwitched: (gridLevel: photoAccessHelper.GridLevel): void => this.onPinchGridSwitched(gridLevel),
         onPhotoBrowserChangeStart: (itemInfo: BaseItemInfo): void => this.onPhotoBrowserChangeStart(itemInfo),
- 	      onError: (pickerError: PickerError): void => this.onError(pickerError),
+        onError: (pickerError: PickerError): void => this.onError(pickerError),
       })
         .height('70%')
         .width('100%')
@@ -424,27 +438,8 @@ struct PickerComponent {
 
   @Builder
   buildFooter(){
-    // 缩略图
-    if (this.isBrowserShow) {
-      Row() {
-        ForEach(this.selectedUris, (uri: string) => {
-          Image(uri)
-            .height('10%')
-            .width('20%')
-            .backgroundColor(this.allBackGroundColor)
-            .onClick(() => {
-              console.log('uri: ' + uri + ' is click');
-              this.pickerController.setPhotoBrowserItem(uri, PhotoBrowserRange.ALL);
-            })
-            .id('smallImage')
-        })
-      }.offset({
-        y: 420
-      })
-    } else {
+    Row() {
       Button('预览')
-        .width('33%')
-        .height('5vp')
         .onClick(() => {
           if (this.selectedUris.length > 0) {
             this.pickerController.setPhotoBrowserItem(this.selectedUris[0], PhotoBrowserRange.SELECTED_ONLY);
@@ -452,9 +447,10 @@ struct PickerComponent {
           }
         })
         .id('previewButton')
-        .offset({
-          x: -120,
-          y: 400
+      Button('setPhotoBrowserItem with empty uri')
+        .id('setPhotoBrowserItemWithEmptyURI')
+        .onClick(() => {
+          this.pickerController.setPhotoBrowserItem('', PhotoBrowserRange.ALL);
         })
     }
   }

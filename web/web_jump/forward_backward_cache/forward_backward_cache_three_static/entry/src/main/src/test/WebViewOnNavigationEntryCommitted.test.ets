@@ -39,15 +39,15 @@ export default function ActsAceWebViewOnNavigationEntryCommitted() {
     })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_ONNAVIAGTIONENTRYCOMMITTED_API_0001
-     *@tc.name testWebViewOnNavigationEntryCommittedStatic01
-     *@tc.desc test onNavigationEntryCommitted
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name testWebViewOnNavigationEntryCommittedStatic01
+     * @tc.number SUB_ACE_WEB_ONNAVIAGTIONENTRYCOMMITTED_API_0001
+     * @tc.desc test onNavigationEntryCommitted
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL0
      */
-    it('testWebViewOnNavigationEntryCommittedStatic01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testWebViewOnNavigationEntryCommittedStatic01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 	  await Utils.msSleep(3000);
       emitKey = "emitWebViewOnNavigationEntryCommitted01"
       Utils.emitEvent(emitKey, 10);

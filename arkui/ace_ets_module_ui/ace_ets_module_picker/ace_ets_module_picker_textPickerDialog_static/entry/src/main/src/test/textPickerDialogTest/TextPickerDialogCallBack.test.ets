@@ -26,7 +26,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function textPickerDialogAppearTextTest() {
   describe('textPickerDialogAppearTextTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerDialogAppearText beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.textPickerDialog.static", "EntryAbility")
     });

@@ -80,6 +80,19 @@
         "MainAbility/pages/Draw/DrawModifierTwoTest",
         "MainAbility/pages/Draw/DrawForegroundTest",
         "MainAbility/pages/Draw/DrawOverlayTest",
-        "MainAbility/pages/useEffect/useEffectIndex"
+        "MainAbility/pages/useEffect/useEffectIndex",
+        "MainAbility/pages/button/ButtonDrawModifierNullUndefined",
+        "MainAbility/pages/button/ButtonAttributeModifierNullUndefined",
+        "MainAbility/pages/button/AttributeModifierNullUndefined",
+        "MainAbility/pages/button/AttributeUpdaterNullUndefined",
+        "MainAbility/pages/button/CommonModifierNullUndefined",
+        "MainAbility/pages/grid/gridModifierNullUndefined",
+        "MainAbility/pages/list/listModifierNullUndefined",
+        "MainAbility/pages/list/listItemModifierNullUndefined",
+        "MainAbility/pages/list/groupModifierNullUndefined",
+        "MainAbility/pages/refresh/refreshModifierNullUndefined",
+        "MainAbility/pages/scroll/scrollModifierNullUndefined",
+        "MainAbility/pages/waterFlow/waterFlowModifierNullUndefined",
+        "MainAbility/pages/AttributeModifier/IsInstanceOf"
     ]
 }

@@ -53,7 +53,7 @@ export default function ActsAccountOnOffStatic() {
       }
     }    
     
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsaccountoperatetest.static");
@@ -82,12 +82,12 @@ export default function ActsAccountOnOffStatic() {
           events: ["account_on_change_associatedata"]
         }
         await Utils.msSleep(500);
-        let subscriber: commonevent.CommonEventSubscriber;
+        let subscriber: commonevent.CommonEventSubscriber | undefined;
         commonevent.createSubscriber(commonEventSubscribeInfo).then((data: commonevent.CommonEventSubscriber | null) => {
           if (data) {
             subscriber = data;
           }
-          commonevent.subscribe(subscriber,
+          commonevent.subscribe(subscriber!,
             (err: BusinessError<void> | null, data: commonevent.CommonEventData | undefined): void => {
               hilog.info(0x0000, tag, "====>subscriberCallback 0200 data: " + JSON.stringify(data));
               try {
@@ -104,7 +104,7 @@ export default function ActsAccountOnOffStatic() {
                       });
                     } else {
                       expect(data?.data).assertEqual("SUCCESS");
-                      commonevent.unsubscribe(subscriber, (err: BusinessError<void> | null): void => {
+                      commonevent.unsubscribe(subscriber!, (err: BusinessError<void> | null): void => {
                         hilog.info(0x0000, tag, "====>unsubscribe 0200 err: " + JSON.stringify(err));
                         accountManager.removeAccount("onoff_associatedata", (err: BusinessError<void> | null): void => {
                           hilog.info(0x0000, tag, "====>delete account 0200 err: " + JSON.stringify(err));
@@ -159,12 +159,12 @@ export default function ActsAccountOnOffStatic() {
           events: ["account_on_change_setcredential"]
         }
         await Utils.msSleep(500);
-        let subscriber: commonevent.CommonEventSubscriber;
+        let subscriber: commonevent.CommonEventSubscriber | undefined;
         commonevent.createSubscriber(commonEventSubscribeInfo).then((data: commonevent.CommonEventSubscriber | null) => {
           if (data) {
             subscriber = data;
           }
-          commonevent.subscribe(subscriber,
+          commonevent.subscribe(subscriber!,
             (err: BusinessError<void> | null, data: commonevent.CommonEventData | undefined): void => {
               hilog.info(0x0000, tag, "====>subscriberCallback 0300 data: " + JSON.stringify(data));
               try {
@@ -181,7 +181,7 @@ export default function ActsAccountOnOffStatic() {
                       });
                     } else {
                       expect(data?.data).assertEqual("SUCCESS");
-                      commonevent.unsubscribe(subscriber, (err: BusinessError<void> | null): void => {
+                      commonevent.unsubscribe(subscriber!, (err: BusinessError<void> | null): void => {
                         hilog.info(0x0000, tag, "====>unsubscribe 0300 err: " + JSON.stringify(err));
                         accountManager.removeAccount("onoff_setcredential", (err: BusinessError<void> | null): void => {
                           hilog.info(0x0000, tag, "====>delete account 0300 err: " + JSON.stringify(err));
@@ -239,14 +239,14 @@ export default function ActsAccountOnOffStatic() {
           events: ["account_on_remove_another"]
         }
         await Utils.msSleep(500)
-        let subscriber: commonevent.CommonEventSubscriber;
+        let subscriber: commonevent.CommonEventSubscriber | undefined;
         hilog.info(0x0000, tag, "====>createSubscriber start");
         commonevent.createSubscriber(commonEventSubscribeInfo).then((data: commonevent.CommonEventSubscriber | null) => {
           if (data) {
             subscriber = data;
           }
           hilog.info(0x0000, tag, "====>subscribe start");
-          commonevent.subscribe(subscriber,
+          commonevent.subscribe(subscriber!,
             (err: BusinessError<void> | null, data: commonevent.CommonEventData | undefined): void => {
               hilog.info(0x0000, tag, "====>subscriberCallback 0400 data: " + JSON.stringify(data));
               try {
@@ -263,7 +263,7 @@ export default function ActsAccountOnOffStatic() {
                       });
                     } else {
                       expect(data?.data).assertEqual("SUCCESS");
-                      commonevent.unsubscribe(subscriber, (err: BusinessError<void> | null): void => {
+                      commonevent.unsubscribe(subscriber!, (err: BusinessError<void> | null): void => {
                         hilog.info(0x0000, tag, "====>unsubscribe 0400 err: " + JSON.stringify(err));
                         accountManager.removeAccount("onoff_removeFir", (err: BusinessError<void> | null): void => {
                           hilog.info(0x0000, tag, "====>remove account 0400 err: " + JSON.stringify(err));
@@ -316,14 +316,14 @@ export default function ActsAccountOnOffStatic() {
           events: ["account_on_change_remove"]
         }
         await Utils.msSleep(500)
-        let subscriber: commonevent.CommonEventSubscriber;
+        let subscriber: commonevent.CommonEventSubscriber | undefined;
         hilog.info(0x0000, tag, "====>createSubscriber start");
         commonevent.createSubscriber(commonEventSubscribeInfo).then((data: commonevent.CommonEventSubscriber | null) => {
           if (data) {
             subscriber = data;
           }
           hilog.info(0x0000, tag, "====>subscribe start");
-          commonevent.subscribe(subscriber,
+          commonevent.subscribe(subscriber!,
             (err: BusinessError<void> | null, data: commonevent.CommonEventData | undefined): void => {
               hilog.info(0x0000, tag, "====>subscriberCallback 0500 data: " + JSON.stringify(data));
               try {
@@ -340,7 +340,7 @@ export default function ActsAccountOnOffStatic() {
                       });
                     } else {
                       expect(data?.data).assertEqual("SUCCESS");
-                      commonevent.unsubscribe(subscriber, (err: BusinessError<void> | null): void => {
+                      commonevent.unsubscribe(subscriber!, (err: BusinessError<void> | null): void => {
                         hilog.info(0x0000, tag, "====>unsubscribe 0500 err: " + JSON.stringify(err));
                         Utils.msSleep(500).then(() => {
                           done();
@@ -394,14 +394,14 @@ export default function ActsAccountOnOffStatic() {
           events: ["account_on_set_another_disable"]
         }
         await Utils.msSleep(500)
-        let subscriber: commonevent.CommonEventSubscriber;
+        let subscriber: commonevent.CommonEventSubscriber | undefined;
         hilog.info(0x0000, tag, "====>createSubscriber start");
         commonevent.createSubscriber(commonEventSubscribeInfo).then((data: commonevent.CommonEventSubscriber | null) => {
           if (data) {
             subscriber = data;
           }
           hilog.info(0x0000, tag, "====>subscribe start");
-          commonevent.subscribe(subscriber,
+          commonevent.subscribe(subscriber!,
             (err: BusinessError<void> | null, data: commonevent.CommonEventData | undefined): void => {
               hilog.info(0x0000, tag, "====>subscriberCallback 0400 data: " + JSON.stringify(data));
               try {
@@ -418,7 +418,7 @@ export default function ActsAccountOnOffStatic() {
                       });
                     } else {
                       expect(data?.data).assertEqual("SUCCESS");
-                      commonevent.unsubscribe(subscriber, (err: BusinessError<void> | null): void => {
+                      commonevent.unsubscribe(subscriber!, (err: BusinessError<void> | null): void => {
                         hilog.info(0x0000, tag, "====>unsubscribe 0600 err: " + JSON.stringify(err));
                         accountManager.removeAccount("onoff_disableFir", (err: BusinessError<void> | null): void => {
                           hilog.info(0x0000, tag, "====>remove account 0600 err: " + JSON.stringify(err));
@@ -481,13 +481,13 @@ export default function ActsAccountOnOffStatic() {
           events: ["account_on_change_disable"]
         }
         await Utils.msSleep(500)
-        let subscriber: commonevent.CommonEventSubscriber;
+        let subscriber: commonevent.CommonEventSubscriber | undefined;
         hilog.info(0x0000, tag, "====>createSubscriber start");
         commonevent.createSubscriber(commonEventSubscribeInfo).then((data: commonevent.CommonEventSubscriber | null) => {
           if (data) {
             subscriber = data;
           }
-          commonevent.subscribe(subscriber,
+          commonevent.subscribe(subscriber!,
             (err: BusinessError<void> | null, data: commonevent.CommonEventData | undefined): void => {
               hilog.info(0x0000, tag, "====>subscriberCallback 0700 data: " + JSON.stringify(data));
               try {
@@ -504,7 +504,7 @@ export default function ActsAccountOnOffStatic() {
                       });
                     } else {
                       expect(data?.data).assertEqual("SUCCESS");
-                      commonevent.unsubscribe(subscriber, (err: BusinessError<void> | null): void => {
+                      commonevent.unsubscribe(subscriber!, (err: BusinessError<void> | null): void => {
                         hilog.info(0x0000, tag, "====>unsubscribe 0700 err: " + JSON.stringify(err));
                         accountManager.removeAccount("onoff_disable", (err: BusinessError<void> | null): void => {
                           hilog.info(0x0000, tag, "====>delete account 0700 err: " + JSON.stringify(err));
@@ -554,6 +554,7 @@ export default function ActsAccountOnOffStatic() {
           hilog.info(0x0000, tag, "====>receive change 0800 data: " + data);
           try {
             if (data) {
+              expect(data.length > 0).assertTrue();
               hilog.info(0x0000, tag, "====>data.length: " + data.length);
               for (let i: int = 0; i < data.length; i++) {
                 if (data[i]) {
@@ -588,7 +589,6 @@ export default function ActsAccountOnOffStatic() {
             });
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -667,7 +667,6 @@ export default function ActsAccountOnOffStatic() {
             });
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setAssociatedData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -844,7 +843,6 @@ export default function ActsAccountOnOffStatic() {
             });
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -948,7 +946,6 @@ export default function ActsAccountOnOffStatic() {
               expect().assertFail();
             });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>on ActsAccountChangeOnOff_1300 err:" + JSON.stringify(err));
         }
         hilog.info(0x0000, tag, "====>setCustomData start====");
@@ -969,7 +966,6 @@ export default function ActsAccountOnOffStatic() {
             });
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -1017,7 +1013,6 @@ export default function ActsAccountOnOffStatic() {
             });
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();

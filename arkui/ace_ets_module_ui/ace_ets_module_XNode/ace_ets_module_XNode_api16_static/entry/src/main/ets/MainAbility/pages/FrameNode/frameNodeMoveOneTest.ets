@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ function buildText(string: string) {
     .fontWeight(FontWeight.Bold)
 }
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public uiContext: UIContext | null = null
   public rootNode: FrameNode | null = null
   public builderRootNode: FrameNode | null = null
@@ -132,7 +132,7 @@ class MyNodeController extends NodeController {
     try{
       console.log('++++++++++++node2',this.node2)
       this.rootNode!.appendChild(this.node2!)  // NullPointerError
-    } catch(err:Error){
+    } catch(err){
       console.log('+++++++++addFrame2-1 Error ',err)
     }
     // this.rootNode!.appendChild(this.node2!) //

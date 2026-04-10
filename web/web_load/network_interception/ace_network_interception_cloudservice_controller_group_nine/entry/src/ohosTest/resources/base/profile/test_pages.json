@@ -1,6 +1,6 @@
 {
   "src": [
-    "testability/pages/WebResourceResponsePage"
-  
+    "testability/pages/WebResourceResponsePage",
+    "testability/pages/WebResourceResponsePageTwo"
   ]
 }

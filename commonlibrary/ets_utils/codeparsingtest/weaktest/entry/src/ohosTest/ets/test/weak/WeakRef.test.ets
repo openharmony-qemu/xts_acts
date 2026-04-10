@@ -700,14 +700,14 @@ export default function WeakRefTest() {
     });
 
     /**
-     * @tc.name   WeakMapMainKey附属WeakRefValueTest060
+     * @tc.name   WeakMapMainKeyWeakRefValueTest060Adapt001
      * @tc.number SUB_BUILTINS_WEAKREF_TEST_060
      * @tc.desc   Verify WeakMap (key=main object, value=WeakRef of 附属) — 附属 links to main; both GC'd, entry removed.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('WeakMapMainKey附属WeakRefValueTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('WeakMapMainKeyWeakRefValueTest060Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const result = await WeakRefTestUtils.test060_WeakMapMainKey附属WeakRefValue();
       expect(result).assertEqual("Test Passed: WeakMapMainKey附属WeakRefValueTest060");
     });

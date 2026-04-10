@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 let testAbilityContext:common.UIAbilityContext;
 
 export default function SetAndClearServiceWorkerWebSchemeHandler() {
-  describe('componentLifeCycleTestOne', (): void => {
+  describe('SetAndClearServiceWorkerWebSchemeHandler', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')
     });
@@ -36,15 +36,15 @@ export default function SetAndClearServiceWorkerWebSchemeHandler() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0100
-    * @tc.name       : testSetAndClearServiceWorkerWebSchemeHandler0100
-    * @tc.desc       : test setAndClearServiceWorkerWebSchemeHandler
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        testSetAndClearServiceWorkerWebSchemeHandlerStatic0100
+    * @tc.number      SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0100
+    * @tc.desc        test setAndClearServiceWorkerWebSchemeHandler
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('setAndClearServiceWorkerWebSchemeHandler0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testSetAndClearServiceWorkerWebSchemeHandlerStatic0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("setAndClearServiceWorkerWebSchemeHandler0100", 10)
       Utils.registerEvent("setAndClearServiceWorkerWebSchemeHandler0100", "GET", 8854, done);
       Utils.registerEvent("setAndClearServiceWorkerWebSchemeHandler0100", false, 8860, done);
@@ -54,15 +54,15 @@ export default function SetAndClearServiceWorkerWebSchemeHandler() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0200
-    * @tc.name       : testSetAndClearServiceWorkerWebSchemeHandler0200
-    * @tc.desc       : test setAndClearServiceWorkerWebSchemeHandler
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        testSetAndClearServiceWorkerWebSchemeHandlerStatic0200
+    * @tc.number      SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0200
+    * @tc.desc        test setAndClearServiceWorkerWebSchemeHandler
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('setAndClearServiceWorkerWebSchemeHandler0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testSetAndClearServiceWorkerWebSchemeHandlerStatic0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("setAndClearServiceWorkerWebSchemeHandler0200", 10)
       await Utils.msSleep(2000);
       Utils.registerEvent("setAndClearServiceWorkerWebSchemeHandler0200", "lock", 8862, done);
@@ -72,6 +72,130 @@ export default function SetAndClearServiceWorkerWebSchemeHandler() {
       done();
     })
 
+    /**
+     * @tc.name   testCustomizeSchemesStatic001
+     * @tc.number SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0300
+     * @tc.desc   test customizeSchemes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCustomizeSchemesStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testCustomizeSchemes001", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testCustomizeSchemes001", 17100020, 148350, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setAndClearServiceWorkerWebSchemeHandler', 10, '');
+      await Utils.msSleep(6000);
+      done();
+    })
 
+    /**
+     * @tc.name   testCustomizeSchemesStatic002
+     * @tc.number SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0400
+     * @tc.desc   test customizeSchemes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCustomizeSchemesStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testCustomizeSchemes002", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testCustomizeSchemes002", true, 148351, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setAndClearServiceWorkerWebSchemeHandler', 10, '');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testCustomizeSchemesLazyInitWebEngineTrueStatic
+     * @tc.number SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0500
+     * @tc.desc   test customizeSchemesLazyInitWebEngine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCustomizeSchemesLazyInitWebEngineTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("emitCustomizeSchemesLazyInitWebEngineTrue", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("emitCustomizeSchemesLazyInitWebEngineTrue", 17100020, 148353, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setAndClearServiceWorkerWebSchemeHandler', 10, '');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testCustomizeSchemesLazyInitWebEngineFalseStatic
+     * @tc.number SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0600
+     * @tc.desc   test customizeSchemesLazyInitWebEngine
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCustomizeSchemesLazyInitWebEngineFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("emitCustomizeSchemesLazyInitWebEngineFalse", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("emitCustomizeSchemesLazyInitWebEngineFalse", 17100020, 148354, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setAndClearServiceWorkerWebSchemeHandler', 10, '');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testWebSchemeHandlerEmptyStatic
+     * @tc.number SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0700
+     * @tc.desc   test webSchemeHandler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebSchemeHandlerEmptyStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("setWebSchemeHandlerEmpty", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("setWebSchemeHandlerEmpty", true, 148352, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setAndClearServiceWorkerWebSchemeHandler', 10, '');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+     * @tc.name   testSetServiceWorkerWebSchemeHandlerEmptyStatic
+     * @tc.number SUB_WEB_SETANDCLEARSERVICEWORKERWEBSCHEMEHANDLER_0800
+     * @tc.desc   test setServiceWorkerWebSchemeHandlerEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetServiceWorkerWebSchemeHandlerEmptyStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("setServiceWorkerWebSchemeHandlerEmpty", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("setServiceWorkerWebSchemeHandlerEmpty", true, 1483521, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setAndClearServiceWorkerWebSchemeHandler', 10, '');
+      await Utils.msSleep(6000);
+      done();
+    })
+
+    /**
+    * @tc.name        emitOnSwitchNextPageStatic03
+    * @tc.number      emitOnSwitchNextPageStatic03
+    * @tc.desc        change page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('emitOnSwitchNextPageStatic03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitonSwitchNextPage', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('setAndClearServiceWorkerWebSchemeHandler', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
   })
 }

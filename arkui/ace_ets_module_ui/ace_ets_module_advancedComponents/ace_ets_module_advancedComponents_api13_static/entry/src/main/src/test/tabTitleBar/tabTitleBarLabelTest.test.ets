@@ -24,7 +24,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function tabTitleBarLabelTest() {
   describe('tabTitleBarLabelTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("tabTitleBarLabelTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
 

@@ -91,7 +91,7 @@ struct Inspector {
                 }
                 console.info("inspector_101 onClick start to emit action state")
                 events_emitter.emit(backEvent, backData)
-              } catch (err: Error) {
+              } catch (err) {
                 console.info("inspector_101 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
               }
             })
@@ -116,7 +116,7 @@ struct Inspector {
                 }
                 console.info("inspector_102 onClick start to emit action state")
                 events_emitter.emit(backEvent1, backData1)
-              } catch (err: Error) {
+              } catch (err) {
                 console.info("inspector_102 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
               }
             })
@@ -140,7 +140,7 @@ struct Inspector {
                 });
                 Profiler.unregisterVsyncCallback();
                 this.catchStatus = "callBackSuccess"
-              } catch (err: Error) {
+              } catch (err) {
                 console.info("inspector_103 onClick err: " + JSON.stringify((err as Error)?.message))
                 this.catchStatus = "callBackFail"
               }
@@ -156,7 +156,7 @@ struct Inspector {
                 }
                 console.info("inspector_103 onClick start to emit action state")
                 events_emitter.emit(backEvent2, backData2)
-              } catch (err: Error) {
+              } catch (err) {
                 console.info("inspector_103 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
               }
             })

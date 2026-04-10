@@ -31,7 +31,7 @@ import Utils from './Util.test';
 
 export default function EscapeRegexpTest() {
   describe('RegexpAbilityTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     // // Defines a test suite. Two parameters are supported: test suite name and test suite function.

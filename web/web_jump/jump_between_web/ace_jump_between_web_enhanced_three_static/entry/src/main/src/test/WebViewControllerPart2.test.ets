@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ export default function webTwoJsunit() {
         abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.actsacejumpbetweenwebenhancedtestthreetest.static')
         await Utils.msSleep(2000)
         console.log('beforeAll end,%s', "Succeed!")
-      } catch (error: Error) {
+      } catch (error) {
         console.info(`beforeAll error: ${JSON.stringify(error)}`)
       }
     });
@@ -72,6 +72,7 @@ export default function webTwoJsunit() {
       inspector.sendEventByKey('WebViewControllerPart2Button', 10, '');
       await Utils.msSleep(10000);
       done()
+    })
 
     /**
      * @tc.name   testBackOrForward_static_003
@@ -89,7 +90,7 @@ export default function webTwoJsunit() {
       inspector.sendEventByKey('WebViewControllerPart2Button', 10, '');
       await Utils.msSleep(10000);
       done()
-      })
+    })
 
     /**
      * @tc.name   testBackOrForward_static_004
@@ -100,7 +101,7 @@ export default function webTwoJsunit() {
      * @tc.level  LEVEL3
      */
     it('testBackOrForward_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-	  await Utils.msSleep(2000);
+      await Utils.msSleep(2000);
       Utils.emitEvent("testBackOrForward004", 10)
       await Utils.msSleep(3000);
       Utils.registerEvent("testBackOrForward004", "index", 37008, done);
@@ -108,7 +109,25 @@ export default function webTwoJsunit() {
       inspector.sendEventByKey('WebViewControllerPart2Button', 10, '');
       await Utils.msSleep(10000);
       done()
-      })
+    })
+
+    /**
+     * @tc.name   testBackOrForward_static_005
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BACKORFORWARD_0500
+     * @tc.desc   test backOrForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testBackOrForward_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent("testBackOrForward005", 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent("testBackOrForward005", "17100001", 370081, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebViewControllerPart2Button', 10, '');
+      await Utils.msSleep(10000);
+      done()
     })
   })
 }

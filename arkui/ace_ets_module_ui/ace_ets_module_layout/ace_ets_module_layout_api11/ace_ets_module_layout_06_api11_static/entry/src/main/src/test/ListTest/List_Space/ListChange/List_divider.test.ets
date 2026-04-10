@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function List_divider() {
 
   describe('List_divider', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("List_divider beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")

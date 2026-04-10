@@ -36,7 +36,7 @@ export default function WebViewEnumAndFontLibrary() {
 
   describe('WebViewEnumAndFontLibraryTest', (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await Utils.sleep(2000)
       await Utils.emitEvent('pages/WebViewEnumAndFontLibrary', 10)
       await Utils.sleep(2000)
@@ -225,7 +225,205 @@ export default function WebViewEnumAndFontLibrary() {
         done()
       })
 
-    afterAll(() => {
+    /**
+     * @tc.name        testWebContextMenuResultPasteStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTPASTE_0100
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testWebContextMenuResultPasteStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitWebContextMenuResultPaste', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitWebContextMenuResultPaste', 'paste', 12521, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        testOnContextMenuShowUndefinedStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTPASTE_1257
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testOnContextMenuShowUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitOnContextMenuShowUndefined', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitOnContextMenuShowUndefined', true, 1257, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        testWebContextMenuResultRedoStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTREDO_012522
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testWebContextMenuResultRedoStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitWebContextMenuResultRedo', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitWebContextMenuResultRedo', 'redo', 12522, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        testOnContextMenuShowStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTREDO_0100
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testOnContextMenuShowStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitOnContextMenuShow001', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitOnContextMenuShow001', true, 1258, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        testWebContextMenuResultUndoStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTUNDO_0100
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testWebContextMenuResultUndoStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitWebContextMenuResultUndo', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitWebContextMenuResultUndo', 'undo', 12523, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        testOnContextMenuHideStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTUNDO_1259
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testOnContextMenuHideStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitOnContextMenuHide001', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitOnContextMenuHide001', true, 1259, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        emitWebContextMenuResultPasteAndMatchStyleStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTPASTEANDMATCHSTYLE_012524
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('emitWebContextMenuResultPasteAndMatchStyleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitWebContextMenuResultPasteAndMatchStyle', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitWebContextMenuResultPasteAndMatchStyle', 'pasteAndMatchStyle', 12524, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        testOnContextMenuHideUndefinedStatic
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTPASTEANDMATCHSTYLE_0100
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testOnContextMenuHideUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitOnContextMenuHideUndefined', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitOnContextMenuHideUndefined', true, 1260, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        emitWebContextMenuResultRequestPasswordAutoFillStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTREQUESTPASSWORDAUTOFILL_0100
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('emitWebContextMenuResultRequestPasswordAutoFillStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitWebContextMenuResultRequestPasswordAutoFill', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitWebContextMenuResultRequestPasswordAutoFill', 'requestPasswordAutoFill', 12524, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.name        testEditMenuOptionsStatic001
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTREQUESTPASSWORDAUTOFILL_12524
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testEditMenuOptionsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitEditMenuOptions001', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitEditMenuOptions001', true, 1261, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    /**
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTCLOSECONTEXTMENU_0700
+     * @tc.name        testEditMenuOptionsUndefinedStatic
+     * @tc.desc        test EditMenuOptions
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testEditMenuOptionsUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        Utils.emitEvent('emitEditMenuOptionsUndefined', 10)
+        await Utils.sleep(2000);
+        Utils.registerEvent('emitEditMenuOptionsUndefined', true, 1262, done);
+        inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
+        await Utils.sleep(3000)
+        done()
+      })
+
+    afterAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterAll start');
       Utils.emitEvent('back', 10)
       await Utils.sleep(2000);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -119,12 +119,12 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         }
         try {
           generator.addSigner(x509Cert, keyInfo, signer);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`addSigner catch error: ${error}`);
-          expect(error.code).assertEqual(19030001);
+          expect((error as BusinessError).code).assertEqual(19030001);
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_0100 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -164,12 +164,12 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         expect(null).assertNull();
         try {
           generator.addSigner(x509Cert, keyInfo, signer);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`addSigner catch error: ${error}`);
-          expect(error.code).assertEqual(19030001);
+          expect((error as BusinessError).code).assertEqual(19030001);
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_0200 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -206,7 +206,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
           generator.addSigner(x509Cert, keyInfo, signer);
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_0300 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -253,7 +253,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
           console.info("################# p7:" + p7.toString())
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_0400 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -300,7 +300,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
           console.info("################# p7:" + p7)
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_0500 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -348,7 +348,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_0600 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -396,7 +396,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_0700 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -443,7 +443,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_0800 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -491,7 +491,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_0900 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -539,7 +539,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_1000 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -588,7 +588,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
           console.info("########################## p7" + p7.toString())
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_1100 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -636,7 +636,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_1200 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -683,7 +683,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_1300 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -730,7 +730,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_1400 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -778,7 +778,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_1500 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -826,7 +826,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_1600 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -863,9 +863,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         };
         let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
         generator.addSigner(x509Cert, keyInfo, signer);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_1601 catch error: ${error}`);
-        expect(error.code).assertEqual(cert.CertResult.ERR_MAYBE_WRONG_PASSWORD);
+        expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_MAYBE_WRONG_PASSWORD);
       }
       done();
     });
@@ -907,7 +907,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_1700 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -952,7 +952,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_1800 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -996,7 +996,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_1900 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1040,7 +1040,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_2000 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1087,7 +1087,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_2100 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1138,7 +1138,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_2200 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1196,7 +1196,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_2300 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1247,7 +1247,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_2400 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1292,7 +1292,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_2500 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1337,7 +1337,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_2600 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1380,7 +1380,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_2700 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1425,7 +1425,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_2800 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1470,7 +1470,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_2900 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1513,7 +1513,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_3000 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1548,9 +1548,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
         generator.addSigner(x509Cert, keyInfo, signer);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_3100 catch error: ${error}`);
-        expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -1583,9 +1583,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
         generator.addSigner(x509Cert, keyInfo, signer);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_3200 catch error: ${error}`);
-        expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -1617,9 +1617,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
         generator.addSigner(x509Cert, keyInfo, signer);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_3300 catch error: ${error}`);
-        expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -1652,9 +1652,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
         generator.addSigner(x509Cert, keyInfo, signer);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_3500 catch error: ${error}`);
-        expect(error.code).assertEqual(cert.CertResult.ERR_MAYBE_WRONG_PASSWORD);
+        expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_MAYBE_WRONG_PASSWORD);
       }
       done();
     });
@@ -1686,9 +1686,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
         generator.addSigner(x509Cert, keyInfo, signer);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_3600 catch error: ${error}`);
-        expect(error.code).assertEqual(19030001);
+        expect((error as BusinessError).code).assertEqual(19030001);
       }
       done();
     });
@@ -1721,9 +1721,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
         generator.addSigner(x509Cert, keyInfo, signer);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_3700 catch error: ${error}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1748,9 +1748,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let ret: boolean = await cmsSignerWithPasswordTest(mdName, addCert, addAttr, addSmime,
           priCert, priKey, password, 19030001);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_3800 catch error: ${error}`);
-        expect(error.code).assertEqual(19030001);
+        expect((error as BusinessError).code).assertEqual(19030001);
       }
       done();
     });
@@ -1774,9 +1774,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let ret: boolean = await cmsSignerTest(mdName, addCert, addAttr, addSmime,
           priCert, priKey, 19030001);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_4200 catch error: ${error}`);
-        expect(error.code).assertEqual(19030001);
+        expect((error as BusinessError).code).assertEqual(19030001);
       }
       done();
     });
@@ -1800,9 +1800,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let ret: boolean = await cmsSignerTest(mdName, addCert, addAttr, addSmime,
           priCert, priKey, 19030001);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_4300 catch error: ${error}`);
-        expect(error.code).assertEqual(19030001);
+        expect((error as BusinessError).code).assertEqual(19030001);
       }
       done();
     });
@@ -1826,7 +1826,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let ret: boolean = await cmsSignerTest(mdName, addCert, addAttr, addSmime,
           priCert, priKey, 0);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_4400 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1852,7 +1852,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let ret: boolean = await cmsSignerTest(mdName, addCert, addAttr, addSmime,
           priCert, priKey, 0);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_4500 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1895,9 +1895,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         generator.addCert(x509Cert1);
         expect(null).assertNull();
         generator.addCert(x509Cert1);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_4600 catch error: ${error}`);
-        expect(error.code).assertEqual(19030001);
+        expect((error as BusinessError).code).assertEqual(19030001);
       }
       done();
     });
@@ -1930,9 +1930,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
         generator.addSigner(x509Cert, keyInfo, signer);
         generator.addCert(x509Cert);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_4700 catch error: ${error}`);
-        expect(error.code).assertEqual(19030001);
+        expect((error as BusinessError).code).assertEqual(19030001);
       }
       done();
     });
@@ -1972,7 +1972,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         let x509CertExpired: cert.X509Cert = await cert.createX509Cert(encodingBlobExpired);
         generator.addCert(x509CertExpired);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_4900 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -1997,9 +1997,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
           outFormat: cert.CmsFormat.PEM
         }
         generator.doFinalSync(new Uint8Array([0x99, 0x88, 0x77]), options);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_5000 catch error: ${error}`);
-        expect(error.code).assertEqual(19030001);
+        expect((error as BusinessError).code).assertEqual(19030001);
       }
       done();
     });
@@ -2022,9 +2022,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
           outFormat: cert.CmsFormat.PEM
         }
         await generator.doFinal(new Uint8Array([0x99, 0x88, 0x77]), options);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_5100 catch error: ${error}`);
-        expect(error.code).assertEqual(19030001);
+        expect((error as BusinessError).code).assertEqual(19030001);
       }
       done();
     });
@@ -2054,9 +2054,9 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
           outFormat: cert.CmsFormat.PEM
         }
         await generator.doFinal(new Uint8Array([0x99, 0x88, 0x77]), options);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_5200 catch error: ${error}`);
-        expect(error.code).assertEqual(19030001);
+        expect((error as BusinessError).code).assertEqual(19030001);
       }
       done();
     });
@@ -2094,7 +2094,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         }
         await generator.doFinal(new Uint8Array([0x99, 0x88, 0x77]), options);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_5300 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -2134,7 +2134,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         }
         await generator.doFinal(new Uint8Array([0x99, 0x88, 0x77]), options);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_5400 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -2174,7 +2174,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
         }
         await generator.doFinal(new Uint8Array([0x99, 0x88, 0x77]), options);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_5500 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -2219,7 +2219,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
           console.info("################ p7:" + p7.toString())
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_5600 catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -2263,7 +2263,7 @@ export default function certFrameworkCertPkcs7ExtCMSFunctionTestUnit() {
           console.info("################ p7:" + p7.toString())
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`CertP7ExtCms_Func_5700 catch error: ${error}`);
         expect(null).assertFail();
       }

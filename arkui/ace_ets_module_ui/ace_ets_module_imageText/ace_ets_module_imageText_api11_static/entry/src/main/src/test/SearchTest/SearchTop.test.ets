@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,13 +41,15 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let uiContext = AppStorage.get<UIContext>("uiContext");
 
 export default function search_top() {
   describe('search_top', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("search_top beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
+      uiContext = AppStorage.get<UIContext>("uiContext")
 
     });
 
@@ -68,7 +70,7 @@ export default function search_top() {
           await CommonFunc.sleep(2000);
           // console.info("push search_top page result: " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push search_top page error: " + err);
         expect().assertFail();
       }
@@ -101,8 +103,7 @@ export default function search_top() {
 
         let driver = Driver.create();
         await CommonFunc.sleep(500);
-        const uiContext = new UIContext();
-        await (driver.click(Math.round(uiContext.vp2px(200)) as Int, Math.round(uiContext.vp2px(20)) as Int) as Promise<void>);
+        await (driver.click(Math.round(uiContext!.vp2px(200)) as Int, Math.round(uiContext!.vp2px(20)) as Int) as Promise<void>);
         await CommonFunc.sleep(1000);
 
         expect(search_01.top).assertEqual(Column_1.top);

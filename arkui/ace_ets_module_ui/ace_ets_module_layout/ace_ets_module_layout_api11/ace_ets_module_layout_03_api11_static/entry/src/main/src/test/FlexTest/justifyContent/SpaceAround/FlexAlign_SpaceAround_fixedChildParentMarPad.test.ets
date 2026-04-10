@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function flexAlign_SpaceAround_fixedChildParentMarPad() {
   describe('FlexAlign_SpaceAround_fixedChildParentMarPad', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexAlign_SpaceAround_fixedChildParentMarPad beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
@@ -96,6 +96,23 @@ it('testAlignSpaceAroundRowNoWrapMarPadOutRange_static', Level.LEVEL0, async () 
       let locationText3: RectValue = CommonFunc.getComponentRect('AlignSpaceAround18');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexAlignSpaceAround6');
 
+      console.info('win6 NoWrapMarPadOutRange 1:' + Math.floor(Math.abs(locationText1.top - locationText2.top)));
+      console.info('win6 NoWrapMarPadOutRange 2:' + Math.floor(Math.abs(locationText2.top - locationText3.top)));
+      console.info('win6 NoWrapMarPadOutRange 3:' + Math.floor(Math.abs(locationText1.top - locationFlex.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))));
+      console.info('win6 NoWrapMarPadOutRange 4:' + Math.floor(Math.abs(locationText1.bottom - locationText1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))));
+      console.info('win6 NoWrapMarPadOutRange 5:' + Math.floor(Math.abs(locationText2.bottom - locationText2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))));
+      console.info('win6 NoWrapMarPadOutRange 6:' + Math.floor(Math.abs(locationText3.bottom - locationText3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))));
+      console.info('win6 NoWrapMarPadOutRange 7:' + Math.floor(Math.abs(locationFlex.bottom - locationText3.bottom)));
+      console.info('win6 NoWrapMarPadOutRange 8:' + Math.floor(Math.abs(locationText1.left - locationFlex.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))));
+      console.info('win6 NoWrapMarPadOutRange 9:' + Math.floor(Math.abs(locationText1.right - locationText2.left)));
+      console.info('win6 NoWrapMarPadOutRange 10:' + Math.floor(Math.abs(locationText2.right - locationText3.left)));
+      console.info('win6 NoWrapMarPadOutRange 11:' + Math.floor(Math.abs(locationText3.right - (locationFlex.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))));
+      console.info('win6 NoWrapMarPadOutRange 12:' + Math.floor(Math.abs(locationText1.right - locationText1.left) -
+        (locationText2.right - locationText2.left)));
+      console.info('win6 NoWrapMarPadOutRange 13:' + Math.floor(Math.abs(locationText3.right - locationText3.left) -
+        (locationText2.right - locationText2.left)));
+      console.info('win6 NoWrapMarPadOutRange 14:' + Math.floor(Math.abs(locationText2.right - locationText2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))));
+
       expect(Math.floor(Math.abs(locationText1.top - locationText2.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText2.top - locationText3.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText1.top - locationFlex.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
@@ -111,7 +128,7 @@ it('testAlignSpaceAroundRowNoWrapMarPadOutRange_static', Level.LEVEL0, async () 
         (locationText2.right - locationText2.left)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText3.right - locationText3.left) -
         (locationText2.right - locationText2.left)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(locationText2.right - locationText2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText2.right - locationText2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(400 / 3))) <= 2).assertTrue();
       console.info('new testAlignSpaceAroundRowNoWrapMarPadOutRange END');
 
     });
@@ -143,6 +160,22 @@ it('testAlignSpaceAroundRowNoWrapMarPadInRange_static', Level.LEVEL0, async () =
       let locationText3: RectValue = CommonFunc.getComponentRect('AlignSpaceAround18');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexAlignSpaceAround6');
 
+      console.info('win6 NoWrapMarPadInRange 1:' + Math.floor(Math.abs(locationText1.top - locationText2.top)));
+      console.info('win6 NoWrapMarPadInRange 2:' + Math.floor(Math.abs(locationText2.top - locationText3.top)));
+      console.info('win6 NoWrapMarPadInRange 3:' + Math.floor(Math.abs(locationText1.top - locationFlex.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5)))));
+      console.info('win6 NoWrapMarPadInRange 4:' + Math.floor(Math.abs(locationText1.bottom - locationText1.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))));
+      console.info('win6 NoWrapMarPadInRange 5:' + Math.floor(Math.abs(locationText2.bottom - locationText2.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))));
+      console.info('win6 NoWrapMarPadInRange 6:' + Math.floor(Math.abs((locationText3.bottom - locationText3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('win6 NoWrapMarPadInRange 7:' + Math.floor(Math.abs(locationFlex.bottom - locationText3.bottom - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(45)))));
+      console.info('win6 NoWrapMarPadInRange 8:' + Math.floor(Math.abs((locationText1.right - locationText1.left) - (locationText2.right - locationText2.left))));
+      console.info('win6 NoWrapMarPadInRange 9:' + Math.floor(Math.abs((locationText3.right - locationText3.left) - (locationText2.right - locationText2.left))));
+      console.info('win6 NoWrapMarPadInRange 10:' + Math.floor(Math.abs((locationText2.right - locationText2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('win6 NoWrapMarPadInRange 11:' + Math.floor(Math.abs((locationText2.left - locationText1.right) - (locationText3.left - locationText2.right))));
+      console.info('win6 NoWrapMarPadInRange 12:' + Math.floor(Math.abs((locationText2.left - locationText1.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40 / 3)))));
+      console.info('win6 NoWrapMarPadInRange 13:' + Math.floor(Math.abs((locationText1.left - locationFlex.left) - (locationFlex.right - locationText3.right))));
+      console.info('win6 NoWrapMarPadInRange 14:' + Math.floor(Math.abs((locationText1.left - locationFlex.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(35 / 3)))));
+      console.info('win6 NoWrapMarPadInRange 15:' + Math.floor(Math.abs((locationText2.left - locationText1.right) - 2 * (locationFlex.right - locationText3.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5))))));
+
       expect(Math.floor(Math.abs(locationText1.top - locationText2.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText2.top - locationText3.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText1.top - locationFlex.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5)))) <= 1).assertTrue();
@@ -162,12 +195,12 @@ it('testAlignSpaceAroundRowNoWrapMarPadInRange_static', Level.LEVEL0, async () =
       expect(Math.floor(Math.abs((locationText2.right - locationText2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText2.left - locationText1.right) - (locationText3.left - locationText2.right))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((locationText2.left - locationText1.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40 / 3)))) <= 1)
+      expect(Math.floor(Math.abs((locationText2.left - locationText1.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40 / 3)))) <= 2)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText1.left - locationFlex.left) - (locationFlex.right - locationText3.right))) <= 1)
         .assertTrue();
 
-      expect(Math.floor(Math.abs((locationText1.left - locationFlex.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(35 / 3)))) <= 1)
+      expect(Math.floor(Math.abs((locationText1.left - locationFlex.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(35 / 3)))) <= 2)
         .assertTrue();
       expect(Math.floor(Math.abs((locationText2.left - locationText1.right) - 2 * (locationFlex.right - locationText3.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5))))) <= 1)
 

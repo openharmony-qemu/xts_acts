@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,265 +37,258 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, BorderStyle, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 
-  class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+  export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+  export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: BadgeAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class BlankModifier implements AttributeModifier<BlankAttribute> {
+  export class BlankModifier implements AttributeModifier<BlankAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: BlankAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+  export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: ButtonAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+  export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: CalendarPickerAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+  export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: CheckboxAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+  export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: CheckboxGroupAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+  export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: ColumnAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+  export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: ColumnSplitAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class CounterModifier implements AttributeModifier<CounterAttribute> {
+  export class CounterModifier implements AttributeModifier<CounterAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: CounterAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+  export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: DataPanelAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+  export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: DatePickerAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class DividerModifier implements AttributeModifier<DividerAttribute> {
+  export class DividerModifier implements AttributeModifier<DividerAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: DividerAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+  export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: EffectComponentAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class FlexModifier implements AttributeModifier<FlexAttribute> {
+  export class FlexModifier implements AttributeModifier<FlexAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: FlexAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+  export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: FlowItemAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+  export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: FormComponentAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-    mBorderStyle: BorderStyle = BorderStyle.Solid
-    applyNormalAttribute(instance: FormLinkAttribute): void {
-      console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
-     instance.borderStyle(this.mBorderStyle)
-    }
-  }
-  class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+  export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: GaugeAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class GridModifier implements AttributeModifier<GridAttribute> {
+  export class GridModifier implements AttributeModifier<GridAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: GridAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class GridColModifier implements AttributeModifier<GridColAttribute> {
+  export class GridColModifier implements AttributeModifier<GridColAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: GridColAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+  export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: GridItemAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+  export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: GridRowAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+  export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: HyperlinkAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+  export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: ImageAnimatorAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+  export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: ImageSpanAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class ImageModifier implements AttributeModifier<ImageAttribute> {
+  export class ImageModifier implements AttributeModifier<ImageAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: ImageAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class ListModifier implements AttributeModifier<ListAttribute> {
+  export class ListModifier implements AttributeModifier<ListAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: ListAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+  export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: ListItemAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+  export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: ListItemGroupAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+  export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: LoadingProgressAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+  export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: MarqueeAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class MenuModifier implements AttributeModifier<MenuAttribute> {
+  export class MenuModifier implements AttributeModifier<MenuAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: MenuAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+  export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: MenuItemAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+  export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: MenuItemGroupAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+  export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: NavDestinationAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+  export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: NavigationAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
@@ -316,238 +309,238 @@ import { SetValue, RouterParams } from '../../common/Utils';
 
 
 
-  class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+  export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: PatternLockAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+  export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: PluginComponentAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+  export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: QRCodeAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class RadioModifier implements AttributeModifier<RadioAttribute> {
+  export class RadioModifier implements AttributeModifier<RadioAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: RadioAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class RatingModifier implements AttributeModifier<RatingAttribute> {
+  export class RatingModifier implements AttributeModifier<RatingAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: RatingAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+  export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: RefreshAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+  export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: RelativeContainerAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+  export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: RemoteWindowAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+  export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: RichEditorAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+  export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: RichTextAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class RowModifier implements AttributeModifier<RowAttribute> {
+  export class RowModifier implements AttributeModifier<RowAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: RowAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+  export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: RowSplitAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+  export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: ScrollAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+  export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: ScrollBarAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class SearchModifier implements AttributeModifier<SearchAttribute> {
+  export class SearchModifier implements AttributeModifier<SearchAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: SearchAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class SelectModifier implements AttributeModifier<SelectAttribute> {
+  export class SelectModifier implements AttributeModifier<SelectAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: SelectAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+  export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: SideBarContainerAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class SliderModifier implements AttributeModifier<SliderAttribute> {
+  export class SliderModifier implements AttributeModifier<SliderAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: SliderAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class StackModifier implements AttributeModifier<StackAttribute> {
+  export class StackModifier implements AttributeModifier<StackAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: StackAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+  export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: SwiperAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+  export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: TabContentAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class TabsModifier implements AttributeModifier<TabsAttribute> {
+  export class TabsModifier implements AttributeModifier<TabsAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: TabsAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class TextModifier implements AttributeModifier<TextAttribute> {
+  export class TextModifier implements AttributeModifier<TextAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: TextAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+  export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: TextAreaAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+  export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: TextClockAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+  export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: TextInputAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+  export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: TextPickerAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+  export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: TextTimerAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+  export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: TimePickerAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+  export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: ToggleAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+  export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+  export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: WaterFlowAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class WebModifier implements AttributeModifier<WebAttribute> {
+  export class WebModifier implements AttributeModifier<WebAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: WebAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
   }
-  class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+  export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: XComponentAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
@@ -576,7 +569,6 @@ struct borderStylePage {
   @State _borderStyleFlexMod: FlexModifier = new FlexModifier()
   @State _borderStyleFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _borderStyleFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _borderStyleFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _borderStyleGaugeMod: GaugeModifier = new GaugeModifier()
   @State _borderStyleGridMod: GridModifier = new GridModifier()
   @State _borderStyleGridColMod: GridColModifier = new GridColModifier()
@@ -669,7 +661,6 @@ struct borderStylePage {
       this._borderStyleFlexMod.mBorderStyle = value.borderStyle
       this._borderStyleFlowItemMod.mBorderStyle = value.borderStyle
       this._borderStyleFormComponentMod.mBorderStyle = value.borderStyle
-      this._borderStyleFormLinkMod.mBorderStyle = value.borderStyle
       this._borderStyleGaugeMod.mBorderStyle = value.borderStyle
       this._borderStyleGridMod.mBorderStyle = value.borderStyle
       this._borderStyleGridColMod.mBorderStyle = value.borderStyle

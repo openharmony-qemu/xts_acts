@@ -17,5 +17,9 @@ group("applications") {
     "calendarManager:calendarManager",
     "settings_ets_Nop:SettingsEtsNopTest",
     "settingsdata:settingsdata",
+    "intelligentScene_ets_Nop:ActsIntelligentSceneNopEtsTest",
+    "intelligentScene_ets:ActsIntelligentSceneEtsTest",
+    "intelligentScene_ets_static:ActsIntelligentSceneEtsStaticTest",
+    "intelligentScene_ets_nop_static:ActsIntelligentSceneEtsNopStaticTest",
   ]
 }

@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -24,14 +24,35 @@ import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base'
 
-let testAbilityContext: common.UIAbilityContext
+let testAbilityContext: common.UIAbilityContext | undefined;
 let DOMAIN: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let bundle :string = 'com.acts.actsreminderagentmgr.static'
 
 export default function ActsReminderAgentManagerStaticTest() {
   describe('ActsReminderAgentManagerStaticTest', () => {
+
+    let getFormattedParts = (timestamp : long) : reminderAgentManager.LocalDateTime => {
+      console.info(`ActsReminderAgentManagerStaticTest ===>====>getFormattedParts is success`);
+      const date = new Date(timestamp);
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      const hour = date.getHours();
+      const minute = date.getMinutes();
+      const second = date.getSeconds();
+
+      return {
+        year,
+        month,
+        day,
+        hour,
+        minute,
+        second
+      };
+    }
 
     beforeAll(async () => {
 
@@ -82,17 +103,19 @@ export default function ActsReminderAgentManagerStaticTest() {
 
         let TEST_CASE_NAME = 'SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001'
         console.info(`${TEST_CASE_NAME} START requestEnableNotification`)
-        notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
-          console.info(`${TEST_CASE_NAME} requestEnableNotification about is ${testAbilityContext}`)
-          console.info(`${TEST_CASE_NAME} come in requestEnableNotification`);
-          if (err) {
-            console.info(`${TEST_CASE_NAME} requestEnableNotification err: ${err.code}`)
-            expect(false).assertTrue()
-            done();
-          }else {
-            console.info(`${TEST_CASE_NAME} requestEnableNotification success`)
-            await Utils.msSleep(1000)
-          }
+        notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
+          waitForCompletion(async () => {
+            console.info(`${TEST_CASE_NAME} requestEnableNotification about is ${testAbilityContext}`)
+            console.info(`${TEST_CASE_NAME} come in requestEnableNotification`);
+            if (err) {
+              console.info(`${TEST_CASE_NAME} requestEnableNotification err: ${err.code}`)
+              expect(false).assertTrue()
+              done();
+            }else {
+              console.info(`${TEST_CASE_NAME} requestEnableNotification success`)
+              await Utils.msSleep(1000)
+            }
+          })
         })
         await Utils.msSleep(1000)
         let driver = Driver.create()
@@ -158,7 +181,7 @@ export default function ActsReminderAgentManagerStaticTest() {
               }
             }
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001 publishReminder error.code:" + error.code);
         }
       })
@@ -217,7 +240,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_002 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_002 publishReminder error.code:" + error.code);
         }
       })
@@ -275,7 +298,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_003 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_003 publishReminder error.code:" + error.code);
         }
       })
@@ -331,7 +354,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_004 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_004 publishReminder error.code:" + error.code);
         }
       })
@@ -391,7 +414,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_005 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_005 publishReminder error.code:" + error.code);
         }
       })
@@ -451,7 +474,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_006 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_006 publishReminder error.code:" + error.code);
         }
       })
@@ -486,7 +509,7 @@ export default function ActsReminderAgentManagerStaticTest() {
               done();
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_007 publishReminder error.code:" + error.code);
         }
       })
@@ -519,7 +542,7 @@ export default function ActsReminderAgentManagerStaticTest() {
             expect(false).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_008 publishReminder error.code:" + error.code);
         }
       })
@@ -550,7 +573,7 @@ export default function ActsReminderAgentManagerStaticTest() {
               done();
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_009 publishReminder error.code:" + error.code);
         }
       })
@@ -579,7 +602,7 @@ export default function ActsReminderAgentManagerStaticTest() {
             expect(false).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_010 publishReminder error.code:" + error.code);
         }
       })
@@ -627,7 +650,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011 publishReminder error.code:" + error.code);
         }
       })
@@ -670,7 +693,7 @@ export default function ActsReminderAgentManagerStaticTest() {
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_012 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_012 publishReminder error.code:" + error.code);
         }
       })
@@ -757,15 +780,16 @@ export default function ActsReminderAgentManagerStaticTest() {
 
         try {
           reminderAgentManager.publishReminder(calendar).then((reminderId: int) => {
-            console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013 promise, reminderId = " + reminderId);
-            expect(reminderId).assertLarger(0);
-
-            await reminderAgentManager.cancelAllReminders();
-            done();
+            waitForCompletion(async () => {
+              console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013 promise, reminderId = " + reminderId);
+              expect(reminderId).assertLarger(0);
+              await reminderAgentManager.cancelAllReminders();
+              done();
+            })
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013 promise err code:" + err.code + " message:" + err.message);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013 publishReminder error.code:" + error.code);
         }
       })
@@ -938,14 +962,14 @@ export default function ActsReminderAgentManagerStaticTest() {
                     console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 deleteExcludeDates promise");
 
                     reminderAgentManager.getExcludeDates(reminderId as int).then((dates3: Array<Date>) => {
-                      console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 getExcludeDates3 promise length: " + dates3.length);
-
-                      expect(dates3?.length).assertEqual(0);
-
-                      if(reminderId != undefined){
-                        await reminderAgentManager.cancelReminder(reminderId as int);
-                      }
-                      done();
+                      waitForCompletion(async () => {
+                        console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 getExcludeDates3 promise length: " + dates3.length);
+                        expect(dates3?.length).assertEqual(0);
+                        if(reminderId != undefined){
+                          await reminderAgentManager.cancelReminder(reminderId as int);
+                        }
+                        done();
+                      })
                     }).catch((err: Error) => {
                       console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 getExcludeDates3 promise err code:" + err.code + " message:" + err.message);
                       expect(false).assertTrue();
@@ -974,12 +998,518 @@ export default function ActsReminderAgentManagerStaticTest() {
             })
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 publishReminder error.code:" + error.code + error.message);
       }
 
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 end---');
     })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_020
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_020
+     * @tc.desc   test updateReminder promise function
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_020 begin---');
+      reminderAgentManager.cancelAllReminders().then(() => {
+        console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_020 cancelAllReminders success');
+      });
+      const currentYear = new Date().getFullYear();
+      const nextYear = currentYear + 1
+      let calendar: reminderAgentManager.ReminderRequestCalendar = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_CALENDAR,
+        dateTime: {
+          year: nextYear,
+          month: 1,
+          day: 11,
+          hour: 11,
+          minute: 11,
+          second: 11
+        },
+        actionButton: [
+          {
+            title: "close",
+            titleResource: 'English',
+            type: reminderAgentManager.ActionButtonType.ACTION_BUTTON_TYPE_CLOSE
+          }
+        ],
+        ringChannel: reminderAgentManager.RingChannel.RING_CHANNEL_ALARM
+      }
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10
+      }
+      let flag = 1;
+      try {
+        reminderAgentManager.publishReminder(calendar).then((reminderId: int) => {
+          console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_020 publishReminder promise reminderId:" + reminderId);
+          reminderAgentManager.updateReminder(reminderId, timer).then(() => {
+            console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_020 updateReminder promise");
+            expect(flag).assertEqual(1);
+            done();
+          })
+        })
+      } catch (error) {
+        console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_020 publishReminder error.code:" + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021
+     * @tc.desc   test cancelReminderOnDisplay promise function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 begin---');
+      reminderAgentManager.cancelAllReminders().then(async () => {
+        console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 cancelAllReminders success');
+        // 获取当前时间戳（毫秒）
+        const nowTimestamp = Date.now();
+        // 获取当前时间一小时后的时间部分
+        const endDateTime = getFormattedParts(nowTimestamp + 3600 * 1000);
+        console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 当前时间一小时后的时间部分:", JSON.stringify(endDateTime));
+        // 获取当前时间一小时前的时间部分
+        const dateTime = getFormattedParts(nowTimestamp - 3600 * 1000);
+        console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 当前时间一小时前的时间部分:", JSON.stringify(dateTime));
+        let calendar: reminderAgentManager.ReminderRequestCalendar = {
+          reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_CALENDAR,
+          dateTime,
+          endDateTime,
+          actionButton: [
+            {
+              title: "close",
+              titleResource: 'English',
+              type: reminderAgentManager.ActionButtonType.ACTION_BUTTON_TYPE_CLOSE
+            }
+          ],
+          ringChannel: reminderAgentManager.RingChannel.RING_CHANNEL_NOTIFICATION
+        }
+        let callbakFlag = 0;
+        let newId: int = 0;
+        try {
+          reminderAgentManager.publishReminder(calendar, (err: BusinessError<void>|null, reminderId: int|undefined) => {
+            if (err) {
+              console.error('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 callback err.code is :' + err.code);
+            } else {
+              console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 callback reminderId = ' + reminderId);
+              if (reminderId !== undefined) {
+                newId = reminderId;
+              }
+            }
+          })
+
+          await Utils.msSleep(5000)
+
+          reminderAgentManager.cancelReminderOnDisplay(newId).then(() => {
+            console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 cancelReminderOnDisplay reminder succeed");
+            expect(callbakFlag).assertEqual(0);
+            done();
+          }).catch((err) => {
+            console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 promise err code:" + err.code + " message:" + err.message);
+            expect(false).assertTrue();
+            done();
+          });
+        } catch (error) {
+          console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_021 publishReminder error.code:" + error.code);
+        }
+      });
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_023
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_023
+     * @tc.desc   Test  ringChannel  RING_CHANNEL_ALARM is 0
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_023 begin---');
+      let type = reminderAgentManager.RingChannel.RING_CHANNEL_ALARM;
+      hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_023 reminderAgentManager ActionButtonType: ' + type);
+      expect(type).assertEqual(0);
+      done();
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_023 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_024
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_024
+     * @tc.desc   Test  ringChannel  RING_CHANNEL_MEDIA is 1
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_024 begin---');
+      let type = reminderAgentManager.RingChannel.RING_CHANNEL_MEDIA;
+      hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_024 reminderAgentManager ActionButtonType: ' + type);
+      expect(type).assertEqual(1);
+      done();
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_024 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_025
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_025
+     * @tc.desc   Test  ringChannel  RING_CHANNEL_MEDIA is 2
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_025 begin---');
+      let type = reminderAgentManager.RingChannel.RING_CHANNEL_NOTIFICATION;
+      hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_025 reminderAgentManager ActionButtonType: ' + type);
+      expect(type).assertEqual(2);
+      done();
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_025 end---');
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_026
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_026
+     * @tc.desc   Test grtAllValidReminders
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_026 begin---');
+      reminderAgentManager.cancelAllReminders().then(() => {
+        console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_026 cancelAllReminders success');
+      });
+
+      try {
+        reminderAgentManager.getAllValidReminders().then((reminderInfo: Array<reminderAgentManager.ReminderInfo>) => {
+          console.info('reminderRequestAttribute_0038 reminderInfo = ' + JSON.stringify(reminderInfo));
+          let reminderInfoArr: reminderAgentManager.ReminderInfo[] = [];
+          reminderInfoArr = reminderInfo;
+          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_026 reminderInfoArr = ' + JSON.stringify(reminderInfoArr));
+          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_026 reminderInfoArr = ' + JSON.stringify(reminderInfoArr.length));
+          expect(reminderInfoArr.length).assertEqual(0);
+          done();
+        }).catch((err: Error) =>{
+          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_026 promise err.code is : ' + err.code);
+          expect(false).assertTrue();
+          done();
+        })
+      } catch (error) {
+        console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_026 publishReminder error.code:" + error.code);
+      }
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_028
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_028
+     * @tc.desc   publishReminder promise Test
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_028',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+
+        let p: Record<string, RecordData> = { 'x': 1 };
+
+        let alarm: reminderAgentManager.ReminderRequestAlarm = {
+          reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_ALARM,
+          actionButton: [],
+          wantAgent: {
+            pkgName: "com.acts.actsreminderagentmgr.static",
+            abilityName: "EntryAbility",
+            parameters: p,
+            uri:""
+          },
+          maxScreenWantAgent: {
+            pkgName: "com.acts.actsreminderagentmgr.static",
+            abilityName: "EntryAbility"
+          },
+          hour: 13,
+          minute: 30,
+          ringDuration: 2 as long,
+          ringChannel: reminderAgentManager.RingChannel.RING_CHANNEL_ALARM,
+          snoozeTimes: 1,
+          timeInterval: 3 as long,
+          title: "this is addExcludeDate title",
+          titleResourceId: 1 as int,
+          content: "this is content",
+          contentResourceId: 1 as int,
+          expiredContent: "this reminder has expired",
+          expiredContentResourceId: 2 as int,
+          snoozeContent: "remind later",
+          snoozeContentResourceId: 2 as int,
+          notificationId: 500,
+          groupId: 'this is groupId',
+          slotType: notificationManager.SlotType.CONTENT_INFORMATION,
+          tapDismissed: false,
+          autoDeletedTime: 200000 as long,
+          snoozeSlotType: notificationManager.SlotType.SERVICE_INFORMATION,
+          customRingUri: "#",
+          daysOfWeek: [1, 2, 3, 4, 5]
+        }
+
+        try {
+          reminderAgentManager.publishReminder(alarm).then((reminderId: int) => {
+            waitForCompletion(async () => {
+              console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_028 promise, reminderId = " + reminderId);
+              expect(reminderId).assertLarger(0);
+              await reminderAgentManager.cancelAllReminders();
+              done();
+            })
+          }).catch((err: Error) => {
+            console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_028 promise err code:" + err.code + " message:" + err.message);
+          });
+        } catch (error) {
+          console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_028 publishReminder error.code:" + error.code);
+        }
+      })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_029
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_029
+     * @tc.desc   publishReminder callback Test
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_029',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let alarm: reminderAgentManager.ReminderRequestAlarm = {
+          reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_ALARM,
+          actionButton: [],
+          wantAgent: {
+            pkgName: "com.acts.actsreminderagentmgr.static",
+            abilityName: "EntryAbility",
+            // parameters: parameters,
+            uri:""
+          },
+          maxScreenWantAgent: {
+            pkgName: "com.acts.actsreminderagentmgr.static",
+            abilityName: "EntryAbility"
+          },
+          hour: 13,
+          minute: 30,
+          ringDuration: 2 as long,
+          ringChannel: reminderAgentManager.RingChannel.RING_CHANNEL_ALARM,
+          snoozeTimes: 1,
+          timeInterval: 3 as long,
+          title: "this is addExcludeDate title",
+          titleResourceId: 1 as int,
+          content: "this is content",
+          contentResourceId: 1 as int,
+          expiredContent: "this reminder has expired",
+          expiredContentResourceId: 2 as int,
+          snoozeContent: "remind later",
+          snoozeContentResourceId: 2 as int,
+          notificationId: 500,
+          groupId: 'this is groupId',
+          slotType: notificationManager.SlotType.CONTENT_INFORMATION,
+          tapDismissed: false,
+          autoDeletedTime: 200000 as long,
+          snoozeSlotType: notificationManager.SlotType.SERVICE_INFORMATION,
+          customRingUri: "#",
+          daysOfWeek: [1, 2, 3, 4, 5]
+        }
+        try {
+          reminderAgentManager.publishReminder(alarm, (err: BusinessError<void>|null, reminderId: int|undefined) => {
+            if (err) {
+              console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_029 callback err.code111 is :' + err.code + err.message);
+              expect(false).assertTrue();
+              done();
+            } else {
+              console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_029 callback reminderId = ' + reminderId);
+              expect(reminderId).assertLarger(0);
+            }
+          })
+          await reminderAgentManager.cancelAllReminders();
+          done();
+        } catch (error) {
+          console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_029 publishReminder error.code:" + error.code + error.message);
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_029 end---');
+      })
+
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_030
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_030
+     * @tc.desc   publishReminder callback Test
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_030',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+
+        let calendar: reminderAgentManager.ReminderRequestCalendar = {
+          reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_CALENDAR,
+          actionButton: [
+            {
+              title: "close",
+              titleResource: '',
+              type: reminderAgentManager.ActionButtonType.ACTION_BUTTON_TYPE_CLOSE
+            },
+            {
+              title: "snooze",
+              titleResource: '',
+              type: reminderAgentManager.ActionButtonType.ACTION_BUTTON_TYPE_SNOOZE
+            }
+          ],
+          wantAgent: {
+            pkgName: "com.acts.actsreminderagentmgr.static",
+            abilityName: "EntryAbility",
+            uri:""
+          },
+          maxScreenWantAgent: {
+            pkgName: "com.acts.actsreminderagentmgr.static",
+            abilityName: "EntryAbility"
+          },
+          dateTime: {
+            year: 2030,
+            month: 7,
+            day: 28,
+            hour: 13,
+            minute: 30,
+            second: 32
+          },
+          endDateTime: {
+            year: 2030,
+            month: 7,
+            day: 31,
+            hour: 10,
+            minute: 30,
+            second: 10
+          },
+          ringDuration: 2 as long,
+          ringChannel: reminderAgentManager.RingChannel.RING_CHANNEL_MEDIA,
+          snoozeTimes: 1,
+          timeInterval: 3 as long,
+          title: "this is addExcludeDate title",
+          titleResourceId: 1 as int,
+          content: "this is content",
+          contentResourceId: 1 as int,
+          expiredContent: "this reminder has expired",
+          expiredContentResourceId: 2 as int,
+          snoozeContent: "remind later",
+          snoozeContentResourceId: 2 as int,
+          notificationId: 500,
+          groupId: 'this is groupId',
+          slotType: notificationManager.SlotType.CONTENT_INFORMATION,
+          tapDismissed: false,
+          autoDeletedTime: 200000 as long,
+          snoozeSlotType: notificationManager.SlotType.SERVICE_INFORMATION,
+          customRingUri: "#",
+          repeatMonths: [3],
+          repeatDays: [6, 7],
+          daysOfWeek: [1, 2, 3, 4, 5]
+        }
+        try {
+          reminderAgentManager.publishReminder(calendar, (err: BusinessError<void>|null, reminderId: int|undefined) => {
+            if (err) {
+              console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_030 callback err.code111 is :' + err.code + err.message);
+              expect(false).assertTrue();
+              done();
+            } else {
+              console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_030 callback reminderId = ' + reminderId);
+              expect(reminderId).assertLarger(0);
+            }
+          })
+          await reminderAgentManager.cancelAllReminders();
+          done();
+        } catch (error) {
+          console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_030 publishReminder error.code:" + error.code + error.message);
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_030 end---');
+      })
+
+      /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100
+     * @tc.desc   test subscribeReminderState promise function and unsubscribeReminderState promise function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+
+        let reminderStateCallback = (states: Array<reminderAgentManager.ReminderState>) =>{
+          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100 length is : ' + states.length)
+          expect(states.length === 0).assertTrue();
+          done();
+        }
+
+        try {
+          let callbakFlag1 = 1;
+          await reminderAgentManager.subscribeReminderState(reminderStateCallback);
+          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100 subscribe succeed');
+          expect(callbakFlag1 === 1).assertTrue();
+          done();
+        } catch (error) {
+          console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100 subscribeReminderState:" + error.code + error.message);
+          expect(false).assertTrue();
+          done();
+        }
+
+        try {
+          let callbakFlag2 = 1;
+          await reminderAgentManager.unsubscribeReminderState(reminderStateCallback);
+          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100 unsubscribe succeed');
+          expect(callbakFlag2 === 1).assertTrue();
+          done();
+        } catch (error) {
+          console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100 unsubscribeReminderState error.code:" + error.code);
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3100 end---');
+      })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200
+     * @tc.desc   test api23 unsubscribeReminderState promise function and input is empty
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+
+        try {
+          let callbakFlag2 = 1;
+          await reminderAgentManager.unsubscribeReminderState();
+          console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200 unsubscribe succeed');
+          expect(callbakFlag2 === 1).assertTrue();
+          done();
+        } catch (error) {
+          console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200 unsubscribeReminderState error.code:" + error.code);
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200 end---');
+      })
 
   })
 }

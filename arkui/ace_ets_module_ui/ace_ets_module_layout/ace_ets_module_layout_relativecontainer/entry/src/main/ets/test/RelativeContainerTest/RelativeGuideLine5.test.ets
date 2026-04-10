@@ -12,9 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
 import router from '@ohos.router';
-import CommonFunc from '../../MainAbility/common/Common';
+import CommonFunc, { RectValue } from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
 export default function RelativeGuideLine5() {
@@ -57,10 +58,14 @@ export default function RelativeGuideLine5() {
       let strJson = getInspectorByKey("RelButton5");
       let obj: ESObject = JSON.parse(strJson);
       await CommonFunc.sleep(1000);
-      console.info("[RelativeGuideLine5_001] obj is: " + JSON.stringify(obj.$attrs.height) + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.height=='100.00vp').assertTrue();
-      expect(obj.$attrs.width=='100.00vp').assertTrue();
 
+      let Relative: RectValue = CommonFunc.getComponentRect('RelButton5');
+      let Relative_width = Relative.right - Relative.left;
+      let Relative_height = Relative.bottom - Relative.top;
+      console.info("[RelativeGuideLine5_001] obj is: " + JSON.stringify(obj.$attrs.height) + JSON.stringify(obj.$attrs.width));
+      expect(Math.floor(Math.abs(Relative_width - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Relative_height - vp2px(100))) <= 1).assertTrue();
+      
       console.info('[RelativeGuideLine5_001] END');
       done();
     });

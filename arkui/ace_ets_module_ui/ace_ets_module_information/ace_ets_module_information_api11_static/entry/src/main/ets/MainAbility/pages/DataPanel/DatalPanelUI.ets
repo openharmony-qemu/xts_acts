@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,7 +24,7 @@ struct DataPanelExample {
   messageManager:MessageManager<Object> = new MessageManager<Object>()
 
   @StoragePropRef('maxValue') maxValue:number = 0
-  @StoragePropRef('dataPanelType') dataPanelType: DataPanelType = 0 as DataPanelType
+  @StoragePropRef('dataPanelType') dataPanelType: DataPanelType = DataPanelType.fromValue(0)
   @StoragePropRef('values') values: Array<number> = new Array<number>(25,1);
 
 

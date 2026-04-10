@@ -65,6 +65,22 @@ export default class EntryAbility extends UIAbility {
       }
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
     });
+  }
+
+  onWindowStageDestroy(): void {
+    // Main window is destroyed, release UI related resources
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
+  }
+
+  onNewWant(): void {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
+
+  }
+
+  onForeground(): void {
+    // Ability has brought to foreground
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
+    this.onForegroundFlag = true;
 
     let wants: Want = {
       deviceId: '', // deviceId为空表示本设备
@@ -82,22 +98,6 @@ export default class EntryAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', '%{public}s',
         `Failed to start SpecifiedAbility. err.Code is ${err.code},SpecifiedAbility辅助hap2  err.message is ${err.message}`);
     })
-  }
-
-  onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
-  }
-
-  onNewWant(): void {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
-
-  }
-
-  onForeground(): void {
-    // Ability has brought to foreground
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
-    this.onForegroundFlag = true;
 
     let commonEventData: commonEventManager.CommonEventPublishData = {
       parameters: {

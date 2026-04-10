@@ -65,7 +65,7 @@ describe('ActsGetWantTest', function () {
             }, TIMEOUT_NUMBER);
         }).catch((error) => {
             console.log('ACTS_RemoteObject_0100 error: ' + JSON.stringify(error));
-            expect.assertFail();
+            expect().assertFail();
             done();
         })
     })
@@ -126,7 +126,7 @@ describe('ActsGetWantTest', function () {
             }, TIMEOUT_NUMBER);
         }).catch((error) => {
             console.log('ACTS_GetWant_0100 error: ' + JSON.stringify(error))
-            expect.assertFail()
+            expect().assertFail()
             done();
         })
     })
@@ -248,7 +248,7 @@ describe('ActsGetWantTest', function () {
             }, TIMEOUT_NUMBER);
         }).catch((error) => {
             console.log('ACTS_GetWant_0300 error: ' + JSON.stringify(error))
-            expect.assertFail()
+            expect().assertFail()
             done();
         })
     })
@@ -315,7 +315,7 @@ describe('ActsGetWantTest', function () {
             }, TIMEOUT_NUMBER);
         }).catch((error) => {
             console.log('ACTS_GetWant_0500 error: ' + JSON.stringify(error))
-            expect.assertFail()
+            expect().assertFail()
             done();
         })
     })
@@ -446,7 +446,7 @@ describe('ActsGetWantTest', function () {
             }, TIMEOUT_NUMBER);
         }).catch((error) => {
             console.log('ACTS_GetWant_0700 error: ' + JSON.stringify(error))
-            expect.assertFail()
+            expect().assertFail()
             done();
         })
     })
@@ -577,7 +577,7 @@ describe('ActsGetWantTest', function () {
                 }, TIMEOUT_NUMBER);
             }).catch((error) => {
                 console.log('ACTS_GetWant_0900 error: ' + JSON.stringify(error))
-                expect.assertFail()
+                expect().assertFail()
                 done();
             })
         })
@@ -706,7 +706,7 @@ describe('ActsGetWantTest', function () {
                 }, TIMEOUT_NUMBER);
             }).catch((error) => {
                 console.log('ACTS_GetWant_1100 error: ' + JSON.stringify(error))
-                expect.assertFail()
+                expect().assertFail()
                 done();
             })
         })
@@ -835,7 +835,7 @@ describe('ActsGetWantTest', function () {
                 }, 3500);
             }).catch((error) => {
                 console.log('ACTS_GetWant_1300 error: ' + JSON.stringify(error))
-                expect.assertFail()
+                expect().assertFail()
                 done();
             })
         })
@@ -966,7 +966,7 @@ describe('ActsGetWantTest', function () {
                 }, TIMEOUT_NUMBER);
             }).catch((error) => {
                 console.log('ACTS_GetWant_1500 error: ' + JSON.stringify(error))
-                expect.assertFail()
+                expect().assertFail()
                 done();
             })
         })
@@ -1097,7 +1097,7 @@ describe('ActsGetWantTest', function () {
                 }, TIMEOUT_NUMBER);
             }).catch((error) => {
                 console.log('ACTS_GetWant_1700 error: ' + JSON.stringify(error))
-                expect.assertFail()
+                expect().assertFail()
                 done();
             })
         })
@@ -1164,7 +1164,7 @@ describe('ActsGetWantTest', function () {
                 }, TIMEOUT_NUMBER);
             }).catch((error) => {
                 console.log('ACTS_GetWant_1900 error: ' + JSON.stringify(error))
-                expect.assertFail()
+                expect().assertFail()
                 done();
             })
         })
@@ -1231,7 +1231,7 @@ describe('ActsGetWantTest', function () {
                 }, TIMEOUT_NUMBER);
             }).catch((error) => {
                 console.log('ACTS_GetWant_2100 error: ' + JSON.stringify(error))
-                expect.assertFail()
+                expect().assertFail()
                 done();
             })
         })
@@ -1362,7 +1362,7 @@ describe('ActsGetWantTest', function () {
                 }, TIMEOUT_NUMBER);
             }).catch((error) => {
                 console.log('ACTS_GetWant_2300 error: ' + JSON.stringify(error))
-                expect.assertFail()
+                expect().assertFail()
                 done();
             })
         })
@@ -1489,7 +1489,7 @@ describe('ActsGetWantTest', function () {
             }, TIMEOUT_NUMBER);
         }).catch((error) => {
             console.log('ACTS_GetWant_2500 error: ' + JSON.stringify(error))
-            expect.assertFail()
+            expect().assertFail()
             done();
         })
     });

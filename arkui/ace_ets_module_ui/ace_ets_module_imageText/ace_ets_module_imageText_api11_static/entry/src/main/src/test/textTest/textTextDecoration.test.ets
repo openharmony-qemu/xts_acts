@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,7 +43,7 @@ interface ValueType {
 export default function textTextDecorationTest() {
   describe('textTextDecorationTest', ()=> {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textTextDecorationTest beforeEach start");
 
 
@@ -97,7 +97,7 @@ export default function textTextDecorationTest() {
         AppStorage.get<MessageManagerBase<ResourceColor|undefined>>("messageManagerTextDecorationColor")?.notify({
           name: 'textDecorationColor', value: undefined
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -132,7 +132,7 @@ export default function textTextDecorationTest() {
           name: 'textDecorationColor', value: Color.Black
         });
 
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -166,7 +166,7 @@ export default function textTextDecorationTest() {
         AppStorage.get<MessageManagerBase<ResourceColor|undefined>>("messageManagerTextDecorationColor")?.notify({
           name: 'textDecorationColor', value: Color.Red
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -204,7 +204,7 @@ export default function textTextDecorationTest() {
           name: 'textDecorationColor', value: Color.Blue
         });
 
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -242,7 +242,7 @@ export default function textTextDecorationTest() {
           name: 'textDecorationColor', value: $r('app.color.color_D90013_red')
         });
 
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);

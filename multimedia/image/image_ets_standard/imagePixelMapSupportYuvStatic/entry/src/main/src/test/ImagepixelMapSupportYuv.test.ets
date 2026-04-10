@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,10 +25,10 @@ import resourceManager from '@ohos.resourceManager';
 import fileIo from '@ohos.file.fs';
 import { initialize } from './AbilityContextHelper.test';
 
-let testContext: common.UIAbilityContext;
+let testContext: common.UIAbilityContext | undefined;
 let sleep = (delay: int): Promise<void> => {
   return new Promise<void>((resolve, _) => {
-    setTimeout((): Promise<int> => {
+    setTimeout(() => {
       resolve(undefined);
     }, delay);
   });
@@ -40,7 +40,7 @@ export default function imagepixelMapSupportYuv() {
     let filePath: string;
     let fdInt: int;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       testContext = Hypium.get('context') as common.UIAbilityContext;
     })
@@ -159,18 +159,20 @@ export default function imagepixelMapSupportYuv() {
         result = checkArrayBuffer(readBuffer)
       }else if(type == "callback"){
         pixelMap.writeBufferToPixels(writeBuffer, (error: BusinessError|null) => {
-          if (error && error.code) {
-            hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:Failed to write data from a buffer to a PixelMap  ${error}`)
-            result = false
-          } else {
-          try {
-            await pixelMap.readPixelsToBuffer(readBuffer)
-            result = checkArrayBuffer(readBuffer)
-          } catch(error) {
-            hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:Failed to read image pixel data  ${error}`)
-            result = false
-          }
-        }
+          waitForCompletion(async () => {
+            if (error && error.code) {
+              hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:Failed to write data from a buffer to a PixelMap  ${error}`)
+              result = false
+            } else {
+            try {
+              await pixelMap.readPixelsToBuffer(readBuffer)
+              result = checkArrayBuffer(readBuffer)
+            } catch(error) {
+              hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:Failed to read image pixel data  ${error}`)
+              result = false
+            }
+            }
+          })
         });
         await sleep(1000)
       }else {
@@ -232,19 +234,19 @@ export default function imagepixelMapSupportYuv() {
         try {
           await imagePackerApi.packToData(pixelMap, packOpts);
           checkResult = true
-        } catch(error: BusinessError) {
+        } catch(error) {
           hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:${JSON.stringify(error)}`);
           checkResult = false
         }
         let data: ArrayBuffer = await imagePackerApi.packToData(pixelMap, packOpts);
       }else {
-        const uri: string = testContext.cacheDir + "/" + `${testNum}` + "jpg"
+        const uri: string = testContext!.cacheDir + "/" + `${testNum}` + "jpg"
         const file: fileIo.File = fs.openSync(uri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
         if(type === "promise"){
           try {
             await imagePackerApi.packToFile(pixelMap, file.fd as int, packOpts);
             checkResult = true
-          } catch (error:BusinessError) {
+          } catch (error) {
             hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:${JSON.stringify(error)}`);
             checkResult = false
           }

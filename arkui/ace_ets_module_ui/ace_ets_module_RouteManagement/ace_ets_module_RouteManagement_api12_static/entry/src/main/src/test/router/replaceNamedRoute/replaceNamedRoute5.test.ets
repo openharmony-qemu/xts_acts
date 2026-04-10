@@ -26,7 +26,7 @@ import { UtilsTest, startAbility } from '../../Util.test'
 
 export default function replaceNamedRoute5() {
   describe('replaceNamedRoute5', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("replaceNamedRoute5 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });

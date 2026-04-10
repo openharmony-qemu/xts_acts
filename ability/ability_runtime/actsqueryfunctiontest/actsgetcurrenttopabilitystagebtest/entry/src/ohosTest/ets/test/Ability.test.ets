@@ -18,6 +18,7 @@ import commonEvent from "@ohos.commonEvent"
 import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import { Want } from '@kit.AbilityKit';
+import eventBus from '../lib/EventBus';
 
 function sleep(time:number) {
     return new Promise((resolve: (value: string) => void) => {
@@ -35,18 +36,6 @@ export default function abilityTest() {
     describe('ActsParticleAbilityStageBTest', () => {
         afterEach(async (done: Function) => {
             console.info('= ACTS_afterEach ====<begin');
-            let AbilityDelegator = await abilityDelegatorRegistry.getAbilityDelegator();
-            AbilityDelegator.getCurrentTopAbility().then((data) => {
-                console.info("====>thisTopAbility====>"+JSON.stringify(data.lastRequestWant))
-                let want: Want = {
-                    bundleName: 'com.example.actsgetcurrenttopabilitystagebtest',
-                    abilityName: 'MainAbility'
-                }
-                console.info("====>start startAbility====>");
-                if(data.lastRequestWant.abilityName!='MainAbility'){
-                    AbilityDelegator.startAbility(want)
-                }
-            })
             await sleep(2000);
             console.info('= ACTS_afterEach ====<end');
             done();
@@ -137,6 +126,11 @@ export default function abilityTest() {
                         })
                     }
                 });
+
+                if (globalThis.mainAbilityOnBackground) { 
+                    AbilityDelegator.executeShellCommand(`aa start -b com.example.actsgetcurrenttopabilitystagebtest -a MainAbility`); 
+                    await eventBus.onWait('MainAbility_onForeground'); 
+                }
 
                 await globalThis.abilityContext.startAbility(
                     {

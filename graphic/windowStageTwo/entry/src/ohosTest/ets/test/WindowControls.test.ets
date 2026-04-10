@@ -162,11 +162,12 @@ export default function windowControlsTest() {
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'Failed to call setStartWindowBackgroundColor. Cause: ' + JSON.stringify(err));
           if (err.code === 801) {
-            expect(true).assertTrue()
+            done();
           } else {
             expect(err.code).assertEqual(1300003)
+            done();
           }
-          done();
+          
         });
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));

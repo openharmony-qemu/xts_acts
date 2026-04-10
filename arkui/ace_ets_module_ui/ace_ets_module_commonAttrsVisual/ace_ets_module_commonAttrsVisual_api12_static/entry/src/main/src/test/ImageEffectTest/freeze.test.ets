@@ -35,13 +35,13 @@ let testAbilityContext: common.UIAbilityContext;
 export default function freezeTest() {
 
   describe('freezeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("freezeTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api12.static", "EntryAbility")
       
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("freezeTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/ImageEffect/freeze',

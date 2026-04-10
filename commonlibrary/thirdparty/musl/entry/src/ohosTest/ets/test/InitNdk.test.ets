@@ -30,9 +30,9 @@ export default function initNdkTest() {
      * @tc.desc   test init_module
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInitInitmodule001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInitInitmodule001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = init.initModule();
       console.info("Test NAPI data = \"" + data + "\"");
       expect(data).assertEqual(0);

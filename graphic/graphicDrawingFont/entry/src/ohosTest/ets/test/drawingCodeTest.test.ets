@@ -402,14 +402,14 @@ export default function drawingCodeTest() {
       }
     })
     /**
-     * @tc.name   PenSetStrokeWidth
+     * @tc.name   PenSetStrokeWidthAdapt001
      * @tc.number SUB_GRAPHIC_DrawingCode_PenSetStrokeWidth
      * @tc.desc   test the drawing of create
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PenSetStrokeWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('PenSetStrokeWidthAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const pen = new drawing.Pen();
         pen.setStrokeWidth(null);
@@ -704,14 +704,14 @@ export default function drawingCodeTest() {
       }
     })
     /**
-     * @tc.name   BrushSetShadowLayer
+     * @tc.name   BrushSetShadowLayerAdapt001
      * @tc.number SUB_GRAPHIC_DrawingCode_BrushSetShadowLayer
      * @tc.desc   test the drawing of create
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BrushSetShadowLayer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('BrushSetShadowLayerAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const brush = new drawing.Brush();
         brush.setShadowLayer(null);

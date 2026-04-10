@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -62,7 +62,7 @@ struct WebInitTest {
         console.error('webCreated =====>')
         this.webCreated = true
       })
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
     }
   }
@@ -97,7 +97,7 @@ struct WebInitTest {
                     this.webInit = true
                   })
                   Utils.emitEvent(this.webInit, 409);
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -106,8 +106,23 @@ struct WebInitTest {
               case 'emitOnce002': {
                 try {
                   Utils.emitEvent(this.webCreated, 410);
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
+              case 'emitOnce003': {
+                try {
+                  webView.once('', () => {
+                    console.error('webInited =====>')
+                    this.webInit = true
+                  })
+                  Utils.emitEvent(this.webInit, 202603182);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(`${error.code}`, 202603182);
                 }
                 break;
               }

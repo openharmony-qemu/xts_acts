@@ -41,7 +41,7 @@ export default function getGridItemRect1() {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
 
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("getGridItemRect1 beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/getItemRect/grid/getGridItemRect1',

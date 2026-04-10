@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,7 +53,7 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-@Observed class ClassAAA {
+@Observed export class ClassAAA {
   public numA: number = 1
   public classB: ClassBBB =new ClassBBB(1)
 
@@ -64,7 +64,7 @@ import common from '@ohos.app.ability.common';
 }
 
 @Observed
-class ClassBBB {
+export class ClassBBB {
   public numB: number = 1
 
   constructor(aValue: number = 0) {
@@ -83,7 +83,7 @@ struct ObjectLinkFarClassAAA {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ObjectLinkFar', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

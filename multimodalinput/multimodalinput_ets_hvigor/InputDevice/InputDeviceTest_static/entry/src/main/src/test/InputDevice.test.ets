@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,7 +58,7 @@ export default function InputDeviceTest() {
           ExpectTrue(inputDevice.KeyboardType.HANDWRITING_PEN == 4);
           ExpectTrue(inputDevice.KeyboardType.REMOTE_CONTROL == 5);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -81,7 +81,7 @@ export default function InputDeviceTest() {
         try {
           ExpectTrue(inputDevice.FunctionKey.CAPS_LOCK == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -117,7 +117,8 @@ export default function InputDeviceTest() {
               }
             });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} Failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -139,6 +140,7 @@ export default function InputDeviceTest() {
         hilog.info(domain, tag, `${caseName} enter`);
         try {
           await inputDevice.getDeviceList().then((ids: Array<Int>) => {
+            waitForCompletion(async () => {
             hilog.info(domain, tag, `${caseName} Device id list: ${JSON.stringify(ids)}`);
             expect(ids).assertInstanceOf('Array');
             if(ids.length > 0) {
@@ -175,8 +177,10 @@ export default function InputDeviceTest() {
               });
             }
             done();
+          })
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag,
             `${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
@@ -211,7 +215,8 @@ export default function InputDeviceTest() {
             }
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} Failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -237,7 +242,7 @@ export default function InputDeviceTest() {
             ExpectTrue(Array.isArray(ids));
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag,
             `${caseName} Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
@@ -265,7 +270,8 @@ export default function InputDeviceTest() {
             isPhysicalKeyboardExist++;
             ExpectTrue(isPhysicalKeyboardExist == 1);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
         }
@@ -301,7 +307,7 @@ export default function InputDeviceTest() {
           ifInputDeviceOffSuccess++;
           ExpectTrue(ifInputDeviceOffSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info(`${caseName} Cancel listening device event failed, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
           ExpectFalse(true);
@@ -329,7 +335,7 @@ export default function InputDeviceTest() {
           ifInputDeviceOffSuccess++;
           ExpectTrue(ifInputDeviceOffSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.info(`${caseName} Cancel all listening device event failed, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
           ExpectFalse(true);

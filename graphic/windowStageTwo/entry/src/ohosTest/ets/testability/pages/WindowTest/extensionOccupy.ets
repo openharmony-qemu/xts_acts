@@ -88,6 +88,20 @@ struct Extension {
             this.message = err.code
           }
         })
+        Button('独占点击事件undefined')
+        .id('button401_2')
+        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            extensionWindow?.occupyEvents(undefined)
+            console.log('testUIExtensionHostOccupyEvents success')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code
+          }
+        })
 
       Button('按钮')
         .id('clickBtn')

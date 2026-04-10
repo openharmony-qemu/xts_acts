@@ -14,14 +14,15 @@
  */
 import Ability from '@ohos.app.ability.UIAbility'
 import commonEvent from '@ohos.commonEvent'
+import EventBusPlus from '../lib/EventBusPlus';
 
 let sendMessageTime = 2000;
+let ACTS_InterfaceMultiUsers_0100_Start_CommonEventPromise = EventBusPlus.onWait('ACTS_InterfaceMultiUsers_0100_Start_CommonEvent_Done');
 
-function PublishCallBackOne() {
+async function PublishCallBackOne() {
   console.info('====>Publish CallBack ACTS_StartAbility_0100_CommonEvent====>');
-  setTimeout(() => {
-    globalThis.abilityContext2.terminateSelf();
-  }, sendMessageTime)
+  await ACTS_InterfaceMultiUsers_0100_Start_CommonEventPromise
+  globalThis.abilityContext2.terminateSelf();
   console.info('====>terminateSelf succese====>');
 }
 
@@ -30,13 +31,12 @@ export default class MainAbility extends Ability {
     console.log('MainAbility2 onCreate');
   }
 
-  onDestroy() {
+  async onDestroy(): Promise<void> {
     console.log('MainAbility2 onDestroy');
-    setTimeout(() => {
-      commonEvent.publish('ACTS_TerminateSelf_CommonEvent', () => {
+    EventBusPlus.emit('ACTS_TerminateSelf_CommonEvent')
+      .then(()=>{
         console.info('====>publish ACTS_TerminateSelf_CommonEvent====>');
       });
-    }, sendMessageTime)
   }
 
   onWindowStageCreate(windowStage) {

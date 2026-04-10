@@ -17,6 +17,8 @@ import distributedKVStore from '@ohos.data.distributedKVStore'
 import common from "@ohos.app.ability.common";
 import { BusinessError } from '@kit.BasicServicesKit';
 import fs from '@ohos.file.fs';
+import deviceInfo from '@ohos.deviceInfo';
+let currentDeviceIsWatch = false;
 
 let context: common.UIAbilityContext;
 const TAG = "[ttt]"
@@ -52,6 +54,11 @@ function sleep(ms:number) {
 export default function SingleKvStoreErrCodeTest(){
   describe('SingleKvStoreErrCodeTest', () => {
     beforeAll(async (done: Function) => {
+      console.info('beforeAll currentDeviceIsWatch');
+      let deviceTypeInfo = deviceInfo.deviceType;
+      currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+      console.info( "the value of the deviceType is : " + deviceInfo.deviceType + ' currentDeviceIsWatch=' +currentDeviceIsWatch);
+
       context = AppStorage.Get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
       const config: distributedKVStore.KVManagerConfig = {
         bundleName: TEST_BUNDLE_NAME,
@@ -3182,6 +3189,11 @@ export default function SingleKvStoreErrCodeTest(){
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1170 start');
       let resultSet: distributedKVStore.KVStoreResultSet | undefined;
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         await kvStore?.put("key", "zhangsan");
         resultSet = await kvStore?.getResultSet('key');
@@ -3225,6 +3237,11 @@ export default function SingleKvStoreErrCodeTest(){
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1180 start');
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       let resultSet: distributedKVStore.KVStoreResultSet | undefined;
       try {
         await kvStore?.put("key", "zhangsan");
@@ -3283,6 +3300,11 @@ export default function SingleKvStoreErrCodeTest(){
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1200 start');
       let resultSet: distributedKVStore.KVStoreResultSet | undefined;
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         await kvStore?.put("key", "zhangsan");
         resultSet = await kvStore?.getResultSet('key');
@@ -3334,6 +3356,11 @@ export default function SingleKvStoreErrCodeTest(){
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1210 start');
       let resultSet: distributedKVStore.KVStoreResultSet | undefined;
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         await kvStore?.put("key", "zhangsan");
         resultSet = await kvStore?.getResultSet('key');
@@ -3385,6 +3412,11 @@ export default function SingleKvStoreErrCodeTest(){
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1220 start');
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       let resultSet: distributedKVStore.KVStoreResultSet | undefined;
       let keys = ["key", "key1"];
       try {
@@ -3439,6 +3471,11 @@ export default function SingleKvStoreErrCodeTest(){
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1230 start');
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       let resultSet: distributedKVStore.KVStoreResultSet | undefined;
       try {
         await kvStore?.put("key", "zhangsan");

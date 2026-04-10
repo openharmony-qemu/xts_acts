@@ -66,9 +66,6 @@ interface MyObj74_1 extends MyObj74 {}
 interface MyObj106 {
   value: string;
 }
-interface MyObj108 {
-  a: number
-}
 
 export default function MapValueTest() {
   describe('MapValueTest', () => {
@@ -1048,7 +1045,7 @@ export default function MapValueTest() {
     it('MapValuesTest082',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map<number, number>([[1, 1], [2, 2], [3, 3], [4, 4]]);
       const values = Array.from(map.values());
-      const sum = values.reduce((acc, curr) => acc + curr, 0);
+      const sum = values.reduce((acc, curr) => acc + curr, 0.);
 
       expect(sum).assertEqual(10);
     });
@@ -1358,22 +1355,5 @@ export default function MapValueTest() {
       const values = Array.from(map.values());
       expect(values[0].value).assertEqual('modified');
     });
-    /**
-     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_108
-     * @tc.name MapValuesTest108
-     * @tc.desc values() with Map and reflective properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('MapValuesTest108',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const obj: MyObj108 = { a: 1 };
-    //   const map = new Map<number, MyObj108>([[1, obj]]);
-    //   const values = Array.from(map.values());
-    //
-    //   expect(Reflect.get(values[0], 'a')).assertEqual(1);
-    //   expect(Reflect.has(values[0], 'a')).assertEqual(true);
-    // });
-
   })
 }

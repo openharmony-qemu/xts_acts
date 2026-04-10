@@ -26,33 +26,125 @@ let tag = 'SystemAppA_MainAbility3'
 export default class MainAbility3 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void{
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    let wantInfo: Want = {
-      bundleName: 'com.acts.systemappb',
-      abilityName: 'SecondAbility3',
-    };
-    let param = new MyParcelable(100, 'test', false);
-    try {
-      this.context.startAbilityByCall(wantInfo).then((caller) => {
-        console.log('SystemAppCalleeA MainAbility3 startAbilityByCall' + JSON.stringify(caller));
-        caller.callWithResult(null, param).then((data) => {
-          console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-data-==' + JSON.stringify(data));
-          caller.release();
-        }).catch((err: BusinessError) => {
-          console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-error-==' + JSON.stringify(err));
-          let code = (err as BusinessError).code;
-          console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-error-code==' + code);
-          let commonEventData: commonEvent.CommonEventPublishData = {
-            parameters: {
-              num: code,
-            }
-          };
-          commonEvent.publish(ON_ERROR_BACK, commonEventData, (err) => {
-            hilog.info(0x0000, tag, '%{public}s', `ON_ERROR_BACK publish err:  ${JSON.stringify(err)}`);
+    if(want?.action == "nullTest"){
+      let wantInfo: Want = {
+        bundleName: 'com.acts.systemappb',
+        abilityName: 'SecondAbility3',
+      };
+      let param = new MyParcelable(100, 'test', false);
+      try {
+        this.context.startAbilityByCall(wantInfo).then((caller) => {
+          console.log('SystemAppCalleeA MainAbility3 startAbilityByCall' + JSON.stringify(caller));
+          caller.callWithResult(null, param).then((data) => {
+            console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-data-==' + JSON.stringify(data));
+            caller.release();
+          }).catch((err: BusinessError) => {
+            console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-error-==' + JSON.stringify(err));
+            let code = (err as BusinessError).code;
+            console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-error-code==' + code);
+            let commonEventData: commonEvent.CommonEventPublishData = {
+              parameters: {
+                num: code,
+              }
+            };
+            commonEvent.publish(ON_ERROR_BACK, commonEventData, (err) => {
+              hilog.info(0x0000, tag, '%{public}s', `ON_ERROR_BACK publish err:  ${JSON.stringify(err)}`);
+            });
           });
         });
-      });
-    } catch (e) {
-      console.log('SystemAppCalleeA MainAbility3 startAbilityByCall err==' + JSON.stringify(e));
+      } catch (e) {
+        console.log('SystemAppCalleeA MainAbility3 startAbilityByCall err==' + JSON.stringify(e));
+      }
+    }
+    if(want?.action == "undefinedTest"){
+      let wantInfo: Want = {
+        bundleName: 'com.acts.systemappb',
+        abilityName: 'SecondAbility3',
+      };
+      let param = new MyParcelable(100, 'test', false);
+      try {
+        this.context.startAbilityByCall(wantInfo).then((caller) => {
+          console.log('SystemAppCalleeA MainAbility3 startAbilityByCall' + JSON.stringify(caller));
+          caller.callWithResult(undefined, param).then((data) => {
+            console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-data-==' + JSON.stringify(data));
+            caller.release();
+          }).catch((err: BusinessError) => {
+            console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-error-==' + JSON.stringify(err));
+            let code = (err as BusinessError).code;
+            console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-error-code==' + code);
+            let commonEventData: commonEvent.CommonEventPublishData = {
+              parameters: {
+                num: code,
+              }
+            };
+            commonEvent.publish(ON_ERROR_BACK, commonEventData, (err) => {
+              hilog.info(0x0000, tag, '%{public}s', `ON_ERROR_BACK publish err:  ${JSON.stringify(err)}`);
+            });
+          });
+        });
+      } catch (e) {
+        console.log('SystemAppCalleeA MainAbility3 startAbilityByCall err==' + JSON.stringify(e));
+      }
+    }
+    
+    if(want?.action == "undefinedDataTest"){
+      let wantInfo: Want = {
+        bundleName: 'com.acts.systemappb',
+        abilityName: 'SecondAbility3',
+      };
+      try {
+        this.context.startAbilityByCall(wantInfo).then((caller) => {
+          console.log('SystemAppCalleeA MainAbility3 startAbilityByCall' + JSON.stringify(caller));
+          caller.callWithResult('test', undefined).then((data) => {
+            console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-data-==' + JSON.stringify(data));
+            caller.release();
+          }).catch((err: BusinessError) => {
+            console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-error-==' + JSON.stringify(err));
+            let code = (err as BusinessError).code;
+            console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-error-code==' + code);
+            let commonEventData: commonEvent.CommonEventPublishData = {
+              parameters: {
+                num: code,
+              }
+            };
+            commonEvent.publish(ON_ERROR_BACK, commonEventData, (err) => {
+              hilog.info(0x0000, tag, '%{public}s', `ON_ERROR_BACK publish err:  ${JSON.stringify(err)}`);
+            });
+          });
+        });
+      } catch (e) {
+        console.log('SystemAppCalleeA MainAbility3 startAbilityByCall err==' + JSON.stringify(e));
+      }
+    }
+    
+    if(want?.action == "nullDataTest"){
+      let wantInfo: Want = {
+        bundleName: 'com.acts.systemappb',
+        abilityName: 'SecondAbility3',
+      };
+      try {
+        this.context.startAbilityByCall(wantInfo).then((caller) => {
+          console.log('SystemAppCalleeA MainAbility3 startAbilityByCall' + JSON.stringify(caller));
+          caller.callWithResult('test', null).then((data) => {
+            console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-data-==' + JSON.stringify(data));
+            caller.release();
+          }).catch((err: BusinessError) => {
+            console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-error-==' + JSON.stringify(err));
+            let code = (err as BusinessError).code;
+            console.log('SystemAppCalleeA MainAbility3 startAbilityByCall-error-code==' + code);
+            let commonEventData: commonEvent.CommonEventPublishData = {
+              parameters: {
+                num: code,
+              }
+            };
+            commonEvent.publish(ON_ERROR_BACK, commonEventData, (err) => {
+              hilog.info(0x0000, tag, '%{public}s', `ON_ERROR_BACK publish err:  ${JSON.stringify(err)}`);
+            });
+          });
+        });
+      } catch (e) {
+        console.log('SystemAppCalleeA MainAbility3 startAbilityByCall err==' + JSON.stringify(e));
+      }
     }
   }
 

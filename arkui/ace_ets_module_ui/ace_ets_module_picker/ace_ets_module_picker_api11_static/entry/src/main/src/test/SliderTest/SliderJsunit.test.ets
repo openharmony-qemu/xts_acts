@@ -44,7 +44,7 @@ function sleep(time: int):Promise<int> {
 export default function sliderJsunit() {
 
   describe('SliderTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 

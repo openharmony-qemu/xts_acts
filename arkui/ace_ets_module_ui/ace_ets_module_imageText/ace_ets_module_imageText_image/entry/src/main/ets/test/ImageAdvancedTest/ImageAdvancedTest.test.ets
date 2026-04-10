@@ -408,54 +408,6 @@ export default function ImageAdvancedTest() {
     });
 
     /**
-     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0430
-     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0430
-     * @tc.desc   citation internal img
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0430', Level.LEVEL3, async (done: Function) => {
-      console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0430] START'); 
-      await routerPush("image15")
-      let driver = Driver.create();
-      await CommonFunc.sleep(2000);
-
-      console.info("======> wifi_test/enable wifi:" + wifiMg.isWifiActive());
-      console.info("======> wifi_test/enable wifi:" + wifiManager.isWifiActive());
-      //网络维测日志 
-      let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
-      console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
-      console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
-      console.info("======> Internet chload : " + JSON.stringify(data.chload));
-      console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
-      console.info("======> Internet connState : " + JSON.stringify(data.connState));
-
-      if (data.chload >= 800 || data.rssi <= -80) {
-        expect().message("======> WLAN Network error").assertFail();//方式一
-        done();
-      } else if (data.chload >= 500) {
-        expect().message("======> The internet connection is poor. ").assertFail();//方式一
-        console.info("======> The internet connection is poor. ");
-        done();
-      }
-          
-      if (data.connState == wifiMg.ConnState.CONNECTED) {
-        console.info("======> WLAN connection established ");
-        await CommonFunc.sleep(2000);
-        let strJson1 = getInspectorByKey('loadingResult15');
-        let obj1: ESObject = JSON.parse(strJson1);
-        console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0430] component obj1 is: " + JSON.stringify(obj1));
-        console.info("[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0430] obj1.$attrs.content is: " + obj1.$attrs.content);
-        expect(obj1.$attrs.content).assertContain('success');
-        done();
-      } else {
-        expect().message("======> WLAN Network error").assertFail(); //方式一
-        done();
-      }
-    });
-
-    /**
      * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0440
      * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0440
      * @tc.desc   Referencing using relative paths

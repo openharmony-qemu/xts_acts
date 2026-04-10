@@ -112,7 +112,7 @@ it('focusTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
           }
           console.info("focusTest_0100 start to publish emit");
           events_emitter.emit(indexEventOne, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("focusTest_0100 change component data error: " + err.message);
         }
         await CommonFunc.sleep(2000);

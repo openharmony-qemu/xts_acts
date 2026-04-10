@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 const ERRCODE = 801;
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let sqlStatement = "CREATE TABLE IF NOT EXISTS employee (" +
   "id INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -45,7 +45,7 @@ sqlStatement = "CREATE TABLE IF NOT EXISTS product (" +
   "vendor INTEGER," + "describe TEXT)"
 const TAG = "testTag"
 const STORE_NAME = "distributed_rdb.db"
-let rdbStore: data_Rdb.RdbStore;
+let rdbStore: data_Rdb.RdbStore | undefined;
 let config: data_Rdb.StoreConfig = {
   "name": STORE_NAME,
   securityLevel: data_Rdb.SecurityLevel.S1
@@ -127,16 +127,16 @@ export default function relationalStoreDistributedTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
-      rdbStore = await data_Rdb.getRdbStore(context, config);
+      rdbStore = await data_Rdb.getRdbStore(context!, config);
       console.info(TAG + "create RelationalStore store success");
-      await executeSql1(rdbStore);
-      await executeSql2(rdbStore);
-      await executeSql3(rdbStore);
+      await executeSql1(rdbStore!);
+      await executeSql2(rdbStore!);
+      await executeSql3(rdbStore!);
     })
 
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach')
-      await data_Rdb.deleteRdbStore(context, config);
+      await data_Rdb.deleteRdbStore(context!, config);
     })
 
     afterAll(async (): Promise<void> => {
@@ -369,6 +369,7 @@ export default function relationalStoreDistributedTest() {
           let pr = predicates.inDevices(["1234567890"]);
           console.info(TAG + "inDevices success");
           expect(pr !== null).assertTrue();
+          expect(typeof(pr) === "object").assertTrue();
           done();
         } catch (err) {
           console.info(TAG + "inDevices failed");
@@ -391,7 +392,8 @@ export default function relationalStoreDistributedTest() {
         console.info(TAG + "************* testRdbStoreDistributed0010 start *************");
         let predicates = new data_Rdb.RdbPredicates("employee")
         try {
-          predicates = predicates.inAllDevices();
+         let pr = predicates = predicates.inAllDevices();
+         expect(typeof(pr) === "object").assertTrue();
           console.info(TAG + "inAllDevices success");
           expect(predicates !== null).assertTrue();
         } catch (err) {
@@ -426,7 +428,8 @@ export default function relationalStoreDistributedTest() {
         try {
           await rdbStore!.sync(data_Rdb.SyncMode.SYNC_MODE_PULL, predicates);
           expect(true).assertFail();
-        } catch(err:BusinessError) {
+        } catch(err) {
+          err = err as BusinessError;
           console.info(TAG + "testRdbStoreDistributed0011-2 err.code:" + err.code + " err.msg:" + err.message);
           expect(err.code).assertEqual(14800000);
         }
@@ -860,6 +863,233 @@ export default function relationalStoreDistributedTest() {
         done();
 
       })
+
+       /**
+     * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_032
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_3200
+     * @tc.desc   sync test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+      try {
+        rdbStore!.on('', false, Observer);
+        console.info(TAG + "on success ");
+      } catch (err) {
+        console.info(TAG + "on " + err);
+        expect(401).assertEqual(err.code);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_033
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_3300
+     * @tc.desc   sync test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+      try {
+        rdbStore!.off('', false, Observer);
+        console.info(TAG + "off success ");
+      } catch (err) {
+        console.info(TAG + "off " + err);
+        expect(401).assertEqual(err.code);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRdbStoreDistributedErr0400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_3700
+     * @tc.desc   setDistributedTables errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+      it("testRdbStoreDistributedErr0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info(TAG + "************* testRdbStoreDistributedErr0400 start *************");
+        let distributedConfig : data_Rdb.DistributedConfig = {
+          autoSync: false,
+          enableCloud: true,
+          asyncDownloadAsset: true
+        }
+        try {
+          await rdbStore!.setDistributedTables([""], data_Rdb.DistributedType.DISTRIBUTED_DEVICE, distributedConfig)
+          expect(null).assertFail()
+          done();
+        } catch (err) {
+          console.info(TAG + `testRdbStoreDistributedErr0400 failed , error code is ${err.code}, message is ${err.message}`);
+          expect(14800000).assertEqual(err.code);
+          done();
+        }
+      })
+  
+      /**
+       * @tc.name   testRdbStoreDistributedErr0500
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_3800
+       * @tc.desc   setDistributedTables errcode is 401
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it("testRdbStoreDistributedErr0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info(TAG + "************* testRdbStoreDistributedErr0500 start *************");
+        let distributedConfig : data_Rdb.DistributedConfig = {
+          autoSync: false,
+          enableCloud: false,
+          asyncDownloadAsset: false
+        }
+        try {
+          await rdbStore!.setDistributedTables([""], data_Rdb.DistributedType.DISTRIBUTED_DEVICE, distributedConfig)
+          expect(null).assertFail()
+          done();
+        } catch (err) {
+          console.info(TAG + `testRdbStoreDistributedErr0500 failed , error code is ${err.code}, message is ${err.message}`);
+          expect(14800000).assertEqual(err.code);
+          done();
+        }
+      })
+
+      /**
+     * @tc.name   testRdbStoreDistributedErr0600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_3900
+     * @tc.desc   RelationalStore set distributed table using none table as argment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreDistributedErr0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info(TAG + "************* testRdbStoreDistributedErr0600 start *************");
+        try {
+           rdbStore!.setDistributedTables([""], (err: BusinessError | null) => {
+            if(err){
+              console.info(TAG + "testRdbStoreDistributedErr0600 failed" + `, error code is ${err.code}, message is ${err.message}`);
+              expect(err.code).assertEqual(14800000);
+            }else{
+              expect(null).assertFail()
+              done();
+            }
+
+          })
+          console.info(TAG + "set none to be distributed table success");
+          expect(rdbStore !== null).assertTrue();
+        } catch (err) {
+          console.info(TAG + "testRdbStoreDistributedErr0600 failed" + `, error code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(ERRCODE);
+        }
+        done()
+        console.info(TAG + "************* testRdbStoreDistributedErr0600 end *************");
+      })
+
+      /**
+       * @tc.name   testRdbStoreDistributedErr0700
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_4000
+       * @tc.desc   setDistributedTables errcode is 401
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
+      it("testRdbStoreDistributedErr0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: () => void): Promise<void> => {
+          console.info(TAG + "************* testRdbStoreDistributedErr0700 start *************");
+          try {
+           rdbStore!.setDistributedTables([""], data_Rdb.DistributedType.DISTRIBUTED_DEVICE, (err: BusinessError | null) =>{
+              if(err){
+                expect(14800000).assertEqual(err.code);
+                done();
+              }else{
+                expect(null).assertFail()
+                done();
+              }
+            })
+
+          } catch (err) {
+            console.info(TAG + `testRdbStoreDistributedErr0700 failed , error code is ${err.code}, message is ${err.message}`);
+            expect(14800000).assertEqual(err.code);
+            done();
+          }
+        })
+
+
+        /**
+     * @tc.name   testRdbStoreDistributedErr0800
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_4100
+     * @tc.desc   setDistributedTables errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+      it("testRdbStoreDistributedErr0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: () => void): Promise<void> => {
+          console.info(TAG + "************* testRdbStoreDistributedErr0400 start *************");
+          let distributedConfig : data_Rdb.DistributedConfig = {
+            autoSync: false,
+            enableCloud: true,
+            asyncDownloadAsset: true,
+            tableType: data_Rdb.DistributedTableType.SINGLE_VERSION
+          }
+          try {
+            rdbStore!.setDistributedTables([""], data_Rdb.DistributedType.DISTRIBUTED_DEVICE, distributedConfig, (err: BusinessError | null) =>{
+              if(err){
+                expect(14800000).assertEqual(err.code);
+                done();
+              }else{
+                expect(null).assertFail()
+                done();
+              }
+            })
+           
+          } catch (err) {
+            console.info(TAG + `testRdbStoreDistributedErr0400 failed , error code is ${err.code}, message is ${err.message}`);
+            expect(14800000).assertEqual(err.code);
+            done();
+          }
+        })
+    
+        /**
+         * @tc.name   testRdbStoreDistributedErr0900
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_4200
+         * @tc.desc   setDistributedTables errcode is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("testRdbStoreDistributedErr0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: () => void): Promise<void> => {
+          console.info(TAG + "************* testRdbStoreDistributedErr0900 start *************");
+          let distributedConfig : data_Rdb.DistributedConfig = {
+            autoSync: false,
+            enableCloud: false,
+            asyncDownloadAsset: false,
+            tableType: data_Rdb.DistributedTableType.DEVICE_COLLABORATION
+          }
+          try {
+            rdbStore!.setDistributedTables([""], data_Rdb.DistributedType.DISTRIBUTED_DEVICE, distributedConfig, (err: BusinessError | null) =>{
+              if(err){
+                expect(14800000).assertEqual(err.code);
+                done();
+              }else{
+                expect(null).assertFail()
+                done();
+              }
+            })
+          } catch (err) {
+            console.info(TAG + `testRdbStoreDistributedErr0900 failed , error code is ${err.code}, message is ${err.message}`);
+            expect(14800000).assertEqual(err.code);
+            done();
+          }
+        })
+
+      
     console.info(TAG + "*************Unit Test End*************");
   })
 }

@@ -26,6 +26,13 @@ import onWillAppearOpenTest from './OpenMenuTest/onWillAppearOpenTest.test'
 import onWillDisappearOpenTest from './OpenMenuTest/onWillDisappearOpenTest.test'
 import updateMenuTest from './UpdateMenuTest/updateMenuTest.test'
 import bindContextMenuTest from './BindContextMenuTest/bindContextMenuTest.test'
+import ContextMenuOptionsTest from './BindContextMenuTest/ContextMenuOptions.test'
+import PromptActionTest from './PromptActionTest/PromptAction.test'
+import HoverScaleInterruptionTest from './CommonTest/HoverScaleInterruption.test'
+import MenuKeyboardAvoidModeTest from './CommonTest/MenuKeyboardAvoidMode.test'
+import MenuTest from './menuExpandSymbol/Menu.test'
+import GetStateTest from './PromptActionTest/GetState.test'
+import SheetTest from './SheetTest/Sheet.test'
 
 export default function testsuite() {
   maskTest();
@@ -41,4 +48,11 @@ export default function testsuite() {
   onWillDisappearOpenTest();
   updateMenuTest();
   bindContextMenuTest();
+  ContextMenuOptionsTest();
+  PromptActionTest();
+  HoverScaleInterruptionTest();
+  MenuKeyboardAvoidModeTest();
+  MenuTest();
+  GetStateTest();
+  SheetTest();
 }

@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function setGridEvent() {
   describe('setGridEvent', (): void => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchTypeTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
       

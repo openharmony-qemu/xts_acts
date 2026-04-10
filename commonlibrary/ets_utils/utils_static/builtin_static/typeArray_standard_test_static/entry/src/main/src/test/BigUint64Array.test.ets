@@ -31,7 +31,7 @@ import Utils from './Util.test';
 
 export default function BigUint64ArrayTest() {
   describe('BigUint64ArrayTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     let value: string;
@@ -986,9 +986,7 @@ export default function BigUint64ArrayTest() {
     it('testBigUint64ArrayConstructor0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBigUint64ArrayConstructor0045";
       try {
-        let array: Array<number> = new Array<number>(2);
-        array[0] = 21;
-        array[1] = 31;
+        let array: Array<number> = [21, 31];
         let bigIntArray = array.map((value: number) => {
           return BigInt(value)
         });
@@ -1013,9 +1011,7 @@ export default function BigUint64ArrayTest() {
     it('testBigUint64ArrayConstructor0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBigUint64ArrayConstructor0046";
       try {
-        let array: Array<number> = new Array<number>(2);
-        array[0] = 21;
-        array[1] = 31;
+        let array: Array<number> = [21, 31];
         let bigIntArray = array.map((value: number) => {
           return BigInt(value)
         });

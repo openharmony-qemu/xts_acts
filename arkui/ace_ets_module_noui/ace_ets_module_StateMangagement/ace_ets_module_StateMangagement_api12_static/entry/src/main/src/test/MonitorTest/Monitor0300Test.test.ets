@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Monitor0300Test() {
   describe('Monitor0300Test', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Monitor0300Test beforeEach start");
 
 
@@ -117,6 +117,10 @@ it('Monitor0300Test_static_001', Level.LEVEL0, async (done: () => void): Promise
       let obj3 = JSON.parseJsonElement(inspector.getInspectorByKey('tvMonitor03002'));
       console.info("[Monitor0300Test_static_001] component obj3 is: " + JSON.stringify(obj3));
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('18');
+      await CommonFunc.sleep(1000);
+      let obj6 = JSON.parseJsonElement(inspector.getInspectorByKey('tvMonitor03003'));
+      console.info("[Monitor0300Test_static_001] component obj6 is: " + JSON.stringify(obj6));
+      expect(obj6.getElement('$attrs').getString('content')).assertEqual('person.age');
       await CommonFunc.sleep(1000);
       let btn2: Component|null = await driver.findComponent(ON.id("btnMonitor03003"));
       await CommonFunc.sleep(1000);

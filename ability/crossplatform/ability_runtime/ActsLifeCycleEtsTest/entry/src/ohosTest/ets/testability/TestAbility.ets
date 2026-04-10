@@ -18,6 +18,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../test/List.test';
+import commonEventManager from '@ohos.commonEventManager';
 
 export default class TestAbility extends UIAbility {
     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -55,6 +56,9 @@ export default class TestAbility extends UIAbility {
 
     onForeground() {
         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onForeground');
+        commonEventManager.publish('TestAbility_onForeground', (err, data) => {
+            console.log('TestAbility onForeground publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+        });
     }
 
     onBackground() {

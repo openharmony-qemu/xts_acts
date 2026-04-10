@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function textBackgroundStyleTest() {
   describe('textBackgroundStyleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textBackgroundStyleTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
@@ -84,7 +84,7 @@ it('textBackgroundStyleTest_static_0001', Level.LEVEL1, async (done: () => void)
       await CommonFunc.sleep(500);
       await get.click();
       await CommonFunc.sleep(500);
-      expect(AppStorage.get('RichEditorTextBackgroundStyleColor')).assertEqual(undefined);
+      expect(AppStorage.get<string>('RichEditorTextBackgroundStyleColor')).assertEqual(undefined);
       expect(AppStorage.get<string>('RichEditorTextBackgroundStyleRadius')).assertEqual("undefined");
       AppStorage.delete('RichEditorTextBackgroundStyleColor')
       AppStorage.delete('RichEditorTextBackgroundStyleRadius')

@@ -48,7 +48,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -74,9 +74,9 @@ export default function WindowModalTest() {
 
     describe("WindowModalTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowModalTest describe start');
-        let windowStage: window.WindowStage;
-        let win: window.Window;
-        let context: common.UIAbilityContext;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
+        let context: common.UIAbilityContext | undefined;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
@@ -129,7 +129,7 @@ export default function WindowModalTest() {
         it("testsetSubWindowModal_Function_Promise3_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let msgStr:string = "testsetSubWindowModal_Function_Promise3_static ";
             hilog.info(domain, tag,msgStr + " begin");
-            let wnd:window.Window = windowStage.getMainWindowSync();
+            let wnd:window.Window = windowStage!.getMainWindowSync();
             hilog.info(domain, tag,msgStr + ' window.getTopWindow wnd: ' + wnd);
             expect(wnd != null).assertTrue();
             try {
@@ -167,7 +167,7 @@ export default function WindowModalTest() {
             let caseName:string = 'testSetSubWindowModal_SubWindowDestroy_static';
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
-            let subWin:window.Window = await windowStage.createSubWindow('testSetSubWindowModal_SubWindowDestroy_static');
+            let subWin:window.Window = await windowStage!.createSubWindow('testSetSubWindowModal_SubWindowDestroy_static');
             hilog.info(domain, tag,msgStr + `createSubWindow success.`);
             expect(!!subWin).assertTrue();
             await subWin.destroyWindow();
@@ -179,7 +179,6 @@ export default function WindowModalTest() {
                     if (err.code == 801) {
                         done();
                     } else if(err.code == 1300002){
-                        expect(true).assertTrue();
                         done();
                     }else{
                         expect(false).assertTrue();
@@ -205,7 +204,7 @@ export default function WindowModalTest() {
         it("test_setSubWindowModal_MainWindow_1300004_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let msgStr:string = "test_setSubWindowModal_MainWindow_1300004_static";
             hilog.info(domain, tag,msgStr + "begin");
-            let windowClass:window.Window =  windowStage.getMainWindowSync();
+            let windowClass:window.Window =  windowStage!.getMainWindowSync();
             try {
                 windowClass.setSubWindowModal(true, window.ModalityType.APPLICATION_MODALITY).then(() => {
                     hilog.info(domain, tag,msgStr + 'Succeeded in setting subwindow modal');
@@ -215,7 +214,6 @@ export default function WindowModalTest() {
                     hilog.error(domain, tag,msgStr + `Failed to setSubWindowModal. Cause code: ${err.code}, message: ${err.message}`);
                     if (err.code == 1300004) {
                         hilog.info(domain, tag,msgStr + 'The mainWindow not support setSubWindowModal');
-                        expect(true).assertTrue();
                         done();
                     } else if(err.code == 801){
                         done();
@@ -242,7 +240,7 @@ export default function WindowModalTest() {
         it("test_setSubWindowModal_subWindow_destory_1300002_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let msgStr:string = "test_setSubWindowModal_subWindow_destory_1300002_static";
             hilog.info(domain, tag,msgStr + "begin");
-            let subWindowClass: window.Window = await windowStage.createSubWindow('test_setSubWindowModal_subWindow_destory_1300002_static');
+            let subWindowClass: window.Window = await windowStage!.createSubWindow('test_setSubWindowModal_subWindow_destory_1300002_static');
             hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(subWindowClass));
             try {
                 await subWindowClass.destroyWindow();
@@ -254,7 +252,6 @@ export default function WindowModalTest() {
                     hilog.error(domain, tag,msgStr + `Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
                     if (err.code == 1300002) {
                         hilog.info(domain, tag,msgStr + 'The SubWindow is destroyed');
-                        expect(true).assertTrue();
                         done();
                     } else {
                         expect(false).assertTrue();
@@ -280,7 +277,7 @@ export default function WindowModalTest() {
          */
         it('testSetSubWindowModalModalityType_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const message:string = 'testSetSubWindowModalModalityType_static_0300';
-            let windowClass:window.Window = windowStage.getMainWindowSync();
+            let windowClass:window.Window = windowStage!.getMainWindowSync();
             try {
                 let promise = windowClass.setSubWindowModal(true, window.ModalityType.APPLICATION_MODALITY);
                 promise.then(() => {
@@ -289,11 +286,9 @@ export default function WindowModalTest() {
                 }).catch((err: Error) :PromiseLike<void>|undefined => {
                     if (err.code == 801) {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-                        expect(false).assertFalse()
                         done()
                     } else if (err.code == 1300004) {
                         hilog.error(domain, tag,`${message} Unauthorized operation.`);
-                        expect(false).assertFalse()
                         done()
                     } else {
                         hilog.error(domain, tag,`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
@@ -323,7 +318,7 @@ export default function WindowModalTest() {
             let caseName:string = "testSetWindowModalPromiseErrCode1300002_static_0100";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin.');
-            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context!);
             await terminateAbility(caseName);
             try {
                 windowStageStart.setWindowModal(false).then(() => {
@@ -359,9 +354,8 @@ export default function WindowModalTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin.');
             try {
-                windowStage.setWindowModal(false).then(() => {
+                windowStage!.setWindowModal(false).then(() => {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowModal.');
-                    expect(true).assertTrue();
                     done()
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed to call setWindowModal. Cause: ' + JSON.stringify(err));

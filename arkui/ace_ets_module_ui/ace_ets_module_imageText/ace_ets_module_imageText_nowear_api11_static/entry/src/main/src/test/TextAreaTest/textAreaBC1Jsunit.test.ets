@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function textAreaBC1Jsunit() {
   describe('textAreaBC1Jsunit', () :void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaBC1Jsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")
@@ -60,7 +60,7 @@ export default function textAreaBC1Jsunit() {
       }
       console.info("textAreaBC1Jsunit beforeEach end");
     });
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.pushUrl({url: 'MainAbility/pages/index/index'});
       await CommonFunc.sleep(2000);

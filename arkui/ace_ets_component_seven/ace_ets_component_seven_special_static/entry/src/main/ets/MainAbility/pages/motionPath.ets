@@ -18,7 +18,7 @@ import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter'
 import { RecordData } from '@ohos.base';
 
-class MotionPathModifier1 implements AttributeModifier<ButtonAttribute> {
+export class MotionPathModifier1 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.motionPath({ path: 'Mstart.x start.y L300 200 L300 500 Lend.x end.y', from: 0, to: 1, rotatable: false })
   }

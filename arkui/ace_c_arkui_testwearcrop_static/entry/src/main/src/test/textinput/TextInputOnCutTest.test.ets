@@ -28,7 +28,7 @@ export default function textInputOnCutTest() {
 
     let PAGE_TAG = 'TextInputOnCutTest';
 
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       console.info("[ui] beforeAll start");
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility")
       await Utils.pushPage(`textarea/${PAGE_TAG}`, false);

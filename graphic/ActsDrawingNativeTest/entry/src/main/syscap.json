@@ -1,10 +1,11 @@
 {
     "devices": {
-        "general": [],
+        "general": [
+            "default"
+        ],
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Multimedia.Image.Core",
                     "SystemCapability.Graphic.Graphic2D.NativeDrawing"
                 ]
             }

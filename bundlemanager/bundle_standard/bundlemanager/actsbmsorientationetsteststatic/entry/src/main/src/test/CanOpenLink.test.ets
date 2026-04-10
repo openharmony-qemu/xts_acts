@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,14 +33,15 @@ export default function canOpenLink() {
      * @tc.desc   The scheme of the specified link is not in the querySchemes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('canOpenLinkNotInQuerySchemes_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('canOpenLinkNotInQuerySchemes_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let data = bundle.canOpenLink("https://");
         expect(data).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `canOpenLinkNotInQuerySchemes_static catch failed errCode:${err.code} message:${err.message}`);
         expect(err.code).assertEqual(ERROR_SCHEME_NOT_IN_QUERYSCHEMES);
         done();
@@ -60,7 +61,8 @@ export default function canOpenLink() {
         let data = bundle.canOpenLink("http:/");
         expect(data).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `canOpenLinkInvalidLink_static catch failed errCode:${err.code} message:${err.message}`);
         expect(err.code).assertEqual(ERROR_INVALID_LINK);
         done();
@@ -81,12 +83,54 @@ export default function canOpenLink() {
         let data = bundle.canOpenLink("");
         expect(data).assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `canOpenLinkEmptyParam_static catch failed errCode:${err.code} message:${err.message}`);
         expect(err.code).assertEqual(ERROR_INVALID_LINK);
         done();
       }
     });
 
+    /**
+     * @tc.name   canOpenLinkCanOpen_static
+     * @tc.number SUB_BMS_CANOPENLINK_static_0010
+     * @tc.desc   Test canOpenLink, return true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('canOpenLinkCanOpen_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let data = bundle.canOpenLink("http://");
+        expect(data).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.error(domain, tag, `canOpenLinkCanOpen_static catch failed errCode:${err.code} message:${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   canOpenLinkCanNotOpen_static
+     * @tc.number SUB_BMS_CANOPENLINK_static_0020
+     * @tc.desc   Test canOpenLink, return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('canOpenLinkCanNotOpen_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let data = bundle.canOpenLink("welink://");
+        expect(data).assertFalse();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.error(domain, tag, `canOpenLinkCanNotOpen_static catch failed errCode:${err.code} message:${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }

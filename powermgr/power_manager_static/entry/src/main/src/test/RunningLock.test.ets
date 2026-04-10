@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -249,7 +249,7 @@ export default function RunningLockTest() {
         let TAG: string = 'testRunningLockTest_static_0700';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let isSupported: boolean = runningLock.isSupported(1 as runningLock.RunningLockType);
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.fromValue(1));
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect(isSupported).assertTrue();
           done();
@@ -274,7 +274,7 @@ export default function RunningLockTest() {
         let TAG: string = 'testRunningLockTest_static_0800';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let isSupported: boolean = runningLock.isSupported(2 as runningLock.RunningLockType);
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.fromValue(2));
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect(isSupported).assertTrue();
           done();
@@ -300,7 +300,7 @@ export default function RunningLockTest() {
         let TAG: string = 'testRunningLockTest_static_0900';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let isSupported: boolean = runningLock.isSupported(3 as runningLock.RunningLockType);
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.fromValue(3));
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect().assertFail();
           done();
@@ -535,7 +535,7 @@ export default function RunningLockTest() {
         let TAG: string = 'testRunningLockTest_static_1600';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let isSupported: boolean = runningLock.isSupported(0 as runningLock.RunningLockType);
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.fromValue(0));
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect().assertFail();
           done();
@@ -571,7 +571,7 @@ export default function RunningLockTest() {
           } else {
             hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
         } finally {
@@ -615,7 +615,7 @@ export default function RunningLockTest() {
           } else {
             hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
         } finally {
@@ -654,7 +654,7 @@ export default function RunningLockTest() {
           } else {
             hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
         } finally {
@@ -704,7 +704,7 @@ export default function RunningLockTest() {
           } else {
             hilog.error(domain, tag, `${TAG} The device does not support this type of lock!`);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
         } finally {
@@ -731,11 +731,67 @@ export default function RunningLockTest() {
           let runningLockType: int = runningLock.RunningLockType.BACKGROUND_USER_IDLE;
           hilog.info(domain, tag, `${TAG} runningLockType: ${runningLockType}`);
           expect(runningLockType).assertEqual(129);
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
         } finally {
           hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_2200
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0220
+     * @tc.desc   Create lock promise when lock name is ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testRunningLockTest_static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_2200';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let lock: runningLock.RunningLock = await runningLock.create("", runningLock.RunningLockType.PROXIMITY_SCREEN_CONTROL);
+          hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+          expect(lock).not().assertUndefined();
+          done();
+        } catch (e) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_2300
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0230
+     * @tc.desc   Create lock callback when lock name is ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testRunningLockTest_static_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_2300';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          runningLock.create("", runningLock.RunningLockType.PROXIMITY_SCREEN_CONTROL,
+            (error: BusinessError | null, lock: runningLock.RunningLock | undefined) => {
+              if (lock !== null && lock !== undefined) {
+                hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+                expect(lock).not().assertUndefined();
+                done();
+              } else {
+                hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(error)}`);
+                expect().assertFail();
+                done();
+              }
+            })
+        } catch (e) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
           done();
         }
       })

@@ -46,7 +46,6 @@ export default function File_Nopermission_test() {
         let policies = [policyInfo];
         fileShare.persistPermission(policies).then(() => {
           console.info("FileShare_NoPermission_001 successfully");
-          expect(true).assertTrue();
           done();
         }).catch((err) => {
           console.info("FileShare_NoPermission_001 failed with error message: " + err.message + ", error code: " + err.code);
@@ -86,7 +85,6 @@ export default function File_Nopermission_test() {
         let policies = [policyInfo];
         fileShare.deactivatePermission(policies).then(() => {
           console.info("FileShare_NoPermission_002 successfully");
-          expect(true).assertTrue();
           done();
         }).catch((err) => {
           console.info("FileShare_NoPermission_002 failed with error message: " + err.message + ", error code: " + err.code);
@@ -125,7 +123,6 @@ export default function File_Nopermission_test() {
         let policies = [policyInfo];
         fileShare.revokePermission(policies).then(() => {
           console.info("FileShare_NoPermission_003 successfully");
-          expect(true).assertTrue();
           done();
         }).catch((err) => {
           console.info("FileShare_NoPermission_003 failed with error message: " + err.message + ", error code: " + err.code);
@@ -165,7 +162,6 @@ export default function File_Nopermission_test() {
       let policies = [policyInfo];
       fileShare.activatePermission(policies).then(() => {
         console.info("FileShare_NoPermission_004 successfully");
-        expect(true).assertTrue();
         done();
       }).catch((err) => {
         console.info("FileShare_NoPermission_004 failed with error message: " + err.message + ", error code: " + err.code);

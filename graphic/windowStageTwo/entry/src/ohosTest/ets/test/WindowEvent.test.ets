@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll,afterAll,it, expect , TestType, Size, Level} from '@ohos/hypium';
+import { describe, beforeAll, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import ohosWindow from '@ohos.window';
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
@@ -93,9 +93,9 @@ export default function windowEventTest() {
     let context: common.UIAbilityContext;
     let windowStage: ohosWindow.WindowStage;
     let windowClass: window.Window;
-    let isPCStatus:string = '';
-    let isAutoWindow:string = '';
-    let isFreeWindowMode:boolean = false;
+    let isPCStatus: string = '';
+    let isAutoWindow: string = '';
+    let isFreeWindowMode: boolean = false;
     let driver: Driver;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -106,8 +106,8 @@ export default function windowEventTest() {
       systemWindowTypeDicArr = Object.keys(systemWindowTypeDic);
       console.log('jsUnittest beforeAll systemWindowTypeDicArr=' + JSON.stringify(systemWindowTypeDicArr) + '   ,length=' + systemWindowTypeDicArr.length);
       systemWindowTypeArr = Object.keys(systemWindowTypeDic);
-      isPCStatus = settings.getValueSync(context,'isStatusBarExist','',settings.domainName.USER_PROPERTY)
-      isAutoWindow = settings.getValueSync(context,'window_pcmode_switch_status','',settings.domainName.USER_PROPERTY);
+      isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '', settings.domainName.USER_PROPERTY);
       //isAutoWindow == '' 非PAD设备
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
@@ -119,7 +119,7 @@ export default function windowEventTest() {
       driver = Driver.create();
     })
     afterAll(async () => {
-      
+
       await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
     })
     /**
@@ -147,7 +147,7 @@ export default function windowEventTest() {
         await sleep(1000);
         let displayInfo = display.getDefaultDisplaySync();
         console.info(`${caseName} :display.getDefaultDisplaySync. info: ${JSON.stringify(displayInfo)}`);
-        await subWindowClass.moveWindowTo(displayInfo.width/2, displayInfo.height/2);
+        await subWindowClass.moveWindowTo(displayInfo.width / 2, displayInfo.height / 2);
 
         await subWindowClass.showWindow();
         await sleep(1000);
@@ -165,7 +165,7 @@ export default function windowEventTest() {
         }
         mainWindow.on('touchOutside', callback);
         await sleep(200);
-        await driver.click(Math.round(windowProperties.windowRect.left as number+10), Math.round(windowProperties.windowRect.top as number+10));
+        await driver.click(Math.round(windowProperties.windowRect.left as number + 10), Math.round(windowProperties.windowRect.top as number + 10));
         await sleep(300);
 
       } catch (e) {
@@ -199,14 +199,14 @@ export default function windowEventTest() {
       try {
         let windowLimits = subWindowClass.getWindowLimits();
         console.info(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
-        await subWindowClass.resize(windowLimits.minWidth as number+200, windowLimits.minHeight as number);
+        await subWindowClass.resize(windowLimits.minWidth as number + 200, windowLimits.minHeight as number);
         await subWindowClass.moveWindowTo(200, 0);
-        if(isFreeWindowMode){
+        if (isFreeWindowMode) {
           await subWindowClass.moveWindowTo(200, 200);
         }
         await subWindowClass.showWindow();
         await sleep(1000);
-        
+
         const callback = () => {
           timer++;
           console.log(`${caseName} timer: ${timer}`);
@@ -219,12 +219,12 @@ export default function windowEventTest() {
         console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
         await sleep(200);
         // await driver.click(Math.round((windowLimits.minWidth as number+200)/2), 0);
-        await driver.click(Math.round((windowProperties.windowRect.left as number+10)), (windowProperties.windowRect.top as number+10));
+        await driver.click(Math.round((windowProperties.windowRect.left as number + 10)), (windowProperties.windowRect.top as number + 10));
         await sleep(300);
         console.log(`${caseName} timer1: ${timer}`);
         expect(timer).assertEqual(0);
         // await driver.click(((windowLimits.minWidth as number+200)+10) , 0);
-        await driver.click(((windowProperties.windowRect.left as number)-10) , 0);
+        await driver.click(((windowProperties.windowRect.left as number) - 10), 0);
         await sleep(300);
         console.log(`${caseName} timer2: ${timer}`);
         expect(timer).assertEqual(1);
@@ -581,6 +581,494 @@ export default function windowEventTest() {
         }
       }
     });
+    /**
+    * @tc.name testClearWindowMask_1300002
+    * @tc.number testClearWindowMask_0100
+    * @tc.desc testClearWindowMask_1300002
+    * @tc.type FUNCTION
+    * @tc.size MEDIUMTEST
+    * @tc.level LEVEL3
+    */
+    it('testClearWindowMask_1300002', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testClearWindowMask_1300002";
+      let subWindow = await windowStage.createSubWindow('testClearWindowMask_1300002');
+      await subWindow.destroyWindow();
+      try {
+        let promise = subWindow.clearWindowMask();
+        promise.then(() => {
+          console.info(caseName + ' Succeeded in clearing the window mask.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(caseName + `Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1300002);
+          expect(err.message).assertEqual('This window state is abnormal.[window][clearWindowMask]msg:invalid window');
+          done();
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        expect(false).assertTrue();
+        done();
+      }
+
+    })
+    /**
+     * @tc.name   testClearWindowMask_1300004
+     * @tc.number testClearWindowMask_0200
+     * @tc.desc   testClearWindowMask_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClearWindowMask_1300004', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testClearWindowMask_1300004";
+      let mainWindow = windowStage.getMainWindowSync();
+      try {
+        let promise = mainWindow.clearWindowMask();
+        promise.then(() => {
+          console.info(caseName + ' Succeeded in clearing the window mask.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(caseName + ` Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1300004);
+          expect(err.message).assertEqual('Unauthorized operation.[window][clearWindowMask]msg: invalid type');
+          done();
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        expect(false).assertTrue();
+        done();
+      }
+
+    })
+    /**
+     * @tc.name   testClearWindowMask_subWindow
+     * @tc.number testClearWindowMask_0300
+     * @tc.desc   testClearWindowMask_subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClearWindowMask_subWindow', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testClearWindowMask_subWindow";
+      let subWindow = await windowStage.createSubWindow('testClearWindowMask_subWindow');
+      await subWindow.setUIContent('testability/pages/Index1');
+      await subWindow.showWindow();
+      await sleep(300);
+      let maskWidth = subWindow.getWindowProperties().windowRect.width;
+      let maskHeight = subWindow.getWindowProperties().windowRect.height;
+      let windowMask = Array < Array < number >> (maskHeight).fill([]).map((_, row) => {
+        let array = Array < number > (maskWidth);
+        for (let i = 0; i < maskWidth; i++) {
+          array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
+        }
+        return array;
+      });
+      try {
+        let cornerRadius1 = subWindow.getWindowCornerRadius();
+        console.info(caseName + ' Succeeded in getWindowCornerRadius.cornerRadius1:' + JSON.stringify(cornerRadius1));
+        let promise = subWindow.setWindowMask(windowMask);
+        promise.then(() => {
+          console.info(caseName + ' Succeeded in setting the window mask.');
+          promise = subWindow.clearWindowMask();
+          promise.then(async () => {
+            console.info(caseName + ' Succeeded in clearing the window mask.');
+            let cornerRadius2 = subWindow.getWindowCornerRadius();
+            console.info(caseName + ' Succeeded in getWindowCornerRadius.cornerRadius2:' + JSON.stringify(cornerRadius2));
+            expect(cornerRadius2).assertEqual(cornerRadius1);
+            await subWindow.destroyWindow();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + ` Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow.destroyWindow();
+            if (err.code === 801) {
+              expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][clearWindowMask]msg: clear mask failed')
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
+          if (err.code === 801) {
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        if (err.code === 801) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+
+      }
+
+    })
+    /**
+     * @tc.name   testClearWindowMask_subWindow_resizeWindow
+     * @tc.number testClearWindowMask_0400
+     * @tc.desc   testClearWindowMask_subWindow_resizeWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClearWindowMask_subWindow_resizeWindow', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testClearWindowMask_subWindow_resizeWindow";
+      let subWindow = await windowStage.createSubWindow('testClearWindowMask_subWindow');
+      await subWindow.setUIContent('testability/pages/Index1');
+      await subWindow.showWindow();
+      await sleep(300);
+      let maskWidth = subWindow.getWindowProperties().windowRect.width;
+      let maskHeight = subWindow.getWindowProperties().windowRect.height;
+      let windowMask = Array < Array < number >> (maskHeight).fill([]).map((_, row) => {
+        let array = Array < number > (maskWidth);
+        for (let i = 0; i < maskWidth; i++) {
+          array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
+        }
+        return array;
+      });
+      try {
+        let minWidth = subWindow.getWindowLimits().minWidth;
+        let minHeight = subWindow.getWindowLimits().minHeight;
+        console.info(caseName + ' subWindow minWidth:' + minWidth + '，minHeight：' + minHeight);
+        let promise = subWindow.setWindowMask(windowMask);
+        promise.then(() => {
+          console.info(caseName + ' Succeeded in setting the window mask.');
+          promise = subWindow.clearWindowMask();
+          promise.then(async () => {
+            console.info(caseName + ' Succeeded in clearing the window mask.');
+            await subWindow.resizeAsync(minWidth, minHeight);
+            await sleep(500);
+            let width = subWindow.getWindowProperties().windowRect.width;
+            let height = subWindow.getWindowProperties().windowRect.height;
+            console.info(caseName + ' subWindow width:' + width + ',height:' + height);
+            expect(width).assertEqual(minWidth);
+            expect(height).assertEqual(minHeight);
+            await subWindow.destroyWindow();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + ` Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow.destroyWindow();
+            if (err.code === 801) {
+              expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][clearWindowMask]msg: clear mask failed')
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
+          if (err.code === 801) {
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        if (err.code === 801) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+
+      }
+
+    })
+    /**
+     * @tc.name   testClearWindowMask_subWindow_not_setWindowMask
+     * @tc.number testClearWindowMask_0500
+     * @tc.desc   testClearWindowMask_subWindow_not_setWindowMask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClearWindowMask_subWindow_not_setWindowMask', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testClearWindowMask_subWindow_not_setWindowMask";
+      let subWindow = await windowStage.createSubWindow('testClearWindowMask_subWindow_not_setWindowMask');
+      await subWindow.setUIContent('testability/pages/Index1');
+      await subWindow.showWindow();
+      await sleep(300);
+
+      try {
+        let promise = subWindow.clearWindowMask();
+        promise.then(async () => {
+          console.info(caseName + ' Succeeded in clearing the window mask.');
+          await subWindow.destroyWindow();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + ` Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
+          if (err.code === 801) {
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][clearWindowMask]msg: clear mask failed')
+            done();
+          } else if (err.code === 1300002) {
+            expect(err.message).assertEqual('This window state is abnormal.[window][clearWindowMask]msg: clear mask failed')
+            done();
+          }
+          else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        expect(false).assertTrue();
+        done();
+      }
+
+    })
+    /**
+     * @tc.name   testClearWindowMask_floatWindow
+     * @tc.number testClearWindowMask_0600
+     * @tc.desc   testClearWindowMask_floatWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClearWindowMask_floatWindow', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testClearWindowMask_floatWindow";
+      let subWindow: window.Window | null = null;
+      let config: window.Configuration = {
+        name: "testClearWindowMask_floatWindow",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context
+      };
+      window.createWindow(config).then(async (data) => {
+        console.info(caseName + ' createWindow Succeeded');
+        subWindow = data;
+        await subWindow.setUIContent('testability/pages/Index1');
+        await subWindow.showWindow();
+        await sleep(300);
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        let windowMask = Array < Array < number >> (maskHeight).fill([]).map((_, row) => {
+          let array = Array < number > (maskWidth);
+          for (let i = 0; i < maskWidth; i++) {
+            array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
+          }
+          return array;
+        });
+        try {
+          let cornerRadius1 = subWindow.getWindowCornerRadius();
+          console.info(caseName + ' Succeeded in getWindowCornerRadius.cornerRadius1:' + JSON.stringify(cornerRadius1));
+          let promise = subWindow!.setWindowMask(windowMask);
+          promise.then(() => {
+            console.info(caseName + ' Succeeded in setting the window mask.');
+            promise = subWindow!.clearWindowMask();
+            promise.then(async () => {
+              console.info(caseName + ' Succeeded in clearing the window mask.');
+              let cornerRadius2 = subWindow!.getWindowCornerRadius();
+              console.info(caseName + ' Succeeded in getWindowCornerRadius.cornerRadius2:' + JSON.stringify(cornerRadius2));
+              expect(cornerRadius2).assertEqual(cornerRadius1);
+              await subWindow!.destroyWindow();
+              done();
+            }).catch(async (err: BusinessError) => {
+              console.error(caseName + ` Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
+              await subWindow!.destroyWindow();
+              if (err.code === 801) {
+                expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][clearWindowMask]msg: clear mask failed')
+                done();
+              } else {
+                expect(false).assertTrue();
+                done();
+              }
+            });
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow!.destroyWindow();
+            if (err.code === 801) {
+              expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        } catch (err) {
+          console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow!.destroyWindow();
+          if (err.code === 801) {
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+
+        }
+      }).catch(async (err: BusinessError) => {
+        console.error(caseName + 'createWindow ' + 'caught, err: ' + JSON.stringify(err.code) + ',errMessage: ' + err.message);
+        if (err.code === 1300002) {
+          expect(err.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      })
+    })
+    /**
+     * @tc.name   testClearWindowMask_floatWindow_resizeWindow
+     * @tc.number testClearWindowMask_0700
+     * @tc.desc   testClearWindowMask_floatWindow_resizeWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testClearWindowMask_floatWindow_resizeWindow', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testClearWindowMask_floatWindow_resizeWindow";
+      let subWindow: window.Window | null = null;
+      let config: window.Configuration = {
+        name: "testClearWindowMask_floatWindow_resizeWindow",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context
+      };
+      window.createWindow(config).then(async (data) => {
+        console.info(caseName + ' createWindow Succeeded');
+        subWindow = data;
+        await subWindow.setUIContent('testability/pages/Index1');
+        await subWindow.showWindow();
+        await sleep(300);
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        let windowMask = Array < Array < number >> (maskHeight).fill([]).map((_, row) => {
+          let array = Array < number > (maskWidth);
+          for (let i = 0; i < maskWidth; i++) {
+            array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
+          }
+          return array;
+        });
+        try {
+          let minWidth = subWindow.getWindowLimits().minWidth;
+          let minHeight = subWindow.getWindowLimits().minHeight;
+          console.info(caseName + ' subWindow minWidth:' + minWidth + '，minHeight：' + minHeight);
+          let cornerRadius1 = subWindow.getWindowCornerRadius();
+          console.info(caseName + ' Succeeded in getWindowCornerRadius.cornerRadius1:' + JSON.stringify(cornerRadius1));
+          let promise = subWindow!.setWindowMask(windowMask);
+          promise.then(() => {
+            console.info(caseName + ' Succeeded in setting the window mask.');
+            promise = subWindow!.clearWindowMask();
+            promise.then(async () => {
+              console.info(caseName + ' Succeeded in clearing the window mask.');
+              await subWindow!.resizeAsync(minWidth, minHeight);
+              await sleep(500);
+              let width = subWindow!.getWindowProperties().windowRect.width;
+              let height = subWindow!.getWindowProperties().windowRect.height;
+              console.info(caseName + ' subWindow width:' + width + ',height:' + height);
+              expect(width).assertEqual(minWidth);
+              expect(height).assertEqual(minHeight);
+              await subWindow!.destroyWindow();
+              done();
+            }).catch(async (err: BusinessError) => {
+              console.error(caseName + ` Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
+              await subWindow!.destroyWindow();
+              if (err.code === 801) {
+                expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][clearWindowMask]msg: clear mask failed')
+                done();
+              } else {
+                expect(false).assertTrue();
+                done();
+              }
+            });
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindow!.destroyWindow();
+            if (err.code === 801) {
+              expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        } catch (err) {
+          console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+          await subWindow!.destroyWindow();
+          if (err.code === 801) {
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      }).catch(async (err: BusinessError) => {
+        console.error(caseName + 'createWindow ' + 'caught, err: ' + JSON.stringify(err.code) + ',errMessage: ' + err.message);
+        if (err.code === 1300002) {
+          expect(err.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done()
+        }
+      })
+
+
+
+    })
+    /**
+     * @tc.name   testSetWindowMask_subWindow
+     * @tc.number testSetWindowMask_0100
+     * @tc.desc   testSetWindowMask_subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMask_subWindow', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testSetWindowMask_subWindow";
+      let subWindow = await windowStage.createSubWindow('testSetWindowMask_subWindow');
+      await subWindow.setUIContent('testability/pages/Index1');
+      await subWindow.showWindow();
+      await sleep(300);
+      let windowMask = [];
+      try {
+        let promise = subWindow.setWindowMask(windowMask);
+        promise.then(() => {
+          console.info(caseName + ' Succeeded in setting the window mask.');
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
+          if (err.code === 801) {
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowMask]');
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        if (err.code ===401) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+
+      }
+
+    })
+
+
 
   })
 }

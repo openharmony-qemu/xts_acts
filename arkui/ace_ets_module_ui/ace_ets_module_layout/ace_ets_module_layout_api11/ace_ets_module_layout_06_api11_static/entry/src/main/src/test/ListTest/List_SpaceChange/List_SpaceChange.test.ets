@@ -48,7 +48,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function list_SpaceChangeTest() {
   describe('list_SpaceChangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("list_SpaceChangeTest beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")

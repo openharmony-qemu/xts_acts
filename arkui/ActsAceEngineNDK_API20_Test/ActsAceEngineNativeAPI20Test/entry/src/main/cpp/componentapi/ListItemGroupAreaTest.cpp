@@ -15,6 +15,7 @@
 #include "ListItemGroupAreaTest.h"
 #include "component/Component.h"
 #define PARAM_0_POINT_2 0.2
+#define PARAM_0_POINT_3 0.3
 #define PARAM_0_POINT_8 0.8
 #define PARAM_1_POINT_0 1.0
 
@@ -82,7 +83,7 @@ void  CreateListComponent(XC list)
 void CreateListGroupComponent(XC group1)
 {
     XC header = XC(ARKUI_NODE_COLUMN);
-    header.SetPercentHeight(PARAM_0_POINT_2);
+    header.SetPercentHeight(PARAM_0_POINT_3);
     header.SetPercentWidth(1.0);
     header.SetBackgroundColor(0xff483D8B);
     XC headerText = XC(ARKUI_NODE_TEXT);
@@ -96,7 +97,7 @@ void CreateListGroupComponent(XC group1)
     group1.setAttribute(NODE_LIST_ITEM_GROUP_SET_HEADER, &headerAttr);
 
     XC footer = XC(ARKUI_NODE_COLUMN);
-    footer.SetPercentHeight(PARAM_0_POINT_2);
+    footer.SetPercentHeight(PARAM_0_POINT_3);
     footer.SetBackgroundColor(0xffff00ff);
     XC footerText = XC(ARKUI_NODE_TEXT);
     footerText.SetPercentHeight(PARAM_1_POINT_0);
@@ -120,7 +121,7 @@ void CreateListGroupComponent(XC group1)
 void CreateListGroup2Component(XC group2)
 {
     XC header = XC(ARKUI_NODE_COLUMN);
-    header.SetPercentHeight(PARAM_0_POINT_2);
+    header.SetPercentHeight(PARAM_0_POINT_3);
     header.SetPercentWidth(1.0);
     header.SetBackgroundColor(0xff483D8B);
     XC headerText = XC(ARKUI_NODE_TEXT);
@@ -134,7 +135,7 @@ void CreateListGroup2Component(XC group2)
     group2.setAttribute(NODE_LIST_ITEM_GROUP_SET_HEADER, &headerAttr);
 
     XC footer = XC(ARKUI_NODE_COLUMN);
-    footer.SetPercentHeight(PARAM_0_POINT_2);
+    footer.SetPercentHeight(PARAM_0_POINT_3);
     footer.SetBackgroundColor(0xffff00ff);
     XC footerText = XC(ARKUI_NODE_TEXT);
     footerText.SetPercentHeight(PARAM_1_POINT_0);
@@ -158,7 +159,7 @@ void CreateListGroup2Component(XC group2)
 void CreateListGroup3Component(XC group3)
 {
     XC header = XC(ARKUI_NODE_COLUMN);
-    header.SetPercentHeight(PARAM_0_POINT_2);
+    header.SetPercentHeight(PARAM_0_POINT_3);
     header.SetPercentWidth(1.0);
     header.SetBackgroundColor(0xff483D8B);
     XC headerText = XC(ARKUI_NODE_TEXT);
@@ -172,7 +173,7 @@ void CreateListGroup3Component(XC group3)
     group3.setAttribute(NODE_LIST_ITEM_GROUP_SET_HEADER, &headerAttr);
 
     XC footer = XC(ARKUI_NODE_COLUMN);
-    footer.SetPercentHeight(PARAM_0_POINT_2);
+    footer.SetPercentHeight(PARAM_0_POINT_3);
     footer.SetBackgroundColor(0xffff00ff);
     XC footerText = XC(ARKUI_NODE_TEXT);
     footerText.SetPercentHeight(PARAM_1_POINT_0);

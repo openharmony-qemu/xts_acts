@@ -30,7 +30,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function ReplaceSymbolEffect_APITest() {
   describe('ReplaceSymbolEffect_APITest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ReplaceSymbolEffect_APITest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility");
     });

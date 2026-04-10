@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,14 +34,14 @@ export default function releaseTest() {
       await sleep(1000);
     });
     /**
-     * @tc.name   release_callback_static_000 
+     * @tc.name   release_callback_static_000Adapt001
      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_RELEASE_STATIC_0000
      * @tc.desc   release photoAccessHelper instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("release_callback_static_000 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("release_callback_static_000Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let testNum = 'release_callback_static_000';
         try {
@@ -53,7 +53,7 @@ export default function releaseTest() {
             }
             done();
           });
-        } catch (error: Error) {
+        } catch (error) {
           hilog.info(domain, tag,
             testNum + ' release failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           expect(false).assertTrue()
@@ -62,14 +62,14 @@ export default function releaseTest() {
       })
 
     /**
-     * @tc.name   release_promise_static_000 
+     * @tc.name   release_promise_static_000Adapt001
      * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_RELEASE_STATIC_0000
      * @tc.desc   release photoAccessHelper instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("release_promise_static_000 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("release_promise_static_000Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let testNum = 'release_promise_static_000';
         try {
@@ -77,7 +77,7 @@ export default function releaseTest() {
           let helper = photoAccessHelper.getPhotoAccessHelper(appContext);
           await (helper as photoAccessHelper.PhotoAccessHelper).release()
           done();
-        } catch (error: Error) {
+        } catch (error) {
           hilog.info(domain, tag,
             testNum + ' release failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           expect(false).assertTrue()

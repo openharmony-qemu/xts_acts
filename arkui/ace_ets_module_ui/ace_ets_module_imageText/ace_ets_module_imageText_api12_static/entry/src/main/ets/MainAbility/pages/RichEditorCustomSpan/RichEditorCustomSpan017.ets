@@ -67,7 +67,7 @@ struct RichEditorCustomSpan017 {
   imagePixelMap: image.PixelMap | undefined = undefined;
   customSpan1: MyCustomSpan = new MyCustomSpan('Hello', 80, 50);
   style1: MutableStyledString = new MutableStyledString(this.customSpan1);
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   mutableStyledString: MutableStyledString = new MutableStyledString('abc',
     [{
       start: 0,
@@ -82,7 +82,9 @@ struct RichEditorCustomSpan017 {
   options: RichEditorStyledStringOptions = { controller: this.controller } as RichEditorStyledStringOptions;
 
   onPageShow() {
-    this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
+    waitForCompletion(async ()=>{
+      this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
+    })
   }
 
   private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {

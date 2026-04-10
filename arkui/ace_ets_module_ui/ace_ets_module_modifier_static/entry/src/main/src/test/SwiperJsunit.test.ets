@@ -32,7 +32,7 @@ import Utils from './Utils.test';
 
 export default function swiperJsunit() {
   describe('swiperTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("scrollNestedScroll beforeEach start");
 
 

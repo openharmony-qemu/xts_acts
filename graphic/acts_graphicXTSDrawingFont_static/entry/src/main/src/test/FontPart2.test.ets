@@ -1161,7 +1161,7 @@ export default function fontPart2Test() {
           expect().assertFail();
         }
         console.info(msg + ' getTextPath successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ' getTextPath failed');
         expect().assertFail();
       }
@@ -1187,7 +1187,7 @@ export default function fontPart2Test() {
           expect(result == 0).assertTrue();
           console.info(msg + ' GetTextPath successed,path length:' + result);
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` GetTextPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -1209,7 +1209,7 @@ export default function fontPart2Test() {
         let path = font.getTextPath(myString, buffer.from(myString).length, -1, -1);
         expect(path).not().assertNull();
         console.info(msg + ' GetTextPath successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` GetTextPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -1235,7 +1235,7 @@ export default function fontPart2Test() {
           expect(result >= 0).assertEqual(true);
         }
         console.info(msg + ' GetTextPath successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` GetTextPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }

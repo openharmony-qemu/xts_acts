@@ -67,7 +67,8 @@ export default function circleJsunit() {
           circle.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push circle page error:" + JSON.stringify(err));
       }
     });
@@ -119,7 +120,8 @@ it('circleTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("[circleTest_static_0200] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[circleTest_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -154,7 +156,8 @@ it('circleTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
         }
         console.info("[circleTest_030] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[circleTest_030] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

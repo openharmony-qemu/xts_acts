@@ -26,7 +26,7 @@ let libUtil:LibUtil = new LibUtil();
 export default function textPickerRangeTest() {
 
   describe('TextPickerRangeTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api19.static", "EntryAbility")
     });
     afterEach(async (): Promise<void> => {
@@ -46,7 +46,7 @@ export default function textPickerRangeTest() {
       await Utils.sleep(3000)
       let strJson = inspector.getInspectorByKey('textpicker');
       console.log('testTextPickerMode001' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('range')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('range')).assertEqual('[\"icon:resource://base/media/icon.png,text:video\",\"icon:,text:test'+
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('range')).assertEqual('[\"icon:resource://base/media/startIcon.png,text:video\",\"icon:,text:test'+
         '\",\"icon:,text:\"]');
       done();
     });

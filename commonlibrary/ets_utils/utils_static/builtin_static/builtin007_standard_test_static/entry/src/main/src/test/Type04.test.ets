@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -447,7 +447,7 @@ export default function type_04Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -478,7 +478,7 @@ export default function type_04Test() {
         const input = null;
         const type = Type.of(input);
         expect(type.toString()).assertEqual(String(null));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -498,7 +498,7 @@ export default function type_04Test() {
         const input = undefined;
         const type = Type.of(input);
         expect(type.toString()).assertEqual(String(undefined));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -518,7 +518,7 @@ export default function type_04Test() {
         const input: double = 3.14;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('double');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -538,7 +538,7 @@ export default function type_04Test() {
         const input: FixedArray<double> = [3.14, 1.59, 2.71, 0.618, 1.414];
         const type = Type.of(input);
         expect(type.toString()).assertEqual('double[]');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -559,7 +559,7 @@ export default function type_04Test() {
         const input: FixedArray<int> = [500, 300, 900, 200];
         const type = Type.of(input);
         expect(type.toString()).assertEqual('int[]');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -579,7 +579,7 @@ export default function type_04Test() {
         const input: long = 9223372036854775807;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('long');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -599,7 +599,7 @@ export default function type_04Test() {
         const input: FixedArray<long> = [-9223372036854775808, 0, 9223372036854775807];
         const type = Type.of(input);
         expect(type.toString()).assertEqual('long[]');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -619,7 +619,7 @@ export default function type_04Test() {
         const input: short = 5;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('short');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -639,7 +639,7 @@ export default function type_04Test() {
         const input: FixedArray<short> = [5, 3, 9, 2];
         const type = Type.of(input);
         expect(type.toString()).assertEqual('short[]');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -659,7 +659,7 @@ export default function type_04Test() {
         const input: boolean = true;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('boolean');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -679,7 +679,7 @@ export default function type_04Test() {
         const input: boolean = false;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('boolean');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -699,7 +699,7 @@ export default function type_04Test() {
         const input: string = "ArkTS Type Test";
         const type = Type.of(input);
         expect(type.toString()).assertEqual('string');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -719,7 +719,7 @@ export default function type_04Test() {
         const input: string = "";
         const type = Type.of(input);
         expect(type.toString()).assertEqual('string');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -739,7 +739,7 @@ export default function type_04Test() {
         const input: FixedArray<boolean> = [true, false, true];
         const type = Type.of(input);
         expect(type.toString()).assertEqual('boolean[]');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -759,7 +759,7 @@ export default function type_04Test() {
         const input: FixedArray<byte> = [60, -38, -128];
         const type = Type.of(input);
         expect(type.toString()).assertEqual("byte[]");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -779,7 +779,7 @@ export default function type_04Test() {
         const input: byte = 65;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('byte');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -799,7 +799,7 @@ export default function type_04Test() {
         const input: byte = -35;
         const type = Type.of(input);
         expect(type.toString()).assertEqual('byte');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -820,7 +820,7 @@ export default function type_04Test() {
         const input: FixedArray<Object> = [new TestObject(1), new TestObject(2)];
         const type = Type.of(input);
         expect(type.toString()).assertEqual('std.core.Object[]');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -840,7 +840,7 @@ export default function type_04Test() {
       try {
         const type = Type.of(127 as byte) as ByteType;
         expect(type.toString()).assertEqual(type.getLiteral());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -861,7 +861,7 @@ export default function type_04Test() {
         const input: FixedArray<boolean> = [true, false];
         const type = Type.of(input) as ArrayType;
         expect(type.toString()).assertEqual(type.getLiteral());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -881,7 +881,7 @@ export default function type_04Test() {
         const testObj = new TestClass("TestClass");
         const type = Type.of(testObj) as ClassType;
         expect(type.toString()).assertEqual(type.getName());
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -903,7 +903,7 @@ export default function type_04Test() {
         const expected: boolean = intType.assignableFrom(byteType);
         const result: boolean = true;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -925,7 +925,7 @@ export default function type_04Test() {
         const expected: boolean = doubleType.assignableFrom(intType);
         const result: boolean = true;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -946,7 +946,7 @@ export default function type_04Test() {
         const expected: boolean = longType.assignableFrom(longType);
         const result: boolean = true;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -968,7 +968,7 @@ export default function type_04Test() {
         const expected: boolean = parentType.assignableFrom(childType);
         const result: boolean = true;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -990,7 +990,7 @@ export default function type_04Test() {
         const expected: boolean = interfaceType.assignableFrom(implType);
         const result: boolean = false;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1012,7 +1012,7 @@ export default function type_04Test() {
         const expected: boolean = intType.assignableFrom(boolType);
         const result: boolean = false;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1034,7 +1034,7 @@ export default function type_04Test() {
         const expected: boolean = parentType.assignableFrom(stringType);
         const result: boolean = false;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1056,7 +1056,7 @@ export default function type_04Test() {
         const expected: boolean = objectType.assignableFrom(nullType);
         const result: boolean = false;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1078,7 +1078,7 @@ export default function type_04Test() {
         const expected: boolean = doubleType.assignableFrom(undefinedType);
         const result: boolean = false;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1100,7 +1100,7 @@ export default function type_04Test() {
         const expected: boolean = doubleType.assignableFrom(floatType);
         const result: boolean = true;
         expect(expected).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1123,7 +1123,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(BooleanType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1145,7 +1145,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(ByteType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1167,7 +1167,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(CharType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1189,7 +1189,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(ShortType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1211,7 +1211,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(IntType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1233,7 +1233,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(LongType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1255,7 +1255,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(FloatType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1277,7 +1277,7 @@ export default function type_04Test() {
         expect(refType).assertEqual(DoubleType.REF);
         expect(refType.isPrimitive()).assertTrue();
         expect(refType.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1302,7 +1302,7 @@ export default function type_04Test() {
 
         expect(result.isPrimitive()).assertTrue();
         expect(result.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1324,7 +1324,7 @@ export default function type_04Test() {
         const type = Type.of(input);
         Type.toRefType(type);
         expect().assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err.message}`);
         expect(`${err.message}`).assertEqual("type  is not primitive type");
       }
@@ -1346,712 +1346,10 @@ export default function type_04Test() {
         let result = Type.toRefType(type);
         expect(result.isPrimitive()).assertTrue();
         expect(result.isReference()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
     });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_GetCase_0100
-     * @tc.name    testLambdaTypeGetCase0001
-     * @tc.desc    Test throwing exception when input is unsupported primitive type (undefined)
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeGetCase0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testLambdaTypeGetCase0001";
-      try {
-        let addNumbers = (a: number, b: number): number => {
-          return a + b;
-        };
-        let type: LambdaType = Type.of(addNumbers) as LambdaType;
-        let result = type.getLiteral();
-        expect(result).assertEqual('(1: double, 2: double): double');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_MAKE_0100
-     * @tc.name    testLambdaTypeMake_0001
-     * @tc.desc    Test make() with basic arithmetic lambda function
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeMake_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeMake_0001";
-      try {
-        const add = (a: number, b: number): number => {
-          return a + b;
-        }
-
-
-        const lambdaType: LambdaType = Type.of(add) as LambdaType;
-        const madeObject: Object = lambdaType.make();
-
-        expect(madeObject).not().assertNull();
-        expect(typeof madeObject === 'function').assertTrue();
-
-        const expected: number = 8;
-        const result: number = (madeObject as (a: number, b: number) => number)(5, 3);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_MAKE_0200
-     * @tc.name    testLambdaTypeMake_0002
-     * @tc.desc    Test make() with string manipulation lambda function
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeMake_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeMake_0002";
-      try {
-
-        const concatenate = (s1: string, s2: string): string => {
-          return `${s1} ${s2}`;
-        }
-
-        const lambdaType: LambdaType = Type.of(concatenate) as LambdaType;
-        const madeObject: Object = lambdaType.make();
-
-        expect(madeObject).not().assertNull();
-        expect(typeof madeObject === 'function').assertTrue();
-
-        const expected: string = "Hello World";
-        const result: string = (madeObject as (s1: string, s2: string) => string)("Hello", "World");
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_MAKE_0300
-     * @tc.name    testLambdaTypeMake_0003
-     * @tc.desc    Test make() with boolean returning lambda function
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeMake_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeMake_0003";
-      try {
-
-        const isGreaterThan = (a: number, b: number): boolean => {
-          return a > b;
-        }
-
-        const lambdaType: LambdaType = Type.of(isGreaterThan) as LambdaType;
-        const madeObject: Object = lambdaType.make();
-
-        expect(madeObject).not().assertNull();
-        expect(typeof madeObject === 'function').assertTrue();
-
-        let expected: boolean = true;
-        let result: boolean = (madeObject as (a: number, b: number) => boolean)(10, 5);
-        expect(result).assertEqual(expected);
-
-        expected = false;
-        result = (madeObject as (a: number, b: number) => boolean)(3, 7);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_MAKE_0400
-     * @tc.name    testLambdaTypeMake_0004
-     * @tc.desc    Test make() with no-parameter lambda function
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeMake_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeMake_0004";
-      try {
-
-        const getDefaultMessage = (): string => {
-          return "Default message";
-        }
-
-
-        const lambdaType: LambdaType = Type.of(getDefaultMessage) as LambdaType;
-        const madeObject: Object = lambdaType.make();
-
-        expect(madeObject).not().assertNull();
-        expect(typeof madeObject === 'function').assertTrue();
-
-        const expected: string = "Default message";
-        const result: string = (madeObject as () => string)();
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_MAKE_0600
-     * @tc.name    testLambdaTypeMake_0006
-     * @tc.desc    Test make() with lambda that captures context variable
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeMake_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeMake_0006";
-      try {
-
-        const multiplier: number = 2;
-        const multiply = (value: number): number => {
-          return value * multiplier;
-        }
-
-        const lambdaType: LambdaType = Type.of(multiply) as LambdaType;
-        const madeObject: Object = lambdaType.make();
-
-        expect(madeObject).not().assertNull();
-        expect(typeof madeObject === 'function').assertTrue();
-
-        const expected: number = 10;
-        const result: number = (madeObject as (value: number) => number)(5);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_MAKE_0700
-     * @tc.name    testLambdaTypeMake_0007
-     * @tc.desc    Test make() with complex object handling lambda
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeMake_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeMake_0007";
-      try {
-
-        const getPersonGreeting = (person: Person): string => {
-          return `Hello, my name is ${person.name} and I'm ${person.age} years old`;
-        }
-
-
-        const lambdaType: LambdaType = Type.of(getPersonGreeting) as LambdaType;
-        const madeObject: Object = lambdaType.make();
-
-        expect(madeObject).not().assertNull();
-        expect(typeof madeObject === 'function').assertTrue();
-
-        const testPerson: Person = { name: "Alice", age: 30 };
-        const expected: string = "Hello, my name is Alice and I'm 30 years old";
-        const result: string = (madeObject as (p: Person) => string)(testPerson);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_ASSIGNABLEFROM_0100
-     * @tc.name    testLambdaTypeAssignableFrom_0001
-     * @tc.desc    Check assignability from identical function type with same parameters and return type
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeAssignableFrom_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeAssignableFrom_0001";
-      try {
-        const func1 = (a: number, b: string): boolean => {
-          return a > b.length;
-        };
-        const func2 = (a: number, b: string): boolean => {
-          return a > b.length;
-        };
-        const lambdaType: LambdaType = Type.of(func1) as LambdaType;
-        const otherType: LambdaType = Type.of(func2) as LambdaType;
-        const expected: boolean = true;
-        const result: boolean = lambdaType.assignableFrom(otherType);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_ASSIGNABLEFROM_0200
-     * @tc.name    testLambdaTypeAssignableFrom_0002
-     * @tc.desc    Check assignability from function type with compatible parameter subtypes
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeAssignableFrom_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeAssignableFrom_0002";
-      try {
-        const func = (value: Object): string => {
-          return value.toString();
-        };
-        const compatibleFunc = (value: String): string => {
-          return value.toString();
-        };
-        const lambdaType: LambdaType = Type.of(func) as LambdaType;
-        const otherType: LambdaType = Type.of(compatibleFunc) as LambdaType;
-        const expected: boolean = false;
-        const result: boolean = lambdaType.assignableFrom(otherType);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_ASSIGNABLEFROM_0300
-     * @tc.name    testLambdaTypeAssignableFrom_0003
-     * @tc.desc    Check non-assignability from function type with incompatible parameter types
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeAssignableFrom_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeAssignableFrom_0003";
-      try {
-        const func = (num: number): void => {
-        };
-        const incompatibleFunc = (num: string): void => {
-        };
-        const lambdaType: LambdaType = Type.of(func) as LambdaType;
-        const otherType: LambdaType = Type.of(incompatibleFunc) as LambdaType;
-        const expected: boolean = false;
-        const result: boolean = lambdaType.assignableFrom(otherType);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_ASSIGNABLEFROM_0400
-     * @tc.name    testLambdaTypeAssignableFrom_0004
-     * @tc.desc    Check assignability from function type with compatible return type subtype
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeAssignableFrom_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeAssignableFrom_0004";
-      try {
-        const func = (): Object => {
-          return new Object();
-        };
-        const compatibleFunc = (): String => {
-          return new String();
-        };
-        const lambdaType: LambdaType = Type.of(func) as LambdaType;
-        const otherType: LambdaType = Type.of(compatibleFunc) as LambdaType;
-        const expected: boolean = true;
-        const result: boolean = lambdaType.assignableFrom(otherType);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_ASSIGNABLEFROM_0500
-     * @tc.name    testLambdaTypeAssignableFrom_0005
-     * @tc.desc    Check non-assignability from function type with incompatible return type
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeAssignableFrom_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeAssignableFrom_0005";
-      try {
-        const func = (): number => {
-          return 42;
-        };
-        const incompatibleFunc = (): string => {
-          return "42";
-        };
-        const lambdaType: LambdaType = Type.of(func) as LambdaType;
-        const otherType: LambdaType = Type.of(incompatibleFunc) as LambdaType;
-        const expected: boolean = false;
-        const result: boolean = lambdaType.assignableFrom(otherType);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_ASSIGNABLEFROM_0600
-     * @tc.name    testLambdaTypeAssignableFrom_0006
-     * @tc.desc    Check non-assignability from function type with fewer parameters
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeAssignableFrom_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeAssignableFrom_0006";
-      try {
-        const func = (a: number, b: number): number => {
-          return a + b;
-        };
-        const fewerParamsFunc = (a: number): number => {
-          return a;
-        };
-        const lambdaType: LambdaType = Type.of(func) as LambdaType;
-        const otherType: LambdaType = Type.of(fewerParamsFunc) as LambdaType;
-        const expected: boolean = true;
-        const result: boolean = lambdaType.assignableFrom(otherType);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_ASSIGNABLEFROM_0700
-     * @tc.name    testLambdaTypeAssignableFrom_0007
-     * @tc.desc    Check non-assignability from function type with more parameters
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeAssignableFrom_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeAssignableFrom_0007";
-      try {
-        const func = (a: number): number => {
-          return a * 2;
-        };
-        const moreParamsFunc = (a: number, b: number): number => {
-          return a * b;
-        };
-        const lambdaType: LambdaType = Type.of(func) as LambdaType;
-        const otherType: LambdaType = Type.of(moreParamsFunc) as LambdaType;
-        const expected: boolean = false;
-        const result: boolean = lambdaType.assignableFrom(otherType);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_ASSIGNABLEFROM_0800
-     * @tc.name    testLambdaTypeAssignableFrom_0008
-     * @tc.desc    Check assignability from identical lambda type
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeAssignableFrom_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeAssignableFrom_0008";
-      try {
-        const func = (s: string): number => {
-          return s.length;
-        };
-        const lambdaType1: LambdaType = Type.of(func) as LambdaType;
-        const lambdaType2: LambdaType = Type.of(func) as LambdaType;
-        const expected: boolean = true;
-        const result: boolean = lambdaType1.assignableFrom(lambdaType2);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_LAMBDATYPE_ASSIGNABLEFROM_0900
-     * @tc.name    testLambdaTypeAssignableFrom_0009
-     * @tc.desc    Check non-assignability from class instance type
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testLambdaTypeAssignableFrom_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testLambdaTypeAssignableFrom_0009";
-      try {
-        const func = (): void => {
-        };
-        const lambdaType: LambdaType = Type.of(func) as LambdaType;
-        const classInstance = new TestClass("ds");
-        const otherType: ClassType = Type.of(classInstance) as ClassType;
-        const expected: boolean = false;
-        const result: boolean = lambdaType.assignableFrom(otherType);
-        expect(result).assertEqual(expected);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETTYPEPARAMETERSNUM_1000
-     * @tc.name    testFunctionTypeGetTypeParametersNum_0001
-     * @tc.desc    Test that calling getTypeParametersNum throws "Not implemented" error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetTypeParametersNum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetTypeParametersNum_0001";
-      try {
-
-        const type: FunctionType = Type.of(FuncX) as FunctionType;
-
-        const result = type.getTypeParametersNum();
-        let expected: long = 0;
-        expect(result).assertEqual(expected);
-
-      } catch (err: Error) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETER_0100
-     * @tc.name    testFunctionTypeGetParameter_0001
-     * @tc.desc    Get first parameter from function with one parameter
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-
-    it('testFunctionTypeGetParameter_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetParameter_0001";
-      try {
-
-        const functionType: FunctionType = Type.of(voidReturningFunction) as FunctionType;
-        const parameter = functionType.getParameter(0);
-        expect(parameter !== null).assertTrue();
-
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0100
-     * @tc.name    testFunctionTypeGetResultType_0001
-     * @tc.desc    Get result type from function returning number
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetResultType_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetResultType_0001";
-      try {
-
-        const functionType: FunctionType = Type.of(stringReturningFunction) as FunctionType;
-        const resultType: Type = functionType.getResultType();
-        expect(resultType !== null).assertTrue();
-        expect(resultType.getLiteral()).assertEqual("string");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0200
-     * @tc.name    testFunctionTypeGetResultType_0002
-     * @tc.desc    Get result type from function returning string
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetResultType_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetResultType_0002";
-      try {
-
-        const functionType: FunctionType = Type.of(numberReturningFunction) as FunctionType;
-        const resultType: Type = functionType.getResultType();
-        expect(resultType !== null).assertTrue();
-        expect(resultType.getName()).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0300
-     * @tc.name    testFunctionTypeGetResultType_0003
-     * @tc.desc    Get result type from function returning boolean
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-
-    it('testFunctionTypeGetResultType_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetResultType_0003";
-      try {
-        const functionType: FunctionType = Type.of(booleanReturningFunction) as FunctionType;
-        const resultType: Type = functionType.getResultType();
-        expect(resultType !== null).assertTrue();
-        expect(resultType.getName()).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0500
-     * @tc.name    testFunctionTypeGetResultType_0005
-     * @tc.desc    Get result type from void function
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetResultType_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetResultType_0005";
-      try {
-        const functionType: FunctionType = Type.of(voidReturningFunction) as FunctionType;
-        const resultType: Type = functionType.getResultType();
-        expect(resultType !== null).assertTrue();
-        expect(resultType.getName()).assertEqual("void");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0600
-     * @tc.name    testFunctionTypeGetResultType_0006
-     * @tc.desc    Get result type from lambda function
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetResultType_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetResultType_0006";
-      try {
-        let lambda = (a: number, b: number): number => {
-          return a + b;
-        };
-        const lambdaType: LambdaType = Type.of(lambda) as LambdaType;
-        const resultType: Type = lambdaType.getResultType();
-        expect(resultType !== null).assertTrue();
-        expect(resultType.getName()).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETERSNUM_0100
-     * @tc.name    testFunctionTypeGetParametersNum_0001
-     * @tc.desc    Check parameter count for function with no parameters
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetParametersNum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetParametersNum_0001";
-      try {
-        const functionType: FunctionType = Type.of(noParamFunction) as FunctionType;
-        const result: number = functionType.getParametersNum();
-        expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETERSNUM_0200
-     * @tc.name    testFunctionTypeGetParametersNum_0002
-     * @tc.desc    Check parameter count for function with one parameter
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetParametersNum_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetParametersNum_0002";
-      try {
-        const functionType: FunctionType = Type.of(oneParamFunction) as FunctionType;
-        const result: number = functionType.getParametersNum();
-        expect(result).assertEqual(1);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETERSNUM_0300
-     * @tc.name    testFunctionTypeGetParametersNum_0003
-     * @tc.desc    Check parameter count for function with two parameters
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetParametersNum_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetParametersNum_0003";
-      try {
-        const functionType: FunctionType = Type.of(twoParamsFunction) as FunctionType;
-        const result: number = functionType.getParametersNum();
-        expect(result).assertEqual(2);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETERSNUM_0400
-     * @tc.name    testFunctionTypeGetParametersNum_0004
-     * @tc.desc    Check parameter count for function with three parameters
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testFunctionTypeGetParametersNum_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = "testFunctionTypeGetParametersNum_0004";
-      try {
-        const functionType: FunctionType = Type.of(threeParamsFunction) as FunctionType;
-        const result: number = functionType.getParametersNum();
-        expect(result).assertEqual(3);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed: ${err.message}`);
-        expect().assertFail();
-      }
-    });
-
-
   });
 }

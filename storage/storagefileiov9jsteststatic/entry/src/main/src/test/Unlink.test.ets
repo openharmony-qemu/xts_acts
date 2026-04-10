@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,8 @@ export default function fileIOUnlink() {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_sync_static_001 fpath: ' + fpath);
         fs.unlinkSync(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_sync_static_001 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -68,7 +69,7 @@ export default function fileIOUnlink() {
         expect(fs.accessSync(fpath)).assertTrue();
         fs.unlinkSync(fpath);
         expect(!fs.accessSync(fpath)).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_sync_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -90,7 +91,8 @@ export default function fileIOUnlink() {
       try {
         fs.unlinkSync(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_sync_static_003 has failed for' + JSON.stringify(e));
         expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
@@ -115,7 +117,7 @@ export default function fileIOUnlink() {
         await fs.unlink(fpath);
         expect(!fs.accessSync(fpath)).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -140,7 +142,7 @@ export default function fileIOUnlink() {
           expect(!fs.accessSync(fpath)).assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -166,7 +168,7 @@ export default function fileIOUnlink() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -187,7 +189,8 @@ export default function fileIOUnlink() {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_003 fpath: ' + fpath);
         await fs.unlink(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_003 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
@@ -210,7 +213,8 @@ export default function fileIOUnlink() {
         fs.mkdirSync(fpath);
         await fs.unlink(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_004 has failed for' + JSON.stringify(e));
         expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
         done();
@@ -239,12 +243,79 @@ export default function fileIOUnlink() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_005 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
     });
 
+    /**
+     * @tc.name   fileIO_test_unlink_async_static_006
+     * @tc.number SUB_DF_FILEIO_UNLINK_ASYNC_0600
+     * @tc.desc   Test unlink() interface with empty string for the first parameter. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_unlink_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_006 start');
+      try {
+        await fs.unlink("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_006 has failed for' + JSON.stringify(e));
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_unlink_async_static_007
+     * @tc.number SUB_DF_FILEIO_UNLINK_ASYNC_0700
+     * @tc.desc   Test unlink() interface with empty string for the first parameter. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_unlink_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_007 start');
+      try {
+        fs.unlink("", (err: BusinessError<void> | null) => {
+          if (err) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_007 has failed for' + JSON.stringify(err));
+            expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_007 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_unlink_sync_static_004
+     * @tc.number SUB_DF_FILEIO_UNLINK_SYNC_0400
+     * @tc.desc   Test unlinkSync() interface with empty string for the first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_unlink_sync_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_sync_static_004 start');
+      try {
+        fs.unlinkSync("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_sync_static_004 has failed for' + JSON.stringify(e));
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+      }
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'fileIO_fs_unlink end');
 

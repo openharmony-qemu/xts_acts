@@ -16,13 +16,12 @@
 #include "include/DrawingNativeFilterTest.h"
 #include "include/OhosCommonTest.h"
 
+#define DRAWING_NUMBER_10 10
+
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
 
-constexpr int LOOP_COUNT = 10;
-
-// Common SetUp and TearDown functions implementation
 void DrawingNativeFilterTestSetUp()
 {
     std::cout << "DrawingNativeFilterTest Setup code called before each test case." << std::endl;
@@ -39,7 +38,7 @@ void DrawingNativeFilterTestTearDown()
 
 /**
  * @tc.name   testFilterCreateDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0100
  * @tc.desc   Test for creating and destroying a filter with normal parameters.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -48,18 +47,17 @@ void DrawingNativeFilterTestTearDown()
 int TestFilterCreateDestroyNormal()
 {
     DrawingNativeFilterTestSetUp();
-    OH_Drawing_Filter* filter = OH_Drawing_FilterCreate();
+    OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
     EXPECT_NE(filter, nullptr);
 
     OH_Drawing_FilterDestroy(filter);
-
     DrawingNativeFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testFilterCreateDestroyNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0101
  * @tc.desc   Test for destroying a filter with NULL parameter.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -68,17 +66,16 @@ int TestFilterCreateDestroyNormal()
 int TestFilterCreateDestroyNULL()
 {
     DrawingNativeFilterTestSetUp();
+    OH_Drawing_Filter *filter = nullptr;
     OH_Drawing_FilterDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
-
+    EXPECT_EQ(filter, nullptr);
     DrawingNativeFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testFilterCreateDestroyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0300
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0102
  * @tc.desc   Test for creating and destroying a filter multiple times and in loops.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -87,20 +84,18 @@ int TestFilterCreateDestroyNULL()
 int TestFilterCreateDestroyMultipleCalls()
 {
     DrawingNativeFilterTestSetUp();
-
-    for (int i = 0; i < LOOP_COUNT; i++) {
-        OH_Drawing_Filter* filter = OH_Drawing_FilterCreate();
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
         EXPECT_NE(filter, nullptr);
         OH_Drawing_FilterDestroy(filter);
     }
-
     DrawingNativeFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testFilterSetImageFilterNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0400
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0200
  * @tc.desc   Test for setting an image filter with normal parameters.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -109,11 +104,11 @@ int TestFilterCreateDestroyMultipleCalls()
 int TestFilterSetImageFilterNormal()
 {
     DrawingNativeFilterTestSetUp();
-    OH_Drawing_Filter* cFilter = OH_Drawing_FilterCreate();
+    OH_Drawing_Filter *cFilter = OH_Drawing_FilterCreate();
     // add assert
     EXPECT_NE(cFilter, nullptr);
-    OH_Drawing_ImageFilter* cImageFilter =
-        OH_Drawing_ImageFilterCreateBlur(10, 10, OH_Drawing_TileMode::CLAMP, nullptr);
+    OH_Drawing_ImageFilter *cImageFilter =
+        OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_10, DRAWING_NUMBER_10, OH_Drawing_TileMode::CLAMP, nullptr);
     // add assert
     EXPECT_NE(cImageFilter, nullptr);
 
@@ -123,14 +118,13 @@ int TestFilterSetImageFilterNormal()
 
     OH_Drawing_FilterDestroy(cFilter);
     OH_Drawing_ImageFilterDestroy(cImageFilter);
-
     DrawingNativeFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testFilterSetImageFilterNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0500
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0201
  * @tc.desc   Test for setting an image filter with NULL parameters.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -139,11 +133,11 @@ int TestFilterSetImageFilterNormal()
 int TestFilterSetImageFilterNULL()
 {
     DrawingNativeFilterTestSetUp();
-    OH_Drawing_Filter* cFilter = OH_Drawing_FilterCreate();
+    OH_Drawing_Filter *cFilter = OH_Drawing_FilterCreate();
     // add assert
     EXPECT_NE(cFilter, nullptr);
-    OH_Drawing_ImageFilter* cImageFilter =
-        OH_Drawing_ImageFilterCreateBlur(10, 10, OH_Drawing_TileMode::CLAMP, nullptr);
+    OH_Drawing_ImageFilter *cImageFilter =
+        OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_10, DRAWING_NUMBER_10, OH_Drawing_TileMode::CLAMP, nullptr);
     // add assert
     EXPECT_NE(cImageFilter, nullptr);
     OH_Drawing_FilterSetImageFilter(nullptr, cImageFilter);
@@ -154,14 +148,13 @@ int TestFilterSetImageFilterNULL()
 
     OH_Drawing_FilterDestroy(cFilter);
     OH_Drawing_ImageFilterDestroy(cImageFilter);
-
     DrawingNativeFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testFilterSetImageFilterMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0600
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0202
  * @tc.desc   Test for setting an image filter multiple times with different objects.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -170,12 +163,13 @@ int TestFilterSetImageFilterNULL()
 int TestFilterSetImageFilterMultipleCalls()
 {
     DrawingNativeFilterTestSetUp();
-    for (int i = 0; i < LOOP_COUNT; i++) {
-        OH_Drawing_Filter* cFilter = OH_Drawing_FilterCreate();
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_Filter *cFilter = OH_Drawing_FilterCreate();
         // add assert
         EXPECT_NE(cFilter, nullptr);
-        OH_Drawing_ImageFilter* cImageFilter =
-            OH_Drawing_ImageFilterCreateBlur(LOOP_COUNT + i, LOOP_COUNT + i, OH_Drawing_TileMode::CLAMP, nullptr);
+        OH_Drawing_ImageFilter *cImageFilter =
+            OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_10 + i, DRAWING_NUMBER_10 + i, OH_Drawing_TileMode::CLAMP,
+                nullptr);
         // add assert
         EXPECT_NE(cImageFilter, nullptr);
         OH_Drawing_FilterSetImageFilter(cFilter, cImageFilter);
@@ -184,14 +178,13 @@ int TestFilterSetImageFilterMultipleCalls()
         OH_Drawing_FilterDestroy(cFilter);
         OH_Drawing_ImageFilterDestroy(cImageFilter);
     }
-
     DrawingNativeFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testFilterSetMaskFilterNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0700
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0300
  * @tc.desc   Test for setting a mask filter with normal parameters.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -202,10 +195,11 @@ int TestFilterSetMaskFilterNormal()
     DrawingNativeFilterTestSetUp();
     // 1. Create OH_Drawing_Filter using OH_Drawing_FilterCreate and OH_Drawing_MaskFilter using
     // OH_Drawing_MaskFilterCreateBlur
-    OH_Drawing_Filter* filter = OH_Drawing_FilterCreate();
+    OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
     // add assert
     EXPECT_NE(filter, nullptr);
-    OH_Drawing_MaskFilter* maskFilter = OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL, 10, true);
+    OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL, DRAWING_NUMBER_10,
+        true);
     // add assert
     EXPECT_NE(maskFilter, nullptr);
     // 2. Set mask filter using OH_Drawing_FilterSetMaskFilter, should return OH_DRAWING_SUCCESS
@@ -215,14 +209,13 @@ int TestFilterSetMaskFilterNormal()
     // 3. Destroy objects, should be successful
     OH_Drawing_FilterDestroy(filter);
     OH_Drawing_MaskFilterDestroy(maskFilter);
-
     DrawingNativeFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testFilterSetMaskFilterNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0800
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0301
  * @tc.desc   Test for setting a mask filter with NULL parameters.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -231,10 +224,11 @@ int TestFilterSetMaskFilterNormal()
 int TestFilterSetMaskFilterNULL()
 {
     DrawingNativeFilterTestSetUp();
-    OH_Drawing_Filter* filter = OH_Drawing_FilterCreate();
+    OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
     // add assert
     EXPECT_NE(filter, nullptr);
-    OH_Drawing_MaskFilter* maskFilter = OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL, 10, true);
+    OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL, DRAWING_NUMBER_10,
+        true);
     // add assert
     EXPECT_NE(maskFilter, nullptr);
     // 1. Pass nullptr as the first parameter to OH_Drawing_FilterSetMaskFilter and check the error code using
@@ -253,14 +247,13 @@ int TestFilterSetMaskFilterNULL()
     // 3. Free memory
     OH_Drawing_FilterDestroy(filter);
     OH_Drawing_MaskFilterDestroy(maskFilter);
-
     DrawingNativeFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testFilterSetMaskFilterMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_0900
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0302
  * @tc.desc   Test for setting a mask filter multiple times with different objects.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -271,26 +264,25 @@ int TestFilterSetMaskFilterMultipleCalls()
     DrawingNativeFilterTestSetUp();
     // 1. Call OH_Drawing_FilterSetMaskFilter 10 times with different OH_Drawing_Filter and OH_Drawing_MaskFilter
     // objects.
-    for (int i = 0; i < LOOP_COUNT; i++) {
-        OH_Drawing_Filter* filter = OH_Drawing_FilterCreate();
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
         // add assert
         EXPECT_NE(filter, nullptr);
-        OH_Drawing_MaskFilter* maskFilter =
-            OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL, LOOP_COUNT + i, true);
+        OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL,
+            DRAWING_NUMBER_10 + i, true);
         // add assert
         EXPECT_NE(maskFilter, nullptr);
         OH_Drawing_FilterSetMaskFilter(filter, maskFilter);
         OH_Drawing_FilterDestroy(filter);
         OH_Drawing_MaskFilterDestroy(maskFilter);
     }
-
     DrawingNativeFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testFilterSetColorFilterNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1000
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0400
  * @tc.desc   Test for setting a color filter with normal parameters.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -300,16 +292,16 @@ int TestFilterSetColorFilterNormal()
 {
     DrawingNativeFilterTestSetUp();
     // 1. Create OH_Drawing_Filter using OH_Drawing_FilterCreate
-    OH_Drawing_Filter* filter = OH_Drawing_FilterCreate();
+    OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
     // add assert
     EXPECT_NE(filter, nullptr);
-    OH_Drawing_ColorFilter* outerFilter = OH_Drawing_ColorFilterCreateLuma();
+    OH_Drawing_ColorFilter *outerFilter = OH_Drawing_ColorFilterCreateLuma();
     // add assert
     EXPECT_NE(outerFilter, nullptr);
-    OH_Drawing_ColorFilter* innerFilter = OH_Drawing_ColorFilterCreateSrgbGammaToLinear();
+    OH_Drawing_ColorFilter *innerFilter = OH_Drawing_ColorFilterCreateSrgbGammaToLinear();
     // add assert
     EXPECT_NE(innerFilter, nullptr);
-    OH_Drawing_ColorFilter* colorFilter = OH_Drawing_ColorFilterCreateCompose(outerFilter, innerFilter);
+    OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateCompose(outerFilter, innerFilter);
     // add assert
     EXPECT_NE(colorFilter, nullptr);
     // 2. Set color filter using OH_Drawing_FilterSetColorFilter
@@ -324,14 +316,13 @@ int TestFilterSetColorFilterNormal()
     OH_Drawing_ColorFilterDestroy(outerFilter);
     OH_Drawing_ColorFilterDestroy(innerFilter);
     OH_Drawing_ColorFilterDestroy(colorFilter);
-
     DrawingNativeFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testFilterSetColorFilterNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0401
  * @tc.desc   Test for setting a color filter with NULL parameters.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -340,16 +331,16 @@ int TestFilterSetColorFilterNormal()
 int TestFilterSetColorFilterNULL()
 {
     DrawingNativeFilterTestSetUp();
-    OH_Drawing_Filter* filter = OH_Drawing_FilterCreate();
+    OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
     // add assert
     EXPECT_NE(filter, nullptr);
-    OH_Drawing_ColorFilter* outerFilter = OH_Drawing_ColorFilterCreateLuma();
+    OH_Drawing_ColorFilter *outerFilter = OH_Drawing_ColorFilterCreateLuma();
     // add assert
     EXPECT_NE(outerFilter, nullptr);
-    OH_Drawing_ColorFilter* innerFilter = OH_Drawing_ColorFilterCreateSrgbGammaToLinear();
+    OH_Drawing_ColorFilter *innerFilter = OH_Drawing_ColorFilterCreateSrgbGammaToLinear();
     // add assert
     EXPECT_NE(innerFilter, nullptr);
-    OH_Drawing_ColorFilter* colorFilter = OH_Drawing_ColorFilterCreateCompose(outerFilter, innerFilter);
+    OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateCompose(outerFilter, innerFilter);
     // add assert
     EXPECT_NE(colorFilter, nullptr);
     // 1. Pass nullptr as the first parameter to OH_Drawing_FilterSetColorFilter and check the error code using
@@ -380,14 +371,13 @@ int TestFilterSetColorFilterNULL()
     OH_Drawing_ColorFilterDestroy(outerFilter);
     OH_Drawing_ColorFilterDestroy(innerFilter);
     OH_Drawing_ColorFilterDestroy(colorFilter);
-
     DrawingNativeFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
 /**
  * @tc.name   testFilterSetColorFilterMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_FILTER_1200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FILTER_0402
  * @tc.desc   Test for setting a color filter multiple times with different objects.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -398,17 +388,17 @@ int TestFilterSetColorFilterMultipleCalls()
     DrawingNativeFilterTestSetUp();
     // 1. Call OH_Drawing_FilterSetColorFilter 10 times with different OH_Drawing_Filter and OH_Drawing_ColorFilter
     // objects. Call successful, errorcode returns OH_DRAWING_SUCCESS
-    for (int i = 0; i < LOOP_COUNT; i++) {
-        OH_Drawing_Filter* filter = OH_Drawing_FilterCreate();
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
         // add assert
         EXPECT_NE(filter, nullptr);
-        OH_Drawing_ColorFilter* outerFilter = OH_Drawing_ColorFilterCreateLuma();
+        OH_Drawing_ColorFilter *outerFilter = OH_Drawing_ColorFilterCreateLuma();
         // add assert
         EXPECT_NE(outerFilter, nullptr);
-        OH_Drawing_ColorFilter* innerFilter = OH_Drawing_ColorFilterCreateSrgbGammaToLinear();
+        OH_Drawing_ColorFilter *innerFilter = OH_Drawing_ColorFilterCreateSrgbGammaToLinear();
         // add assert
         EXPECT_NE(innerFilter, nullptr);
-        OH_Drawing_ColorFilter* colorFilter = OH_Drawing_ColorFilterCreateCompose(outerFilter, innerFilter);
+        OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateCompose(outerFilter, innerFilter);
         // add assert
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_FilterSetColorFilter(filter, colorFilter);
@@ -417,7 +407,6 @@ int TestFilterSetColorFilterMultipleCalls()
         OH_Drawing_ColorFilterDestroy(innerFilter);
         OH_Drawing_ColorFilterDestroy(colorFilter);
     }
-
     DrawingNativeFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }

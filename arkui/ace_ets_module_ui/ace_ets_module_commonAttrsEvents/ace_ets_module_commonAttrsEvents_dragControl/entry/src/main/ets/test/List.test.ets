@@ -32,10 +32,23 @@ import enableEdgeAutoScroll_true from './DragInteractionOptions/enableEdgeAutoSc
 import enableEdgeAutoScroll from './DragInteractionOptions/enableEdgeAutoScroll.test';
 import notifyDragStartRequest from './Drag/notifyDragStartRequest.test';
 import DragEventUITest from "./DragController/DragEventUI.test";
-
+import dragActionAndPreviewTest from "./DragController/DragActionAndPreviewNullandundefined/DragActionAndPreviewTest.test";
+import createDragActionAndSpringTest from "./DragController/CreateDragActionAndSpringNullandundefined/CreateDragActionAndSpringTest.test";
+import dragControllerTest from './UIContext/DragControllerNullandundefined/DragControllerTest.test';
+import onDragSpringLoadingNullAndUndefinedTest from './OnDragSpringLoading/onDragSpringLoadingNullAndUndefinedTest.test';
+import dragPreviewOptionsNullAndUndefinedTest from './DragPreviewOptions/dragPreviewOptionsNullAndUndefinedTest.test';
+import dragPreviewNullAndUndefinedTest from './DragPreview/dragPreviewNullAndUndefinedTest.test';
+import dragEventNullAndUndefinedTest from './DragEvent/dragEventNullAndUndefinedTest.test';
+import onMoveNullAndUndefinedTest from './OnMove/onMoveNullAndUndefinedTest.test';
+import onMoveV20NullAndUndefinedTest from './OnMoveV20/onMoveV20NullAndUndefinedTest.test';
+import allowDropNullAndUndefinedTest from './AllowDrop/allowDropNullAndUndefinedTest.test';
+import setDataLoadParamsNullAndUndefinedTest from './DragEvent/setDataLoadParamsNullAndUndefinedTest.test';
+import setDataNullAndUndefinedTest from './DragEvent/setDataNullAndUndefinedTest.test';
+import startDataLoadingNullAndUndefinedTest from './DragEvent/startDataLoadingNullAndUndefinedTest.test';
 
 export default function testsuite() {
     dragAdaptationTest();
+    DragEventUITest();
     getDragController();
     PreDrag();
     enableEdgeAutoScroll_false();
@@ -52,5 +65,17 @@ export default function testsuite() {
     APIPreDragStatusTest();
     DragInteractionOptionsTest();
     DragPreviewOptions();
-    DragEventUITest();
+    dragActionAndPreviewTest();
+    createDragActionAndSpringTest();
+    dragControllerTest();
+    onDragSpringLoadingNullAndUndefinedTest();
+    dragPreviewOptionsNullAndUndefinedTest();
+    dragPreviewNullAndUndefinedTest();
+    dragEventNullAndUndefinedTest();
+    onMoveNullAndUndefinedTest();
+    onMoveV20NullAndUndefinedTest();
+    allowDropNullAndUndefinedTest();
+    setDataLoadParamsNullAndUndefinedTest();
+    setDataNullAndUndefinedTest();
+    startDataLoadingNullAndUndefinedTest();
 }

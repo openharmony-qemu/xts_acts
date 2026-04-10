@@ -40,7 +40,7 @@ function sleep(time: int):Promise<int> {
 export default function checkBoxTest1() {
   describe('ActsCheckBoxTest1', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 

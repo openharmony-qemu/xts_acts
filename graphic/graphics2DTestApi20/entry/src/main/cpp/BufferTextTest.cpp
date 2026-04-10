@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 #include "BufferTextTest.h"
+#include "common/log_common.h"
 #include <native_buffer/native_buffer.h>
 #include <native_drawing/drawing_text_blob.h>
 #include <native_drawing/drawing_rect.h>
@@ -113,8 +114,7 @@ void addBufferTextTest(std::vector<napi_property_descriptor>& descData)
     int32_t res = OH_NativeBuffer_SetColorSpace(buffer, OH_COLORSPACE_DISPLAY_BT2020_PQ);
     OH_NativeBuffer_ColorSpace colorSpace;
     res = OH_NativeBuffer_GetColorSpace(buffer, &colorSpace);
-    napi_create_int32(env, res == NATIVE_ERROR_OK || res != NATIVE_ERROR_INVALID_ARGUMENTS ||
-                      res != NATIVE_ERROR_BUFFER_STATE_INVALID, &result);
+    napi_create_int32(env, res == NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -127,11 +127,11 @@ void addBufferTextTest(std::vector<napi_property_descriptor>& descData)
     napi_create_int32(env, res == NATIVE_ERROR_INVALID_ARGUMENTS, &result);
     return result;
 }
+
  napi_value OH_NativeBuffer_SetMetadataValueSuccess(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    
-        OH_NativeBuffer_Config config = {
+    OH_NativeBuffer_Config config = {
         .width = 0x100,
         .height = 0x100,
         .format = 12,
@@ -145,9 +145,7 @@ void addBufferTextTest(std::vector<napi_property_descriptor>& descData)
     int32_t size = 10;
     uint8_t *metadata = new uint8_t(size);
     int32_t res = OH_NativeBuffer_SetMetadataValue(buffer, OH_HDR_STATIC_METADATA, size, metadata);
-    
-    napi_create_int32(env, res == NATIVE_ERROR_OK || res != NATIVE_ERROR_INVALID_ARGUMENTS ||
-                      res != NATIVE_ERROR_BUFFER_STATE_INVALID, &result);
+    napi_create_int32(env, res == NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -179,8 +177,7 @@ void addBufferTextTest(std::vector<napi_property_descriptor>& descData)
     uint8_t *metadata = new uint8_t(size);
     OH_NativeBuffer_SetMetadataValue(buffer, OH_HDR_STATIC_METADATA, size, metadata);
     int32_t res = OH_NativeBuffer_GetMetadataValue(buffer, OH_HDR_STATIC_METADATA, &size, &metadata);
-    napi_create_int32(env, res == NATIVE_ERROR_OK || res != NATIVE_ERROR_INVALID_ARGUMENTS ||
-                      res != NATIVE_ERROR_BUFFER_STATE_INVALID, &result);
+    napi_create_int32(env, res == NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -190,7 +187,7 @@ void addBufferTextTest(std::vector<napi_property_descriptor>& descData)
     int32_t size = 10;
     uint8_t *metadata = new uint8_t(size);
     int32_t res = OH_NativeBuffer_GetMetadataValue(nullptr, OH_HDR_STATIC_METADATA, &size, &metadata);
-    napi_create_int32(env, res == NATIVE_ERROR_INVALID_ARGUMENTS || res != NATIVE_ERROR_UNSUPPORTED, &result);
+    napi_create_int32(env, res == NATIVE_ERROR_INVALID_ARGUMENTS, &result);
     return result;
 }
 

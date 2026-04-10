@@ -51,7 +51,7 @@ struct promptExample {
             }
             console.info("confituration start to emit action state");
             emitter.emit(backEvent, backData);
-          } catch (error:Error){
+          } catch (error){
             console.info("confituration emit action state err: ");
           }
         })

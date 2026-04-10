@@ -1053,8 +1053,6 @@ static napi_value OH_LowPowerAudioSink_CreateByMime0100(napi_env env, napi_callb
     napi_create_int32(env, res, &retValue);
     return retValue;
 }
-
-
 napi_property_descriptor desc[] = {
     {"OH_LowPowerAudioSink_Configure0100", nullptr, OH_LowPowerAudioSink_Configure0100, nullptr, nullptr, nullptr,
      napi_default, nullptr},

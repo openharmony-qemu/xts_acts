@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,8 +58,8 @@ import hilog from "@ohos.hilog";
 AppStorage.clear()
 AppStorage.setOrCreate('PropA', 122);
 let storage37 = new LocalStorage();
-let prop: SubscribedAbstractProperty<number> = AppStorage.link('PropA') as SubscribedAbstractProperty<number>
-let prop137: SubscribedAbstractProperty<number> = AppStorage.link('sss') as SubscribedAbstractProperty<number>
+let prop: SubscribedAbstractProperty<number> = AppStorage.link<number>('PropA') as SubscribedAbstractProperty<number>
+let prop137: SubscribedAbstractProperty<number> = AppStorage.link<number>('sss') as SubscribedAbstractProperty<number>
 
 // @Entry(storage37)
 @Entry
@@ -75,7 +75,7 @@ struct LocalStorage37 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('Storage37', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

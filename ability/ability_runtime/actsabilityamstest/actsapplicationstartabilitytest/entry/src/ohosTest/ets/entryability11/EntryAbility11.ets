@@ -17,6 +17,7 @@ import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import commonEventManager from '@ohos.commonEventManager';
+import eventBusPlus from '../lib/EventBusPlus';
 
 export default class EntryAbility extends UIAbility {
   private onCreateFlag = false;
@@ -34,7 +35,7 @@ export default class EntryAbility extends UIAbility {
     this.onCreateFlag = true
   }
 
-  onDestroy(): void {
+  async onDestroy(): Promise<void> {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
     this.onDestroyFlag = true;
@@ -67,6 +68,7 @@ export default class EntryAbility extends UIAbility {
   onForeground(): void {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
+    globalThis.EntryAbility11 = this.context;
     this.onForegroundFlag = true;
 
     let commonEventData: commonEventManager.CommonEventPublishData = {
@@ -83,9 +85,6 @@ export default class EntryAbility extends UIAbility {
         hilog.info(0x0000, 'testTag', '%{public}s',
           `onConnect ${this.TEST_CASE_NAME}: ${JSON.stringify(result)}`);
       });
-    setTimeout(() => {
-      this.context.terminateSelf();
-    }, 3000)
   }
 
   onBackground(): void {

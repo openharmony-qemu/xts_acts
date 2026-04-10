@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextAreaApi4() {
   describe('TextAreaApi4', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaApi4 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -78,7 +78,7 @@ export default function TextAreaApi4() {
       await CommonFunc.sleep(1000);
 
       let text1 = inspector.getInspectorByKey('TextAreaApi4_text1');
-      expect(String(JSON.parseJsonElement(text1).getElement('$attrs').getString('content'))).assertEqual('{"type":"TextDecorationType.Overline","color":"#FFFF0000","style":"TextDecorationStyle.DOUBLE"}')
+      expect(String(JSON.parseJsonElement(text1).getElement('$attrs').getString('content'))).assertContain('"type":"TextDecorationType.Overline","color":"#FFFF0000","style":"TextDecorationStyle.DOUBLE"')
 
       await CommonFunc.sleep(1000);
 

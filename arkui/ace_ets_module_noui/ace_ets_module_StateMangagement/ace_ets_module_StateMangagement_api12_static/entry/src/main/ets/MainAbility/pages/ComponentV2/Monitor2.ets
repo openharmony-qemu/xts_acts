@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ import {
   StorageLink,ObservedV2,Trace,Param,Event
 } from '@ohos.arkui.stateManagement'
 @ObservedV2
-class MonitorObject {
+export class MonitorObject {
   @Trace name: string;
   constructor(name: string) {
     this.name = name;
@@ -47,7 +47,7 @@ class LogClassTrace {
 }
 let log:LogClassTrace = new LogClassTrace()
 @ObservedV2
-class MonitorInfo extends MonitorObject {
+export class MonitorInfo extends MonitorObject {
   constructor(name: string) {
     super(name); // 关键：调用父类的构造函数，传入必要的参数
   }

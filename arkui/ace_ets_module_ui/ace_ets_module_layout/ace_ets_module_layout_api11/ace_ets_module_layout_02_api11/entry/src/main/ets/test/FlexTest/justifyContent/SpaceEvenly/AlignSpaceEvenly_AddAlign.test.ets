@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -69,23 +69,38 @@ export default function AlignSpaceEvenly_AddAlign() {
       let SpaceEvenly_AddAlign_012: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddAlign_012');
       let SpaceEvenly_AddAlign_013: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddAlign_013');
       let SpaceEvenly_AddAlign_01: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddAlign_01');
-      expect(Math.abs(SpaceEvenly_AddAlign_011.top - SpaceEvenly_AddAlign_012.top) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_012.top - SpaceEvenly_AddAlign_013.top) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_011.top - SpaceEvenly_AddAlign_01.top) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_012.left - SpaceEvenly_AddAlign_011.right - SpaceEvenly_AddAlign_013.left + SpaceEvenly_AddAlign_012.right) <= 1)
-        .assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_011.left - SpaceEvenly_AddAlign_01.left - SpaceEvenly_AddAlign_01.right + SpaceEvenly_AddAlign_013.right) <= 1)
-        .assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_012.left - SpaceEvenly_AddAlign_011.right - vp2px(12.5)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_01.right - SpaceEvenly_AddAlign_013.right - vp2px(12.5)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_011.right - SpaceEvenly_AddAlign_011.left - vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_012.right - SpaceEvenly_AddAlign_012.left - vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_013.right - SpaceEvenly_AddAlign_013.left - vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_011.bottom - SpaceEvenly_AddAlign_011.top - vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_012.bottom - SpaceEvenly_AddAlign_012.top - vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_013.bottom - SpaceEvenly_AddAlign_013.top - vp2px(150)) <= 1).assertTrue()
-      console.info('[testFlexAlignSpaceEvenlyAlignBottomEnd] END');
 
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi1:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_011.top - SpaceEvenly_AddAlign_012.top)))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_011.top - SpaceEvenly_AddAlign_012.top)) <= 1).assertTrue()
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi2:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_012.top - SpaceEvenly_AddAlign_013.top)))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_012.top - SpaceEvenly_AddAlign_013.top)) <= 1).assertTrue()
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi3:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_011.top - SpaceEvenly_AddAlign_01.top)))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_011.top - SpaceEvenly_AddAlign_01.top)) <= 1).assertTrue()
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi4:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_012.left - SpaceEvenly_AddAlign_011.right - SpaceEvenly_AddAlign_013.left + SpaceEvenly_AddAlign_012.right)))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_012.left - SpaceEvenly_AddAlign_011.right - SpaceEvenly_AddAlign_013.left + SpaceEvenly_AddAlign_012.right)) <= 1)
+        .assertTrue()
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi5:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_011.left - SpaceEvenly_AddAlign_01.left - SpaceEvenly_AddAlign_01.right + SpaceEvenly_AddAlign_013.right)))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_011.left - SpaceEvenly_AddAlign_01.left - SpaceEvenly_AddAlign_01.right + SpaceEvenly_AddAlign_013.right)) <= 1)
+        .assertTrue()
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi6:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_012.left - SpaceEvenly_AddAlign_011.right - vp2px(12.5))))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_012.left - SpaceEvenly_AddAlign_011.right - vp2px(12.5))) <= 1).assertTrue()
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi7:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_01.right - SpaceEvenly_AddAlign_013.right - vp2px(12.5))))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_01.right - SpaceEvenly_AddAlign_013.right - vp2px(12.5))) <= 1).assertTrue()
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi8:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_011.right - SpaceEvenly_AddAlign_011.left - vp2px(150))))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_011.right - SpaceEvenly_AddAlign_011.left - vp2px(150))) <= 1).assertTrue()
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi9:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_012.right - SpaceEvenly_AddAlign_012.left - vp2px(150))))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_012.right - SpaceEvenly_AddAlign_012.left - vp2px(150))) <= 1).assertTrue()
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi10:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_013.right - SpaceEvenly_AddAlign_013.left - vp2px(150))))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_013.right - SpaceEvenly_AddAlign_013.left - vp2px(150))) <= 1).assertTrue()
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi11:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_011.bottom - SpaceEvenly_AddAlign_011.top - vp2px(50))))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_011.bottom - SpaceEvenly_AddAlign_011.top - vp2px(50))) <= 1).assertTrue()
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi12:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_012.bottom - SpaceEvenly_AddAlign_012.top - vp2px(100))))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_012.bottom - SpaceEvenly_AddAlign_012.top - vp2px(100))) <= 1).assertTrue()
+      console.info('testFlexAlignSpaceEvenlyAlignBottomEnd_chazhi13:'+ Math.floor(Math.abs(SpaceEvenly_AddAlign_013.bottom - SpaceEvenly_AddAlign_013.top - vp2px(150))))
+      expect(Math.floor(Math.abs(SpaceEvenly_AddAlign_013.bottom - SpaceEvenly_AddAlign_013.top - vp2px(150))) <= 1).assertTrue()
+
+      console.info('[testFlexAlignSpaceEvenlyAlignBottomEnd] END');
     });
+    
   })
 }

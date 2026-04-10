@@ -17,10 +17,12 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 // import router from '@system.router';
 import router from '@ohos.router';
+import { Driver, ON } from '@kit.TestKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 // @ts-nocheck
 export default function webViewGetAccessibleGeolocation() {
   describe('ActsAceWebDevWebViewGetAccessibleGeolocationTest',  () =>{
@@ -61,11 +63,19 @@ export default function webViewGetAccessibleGeolocation() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetAccessibleGeolocationFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      Utils.emitEvent("emitGetAccessAllowAndRetainAllFalse", 160550);
-      Utils.registerEvent("testGetAccessibleGeolocationFalse",false,160560,done);
-      sendEventByKey('webViewGetAccessibleGeolocation',10,'');
-    })
+    it('testGetAccessibleGeolocationFalse',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let emitKey = 'emitGetAccessAllowAndRetainAllFalse';
+        let tcName = 'testGetAccessibleGeolocationFalse';
+        let isReturn = false;
+        Utils.emitEvent(emitKey, 160550);
+        Utils.registerEvent(tcName, false, 160560, () => {
+          isReturn = true
+        });
+        Utils.waitAndClickComponent(driver, "webViewGetAccessibleGeolocation", tcName);
+        await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+        done();
+      });
     /**
      * @tc.name   testGetAccessibleGeolocationTrue
      * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWGETACCGEO_API_0200

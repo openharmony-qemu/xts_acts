@@ -22,6 +22,7 @@ import settings from '@ohos.settings';
 import { BusinessError } from '@kit.BasicServicesKit';
 import Want from '@ohos.app.ability.Want';
 import { ColorMetrics } from '@kit.ArkUI';
+import deviceInfo from '@ohos.deviceInfo';
 
 
 
@@ -130,6 +131,8 @@ export default function windowAutoSaveTest() {
     let isFreeWindowMode = false;
     let isPCMode:boolean = false;
     let isSupportFreeWindowMode:boolean = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     let driver: Driver;
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -241,7 +244,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -271,7 +274,7 @@ export default function windowAutoSaveTest() {
     it('testSetWindowRectAutoSaveTrue_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestTrue_0200';
       // 拉起Ability
-      if(isPCStatus != '' || isPCMode == true){
+      if(deviceType === '2in1' || isPCMode == true){
       let windowStageStart = await startAbility(message, context)
       // 设置setWindowRectAutoSave = true
       try {
@@ -311,7 +314,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           }else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -375,7 +378,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -437,7 +440,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -498,7 +501,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -552,7 +555,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -620,7 +623,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
@@ -684,7 +687,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
@@ -738,7 +741,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           }else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -767,7 +770,7 @@ export default function windowAutoSaveTest() {
     it('testSetWindowRectAutoSaveFalse_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestFalse_0200';
       // 拉起Ability
-      if(isPCStatus != ''|| isPCMode == true){
+      if(deviceType === '2in1'|| isPCMode == true){
       let windowStageStart = await startAbility(message, context)
       let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
       console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
@@ -805,7 +808,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           }else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -867,7 +870,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -926,7 +929,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -985,7 +988,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -1037,7 +1040,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -1095,7 +1098,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
@@ -1150,7 +1153,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
@@ -1316,7 +1319,7 @@ export default function windowAutoSaveTest() {
     it('test_SetWindowRectAutoSave_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0200 ';
       console.log(caseName + 'begin');
-      if(isPCStatus != ''|| isPCMode == true){
+      if(deviceType === '2in1'|| isPCMode == true){
       let windowStageStart = await startAbility2(caseName, context);
       try {
         let mainWindow = windowStageStart.getMainWindowSync();
@@ -1603,7 +1606,7 @@ export default function windowAutoSaveTest() {
     it('test_SetWindowRectAutoSave_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0700 ';
       console.log(caseName + 'begin');
-      if(isPCStatus != ''|| isPCMode == true){
+      if(deviceType === '2in1'|| isPCMode == true){
       let windowStageStart = await startAbility2(caseName, context);
       try {
         let mainWindow = windowStageStart.getMainWindowSync();
@@ -1850,11 +1853,10 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(false).assertFalse();
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertFalse();
+            expect(true).assertFalse();
             done();
           }
         })
@@ -1873,11 +1875,11 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            expect(true).assertTrue();
+           
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
-            expect(true).assertTrue();
+            expect(false).assertTrue();
             done();
           }
         })

@@ -30,9 +30,9 @@ export default function muslIconvNdkTest() {
      * @tc.desc   test iconv
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslIconvIconv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslIconvIconv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = iconv.iconv();
       expect(result).assertEqual(0)
       done()
@@ -44,9 +44,9 @@ export default function muslIconvNdkTest() {
      * @tc.desc   test iconv_open
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslIconvIconvOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslIconvIconvOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = iconv.iconvOpen();
       expect(result).assertEqual(0)
       done()
@@ -58,9 +58,9 @@ export default function muslIconvNdkTest() {
      * @tc.desc   test iconv_close
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslIconvIconvClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslIconvIconvClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = iconv.iconvClose();
       expect(result).assertEqual(0)
       done()

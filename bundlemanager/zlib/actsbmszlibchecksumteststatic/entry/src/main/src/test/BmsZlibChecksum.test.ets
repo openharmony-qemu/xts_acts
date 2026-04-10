@@ -30,9 +30,9 @@ export default function bmsZlibChecksumTest() {
      * @tc.desc   test createChecksum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("Sub_Bms_Zlib_Checksum_Check_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("Sub_Bms_Zlib_Checksum_Check_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_0100 start`);
         zlib.createChecksum().then<void, void>((data: zlib.Checksum): void => {
@@ -60,9 +60,9 @@ export default function bmsZlibChecksumTest() {
      * @tc.desc   test createChecksumSync
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("Sub_Bms_Zlib_Checksum_Check_static_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("Sub_Bms_Zlib_Checksum_Check_static_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_0200 start`);
         let checksum: zlib.Checksum = zlib.createChecksumSync();

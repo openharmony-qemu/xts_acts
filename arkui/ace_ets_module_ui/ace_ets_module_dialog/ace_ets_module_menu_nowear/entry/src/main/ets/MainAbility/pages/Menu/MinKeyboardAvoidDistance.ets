@@ -35,10 +35,6 @@ struct MinKeyboardAvoidDistance {
   build() {
     RelativeContainer() {
       Button('Click Show Menu')
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center },
-        })
         .bindMenu(this.MyMenu, {
           keyboardAvoidMode: MenuKeyboardAvoidMode.TRANSLATE_AND_RESIZE,
           minKeyboardAvoidDistance: LengthMetrics.vp(20)
@@ -50,7 +46,8 @@ struct MinKeyboardAvoidDistance {
           }, 2000)
         })
     }
-    .height('100%')
+    .position({bottom:100})
+    .height('40%')
     .width('100%')
 
   }

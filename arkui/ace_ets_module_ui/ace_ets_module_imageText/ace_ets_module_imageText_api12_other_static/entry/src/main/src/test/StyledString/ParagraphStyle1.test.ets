@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ParagraphStyle1() {
   describe('ParagraphStyle1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ParagraphStyle1 beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")

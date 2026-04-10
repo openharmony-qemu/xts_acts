@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function searchHalfLeadingTest() {
   describe('searchHalfLeadingTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("searchHalfLeadingTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api16.static", "EntryAbility");

@@ -261,7 +261,7 @@ export default function createAssetTest () {
         let uri: string = await sendablePhAccessHelper.createAsset(photoType, extension, options);
         console.info(`${testNum} :: createAsset uri ${uri}`);
         console.info(`${testNum} :: createAsset successfully`);
-        expect(false).assertTrue(true);
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.error(`${testNum} :: createAsset failed, error: ${error.code}, ${error.message}`);
@@ -288,7 +288,7 @@ export default function createAssetTest () {
         let uri: string = await sendablePhAccessHelper.createAsset(photoType, extension, options);
         console.info(`${testNum} :: createAsset uri ${uri}`);
         console.info(`${testNum} :: createAsset successfully`);
-        expect(false).assertTrue(true);
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.error(`${testNum} :: createAsset failed, error: ${error.code}, ${error.message}`);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,9 +49,9 @@ export default function abilityTest() {
      * @tc.desc   Query if the orientation value is FOLLOW_RECENT.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Acts_OrientationTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('Acts_OrientationTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         bundleManager.getBundleInfoForSelf(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE |
         bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_ABILITY,
@@ -109,7 +109,8 @@ export default function abilityTest() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, 'TestAbilityDisable_static_014 failed: %{public}s' + err.message);
         expect().assertFail();
         done();

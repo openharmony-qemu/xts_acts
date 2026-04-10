@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Param2Jsunit() {
   describe('Param2Jsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Param2Jsunit beforeEach start");
 
 

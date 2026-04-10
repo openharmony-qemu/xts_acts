@@ -14,6 +14,7 @@
  */
 import precompileJavaScript from './precompileJavaScript.test'
 import injectOfflineResources from './injectOfflineResources.test'
+import prefetchedResourceTest from './prefetchResource.test'
 import clearPrefetchedResource from './clearPrefetchedResource.test'
 import blankLessInfoWithKeyTest from "./BlankLessInfoWithKey.test"
 import setBlanklessLoadingWithParamsTest from "./SetBlanklessLoadingWithParams.test"
@@ -24,6 +25,7 @@ import abilityTest from './Ability.test';
 export default function testsuite() {
   precompileJavaScript()
   injectOfflineResources()
+  prefetchedResourceTest()
   clearPrefetchedResource()
   abilityTest()
   blankLessInfoWithKeyTest()

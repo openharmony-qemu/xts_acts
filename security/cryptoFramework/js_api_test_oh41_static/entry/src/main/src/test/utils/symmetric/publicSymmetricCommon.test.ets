@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,7 +20,7 @@ function createSymKeyGenerator(symAlgoName: string): crypto.SymKeyGenerator {
     let symKeyGenerator: crypto.SymKeyGenerator = crypto.createSymKeyGenerator(symAlgoName);
     console.log("symKeyGenerator algName: " + symKeyGenerator.algName);
     return symKeyGenerator;
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("symKeyGenerator error:" + err);
     throw err as Error;
   }
@@ -31,7 +31,7 @@ function createSymCipher(cipherAlgoName: string): crypto.Cipher {
     let cipherGenerator: crypto.Cipher = crypto.createCipher(cipherAlgoName);
     console.log("cipherGenerator algName: " + cipherGenerator.algName);
     return cipherGenerator;
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("cipherGenerator error:" + err);
     throw err as Error;
   }

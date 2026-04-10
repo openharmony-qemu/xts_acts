@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function searchTest() {
   describe('searchTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("searchTest beforeEach start");
 
 

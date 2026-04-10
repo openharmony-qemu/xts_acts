@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,6 +37,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 class StringFields {
   public str: string = '';
 }
@@ -112,7 +113,7 @@ struct webResourceResponsePage {
                 let result: boolean = false;
                 console.log('testGetResponseDataExReturnString:' + result)
                 Utils.emitEvent(true, 36010);
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -126,11 +127,21 @@ struct webResourceResponsePage {
                 this.controller.loadUrl('www.example.com');
                 console.log('testGetResponseIsReadyReturnTrue getResponseIsReady:' +
                 this.responseWeb.getResponseIsReady())
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
             }
+
+            case 'SwitchNextPageStatic' : {
+              console.info('key==>test SwitchNextPageStatic')
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebGetResponseDataExTest' })
+              console.log('push URL success')
+              break;
+            }
+
           }
         })
       }
@@ -162,15 +173,15 @@ struct webResourceResponsePage {
         })
         .onHttpErrorReceive((event: OnHttpErrorReceiveEvent): void => {
           if (event) {
-              console.info("ResponseDataEx: " + JSON.stringify(event.response.getResponseDataEx()));
-              console.log('onHttpErrorReceive url:' + event.request.getRequestUrl());
-              console.log('onHttpErrorReceive getResponseIsReady:' + event.response.getResponseIsReady());
-              this.getResponseIsReady = event.response.getResponseIsReady()
-              Utils.emitEvent(true, 36015);
-              console.log('onHttpErrorReceive getResponseDataEx JSON stringify:' +
-              JSON.stringify(event.response.getResponseDataEx()));
-              console.log('onHttpErrorReceive getResponseDataEx :' + event.response.getResponseDataEx());
-              this.getResponseDataExValue = JSON.stringify(event.response.getResponseDataEx())
+            console.info("ResponseDataEx: " + JSON.stringify(event.response.getResponseDataEx()));
+            console.log('onHttpErrorReceive url:' + event.request.getRequestUrl());
+            console.log('onHttpErrorReceive getResponseIsReady:' + event.response.getResponseIsReady());
+            this.getResponseIsReady = event.response.getResponseIsReady()
+            Utils.emitEvent(true, 36015);
+            console.log('onHttpErrorReceive getResponseDataEx JSON stringify:' +
+            JSON.stringify(event.response.getResponseDataEx()));
+            console.log('onHttpErrorReceive getResponseDataEx :' + event.response.getResponseDataEx());
+            this.getResponseDataExValue = JSON.stringify(event.response.getResponseDataEx())
           }
         })
     }

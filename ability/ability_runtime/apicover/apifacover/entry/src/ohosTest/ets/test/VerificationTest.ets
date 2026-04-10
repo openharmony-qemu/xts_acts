@@ -429,11 +429,35 @@ export default function verificationTest() {
     it('SUB_AA_OpenHarmony_RequestPermissionsFromUser_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_RequestPermissionsFromUser_0200 ==>';
       console.info(TAG + " start");
+      let permissionRequestResult: ESObject;
+      let subscriber: commonEventManager.CommonEventSubscriber | null = null;
+      let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ["Fa_MainAbility3_onCreate", "Fa_MainAbility3_onDestroy"]
+      }
       try {
         console.info(TAG + `come in driveFn`);
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
         let driver = await UiDriver.create();
         console.info(TAG + `driver is ${JSON.stringify(driver)}`);
+        commonEvent.createSubscriber(subscribeInfo, (err, data) => {
+          console.info(TAG + "===CreateSubscriberCallback===")
+          subscriber = data;
+          commonEvent.subscribe(subscriber, (err, data) => {
+            console.info(TAG + "===SubscribeInfoCallback===" + JSON.stringify(data));
+            if (data.event == "Fa_MainAbility3_onCreate") {
+              permissionRequestResult = data.parameters?.permissionRequestResult;
+            }
+            if (data.event == "Fa_MainAbility3_onDestroy") {
+              console.info(TAG + "===PermissionRequestResult===" + JSON.stringify(permissionRequestResult));
+              try{
+                expect(permissionRequestResult.requestCode).assertEqual(1);
+                expect(JSON.stringify(permissionRequestResult.permissions))
+                  .assertEqual(JSON.stringify(["ohos.permission.MICROPHONE"]));
+                expect(JSON.stringify(permissionRequestResult.authResults)).assertEqual(JSON.stringify([0]));
+              }catch{}
+            }
+          })
+        })
         let wantNum: Want = {
           bundleName: 'ohos.acts.aafwk.test.fasupplement',
           abilityName: 'ohos.acts.aafwk.test.fasupplement.MainAbility3',
@@ -465,7 +489,12 @@ export default function verificationTest() {
         console.info(TAG + `end click`);
         await sleep(2000);
         console.info(TAG + `end`);
-        done();
+        if(subscriber != undefined){
+          commonEvent.unsubscribe(subscriber, () => {
+            console.info(TAG + "===UnSubscribeInfoCallback===");
+            done();
+          });
+        }
       } catch (err) {
         console.info(TAG + "catch err = " + JSON.stringify(err));
         expect().assertFail();
@@ -662,6 +691,56 @@ export default function verificationTest() {
           });
       } catch (err) {
         console.info(TAG + "catch err = " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_RestoreWindowStage_0100
+     * @tc.number SUB_AA_OpenHarmony_RestoreWindowStage_0100
+     * @tc.desc   restoreWindowStage with null parameter test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_RestoreWindowStage_0100', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_RestoreWindowStage_0100 ==>';
+      console.info(TAG + " start");
+      let flag = false;
+      try {
+        AppStorage.get<common.UIAbilityContext>("abilityContext")!.restoreWindowStage(null);
+        console.info(TAG + "restoreWindowStage should throw error");
+        flag = true;
+        expect(flag).assertTrue();
+        done();
+      } catch (err) {
+        console.info(TAG + "restoreWindowStage err = " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_RestoreWindowStage_0200
+     * @tc.number SUB_AA_OpenHarmony_RestoreWindowStage_0200
+     * @tc.desc   restoreWindowStage with undefined parameter test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_RestoreWindowStage_0200', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_RestoreWindowStage_0200 ==>';
+      console.info(TAG + " start");
+      let flag = false;
+      try {
+        AppStorage.get<common.UIAbilityContext>("abilityContext")!.restoreWindowStage(undefined);
+        console.info(TAG + "restoreWindowStage should throw error");
+        flag = true;
+        expect(flag).assertTrue();
+        done();
+      } catch (err) {
+        console.info(TAG + "restoreWindowStage err = " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

@@ -168,12 +168,13 @@ class MyAuthenticator extends account.Authenticator {
         let appAccountMgr = account.createAppAccountManager();
         hilog.info(0x0000, tag, '====>[Authenticator] start remove ' + JSON.stringify(prop2));
         try {
-          await appAccountMgr.removeAccount(prop2);
-          hilog.info(0x0000, tag, '====>[Authenticator] remove appaccount success');
-          callback.onResult(0);
-          return;
+          waitForCompletion(async () => {
+            await appAccountMgr.removeAccount(prop2);
+            hilog.info(0x0000, tag, '====>[Authenticator] remove appaccount success');
+            callback.onResult(0);
+            return;
+          });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>[Authenticator] removeAccount err: ' + JSON.stringify(err));
         }
       }

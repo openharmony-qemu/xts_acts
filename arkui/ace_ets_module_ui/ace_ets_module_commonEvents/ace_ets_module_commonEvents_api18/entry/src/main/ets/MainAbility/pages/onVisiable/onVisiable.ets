@@ -39,14 +39,14 @@ struct ScrollExample {
           Text("Test Text Visible Change")
             .fontSize(20)
             .height('50%')
-            .margin({ top: 1, bottom: 1 })
+            .margin({ top: 10, bottom: 1 })
             .backgroundColor(Color.Green)// 通过设置ratios为[0.0, 1.0]，实现当组件完全显示或完全消失在屏幕中时触发回调
             .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number) => {
               console.info("Test Text isVisible: " + isVisible + ", currentRatio:" + currentRatio)
               if (isVisible && currentRatio >= 1.0) {
                 console.info("Test Text is fully visible. currentRatio:" + currentRatio)
                 this.testTextStr = "Test Text is fully visible"
-              } 
+              }
 
               if (!isVisible && currentRatio <= 0.0) {
                 console.info("Test Text is completely invisible.")

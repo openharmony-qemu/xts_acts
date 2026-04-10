@@ -18,7 +18,7 @@ import { RenderingContextSettings, OffscreenCanvas, OffscreenCanvasRenderingCont
 const canvasWidth = 1000
 const canvasHeight = 100
 
-enum FontSizeScaleThreshold {
+enum FontSizeScaleThreshold:double {
   SMALL = 0.9,
   NORMAL = 1.1,
   LEVEL_1_LARGE = 1.2,
@@ -77,7 +77,12 @@ export default class LeadingMarginCreator {
     this.clearCanvas()
     this.offContext.font = fontSize + 'vp sans-serif'
     this.offContext.fillText(str + '.', 0, fontSize * 0.9)
-    return this.offContext.getPixelMap(0, 0, fontSize * (str.length + 1) / 1.75, fontSize)
+    let pixelMap = this.offContext.getPixelMap(0, 0, fontSize * (str.length + 1) / 1.75, fontSize)
+    if (pixelMap != undefined) {
+      return pixelMap as PixelMap
+    } else {
+      throw new Error(`GetPixelMap failed`)
+    }
   }
 
   public genSquareMark(fontSize: number): PixelMap {
@@ -86,7 +91,12 @@ export default class LeadingMarginCreator {
     const coordinate = fontSize * (1 - 1 / 1.5) / 2
     const sideLength = fontSize / 1.5
     this.offContext.fillRect(coordinate, coordinate, sideLength, sideLength)
-    return this.offContext.getPixelMap(0, 0, fontSize, fontSize)
+    let pixelMap = this.offContext.getPixelMap(0, 0, fontSize, fontSize)
+    if (pixelMap != undefined) {
+      return pixelMap as PixelMap
+    } else {
+      throw new Error(`GetPixelMap failed`)
+    }
   }
 
   // 生成圆圈符号
@@ -104,7 +114,12 @@ export default class LeadingMarginCreator {
       radius * marginLevel, radius, 0, 0, 2 * Math.PI)
     newOffContext.fillStyle = '66FF0000'
     newOffContext.fill()
-    return newOffContext.getPixelMap(0, 0, 100 + 100 * indentLevel, 100)
+    let pixelMap = newOffContext.getPixelMap(0, 0, 100 + 100 * indentLevel, 100)
+    if (pixelMap != undefined) {
+      return pixelMap as PixelMap
+    } else {
+      throw new Error(`GetPixelMap failed`)
+    }
   }
 
   private clearCanvas() {

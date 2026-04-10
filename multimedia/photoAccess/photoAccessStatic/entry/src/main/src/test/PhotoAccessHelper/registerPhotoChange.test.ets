@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import Utils from '../Util.test';
 import hilog from '@ohos.hilog'
 import Context from "application.Context"
 import { describe, beforeAll, it, expect, TestType, Size, Level, Hypium } from "../../../../hypium/index";
-import { fetchOption, checkUserAlbum, checkSystemAlbum, sleep, getPermission, driveFn, } from '../Common.test.ets'
+import { fetchOption, checkUserAlbum, checkSystemAlbum, sleep, getPermission, driveFn, pushCreateAsset } from '../Common.test.ets'
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { BusinessError } from '@ohos.base'
 
@@ -32,12 +32,14 @@ export default function registerPhotoChangeTest () {
     let appContext: Context = Hypium.get("context") as Context;
     let helper = photoAccessHelper.getPhotoAccessHelper(appContext);
     let arr: Array<string> = [photoAccessHelper.PhotoKeys.TITLE, photoAccessHelper.PhotoKeys.HIDDEN];
+    let fileNameList: Array<string> = ['registerPhotoChange_01.jpg'];
 
     beforeAll(async () => {
       hilog.info(domain, tag, 'beforeAll case');
       await getPermission();
       await driveFn();
       await sleep(1000);
+      await pushCreateAsset(appContext, fileNameList);
     });
 
     const NOTIFY_CHANGE_UPDATE = photoAccessHelper.NotifyChangeType.NOTIFY_CHANGE_UPDATE;
@@ -56,6 +58,7 @@ export default function registerPhotoChangeTest () {
       const testNum = 'register_photoChange_callback_001';
       try {
         const predicates = new dataSharePredicates.DataSharePredicates();
+        predicates.equalTo('display_name', 'registerPhotoChange_01.jpg');
         const ops : photoAccessHelper.FetchOptions = {
           fetchColumns: arr,
           predicates: predicates
@@ -87,7 +90,7 @@ export default function registerPhotoChangeTest () {
         }
         expect(count).assertEqual(1);
         done();
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag,
           testNum + ' PhotoAccessHelperTest failed' + ", error.name:" + error.name + ", error.message:" +
           error.message);

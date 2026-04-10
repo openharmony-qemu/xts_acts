@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 export default function TextPickerPage() {
   describe('TextPickerPage', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerPage beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api20.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

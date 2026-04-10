@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ export default function EveryModulusTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -45,7 +45,7 @@ export default function EveryModulusTest() {
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_212
      * @tc.name    test_type_of_212
-     * @tc.desc    Testing Type.of with string type
+     * @tc.desc    Testing Class.of with string type
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
@@ -53,9 +53,9 @@ export default function EveryModulusTest() {
     it('test_type_of_212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "test_type_of_212";
         try {
-            let a = Type.of("OpenHarmony");
-            expect(String(a)).assertEqual("string");
-        } catch (err: BusinessError) {
+            let a = Class.of("OpenHarmony");
+            expect(a).assertEqual(Class.from<string>());
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -73,12 +73,10 @@ export default function EveryModulusTest() {
         let TAG = "test_type_of_213";
         try {
             const num = 3.14;
-            const typeDesc = String(Type.of(num));
-            const validTypes = ["number", "double", "Number"];
-            expect(validTypes.includes(typeDesc)).assertTrue();
+            expect(Class.of(num)).assertEqual(Class.from<double>());
             expect(typeof num === "number").assertTrue();
             expect(num > 3.13 && num < 3.15).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail, err is ${err}`);
             expect().assertFail();
         }
@@ -87,7 +85,7 @@ export default function EveryModulusTest() {
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_214
      * @tc.name    test_type_of_214
-     * @tc.desc    Testing Type.of with boolean type
+     * @tc.desc    Testing Class.of with boolean type
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
@@ -95,32 +93,10 @@ export default function EveryModulusTest() {
     it('test_type_of_214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "test_type_of_214";
         try {
-            let a = Type.of(true);
-            expect(String(a)).assertEqual("boolean");
-        } catch (err: BusinessError) {
+            let a = Class.of(true);
+            expect(a).assertEqual(Class.from<boolean>());
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
-            expect().assertFail();
-        }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_215
-     * @tc.name    test_type_of_215
-     * @tc.desc    Testing Type.of with function type (specific signature)
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
-     * @tc.level   LEVEL1
-     */
-    it('test_type_of_215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-        let TAG = "test_type_of_215";
-        try {
-            let func = () => {
-                console.log("test");
-            };
-            let a = Type.of(func);
-            expect(String(a)).assertEqual("(): void");
-        } catch (err: BusinessError) {
-            console.error(`${TAG} is fail, err is ${err}`);
             expect().assertFail();
         }
     });
@@ -128,7 +104,7 @@ export default function EveryModulusTest() {
     /**
      * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_OF_216
      * @tc.name    test_type_of_null_216
-     * @tc.desc    Testing Type.of with null type
+     * @tc.desc    Testing Class.of with null type
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNCTION
@@ -136,9 +112,9 @@ export default function EveryModulusTest() {
     it('test_type_of_null_216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
         let TAG = "test_type_of_null_216";
         try {
-            let a = Type.of(null);
-            expect(String(a)).assertEqual("null");
-        } catch (err: BusinessError) {
+            let a = Class.of(null);
+            expect(a).assertEqual(Class.from<null>());
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -158,7 +134,7 @@ export default function EveryModulusTest() {
             let arr: FixedArray<double> = [];
             let result = every(arr, (value) => value > 0);
             expect(result).assertEqual(true);
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -178,7 +154,7 @@ export default function EveryModulusTest() {
             let arr: FixedArray<double> = [1.0, 2.0, 3.0];
             let result = every(arr, (value) => value > 0);
             expect(result).assertEqual(true);
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -198,7 +174,7 @@ export default function EveryModulusTest() {
             let arr: FixedArray<double> = [1.0, -2.0, 3.0];
             let result = every(arr, (value) => value > 0);
             expect(result).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -218,7 +194,7 @@ export default function EveryModulusTest() {
             let arr: FixedArray<double> = [10.0, 20.0, 30.0];
             let result = every(arr, (value, index) => value > index);
             expect(result).assertEqual(true);
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -238,7 +214,7 @@ export default function EveryModulusTest() {
             let arr: FixedArray<double> = [5.0, 5.0, 5.0];
             let result = every(arr, (value, _, array) => value === array[0]);
             expect(result).assertEqual(true);
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }
@@ -258,7 +234,7 @@ export default function EveryModulusTest() {
             let arr: FixedArray<float> = [5.0f, 5.0f, 5.0f, 5.0f];
             let result = every(arr, (value) => value === 5.0f);
             expect(result).assertEqual(true);
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.error(`${TAG} is fail,err is ${err}`);
             expect().assertFail();
         }

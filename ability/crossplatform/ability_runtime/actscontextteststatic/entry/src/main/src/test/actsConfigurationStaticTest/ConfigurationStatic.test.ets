@@ -25,7 +25,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context: common.UIAbilityContext
+let context: common.UIAbilityContext | undefined;
 
 export default function ConfigurationStatic() {
   describe('ConfigurationStatic', () => {
@@ -63,15 +63,15 @@ export default function ConfigurationStatic() {
         let colorMode = AppStorage.get<ConfigurationConstant.ColorMode>("colorMode");
         hilog.info(domain, tag, '%{public}s', `testColorModeStatic001 colorMode:` + colorMode);
         if (colorMode == configurationConstant.ColorMode.COLOR_MODE_NOT_SET) {
-          expect(context.config.colorMode).assertEqual(configurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+          expect(context!.config.colorMode).assertEqual(configurationConstant.ColorMode.COLOR_MODE_NOT_SET);
         } else if (colorMode == configurationConstant.ColorMode.COLOR_MODE_DARK) {
-          expect(context.config.colorMode).assertEqual(configurationConstant.ColorMode.COLOR_MODE_DARK);
-          expect(context.config.colorMode != configurationConstant.ColorMode.COLOR_MODE_NOT_SET).assertTrue();
-          expect(context.config.colorMode != configurationConstant.ColorMode.COLOR_MODE_LIGHT).assertTrue();
+          expect(context!.config.colorMode).assertEqual(configurationConstant.ColorMode.COLOR_MODE_DARK);
+          expect(context!.config.colorMode != configurationConstant.ColorMode.COLOR_MODE_NOT_SET).assertTrue();
+          expect(context!.config.colorMode != configurationConstant.ColorMode.COLOR_MODE_LIGHT).assertTrue();
         } else if (colorMode == configurationConstant.ColorMode.COLOR_MODE_LIGHT) {
-          expect(context.config.colorMode).assertEqual(configurationConstant.ColorMode.COLOR_MODE_LIGHT);
-          expect(context.config.colorMode != configurationConstant.ColorMode.COLOR_MODE_NOT_SET).assertTrue();
-          expect(context.config.colorMode != configurationConstant.ColorMode.COLOR_MODE_DARK).assertTrue();
+          expect(context!.config.colorMode).assertEqual(configurationConstant.ColorMode.COLOR_MODE_LIGHT);
+          expect(context!.config.colorMode != configurationConstant.ColorMode.COLOR_MODE_NOT_SET).assertTrue();
+          expect(context!.config.colorMode != configurationConstant.ColorMode.COLOR_MODE_DARK).assertTrue();
         }
         hilog.info(domain, tag, '%{public}s', `testColorModeStatic001 success`);
         done();
@@ -95,15 +95,15 @@ export default function ConfigurationStatic() {
         let direction = AppStorage.get<ConfigurationConstant.Direction>("direction");
         hilog.info(domain, tag, '%{public}s', `testDirectionStatic001 direction:` + direction);
         if (direction == configurationConstant.Direction.DIRECTION_NOT_SET) {
-          expect(context.config.direction).assertEqual(configurationConstant.Direction.DIRECTION_NOT_SET);
+          expect(context!.config.direction).assertEqual(configurationConstant.Direction.DIRECTION_NOT_SET);
         } else if (direction == configurationConstant.Direction.DIRECTION_VERTICAL) {
-          expect(context.config.direction).assertEqual(configurationConstant.Direction.DIRECTION_VERTICAL);
-          expect(context.config.direction != configurationConstant.Direction.DIRECTION_NOT_SET).assertTrue();
-          expect(context.config.direction != configurationConstant.Direction.DIRECTION_HORIZONTAL).assertTrue();
+          expect(context!.config.direction).assertEqual(configurationConstant.Direction.DIRECTION_VERTICAL);
+          expect(context!.config.direction != configurationConstant.Direction.DIRECTION_NOT_SET).assertTrue();
+          expect(context!.config.direction != configurationConstant.Direction.DIRECTION_HORIZONTAL).assertTrue();
         } else if (direction == configurationConstant.Direction.DIRECTION_HORIZONTAL) {
-          expect(context.config.direction).assertEqual(configurationConstant.Direction.DIRECTION_HORIZONTAL);
-          expect(context.config.direction != configurationConstant.Direction.DIRECTION_NOT_SET).assertTrue();
-          expect(context.config.direction != configurationConstant.Direction.DIRECTION_VERTICAL).assertTrue();
+          expect(context!.config.direction).assertEqual(configurationConstant.Direction.DIRECTION_HORIZONTAL);
+          expect(context!.config.direction != configurationConstant.Direction.DIRECTION_NOT_SET).assertTrue();
+          expect(context!.config.direction != configurationConstant.Direction.DIRECTION_VERTICAL).assertTrue();
         }
         hilog.info(domain, tag, '%{public}s', `testDirectionStatic001 success`);
         done();
@@ -319,42 +319,42 @@ export default function ConfigurationStatic() {
      */
     it('SUB_AA_OpenHarmony_Configuration_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("------------start SUB_AA_OpenHarmony_Configuration_Static_0100-------------");
-      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.language: ' + context.config.language);
-      expect(context.config.language).not().assertUndefined();
-      expect(context.config.language).not().assertNull();
-      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.colorMode: ' + context.config.colorMode);
-      expect(context.config.colorMode).not().assertUndefined();
-      expect(context.config.colorMode).not().assertNull();
-      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.direction: ' + context.config.direction);
-      expect(context.config.direction).not().assertUndefined();
-      expect(context.config.direction).not().assertNull();
-      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.screenDensity: ' + context.config.screenDensity);
-      expect(context.config.screenDensity).not().assertUndefined();
-      expect(context.config.screenDensity).not().assertNull();
-      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.displayId: ' + context.config.displayId);
-      expect(context.config.displayId).not().assertUndefined();
-      expect(context.config.displayId).not().assertNull();
-      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.hasPointerDevice: ' + context.config.hasPointerDevice);
-      expect(context.config.hasPointerDevice).not().assertUndefined();
-      expect(context.config.hasPointerDevice).not().assertNull();
-      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.fontId: ' + context.config.fontId);
-      expect(context.config.fontId).not().assertUndefined();
-      expect(context.config.fontId).not().assertNull();
-      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.fontSizeScale: ' + context.config.fontSizeScale);
-      expect(context.config.fontSizeScale).not().assertUndefined();
-      expect(context.config.fontSizeScale).not().assertNull();
-      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.fontWeightScale: ' + context.config.fontWeightScale);
-      expect(context.config.fontWeightScale).not().assertUndefined();
-      expect(context.config.fontWeightScale).not().assertNull();
-      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.mcc: ' + context.config.mcc);
-      expect(context.config.mcc).not().assertUndefined();
-      expect(context.config.mcc).not().assertNull();
-      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.mnc: ' + context.config.mnc);
-      expect(context.config.mnc).not().assertUndefined();
-      expect(context.config.mnc).not().assertNull();
-      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.locale: ' + context.config.locale);
-      expect(context.config.locale).not().assertUndefined();
-      expect(context.config.locale).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.language: ' + context!.config.language);
+      expect(context!.config.language).not().assertUndefined();
+      expect(context!.config.language).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.colorMode: ' + context!.config.colorMode);
+      expect(context!.config.colorMode).not().assertUndefined();
+      expect(context!.config.colorMode).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.direction: ' + context!.config.direction);
+      expect(context!.config.direction).not().assertUndefined();
+      expect(context!.config.direction).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.screenDensity: ' + context!.config.screenDensity);
+      expect(context!.config.screenDensity).not().assertUndefined();
+      expect(context!.config.screenDensity).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.displayId: ' + context!.config.displayId);
+      expect(context!.config.displayId).not().assertUndefined();
+      expect(context!.config.displayId).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.hasPointerDevice: ' + context!.config.hasPointerDevice);
+      expect(context!.config.hasPointerDevice).not().assertUndefined();
+      expect(context!.config.hasPointerDevice).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.fontId: ' + context!.config.fontId);
+      expect(context!.config.fontId).not().assertUndefined();
+      expect(context!.config.fontId).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.fontSizeScale: ' + context!.config.fontSizeScale);
+      expect(context!.config.fontSizeScale).not().assertUndefined();
+      expect(context!.config.fontSizeScale).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.fontWeightScale: ' + context!.config.fontWeightScale);
+      expect(context!.config.fontWeightScale).not().assertUndefined();
+      expect(context!.config.fontWeightScale).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.mcc: ' + context!.config.mcc);
+      expect(context!.config.mcc).not().assertUndefined();
+      expect(context!.config.mcc).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.mnc: ' + context!.config.mnc);
+      expect(context!.config.mnc).not().assertUndefined();
+      expect(context!.config.mnc).not().assertNull();
+      hilog.info(domain, tag, 'SUB_AA_OpenHarmony_Configuration_Static_0100 config.locale: ' + context!.config.locale);
+      expect(context!.config.locale).not().assertUndefined();
+      expect(context!.config.locale).not().assertNull();
       done();
       console.log("------------end SUB_AA_OpenHarmony_Configuration_Static_0100-------------");
     });

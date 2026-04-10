@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SelectJsunit() {
   describe('SelectJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Builder0050TestJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility");
     });
@@ -144,7 +144,7 @@ it('SelectJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
 
         expect(obj.getElement('$attrs').getString('selected')).assertEqual('2');
         expect(obj.getElement('$attrs').getString('value')).assertEqual('testButton');
-        expect(obj.getElement('$attrs').getString('font')).assertEqual('{"size":"16.00fp","weight":"FontWeight.Medium","family":"","style":"FontStyle.Normal"}');
+        expect(obj.getElement('$attrs').getString('font')).assertEqual('{"size":"16.00fp","weight":"500","family":"","style":"FontStyle.Normal"}');
         expect(obj.getElement('$attrs').getString('selectedOptionBgColor')).assertEqual('#FF0000FF');
         expect(obj.getElement('$attrs').getString('selectedOptionFont')).assertEqual('{"size":"16.00fp","weight":"400","family":"","style":"FontStyle.Normal"}');
         expect(obj.getElement('$attrs').getString('selectedOptionFontColor')).assertEqual('#FFFFFF00');
@@ -224,7 +224,7 @@ it('SelectJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
       "optionBgColor":'-10',
       "optionFont":{ size: 16, weight: 500 } as Font,
       "optionFontColor":'123',
-      "indexValue":'bbb'
+      "indexValue":'1'
     } as Record<String,RecordData>
   } as events_emitter.EventData
   let indexEvent: events_emitter.InnerEvent = {
@@ -248,14 +248,14 @@ it('SelectJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
 
         expect(obj.getElement('$attrs').getString('selected')).assertEqual('0');
         expect(obj.getElement('$attrs').getString('value')).assertEqual('10');
-        expect(obj.getElement('$attrs').getString('font')).assertEqual('{"size":"16.00fp","weight":"FontWeight.Medium","family":"","style":"FontStyle.Normal"}');
+        expect(obj.getElement('$attrs').getString('font')).assertEqual('{"size":"16.00fp","weight":"500","family":"","style":"FontStyle.Normal"}');
         expect(obj.getElement('$attrs').getString('fontColor')).assertEqual('#FF00007B');
-        expect(obj.getElement('$attrs').getString('selectedOptionBgColor')).assertEqual('#FF0000FF');
-        expect(obj.getElement('$attrs').getString('selectedOptionFont')).assertEqual('{"size":"16.00fp","weight":"400","family":"","style":"FontStyle.Normal"}');
-        expect(obj.getElement('$attrs').getString('selectedOptionFontColor')).assertEqual('#FFFFFF00');
-        expect(obj.getElement('$attrs').getString('optionBgColor')).assertEqual('#FF0000FF');
-        expect(obj.getElement('$attrs').getString('optionFont')).assertEqual('{"size":"16.00fp","weight":"400","family":"","style":"FontStyle.Normal"}');
-        expect(obj.getElement('$attrs').getString('optionFontColor')).assertEqual('#FFFFFF00');
+        expect(obj.getElement('$attrs').getString('selectedOptionBgColor')).assertEqual('#33007DFF');
+        expect(obj.getElement('$attrs').getString('selectedOptionFont')).assertEqual('{"size":"16.00fp","weight":"500","family":"","style":"FontStyle.Normal"}');
+        expect(obj.getElement('$attrs').getString('selectedOptionFontColor')).assertEqual('#FF007DFF');
+        expect(obj.getElement('$attrs').getString('optionBgColor')).assertEqual('#33007DFF');
+        expect(obj.getElement('$attrs').getString('optionFont')).assertEqual('{"size":"16.00fp","weight":"500","family":"","style":"FontStyle.Normal"}');
+        expect(obj.getElement('$attrs').getString('optionFontColor')).assertEqual('#FF007DFF');
         expect(obj1.getElement('$attrs').getString('content')).assertEqual('indexValue:1');
 
       console.info('[SelectJsunit_0400] END');

@@ -63,9 +63,9 @@ export default function ActsNotificationPublishTest() {
   describe('ActsNotificationPublishTest', () => {
     let TAG:string = 'SUB_NOTIFICATION_ANS_Publish_TEST ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_Publish_TEST START')
-    let testAbilityContext:common.UIAbilityContext;
+    let testAbilityContext:common.UIAbilityContext | undefined;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -82,7 +82,7 @@ export default function ActsNotificationPublishTest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info(`${TAG} beforeEach START`)
       count = 0;
       notificationManager.cancelAll((err: BusinessError | null) => {
@@ -99,7 +99,7 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} beforeEach END`)
     })
 
-    afterEach(() =>{
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(500)
     })
 
@@ -115,7 +115,8 @@ export default function ActsNotificationPublishTest() {
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Enable_Query_Static_2700'
         count = 0;
-        notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
+        notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
+          waitForCompletion(async () => {
           if (err) {
             console.info(`Sub_Notification_Ans_Enable_Query_Static_2700 ===>requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
             expect(false).assertTrue()
@@ -128,6 +129,7 @@ export default function ActsNotificationPublishTest() {
             console.info("Sub_Notification_Ans_Enable_Query_Static_2700 ===>requestEnableNotification success 1s");
             done()
           }
+          })
         })
 
         await Utils.msSleep(1000)
@@ -164,7 +166,7 @@ export default function ActsNotificationPublishTest() {
         console.info(`Sub_Notification_Ans_Enable_Query_Static_2800 START`)
         await Utils.msSleep(2000);
         console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2800 2s`)
-        await notificationManager.requestEnableNotification(testAbilityContext).then(() => {
+        await notificationManager.requestEnableNotification(testAbilityContext!).then(() => {
           console.info(`${TAG} requestEnableNotification Promise success`)
           count++;
           expect(count).assertEqual(1);

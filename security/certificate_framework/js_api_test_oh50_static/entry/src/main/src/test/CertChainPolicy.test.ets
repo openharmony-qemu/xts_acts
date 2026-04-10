@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,9 +33,9 @@ let testAbilityContext:common.UIAbilityContext;
 export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
   describe("certFrameworkCertChainPolicyJsAPIFunctionTestUnit", () => {
     console.info("##########start certFrameworkCertChainPolicyJsAPIFunctionTestUnit##########");
-    let certChain0: cert.X509CertChain;
-    let rootCaCert0: cert.X509Cert;
-    let leafCert: cert.X509Cert;
+    let certChain0: cert.X509CertChain | undefined;
+    let rootCaCert0: cert.X509Cert | undefined;
+    let leafCert: cert.X509Cert | undefined;
     let parentCert0: cert.X509Cert;
     let otherCert: cert.X509Cert;
     console.info("##########start certFrameworkCertChainPolicyJsAPIFunctionTestUnit##########");
@@ -48,7 +48,7 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
         certChain0 = await certChainFunc.createX509CertChainPromise("pem", 0);
         console.log("########################### 1")
         expect(certChain0 != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("createX509CertChain(inStream: EncodingBlob) error", err);
         expect(null).assertFail();
       }
@@ -66,7 +66,7 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
         expect(rootCaCert0 != null).assertTrue();
         expect(leafCert != null).assertTrue();
         expect(otherCert != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("createX509Cert error", err);
         expect(null).assertFail();
       }
@@ -84,19 +84,19 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0100';
       let param: cert.CertChainValidationParameters = {
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         policy: cert.ValidationPolicyType.VALIDATION_POLICY_TYPE_X509
       };
       try {
         console.log("########################### start")
-        const validRes = await certChain0.validate(param);
+        const validRes = await certChain0!.validate(param);
         console.log("########################### 0")
         expect(validRes != null).assertTrue();
-        expect(validRes.entityCert.getCertSerialNumber() == leafCert.getCertSerialNumber()).assertTrue();
-        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0.getCertSerialNumber()).assertTrue();
+        expect(validRes.entityCert.getCertSerialNumber() == leafCert!.getCertSerialNumber()).assertTrue();
+        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0!.getCertSerialNumber()).assertTrue();
         console.log("########################### end")
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
       }
@@ -126,7 +126,7 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
         console.log(`[XtsTestLog] X509CertChain validate success: ${JSON.stringify(validRes.entityCert.getNotBeforeTime())}`);
         expect(validRes != null).assertTrue();
         expect(validRes.entityCert.getNotBeforeTime() == '230323000000Z').assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
       }
@@ -154,7 +154,8 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
       try {
         await certChain1.validate(param);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
       }
@@ -173,16 +174,17 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0400';
       const param: cert.CertChainValidationParameters = {
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         policy: cert.ValidationPolicyType.VALIDATION_POLICY_TYPE_SSL,
         sslHostname: '.163.com'
       }
 
       try {
-        await certChain0.validate(param);
+        await certChain0!.validate(param);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
       }
@@ -211,7 +213,7 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
         const validRes = await certChain1.validate(param);
         expect(validRes != null).assertTrue();
         expect(validRes.entityCert.getNotBeforeTime() == '230323000000Z').assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
       }
@@ -239,7 +241,8 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
       try {
         await certChain1.validate(param);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
       }
@@ -258,16 +261,17 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0700';
       const param: cert.CertChainValidationParameters = {
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         policy: cert.ValidationPolicyType.VALIDATION_POLICY_TYPE_SSL,
         sslHostname: 'test.com'
       }
 
       try {
-        await certChain0.validate(param);
+        await certChain0!.validate(param);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
       }
@@ -286,16 +290,17 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0800';
       let param: cert.CertChainValidationParameters = {
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         policy: cert.ValidationPolicyType.VALIDATION_POLICY_TYPE_SSL,
         sslHostname: ''
       }
 
       try {
-        await certChain0.validate(param);
+        await certChain0!.validate(param);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
       }
@@ -314,18 +319,18 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_0900';
       let param: cert.CertChainValidationParameters = {
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         policy: cert.ValidationPolicyType.VALIDATION_POLICY_TYPE_X509,
         sslHostname: 'testLeaf2'
       }
 
       try {
-        const validRes = await certChain0.validate(param);
+        const validRes = await certChain0!.validate(param);
         expect(validRes != null).assertTrue();
-        expect(validRes.entityCert.getCertSerialNumber() == leafCert.getCertSerialNumber()).assertTrue();
-        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0.getCertSerialNumber()).assertTrue();
-      } catch (err: BusinessError) {
+        expect(validRes.entityCert.getCertSerialNumber() == leafCert!.getCertSerialNumber()).assertTrue();
+        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0!.getCertSerialNumber()).assertTrue();
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
       }
@@ -344,17 +349,17 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_1000';
       let param: cert.CertChainValidationParameters = {
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         sslHostname: 'testLeaf2'
       }
 
       try {
-        const validRes = await certChain0.validate(param);
+        const validRes = await certChain0!.validate(param);
         expect(validRes != null).assertTrue();
-        expect(validRes.entityCert.getCertSerialNumber() == leafCert.getCertSerialNumber()).assertTrue();
-        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0.getCertSerialNumber()).assertTrue();
-      } catch (err: BusinessError) {
+        expect(validRes.entityCert.getCertSerialNumber() == leafCert!.getCertSerialNumber()).assertTrue();
+        expect(validRes.trustAnchor.CACert?.getCertSerialNumber() == rootCaCert0!.getCertSerialNumber()).assertTrue();
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
       }
@@ -373,15 +378,16 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_1100';
       let param: cert.CertChainValidationParameters = {
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         policy: cert.ValidationPolicyType.VALIDATION_POLICY_TYPE_SSL
       }
 
       try {
-        await certChain0.validate(param);
+        await certChain0!.validate(param);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
       }
@@ -412,7 +418,7 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
         const validRes = await certChain1.validate(param);
         expect(validRes != null).assertTrue();
         expect(validRes.entityCert.getNotBeforeTime() == '230323000000Z').assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
       }
@@ -442,7 +448,8 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
       try {
         await certChain1.validate(param);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
       }
@@ -472,7 +479,7 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
         const validRes = await certChain1.validate(param);
         expect(validRes != null).assertTrue();
         expect(validRes.entityCert.getNotBeforeTime() == '230323000000Z').assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(null).assertFail();
       }
@@ -509,7 +516,8 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
       try {
         await certChain1.validate(param);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
       }
@@ -528,15 +536,16 @@ export default function certFrameworkCertChainPolicyJsAPIFunctionTestUnit() {
       let caseName = 'SUB_Security_Cert_Framework_CertChain_Policy_Func_1600';
       let param: cert.CertChainValidationParameters = {
         trustAnchors: [{
-          CACert: rootCaCert0
+          CACert: rootCaCert0!
         }],
         keyUsage: []
       }
 
       try {
-        await certChain0.validate(param);
+        await certChain0!.validate(param);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
         expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,7 +57,7 @@ struct WebHitTestTypeEnumTest {
               case 'testWebHitTestTypeEnum001': {
                 try {
                   Utils.emitEvent(webView.WebHitTestType.EDIT_TEXT, 70143)
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -65,7 +65,7 @@ struct WebHitTestTypeEnumTest {
               case 'testWebHitTestTypeEnum002': {
                 try {
                   Utils.emitEvent(webView.WebHitTestType.EMAIL, 70144)
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -73,7 +73,7 @@ struct WebHitTestTypeEnumTest {
               case 'testWebHitTestTypeEnum003': {
                 try {
                   Utils.emitEvent(webView.WebHitTestType.HTTP_ANCHOR, 70145)
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -81,7 +81,7 @@ struct WebHitTestTypeEnumTest {
               case 'testWebHitTestTypeEnum004': {
                 try {
                   Utils.emitEvent(webView.WebHitTestType.HTTP_ANCHOR_IMG, 70146)
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -89,7 +89,7 @@ struct WebHitTestTypeEnumTest {
               case 'testWebHitTestTypeEnum005': {
                 try {
                   Utils.emitEvent(webView.WebHitTestType.IMG, 70147)
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -97,7 +97,7 @@ struct WebHitTestTypeEnumTest {
               case 'testWebHitTestTypeEnum006': {
                 try {
                   Utils.emitEvent(webView.WebHitTestType.MAP, 70148)
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -105,7 +105,7 @@ struct WebHitTestTypeEnumTest {
               case 'testWebHitTestTypeEnum007': {
                 try {
                   Utils.emitEvent(webView.WebHitTestType.PHONE, 70149)
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -113,7 +113,7 @@ struct WebHitTestTypeEnumTest {
               case 'testWebHitTestTypeEnum008': {
                 try {
                   Utils.emitEvent(webView.WebHitTestType.UNKNOWN, 70150)
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;

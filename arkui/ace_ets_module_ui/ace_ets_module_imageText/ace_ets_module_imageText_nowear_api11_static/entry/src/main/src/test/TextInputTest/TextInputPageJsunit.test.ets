@@ -41,7 +41,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextInputPageJsunit() {
   describe('TextInputPageJsunit', () :void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputPageJsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")

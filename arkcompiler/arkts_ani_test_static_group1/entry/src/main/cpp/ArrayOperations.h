@@ -29,6 +29,9 @@ ani_boolean test_array_getLength([[maybe_unused]] ani_env *env, [[maybe_unused]]
     ani_size length = 0;
     ASSERT_EQ(env->Array_GetLength(array, &length), ANI_OK);
     ASSERT_EQ(length, LENGTH_5);
+    
+    ani_size sz {};
+    ASSERT_EQ(env->Array_New(5U, nullptr, &array), ANI_INVALID_ARGS);
     return ANI_TRUE;
 }
 

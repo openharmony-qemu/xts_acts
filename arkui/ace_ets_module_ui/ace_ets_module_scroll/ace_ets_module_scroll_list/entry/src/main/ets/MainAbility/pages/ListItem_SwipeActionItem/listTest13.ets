@@ -40,12 +40,19 @@ struct ListItemExampleEnd13 {
 
   build() {
     Column() {
-      List({ space: 10 }) {
+      Text(this.enterEndDeleteAreaString)
+      Text(this.exitEndDeleteAreaString)
+      Text(this.swipeActionState).margin({ top: 2 }).key('swipeState13End')
+      Button('Delete').height('8%').key('btreset13End').onClick(() => {
+        this.swipeActionState = '-1';
+        this.arr = [0, 1, 2, 3, 4];
+      })
+      List({ space: 5 }) {
         ForEach(this.arr, (item: number) => {
           ListItem() {
             Text('item' + item)
               .width('100%')
-              .height(100)
+              .height('30%')
               .fontSize(16)
               .textAlign(TextAlign.Center)
               .borderRadius(10)
@@ -80,14 +87,7 @@ struct ListItemExampleEnd13 {
           .key('lSwipeAction13End' + item)
         }, (item: string) => item)
       }
-
-      Text(this.enterEndDeleteAreaString).fontSize(20)
-      Text(this.exitEndDeleteAreaString).fontSize(20)
-      Text(this.swipeActionState).fontSize(20).margin({ top: 20 }).key('swipeState13End')
-      Button('Delete').margin('4vp').key('btreset13End').onClick(() => {
-        this.swipeActionState = '-1';
-        this.arr = [0, 1, 2, 3, 4];
-      })
+      .height('60%')
 
     }
     .padding(10)

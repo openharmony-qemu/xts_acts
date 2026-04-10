@@ -37,7 +37,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function WorkerUseCurvesTest() {
   describe('WorkerUseCurvesTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("WorkerUseCurvesTest beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")

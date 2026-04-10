@@ -37,7 +37,7 @@ let tag: string = 'testTag';
 
 export default function ellipseNeJsunit() {
   describe('ellipseNeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

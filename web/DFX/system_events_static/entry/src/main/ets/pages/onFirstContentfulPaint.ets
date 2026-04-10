@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,6 +25,7 @@ import web_webview from '@ohos.web.webview';
 import  { BusinessError } from '@ohos.base';
 import webView from '@ohos.web.webview';
 import hilog from '@ohos.hilog';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   str: string = '';
@@ -80,7 +81,7 @@ struct WebOnFirstContentfulPaint {
             case 'emitOnFirstContentfulPaint001': {
               try {
                 Utils.emitEvent(this.onFirstContentfulPaintCalled, 520)
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -94,10 +95,16 @@ struct WebOnFirstContentfulPaint {
                     Utils.emitEvent(this.onFirstContentfulPaintCalled, 522);
                   }, 3000);
                 },3000);
-              } catch (error:BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
+            }
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebOnDataResubmitted' })
+              console.log('push URL success')
             }
           }
         })

@@ -20,10 +20,10 @@ import events_emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
 import { waitForExist} from './WaitTest.test';
+import { abilityAccessCtrl, PermissionRequestResult, common } from '@kit.AbilityKit';
+import business_error, { BusinessError } from '@ohos.base';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
-const EVENT_ID_SET_SUITE_KEY = 300752;
 const driver = Driver.create();
 
 export default function ActsAceWebViewOnCameraCaptureStateChangeCase() {
@@ -41,7 +41,6 @@ export default function ActsAceWebViewOnCameraCaptureStateChangeCase() {
         if (!("WebViewOnCameraCaptureStateChange" == pages.name)) {
           console.info("get WebViewOnCameraCaptureStateChange state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000)
           console.info("push WebViewOnCameraCaptureStateChange page success " + JSON.stringify(result));
           await driver.waitForComponent(ON.id("webViewOnCameraCaptureStateChangeButton"), 10000)
         }
@@ -71,11 +70,35 @@ export default function ActsAceWebViewOnCameraCaptureStateChangeCase() {
      * @tc.level  LEVEL0
      */
     it('testOnCameraCaptureStateChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+        let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+        try {
+          // 替换方案：直接使用全局上下文获取方式
+          let context: Context = getContext() as common.UIAbilityContext;
+          atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA'],
+            (err: BusinessError, data: PermissionRequestResult) => {
+              console.info('data:' + JSON.stringify(data));
+              console.info('data permissions:' + data.permissions);
+              console.info('data authResults:' + data.authResults);
+            })
+        } catch (error) {
+          let e: business_error.BusinessError = error as business_error.BusinessError;
+          console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+        }
+        let buttonThree = await driver.waitForComponent(ON.text('允许'), 10000);
+        await buttonThree.click();
+        let buttonOne = await driver.waitForComponent(ON.text('开启摄像头'), 10000);
+        await buttonOne.click();
+        let buttonTwo = await driver.waitForComponent(ON.text('onConfirm'), 10000);
+        await buttonTwo.click();
+        await Utils.sleep(1000)
+      }
       Utils.emitEvent("emitOnCameraCaptureStateChange001", 300758)
       Utils.registerEvent("testOnCameraCaptureStateChange001", true, 20260201, done);
       sendEventByKey('webViewOnCameraCaptureStateChangeButton', 10, '');
       Utils.waitAndClickComponent(driver, "webViewOnCameraCaptureStateChangeButton");
     })
+
 
 
     /**

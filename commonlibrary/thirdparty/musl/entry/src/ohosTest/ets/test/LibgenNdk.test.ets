@@ -30,9 +30,9 @@ export default function libgenNdkTest() {
      * @tc.desc   test basename
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslLibgenBasename001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslLibgenBasename001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: number = libgen.basename();
       expect(result).assertEqual(resultTrue);

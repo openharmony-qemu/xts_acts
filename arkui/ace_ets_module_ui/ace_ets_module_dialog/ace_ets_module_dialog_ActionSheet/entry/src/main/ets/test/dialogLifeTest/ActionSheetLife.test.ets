@@ -46,11 +46,11 @@ export default function ActionSheetLifeTest() {
      * @tc.number    ActionSheetLife_0001
      * @tc.name      ActionSheetLife_0001
      * @tc.desc      createActionSheetToWindow
-     * @tc.level:    Level 2
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('ActionSheetLife_0001', Level.LEVEL2, async (done: Function) => {
+    it('ActionSheetLife_0001', Level.LEVEL0, async (done: Function) => {
       console.info('ActionSheetLife_0001 START');
       await CommonFunc.sleep(1000);
       sendEventByKey('ActionSheet',10,"")

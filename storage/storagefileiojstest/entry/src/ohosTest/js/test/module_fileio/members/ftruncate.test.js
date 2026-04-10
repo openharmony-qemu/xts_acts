@@ -166,14 +166,14 @@ describe('fileio_ftruncate', function () {
   });
 
   /**
-   * @tc.name   fileio_test_ftruncate_async_004
+   * @tc.name   fileio_test_ftruncate_async_004Adapt001
    * @tc.number SUB_DF_FILEIO_FTRUNCATE_ASYNC_0400
    * @tc.desc   Test ftruncate() interfaces. Promise.
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('fileio_test_ftruncate_async_004', Level.LEVEL3, async function (done) {
+  it('fileio_test_ftruncate_async_004Adapt001', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_ftruncate_async_004');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
 
@@ -289,5 +289,299 @@ describe('fileio_ftruncate', function () {
       expect(false).assertTrue();
     }
   });
+
+  /**
+ 	    * @tc.name   fileio_test_ftruncate_sync_error_001
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_SYNC_ERROR_001
+ 	    * @tc.desc   Test ftruncateSync() interface with null fd.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_sync_error_001', Level.LEVEL2, async function () {
+ 	     try {
+ 	       fileio.ftruncateSync(null, 5);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_ftruncate_sync_error_001: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_ftruncate_sync_error_002
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_SYNC_ERROR_002
+ 	    * @tc.desc   Test ftruncateSync() interface with undefined fd.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_sync_error_002', Level.LEVEL2, async function () {
+ 	     try {
+ 	       fileio.ftruncateSync(undefined, 5);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_ftruncate_sync_error_002: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_ftruncate_sync_error_003
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_SYNC_ERROR_003
+ 	    * @tc.desc   Test ftruncateSync() interface with null len.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_sync_error_003', Level.LEVEL2, async function () {
+ 	     let fpath = await nextFileName('fileio_test_ftruncate_sync_error_003');
+ 	     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	     let fd = fileio.openSync(fpath, 0o2);
+ 	     
+ 	     try {
+ 	       fileio.ftruncateSync(fd, null);
+ 	       fileio.closeSync(fd);
+ 	       fileio.unlinkSync(fpath);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_ftruncate_sync_error_003: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid len').assertTrue();
+ 	       fileio.closeSync(fd);
+ 	       fileio.unlinkSync(fpath);
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_ftruncate_sync_error_004
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_SYNC_ERROR_004
+ 	    * @tc.desc   Test ftruncateSync() interface with undefined len.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_sync_error_004', Level.LEVEL2, async function () {
+ 	     let fpath = await nextFileName('fileio_test_ftruncate_sync_error_004');
+ 	     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	     let fd = fileio.openSync(fpath, 0o2);
+ 	     
+ 	     try {
+ 	       fileio.ftruncateSync(fd, undefined);
+         let readLen = fileio.readSync(fd, new ArrayBuffer(4096));
+         console.log('fileio_test_ftruncate_sync_error_004: ' + readLen);
+         expect(readLen == 0).assertTrue();
+ 	       fileio.closeSync(fd);
+ 	       fileio.unlinkSync(fpath);
+ 	     } catch (err) {
+ 	       console.log('fileio_test_ftruncate_sync_error_004: ' + err.message + ', code: ' + err.code);
+ 	       fileio.closeSync(fd);
+ 	       fileio.unlinkSync(fpath);
+ 	       expect(false).assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_ftruncate_promise_error_001
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_PROMISE_ERROR_001
+ 	    * @tc.desc   Test ftruncate() interface with null fd. Promise.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_promise_error_001', Level.LEVEL2, async function () {
+ 	     try {
+ 	       await fileio.ftruncate(null, 5);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_ftruncate_promise_error_001: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_ftruncate_promise_error_002
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_PROMISE_ERROR_002
+ 	    * @tc.desc   Test ftruncate() interface with undefined fd. Promise.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_promise_error_002', Level.LEVEL2, async function () {
+ 	     try {
+ 	       await fileio.ftruncate(undefined, 5);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_ftruncate_promise_error_002: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid fd').assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_ftruncate_promise_error_003
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_PROMISE_ERROR_003
+ 	    * @tc.desc   Test ftruncate() interface with null len. Promise.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_promise_error_003', Level.LEVEL2, async function () {
+ 	     let fpath = await nextFileName('fileio_test_ftruncate_promise_error_003');
+ 	     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	     let fd = fileio.openSync(fpath, 0o2);
+ 	     
+ 	     try {
+ 	       await fileio.ftruncate(fd, null);
+ 	       fileio.closeSync(fd);
+ 	       fileio.unlinkSync(fpath);
+ 	       expect(false).assertTrue();
+ 	     } catch (err) {
+ 	       console.log('fileio_test_ftruncate_promise_error_003: ' + err.message + ', code: ' + err.code);
+ 	       expect(err.message == 'Invalid len').assertTrue();
+ 	       fileio.closeSync(fd);
+ 	       fileio.unlinkSync(fpath);
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_ftruncate_promise_error_004
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_PROMISE_ERROR_004
+ 	    * @tc.desc   Test ftruncate() interface with undefined len. Promise.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_promise_error_004', Level.LEVEL2, async function () {
+ 	     let fpath = await nextFileName('fileio_test_ftruncate_promise_error_004');
+ 	     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	     let fd = fileio.openSync(fpath, 0o2);
+ 	     
+ 	     try {
+ 	       await fileio.ftruncate(fd, undefined);
+         let readLen = fileio.readSync(fd, new ArrayBuffer(4096));
+         console.log('fileio_test_ftruncate_promise_error_004: ' + readLen);
+         expect(readLen == 0).assertTrue();
+ 	       fileio.closeSync(fd);
+ 	       fileio.unlinkSync(fpath);
+ 	     } catch (err) {
+ 	       console.log('fileio_test_ftruncate_promise_error_004: ' + err.message + ', code: ' + err.code);
+ 	       fileio.closeSync(fd);
+ 	       fileio.unlinkSync(fpath);
+ 	       expect(false).assertTrue();
+ 	     }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_ftruncate_callback_error_001
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_CALLBACK_ERROR_001
+ 	    * @tc.desc   Test ftruncate() interface with null fd. Callback.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_callback_error_001', Level.LEVEL2, async function (done) {
+      try {
+ 	     fileio.ftruncate(null, 5, function (err) {
+ 	       if (err) {
+ 	         console.log('fileio_test_ftruncate_callback_error_001: ' + err.message + ', code: ' + err.code);
+ 	         expect(err.message == 'Invalid fd').assertTrue();
+ 	         done();
+ 	       }
+ 	     });
+       console.log('fileio_test_ftruncate_callback_error_001 res');
+       done();
+      } catch (err) {
+        console.log('fileio_test_ftruncate_callback_error_001 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid fd').assertTrue();
+        done();
+ 	    }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_ftruncate_callback_error_002
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_CALLBACK_ERROR_002
+ 	    * @tc.desc   Test ftruncate() interface with undefined fd. Callback.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_callback_error_002', Level.LEVEL2, async function (done) {
+      try {
+ 	     fileio.ftruncate(undefined, 5, function (err) {
+ 	       if (err) {
+ 	         console.log('fileio_test_ftruncate_callback_error_002: ' + err.message + ', code: ' + err.code);
+ 	         expect(err.message == 'Invalid fd').assertTrue();
+ 	         done();
+ 	       }
+ 	     });
+       console.log('fileio_test_ftruncate_callback_error_002 res');
+       done();
+      } catch (err) {
+        console.log('fileio_test_ftruncate_callback_error_002 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid fd').assertTrue();
+        done();
+ 	    }
+ 	   });
+
+    /**
+ 	    * @tc.name   fileio_test_ftruncate_callback_error_003
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_CALLBACK_ERROR_003
+ 	    * @tc.desc   Test ftruncate() interface with null fd. Callback.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_callback_error_003', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileio_test_ftruncate_callback_error_003');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	    let fd = fileio.openSync(fpath, 0o2);
+      try {
+ 	     fileio.ftruncate(fd, null, function (err) {
+ 	       if (err) {
+ 	         console.log('fileio_test_ftruncate_callback_error_003: ' + err.message + ', code: ' + err.code);
+ 	         expect(err.message == 'Invalid len').assertTrue();
+ 	         done();
+ 	       }
+ 	     });
+       console.log('fileio_test_ftruncate_callback_error_003 res');
+       done();
+      } catch (err) {
+        console.log('fileio_test_ftruncate_callback_error_003 err: ' + err.message + ', code: ' + err.code);
+        fileio.closeSync(fd);
+ 	      fileio.unlinkSync(fpath);
+        expect(err.message == 'Invalid len').assertTrue();
+        done();
+ 	    }
+ 	   });
+ 	 
+ 	   /**
+ 	    * @tc.name   fileio_test_ftruncate_callback_error_004
+ 	    * @tc.number SUB_DF_FILEIO_FTRUNCATE_CALLBACK_ERROR_004
+ 	    * @tc.desc   Test ftruncate() interface with undefined fd. Callback.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL2
+ 	    */
+ 	   it('fileio_test_ftruncate_callback_error_004', Level.LEVEL2, async function (done) {
+      let fpath = await nextFileName('fileio_test_ftruncate_callback_error_004');
+ 	    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+ 	    let fd = fileio.openSync(fpath, 0o2);
+      try {
+ 	     fileio.ftruncate(fd, undefined, function (err) {
+ 	       if (err) {
+ 	         console.log('fileio_test_ftruncate_callback_error_004: ' + err.message + ', code: ' + err.code);
+ 	         expect(err.message == 'Invalid len').assertTrue();
+ 	         done();
+ 	       }
+ 	     });
+       console.log('fileio_test_ftruncate_callback_error_004 res');
+       done();
+      } catch (err) {
+        console.log('fileio_test_ftruncate_callback_error_004 err: ' + err.message + ', code: ' + err.code);
+        expect(err.message == 'Invalid len').assertTrue();
+        fileio.closeSync(fd);
+ 	      fileio.unlinkSync(fpath);
+        done();
+ 	    }
+ 	   });
 });
 }

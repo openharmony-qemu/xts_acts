@@ -543,10 +543,10 @@ const TAG = LOG_TAG + 'Picture.PackingPictureSupp';
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packData_Promise_013', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packData_Promise_013';
-      pictureCreatImageSource(done,testName ,'test_exif_v4.heic',  (imageSource) => {
+      pictureCreatImageSource(done,testName ,'test.jpeg',  (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
-            format: "image/heic",
+            format: "image/jpeg",
             desiredDynamicRange: image.PackingDynamicRange.AUTO,
             quality: 0
           };
@@ -582,10 +582,10 @@ const TAG = LOG_TAG + 'Picture.PackingPictureSupp';
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packData_Promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packData_Promise_014';
-      pictureCreatImageSource(done,testName ,'test_exif_v4.heic', async (imageSource) => {
+      pictureCreatImageSource(done,testName ,'test.jpeg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
-            format: "image/heic",
+            format: "image/jpeg",
             desiredDynamicRange: image.PackingDynamicRange.SDR,
             quality: 0
           };
@@ -620,10 +620,10 @@ const TAG = LOG_TAG + 'Picture.PackingPictureSupp';
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packData_Promise_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packData_Promise_015';
-      pictureCreatImageSource(done,testName ,'test_exif_v4.heic', async (imageSource) => {
+      pictureCreatImageSource(done,testName ,'test.jpeg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
-            format: "image/heic",
+            format: "image/jpeg",
             desiredDynamicRange: image.PackingDynamicRange.SDR,
             quality: 0,
             needsPackProperties:false
@@ -659,10 +659,10 @@ const TAG = LOG_TAG + 'Picture.PackingPictureSupp';
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packData_Promise_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packData_Promise_016';
-      pictureCreatImageSource(done,testName ,'test_exif_v4.heic', async (imageSource) => {
+      pictureCreatImageSource(done,testName ,'test.jpeg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
-            format: "image/heic",
+            format: "image/jpeg",
             desiredDynamicRange: image.PackingDynamicRange.SDR,
             quality: 0,
             needsPackProperties:true

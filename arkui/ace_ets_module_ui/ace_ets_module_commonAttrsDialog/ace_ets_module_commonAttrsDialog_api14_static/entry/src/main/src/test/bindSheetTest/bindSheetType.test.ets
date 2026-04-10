@@ -41,7 +41,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function bindSheetType() {
   describe('bindSheetType', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("bindSheetType beforeAll start");
        await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api14.static", "EntryAbility")
     });

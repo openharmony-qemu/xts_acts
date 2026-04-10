@@ -20,19 +20,6 @@ import { BusinessError } from '@ohos.base';
 function sleep(delay : number) : Promise<void> {
     return new Promise(resovle => setTimeout(resovle, delay))
 }
-async function openPhone() {
-    try{
-        let drivers = Driver.create();
-        console.info('[bluetooth_js] bt driver create:'+ drivers);
-        await drivers.delayMs(1000);
-        await drivers.wakeUpDisplay();
-        await drivers.delayMs(5000);
-        await drivers.swipe(1500, 1000, 1500, 100);
-        await drivers.delayMs(10000);
-    } catch (error) {
-        console.info('[bluetooth_js] driver error info:'+ error);
-    }
-}
 
 let PERMISSION_TEXT:string = "允许";
 let OPEN_BT_TEXT:string = "开启";
@@ -74,13 +61,12 @@ function onReceiveEvent(data : bluetooth.BluetoothState) {
 export default function btAccessTest() {
     describe('btAccessTest', () => {
 
-        beforeAll(async (done : Function) =>  {
+        beforeAll(async (done : Function) => {
             console.info('beforeAll called')
             await clickRequestPermission(PERMISSION_TEXT);
-            await openPhone();
             done();
         })
-        beforeEach(async (done : Function) =>  {
+        beforeEach(async (done : Function) => {
             console.info('beforeEach called')
             let state = bluetooth.getState();
             console.info('[bluetooth_js] bluetooth state ='+ JSON.stringify(state));
@@ -104,6 +90,7 @@ export default function btAccessTest() {
             await clickRequestPermission(OPEN_BT_TEXT);
             await sleep(3000);
             console.info('[bluetooth_js] bluetooth enable state ='+ JSON.stringify(bluetooth.getState()));
+            done();
         })
 
         /**
@@ -406,6 +393,46 @@ export default function btAccessTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_ADD_0100
+         * @tc.desc   Test isValidRandomDeviceId api16
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let isValidRandom = bluetooth.isValidRandomDeviceId(undefined);
+                console.info("[bluetooth_js]isValidRandomDeviceId result:" + JSON.stringify(isValidRandom));
+                expect().assertFail();
+            } catch (error) {
+                console.info("isValidRandomDeviceId errCode:" + error.code + ",errMessage:" + error.message);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_ADD_0200
+         * @tc.desc   Test isValidRandomDeviceId api16
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let isValidRandom = bluetooth.isValidRandomDeviceId('');
+                console.info("[bluetooth_js]isValidRandomDeviceId result:" + JSON.stringify(isValidRandom));
+                expect().assertFail();
+            } catch (error) {
+                console.info("isValidRandomDeviceId errCode:" + error.code + ",errMessage:" + error.message);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_0100
          * @tc.desc   Test addPersistentDeviceId api16
@@ -416,6 +443,84 @@ export default function btAccessTest() {
         it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await bluetooth.addPersistentDeviceId('00:00:00:00:00:00').then(() => {
+                    console.info('[bluetooth_js] addPersistentDeviceId success');
+                });
+                expect().assertFail();
+            } catch (error) {
+                console.info("addPersistentDeviceId errCode:" + error.code + ",errMessage:" + error.message);
+                if (Number(error.code) == 801) {
+                    console.info("addPersistentDeviceId is not support");
+                    expect(true).assertTrue();
+                }else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_ADD_0100
+         * @tc.desc   Test addPersistentDeviceId api16
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await bluetooth.addPersistentDeviceId('').then(() => {
+                    console.info('[bluetooth_js] addPersistentDeviceId success');
+                });
+                expect().assertFail();
+            } catch (error) {
+                console.info("addPersistentDeviceId errCode:" + error.code + ",errMessage:" + error.message);
+                if (Number(error.code) == 801) {
+                    console.info("addPersistentDeviceId is not support");
+                    expect(true).assertTrue();
+                }else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_ADD_0200
+         * @tc.desc   Test addPersistentDeviceId api16
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await bluetooth.addPersistentDeviceId(null).then(() => {
+                    console.info('[bluetooth_js] addPersistentDeviceId success');
+                });
+                expect().assertFail();
+            } catch (error) {
+                console.info("addPersistentDeviceId errCode:" + error.code + ",errMessage:" + error.message);
+                if (Number(error.code) == 801) {
+                    console.info("addPersistentDeviceId is not support");
+                    expect(true).assertTrue();
+                }else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_ADD_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_ADD_0300
+         * @tc.desc   Test addPersistentDeviceId api16
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await bluetooth.addPersistentDeviceId(undefined).then(() => {
                     console.info('[bluetooth_js] addPersistentDeviceId success');
                 });
                 expect().assertFail();
@@ -458,6 +563,84 @@ export default function btAccessTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_ADD_0100
+         * @tc.desc   Test deletePersistentDeviceId api16
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await bluetooth.deletePersistentDeviceId('').then(() => {
+                    console.info('[bluetooth_js] deletePersistentDeviceId success');
+                });
+                expect().assertFail();
+            } catch (error) {
+                console.info("deletePersistentDeviceId errCode:" + error.code + ",errMessage:" + error.message);
+                if (Number(error.code) == 801) {
+                    console.info("deletePersistentDeviceId is not support");
+                    expect(true).assertTrue();
+                }else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_ADD_0200
+         * @tc.desc   Test deletePersistentDeviceId api16
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await bluetooth.deletePersistentDeviceId(null).then(() => {
+                    console.info('[bluetooth_js] deletePersistentDeviceId success');
+                });
+                expect().assertFail();
+            } catch (error) {
+                console.info("deletePersistentDeviceId errCode:" + error.code + ",errMessage:" + error.message);
+                if (Number(error.code) == 801) {
+                    console.info("deletePersistentDeviceId is not support");
+                    expect(true).assertTrue();
+                }else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_ADD_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_ADD_0300
+         * @tc.desc   Test deletePersistentDeviceId api16
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                await bluetooth.deletePersistentDeviceId(undefined).then(() => {
+                    console.info('[bluetooth_js] deletePersistentDeviceId success');
+                });
+                expect().assertFail();
+            } catch (error) {
+                console.info("deletePersistentDeviceId errCode:" + error.code + ",errMessage:" + error.message);
+                if (Number(error.code) == 801) {
+                    console.info("deletePersistentDeviceId is not support");
+                    expect(true).assertTrue();
+                }else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0700
          * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0700
          * @tc.desc   Test on 'stateChange' 401
@@ -477,6 +660,44 @@ export default function btAccessTest() {
         })
 
         /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_ADD_0100
+         * @tc.desc   Test on 'stateChange' 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                bluetooth.on(null, onReceiveEvent);
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bluetooth_js]enable StateChange error, code is ${error.code},message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_ADD_0200
+         * @tc.desc   Test on 'stateChange' 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                bluetooth.on(undefined, onReceiveEvent);
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bluetooth_js]enable StateChange error, code is ${error.code},message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0800
          * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0800
          * @tc.desc   Test off 'stateChange' 401
@@ -487,6 +708,44 @@ export default function btAccessTest() {
         it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 bluetooth.off('stateChange', null);
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bluetooth_js]enable StateChange error, code is ${error.code},message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_ADD_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_ADD_0300
+         * @tc.desc   Test off 'stateChange' 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                bluetooth.off(null, onReceiveEvent);
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bluetooth_js]enable StateChange error, code is ${error.code},message is ${error.message}`);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_ADD_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_ADD_0400
+         * @tc.desc   Test off 'stateChange' 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                bluetooth.off(undefined, onReceiveEvent);
                 expect().assertFail();
             } catch (error) {
                 console.error(`[bluetooth_js]enable StateChange error, code is ${error.code},message is ${error.message}`);
@@ -664,6 +923,57 @@ export default function btAccessTest() {
             done();
         })
 
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_ADD_0100
+         * @tc.desc   20251113API22用例覆盖convertUuid 4-4.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_ADD_0100", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
+            try {
+                let uuid = undefined;
+                let converuuid = bluetooth.convertUuid(uuid);
+                console.info("[bluetooth_js]converuuid result:" + JSON.stringify(converuuid));
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]converUuid ADD0100 is failed, code is ${error.code}, message is ${error.message}`);
+                if (Number(error.code) == 801){
+                    console.info("[bluetooth_js]converuuid is not support");
+                    expect(Number(error.code)).assertEqual(801);
+                }else{
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_ADD_0200
+         * @tc.desc   20251113API22用例覆盖convertUuid 4-4.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_ADD_0200", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
+            try {
+                let uuid = '';
+                let converuuid = bluetooth.convertUuid(uuid);
+                console.info("[bluetooth_js]converuuid result:" + JSON.stringify(converuuid));
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]converUuid ADD0200 is failed, code is ${error.code}, message is ${error.message}`);
+                if (Number(error.code) == 801){
+                    console.info("[bluetooth_js]converuuid is not support");
+                    expect(Number(error.code)).assertEqual(801);
+                }else{
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
 
     })
 }

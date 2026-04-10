@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,7 +29,7 @@ import {
   ClickEvent
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-initModule ('./pageOne')
+initModule('./pushNamedRoute26')
 
 @Entry({ routeName: 'pushNamedRoute7' })
 @Component
@@ -39,15 +39,16 @@ struct pushNamedRoute7 {
   build() {
     Column() {
       Text('pushNamedRoute7').id('pushNamedRoute7_text1')
-      Text(this.text1).id('pushNamedRoute7_text2')
       Button('pushNamedRoute').onClick((event: ClickEvent) => {
-        initModule ('./pageOne')
+        initModule('./pushNamedRoute26')
         for(let i = 0; i < 32 ; i++){
           this.getUIContext().getRouter().pushNamedRoute({
-            name: 'pushNamedRoute7'
+            name: 'pushNamedRoute26'
           }, (err) => {
             if (err) {
               this.text1 = '' +  (err as BusinessError).code
+              console.log('test pushNamedRoute7 ', this.text1)
+              AppStorage.setOrCreate<string>('errcode1', this.text1)
               return;
             }
           })

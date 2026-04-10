@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Row, Text, Button, ClickEvent, Web, $rawfile, Visibility, CacheMode, OnBeforeUnloadEvent } from "@ohos.arkui.component";
+import { Entry, Component, Column, Row, Text, Button, ClickEvent, Web, $rawfile, Visibility, CacheMode, OnBeforeUnloadEvent, NestedScrollMode, OnDataResubmittedEvent } from "@ohos.arkui.component";
 import { State } from "@ohos.arkui.stateManagement";
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
@@ -69,7 +69,7 @@ struct WebOnBeforeUnload {
                 this.controller.runJavaScript("myRefresh()", (result) => {
                   console.log(`The myRefresh() return value is: ${result}`);
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -82,7 +82,7 @@ struct WebOnBeforeUnload {
                 this.controller.runJavaScript("myNewPage()", (result) => {
                   console.log(`The myNewPage() return value is: ${result}`);
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -94,11 +94,18 @@ struct WebOnBeforeUnload {
       Web({ src: 'resource://rawfile/onBeforeUnloadTest.html', controller: this.controller })
         .key('onBeforeUnloadWebView')
         .javaScriptAccess(this.javaScriptAccess)
+        .webSansSerifFont('sans-serif')
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
         .domStorageAccess(this.domStorageAccess)
         .onlineImageAccess(this.onlineImageAccess)
         .databaseAccess(this.databaseAccess)
+        .nestedScroll({
+          scrollUp: NestedScrollMode.SELF_FIRST,
+          scrollDown: NestedScrollMode.PARENT_FIRST,
+          scrollLeft: NestedScrollMode.SELF_FIRST,
+          scrollRight: NestedScrollMode.SELF_FIRST,
+        })
         .onBeforeUnload((event: OnBeforeUnloadEvent): boolean => {
           if (event) {
             Utils.emitEvent(event.url, this.firstId)
@@ -107,10 +114,16 @@ struct WebOnBeforeUnload {
             }
             console.log("event.url:" + event.url)
             console.log("event.message:" + event.message)
+            console.log("event.result:" + event.result)
+            console.log("event.isReload:" + event.isReload)
             console.log("event.result.handleCancel: " + event?.result.handleCancel());
             console.log("event.result.handleConfirm: " + event?.result.handleConfirm());
           }
           return true
+        })
+        .onDataResubmitted((event:OnDataResubmittedEvent) => {
+          console.log('onDataResubmitted');
+          event.handler.resend();
         })
     }
   }

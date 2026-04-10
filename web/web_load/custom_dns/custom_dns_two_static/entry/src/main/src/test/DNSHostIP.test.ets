@@ -54,14 +54,74 @@ export default function DNSHostIP() {
      * @tc.desc   test DNSHostIP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SetHostIPStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SetHostIPStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("setHostIP0100", 10)
         await Utils.msSleep(5000);
         Utils.registerEvent("setHostIP0100", true, 8770, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('DNSHostIP', 10, '');
+        await Utils.msSleep(8000);
+        done();
+      })
+
+    /**
+     * @tc.name   SetHostIPStatic002
+     * @tc.number Acts_setHostIP_0200
+     * @tc.desc   test DNSHostIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SetHostIPStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("setHostIP0200", 10)
+        await Utils.msSleep(5000);
+        Utils.registerEvent("setHostIP0200", true, 87701, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('DNSHostIP', 10, '');
+        await Utils.msSleep(8000);
+        done();
+      })
+
+    /**
+     * @tc.name   SetHostIPStatic003
+     * @tc.number Acts_setHostIP_0300
+     * @tc.desc   test DNSHostIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SetHostIPStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("setHostIP0300", 10)
+        await Utils.msSleep(5000);
+        Utils.registerEvent("setHostIP0300", true, 87702, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('DNSHostIP', 10, '');
+        await Utils.msSleep(8000);
+        done();
+      })
+
+    /**
+     * @tc.name   SetHostIPStatic004
+     * @tc.number Acts_setHostIP_0400
+     * @tc.desc   test DNSHostIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SetHostIPStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("setHostIP0400", 10)
+        await Utils.msSleep(5000);
+        Utils.registerEvent("setHostIP0400", true, 87703, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('DNSHostIP', 10, '');
         await Utils.msSleep(8000);

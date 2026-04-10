@@ -47,7 +47,7 @@ interface text1 {
 export default function NativeJsonTest() {
 
   describe("NativeJsonTest", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     let init: (size: number) => string = (size: number): string => {

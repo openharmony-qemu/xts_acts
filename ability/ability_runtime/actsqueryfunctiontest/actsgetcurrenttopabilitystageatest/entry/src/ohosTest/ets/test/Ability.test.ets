@@ -53,24 +53,24 @@ export default function abilityTest() {
             let AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
             commonEvent.createSubscriber(subscriberInfo_MainAbility2).then(async (data) => {
-                console.debug("ACTS_GetCurrentTopAbility_0100====>Create Subscriber====>");
+                console.log("ACTS_GetCurrentTopAbility_0100====>Create Subscriber====>");
                 Subscriber = data;
                 commonEvent.subscribe(Subscriber, async (err, data) => {
-                console.debug("ACTS_GetCurrentTopAbility_0100====>Subscribe CallBack data:====>"
+                console.log("ACTS_GetCurrentTopAbility_0100====>Subscribe CallBack data:====>"
                 + JSON.stringify(data));
                 expect(data.event == 'GetCurrentTopAbilityB').assertTrue();
                 if (data.event == 'GetCurrentTopAbilityB') {
                     commonEvent.unsubscribe(Subscriber, async () => {
-                        console.debug("ACTS_GetCurrentTopAbility_0100====>UnSubscribe CallBack====>");
+                        console.log("ACTS_GetCurrentTopAbility_0100====>UnSubscribe CallBack====>");
                     });
 
                     AbilityDelegator.getCurrentTopAbility((err, data) => {
                         console.log("ACTS_GetCurrentTopAbility_0100 and");
-                        console.debug("====>thisTopAbility_0100====>" + JSON.stringify(data));
-                        console.debug("====>thisTopAbility_0100====>want====>" + JSON.stringify(data.lastRequestWant));
-                        console.debug("====>thisTopAbility_0100====>abilityName====>"
+                        console.log("====>thisTopAbility_0100====>" + JSON.stringify(data));
+                        console.log("====>thisTopAbility_0100====>want====>" + JSON.stringify(data.lastRequestWant));
+                        console.log("====>thisTopAbility_0100====>abilityName====>"
                         + JSON.stringify(data.lastRequestWant.abilityName));
-                        console.debug("====>start startAbility====>");
+                        console.log("====>start startAbility====>");
                         expect(data.lastRequestWant.abilityName == "Ability2").assertTrue();
                         globalThis.ability2Context.terminateSelf();
                         globalThis.ability3Context.terminateSelf();
@@ -85,7 +85,7 @@ export default function abilityTest() {
                         bundleName: 'com.example.actsgetcurrenttopabilitystageatest',
                         abilityName: 'Ability1'
                     }, (err:BusinessError) => {
-                    console.debug("====>ACTS_GetCurrentTopAbility_0100 err:" + JSON.stringify(err))
+                    console.log("====>ACTS_GetCurrentTopAbility_0100 err:" + JSON.stringify(err))
                 })
                 console.log("ACTS_GetCurrentTopAbility_0100 end");
             })

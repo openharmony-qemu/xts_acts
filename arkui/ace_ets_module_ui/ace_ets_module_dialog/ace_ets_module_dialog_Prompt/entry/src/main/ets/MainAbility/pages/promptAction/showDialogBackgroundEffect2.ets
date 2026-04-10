@@ -18,9 +18,11 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Component
 struct showDialog4 {
   build() {
-    Column({ space: 10 }){
-      Button('ShowDialog_Callback_Effect001')
+    Row(){
+      Button('Effect001')
         .id('ShowDialog_Callback_Effect001')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           try {
             promptAction.showDialog({
@@ -37,6 +39,7 @@ struct showDialog4 {
                 }
               },
               title: 'showDialog Title Info',
+              offset: { dx: 0, dy: 10 },
               message: 'Message Info',
               buttons: [
                 {
@@ -61,8 +64,10 @@ struct showDialog4 {
             console.error(`showDialog args error code is ${code}, message is ${message}`);
           };
         })
-      Button('ShowDialog_Callback_Effect002')
+      Button('Effect002')
         .id('ShowDialog_Callback_Effect002')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           try {
             promptAction.showDialog({
@@ -77,6 +82,7 @@ struct showDialog4 {
                 blurOptions: undefined,
               },
               title: 'showDialog Title Info',
+              offset: { dx: 0, dy: 20 },
               message: 'Message Info',
               buttons: [
                 {
@@ -101,8 +107,10 @@ struct showDialog4 {
             console.error(`showDialog args error code is ${code}, message is ${message}`);
           };
         })
-      Button('ShowDialog_Callback_Effect003')
+      Button('Effect003')
         .id('ShowDialog_Callback_Effect003')
+        .width(60)
+        .height('5%')
         .onClick(() => {
           try {
             promptAction.showDialog({
@@ -117,6 +125,7 @@ struct showDialog4 {
                 blurOptions: null,
               },
               title: 'showDialog Title Info',
+              offset: { dx: 0, dy: 20 },
               message: 'Message Info',
               buttons: [
                 {
@@ -146,5 +155,8 @@ struct showDialog4 {
     .width('100%')
     .backgroundImage($r('app.media.icon'))
     .backgroundImageSize({ width: '100%', height: '100%' })
+    .margin({top:30})
+    .alignItems(VerticalAlign.Top)
+    .justifyContent(FlexAlign.Start)
   }
 }

@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function repeatNoTemplateIdJsunit() {
   describe('repeatNoTemplateIdJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("repeatNoTemplateIdJsunit beforeEach start");
 
 

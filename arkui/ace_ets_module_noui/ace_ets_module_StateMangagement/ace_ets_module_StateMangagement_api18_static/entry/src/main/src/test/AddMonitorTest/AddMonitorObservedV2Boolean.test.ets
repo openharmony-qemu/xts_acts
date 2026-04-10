@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function AddMonitorObservedV2Boolean() {
   describe('AddMonitorObservedV2Boolean', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AddMonitorObservedV2Boolean beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility")

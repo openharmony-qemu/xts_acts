@@ -31,7 +31,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function searchJsunit() {
   describe('searchTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 
@@ -199,7 +199,7 @@ it('searchTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("searchTest_static_009 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').tryGetElement('selectionMenuHidden')).assertEqual(undefined);
+      expect(objNew.getElement('$attrs').getString('selectionMenuHidden')).assertEqual('true');
       console.info('searchTest_static_009 END');
       done();
     });

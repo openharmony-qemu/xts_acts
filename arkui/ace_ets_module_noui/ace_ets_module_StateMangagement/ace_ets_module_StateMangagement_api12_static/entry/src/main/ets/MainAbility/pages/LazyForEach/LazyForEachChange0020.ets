@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,7 +52,7 @@ interface Dta {
   index: number
   key: string
 }
-class BasicDataSourceChange0020 implements IDataSource<string> {
+export class BasicDataSourceChange0020 implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];
 
@@ -86,7 +86,7 @@ class BasicDataSourceChange0020 implements IDataSource<string> {
   }
 }
 
-class MyDataSourceChange0020 extends BasicDataSourceChange0020 {
+export class MyDataSourceChange0020 extends BasicDataSourceChange0020 {
   public dataArray: string[] = [];
 
   public totalCount(): int {
@@ -123,7 +123,7 @@ struct LazyForEachChange0020 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LazyForEachChange0020', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

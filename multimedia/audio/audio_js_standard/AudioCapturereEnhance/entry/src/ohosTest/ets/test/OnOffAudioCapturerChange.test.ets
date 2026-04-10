@@ -67,6 +67,7 @@ export default function onOffAudioCapturerChangeTest() {
       let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000);
       await sleep(2000);
       await power?.click();
+      await sleep(1000);
     }
 
     let getPermission = async () => {
@@ -227,6 +228,7 @@ export default function onOffAudioCapturerChangeTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      sleep(1000);
       let AudioStreamInfo: AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,

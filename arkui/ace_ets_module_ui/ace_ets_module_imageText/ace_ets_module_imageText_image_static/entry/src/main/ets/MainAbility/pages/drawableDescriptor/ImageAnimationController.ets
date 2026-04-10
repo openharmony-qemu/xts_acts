@@ -98,7 +98,7 @@ struct ImageAnimationController {
               this.animated_1 = animated1;
 
               hilog.info(0x0000, 'testTag', 'AnimatedDrawable end');
-            } catch (e: Error) {
+            } catch (e) {
               console.log('更新图片 catch error：-----------' + e.message);
             }
           }
@@ -113,7 +113,7 @@ struct ImageAnimationController {
               let result = (this.animated_ as AnimatedDrawableDescriptor).getAnimationController('image1');
               this.animationController_ = result;
             }
-          } catch (e: Error) {
+          } catch (e) {
             console.log('获取Result catch error：-----------' + e.message);
           }
         })
@@ -128,7 +128,7 @@ struct ImageAnimationController {
                 console.log('if (this.animationController_)');
                 (this.animationController_ as AnimationController).start();
               }
-            } catch (e: Error) {
+            } catch (e) {
               console.log('start catch error：-----------' + e.message);
             }
           })
@@ -141,7 +141,7 @@ struct ImageAnimationController {
               if (this.animationController_) {
                 (this.animationController_ as AnimationController).stop();
               }
-            } catch (e: Error) {
+            } catch (e) {
               console.log('stop catch error：-----------' + e.message);
             }
           })
@@ -154,7 +154,7 @@ struct ImageAnimationController {
               if (this.animationController_) {
                 (this.animationController_ as AnimationController).pause();
               }
-            } catch (e: Error) {
+            } catch (e) {
               console.log('pause catch error：-----------' + e.message);
             }
           })
@@ -167,7 +167,7 @@ struct ImageAnimationController {
               if (this.animationController_) {
                 (this.animationController_ as AnimationController).resume();
               }
-            } catch (e: Error) {
+            } catch (e) {
               console.log('resume catch error：-----------' + e.message);
             }
           })
@@ -181,7 +181,7 @@ struct ImageAnimationController {
                 console.info(`animation status = ${this.statusToString(status)}`)
                 this.getStatus = `status = ${this.statusToString(status)}`
               }
-            } catch (e: Error) {
+            } catch (e) {
               console.log('getStatus catch error：-----------' + e.message);
             }
           })

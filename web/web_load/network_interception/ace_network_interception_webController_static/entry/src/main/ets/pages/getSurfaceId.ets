@@ -90,17 +90,58 @@ struct WebOnDataResubmitted {
                 this.controller.setUrlTrustList(this.urltrustList);
                 this.controller.loadUrl('www.example.com');
                 setTimeout(() => {
-                 if( this.test = true ) {
-                   this.test = false;
-                 }
+                  if( this.test = true ) {
+                    this.test = false;
+                  }
                   this.controller.loadUrl('www.baidu.com');
                 }, 4000)
                 setTimeout(() => {
-                Utils.emitEvent(this.test, 28931)
+                  Utils.emitEvent(this.test, 28931)
                 }, 7000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              }
+              break;
+            }
+
+            case 'emitSetUrlTrustList0200': {
+              try {
+                this.controller.setUrlTrustList("");
+                this.controller.loadUrl('www.example.com');
+                setTimeout(() => {
+                  if( this.test = true ) {
+                    this.test = false;
+                  }
+                  this.controller.loadUrl('www.baidu.com');
+                }, 4000)
+                setTimeout(() => {
+                  Utils.emitEvent(this.test, 289311)
+                }, 7000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              }
+              break;
+            }
+
+            case 'emitSetUrlTrustList0300': {
+              try {
+                this.controllerOne.setUrlTrustList(this.urltrustList);
+                this.controller.loadUrl('www.example.com');
+                setTimeout(() => {
+                  if( this.test = true ) {
+                    this.test = false;
+                  }
+                  this.controller.loadUrl('www.baidu.com');
+                }, 4000)
+                setTimeout(() => {
+                  Utils.emitEvent(this.test, 289312)
+                }, 7000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 289312);
               }
               break;
             }

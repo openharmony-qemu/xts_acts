@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 import ErrormangerTest from './errormanger.test';
+import ErrormangerLeakUpTest from './ErrorMangerLeakUp.test';
+
 export default function testsuite() {
   ErrormangerTest();
+  ErrormangerLeakUpTest();
 }

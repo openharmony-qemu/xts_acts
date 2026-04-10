@@ -42,7 +42,7 @@ import { startAbility, UtilsTest } from '../Util.test.ets';
 export default function LazyVGridLayout() {
 
   describe('LazyVGridLayout', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LazyVGridLayout beforeEach start");
 
       

@@ -490,6 +490,7 @@ int NDKCamera::AdjustHeifIdx(int idx)
 
 Camera_ErrorCode NDKCamera::CreatePreviewOutput(void)
 {
+    LOG("ndkXTS CreatePreviewOutput begin.");
     profile_ = cameraOutputCapability_->previewProfiles[0];
     for (decltype(cameraOutputCapability_->previewProfilesSize) i = 0; i < cameraOutputCapability_->previewProfilesSize;
          i++) {
@@ -525,6 +526,51 @@ Camera_ErrorCode NDKCamera::CreatePreviewOutput(void)
     }
     ret_ = OH_CameraManager_CreatePreviewOutput(cameraManager_, profile_, previewSurfaceId_, &previewOutput_);
     if (previewSurfaceId_ == nullptr || previewOutput_ == nullptr || ret_ != CAMERA_OK) {
+        LOG("ndkXTS CreatePreviewOutput failed.");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    PreviewOutputRegisterCallback();
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::CreateDeferredPreviewOutput(void)
+{
+    LOG("ndkXTS CreateDeferredPreviewOutput begin.");
+    profile_ = cameraOutputCapability_->previewProfiles[0];
+    for (decltype(cameraOutputCapability_->previewProfilesSize) i = 0; i < cameraOutputCapability_->previewProfilesSize;
+         i++) {
+        if (cameraOutputCapability_->previewProfiles[i]->size.width == DEFAULT_PREVIEW_PROFILE.size.width &&
+            cameraOutputCapability_->previewProfiles[i]->size.height == DEFAULT_PREVIEW_PROFILE.size.height) {
+            profile_ = cameraOutputCapability_->previewProfiles[i];
+            break;
+        }
+    }
+    if (sceneMode_ == SECURE_PHOTO) {
+        for (decltype(cameraOutputCapability_ -> previewProfilesSize) i = 0;
+             i< cameraOutputCapability_ -> previewProfilesSize; i++) {
+            if (cameraOutputCapability_->previewProfiles[i]->size.width == SecureSize.width &&
+                cameraOutputCapability_->previewProfiles[i]->size.height == SecureSize.height) {
+                profile_ = cameraOutputCapability_->previewProfiles[i];
+                break;
+            }
+        }
+    } else if (isCreatePhotoOutputWithoutSurface_) {
+        for (decltype(cameraOutputCapability_ -> previewProfilesSize) i = 0;
+             i< cameraOutputCapability_ -> previewProfilesSize; i++) {
+            if (cameraOutputCapability_->previewProfiles[i]->size.width == PreviewOutputSample.size.width &&
+                cameraOutputCapability_->previewProfiles[i]->size.height == PreviewOutputSample.size.height &&
+                cameraOutputCapability_->previewProfiles[i]->format == PreviewOutputSample.format) {
+                profile_ = cameraOutputCapability_->previewProfiles[i];
+                break;
+            }
+        }
+    }
+    if (profile_ == nullptr) {
+        LOG("ndkXTS Get previewProfiles failed.");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    ret_ = OH_CameraManager_CreateDeferredPreviewOutput(cameraManager_, profile_, &previewOutput_);
+    if (previewOutput_ == nullptr || ret_ != CAMERA_OK) {
         LOG("ndkXTS CreatePreviewOutput failed.");
         return CAMERA_INVALID_ARGUMENT;
     }
@@ -585,13 +631,19 @@ Camera_ErrorCode NDKCamera::CreateHeifPhotoOutput(char* photoSurfaceId, int idx)
 Camera_ErrorCode NDKCamera::CreateVideoOutput(char* videoId)
 {
     LOG("ndkXTS CreateVideoOutput start.");
+    float errorRange = 0.1;
     videoProfile_ = cameraOutputCapability_->videoProfiles[0];
     for (decltype(cameraOutputCapability_->videoProfilesSize) i = 0; i < cameraOutputCapability_->videoProfilesSize;
          i++) {
         if (cameraOutputCapability_->videoProfiles[i]->size.width == DEFAULT_VIDEO_PROFILE.size.width &&
             cameraOutputCapability_->videoProfiles[i]->size.height == DEFAULT_VIDEO_PROFILE.size.height) {
-            videoProfile_ = cameraOutputCapability_->videoProfiles[i];
-            break;
+            if ((float)(cameraOutputCapability_->videoProfiles[i]->size.width /
+                cameraOutputCapability_->videoProfiles[i]->size.height) -
+                (float)(cameraOutputCapability_->previewProfiles[0]->size.width /
+                cameraOutputCapability_->previewProfiles[0]->size.height) < errorRange) {
+                videoProfile_ = cameraOutputCapability_->videoProfiles[i];
+                break;
+            }
         }
     }
     LOG("ndkXTS CreateVideoOutput videoProfiles start.");
@@ -622,6 +674,9 @@ Camera_ErrorCode NDKCamera::AddVideoOutput(void)
 
 Camera_ErrorCode NDKCamera::CreateMetadataOutput(void)
 {
+    if (cameraOutputCapability_->supportedMetadataObjectTypes == nullptr) {
+        return CAMERA_SERVICE_FATAL_ERROR;
+    }
     metaDataObjectType_ = cameraOutputCapability_->supportedMetadataObjectTypes[0];
     
     LOG("NDKCamera::CreateMetadataOutput supportedMetadataObjectTypes end.");
@@ -635,6 +690,14 @@ Camera_ErrorCode NDKCamera::CreateMetadataOutput(void)
         return CAMERA_INVALID_ARGUMENT;
     }
     return ret_;
+}
+
+bool NDKCamera::IsMetadataObjectTypeValid()
+{
+    if (cameraOutputCapability_->supportedMetadataObjectTypes == nullptr) {
+        return false;
+    }
+    return true;
 }
 
 Camera_ErrorCode NDKCamera::IsCameraMuted(void)
@@ -2627,6 +2690,21 @@ Camera_ErrorCode NDKCamera::SetPhotoQualityPrioritization(int useCaseCode, int q
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::AddDeferredSurface(int useCaseCode, char* surfaceId)
+{
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PreviewOutput_AddDeferredSurface(previewOutput_, surfaceId);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PreviewOutput_AddDeferredSurface(nullptr, surfaceId);
+    } else {
+        ret_ = OH_PreviewOutput_AddDeferredSurface(previewOutput_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_PreviewOutput_EnableBandwidthCompression failed. %d", ret_);
+    }
+    return ret_;
+}
+
 Camera_ErrorCode NDKCamera::GetMainImage(int useCaseCode)
 {
     if (useCaseCode == PARAMETER_OK) {
@@ -2800,6 +2878,18 @@ Camera_ErrorCode NDKCamera::SetTorchMode(int useCaseCode)
         LOG("OH_CameraManager_SetTorchMode failed.");
     }
     return ret_;
+}
+
+bool NDKCamera::IsTorchLevelControlSupported()
+{
+    bool ret = false;
+    OH_CameraManager_IsTorchLevelControlSupported(cameraManager_, &ret);
+    return ret;
+}
+ 
+Camera_ErrorCode NDKCamera::SetTorchModeOnWithLevel(double level)
+{
+    return OH_CameraManager_SetTorchModeOnWithLevel(cameraManager_, level);
 }
 
 Camera_ErrorCode NDKCamera::GetExposureValue(int useCaseCode)

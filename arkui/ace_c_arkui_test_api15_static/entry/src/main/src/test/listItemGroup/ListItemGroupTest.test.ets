@@ -27,7 +27,7 @@ let libUtil: LibUtil = new LibUtil();
 export default function listItemGroupNodeAdapterTest() {
 
   describe('listItemGroupNodeAdapterTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api15.static", "EntryAbility")
     });
     beforeEach(async () => {

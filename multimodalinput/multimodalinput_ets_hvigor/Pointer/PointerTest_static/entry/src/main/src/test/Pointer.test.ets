@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -69,7 +69,7 @@ export default function MultimodalInputPointerTest() {
             }
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag,
             `${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect().assertFail();
@@ -96,7 +96,7 @@ export default function MultimodalInputPointerTest() {
             expect().assertFail();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           error = error as BusinessError;
           hilog.info(domain, tag,
             `${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -123,7 +123,7 @@ export default function MultimodalInputPointerTest() {
           console.info(`${caseName} Set pointer style success`);
           expect().assertFail();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           error = error as BusinessError;
           console.info(`${caseName} set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect(error.code).assertEqual(401);
@@ -190,8 +190,16 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.PointerStyle.LOADING == 42);
           ExpectTrue(pointer.PointerStyle.RUNNING == 43);
           ExpectTrue(pointer.PointerStyle.MIDDLE_BTN_EAST_WEST == 44);
+          expect(pointer.PointerStyle.RUNNING_LEFT).assertEqual(45);
+          expect(pointer.PointerStyle.RUNNING_RIGHT).assertEqual(46);
+          expect(pointer.PointerStyle.AECH_DEVELOPER_DEFINED_ICON).assertEqual(47);
+          expect(pointer.PointerStyle.SCREENRECORDER_CURSOR).assertEqual(48);
+          expect(pointer.PointerStyle.LASER_CURSOR).assertEqual(49);
+          expect(pointer.PointerStyle.LASER_CURSOR_DOT).assertEqual(50);
+          expect(pointer.PointerStyle.LASER_CURSOR_DOT_RED).assertEqual(51);
+          expect(pointer.PointerStyle.DEVELOPER_DEFINED_ICON).assertEqual(-100);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -215,7 +223,7 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.PrimaryButton.LEFT == 0);
           ExpectTrue(pointer.PrimaryButton.RIGHT == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -240,7 +248,7 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.RightClickType.TOUCHPAD_LEFT_BUTTON == 2);
           ExpectTrue(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP == 3);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -265,7 +273,7 @@ export default function MultimodalInputPointerTest() {
           let followSystemTest = cursorconfig.followSystem;
           ExpectTrue(followSystemTest == true);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();

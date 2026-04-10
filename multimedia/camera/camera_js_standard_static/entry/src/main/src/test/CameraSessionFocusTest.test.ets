@@ -28,14 +28,14 @@ import { BusinessError } from '@ohos.base';
 
 const TAG: string = "CameraSessionFocusTest: ";
 
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.PhotoSession;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> = [];
+let mCameraSession: cameraObj.PhotoSession | undefined;
 let mCameraNum: number;
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
-let mPhotoOutput: cameraObj.PhotoOutput;
-let mIsFocusModeSupportedArray: Array<boolean>;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
+let mPhotoOutput: cameraObj.PhotoOutput | undefined;
+let mIsFocusModeSupportedArray: Array<boolean> = [];
 let mPicWidthMax: number = (1.0) as number;
 let mPicHeightMax: number = (1.0) as number;
 let mPicWidthMean: number = (0.5) as number;
@@ -190,7 +190,7 @@ export default function cameraSessionFocusTest() {
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
 
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
 
     if (mCameraDevicesArray == undefined) {
       console.info(TAG + "getSupportedCameras FAILED");
@@ -213,7 +213,7 @@ export default function cameraSessionFocusTest() {
     console.info('Enter createCameraSessionInstance');
 
     try {
-      mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+      mCameraSession = mCameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
     } catch(err) {
       console.info('createCaptureSession FAILED');
     }
@@ -223,7 +223,7 @@ export default function cameraSessionFocusTest() {
       return false;
     }
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     console.info('Exit createCameraSessionInstance');
 
@@ -231,7 +231,7 @@ export default function cameraSessionFocusTest() {
   }
 
   let releaseCameraSessionInstance = async (): Promise<void> => {
-    await mCameraSession.release();
+    await mCameraSession!.release();
   }
 
   let createInput = async (idx: int): Promise<boolean> => {
@@ -242,14 +242,14 @@ export default function cameraSessionFocusTest() {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[idx.toInt()]);
 
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
     }
 
-    await mCameraInput.open();
+    await mCameraInput!.open();
 
     await Utils.msSleep(100);
 
@@ -264,7 +264,7 @@ export default function cameraSessionFocusTest() {
     console.info('Enter releaseInput');
 
     if (mCameraInput != undefined) {
-      await mCameraInput.close();
+      await mCameraInput!.close();
     }
 
     console.info('Exit releaseInput');
@@ -275,13 +275,13 @@ export default function cameraSessionFocusTest() {
   let createOutput = (idx: int) => {
     console.info('Enter createOutput');
 
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_PHOTO);
+    let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()], cameraObj.SceneMode.NORMAL_PHOTO);
 
     if (cameraOutputCap != undefined) {
       if (cameraOutputCap.previewProfiles != null) {
         console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
         for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
-          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+          mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
           if (mPreviewOutput != undefined) {
             break;
           }
@@ -298,7 +298,7 @@ export default function cameraSessionFocusTest() {
         console.info(TAG + "cameraOutputCap.photoProfiles.length: " + cameraOutputCap.photoProfiles.length);
 
         for (let i = 0; i < cameraOutputCap.photoProfiles.length; i++) {
-          mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
+          mPhotoOutput = mCameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
           if (mPhotoOutput != undefined) {
             break;
           }
@@ -343,11 +343,11 @@ export default function cameraSessionFocusTest() {
     console.info('Enter releaseOutput');
 
     if (mPreviewOutput != undefined) {
-      await mPreviewOutput.release();
+      await mPreviewOutput!.release();
     }
 
     if (mPreviewOutput != undefined) {
-      await mPhotoOutput.release();
+      await mPhotoOutput!.release();
     }
     /*
     if (!isEmpty(mVideoOutput)) {
@@ -370,17 +370,17 @@ export default function cameraSessionFocusTest() {
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to addInput");
-      mCameraSession.addInput(mCameraInput);
+      mCameraSession!.addInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to addOutput mPreviewOutput");
-      mCameraSession.addOutput(mPreviewOutput);
+      mCameraSession!.addOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to addOutput mPhotoOutput");
-      mCameraSession.addOutput(mPhotoOutput);
+      mCameraSession!.addOutput(mPhotoOutput!);
     }
     /*
     if (!isEmpty(mVideoOutput)) {
@@ -390,10 +390,10 @@ export default function cameraSessionFocusTest() {
     */
     await Utils.msSleep(1);
 
-    await mCameraSession.commitConfig();
+    await mCameraSession!.commitConfig();
 
     /*
-    await mCameraSession.start(async (err) => {
+    await mCameraSession!.start(async (err) => {
         console.info(TAG + "Entering mCameraSession start callback");
         if (!err) {
             console.info(TAG + "Entering mCameraSession start PASSED ");
@@ -412,7 +412,7 @@ export default function cameraSessionFocusTest() {
   let stopCameraSession = async (): Promise<boolean>  => {
     console.info(TAG + "Enter stopCameraSession");
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
     /*
     mCameraSession.stop(async (err) => {
         console.info(TAG + "Entering mCameraSession stop callback");
@@ -428,17 +428,17 @@ export default function cameraSessionFocusTest() {
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to removeInput input");
-      mCameraSession.removeInput(mCameraInput);
+      mCameraSession!.removeInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPreviewOutput");
-      mCameraSession.removeOutput(mPreviewOutput);
+      mCameraSession!.removeOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPhotoOutput");
-      mCameraSession.removeOutput(mPhotoOutput);
+      mCameraSession!.removeOutput(mPhotoOutput!);
     }
     /*
     if (!isEmpty(mVideoOutput)) {
@@ -456,7 +456,7 @@ export default function cameraSessionFocusTest() {
 
   describe('cameraSessionFocusTest', () => {
     console.info(TAG + '----------cameraSessionFocusTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -477,7 +477,7 @@ export default function cameraSessionFocusTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);
@@ -508,7 +508,7 @@ export default function cameraSessionFocusTest() {
 
           await startCameraSession(i);
 
-          let isFocusModeSupported = mCameraSession.isFocusModeSupported(cameraObj.FocusMode.FOCUS_MODE_MANUAL);
+          let isFocusModeSupported = mCameraSession!.isFocusModeSupported(cameraObj.FocusMode.FOCUS_MODE_MANUAL);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORT_PROMISE_STATIC_0100 finish");
           if (isFocusModeSupported != null || isFocusModeSupported != undefined) {
             console.info(TAG +
@@ -556,13 +556,13 @@ export default function cameraSessionFocusTest() {
           await startCameraSession(i);
 
           if (mIsFocusModeSupportedArray.length > mCameraNum) {
-            mCameraSession.setFocusMode(cameraObj.FocusMode.FOCUS_MODE_MANUAL);
+            mCameraSession!.setFocusMode(cameraObj.FocusMode.FOCUS_MODE_MANUAL);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_MODE_PROMISE_STATIC_0100 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_MODE_PROMISE_STATIC_0100 PASSED with FocusMode is: " +
             cameraObj.FocusMode.FOCUS_MODE_MANUAL);
 
-            let focusMode = mCameraSession.getFocusMode();
+            let focusMode = mCameraSession!.getFocusMode();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_MODE_PROMISE_STATIC_0100 finish");
             if (focusMode == cameraObj.FocusMode.FOCUS_MODE_MANUAL) {
               console.info(TAG +
@@ -614,7 +614,7 @@ export default function cameraSessionFocusTest() {
           await startCameraSession(i);
 
           let isFocusModeSupported =
-            mCameraSession.isFocusModeSupported(cameraObj.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO);
+            mCameraSession!.isFocusModeSupported(cameraObj.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORT_PROMISE_STATIC_0200 finish");
           if (isFocusModeSupported != null || isFocusModeSupported != undefined) {
             console.info(TAG +
@@ -663,13 +663,13 @@ export default function cameraSessionFocusTest() {
           await startCameraSession(i);
 
           if (mIsFocusModeSupportedArray.length > mCameraNum) {
-            mCameraSession.setFocusMode(cameraObj.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO);
+            mCameraSession!.setFocusMode(cameraObj.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_MODE_PROMISE_STATIC_0200 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_MODE_PROMISE_STATIC_0200 PASSED with FocusMode is: " +
             cameraObj.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO);
 
-            let focusMode = mCameraSession.getFocusMode();
+            let focusMode = mCameraSession!.getFocusMode();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_MODE_PROMISE_STATIC_0200 finish");
             if (focusMode == cameraObj.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO) {
               console.info(TAG +
@@ -720,7 +720,7 @@ export default function cameraSessionFocusTest() {
 
           await startCameraSession(i);
 
-          let isFocusModeSupported = mCameraSession.isFocusModeSupported(cameraObj.FocusMode.FOCUS_MODE_AUTO);
+          let isFocusModeSupported = mCameraSession!.isFocusModeSupported(cameraObj.FocusMode.FOCUS_MODE_AUTO);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORT_PROMISE_STATIC_0300 finish");
           if (isFocusModeSupported != null || isFocusModeSupported != undefined) {
             console.info(TAG +
@@ -771,13 +771,13 @@ export default function cameraSessionFocusTest() {
           await startCameraSession(i);
 
           if (mIsFocusModeSupportedArray.length > mCameraNum) {
-            mCameraSession.setFocusMode(cameraObj.FocusMode.FOCUS_MODE_AUTO);
+            mCameraSession!.setFocusMode(cameraObj.FocusMode.FOCUS_MODE_AUTO);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_MODE_PROMISE_STATIC_0300 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_MODE_PROMISE_STATIC_0300 PASSED with FocusMode is: " +
             cameraObj.FocusMode.FOCUS_MODE_AUTO);
 
-            let focusMode = mCameraSession.getFocusMode();
+            let focusMode = mCameraSession!.getFocusMode();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_MODE_PROMISE_STATIC_0300 finish");
             if (focusMode == cameraObj.FocusMode.FOCUS_MODE_AUTO) {
               console.info(TAG +
@@ -828,7 +828,7 @@ export default function cameraSessionFocusTest() {
 
           await startCameraSession(i);
 
-          let isFocusModeSupported = mCameraSession.isFocusModeSupported(cameraObj.FocusMode.FOCUS_MODE_LOCKED);
+          let isFocusModeSupported = mCameraSession!.isFocusModeSupported(cameraObj.FocusMode.FOCUS_MODE_LOCKED);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORT_PROMISE_STATIC_0400 finish");
           if (isFocusModeSupported != null || isFocusModeSupported != undefined) {
             console.info(TAG +
@@ -877,13 +877,13 @@ export default function cameraSessionFocusTest() {
           await startCameraSession(i);
 
           if (mIsFocusModeSupportedArray.length > mCameraNum) {
-            mCameraSession.setFocusMode(cameraObj.FocusMode.FOCUS_MODE_LOCKED);
+            mCameraSession!.setFocusMode(cameraObj.FocusMode.FOCUS_MODE_LOCKED);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_MODE_PROMISE_STATIC_0400 finish");
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_MODE_PROMISE_STATIC_0400 PASSED with FocusMode is: " +
             cameraObj.FocusMode.FOCUS_MODE_LOCKED);
 
-            let focusMode = mCameraSession.getFocusMode();
+            let focusMode = mCameraSession!.getFocusMode();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_MODE_PROMISE_STATIC_0400 finish");
             if (focusMode == cameraObj.FocusMode.FOCUS_MODE_LOCKED) {
               console.info(TAG +
@@ -933,13 +933,13 @@ export default function cameraSessionFocusTest() {
 
           await startCameraSession(i);
 
-          mCameraSession.setFocusPoint(mFocusPoint);
+          mCameraSession!.setFocusPoint(mFocusPoint);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0100 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0100 PASSED with FocusPoint is: " +
           mFocusPoint.x + ", " + mFocusPoint.y);
 
-          let focusPoint = mCameraSession.getFocusPoint();
+          let focusPoint = mCameraSession!.getFocusPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0100 finish");
           if ((focusPoint.x == mFocusPoint.x) && (focusPoint.y == mFocusPoint.y)) {
             console.info(TAG +
@@ -987,13 +987,13 @@ export default function cameraSessionFocusTest() {
     
           await startCameraSession(i);
     
-          mCameraSession.setFocusPoint(mFocusPointLT);
+          mCameraSession!.setFocusPoint(mFocusPointLT);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0200 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0200 PASSED with FocusPoint is: " +
           mFocusPointLT.x + ", " + mFocusPointLT.y);
     
-          let focusPoint = mCameraSession.getFocusPoint();
+          let focusPoint = mCameraSession!.getFocusPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0200 finish");
           if ((Math.abs(focusPoint.x - mFocusPointLT.x) >= 0) && (Math.abs(focusPoint.y - mFocusPointLT.y) >= 0)) {
             console.info(TAG +
@@ -1042,13 +1042,13 @@ export default function cameraSessionFocusTest() {
     
           await startCameraSession(i);
     
-          mCameraSession.setFocusPoint(mFocusPointRT);
+          mCameraSession!.setFocusPoint(mFocusPointRT);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0300 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0300 PASSED with FocusPoint is: " +
           mFocusPointRT.x + ", " + mFocusPointRT.y);
     
-          let focusPoint = mCameraSession.getFocusPoint();
+          let focusPoint = mCameraSession!.getFocusPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0300 finish");
           if ((Math.abs(focusPoint.x - mFocusPointRT.x) >= 0) && (Math.abs(focusPoint.y - mFocusPointRT.y) >= 0)) {
             console.info(TAG +
@@ -1097,13 +1097,13 @@ export default function cameraSessionFocusTest() {
     
           await startCameraSession(i);
     
-          mCameraSession.setFocusPoint(mFocusPointLB);
+          mCameraSession!.setFocusPoint(mFocusPointLB);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0400 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0400 PASSED with FocusPoint is: " +
           mFocusPointLB.x + ", " + mFocusPointLB.y);
     
-          let focusPoint = mCameraSession.getFocusPoint();
+          let focusPoint = mCameraSession!.getFocusPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0400 finish");
           if ((Math.abs(focusPoint.x - mFocusPointLB.x) >= 0) && (Math.abs(focusPoint.y - mFocusPointLB.y) >= 0)) {
             console.info(TAG +
@@ -1152,13 +1152,13 @@ export default function cameraSessionFocusTest() {
     
           await startCameraSession(i);
     
-          mCameraSession.setFocusPoint(mFocusPointRB);
+          mCameraSession!.setFocusPoint(mFocusPointRB);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0500 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0500 PASSED with FocusPoint is: " +
           mFocusPointRB.x + ", " + mFocusPointRB.y);
     
-          let focusPoint = mCameraSession.getFocusPoint();
+          let focusPoint = mCameraSession!.getFocusPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0500 finish");
           if ((focusPoint.x == mFocusPointRB.x) && (focusPoint.y == mFocusPointRB.y)) {
             console.info(TAG +
@@ -1207,13 +1207,13 @@ export default function cameraSessionFocusTest() {
     
           await startCameraSession(i);
     
-          mCameraSession.setFocusPoint(mFocusPointInvalidLT);
+          mCameraSession!.setFocusPoint(mFocusPointInvalidLT);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0600 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0600 PASSED with FocusPoint is: " +
           mFocusPointInvalidLT.x + ", " + mFocusPointInvalidLT.y);
     
-          let focusPoint = mCameraSession.getFocusPoint();
+          let focusPoint = mCameraSession!.getFocusPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0600 finish");
           if (((focusPoint.x != mFocusPointInvalidLT.x) && (focusPoint.y != mFocusPointInvalidLT.y)) ||
             (mEnableCheckInvalidFocusPoint == false)) {
@@ -1263,13 +1263,13 @@ export default function cameraSessionFocusTest() {
     
           await startCameraSession(i);
     
-          mCameraSession.setFocusPoint(mFocusPointInvalidRT);
+          mCameraSession!.setFocusPoint(mFocusPointInvalidRT);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0700 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0700 PASSED with FocusPoint is: " +
           mFocusPointInvalidRT.x + ", " + mFocusPointInvalidRT.y);
     
-          let focusPoint = mCameraSession.getFocusPoint();
+          let focusPoint = mCameraSession!.getFocusPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0700 finish");
           if (((focusPoint.x != mFocusPointInvalidRT.x) && (focusPoint.y != mFocusPointInvalidRT.y)) ||
             (mEnableCheckInvalidFocusPoint == false)) {
@@ -1319,13 +1319,13 @@ export default function cameraSessionFocusTest() {
     
           await startCameraSession(i);
     
-          mCameraSession.setFocusPoint(mFocusPointInvalidLB);
+          mCameraSession!.setFocusPoint(mFocusPointInvalidLB);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0800 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0800 PASSED with FocusPoint is: " +
           mFocusPointInvalidLB.x + ", " + mFocusPointInvalidLB.y);
     
-          let focusPoint = mCameraSession.getFocusPoint();
+          let focusPoint = mCameraSession!.getFocusPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0800 finish");
           if (((focusPoint.x != mFocusPointInvalidLB.x) && (focusPoint.y != mFocusPointInvalidLB.y)) ||
             (mEnableCheckInvalidFocusPoint == false)) {
@@ -1375,13 +1375,13 @@ export default function cameraSessionFocusTest() {
     
           await startCameraSession(i);
     
-          mCameraSession.setFocusPoint(mFocusPointInvalidRB);
+          mCameraSession!.setFocusPoint(mFocusPointInvalidRB);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0900 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0900 PASSED with FocusPoint is: " +
           mFocusPointInvalidRB.x + ", " + mFocusPointInvalidRB.y);
     
-          let focusPoint = mCameraSession.getFocusPoint();
+          let focusPoint = mCameraSession!.getFocusPoint();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_FOCUS_POINT_PROMISE_STATIC_0900 finish");
           if (((focusPoint.x != mFocusPointInvalidRB.x) && (focusPoint.y != mFocusPointInvalidRB.y)) ||
             (mEnableCheckInvalidFocusPoint == false)) {
@@ -1429,7 +1429,7 @@ export default function cameraSessionFocusTest() {
 
           await startCameraSession(i);
 
-          let focalLength = mCameraSession.getFocalLength();
+          let focalLength = mCameraSession!.getFocalLength();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCAL_LENGTH_PROMISE_STATIC_0100 finish");
           console.info(TAG +
             "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_FOCAL_LENGTH_PROMISE_STATIC_0100 PASSED with FocalLength is: " +
@@ -1463,17 +1463,17 @@ export default function cameraSessionFocusTest() {
         expect().assertFail();
       } else {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ON_FOCUSSTATECHANGE_STATIC_0100 to operate");
-        mCameraSession.onFocusStateChange((err: BusinessError | null, data: cameraObj.FocusState | undefined) => {
+        mCameraSession!.onFocusStateChange((err: BusinessError | null, data: cameraObj.FocusState | undefined) => {
           if (!err) {
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ON_FOCUSSTATECHANGE_STATIC_0100 success");
           } else {
             expect().assertFail();
             console.info(TAG + "Error in SUB_MULTIMEDIA_CAMERA_ON_FOCUSSTATECHANGE_STATIC_0100 FAILED: " + err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
-        mCameraSession.offFocusStateChange()
+        mCameraSession!.offFocusStateChange()
       }
       await Utils.msSleep(1000);
       done();
@@ -1496,17 +1496,17 @@ export default function cameraSessionFocusTest() {
         expect().assertFail();
       } else {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_ON_ERROR_STATIC_0100 to operate");
-        mCameraSession.onError((err: BusinessError) => {
+        mCameraSession!.onError((err: BusinessError) => {
           if (!err) {
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_ON_ERROR_STATIC_0100 success");
           } else {
             expect().assertFail();
             console.info(TAG + "Error in SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_ON_ERROR_STATIC_0100 FAILED: " + err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
-        mCameraSession.offError()
+        mCameraSession!.offError()
       }
       await Utils.msSleep(1000);
       done();

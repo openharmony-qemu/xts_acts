@@ -27,6 +27,7 @@ import { isSupportedCameras } from './common';
 import hdrCapability from '@ohos.graphics.hdrCapability';
 import display from '@ohos.display';
 import arriveOnNdkTest from 'libArriveOnNdk.so';
+import { BusinessError } from '@ohos.base';
 
 let WIDTH = 1280;
 let HEIGHT = 960;
@@ -38,6 +39,7 @@ let Jpg_Stride = 1;
 let isSupportedCamerasResult = isSupportedCameras();
 let isSupportCameraVideoProfiles = true;
 let isSupportHdr: Boolean;
+let imageArrival: Boolean = false;
 
 let RGBA = 12;
 let RECEIVER_FORMAT = 2000;
@@ -170,6 +172,28 @@ const checkWaitForResultIsNum = (logger: string, myData: arriveOnNdkTest.onImage
     return;
 }
 
+let waitUntilImageArrival = async (TAG: string) => {
+    let waitTime = 0;
+    let step = 100;
+    while (imageArrival == false) {
+      await sleep(step);
+      waitTime += step;
+    }
+    console.info(`${TAG} image arrival cost(ms) ${waitTime}`);
+  }
+
+let waitForTrigger = async (check: () => boolean, timeoutMs: number = 15000, intervalMs: number = 100): Promise<boolean> => {
+  let elapsed: number = 0;
+  while (elapsed < timeoutMs) {
+    if (check()) {
+      return true;
+    }
+    await sleep(intervalMs);
+    elapsed += intervalMs;
+  }
+  return check();
+}
+
 //相机拍照
 export async function cameraCaptureRelyOnNum(TAG: string, photoOutput: ESObject) {
     let captureLocation: cameraObj.Location = {
@@ -185,11 +209,19 @@ export async function cameraCaptureRelyOnNum(TAG: string, photoOutput: ESObject)
     }
     //使用当前拍照设置进行拍照。
     console.info(`${TAG} start take first photo`);
+    let ready: boolean = false;
+    photoOutput!.on('captureReady', (err: BusinessError) => { ready = true; });
     await photoOutput.capture(photoCaptureSetting);
-    await sleep(10000);
+    await waitUntilImageArrival(TAG);
+    let result: boolean = await waitForTrigger((): boolean => ready);
+    expect(result).assertTrue();
+    photoOutput!.off('captureReady');
+    await sleep(1000);
     console.info(`${TAG} start take second photo`);
+    imageArrival = false;
     await photoOutput.capture(photoCaptureSetting);
-    await sleep(10000);
+    await waitUntilImageArrival(TAG);
+    await sleep(1000);
     console.info(`${TAG} capture two images success`);
 }
 
@@ -1209,6 +1241,7 @@ export default function ImageReceiverTest() {
                     ndkTest.JsImageReceiverOptionsSetCapacity(options, capacity);
                     console.info(`${TAG} OnCallback success`);
                     expect(receiver != undefined).assertTrue();
+                    imageArrival = true;
                 });
                 expect(onRet != undefined).assertTrue();
                 let mPhotoSurface = ndkTest.JsGetReceivingSurfaceId(myReceiver);
@@ -1311,6 +1344,16 @@ export default function ImageReceiverTest() {
                 let receiverCapacity: number = ndkTest.JsGetCapacity(myReceiver);
                 let mPhotoSurface = ndkTest.JsGetReceivingSurfaceId(myReceiver);
                 console.info(TAG + 'mPhotoSurface is: ' + JSON.stringify(mPhotoSurface));
+                let capacity: number = CAPACITY;
+                let onRet: number = ndkTest.JsOn(myReceiver, (receiver: image.ImageReceiver) => {
+                    console.info(`${TAG} Image receiver callback success, receiver is ${JSON.stringify(receiver)}`);
+                    capacity = capacity + 1;
+                    ndkTest.JsImageReceiverOptionsSetCapacity(options, capacity);
+                    console.info(`${TAG} OnCallback success`);
+                    expect(receiver != undefined).assertTrue();
+                    imageArrival = true;
+                });
+                expect(onRet != undefined).assertTrue();
                 // 拍照
                 let testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
                 let mCameraManager: cameraObj.CameraManager = await cameraObj.getCameraManager(testContext);
@@ -1416,6 +1459,7 @@ export default function ImageReceiverTest() {
                     ndkTest.JsImageReceiverOptionsSetCapacity(options, capacity);
                     console.info(`${TAG} OnCallback success`);
                     expect(receiver != undefined).assertTrue();
+                    imageArrival = true;
                 });
                 expect(onRet != undefined).assertTrue();
                 let mPhotoSurface = ndkTest.JsGetReceivingSurfaceId(myReceiver);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,7 @@ import relationalStore from '@ohos.data.relationalStore';
 import data_Rdb from '@ohos.data.relationalStore';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
 const TAG = "[RelationalStore_Ets_TEST >>>>>> ]";
@@ -79,7 +79,7 @@ export default function VectorStoreTest() {
     });
     afterAll(async (): Promise<void> => {
       console.info(TAG + 'afterAll');
-      await data_Rdb.deleteRdbStore(context, STORE_CONFIG);
+      await data_Rdb.deleteRdbStore(context!, STORE_CONFIG);
     });
     console.info(TAG + "*************Unit Test Begin*************");
 
@@ -96,18 +96,19 @@ export default function VectorStoreTest() {
       console.info(TAG + "VectorStoreTest0100 res=" + res);
       if (res == false) {
         try {
-          rdbStore = await data_Rdb.getRdbStore(context, STORE_CONFIG);
+          rdbStore = await data_Rdb.getRdbStore(context!, STORE_CONFIG);
           console.info(TAG + "VectorStoreTest0100 success getRdbStore. rdbStore=" + rdbStore);
           expect().assertFail();
           done()
-        } catch(err: BusinessError){
+        } catch(err){
+          err = err as BusinessError;
           console.info(TAG + "VectorStoreTest0100 fail getRdbStore, code=" + err.code + err.message);
           expect(801).assertEqual(err.code);
           done()
         }
       } else {
         try {
-          rdbStore = await data_Rdb.getRdbStore(context, STORE_CONFIG);
+          rdbStore = await data_Rdb.getRdbStore(context!, STORE_CONFIG);
           console.info(TAG + "VectorStoreTest0100 getRdbStore is successful, rdbStore = " + rdbStore);
           expect(rdbStore != null).assertTrue();
           await rdbStore.execute(CREATE_TABLE_TEST, 0 ,undefined);
@@ -121,7 +122,7 @@ export default function VectorStoreTest() {
           console.log(TAG + "resultSet.rowCount:" + resultSet.rowCount)
           expect(resultSet.rowCount).assertEqual(1);
           done();
-        } catch(err: BusinessError){
+        } catch(err){
           console.info(TAG + "VectorStoreTest0100 getRdbStore is failed, code=" + err.code + err.message);
           expect().assertFail();
           done();

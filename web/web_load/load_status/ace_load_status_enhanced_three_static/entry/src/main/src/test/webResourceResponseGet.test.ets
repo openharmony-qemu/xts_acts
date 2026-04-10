@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -26,31 +26,31 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function webResourceResponseGet() {
   describe('WebResourceResponseGetTestSuite', ():void => {
-      beforeAll(async (): Promise<void> => {
-        try {
-          console.log(' App start')
-          let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-          abilityDelegator.addAbilityMonitor({
-            abilityName: 'EntryAbility',
-            moduleName: 'entry',
-            onAbilityCreate: (abilitys: UIAbility): void => {
-              testAbilityContext = abilitys.context
-              console.log('onAbilityCreate end')
-            },
-          }, (err: BusinessError | null): void => {
-            if (err != null) {
-              console.log('-----' + err.code)
-            }
-            console.log('BusinessError  end')
-          });
-          await Utils.msSleep(2000)
-          abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.actsaceloadstatusenhancedtestthree.static')
-          await Utils.msSleep(2000)
-          console.log('beforeAll end,%s', "Succeed!")
-        } catch (error) {
-          console.info(`beforeAll error: ${JSON.stringify(error)}`)
-        }
-      });
+    beforeAll(async (): Promise<void> => {
+      try {
+        console.log(' App start')
+        let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+        abilityDelegator.addAbilityMonitor({
+          abilityName: 'EntryAbility',
+          moduleName: 'entry',
+          onAbilityCreate: (abilitys: UIAbility): void => {
+            testAbilityContext = abilitys.context
+            console.log('onAbilityCreate end')
+          },
+        }, (err: BusinessError | null): void => {
+          if (err != null) {
+            console.log('-----' + err.code)
+          }
+          console.log('BusinessError  end')
+        });
+        await Utils.msSleep(2000)
+        abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.actsaceloadstatusenhancedtestthree.static')
+        await Utils.msSleep(2000)
+        console.log('beforeAll end,%s', "Succeed!")
+      } catch (error) {
+        console.info(`beforeAll error: ${JSON.stringify(error)}`)
+      }
+    });
 
     beforeEach(async (done: () => void): Promise<void> => {
       console.info("web beforeEach start");
@@ -72,7 +72,7 @@ export default function webResourceResponseGet() {
           throw new Error("======> WLAN Network error");//方式二
           done();
         }
-        if (data.chload >= 800 || data.rssi <= -80) {
+        if (data.chload >= 900 || data.rssi <= -80) {
           throw new Error("======> WLAN Network error");//方式二
           done();
         } else if (data.chload >= 500) {
@@ -86,15 +86,15 @@ export default function webResourceResponseGet() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETREQUESTHEADER_0100
-    * @tc.name       : testGetRequestHeader001
-    * @tc.desc       : test getRequestHeader
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.name        testGetRequestHeaderStatic001
+    * @tc.number      SUB_WEB_GETREQUESTHEADER_0100
+    * @tc.desc        test getRequestHeader
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testGetRequestHeaderStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testGetRequestHeaderStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(10000);
       Utils.emitEvent("testGetRequestHeader001", 10)
       await Utils.msSleep(2000);
@@ -105,15 +105,15 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETREQUESTURL_0100
-    * @tc.name       : testGetRequestUrl001
-    * @tc.desc       : test getRequestUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.name        testGetRequestUrlStatic001
+    * @tc.number      SUB_WEB_GETREQUESTURL_0100
+    * @tc.desc        test getRequestUrl
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testGetRequestUrlStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testGetRequestUrlStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       Utils.emitEvent("testGetRequestUrl001", 10)
       await Utils.msSleep(3000);
@@ -124,15 +124,15 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ISREQUESTGESTURE_0100
-    * @tc.name       : testIsRequestGesture001
-    * @tc.desc       : test isRequestGesture
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.name        testIsRequestGestureStatic001
+    * @tc.number      SUB_WEB_ISREQUESTGESTURE_0100
+    * @tc.desc        test isRequestGesture
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testIsRequestGestureStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testIsRequestGestureStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       Utils.emitEvent("testIsRequestGesture001", 10)
       await Utils.msSleep(3000);
@@ -143,15 +143,15 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ISMAINFRAME_0100
-    * @tc.name       : testIsMainFrame001
-    * @tc.desc       : test isMainFrame
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.name        testIsMainFrameStatic001
+    * @tc.number      SUB_WEB_ISMAINFRAME_0100
+    * @tc.desc        test isMainFrame
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testIsMainFrameStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testIsMainFrameStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("testIsMainFrame001", 10)
       await Utils.msSleep(2000);
@@ -162,15 +162,15 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ISREDIRECT_0100
-    * @tc.name       : testIsRedirect001
-    * @tc.desc       : test isRedirect
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.name        testIsRedirectStatic001
+    * @tc.number      SUB_WEB_ISREDIRECT_0100
+    * @tc.desc        test isRedirect
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testIsRedirectStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testIsRedirectStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("testIsRedirect001", 10)
       await Utils.msSleep(2000);
@@ -181,15 +181,15 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETREQUESTMETHOD_0100
-    * @tc.name       : testGetRequestMethod001
-    * @tc.desc       : test getRequestMethod
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.name        testGetRequestMethodStatic001
+    * @tc.number      SUB_WEB_GETREQUESTMETHOD_0600
+    * @tc.desc        test getRequestMethod
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testGetRequestMethodStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testGetRequestMethodStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("testGetRequestMethod001", 10)
       await Utils.msSleep(2000);
@@ -200,15 +200,15 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETRESPONSEENCODING_0100
-    * @tc.name       : testGetResponseEncoding001
-    * @tc.desc       : test getResponseEncoding
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.name        testGetResponseEncodingStatic001
+    * @tc.number      SUB_WEB_GETRESPONSEENCODING_0100
+    * @tc.desc        test getResponseEncoding
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testGetResponseEncodingStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testGetResponseEncodingStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("testGetResponseEncoding001", 10)
       await Utils.msSleep(2000);
@@ -219,15 +219,15 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETRESPONSEMIMETYPE_0100
-    * @tc.name       : testGetResponseMimeType001
-    * @tc.desc       : test getResponseMimeType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.name        testGetResponseMimeTypeStatic001
+    * @tc.number      SUB_WEB_GETRESPONSEMIMETYPE_0100
+    * @tc.desc        test getResponseMimeType
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testGetResponseMimeTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testGetResponseMimeTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("testGetResponseMimeType001", 10)
       await Utils.msSleep(2000);
@@ -238,15 +238,15 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETREASONMESSAGE_0100
-    * @tc.name       : testGetReasonMessage001
-    * @tc.desc       : test getReasonMessage
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.name        testGetReasonMessageStatic001
+    * @tc.number      SUB_WEB_GETREASONMESSAGE_0100
+    * @tc.desc        test getReasonMessage
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testGetReasonMessageStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testGetReasonMessageStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("testGetReasonMessage001", 10)
       await Utils.msSleep(2000);
@@ -257,15 +257,15 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETRESPONSEHEADER_0100
-    * @tc.name       : testGetResponseHeader001
-    * @tc.desc       : test getResponseHeader
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.name        testGetResponseHeaderStatic001
+    * @tc.number      SUB_WEB_GETRESPONSEHEADER_0100
+    * @tc.desc        test getResponseHeader
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testGetResponseHeaderStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testGetResponseHeaderStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("testGetResponseHeader001", 10)
       await Utils.msSleep(2000);
@@ -276,15 +276,15 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETRESPONSECODE_0100
-    * @tc.name       : testGetResponseCode001
-    * @tc.desc       : test getResponseCode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.name        testGetResponseCodeStatic001
+    * @tc.number      SUB_WEB_GETRESPONSECODE_0100
+    * @tc.desc        test getResponseCode
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testGetResponseCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testGetResponseCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent("testGetResponseCode001", 10)
       await Utils.msSleep(2000);
@@ -294,7 +294,5 @@ export default function webResourceResponseGet() {
       await Utils.msSleep(10000);
       done();
     })
-
-
   })
 }

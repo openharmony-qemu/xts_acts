@@ -33,8 +33,8 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   securityLevel: relationalStore.SecurityLevel.S1,
 }
 
-let context: common.UIAbilityContext;
-let rdbStore: relationalStore.RdbStore;
+let context: common.UIAbilityContext | undefined;
+let rdbStore: relationalStore.RdbStore | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 async function attachInsert(store: relationalStore.RdbStore, tableName: string) {
@@ -115,14 +115,14 @@ export default function RdbErrorCode14801001() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
     });
 
     beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
       try {
-        let attachStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-        console.info(TAG + 'beforeEach context databasedir: ' + context.databaseDir);
+        let attachStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+        console.info(TAG + 'beforeEach context databasedir: ' + context!.databaseDir);
         console.info(TAG + 'beforeEach STORE_CONFIG success');
         await attachStore.executeSql(CREATE_TABLE_TEST1);
       } catch (e) {
@@ -137,7 +137,7 @@ export default function RdbErrorCode14801001() {
 
     afterAll(async (): Promise<void> => {
       console.info(TAG + 'afterAll');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
     })
 
     /**
@@ -150,11 +150,11 @@ export default function RdbErrorCode14801001() {
      */
     it('testRdbAttach14801001_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       console.log(TAG + "************* testRdbAttach14801001_001 start *************");
-      let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
       await store.execute(CREATE_TABLE_TEST);
       await attachInsert(store, "test");
       try {
-        let num = await store.attach(context, STORE_CONFIG, "attachDB");
+        let num = await store.attach(context!, STORE_CONFIG, "attachDB");
         expect(1).assertEqual(num);
       } catch (e) {
         console.log("testRdbAttach14801001_001 : failed, err: code=" + e.code + " message=" + e.message);
@@ -178,14 +178,14 @@ export default function RdbErrorCode14801001() {
     it('testRdbGetRdbStore14801001_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void) => {
         console.log(TAG + "************* testRdbGetRdbStore14801001_002 start *************");
-        relationalStore.getRdbStore(context, STORE_CONFIG).then(async (rdbStore: relationalStore.RdbStore) => {
+        relationalStore.getRdbStore(context!, STORE_CONFIG).then(async (rdbStore: relationalStore.RdbStore) => {
           console.info('getRdbStore successfully.');
         }).catch((e) => {
           console.log("getRdbStore failed, err: code=" + e.code + " message=" + e.message);
           expect(14801001).assertEqual(e.code);
         });
         try {
-          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+          await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         } catch (e) {
           console.log("deleteRdbStore failed, err: code=" + e.code + " message=" + e.message);
           expect(14801001).assertEqual(e.code);

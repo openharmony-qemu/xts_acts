@@ -45,9 +45,9 @@ export default function GetCurrentTopAbilityTest() {
      * @tc.desc   Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001", Level.LEVEL2, async (done: () => void): Promise<void> =>{
+    it("ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001", Level.LEVEL0, async (done: () => void): Promise<void> =>{
       console.log("ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001 :start");
       let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -87,9 +87,9 @@ export default function GetCurrentTopAbilityTest() {
      * @tc.desc   Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002", Level.LEVEL2, async (done: () => void): Promise<void> =>{
+    it("ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002", Level.LEVEL0, async (done: () => void): Promise<void> =>{
       console.log("ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002 :start");
       let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();

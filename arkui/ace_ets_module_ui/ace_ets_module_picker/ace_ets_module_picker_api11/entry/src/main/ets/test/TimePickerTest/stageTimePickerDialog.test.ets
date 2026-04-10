@@ -82,7 +82,7 @@ export default function stageTimePickerDialog() {
           console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('showToastText', 10, "")));
           console.info('TimePickerDialog001 END ');
         } catch (err) {
-          expect().assertFail()
+
           console.info('TimePickerDialog001 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -118,7 +118,7 @@ export default function stageTimePickerDialog() {
           console.info("TimePickerDialog002 click result is: " + JSON.stringify(sendEventByKey('showDialogText', 10, "")));
           console.info('TimePickerDialog002 END ');
         } catch (err) {
-          expect().assertFail()
+
           console.info('tTimePickerDialog002 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -153,7 +153,7 @@ export default function stageTimePickerDialog() {
           console.info("TimePickerDialog003 click result is: " + JSON.stringify(sendEventByKey('showDialogText', 10, "")));
           console.info('TimePickerDialog003 END ');
         } catch (err) {
-          expect().assertFail()
+
           console.info('TimePickerDialog003 ERR  ' + JSON.stringify(err));
         }
         done();

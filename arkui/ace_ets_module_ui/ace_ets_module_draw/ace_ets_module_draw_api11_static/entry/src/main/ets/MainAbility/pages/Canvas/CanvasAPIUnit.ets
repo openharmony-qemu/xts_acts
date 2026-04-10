@@ -150,77 +150,77 @@ struct CanvasAPIUnit {
 
   context_putImageData1() {
     let imageData = this.context.createImageData(100, 100)
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255
-      imageData.data[i + 1] = 0
-      imageData.data[i + 2] = 255
-      imageData.data[i + 3] = 255
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255
+      imageData.data![i + 1] = 0
+      imageData.data![i + 2] = 255
+      imageData.data![i + 3] = 255
     }
     this.context.putImageData(imageData, "50px", "50px")
   }
 
   context_putImageData2() {
     let imageData = this.context.createImageData(100, 100)
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255
-      imageData.data[i + 1] = 0
-      imageData.data[i + 2] = 255
-      imageData.data[i + 3] = 255
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255
+      imageData.data![i + 1] = 0
+      imageData.data![i + 2] = 255
+      imageData.data![i + 3] = 255
     }
     this.context.putImageData(imageData, 50, 50)
   }
 
   context_putImageData3() {
     let imageData = this.context.createImageData(100, 100)
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255
-      imageData.data[i + 1] = 0
-      imageData.data[i + 2] = 255
-      imageData.data[i + 3] = 255
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255
+      imageData.data![i + 1] = 0
+      imageData.data![i + 2] = 255
+      imageData.data![i + 3] = 255
     }
     this.context.putImageData(imageData, "50vp", "50vp")
   }
 
   context_putImageData4() {
     let imageData = this.context.createImageData(100, 100)
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255
-      imageData.data[i + 1] = 0
-      imageData.data[i + 2] = 255
-      imageData.data[i + 3] = 255
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255
+      imageData.data![i + 1] = 0
+      imageData.data![i + 2] = 255
+      imageData.data![i + 3] = 255
     }
     this.context.putImageData(imageData, "50px", "50px", "50px", "50px", "75px", "75px")
   }
 
   context_putImageData5() {
     let imageData = this.context.createImageData(100, 100)
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255
-      imageData.data[i + 1] = 0
-      imageData.data[i + 2] = 255
-      imageData.data[i + 3] = 255
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255
+      imageData.data![i + 1] = 0
+      imageData.data![i + 2] = 255
+      imageData.data![i + 3] = 255
     }
     this.context.putImageData(imageData, "50vp", "50vp", "50vp", "50vp", "50vp", "50vp")
   }
 
   context_putImageData6() {
     let imageData = this.context.createImageData(100, 100)
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255
-      imageData.data[i + 1] = 0
-      imageData.data[i + 2] = 255
-      imageData.data[i + 3] = 255
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255
+      imageData.data![i + 1] = 0
+      imageData.data![i + 2] = 255
+      imageData.data![i + 3] = 255
     }
     this.context.putImageData(imageData, 50, 50, 50, 50, 50, 50)
   }
 
   off_context_putImageData1() {
     let imageData = this.offContext.createImageData(100, 100)
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255
-      imageData.data[i + 1] = 0
-      imageData.data[i + 2] = 255
-      imageData.data[i + 3] = 255
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255
+      imageData.data![i + 1] = 0
+      imageData.data![i + 2] = 255
+      imageData.data![i + 3] = 255
     }
     this.offContext.putImageData(imageData, "50px", "50px")
     let image = this.offContext.transferToImageBitmap()
@@ -229,11 +229,11 @@ struct CanvasAPIUnit {
 
   off_context_putImageData2() {
     let imageData = this.offContext.createImageData(100, 100)
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255
-      imageData.data[i + 1] = 0
-      imageData.data[i + 2] = 255
-      imageData.data[i + 3] = 255
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255
+      imageData.data![i + 1] = 0
+      imageData.data![i + 2] = 255
+      imageData.data![i + 3] = 255
     }
     this.offContext.putImageData(imageData, 50, 50)
     let image = this.offContext.transferToImageBitmap()
@@ -242,11 +242,11 @@ struct CanvasAPIUnit {
 
   off_context_putImageData3() {
     let imageData = this.offContext.createImageData(100, 100)
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255
-      imageData.data[i + 1] = 0
-      imageData.data[i + 2] = 255
-      imageData.data[i + 3] = 255
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255
+      imageData.data![i + 1] = 0
+      imageData.data![i + 2] = 255
+      imageData.data![i + 3] = 255
     }
     this.offContext.putImageData(imageData, "50vp", "50vp")
     let image = this.offContext.transferToImageBitmap()
@@ -255,11 +255,11 @@ struct CanvasAPIUnit {
 
   off_context_putImageData4() {
     let imageData = this.offContext.createImageData(100, 100)
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255
-      imageData.data[i + 1] = 0
-      imageData.data[i + 2] = 255
-      imageData.data[i + 3] = 255
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255
+      imageData.data![i + 1] = 0
+      imageData.data![i + 2] = 255
+      imageData.data![i + 3] = 255
     }
     this.offContext.putImageData(imageData, "50px", "50px", "50px", "50px", "75px", "75px")
     let image = this.offContext.transferToImageBitmap()
@@ -268,11 +268,11 @@ struct CanvasAPIUnit {
 
   off_context_putImageData5() {
     let imageData = this.offContext.createImageData(100, 100)
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255
-      imageData.data[i + 1] = 0
-      imageData.data[i + 2] = 255
-      imageData.data[i + 3] = 255
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255
+      imageData.data![i + 1] = 0
+      imageData.data![i + 2] = 255
+      imageData.data![i + 3] = 255
     }
     this.offContext.putImageData(imageData, "50vp", "50vp", "50vp", "50vp", "50vp", "50vp")
     let image = this.offContext.transferToImageBitmap()
@@ -281,11 +281,11 @@ struct CanvasAPIUnit {
 
   off_context_putImageData6() {
     let imageData = this.offContext.createImageData(100, 100)
-    for (let i = 0; i < imageData.data.length; i += 4) {
-      imageData.data[i + 0] = 255
-      imageData.data[i + 1] = 0
-      imageData.data[i + 2] = 255
-      imageData.data[i + 3] = 255
+    for (let i = 0; i < imageData.data!.length; i += 4) {
+      imageData.data![i + 0] = 255
+      imageData.data![i + 1] = 0
+      imageData.data![i + 2] = 255
+      imageData.data![i + 3] = 255
     }
     this.offContext.putImageData(imageData, 50, 50, 50, 50, 50, 50)
     let image = this.offContext.transferToImageBitmap()

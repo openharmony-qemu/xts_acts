@@ -60,5 +60,77 @@ export default function abilityTest() {
       console.log("du.yuan end");
       done();
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AutoSave_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AutoSave_0200
+     * @tc.desc   Test requestAutoSave with uiContext as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AutoSave_0200', Level.LEVEL1, async (done:Function) => {
+      const TAG = 'SUB_Ability_AbilityRuntime_AutoSave_0200_TAG';
+      let isSuccess = false;
+      let isFailure = false;
+      let callback: autoFillManager.AutoSaveCallback = {
+        onSuccess: () => {
+          console.log(TAG + " save request on success");
+          isSuccess = true;
+        },
+        onFailure: () => {
+          console.log(TAG + " save request on failure");
+          isFailure = true;
+        }
+      }
+      try {
+        autoFillManager.requestAutoSave(null, callback);
+        console.log(TAG + " should not reach here");
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.log(TAG + " requestAutoSave catch error, code: ", JSON.stringify(error.code));
+        expect(error.code == 401).assertTrue();
+        expect(isSuccess).assertFalse();
+        expect(isFailure).assertFalse();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AutoSave_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AutoSave_0300
+     * @tc.desc   Test requestAutoSave with uiContext as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_AutoSave_0300', Level.LEVEL1, async (done:Function) => {
+      const TAG = 'SUB_Ability_AbilityRuntime_AutoSave_0300_TAG';
+      let isSuccess = false;
+      let isFailure = false;
+      let callback: autoFillManager.AutoSaveCallback = {
+        onSuccess: () => {
+          console.log(TAG + " save request on success");
+          isSuccess = true;
+        },
+        onFailure: () => {
+          console.log(TAG + " save request on failure");
+          isFailure = true;
+        }
+      }
+      try {
+        autoFillManager.requestAutoSave(undefined, callback);
+        console.log(TAG + " should not reach here");
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.log(TAG + " requestAutoSave catch error, code: ", JSON.stringify(error.code));
+        expect(error.code == 401).assertTrue();
+        expect(isSuccess).assertFalse();
+        expect(isFailure).assertFalse();
+        done();
+      }
+    })
   })
 }

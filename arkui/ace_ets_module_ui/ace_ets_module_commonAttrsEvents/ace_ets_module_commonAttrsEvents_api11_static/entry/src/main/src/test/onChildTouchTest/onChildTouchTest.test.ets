@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function onChildTouchTest() {
   describe('onChildTouchTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onChildTouchTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
     });

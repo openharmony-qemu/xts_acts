@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 
 export default function SensorJsTest_sensor_44() {
 describe("SensorJsTest_sensor_44", function () {
+    let sensortempcode = true;
     function callback(data) {
         console.info("callback" + JSON.stringify(data));
         expect(typeof (data.x)).assertEqual("number");
@@ -185,7 +186,7 @@ describe("SensorJsTest_sensor_44", function () {
     it("newGyroscope_Uncalibrated_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.once(sensor.SensorId.GYROSCOPE_UNCALIBRATED, callback);
         setTimeout(()=>{
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })
@@ -279,7 +280,7 @@ describe("SensorJsTest_sensor_44", function () {
         sensor.on(sensor.SensorId.GYROSCOPE_UNCALIBRATED, onSensorCallback);
         sensor.off(sensor.SensorId.GYROSCOPE_UNCALIBRATED, onSensorCallback);
         setTimeout(()=>{
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })
@@ -505,14 +506,14 @@ describe("SensorJsTest_sensor_44", function () {
     })
 
     /**
-     * @tc.name   newGyroscope_Uncalibrated_SensorJsTest030
+     * @tc.name   newGyroscope_Uncalibrated_SensorJsTest030Adapt001
      * @tc.number SUB_SensorsSystem_GYROSCOPE_UNCALIBRATED_JSTest_0300
      * @tc.desc   Verification results of the incorrect parameters of the test interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("newGyroscope_Uncalibrated_SensorJsTest030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it("newGyroscope_Uncalibrated_SensorJsTest030Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newGyroscope_Uncalibrated_SensorJsTest030--------------');
         sensor.on(sensor.SensorId.GYROSCOPE_UNCALIBRATED, callback, { 'interval': 100000000 });
         sensor.on(sensor.SensorId.GYROSCOPE_UNCALIBRATED, callback2, { 'interval': 100000000 });

@@ -57,6 +57,12 @@ import SearchOnWillAttachIMETest from './SearchApi22Test/SearchOnWillAttachIME.t
 import SearchCompressLeadingPunctuation from './SearchTest/SearchCompressLeadingPunctuation.test';
 import SearchCompressLeadingPunctuationModifier from './SearchTest/SearchCompressLeadingPunctuationModifier.test';
 import SearchTextDirectionTest from './SearchApi23Test/SearchTextDirection.test';
+import SearchEnableKeyboardOnFocusTest from './SearchTest/SearchEnableKeyboardOnFocus.test';
+import SearchSelectionMenuHiddenTest from './SearchTest/SearchSelectionMenuHidden.test';
+import SearchPropertiesNullUndefinedTest from './SearchTest/SearchPropertiesNullUndefined.test';
+import SearchPropertiesNullUndefined02Test from './SearchTest/SearchPropertiesNullUndefined02.test';
+import SearchPropertiesNullUndefined03Test from './SearchTest/SearchPropertiesNullUndefined03Test.test';
+import SearchControllerMethodsTest from './SearchTest/SearchControllerMethodsTest.test';
 
 
 export default function testsuite() {
@@ -103,4 +109,10 @@ export default function testsuite() {
   SearchCompressLeadingPunctuation()
   SearchCompressLeadingPunctuationModifier()
   SearchTextDirectionTest()      // Api23
+  SearchEnableKeyboardOnFocusTest();
+  SearchSelectionMenuHiddenTest();
+  SearchPropertiesNullUndefinedTest();
+  SearchPropertiesNullUndefined02Test();
+  SearchPropertiesNullUndefined03Test();
+  SearchControllerMethodsTest();
 }

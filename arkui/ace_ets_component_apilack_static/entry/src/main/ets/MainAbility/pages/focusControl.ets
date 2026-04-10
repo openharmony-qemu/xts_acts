@@ -68,7 +68,7 @@ struct FocusControlExample {
                   }
                   console.info("OnTouchGrpBtn start to emit action state")
                   events_emitter.emit(event, eventData)
-                } catch (err: Error) {
+                } catch (err) {
                   console.info("OnTouchGrpBtn emit action state err: " + JSON.stringify((err as Error)?.message))
                 }
               })
@@ -95,7 +95,7 @@ struct FocusControlExample {
                     }
                     console.info("OnTouchBtn1 start to emit action state")
                     events_emitter.emit(event, eventData)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("OnTouchBtn1 emit action state err: " + JSON.stringify((err as Error)?.message))
                   }
                 })
@@ -121,7 +121,7 @@ struct FocusControlExample {
                     }
                     console.info("OnTouchBtn2 start to emit action state")
                     events_emitter.emit(event, eventData)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("OnTouchBtn2 emit action state err: " + JSON.stringify((err as Error)?.message))
                   }
                 })
@@ -152,7 +152,7 @@ struct FocusControlExample {
                     }
                     console.info("OnTouchBtn3 start to emit action state")
                     events_emitter.emit(event, eventData)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("OnTouchBtn3 emit action state err: " + JSON.stringify((err as Error)?.message))
                   }
                 })
@@ -181,7 +181,7 @@ struct FocusControlExample {
                     }
                     console.info("OnTouchBtn4 start to emit action state")
                     events_emitter.emit(event, eventData)
-                  } catch (err: Error) {
+                  } catch (err) {
                     console.info("OnTouchBtn4 emit action state err: " + JSON.stringify((err as Error)?.message))
                   }
                 })
@@ -242,7 +242,7 @@ struct FocusControlExample {
                 }
                 console.info("defaultFocus test start to emit action start")
                 events_emitter.emit(event, eventData)
-              } catch (err: Error) {
+              } catch (err) {
                 console.info("defaultFocus test emit action state err: " + JSON.stringify((err as Error)?.message))
               }
             })

@@ -39,7 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ActsgetcomponentaddTest() {
   describe('ActsgetcomponentaddTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Builder0050TestJsunit beforeEach start");
 
      await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility");

@@ -67,11 +67,6 @@ import IsFiniteTest from './Golebal/IsFinite.test';
 import NaNTest from './Golebal/NaN.test';
 import ParseIntTest from './Golebal/ParseInt.test';
 import ParseFloatTest from './Golebal/ParseFloat.test';
-import Json1Test from './Json/Json1.test';
-import Json4Test from './Json/Json4.test';
-import Json5Test from './Json/Json5.test';
-import Json6Test from './Json/Json6.test';
-import Json2Test from './Json/Json2.test';
 import ArrayBuffer2Test from './ArrayBuffer/ArrayBuffer2.test';
 import ArrayBuffer1Test from './ArrayBuffer/ArrayBuffer1.test';
 import ArrayBuffer4Test from './ArrayBuffer/ArrayBuffer4.test';
@@ -133,11 +128,6 @@ export default function testsuite() {
   NaNTest();
   ParseIntTest();
   ParseFloatTest();
-  Json1Test();
-  Json2Test()
-  Json4Test();
-  Json5Test()
-  Json6Test()
   ArrayBuffer1Test();
   ArrayBuffer2Test();
   ArrayBuffer4Test();

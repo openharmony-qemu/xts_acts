@@ -369,6 +369,221 @@ export default function getBundleArchiveInfo() {
       }
     })
 
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1510
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_1510
+     * @tc.desc   Test getBundleArchiveInfo with empty string hapFilePath callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_1510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      await bundle.getBundleArchiveInfo('', bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent)
+      function OnReceiveEvent(err, datainfo) {
+        if (err) {
+          console.info("getBundleArchiveInfo empty string err:" + JSON.stringify(err));
+          expect(err.code).assertEqual(1);
+          done();
+          return;
+        }
+        console.info("getBundleArchiveInfo empty string success" + JSON.stringify(datainfo));
+        expect(datainfo).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1520
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_1520
+     * @tc.desc   Test getBundleArchiveInfo with null hapFilePath callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_1520', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      await bundle.getBundleArchiveInfo(null, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent)
+      function OnReceiveEvent(err, datainfo) {
+        if (err) {
+          console.info("getBundleArchiveInfo null hapFilePath err:" + JSON.stringify(err));
+          expect(err.code).assertEqual(1);
+          done();
+          return;
+        }
+        console.info("getBundleArchiveInfo null hapFilePath success" + JSON.stringify(datainfo));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1530
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_1530
+     * @tc.desc   Test getBundleArchiveInfo with undefined hapFilePath callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_1530', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      await bundle.getBundleArchiveInfo(undefined, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent)
+      function OnReceiveEvent(err, datainfo) {
+        if (err) {
+          console.info("getBundleArchiveInfo undefined hapFilePath err:" + JSON.stringify(err));
+          expect(err.code).assertEqual(1);
+          done();
+          return;
+        }
+        console.info("getBundleArchiveInfo undefined hapFilePath success" + JSON.stringify(datainfo));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1540
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_1540
+     * @tc.desc   Test getBundleArchiveInfo with null bundleFlags callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_1540', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      await bundle.getBundleArchiveInfo(BMSJSTEST1, null, OnReceiveEvent)
+      function OnReceiveEvent(err, datainfo) {
+        if (err) {
+          console.info("getBundleArchiveInfo null bundleFlags err:" + JSON.stringify(err));
+          expect(err.code).assertEqual(1);
+          done();
+          return;
+        }
+        console.info("getBundleArchiveInfo null bundleFlags success" + JSON.stringify(datainfo));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1550
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_1550
+     * @tc.desc   Test getBundleArchiveInfo with undefined bundleFlags callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_1550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      await bundle.getBundleArchiveInfo(BMSJSTEST1, undefined, OnReceiveEvent)
+      function OnReceiveEvent(err, datainfo) {
+        if (err) {
+          console.info("getBundleArchiveInfo undefined bundleFlags err:" + JSON.stringify(err));
+          expect(err.code).assertEqual(1);
+          done();
+          return;
+        }
+        console.info("getBundleArchiveInfo undefined bundleFlags success" + JSON.stringify(datainfo));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1560
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_1560
+     * @tc.desc   Test getBundleArchiveInfo with empty string hapFilePath Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_1560', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      await bundle.getBundleArchiveInfo('', bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES).then(datainfo => {
+        console.info("getBundleArchiveInfo empty string Promise success" + JSON.stringify(datainfo));
+        expect().assertFail();
+        done();
+      }).catch(err => {
+        console.info("getBundleArchiveInfo empty string Promise err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(1);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1570
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_1570
+     * @tc.desc   Test getBundleArchiveInfo with null hapFilePath Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_1570', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      await bundle.getBundleArchiveInfo(null, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES).then(datainfo => {
+        console.info("getBundleArchiveInfo null hapFilePath Promise success" + JSON.stringify(datainfo));
+        expect().assertFail();
+        done();
+      }).catch(err => {
+        console.info("getBundleArchiveInfo null hapFilePath Promise err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(1);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1580
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_1580
+     * @tc.desc   Test getBundleArchiveInfo with undefined hapFilePath Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_1580', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      await bundle.getBundleArchiveInfo(undefined, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES).then(datainfo => {
+        console.info("getBundleArchiveInfo undefined hapFilePath Promise success" + JSON.stringify(datainfo));
+        expect().assertFail();
+        done();
+      }).catch(err => {
+        console.info("getBundleArchiveInfo undefined hapFilePath Promise err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(1);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1590
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_1590
+     * @tc.desc   Test getBundleArchiveInfo with null bundleFlags Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_1590', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      await bundle.getBundleArchiveInfo(BMSJSTEST1, null).then(datainfo => {
+        console.info("getBundleArchiveInfo null bundleFlags Promise success" + JSON.stringify(datainfo));
+        expect().assertFail();
+        done();
+      }).catch(err => {
+        console.info("getBundleArchiveInfo null bundleFlags Promise err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(1);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1600
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_1600
+     * @tc.desc   Test getBundleArchiveInfo with undefined bundleFlags Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      await bundle.getBundleArchiveInfo(BMSJSTEST1, undefined).then(datainfo => {
+        console.info("getBundleArchiveInfo undefined bundleFlags Promise success" + JSON.stringify(datainfo));
+        expect().assertFail();
+        done();
+      }).catch(err => {
+        console.info("getBundleArchiveInfo undefined bundleFlags Promise err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(1);
+        done();
+      })
+    })
+
 
   })
 }

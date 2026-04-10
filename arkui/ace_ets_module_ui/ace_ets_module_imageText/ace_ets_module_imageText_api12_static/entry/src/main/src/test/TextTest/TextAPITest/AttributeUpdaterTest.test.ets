@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function AttributeUpdaterTest() {
   describe("AttributeUpdaterTest", () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AttributeUpdaterTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });
@@ -70,7 +70,7 @@ export default function AttributeUpdaterTest() {
      * @tc.desc     AttributeUpdaterTest_static_001
      * @tc.level   Level.LEVEL0
      */
-    it("AttributeUpdaterTest_static_001", Level.LEVEL0, (done: () => void): Promise<void> => {
+    it("AttributeUpdaterTest_static_001", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[AttributeUpdaterTest_001] START");
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

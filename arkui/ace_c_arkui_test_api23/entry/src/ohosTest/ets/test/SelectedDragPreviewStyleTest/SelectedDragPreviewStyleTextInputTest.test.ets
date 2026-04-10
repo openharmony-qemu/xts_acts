@@ -38,8 +38,6 @@ export default function SelectedDragPreviewStyleTextInputTest() {
     it('SelectedDragPreviewStyleTextInputTest0737', Level.LEVEL1, async (done: Function) => {
       let driver = await Driver.create();
       let DragTextInput = await driver.findComponent(ON.id('textInput_test_capi'));
-      let DragCAPIText_1 = await driver.findComponent(ON.id('Drag'));
-      await DragTextInput.dragTo(DragCAPIText_1);
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('textInput_test_capi');
       let obj: ESObject = JSON.parse(strJson);

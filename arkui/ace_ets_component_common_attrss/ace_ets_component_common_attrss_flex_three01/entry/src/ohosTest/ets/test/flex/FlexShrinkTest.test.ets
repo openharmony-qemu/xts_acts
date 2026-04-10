@@ -63,9 +63,9 @@ function expectForFlexShrink(targetSize: number, space: number, countFlexShrink:
   console.info('[' + data.caseTag + '] targetSize : ' + targetSize);
   //Verify based on different parent container spindle directions
   let ratio = countFlexShrink / (compareFlexShrink + targetFlexShrink);
-  console.info('[' + data.caseTag + '] targetSize - space * ratio : ' + vp2px(targetSize - space * ratio));
-  expect(Math.abs(Math.round(realRect) - Math.round(vp2px(targetSize - space * ratio))) <= 2).assertTrue();
   console.info('[' + data.caseTag + '] targetSize - space * ratio : ' + (targetSize - space * ratio));
+  console.info('[' + data.caseTag + '] vp2px(targetSize - space * ratio) : ' + vp2px(targetSize - space * ratio));
+  expect(Math.abs(realRect - vp2px(targetSize - space * ratio)) <= 2).assertTrue();
 }
 
 export default function flexShrinkTest() {
@@ -187,9 +187,13 @@ export default function flexShrinkTest() {
       if (data.testValue.describe == 'NoCompressedSize') {
         if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow'
           || data.pageConfig.containerView == 'FlexRowReverse') {
-          expect(Math.abs(Math.round((rect.right - rect.left)) - Math.round(vp2px(targetWidth))) <= 2).assertTrue();
+          console.info('[' + data.caseTag + '] rect.right - rect.left: ' + (rect.right - rect.left));
+          console.info('[' + data.caseTag + '] vp2px(targetWidth): ' + vp2px(targetWidth));
+          expect(Math.abs((rect.right - rect.left) - vp2px(targetWidth)) <= 2).assertTrue();
         } else {
-          expect(Math.abs(Math.round((rect.bottom - rect.top)) - Math.round(vp2px(targetHeight))) <= 2).assertTrue();
+          console.info('[' + data.caseTag + '] rect.bottom - rect.top: ' + (rect.bottom - rect.top));
+          console.info('[' + data.caseTag + '] vp2px(targetHeight): ' + vp2px(targetHeight));
+          expect(Math.abs((rect.bottom - rect.top) - vp2px(targetHeight)) <= 2).assertTrue();
         }
       } else {
         //Verify the standard component not be changed

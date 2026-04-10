@@ -1,24 +1,22 @@
-/*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
+import atomicsAddTest from './AtomicAddTest.test';
+import atomicsAndTest from './AtomicAndTest.test';
+import atomicsCompareExchangeTest from './AtomicCompareExchangeTest.test';
+import atomicsExchangeTest from './AtomicExchangeTest.test';
+import atomicsIsLockFreeTest from './AtomicIsLockFreeTest.test';
+import atomicsLoadTest from './AtomicLoadTest.test';
+import atomicsOrTest from './AtomicOrTest.test';
+import atomicsCombTest from './AtomicsCombTest.test';
+import atomicsStoreTest from './AtomicStoreTest.test';
+import atomicsSubTest from './AtomicSubTest.test';
+import atomicsWaitTest from './AtomicWaitTest.test';
+import atomicsXorTest from './AtomicXorTest.test';
 import atomicsTest from "./Atomics.test";
 import atomicsAPITest from './AtomicsAPITest.test';
 import atomicsAPISecondTest from './AtomicsAPISecondTest.test';
 import AtomicsAPIThirdlyTest from './AtomicsAPIThirdlyTest.test';
 import AtomicsFunctionTest from './AtomicsFunctionTest.test';
 import AtomicsMultithreadTest from './AtomicsMultithreadTest.test';
+import atomics2Test from './Atomic2Test.test';
 
 export default function testsuite() {
   atomicsTest()
@@ -27,4 +25,17 @@ export default function testsuite() {
   AtomicsAPIThirdlyTest();
   AtomicsFunctionTest();
   AtomicsMultithreadTest();
+  atomics2Test()
+  atomicsCombTest()
+  atomicsAddTest()
+  atomicsAndTest()
+  atomicsCompareExchangeTest()
+  atomicsExchangeTest()
+  atomicsIsLockFreeTest()
+  atomicsLoadTest()
+  atomicsOrTest()
+  atomicsStoreTest()
+  atomicsSubTest()
+  atomicsXorTest()
+  atomicsWaitTest()
 }

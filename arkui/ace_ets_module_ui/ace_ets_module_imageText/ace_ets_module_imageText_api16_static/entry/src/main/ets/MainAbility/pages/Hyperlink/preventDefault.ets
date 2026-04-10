@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,7 +78,7 @@ struct Index {
               console.log('Hyperlink1 Click Begin')
               event.preventDefault();
               console.log('Hyperlink1 Click After')
-            } catch (e:Error) {
+            } catch (e) {
               console.log('Hyperlink1 Click ErrorCode:' + JSON.stringify(e))
               console.log('Hyperlink1 Click ErrorMessage:' + e.message)
             }
@@ -97,7 +97,7 @@ struct Index {
               console.log('Hyperlink1 Touch Begin')
               event.preventDefault();
               console.log('Hyperlink1 Touch After')
-            } catch (e:Error) {
+            } catch (e) {
               console.log('Hyperlink1 Touch ErrorCode:' + JSON.stringify(e))
               console.log('Hyperlink1 Touch ErrorMessage:' + e.message)
             }

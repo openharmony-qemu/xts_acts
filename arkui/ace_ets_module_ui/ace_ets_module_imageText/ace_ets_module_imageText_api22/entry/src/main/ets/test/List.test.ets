@@ -19,6 +19,7 @@ import textInputTest from './TextChangeObserverTest/textInput.test';
 import richEditorTest from './TextChangeObserverTest/richEditor.test';
 import imageAltTest from './Image/imageAltTest.test';
 import minLines from './TextTest/minLines.test';
+import TextFontColorByNameTest from './TextTest/TextFontColorByNameTest.test';
 import richEditorSupportSvg2Test from './richEditorSupportSvg2Test/richEditorSupportSvg2.test';
 import scrollbarTest from './scrollbarTest/scrollbarTest.test';
 import TextAreaTest from './ShowCounterTest/TextAreaTest.test';
@@ -32,6 +33,7 @@ export default function testsuite() {
   richEditorTest();
   imageAltTest();
   minLines();
+  TextFontColorByNameTest();
   richEditorSupportSvg2Test();
   scrollbarTest();
   TextAreaTest();

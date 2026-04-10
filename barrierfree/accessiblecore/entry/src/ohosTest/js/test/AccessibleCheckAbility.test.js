@@ -17,7 +17,7 @@ import accessibility from '@ohos.accessibility'
 import { Driver } from '@ohos.UiTest';
 
 export default function AccessibleCheckAbility() {
-describe('AccessibleCheckAbility', function () {
+describe('AccessibleCheckAbilityAdapt001', function () {
     const TIMEOUT = 1000;
     beforeAll(async function (done) {
         let driver = Driver.create();
@@ -252,6 +252,28 @@ describe('AccessibleCheckAbility', function () {
     })
 
     /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0300
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0300
+     * @tc.desc   Test isSeniorModeEnabled() function in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0300', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0300');
+
+        accessibility.isSeniorModeEnabled().then((result) => {
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0300 result: ${result}`);
+            expect(typeof (result)).assertEqual('boolean');
+            done();
+        }).catch((err) => {
+            console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0300 has error: ${err.code}`);
+            expect(null).assertFail();
+            done();
+        });
+    })
+
+    /**
      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0300
      * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0300
      * @tc.desc   on(screenReaderStateChange)
@@ -260,13 +282,20 @@ describe('AccessibleCheckAbility', function () {
      * @tc.level  LEVEL1
      */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0300', TestType.FUNCTION | Size.SmallTest| Level.LEVEL1, async function (done) {
-      console.info('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0300');
-      let callbackdata = (data) => {
-      }
-      accessibility.on('screenReaderStateChange', callbackdata);
-      accessibility.off('screenReaderStateChange', callbackdata);
-      expect(true).assertTrue();
-      done();
+        console.info('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0300');
+        let callbackdata = (data) => {
+        }
+        let result = false;
+        try {
+            accessibility.on('screenReaderStateChange', callbackdata);
+            accessibility.off('screenReaderStateChange', callbackdata);
+            result = true;
+        } catch (error) {
+            expect(null).assertFail();
+            done();
+        }
+        expect(result).assertEqual(true);
+        done();
     })
 
     /**
@@ -281,9 +310,16 @@ describe('AccessibleCheckAbility', function () {
         console.info('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0400');
         let callbackdata = (data) => {
         }
-        accessibility.on('touchModeChange', callbackdata);
-        accessibility.off('touchModeChange', callbackdata);
-        expect(true).assertTrue();
+        let result = false;
+        try {
+            accessibility.on('touchModeChange', callbackdata);
+            accessibility.off('touchModeChange', callbackdata);
+            result = true;
+        } catch (error) {
+            expect(null).assertFail();
+            done();
+        }
+        expect(result).assertEqual(true);
         done();
     })
 
@@ -297,21 +333,22 @@ describe('AccessibleCheckAbility', function () {
      */
     it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
       console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0100');
-      let callbackdata = (data) => {
-        console.info(domain, tag, 'on animationReduce state changed');
-      }
-
-      try {
-        accessibility.onAnimationReduceStateChange(callbackdata);
-        accessibility.offAnimationReduceStateChange(callbackdata);
-        accessibility.offAnimationReduceStateChange();
-        expect(true).assertTrue();
+        let callbackdata = (data) => {
+            console.info(domain, tag, 'on animationReduce state changed');
+        }
+        let result = false;
+        try {
+            accessibility.onAnimationReduceStateChange(callbackdata);
+            accessibility.offAnimationReduceStateChange(callbackdata);
+            accessibility.offAnimationReduceStateChange();
+            result = true;
+        } catch (error) {
+            hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0100 failed. code: ${error.code}, msg: ${error.message}`);
+            expect(null).assertFail();
+            done();
+        }
+        expect(result).assertEqual(true);
         done();
-      } catch (error) {
-        hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAnimationReduce_0100 failed. code: ${error.code}, msg: ${error.message}`);
-        expect(null).assertFail();
-        done();
-      }
     })
 
     /**
@@ -323,21 +360,23 @@ describe('AccessibleCheckAbility', function () {
      * @tc.level  LEVEL0
      */
     it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
-      console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0100');
-      let callbackdata = (data) => {
-        console.info(domain, tag, 'on AudioMono state changed');
-      }
-      try {
-        accessibility.onAudioMonoStateChange(callbackdata);
-        accessibility.offAudioMonoStateChange(callbackdata);
-        accessibility.offAudioMonoStateChange();
-        expect(true).assertTrue();
+        console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0100');
+        let callbackdata = (data) => {
+            console.info(domain, tag, 'on AudioMono state changed');
+        }
+        let result = false;
+        try {
+            accessibility.onAudioMonoStateChange(callbackdata);
+            accessibility.offAudioMonoStateChange(callbackdata);
+            accessibility.offAudioMonoStateChange();
+            result = true;
+        } catch (error) {
+            hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0100 failed. code: ${error.code}, msg: ${error.message}`);
+            expect(null).assertFail();
+            done();
+        }
+        expect(result).assertEqual(true);
         done();
-      } catch (error) {
-        hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_Accessibility_InquiriesAudioMono_0100 failed. code: ${error.code}, msg: ${error.message}`);
-        expect(null).assertFail();
-        done();
-      }
     })
 
     /**
@@ -350,21 +389,51 @@ describe('AccessibleCheckAbility', function () {
      */
     it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
       console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0100');
-      let callbackdata = (data) => {
-        console.info(domain, tag, 'on flashReminder state changed');
-      }
-      try {
-        accessibility.onFlashReminderStateChange(callbackdata);
-        accessibility.offFlashReminderStateChange(callbackdata);
-        accessibility.offFlashReminderStateChange();
-        expect(true).assertTrue();
+        let callbackdata = (data) => {
+            console.info(domain, tag, 'on flashReminder state changed');
+        }
+        let result = false;
+        try {
+            accessibility.onFlashReminderStateChange(callbackdata);
+            accessibility.offFlashReminderStateChange(callbackdata);
+            accessibility.offFlashReminderStateChange();
+            result = true;
+        } catch (error) {
+            hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0100 failed. code: ${error.code}, msg: ${error.message}`);
+            expect(null).assertFail();
+            done();
+        }
+        expect(result).assertEqual(true);
         done();
-      } catch (error) {
-        hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_Accessibility_InquiriesFlashReminder_0100 failed. code: ${error.code}, msg: ${error.message}`);
-        expect(null).assertFail();
-        done();
-      }
     })
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0100
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0100
+     * @tc.desc   onSeniorModeStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0100');
+          let callbackdata = (data) => {
+              console.info(domain, tag, 'on SeniorMode state changed');
+          }
+          let result = false;
+          try {
+              accessibility.onSeniorModeStateChange(callbackdata);
+              accessibility.offSeniorModeStateChange(callbackdata);
+              accessibility.offSeniorModeStateChange();
+              result = true;
+          } catch (error) {
+              hilog.error(domain, tag, ` SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0100 failed. code: ${error.code}, msg: ${error.message}`);
+              expect(null).assertFail();
+              done();
+          }
+          expect(result).assertEqual(true);
+          done();
+      })
 
     /**
      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100
@@ -376,12 +445,19 @@ describe('AccessibleCheckAbility', function () {
      */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
       console.info('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100');
-      let callbackdata = (data) => {
-      }
-      accessibility.on('accessibilityStateChange', callbackdata);
-      accessibility.off('accessibilityStateChange', callbackdata);
-      expect(true).assertTrue();
-      done();
+        let callbackdata = (data) => {
+        }
+        let result = false;
+        try {
+            accessibility.on('accessibilityStateChange', callbackdata);
+            accessibility.off('accessibilityStateChange', callbackdata);
+            result = true;
+        } catch (error) {
+            expect(null).assertFail();
+            done();
+        }
+        expect(result).assertEqual(true);
+        done();
     })
 
 })

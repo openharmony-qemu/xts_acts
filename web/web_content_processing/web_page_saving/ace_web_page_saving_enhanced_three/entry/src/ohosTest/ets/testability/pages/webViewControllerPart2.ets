@@ -46,6 +46,8 @@ struct webViewControllerPart2 {
   no_error: string = "no error happened"
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
+  @State activeMatchOrdinal: number = -1;
+  @State isDoneCounting: boolean = false;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -87,8 +89,8 @@ struct webViewControllerPart2 {
       Row() {
         Button("WebViewControllerPart2 click").key('WebViewControllerPart2Button').onClick(async () => {
           console.info('key==>' + this.str);
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
+          await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
           this.isReceive = -1;
           switch (this.str) {
 
@@ -99,8 +101,12 @@ struct webViewControllerPart2 {
                 this.controller.loadUrl("resource://rawfile/searchAllAsync.html");
                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 this.controller.searchAllAsync('Hello World');
-                await waitForExist(() => this.numberOfMatches, this.str, 2);
+                await waitForExist(() => this.numberOfMatches, this.str, 2, 1000);
+                await waitForExist(() => this.activeMatchOrdinal, this.str, 0, 1000);
+                await waitForExist(() => this.isDoneCounting, this.str, true, 1000);
                 Utils.emitEvent(this.numberOfMatches, 132050)
+                Utils.emitEvent(this.activeMatchOrdinal, 26031003)
+                Utils.emitEvent(this.isDoneCounting, 26031004)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -252,6 +258,8 @@ struct webViewControllerPart2 {
             console.log("on search result receive:" + "[cur]" + ret.activeMatchOrdinal +
               "[total]" + ret.numberOfMatches + "[isDone]" + ret.isDoneCounting);
             this.numberOfMatches = ret.numberOfMatches
+            this.activeMatchOrdinal = ret.activeMatchOrdinal;
+            this.isDoneCounting = ret.isDoneCounting;
             this.searchNext = true
           }
         })

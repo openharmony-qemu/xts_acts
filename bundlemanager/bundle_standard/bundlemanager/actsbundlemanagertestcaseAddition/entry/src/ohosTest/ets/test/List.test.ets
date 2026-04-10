@@ -16,10 +16,14 @@
 
 
 import ErrcodeTest from './ErrorCodeTest.test.ets';
+import GetAbilityInfoNopermissionTest from './GetAbilityInfoNopermission.test.ets';
+import testGetLaunchWantForBundleSync from './GetLaunchWantForBundleSync.test';
 
 
 export default function testsuite() {
 
   ErrcodeTest();
+  GetAbilityInfoNopermissionTest();
+  testGetLaunchWantForBundleSync();
 
 }

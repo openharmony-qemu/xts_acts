@@ -25,7 +25,7 @@
     "@test/library": "file:../library",
     "loadHsp": "file:../loadHsp",
     "@test/library1": "file:../library1",
-    "@ohos/hypium": "1.0.16",
+    "@ohos/hypium": "1.0.26",
     "validator": "^13.9.0"
   }
 }

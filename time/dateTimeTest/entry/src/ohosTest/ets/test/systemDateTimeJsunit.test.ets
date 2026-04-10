@@ -122,6 +122,56 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
+     * @tc.name   SUB_systemDateTime_getCurrentTime_JS_API_0005
+     * @tc.number SUB_systemDateTime_getCurrentTime_JS_API_0005
+     * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_systemDateTime_getCurrentTime_JS_API_0005", Level.LEVEL0, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getCurrentTime_JS_API_0005 start----------------");
+      systemDateTime.getCurrentTime(false, (error, data) => {
+        try {
+          if (error) {
+            console.error('====>SUB_systemDateTime_getCurrentTime_JS_API_0005 fail: ' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+          };
+          console.info('====>systemDateTime.getCurrentTime success data : ' + JSON.stringify(data));
+          expect(data != null).assertEqual(true);
+          done();
+        } catch (error) {
+          console.error('====>SUB_systemDateTime_getCurrentTime_JS_API_0005 catch error: ' + JSON.stringify(error));
+          done();
+        }
+        console.info("====>----------SUB_systemDateTime_getCurrentTime_JS_API_0005 end-----------------");
+      });
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getCurrentTime_JS_API_0006
+     * @tc.number SUB_systemDateTime_getCurrentTime_JS_API_0006
+     * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_systemDateTime_getCurrentTime_JS_API_0006", Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----SUB_systemDateTime_getCurrentTime_JS_API_0006 start----------------");
+      await systemDateTime.getCurrentTime(true).then((data) => {
+        console.info('====>SUB_systemDateTime_getCurrentTime_JS_API_0006 success data : ' + JSON.stringify(data));
+        expect(data != null).assertEqual(true);
+        done();
+      }).catch((error: BusinessError) => {
+        console.error('====>SUB_systemDateTime_getCurrentTime_JS_API_0006 fail: ' + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      });
+      console.info("====>-----SUB_systemDateTime_getCurrentTime_JS_API_0006 end------------");
+    });
+
+    /**
      * @tc.name   SUB_systemDateTime_getRealActiveTime_JS_API_0001
      * @tc.number SUB_systemDateTime_getRealActiveTime_JS_API_0001
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
@@ -222,6 +272,56 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
+     * @tc.name   SUB_systemDateTime_getRealActiveTime_JS_API_0005
+     * @tc.number SUB_systemDateTime_getRealActiveTime_JS_API_0005
+     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_systemDateTime_getRealActiveTime_JS_API_0005", Level.LEVEL2, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getRealActiveTime_JS_API_0005 start----------------");
+      systemDateTime.getRealActiveTime(false, (error, data) => {
+        try {
+          if (error) {
+            console.error('====>SUB_systemDateTime_getRealActiveTime_JS_API_0005 fail: ' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+          };
+          console.info('====>SUB_systemDateTime_getRealActiveTime_JS_API_0005 success data : ' + JSON.stringify(data));
+          expect(data != null).assertEqual(true);
+          done();
+        } catch (error) {
+          console.error('====>SUB_systemDateTime_getRealActiveTime_JS_API_0005 catch err: ' + JSON.stringify(error));
+          done();
+        }
+        console.info("====>----------SUB_systemDateTime_getRealActiveTime_JS_API_0005 end-----------------");
+      });
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getRealActiveTime_JS_API_0006
+     * @tc.number SUB_systemDateTime_getRealActiveTime_JS_API_0006
+     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_systemDateTime_getRealActiveTime_JS_API_0006", Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----SUB_systemDateTime_getRealActiveTime_JS_API_0006 start----------------");
+      await systemDateTime.getRealActiveTime(true).then((data) => {
+        console.log('SUB_systemDateTime_getRealActiveTime_JS_API_0006 success data : ' + JSON.stringify(data));
+        expect(data != null).assertEqual(true);
+        done();
+      }).catch((error: BusinessError) => {
+        console.error('====>SUB_systemDateTime_getRealActiveTime_JS_API_0006 err: ' + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      });
+      console.info("====>-----SUB_systemDateTime_getRealActiveTime_JS_API_0006 end------------");
+    });
+
+    /**
      * @tc.name   SUB_systemDateTime_getRealTime_JS_API_0001
      * @tc.number SUB_systemDateTime_getRealTime_JS_API_0001
      * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, including deep sleep time.
@@ -319,6 +419,56 @@ export default function systemDateTimeJsunit() {
         }
         console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0004 end-----------------");
       });
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getRealTime_JS_API_0005
+     * @tc.number SUB_systemDateTime_getRealTime_JS_API_0005
+     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, including deep sleep time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_systemDateTime_getRealTime_JS_API_0005", Level.LEVEL2, async (done: Function) => {
+      console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0005 start----------------");
+      systemDateTime.getRealTime(false, (error, data) => {
+        try {
+          if (error) {
+            console.error('SUB_systemDateTime_getRealTime_JS_API_0005 fail: ' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+          };
+          console.info('====>SUB_systemDateTime_getRealTime_JS_API_0005 success data : ' + JSON.stringify(data));
+          expect(data != null).assertEqual(true);
+          done();
+        } catch (error) {
+          console.error('====>SUB_systemDateTime_getRealTime_JS_API_0005 catch err: ' + JSON.stringify(error));
+          done();
+        }
+        console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0005 end-----------------");
+      });
+    });
+
+    /**
+     * @tc.name   SUB_systemDateTime_getRealTime_JS_API_0006
+     * @tc.number SUB_systemDateTime_getRealTime_JS_API_0006
+     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_systemDateTime_getRealTime_JS_API_0006", Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----SUB_systemDateTime_getRealTime_JS_API_0006 start----------------");
+      await systemDateTime.getRealTime(true).then((data) => {
+        console.info('====>SUB_systemDateTime_getRealTime_JS_API_0006 success data : ' + JSON.stringify(data));
+        expect(data != null).assertEqual(true);
+        done();
+      }).catch((error: BusinessError) => {
+        console.error('====>SUB_systemDateTime_getRealTime_JS_API_0006 err: ' + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      });
+      console.info("====>-----SUB_systemDateTime_getRealTime_JS_API_0006 end------------");
     });
 
     /**

@@ -31,6 +31,7 @@ import emitter from '@ohos.events.emitter';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
@@ -135,6 +136,12 @@ struct WebComponent {
                 })
 
               break;
+            }
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({url: 'pages/WebViewOnPdfLoadEvent'})
+              console.log('push URL success')
             }
 
           }

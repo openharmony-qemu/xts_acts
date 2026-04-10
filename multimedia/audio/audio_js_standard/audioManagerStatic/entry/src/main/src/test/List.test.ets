@@ -31,6 +31,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let getPermission = async () => {
     try {
+        console.info('getPermission start');
         let g_context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
         let atManager = abilityAccessCtrl.createAtManager();
         let arr: Array<Permissions> = new Array<Permissions>();
@@ -42,12 +43,14 @@ let getPermission = async () => {
                 console.info("getPermissionRequestResult err" + JSON.stringify(err));
             });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
+        await Utils.msSleep(1000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        await Utils.msSleep(1000);
         if (permissionButton != null) {
             await permissionButton.click();
         }
     } catch (err) {
-        console.error(' beforeAll failed, err: ' + err);
+        console.error('beforeAll failed, err: ' + err);
     }
 }
 

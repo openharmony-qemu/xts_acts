@@ -43,13 +43,13 @@ export default function wholeWebPageDrawing() {
 
     /**
      * @tc.name   wholeWebPageDrawing0100
-     * @tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0100
+     * @tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_01001
      * @tc.desc   test wholeWebPageDrawing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('wholeWebPageDrawing0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('wholeWebPageDrawing0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("wholeWebPageDrawing0100", 10)
         await Utils.msSleep(4000);
@@ -58,6 +58,24 @@ export default function wholeWebPageDrawing() {
         inspector.sendEventByKey('wholeWebPageDrawingButton', 10, '');
         await Utils.msSleep(2000);
         done()
+      })
+
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number SUB_ACE_BASIC_ETS_WHOLEWEBPAGEDRAWING_API_0100
+     * @tc.desc   PAGE_REDIRECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitonSwitchNextPage', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('wholeWebPageDrawingButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
       })
   })
 }

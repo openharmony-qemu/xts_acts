@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,7 +27,7 @@ async function genSymKeyPair(): Promise<cryptoFramework.SymKey> {
     let symGenerator: cryptoFramework.SymKeyGenerator = asyCommon.createSymKeyGenerator("SM4_128");
     let symKeyPair: cryptoFramework.SymKey = await symGenerator.generateSymKey();
     return symKeyPair;
-  } catch (err: BusinessError) {
+  } catch (err) {
     throw err as Error;
   }
 }
@@ -35,7 +35,7 @@ async function genSymKeyPair(): Promise<cryptoFramework.SymKey> {
 export default function SecurityCipherSM2SM4Jsunit() {
   describe("SecurityCipherSM2SM4Jsunit", () => {
     console.log("##########start SecurityCipherSM2SM4Jsunit##########");
-    let symKeyPairSM4: cryptoFramework.SymKey;
+    let symKeyPairSM4: cryptoFramework.SymKey | undefined;
     beforeAll(async () => {
       symKeyPairSM4 = await genSymKeyPair();
     });
@@ -46,15 +46,15 @@ export default function SecurityCipherSM2SM4Jsunit() {
      * @tc.desc   the asyAlgoName is "SM4_128|CTR|NoPadding", Use the Promise Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|CTR|NoPadding"
           )
           .then((result: boolean) => {
@@ -83,7 +83,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
          await symCallback
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|CTR|PKCS5")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|CTR|PKCS5")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -110,7 +110,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await symPromise
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|CTR|PKCS7")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|CTR|PKCS7")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -138,7 +138,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|ECB|NoPadding"
           )
           .then((result: boolean) => {
@@ -167,7 +167,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
          await symCallback
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|ECB|PKCS5")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|ECB|PKCS5")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -194,7 +194,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await symPromise
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|ECB|PKCS7")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|ECB|PKCS7")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -222,7 +222,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|CBC|NoPadding"
           )
           .then((result: boolean) => {
@@ -251,7 +251,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
          await symCallback
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|CBC|PKCS5")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|CBC|PKCS5")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -278,7 +278,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await symPromise
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|CBC|PKCS7")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|CBC|PKCS7")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -306,7 +306,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|OFB|NoPadding"
           )
           .then((result: boolean) => {
@@ -335,7 +335,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
          await symCallback
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|OFB|PKCS5")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|OFB|PKCS5")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -362,7 +362,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await symPromise
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|OFB|PKCS7")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|OFB|PKCS7")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -390,7 +390,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|CFB|NoPadding"
           )
           .then((result: boolean) => {
@@ -419,7 +419,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
          await symCallback
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|CFB|PKCS5")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|CFB|PKCS5")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -446,7 +446,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await symPromise
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4_128|CFB|PKCS7")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4_128|CFB|PKCS7")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -474,7 +474,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|CFB128|NoPadding"
           )
           .then((result: boolean) => {
@@ -504,7 +504,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
          await symCallback
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|CFB128|PKCS5"
           )
           .then((result: boolean) => {
@@ -534,7 +534,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       async (done: () => void): Promise<void> => {
         await symPromise
           .encryptAndDecryptNormalSM4Process(
-            symKeyPairSM4,
+            symKeyPairSM4!,
             "SM4_128|CFB128|PKCS7"
           )
           .then((result: boolean) => {
@@ -563,7 +563,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         await symPromise
-          .encryptAndDecryptNormalSM4Process(symKeyPairSM4, "SM4|ECB|PKCS7")
+          .encryptAndDecryptNormalSM4Process(symKeyPairSM4!, "SM4|ECB|PKCS7")
           .then((result: boolean) => {
             expect(result).assertTrue();
           })
@@ -781,38 +781,38 @@ export default function SecurityCipherSM2SM4Jsunit() {
         try {
           cryptoFramework.createCipher("SM2257|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(801);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("SM2_256|SHA257");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(801);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("SM2_256|NoHash");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(401);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(401);
         }
         try {
           cryptoFramework.createCipher("SM2_256|C1C2C3|SHA512");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(801);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("SM4_192|CFB|PKCS5");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(801);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("SM4_256|CFB|PKCS5");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(801);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(801);
         }
         done();
       }
@@ -833,16 +833,16 @@ export default function SecurityCipherSM2SM4Jsunit() {
         try {
           cryptoFramework.createSymKeyGenerator("SM2_256|SHA257");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("createCipherFail catch error: " + err);
-          expect(err.code).assertEqual(801);
+          expect((err as BusinessError).code).assertEqual(801);
         }
         try {
           cryptoFramework.createSymKeyGenerator("SM2257|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("createCipherFail catch error: " + err);
-          expect(err.code).assertEqual(801);
+          expect((err as BusinessError).code).assertEqual(801);
         }
         done();
       }
@@ -883,10 +883,10 @@ export default function SecurityCipherSM2SM4Jsunit() {
             });
           });
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(401);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(401);
         }
-        await cipherGenerator.init(encryptMode, symKeyPairSM4, null);
+        await cipherGenerator.init(encryptMode, symKeyPairSM4!, null);
         done();
       }
     );
@@ -926,10 +926,10 @@ export default function SecurityCipherSM2SM4Jsunit() {
             });
           });
           expect(null).assertFail();
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual(401);
+        } catch (err) {
+          expect((err as BusinessError).code).assertEqual(401);
         }
-        await cipherGenerator.init(encryptMode, symKeyPairSM4, null);
+        await cipherGenerator.init(encryptMode, symKeyPairSM4!, null);
         try {
           await new Promise<cryptoFramework.DataBlob|null>((resolve, reject) => {
             cipherGenerator.doFinal(null, (err: BusinessError<void>|null, data: cryptoFramework.DataBlob|null|undefined) => {
@@ -940,7 +940,7 @@ export default function SecurityCipherSM2SM4Jsunit() {
               }
             });
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           expect(null).assertFail();
         }
         done();
@@ -962,9 +962,9 @@ export default function SecurityCipherSM2SM4Jsunit() {
         try {
           cryptoFramework.createSymKeyGenerator("SM4_257|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error("createCipherFail catch error: " + err);
-          expect(err.code).assertEqual(801);
+          expect((err as BusinessError).code).assertEqual(801);
         }
         done();
       }
@@ -985,11 +985,11 @@ export default function SecurityCipherSM2SM4Jsunit() {
         try {
           let cipherGenerator: cryptoFramework.Cipher = cryptoFramework.createCipher("SM2_256|SM3");
           expect(cipherGenerator.algName == "SM2_256|SM3").assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(
             "Security_CryptoFramework_CipherSMX_Func_3300 catch err: " + err
           );
-          expect(err.code).assertEqual(401);
+          expect((err as BusinessError).code).assertEqual(401);
         }
         done();
       }

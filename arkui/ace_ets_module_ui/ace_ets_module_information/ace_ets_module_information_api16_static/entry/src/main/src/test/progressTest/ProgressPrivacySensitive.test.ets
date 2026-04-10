@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ProgressPrivacySensitiveTest() {
   describe('ProgressPrivacySensitiveTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ProgressPrivacySensitiveTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility");
     });
@@ -58,7 +58,7 @@ export default function ProgressPrivacySensitiveTest() {
       }
       console.info('ProgressPrivacySensitiveTest beforeEach end');
     });
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
       await Utils.sleep(2500);

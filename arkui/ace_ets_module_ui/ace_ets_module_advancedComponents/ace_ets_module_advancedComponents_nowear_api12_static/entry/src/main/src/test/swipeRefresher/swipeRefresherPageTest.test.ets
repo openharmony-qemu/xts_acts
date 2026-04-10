@@ -26,7 +26,7 @@ import events_emitter from '@ohos.events.emitter';
 export default function swipeRefresherPageTest() {
   describe('swipeRefresherPageTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swipeRefresherPageTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.test.static", "EntryAbility")
 

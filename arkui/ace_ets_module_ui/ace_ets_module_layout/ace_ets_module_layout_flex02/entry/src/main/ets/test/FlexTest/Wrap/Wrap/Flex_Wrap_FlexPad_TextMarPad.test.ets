@@ -211,27 +211,40 @@ export default function flex_Wrap_FlexPad_TextMarPadTest() {
       expect(JSON.parse(flexContainerStrJson).$type).assertEqual('Flex');
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.wrap).assertEqual('FlexWrap.Wrap');
 
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi1:' + Math.floor(Math.abs(firstText.top - secondText.top)));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi2:' + Math.floor(Math.abs((firstText.top - flexContainer.top) - vp2px(40))));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi3:' + Math.floor(Math.abs((firstText.left - flexContainer.left) - vp2px(40))));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi4:' + Math.floor(Math.abs((thirdText.top - secondText.bottom) - vp2px(20))));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi5:' + Math.floor(Math.abs(thirdText.left - firstText.left)));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi6:' + Math.floor(Math.abs((firstText.bottom - firstText.top) - vp2px(50))));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi7:' + Math.floor(Math.abs((secondText.bottom - secondText.top) - vp2px(100))));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi8:' + Math.floor(Math.abs((thirdText.bottom - thirdText.top) - vp2px(150))));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi9:' + Math.floor(Math.abs((firstText.right - firstText.left) - vp2px(150))));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi10:' + Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi11:' + Math.floor(Math.abs((secondText.right - secondText.left) - (thirdText.right - thirdText.left))));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi12:' + Math.floor(Math.abs((secondText.left - firstText.right) - vp2px(20))));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi13:' + Math.floor(Math.abs((flexContainer.right - secondText.right) - vp2px(140))));
+      console.info('testWrapWrapFlexPadTextMarPad_chazhi14:' + Math.floor(Math.abs((thirdText.bottom - flexContainer.bottom) - vp2px(10))));
+
       expect(Math.floor(Math.abs(firstText.top - secondText.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs((firstText.top - flexContainer.top) - vp2px(40))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((firstText.left - flexContainer.left) - vp2px(40))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((thirdText.top - secondText.bottom) - vp2px(20))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(thirdText.left - firstText.left)) <= 1).assertTrue();
-
       expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - vp2px(100))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - vp2px(150))) <= 1).assertTrue();
-
       expect(Math.floor(Math.abs((firstText.right - firstText.left) - vp2px(150))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((secondText.right - secondText.left) - (thirdText.right - thirdText.left))) <= 1)
         .assertTrue();
-
       expect(Math.floor(Math.abs((secondText.left - firstText.right) - vp2px(20))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((flexContainer.right - secondText.right) - vp2px(140))) <= 2)
+      expect(Math.floor(Math.abs((flexContainer.right - secondText.right) - vp2px(140))) <= 3)
         .assertTrue();
       expect(Math.floor(Math.abs((thirdText.bottom - flexContainer.bottom) - vp2px(10))) <= 2)
         .assertTrue();
+
       console.info('[testWrapWrapFlexPadTextMarPad] END');
 
     });

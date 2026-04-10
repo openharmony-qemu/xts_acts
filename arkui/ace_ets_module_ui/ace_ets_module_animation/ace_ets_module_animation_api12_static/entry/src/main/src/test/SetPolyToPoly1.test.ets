@@ -34,7 +34,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function setPolyToPoly() {
   describe('setPolyToPoly', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("setPolyToPoly beforeEach start");
 
       

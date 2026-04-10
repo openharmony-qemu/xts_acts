@@ -2813,6 +2813,224 @@ export default function inputMethodDrawnControlJSUnit() {
     });
 
     /**
+     * @tc.name   Sub_Inputmethod_IMF_switchInputMethod_0300
+     * @tc.number Sub_Inputmethod_IMF_switchInputMethod_0300
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchInputMethod_0300', Level.LEVEL3, async (done: Function) => {
+      try{
+        inputMethod.switchInputMethod(null, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_switchInputMethod_0300 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchInputMethod_0300 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchInputMethod_0400
+     * @tc.number Sub_Inputmethod_IMF_switchInputMethod_0400
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchInputMethod_0400', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.DISABLED,
+        label: '',
+        icon: ''
+      };
+      try{
+        inputMethod.switchInputMethod(inputMethodProperty, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_switchInputMethod_0400 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchInputMethod_0400 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchInputMethod_0500
+     * @tc.number Sub_Inputmethod_IMF_switchInputMethod_0500
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchInputMethod_0500', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.BASIC_MODE
+      };
+      try{
+        inputMethod.switchInputMethod(inputMethodProperty, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_switchInputMethod_0500 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchInputMethod_0500 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchInputMethod_0600
+     * @tc.number Sub_Inputmethod_IMF_switchInputMethod_0600
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchInputMethod_0600', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.FULL_EXPERIENCE_MODE
+      };
+      try{
+        inputMethod.switchInputMethod(inputMethodProperty, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_switchInputMethod_0600 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchInputMethod_0600 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchInputMethod_0700
+     * @tc.number Sub_Inputmethod_IMF_switchInputMethod_0700
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchInputMethod_0700', Level.LEVEL3, async (done: Function) => {
+      try{
+        await inputMethod.switchInputMethod(null);
+        console.info("====>Sub_Inputmethod_IMF_switchInputMethod_0700 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchInputMethod_0700 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchInputMethod_0800
+     * @tc.number Sub_Inputmethod_IMF_switchInputMethod_0800
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchInputMethod_0800', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.DISABLED,
+        label: '',
+        icon: ''
+      };
+      try{
+        await inputMethod.switchInputMethod(inputMethodProperty);
+        console.info("====>Sub_Inputmethod_IMF_switchInputMethod_0800 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchInputMethod_0800 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchInputMethod_0900
+     * @tc.number Sub_Inputmethod_IMF_switchInputMethod_0900
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchInputMethod_0900', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.BASIC_MODE
+      };
+      try{
+        inputMethod.switchInputMethod(inputMethodProperty);
+        console.info("====>Sub_Inputmethod_IMF_switchInputMethod_0900 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchInputMethod_0900 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchInputMethod_1000
+     * @tc.number Sub_Inputmethod_IMF_switchInputMethod_1000
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchInputMethod_1000', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.FULL_EXPERIENCE_MODE
+      };
+      try{
+        await inputMethod.switchInputMethod(inputMethodProperty); 
+        console.info("====>Sub_Inputmethod_IMF_switchInputMethod_1000 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchInputMethod_1000 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   inputmethod_test_switchCurrentInputMethodSubtype_0010
      * @tc.number inputmethod_test_switchCurrentInputMethodSubtype_0010
      * @tc.desc   401 Function test
@@ -2866,6 +3084,49 @@ export default function inputMethodDrawnControlJSUnit() {
     });
 
     /**
+     * @tc.name   Sub_Inputmethod_IMF_switchCurrentInputMethodSubtype_0300
+     * @tc.number Sub_Inputmethod_IMF_switchCurrentInputMethodSubtype_0300
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchCurrentInputMethodSubtype_0300', Level.LEVEL3, async (done: Function) => {
+      try{
+        inputMethod.switchCurrentInputMethodSubtype(null, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_switchInputMethod_0300 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchInputMethod_0300 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchCurrentInputMethodSubtype_0400
+     * @tc.number Sub_Inputmethod_IMF_switchCurrentInputMethodSubtype_0400
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchCurrentInputMethodSubtype_0400', Level.LEVEL3, async (done: Function) => {
+      try{
+        await inputMethod.switchCurrentInputMethodSubtype(null);
+        console.info("====>Sub_Inputmethod_IMF_switchCurrentInputMethodSubtype_0400 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchCurrentInputMethodSubtype_0400 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   inputmethod_test_switchCurrentInputMethodAndSubtype_0010
      * @tc.number inputmethod_test_switchCurrentInputMethodAndSubtype_0010
      * @tc.desc   401 Function test
@@ -2886,6 +3147,224 @@ export default function inputMethodDrawnControlJSUnit() {
         });
       }catch(err){
         console.info(`====>inputmethod_test_switchCurrentInputMethodAndSubtype_0010 catch err:  ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0300
+     * @tc.number Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0300
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0300', Level.LEVEL3, async (done: Function) => {
+      try{
+        inputMethod.switchCurrentInputMethodAndSubtype(null, null, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0300 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0300 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0400
+     * @tc.number Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0400
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0400', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.DISABLED,
+        label: '',
+        icon: ''
+      };
+      try{
+        inputMethod.switchCurrentInputMethodAndSubtype(inputMethodProperty, undefined, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0400 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0400 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0500
+     * @tc.number Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0500
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0500', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.BASIC_MODE
+      };
+      try{
+        inputMethod.switchCurrentInputMethodAndSubtype(inputMethodProperty, undefined, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0500 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0500 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0600
+     * @tc.number Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0600
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0600', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.FULL_EXPERIENCE_MODE
+      };
+      try{
+        inputMethod.switchCurrentInputMethodAndSubtype(inputMethodProperty, undefined, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0600 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0600 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0700
+     * @tc.number Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0700
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0700', Level.LEVEL3, async (done: Function) => {
+      try{
+        await inputMethod.switchCurrentInputMethodAndSubtype(null, null);
+        console.info("====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0700 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0700 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0800
+     * @tc.number Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0800
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0800', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.DISABLED,
+        label: '',
+        icon: ''
+      };
+      try{
+        await inputMethod.switchCurrentInputMethodAndSubtype(inputMethodProperty, undefined);
+        console.info("====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0800 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0800 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0900
+     * @tc.number Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0900
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0900', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.BASIC_MODE
+      };
+      try{
+        inputMethod.switchCurrentInputMethodAndSubtype(inputMethodProperty, undefined);
+        console.info("====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0900 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_0900 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_1000
+     * @tc.number Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_1000
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_1000', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.FULL_EXPERIENCE_MODE
+      };
+      try{
+        await inputMethod.switchCurrentInputMethodAndSubtype(inputMethodProperty, undefined); 
+        console.info("====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_1000 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_switchCurrentInputMethodAndSubtype_1000 catch err:  ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
         done();
       }
@@ -2974,6 +3453,232 @@ export default function inputMethodDrawnControlJSUnit() {
     });
 
     /**
+     * @tc.name   Sub_Inputmethod_IMF_listInputMethodSubtype_0300
+     * @tc.number Sub_Inputmethod_IMF_listInputMethodSubtype_0300
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_listInputMethodSubtype_0300', Level.LEVEL3, async (done: Function) => {
+      try{
+        let inputMethodSetting = inputMethod.getSetting();
+        inputMethodSetting.listInputMethodSubtype(null, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_listInputMethodSubtype_0300 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_listInputMethodSubtype_0300 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_listInputMethodSubtype_0400
+     * @tc.number Sub_Inputmethod_IMF_listInputMethodSubtype_0400
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_listInputMethodSubtype_0400', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.DISABLED,
+        label: '',
+        icon: ''
+      };
+      try{
+        let inputMethodSetting = inputMethod.getSetting();
+        inputMethodSetting.listInputMethodSubtype(inputMethodProperty, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_listInputMethodSubtype_0400 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_listInputMethodSubtype_0400 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_listInputMethodSubtype_0500
+     * @tc.number Sub_Inputmethod_IMF_listInputMethodSubtype_0500
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_listInputMethodSubtype_0500', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.BASIC_MODE
+      };
+      try{
+        let inputMethodSetting = inputMethod.getSetting();
+        inputMethodSetting.listInputMethodSubtype(inputMethodProperty, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_listInputMethodSubtype_0500 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_listInputMethodSubtype_0500 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_listInputMethodSubtype_0600
+     * @tc.number Sub_Inputmethod_IMF_listInputMethodSubtype_0600
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_listInputMethodSubtype_0600', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.FULL_EXPERIENCE_MODE
+      };
+      try{
+        let inputMethodSetting = inputMethod.getSetting();
+        inputMethodSetting.listInputMethodSubtype(inputMethodProperty, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_listInputMethodSubtype_0600 success");
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_listInputMethodSubtype_0600 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_listInputMethodSubtype_0700
+     * @tc.number Sub_Inputmethod_IMF_listInputMethodSubtype_0700
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_listInputMethodSubtype_0700', Level.LEVEL3, async (done: Function) => {
+      try{
+        let inputMethodSetting = inputMethod.getSetting();
+        await inputMethodSetting.listInputMethodSubtype(null);
+        console.info("====>Sub_Inputmethod_IMF_listInputMethodSubtype_0700 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_listInputMethodSubtype_0700 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_listInputMethodSubtype_0800
+     * @tc.number Sub_Inputmethod_IMF_listInputMethodSubtype_0800
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_listInputMethodSubtype_0800', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.DISABLED,
+        label: '',
+        icon: ''
+      };
+      try{
+        let inputMethodSetting = inputMethod.getSetting();
+        await inputMethodSetting.listInputMethodSubtype(inputMethodProperty);
+        console.info("====>Sub_Inputmethod_IMF_listInputMethodSubtype_0800 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_listInputMethodSubtype_0800 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_listInputMethodSubtype_0900
+     * @tc.number Sub_Inputmethod_IMF_listInputMethodSubtype_0900
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_listInputMethodSubtype_0900', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.BASIC_MODE
+      };
+      try{
+        let inputMethodSetting = inputMethod.getSetting();
+        await inputMethodSetting.listInputMethodSubtype(inputMethodProperty);
+        console.info("====>Sub_Inputmethod_IMF_listInputMethodSubtype_0900 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_listInputMethodSubtype_0900 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_listInputMethodSubtype_1000
+     * @tc.number Sub_Inputmethod_IMF_listInputMethodSubtype_1000
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_listInputMethodSubtype_1000', Level.LEVEL3, async (done: Function) => {
+      let inputMethodProperty: inputMethod.InputMethodProperty = {
+        packageName: '',
+        methodId: '',
+        name: '',
+        id: '',
+        enabledState: inputMethod.EnabledState.FULL_EXPERIENCE_MODE
+      };
+      try{
+        let inputMethodSetting = inputMethod.getSetting();
+        await inputMethodSetting.listInputMethodSubtype(inputMethodProperty); 
+        console.info("====>Sub_Inputmethod_IMF_listInputMethodSubtype_1000 success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>Sub_Inputmethod_IMF_listInputMethodSubtype_1000 catch err:  ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   inputmethod_test_getInputMethods_0010
      * @tc.number inputmethod_test_getInputMethods_0010
      * @tc.desc   401 Function test
@@ -3056,6 +3761,28 @@ export default function inputMethodDrawnControlJSUnit() {
     });
 
     /**
+     * @tc.name   Sub_Inputmethod_IMF_updateAttributePromise_0200
+     * @tc.number Sub_Inputmethod_IMF_updateAttributePromise_0200
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_updateAttributePromise_0200', Level.LEVEL3, async (done: Function) => {
+      try{
+        let inputMethodController = inputMethod.getController();
+        await inputMethodController.updateAttribute(null);
+        console.info("====>Sub_Inputmethod_IMF_updateAttributePromise_0200 success");
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.info(`====>Sub_Inputmethod_IMF_updateAttributePromise_0200 catch err:  ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   inputmethod_test_updateAttribute_0020
      * @tc.number inputmethod_test_updateAttribute_0020
      * @tc.desc   401 Function test
@@ -3078,6 +3805,29 @@ export default function inputMethodDrawnControlJSUnit() {
         });
       }catch(err){
         console.info(`====>inputmethod_test_updateAttribute_0020 catch err:  ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_updateAttributeCallback_0100
+     * @tc.number Sub_Inputmethod_IMF_updateAttributeCallback_0100
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_updateAttributeCallback_0100', Level.LEVEL3, async (done: Function) => {
+      try{
+        let inputMethodController = inputMethod.getController();
+        inputMethodController.updateAttribute(null, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_updateAttributeCallback_0100 success");
+          expect().assertFail();
+          done();
+        });
+      }catch(err){
+        console.info(`====>Sub_Inputmethod_IMF_updateAttributeCallback_0100 catch err:  ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
         done();
       }
@@ -3111,6 +3861,28 @@ export default function inputMethodDrawnControlJSUnit() {
     });
 
     /**
+     * @tc.name   Sub_Inputmethod_IMF_updateCursorPromise_0200
+     * @tc.number Sub_Inputmethod_IMF_updateCursorPromise_0200
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_updateCursorPromise_0200', Level.LEVEL3, async (done: Function) => {
+      try{
+        let inputMethodController = inputMethod.getController();
+        await inputMethodController.updateCursor(null);
+        console.info("====>Sub_Inputmethod_IMF_updateCursorPromise_0200 success");
+        expect().assertFail();
+        done();
+      }catch(err){
+        console.info(`====>Sub_Inputmethod_IMF_updateCursorPromise_0200 catch err:  ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   inputmethod_test_updateCursor_0020
      * @tc.number inputmethod_test_updateCursor_0020
      * @tc.desc   401 Function test
@@ -3133,6 +3905,29 @@ export default function inputMethodDrawnControlJSUnit() {
         });
       }catch(err){
         console.info(`====>inputmethod_test_updateCursor_0020 catch err:  ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Inputmethod_IMF_updateCursorCallback_0100
+     * @tc.number Sub_Inputmethod_IMF_updateCursorCallback_0100
+     * @tc.desc   401 Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Inputmethod_IMF_updateCursorCallback_0100', Level.LEVEL3, async (done: Function) => {
+      try{
+        let inputMethodController = inputMethod.getController();
+        inputMethodController.updateCursor(null, (err, data) => {
+          console.info("====>Sub_Inputmethod_IMF_updateCursorCallback_0100 success");
+          expect().assertFail();
+          done();
+        });
+      }catch(err){
+        console.info(`====>Sub_Inputmethod_IMF_updateCursorCallback_0100 catch err:  ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
         done();
       }

@@ -2,6 +2,17 @@
     "src": [
         "MainAbility/pages/index/index",
         "MainAbility/pages/onHoverStatusChange/onHoverStatusChange",
-        "MainAbility/pages/MouseEvent/MouseEventWindow"
+        "MainAbility/pages/MouseEvent/MouseEventWindow",
+        "MainAbility/pages/HoverEffect/HoverEffectNullAndUndefined",
+        "MainAbility/pages/UICommonEvent/SetOnClick/SetOnClickNullAndUndefined",
+        "MainAbility/pages/UICommonEvent/SetOnTouch/SetOnTouchNullAndUndefined",
+        "MainAbility/pages/UICommonEvent/SetOnAppear/SetOnAppearNullAndUndefined",
+        "MainAbility/pages/UICommonEvent/SetOnDisappear/SetOnDisappearNullAndUndefined",
+        "MainAbility/pages/UICommonEvent/SetOnKeyEvent/SetOnKeyEventNullAndUndefined",
+        "MainAbility/pages/UICommonEvent/SetOnFocus/SetOnFocusNullAndUndefined",
+        "MainAbility/pages/UICommonEvent/SetOnBlur/SetOnBlurNullAndUndefined",
+        "MainAbility/pages/UICommonEvent/SetOnHover/SetOnHoverNullAndUndefined",
+        "MainAbility/pages/UICommonEvent/SetOnMouse/SetOnMouseNullAndUndefined",
+        "MainAbility/pages/UICommonEvent/SetOnSizeChange/SetOnSizeChangeNullAndUndefined"
     ]
 }

@@ -46,7 +46,7 @@ interface optionsObj {
 
 export default function ColumnSplitJsunit() {
   describe('ColumnSplitJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnSplitJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.nowear.api11.static", "EntryAbility")

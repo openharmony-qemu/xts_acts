@@ -33,9 +33,9 @@ struct IsAvailableIndex {
           const uiContext1 = this.getUIContext();
           const uiContext2 = new UIContext();
           console.log(`jerry uiContext1.isAvailable=${uiContext1.isAvailable()}`);
-          console.log(`jerry uicontext2.isAvailable=${uiContext2.isAvailable()}`);
+
           this.isAvailable1 = uiContext1.isAvailable() + '';
-          this.isAvailable2 = uiContext2.isAvailable() + '';
+
         })
       Text(`${this.isAvailable1}`).height('5%').id('isAvailable1_id')
       Text(`${this.isAvailable2}`).height('5%').id('isAvailable2_id')

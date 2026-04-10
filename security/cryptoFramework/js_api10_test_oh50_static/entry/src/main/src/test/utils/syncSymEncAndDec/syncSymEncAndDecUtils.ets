@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,6 +14,7 @@
  */
 import { BusinessError } from '@ohos.base';
 import cryptoFramework from '@ohos.security.cryptoFramework';
+import { createFullData } from '../common/commonUtils';
 import * as rsa from '../pkcs1Topkcs8/pkcs1topkcs8';
 
 function genGcmOrCcmParamsSpec(iv: number[], aad: number[], tag: number[], algName: string): cryptoFramework.GcmParamsSpec {
@@ -87,7 +88,7 @@ function tagEncryptDecryptMessageSync(algName: string, isEnc: boolean, symKey: c
       }
     }
     return {data:updateOutput, paramSpec:paramsSpec} as dataGcmOrCCMSpec;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -108,7 +109,7 @@ function encryptDecryptMessageSync(algName: string, isEnc: boolean, symKey: cryp
     } else {
       return {data:updateOutput, paramSpec:paramsSpec} as dataSpec;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -120,7 +121,7 @@ function createSymKeySync(algName: string): cryptoFramework.SymKey {
     let syncSymKey: cryptoFramework.SymKey = symKeyGenerator.generateSymKeySync();
 
     return syncSymKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -132,7 +133,7 @@ async function convertSymKeyPromise(algName: string, symKeyBlob: cryptoFramework
     let syncSymKey: cryptoFramework.SymKey = await symKeyGenerator.convertKey(symKeyBlob);
 
     return syncSymKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -144,7 +145,7 @@ async function createSymKeyPromise(algName: string): Promise<cryptoFramework.Sym
     let syncSymKey: cryptoFramework.SymKey = await symKeyGenerator.generateSymKey();
 
     return syncSymKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -169,7 +170,7 @@ async function createAsymKeySync(algName: string): Promise<cryptoFramework.KeyPa
     }
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -190,7 +191,7 @@ function encryptDecryptAsymMessageSync(algName: string, keyPair: cryptoFramework
     } else {
       return encryptCipher;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -216,7 +217,7 @@ function encryptDecryptAsymOAaepMessageSync(algName: string, keyPair: cryptoFram
     } else {
       return encryptCipher;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -252,7 +253,7 @@ function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoF
     }
 
     return {data:{data: cipherText1}, paramSpec} as dataGcmOrCCMSpec;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -287,7 +288,7 @@ async function gcmEncOrDecMessagePromise(algName: string, isEnc: boolean, symKey
     paramSpec.authTag = authTag1;
 
     return {data:{data: cipherText1}, paramSpec} as dataGcmOrCCMSpec;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -310,7 +311,7 @@ function gcmEncOrDecNullSync(algName: string, isEnc: boolean, symKey: cryptoFram
       paramsSpec.authTag = authTag;
     }
     return paramsSpec;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -333,7 +334,7 @@ async function gcmEncOrDecNullPromise(algName: string, isEnc: boolean, symKey: c
       paramsSpec.authTag = authTag;
     }
     return paramsSpec;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -385,6 +386,18 @@ let MODE_CBC_CIPHER_SEPC = [
 let MODE_CTR_CIPHER_SEPC = [
   [["AES"], ["0", "128", "192", "256"], ["PKCS5", "PKCS7", "NoPadding"]],
   [["SM4"], ["0", "128"], ["PKCS5", "PKCS7", "NoPadding"]],
+]
+
+let WEAK_SYM_CIPHER = [
+  "Blowfish", "RC2", "RC4", "CAST"
+]
+
+let WEAK_MODE_CIPHER = [
+  "ECB", "CBC", "OFB", "CFB"
+]
+
+let WEAK_KEYLEN_CIPHER = [
+  [8, 32, 4], [1, 128, 1], [1, 512, 1], [5, 16, 1]
 ]
 
 let ASY_CIPHER_SPEC = [
@@ -511,10 +524,218 @@ let SM4_GCM_VECTOR: sm4GcmVector[] = [
   },
 ];
 
+let AES_CCM_IV_LENS: number[] = [
+  7, 8, 9, 10, 11, 12, 13
+];
+
+let AES_CCM_TAG_LENS: number[] = [
+  4, 6, 8, 10, 12, 14, 16
+];
+
+async function genAeadParamsSpec(nonce: int, tagLen: int = 0,
+  aadLen: int = 0): Promise<cryptoFramework.AeadParamsSpec> {
+  let dataNonce = await createFullData(nonce);
+  let aeadParamsSpec: cryptoFramework.AeadParamsSpec = {
+    nonce: dataNonce.data,
+    algName: "AeadParamsSpec"
+  };
+  if (tagLen > 0) {
+    aeadParamsSpec.tagLen = tagLen;
+  }
+  if (aadLen > 0) {
+    let aad: cryptoFramework.DataBlob = await createFullData(aadLen);
+    aeadParamsSpec.authenticatedData = aad.data;
+  }
+  return aeadParamsSpec;
+}
+
+function aeadCipherSync(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey,
+  data: cryptoFramework.DataBlob, paramsSpec: cryptoFramework.ParamsSpec): cryptoFramework.DataBlob {
+  try {
+    let cipher = cryptoFramework.createCipher(algName);
+    if (isEnc) {
+      cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramsSpec);
+    } else {
+      cipher.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramsSpec);
+    }
+    let dataText: cryptoFramework.DataBlob|null = cipher.doFinalSync(data);
+    if (dataText === null) {
+      throw new Error("[TEST] DoFinal Failed.");
+    } else {
+      return dataText;
+    }
+  } catch (error) {
+    console.error(`“${error}“, error code: ${error.code}`);
+    throw error as Error;
+  }
+}
+
+function aeadCipherWithUpdateSync(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey,
+  data: cryptoFramework.DataBlob, paramsSpec: cryptoFramework.ParamsSpec): cryptoFramework.DataBlob {
+  try {
+    let mergeText = new Uint8Array();
+    let cipher = cryptoFramework.createCipher(algName);
+    if (isEnc) {
+      cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramsSpec);
+    } else {
+      cipher.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramsSpec);
+    }
+    let updateText: cryptoFramework.DataBlob|null = cipher.updateSync(data);
+    if (updateText === null) {
+      throw new Error("[TEST] Update Failed.")
+    }
+    let dataText: cryptoFramework.DataBlob|null = cipher.doFinalSync(null);
+    if (dataText) {
+      mergeText = new Uint8Array(updateText.data.length + dataText.data.length);
+      mergeText.set(updateText.data);
+      mergeText.set(dataText.data, updateText.data.length);
+    } else {
+      mergeText = new Uint8Array(updateText.data.length);
+      mergeText.set(updateText.data);
+    }
+
+    return {data: mergeText};
+  } catch (error) {
+    console.error(`“${error}“, error code: ${error.code}`);
+    throw error as Error;
+  }
+}
+
+async function aeadCipherPromise(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey,
+  data: cryptoFramework.DataBlob, paramsSpec: cryptoFramework.ParamsSpec): Promise<cryptoFramework.DataBlob> {
+  try {
+    let cipher = cryptoFramework.createCipher(algName);
+    if (isEnc) {
+      await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramsSpec);
+    } else {
+      await cipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramsSpec);
+    }
+    let dataText: cryptoFramework.DataBlob|null = await cipher.doFinal(data);
+    if (dataText === null) {
+      throw new Error("[TEST] DoFinal Failed.");
+    } else {
+      return dataText;
+    }
+  } catch (error) {
+    console.error(`“${error}“, error code: ${error.code}`);
+    throw error as Error;
+  }
+}
+
+async function aeadCipherWithUpdatePromise(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey,
+  data: cryptoFramework.DataBlob, paramsSpec: cryptoFramework.ParamsSpec): Promise<cryptoFramework.DataBlob> {
+  try {
+    let mergeText = new Uint8Array();
+    let cipher = cryptoFramework.createCipher(algName);
+    if (isEnc) {
+      await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramsSpec);
+    } else {
+      await cipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramsSpec);
+    }
+    let updateText: cryptoFramework.DataBlob|null = await cipher.update(data);
+    if (updateText === null) {
+      throw new Error("[TEST] Update Failed.")
+    }
+    let dataText: cryptoFramework.DataBlob|null = await cipher.doFinal(null);
+    if (dataText) {
+      mergeText = new Uint8Array(updateText.data.length + dataText.data.length);
+      mergeText.set(updateText.data);
+      mergeText.set(dataText.data, updateText.data.length);
+    } else {
+      mergeText = new Uint8Array(updateText.data.length);
+      mergeText.set(updateText.data);
+    }
+    return {data: mergeText};
+  } catch (error) {
+    console.error(`“${error}“, error code: ${error.code}`);
+    throw error as Error;
+  }
+}
+
+async function initCallback(cipher: cryptoFramework.Cipher, mode: cryptoFramework.CryptoMode,
+  symKey: cryptoFramework.SymKey, paramsSpec: cryptoFramework.ParamsSpec): Promise<boolean> {
+  return new Promise<boolean>((resolve, reject) => {
+    cipher.init(mode, symKey, paramsSpec, (error: BusinessError<void>|null) => {
+      if (error) {
+        reject(error as Error);
+      } else {
+        resolve(true);
+      }
+    });
+  });
+}
+
+async function updateCallback(cipher: cryptoFramework.Cipher,
+  message: cryptoFramework.DataBlob): Promise<cryptoFramework.DataBlob> {
+  return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
+    cipher.update(message, (error: BusinessError<void>|null, cipherText) => {
+      if (error || cipherText === undefined) {
+        reject(error as Error);
+      } else {
+        if (cipherText) {
+          resolve(cipherText);
+        } else {
+          resolve({data: new Uint8Array()} as cryptoFramework.DataBlob);
+        }
+      }
+    });
+  });
+}
+
+async function finalCallback(cipher: cryptoFramework.Cipher,
+  message: cryptoFramework.DataBlob|null): Promise<cryptoFramework.DataBlob> {
+  return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
+    cipher.doFinal(message, (error: BusinessError<void>|null, cipherText) => {
+      if (error || cipherText === undefined) {
+        reject(error as Error);
+      } else {
+        if (cipherText) {
+          resolve(cipherText);
+        } else {
+          resolve({data: new Uint8Array()} as cryptoFramework.DataBlob);
+        }
+      }
+    });
+  });
+}
+
+async function aeadCipherCallback(cipher: cryptoFramework.Cipher, isEnc: boolean, symKey: cryptoFramework.SymKey,
+  data: cryptoFramework.DataBlob, paramsSpec: cryptoFramework.ParamsSpec): Promise<cryptoFramework.DataBlob> {
+  if (isEnc) {
+    await initCallback(cipher, cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramsSpec);
+  } else {
+    await initCallback(cipher, cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramsSpec);
+  }
+  let cipherText: cryptoFramework.DataBlob = await finalCallback(cipher, data);
+  return cipherText;
+}
+
+async function aeadCipherWithUpdateCallback(cipher: cryptoFramework.Cipher, isEnc: boolean, symKey: cryptoFramework.SymKey,
+  data: cryptoFramework.DataBlob, paramsSpec: cryptoFramework.ParamsSpec): Promise<cryptoFramework.DataBlob> {
+  let mergeText = new Uint8Array();
+  if (isEnc) {
+    await initCallback(cipher, cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramsSpec);
+  } else {
+    await initCallback(cipher, cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramsSpec);
+  }
+  let updateText: cryptoFramework.DataBlob = await updateCallback(cipher, data);
+  let dataText: cryptoFramework.DataBlob|null = await finalCallback(cipher, null);
+  if (dataText) {
+    mergeText = new Uint8Array(updateText.data.length + dataText.data.length);
+    mergeText.set(updateText.data);
+    mergeText.set(dataText.data, updateText.data.length);
+  } else {
+    mergeText = new Uint8Array(updateText.data.length);
+    mergeText.set(updateText.data);
+  }
+  return {data: mergeText};
+}
+
 export {
   genGcmOrCcmParamsSpec,
   genCcmParamsSpec,
   genIvParamsSpec,
+  genAeadParamsSpec,
   createSymKeySync,
   createSymKeyPromise,
   convertSymKeyPromise,
@@ -550,4 +771,18 @@ export {
   MODE_GCM_CIPHER_SEPC,
   MODE_CCM_CIPHER_SEPC,
   SM4_GCM_VECTOR,
+  WEAK_SYM_CIPHER,
+  WEAK_MODE_CIPHER,
+  WEAK_KEYLEN_CIPHER,
+  aeadCipherSync,
+  aeadCipherPromise,
+  aeadCipherWithUpdateSync,
+  aeadCipherWithUpdatePromise,
+  AES_CCM_TAG_LENS,
+  AES_CCM_IV_LENS,
+  initCallback,
+  updateCallback,
+  finalCallback,
+  aeadCipherWithUpdateCallback,
+  aeadCipherCallback
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,7 +30,7 @@ async function genSymKey(algName: string): Promise<cryptoFramework.SymKey> {
     let symKey: cryptoFramework.SymKey = await aesGenerator.generateSymKey();
 
     return symKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`genSymKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -42,7 +42,7 @@ async function convertSymKey(algName: string, data: cryptoFramework.DataBlob): P
     let syncSymKey: cryptoFramework.SymKey = symKeyGenerator.convertKeySync(data);
 
     return syncSymKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('convertSymKey error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -59,7 +59,7 @@ async function doMacPromise(spec: cryptoFramework.MacSpec,
     let secret: cryptoFramework.DataBlob = await mac.doFinal();
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doMacPromise “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -74,7 +74,7 @@ function doMacSync(spec: cryptoFramework.MacSpec,
     let secret: cryptoFramework.DataBlob = mac.doFinalSync();
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doMacSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -104,7 +104,7 @@ function doCmacSyncSpilt(spec: cryptoFramework.MacSpec, message: cryptoFramework
     let dataRes: cryptoFramework.DataBlob = mac.doFinalSync();
 
     return {dataRes: dataRes, macObj: mac} as macInfo;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doCmacSyncSpilt “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -134,7 +134,7 @@ async function doCmacPromiseSpilt(spec: cryptoFramework.MacSpec, message: crypto
     let dataRes: cryptoFramework.DataBlob = await mac.doFinal();
 
     return {dataRes: dataRes, macObj: mac} as macInfo;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doCmacSyncSpilt “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

@@ -132,6 +132,19 @@ struct WebOnInterceptKeyEvent {
           console.log("onInterceptKeyEvent==>")
           if (event) {
             console.log("onInterceptKeyEvent==>" + JSON.stringify(event.keyCode))
+            console.log("type==>" + event.type);
+            console.log("keyCode==>" + event.keyCode);
+            console.log("keyText==>" + event.keyText);
+            console.log("keySource==>" + event.keySource);
+            console.log("deviceId==>" + event.deviceId);
+            console.log("metaKey==>" + event.metaKey);
+            console.log("timestamp==>" + event.timestamp);
+            console.log("stopPropagation==>" + event.stopPropagation);
+            console.log("intentionCode==>" + event.intentionCode);
+            console.log("unicode==>" + event.unicode);
+            console.log("isNumLockOn==>" + event.isNumLockOn);
+            console.log("isCapsLockOn==>" + event.isCapsLockOn);
+            console.log("isScrollLockOn==>" + event.isScrollLockOn);
             this.onInterceptKeyEventCode = event.keyCode
           }
           this.isOnInterceptKeyEventEnd = 1

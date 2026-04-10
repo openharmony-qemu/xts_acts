@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,7 +49,8 @@ export default function BatteryStatisticsTest() {
               expect(error.code).assertEqual(202);
               done();
             });
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -81,7 +82,8 @@ export default function BatteryStatisticsTest() {
                 done();
               }
             })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -103,7 +105,8 @@ export default function BatteryStatisticsTest() {
         try {
           let value: double = batteryStats.getAppPowerValue(10021);
           hilog.info(domain, tag, `${TAG} value: ${value}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -125,7 +128,8 @@ export default function BatteryStatisticsTest() {
         try {
           let percent: double = batteryStats.getAppPowerPercent(10021);
           hilog.info(domain, tag, `${TAG} percent: ${percent}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -148,7 +152,8 @@ export default function BatteryStatisticsTest() {
           let value: double =
             batteryStats.getHardwareUnitPowerValue(batteryStats.ConsumptionType.CONSUMPTION_TYPE_USER);
           hilog.info(domain, tag, `${TAG} value: ${value}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -171,7 +176,8 @@ export default function BatteryStatisticsTest() {
           let percent: double =
             batteryStats.getHardwareUnitPowerPercent(batteryStats.ConsumptionType.CONSUMPTION_TYPE_WIFI);
           hilog.info(domain, tag, `${TAG} percent: ${percent}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -195,7 +201,7 @@ export default function BatteryStatisticsTest() {
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
           expect(consumptionType).assertEqual(-17);
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -219,7 +225,7 @@ export default function BatteryStatisticsTest() {
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
           expect(consumptionType).assertEqual(-16);
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -243,7 +249,7 @@ export default function BatteryStatisticsTest() {
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
           expect(consumptionType).assertEqual(-15);
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -267,7 +273,7 @@ export default function BatteryStatisticsTest() {
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
           expect(consumptionType).assertEqual(-14);
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -291,7 +297,7 @@ export default function BatteryStatisticsTest() {
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
           expect(consumptionType).assertEqual(-13);
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -315,7 +321,7 @@ export default function BatteryStatisticsTest() {
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
           expect(consumptionType).assertEqual(-12);
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -339,7 +345,7 @@ export default function BatteryStatisticsTest() {
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
           expect(consumptionType).assertEqual(-11);
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -363,7 +369,7 @@ export default function BatteryStatisticsTest() {
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
           expect(consumptionType).assertEqual(-10);
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -387,7 +393,7 @@ export default function BatteryStatisticsTest() {
           hilog.info(domain, tag, `${TAG} consumptionType type: ${typeof consumptionType}`);
           expect(consumptionType).assertEqual(-9);
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();

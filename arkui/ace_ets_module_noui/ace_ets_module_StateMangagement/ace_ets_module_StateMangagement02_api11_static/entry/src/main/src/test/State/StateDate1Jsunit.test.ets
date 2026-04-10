@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function StateDate1Jsunit() {
   describe('StateDate1Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StateDate1Jsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,8 +31,8 @@ async function kdfGenerateSecret(kdfObj: crypto.Kdf, params: crypto.KdfSpec): Pr
 
 async function kdfParamSpecWithNull(kdfObj: crypto.Kdf): Promise<crypto.DataBlob> {
   return await new Promise<crypto.DataBlob>((resolve, reject) => {
-    let paramSpec: crypto.KdfSpec;
-    kdfObj.generateSecret(paramSpec, (err: BusinessError<void>|null, dataBlob: crypto.DataBlob|undefined) => {
+    let paramSpec: crypto.KdfSpec | undefined;
+    kdfObj.generateSecret(paramSpec!, (err: BusinessError<void>|null, dataBlob: crypto.DataBlob|undefined) => {
       if (err || dataBlob === undefined) { // success: error is null, failed: data is undefined
         reject(err as Error);
       } else {
@@ -49,7 +49,7 @@ async function pbkdf2NormalProcess(algName: string, pbkdf2Spec: crypto.PBKDF2Spe
     console.log(`[Callback] dataBlob is: ${dataBlob.data}`);
     console.log(`[Callback] dataBlob is: ${uInt8ArrayToShowStr(dataBlob.data)}`);
     return dataBlob;
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.log(`[Callback] pbkdf2NormalProcess catch error: ${err}`);
     throw err as Error;
   }

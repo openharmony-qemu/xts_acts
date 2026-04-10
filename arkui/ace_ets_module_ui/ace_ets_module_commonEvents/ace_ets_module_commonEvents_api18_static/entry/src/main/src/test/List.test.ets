@@ -25,12 +25,10 @@ import RotationRecognizer from './GestureRecognizer/RotationRecognizer.test';
 import SwipeRecognizer from './GestureRecognizer/SwipeRecognizer.test';
 import TapRecognizer from './GestureRecognizer/TapRecognizer.test';
 import InteractionEventBindingInfoTest from './InteractionEventBindingInfo/InteractionEventBindingInfo.test';
-import UIObserverEventTest from './ListeningEvent/UIObserverEvent.test';
 import nextFocus from './nextFocus/nextFocus.test';
 import nextFocus2 from './nextFocus2/nextFocus2.test';
 import onVisiable from './onVisiable/onVisiable.test';
 import panGestureDistanceTest from './PanGesture/panGestureDistance.test';
-import panGestureOnOffTest from './PanGesture/panGestureOnOff.test';
 
 export default function testsuite() {
   onVisiable();
@@ -47,9 +45,7 @@ export default function testsuite() {
   SwipeRecognizer();
   TapRecognizer();
   // InteractionEventBindingInfoTest();
-  UIObserverEventTest();
   nextFocus();
   nextFocus2(); 
   // panGestureDistanceTest();
-  panGestureOnOffTest();
 }

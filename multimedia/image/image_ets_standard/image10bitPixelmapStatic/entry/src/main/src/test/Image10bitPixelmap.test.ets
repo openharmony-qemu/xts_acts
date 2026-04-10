@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -59,10 +59,10 @@ export default function image10bitPixelMap() {
     const YCRCB_P010: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
     let filesDir: string | undefined;
     let cacheDir: string | undefined;
-    let openHdrPic: HdrPicture;
+    let openHdrPic: HdrPicture | undefined;
     let isSupportHEICEncode: boolean;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined;
       cacheDir = Hypium.get('cacheDir') as string | undefined;
@@ -73,7 +73,7 @@ export default function image10bitPixelMap() {
         } else {
           console.info("file not exists");
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error("access failed with error message: " + err.message + ", error code: " + err.code);
       }
       isSupportHEICEncode =
@@ -97,7 +97,7 @@ export default function image10bitPixelMap() {
         }
       }
       try {
-        fs.closeSync(openHdrPic.fd)
+        fs.closeSync(openHdrPic!.fd)
       } catch (error) {
         hilog.info(0x0000, '10bitPixelMap', '%{public}s', 'fileDescriptor close failed. ' + error);
       }
@@ -378,7 +378,7 @@ export default function image10bitPixelMap() {
             fs.closeSync(writeFile.fd);
             expect(ret).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
             fs.closeSync(writeFile.fd);
             if (!isSupportHdr) {
               logger.log(`device not support hdr`);
@@ -392,24 +392,26 @@ export default function image10bitPixelMap() {
           }
         } else {
           imagePacker.packToFile(pixelMap!, writeFile.fd, packOpt, (err: BusinessError|null) => {
-            if (!isSupportHdr) {
-              logger.log(`device not support hdr`);
-              expect(!isSupportHdr).assertTrue();
-              done();
-            } else {
-              if (err && err.code) {
-                logger.log(`packToFile callback error: ` + err.message);
-                expect(false).assertTrue();
+            waitForCompletion(async () => {
+              if (!isSupportHdr) {
+                logger.log(`device not support hdr`);
+                expect(!isSupportHdr).assertTrue();
+                done();
+              } else {
+                if (err && err.code) {
+                  logger.log(`packToFile callback error: ` + err.message);
+                  expect(false).assertTrue();
+                  done();
+                }
+                let ret = await checkPackResult(orgInfo, writeFile.fd, format, packOpt.format, logger);
+                fs.closeSync(writeFile.fd);
+                expect(ret).assertTrue();
                 done();
               }
-              let ret = await checkPackResult(orgInfo, writeFile.fd, format, packOpt.format, logger);
-              fs.closeSync(writeFile.fd);
-              expect(ret).assertTrue();
-              done();
-            }
+            })
           })
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         logger.log("test packToFile error: " + error.message);
         expect().assertFail();
         done();

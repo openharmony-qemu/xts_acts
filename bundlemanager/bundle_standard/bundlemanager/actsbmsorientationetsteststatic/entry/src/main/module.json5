@@ -44,7 +44,22 @@
             "value": "",
             "resource": "$profile:shortcuts_config"
           }
-        ]
+        ],
+        "skills": [
+        {
+          "actions": [
+            "ohos.want.action.viewData"
+          ],
+          "entities": [
+            "entity.system.browsable"
+          ],
+          "uris": [
+            {
+              "scheme": "http"
+            }
+          ]
+        }
+      ]
       },
       {
         "name": "EntryAbility1",

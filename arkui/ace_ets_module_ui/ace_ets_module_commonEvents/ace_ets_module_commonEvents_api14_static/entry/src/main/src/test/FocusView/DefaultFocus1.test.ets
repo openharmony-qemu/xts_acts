@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function defaultFocus() {
 
   describe('defaultFocus', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
 

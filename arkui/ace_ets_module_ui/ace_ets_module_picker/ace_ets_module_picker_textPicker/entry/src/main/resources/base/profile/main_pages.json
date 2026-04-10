@@ -17,6 +17,17 @@
         "MainAbility/pages/textPicker/textPickerSec",
         "MainAbility/pages/textPicker/textPickerSelectedArea",
         "MainAbility/pages/textPicker/textPickerTextStyleThree",
-        "MainAbility/pages/textPicker/textPickerValue"
+        "MainAbility/pages/textPicker/textPickerValue",
+        "MainAbility/pages/textPickerUndefinedNull/TextPickerDefaultPickerItemHeightNullUndefined",
+        "MainAbility/pages/textPickerUndefinedNull/TextPickerDisappearTextStyleNullUndefined",
+        "MainAbility/pages/textPickerUndefinedNull/TextPickerGradientHeightNullUndefined",
+        "MainAbility/pages/textPickerUndefinedNull/TextPickerSelectedBackgroundStyleNullUndefined",
+        "MainAbility/pages/textPickerUndefinedNull/TextPickerSelectedTextStyleNullUndefined",
+        "MainAbility/pages/textPickerUndefinedNull/TextPickerTextStyleNullUndefined",
+        "MainAbility/pages/textPickerUndefinedNull/textPickerCanLoopUndefinedNull",
+        "MainAbility/pages/textPickerUndefinedNull/textPickerDisableTextStyleAnimationUndefinedNull",
+        "MainAbility/pages/textPickerUndefinedNull/textPickerSelectedIndexUndefinedNull",
+        "MainAbility/pages/textPickerUndefinedNull/textPickerDefaultTextStyleUndefinedNull",
+        "MainAbility/pages/textPickerUndefinedNull/textPickerDividerUndefinedNull"
     ]
 }

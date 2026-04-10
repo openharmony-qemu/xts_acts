@@ -30,7 +30,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function ProgressMask() {
   describe('ProgressMask', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ProgressMask beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility");
     });

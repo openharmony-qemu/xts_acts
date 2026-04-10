@@ -145,7 +145,7 @@ struct fingerInfosDemo {
         Scroll() {
           Column() {
             Column() {
-              Text('一只手指长按Column中的红色文本,另一只指手长按外部粉色区域:' + this.count)
+              Text('一手指先长按外部粉色区域，令一只手指后长按Column中的红色文本' + this.count)
                 .fontColor(Color.Red)
                 .gesture(
                   LongPressGesture({ repeat: true })

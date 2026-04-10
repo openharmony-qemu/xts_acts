@@ -297,5 +297,719 @@ export default function MultimodalTouchNdkTest() {
       }
       console.info(`${caseName} end to test OH_Input_DispatchToNextHandler`);
     });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_CreateTouchEvent_0100
+     * @tc.number SUB_MMI_Input_Api_CreateTouchEvent_0100
+     * @tc.desc   OH_Input_CreateTouchEvent Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_CreateTouchEvent_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_CreateTouchEvent_0100';
+      console.info(`${caseName} start to test OH_Input_CreateTouchEvent`);
+      try {
+        let data = touch.createTouchEvent();
+        console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(0);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_CreateTouchEvent`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_DestroyTouchEvent_0100
+     * @tc.number SUB_MMI_Input_Api_DestroyTouchEvent_0100
+     * @tc.desc   OH_Input_DestroyTouchEvent Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_DestroyTouchEvent_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_DestroyTouchEvent_0100';
+      console.info(`${caseName} start to test OH_Input_DestroyTouchEvent`);
+      try {
+        let data = touch.destroyTouchEvent();
+        let touchFlag = 0;
+        console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
+        if (data == 1) {
+          console.info(`${caseName} destroy TouchEvent success`);
+          touchFlag++;
+          expect(touchFlag).assertEqual(1);
+          done();
+        } else {
+          console.info(`${caseName} destroy TouchEvent fail`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_DestroyTouchEvent`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_TouchEventAction_0100
+     * @tc.number SUB_MMI_Input_Api_TouchEventAction_0100
+     * @tc.desc   OH_Input_GetTouchEventAction Interface testing, verify the set and get of touchEvent action
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_TouchEventAction_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_TouchEventAction_0100';
+      console.info(`${caseName} start to test OH_Input_GetTouchEventAction`);
+      try {
+        let data = touch.touchEventAction(1);
+        let touchFlag = 0;
+        console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
+        if (data == 1) {
+          console.info(`${caseName} success`);
+          touchFlag++;
+          expect(touchFlag).assertEqual(1);
+          done();
+        } else {
+          console.info(`${caseName} fail`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_GetTouchEventAction`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_TouchEventFingerId_0100
+     * @tc.number SUB_MMI_Input_Api_TouchEventFingerId_0100
+     * @tc.desc   OH_Input_GetTouchEventFingerId Interface testing, verify the set and get of touchEvent id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_TouchEventFingerId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_TouchEventFingerId_0100';
+      console.info(`${caseName} start to test OH_Input_GetTouchEventFingerId`);
+      try {
+        let data = touch.touchEventFingerId(0);
+        console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(0);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_GetTouchEventFingerId`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_TouchEventDisplayX_0100
+     * @tc.number SUB_MMI_Input_Api_TouchEventDisplayX_0100
+     * @tc.desc   OH_Input_GetTouchEventDisplayX Interface testing, verify the set and get of touchEvent displayX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_TouchEventDisplayX_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_TouchEventDisplayX_0100';
+      console.info(`${caseName} start to test OH_Input_GetTouchEventDisplayX`);
+      try {
+        let data = touch.touchEventDisplayX(100);
+        console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(100);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_GetTouchEventDisplayX`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_TouchEventDisplayY_0100
+     * @tc.number SUB_MMI_Input_Api_TouchEventDisplayY_0100
+     * @tc.desc   OH_Input_GetTouchEventDisplayY Interface testing, verify the set and get of touchEvent displayY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_TouchEventDisplayY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_TouchEventDisplayY_0100';
+      console.info(`${caseName} start to test OH_Input_GetTouchEventDisplayY`);
+      try {
+        let data = touch.touchEventDisplayY(100);
+        console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(100);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_GetTouchEventDisplayY`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_TouchEventActionTime_0100
+     * @tc.number SUB_MMI_Input_Api_TouchEventActionTime_0100
+     * @tc.desc   OH_Input_GetTouchEventActionTime Interface testing, verify the set and get of touchEvent actionTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_TouchEventActionTime_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_TouchEventActionTime_0100';
+      console.info(`${caseName} start to test OH_Input_GetTouchEventActionTime`);
+      try {
+        let data = touch.touchEventActionTime(200);
+        console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(200);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_GetTouchEventActionTime`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_InjectTouchEvent_0100
+     * @tc.number SUB_MMI_Input_Api_InjectTouchEvent_0100
+     * @tc.desc   OH_Input_InjectTouchEvent Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_InjectTouchEvent_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_InjectTouchEvent_0100';
+      console.info(`${caseName} start to test OH_Input_InjectTouchEvent`);
+      try {
+        let data = touch.injectTouchEvent(-671, -10);
+        console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
+        expect(data).assertEqual(401);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_InjectTouchEvent`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_TouchEventToolType_0100
+     * @tc.number SUB_MMI_Input_Api_TouchEventToolType_0100
+     * @tc.desc   TouchEventToolType Enumerated Value Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_TouchEventToolType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_TouchEventToolType_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.TouchEventToolType();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventPressure_0100
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventPressure_0100
+     * @tc.desc   Test OH_Input_SetTouchEventPressure to set pressure as 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventPressure_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventPressure_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventPressure1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventPressure_0200
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventPressure_0200
+     * @tc.desc   Test OH_Input_SetTouchEventPressure to set pressure as 1.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventPressure_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventPressure_0200';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventPressure2();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventPressure_0300
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventPressure_0300
+     * @tc.desc   Test OH_Input_SetTouchEventPressure to set touchEvent as nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventPressure_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventPressure_0300';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventPressure3();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventPressure_0400
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventPressure_0400
+     * @tc.desc   Test OH_Input_SetTouchEventPressure to set pressure as -0.1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventPressure_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventPressure_0400';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventPressure4();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventPressure_0500
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventPressure_0500
+     * @tc.desc   Test OH_Input_SetTouchEventPressure to set pressure as 1.1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventPressure_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventPressure_0500';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventPressure5();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_GetTouchEventPressure_0100
+     * @tc.number SUB_MMI_Input_Api_GetTouchEventPressure_0100
+     * @tc.desc   Test OH_Input_GetTouchEventPressure to set touchEvent as nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_GetTouchEventPressure_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_GetTouchEventPressure_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.GetTouchEventPressure();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventWindowX_0100
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventWindowX_0100
+     * @tc.desc   Test OH_Input_SetTouchEventWindowX to set windowX as -100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventWindowX_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventWindowX_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventWindowX1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventWindowX_0200
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventWindowX_0200
+     * @tc.desc   Test OH_Input_SetTouchEventWindowX to set windowX as 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventWindowX_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventWindowX_0200';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventWindowX2();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventWindowX_0300
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventWindowX_0300
+     * @tc.desc   Test OH_Input_SetTouchEventWindowX to set touchEvent as nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventWindowX_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventWindowX_0300';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventWindowX3();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_GetTouchEventWindowX_0100
+     * @tc.number SUB_MMI_Input_Api_GetTouchEventWindowX_0100
+     * @tc.desc   Test OH_Input_GetTouchEventWindowX to set touchEvent as nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_GetTouchEventWindowX_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_GetTouchEventWindowX_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.GetTouchEventWindowX();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventWindowY_0100
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventWindowY_0100
+     * @tc.desc   Test OH_Input_SetTouchEventWindowY to set windowX as -100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventWindowY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventWindowY_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventWindowY1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventWindowY_0200
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventWindowY_0200
+     * @tc.desc   Test OH_Input_SetTouchEventWindowY to set windowX as 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventWindowY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventWindowY_0200';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventWindowY2();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventWindowY_0300
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventWindowY_0300
+     * @tc.desc   Test OH_Input_SetTouchEventWindowY to set touchEvent as nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventWindowY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventWindowY_0300';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventWindowY3();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_GetTouchEventWindowY_0100
+     * @tc.number SUB_MMI_Input_Api_GetTouchEventWindowY_0100
+     * @tc.desc   Test OH_Input_GetTouchEventWindowY to set touchEvent as nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_GetTouchEventWindowY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_GetTouchEventWindowY_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.GetTouchEventWindowY();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventDownTime_0100
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventDownTime_0100
+     * @tc.desc   Test OH_Input_SetTouchEventDownTime to set downTime as 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventDownTime_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventDownTime_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventDownTime1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventDownTime_0200
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventDownTime_0200
+     * @tc.desc   Test OH_Input_SetTouchEventDownTime to set touchEvent as nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventDownTime_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventDownTime_0200';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventDownTime2();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_GetTouchEventDownTime_0100
+     * @tc.number SUB_MMI_Input_Api_GetTouchEventDownTime_0100
+     * @tc.desc   Test OH_Input_GetTouchEventDownTime to set touchEvent as nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_GetTouchEventDownTime_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_GetTouchEventDownTime_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.GetTouchEventDownTime();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventToolType_0100
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventToolType_0100
+     * @tc.desc   Test OH_Input_SetTouchEventToolType to set toolType as TOOL_TYPE_LENS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventToolType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventToolType_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventToolType1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_SetTouchEventToolType_0200
+     * @tc.number SUB_MMI_Input_Api_SetTouchEventToolType_0200
+     * @tc.desc   Test OH_Input_SetTouchEventToolType to set touchEvent as nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_SetTouchEventToolType_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_SetTouchEventToolType_0200';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.SetTouchEventToolType2();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_GetTouchEventToolType_0100
+     * @tc.number SUB_MMI_Input_Api_GetTouchEventToolType_0100
+     * @tc.desc   Test OH_Input_GetTouchEventToolType to set touchEvent as nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_GetTouchEventToolType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_GetTouchEventToolType_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.GetTouchEventToolType();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
   });
 }

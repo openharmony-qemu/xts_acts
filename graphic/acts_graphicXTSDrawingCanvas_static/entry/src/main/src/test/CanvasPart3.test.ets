@@ -21,7 +21,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function drawingTsCanvasPart3Test() {
   describe('DrawingTsCanvasPart3Test', () => {
-    let pixel: image.PixelMap;
+    let pixel: image.PixelMap | undefined;
     const DEFAULT = 0;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
@@ -61,7 +61,7 @@ export default function drawingTsCanvasPart3Test() {
     it('testCanvasRestoreToCountNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasRestoreToCountNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         canvas.drawRect({left: 10, right: 200, top: 100, bottom: 300});
         for (let index = 0; index < 20; index++) {
           canvas.save();
@@ -83,7 +83,7 @@ export default function drawingTsCanvasPart3Test() {
         expect().assertFail();
       }
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         canvas.drawRect({left: 10, right: 200, top: 100, bottom: 300});
         for (let index = 0; index < 20; index++) {
           canvas.save();
@@ -108,7 +108,7 @@ export default function drawingTsCanvasPart3Test() {
     it('testCanvasRestoreToCountMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasRestoreToCountMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         for (let index = 0; index < 20; index++) {
           canvas.restoreToCount((Math.random() * Number.MAX_VALUE).toInt());
         }
@@ -130,7 +130,7 @@ export default function drawingTsCanvasPart3Test() {
     it('testCanvasRestoreNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testCanvasRestoreNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         canvas.save();
         canvas.restore();
         canvas.getSaveCount();
@@ -152,7 +152,7 @@ export default function drawingTsCanvasPart3Test() {
     it('testCanvasRestoreMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testCanvasRestoreMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         for (let index = 0; index < 20; index++) {
           canvas.save();
         }
@@ -183,7 +183,7 @@ export default function drawingTsCanvasPart3Test() {
     it('testCanvasRestoreWhenNoSaveStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testCanvasRestoreWhenNoSaveStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         canvas.restore();
         canvas.getSaveCount();
         console.info(msg + 'restore successed');

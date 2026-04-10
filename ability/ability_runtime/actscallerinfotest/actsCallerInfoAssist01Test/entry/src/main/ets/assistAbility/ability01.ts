@@ -55,22 +55,20 @@ export default class AssistAbility01 extends UIAbility {
 
   onForeground():void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'AssistAbility01 onForeground');
-    setTimeout(()=>{
-      try {
-        globalThis.AssistAbility01.startAbility(
-          {
-            bundleName: 'com.acts.actsCallerInfoTest',
-            abilityName: 'callerInfo02'
-          }).then(() => {
-          hilog.info(0x0000, 'testTag', '%{public}s', `CallerInfo01 startAbility end====>`);
-        });
-      } catch (err) {
-        // 处理入参错误异常
-        let code = (err as BusinessError).code;
-        let message = (err as BusinessError).message;
-        hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${code}, error.message: ${message}`);
-      }
-    }, 2000)
+    try {
+      globalThis.AssistAbility01.startAbility(
+        {
+          bundleName: 'com.acts.actsCallerInfoTest',
+          abilityName: 'callerInfo02'
+        }).then(() => {
+        hilog.info(0x0000, 'testTag', '%{public}s', `CallerInfo01 startAbility end====>`);
+      });
+    } catch (err) {
+      // 处理入参错误异常
+      let code = (err as BusinessError).code;
+      let message = (err as BusinessError).message;
+      hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${code}, error.message: ${message}`);
+    }
   }
 
   onBackground():void {

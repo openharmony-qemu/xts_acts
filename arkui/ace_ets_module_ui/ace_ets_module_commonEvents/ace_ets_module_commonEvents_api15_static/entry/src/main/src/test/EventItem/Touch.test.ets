@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function touchEventTest() {
   describe('touchEvent', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi15.static", "EntryAbility")
       

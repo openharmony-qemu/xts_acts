@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ export default function ResmgrTest() {
   describe("ResmgrTest", (): void => {
     hilog.info(0x0000, 'testTag', '%{public}s', '*************start ResmgrTest*************');
     let resContext: Context;
-    let res: resourceManager.ResourceManager;
+    let res: resourceManager.ResourceManager | undefined;
 
     beforeAll(async () => {
       console.info("beforeAll case");
@@ -271,15 +271,11 @@ export default function ResmgrTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('getMediaContent_test_static_003', Level.LEVEL0, async (): Promise<void> => {
+    it('getMediaContent_test_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaContent(0x01000001, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
-        if (value?.length) {
-          console.log('getMediaContent_test_static_003 ' + value?.length);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaContent_test_static_003 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaContent_test_static_003 length' + value!.length);
+        expect(value!.length > 0).assertTrue();
+        done();
       })
     })
 
@@ -308,13 +304,8 @@ export default function ResmgrTest() {
      */
     it('getMediaContentBase64_test_static_003', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaContentBase64(0x01000001, (err: BusinessError<void> | null, value: string | undefined) => {
-        if (value?.length) {
-          console.log('getMediaContentBase64_test_static_003 ' + value);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaContentBase64_test_static_003 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaContentBase64_test_static_003 length' + value!.length);
+        expect(value!.length > 0).assertTrue();
       })
     })
 
@@ -511,7 +502,7 @@ export default function ResmgrTest() {
        */
       it('getDeviceCapability_test_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
-          res.getDeviceCapability().then((dc: resourceManager.DeviceCapability): void => {
+          res?.getDeviceCapability().then((dc: resourceManager.DeviceCapability): void => {
             if (dc.deviceType == resourceManager.DeviceType.DEVICE_TYPE_PHONE) {
               console.log('getDeviceCapability_test_static_008 DEVICE_TYPE_PHONE');
             }
@@ -709,7 +700,7 @@ export default function ResmgrTest() {
      * @tc.level  LEVEL3
      */
     it('getRawFd_test_static_0100', Level.LEVEL3, async (): Promise<void> => {
-      res.getRawFd('plural_name_loop', (error: BusinessError<void> | null) => {
+      res?.getRawFd('plural_name_loop', (error: BusinessError<void> | null) => {
         console.log('getRawFd_test_static_0100 error code:' + error?.code);
         expect(error?.code).assertEqual(9001005);
       })
@@ -724,7 +715,7 @@ export default function ResmgrTest() {
      * @tc.level  LEVEL3
      */
     it('getRawFd_test_static_0200', Level.LEVEL3, async (): Promise<void> => {
-      res.getRawFd('plural_name_loop').then(() => {
+      res?.getRawFd('plural_name_loop').then(() => {
       }).catch((err: Object | null | undefined) => {
         let error = err as BusinessError;
         console.log('getRawFd_test_static_0200 error code:' + error.code);
@@ -882,13 +873,8 @@ export default function ResmgrTest() {
      */
     it('getMediaByName_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaByName('background', (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
-        if (value?.length) {
-          console.log('getMediaByName_test_static_001 ' + value);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaByName_test_static_001 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaByName_test_static_001 value:' + value);
+        expect(value!.length > 0).assertTrue();
         done();
       })
     })
@@ -903,17 +889,12 @@ export default function ResmgrTest() {
      */
     it('getMediaByName_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaByName('foreground', 0, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
-        if (value?.length) {
-          console.log('getMediaByName_test_static_0100 ' + value?.length);
-          expect(true).assertTrue();
-          done();
-        } else {
-          console.log('getMediaByName_test_static_0100 Failed');
-          expect().assertFail();
-          done();
-        }
+        console.log('getMediaByName_test_static_0100 value:' + value);
+        expect(value!.length > 0).assertTrue();
+        done();
       })
     })
+
     /**
      * @tc.name   getMediaByName_test_static_002
      * @tc.number SUB_GLOBAL_RESMGR_JS_2900
@@ -939,13 +920,8 @@ export default function ResmgrTest() {
      */
     it('getMediaBase64ByName_test_static_001', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaBase64ByName('background', (err: BusinessError<void> | null, value: string | undefined) => {
-        if (value?.length) {
-          console.log('getMediaBase64ByName_test_static_001 ' + value);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaBase64ByName_test_static_001 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaBase64ByName_test_static_001 value:' + value);
+        expect(value!.length > 0).assertTrue();
       })
     })
 
@@ -995,7 +971,8 @@ export default function ResmgrTest() {
         expect(value !== null).assertTrue();
         console.log('getStringByNameSync_test_static_001 ' + value);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('getStringByNameSync_test_static_001 err.code' + e.code);
         console.log('getStringByNameSync_test_static_001 err.message' + e.message);
         expect(e.code == 9001003).assertTrue();
@@ -1019,25 +996,19 @@ export default function ResmgrTest() {
         done();
       })
       /**
-       * @tc.name   getfloatByName_test_static_001
+       * @tc.name   getFloatByName_test_static_001
        * @tc.number SUB_GLOBAL_RESMGR_JS_static_4100
        * @tc.desc   test getDoubleByName with float
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL0
        */
-      it('getfloatByName_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let value = res?.getDoubleByName('page_text_font_size');
-        console.log('getfloatByName_test_static_001 ' + value);
-        if (value) {
-          console.log('getfloatByName_test_static_001 ' + value);
-          expect(true).assertTrue();
-        } else {
-          console.log('getfloatByName_test_static_001 Failed');
-          expect().assertFail();
-        }
-        done();
-      })
+    it('getFloatByName_test_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = res?.getDoubleByName('page_text_font_size');
+      console.log('getFloatByName_test_static_001 ' + value);
+      expect(value == 50).assertTrue();
+      done();
+    })
 
     /**
      * @tc.name   getRawFileList_test_static_0100
@@ -1060,7 +1031,8 @@ export default function ResmgrTest() {
             done();
           }
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('getRawFileList_test_static_0100 e.code' + e.code);
         console.log('getRawFileList_test_static_0100 e.message' + e.message);
       }
@@ -1087,7 +1059,8 @@ export default function ResmgrTest() {
           }
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('getRawFileList_test_static_0110 e.code' + e.code);
         console.log('getRawFileList_test_static_0110 e.message' + e.message);
         done();
@@ -1131,13 +1104,8 @@ export default function ResmgrTest() {
      */
     it('getMediaBase64ByName_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
       res?.getMediaBase64ByName('background', 0, (err: BusinessError<void> | null, value: string | undefined) => {
-        if (value?.length) {
-          console.log('getMediaBase64ByName_test_static_0100 ' + value);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaBase64ByName_test_static_0100 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaBase64ByName_test_static_0100 value:' + value);
+        expect(value!.length > 0).assertTrue();
       })
     })
 
@@ -1236,7 +1204,7 @@ export default function ResmgrTest() {
             expect(err?.code == 9001001).assertTrue();
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColor_test_static_0110 error.code' + error.code);
           console.log('getColor_test_static_0110 error.message' + error.message);
         }
@@ -1258,7 +1226,7 @@ export default function ResmgrTest() {
             expect(err?.code == 9001001).assertTrue();
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColor_test_static_0120 error.code' + error.code);
           console.log('getColor_test_static_0120 error.message' + error.message);
         }
@@ -1280,7 +1248,7 @@ export default function ResmgrTest() {
             expect(err?.code == 9001002).assertTrue();
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColor_test_static_0130 error.code' + error.code);
           console.log('getColor_test_static_0130 error.message' + error.message);
         }
@@ -1302,7 +1270,7 @@ export default function ResmgrTest() {
             expect(err?.code == 9001006).assertTrue();
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColor_test_static_0140 error.code' + error.code);
           console.log('getColor_test_static_0140 error.message' + error.message);
         }
@@ -1324,7 +1292,7 @@ export default function ResmgrTest() {
             expect(err?.code == 9001006).assertTrue();
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColor_test_static_0150 error.code' + error.code);
           console.log('getColor_test_static_0150 error.message' + error.message);
         }
@@ -1347,7 +1315,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001001).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColor_test_static_0210 error.code' + error.code);
           console.log('getColor_test_static_0210 error.message' + error.message);
       }
@@ -1371,7 +1339,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001002).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColor_test_static_0220 error.code' + error.code);
           console.log('getColor_test_static_0220 error.message' + error.message);
       }
@@ -1395,7 +1363,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001002).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColor_test_static_0230 error.code' + error.code);
           console.log('getColor_test_static_0230 error.message' + error.message);
       }
@@ -1419,7 +1387,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001006).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColor_test_static_0240 error.code' + error.code);
           console.log('getColor_test_static_0240 error.message' + error.message);
       }
@@ -1576,7 +1544,7 @@ export default function ResmgrTest() {
             expect(err?.message).assertEqual('Invalid resource name');
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColorByName_test_static_0120 error.code' + error.code);
           console.log('getColorByName_test_static_0120 error.message' + error.message);
         }
@@ -1598,7 +1566,7 @@ export default function ResmgrTest() {
             expect(err?.code == 9001003).assertTrue();
             done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColorByName_test_static_0130 error.code' + error.code);
           console.log('getColorByName_test_static_0130 error.message' + error.message);
       }
@@ -1621,7 +1589,7 @@ export default function ResmgrTest() {
             expect(err?.message).assertEqual('No matching resource is found based on the resource name');
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColorByName_test_static_0140 error.code' + error.code);
           console.log('getColorByName_test_static_0140 error.message' + error.message);
         }
@@ -1644,7 +1612,7 @@ export default function ResmgrTest() {
             expect(err?.message).assertEqual('The resource is referenced cyclically');
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getColorByName_test_static_0150 error.code' + error.code);
           console.log('getColorByName_test_static_0150 error.message' + error.message);
         }
@@ -1741,7 +1709,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001003).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColorByName_test_static_0210 error.code' + error.code);
           console.log('getColorByName_test_static_0210 error.message' + error.message);
       }
@@ -1765,7 +1733,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001003).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColorByName_test_static_0220 error.code' + error.code);
           console.log('getColorByName_test_static_0220 error.message' + error.message);
       }
@@ -1789,7 +1757,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001004).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColorByName_test_static_0230 error.code' + error.code);
           console.log('getColorByName_test_static_0230 error.message' + error.message);
       }
@@ -1813,7 +1781,7 @@ export default function ResmgrTest() {
               expect(error.code == 9001006).assertTrue();
               done();
           })
-      } catch (error: BusinessError) {
+      } catch (error) {
           console.log('getColorByName_test_static_0240 error.code' + error.code);
           console.log('getColorByName_test_static_0240 error.message' + error.message);
       }
@@ -1967,13 +1935,8 @@ export default function ResmgrTest() {
      */
     it('getMediaContent_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaContent(0x01000001, 0, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
-        if (value?.length) {
-          console.log('getMediaContent_test_static_0100 ' + value?.length);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaContent_test_static_0100 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaContent_test_static_0100 length' + value!.length);
+        expect(value!.length > 0).assertTrue();
         done();
       })
     })
@@ -2079,13 +2042,8 @@ export default function ResmgrTest() {
      */
     it('getMediaContentBase64_test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaContentBase64(0x01000001, 0, (err: BusinessError<void> | null, value: string | undefined) => {
-        if (value?.length) {
-          console.log('getMediaContentBase64_test_static_0100 ' + value?.length);
-          expect(true).assertTrue();
-        } else {
-          console.log('getMediaContentBase64_test_static_0100 Failed');
-          expect().assertFail();
-        }
+        console.log('getMediaContentBase64_test_static_0100 length' + value!.length);
+        expect(value!.length > 0).assertTrue();
         done();
       })
     })
@@ -2285,7 +2243,7 @@ export default function ResmgrTest() {
      */
     it('resourceManager_test_getStringByNameSync_static_0270', Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
-        res.getStringByNameSync('test_stringLoopB', 'aaa', 1);
+        res?.getStringByNameSync('test_stringLoopB', 'aaa', 1);
         done();
       } catch (err) {
         console.log('resourceManager_test_getStringByNameSync_static_0270 error code:' + err?.code);
@@ -2304,11 +2262,12 @@ export default function ResmgrTest() {
        */
       it('resourceManager_test_getStringByNameSync_static_0280', Level.LEVEL0,
         async (done: () => void): Promise<void> => {
-          let resMgr = res;
+          let resMgr = res!;
           try {
             resMgr.getStringByNameSync('test_stringTwentyFour', "format string", "format", "1.5", "string");
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.log('resourceManager_test_getStringByNameSync_0280' + error?.code + error?.message);
             expect(error?.code).assertEqual(9001008);
             done();
@@ -2464,7 +2423,8 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptor(0x01234567);
           console.log('getDrawableDescriptor_test_static_0600 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log('getDrawableDescriptor_test_static_0600 ' + error.code);
           console.log('getDrawableDescriptor_test_static_0600 ' + error.message);
           expect(error.code == 9001001).assertTrue();
@@ -2485,7 +2445,8 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptor(0x01000038);
           console.log('getDrawableDescriptor_test_static_0700 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log('getDrawableDescriptor_test_static_0700 ' + error.code);
           console.log('getDrawableDescriptor_test_static_0700 ' + error.message);
           expect(error.code == 9001002).assertTrue();
@@ -2506,7 +2467,8 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptor(0x200001D, 130);
           console.log('getDrawableDescriptor_test_static_0800 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log('getDrawableDescriptor_test_static_0800 ' + error.code);
           console.log('getDrawableDescriptor_test_static_0800 ' + error.message);
           expect(error.code == 401).assertTrue();
@@ -2527,7 +2489,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptor(0x200001D, 0);
           console.log('getDrawableDescriptor_test_1000 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1000 ' + error.code);
           console.log('getDrawableDescriptor_test_1000 ' + error.message);
         }
@@ -2547,7 +2509,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('icon');
           console.log('getDrawableDescriptor_test_1100 ' + JSON.stringify(value));
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1100 ' + error.code);
           console.log('getDrawableDescriptor_test_1100 ' + error.message);
         }
@@ -2567,7 +2529,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('icon', undefined);
           console.log('getDrawableDescriptor_test_1120 ' + JSON.stringify(value));
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1120 ' + error.code);
           console.log('getDrawableDescriptor_test_1120 ' + error.message);
         }
@@ -2587,7 +2549,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('foreground', undefined);
           console.log('getDrawableDescriptor_test_1140 ' + JSON.stringify(value));
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1140 ' + error.code);
           console.log('getDrawableDescriptor_test_1140 ' + error.message);
         }
@@ -2607,7 +2569,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('icon', 120);
           console.log('getDrawableDescriptor_test_1200 ' + JSON.stringify(value));
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1200 ' + error.code);
           console.log('getDrawableDescriptor_test_1200 ' + error.message);
         }
@@ -2627,7 +2589,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('stratify');
           console.log('getDrawableDescriptor_test_1300 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1300 ' + error.code);
           console.log('getDrawableDescriptor_test_1300 ' + error.message);
         }
@@ -2647,7 +2609,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('stratify', 240);
           console.log('getDrawableDescriptor_test_1400 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1400 ' + error.code);
           console.log('getDrawableDescriptor_test_1400 ' + error.message);
         }
@@ -2668,7 +2630,8 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('stratify1');
           console.log('getDrawableDescriptor_test_1600 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log('getDrawableDescriptor_test_1600 ' + error.code);
           console.log('getDrawableDescriptor_test_1600 ' + error.message);
           expect(error.code == 9001003).assertTrue();
@@ -2689,7 +2652,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('stratify', 130);
           console.log('getDrawableDescriptor_test_1800 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_1800 ' + error.code);
           console.log('getDrawableDescriptor_test_1800 ' + error.message);
           expect(error.code == 401).assertTrue();
@@ -2710,7 +2673,7 @@ export default function ResmgrTest() {
           let value = res?.getDrawableDescriptorByName('stratify', 0);
           console.log('getDrawableDescriptor_test_2000 ' + value);
           expect(value != null).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.log('getDrawableDescriptor_test_2000 ' + error.code);
           console.log('getDrawableDescriptor_test_2000 ' + error.message);
         }
@@ -2726,7 +2689,7 @@ export default function ResmgrTest() {
        * @tc.level  LEVEL2
        */
       it('getScreenDensity_test_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
-          res.getDeviceCapability((error: BusinessError | null, dc: resourceManager.DeviceCapability | undefined) => {
+          res?.getDeviceCapability((error: BusinessError | null, dc: resourceManager.DeviceCapability | undefined) => {
             if (error) {
               console.log('getScreenDensity_test_static_001 errorCode: ' + error.code +'errorMessage:'+ error.message);
               expect().assertFail();
@@ -2753,6 +2716,1403 @@ export default function ResmgrTest() {
             done();
           })
         })
+
+    /**
+     * @tc.number   getMediaByName_test_static_003
+     * @tc.name     getMediaByName_test_static_003
+     * @tc.desc     normal in promise mode
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL0
+     */
+    it('getMediaByName_test_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      res!.getMediaByName('startIcon', 0).then((value) => {
+        console.log('getMediaByName_test_static_003 value:' + value);
+        expect(value!.length > 0).assertTrue();
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   getMediaBase64ByName_test_static_003
+     * @tc.name     getMediaBase64ByName_test_static_003
+     * @tc.desc     normal in promise mode
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL0
+     */
+    it('getMediaBase64ByName_test_static_003', Level.LEVEL0, async (): Promise<void> => {
+      res?.getMediaBase64ByName('startIcon', 0).then((value: string): void => {
+        console.log('getMediaBase64ByName_test_static_003 value:' + value);
+        expect(value.length > 0).assertTrue();
+      })
+    })
+
+    /**
+     * @tc.number   getRawFileList_test_static_0300
+     * @tc.name     getRawFileList_test_static_0300
+     * @tc.desc     input void in promise mode
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getRawFileList_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getRawFileList("").then((value: Array<string>): void => {
+        console.log('getRawFileList_test_static_0300 value:' + value);
+        expect(value).assertContain('rawfiletest.xml');
+        done();
+      }).catch((error: Error): void => {
+        console.log('getRawFileList_test_static_0300 error.code' + error.code);
+        console.log('getRawFileList_test_static_0300 error.message' + error.message);
+        expect(error.code).assertFail();
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   getColorByName_test_static_0160
+     * @tc.name     getColorByName_test_static_0160
+     * @tc.desc     input void in callback mode
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getColorByName_test_static_0160', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getColorByName('', (err: BusinessError<void> | null, value: long | undefined) => {
+        console.log('getColorByName_test_static_0160 err.code' + err?.code);
+        console.log('getColorByName_test_static_0160 err.message' + err?.message);
+        expect(err?.code == 9001003).assertTrue();
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   getColorByName_test_static_0170
+     * @tc.name     getColorByName_test_static_0170
+     * @tc.desc     input void in promise mode
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getColorByName_test_static_0170', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getColorByName('').then((value: long) => {
+        console.log('getColorByName_test_static_0170 value:' + value);
+        expect(value).assertFail();
+        done();
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError
+        console.log('getColorByName_test_static_0170 err.code ' + error.code);
+        console.log('getColorByName_test_static_0170 err.message ' + error.message);
+        expect(error.code == 9001003).assertTrue();
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   getColorByNameSync_test_static_008
+     * @tc.name     getColorByNameSync_test_static_008
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getColorByNameSync_test_static_008', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let value = res?.getColorByNameSync('');
+      } catch (err) {
+        console.log('getColorByNameSync_test_static_008 err.code' + err.code);
+        console.log('getColorByNameSync_test_static_008 err.message' + err.message);
+        expect(err.code).assertEqual(9001003);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number   addResource_test_static_003
+     * @tc.name     addResource_test_static_003
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('addResource_test_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        res?.addResource('');
+      } catch (err) {
+        let error = err as BusinessError
+        console.log('addResource_test_static_003 err.code' + error.code);
+        expect(error.code).assertEqual(9001010);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number   removeResource_test_static_003
+     * @tc.name     removeResource_test_static_003
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('removeResource_test_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        res?.removeResource('');
+      } catch (err) {
+        let error = err as BusinessError
+        console.log('removeResource_test_static_003 err.code' + error.code);
+        expect(error.code).assertEqual(9001010);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number   getDrawableDescriptor_test_static_0900
+     * @tc.name     getDrawableDescriptor_test_static_0900
+     * @tc.desc     id density type
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL0
+     */
+    it('getDrawableDescriptor_test_static_0900', Level.LEVEL0, () => {
+      let value = res?.getDrawableDescriptor(0x01000001, 0, 1);
+      console.log('getDrawableDescriptor_test_static_0900 ' + value);
+      expect(value != null).assertTrue();
+    })
+
+    /**
+     * @tc.number   getDrawableDescriptor_test_static_2100
+     * @tc.name     getDrawableDescriptor_test_static_2100
+     * @tc.desc     id density type
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL0
+     */
+    it('getDrawableDescriptor_test_static_2100', Level.LEVEL0, () => {
+      let value = res?.getDrawableDescriptorByName('startIcon', 0, 1);
+      console.log('getDrawableDescriptor_test_static_2100 ' + value);
+      expect(value != null).assertTrue();
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringByNameSync_test_static_0200
+     * @tc.name     getDoublePluralStringByNameSync_test_static_0200
+     * @tc.desc     9001006
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringByNameSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        res?.getDoublePluralStringByNameSync('test_cyc', 2.1, 'test');
+      } catch (err) {
+        console.log('getDoublePluralStringByNameSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001006);
+      }
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringByNameSync_test_static_0300
+     * @tc.name     getDoublePluralStringByNameSync_test_static_0300
+     * @tc.desc     9001008
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringByNameSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        res?.getDoublePluralStringByNameSync('string_format7', 2.1, 'test');
+      } catch (err) {
+        console.log('getDoublePluralStringByNameSync_test_static_0300 error code:' + err.code);
+        expect(err.code).assertEqual(9001008);
+      }
+    })
+
+    /**
+     * @tc.number   getIntPluralStringByNameSync_test_static_0200
+     * @tc.name     getIntPluralStringByNameSync_test_static_0200
+     * @tc.desc     9001006
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringByNameSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        res?.getIntPluralStringByNameSync('test_cyc', 1, 10);
+      } catch (err) {
+        console.log('getIntPluralStringByNameSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001006);
+      }
+    })
+
+    /**
+     * @tc.number   getIntPluralStringByNameSync_test_static_0300
+     * @tc.name     getIntPluralStringByNameSync_test_static_0300
+     * @tc.desc     9001008
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringByNameSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        res?.getIntPluralStringByNameSync('string_format7', 1, 'test');
+      } catch (err) {
+        console.log('getIntPluralStringByNameSync_test_static_0300 error code:' + err.code);
+        expect(err.code).assertEqual(9001008);
+      }
+    })
+
+    /**
+     * @tc.name getDeviceCapability_stage_test_static_0100
+     * @tc.number getDeviceCapability_stage_test_static_0100
+     * @tc.desc with callback deviceType
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getDeviceCapability_stage_test_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getDeviceCapability((err, value) => {
+        let result: resourceManager.DeviceType = value!.deviceType;
+        result = resourceManager.DeviceType.DEVICE_TYPE_PHONE;
+        console.log('getDeviceCapability_stage_test_static_0100 phone:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_PHONE);
+        result = resourceManager.DeviceType.DEVICE_TYPE_TABLET;
+        console.log('getDeviceCapability_stage_test_static_0100 table:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_TABLET);
+        result = resourceManager.DeviceType.DEVICE_TYPE_CAR;
+        console.log('getDeviceCapability_stage_test_static_0100 car:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_CAR);
+        result = resourceManager.DeviceType.DEVICE_TYPE_PC;
+        console.log('getDeviceCapability_stage_test_static_0100 pc:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_PC);
+        result = resourceManager.DeviceType.DEVICE_TYPE_TV;
+        console.log('getDeviceCapability_stage_test_static_0100 tv:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_TV);
+        result = resourceManager.DeviceType.DEVICE_TYPE_WEARABLE;
+        console.log('getDeviceCapability_stage_test_static_0100 wearable:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_WEARABLE);
+        result = resourceManager.DeviceType.DEVICE_TYPE_2IN1;
+        console.log('getDeviceCapability_stage_test_static_0100 2in1:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_2IN1);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getDeviceCapability_stage_test_static_0200
+     * @tc.number getDeviceCapability_stage_test_static_0200
+     * @tc.desc with callback deviceType
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getDeviceCapability_stage_test_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getDeviceCapability((err, value) => {
+        let result: resourceManager.ScreenDensity = value!.screenDensity;
+        result = resourceManager.ScreenDensity.SCREEN_SDPI;
+        console.log('getDeviceCapability_stage_test_static_0200 SCREEN_SDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_SDPI);
+        result = resourceManager.ScreenDensity.SCREEN_MDPI;
+        console.log('getDeviceCapability_stage_test_static_0200 SCREEN_MDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_MDPI);
+        result = resourceManager.ScreenDensity.SCREEN_LDPI;
+        console.log('getDeviceCapability_stage_test_static_0200 SCREEN_LDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_LDPI);
+        result = resourceManager.ScreenDensity.SCREEN_XLDPI;
+        console.log('getDeviceCapability_stage_test_static_0200 SCREEN_XLDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XLDPI);
+        result = resourceManager.ScreenDensity.SCREEN_XXLDPI;
+        console.log('getDeviceCapability_stage_test_static_0200 SCREEN_XXLDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XXLDPI);
+        result = resourceManager.ScreenDensity.SCREEN_XXXLDPI;
+        console.log('getDeviceCapability_stage_test_static_0200 SCREEN_XXXLDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XXXLDPI);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getDeviceCapability_stage_test_static_0300
+     * @tc.number getDeviceCapability_stage_test_static_0300
+     * @tc.desc with promise deviceType
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getDeviceCapability_stage_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getDeviceCapability().then((value) => {
+        let result: resourceManager.DeviceType = value!.deviceType;
+        result = resourceManager.DeviceType.DEVICE_TYPE_PHONE;
+        console.log('getDeviceCapability_stage_test_static_0300 phone:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_PHONE);
+        result = resourceManager.DeviceType.DEVICE_TYPE_TABLET;
+        console.log('getDeviceCapability_stage_test_static_0300 table:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_TABLET);
+        result = resourceManager.DeviceType.DEVICE_TYPE_CAR;
+        console.log('getDeviceCapability_stage_test_static_0300 car:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_CAR);
+        result = resourceManager.DeviceType.DEVICE_TYPE_PC;
+        console.log('getDeviceCapability_stage_test_static_0300 pc:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_PC);
+        result = resourceManager.DeviceType.DEVICE_TYPE_TV;
+        console.log('getDeviceCapability_stage_test_static_0300 tv:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_TV);
+        result = resourceManager.DeviceType.DEVICE_TYPE_WEARABLE;
+        console.log('getDeviceCapability_stage_test_static_0300 wearable:', +result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_WEARABLE);
+        result = resourceManager.DeviceType.DEVICE_TYPE_2IN1;
+        console.log('getDeviceCapability_stage_test_static_0300 2in1:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_2IN1);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getDeviceCapability_stage_test_static_0400
+     * @tc.number getDeviceCapability_stage_test_static_0400
+     * @tc.desc with promise deviceType
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getDeviceCapability_stage_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getDeviceCapability().then((value) => {
+        let result: resourceManager.ScreenDensity = value!.screenDensity;
+        result = resourceManager.ScreenDensity.SCREEN_SDPI;
+        console.log('getDeviceCapability_stage_test_static_0400 SCREEN_SDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_SDPI);
+        result = resourceManager.ScreenDensity.SCREEN_MDPI;
+        console.log('getDeviceCapability_stage_test_static_0400 SCREEN_MDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_MDPI);
+        result = resourceManager.ScreenDensity.SCREEN_LDPI;
+        console.log('getDeviceCapability_stage_test_static_0400 SCREEN_LDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_LDPI);
+        result = resourceManager.ScreenDensity.SCREEN_XLDPI;
+        console.log('getDeviceCapability_stage_test_static_0400 SCREEN_XLDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XLDPI);
+        result = resourceManager.ScreenDensity.SCREEN_XXLDPI;
+        console.log('getDeviceCapability_stage_test_static_0400 SCREEN_XXLDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XXLDPI);
+        result = resourceManager.ScreenDensity.SCREEN_XXXLDPI;
+        console.log('getDeviceCapability_stage_test_static_0400 SCREEN_XXXLDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XXXLDPI);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_static_0100
+     * @tc.number getConfiguration_stage_static_0100
+     * @tc.desc callback locale
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('getConfiguration_stage_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getConfiguration((err, value) => {
+        value!.locale = 'zh_Hans_CN';
+        console.log('getConfiguration_stage_static_0100 locale:' + value!.locale);
+        expect(value!.locale).assertEqual('zh_Hans_CN');
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_test_static_0200
+     * @tc.number getConfiguration_stage_test_static_0200
+     * @tc.desc with callback direction
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getConfiguration_stage_test_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getConfiguration((err, value) => {
+        value!.direction = resourceManager.Direction.DIRECTION_VERTICAL;
+        console.log('getConfiguration_stage_test_static_0200 DIRECTION_VERTICAL:' + value!.direction);
+        expect(value!.direction).assertEqual(resourceManager.Direction.DIRECTION_VERTICAL);
+        value!.direction = resourceManager.Direction.DIRECTION_HORIZONTAL;
+        console.log('getConfiguration_stage_test_static_0200 DIRECTION_HORIZONTAL:' + value!.direction);
+        expect(value!.direction).assertEqual(resourceManager.Direction.DIRECTION_HORIZONTAL);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_test_static_0300
+     * @tc.number getConfiguration_stage_test_static_0300
+     * @tc.desc with callback deviceType
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getConfiguration_stage_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getConfiguration((err, value) => {
+        let result: resourceManager.DeviceType = value!.deviceType;
+        result = resourceManager.DeviceType.DEVICE_TYPE_PHONE;
+        console.log('getConfiguration_stage_test_static_0300 phone:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_PHONE);
+        result = resourceManager.DeviceType.DEVICE_TYPE_TABLET;
+        console.log('getConfiguration_stage_test_static_0300 table:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_TABLET);
+        result = resourceManager.DeviceType.DEVICE_TYPE_CAR;
+        console.log('getConfiguration_stage_test_static_0300 car:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_CAR);
+        result = resourceManager.DeviceType.DEVICE_TYPE_PC;
+        console.log('getConfiguration_stage_test_static_0300 pc:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_PC);
+        result = resourceManager.DeviceType.DEVICE_TYPE_TV;
+        console.log('getConfiguration_stage_test_static_0300 tv:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_TV);
+        result = resourceManager.DeviceType.DEVICE_TYPE_WEARABLE;
+        console.log('getConfiguration_stage_test_static_0300 wearable:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_WEARABLE);
+        result = resourceManager.DeviceType.DEVICE_TYPE_2IN1;
+        console.log('getConfiguration_stage_test_static_0300 2in1:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_2IN1);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_test_static_0400
+     * @tc.number getConfiguration_stage_test_static_0400
+     * @tc.desc with callback screenDensity
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getConfiguration_stage_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getConfiguration((err, value) => {
+        let result: resourceManager.ScreenDensity = value!.screenDensity;
+        result = resourceManager.ScreenDensity.SCREEN_SDPI;
+        console.log('getConfiguration_stage_test_static_0400 SCREEN_SDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_SDPI);
+        result = resourceManager.ScreenDensity.SCREEN_MDPI;
+        console.log('getConfiguration_stage_test_static_0400 SCREEN_MDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_MDPI);
+        result = resourceManager.ScreenDensity.SCREEN_LDPI;
+        console.log('getConfiguration_stage_test_static_0400 SCREEN_LDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_LDPI);
+        result = resourceManager.ScreenDensity.SCREEN_XLDPI;
+        console.log('getConfiguration_stage_test_static_0400 SCREEN_XLDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XLDPI);
+        result = resourceManager.ScreenDensity.SCREEN_XXLDPI;
+        console.log('getConfiguration_stage_test_static_0400 SCREEN_XXLDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XXLDPI);
+        result = resourceManager.ScreenDensity.SCREEN_XXXLDPI;
+        console.log('getConfiguration_stage_test_static_0400 SCREEN_XXXLDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XXXLDPI);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_test_static_0500
+     * @tc.number getConfiguration_stage_test_static_0500
+     * @tc.desc with callback colorMode
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getConfiguration_stage_test_static_0500', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getConfiguration((err, value) => {
+        value!.colorMode = resourceManager.ColorMode.DARK;
+        console.log('getConfiguration_stage_test_static_0500 DARK:' + value!.colorMode);
+        expect(value!.colorMode).assertEqual(resourceManager.ColorMode.DARK);
+        value!.colorMode = resourceManager.ColorMode.LIGHT;
+        console.log('getConfiguration_stage_test_static_0500 LIGHT:' + value!.colorMode);
+        expect(value!.colorMode).assertEqual(resourceManager.ColorMode.LIGHT);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_static_0600
+     * @tc.number getConfiguration_stage_static_0600
+     * @tc.desc callback mcc
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('getConfiguration_stage_static_0600', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getConfiguration((err, value) => {
+        value!.mcc = 460;
+        console.log('getConfiguration_stage_static_0600 locale:' + value!.mcc);
+        expect(value!.mcc).assertEqual(460);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_static_0700
+     * @tc.number getConfiguration_stage_static_0700
+     * @tc.desc callback mcc
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('getConfiguration_stage_static_0700', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getConfiguration((err, value) => {
+        value!.mnc = 60;
+        console.log('getConfiguration_stage_static_0700 locale:' + value!.mnc);
+        expect(value!.mnc).assertEqual(60);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_static_0800
+     * @tc.number getConfiguration_stage_static_0800
+     * @tc.desc promise locale
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('getConfiguration_stage_static_0800', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getConfiguration().then((value) => {
+        value!.locale = 'zh_Hans_CN';
+        console.log('getConfiguration_stage_static_0800 locale:' + value!.locale);
+        expect(value!.locale).assertEqual('zh_Hans_CN');
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_static_0900
+     * @tc.number getConfiguration_stage_static_0900
+     * @tc.desc promise direction
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('getConfiguration_stage_static_0900', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getConfiguration().then((value) => {
+        value!.direction = resourceManager.Direction.DIRECTION_VERTICAL;
+        console.log('getConfiguration_stage_static_0900 DIRECTION_VERTICAL:' + value!.direction);
+        expect(value!.direction).assertEqual(resourceManager.Direction.DIRECTION_VERTICAL);
+        value!.direction = resourceManager.Direction.DIRECTION_HORIZONTAL;
+        console.log('getConfiguration_stage_static_0900 DIRECTION_HORIZONTAL:' + value!.direction);
+        expect(value!.direction).assertEqual(resourceManager.Direction.DIRECTION_HORIZONTAL);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_static_1000
+     * @tc.number getConfiguration_stage_static_1000
+     * @tc.desc promise deviceType
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('getConfiguration_stage_static_1000', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getConfiguration().then((value) => {
+        let result: resourceManager.DeviceType = value!.deviceType;
+        result = resourceManager.DeviceType.DEVICE_TYPE_PHONE;
+        console.log('getConfiguration_stage_static_1000 phone:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_PHONE);
+        result = resourceManager.DeviceType.DEVICE_TYPE_TABLET;
+        console.log('getConfiguration_stage_static_1000 table:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_TABLET);
+        result = resourceManager.DeviceType.DEVICE_TYPE_CAR;
+        console.log('getConfiguration_stage_static_1000 car:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_CAR);
+        result = resourceManager.DeviceType.DEVICE_TYPE_PC;
+        console.log('getConfiguration_stage_static_1000 pc:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_PC);
+        result = resourceManager.DeviceType.DEVICE_TYPE_TV;
+        console.log('getConfiguration_stage_static_1000 tv:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_TV);
+        result = resourceManager.DeviceType.DEVICE_TYPE_WEARABLE;
+        console.log('getConfiguration_stage_static_1000 wearable:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_WEARABLE);
+        result = resourceManager.DeviceType.DEVICE_TYPE_2IN1;
+        console.log('getConfiguration_stage_static_1000 2in1:' + result);
+        expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_2IN1);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_static_1100
+     * @tc.number getConfiguration_stage_static_1100
+     * @tc.desc promise deviceType
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('getConfiguration_stage_static_1100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.getConfiguration().then((value) => {
+        let result: resourceManager.ScreenDensity = value!.screenDensity;
+        result = resourceManager.ScreenDensity.SCREEN_SDPI;
+        console.log('getConfiguration_stage_static_1100 SCREEN_SDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_SDPI);
+        result = resourceManager.ScreenDensity.SCREEN_MDPI;
+        console.log('getConfiguration_stage_static_1100 SCREEN_MDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_MDPI);
+        result = resourceManager.ScreenDensity.SCREEN_LDPI;
+        console.log('getConfiguration_stage_static_1100 SCREEN_LDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_LDPI);
+        result = resourceManager.ScreenDensity.SCREEN_XLDPI;
+        console.log('getConfiguration_stage_static_1100 SCREEN_XLDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XLDPI);
+        result = resourceManager.ScreenDensity.SCREEN_XXLDPI;
+        console.log('getConfiguration_stage_static_1100 SCREEN_XXLDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XXLDPI);
+        result = resourceManager.ScreenDensity.SCREEN_XXXLDPI;
+        console.log('getConfiguration_stage_static_1100 SCREEN_XXXLDPI:' + result);
+        expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XXXLDPI);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_test_static_1200
+     * @tc.number getConfiguration_stage_test_static_1200
+     * @tc.desc promise colorMode
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('getConfiguration_stage_test_static_1200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      res?.getConfiguration().then((value) => {
+        value!.colorMode = resourceManager.ColorMode.DARK;
+        console.log('getConfiguration_stage_test_static_1200 DARK:' + value!.colorMode);
+        expect(value!.colorMode).assertEqual(resourceManager.ColorMode.DARK);
+        value!.colorMode = resourceManager.ColorMode.LIGHT;
+        console.log('getConfiguration_stage_test_static_1200 LIGHT:' + value!.colorMode);
+        expect(value!.colorMode).assertEqual(resourceManager.ColorMode.LIGHT);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_test_static_1300
+     * @tc.number getConfiguration_stage_test_static_1300
+     * @tc.desc promise mcc
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('getConfiguration_stage_test_static_1300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      res?.getConfiguration().then((value) => {
+        value!.mcc = 460;
+        console.log('getConfiguration_stage_test_static_1300 value:' + value!.mcc);
+        expect(value!.mcc).assertEqual(460);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfiguration_stage_test_static_1400
+     * @tc.number getConfiguration_stage_test_static_1400
+     * @tc.desc promise mnc
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('getConfiguration_stage_test_static_1400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      res?.getConfiguration().then((value) => {
+        value!.mnc = 60;
+        console.log('getConfiguration_stage_test_static_1400 value:' + value!.mnc);
+        expect(value!.mnc).assertEqual(60);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name getConfigurationSync_stage_test_static_0100
+     * @tc.number getConfigurationSync_stage_test_static_0100
+     * @tc.desc locale
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('getConfigurationSync_stage_test_static_0100', Level.LEVEL2, () => {
+      let value: resourceManager.Configuration | undefined = res?.getConfigurationSync();
+      value!.locale = 'zh_Hans_CN';
+      console.log('getConfigurationSync_stage_test_static_0100 locale:' + value!.locale);
+      expect(value!.locale).assertEqual('zh_Hans_CN');
+    })
+
+    /**
+     * @tc.name getConfigurationSync_stage_test_static_0200
+     * @tc.number getConfigurationSync_stage_test_static_0200
+     * @tc.desc direction
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('getConfigurationSync_stage_test_static_0200', Level.LEVEL2, () => {
+      let value: resourceManager.Configuration | undefined = res?.getConfigurationSync();
+      value!.direction = resourceManager.Direction.DIRECTION_VERTICAL;
+      console.log('getConfigurationSync_stage_test_static_0200 DIRECTION_VERTICAL:' + value!.direction);
+      expect(value!.direction).assertEqual(resourceManager.Direction.DIRECTION_VERTICAL);
+      value!.direction = resourceManager.Direction.DIRECTION_HORIZONTAL;
+      console.log('getConfigurationSync_stage_test_static_0200 DIRECTION_HORIZONTAL:' + value!.direction);
+      expect(value!.direction).assertEqual(resourceManager.Direction.DIRECTION_HORIZONTAL);
+    })
+
+    /**
+     * @tc.name getConfigurationSync_stage_test_static_0300
+     * @tc.number getConfigurationSync_stage_test_static_0300
+     * @tc.desc deviceType
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('getConfigurationSync_stage_test_static_0300', Level.LEVEL2, () => {
+      let value: resourceManager.Configuration | undefined = res?.getConfigurationSync();
+      let result: resourceManager.DeviceType = value!.deviceType;
+      result = resourceManager.DeviceType.DEVICE_TYPE_PHONE;
+      console.log('getConfigurationSync_stage_test_static_0300 phone:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_PHONE);
+      result = resourceManager.DeviceType.DEVICE_TYPE_TABLET;
+      console.log('getConfigurationSync_stage_test_static_0300 table:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_TABLET);
+      result = resourceManager.DeviceType.DEVICE_TYPE_CAR;
+      console.log('getConfigurationSync_stage_test_static_0300 car:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_CAR);
+      result = resourceManager.DeviceType.DEVICE_TYPE_PC;
+      console.log('getConfigurationSync_stage_test_static_0300 pc:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_PC);
+      result = resourceManager.DeviceType.DEVICE_TYPE_TV;
+      console.log('getConfigurationSync_stage_test_static_0300 tv:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_TV);
+      result = resourceManager.DeviceType.DEVICE_TYPE_WEARABLE;
+      console.log('getConfigurationSync_stage_test_static_0300 wearable:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_WEARABLE);
+      result = resourceManager.DeviceType.DEVICE_TYPE_2IN1;
+      console.log('getConfigurationSync_stage_test_static_0300 2in1:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_2IN1);
+    })
+
+    /**
+     * @tc.name getConfigurationSync_stage_test_static_0400
+     * @tc.number getConfigurationSync_stage_test_static_0400
+     * @tc.desc screenDensity
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('getConfigurationSync_stage_test_static_0400', Level.LEVEL2, () => {
+      let value: resourceManager.Configuration | undefined = res?.getConfigurationSync();
+      let result: resourceManager.ScreenDensity = value!.screenDensity;
+      result = resourceManager.ScreenDensity.SCREEN_SDPI;
+      console.log('getConfigurationSync_stage_test_static_0400 SCREEN_SDPI:' + result);
+      expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_SDPI);
+      result = resourceManager.ScreenDensity.SCREEN_MDPI;
+      console.log('getConfigurationSync_stage_test_static_0400 SCREEN_MDPI:' + result);
+      expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_MDPI);
+      result = resourceManager.ScreenDensity.SCREEN_LDPI;
+      console.log('getConfigurationSync_stage_test_static_0400 SCREEN_LDPI:' + result);
+      expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_LDPI);
+      result = resourceManager.ScreenDensity.SCREEN_XLDPI;
+      console.log('getConfigurationSync_stage_test_static_0400 SCREEN_XLDPI:' + result);
+      expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XLDPI);
+      result = resourceManager.ScreenDensity.SCREEN_XXLDPI;
+      console.log('getConfigurationSync_stage_test_static_0400 SCREEN_XXLDPI:' + result);
+      expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XXLDPI);
+      result = resourceManager.ScreenDensity.SCREEN_XXXLDPI;
+      console.log('getConfigurationSync_stage_test_static_0400 SCREEN_XXXLDPI:' + result);
+      expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XXXLDPI);
+    })
+
+    /**
+     * @tc.name getConfigurationSync_stage_test_static_0500
+     * @tc.number getConfigurationSync_stage_test_static_0500
+     * @tc.desc colorMode
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('getConfigurationSync_stage_test_static_0500', Level.LEVEL2, () => {
+      let value: resourceManager.Configuration | undefined = res?.getConfigurationSync();
+      value!.colorMode = resourceManager.ColorMode.DARK;
+      console.log('getConfigurationSync_stage_test_static_0500 DARK:' + value!.colorMode);
+      expect(value!.colorMode).assertEqual(resourceManager.ColorMode.DARK);
+      value!.colorMode = resourceManager.ColorMode.LIGHT;
+      console.log('getConfigurationSync_stage_test_static_0500 LIGHT:' + value!.colorMode);
+      expect(value!.colorMode).assertEqual(resourceManager.ColorMode.LIGHT);
+    })
+
+    /**
+     * @tc.name getConfigurationSync_stage_test_static_0600
+     * @tc.number getConfigurationSync_stage_test_static_0600
+     * @tc.desc mcc
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('getConfigurationSync_stage_test_static_0600', Level.LEVEL2, () => {
+      let value: resourceManager.Configuration | undefined = res?.getConfigurationSync();
+      value!.mcc = 460;
+      console.log('getConfigurationSync_stage_test_static_0600 value:' + value!.mcc);
+      expect(value!.mcc).assertEqual(460);
+    })
+
+    /**
+     * @tc.name getConfigurationSync_stage_test_static_0700
+     * @tc.number getConfigurationSync_stage_test_static_0700
+     * @tc.desc mnc
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('getConfigurationSync_stage_test_static_0700', Level.LEVEL2, () => {
+      let value: resourceManager.Configuration | undefined = res?.getConfigurationSync();
+      value!.mnc = 60;
+      console.log('getConfigurationSync_stage_test_static_0700 value:' + value!.mnc);
+      expect(value!.mnc).assertEqual(60);
+    })
+
+    /**
+     * @tc.name getDeviceCapabilitySync_stage_test_static_0100
+     * @tc.number getDeviceCapabilitySync_stage_test_static_0100
+     * @tc.desc deviceType
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('getDeviceCapabilitySync_stage_test_static_0100', Level.LEVEL2, () => {
+      let value: resourceManager.DeviceCapability | undefined = res?.getDeviceCapabilitySync();
+      let result: resourceManager.DeviceType = value!.deviceType;
+      result = resourceManager.DeviceType.DEVICE_TYPE_PHONE;
+      console.log('getDeviceCapabilitySync_stage_test_static_0100 phone:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_PHONE);
+      result = resourceManager.DeviceType.DEVICE_TYPE_TABLET;
+      console.log('getDeviceCapabilitySync_stage_test_static_0100 table:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_TABLET);
+      result = resourceManager.DeviceType.DEVICE_TYPE_CAR;
+      console.log('getDeviceCapabilitySync_stage_test_static_0100 car:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_CAR);
+      result = resourceManager.DeviceType.DEVICE_TYPE_PC;
+      console.log('getDeviceCapabilitySync_stage_test_static_0100 pc:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_PC);
+      result = resourceManager.DeviceType.DEVICE_TYPE_TV;
+      console.log('getDeviceCapabilitySync_stage_test_static_0100 tv:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_TV);
+      result = resourceManager.DeviceType.DEVICE_TYPE_WEARABLE;
+      console.log('getDeviceCapabilitySync_stage_test_static_0100 wearable:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_WEARABLE);
+      result = resourceManager.DeviceType.DEVICE_TYPE_2IN1;
+      console.log('getDeviceCapabilitySync_stage_test_static_0100 2in1:' + result);
+      expect(result).assertEqual(resourceManager.DeviceType.DEVICE_TYPE_2IN1);
+    })
+
+    /**
+     * @tc.number getDeviceCapabilitySync_stage_test_static_0200
+     * @tc.name getDeviceCapabilitySync_stage_test_static_0200
+     * @tc.desc screenDensity
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('getDeviceCapabilitySync_stage_test_static_0200', Level.LEVEL2, () => {
+      let value: resourceManager.DeviceCapability | undefined = res?.getDeviceCapabilitySync();
+      let result: resourceManager.ScreenDensity = value!.screenDensity;
+      result = resourceManager.ScreenDensity.SCREEN_SDPI;
+      console.log('getDeviceCapabilitySync_stage_test_static_0200 SCREEN_SDPI:' + result);
+      expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_SDPI);
+      result = resourceManager.ScreenDensity.SCREEN_MDPI;
+      console.log('getDeviceCapabilitySync_stage_test_static_0200 SCREEN_MDPI:' + result);
+      expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_MDPI);
+      result = resourceManager.ScreenDensity.SCREEN_LDPI;
+      console.log('getDeviceCapabilitySync_stage_test_static_0200 SCREEN_LDPI:' + result);
+      expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_LDPI);
+      result = resourceManager.ScreenDensity.SCREEN_XLDPI;
+      console.log('getDeviceCapabilitySync_stage_test_static_0200 SCREEN_XLDPI:' + result);
+      expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XLDPI);
+      result = resourceManager.ScreenDensity.SCREEN_XXLDPI;
+      console.log('getDeviceCapabilitySync_stage_test_static_0200 SCREEN_XXLDPI:' + result);
+      expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XXLDPI);
+      result = resourceManager.ScreenDensity.SCREEN_XXXLDPI;
+      console.log('getDeviceCapabilitySync_stage_test_static_0200 SCREEN_XXXLDPI:' + result);
+      expect(result).assertEqual(resourceManager.ScreenDensity.SCREEN_XXXLDPI);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetLocales_static_0100
+     * @tc.number SUB_GLOBAL_GetLocales_static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GLOBAL_GetLocales_static_0100', Level.LEVEL3, () => {
+      let value: Array<string> | undefined = res?.getLocales(true);
+      console.log('SUB_GLOBAL_GetLocales_static_0100 value:', value);
+      expect(value!.toString()).assertContain('zh-CN');
+    })
+
+    /**
+     * @tc.number getSymbolByName_void_test_static_0100
+     * @tc.name getSymbolByName_void_test_static_0100
+     * @tc.desc with Void
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('getSymbolByName_void_test_static_0100', Level.LEVEL3, () => {
+      try {
+        let value = res?.getSymbolByName("");
+        console.log('getSymbolByName_void_test_static_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (e) {
+        let error = e as BusinessError;
+        console.log('getSymbolByName_void_test_static_0100 err:' + error.code);
+        expect(Number(error.code)).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number isRawDir_void_test_static_0100
+     * @tc.name isRawDir_void_test_static_0100
+     * @tc.desc with Void
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('isRawDir_void_test_static_0100', Level.LEVEL3, () => {
+      try {
+        let value = res?.isRawDir("");
+        console.log('isRawDir_void_test_static_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (e) {
+        let error = e as BusinessError;
+        console.log('isRawDir_void_test_static_0100 err:' + error.code);
+        expect(Number(error.code)).assertEqual(9001005);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0200
+     * @tc.number SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0200
+     * @tc.desc with getOverrideResourceManager
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0200', Level.LEVEL3, () => {
+      let overrideConfigurationOne: resourceManager.Configuration = {
+        mcc: 460,
+        mnc: 101,
+        locale: 'zh_Hans_CN',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_TABLET,
+        screenDensity: resourceManager.ScreenDensity.SCREEN_MDPI,
+        colorMode: resourceManager.ColorMode.DARK
+      };
+      let value = res?.getOverrideResourceManager(overrideConfigurationOne);
+      let result: Array<number> = [];
+      result.push(value!.getOverrideConfiguration().direction);
+      result.push(value!.getOverrideConfiguration().deviceType);
+      result.push(value!.getOverrideConfiguration().screenDensity);
+      result.push(value!.getOverrideConfiguration().colorMode);
+      result.push(value!.getOverrideConfiguration().mnc);
+      result.push(value!.getOverrideConfiguration().mcc);
+      let resultString = value!.getOverrideConfiguration().locale;
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0200 result:', result[0]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0200 result:', result[1]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0200 result:', result[2]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0200 result:', result[3]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0200 result:', result[4]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0200 result:', result[5]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0200 result:', resultString);
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0x01);
+      expect(result[2]).assertEqual(160);
+      expect(result[3]).assertEqual(0);
+      expect(result[4]).assertEqual(101);
+      expect(result[5]).assertEqual(460);
+      expect(resultString).assertEqual('zh_Hans_CN');
+    })
+
+    /**
+     * @tc.name SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0300
+     * @tc.number SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0300
+     * @tc.desc with getOverrideResourceManager
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0300', Level.LEVEL3, () => {
+      let overrideConfigurationTwo: resourceManager.Configuration = {
+        mcc: 460,
+        mnc: 101,
+        locale: 'en-US',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_CAR,
+        screenDensity: resourceManager.ScreenDensity.SCREEN_LDPI,
+        colorMode: resourceManager.ColorMode.DARK
+      };
+      let value = res?.getOverrideResourceManager(overrideConfigurationTwo);
+      let result: Array<number> = [];
+      result.push(value!.getOverrideConfiguration().direction);
+      result.push(value!.getOverrideConfiguration().deviceType);
+      result.push(value!.getOverrideConfiguration().screenDensity);
+      result.push(value!.getOverrideConfiguration().colorMode);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0300 result:', result[0]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0300 result:', result[1]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0300 result:', result[2]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0300 result:', result[3]);
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0x02);
+      expect(result[2]).assertEqual(240);
+      expect(result[3]).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0400
+     * @tc.number SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0400
+     * @tc.desc with getOverrideResourceManager
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0400', Level.LEVEL3, () => {
+      let overrideConfigurationThree: resourceManager.Configuration = {
+        mcc: 460,
+        mnc: 101,
+        locale: 'en-US',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_PC,
+        screenDensity: resourceManager.ScreenDensity.SCREEN_XLDPI,
+        colorMode: resourceManager.ColorMode.DARK
+      };
+      let value = res?.getOverrideResourceManager(overrideConfigurationThree);
+      let result: Array<number> = [];
+      result.push(value!.getOverrideConfiguration().direction);
+      result.push(value!.getOverrideConfiguration().deviceType);
+      result.push(value!.getOverrideConfiguration().screenDensity);
+      result.push(value!.getOverrideConfiguration().colorMode);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0400 result:', result[0]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0400 result:', result[1]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0400 result:', result[2]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0400 result:', result[3]);
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0x03);
+      expect(result[2]).assertEqual(320);
+      expect(result[3]).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0500
+     * @tc.number SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0500
+     * @tc.desc with getOverrideResourceManager
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0500', Level.LEVEL3, () => {
+      let overrideConfigurationFour: resourceManager.Configuration = {
+        mcc: 460,
+        mnc: 101,
+        locale: 'en-US',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_TV,
+        screenDensity: resourceManager.ScreenDensity.SCREEN_XXLDPI,
+        colorMode: resourceManager.ColorMode.DARK
+      };
+      let value = res?.getOverrideResourceManager(overrideConfigurationFour);
+      let result: Array<number> = [];
+      result.push(value!.getOverrideConfiguration().direction);
+      result.push(value!.getOverrideConfiguration().deviceType);
+      result.push(value!.getOverrideConfiguration().screenDensity);
+      result.push(value!.getOverrideConfiguration().colorMode);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0500 result:', result[0]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0500 result:', result[1]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0500 result:', result[2]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0500 result:', result[3]);
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0x04);
+      expect(result[2]).assertEqual(480);
+      expect(result[3]).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0600
+     * @tc.number SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0600
+     * @tc.desc with getOverrideResourceManager
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0600', Level.LEVEL3, () => {
+      let overrideConfigurationFive: resourceManager.Configuration = {
+        mcc: 460,
+        mnc: 101,
+        locale: 'en-US',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_WEARABLE,
+        screenDensity: resourceManager.ScreenDensity.SCREEN_XXXLDPI,
+        colorMode: resourceManager.ColorMode.DARK
+      };
+      let value = res?.getOverrideResourceManager(overrideConfigurationFive);
+      let result: Array<number> = [];
+      result.push(value!.getOverrideConfiguration().direction);
+      result.push(value!.getOverrideConfiguration().deviceType);
+      result.push(value!.getOverrideConfiguration().screenDensity);
+      result.push(value!.getOverrideConfiguration().colorMode);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0600 result:', result[0]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0600 result:', result[1]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0600 result:', result[2]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0600 result:', result[3]);
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0x06);
+      expect(result[2]).assertEqual(640);
+      expect(result[3]).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0700
+     * @tc.number SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0700
+     * @tc.desc with getOverrideResourceManager
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0700', Level.LEVEL3, () => {
+      let overrideConfigurationSix: resourceManager.Configuration = {
+        mcc: 460,
+        mnc: 101,
+        locale: 'en-US',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_2IN1,
+        screenDensity: resourceManager.ScreenDensity.SCREEN_XXXLDPI,
+        colorMode: resourceManager.ColorMode.DARK
+      };
+      let value = res?.getOverrideResourceManager(overrideConfigurationSix);
+      let result: Array<number> = [];
+      result.push(value!.getOverrideConfiguration().direction);
+      result.push(value!.getOverrideConfiguration().deviceType);
+      result.push(value!.getOverrideConfiguration().screenDensity);
+      result.push(value!.getOverrideConfiguration().colorMode);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0700 result:', result[0]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0700 result:', result[1]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0700 result:', result[2]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_static_0700 result:', result[3]);
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0x07);
+      expect(result[2]).assertEqual(640);
+      expect(result[3]).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0200
+     * @tc.number SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0200
+     * @tc.desc with updateOverrideConfiguration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0200', Level.LEVEL3, () => {
+      let overrideConfigurationOne: resourceManager.Configuration = {
+        mcc: 460,
+        mnc: 101,
+        locale: 'en-US',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_TABLET,
+        screenDensity: resourceManager.ScreenDensity.SCREEN_MDPI,
+        colorMode: resourceManager.ColorMode.LIGHT
+      };
+      let value = res?.getOverrideResourceManager();
+      value!.updateOverrideConfiguration(overrideConfigurationOne);
+      let result: Array<number> = [];
+      result.push(value!.getOverrideConfiguration().direction);
+      result.push(value!.getOverrideConfiguration().deviceType);
+      result.push(value!.getOverrideConfiguration().screenDensity);
+      result.push(value!.getOverrideConfiguration().colorMode);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0200 result:', result[0]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0200 result:', result[1]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0200 result:', result[2]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0200 result:', result[3]);
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0x01);
+      expect(result[2]).assertEqual(160);
+      expect(result[3]).assertEqual(1);
+    })
+
+    /**
+     * @tc.name SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0300
+     * @tc.number SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0300
+     * @tc.desc with updateOverrideConfiguration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0300', Level.LEVEL3, () => {
+      let overrideConfigurationTwo: resourceManager.Configuration = {
+        mcc: 460,
+        mnc: 101,
+        locale: 'en-US',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_CAR,
+        screenDensity: resourceManager.ScreenDensity.SCREEN_LDPI,
+        colorMode: resourceManager.ColorMode.DARK
+      };
+      let value = res?.getOverrideResourceManager();
+      value!.updateOverrideConfiguration(overrideConfigurationTwo);
+      let result: Array<number> = [];
+      result.push(value!.getOverrideConfiguration().direction);
+      result.push(value!.getOverrideConfiguration().deviceType);
+      result.push(value!.getOverrideConfiguration().screenDensity);
+      result.push(value!.getOverrideConfiguration().colorMode);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0300 result:', result[0]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0300 result:', result[1]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0300 result:', result[2]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0300 result:', result[3]);
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0x02);
+      expect(result[2]).assertEqual(240);
+      expect(result[3]).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0400
+     * @tc.number SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0400
+     * @tc.desc with updateOverrideConfiguration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0400', Level.LEVEL3, () => {
+      let overrideConfigurationThree: resourceManager.Configuration = {
+        mcc: 460,
+        mnc: 101,
+        locale: 'en-US',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_PC,
+        screenDensity: resourceManager.ScreenDensity.SCREEN_XLDPI,
+        colorMode: resourceManager.ColorMode.DARK
+      };
+      let value = res?.getOverrideResourceManager();
+      value!.updateOverrideConfiguration(overrideConfigurationThree);
+      let result: Array<number> = [];
+      result.push(value!.getOverrideConfiguration().direction);
+      result.push(value!.getOverrideConfiguration().deviceType);
+      result.push(value!.getOverrideConfiguration().screenDensity);
+      result.push(value!.getOverrideConfiguration().colorMode);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0400 result:', result[0]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0400 result:', result[1]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0400 result:', result[2]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0400 result:', result[3]);
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0x03);
+      expect(result[2]).assertEqual(320);
+      expect(result[3]).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0500
+     * @tc.number SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0500
+     * @tc.desc with updateOverrideConfiguration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0500', Level.LEVEL3, () => {
+      let overrideConfigurationFour: resourceManager.Configuration = {
+        mcc: 460,
+        mnc: 101,
+        locale: 'en-US',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_TV,
+        screenDensity: resourceManager.ScreenDensity.SCREEN_XXLDPI,
+        colorMode: resourceManager.ColorMode.DARK
+      };
+      let value = res?.getOverrideResourceManager();
+      value!.updateOverrideConfiguration(overrideConfigurationFour);
+      let result: Array<number> = [];
+      result.push(value!.getOverrideConfiguration().direction);
+      result.push(value!.getOverrideConfiguration().deviceType);
+      result.push(value!.getOverrideConfiguration().screenDensity);
+      result.push(value!.getOverrideConfiguration().colorMode);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0500 result:', result[0]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0500 result:', result[1]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0500 result:', result[2]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0500 result:', result[3]);
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0x04);
+      expect(result[2]).assertEqual(480);
+      expect(result[3]).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0600
+     * @tc.number SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0600
+     * @tc.desc with updateOverrideConfiguration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0600', Level.LEVEL3, () => {
+      let overrideConfigurationFive: resourceManager.Configuration = {
+        mcc: 460,
+        mnc: 101,
+        locale: 'en-US',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_WEARABLE,
+        screenDensity: resourceManager.ScreenDensity.SCREEN_XXXLDPI,
+        colorMode: resourceManager.ColorMode.DARK
+      };
+      let value = res?.getOverrideResourceManager();
+      value!.updateOverrideConfiguration(overrideConfigurationFive);
+      let result: Array<number> = [];
+      result.push(value!.getOverrideConfiguration().direction);
+      result.push(value!.getOverrideConfiguration().deviceType);
+      result.push(value!.getOverrideConfiguration().screenDensity);
+      result.push(value!.getOverrideConfiguration().colorMode);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0600 result:', result[0]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0600 result:', result[1]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0600 result:', result[2]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0600 result:', result[3]);
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0x06);
+      expect(result[2]).assertEqual(640);
+      expect(result[3]).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0700
+     * @tc.number SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0700
+     * @tc.desc with updateOverrideConfiguration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0700', Level.LEVEL3, () => {
+      let overrideConfigurationSix: resourceManager.Configuration = {
+        mcc: 460,
+        mnc: 101,
+        locale: 'en-US',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_2IN1,
+        screenDensity: resourceManager.ScreenDensity.SCREEN_XXXLDPI,
+        colorMode: resourceManager.ColorMode.DARK
+      };
+      let value = res?.getOverrideResourceManager();
+      value!.updateOverrideConfiguration(overrideConfigurationSix);
+      let result: Array<number> = [];
+      result.push(value!.getOverrideConfiguration().direction);
+      result.push(value!.getOverrideConfiguration().deviceType);
+      result.push(value!.getOverrideConfiguration().screenDensity);
+      result.push(value!.getOverrideConfiguration().colorMode);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0700 result:', result[0]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0700 result:', result[1]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0700 result:', result[2]);
+      console.log('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_static_0700 result:', result[3]);
+      expect(result[0]).assertEqual(0);
+      expect(result[1]).assertEqual(0x07);
+      expect(result[2]).assertEqual(640);
+      expect(result[3]).assertEqual(0);
+    })
 
       console.log('*************end ResmgrTest*************');
     })

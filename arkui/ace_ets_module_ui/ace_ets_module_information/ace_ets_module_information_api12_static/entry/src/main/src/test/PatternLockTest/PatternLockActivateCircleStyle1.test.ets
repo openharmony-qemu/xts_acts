@@ -32,7 +32,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function PatternLockActivateCircleStyle1() {
   describe('PatternLockActivateCircleStyle1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("PatternLockActivateCircleStyle1 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility");
     });

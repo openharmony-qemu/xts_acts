@@ -21,6 +21,7 @@ import { Context } from '@ohos.abilityAccessCtrl';
 import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import image from '@ohos.multimedia.image';
+import deviceInfo from '@ohos.deviceInfo';
 
 function expectedError(TRUE_FLAG: boolean, error: BusinessError, caseName: string, apiName: string, done: Function, code: number) {
   let msgStr: string = 'jsUnittest ' + caseName + ' ' + apiName + ' failed, err: ';
@@ -67,6 +68,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
     let commonNUMBERColorArr: Array<string> = ['#00FF0000', '#0000FF00', '#000000FF', '#00FFFFFF', '#00000000', '#00F900E6', '#00666666', '#00FFF700'];
     let commonKEYColorArr: Array<string> = ['red', 'green', 'blue', 'white', 'black', 'pink', 'grey', 'yellow'];
     let avoidArea1: ohosWindow.AvoidArea;
+    let isFreeWindowMode = false;
     
     beforeAll(async () => {
       let windowClass = windowStage.getMainWindowSync();
@@ -75,6 +77,11 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let type:ohosWindow.AvoidAreaType = ohosWindow.AvoidAreaType.TYPE_SYSTEM;
         avoidArea1 = windowClass.getWindowAvoidArea(type);
         console.info(` Succeeded in getWindowAvoidArea1. Data: ${JSON.stringify(avoidArea1)}`);
+
+        isFreeWindowMode = windowClass.isInFreeWindowMode();
+        //isFreeWindowMode == true 自由窗口模式
+        //isFreeWindowMode == false 非自由窗口模式
+        console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     })
     /**
      * @tc.name   testSetSystemBarEnable_ShowStatusBar_HideNavBar_Callback
@@ -767,6 +774,8 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
           navigationBarColor: tempColor,
           isNavigationBarLightIcon: false,
           navigationBarContentColor: tempColor,
+          enableNavigationBarAnimation: false,
+          enableStatusBarAnimation:false
         };
         (tempWnd as ohosWindow.Window).setSystemBarProperties(systemBarProperties, (err, data) => {
           console.log(msgStr + 'tempWnd.setSystemBarProperties data' + JSON.stringify(data));
@@ -1420,16 +1429,50 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         })
       }
 
-      mainWin = await windowStage.getMainWindow().catch((err: BusinessError) => {
-        console.error(msgStr + 'Failed to obtain the main window. Cause: ' + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      });
-      expect(!!mainWin).assertTrue();
-      for (let i = 0; i < orientationItem.length; i++) {
-        await sleep(900)
-        await sleep(900)
-        let orientation: ohosWindow.Orientation = ohosWindow.Orientation[orientationItem[i]]
+      let testSetPreferredOrientation_Callback_CheckReturnSuccess = async () => {
+        mainWin = await windowStage.getMainWindow().catch((err: BusinessError) => {
+          console.error(msgStr + 'Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        });
+        expect(!!mainWin).assertTrue();
+
+        for (let i = 0; i < orientationItem.length; i++) {
+          await sleep(900)
+          await sleep(900)
+          let orientation: ohosWindow.Orientation = ohosWindow.Orientation[orientationItem[i]]
+          await setPreferredOrientationFun(mainWin, orientation).catch((err: BusinessError) => {
+            console.error(msgStr + 'Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+          });
+          await sleep(900)
+          await sleep(300)
+          console.info(msgStr + 'Succeeded in setting window orientation. orientation: ' + orientation + "step: " + i);
+        }
+      }
+
+      let testSetPreferredOrientation_Callback_CheckReturnFail = async () => {
+        console.error(msgStr + 'Failed to setPreferredOrientationFun Cause: CheckReturnFail' 
+          + 'deviceType: '+ JSON.stringify(deviceInfo.deviceType) + ' isFreeWindowMode: '+ JSON.stringify(isFreeWindowMode));
+
+        let displayClass: display.Display | null = null;
+        try {
+          displayClass = display.getDefaultDisplaySync();
+        } catch (exception) {
+          console.error(`Failed to get default display. Code: ${exception.code}, message: ${exception.message}`);
+        }
+        let beforeOrientation = displayClass?.orientation;
+        console.info(msgStr + 'Succeeded in get displayClass.beforeOrientation . beforeOrientation: ' + beforeOrientation);
+
+        mainWin = await windowStage.getMainWindow().catch((err: BusinessError) => {
+          console.error(msgStr + 'Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        });
+        expect(!!mainWin).assertTrue();
+
+        let orientation: ohosWindow.Orientation = ohosWindow.Orientation.PORTRAIT_INVERTED;
         await setPreferredOrientationFun(mainWin, orientation).catch((err: BusinessError) => {
           console.error(msgStr + 'Failed to obtain the main window. Cause: ' + JSON.stringify(err));
           expect().assertFail();
@@ -1437,8 +1480,38 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         });
         await sleep(900)
         await sleep(300)
-        console.info(msgStr + 'Succeeded in setting window orientation. orientation: ' + orientation + "step: " + i);
+        console.info(msgStr + 'Succeeded in setting window orientation . orientation: ' + orientation);
+
+        try {
+          displayClass = display.getDefaultDisplaySync();
+        } catch (exception) {
+          console.error(`Failed to get default display. Code: ${exception.code}, message: ${exception.message}`);
+        }
+        let afterOrientation = displayClass?.orientation;
+        console.info(msgStr + 'Succeeded in get displayClass.afterOrientation . afterOrientation: ' + afterOrientation);
+        
+        expect(beforeOrientation).assertEqual(afterOrientation);
       }
+
+      if (deviceInfo.deviceType === '2in1') {
+        testSetPreferredOrientation_Callback_CheckReturnFail();
+      } else if (deviceInfo.deviceType === 'phone' && isFreeWindowMode === false) {
+        testSetPreferredOrientation_Callback_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'tv') {
+        testSetPreferredOrientation_Callback_CheckReturnFail();
+      } else if (deviceInfo.deviceType === 'wearable') {
+        testSetPreferredOrientation_Callback_CheckReturnFail();
+      } else if (deviceInfo.deviceType === 'tablet' && isFreeWindowMode === false) {
+        testSetPreferredOrientation_Callback_CheckReturnSuccess();
+      } else if (deviceInfo.deviceType === 'car') {
+        testSetPreferredOrientation_Callback_CheckReturnFail();
+      } else if (isFreeWindowMode === true){
+        testSetPreferredOrientation_Callback_CheckReturnFail();
+      } else {
+        console.info(`====>${msgStr} end fail====`);
+        expect().assertFail();
+      }
+      
       done()
     })
     /**
@@ -1647,7 +1720,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
             done()
           } else {
             console.info(msg + 'Succeeded in loading the content.');
-            expect(true).assertTrue()
+            
             done()
           }
         });
@@ -1676,7 +1749,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
             done()
           } else {
             console.info(msg + 'Succeeded in loading the content.');
-            expect(true).assertTrue()
+            
             done()
           }
         });
@@ -1700,7 +1773,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let promise = windowStage.loadContentByName("Index1", abilityStorage);
         promise.then(() => {
           console.info(msg + 'Succeeded in loading the content.');
-          expect(true).assertTrue()
+          
           done()
         }).catch((err: BusinessError) => {
           console.error(msg + 'Failed to load the content. Cause:' + JSON.stringify(err));
@@ -1736,7 +1809,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       } catch (error) {
         console.log(msgStr + 'Failed to get the area of title buttons. Cause: ' + JSON.stringify(error));
         if (error.code == 801) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1760,15 +1833,13 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let windowClass: ohosWindow.Window = await ohosWindow.getLastWindow(context);
         windowClass.on('windowTitleButtonRectChange', (titleButtonRect) => {
           console.log(msgStr + 'Succeeded in enabling the listener for window title buttons area changes. Data: ' + JSON.stringify(titleButtonRect));
-          expect(true).assertTrue();
           done();
         });
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log(msgStr + 'Failed to enable the listener for window title buttons area changes. Cause: ' + JSON.stringify(err));
         if (err.code == 801) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1793,12 +1864,11 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let windowClass: ohosWindow.Window = await ohosWindow.getLastWindow(context);
         windowClass.off('windowTitleButtonRectChange');
         console.log(msgStr + 'Succeeded in enabling the listener for window title buttons area changes');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to disable the listener for window title buttons area changes. Cause: ' + JSON.stringify(error));
         if (error.code == 1300002) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1866,7 +1936,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
             done()
           } else {
             console.info(msg + 'Succeeded in loading the content.');
-            expect(true).assertTrue()
+            
             done()
           }
 
@@ -1900,7 +1970,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
             done()
           } else {
             console.info(msg + 'Succeeded in loading the content.');
-            expect(true).assertTrue()
+            
             done()
           }
         });
@@ -1931,7 +2001,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let promise = windowClass.loadContentByName("Index1", storage);
         promise.then(() => {
           console.info(msg + 'Succeeded in loading the content.');
-          expect(true).assertTrue()
+          
           done()
         }).catch((err: BusinessError) => {
           console.error(msg + 'Failed to load the content. Cause:' + JSON.stringify(err));
@@ -1965,7 +2035,6 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         windowClass.on('noInteractionDetected', 60, () => {
           console.log(msgStr + 'no interaction in 60s');
         });
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
@@ -1997,7 +2066,6 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let windowClass: ohosWindow.Window = await ohosWindow.getLastWindow(context);
         windowClass.off('noInteractionDetected');
         console.log(msgStr + "noInteractionDetected");
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(error));

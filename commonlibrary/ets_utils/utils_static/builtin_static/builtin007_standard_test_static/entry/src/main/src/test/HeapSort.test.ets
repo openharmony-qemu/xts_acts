@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ export default function HeapSortTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -57,7 +57,7 @@ export default function HeapSortTest() {
         const arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
         const found = find(arr, (v: double) => v === 3.3);
         expect(found).assertEqual(3.3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -77,7 +77,7 @@ export default function HeapSortTest() {
         const arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
         const found = find(arr, (v: double) => v === 6.6);
         expect(found).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -97,7 +97,7 @@ export default function HeapSortTest() {
         const emptyArr: FixedArray<double> = new FixedArray<double>(0);
         const found = find(emptyArr, (v: double) => v === 1.1);
         expect(found).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -117,7 +117,7 @@ export default function HeapSortTest() {
         const arr: FixedArray<long> = [1000, 2000, 3000, 4000];
         const found = find(arr, (v: long) => v === 3000);
         expect(found).assertEqual(3000);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -137,7 +137,7 @@ export default function HeapSortTest() {
         const arr: FixedArray<long> = [1000, 2000, 3000];
         const found = find(arr, (v: long) => v === 5000);
         expect(found).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -157,7 +157,7 @@ export default function HeapSortTest() {
         const emptyArr: FixedArray<long> = new FixedArray<long>(0);
         const found = find(emptyArr, (v: long) => v === 1000);
         expect(found).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -179,7 +179,7 @@ export default function HeapSortTest() {
         const found2 = find(arr, (v: long) => v === -9223372036854775808);
         expect(found1).assertEqual(9223372036854775807);
         expect(found2).assertEqual(-9223372036854775808);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -199,7 +199,7 @@ export default function HeapSortTest() {
         const arr: FixedArray<long> = [0, -0, 1000];
         const found = find(arr, (v: long) => v === 0);
         expect(found).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -219,7 +219,7 @@ export default function HeapSortTest() {
         const arr: FixedArray<float> = [1.5f, 2.3f, 3.7f, 4.2f];
         const result = find(arr, (val: float) => val > 3);
         expect(result).assertEqual(3.7 as float);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -243,7 +243,7 @@ export default function HeapSortTest() {
         expect(result[1]).assertEqual(2.2);
         expect(result[2]).assertEqual(3.3);
         expect(result[3]).assertEqual(4.4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -266,7 +266,7 @@ export default function HeapSortTest() {
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(5.5);
         expect(result[1]).assertEqual(6.6);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -288,7 +288,7 @@ export default function HeapSortTest() {
         const result = concat(arr1, arr2);
         expect(result.length).assertEqual(3);
         expect(result[2]).assertEqual(0.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -310,7 +310,7 @@ export default function HeapSortTest() {
         const result = concat(arr1, arr2);
         expect(result[0]).assertEqual(1.23);
         expect(result[1]).assertEqual(4.56);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -332,7 +332,7 @@ export default function HeapSortTest() {
         const result = concat(arr1, arr2);
         expect(result.length).assertEqual(5);
         expect(result[4]).assertEqual(50.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -356,7 +356,7 @@ export default function HeapSortTest() {
         const result = concat(temp, arr3);
         expect(result.length).assertEqual(3);
         expect(result[2]).assertEqual(3.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -378,7 +378,7 @@ export default function HeapSortTest() {
         const result = concat(arr1, arr2);
         expect(result.length).assertEqual(3);
         expect(result[2]).assertEqual(3.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -401,7 +401,7 @@ export default function HeapSortTest() {
         const result = concat(arr1, arr2, arr3);
         expect(result.length).assertEqual(3);
         expect(result[2]).assertEqual(3.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -423,7 +423,7 @@ export default function HeapSortTest() {
         const result = concat(arr1, arr2);
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(1.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -447,7 +447,7 @@ export default function HeapSortTest() {
         const result = concat(arr1, arr2, arr3, arr4);
         expect(result.length).assertEqual(4);
         expect(result[3]).assertEqual(4.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -472,7 +472,7 @@ export default function HeapSortTest() {
         expect(result[1]).assertEqual(2.0);
         expect(result[2]).assertEqual(3.0);
         expect(result[3]).assertEqual(4.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -495,7 +495,7 @@ export default function HeapSortTest() {
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(9.9);
         expect(result[1]).assertEqual(8.8);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -518,7 +518,7 @@ export default function HeapSortTest() {
         const result = concat(arr1, arr2, arr3);
         expect(result.length).assertEqual(10);
         expect(result[9]).assertEqual(10.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -542,7 +542,7 @@ export default function HeapSortTest() {
         expect(result[0]).assertEqual(-1.5);
         expect(result[1]).assertEqual(2.3);
         expect(result[2]).assertEqual(-3.7);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -564,7 +564,7 @@ export default function HeapSortTest() {
         const result = concat(arr1, arr2);
         expect(result.length).assertEqual(4);
         expect(result[3]).assertEqual(2.2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -587,7 +587,7 @@ export default function HeapSortTest() {
         const result = concat(temp2, [3.5]);
         expect(result.length).assertEqual(4);
         expect(result[3]).assertEqual(3.5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -610,7 +610,7 @@ export default function HeapSortTest() {
         const result = concat(arr1, arr2, arr3);
         expect(result.length).assertEqual(10);
         expect(result[9]).assertEqual(10.0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -634,7 +634,7 @@ export default function HeapSortTest() {
         expect(result[0]).assertEqual(-1.5);
         expect(result[1]).assertEqual(2.3);
         expect(result[2]).assertEqual(-3.7);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -656,7 +656,7 @@ export default function HeapSortTest() {
         const result = concat(arr1, arr2);
         expect(result.length).assertEqual(4);
         expect(result[3]).assertEqual(2.2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -679,7 +679,7 @@ export default function HeapSortTest() {
         const result = concat(temp2, [3.5]);
         expect(result.length).assertEqual(4);
         expect(result[3]).assertEqual(3.5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }

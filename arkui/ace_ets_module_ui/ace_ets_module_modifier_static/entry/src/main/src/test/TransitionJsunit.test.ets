@@ -35,7 +35,7 @@ interface Btn {
 }
 export default function transitionJsunit() {
   describe('common_transitionTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
     });
 

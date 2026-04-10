@@ -21,7 +21,18 @@ import textPickerOnScrollStop from './textPickerDialogTest/TextPickerOnScrollSto
 import textPickerOnEnterSelectedArea from './textPickerDialogTest/TextPickerOnEnterSelectedArea.test'
 import textPickerOnAccept from './textPickerDialogTest/TextPickerOnAccept.test'
 import textPickerOnCancel from './textPickerDialogTest/TextPickerOnCancel.test'
+import alignmentTest from './textPickerDialogTest/alignment.test'
+import canLoopTest from './textPickerDialogTest/canLoop.test'
+import disableTextStyleAnimationTest from './textPickerDialogTest/disableTextStyleAnimation.test'
+import hoverModeAreaTest from './textPickerDialogTest/hoverModeArea.test'
+import offsetTest from './textPickerDialogTest/offset.test'
+import TextPickerDialogBackgroundColorTest from './textPickerDialogTest/TextPickerDialogBackgroundColor.test'
+
 export default function testsuite() {
+  alignmentTest();
+  canLoopTest();
+  hoverModeAreaTest();
+  offsetTest();
   textPickerDialogAppearTextTest();
   textPickerOnChange();
   textPickerOnScrollStop();

@@ -35,7 +35,7 @@ let strAttr = "";
 
 export default function xmlTest2() {
   describe('xmlTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
 

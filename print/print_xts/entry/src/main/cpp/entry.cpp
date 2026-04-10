@@ -42,7 +42,10 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, napi_default, nullptr },
         { "oHScanExit", nullptr, OHScanExit, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "oHPrintStartPrintByNative",
-            nullptr, OHPrintStartPrintByNative, nullptr, nullptr, nullptr, napi_default, nullptr }
+            nullptr, OHPrintStartPrintByNative, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "oHPrintCreateEnum1", nullptr, OHPrintCreateEnum1, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "oHPrintCreateEnum2", nullptr, OHPrintCreateEnum2, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "oHScanCreateEnum", nullptr, OHScanCreateEnum, nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

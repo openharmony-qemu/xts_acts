@@ -48,9 +48,9 @@ export default function webOnFirstContFour() {
      * @tc.desc   onfirstcontentfulpaint with web refresh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnfirstcontentfulpaintrefreshWebcStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testOnfirstcontentfulpaintrefreshWebcStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       Utils.emitEvent('emitRefreshOnfirstcontentfulpaintWebc', 10)
       await Utils.msSleep(3000);

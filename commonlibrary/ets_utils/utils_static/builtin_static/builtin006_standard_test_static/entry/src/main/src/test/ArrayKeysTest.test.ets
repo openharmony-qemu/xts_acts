@@ -58,7 +58,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<boolean> = [true, false, true];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0,1,2] as Array<number>);
+        expect(result).assertDeepEquals([0,1,2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -77,7 +77,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<boolean> = [false];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0] as Array<number>);
+        expect(result).assertDeepEquals([0] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -115,7 +115,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<boolean> = [true, false];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1] as Array<number>);
+        expect(result).assertDeepEquals([0, 1] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -134,7 +134,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<boolean> = [true, false, true, false, true];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -153,7 +153,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<boolean> = [true, true, true];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -172,7 +172,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<boolean> = [false, false, false];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -191,7 +191,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<boolean> = [true, false, true, false];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -210,7 +210,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [1, 2, 3];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -229,7 +229,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [4];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0] as Array<number>);
+        expect(result).assertDeepEquals([0] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -267,7 +267,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [5, 6];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1] as Array<number>);
+        expect(result).assertDeepEquals([0, 1] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -286,7 +286,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [7, 8, 9, 10, 11];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -305,7 +305,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [12, 12, 12];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -324,7 +324,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [13, 14, 15, 16];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -343,7 +343,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [17, 18, 17, 18];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -362,7 +362,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<char> = [c'a', c'b', c'c'];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -381,7 +381,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<char> = [c'z'];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0] as Array<number>);
+        expect(result).assertDeepEquals([0] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -419,7 +419,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<char> = [c'x', c'y'];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1] as Array<number>);
+        expect(result).assertDeepEquals([0, 1] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -438,7 +438,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<char> = [c'a', c'b', c'c', c'd', c'e'];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -457,7 +457,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<char> = [c'a', c'a', c'a'];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -476,7 +476,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<char> = [c'a', c'b', c'c', c'd'];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -495,7 +495,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<char> = [c'a', c'b', c'a', c'b'];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -514,7 +514,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<double> = [1.1.toDouble(), 2.2.toDouble(), 3.3.toDouble()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -533,7 +533,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<double> = [4.4.toDouble()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0] as Array<number>);
+        expect(result).assertDeepEquals([0] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -571,7 +571,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<double> = [5.5.toDouble(), 6.6.toDouble()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1] as Array<number>);
+        expect(result).assertDeepEquals([0, 1] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -590,7 +590,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<double> = [7.7.toDouble(), 8.8.toDouble(), 9.9.toDouble(), 10.1.toDouble(), 11.11.toDouble()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -609,7 +609,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<double> = [12.12.toDouble(), 12.12.toDouble(), 12.12.toDouble()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -628,7 +628,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<double> = [13.13.toDouble(), 14.14.toDouble(), 15.15.toDouble(), 16.16.toDouble()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -647,7 +647,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<double> = [17.17.toDouble(), 18.18.toDouble(), 17.17.toDouble(), 18.18.toDouble()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -666,7 +666,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -685,7 +685,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [4.4.toFloat()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0] as Array<number>);
+        expect(result).assertDeepEquals([0] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -723,7 +723,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [5.5.toFloat(), 6.6.toFloat()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1] as Array<number>);
+        expect(result).assertDeepEquals([0, 1] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -742,7 +742,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [7.7.toFloat(), 8.8.toFloat(), 9.9.toFloat(), 10.1.toFloat(), 11.11.toFloat()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -761,7 +761,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [12.12.toFloat(), 12.12.toFloat(), 12.12.toFloat()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -780,7 +780,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [13.13.toFloat(), 14.14.toFloat(), 15.15.toFloat(), 16.16.toFloat()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -799,7 +799,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [17.17.toFloat(), 18.18.toFloat(), 17.17.toFloat(), 18.18.toFloat()];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -818,7 +818,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<int> = [1, 2, 3];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -837,7 +837,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<int> = [4];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0] as Array<number>);
+        expect(result).assertDeepEquals([0] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -875,7 +875,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<int> = [5, 6];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1] as Array<number>);
+        expect(result).assertDeepEquals([0, 1] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -894,7 +894,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<int> = [7, 8, 9, 10, 11];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -913,7 +913,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<int> = [12, 12, 12];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -932,7 +932,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<int> = [13, 14, 15, 16];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -951,7 +951,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<int> = [17, 18, 17, 18];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -970,7 +970,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [1, 2, 3];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -989,7 +989,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [4];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0] as Array<number>);
+        expect(result).assertDeepEquals([0] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1027,7 +1027,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [5, 6];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1] as Array<number>);
+        expect(result).assertDeepEquals([0, 1] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1046,7 +1046,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [7, 8, 9, 10, 11];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1065,7 +1065,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [12, 12, 12];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1084,7 +1084,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [13, 14, 15, 16];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1103,7 +1103,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [17, 18, 17, 18];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1122,7 +1122,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [1, 2, 3];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1141,7 +1141,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [4];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0] as Array<number>);
+        expect(result).assertDeepEquals([0] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1179,7 +1179,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [5, 6];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1] as Array<number>);
+        expect(result).assertDeepEquals([0, 1] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1198,7 +1198,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [7, 8, 9, 10, 11];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3, 4] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1217,7 +1217,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [12, 12, 12];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1236,7 +1236,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [13, 14, 15, 16];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1255,7 +1255,7 @@ export default function builtinsArrayKeysPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [17, 18, 17, 18];
         let result = Array.from(keys(arr));
-        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<number>);
+        expect(result).assertDeepEquals([0, 1, 2, 3] as Array<int>);
         console.info(`${caseName}, test end`);
         Done();
       })

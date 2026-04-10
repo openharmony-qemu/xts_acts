@@ -202,7 +202,7 @@ describe("FaultlogJsTest", function () {
             let ret = await faultlogger.querySelfFaultLog(faultlogger.FaultType.JS_CRASH);
             console.info("DFX_DFR_Faultlogger_Interface_0500 ret == " + ret.length);
             if (ret.length > 0) {
-                expect(true).assertTrue();
+                console.info("--------DFX_DFR_Faultlogger_Interface_0500 4" + "----------");
             } else {
                 expect(false).assertTrue();
             }
@@ -257,7 +257,6 @@ describe("FaultlogJsTest", function () {
                 console.info("faultloggertestsummary04 " + i + " fullLog.length " + ret[i].fullLog.length);
                 if (ret[i].fullLog.indexOf("faultloggertestsummary04 " + (loopTimes - 1 - i)) != -1) {
                     console.info("DFX_DFR_Faultlogger_Interface_0300 " + ret[i].fullLog.length);
-                    expect(true).assertTrue();
                 } else {
                     expect(false).assertTrue();
                 }
@@ -425,7 +424,7 @@ describe("FaultlogJsTest", function () {
             let ret = await faultlogger.query(faultlogger.FaultType.JS_CRASH);
             console.info("DFX_DFR_Faultlogger_Interface_0900 ret == " + ret.length);
             if (ret.length > 0) {
-                expect(true).assertTrue();
+                console.info("--------DFX_DFR_Faultlogger_Interface_0900 4" + "----------");
             } else {
                 expect(false).assertTrue();
             }
@@ -479,7 +478,6 @@ describe("FaultlogJsTest", function () {
                 console.info("faultloggertestsummary09 " + i + " fullLog.length " + ret[i].fullLog.length);
                 if (ret[i].fullLog.indexOf("faultloggertestsummary09 " + (loopTimes - 1 - i)) != -1) {
                     console.info("DFX_DFR_Faultlogger_Interface_1000 " + ret[i].fullLog.length);
-                    expect(true).assertTrue();
                 } else {
                     expect(false).assertTrue();
                 }
@@ -571,14 +569,14 @@ describe("FaultlogJsTest", function () {
     })
 
     /**
-     * @tc.name   DFX_DFR_Faultlogger_Interface_1200
+     * @tc.name   DFX_DFR_Faultlogger_Interface_1200Adapt001
      * @tc.number test_1300
      * @tc.desc   检验query函数入参为空时程序是否会崩溃,校验错误码返回801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('DFX_DFR_Faultlogger_Interface_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('DFX_DFR_Faultlogger_Interface_1200Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info("---------------------------DFX_DFR_Faultlogger_Interface_1300----------------------------------");
         function queryFaultLogCallback(error, ret) {
             if (error) {

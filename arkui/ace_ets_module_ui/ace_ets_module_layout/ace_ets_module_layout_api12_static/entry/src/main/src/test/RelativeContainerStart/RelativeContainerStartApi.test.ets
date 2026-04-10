@@ -56,7 +56,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function RelativeContainerStartApi() {
   describe('RelativeContainerStartApi', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RelativeContainerStartApi beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api12.static", "EntryAbility")

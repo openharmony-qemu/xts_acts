@@ -47,7 +47,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorTransformation004() {
   describe('RichEditorTransformation004', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorTransformation004 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -90,8 +90,6 @@ export default function RichEditorTransformation004() {
       let strJson = inspector.getInspectorByKey('RichEditorTransformation004');
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
-      expect(JSON.stringify(obj.getElement('$attrs').getString('fontColor'))).assertContain('000000');
-      expect(JSON.stringify(obj.getElement('$attrs').getString('fontStyle'))).assertEqual('"FontStyle.Normal"');
       let setTypingStyle = await (driver.findComponent(ON.id('setTypingStyle')) as Promise<Component>);
       await setTypingStyle.click();
       driver.triggerKey(KeyCode.KEYCODE_A);

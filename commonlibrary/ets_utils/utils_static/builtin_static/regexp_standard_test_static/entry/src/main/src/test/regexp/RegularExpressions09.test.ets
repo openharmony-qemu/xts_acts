@@ -34,7 +34,7 @@ export default function RegularExpressions09Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(20);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -118,7 +118,7 @@ export default function RegularExpressions09Test() {
         const re82: RegExp = new RegExp("a{5,2}");
         expect(false).assertTrue();
       } catch (e) {
-        expect((e as Error).message.toString()).assertEqual("Invalid repetition count");
+        expect((e as Error).message.toString()).assertEqual("Invalid regular expression: /a{5,2}/: numbers out of order in {} quantifier");
       }
     });
 

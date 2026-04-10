@@ -14,12 +14,12 @@
  */
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { MergeOptions, SetInData, SetParam } from './utils/huks/HuksOptionsUtils.ets';
-import { GetAesGenerateOptions, GetEccGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
-import { GetAesImportData } from './utils/huks/ImportKeyUtils.ets';
-import { BuildWrappedKeyData } from './utils/huks/ImportWrappedKeyUtils.ets';
-import { Agree, Derive, GetDeriveAgreeFinishOptions, GetEcdhAgreeOptions, GetHkdfDeriveOptions, GetSha256Options } from './utils/huks/DeriveAgreeUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
+import { MergeOptions, SetInData, SetParam } from './utils/huks/HuksOptionsUtils';
+import { GetAesGenerateOptions, GetEccGenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { GetAesImportData } from './utils/huks/ImportKeyUtils';
+import { BuildWrappedKeyData } from './utils/huks/ImportWrappedKeyUtils';
+import { Agree, Derive, GetDeriveAgreeFinishOptions, GetEcdhAgreeOptions, GetHkdfDeriveOptions, GetSha256Options } from './utils/huks/DeriveAgreeUtils';
+import { Logger } from './utils/common/Logger';
 
 export default function SecurityHuksKeyGenerateOverrideTest() {
   describe('SecurityHuksKeyGenerateOverrideTest', () => {

@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textSelectableJsunit() {
   describe('textSelectableJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textSelectableJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,8 @@ export default function atomicFileTest() {
       try {
         let file1 = new fs.AtomicFile("");
         let ws1 = file1.startWrite();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_000 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message === "No such file or directory").assertTrue();
       }
@@ -70,7 +71,7 @@ export default function atomicFileTest() {
         let statres = fs.statSync(fpath);
         expect(statres.size == 0).assertTrue();
         file.delete();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -91,7 +92,8 @@ export default function atomicFileTest() {
         let file1 = new fs.AtomicFile(fpath);
         let ws1 = file1.readFully();
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_003 has failed for' + e.code + e.message );
         expect(e.code == 13900002 && e.message === "No such file or directory").assertTrue();
       }
@@ -117,7 +119,7 @@ export default function atomicFileTest() {
         let str = decoder.decodeToString(new Uint8Array(data));
         expect(str === FILE_CONTENT).assertTrue();
         file.delete();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -145,10 +147,10 @@ export default function atomicFileTest() {
           if (data == null) {
             return;
           }
-          let context = data.toString();
+          let context = (data as Object).toString();
           expect(context === FILE_CONTENT).assertTrue();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_005 has failed for ' + e.message);
         expect(false).assertTrue();
       }
@@ -178,7 +180,7 @@ export default function atomicFileTest() {
         let str = decoder.decodeToString(new Uint8Array(data));
         expect(str === "fileIO_test_atomicFile_static_006").assertTrue();
         file.delete();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_006 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -218,7 +220,7 @@ export default function atomicFileTest() {
         })
         rFile.delete();
         wFile.delete();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_007 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -247,7 +249,7 @@ export default function atomicFileTest() {
         let res = fs.accessSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_008 res ' + res);
         expect(res).assertFalse();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_008 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -268,7 +270,8 @@ export default function atomicFileTest() {
         let file = new fs.AtomicFile(fpath);
         let File = file.getBaseFile();
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_009 has failed for' + e.message + ', code: ' + e.code);
         expect(e.code == 13900002 && e.message === "No such file or directory").assertTrue();
       }
@@ -295,7 +298,7 @@ export default function atomicFileTest() {
         expect(File.fd > 0).assertTrue();
         expect(File.path === fpath).assertTrue();
         file.delete();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_atomicFile_static_010 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }

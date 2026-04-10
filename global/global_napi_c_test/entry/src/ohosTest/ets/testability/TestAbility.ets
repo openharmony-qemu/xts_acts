@@ -32,6 +32,7 @@ export default class TestAbility extends UIAbility {
         let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
         abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
         hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
+        GlobalContext.getContext().setObject('abilityContext', this.context);
         application.createModuleContext(this.context, 'entry_test').then((newContext) => {
             GlobalContext.getContext().setObject('yq', newContext);
             Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);

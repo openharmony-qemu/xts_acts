@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -83,7 +83,8 @@ struct httpAuthHandler {
                   Utils.emitEvent(this.HttpAuthHandlerConfirmCallBack, 32040)
                 }, 3000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 32040)
               }
@@ -99,7 +100,8 @@ struct httpAuthHandler {
                   Utils.emitEvent(this.Http_Error_Code, 32041)
                 }, 5000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 32041)
               }
@@ -114,7 +116,8 @@ struct httpAuthHandler {
                   Utils.emitEvent(this.HttpAuthHandlerIsHttpAuthInfoSavedCallBack, 32042)
                 }, 3000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 32042)
               }

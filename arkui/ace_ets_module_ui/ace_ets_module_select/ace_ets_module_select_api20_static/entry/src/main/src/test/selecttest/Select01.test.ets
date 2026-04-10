@@ -43,7 +43,7 @@ import { UtilsTest } from '../Util.test';
 export default function selectmenuOutline() {
   describe('selectmenuOutline', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("selectmenuOutline beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.select.api20.static", "EntryAbility")
       
@@ -51,6 +51,7 @@ export default function selectmenuOutline() {
 
     beforeEach(async () => {
       console.info('selectmenuOutline beforeEach start');
+      await Utils.sleep(5000);
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/select/select',
       }
