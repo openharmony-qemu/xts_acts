@@ -2398,7 +2398,7 @@ export default function displayTest() {
         done();
       } catch (e) {
         if(outDisplayId != -1){
-            await display.destroyVirtualScreen(screenId).then(() =>{
+            await display.destroyVirtualScreen(outDisplayId).then(() =>{
             console.info(caseName + 'Succeeded in destroyVirtualScreen1');
           }).catch((err:BusinessError) => {
             console.info(caseName + 'Failed in destroyVirtualScreen1');
