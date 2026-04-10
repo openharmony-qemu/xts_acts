@@ -689,7 +689,7 @@ export default function windowNdk() {
         done()
       }else{
         WindowClass.off('avoidAreaChange')
-        windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
+        windowNdkTest.setWindowNavigationBarEnabled(windowId, true, false);
         await sleep(500)
         expect(flag).assertEqual(true)
         done()
@@ -722,7 +722,7 @@ export default function windowNdk() {
         done()
       }else{
         WindowClass.off('avoidAreaChange')
-        windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
+        windowNdkTest.setWindowNavigationBarEnabled(windowId, true, false);
         await sleep(500)
         expect(flag).assertEqual(true)
         done()
