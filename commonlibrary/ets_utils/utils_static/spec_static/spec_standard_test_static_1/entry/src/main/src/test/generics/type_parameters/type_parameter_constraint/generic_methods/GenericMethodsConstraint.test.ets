@@ -224,8 +224,8 @@ export default function GenericMethodsConstraintTest_Continue() {
      * @tc.level     Level 2
      */
     it("testGenericMethodsConstraintGroup0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result1 = PointByte.foo<byte>(1 as byte)
-      let result2 = new PointByte().foo<byte>(1 as byte)
+      let result1 = PointByte.foo<byte>((1).toByte())
+      let result2 = new PointByte().foo<byte>((1).toByte())
       expect(result1).assertEqual(1)
       expect(result2).assertEqual(1)
     });

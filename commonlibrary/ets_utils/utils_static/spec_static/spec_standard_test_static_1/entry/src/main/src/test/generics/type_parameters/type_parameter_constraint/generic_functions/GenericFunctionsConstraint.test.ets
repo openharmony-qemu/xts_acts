@@ -182,10 +182,10 @@ export default function GenericFunctionsConstraintTest() {
      * @tc.level     Level 2
      */
     it("testGenericFunctionsConstraintGroup0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result1 = foo3<byte>(1 as byte)
-      let result2 = foo4<short>(1 as short)
-      let result3 = foo5<int>(1 as int)
-      let result4 = foo6<long>(1 as long)
+      let result1 = foo3<byte>((1).toByte())
+      let result2 = foo4<short>((1).toShort())
+      let result3 = foo5<int>(1)
+      let result4 = foo6<long>((1).toLong())
       expect(result1).assertEqual(1)
       expect(result2).assertEqual(1)
       expect(result3).assertEqual(1)
@@ -202,8 +202,8 @@ export default function GenericFunctionsConstraintTest() {
      */
     it("testGenericFunctionsConstraintGroup0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result1 = foo7<float>(1.1f)
-      let result2 = foo8<double>(1.2 as double)
-      let result3 = foo9<number>(1.3 as number)
+      let result2 = foo8<double>(1.2)
+      let result3 = foo9<number>(1.3)
       expect(result1.toString()).assertEqual("1.1")
       expect(result2).assertEqual(1.2)
       expect(result3).assertEqual(1.3)
