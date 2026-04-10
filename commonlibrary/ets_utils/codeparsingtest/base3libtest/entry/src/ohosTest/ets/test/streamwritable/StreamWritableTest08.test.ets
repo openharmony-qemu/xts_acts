@@ -37,9 +37,7 @@ export default function StreamWritable08Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable08Chapter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable08Chapter0001';
       const receivedChunks: Array<string | Uint8Array> = []
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -72,8 +70,6 @@ export default function StreamWritable08Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable08Chapter0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable08Chapter0002';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         public receivedChunks: (string | Uint8Array)[] = [];
@@ -131,8 +127,6 @@ export default function StreamWritable08Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable08Chapter0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable08Chapter0003';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -161,8 +155,6 @@ export default function StreamWritable08Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable08Chapter0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable08Chapter0004';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         public receivedData: string[] = [];
@@ -236,8 +228,6 @@ export default function StreamWritable08Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable08Chapter0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable08Chapter0005';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         public receivedData: string[] = [];
@@ -313,8 +303,6 @@ export default function StreamWritable08Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable08Chapter0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable08Chapter0006';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         public receivedChunks: Uint8Array[] = [];
@@ -400,8 +388,6 @@ export default function StreamWritable08Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable08Chapter0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable08Chapter0007';
-      console.log(TAG + ' start');
 
       let callbackCalled = false;
 
@@ -439,8 +425,6 @@ export default function StreamWritable08Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable08Chapter0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable08Chapter0008';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         public receivedData: string[] = [];
@@ -514,8 +498,6 @@ export default function StreamWritable08Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable08Chapter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const TAG = 'testStreamWritable08Chapter0009';
-      console.log(TAG + ' start');
       let callbackExecutionCount = 0;
       class TestWritable extends stream.Writable {
         constructor() {
@@ -556,8 +538,6 @@ export default function StreamWritable08Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable08Chapter0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const TAG = 'testStreamWritable08Chapter0010';
-      console.log(TAG + ' start');
       class TestWritable extends stream.Writable {
         public receivedData: string[] = [];
         public doWritevCalled: boolean = false;
@@ -605,7 +585,6 @@ export default function StreamWritable08Test() {
       const writableStream = new TestWritable();
       await new Promise<void>((resolve) => {
         writableStream.end('empty', 'utf8', () => {
-          console.log(TAG + ' first empty string written');
           resolve();
         });
       });

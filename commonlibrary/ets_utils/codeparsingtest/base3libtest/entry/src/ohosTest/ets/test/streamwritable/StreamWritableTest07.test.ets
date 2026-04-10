@@ -37,8 +37,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable07Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0001';
-      console.log(TAG + ' start');
       let initialized = false;
 
       class TestWritable extends stream.Writable {
@@ -68,8 +66,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable07Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0002';
-      console.log(TAG + ' start');
       let callbackResult: number = 0;
 
       class TestWritable extends stream.Writable {
@@ -99,8 +95,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable07Chapter0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0003';
-      console.log(TAG + ' start');
       let arrowFuncCalled = false;
 
       class TestWritable extends stream.Writable {
@@ -130,8 +124,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable07Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0004';
-      console.log(TAG + ' start');
       let asyncComplete = false;
 
       class TestWritable extends stream.Writable {
@@ -161,8 +153,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable07Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0005';
-      console.log(TAG + ' start');
       let errorCaught = false;
 
       class TestWritable extends stream.Writable {
@@ -192,8 +182,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable07Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0006';
-      console.log(TAG + ' start');
       let paramValue: string = '';
 
       class TestWritable extends stream.Writable {
@@ -223,8 +211,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable07Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0007';
-      console.log(TAG + ' start');
       let customInit = false;
 
       class TestWritable extends stream.Writable {
@@ -253,8 +239,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable07Chapter0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0010';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         private contextValue: number = 100;
@@ -290,8 +274,6 @@ export default function StreamWritable07Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
 
-        const TAG = 'testStreamWritable07Chapter0011';
-        console.log(TAG + ' start');
 
         class TestWritable extends stream.Writable {
           doInitialize(callback: Function | undefined): void {
@@ -320,8 +302,6 @@ export default function StreamWritable07Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
 
-        const TAG = 'testStreamWritable07Chapter0012';
-        console.log(TAG + ' start');
 
         class TestWritable extends stream.Writable {
           doInitialize(callback: Function | undefined): void {
@@ -350,8 +330,6 @@ export default function StreamWritable07Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
 
-        const TAG = 'testStreamWritable07Chapter0013';
-        console.log(TAG + ' start');
 
         class TestWritable extends stream.Writable {
           doInitialize(callback: Function | undefined): void {
@@ -380,8 +358,6 @@ export default function StreamWritable07Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
 
-        const TAG = 'testStreamWritable07Chapter0014';
-        console.log(TAG + ' start');
 
         class TestWritable extends stream.Writable {
           doInitialize(callback: Function | undefined): void {
@@ -410,8 +386,6 @@ export default function StreamWritable07Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
 
-        const TAG = 'testStreamWritable07Chapter0015';
-        console.log(TAG + ' start');
 
         class TestWritable extends stream.Writable {
           doInitialize(callback: Function | undefined): void {
@@ -440,8 +414,6 @@ export default function StreamWritable07Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
 
-        const TAG = 'testStreamWritable07Chapter0016';
-        console.log(TAG + ' start');
 
         class TestWritable extends stream.Writable {
           doInitialize(callback: Function | undefined): void {
@@ -470,8 +442,6 @@ export default function StreamWritable07Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
 
-        const TAG = 'testStreamWritable07Chapter0017';
-        console.log(TAG + ' start');
 
         class TestWritable extends stream.Writable {
           doInitialize(callback: Function | undefined): void {
@@ -497,20 +467,22 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable07Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0018';
-      console.log(TAG + ' start');
-      try {
-        class TestWritable extends stream.Writable {
-          doInitialize(callback: Function): void {
-            super.doInitialize(callback);
-          }
+      class TestWritable extends stream.Writable {
+        doInitialize(callback: Function): void {
+          super.doInitialize(callback);
         }
-
-        const writable = new TestWritable();
-        expect(writable == null).assertFalse();
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
       }
+
+      let writableCreated = false;
+      try {
+        const writable = new TestWritable();
+        writableCreated = true;
+        expect(writable == null).assertEqual(false);
+      } catch (error) {
+        expect(error.code).assertEqual(401);
+      }
+
+      expect(writableCreated).assertEqual(true);
     });
 
     /**
@@ -522,8 +494,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable07Chapter0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0019';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         doInitialize(callback: Function): void {
@@ -550,8 +520,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable07Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0020';
-      console.log(TAG + ' start');
       let asyncResult: boolean = false;
 
       class TestWritable extends stream.Writable {
@@ -581,8 +549,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0021'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         constructor() {
@@ -613,8 +579,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0022'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         constructor() {
@@ -647,8 +611,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0023'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         private dataReceived: string[] = []
@@ -669,7 +631,6 @@ export default function StreamWritable07Test() {
 
       let writableStream = new TestWritableImpl()
       writableStream.end('', 'utf8', () => {
-        console.log(TAG + ' end callback called')
       })
     })
 
@@ -682,8 +643,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0024'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         constructor() {
@@ -713,8 +672,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0025'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         constructor() {
@@ -743,8 +700,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0026'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         constructor() {
@@ -773,8 +728,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0027'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         constructor() {
@@ -806,8 +759,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0028'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         constructor() {
@@ -839,8 +790,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0029'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         constructor() {
@@ -874,8 +823,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0030'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         constructor() {
@@ -911,8 +858,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0031'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         private receivedData: Array<string | Uint8Array> = []
@@ -956,8 +901,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0032'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         private writeCount: number = 0
@@ -998,8 +941,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0033'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         private writeCount: number = 0
@@ -1040,16 +981,12 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0034'
-      console.log(TAG + ' start')
-
       class TestWritableImpl extends stream.Writable {
         constructor() {
           super()
         }
 
         doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error) => void) {
-          console.info("doWrite should not be called with invalid chunk type")
           callback()
         }
       }
@@ -1058,15 +995,14 @@ export default function StreamWritable07Test() {
 
       try {
         const result = writableStream.write('test data', 'utf8')
-        console.info("Write result:", result)
         expect(typeof result).assertEqual('boolean')
 
         writableStream.end()
 
-        expect(writableStream.writable).assertFalse()
+        expect(writableStream.writable).assertEqual(false)
 
       } catch (err) {
-        expect(err).assertUndefined()
+        expect(err.code).assertEqual(401)
       }
     })
 
@@ -1079,8 +1015,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0035'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         private receivedEncodings: string[] = []
@@ -1124,8 +1058,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      const TAG = 'testStreamWritable07Chapter0036'
-      console.log(TAG + ' start')
       class TestWritableImpl extends stream.Writable {
         constructor() {
           super()
@@ -1166,8 +1098,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0037'
-      console.log(TAG + ' start')
 
       let writeCount = 0
       const expectedWrites = 3
@@ -1206,8 +1136,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0038'
-      console.log(TAG + ' start')
 
       let writeTypes: string[] = []
 
@@ -1253,8 +1181,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0039'
-      console.log(TAG + ' start')
 
       class TestWritableImpl extends stream.Writable {
         constructor() {
@@ -1294,9 +1220,6 @@ export default function StreamWritable07Test() {
      * @tc.level     Level 2
      */
     it('testStreamWritable07Chapter0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable07Chapter0044'
-      console.log(TAG + ' start')
-
       class TestWritableImpl extends stream.Writable {
         constructor() {
           super()

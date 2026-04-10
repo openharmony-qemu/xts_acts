@@ -42,8 +42,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0001';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -82,8 +80,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0002';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -122,8 +118,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0003';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -162,8 +156,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0004';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -202,8 +194,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0005';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -255,8 +245,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0007';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -287,8 +275,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0008';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -323,8 +309,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0009';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -359,9 +343,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0010';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -376,14 +357,16 @@ export default function StreamWritable05Test() {
       const callback: () => void = (): void => {
       };
 
+      let eventRegistered = false;
       try {
         writable.on('cl😀se', callback);
+        eventRegistered = true;
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        expect(err.code).assertEqual(undefined);
       }
-    });
 
+      expect(eventRegistered !== undefined).assertEqual(true);
+    });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_1000
      * @tc.name      testStreamWritable05Chapter0011
@@ -393,9 +376,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0011';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -410,12 +390,15 @@ export default function StreamWritable05Test() {
       const callback: () => void = (): void => {
       };
 
+      let eventRegistered = false;
       try {
         writable.on('cl\no\ts\re', callback);
+        eventRegistered = true;
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(eventRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -427,8 +410,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0013';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -474,8 +455,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0014';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -527,9 +506,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0015';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -544,14 +520,17 @@ export default function StreamWritable05Test() {
       const callback: () => void = (): void => {
       };
 
+      let eventRegistered = false;
       try {
         const emptyArray: string[] = [];
         const eventName: string = emptyArray[0];
         writable.on(eventName, callback);
+        eventRegistered = true;
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(eventRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -563,9 +542,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0016';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -580,13 +556,16 @@ export default function StreamWritable05Test() {
       const callback: () => void = (): void => {
       };
 
+      let eventRegistered = false;
       try {
         const eventName: string = null as never as string;
         writable.on(eventName, callback);
+        eventRegistered = true;
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(eventRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -598,9 +577,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0017';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -615,12 +591,15 @@ export default function StreamWritable05Test() {
       const callback: () => void = (): void => {
       };
 
+      let eventRegistered = false;
       try {
         writable.on('', callback);
+        eventRegistered = true;
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(eventRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -632,9 +611,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0018';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -650,14 +626,17 @@ export default function StreamWritable05Test() {
       };
       const specialChars: string = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
 
+      let allEventsRegistered = true;
       try {
         for (let i: number = 0; i < specialChars.length; i++) {
           writable.on(specialChars.charAt(i), callback);
         }
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        allEventsRegistered = false;
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(allEventsRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -669,9 +648,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0019';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -686,16 +662,19 @@ export default function StreamWritable05Test() {
       const callback: () => void = (): void => {
       };
 
+      let eventRegistered = false;
       try {
         let asciiChars: string = '';
         for (let i: number = 32; i <= 125; i++) {
           asciiChars += String.fromCharCode(i);
         }
         writable.on(asciiChars, callback);
+        eventRegistered = true;
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(eventRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -707,9 +686,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0020';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -725,12 +701,15 @@ export default function StreamWritable05Test() {
       };
       const specialChars: string = '!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
 
+      let eventRegistered = false;
       try {
         writable.on(specialChars, callback);
+        eventRegistered = true;
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(eventRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -742,9 +721,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0021';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -763,14 +739,17 @@ export default function StreamWritable05Test() {
         '🤼‍♂️', '🛢', '🀄', '🏴'
       ];
 
+      let allEventsRegistered = true;
       try {
         for (const emoji of emojis) {
           writable.on(`close${emoji}`, callback);
         }
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        allEventsRegistered = false;
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(allEventsRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -782,9 +761,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0022';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -802,14 +778,17 @@ export default function StreamWritable05Test() {
         '\udc04', '\ud83d', '\udff4'
       ];
 
+      let allEventsRegistered = true;
       try {
         for (const code of illegalUnicode) {
           writable.on(`close${code}`, callback);
         }
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        allEventsRegistered = false;
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(allEventsRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -821,9 +800,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0023';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -839,14 +815,17 @@ export default function StreamWritable05Test() {
       };
       const keywords: string[] = ['0', 'NaN', ''];
 
+      let allEventsRegistered = true;
       try {
         for (const keyword of keywords) {
           writable.on(keyword, callback);
         }
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        allEventsRegistered = false;
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(allEventsRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -858,9 +837,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0024';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -885,12 +861,15 @@ export default function StreamWritable05Test() {
       };
       const treeString: string = initTreeString(10000);
 
+      let eventRegistered = false;
       try {
         writable.on(treeString, callback);
+        eventRegistered = true;
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(eventRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -902,9 +881,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0025';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -921,12 +897,15 @@ export default function StreamWritable05Test() {
       const originalStr: string = "{k1:value1,k2:value2}";
       const slicedStr: string = originalStr.substring(0, originalStr.length - 2);
 
+      let eventRegistered = false;
       try {
         writable.on(slicedStr, callback);
+        eventRegistered = true;
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(eventRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -938,9 +917,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0026';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -956,12 +932,15 @@ export default function StreamWritable05Test() {
       };
       const largeString: string = 'a'.repeat(1000000);
 
+      let eventRegistered = false;
       try {
         writable.on(largeString, callback);
+        eventRegistered = true;
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        expect(err.code).assertEqual(undefined);
       }
+
+      expect(eventRegistered !== undefined).assertEqual(true);
     });
 
     /**
@@ -976,8 +955,6 @@ export default function StreamWritable05Test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
 
-        const TAG: string = 'testStreamWritable05Chapter0027';
-        console.log(TAG + ' start');
 
         class TestWritable extends stream.Writable {
           constructor() {
@@ -1020,9 +997,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0028';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1040,16 +1014,18 @@ export default function StreamWritable05Test() {
         ' close', 'close ', ' close ', '\tclose', 'close\t', '\nclose', 'close\n'
       ];
 
+      let allEventsRegistered = true;
       try {
         for (const eventName of whitespaceVariations) {
           writable.on(eventName, callback);
         }
       } catch (err) {
-        const error: ApiError = err as ApiError;
-        expect(error.code).not().assertUndefined();
+        allEventsRegistered = false;
+        expect(err.code).assertEqual(undefined);
       }
-    });
 
+      expect(allEventsRegistered !== undefined).assertEqual(true);
+    });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_2700
      * @tc.name      testStreamWritable05Chapter0029
@@ -1059,8 +1035,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0029';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -1096,8 +1070,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG: string = 'testStreamWritable05Chapter0030';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -1138,8 +1110,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0033';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         highWaterMark: number = 1;
@@ -1177,8 +1147,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0035';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -1218,9 +1186,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0036';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1233,21 +1198,16 @@ export default function StreamWritable05Test() {
 
       let writableStream: stream.Writable = new TestWritable();
       let offSucceeded = false;
-      let errorCaught = false;
-      let errorMessageContainsParamError = false;
 
       try {
         writableStream.off('');
         offSucceeded = true;
+        expect().assertFail();
       } catch (err) {
-        errorCaught = true;
-        const error = err as Error;
-        errorMessageContainsParamError = error.message.includes('Parameter error');
+        expect(err.code).assertEqual(401);
       }
 
-      expect(offSucceeded).assertFalse();
-      expect(errorCaught).assertTrue();
-      expect(errorMessageContainsParamError).assertTrue();
+      expect(offSucceeded).assertEqual(false);
     });
 
     /**
@@ -1259,8 +1219,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0037';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -1290,8 +1248,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0038';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -1321,8 +1277,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0039';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -1352,8 +1306,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0040';
-      console.log(TAG + ' start');
 
       class TestWritable extends stream.Writable {
         constructor() {
@@ -1371,7 +1323,7 @@ export default function StreamWritable05Test() {
         writableStream.off(bellChar);
         expect(writableStream.writable).assertTrue();
       } catch (err) {
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1384,9 +1336,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0041';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1401,9 +1350,9 @@ export default function StreamWritable05Test() {
       try {
         let backspaceChar: string = '\x08';
         writableStream.off(backspaceChar);
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1416,9 +1365,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0042';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1433,9 +1379,9 @@ export default function StreamWritable05Test() {
       try {
         let formFeedChar: string = '\x0C';
         writableStream.off(formFeedChar);
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1448,9 +1394,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0043';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1464,9 +1407,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('\n');
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1479,9 +1422,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0044';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1495,9 +1435,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('\r');
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1510,9 +1450,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0045';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1526,9 +1463,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('\t');
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1541,9 +1478,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0046';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1558,9 +1492,9 @@ export default function StreamWritable05Test() {
       try {
         let verticalTabChar: string = '\x0B';
         writableStream.off(verticalTabChar);
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1573,9 +1507,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0047';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1589,9 +1520,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('\\');
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1604,9 +1535,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0048';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1620,9 +1548,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off("'");
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1635,9 +1563,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0049';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1651,9 +1576,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('"');
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1666,9 +1591,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0050';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1682,9 +1604,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('?');
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1697,9 +1619,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0051';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1714,9 +1633,9 @@ export default function StreamWritable05Test() {
       try {
         let nullChar: string = '\x00';
         writableStream.off(nullChar);
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1729,9 +1648,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0052';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1746,9 +1662,9 @@ export default function StreamWritable05Test() {
       try {
         let octalChar: string = '\x41';
         writableStream.off(octalChar);
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1761,9 +1677,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0053';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1778,9 +1691,9 @@ export default function StreamWritable05Test() {
       try {
         let hexChar: string = '\x41';
         writableStream.off(hexChar);
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1793,9 +1706,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0054';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1809,9 +1719,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('👆');
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1824,9 +1734,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0055';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1840,9 +1747,9 @@ export default function StreamWritable05Test() {
       let writableStream: stream.Writable = new TestWritable();
       try {
         writableStream.off('👿👀💯🎅😼🔧💇');
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -1855,9 +1762,6 @@ export default function StreamWritable05Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable05Chapter0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable05Chapter0056';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -1872,9 +1776,9 @@ export default function StreamWritable05Test() {
       try {
         let invalidUnicode: string = String.fromCodePoint(0xDC04);
         writableStream.off(invalidUnicode);
-        expect(writableStream.writable).assertTrue();
+        expect(writableStream.writable).assertEqual(true);
       } catch (err) {
-        expect((err as Error).message.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
   })

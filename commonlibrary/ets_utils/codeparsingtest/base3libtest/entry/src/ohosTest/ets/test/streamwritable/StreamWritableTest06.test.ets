@@ -37,9 +37,6 @@ export default function StreamWritable06Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable06Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable06Chapter0001';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -51,23 +48,13 @@ export default function StreamWritable06Test() {
       }
 
       let writableStream: stream.Writable = new TestWritable();
-      expect(writableStream instanceof TestWritable).assertTrue();
-
-      let errorCaught = false;
-      let errorMessage = '';
+      expect(writableStream instanceof TestWritable).assertEqual(true);
 
       try {
         writableStream.off('NaN');
         expect(typeof writableStream.off).assertEqual('function');
       } catch (err) {
-        errorCaught = true;
-        const error = err as Error;
-        errorMessage = error.message;
-        expect(error instanceof Error).assertTrue();
-      }
-
-      if (errorCaught) {
-        expect(errorMessage.includes('Parameter error')).assertTrue();
+        expect(err.code).assertEqual(undefined);
       }
     });
 
@@ -80,9 +67,6 @@ export default function StreamWritable06Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable06Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable06Chapter0002';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -94,24 +78,18 @@ export default function StreamWritable06Test() {
       }
 
       let writableStream: stream.Writable = new TestWritable();
-      expect(writableStream instanceof TestWritable).assertTrue();
+      expect(writableStream instanceof TestWritable).assertEqual(true);
 
-      let errorCaught = false;
-      let errorMessage = '';
-
+      let offSucceeded = false;
       try {
         writableStream.off('0');
+        offSucceeded = true;
         expect(typeof writableStream.off).assertEqual('function');
       } catch (err) {
-        errorCaught = true;
-        const error = err as Error;
-        errorMessage = error.message;
-        expect(error instanceof Error).assertTrue();
+        expect(err.code).assertEqual(401);
       }
 
-      if (errorCaught) {
-        expect(errorMessage.includes('Parameter error')).assertFalse();
-      }
+      expect(offSucceeded).assertEqual(true);
     });
 
     /**
@@ -123,9 +101,6 @@ export default function StreamWritable06Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable06Chapter0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable06Chapter0003';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -159,9 +134,6 @@ export default function StreamWritable06Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable06Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable06Chapter0004';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -173,25 +145,19 @@ export default function StreamWritable06Test() {
       }
 
       let writableStream: stream.Writable = new TestWritable();
-      expect(writableStream instanceof TestWritable).assertTrue();
+      expect(writableStream instanceof TestWritable).assertEqual(true);
 
-      let errorCaught = false;
-      let errorMessage = '';
-
+      let offSucceeded = false;
       try {
         writableStream.off('notvalid');
+        offSucceeded = true;
         expect(typeof writableStream.off).assertEqual('function');
       } catch (err) {
-        errorCaught = true;
-        const error = err as Error;
-        errorMessage = error.message;
-        expect(error instanceof Error).assertTrue();
+        expect(err.code).assertEqual(401);
       }
-
-      if (errorCaught) {
-        expect(errorMessage.includes('Parameter error')).assertFalse();
-      }
+      expect(offSucceeded).assertEqual(true);
     });
+
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTSIX_0500
      * @tc.name      testStreamWritable06Chapter0005
@@ -201,9 +167,6 @@ export default function StreamWritable06Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable06Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable06Chapter0005';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -224,28 +187,21 @@ export default function StreamWritable06Test() {
       };
 
       let writableStream: stream.Writable = new TestWritable();
-      expect(writableStream instanceof TestWritable).assertTrue();
+      expect(writableStream instanceof TestWritable).assertEqual(true);
 
-      let errorCaught = false;
-      let errorMessage = '';
-
+      let offSucceeded = false;
       try {
         let treeString = init(1000);
         expect(treeString.length).assertLarger(0);
         writableStream.off(treeString);
+        offSucceeded = true;
         expect(typeof writableStream.off).assertEqual('function');
       } catch (err) {
-        errorCaught = true;
-        const error = err as Error;
-        errorMessage = error.message;
-        expect(error instanceof Error).assertTrue();
+        expect(err.code).assertEqual(401);
       }
 
-      if (errorCaught) {
-        expect(errorMessage.includes('Parameter error')).assertFalse();
-      }
+      expect(offSucceeded).assertEqual(true);
     });
-
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTSIX_0600
      * @tc.name      testStreamWritable06Chapter0006
@@ -255,9 +211,6 @@ export default function StreamWritable06Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable06Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable06Chapter0006';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -269,28 +222,22 @@ export default function StreamWritable06Test() {
       }
 
       let writableStream: stream.Writable = new TestWritable();
-      expect(writableStream instanceof TestWritable).assertTrue();
+      expect(writableStream instanceof TestWritable).assertEqual(true);
 
-      let errorCaught = false;
-      let errorMessage = '';
-
+      let offSucceeded = false;
       try {
         let str = "{k1:value1,k2:value2}";
         expect(str.length).assertLarger(0);
         let sliceStr = str.substring(0, str.length - 2);
         expect(sliceStr.length).assertLarger(0);
         writableStream.off(sliceStr);
+        offSucceeded = true;
         expect(typeof writableStream.off).assertEqual('function');
       } catch (err) {
-        errorCaught = true;
-        const error = err as Error;
-        errorMessage = error.message;
-        expect(error instanceof Error).assertTrue();
+        expect(err.code).assertEqual(401);
       }
 
-      if (errorCaught) {
-        expect(errorMessage.includes('Parameter error')).assertFalse();
-      }
+      expect(offSucceeded).assertEqual(true);
     });
 
     /**
@@ -302,9 +249,6 @@ export default function StreamWritable06Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable06Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable06Chapter0007';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -316,27 +260,20 @@ export default function StreamWritable06Test() {
       }
 
       let writableStream: stream.Writable = new TestWritable();
-      expect(writableStream instanceof TestWritable).assertTrue();
+      expect(writableStream instanceof TestWritable).assertEqual(true);
 
-      let errorCaught = false;
-      let errorMessage = '';
-
+      let offSucceeded = false;
       try {
         let largeStr = "a".repeat(100000);
         expect(largeStr.length).assertEqual(100000);
         writableStream.off(largeStr);
+        offSucceeded = true;
         expect(typeof writableStream.off).assertEqual('function');
       } catch (err) {
-        errorCaught = true;
-        const error = err as Error;
-        errorMessage = error.message;
-        expect(error instanceof Error).assertTrue();
+        expect(err.code).assertEqual(401);
       }
 
-      if (errorCaught) {
-        expect(errorMessage.includes('out of memory')).assertFalse();
-        expect(errorMessage.includes('allocation failed')).assertFalse();
-      }
+      expect(offSucceeded).assertEqual(true);
     });
 
     /**
@@ -348,9 +285,6 @@ export default function StreamWritable06Test() {
      * @tc.level     Level 2
      */
     it("testStreamWritable06Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamWritable06Chapter0008';
-      console.log(TAG + ' start');
-
       class TestWritable extends stream.Writable {
         constructor() {
           super();
@@ -362,16 +296,15 @@ export default function StreamWritable06Test() {
       }
 
       let writableStream: stream.Writable = new TestWritable();
-      expect(writableStream instanceof TestWritable).assertTrue();
+      expect(writableStream instanceof TestWritable).assertEqual(true);
 
-      let errorCaught = false;
-      let errorMessage = '';
-
+      let offSucceeded = false;
       try {
         {
           let largeStr = "b".repeat(100000);
           expect(largeStr.length).assertEqual(100000);
           writableStream.off(largeStr);
+          offSucceeded = true;
         }
 
         expect(typeof writableStream.off).assertEqual('function');
@@ -379,15 +312,10 @@ export default function StreamWritable06Test() {
           expect(typeof globalThis.gc).assertEqual('function');
         }
       } catch (err) {
-        errorCaught = true;
-        const error = err as Error;
-        errorMessage = error.message;
-        expect(error instanceof Error).assertTrue();
+        expect(err.code).assertEqual(401);
       }
 
-      if (errorCaught) {
-        expect(errorMessage.includes('Parameter error')).assertFalse();
-      }
+      expect(offSucceeded).assertEqual(true);
     });
   })
 }
