@@ -3267,6 +3267,142 @@ static napi_value GetIsoInfoChangeTest(napi_env env, napi_callback_info info)
     return jsValue;
 }
 
+static napi_value TestRegisterFlashStateChangeCallback(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->TestRegisterFlashStateChangeCallback(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value TestUnregisterFlashStateChangeCallback(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->TestUnregisterFlashStateChangeCallback(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value IsExposureMeteringModeSupported(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->IsExposureMeteringModeSupported(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value GetExposureMeteringMode(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->GetExposureMeteringMode(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value SetExposureMeteringMode(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->SetExposureMeteringMode(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value GetSupportedISORange(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->GetSupportedISORange(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value getIso(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->getIso(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value setIso(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->setIso(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3515,6 +3651,22 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"oHPhotoOutputDeleteProfile", nullptr, OHPhotoOutputDeleteProfile, nullptr, nullptr, nullptr, napi_default,
             nullptr},
+        { "oHTestRegisterFlashStateChangeCallback", nullptr, TestRegisterFlashStateChangeCallback, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHTestUnregisterFlashStateChangeCallback", nullptr, TestUnregisterFlashStateChangeCallback, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHIsExposureMeteringModeSupported", nullptr, IsExposureMeteringModeSupported, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHGetExposureMeteringMode", nullptr, GetExposureMeteringMode, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHSetExposureMeteringMode", nullptr, SetExposureMeteringMode, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHGetSupportedISORange", nullptr, GetSupportedISORange, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHgetIso", nullptr, getIso, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
+        { "oHsetIso", nullptr, setIso, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
     };
     napi_property_descriptor desc3[] = {
         {"oHCameraManagerTorchMode", nullptr, OHCameraManagerTorchMode, nullptr, nullptr, nullptr,

@@ -3787,3 +3787,120 @@ Camera_ErrorCode NDKCamera::IsoInfoChangeTest(void)
         captureSession_, OnIsoInfoChange);
     return ret_;
 }
+
+void TestFlashStateCallback(const Camera_CaptureSession* session, OH_Camera_FlashState  flashState)
+{
+    LOG("FlashStateCallback is called.");
+}
+
+Camera_ErrorCode NDKCamera::TestRegisterFlashStateChangeCallback(int useCaseCode)
+{
+    LOG("TestRegisterFlashStateChangeCallback begin.");
+    if (useCaseCode == CAMERA_OK) {
+        ret_ = OH_CaptureSession_RegisterFlashStateChangeCallback(captureSession_, TestFlashStateCallback);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_RegisterFlashStateChangeCallback(nullptr, TestFlashStateCallback);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_RegisterFlashStateChangeCallback(captureSession_, nullptr);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::TestUnregisterFlashStateChangeCallback(int useCaseCode)
+{
+    LOG("TestRegisterFlashStateChangeCallback begin.");
+    if (useCaseCode == CAMERA_OK) {
+        ret_ = OH_CaptureSession_UnregisterFlashStateChangeCallback(captureSession_, TestFlashStateCallback);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_UnregisterFlashStateChangeCallback(nullptr, TestFlashStateCallback);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_UnregisterFlashStateChangeCallback(captureSession_, nullptr);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::IsExposureMeteringModeSupported(int useCaseCode)
+{
+    LOG("IsExposureMeteringModeSupported begin.");
+    bool isSupported;
+    OH_Camera_ExposureMeteringMode exposureMeteringMode =
+        OH_Camera_ExposureMeteringMode::OH_CAMERA_EXPOSURE_METERING_MODE_CENTER ;
+    if (useCaseCode == CAMERA_OK) {
+        ret_ = OH_CaptureSession_IsExposureMeteringModeSupported(captureSession_, exposureMeteringMode, &isSupported);
+        LOG("IsExposureMeteringModeSupported: %d", isSupported);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_IsExposureMeteringModeSupported(nullptr, exposureMeteringMode, &isSupported);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_IsExposureMeteringModeSupported(captureSession_, exposureMeteringMode, nullptr);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::GetExposureMeteringMode(int useCaseCode)
+{
+    LOG("GetExposureMeteringMode begin.");
+    OH_Camera_ExposureMeteringMode getExposureMeteringMode;
+    if (useCaseCode == CAMERA_OK) {
+        ret_ = OH_CaptureSession_GetExposureMeteringMode(captureSession_, &getExposureMeteringMode);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_GetExposureMeteringMode(nullptr, &getExposureMeteringMode);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetExposureMeteringMode(captureSession_, nullptr);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SetExposureMeteringMode(int useCaseCode)
+{
+    LOG("SetExposureMeteringMode begin.");
+    OH_Camera_ExposureMeteringMode exposureMeteringMode =
+        OH_Camera_ExposureMeteringMode::OH_CAMERA_EXPOSURE_METERING_MODE_CENTER ;
+    if (useCaseCode == CAMERA_OK) {
+        ret_ = OH_CaptureSession_SetExposureMeteringMode(captureSession_, exposureMeteringMode);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_SetExposureMeteringMode(nullptr, exposureMeteringMode);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::GetSupportedISORange(int useCaseCode)
+{
+    LOG("GetSupportedISORange begin.");
+    int32_t minIsoValue = 0;
+    int32_t maxIsoValue = 0;
+    if (useCaseCode == CAMERA_OK) {
+        ret_ = OH_CaptureSession_GetSupportedISORange(captureSession_, &minIsoValue, &maxIsoValue);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_GetSupportedISORange(nullptr, &minIsoValue, &maxIsoValue);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetSupportedISORange(captureSession_, nullptr, &maxIsoValue);
+    } else if (useCaseCode == PARAMETER3_ERROR) {
+        ret_ = OH_CaptureSession_GetSupportedISORange(captureSession_, &minIsoValue, nullptr);
+    }
+    return ret_;
+}
+
+
+Camera_ErrorCode NDKCamera::getIso(int useCaseCode)
+{
+    LOG("getIso begin.");
+    int32_t getIso;
+    if (useCaseCode == CAMERA_OK) {
+        ret_ = OH_CaptureSession_GetIso(captureSession_, &getIso);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_GetIso(nullptr, &getIso);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::setIso(int useCaseCode)
+{
+    LOG("setIso begin.");
+    int32_t minIsoValue = 0;
+    if (useCaseCode == CAMERA_OK) {
+        ret_ = OH_CaptureSession_SetIso(captureSession_, minIsoValue);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_SetIso(nullptr, minIsoValue);
+    }
+    return ret_;
+}
