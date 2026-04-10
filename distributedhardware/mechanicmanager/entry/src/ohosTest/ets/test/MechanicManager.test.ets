@@ -137,7 +137,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_on_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_on_1000 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -194,7 +193,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-
         it("SUB_DH_MechanicManager_on_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_on_0100 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -249,7 +247,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_on_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_on_0200 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -350,7 +347,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-
         it("SUB_DH_MechanicManager_off_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_0100 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -426,7 +422,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_off_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_0300 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -455,6 +450,7 @@ export default function MechanicManagerAPI() {
             console.error(`SUB_DH_MechanicManager_off_0300 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
             expect(error.code == 401).assertTrue();
           }
+          console.log("-----------------SUB_DH_MechanicManager_off_0300 end------------------");
         }
         let SUB_DH_MechanicManager_off_0300_CheckReturnError = () => {
           try {
@@ -476,7 +472,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_off_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_0900 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -533,7 +528,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_off_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_1000 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -590,7 +584,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_off_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_0400 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -843,7 +836,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("SUB_DH_MechanicManager_setCameraTrackingEnabled_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_setCameraTrackingEnabled_0400 begin-----------------");
       if (deviceInfo.deviceType === 'tablet') {
@@ -894,7 +886,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("SUB_DH_MechanicManager_getCameraTrackingEnabled_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0100 begin-----------------");
       if (deviceInfo.deviceType === 'tablet') {
@@ -1026,7 +1017,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_on_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_on_0500 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -1077,7 +1067,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_on_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_on_1100 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -1134,7 +1123,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_on_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_on_1200 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -1191,7 +1179,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_on_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_on_0600 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -1344,7 +1331,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-
         it("SUB_DH_MechanicManager_off_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_0500 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -1420,7 +1406,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_off_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_0700 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -1471,7 +1456,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_off_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_1100 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -1528,7 +1512,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_off_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_1200 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
@@ -1585,7 +1568,6 @@ export default function MechanicManagerAPI() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
         it("SUB_DH_MechanicManager_off_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
           console.info("-----------------SUB_DH_MechanicManager_off_0800 begin-----------------");
           if (deviceInfo.deviceType === 'tablet') {
