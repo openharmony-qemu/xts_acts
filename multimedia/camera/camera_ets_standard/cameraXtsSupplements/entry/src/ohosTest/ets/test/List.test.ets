@@ -93,9 +93,7 @@ export default function testsuite() {
   CameraManagerCreateVideoOutputTest();
   CameraInputOnerrorTest();
   createCameraInput();
-<<<<<<< camera0409
   CameraOISQueryTest();
-=======
   CameraSessionSetWhiteBalanceModeTest();
   CameraGetActiveProfileTest();
   CameraSessionBandSuppTest();
@@ -104,6 +102,4 @@ export default function testsuite() {
   CameraTest()
   CameraPickerPickTest();
   CameraManagerGetSupportedOutputCapabilityTest();
-
->>>>>>> master
 }
