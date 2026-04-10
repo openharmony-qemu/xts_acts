@@ -17,6 +17,7 @@ import { describe, expect, it, Level } from '@ohos/hypium';
 import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, DEFAULT_USER_ID, getErrorCode } from '../commom';
 
 import adminManager from '@ohos.enterprise.adminManager';
+import bluetoothManager from '@ohos.enterprise.bluetoothManager';
 import deviceSettings from '@ohos.enterprise.deviceSettings';
 import wifiManager from '@ohos.enterprise.wifiManager';
 import restrictions from '@ohos.enterprise.restrictions';
@@ -33,6 +34,7 @@ const ITEM_DEFAULT_INPUT_METHOD: string = 'defaultInputMethod';
 const KEY_INVALID: number = 999;
 const STATUS_INVALID: number = 999;
 const LABEL_WIFI = "wifi";
+const LABEL_BLUETOOTH = "bluetooth";
 
 const VALID_MENUS_TO_HIDE: Array<deviceSettings.SettingsMenu> = [
   deviceSettings.SettingsMenu.ACCOUNT_ID,
@@ -3188,6 +3190,73 @@ export default function deviceSettingsTest() {
         await sleep(3000);
         let result: boolean = wifiManager.isWifiActiveSync(SELFWANT);
         expect(result === true).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_1400
+     * @tc.desc   test deviceSettings setSwitchStatus with byod admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_1400", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.BLUETOOTH, deviceSettings.SwitchStatus.FORCE_ON);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_1500
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_1500
+     * @tc.desc   test deviceSettings setSwitchStatus with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_1500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.BLUETOOTH, deviceSettings.SwitchStatus.FORCE_ON);
+        restrictions.setDisallowedPolicy(SELFWANT, LABEL_BLUETOOTH, true);
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.BLUETOOTH, deviceSettings.SwitchStatus.FORCE_ON);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 203).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_1600
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_1600
+     * @tc.desc   test deviceSettings setSwitchStatus with force on bluetooth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_1600", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.BLUETOOTH, deviceSettings.SwitchStatus.FORCE_ON);
+        await sleep(3000);
+        let result: bluetoothManager.BluetoothInfo = bluetoothManager.getBluetoothInfo(SELFWANT);
+        expect(Number(result.state) === 2).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
