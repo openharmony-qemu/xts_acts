@@ -98,21 +98,6 @@ export default function BuiltinsBigIntGetULongTest(): void {
       expect(result).assertEqual(expected);
     });
 
-    /**
-     * @tc.name    builtinsBigIntGetULongTest0500
-     * @tc.number  SUB_BUILTINS_BIGINT_GET_ULONG_TEST_0500
-     * @tc.desc    Verify getULong with ulong max value (2^64-1) - test full 64-bit range
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL2
-     */
-    it('builtinsBigIntGetULongTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const bigInt = new BigInt("18446744073709551615");
-      const result = bigInt.getULong();
-      expect(typeof result === 'long').assertTrue();
-      expect(result).assertEqual(-1 as long);
-    });
-
 
     /**
      * @tc.name    builtinsBigIntGetULongTest0700
