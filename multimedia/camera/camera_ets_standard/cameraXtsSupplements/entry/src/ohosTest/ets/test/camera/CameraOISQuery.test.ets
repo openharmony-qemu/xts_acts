@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, it, expect, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium';
 import { camera } from '@kit.CameraKit';
-import { abilityAccessCtrl, Permissions, common } from '@kit.AbilityKit';
+import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { closeFd, driveFn, getFd, getPermission, isEmpty, resourceName, sleep } from '../common';
 import { indexSurfaceId } from '../../testability/pages/Index';
@@ -27,10 +27,8 @@ let mSupportedModes: Array<camera.SceneMode>;
 let mCameraInput: camera.CameraInput;
 let mPreviewOutput: camera.PreviewOutput;
 let mPhotoOutput: camera.PhotoOutput;
-let mVideoOutput: camera.VideoOutput;
 let mVideoSurfaceId: string;
 let mPhotoSession: camera.PhotoSession;
-let mVideoSession: camera.VideoSession;
 let mAVRecorder: media.AVRecorder;
 let fdNumber: number;
 let fdPath: string;
@@ -123,11 +121,13 @@ function createPhotoOutput() {
     }
   }
   if (!haveValidDevice) {
+    console.info(TAG, 'has no valid device')
     return;
   }
   let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_PHOTO);
   let previewProfile = cameraOutputCap.previewProfiles[0];
   let photoProfile = cameraOutputCap.photoProfiles[0];
+  console.info(TAG, 'init  previewProfile ', previewProfile, 'photoProfile', photoProfile);
   for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
     let foundProfile = cameraOutputCap.photoProfiles.find((indexPhotoProfile: camera.Profile) => {
       console.log(TAG, 'find photoProfile: w: ' + indexPhotoProfile.size.width + 'h: ' + indexPhotoProfile.size.height);
@@ -148,48 +148,6 @@ function createPhotoOutput() {
   mPhotoOutput = mCameraManager.createPhotoOutput(photoProfile);
 }
 
-async function createVideoOutput() {
-  await getVideoSurfaceId();
-  let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
-  let haveValidDevice = false;
-  for (const device of mCameraDeviceArray) {
-    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
-    if (mSupportedModes.includes(camera.SceneMode.NORMAL_VIDEO)) {
-      useDevice = device;
-      haveValidDevice = true;
-      break;
-    }
-  }
-  if (!haveValidDevice) {
-    return;
-  }
-  let cameraOutputCap = mCameraManager.getSupportedOutputCapability(useDevice, camera.SceneMode.NORMAL_VIDEO);
-  let previewProfile = cameraOutputCap.previewProfiles[0];
-  let videoProfile = cameraOutputCap.videoProfiles[0];
-  for (const indexPreviewProfiles of cameraOutputCap.previewProfiles) {
-    let foundProfile = cameraOutputCap.videoProfiles.find((indexVideoProfile: camera.Profile) => {
-      console.log(TAG, 'find videoProfile: w: ' + indexVideoProfile.size.width + 'h: ' + indexVideoProfile.size.height);
-      console.log(TAG,
-        'find previewProfile: w: ' + indexPreviewProfiles.size.width + 'h: ' + indexPreviewProfiles.size.height);
-      return Math.abs((indexVideoProfile.size.width * indexPreviewProfiles.size.height) -
-        (indexPreviewProfiles.size.width * indexVideoProfile.size.height)) < Number.EPSILON;
-    })
-    if (foundProfile) {
-      videoProfile = foundProfile;
-      previewProfile = indexPreviewProfiles;
-      break;
-    }
-  }
-  console.log(TAG, 'videoProfile: w: ' + videoProfile.size.width + 'h: ' + videoProfile.size.height);
-  console.log(TAG, 'previewProfile: w: ' + previewProfile.size.width + 'h: ' + previewProfile.size.height);
-  CameraVideoProfile.videoFrameWidth = videoProfile.size.width;
-  CameraVideoProfile.videoFrameHeight = videoProfile.size.height;
-  mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
-  console.log(TAG, 'createVideoOutput' + videoProfile, 'surfaceID', mVideoSurfaceId);
-  mVideoOutput = mCameraManager.createVideoOutput(videoProfile, mVideoSurfaceId);
-  console.log(TAG, 'create preview output' + mPreviewOutput, 'createVideoOutput', mVideoOutput);
-}
-
 async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
   console.info(TAG, 'getCreatePhotoSession.');
   mPhotoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_PHOTO);
@@ -201,24 +159,6 @@ async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoO
   await mPhotoSession.commitConfig();
 }
 
-async function getCreateVideoSession(testName: string, previewOutput: camera.PreviewOutput,
-  videoOutput: camera.VideoOutput) {
-  console.info(TAG, 'getCreateVideoSession.');
-  mVideoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_VIDEO);
-  mVideoSession.beginConfig();
-  console.info(TAG, testName + ' beginConfig passed.');
-  mVideoSession.addInput(mCameraInput);
-  console.info(TAG, testName + ' addInput passed.');
-  await mCameraInput.open();
-  console.info(TAG, testName + ' camera open passed.');
-  mVideoSession.addOutput(previewOutput);
-  console.info(TAG, testName + ' addOutput previewOutput passed.');
-  mVideoSession.addOutput(videoOutput);
-  console.info(TAG, testName + ' addOutput videoOutput passed.');
-  await mVideoSession.commitConfig();
-  console.info(TAG, testName + ' session commitConfig successfully.');
-}
-
 async function releasePhotoSession() {
   console.info(TAG, 'releasePhotoSession.');
   await mPreviewOutput?.release();
@@ -226,206 +166,6 @@ async function releasePhotoSession() {
   await mPhotoSession?.release();
 }
 
-async function releaseVideoSession() {
-  console.info(TAG, 'releaseVideoSession.');
-  await mAVRecorder?.release();
-  await mPreviewOutput?.release();
-  await mVideoOutput?.release();
-  await mVideoSession?.release();
-}
-
-async function getFlashModePhoto(done: Function, testName: string, flashMode: camera.FlashMode,
-  callback: (mode?: camera.FlashMode) => void) {
-  try {
-    if (isEmpty(mCameraDeviceArray)) {
-      console.info(TAG, testName, ' mCameraDeviceArray is null.');
-      return;
-    } else {
-      createPhotoOutput();
-      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-      if (mPhotoSession.hasFlash()) {
-        if (mPhotoSession.isFlashModeSupported(flashMode)) {
-          mPhotoSession.setFlashMode(flashMode);
-          let mode = mPhotoSession.getFlashMode();
-          console.info(TAG, testName, ' photo set flash mode, status: ', flashMode, mode);
-          callback(mode);
-        } else {
-          console.error(TAG, testName, "Flash mode not supported on this device");
-        }
-      } else {
-        console.error(TAG, testName, "Device does not support flash");
-      }
-    }
-  } catch (error) {
-    console.error(TAG, testName, JSON.stringify(error), error.code);
-    expect().assertFail();
-  } finally {
-    await releasePhotoSession();
-    done();
-  }
-}
-
-async function getFlashModeVideo(done: Function, testName: string, flashMode: camera.FlashMode,
-  callback: (mode?: camera.FlashMode) => void) {
-  try {
-    if (isEmpty(mCameraDeviceArray)) {
-      console.info(TAG, testName, ' mCameraDeviceArray is null.');
-      return;
-    } else {
-      await createVideoOutput();
-      await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-      if (mVideoSession.hasFlash()) {
-        if (mVideoSession.isFlashModeSupported(flashMode)) {
-          mVideoSession.setFlashMode(flashMode);
-          let mode = mPhotoSession.getFlashMode();
-          console.info(TAG, testName, ' video set flash mode, status: ', flashMode, mode);
-          callback(mode);
-        } else {
-          console.error(TAG, testName, "Flash mode not supported on this device");
-        }
-      } else {
-        console.error(TAG, testName, "Device does not support flash");
-      }
-    }
-  } catch (error) {
-    console.error(TAG, testName, JSON.stringify(error), error.code);
-    expect().assertFail();
-  } finally {
-    await releaseVideoSession();
-    done();
-  }
-}
-
-async function getActiveStabilizationModeVideo(done: Function, testName: string,
-  expectedMode: camera.VideoStabilizationMode, callback: (mode?: camera.VideoStabilizationMode) => void) {
-  try {
-    if (isEmpty(mCameraDeviceArray)) {
-      console.info(TAG, testName, ' mCameraDeviceArray is null.');
-      return;
-    } else {
-      await createVideoOutput();
-      await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-      if (mVideoSession.isVideoStabilizationModeSupported(expectedMode)) {
-        mVideoSession.setVideoStabilizationMode(expectedMode);
-        let mode = mVideoSession.getActiveVideoStabilizationMode();
-        console.info(TAG, testName, 'video stabilization mode, expected: ', expectedMode, 'actual: ', mode);
-        callback(mode);
-      } else {
-        console.error(TAG, testName, "Stabilization mode not supported on this device");
-      }
-    }
-  } catch (error) {
-    console.error(TAG, testName, JSON.stringify(error), error.code);
-    expect().assertFail();
-  } finally {
-    await releaseVideoSession();
-    done();
-  }
-}
-
-async function getPreviewOutputRotation(done: Function, testName: string,
-  rotation: camera.ImageRotation, callback: (mode?: camera.ImageRotation) => void) {
-  try {
-    if (isEmpty(mCameraDeviceArray)) {
-      console.info(TAG, testName, ' mCameraDeviceArray is null.');
-      return;
-    } else {
-      await createVideoOutput();
-      await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-      mPreviewOutput.setPreviewRotation(rotation);
-      let res: camera.ImageRotation = mPreviewOutput.getPreviewRotation(rotation)
-      console.info(TAG, testName, 'getPreviewOutputRotation, expected: ', res, 'actual: ', rotation);
-      callback(res);
-    }
-  } catch (error) {
-    console.error(TAG, testName, JSON.stringify(error), error.code);
-    expect().assertFail();
-  } finally {
-    await releaseVideoSession();
-    done();
-  }
-}
-
-async function getZoomRatioRangeTest1(done: Function, testName: string, callback: (res: Array<number>) => void) {
-  try {
-    if (isEmpty(mCameraDeviceArray)) {
-      console.info(TAG, testName, ' mCameraDeviceArray is null.');
-      done();
-      return;
-    } else {
-      createPhotoOutput();
-      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-      console.info(TAG, testName, JSON.stringify(mPhotoSession.getZoomRatioRange()),)
-      if (mPhotoSession.getZoomRatioRange()) {
-        let res: Array<number> = mPhotoSession.getZoomRatioRange();
-        console.info(TAG, testName, 'video FocusModeSupported, expected: ', JSON.stringify(res));
-        callback(res);
-      } else {
-        console.error(TAG, testName, "该设备不支持变焦");
-      }
-    }
-  } catch (error) {
-    console.error(TAG, testName, JSON.stringify(error), error.code);
-    expect().assertFail();
-  } finally {
-    await releasePhotoSession();
-    done();
-  }
-}
-
-async function getSupportedFrameRatesTest1(done: Function, testName: string,
-  callback: (res: Array<camera.FrameRateRange>) => void) {
-  try {
-    if (isEmpty(mCameraDeviceArray)) {
-      console.info(TAG, testName, ' mCameraDeviceArray is null.');
-      done();
-      return;
-    } else {
-      await createVideoOutput();
-      await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-      if (mVideoOutput.getSupportedFrameRates()) {
-        let res: Array<camera.FrameRateRange> = mVideoOutput.getSupportedFrameRates();
-        console.info(TAG, testName, 'video getSupportedFrameRates, success: ', JSON.stringify(res));
-        callback(res);
-      } else {
-        console.error(TAG, testName, "该设备不支持自动帧率");
-      }
-    }
-  } catch (error) {
-    console.error(TAG, testName, 'video getSupportedFrameRates, failed', JSON.stringify(error), error.code, error);
-    expect().assertFail();
-  } finally {
-    await releaseVideoSession();
-    done();
-  }
-}
-
-async function getSupportedFrameRatesTest2(done: Function, testName: string,
-  callback: (res: Array<camera.FrameRateRange>) => void) {
-  try {
-    if (isEmpty(mCameraDeviceArray)) {
-      console.info(TAG, testName, ' mCameraDeviceArray is null.');
-      done();
-      return;
-    } else {
-      createPhotoOutput();
-      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-      if (mPreviewOutput.getSupportedFrameRates()) {
-        let res: Array<camera.FrameRateRange> = mPreviewOutput.getSupportedFrameRates();
-        console.info(TAG, testName, 'video getSupportedFrameRates, success: ', JSON.stringify(res));
-        callback(res);
-      } else {
-        console.error(TAG, testName, "该设备不支持自动帧率");
-      }
-    }
-  } catch (error) {
-    console.error(TAG, testName, 'video getSupportedFrameRates, failed', JSON.stringify(error), error.code, error);
-    expect().assertFail();
-  } finally {
-    await releasePhotoSession();
-    done();
-  }
-}
 export default function CameraOISQueryTest() {
   describe('CameraOISQueryTest', () => {
     beforeAll(async () => {
@@ -452,6 +192,705 @@ export default function CameraOISQueryTest() {
       await closeFd(fdNumber);
     });
 
+        /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_isOISModeSupported_0100
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_isOISModeSupported_0100
+     * @tc.desc    isOISModeSupported cover OFF
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_isOISModeSupported_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_isOISModeSupported_0100';
+      console.info(TAG, testName + ' begin.');
+      let isSupported: boolean = false;
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        isSupported = mPhotoSession.isOISModeSupported(camera.OISMode.OFF);
+        console.info(TAG, testName + ' isSupported: ' + isSupported);
+        expect(isEmpty(isSupported)).assertFalse();
+        console.info(TAG, testName + ' success.');
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_isOISModeSupported_0200
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_isOISModeSupported_0200
+     * @tc.desc    isOISModeSupported cover AUTO
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_isOISModeSupported_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_isOISModeSupported_0200';
+      console.info(TAG, testName + ' begin.');
+      let isSupported: boolean = false;
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        isSupported = mPhotoSession!.isOISModeSupported(camera.OISMode.AUTO);
+        console.info(TAG, testName + ' isSupported: ' + isSupported);
+        expect(isEmpty(isSupported)).assertFalse();
+        console.info(TAG, testName + ' success.');
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_isOISModeSupported_0300
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_isOISModeSupported_0300
+     * @tc.desc    isOISModeSupported cover 7400103
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_isOISModeSupported_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_isOISModeSupported_0300';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      mPhotoSession!.beginConfig();
+      try {
+        mPhotoSession!.isOISModeSupported(camera.OISMode.OFF);
+        console.error(TAG, testName + ' should throw error.');
+        expect().assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400103);
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasRange_0100
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasRange_0100
+     * @tc.desc    getSupportedOISBiasRange cover 返回值为空
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasRange_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasRange_0100';
+      console.info(TAG, testName + ' begin.');
+      let biasRange: Array<number> = [];
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        let isSupported = mPhotoSession!.isOISModeSupported(camera.OISMode.AUTO);
+        if (!isSupported) {
+          biasRange = mPhotoSession!.getSupportedOISBiasRange(camera.OISAxes.PITCH);
+          console.info(TAG, testName + ' biasRange: ' + JSON.stringify(biasRange));
+          expect().assertFail();
+        }
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400102);
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasRange_0200
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasRange_0200
+     * @tc.desc    getSupportedOISBiasRange cover 返回值非空
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasRange_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasRange_0200';
+      console.info(TAG, testName + ' begin.');
+      let biasRange: Array<number> = [];
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        let isSupported = mPhotoSession!.isOISModeSupported(camera.OISMode.AUTO);
+        if (isSupported) {
+          biasRange = mPhotoSession!.getSupportedOISBiasRange(camera.OISAxes.PITCH);
+          console.info(TAG, testName + ' biasRange: ' + JSON.stringify(biasRange));
+          expect(biasRange.length > 0).assertTrue();
+        }
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasRange_0300
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasRange_0300
+     * @tc.desc    getSupportedOISBiasRange cover 7400103
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasRange_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasRange_0300';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      await releasePhotoSession();
+      try {
+        mPhotoSession!.getSupportedOISBiasRange(camera.OISAxes.PITCH);
+        console.error(TAG, testName + ' should throw error.');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400103);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasStep_0100
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasStep_0100
+     * @tc.desc    getSupportedOISBiasStep cover 7400103
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasStep_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasStep_0100';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      await releasePhotoSession();
+      try {
+        mPhotoSession!.getSupportedOISBiasStep(camera.OISAxes.PITCH);
+        console.error(TAG, testName + ' should throw error.');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400103);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasStep_0200
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasStep_0200
+     * @tc.desc    getSupportedOISBiasStep cover 7400102
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasStep_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_getSupportedOISBiasStep_0200';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        mPhotoSession!.getSupportedOISBiasStep(null);
+        console.error(TAG, testName + ' should throw error.');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400102);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0100
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0100
+     * @tc.desc    getCurrentOISMode cover 7400103
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0100';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      await releasePhotoSession();
+      try {
+        mPhotoSession!.getCurrentOISMode();
+        console.error(TAG, testName + ' should throw error.');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400103);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0200
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0200
+     * @tc.desc    getCurrentOISMode cover OFF
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0200';
+      console.info(TAG, testName + ' begin.');
+      let currentMode: camera.OISMode = camera.OISMode.OFF;
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        let isSupported = mPhotoSession!.isOISModeSupported(camera.OISMode.AUTO);
+        if (!isSupported) {
+          currentMode = mPhotoSession!.getCurrentOISMode();
+          console.info(TAG, testName + ' currentMode: ' + currentMode);
+          expect().assertFail();
+        }
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400102);
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0300
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0300
+     * @tc.desc    getCurrentOISMode cover OFF
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0300';
+      console.info(TAG, testName + ' begin.');
+      let currentMode: camera.OISMode = camera.OISMode.OFF;
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        let isSupported = mPhotoSession!.isOISModeSupported(camera.OISMode.AUTO);
+        if (isSupported) {
+          currentMode = mPhotoSession!.getCurrentOISMode();
+          console.info(TAG, testName + ' currentMode: ' + currentMode);
+          expect(Number(currentMode)).assertEqual(0);
+        }
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0400
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0400
+     * @tc.desc    getCurrentOISMode cover AUTO
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0400';
+      console.info(TAG, testName + ' begin.');
+      let currentMode: camera.OISMode = camera.OISMode.AUTO;
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        let isSupported = mPhotoSession!.isOISModeSupported(camera.OISMode.AUTO);
+        if (!isSupported) {
+          currentMode = mPhotoSession!.getCurrentOISMode();
+          console.info(TAG, testName + ' currentMode: ' + currentMode);
+          expect().assertFail();
+        }
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400102);
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0500
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0500
+     * @tc.desc    getCurrentOISMode cover AUTO
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_getCurrentOISMode_0500';
+      console.info(TAG, testName + ' begin.');
+      let currentMode: camera.OISMode = camera.OISMode.AUTO;
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        let isSupported = mPhotoSession!.isOISModeSupported(camera.OISMode.AUTO);
+        if (isSupported) {
+          currentMode = mPhotoSession!.getCurrentOISMode();
+          console.info(TAG, testName + ' currentMode: ' + currentMode);
+          expect(Number(currentMode)).assertEqual(1);
+        }
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_getCurrentCustomOISBias_0100
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_getCurrentCustomOISBias_0100
+     * @tc.desc    getCurrentOISMode cover 7400103
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_getCurrentCustomOISBias_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_getCurrentCustomOISBias_0100';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      await releasePhotoSession();
+      try {
+        mPhotoSession!.getCurrentCustomOISBias(camera.OISAxes.PITCH);
+        console.error(TAG, testName + ' should throw error.');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400103);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_getCurrentCustomOISBias_0200
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_getCurrentCustomOISBias_0200
+     * @tc.desc    getCurrentOISMode cover 7400102
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_getCurrentCustomOISBias_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_getCurrentCustomOISBias_0200';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        mPhotoSession!.getCurrentCustomOISBias(null);
+        console.error(TAG, testName + ' should throw error.');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400102);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_setOISMode_0100
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_setOISMode_0100
+     * @tc.desc    setOISMode cover OFF
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_setOISMode_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_setOISMode_0100';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        let isSupported = mPhotoSession!.isOISModeSupported(camera.OISMode.AUTO);
+        if (!isSupported) {
+          let result = mPhotoSession!.setOISMode(camera.OISMode.OFF);
+          console.info(TAG, testName + ' result: ' + result);
+          expect().assertFail();
+        }
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400102);
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_setOISMode_0200
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_setOISMode_0200
+     * @tc.desc    setOISMode cover OFF
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_setOISMode_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_setOISMode_0200';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        let isSupported = mPhotoSession!.isOISModeSupported(camera.OISMode.AUTO);
+        if (isSupported) {
+          let result = mPhotoSession!.setOISMode(camera.OISMode.OFF);
+          console.info(TAG, testName + ' result: ' + result);
+          expect(result != undefined).assertTrue();
+        }
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_setOISMode_0300
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_setOISMode_0300
+     * @tc.desc    setOISMode cover AUTO
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_setOISMode_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_setOISMode_0300';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        let isSupported = mPhotoSession!.isOISModeSupported(camera.OISMode.AUTO);
+        if (!isSupported) {
+          let result = mPhotoSession!.setOISMode(camera.OISMode.AUTO);
+          console.info(TAG, testName + ' result: ' + result);
+          expect().assertFail();
+        }
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400102);
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_setOISMode_0400
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_setOISMode_0400
+     * @tc.desc    setOISMode cover AUTO
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_setOISMode_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_setOISMode_0400';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        let isSupported = mPhotoSession!.isOISModeSupported(camera.OISMode.AUTO);
+        if (isSupported) {
+          let result = mPhotoSession!.setOISMode(camera.OISMode.AUTO);
+          console.info(TAG, testName + ' result: ' + result);
+          expect(result != undefined).assertTrue();
+        }
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect().assertFail();
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_setOISMode_0500
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_setOISMode_0500
+     * @tc.desc    setOISMode cover 7400103
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_setOISMode_0500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_setOISMode_0500';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      await releasePhotoSession();
+      try {
+        mPhotoSession!.setOISMode(camera.OISMode.OFF);
+        console.error(TAG, testName + ' should throw error.');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG, testName + ' err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400103);
+        done();
+      }
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0100
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0100
+     * @tc.desc    setOISMode cover null
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0100';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        mPhotoSession!.setOISMode(camera.OISMode.CUSTOM);
+        let result = mPhotoSession!.setOISModeCustom(null, 1);
+        console.info(TAG, testName + ' result: ' + result);
+        expect().assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400102);
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0200
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0200
+     * @tc.desc    setOISMode cover undefined
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0200';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        mPhotoSession!.setOISMode(camera.OISMode.CUSTOM);
+        let result = mPhotoSession!.setOISModeCustom(undefined, 1);
+        console.info(TAG, testName + ' result: ' + result);
+        expect().assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400102);
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0300
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0300
+     * @tc.desc    setOISMode cover null
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0300';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        mPhotoSession!.setOISMode(camera.OISMode.CUSTOM);
+        let result = mPhotoSession!.setOISModeCustom(1, null);
+        console.info(TAG, testName + ' result: ' + result);
+        expect().assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400102);
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0400
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0400
+     * @tc.desc    setOISMode cover undefined
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0400';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      try {
+        mPhotoSession!.setOISMode(camera.OISMode.CUSTOM);
+        let result = mPhotoSession!.setOISModeCustom(1, undefined);
+        console.info(TAG, testName + ' result: ' + result);
+        expect().assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400102);
+      }
+      await releasePhotoSession();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0500
+     * @tc.name    SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0500
+     * @tc.desc    setOISMode cover 7400103
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MUTIMEDIA_CAMERA_setOISModeCustom_0500';
+      console.info(TAG, testName + ' begin.');
+      createPhotoOutput();
+      mPhotoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_PHOTO);
+      try {
+        let result = mPhotoSession!.setOISModeCustom(1, 2);
+        console.info(TAG, testName + ' result: ' + result);
+        expect().assertFail();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(TAG, testName + ' failed. err: ' + err.code + ', msg: ' + err.message);
+        expect(Number(err.code)).assertEqual(7400103);
+      }
+      await releasePhotoSession();
+      done();
+    })
 
   })
 }
