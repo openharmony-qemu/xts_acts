@@ -854,7 +854,7 @@ function testDisableScreenLockForAccount() {
   /**
    * @tc.name   test_setScreenLockDisabledForAccount_0200
    * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0200
-   * @tc.desc   test getInstalledBundleStorageStats method with normal admin
+   * @tc.desc   test setScreenLockDisabledForAccount method with normal admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -883,7 +883,7 @@ function testDisableScreenLockForAccount() {
   /**
    * @tc.name   test_isScreenLockDisabledForAccount_0300
    * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0300
-   * @tc.desc   test getInstalledBundleStorageStats method with normal admin
+   * @tc.desc   test isScreenLockDisabledForAccount method with normal admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
