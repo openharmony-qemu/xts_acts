@@ -158,6 +158,8 @@ group("ability_runtime") {
       "actsGetAllWindowStagesTest:ActsGetAllWindowStagesTest",
       "abilityactsabilityruntime:abilityactsabilityruntime",
       "actsGetAllWindowStagesTestStatic:ActsGetAllWindowStagesStaticTest",
+      "actgetispreload:ActsGetIsPreloadTest",
+      "actgetispreloadstatic:ActsGetIsPreloadStaticTest"
     ]
   }
 }
