@@ -823,9 +823,9 @@ napi_value TestIsTorchLevelControlSupportedSucc(napi_env env, napi_callback_info
 napi_value TestSetTorchModeOnWithLevelErr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    const double NORMAL_TORCH_LEVEL = 1.0;
-    const double NEGATIVE_TORCH_LEVEL = -1.0;
-    const double OVER_RANGE_TORCH_LEVEL = 1.1;
+    const double normalTorchLevel = 1.0;
+    const double negativeTorchLevel = -1.0;
+    const double overRangeTorchLevel = 1.1;
     Camera_ErrorCode ret = OH_CameraManager_SetTorchModeOnWithLevel(nullptr, NORMAL_TORCH_LEVEL);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         napi_create_int32(env, ret, &result);
