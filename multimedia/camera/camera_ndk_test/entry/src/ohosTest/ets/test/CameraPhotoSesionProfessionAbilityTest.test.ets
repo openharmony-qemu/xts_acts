@@ -369,536 +369,536 @@ export default function CameraPhotoSesionProfessionAbilityTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_001
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_001
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_0001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_0001
      * @tc.desc   Check capture session Register Flash State Change Callback Errcode CAMERA_INVALID_ARGUMENT, capturesession is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_001', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_001--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_0001', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_0001--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHTestRegisterFlashStateChangeCallback(1);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_001 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_0001 ret is "+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_001 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_0001 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_002
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_002
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_0002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_0002
      * @tc.desc   Check capture session Register Flash State Change Callback Errcode CAMERA_INVALID_ARGUMENT, CALLBACK is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_002', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_002--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_0002', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_0002--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHTestRegisterFlashStateChangeCallback(2);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_002 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_0002 ret is "+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_002 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_REGISTER_FLASH_STATE_CHANGE_CALLBACK_0002 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_001
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_001
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_0001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_0001
      * @tc.desc   Check capture session UNRegister Flash State Change Callback Errcode CAMERA_INVALID_ARGUMENT, capturesession is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_001', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_001--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_0001', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_0001--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHTestRegisterFlashStateChangeCallback(1);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_001 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_0001 ret is "+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_001 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_0001 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_002
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_002
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_0002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_0002
      * @tc.desc   Check capture session UNRegister Flash State Change Callback Errcode CAMERA_INVALID_ARGUMENT, CALLBACK is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_002', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_002--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_0002', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_0002--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHTestRegisterFlashStateChangeCallback(2);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_002 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_0002 ret is "+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_002 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_UNREGISTER_FLASH_STATE_CHANGE_CALLBACK_0002 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_001
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_001
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0001
      * @tc.desc   Check capture session Is Exposure Metering Mode Supported CAMERA_OK
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_001', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_001--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0001', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0001--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHIsExposureMeteringModeSupported(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_001 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0001 ret is "+ret);
       expect(ret).assertEqual(CAMERA_OK)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_001 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0001 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_002
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_002
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0002
      * @tc.desc   Check capture session Is Exposure Metering Mode Supported Errcode CAMERA_INVALID_ARGUMENT, capturesession is null 
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_002', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_002--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0002', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0002--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHIsExposureMeteringModeSupported(1);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_002 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0002 ret is "+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_002 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0002 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_005
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_005
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0005
      * @tc.desc   Check capture session Is Exposure Metering Mode Supported Errcode CAMERA_SESSION_NOT_CONFIG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_005', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_005--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0005', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0005--------------");
       createCameraSessionInstance();
       await beginCameraSession();
       let ret = cameraObj.oHIsExposureMeteringModeSupported(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_005 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0005 ret is "+ret);
       expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_005 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_IS_EXPOSURE_METER_MODE_SUPPORTED_0005 ends here");
       await releaseOutputAndInput();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_001
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_001
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0001
      * @tc.desc   Check capture session Get Exposure Metering Mode CAMERA_OK
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_001', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_001--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0001', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0001--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHGetExposureMeteringMode(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_001 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0001 ret is "+ret);
       expect(ret).assertEqual(CAMERA_OK)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_001 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0001 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_002
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_002
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0002
      * @tc.desc   Check capture session Get Exposure Metering Mode Errcode CAMERA_INVALID_ARGUMENT, capturesession is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_002', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_002--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0002', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0002--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHGetExposureMeteringMode(1);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_002 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0002 ret is "+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_002 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0002 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_003
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_003
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0003
      * @tc.desc   Check capture session Get Exposure Metering Mode Errcode CAMERA_INVALID_ARGUMENT, getExposureMeteringMode is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_003', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_003--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0003', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0003--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHGetExposureMeteringMode(2);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_003 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0003 ret is "+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_003 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0003 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_004
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_004
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0004
      * @tc.desc   Check capture session Get Exposure Metering Mode Errcode CAMERA_SESSION_NOT_CONFIG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_004', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_004--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0004', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0004--------------");
       createCameraSessionInstance();
       await beginCameraSession();
       let ret = cameraObj.oHGetExposureMeteringMode(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_004 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0004 ret is "+ret);
       expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_004 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0004 ends here");
       await releaseOutputAndInput();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_005
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_005
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0005
      * @tc.desc   Check capture session Get Exposure Metering Mode Errcode CAMERA_OPERATION_NOT_ALLOWED
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_005', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_005--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0005', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0005--------------");
       createCameraSessionInstance();
       let ret = cameraObj.oHGetExposureMeteringMode(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_005 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0005 ret is "+ret);
       expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_005 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0005 ends here");
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_001
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_001
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0001
      * @tc.desc   Check capture session Set Exposure Metering Mode CAMERA_OK
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_001', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_001--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0001', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0001--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHSetExposureMeteringMode(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_001 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0001 ret is "+ret);
       expect(ret).assertEqual(CAMERA_OK)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_001 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0001 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_002
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_002
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0002
      * @tc.desc   Check capture session Get Exposure Metering Mode Errcode CAMERA_INVALID_ARGUMENT, capturesession is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_002', Level.LEVEL0, async () => {
-        console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_002--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0002', Level.LEVEL0, async () => {
+        console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0002--------------");
         createCameraSessionInstance();
         await startCameraSession();
         let ret = cameraObj.oHSetExposureMeteringMode(1);
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_002 ret is "+ret);
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0002 ret is "+ret);
         expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_002 ends here");
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0002 ends here");
         await stopCameraSession();
         await releaseCameraSessionInstance();
     });
    
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_003
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_003
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0003
      * @tc.desc   Check capture session Set Exposure Metering Mode Errcode CAMERA_SESSION_NOT_CONFIG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_003', Level.LEVEL0, async () => {
-    console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_003--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0003', Level.LEVEL0, async () => {
+    console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0003--------------");
     createCameraSessionInstance();
     await beginCameraSession()
     let ret = cameraObj.oHSetExposureMeteringMode(0);
-    console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_003 ret is "+ret);
+    console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0003 ret is "+ret);
     expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG)
-    console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_003 ends here");
+    console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_EXPOSURE_METERING_MODE_0003 ends here");
     await releaseOutputAndInput();
     await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_001
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_001
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0001
      * @tc.desc   Check capture session Get Supported ISO Range CAMERA_OK
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_001', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_001--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0001', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0001--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHGetSupportedISORange(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_001 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0001 ret is "+ret);
       expect(ret).assertEqual(CAMERA_OK)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_001 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0001 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_002
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_002
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0002
      * @tc.desc   Check capture session Get Supported ISO Range Errcode CAMERA_INVALID_ARGUMENT, capturesession is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_002', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_002--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0002', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0002--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHGetSupportedISORange(1);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_002 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0002 ret is "+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_002 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0002 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_003
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_003
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0003
      * @tc.desc   Check capture session Get Supported ISO Range Errcode CAMERA_INVALID_ARGUMENT, minIsoValue is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_003', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_003--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0003', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0003--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHGetSupportedISORange(2);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_003 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0003 ret is "+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_003 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0003 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_004
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_004
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0004
      * @tc.desc   Check capture session Get Supported ISO Range Errcode CAMERA_INVALID_ARGUMENT, maxIsoValue is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_004', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_004--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0004', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0004--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHGetSupportedISORange(3);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_004 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0004 ret is "+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_004 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0004 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_005
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_005
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0005
      * @tc.desc   Check capture session Get Supported ISO Range Errcode CAMERA_SESSION_NOT_CONFIG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_005', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_005--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0005', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0005--------------");
       createCameraSessionInstance();
       await beginCameraSession();
       let ret = cameraObj.oHGetSupportedISORange(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_005 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0005 ret is "+ret);
       expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_005 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_SUPPORTED_ISO_RANGE_0005 ends here");
       await releaseOutputAndInput();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_001
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_001
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0001
      * @tc.desc   Check capture session Get ISO  CAMERA_OK
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_001', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_001--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0001', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0001--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHgetIso(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_001 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0001 ret is "+ret);
       expect(ret).assertEqual(CAMERA_OK)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_001 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0001 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_002
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_002
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0002
      * @tc.desc   Check capture session Get ISO Errcode CAMERA_INVALID_ARGUMENT, capturesession is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_002', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_002--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0002', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0002--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHgetIso(1);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_002 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0002 ret is "+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_002 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0002 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_003
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_003
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0003
      * @tc.desc   Check capture session Get ISO Errcode CAMERA_SESSION_NOT_CONFIG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_003', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_003--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0003', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0003--------------");
       createCameraSessionInstance();
       await beginCameraSession();
       let ret = cameraObj.oHgetIso(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_003 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0003 ret is "+ret);
       expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_003 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0003 ends here");
       await releaseOutputAndInput();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_004
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_004
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0004
      * @tc.desc   Check capture session Get ISO Errcode CAMERA_OPERATION_NOT_ALLOWED
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_004', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_004--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0004', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0004--------------");
       createCameraSessionInstance();
       let ret = cameraObj.oHgetIso(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_004 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0004 ret is "+ret);
       expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_GET_ISO_004 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0004 ends here");
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_001
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_001
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0001
      * @tc.desc   Check capture session Set ISO  CAMERA_OK
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_001', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_001--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0001', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0001--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHsetIso(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_001 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0001 ret is "+ret);
       expect(ret).assertEqual(CAMERA_OK)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_001 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0001 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_002
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_002
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0002
      * @tc.desc   Check capture session Get ISO Errcode CAMERA_INVALID_ARGUMENT, capturesession is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_002', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_002--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0002', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0002--------------");
       createCameraSessionInstance();
       await startCameraSession();
       let ret = cameraObj.oHsetIso(1);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_002 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0002 ret is "+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_002 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0002 ends here");
       await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_003
-     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_003
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0003
      * @tc.desc   Check capture session set ISO Errcode CAMERA_SESSION_NOT_CONFIG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_003', Level.LEVEL0, async () => {
-      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_003--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0003', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0003--------------");
       createCameraSessionInstance();
       let ret = cameraObj.oHsetIso(0);
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_003 ret is "+ret);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0003 ret is "+ret);
       expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG)
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_PHOTO_SESSION_SET_ISO_003 ends here");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_SET_ISO_0003 ends here");
       await releaseCameraSessionInstance();
     });
 
