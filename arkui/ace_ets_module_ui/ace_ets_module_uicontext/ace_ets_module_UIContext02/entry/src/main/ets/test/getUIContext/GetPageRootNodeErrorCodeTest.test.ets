@@ -48,15 +48,15 @@ export default function GetPageRootNodeErrorCodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_UICONTEXT_GetPageRootNodeErrorCodeTest
-     * @tc.number SUB_ARKUI_UICONTEXT_GetPageRootNodeErrorCodeTest
+     * @tc.name   SUB_ARKUI_UICONTEXT_GetPageRootNodeErrorCodeTest_1000
+     * @tc.number SUB_ARKUI_UICONTEXT_GetPageRootNodeErrorCodeTest_1000
      * @tc.desc   postDelayedFrameCallback test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_UICONTEXT_GetPageRootNodeErrorCodeTest', Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ARKUI_UICONTEXT_GetPageRootNodeErrorCodeTest START');
+    it('SUB_ARKUI_UICONTEXT_GetPageRootNodeErrorCodeTest_1000', Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_ARKUI_UICONTEXT_GetPageRootNodeErrorCodeTest_1000 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('btn_getPageRootNode_code'));
@@ -69,7 +69,7 @@ export default function GetPageRootNodeErrorCodeTest() {
       expect(AppStorage.get('GetPageRootNodeTypeValue')).assertEqual('Column');
       AppStorage.delete('GetPageRootNodeErrorCodeValue');
       AppStorage.delete('GetPageRootNodeTypeValue');
-      console.info('[SUB_ARKUI_UICONTEXT_GetPageRootNodeErrorCodeTest] END');
+      console.info('[SUB_ARKUI_UICONTEXT_GetPageRootNodeErrorCodeTest_1000] END');
       done();
     });
 

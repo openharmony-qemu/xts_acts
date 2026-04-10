@@ -17,7 +17,7 @@
 struct GetPageRootNodeNullIndex {
 
   aboutToAppear(): void {
-    console.info("aboutToAppear", JSON.stringify(this.getUIContext().getPageRootNode()));
+    console.info('GetPageRootNodeNullValue', JSON.stringify(this.getUIContext().getPageRootNode()));
     AppStorage.SetOrCreate('GetPageRootNodeNullValue', this.getUIContext().getPageRootNode());
   }
 
