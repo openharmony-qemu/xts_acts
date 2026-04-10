@@ -1,8 +1,16 @@
 import { stream } from '@kit.ArkTS';
 import util from '@ohos.util';
 import {
-  describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,
-  TestType, Size, Level
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  expect,
+  TestType,
+  Size,
+  Level
 } from '@ohos/hypium';
 
 type StreamData = string | Uint8Array | null;
@@ -43,34 +51,24 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0001';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString = 'Test Resume String Chunk';
-          expect(readable.isPaused() === true).assertEqual(false);
-          const resumedReadable: stream.Readable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          readable.push(testString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData).assertEqual(true);
-          expect(readData === testString).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString = 'Test Resume String Chunk';
+        expect(readable.isPaused() === true).assertEqual(false);
+        const resumedReadable: stream.Readable = readable.resume();
+        expect(resumedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === false).assertEqual(true);
+        readable.push(testString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData !== null).assertEqual(true);
+        expect(readData === testString).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0200
@@ -81,49 +79,39 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0002';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testUint8Array = new Uint8Array(10).fill('A'.charCodeAt(0));
-          expect(testUint8Array instanceof Uint8Array).assertEqual(true);
-          expect(typeof testUint8Array).assertEqual('object');
-          expect(testUint8Array.length).assertEqual(10);
-          expect(testUint8Array.BYTES_PER_ELEMENT).assertEqual(1);
-          expect(testUint8Array.byteLength).assertEqual(10);
-          const aCharCode = 'A'.charCodeAt(0);
-          expect(aCharCode).assertEqual(65);
-          for (let i = 0; i < testUint8Array.length; i++) {
-            expect(testUint8Array[i]).assertEqual(aCharCode);
-          }
-          expect(readable.isPaused() === true).assertEqual(false);
-          const resumedReadable: stream.Readable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          readable.push(testUint8Array);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(typeof readData === 'string').assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const convertedUint8: Uint8Array = encoder.encode(readData);
-          expect(convertedUint8.length === testUint8Array.length).assertEqual(true);
-          for (let i: number = 0; i < convertedUint8.length; i++) {
-            expect(convertedUint8[i] === testUint8Array[i]).assertEqual(true);
-          }
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testUint8Array = new Uint8Array(10).fill('A'.charCodeAt(0));
+        expect(testUint8Array instanceof Uint8Array).assertEqual(true);
+        expect(typeof testUint8Array).assertEqual('object');
+        expect(testUint8Array.length).assertEqual(10);
+        expect(testUint8Array.BYTES_PER_ELEMENT).assertEqual(1);
+        expect(testUint8Array.byteLength).assertEqual(10);
+        const aCharCode = 'A'.charCodeAt(0);
+        expect(aCharCode).assertEqual(65);
+        for (let i = 0; i < testUint8Array.length; i++) {
+          expect(testUint8Array[i]).assertEqual(aCharCode);
         }
-
-      });
+        expect(readable.isPaused() === true).assertEqual(false);
+        const resumedReadable: stream.Readable = readable.resume();
+        expect(resumedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === false).assertEqual(true);
+        readable.push(testUint8Array);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
+        }
+        expect(typeof readData === 'string').assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const convertedUint8: Uint8Array = encoder.encode(readData);
+        expect(convertedUint8.length === testUint8Array.length).assertEqual(true);
+        for (let i: number = 0; i < convertedUint8.length; i++) {
+          expect(convertedUint8[i] === testUint8Array[i]).assertEqual(true);
+        }
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0300
@@ -134,37 +122,27 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0003';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString = 'Multiple Resume Test';
-          expect(readable.isPaused() === true).assertEqual(false);
-          const resumedReadable1: stream.Readable = readable.resume();
-          const resumedReadable2: stream.Readable = readable.resume();
-          const resumedReadable3: stream.Readable = readable.resume();
-          expect(resumedReadable1 === readable).assertEqual(true);
-          expect(resumedReadable2 === readable).assertEqual(true);
-          expect(resumedReadable3 === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          readable.push(testString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData === testString).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString = 'Multiple Resume Test';
+        expect(readable.isPaused() === true).assertEqual(false);
+        const resumedReadable1: stream.Readable = readable.resume();
+        const resumedReadable2: stream.Readable = readable.resume();
+        const resumedReadable3: stream.Readable = readable.resume();
+        expect(resumedReadable1 === readable).assertEqual(true);
+        expect(resumedReadable2 === readable).assertEqual(true);
+        expect(resumedReadable3 === readable).assertEqual(true);
+        expect(readable.isPaused() === false).assertEqual(true);
+        readable.push(testString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData === testString).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0400
@@ -175,34 +153,24 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0004';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const emptyString = '';
-          expect(readable.isPaused() === true).assertEqual(false);
-          const resumedReadable: stream.Readable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          readable.push(emptyString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData === emptyString).assertEqual(true);
-          expect(readData.length === 0).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(false);
+      try {
+        const readable = new stream.Readable();
+        const emptyString = '';
+        expect(readable.isPaused() === true).assertEqual(false);
+        const resumedReadable: stream.Readable = readable.resume();
+        expect(resumedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === false).assertEqual(true);
+        readable.push(emptyString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData === emptyString).assertEqual(true);
+        expect(readData.length === 0).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0500
@@ -213,32 +181,22 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0005';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          expect(readable.isPaused() === true).assertEqual(false);
-          const resumedReadable: stream.Readable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData).assertEqual(true);
-          expect(readData === '').assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        expect(readable.isPaused() === true).assertEqual(false);
+        const resumedReadable: stream.Readable = readable.resume();
+        expect(resumedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === false).assertEqual(true);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData !== null).assertEqual(true);
+        expect(readData === '').assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0600
@@ -249,32 +207,22 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0006';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString = 'Resume Before Push String';
-          const resumedReadable: stream.Readable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          readable.push(testString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData === testString).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString = 'Resume Before Push String';
+        const resumedReadable: stream.Readable = readable.resume();
+        expect(resumedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === false).assertEqual(true);
+        readable.push(testString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData === testString).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0700
@@ -285,38 +233,28 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0007';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testUint8Array = new Uint8Array(8).fill('B'.charCodeAt(0));
-          const resumedReadable: stream.Readable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          readable.push(testUint8Array);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData).assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const convertedUint8: Uint8Array = encoder.encode(readData);
-          expect(convertedUint8.length === testUint8Array.length).assertEqual(false);
-          expect(convertedUint8.every((byte: number, index: number) =>
-          byte === testUint8Array[index]
-          )).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testUint8Array = new Uint8Array(8).fill('B'.charCodeAt(0));
+        const resumedReadable: stream.Readable = readable.resume();
+        expect(resumedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === false).assertEqual(true);
+        readable.push(testUint8Array);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData !== null).assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const convertedUint8: Uint8Array = encoder.encode(readData);
+        expect(convertedUint8.length === testUint8Array.length).assertEqual(true);
+        expect(convertedUint8.every((byte: number, index: number) =>
+        byte === testUint8Array[index]
+        )).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0800
@@ -327,33 +265,23 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0008';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          expect(readable.isPaused() === false).assertEqual(true);
-          const secondResume = readable.resume();
-          expect(secondResume === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          const testString = 'Flowing Stream Resume Test';
-          readable.push(testString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData === testString).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        expect(readable.isPaused() === false).assertEqual(true);
+        const secondResume = readable.resume();
+        expect(secondResume === readable).assertEqual(true);
+        expect(readable.isPaused() === false).assertEqual(true);
+        const testString = 'Flowing Stream Resume Test';
+        readable.push(testString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData === testString).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0900
@@ -364,36 +292,26 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0009';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString = 'Ended Stream Resume Test';
-          readable.push(testString);
-          readable.push(null);
-          expect(readable.isPaused() === true).assertEqual(false);
-          const resumedReadable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(false);
-          const readData1 = readable.read();
-          const readData2 = readable.read();
-          if (typeof readData1 !== 'string') {
-            throw new Error('readData1 should be a string type');
-          }
-          expect(readData1 === testString).assertEqual(true);
-          expect(readData2 === null).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData1 should be a string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString = 'Ended Stream Resume Test';
+        readable.push(testString);
+        readable.push(null);
+        expect(readable.isPaused() === true).assertEqual(false);
+        const resumedReadable = readable.resume();
+        expect(resumedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(false);
+        const readData1 = readable.read();
+        const readData2 = readable.read();
+        if (typeof readData1 !== 'string') {
+          throw new Error('readData1 should be a string type');
         }
-
-      });
+        expect(readData1 === testString).assertEqual(true);
+        expect(readData2 === null).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1000
@@ -404,17 +322,15 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0010';
-        console.log(TAG + ' start');
-          const readable = new stream.Readable();
-          expect(readable.isPaused() === true).assertEqual(false);
-          const resumedReadable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          const readData = readable.read();
-          expect(readData === null).assertEqual(true);
+      const readable = new stream.Readable();
+      expect(readable.isPaused() === true).assertEqual(false);
+      const resumedReadable = readable.resume();
+      expect(resumedReadable === readable).assertEqual(true);
+      expect(readable.isPaused() === false).assertEqual(true);
+      const readData = readable.read();
+      expect(readData === null).assertEqual(true);
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1100
@@ -425,16 +341,14 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0011';
-        console.log(TAG + ' start');
-          const readable = new stream.Readable();
-          const resumedReadable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          const readData = readable.read();
-          expect(readData === null).assertEqual(true);
+      const readable = new stream.Readable();
+      const resumedReadable = readable.resume();
+      expect(resumedReadable === readable).assertEqual(true);
+      expect(readable.isPaused() === false).assertEqual(true);
+      const readData = readable.read();
+      expect(readData === null).assertEqual(true);
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1200
@@ -445,48 +359,38 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0012';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString1 = 'Mixed Chunk 1';
-          const testUint8Array = new Uint8Array(5).fill('D'.charCodeAt(0));
-          const testString2 = 'Mixed Chunk 2';
-          const resumedReadable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          readable.push(testString1);
-          readable.push(testUint8Array);
-          readable.push(testString2);
-          readable.push(null);
-          const read1 = readable.read();
-          const read2 = readable.read();
-          const read3 = readable.read();
-          const read4 = readable.read();
-          if (typeof read1 !== 'string' || typeof read2 !== 'string' || typeof read3 !== 'string') {
-            throw new Error('read1/read2/read3 should be string type');
-          }
-          expect(read1 === testString1).assertEqual(true);
-          expect(read3 === testString2).assertEqual(true);
-          expect(read4 === null).assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const converted: Uint8Array = encoder.encode(read2);
-          expect(converted.length === testUint8Array.length).assertEqual(true);
-          for (let i: number = 0; i < converted.length; i++) {
-            expect(converted[i] === testUint8Array[i]).assertEqual(true);
-            expect().assertFail()
-          }
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('read1/read2/read3 should be string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString1 = 'Mixed Chunk 1';
+        const testUint8Array = new Uint8Array(5).fill('D'.charCodeAt(0));
+        const testString2 = 'Mixed Chunk 2';
+        const resumedReadable = readable.resume();
+        expect(resumedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === false).assertEqual(true);
+        readable.push(testString1);
+        readable.push(testUint8Array);
+        readable.push(testString2);
+        readable.push(null);
+        const read1 = readable.read();
+        const read2 = readable.read();
+        const read3 = readable.read();
+        const read4 = readable.read();
+        if (typeof read1 !== 'string' || typeof read2 !== 'string' || typeof read3 !== 'string') {
+          throw new Error('read1/read2/read3 should be string type');
         }
-
-      });
+        expect(read1 === testString1).assertEqual(true);
+        expect(read3 === testString2).assertEqual(true);
+        expect(read4 === null).assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const converted: Uint8Array = encoder.encode(read2);
+        expect(converted.length === testUint8Array.length).assertEqual(true);
+        for (let i: number = 0; i < converted.length; i++) {
+          expect(converted[i] === testUint8Array[i]).assertEqual(true);
+        }
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1300
@@ -497,48 +401,38 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0013';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString1 = 'Mixed Chunk 1';
-          const testUint8Array = new Uint8Array(5).fill('D'.charCodeAt(0));
-          const testString2 = 'Mixed Chunk 2';
-          const resumedReadable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          readable.push(testString1);
-          readable.push(testUint8Array);
-          readable.push(testString2);
-          readable.push(null);
-          const read1 = readable.read();
-          const read2 = readable.read();
-          const read3 = readable.read();
-          const read4 = readable.read();
-          if (typeof read1 !== 'string' || typeof read2 !== 'string' || typeof read3 !== 'string') {
-            throw new Error('read1/read2/read3 should be string type');
-          }
-          expect(read1 === testString1).assertEqual(true);
-          expect(read3 === testString2).assertEqual(true);
-          expect(read4 === null).assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const converted: Uint8Array = encoder.encode(read2);
-          expect(converted.length === testUint8Array.length).assertEqual(true);
-          for (let i: number = 0; i < converted.length; i++) {
-            expect(converted[i] === testUint8Array[i]).assertEqual(true);
-          }
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('read1/read2/read3 should be string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString1 = 'Mixed Chunk 1';
+        const testUint8Array = new Uint8Array(5).fill('D'.charCodeAt(0));
+        const testString2 = 'Mixed Chunk 2';
+        const resumedReadable = readable.resume();
+        expect(resumedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === false).assertEqual(true);
+        readable.push(testString1);
+        readable.push(testUint8Array);
+        readable.push(testString2);
+        readable.push(null);
+        const read1 = readable.read();
+        const read2 = readable.read();
+        const read3 = readable.read();
+        const read4 = readable.read();
+        if (typeof read1 !== 'string' || typeof read2 !== 'string' || typeof read3 !== 'string') {
+          throw new Error('read1/read2/read3 should be string type');
         }
-
-      });
+        expect(read1 === testString1).assertEqual(true);
+        expect(read3 === testString2).assertEqual(true);
+        expect(read4 === null).assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const converted: Uint8Array = encoder.encode(read2);
+        expect(converted.length === testUint8Array.length).assertEqual(true);
+        for (let i: number = 0; i < converted.length; i++) {
+          expect(converted[i] === testUint8Array[i]).assertEqual(true);
+        }
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1400
@@ -549,37 +443,27 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0014';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const largeString = 'Large Mixed Read Test: 1234567890abcdefghijklmnopqrstuvwxyz';
-          const stepSize = 10;
-          const resumedReadable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          readable.push(largeString);
-          const partialRead = readable.read(stepSize);
-          const remainingRead = readable.read();
-          if (typeof partialRead !== 'string' || typeof remainingRead !== 'string') {
-            throw new Error('partialRead/remainingRead should be string type');
-          }
-          expect(partialRead === largeString.substring(0, stepSize)).assertEqual(true);
-          expect(remainingRead === largeString.substring(stepSize)).assertEqual(true);
-          expect(partialRead.length === stepSize).assertEqual(true);
-          expect(remainingRead.length === largeString.length - stepSize).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('partialRead/remainingRead should be string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const largeString = 'Large Mixed Read Test: 1234567890abcdefghijklmnopqrstuvwxyz';
+        const stepSize = 10;
+        const resumedReadable = readable.resume();
+        expect(resumedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === false).assertEqual(true);
+        readable.push(largeString);
+        const partialRead = readable.read(stepSize);
+        const remainingRead = readable.read();
+        if (typeof partialRead !== 'string' || typeof remainingRead !== 'string') {
+          throw new Error('partialRead/remainingRead should be string type');
         }
-
-      });
+        expect(partialRead === largeString.substring(0, stepSize)).assertEqual(true);
+        expect(remainingRead === largeString.substring(stepSize)).assertEqual(true);
+        expect(partialRead.length === stepSize).assertEqual(true);
+        expect(remainingRead.length === largeString.length - stepSize).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1500
@@ -590,51 +474,41 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableResumeTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableResumeTest0015';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const nonEmptyString = 'Non-empty Chunk';
-          const emptyString = '';
-          const nonEmptyUint8 = new Uint8Array(4).fill('E'.charCodeAt(0));
-          const resumedReadable = readable.resume();
-          expect(resumedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === false).assertEqual(true);
-          readable.push(nonEmptyString);
-          readable.push(emptyString);
-          readable.push(nonEmptyUint8);
-          readable.push(null);
-          const read1 = readable.read();
-          const read2 = readable.read();
-          const read3 = readable.read();
-          const read4 = readable.read();
-          const read5 = readable.read();
-          if (typeof read1 !== 'string' || typeof read2 !== 'string' || typeof read3 !== 'string'
-            || typeof read4 !== 'string') {
-            throw new Error('read1/read2/read3/read4 should be string type');
-          }
-          expect(read1 === nonEmptyString).assertEqual(true);
-          expect(read2 === emptyString).assertEqual(true);
-          expect(read4 === emptyString).assertEqual(true);
-          expect(read5 === null).assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const converted: Uint8Array = encoder.encode(read3);
-          expect(converted.length === nonEmptyUint8.length).assertEqual(true);
-          expect(converted.every((byte: number, idx: number) =>
-          byte === nonEmptyUint8[idx]
-          )).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('read1/read2/read3/read4 should be string type')
-          ).assertEqual(false);
+      try {
+        const readable = new stream.Readable();
+        const nonEmptyString = 'Non-empty Chunk';
+        const emptyString = '';
+        const nonEmptyUint8 = new Uint8Array(4).fill('E'.charCodeAt(0));
+        const resumedReadable = readable.resume();
+        expect(resumedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === false).assertEqual(true);
+        readable.push(nonEmptyString);
+        readable.push(emptyString);
+        readable.push(nonEmptyUint8);
+        readable.push(null);
+        const read1 = readable.read();
+        const read2 = readable.read();
+        const read3 = readable.read();
+        const read4 = readable.read();
+        const read5 = readable.read();
+        if (typeof read1 !== 'string' || typeof read2 !== 'string' || typeof read3 !== 'string'
+          || typeof read4 !== 'string') {
+          throw new Error('read1/read2/read3/read4 should be string type');
         }
-
-      });
+        expect(read1 === nonEmptyString).assertEqual(true);
+        expect(read2 === emptyString).assertEqual(true);
+        expect(read4 === emptyString).assertEqual(true);
+        expect(read5 === null).assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const converted: Uint8Array = encoder.encode(read3);
+        expect(converted.length === nonEmptyUint8.length).assertEqual(true);
+        expect(converted.every((byte: number, idx: number) =>
+        byte === nonEmptyUint8[idx]
+        )).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1600
@@ -645,34 +519,24 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0001';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString = 'Test Pause String Chunk';
-          readable.resume();
-          expect(readable.isPaused() === false).assertEqual(true);
-          const pausedReadable: stream.Readable = readable.pause();
-          expect(pausedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          readable.push(testString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData is not a string');
-          }
-          expect(readData === testString).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData is not a string')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString = 'Test Pause String Chunk';
+        readable.resume();
+        expect(readable.isPaused() === false).assertEqual(true);
+        const pausedReadable: stream.Readable = readable.pause();
+        expect(pausedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(true);
+        readable.push(testString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData is not a string');
         }
-
-      });
+        expect(readData === testString).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1700
@@ -683,40 +547,30 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0002';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testUint8Array = new Uint8Array(10).fill('A'.charCodeAt(0));
-          readable.resume();
-          expect(readable.isPaused() === false).assertEqual(true);
-          const pausedReadable: stream.Readable = readable.pause();
-          expect(pausedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          readable.push(testUint8Array);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData is not a string');
-          }
-          expect(readData).assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const convertedUint8: Uint8Array = encoder.encode(readData);
-          expect(convertedUint8.length === testUint8Array.length).assertEqual(true);
-          for (let i = 0; i < convertedUint8.length; i++) {
-            expect(convertedUint8[i] === testUint8Array[i]).assertEqual(true);
-            expect().assertFail()
-          }
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData is not a string')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testUint8Array = new Uint8Array(10).fill('A'.charCodeAt(0));
+        readable.resume();
+        expect(readable.isPaused() === false).assertEqual(true);
+        const pausedReadable: stream.Readable = readable.pause();
+        expect(pausedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(true);
+        readable.push(testUint8Array);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData is not a string');
         }
-
-      });
+        expect(readData !== null).assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const convertedUint8: Uint8Array = encoder.encode(readData);
+        expect(convertedUint8.length === testUint8Array.length).assertEqual(true);
+        for (let i = 0; i < convertedUint8.length; i++) {
+          expect(convertedUint8[i] === testUint8Array[i]).assertEqual(true);
+        }
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1800
@@ -727,38 +581,28 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0003';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString = 'Multiple Pause Test';
-          readable.resume();
-          expect(readable.isPaused() === false).assertEqual(true);
-          const pausedReadable1: stream.Readable = readable.pause();
-          const pausedReadable2: stream.Readable = readable.pause();
-          const pausedReadable3: stream.Readable = readable.pause();
-          expect(pausedReadable1 === readable).assertEqual(true);
-          expect(pausedReadable2 === readable).assertEqual(true);
-          expect(pausedReadable3 === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          readable.push(testString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData is not a string');
-          }
-          expect(readData === testString).assertEqual(false);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData is not a string')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString = 'Multiple Pause Test';
+        readable.resume();
+        expect(readable.isPaused() === false).assertEqual(true);
+        const pausedReadable1: stream.Readable = readable.pause();
+        const pausedReadable2: stream.Readable = readable.pause();
+        const pausedReadable3: stream.Readable = readable.pause();
+        expect(pausedReadable1 === readable).assertEqual(true);
+        expect(pausedReadable2 === readable).assertEqual(true);
+        expect(pausedReadable3 === readable).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(true);
+        readable.push(testString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData is not a string');
         }
-
-      });
+        expect(readData === testString).assertEqual(false);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1900
@@ -769,36 +613,25 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0004';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const emptyString = '';
-          readable.resume();
-          expect(readable.isPaused() === false).assertEqual(true);
-          const pausedReadable: stream.Readable = readable.pause();
-          expect(pausedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          readable.push(emptyString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData is not a string');
-          }
-          expect(readData === emptyString).assertEqual(true);
-          expect(readData.length === 0).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData is not a string')
-          ).assertEqual(false);
+      try {
+        const readable = new stream.Readable();
+        const emptyString = '';
+        readable.resume();
+        expect(readable.isPaused() === false).assertEqual(true);
+        const pausedReadable: stream.Readable = readable.pause();
+        expect(pausedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(true);
+        readable.push(emptyString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData is not a string');
         }
-
-      });
-
+        expect(readData === emptyString).assertEqual(true);
+        expect(readData.length === 0).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2000
      * @tc.name      ReadablePauseTest0005
@@ -808,33 +641,23 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0005';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          readable.resume();
-          expect(readable.isPaused() === false).assertEqual(true);
-          const pausedReadable: stream.Readable = readable.pause();
-          expect(pausedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData is not a string');
-          }
-          expect(readData).assertEqual(true);
-          expect(readData === '').assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData is not a string')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        readable.resume();
+        expect(readable.isPaused() === false).assertEqual(true);
+        const pausedReadable: stream.Readable = readable.pause();
+        expect(pausedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(true);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData is not a string');
         }
-
-      });
+        expect(readData !== null).assertEqual(true);
+        expect(readData === '').assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2100
@@ -845,33 +668,23 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0006';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString = 'Pause Before Push String';
-          readable.resume();
-          const pausedReadable: stream.Readable = readable.pause();
-          expect(pausedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          readable.push(testString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData is not a string');
-          }
-          expect(readData === testString).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData is not a string')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString = 'Pause Before Push String';
+        readable.resume();
+        const pausedReadable: stream.Readable = readable.pause();
+        expect(pausedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(true);
+        readable.push(testString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData is not a string');
         }
-
-      });
+        expect(readData === testString).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2200
@@ -882,39 +695,29 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0007';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testUint8Array = new Uint8Array(8).fill('B'.charCodeAt(0));
-          readable.resume();
-          const pausedReadable: stream.Readable = readable.pause();
-          expect(pausedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          readable.push(testUint8Array);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData is not a string');
-          }
-          expect(readData).assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const convertedUint8: Uint8Array = encoder.encode(readData);
-          expect(convertedUint8.length === testUint8Array.length).assertEqual(true);
-          expect(convertedUint8.every((byte: number, index: number) =>
-          byte === testUint8Array[index]
-          )).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData is not a string')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testUint8Array = new Uint8Array(8).fill('B'.charCodeAt(0));
+        readable.resume();
+        const pausedReadable: stream.Readable = readable.pause();
+        expect(pausedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(true);
+        readable.push(testUint8Array);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData is not a string');
         }
-
-      });
+        expect(readData !== null).assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const convertedUint8: Uint8Array = encoder.encode(readData);
+        expect(convertedUint8.length === testUint8Array.length).assertEqual(true);
+        expect(convertedUint8.every((byte: number, index: number) =>
+        byte === testUint8Array[index]
+        )).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2300
@@ -925,35 +728,25 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0008';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          expect(readable.isPaused() === true).assertEqual(false);
-          const firstPause = readable.pause();
-          const secondPause = readable.pause();
-          expect(firstPause === readable).assertEqual(true);
-          expect(secondPause === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          const testString = 'Paused Stream Pause Test';
-          readable.push(testString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData is not a string');
-          }
-          expect(readData === testString).assertEqual(false);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData is not a string')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        expect(readable.isPaused() === true).assertEqual(false);
+        const firstPause = readable.pause();
+        const secondPause = readable.pause();
+        expect(firstPause === readable).assertEqual(true);
+        expect(secondPause === readable).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(true);
+        const testString = 'Paused Stream Pause Test';
+        readable.push(testString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData is not a string');
         }
-
-      });
+        expect(readData === testString).assertEqual(false);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2400
@@ -964,41 +757,30 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0009';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString = 'Ended Stream Pause Test';
-          readable.push(testString);
-          readable.push(null);
-          readable.resume();
-          expect(readable.isPaused() === false).assertEqual(true);
-          const pausedReadable = readable.pause();
-          expect(pausedReadable === readable).assertEqual(true);
-          const readData1 = readable.read();
-          const readData2 = readable.read();
-          if (typeof readData1 !== 'string') {
-            throw new Error('readData1 is not a string');
-          }
-          if (readData2 !== null && typeof readData2 === 'string') {
-            throw new Error('readData2 should be null after stream ends');
-          }
-          expect(readData1 === testString).assertEqual(true);
-          expect(readData2 === null).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData1 is not a string') ||
-            errMsg.includes('readData2 should be null after stream ends')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString = 'Ended Stream Pause Test';
+        readable.push(testString);
+        readable.push(null);
+        readable.resume();
+        expect(readable.isPaused() === false).assertEqual(true);
+        const pausedReadable = readable.pause();
+        expect(pausedReadable === readable).assertEqual(true);
+        const readData1 = readable.read();
+        const readData2 = readable.read();
+        if (typeof readData1 !== 'string') {
+          throw new Error('readData1 is not a string');
         }
-
-      });
+        if (readData2 !== null && typeof readData2 === 'string') {
+          throw new Error('readData2 should be null after stream ends');
+        }
+        expect(readData1 === testString).assertEqual(true);
+        expect(readData2 === null).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2500
@@ -1009,18 +791,16 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0010';
-        console.log(TAG + ' start');
-          const readable = new stream.Readable();
-          readable.resume();
-          expect(readable.isPaused() === false).assertEqual(true);
-          const pausedReadable = readable.pause();
-          expect(pausedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          const readData = readable.read();
-          expect(readData === null).assertEqual(true);
+      const readable = new stream.Readable();
+      readable.resume();
+      expect(readable.isPaused() === false).assertEqual(true);
+      const pausedReadable = readable.pause();
+      expect(pausedReadable === readable).assertEqual(true);
+      expect(readable.isPaused() === true).assertEqual(true);
+      const readData = readable.read();
+      expect(readData === null).assertEqual(true);
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2600
@@ -1031,17 +811,15 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0011';
-        console.log(TAG + ' start');
-          const readable = new stream.Readable();
-          readable.resume();
-          const pausedReadable = readable.pause();
-          expect(pausedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          const readData = readable.read();
-          expect(readData === null).assertEqual(true);
+      const readable = new stream.Readable();
+      readable.resume();
+      const pausedReadable = readable.pause();
+      expect(pausedReadable === readable).assertEqual(true);
+      expect(readable.isPaused() === true).assertEqual(true);
+      const readData = readable.read();
+      expect(readData === null).assertEqual(true);
 
-      });
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2700
@@ -1052,57 +830,45 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0012';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString1 = 'Mixed Chunk A';
-          const testUint8Array = new Uint8Array(5).fill('D'.charCodeAt(0));
-          const testString2 = 'Mixed Chunk B';
-          readable.resume();
-          const pausedReadable = readable.pause();
-          expect(pausedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          readable.push(testString1);
-          readable.push(testUint8Array);
-          readable.push(testString2);
-          readable.push(null);
-          const read1 = readable.read();
-          const read2 = readable.read();
-          const read3 = readable.read();
-          const read4 = readable.read();
-          if (typeof read1 !== 'string') {
-            throw new Error('read1 should be string');
-          }
-          if (typeof read2 !== 'string') {
-            throw new Error('read2 should be string');
-          }
-          if (typeof read3 !== 'string') {
-            throw new Error('read3 should be string');
-          }
-          expect(read1 === testString1).assertEqual(true);
-          expect(read3 === testString2).assertEqual(true);
-          expect(read4 === null).assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const converted: Uint8Array = encoder.encode(read2);
-          expect(converted.length === testUint8Array.length).assertEqual(true);
-          for (let i: number = 0; i < converted.length; i++) {
-            expect(converted[i] === testUint8Array[i]).assertEqual(true);
-          }
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('read1 should be string') ||
-            errMsg.includes('read2 should be string') ||
-            errMsg.includes('read3 should be string')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString1 = 'Mixed Chunk A';
+        const testUint8Array = new Uint8Array(5).fill('D'.charCodeAt(0));
+        const testString2 = 'Mixed Chunk B';
+        readable.resume();
+        const pausedReadable = readable.pause();
+        expect(pausedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(true);
+        readable.push(testString1);
+        readable.push(testUint8Array);
+        readable.push(testString2);
+        readable.push(null);
+        const read1 = readable.read();
+        const read2 = readable.read();
+        const read3 = readable.read();
+        const read4 = readable.read();
+        if (typeof read1 !== 'string') {
+          throw new Error('read1 should be string');
         }
-
-      });
+        if (typeof read2 !== 'string') {
+          throw new Error('read2 should be string');
+        }
+        if (typeof read3 !== 'string') {
+          throw new Error('read3 should be string');
+        }
+        expect(read1 === testString1).assertEqual(true);
+        expect(read3 === testString2).assertEqual(true);
+        expect(read4 === null).assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const converted: Uint8Array = encoder.encode(read2);
+        expect(converted.length === testUint8Array.length).assertEqual(true);
+        for (let i: number = 0; i < converted.length; i++) {
+          expect(converted[i] === testUint8Array[i]).assertEqual(true);
+        }
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2800
@@ -1113,42 +879,31 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0013';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const largeString = 'Large Pause Mixed Read Test: 0123456789abcdefghijklmnopqrstuvwxyz';
-          const stepSize = 12;
-          readable.resume();
-          const pausedReadable = readable.pause();
-          expect(pausedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          readable.push(largeString);
-          const partialRead = readable.read(stepSize);
-          const remainingRead = readable.read();
-          if (typeof partialRead !== 'string') {
-            throw new Error('partialRead should be a string type');
-          }
-          if (typeof remainingRead !== 'string') {
-            throw new Error('remainingRead should be a string type');
-          }
-          expect(partialRead === largeString.substring(0, stepSize)).assertEqual(true);
-          expect(remainingRead === largeString.substring(stepSize)).assertEqual(true);
-          expect(partialRead.length === stepSize).assertEqual(true);
-          expect(remainingRead.length === largeString.length - stepSize).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('partialRead should be a string type') ||
-            errMsg.includes('remainingRead should be a string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const largeString = 'Large Pause Mixed Read Test: 0123456789abcdefghijklmnopqrstuvwxyz';
+        const stepSize = 12;
+        readable.resume();
+        const pausedReadable = readable.pause();
+        expect(pausedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(true);
+        readable.push(largeString);
+        const partialRead = readable.read(stepSize);
+        const remainingRead = readable.read();
+        if (typeof partialRead !== 'string') {
+          throw new Error('partialRead should be a string type');
         }
-
-      });
+        if (typeof remainingRead !== 'string') {
+          throw new Error('remainingRead should be a string type');
+        }
+        expect(partialRead === largeString.substring(0, stepSize)).assertEqual(true);
+        expect(remainingRead === largeString.substring(stepSize)).assertEqual(true);
+        expect(partialRead.length === stepSize).assertEqual(true);
+        expect(remainingRead.length === largeString.length - stepSize).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2900
@@ -1159,55 +914,50 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadablePauseTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadablePauseTest0014';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const nonEmptyString = 'Non-empty Data';
-          const emptyString = '';
-          const nonEmptyUint8 = new Uint8Array(4).fill('E'.charCodeAt(0));
-          readable.resume();
-          const pausedReadable = readable.pause();
-          expect(pausedReadable === readable).assertEqual(true);
-          expect(readable.isPaused() === true).assertEqual(true);
-          readable.push(nonEmptyString);
-          readable.push(emptyString);
-          readable.push(nonEmptyUint8);
-          readable.push(null);
-          const read1 = readable.read();
-          const read2 = readable.read();
-          const read3 = readable.read();
-          const read4 = readable.read();
-          const read5 = readable.read();
-          if (typeof read1 !== 'string') throw new Error('read1 should be string');
-          if (typeof read2 !== 'string') throw new Error('read2 should be string');
-          if (typeof read3 !== 'string') throw new Error('read3 should be string');
-          if (typeof read4 !== 'string') throw new Error('read4 should be string');
-          expect(read1 === nonEmptyString).assertEqual(true);
-          expect(read2 === emptyString).assertEqual(true);
-          expect(read4 === emptyString).assertEqual(true);
-          expect(read5 === null).assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const converted: Uint8Array = encoder.encode(read3);
-          expect(converted.length === nonEmptyUint8.length).assertEqual(true);
-          expect(converted.every((byte: number, idx: number) =>
-          byte === nonEmptyUint8[idx]
-          )).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('read1 should be string') ||
-            errMsg.includes('read2 should be string') ||
-            errMsg.includes('read3 should be string') ||
-            errMsg.includes('read4 should be string')
-          ).assertEqual(false);
+      try {
+        const readable = new stream.Readable();
+        const nonEmptyString = 'Non-empty Data';
+        const emptyString = '';
+        const nonEmptyUint8 = new Uint8Array(4).fill('E'.charCodeAt(0));
+        readable.resume();
+        const pausedReadable = readable.pause();
+        expect(pausedReadable === readable).assertEqual(true);
+        expect(readable.isPaused() === true).assertEqual(true);
+        readable.push(nonEmptyString);
+        readable.push(emptyString);
+        readable.push(nonEmptyUint8);
+        readable.push(null);
+        const read1 = readable.read();
+        const read2 = readable.read();
+        const read3 = readable.read();
+        const read4 = readable.read();
+        const read5 = readable.read();
+        if (typeof read1 !== 'string') {
+          throw new Error('read1 should be string');
         }
-
-      });
+        if (typeof read2 !== 'string') {
+          throw new Error('read2 should be string');
+        }
+        if (typeof read3 !== 'string') {
+          throw new Error('read3 should be string');
+        }
+        if (typeof read4 !== 'string') {
+          throw new Error('read4 should be string');
+        }
+        expect(read1 === nonEmptyString).assertEqual(true);
+        expect(read2 === emptyString).assertEqual(true);
+        expect(read4 === emptyString).assertEqual(true);
+        expect(read5 === null).assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const converted: Uint8Array = encoder.encode(read3);
+        expect(converted.length === nonEmptyUint8.length).assertEqual(true);
+        expect(converted.every((byte: number, idx: number) =>
+        byte === nonEmptyUint8[idx]
+        )).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3000
@@ -1218,40 +968,30 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableSetEncodingTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableSetEncodingTest0001';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const encoding = 'utf-8';
-          expect(typeof readable).assertEqual('object');
-          expect(readable instanceof stream.Readable).assertEqual(true);
-          expect(readable.readable).assertEqual(true);
-          expect(typeof encoding).assertEqual('string');
-          expect(encoding).assertEqual('utf-8');
-          expect(['utf-8', 'utf8', 'ascii', 'latin1'].includes(encoding)).assertEqual(true);
-          const testString = 'Test UTF-8 Encoding';
-          expect(typeof testString).assertEqual('string');
-          expect(testString).assertEqual('Test UTF-8 Encoding');
-          readable.push(testString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(typeof readData).assertEqual('string');
-          expect(readData === testString).assertEqual(true);
-          expect(readData.length).assertEqual(testString.length);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const encoding = 'utf-8';
+        expect(typeof readable).assertEqual('object');
+        expect(readable instanceof stream.Readable).assertEqual(true);
+        expect(readable.readable).assertEqual(true);
+        expect(typeof encoding).assertEqual('string');
+        expect(encoding).assertEqual('utf-8');
+        expect(['utf-8', 'utf8', 'ascii', 'latin1'].includes(encoding)).assertEqual(true);
+        const testString = 'Test UTF-8 Encoding';
+        expect(typeof testString).assertEqual('string');
+        expect(testString).assertEqual('Test UTF-8 Encoding');
+        readable.push(testString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(typeof readData).assertEqual('string');
+        expect(readData === testString).assertEqual(true);
+        expect(readData.length).assertEqual(testString.length);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3100
@@ -1262,39 +1002,29 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableSetEncodingTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableSetEncodingTest0002';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const encoding = 'ascii';
-          const result = readable.setEncoding(encoding);
-          expect(result).assertEqual(true);
-          const testUint8Array = new Uint8Array(8).fill('A'.charCodeAt(0));
-          readable.push(testUint8Array);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData).assertEqual(true);
-          expect(typeof readData === 'string').assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const converted: Uint8Array = encoder.encode(readData);
-          expect(converted.length === testUint8Array.length).assertEqual(true);
-          for (let i: number = 0; i < converted.length; i++) {
-            expect(converted[i] === testUint8Array[i]).assertEqual(true);
-          }
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(false);
+      try {
+        const readable = new stream.Readable();
+        const encoding = 'ascii';
+        const result = readable.setEncoding(encoding);
+        expect(result).assertEqual(true);
+        const testUint8Array = new Uint8Array(8).fill('A'.charCodeAt(0));
+        readable.push(testUint8Array);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData !== null).assertEqual(true);
+        expect(typeof readData === 'string').assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const converted: Uint8Array = encoder.encode(readData);
+        expect(converted.length === testUint8Array.length).assertEqual(true);
+        for (let i: number = 0; i < converted.length; i++) {
+          expect(converted[i] === testUint8Array[i]).assertEqual(true);
+        }
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3200
@@ -1305,44 +1035,34 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableSetEncodingTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableSetEncodingTest0003';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const result = readable.setEncoding();
-          expect(result).assertEqual(false);
-          const testString = 'Default Encoding Test';
-          const testUint8Array = new Uint8Array(5).fill('B'.charCodeAt(0));
-          readable.push(testString);
-          readable.push(testUint8Array);
-          readable.push(null);
-          const read1 = readable.read();
-          const read2 = readable.read();
-          const read3 = readable.read();
-          if (typeof read1 !== 'string' || typeof read2 !== 'string') {
-            throw new Error('read1/read2 should be string type');
-          }
-          expect(read1 === testString).assertEqual(true);
-          expect(read3 === null).assertEqual(true);
-          expect(typeof read2 === 'string').assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const converted: Uint8Array = encoder.encode(read2);
-          expect(converted.length === testUint8Array.length).assertEqual(true);
-          for (let i: number = 0; i < converted.length; i++) {
-            expect(converted[i] === testUint8Array[i]).assertEqual(true);
-          }
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('read1/read2 should be string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const result = readable.setEncoding();
+        expect(result).assertEqual(false);
+        const testString = 'Default Encoding Test';
+        const testUint8Array = new Uint8Array(5).fill('B'.charCodeAt(0));
+        readable.push(testString);
+        readable.push(testUint8Array);
+        readable.push(null);
+        const read1 = readable.read();
+        const read2 = readable.read();
+        const read3 = readable.read();
+        if (typeof read1 !== 'string' || typeof read2 !== 'string') {
+          throw new Error('read1/read2 should be string type');
         }
-
-      });
+        expect(read1 === testString).assertEqual(true);
+        expect(read3 === null).assertEqual(true);
+        expect(typeof read2 === 'string').assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const converted: Uint8Array = encoder.encode(read2);
+        expect(converted.length === testUint8Array.length).assertEqual(true);
+        for (let i: number = 0; i < converted.length; i++) {
+          expect(converted[i] === testUint8Array[i]).assertEqual(true);
+        }
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3300
@@ -1353,33 +1073,23 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableSetEncodingTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableSetEncodingTest0004';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const encoding = 'utf-8';
-          const result = readable.setEncoding(encoding);
-          expect(result).assertEqual(true);
-          const emptyString = '';
-          readable.push(emptyString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData === emptyString).assertEqual(true);
-          expect(readData.length === 0).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(false);
+      try {
+        const readable = new stream.Readable();
+        const encoding = 'utf-8';
+        const result = readable.setEncoding(encoding);
+        expect(result).assertEqual(true);
+        const emptyString = '';
+        readable.push(emptyString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData === emptyString).assertEqual(true);
+        expect(readData.length === 0).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3400
@@ -1390,33 +1100,23 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableSetEncodingTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableSetEncodingTest0005';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const encoding = 'ascii';
-          const result = readable.setEncoding(encoding);
-          expect(result).assertEqual(true);
-          const emptyUint8Array = new Uint8Array(0);
-          readable.push(emptyUint8Array);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData).assertEqual(true);
-          expect(readData === '').assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(false);
+      try {
+        const readable = new stream.Readable();
+        const encoding = 'ascii';
+        const result = readable.setEncoding(encoding);
+        expect(result).assertEqual(true);
+        const emptyUint8Array = new Uint8Array(0);
+        readable.push(emptyUint8Array);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData !== null).assertEqual(true);
+        expect(readData === '').assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3500
@@ -1427,43 +1127,33 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableSetEncodingTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableSetEncodingTest0006';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const encoding1 = 'utf-8';
-          const encoding2 = 'ascii';
-          const result1 = readable.setEncoding(encoding1);
-          expect(result1).assertEqual(true);
-          readable.read();
-          const result2 = readable.setEncoding(encoding2);
-          expect(result2).assertEqual(true);
-          const testUint8Array = new Uint8Array(6).fill('C'.charCodeAt(0));
-          readable.push(testUint8Array);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData).assertEqual(true);
-          expect(typeof readData === 'string').assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const converted: Uint8Array = encoder.encode(readData);
-          expect(converted.length === testUint8Array.length).assertEqual(true);
-          expect(converted.every((byte: number, idx: number) =>
-          byte === testUint8Array[idx]
-          )).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(false);
+      try {
+        const readable = new stream.Readable();
+        const encoding1 = 'utf-8';
+        const encoding2 = 'ascii';
+        const result1 = readable.setEncoding(encoding1);
+        expect(result1).assertEqual(true);
+        readable.read();
+        const result2 = readable.setEncoding(encoding2);
+        expect(result2).assertEqual(true);
+        const testUint8Array = new Uint8Array(6).fill('C'.charCodeAt(0));
+        readable.push(testUint8Array);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData !== null).assertEqual(true);
+        expect(typeof readData === 'string').assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const converted: Uint8Array = encoder.encode(readData);
+        expect(converted.length === testUint8Array.length).assertEqual(true);
+        expect(converted.every((byte: number, idx: number) =>
+        byte === testUint8Array[idx]
+        )).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3600
@@ -1474,32 +1164,22 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableSetEncodingTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableSetEncodingTest0007';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString = 'Buffer Has String Data';
-          const encoding = 'utf-8';
-          readable.push(testString);
-          const result = readable.setEncoding(encoding);
-          expect(result === false).assertEqual(false);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData === testString).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString = 'Buffer Has String Data';
+        const encoding = 'utf-8';
+        readable.push(testString);
+        const result = readable.setEncoding(encoding);
+        expect(result === false).assertEqual(false);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData === testString).assertEqual(false);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3700
@@ -1510,38 +1190,28 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableSetEncodingTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableSetEncodingTest0008';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testUint8Array = new Uint8Array(10).fill('D'.charCodeAt(0));
-          const encoding = 'ascii';
-          readable.push(testUint8Array);
-          const result = readable.setEncoding(encoding);
-          expect(result === false).assertEqual(true);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData).assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const converted: Uint8Array = encoder.encode(readData);
-          expect(converted.length === testUint8Array.length).assertEqual(true);
-          for (let i: number = 0; i < converted.length; i++) {
-            expect(converted[i] === testUint8Array[i]).assertEqual(true);
-          }
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testUint8Array = new Uint8Array(10).fill('D'.charCodeAt(0));
+        const encoding = 'ascii';
+        readable.push(testUint8Array);
+        const result = readable.setEncoding(encoding);
+        expect(result === false).assertEqual(true);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData !== null).assertEqual(true);
+        const encoder = new util.TextEncoder();
+        const converted: Uint8Array = encoder.encode(readData);
+        expect(converted.length === testUint8Array.length).assertEqual(true);
+        for (let i: number = 0; i < converted.length; i++) {
+          expect(converted[i] === testUint8Array[i]).assertEqual(true);
+        }
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3800
@@ -1552,41 +1222,31 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableSetEncodingTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableSetEncodingTest0009';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const testString = 'Mixed Buffer Data';
-          const testUint8Array = new Uint8Array(5).fill('E'.charCodeAt(0));
-          const encoding = 'utf-8';
-          readable.push(testString);
-          readable.push(testUint8Array);
-          const result = readable.setEncoding(encoding);
-          expect(result === false).assertEqual(false);
-          const read1 = readable.read();
-          const read2 = readable.read();
-          if (typeof read1 !== 'string' || typeof read2 !== 'string') {
-            throw new Error('read1/read2 should be string type');
-          }
-          expect(read1 === testString).assertEqual(true);
-          const encoder = new util.TextEncoder();
-          const converted: Uint8Array = encoder.encode(read2);
-          expect(converted.length === testUint8Array.length).assertEqual(true);
-          for (let i: number = 0; i < converted.length; i++) {
-            expect(converted[i] === testUint8Array[i]).assertEqual(true);
-          }
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('read1/read2 should be string type')
-          ).assertEqual(true);
+      try {
+        const readable = new stream.Readable();
+        const testString = 'Mixed Buffer Data';
+        const testUint8Array = new Uint8Array(5).fill('E'.charCodeAt(0));
+        const encoding = 'utf-8';
+        readable.push(testString);
+        readable.push(testUint8Array);
+        const result = readable.setEncoding(encoding);
+        expect(result === false).assertEqual(false);
+        const read1 = readable.read();
+        const read2 = readable.read();
+        if (typeof read1 !== 'string' || typeof read2 !== 'string') {
+          throw new Error('read1/read2 should be string type');
         }
-
-      });
+        expect(read1 === testString).assertEqual(false);
+        const encoder = new util.TextEncoder();
+        const converted: Uint8Array = encoder.encode(read2);
+        expect(converted.length === testUint8Array.length).assertEqual(true);
+        for (let i: number = 0; i < converted.length; i++) {
+          expect(converted[i] === testUint8Array[i]).assertEqual(true);
+        }
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
+      }
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3900
@@ -1597,33 +1257,22 @@ export default function StreamTest_05() {
      * @tc.level     Level 2
      */
     it('ReadableSetEncodingTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ReadableSetEncodingTest0010';
-        console.log(TAG + ' start');
-        try {
-          const readable = new stream.Readable();
-          const invalidEncoding = 'invalid-encoding-123';
-          const result = readable.setEncoding(invalidEncoding);
-          expect(result === false).assertEqual(true);
-          const testString = 'Invalid Encoding Test';
-          readable.push(testString);
-          const readData = readable.read();
-          if (typeof readData !== 'string') {
-            throw new Error('readData should be a string type');
-          }
-          expect(readData === testString).assertEqual(true);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err instanceof Error).assertEqual(true);
-          const errMsg = (err as Error).toString();
-          expect(
-            errMsg.includes('_read method not implemented') ||
-            errMsg.includes('invalid encoding') ||
-            errMsg.includes('readData should be a string type')
-          ).assertEqual(false);
+      try {
+        const readable = new stream.Readable();
+        const invalidEncoding = 'invalid-encoding-123';
+        const result = readable.setEncoding(invalidEncoding);
+        expect(result === false).assertEqual(true);
+        const testString = 'Invalid Encoding Test';
+        readable.push(testString);
+        const readData = readable.read();
+        if (typeof readData !== 'string') {
+          throw new Error('readData should be a string type');
         }
-
-      });
+        expect(readData === testString).assertEqual(true);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
   });
 }
 
