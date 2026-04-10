@@ -656,14 +656,14 @@ export default function actslocationTest() {
         });
 
         /**
-         * @tc.number  Sub_Location_core_getCurrentLocation_0400
-         * @tc.name  Sub_Location_core_getCurrentLocation_0400
+         * @tc.number  SUB_Location_core_getCurrentLocation_0400
+         * @tc.name  SUB_Location_core_getCurrentLocation_0400
          * @tc.desc  getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
          * @tc.level  Level 0
          * @tc.type  Function
          * @tc.size  MEDIUMTEST
          */
-        it('Sub_Location_core_getCurrentLocation_0400',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
+        it('SUB_Location_core_getCurrentLocation_0400',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
           let requestInfo: geoLocationManager.CurrentLocationRequest = {
               'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
               'scenario': geoLocationManager.LocationRequestScenario.UNSET,
@@ -673,7 +673,7 @@ export default function actslocationTest() {
               geoLocationManager.getCurrentLocation(requestInfo, (err:BusinessError<void>|null,location:geoLocationManager.Location|undefined)=>{
                 if (location) {
                   expect(location!=null).assertTrue();
-                  console.info('Sub_Location_core_getCurrentLocation_0400: location=' + JSON.stringify(location));
+                  console.info('SUB_Location_core_getCurrentLocation_0400: location=' + JSON.stringify(location));
                   
                   expect(typeof location.latitude).assertEqual("number");
                   expect(location.latitude).assertLarger(-90);
@@ -747,13 +747,13 @@ export default function actslocationTest() {
                   }
                 }
                 if (err) {
-                  console.error('Sub_Location_core_getCurrentLocation_0400: err=' + JSON.stringify(err));
+                  console.error('SUB_Location_core_getCurrentLocation_0400: err=' + JSON.stringify(err));
                   expect(err.code).assertEqual(801);
                   
                 }
               });
             } catch (err) {
-              console.error("Sub_Location_core_getCurrentLocation_0400 errCode:" + err.code + ", message:" + err.message);
+              console.error("SUB_Location_core_getCurrentLocation_0400 errCode:" + err.code + ", message:" + err.message);
               expect(err.code).assertEqual(801);
             }
           done();
@@ -1401,14 +1401,14 @@ export default function actslocationTest() {
         })
 
       /**
-       * @tc.name   geoLocationManager_core_isWlanBssidMatched_0100
-       * @tc.number geoLocationManager_core_isWlanBssidMatched_0100
+       * @tc.name   SUB_geoLocationManager_core_isWlanBssidMatched_0100
+       * @tc.number SUB_geoLocationManager_core_isWlanBssidMatched_0100
        * @tc.desc   isWlanBssidMatched
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL3
        */
-      it("geoLocationManager_core_isWlanBssidMatched_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      it("SUB_geoLocationManager_core_isWlanBssidMatched_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           let wlanBssidArray: Array<string> = [];
           let rssiThreshold: int = -70;
@@ -1419,33 +1419,33 @@ export default function actslocationTest() {
             done();
           })
         } catch (err) {
-          console.info('---geoLocationManager_core_isWlanBssidMatched_0100  catch ---' + typeof err.code + ',err:' + err.code);
+          console.info('---SUB_geoLocationManager_core_isWlanBssidMatched_0100  catch ---' + typeof err.code + ',err:' + err.code);
           expect(err.code).assertEqual(801);
         }
         done();
       })
 
       /**
-       * @tc.name   geoLocationManager_core_isWlanBssidMatched_0200
-       * @tc.number geoLocationManager_core_isWlanBssidMatched_0200
+       * @tc.name   SUB_geoLocationManager_core_isWlanBssidMatched_0200
+       * @tc.number SUB_geoLocationManager_core_isWlanBssidMatched_0200
        * @tc.desc   isWlanBssidMatched
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL3
        */
-      it("geoLocationManager_core_isWlanBssidMatched_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      it("SUB_geoLocationManager_core_isWlanBssidMatched_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         try {
           geoLocationManager.disableLocation()
-          console.info('---geoLocationManager_core_isWlanBssidMatched_0200 disableLocation');
+          console.info('---SUB_geoLocationManager_core_isWlanBssidMatched_0200 disableLocation');
           let wlanBssidArray: Array<string> = [];
           let rssiThreshold: int = -70;
           let needStartScan: boolean = true;
           geoLocationManager.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
-            console.info("geoLocationManager_core_isWlanBssidMatched_0200 Result:" + res);
+            console.info("SUB_geoLocationManager_core_isWlanBssidMatched_0200 Result:" + res);
             expect(res).assertFalse();
           })
         } catch (err) {
-          console.info('---geoLocationManager_core_isWlanBssidMatched_0200  catch ---' + typeof err.code + ',err:' + err.code);
+          console.info('---SUB_geoLocationManager_core_isWlanBssidMatched_0200  catch ---' + typeof err.code + ',err:' + err.code);
           if (err.code === 801){
             expect(err.code).assertEqual(801);
           } else {
@@ -1453,7 +1453,7 @@ export default function actslocationTest() {
           }
         }
         await changedLocationMode()
-        console.info('---geoLocationManager_core_isWlanBssidMatched_0200 enableLocation');
+        console.info('---SUB_geoLocationManager_core_isWlanBssidMatched_0200 enableLocation');
         done();
       })
 
