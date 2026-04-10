@@ -2213,7 +2213,7 @@ function testSetScreenLockDisabledForAccount() {
   /**
    * @tc.name   test_setScreenLockDisabledForAccount_0200
    * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0200
-   * @tc.desc   test getInstalledBundleStorageStats method without permission
+   * @tc.desc   test setScreenLockDisabledForAccount method without permission
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -2242,7 +2242,7 @@ function testSetScreenLockDisabledForAccount() {
   /**
    * @tc.name   test_setScreenLockDisabledForAccount_0300
    * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0300
-   * @tc.desc   test getInstalledBundleStorageStats method without admin
+   * @tc.desc   test setScreenLockDisabledForAccount method without admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -2268,7 +2268,7 @@ function testSetScreenLockDisabledForAccount() {
   /**
    * @tc.name   test_setScreenLockDisabledForAccount_0400
    * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0400
-   * @tc.desc   test getInstalledBundleStorageStats method with admin undefined
+   * @tc.desc   test setScreenLockDisabledForAccount method with admin undefined
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -2294,7 +2294,7 @@ function testSetScreenLockDisabledForAccount() {
   /**
    * @tc.name   test_setScreenLockDisabledForAccount_0500
    * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0500
-   * @tc.desc   test getInstalledBundleStorageStats method without admin
+   * @tc.desc   test setScreenLockDisabledForAccount method without admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -2320,7 +2320,7 @@ function testSetScreenLockDisabledForAccount() {
   /**
    * @tc.name   test_setScreenLockDisabledForAccount_0600
    * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0600
-   * @tc.desc   test getInstalledBundleStorageStats method without admin
+   * @tc.desc   test setScreenLockDisabledForAccount method without admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -2348,7 +2348,7 @@ function testIsScreenLockDisabledForAccount() {
  /**
    * @tc.name   test_isScreenLockDisabledForAccount_0100
    * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0100
-   * @tc.desc   test getInstalledBundleStorageStats method without activated admin
+   * @tc.desc   test isScreenLockDisabledForAccount method without activated admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -2374,7 +2374,7 @@ function testIsScreenLockDisabledForAccount() {
   /**
    * @tc.name   test_isScreenLockDisabledForAccount_0200
    * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0200
-   * @tc.desc   test getInstalledBundleStorageStats method without permission
+   * @tc.desc   test isScreenLockDisabledForAccount method without permission
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -2403,7 +2403,7 @@ function testIsScreenLockDisabledForAccount() {
   /**
    * @tc.name   test_isScreenLockDisabledForAccount_0300
    * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0300
-   * @tc.desc   test getInstalledBundleStorageStats method without admin
+   * @tc.desc   test isScreenLockDisabledForAccount method without admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -2429,7 +2429,7 @@ function testIsScreenLockDisabledForAccount() {
   /**
    * @tc.name   test_isScreenLockDisabledForAccount_0400
    * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0400
-   * @tc.desc   test getInstalledBundleStorageStats method with admin undefined
+   * @tc.desc   test isScreenLockDisabledForAccount method with admin undefined
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -2455,7 +2455,7 @@ function testIsScreenLockDisabledForAccount() {
   /**
    * @tc.name   test_isScreenLockDisabledForAccount_0500
    * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0500
-   * @tc.desc   test getInstalledBundleStorageStats method with super admin
+   * @tc.desc   test isScreenLockDisabledForAccount method with super admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
