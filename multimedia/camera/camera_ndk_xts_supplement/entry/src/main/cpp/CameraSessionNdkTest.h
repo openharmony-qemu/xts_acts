@@ -49,6 +49,9 @@ napi_value OHCameraInputOpenConcurrentCamerasErr(napi_env env, napi_callback_inf
 napi_value TestCreateDeferredPreviewOutputSucc(napi_env env, napi_callback_info info);
 napi_value TestCreateDeferredPreviewOutputWithNullArgs(napi_env env, napi_callback_info info);
 napi_value TestCreateDeferredPreviewOutputWithInvalidProfile(napi_env env, napi_callback_info info);
+napi_value TestIsTorchLevelControlSupportedErr(napi_env env, napi_callback_info info);
+napi_value TestIsTorchLevelControlSupportedSucc(napi_env env, napi_callback_info info);
+napi_value TestSetTorchModeOnWithLevelErr(napi_env env, napi_callback_info info);
 napi_value OHCaptureSessionDeleteSupportedEffectTypes(napi_env env, napi_callback_info info);
 napi_value OHCaptureSessionGetSupportedEffectTypesSupp(napi_env env, napi_callback_info info);
 napi_value captureSessionRegisterIsoChangeCallback(napi_env env, napi_callback_info info);
