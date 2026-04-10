@@ -481,5 +481,13 @@ export default function AVTransCoderTest() {
       toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
       console.info('SUB_MULTIMEDIA_AVTANSCODER_0400 end');
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_0400
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_0400
+     * @tc.desc   Transcoder start-pause-resume-cancel-releaseWithParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
   })
 }
