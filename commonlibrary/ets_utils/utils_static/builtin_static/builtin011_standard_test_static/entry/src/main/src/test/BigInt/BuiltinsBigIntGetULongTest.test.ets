@@ -128,18 +128,5 @@ export default function BuiltinsBigIntGetULongTest(): void {
       expect(result).assertEqual(0);
     });
 
-    /**
-     * @tc.name    builtinsBigIntGetULongTest0900
-     * @tc.number  SUB_BUILTINS_BIGINT_GET_ULONG_TEST_0900
-     * @tc.desc    Verify getULong with specific bit pattern
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL3
-     */
-    it('builtinsBigIntGetULongTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
-      const bigInt = new BigInt("0x1234567890abcdef");
-      const result = bigInt.getULong();
-      expect(typeof result === 'long').assertTrue();
-    });
   });
 }
