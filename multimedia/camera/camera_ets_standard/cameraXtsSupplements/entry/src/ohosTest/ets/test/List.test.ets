@@ -40,6 +40,7 @@ import CameraManagerCreatePhotoOutputTest from './camera/CameraManagerCreatePhot
 import CameraManagerCreateVideoOutputTest from './camera/CameraManagerCreateVideoOutputTest.test';
 import CameraManagerGetSupportedOutputCapabilityTest from './camera/CameraManagerGetSupportedOutputCapabilityTest.test';
 import createCameraInput from './camera/CameraManagerCreateCameraInputTest.test';
+import CameraOISQueryTest from './camera/CameraOISQuery.test';
 
 
 export default function testsuite() {
@@ -84,4 +85,5 @@ export default function testsuite() {
   CameraManagerCreateVideoOutputTest();
   CameraManagerGetSupportedOutputCapabilityTest();
   createCameraInput();
+  CameraOISQueryTest();
 }
