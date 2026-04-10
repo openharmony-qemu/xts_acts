@@ -1595,7 +1595,7 @@ export default function CameraXtsTest() {
 
     /**
      * @tc.name   testCameraControlCenterStatusInfoCONTROLCENTEREFFECTTYPEAUTOFRAMING
-     * @tc.number SUB_MULTIMEIDA_OH_Camera_CONTROL_CENTER_EFFECT_TYPE_AUTO_FRAMING_ErrorCode_0100
+     * @tc.number SUB_MULTIMEDIA_OH_Camera_CONTROL_CENTER_EFFECT_TYPE_AUTO_FRAMING_ErrorCode_0100
      * @tc.desc   Test CONTROL_CENTER_EFFECT_TYPE_AUTO_FRAMING
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
