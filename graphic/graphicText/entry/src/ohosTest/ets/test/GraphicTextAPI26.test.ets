@@ -24,7 +24,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testOrphanCharOptimizationTrue
-     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationTrue_001
+     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationTrue_0100
      * @tc.desc   Test ParagraphStyle orphanCharOptimization property set to true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -55,7 +55,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testOrphanCharOptimizationFalse
-     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationFalse_002
+     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationFalse_0200
      * @tc.desc   Test ParagraphStyle orphanCharOptimization property set to false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -86,7 +86,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testOrphanCharOptimizationUndefined
-     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationUndefined_003
+     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationUndefined_0300
      * @tc.desc   Test ParagraphStyle orphanCharOptimization property with undefined value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -116,7 +116,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testOrphanCharOptimizationWithZhHans
-     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationWithZhHans_004
+     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationWithZhHans_0400
      * @tc.desc   Test orphanCharOptimization with zh-Hans locale and BREAK_WORD.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -160,7 +160,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testOrphanCharOptimizationWithZhHant
-     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationWithZhHant_005
+     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationWithZhHant_0500
      * @tc.desc   Test orphanCharOptimization with zh-Hant locale and BREAK_WORD.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -204,7 +204,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testOrphanCharOptimizationWithBreakAll
-     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationWithBreakAll_006
+     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationWithBreakAll_0600
      * @tc.desc   Test orphanCharOptimization with BREAK_ALL wordBreak.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -248,7 +248,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testOrphanCharOptimizationWithEnLocale
-     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationWithEnLocale_007
+     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationWithEnLocale_0700
      * @tc.desc   Test orphanCharOptimization with en locale.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -292,7 +292,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testOrphanCharOptimizationLayoutEffect
-     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationLayoutEffect_008
+     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationLayoutEffect_0800
      * @tc.desc   Test orphanCharOptimization layout effect.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -340,7 +340,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testOrphanCharOptimizationWithLongText
-     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationWithLongText_009
+     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationWithLongText_0900
      * @tc.desc   Test orphanCharOptimization with long text.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -385,7 +385,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testOrphanCharOptimizationEmptyText
-     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationEmptyText_010
+     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationEmptyText_1000
      * @tc.desc   Test orphanCharOptimization with empty text.
      * @tc.type     FUNCTION
      * @tc.size   MEDIUMTEST
@@ -429,7 +429,7 @@ export default function GraphicTextAPI26() {
 
     /**
      * @tc.name   testOrphanCharOptimizationSingleChar
-     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationSingleChar_011
+     * @tc.number SUB_GRAPHIC_Text_testOrphanCharOptimizationSingleChar_1100
      * @tc.desc   Test orphanCharOptimization with single character text.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
