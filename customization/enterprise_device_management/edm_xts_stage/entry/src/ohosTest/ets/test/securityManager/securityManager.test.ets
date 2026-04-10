@@ -2187,7 +2187,7 @@ function testSetScreenLockDisabledForAccount() {
   /**
    * @tc.name   test_setScreenLockDisabledForAccount_0100
    * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0100
-   * @tc.desc   test getInstalledBundleStorageStats method without activated admin
+   * @tc.desc   test setScreenLockDisabledForAccount method without activated admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -2364,7 +2364,7 @@ function testIsScreenLockDisabledForAccount() {
       if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(Number(error.code) == 9200001).assertTrue();
+        expect(Number(error.code) === 9200001).assertTrue();
       }
     }
     done();
