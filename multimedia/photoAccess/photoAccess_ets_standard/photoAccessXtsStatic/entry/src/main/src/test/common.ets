@@ -63,7 +63,7 @@ export async function getPermission(name?: Permissions): Promise<void> {
       });
     await Utils.msSleep(5000);
     hilog.info(domain, tag, '%{public}s', '  beforeAll waitForComponent');
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < arr.length; i++) {
       let dr = Driver.create();
       let power = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
       if (power != null) {

@@ -115,6 +115,14 @@ export default function FetchResultStatic(): void {
      */
     it('SUB_MULTMEDIA_FETCH_RESULT_CLOSE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MULTMEDIA_FETCH_RESULT_CLOSE_STATIC_0100';
+      let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension: string = 'jpg';
+      let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null= photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      let fileUri = testContext.filesDir + '/test_mov_1.jpg';
+      if (assetChangeRequest !== null) {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, fileUri);
+        await helper!.applyChanges(assetChangeRequest);
+      }
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       let fetchOption: photoAccessHelper.FetchOptions = {
         fetchColumns: [],

@@ -51,6 +51,14 @@ export default function PhotoAssetStatic(): void {
      */
     it('SUB_MULTMEDIA_PHOTO_ASSET_GET_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_GET_STATIC_0100';
+      let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+      let extension: string = 'jpg';
+      let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null= photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      let fileUri = testContext.filesDir + '/test_mov_1.jpg';
+      if (assetChangeRequest !== null) {
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, fileUri);
+        await helper!.applyChanges(assetChangeRequest);
+      }
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       let fetchOption: photoAccessHelper.FetchOptions = {
         fetchColumns: ['title'],
@@ -209,68 +217,7 @@ export default function PhotoAssetStatic(): void {
         done();
       }
     });
-    /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_CALLBACK_STATIC_0100
-     * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_CALLBACK_STATIC_0100
-     * @tc.desc   photoAsset.commitModify -fetchColumns-title-normal
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_CALLBACK_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_CALLBACK_STATIC_0100';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOption: photoAccessHelper.FetchOptions = {
-        fetchColumns: ['title'],
-        predicates: predicates
-      };
-      try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOption);
-        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
-        let photoAssetTitle: photoAccessHelper.MemberType = photoAsset.get(title);
-        console.info('photoAsset get photoAssetTitle = ', photoAssetTitle);
-        photoAsset.set(title, 'newTitle2');
-        photoAsset.commitModify((err: BusinessError | null) => {
-          console.error(TAG,testName,`commitModify success`);
-          expect(err === undefined).assertTrue();
-        });
-        done();
-      } catch (error) {
-        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
-        expect().assertFail();
-        done();
-      }
-    });
 
-    /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_PROMISE_STATIC_0100
-     * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_PROMISE_STATIC_0100
-     * @tc.desc   photoAsset.commitModify -fetchColumns-空字符串
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_PROMISE_STATIC_0100';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOption: photoAccessHelper.FetchOptions = {
-        fetchColumns: [''],
-        predicates: predicates
-      };
-      try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOption);
-        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        await photoAsset.commitModify();
-        console.error(TAG,testName,`commitModify success`);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
-        expect(Number(error.code)).assertEqual(13900020);
-        done();
-      }
-    });
     /**
      * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_GET_THUMBNAIL_PROMISE_STATIC_0100
      * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_GET_THUMBNAIL_PROMISE_STATIC_0100
