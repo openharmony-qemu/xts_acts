@@ -423,7 +423,7 @@ export default function actslocationTest() {
   /**
    * @tc.number  Sub_Location_offCachedGnssLocationsChange_0100
    * @tc.name  Sub_Location_offCachedGnssLocationsChange_0100
-   * @tc.desc  offCachedGnssLocationsChange(callback?: Callback<Array<Location>>): void - Verify with callback
+   * @tc.desc  offCachedGnssLocationsChange(callback?: Callback<Array<Location>>): void
    * @tc.level  Level 0
    * @tc.type  Function
    * @tc.size  MEDIUMTEST
@@ -564,7 +564,7 @@ export default function actslocationTest() {
   /**
    * @tc.number  Sub_Location_onCachedGnssLocationsChange_0300
    * @tc.name  Sub_Location_onCachedGnssLocationsChange_0300
-   * @tc.desc  onCachedGnssLocationsChange(request: CachedGnssLocationsRequest, callback: Callback<Array<Location>>): void - Verify location service unavailable
+   * @tc.desc  onCachedGnssLocationsChange(request: CachedGnssLocationsRequest, callback: Callback<Array<Location>>): void
    * @tc.level  Level 0
    * @tc.type  Function
    * @tc.size  MEDIUMTEST
@@ -599,7 +599,7 @@ export default function actslocationTest() {
   /**
    * @tc.number  Sub_Location_offCachedGnssLocationsChange_0200
    * @tc.name  Sub_Location_offCachedGnssLocationsChange_0200
-   * @tc.desc  offCachedGnssLocationsChange(callback?: Callback<Array<Location>>): void - Verify location service unavailable
+   * @tc.desc  offCachedGnssLocationsChange(callback?: Callback<Array<Location>>): void
    * @tc.level  Level 0
    * @tc.type  Function
    * @tc.size  MEDIUMTEST
