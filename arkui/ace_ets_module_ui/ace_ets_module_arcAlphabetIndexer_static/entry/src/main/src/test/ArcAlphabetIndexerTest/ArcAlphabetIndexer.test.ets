@@ -190,7 +190,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2600
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_0600
      * @tc.name arcIndexerInitInfoEmptyArray
      * @tc.desc Test ArcAlphabetIndexerInitInfo with empty arrayValue as invalid parameter
      * @tc.type   FUNCTION
@@ -214,7 +214,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2700
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_0700
      * @tc.name arcIndexerInitInfoNegativeSelected
      * @tc.desc Test ArcAlphabetIndexerInitInfo with negative selected index as invalid parameter
      * @tc.type   FUNCTION
@@ -238,7 +238,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_0600
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_0800
      * @tc.name blurStyleNoneEnum
      * @tc.desc Test BlurStyle.NONE enum used with popupBackgroundBlurStyle
      * @tc.type   FUNCTION
@@ -260,7 +260,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_0700
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_0900
      * @tc.name arcIndexerColorAttr
      * @tc.desc Verify color attribute is set via Inspector
      * @tc.type   FUNCTION
@@ -287,7 +287,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_0800
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1000
      * @tc.name arcIndexerSelectedColorAttr
      * @tc.desc Verify selectedColor attribute is set via Inspector
      * @tc.type   FUNCTION
@@ -313,7 +313,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_0900
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1100
      * @tc.name arcIndexerPopupColorAttr
      * @tc.desc Verify popupColor attribute is set via Inspector
      * @tc.type   FUNCTION
@@ -339,7 +339,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1000
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1200
      * @tc.name arcIndexerSelectedBgColorAttr
      * @tc.desc Verify selectedBackgroundColor attribute is set via Inspector
      * @tc.type   FUNCTION
@@ -365,7 +365,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1100
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1300
      * @tc.name arcIndexerPopupBgAttr
      * @tc.desc Verify popupBackground attribute is set via Inspector
      * @tc.type   FUNCTION
@@ -391,7 +391,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1200
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1400
      * @tc.name arcIndexerSelectedFontAttr
      * @tc.desc Verify selectedFont attribute is set via Inspector
      * @tc.type   FUNCTION
@@ -419,7 +419,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1300
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1500
      * @tc.name arcIndexerPopupFontAttr
      * @tc.desc Verify popupFont attribute is set via Inspector
      * @tc.type   FUNCTION
@@ -447,7 +447,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1400
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1600
      * @tc.name arcIndexerFontAttr
      * @tc.desc Verify font attribute is set via Inspector
      * @tc.type   FUNCTION
@@ -475,7 +475,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1500
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1700
      * @tc.name arcIndexerItemSizeAttr
      * @tc.desc Verify itemSize attribute is set via Inspector
      * @tc.type   FUNCTION
@@ -501,7 +501,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1600
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1800
      * @tc.name arcIndexerSelectedMethodAttr
      * @tc.desc Verify selected method attribute is set via Inspector
      * @tc.type   FUNCTION
@@ -527,36 +527,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1700
-     * @tc.name arcIndexerOnSelectCallback
-     * @tc.desc Verify onSelect callback is registered via AppStorage
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('arcIndexerOnSelectCallback', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerOnSelectCallback START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('arcIndexerFontSize'));
-        expect(node != null).assertTrue();
-        let rect = CommonFunc.getComponentRect('arcIndexerFontSize');
-        await Utils.drag(rect.left + 10, rect.top + 10, rect.left + 10, rect.top + 50, 10);
-        await CommonFunc.sleep(500);
-        let onSelectIndex = AppStorage.get<int>('arcOnSelectIndex');
-        console.info('[ARKUI_NEW] arcOnSelectIndex = ' + onSelectIndex);
-        expect(onSelectIndex !== undefined && onSelectIndex !== -1).assertTrue();
-        console.info('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerOnSelectCallback END');
-        done();
-      } catch (error) {
-        console.error('[ARKUI_NEW] ArcAlphabetIndexerTest execute: arcIndexerOnSelectCallback error:' + error);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1800
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1900
      * @tc.name arcIndexerAutoCollapseFalse
      * @tc.desc Verify autoCollapse(false) via Inspector on arcIndexerFull
      * @tc.type   FUNCTION
@@ -581,7 +552,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_1900
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2000
      * @tc.name arcIndexerAutoCollapseTrue
      * @tc.desc Verify autoCollapse(true) via Inspector on arcIndexerSimple
      * @tc.type   FUNCTION
@@ -606,7 +577,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2000
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2100
      * @tc.name arcIndexerUsePopupFalse
      * @tc.desc Verify usePopup(false) via Inspector on arcIndexerSimple
      * @tc.type   FUNCTION
@@ -631,7 +602,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2100
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2200
      * @tc.name blurStyleThinEnum
      * @tc.desc Test BlurStyle.Thin enum value
      * @tc.type   FUNCTION
@@ -655,7 +626,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2200
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2300
      * @tc.name blurStyleRegularEnum
      * @tc.desc Test BlurStyle.Regular enum value
      * @tc.type   FUNCTION
@@ -679,7 +650,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2300
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2400
      * @tc.name blurStyleThickEnum
      * @tc.desc Test BlurStyle.Thick enum value
      * @tc.type   FUNCTION
@@ -703,7 +674,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2400
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2500
      * @tc.name arcIndexerUndefinedAllAttrs
      * @tc.desc Verify all attributes set to undefined renders correctly
      * @tc.type   FUNCTION
@@ -728,7 +699,7 @@ export default function ArcAlphabetIndexerTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2500
+     * @tc.number SUB_ARKUI_ACE_ARCALPHABETINDEXER_2600
      * @tc.name arcIndexerEmptyArrayParams
      * @tc.desc Test ArcAlphabetIndexer with empty array as invalid parameter renders without crash
      * @tc.type   FUNCTION

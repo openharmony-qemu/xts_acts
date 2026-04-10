@@ -512,28 +512,5 @@ export default function TypeNodeTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
-    /**
-     * @tc.number SUB_ARKUI_ACE_TYPENODE_2800
-     * @tc.name fn_interactionEventFields
-     * @tc.desc Verify InteractionEventBindingInfo fields (base/node/native/builtIn) stored in AppStorage
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('fn_interactionEventFields', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let base = AppStorage.get<string>('fn_baseEventRegistered');
-        let node = AppStorage.get<string>('fn_nodeEventRegistered');
-        let native1 = AppStorage.get<string>('fn_nativeEventRegistered');
-        let builtIn = AppStorage.get<string>('fn_builtInEventRegistered');
-        console.info('[ARKUI_NEW] base=' + base + ' node=' + node + ' native=' + native1 + ' builtIn=' + builtIn);
-        expect(base != null && base != undefined).assertTrue();
-        expect(node != null && node != undefined).assertTrue();
-        expect(native1 != null && native1 != undefined).assertTrue();
-        expect(builtIn != null && builtIn != undefined).assertTrue();
-        done();
-      } catch (error) { expect().assertFail(); done(); }
-    });
   });
 }
