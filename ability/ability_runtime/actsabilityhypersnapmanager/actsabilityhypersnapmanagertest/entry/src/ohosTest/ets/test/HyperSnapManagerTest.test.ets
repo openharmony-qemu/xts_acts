@@ -18,7 +18,8 @@ import hyperSnapManager from "@ohos.app.ability.hyperSnapManager"
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
 
-let supportUse = false
+let supportUse = false;
+
 export default function HyperSnapManagerTest() {
   describe('HyperSnapManagerTest', () => {
 
@@ -28,7 +29,7 @@ export default function HyperSnapManagerTest() {
       await abilityDelegator.executeShellCommand('hidumper -s 1901 -a -a').then((result) => {
         hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', result.stdResult ?? '');
         hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', result.exitCode ?? '');
-        if(result.stdResult.indexOf('libforkall_plugin.z.so' != -1)){
+        if(result.stdResult.indexOf('libforkall_plugin.z.so') != -1){
           supportUse = true;
         }
       })

@@ -18,21 +18,22 @@ import hilog from '@ohos.hilog';
 import { ShellCmdResult } from 'application.shellCmdResult'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let tag = "ActsAbilityMonitor";
+let supportUse = false;
 
 export default function abilityTest() {
 
   let TAG = "";
 
-  describe('ActsAbilityMonitor', () => {
+  describe('HyperSnapManagerTest', () => {
     beforeAll(async (done: Function) => {
       console.log('HyperSnapManagerTest' + "beforeAll called");
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
       await abilityDelegator.executeShellCommand('hidumper -s 1901 -a -a').then((result:ShellCmdResult|undefined): void => {
         hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', result?.stdResult ?? '');
         hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', result?.exitCode ?? '');
-        if(result?.stdResult.indexOf('libforkall_plugin.z.so' != -1)){
+        if(result?.stdResult.indexOf('libforkall_plugin.z.so') != -1){
           supportUse = true;
         }
       })
