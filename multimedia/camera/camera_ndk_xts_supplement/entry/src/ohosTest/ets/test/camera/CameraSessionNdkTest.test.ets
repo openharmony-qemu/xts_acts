@@ -471,6 +471,48 @@ export default function CameraFunctionTest() {
       console.info(TAG, result);
       expect(result).assertEqual(7400107);
     });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0100
+     * @tc.desc     OH_CameraManager_CreateDeferredPreviewOutput - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestCreateDeferredPreviewOutputSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0200
+     * @tc.desc     OH_CameraManager_CreateDeferredPreviewOutput - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestCreateDeferredPreviewOutputWithNullArgs();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0300
+     * @tc.desc     OH_CameraManager_CreateDeferredPreviewOutput - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestCreateDeferredPreviewOutputWithInvalidProfile();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400201);
+    });
     
   })
 }
