@@ -20,14 +20,7 @@ import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
 import { UtilsTest } from '../Util.test';
-import { Driver, Point, Rect, ON } from '@kit.TestKit';
-
-function finiteOrThrow(n: number | undefined | null, label: string): number {
-  if (n === undefined || n === null || Number.isNaN(Number(n))) {
-    throw new Error(`${label} is nullish or NaN`);
-  }
-  return Number(n);
-}
+import { Driver, Point, ON } from '@kit.TestKit';
 
 async function dragFromProbeHost(): Promise<void> {
   const driver = Driver.create();
@@ -35,20 +28,20 @@ async function dragFromProbeHost(): Promise<void> {
   if (button === undefined || button === null) {
     throw new Error('commonDragHost not found');
   }
-  let centerRaw: Point | undefined | null = await (button.getBoundsCenter() as Promise<Point>);
-  let boundsRaw: Rect | undefined | null = await (button.getBounds() as Promise<Rect>);
-  if (centerRaw === undefined || centerRaw === null) {
+  let center = await button.getBoundsCenter();
+  let bounds = await button.getBounds();
+  if (center === undefined || center === null) {
     throw new Error('getBoundsCenter nullish');
   }
-  if (boundsRaw === undefined || boundsRaw === null) {
+  if (bounds === undefined || bounds === null) {
     throw new Error('getBounds nullish');
   }
-  let cx: number = finiteOrThrow(centerRaw.x, 'center.x');
-  let cy: number = finiteOrThrow(centerRaw.y, 'center.y');
-  let left: number = finiteOrThrow(boundsRaw.left, 'bounds.left');
+  let cx: int = Double.toInt(Math.round(center.x)) as int;
+  let cy: int = Double.toInt(Math.round(center.y)) as int;
+  let left: int = Double.toInt(Math.round(bounds.left)) as int;
   await driver.dragBetween(
-    { x: Double.toInt(Math.round(cx)) as int, y: Double.toInt(Math.round(cy)) as int } as Point,
-    { x: Double.toInt(Math.round(left)) as int, y: Double.toInt(Math.round(cy)) as int } as Point,
+    { x: cx, y: cy } as Point,
+    { x: left, y: cy } as Point,
     3500,
     1600
   );
