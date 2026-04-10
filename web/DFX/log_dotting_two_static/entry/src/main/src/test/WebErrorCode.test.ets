@@ -55,15 +55,15 @@ export default function webTwoJsunit() {
       console.info('web beforeEach start');
     })
 
-    /*
-    * @tc.name   testZoomInErrorStatic001
-    * @tc.number SUB_WEB_ERRORCODE_ZOOMIN_0100
-    * @tc.desc   test zoomIn error
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
-    */
-    it('testZoomInErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+     * @tc.name   testZoomInErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_ZOOMIN_0100
+     * @tc.desc   test zoomIn error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testZoomInErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitZoomIn', 10)
         await Utils.msSleep(2000);
@@ -262,15 +262,15 @@ export default function webTwoJsunit() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_CLOSE_0100
-    * @tc.name       : testCloseErrorStatic001
-    * @tc.desc       : test close error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
-    it('testCloseErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+     * @tc.name        testCloseErrorStatic001
+     * @tc.number      SUB_WEB_ERRORCODE_CLOSE_0100
+     * @tc.desc        test close error
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testCloseErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testCloseError001', 10)
         await Utils.msSleep(2000);

@@ -46,7 +46,8 @@ export default function startArkChildProcess() {
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0600', Level.LEVEL0, async (done: Function) => {
       let args: ChildProcessArgs | null = null;
       let options: ChildProcessOptions = {
-        isolationMode: false
+        isolationMode: false,
+        isolationUid: false
       };
       try {
         DemoProcess.toString();
@@ -74,7 +75,8 @@ export default function startArkChildProcess() {
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0700', Level.LEVEL0, async (done: Function) => {
       let args: ChildProcessArgs | undefined = undefined;
       let options: ChildProcessOptions = {
-        isolationMode: false
+        isolationMode: false,
+        isolationUid: true
       };
       try {
         DemoProcess.toString();

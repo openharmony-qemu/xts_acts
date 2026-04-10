@@ -21,7 +21,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
 import {waitForExist} from '../../test/WaitTest.test';
-
+const driver = Driver.create();
 @Entry
 @Component
 struct WebOnPermissionRequest {
@@ -142,7 +142,6 @@ struct WebOnPermissionRequest {
                         }
                       })
 
-                    let driver = Driver.create();
  
                     await waitForExist(async () => {
                       try {
@@ -181,6 +180,238 @@ struct WebOnPermissionRequest {
                   break;
                 } else {
                   Utils.emitEvent('"grant"', 160880)
+                }
+              }
+              case 'emitPermissionRequestGrant002': {
+                if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
+                  if (Utils.isPC(this.controller)||Utils.isWearable(this.controller)) {
+                    console.info('[TAO]PC or Wearable');
+                    Utils.emitEvent('"grant"', 160900)
+                    break;
+                  }
+
+                  if (deviceProductModel === 'emulator') {
+                    Utils.emitEvent('"grant"', 160900)
+                    break;
+                  }
+                  try {
+                    this.deny = false;
+                    this.controller.runJavaScript('getMedia()', (error) => {
+                      if (error) {
+                        console.info('getMedia() return error: ' + error)
+                      }
+                    })
+
+                    PermissionsUtils.reqPermissionCamera(getContext(this) as common.UIAbilityContext,
+                      (success: boolean) => {
+                        if (success) {
+                          console.info('onPermissionRequest ====> grant')
+                          if (this.permissionRequest) {
+                            try {
+                              this.permissionRequest.grant(null)
+                              Utils.emitEvent('"grant"', 160900)
+                            } catch(error) {
+                              Utils.emitEvent(error.code, 160900)
+                            }
+                          } else {
+                            console.info('permissionRequest is null')
+                          }
+                        }
+                      })
+
+
+
+                    await waitForExist(async () => {
+                      try {
+                        const component = await driver.findComponent(ON.text('允许'));
+                        return component !== null;
+                      } catch {
+                        return false;
+                      }
+                    }, "allowButton", true)
+
+                    const component = await driver.findComponent(ON.text('允许'));
+                    await component.click();
+
+
+                    const result = await waitForExist(async () => {
+                      return new Promise<string>((resolve) => {
+                        this.controller.runJavaScript('getResult()', (error, result) => {
+                          if (error) {
+                            console.info('getResult() return error: ' + error)
+                            resolve('')
+                          } else if (result) {
+                            console.info('getResult() return result: ' + result)
+                            resolve(result)
+                          } else {
+                            resolve('')
+                          }
+                        })
+                      })
+                    }, "getResult", '"grant"')
+
+                    Utils.emitEvent(result, 160900)
+
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  }
+                  break;
+                } else {
+                  Utils.emitEvent('"grant"', 160900)
+                }
+              }
+              case 'emitPermissionRequestGrant003': {
+                if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
+                  if (Utils.isPC(this.controller)||Utils.isWearable(this.controller)) {
+                    console.info('[TAO]PC or Wearable');
+                    Utils.emitEvent('"grant"', 160920)
+                    break;
+                  }
+
+                  if (deviceProductModel === 'emulator') {
+                    Utils.emitEvent('"grant"', 160920)
+                    break;
+                  }
+                  try {
+                    this.deny = false;
+                    this.controller.runJavaScript('getMedia()', (error) => {
+                      if (error) {
+                        console.info('getMedia() return error: ' + error)
+                      }
+                    })
+
+                    PermissionsUtils.reqPermissionCamera(getContext(this) as common.UIAbilityContext,
+                      (success: boolean) => {
+                        if (success) {
+                          console.info('onPermissionRequest ====> grant')
+                          if (this.permissionRequest) {
+                            try {
+                              this.permissionRequest.grant(undefined)
+                              Utils.emitEvent('"grant"', 160920)
+                            } catch(error) {
+                              Utils.emitEvent(error.code, 160920)
+                            }
+                          } else {
+                            console.info('permissionRequest is null')
+                          }
+                        }
+                      })
+
+
+                    await waitForExist(async () => {
+                      try {
+                        const component = await driver.findComponent(ON.text('允许'));
+                        return component !== null;
+                      } catch {
+                        return false;
+                      }
+                    }, "allowButton", true)
+
+                    const component = await driver.findComponent(ON.text('允许'));
+                    await component.click();
+
+
+                    const result = await waitForExist(async () => {
+                      return new Promise<string>((resolve) => {
+                        this.controller.runJavaScript('getResult()', (error, result) => {
+                          if (error) {
+                            console.info('getResult() return error: ' + error)
+                            resolve('')
+                          } else if (result) {
+                            console.info('getResult() return result: ' + result)
+                            resolve(result)
+                          } else {
+                            resolve('')
+                          }
+                        })
+                      })
+                    }, "getResult", '"grant"')
+
+                    Utils.emitEvent(result, 160920)
+
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  }
+                  break;
+                } else {
+                  Utils.emitEvent('"grant"', 160920)
+                }
+              }
+              case 'emitPermissionRequestGrant004': {
+                if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
+                  if (Utils.isPC(this.controller)||Utils.isWearable(this.controller)) {
+                    console.info('[TAO]PC or Wearable');
+                    Utils.emitEvent('"grant"', 160940)
+                    break;
+                  }
+
+                  if (deviceProductModel === 'emulator') {
+                    Utils.emitEvent('"grant"', 160940)
+                    break;
+                  }
+                  try {
+                    this.deny = false;
+                    this.controller.runJavaScript('getMedia()', (error) => {
+                      if (error) {
+                        console.info('getMedia() return error: ' + error)
+                      }
+                    })
+
+                    PermissionsUtils.reqPermissionCamera(getContext(this) as common.UIAbilityContext,
+                      (success: boolean) => {
+                        if (success) {
+                          console.info('onPermissionRequest ====> grant')
+                          if (this.permissionRequest) {
+                            try {
+                              this.permissionRequest.grant([])
+                              Utils.emitEvent('"grant"', 160940)
+                            } catch(error) {
+                              Utils.emitEvent(error.code, 160940)
+                            }
+                          } else {
+                            console.info('permissionRequest is null')
+                          }
+                        }
+                      })
+
+
+                    await waitForExist(async () => {
+                      try {
+                        const component = await driver.findComponent(ON.text('允许'));
+                        return component !== null;
+                      } catch {
+                        return false;
+                      }
+                    }, "allowButton", true)
+
+                    const component = await driver.findComponent(ON.text('允许'));
+                    await component.click();
+
+
+                    const result = await waitForExist(async () => {
+                      return new Promise<string>((resolve) => {
+                        this.controller.runJavaScript('getResult()', (error, result) => {
+                          if (error) {
+                            console.info('getResult() return error: ' + error)
+                            resolve('')
+                          } else if (result) {
+                            console.info('getResult() return result: ' + result)
+                            resolve(result)
+                          } else {
+                            resolve('')
+                          }
+                        })
+                      })
+                    }, "getResult", '"grant"')
+
+                    Utils.emitEvent(result, 160940)
+
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  }
+                  break;
+                } else {
+                  Utils.emitEvent('"grant"', 160940)
                 }
               }
             }

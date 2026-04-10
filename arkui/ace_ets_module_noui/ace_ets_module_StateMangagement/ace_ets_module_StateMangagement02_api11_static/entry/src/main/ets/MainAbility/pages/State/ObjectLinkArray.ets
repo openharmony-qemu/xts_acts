@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,7 @@ import common from '@ohos.app.ability.common';
 // 父组件arrViewB中的类对象ClassA与子组件ViewA保持数据同步时，可以使用@ObjectLink和@Observed，绑定该数据对象的父组件和其他子组件同步更新
 let nextID: number = 0
 @Observed
-class ClassA {
+export class ClassA {
   public num: number
   public id: number
 
@@ -86,7 +86,7 @@ struct arrViewB {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ObjectLinkArray', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

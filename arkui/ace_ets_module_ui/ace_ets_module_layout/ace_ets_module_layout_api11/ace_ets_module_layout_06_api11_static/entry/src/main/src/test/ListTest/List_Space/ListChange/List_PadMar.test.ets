@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function List_PadMar() {
 
   describe('List_PadMar', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("List_PadMar beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -139,7 +139,7 @@ it('testListPadMar_static', Level.LEVEL0, async (done: () => void): Promise<void
       expect(Math.abs(Math.round(List_PadMar_01.right - List_PadMar_01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(350))) <= 1)
         .assertTrue();
       let driver = Driver.create();
-      driver.swipe(360, 690, 360, 30);
+      await driver.swipe(360, 690, 360, 30);
       let List_PadMar_014Again: RectValue = CommonFunc.getComponentRect('List_PadMar_014');
       expect(Math.abs(List_PadMar_014.top - List_PadMar_014Again.top) <= 1).assertTrue();
       console.info('testListPadMar END');

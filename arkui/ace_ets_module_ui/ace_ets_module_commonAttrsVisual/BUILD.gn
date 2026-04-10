@@ -22,5 +22,6 @@ group("ActsAceEtsModuleCommonAttrsVisualTest") {
     "ace_ets_module_commonAttrsVisual_api11_static:ActsAceEtsModuleCommonAttrsVisualApi11StaticTest",
     "ace_ets_module_commonAttrsVisual_api12_static:ActsAceEtsModuleCommonAttrsVisualApi12StaticTest",
     "ace_ets_module_commonAttrsVisual_api14_static:ActsAceEtsModuleCommonAttrsVisualApi14StaticTest",
+    "ace_ets_module_commonAttrsVisual_undefined_static:ActsAceEtsModuleCommonAttrsVisualUndefinedStaticTest"
   ]
 }

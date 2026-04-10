@@ -36,6 +36,18 @@ import checkboxGroupNode from './checkboxGroup/checkboxGroupNode.test';
 import checkBoxOnChangeModifierTest from './checkbox/checkboxOnChangeModifier.test';
 import checkBoxGroupOnChangeModifierTest from './checkboxGroup/checkboxGroupOnChangeModifier.test';
 
+import CheckboxContentModifierNullTest from './checkboxNull/CheckboxContentModifierNullTest.test';
+import CheckboxMarkNullTest from './checkboxNull/CheckboxMarkNullTest.test';
+import CheckboxSelectedColorNullTest from './checkboxNull/CheckboxSelectedColorNullTest.test';
+import CheckboxSelectNullTest from './checkboxNull/CheckboxSelectNullTest.test';
+import CheckboxShapeNullTest from './checkboxNull/CheckboxShapeNullTest.test';
+
+import CheckboxGroupCheckboxShapeNullTest from './checkboxGroupNull/CheckboxGroupCheckboxShapeNullTest.test';
+import CheckboxGroupContentModifierNullTest from './checkboxGroupNull/CheckboxGroupContentModifierNullTest.test';
+import CheckboxGroupMarkNullTest from './checkboxGroupNull/CheckboxGroupMarkNullTest.test';
+import CheckboxGroupSelectAllNullTest from './checkboxGroupNull/CheckboxGroupSelectAllNullTest.test';
+import CheckboxGroupSelectedColorNullTest from './checkboxGroupNull/CheckboxGroupSelectedColorNullTest.test';
+
 export default function testsuite() {
   CheckboxgroupContentModifier()
 
@@ -60,4 +72,16 @@ export default function testsuite() {
   checkboxGroupNode();
   checkBoxOnChangeModifierTest();
   checkBoxGroupOnChangeModifierTest();
+
+  CheckboxContentModifierNullTest();
+  CheckboxMarkNullTest();
+  CheckboxSelectedColorNullTest();
+  CheckboxSelectNullTest();
+  CheckboxShapeNullTest();
+
+  CheckboxGroupCheckboxShapeNullTest();
+  CheckboxGroupContentModifierNullTest();
+  CheckboxGroupMarkNullTest();
+  CheckboxGroupSelectAllNullTest();
+  CheckboxGroupSelectedColorNullTest();
 }

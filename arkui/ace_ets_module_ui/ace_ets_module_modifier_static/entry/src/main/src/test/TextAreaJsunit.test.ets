@@ -32,7 +32,7 @@ import Utils from './Utils.test';
 
 export default function textAreaJsunit() {
   describe('textAreaTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("scrollNestedScroll beforeEach start");
 
 
@@ -182,7 +182,7 @@ it('textAreaTest_static_008', Level.LEVEL0, async (done: () => void): Promise<vo
       let strJsonNew = inspector.getInspectorByKey('textArea');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("textAreaTest_static_008 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').tryGetElement('selectionMenuHidden')).assertEqual(undefined);
+      expect(objNew.getElement('$attrs').getString('selectionMenuHidden')).assertEqual('true');
       console.info('textAreaTest_static_008 END');
       done();
     });
@@ -200,7 +200,7 @@ it('textAreaTest_static_009', Level.LEVEL0, async (done: () => void): Promise<vo
       let strJsonNew = inspector.getInspectorByKey('textArea');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("textAreaTest_static_009 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').tryGetElement('enableKeyboardOnFocus')).assertEqual(undefined);
+      expect(objNew.getElement('$attrs').getString('enableKeyboardOnFocus')).assertEqual('true');
       console.info('textAreaTest_static_009 END');
       done();
     });

@@ -18,7 +18,10 @@ group("webConnectNative") {
   if (is_standard_system) {
     deps = [
       "web_on_connectnative:ActsWebOnConnectnativeTest",
+      "web_on_connectnative_static:ActsWebOnConnectnativeStaticTest",
+      "web_on_connectnative_Permissions:ActsWebOnConnectnativePermissionsTest",
       "web_on_connectnative_rely:ActsWebOnConnectnativeRelyTest",
+      "web_on_connectnative_Permission_rely:ActsWebOnConnectnativePermissionRelyTest",
     ]
   }
 }

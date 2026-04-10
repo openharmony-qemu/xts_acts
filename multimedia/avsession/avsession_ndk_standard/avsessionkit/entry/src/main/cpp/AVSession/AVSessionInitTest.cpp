@@ -339,8 +339,120 @@ static void InitPush7(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVSessionPlaybackSpeed2_00X", AVSessionPlaybackSpeed2_00X));
     desc.push_back(XL("AVSessionPlaybackSpeed0_50X", AVSessionPlaybackSpeed0_50X));
     desc.push_back(XL("AVSessionPlaybackSpeed1_50X", AVSessionPlaybackSpeed1_50X));
+    desc.push_back(XL("AVSession_TypeSESSION_TYPE_PHOTO", AVSession_TypeSESSION_TYPE_PHOTO));
+    desc.push_back(XL("AVSessionConnectionStateSTATE_CONNECTING", AVSessionConnectionStateSTATE_CONNECTING));
+    desc.push_back(XL("AVSessionConnectionStateSTATE_CONNECTED", AVSessionConnectionStateSTATE_CONNECTED));
+    desc.push_back(XL("AVSessionConnectionStateSTATE_DISCONNECTED", AVSessionConnectionStateSTATE_DISCONNECTED));
+    desc.push_back(XL("AVSessionAVCastCategoryCATEGORY_LOCAL", AVSessionAVCastCategoryCATEGORY_LOCAL));
+    desc.push_back(XL("AVSessionAVCastCategoryCATEGORY_REMOTE", AVSessionAVCastCategoryCATEGORY_REMOTE));
+    desc.push_back(XL("AVSessionDeviceTypeDEVICE_TYPE_LOCAL", AVSessionDeviceTypeDEVICE_TYPE_LOCAL));
+    desc.push_back(XL("AVSessionDeviceTypeDEVICE_TYPE_TV", AVSessionDeviceTypeDEVICE_TYPE_TV));
+desc.push_back(XL("AVSessionDeviceTypeDEVICE_TYPE_SMART_SPEAKER", AVSessionDeviceTypeDEVICE_TYPE_SMART_SPEAKER));
+    desc.push_back(XL("AVSessionDeviceTypeDEVICE_TYPE_BLUETOOTH", AVSessionDeviceTypeDEVICE_TYPE_BLUETOOTH));
+    desc.push_back(XL("AVSessionProtocolTypeTYPE_LOCAL", AVSessionProtocolTypeTYPE_LOCAL));
+    desc.push_back(XL("AVSessionProtocolTypeTYPE_CAST_PLUS_STREAM", AVSessionProtocolTypeTYPE_CAST_PLUS_STREAM));
+    desc.push_back(XL("AVSessionProtocolTypeTYPE_DLNA", AVSessionProtocolTypeTYPE_DLNA));
+    desc.push_back(XL("AVSessionProtocolTypeTYPE_CAST_PLUS_AUDIO",
+        AVSessionProtocolTypeTYPE_CAST_PLUS_AUDIO));
+    desc.push_back(XL("AVSession_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST",
+        AVSession_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_UNSPECIFIED", AVSession_ERR_CODE_CAST_CONTROL_UNSPECIFIED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_REMOTE_ERROR", AVSession_ERR_CODE_CAST_CONTROL_REMOTE_ERROR));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW",
+        AVSession_ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_TIMEOUT", AVSession_ERR_CODE_CAST_CONTROL_TIMEOUT));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED",
+        AVSession_ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED));
 }
 
+static void InitPush8(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING",
+        AVSession_ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED",
+        AVSession_ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET",
+        AVSession_ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED",
+        AVSession_ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED",
+        AVSession_ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_DEVICE_MISSING",
+        AVSession_ERR_CODE_CAST_CONTROL_DEVICE_MISSING));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_INVALID_PARAM",
+        AVSession_ERR_CODE_CAST_CONTROL_INVALID_PARAM));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_NO_MEMORY", AVSession_ERR_CODE_CAST_CONTROL_NO_MEMORY));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED",
+        AVSession_ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_READ_ERROR",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_READ_ERROR));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN));
+}
+
+static void InitPush9(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED",
+        AVSession_ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED",
+        AVSession_ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED",
+        AVSession_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED",
+        AVSession_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED",
+        AVSession_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED",
+        AVSession_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED",
+        AVSession_ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED",
+        AVSession_ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED",
+        AVSession_ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_DECODING_FAILED",
+        AVSession_ERR_CODE_CAST_CONTROL_DECODING_FAILED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES",
+        AVSession_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED",
+        AVSession_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED",
+        AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED",
+        AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED));
+    desc.push_back(XL("AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED",
+        AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED));
+    desc.push_back(XL("AVSession_AVQUEUEITEM_ERROR_NO_MEMORY",
+        AVSession_AVQUEUEITEM_ERROR_NO_MEMORY));
+}
 static napi_value Init(napi_env env, napi_value exports)
 {
     std::vector<napi_property_descriptor> desc;
@@ -351,6 +463,8 @@ static napi_value Init(napi_env env, napi_value exports)
     InitPush5(desc);
     InitPush6(desc);
     InitPush7(desc);
+    InitPush8(desc);
+    InitPush9(desc);
     napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }

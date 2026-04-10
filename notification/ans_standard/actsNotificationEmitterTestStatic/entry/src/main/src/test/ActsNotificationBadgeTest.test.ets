@@ -31,7 +31,7 @@ let domain: int = 0x000
 
 export default function ActsNotificationEmitterTest() {
   describe('testemitterNotification', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
       
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -41,14 +41,14 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info(`${TAG} beforeEach START`)
       emitter.off('eventid')
       emitter.off('eventids')
       await Utils.msSleep(500)
       console.info(`${TAG} beforeEach END`)
     })
-    afterEach(()=> {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(500)
     })
 

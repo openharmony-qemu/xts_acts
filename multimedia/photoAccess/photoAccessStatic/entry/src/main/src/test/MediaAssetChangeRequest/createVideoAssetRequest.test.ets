@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,11 +43,11 @@ export default function createVideoAssetRequest() {
           let invalidFileUri: string =
             "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/files/testVedio.MP4";
           let res = photoAccessHelper.MediaAssetChangeRequest.createVideoAssetRequest(appContext, invalidFileUri);
-          await helper.applyChanges(res);
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges((res as photoAccessHelper.MediaAssetChangeRequest));
           console.error(`${testNum} failed; error: succeed to create video asset with invalid fileUri`);
           expect(false).assertTrue();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.info(`${testNum} succeed to detect invalid fileUri`);
           done();
         }

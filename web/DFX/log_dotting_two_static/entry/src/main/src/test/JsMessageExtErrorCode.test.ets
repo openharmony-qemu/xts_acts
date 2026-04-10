@@ -35,15 +35,15 @@ export default function jsMessageExtErrorCode() {
     });
     
 
-    /*
-     * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0100
-     * @tc.name       : testJsMessageExtGetStringErrorStatic001
-     * @tc.desc       : test JsMessageExtGetString error
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name        testJsMessageExtGetStringErrorStatic001
+     * @tc.number      SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0100
+     * @tc.desc        test JsMessageExtGetString error
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       LEVEL0
      */
-    it('testJsMessageExtGetStringErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testJsMessageExtGetStringErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       Utils.emitEvent('testJsMessageExtGetStringError001', 10)

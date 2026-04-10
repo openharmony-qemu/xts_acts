@@ -50,7 +50,7 @@ export default function ratingOnChangeModifierTest() {
    
     /**
      * @tc.number ArkUX_Modifier_Rating_OnChange_1001
-     * @tc.name Test the properties of components
+     * @tc.name ArkUX_Modifier_Rating_OnChange_1001
      * @tc.desc OnChange callback
      * @tc.size MediumTest
      * @tc.type Function

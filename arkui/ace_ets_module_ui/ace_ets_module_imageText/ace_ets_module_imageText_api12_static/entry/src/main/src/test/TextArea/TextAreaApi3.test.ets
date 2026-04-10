@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextAreaApi3() {
   describe('TextAreaApi3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextAreaApi3 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

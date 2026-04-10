@@ -45,7 +45,7 @@ export default function tabJsunit() {
 
   describe('tabTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
     beforeEach(async () => {

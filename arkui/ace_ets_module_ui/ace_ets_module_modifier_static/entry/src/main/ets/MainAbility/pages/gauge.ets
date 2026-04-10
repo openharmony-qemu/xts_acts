@@ -60,7 +60,6 @@ import {
   ForEach,
   PickerTextStyle,
   CalendarAlign,
-  Date,
   CalendarPicker,
   EdgeEffect,
   Curve,

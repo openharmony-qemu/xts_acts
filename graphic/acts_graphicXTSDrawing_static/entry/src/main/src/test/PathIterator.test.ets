@@ -70,25 +70,47 @@ export default function PathIterator() {
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_STATIC_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         let msg = " ====testPathIteratorNext==== "
+        let path: drawing.Path = new drawing.Path();
+        path.moveTo(10, 20);
+        let iter: drawing.PathIterator = new drawing.PathIterator(path);
+        let verbStr: Array<string> = ["MOVE", "LINE", "QUAD", "CONIC", "CUBIC", "CLOSE", "DONE"];
+        let pointCount: Array<number> = [1, 2, 3, 4, 4, 0, 0]; //1,2,3,3.5,4,0,0
+        let points: Array<common2D.Point> = [{ x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }];
+        let offset = 0;
         try {
-          let path: drawing.Path = new drawing.Path();
-          path.moveTo(10, 20);
-          let iter: drawing.PathIterator = new drawing.PathIterator(path);
-          let verbStr: Array<string> = ["MOVE", "LINE", "QUAD", "CONIC", "CUBIC", "CLOSE", "DONE"];
-          let pointCount: Array<number> = [1, 2, 3, 4, 4, 0, 0]; //1,2,3,3.5,4,0,0
-          let points: Array<common2D.Point> = [{ x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }];
-          let offset = 0;
           let verb = iter.next(points, offset);
-          console.info(msg + ' iter.next(points, offset): ' + verb);
-          done()
+          if(verb) {
+            console.info(msg + ' iter.next(points, offset) success: ' + verb);
+            done();
+          }
+          if(verb == undefined){
+            console.info(msg + ' iter.next(points, offset) failed: ' + verb);
+            expect().assertFail();
+            done();
+          }
         } catch (err) {
           console.log(msg + " Failed in PathIterator.next " + JSON.stringify(err))
           console.log(msg + " Failed in PathIterator.next " + err)
-          expect().assertFail()
-          done()
+          expect().assertFail();
+          done();
+        }
+        try {
+          let verb1 = iter.next(points);
+          if(verb1) {
+            console.info(msg + ' verb1  success: ' + verb1);
+            done();
+          }
+          if(verb1 == undefined){
+            console.info(msg + ' verb1 failed: ' + verb1);
+            expect().assertFail();
+            done();
+          }
+        } catch (err) {
+          console.log(msg + " Failed verb1 " + JSON.stringify(err))
+          expect().assertFail();
+          done();
         }
       })
-
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_STATIC_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_STATIC_0300
@@ -103,9 +125,16 @@ export default function PathIterator() {
         try {
           let path: drawing.Path = new drawing.Path();
           let iter: drawing.PathIterator = new drawing.PathIterator(path);
-          let res = iter.peek();
-          console.info(msg + ' iter.peek(): ' + res);
-          done()
+          if(iter) {
+            let res = iter.peek();
+            console.info(msg + ' iter.peek(): success' + res);
+            done();
+          }
+          if(iter == undefined){
+            console.info(msg + ' PathIterator failed');
+            expect().assertFail();
+            done();
+          }
         } catch (err) {
           console.log(msg + " Failed in PathIterator.peek " + JSON.stringify(err))
           console.log(msg + " Failed in PathIterator.peek " + err)
@@ -153,9 +182,16 @@ export default function PathIterator() {
         try {
           let path: drawing.Path = new drawing.Path();
           let iter = path.getPathIterator();
-          console.info(msg + ' iter.getPathIterator(): ' + iter);
-          console.info(msg + ' iter.getPathIterator(): ' + JSON.stringify(iter));
-          done()
+          if(iter){
+            console.info(msg + ' iter.getPathIterator() success: ' + iter);
+            console.info(msg + ' iter.getPathIterator(): ' + JSON.stringify(iter));
+            done();
+          }
+          if(iter == undefined){
+            console.info(msg + ' iter.getPathIterator() failed: ' + iter);
+            expect().assertFail();
+            done();
+          }
         } catch (err) {
           console.log(msg + " Faild in Path.getPathIterator " + JSON.stringify(err))
           console.log(msg + " Faild in Path.getPathIterator " + err)
@@ -268,5 +304,32 @@ export default function PathIterator() {
         }
       })
 
+    /**
+     * @tc.name   testPathIteratorNextAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_STATIC_0800
+     * @tc.desc   test for pathIterator next
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPathIteratorNextAbnormal',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let msg = " ====testPathIteratorNextAbnormal==== "
+        let path: drawing.Path = new drawing.Path();
+        path.moveTo(10, 20);
+        let iter: drawing.PathIterator = new drawing.PathIterator(path);
+        let offset = 0;
+        try {
+          let verb = iter.next([], offset);
+          console.info(msg + ' iter.next([], offset) success: ' + verb);
+          expect().assertFail();
+          done();
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` PathIterator next errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+          expect(e.code).assertEqual(401);
+          done();
+        }
+      })
   })
 }

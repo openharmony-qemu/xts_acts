@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -71,7 +71,8 @@ struct Index {
               try {
                 this.controllerNull.pageUp(true);
                 Utils.emitEvent(true, 20265)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 20265)
               }
@@ -82,7 +83,8 @@ struct Index {
               try {
                 this.controllerNull.pageUp(false);
                 Utils.emitEvent(true, 20266)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 20266)
               }
@@ -92,7 +94,8 @@ struct Index {
             case "testPageDownError001": {
               try {
                 this.controllerNull.pageDown(true);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 20270)
               }
@@ -102,7 +105,8 @@ struct Index {
             case "testPageDownError002": {
               try {
                 this.controllerNull.pageDown(false);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 20271)
               }

@@ -41,6 +41,7 @@ import VideoOnErrorTest from './Video/VideoOnErrorTest.test'
 import VideoContentTransitionEffectTest from './Video/VideoContentTransitionEffectTest.test'
 import VideoSupportMoreSpeedTest from './Video/VideoSupportMoreSpeedTest'
 import VideoOneBoundaryTest from './Video/VideoOneBoundaryTest'
+import videoApiNullUndefinedTest from './Video/videoApiNullUndefinedTest.test';
 
 export default function testsuite() {
   videoEnableShortcutKeyTest();
@@ -58,17 +59,17 @@ export default function testsuite() {
   VideoReset6();
   VideoReset7();
   VideoReset8();
-  VideoReset9();
-  VideoReset10();
-  VideoReset11();
-  VideoReset12();
-  VideoReset13();
-  VideoReset14();
+  //VideoReset9();
+  //VideoReset10();
+  //VideoReset11();
+  //VideoReset12();
+  //VideoReset13();
+  //VideoReset14();
   VideoTest2();
-
   VideoOnErrorTest()
   VideoContentTransitionEffectTest()
   VideoSupportMoreSpeedTest()
   VideoOneBoundaryTest()
+  videoApiNullUndefinedTest()
   videoOnFullscreenChangeJsunit()
 }

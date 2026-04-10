@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-package test
 enum Colors {Red = 1, Green = 2, Blue = 3}
 
 function CreateTuple(a: int, b: long): [int, long] {
@@ -34,29 +33,27 @@ class A {
         return a0 * a0;
     }
 
-    public overloadedBase1(): int
+    public overloadedBase(): int
     {
         return 1
     }
 
-    public overloadedBase2(i: int): int
+    public overloadedBase(i: int): int
     {
         return 1
     }
 
-    overload overloadedBase {overloadedBase1, overloadedBase2}
 
-    public static staticOverloadedBase1(): int
+    public static staticOverloadedBase(): int
     {
         return 1
     }
 
-    public static staticOverloadedBase2(i: int): int
+    public static staticOverloadedBase(i: int): int
     {
         return 1
     }
 
-    static overload staticOverloadedBase {staticOverloadedBase1, staticOverloadedBase2}
 }
 
 final class B extends A {
@@ -67,28 +64,26 @@ final class B extends A {
         return a1 * a1;
     }
 
-    public overloaded1(): int
+    public overloaded(): int
     {
         return 1
     }
 
-    public overloaded2(i: int): int
+    public overloaded(i: int): int
     {
         return 1
     }
 
-    overload overloaded {overloaded1, overloaded2}
 
-    public static staticOverloaded1(): int
+    public static staticOverloaded(): int
     {
         return 1
     }
 
-    public static staticOverloaded2(i: int): int
+    public static staticOverloaded(i: int): int
     {
         return 1
     }
-    static overload staticOverloaded {staticOverloaded2, staticOverloaded1}
 }
 
 interface I {
@@ -179,7 +174,7 @@ class Overload {
         return 3 * x;
     }
 
-    overload method {method1, method2, method3}
+    private overload method {method1, method2, method3}
 }
 
 function CreatePartial(a: int): Partial<UnusualTypes> {
@@ -439,16 +434,15 @@ final class Operations {
 }
 
 class ClassA {
-    static calculateSquareArea1(length: int, wide: int, height: int): int {
+    static calculateSquareArea(length: int, wide: int, height: int): int {
         return length * wide * height;
     }
-    static calculateSquareArea2(length: int, wide: int): int {
+    static calculateSquareArea(length: int, wide: int): int {
         return length * wide;
     }
     calculateSquareArea(length: int): int {
         return length;
     }
-    static overload calculateSquareArea {calculateSquareArea1, calculateSquareArea2}
 
     static sumA(a0: int, a1: int): int {
         return a0 + a1;

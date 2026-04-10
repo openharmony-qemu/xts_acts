@@ -46,7 +46,8 @@ import {
   Stack,
   Text,
   TextAlign,
-  WaterFlow
+  WaterFlow,
+  UIScrollEvent
 } from '@ohos.arkui.component'
 import { LocalStorage, State } from '@ohos.arkui.stateManagement'
 import { FrameNode, NodeController, typeNode } from '@ohos.arkui.node';
@@ -73,38 +74,38 @@ class MyNodeController extends NodeController {
   }
 
   addCommonEvent(frameNode: FrameNode) {
-    // let listEvent: UIScrollEvent | undefined = typeNode.getEvent(frameNode, 'Scroll');
-    // listEvent?.setOnWillScroll((scrollOffx: number, scrollOffy: number,
-    //   scrollState: ScrollState, scrollSource: ScrollSource)=>{
-    // storage.set('Scroll_setOnWillScroll', 'setOnWillScroll');
-    // console.log(`Scroll:: onWillScroll scrollOffx=${scrollOffx}, scrollOffy=${scrollOffy},
-    //   scrollState=${scrollState}, scrollSource=${scrollSource}`)
-    // })
-    // listEvent?.setOnDidScroll((xOffset: number, yOffset: number, scrollState: ScrollState)=>{
-    // storage.set('Scroll_setOnDidScroll', 'setOnDidScroll');
-    // console.log(`Scroll:: setOnDidScroll xOffset=${xOffset}, yOffset=${yOffset}, scrollState=${scrollState}`)
-    // })
-    // listEvent?.setOnReachStart(()=>{
-    // storage1.set('Scroll_setOnReachStart', 'setOnReachStart');
-    // console.log(`Scroll:: setOnReachStart`)
-    // })
-    // listEvent?.setOnReachEnd(()=>{
-    // storage1.set('Scroll_setOnReachEnd', 'setOnReachEnd');
-    // console.log(`Scroll:: setOnReachEnd`)
-    // })
-    // listEvent?.setOnScrollStart(()=>{
-    // storage2.set('Scroll_setOnScrollStart', 'setOnScrollStart');
-    // console.log(`Scroll:: setOnScrollStart`)
-    // })
-    // listEvent?.setOnScrollStop(()=>{
-    // storage2.set('Scroll_setOnScrollStop', 'setOnScrollStop');
-    // console.log(`Scroll:: setOnScrollStop`)
-    // })
-    // listEvent?.setOnScrollFrameBegin((offset: number, state: ScrollState) => {
-    // storage3.set('Scroll_setOnScrollFrameBegin', 'setOnScrollFrameBegin');
-    // console.log(`Scroll:: setOnScrollFrameBegin offset=${offset}, state=${state}`)
-    // return undefined;
-    // })
+    let listEvent: UIScrollEvent | undefined = typeNode.getScrollEvent(frameNode);
+    listEvent?.setOnWillScroll((scrollOffx: Double, scrollOffy: Double,
+      scrollState: ScrollState, scrollSource: ScrollSource)=>{
+      storage.set('Scroll_setOnWillScroll', 'setOnWillScroll');
+      console.log(`Scroll:: onWillScroll scrollOffx=${scrollOffx}, scrollOffy=${scrollOffy},
+      scrollState=${scrollState}, scrollSource=${scrollSource}`)
+    })
+    listEvent?.setOnDidScroll((xOffset: Double, yOffset: Double, scrollState: ScrollState)=>{
+      storage.set('Scroll_setOnDidScroll', 'setOnDidScroll');
+      console.log(`Scroll:: setOnDidScroll xOffset=${xOffset}, yOffset=${yOffset}, scrollState=${scrollState}`)
+    })
+    listEvent?.setOnReachStart(()=>{
+      storage1.set('Scroll_setOnReachStart', 'setOnReachStart');
+      console.log(`Scroll:: setOnReachStart`)
+    })
+    listEvent?.setOnReachEnd(()=>{
+      storage1.set('Scroll_setOnReachEnd', 'setOnReachEnd');
+      console.log(`Scroll:: setOnReachEnd`)
+    })
+    listEvent?.setOnScrollStart(()=>{
+      storage2.set('Scroll_setOnScrollStart', 'setOnScrollStart');
+      console.log(`Scroll:: setOnScrollStart`)
+    })
+    listEvent?.setOnScrollStop(()=>{
+      storage2.set('Scroll_setOnScrollStop', 'setOnScrollStop');
+      console.log(`Scroll:: setOnScrollStop`)
+    })
+    listEvent?.setOnScrollFrameBegin((offset: Double, state: ScrollState) => {
+      storage3.set('Scroll_setOnScrollFrameBegin', 'setOnScrollFrameBegin');
+      console.log(`Scroll:: setOnScrollFrameBegin offset=${offset}, state=${state}`)
+      return {offsetRemain: offset};
+    })
   }
 }
 
@@ -112,7 +113,7 @@ class MyNodeController extends NodeController {
 @Component
 struct setOnScrollIndex03 {
   private myNodeController: MyNodeController = new MyNodeController();
-  @State index: number = 0;
+  @State index: int = 0;
   @State text: string = 'start';
   @State text1: string = 'start';
   @State text2: string = 'start';
@@ -124,7 +125,7 @@ struct setOnScrollIndex03 {
         .id('Scroll_addCommonEvent_03')
         .height('5%')
         .onClick((e: ClickEvent) => {
-          // this.myNodeController!.addCommonEvent(this.myNodeController!.rootNode!.getParent()!.getPreviousSibling()!)
+          this.myNodeController!.addCommonEvent(this.myNodeController!.rootNode!.getParent()!.getPreviousSibling()!)
         })
       Text(this.text)
         .id('Scroll_setOnWill_03')
@@ -177,11 +178,11 @@ struct setOnScrollIndex03 {
       .height('50%')
       .id('key_ScrollItem_set')
       .edgeEffect(EdgeEffect.None)
-      .onWillScroll((scrollOffx: number, scrollOffy: number, scrollState: ScrollState,
+      .onWillScroll((scrollOffx: Double, scrollOffy: Double, scrollState: ScrollState,
         scrollSource: ScrollSource): undefined | OffsetResult => {
         console.log(`Scroll:: onWillScroll 1 scrollOffx=${scrollOffx}, scrollOffy=${scrollOffy}scrollState=${scrollState}, scrollSource=${scrollSource}`)
       })
-      .onDidScroll((xOffset: number, yOffset: number, scrollState: ScrollState): void => {
+      .onDidScroll((xOffset: Double, yOffset: Double, scrollState: ScrollState): void => {
         console.log(`Scroll:: onDidScroll 1  xOffset=${xOffset},yOffset=${yOffset}, scrollState=${scrollState}`)
       })
       .onReachStart(() => {
@@ -196,12 +197,12 @@ struct setOnScrollIndex03 {
       .onScrollStop(() => {
         console.log(`Scroll:: onScrollStop 1 `)
       })
-      .onScrollFrameBegin((offset: number, state: ScrollState): OnScrollFrameBeginHandlerResult => {
+      .onScrollFrameBegin((offset: Double, state: ScrollState): OnScrollFrameBeginHandlerResult => {
         console.log(`Scroll:: onScrollFrameBegin 1 offset=${offset}, state=${state}`)
         return { offsetRemain: offset };
       })
 
-      // NodeContainer(this.myNodeController)
+      NodeContainer(this.myNodeController)
     }.width('100%')
   }
 }

@@ -69,8 +69,11 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector01", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector01", 'test-file.mp4', 20260105, done);
-      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector01");
+      let isReturn = false;
+      Utils.registerEvent("testOnShowFileSelector01", 'test-file.mp4', 20260105, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton", "testOnShowFileSelector01");
+      await Utils.waitForExist(() => isReturn, "emitOnShowFileSelector01" + '_returnCheck', true, 500);
+      done();
     })
 
     /**
@@ -83,8 +86,11 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector02", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector02", 'downloads', 20260106, done);
-      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector02");
+      let isReturn = false;
+      Utils.registerEvent("testOnShowFileSelector02", 'downloads', 20260106, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton", "testOnShowFileSelector02");
+      await Utils.waitForExist(() => isReturn, "emitOnShowFileSelector02" + '_returnCheck', true, 500);
+      done();
     })
 
     /**
@@ -97,8 +103,11 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector03", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector03", 1, 20260107, done);
-      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector03");
+      let isReturn = false;
+      Utils.registerEvent("testOnShowFileSelector03", 1, 20260107, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton", "testOnShowFileSelector03");
+      await Utils.waitForExist(() => isReturn, "emitOnShowFileSelector03" + '_returnCheck', true, 500);
+      done();
     })
 
     /**
@@ -111,8 +120,11 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector04", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector04", true, 20260108, done);
-      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector04");
+      let isReturn = false;
+      Utils.registerEvent("testOnShowFileSelector04", true, 20260108, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton", "testOnShowFileSelector04");
+      await Utils.waitForExist(() => isReturn, "emitOnShowFileSelector04" + '_returnCheck', true, 500);
+      done();
     })
 
     /**
@@ -125,8 +137,11 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector05", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector05", "video/*", 20260109, done);
-      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector05");
+      let isReturn = false;
+      Utils.registerEvent("testOnShowFileSelector05", "video/*", 20260109, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton", "testOnShowFileSelector05");
+      await Utils.waitForExist(() => isReturn, "emitOnShowFileSelector05" + '_returnCheck', true, 500);
+      done();
     })
 
     /**
@@ -139,8 +154,11 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector06", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector06", '[".mp4",".ogm",".wmv",".mpg"]', 20260110, done);
-      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector06");
+      let isReturn = false;
+      Utils.registerEvent("testOnShowFileSelector06", '[".mp4",".ogm",".wmv",".mpg"]', 20260110, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton", "testOnShowFileSelector06");
+      await Utils.waitForExist(() => isReturn, "emitOnShowFileSelector06" + '_returnCheck', true, 500);
+      done();
     })
 
     /**
@@ -153,8 +171,11 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector07", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector07", 0, 202601077, done);
-      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector07");
+      let isReturn = false;
+      Utils.registerEvent("testOnShowFileSelector07", 0, 202601077, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton", "testOnShowFileSelector07");
+      await Utils.waitForExist(() => isReturn, "emitOnShowFileSelector07" + '_returnCheck', true, 500);
+      done();
     })
 
 
@@ -168,8 +189,11 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector08", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector08", false, 202601078, done);
-      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector08");
+      let isReturn = false;
+      Utils.registerEvent("testOnShowFileSelector08",  false, 202601078, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton", "testOnShowFileSelector08");
+      await Utils.waitForExist(() => isReturn, "emitOnShowFileSelector08" + '_returnCheck', true, 500);
+      done();
     })
     /**
      * @tc.name   testOnShowFileSelector09
@@ -181,8 +205,11 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector09", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector09", 0, 202601079, done);
-      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector09");
+      let isReturn = false;
+      Utils.registerEvent("testOnShowFileSelector09",  0, 202601079, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton", "testOnShowFileSelector09");
+      await Utils.waitForExist(() => isReturn, "emitOnShowFileSelector09" + '_returnCheck', true, 500);
+      done();
     })
     /**
      * @tc.name   testOnShowFileSelector10
@@ -194,8 +221,11 @@ export default function WebViewOnShowFileSelectorType() {
      */
     it('testOnShowFileSelector10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnShowFileSelector10", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnShowFileSelector10", 1, 2026010710, done);
-      await Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton","testOnShowFileSelector10");
+      let isReturn = false;
+      Utils.registerEvent("testOnShowFileSelector10",  1, 2026010710, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewOnShowFileSelectorButton", "testOnShowFileSelector10");
+      await Utils.waitForExist(() => isReturn, "emitOnShowFileSelector10" + '_returnCheck', true, 500);
+      done();
     })
 
   })

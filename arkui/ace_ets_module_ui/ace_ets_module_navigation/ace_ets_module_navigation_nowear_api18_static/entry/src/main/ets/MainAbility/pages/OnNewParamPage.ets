@@ -15,7 +15,7 @@
  */
 
 import { Entry, Column,Builder, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, SymbolGlyphModifier, NavPathStack, Navigation, ColumnOptions,
+  Row, ClickEvent, Margin, ButtonType, NavPathStack, Navigation, ColumnOptions,
   NavDestination, Navigation, LaunchMode, NavigationTitleMode, NavPathInfo, NavigationOptions} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -24,11 +24,12 @@ import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
 
 
-class NavParam {
+
+class NavParam  {
   constructor(msg: string) {
     this.msg = msg
   }
-  private msg: string = ''
+  public msg: string = ''
 }
 
 @Entry
@@ -132,9 +133,12 @@ struct lifeCyclePush {
       this.name = context.pathInfo.name
     })
     .onNewParam((param: Object|null|undefined):void => {
-      console.log("==============================onNewParam ")
-      this.paramString = JSON.stringify(param);
-      console.log('TestTag', this.name, 'onNewParam, param: ' + JSON.stringify(param))
+      this.paramString = (param as NavParam).msg;
+      if((param as NavParam).msg != "10"){
+        this.paramString = `{"msg":"${(param as NavParam).msg}"}`;
+      }
+
+      console.log('TestTag', this.name, 'onNewParam, param: ' + this.paramString)
     })
   }
 }
@@ -154,9 +158,11 @@ struct Dest {
       this.name = context.pathInfo.name
     })
     .onNewParam((param:  Object|null|undefined):void => {
-      console.log("==============================onNewParam ")
-      this.paramString = JSON.stringify(param);
-      console.log('TestTag', this.name, 'onNewParam, param: ' + JSON.stringify(param))
+      this.paramString = (param as NavParam).msg
+      if((param as NavParam).msg != "10"){
+        this.paramString = `{"msg":"${(param as NavParam).msg}"}`;
+      }
+      console.log('TestTag', this.name, 'onNewParam, param: ' + this.paramString)
     })
   }
 }
@@ -186,7 +192,7 @@ struct NavBody {
         .height('10%')
       Button('POP_TO_SINGLETON')
         .onClick((e:ClickEvent) => {
-          this.stack.pushPath(new NavPathInfo('pageOne', new NavParam('10')), {launchMode: LaunchMode.POP_TO_SINGLETON} as NavigationOptions)
+          this.stack.pushDestination(new NavPathInfo('pageOne', new NavParam('10') ), {launchMode: LaunchMode.POP_TO_SINGLETON} as NavigationOptions)
         })
         .id('popId')
         .height('10%')

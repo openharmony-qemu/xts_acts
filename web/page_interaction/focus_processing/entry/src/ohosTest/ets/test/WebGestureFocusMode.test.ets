@@ -59,25 +59,6 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-    // afterEach(async  (done: Function) =>{
-    //   console.info("blurMode afterEach start:"+emitKey);
-    //   try {
-    //     let backData: events_emitter.EventData = {
-    //       data: {
-    //         "ACTION": emitKey
-    //       }
-    //     }
-    //     let backEvent: events_emitter.InnerEvent = {
-    //       eventId:10,
-    //       priority:events_emitter.EventPriority.LOW
-    //     }
-    //     console.info("start send emitKey");
-    //     events_emitter.emit(backEvent, backData);
-    //   } catch (err) {
-    //     console.info("emit emitKey  err: " + JSON.stringify(err));
-    //   }
-    //   done();
-    // })
 
     /**
      * @tc.name   testWebGestureFocusMode001

@@ -39,9 +39,9 @@ export default function GetAppContextTest() {
      * @tc.desc   Test the api "abilityDelegator.getAppContext", return the result with callback function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("ACTS_GET_APP_CONTENT_0001", Level.LEVEL2, async (done: () => void): Promise<void> =>{
+    it("ACTS_GET_APP_CONTENT_0001", Level.LEVEL0, async (done: () => void): Promise<void> =>{
       console.log("ACTS_GET_APP_CONTENT_0001 :start");
       let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       let context:common.Context = abilityDelegator.getAppContext() as common.Context;

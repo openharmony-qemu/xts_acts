@@ -73,7 +73,6 @@ export default function DisplayManagerErrorCodeTest() {
     } catch (err) {
       console.log(caseName + ': fail:'+ err + ' '+err.code);
       if(err.code == 801){
-        expect(true).assertTrue();
         done()
       }else{
         expect(false).assertTrue();

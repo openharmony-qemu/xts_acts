@@ -20,6 +20,7 @@ import ohosWindow from '@ohos.window';
 import { Driver, ON } from '@ohos.UiTest';
 import settings from '@ohos.settings';
 import display from '@ohos.display';
+import deviceInfo from '@ohos.deviceInfo';
 
 function createSysSubWindow(context: common.UIAbilityContext, caseName: string): Promise<window.Window> {
   let config: window.Configuration = {
@@ -89,6 +90,8 @@ export default function windowManageTest() {
     let isPCStatus: string = '';
     let isAutoWindow: string = '';
     let isFreeWindowMode = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -152,7 +155,7 @@ export default function windowManageTest() {
       let displayId = display.getDefaultDisplaySync().id;
       let width = display.getDefaultDisplaySync().width;
       let height = display.getDefaultDisplaySync().height;
-      if(isPCStatus != ''){
+      if(deviceType === '2in1'){
         try{
           await mainWindowClass.minimize();
           await sleep(1000);
@@ -609,21 +612,21 @@ export default function windowManageTest() {
      */
     it('testOnWindowStageCloseOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnWindowStageCloseOff';
-      try {
-        if(isFreeWindowMode){
+      let count1 = 0;
+      let count2 = 0;
+      const closeFunc1 = () => {
+        console.info(`${caseName} func1 Succeeded in enabling the listener for window stage close event.`);
+        count1++;
+        return true;
+      }
+      const closeFunc2 = () => {
+        console.info(`${caseName} func2 Succeeded in enabling the listener for window stage close event.`);
+        count2++;
+        return true;
+      }
+      let onWindowStageCloseOff_Success = async (done: Function) => {
+        try {
           let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-          let count1 = 0;
-          let count2 = 0;
-          const closeFunc1 = () => {
-            console.info(`${caseName} func1 Succeeded in enabling the listener for window stage close event.`);
-            count1++;
-            return true;
-          }
-          const closeFunc2 = () => {
-            console.info(`${caseName} func2 Succeeded in enabling the listener for window stage close event.`);
-            count2++;
-            return true;
-          }
           windowStage.on('windowStageClose', closeFunc2);
           windowStage.off('windowStageClose', closeFunc2);
           windowStage.on('windowStageClose', closeFunc1);
@@ -633,20 +636,40 @@ export default function windowManageTest() {
           expect(count1).assertEqual(1);
           expect(count2).assertEqual(0);
           done();
-        }else{
-          done();
+        } catch (exception) {
+          if (exception.code === 801) {
+            console.info(`${caseName} The current device type does not support to listener for window stage close event.`);
+            done();
+          } else {
+            console.error(`${caseName} Failed to enable the listener for window stage close event. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect(true).assertFail();
+            done();
+          }
         }
-        
-      } catch (exception) {
-        if (exception.code === 801) {
-          console.info(`${caseName} The current device type does not support to listener for window stage close event.`);
-          windowStage.off('windowStageClose');
+      }
+      let onWindowStageCloseOff_Failed = async (done: Function) => {
+        try {
+          windowStage.on('windowStageClose', closeFunc2);
+          windowStage.off('windowStageClose', closeFunc2);
+          windowStage.on('windowStageClose', closeFunc1);
+          expect(count1).assertEqual(0);
+          expect(count2).assertEqual(0);
           done();
-        } else {
-          console.error(`${caseName} Failed to enable the listener for window stage close event. Cause code: ${exception.code}, message: ${exception.message}`);
-          expect().assertFail();
-          done();
+        } catch (exception) {
+          if (exception.code === 801) {
+            console.info(`${caseName} The current device type does not support to listener for window stage close event.`);
+            done();
+          } else {
+            console.error(`${caseName} Failed to enable the listener for window stage close event. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect(true).assertFail();
+            done();
+          }
         }
+      }
+      if (isFreeWindowMode) {
+        await onWindowStageCloseOff_Success(done);
+      } else {
+        await onWindowStageCloseOff_Failed(done);
       }
     })
     /**
@@ -662,7 +685,7 @@ export default function windowManageTest() {
       try {
         windowClass.setWindowTopmost(false).then(() => {
           console.info(`${caseName} Succeeded in setting the window to be top most.`);
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} Failed to set the window to be top most. Cause code: ${err.code}, message: ${err.message}`);
@@ -698,7 +721,7 @@ export default function windowManageTest() {
       try {
         windowClass.setWindowTopmost(true).then(async () => {
           console.info(`${caseName} Succeeded in setting the window to be top most.`);
-          expect(true).assertTrue();
+          
           await windowClass.setWindowTopmost(false)
           await subWindowClass.destroyWindow();
           done();

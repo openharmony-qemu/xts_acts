@@ -67,22 +67,22 @@ let sizes: image.Size[] = [
 ]
 const fetchOptions_allocate_file = initFetchOptions()
 
-export function checkSet(callBackSet: boolean, uriSet: boolean, phAccessHelper: photoAccessHelper.PhotoAccessHelper,
+export function checkSet(callBackSet: boolean, uriSet: boolean, phAccessHelper: photoAccessHelper.PhotoAccessHelper | null,
   forChildUris: boolean, photoAsset: photoAccessHelper.PhotoAsset,
   onCallback1: Callback<photoAccessHelper.ChangeData>) {
   if (uriSet) {
-    phAccessHelper.registerChange(photoAsset.uri, forChildUris, onCallback1);
+    (phAccessHelper as photoAccessHelper.PhotoAccessHelper).registerChange(photoAsset.uri, forChildUris, onCallback1);
     if (callBackSet) {
-      phAccessHelper.unRegisterChange(photoAsset.uri, onCallback1);
+      (phAccessHelper as photoAccessHelper.PhotoAccessHelper).unRegisterChange(photoAsset.uri, onCallback1);
     } else {
-      phAccessHelper.unRegisterChange(photoAsset.uri);
+      (phAccessHelper as photoAccessHelper.PhotoAccessHelper).unRegisterChange(photoAsset.uri);
     }
   } else {
-    phAccessHelper.registerChange(DEFAULT_PHOTO_URI, true, onCallback1);
+    (phAccessHelper as photoAccessHelper.PhotoAccessHelper).registerChange(DEFAULT_PHOTO_URI, true, onCallback1);
     if (callBackSet) {
-      phAccessHelper.unRegisterChange(photoAsset.uri, onCallback1);
+      (phAccessHelper as photoAccessHelper.PhotoAccessHelper).unRegisterChange(photoAsset.uri, onCallback1);
     } else {
-      phAccessHelper.unRegisterChange(photoAsset.uri);
+      (phAccessHelper as photoAccessHelper.PhotoAccessHelper).unRegisterChange(photoAsset.uri);
     }
   }
 }

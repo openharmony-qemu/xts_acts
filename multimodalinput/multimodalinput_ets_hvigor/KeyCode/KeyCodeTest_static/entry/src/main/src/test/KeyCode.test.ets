@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,7 +57,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_BACK == 2);
         ExpectTrue(KeyCode.KEYCODE_SEARCH == 9);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -92,7 +92,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_BRIGHTNESS_UP == 40);
         ExpectTrue(KeyCode.KEYCODE_BRIGHTNESS_DOWN == 41);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -123,7 +123,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_8 == 2008);
         ExpectTrue(KeyCode.KEYCODE_9 == 2009);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -151,7 +151,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_DPAD_RIGHT == 2015);
         ExpectTrue(KeyCode.KEYCODE_DPAD_CENTER == 2016);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -198,7 +198,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_Y == 2041);
         ExpectTrue(KeyCode.KEYCODE_Z == 2042);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -240,7 +240,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_SEMICOLON == 2062);
         ExpectTrue(KeyCode.KEYCODE_APOSTROPHE == 2063);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -283,7 +283,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_FORWARD == 2084);
         ExpectTrue(KeyCode.KEYCODE_NUM_LOCK == 2102);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -309,7 +309,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_MEDIA_EJECT == 2088);
         ExpectTrue(KeyCode.KEYCODE_MEDIA_RECORD == 2089);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -354,7 +354,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_F23 == 2826);
         ExpectTrue(KeyCode.KEYCODE_F24 == 2827);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -396,7 +396,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_NUMPAD_RIGHT_PAREN == 2122);
         ExpectTrue(KeyCode.KEYCODE_VIRTUAL_MULTITASK == 2210);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -430,7 +430,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_BUTTON_THUMBL == 2314);
         ExpectTrue(KeyCode.KEYCODE_BUTTON_THUMBR == 2315);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -480,7 +480,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_BOOKMARKS == 2628);
         ExpectTrue(KeyCode.KEYCODE_NEXT == 2629);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -530,7 +530,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_VIDEO_PREV == 2658);
         ExpectTrue(KeyCode.KEYCODE_BRIGHTNESS_CYCLE == 2659);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -581,7 +581,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_YELLOW == 2688);
         ExpectTrue(KeyCode.KEYCODE_BLUE == 2689);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -632,7 +632,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_JOURNAL == 2718);
         ExpectTrue(KeyCode.KEYCODE_CONTROLPANEL == 2719);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -664,6 +664,8 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_KBDINPUTASSIST_NEXTGROUP == 2729);
         ExpectTrue(KeyCode.KEYCODE_KBDINPUTASSIST_ACCEPT == 2730);
         ExpectTrue(KeyCode.KEYCODE_KBDINPUTASSIST_CANCEL == 2731);
+        ExpectTrue(KeyCode.KEYCODE_MOUSE_ASSISTANT == 2732);
+        ExpectTrue(KeyCode.KEYCODE_MOUSE_INTELLIGENCE_SELECTION == 2733);
         ExpectTrue(KeyCode.KEYCODE_FRONT == 2800);
         ExpectTrue(KeyCode.KEYCODE_SETUP == 2801);
         ExpectTrue(KeyCode.KEYCODE_WAKEUP == 2802);
@@ -683,7 +685,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_PROG3 == 2828);
         ExpectTrue(KeyCode.KEYCODE_PROG4 == 2829);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -721,7 +723,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_RFKILL == 2847);
         ExpectTrue(KeyCode.KEYCODE_CHANNEL == 3001);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -752,7 +754,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_BTN_8 == 3108);
         ExpectTrue(KeyCode.KEYCODE_BTN_9 == 3109);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -775,8 +777,9 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(KeyCode.KEYCODE_DAGGER_CLICK == 3211);
         ExpectTrue(KeyCode.KEYCODE_DAGGER_DOUBLE_CLICK == 3212);
         ExpectTrue(KeyCode.KEYCODE_DAGGER_LONG_PRESS == 3213);
+        expect(KeyCode.KEYCODE_DIV).assertEqual(3220);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();
@@ -811,7 +814,7 @@ export default function MultimodalKeyCodeTest() {
         ExpectTrue(IntentionCode.INTENTION_ZOOM_OUT == 13);
         ExpectTrue(IntentionCode.INTENTION_ZOOM_IN == 14);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
         ExpectFalse(true);
         done();

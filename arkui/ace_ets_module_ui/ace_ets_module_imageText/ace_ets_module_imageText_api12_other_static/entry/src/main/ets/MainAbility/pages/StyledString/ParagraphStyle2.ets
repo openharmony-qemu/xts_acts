@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +51,7 @@ import { LengthMetrics } from '@kit.ArkUI'
 const canvasWidth = 1000
 const canvasHeight = 100
 
-class LeadingMarginCreator {
+export class LeadingMarginCreator {
   private settings: RenderingContextSettings = new RenderingContextSettings(true)
   private offscreenCanvas: OffscreenCanvas = new OffscreenCanvas(canvasWidth, canvasHeight)
   private offContext: OffscreenCanvasRenderingContext2D = this.offscreenCanvas.getContext('2d', this.settings)
@@ -63,7 +63,12 @@ class LeadingMarginCreator {
     const coordinate = fontSize * (1 - 1 / 1.5) / 2
     const sideLength = fontSize / 1.5
     this.offContext.fillRect(coordinate, coordinate, sideLength, sideLength)
-    return this.offContext.getPixelMap(0, 0, fontSize, fontSize)
+    let pixelMap = this.offContext.getPixelMap(0, 0, fontSize, fontSize)
+    if (pixelMap != undefined) {
+      return pixelMap as PixelMap
+    } else {
+      throw new Error(`GetPixelMap failed`)
+    }
   }
 
   private clearCanvas() {

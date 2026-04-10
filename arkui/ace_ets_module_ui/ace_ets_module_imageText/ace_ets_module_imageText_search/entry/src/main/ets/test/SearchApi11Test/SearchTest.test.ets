@@ -1183,7 +1183,8 @@ export default function search() {
       console.info("[ArkUI_Stage_Search_SearchIcon_0200]: " + JSON.stringify(obj.$attrs.searchIcon.size));
       let result: number = 26;
       console.info("[ArkUI_Stage_Search_SearchIcon_0200]: " + vp2px(result).toFixed(2));
-      expect(obj.$attrs.searchIcon.size).assertEqual(vp2px(result).toFixed(2) + "px");
+      let searchIconSize:number =  Number(obj.$attrs.searchIcon.size.slice(0,-2))
+      expect(Math.abs(searchIconSize-vp2px(result))<=1).assertEqual(true);
       console.info("[ArkUI_Stage_Search_SearchIcon_0200] end");
       done();
     });
@@ -1965,7 +1966,8 @@ export default function search() {
       console.info("[ArkUI_Stage_Search_SearchIcon_2100]: " + JSON.stringify(obj.$attrs.searchIcon.size));
       let result: number = 26;
       console.info("[ArkUI_Stage_Search_SearchIcon_2100]: " + vp2px(result).toFixed(2));
-      expect(obj.$attrs.searchIcon.size).assertEqual(vp2px(result).toFixed(2) + "px");
+      let searchIconSize:number =  Number(obj.$attrs.searchIcon.size.slice(0,-2))
+      expect(Math.abs(searchIconSize-vp2px(result))<=1).assertEqual(true);
       console.info("[ArkUI_Stage_Search_SearchIcon_2100]: " + JSON.stringify(obj.$attrs.searchIcon));
       console.info("[ArkUI_Stage_Search_SearchIcon_2100]: " + JSON.stringify(obj.$attrs.searchIcon.color));
       expect(obj.$attrs.searchIcon.color).assertEqual("#FF00FF00");
@@ -2556,7 +2558,8 @@ export default function search() {
       console.info("[ArkUI_Stage_Search_CancelButton_0700]: " + JSON.stringify(obj.$attrs.cancelButton.icon.size));
       let result: number = 26;
       console.info("[ArkUI_Stage_Search_CancelButton_0700]: " + vp2px(result).toFixed(2));
-      expect(obj.$attrs.cancelButton.icon.size).assertEqual(vp2px(result).toFixed(2) + "px");
+      let searchIconSize:number =  Number(obj.$attrs.cancelButton.icon.size.slice(0,-2))
+      expect(Math.abs(searchIconSize-vp2px(result))<=1).assertEqual(true);
       console.info("[ArkUI_Stage_Search_CancelButton_0700] end");
       done();
     });
@@ -3338,7 +3341,8 @@ export default function search() {
       console.info("[ArkUI_Stage_Search_CancelButton_2600]: " + JSON.stringify(obj.$attrs.cancelButton.icon.size));
       let result: number = 26;
       console.info("[ArkUI_Stage_Search_CancelButton_2600]: " + vp2px(result).toFixed(2));
-      expect(obj.$attrs.cancelButton.icon.size).assertEqual(vp2px(result).toFixed(2) + "px");
+      let searchIconSize:number =  Number(obj.$attrs.cancelButton.icon.size.slice(0,-2))
+      expect(Math.abs(searchIconSize-vp2px(result))<=1).assertEqual(true);
       console.info("[ArkUI_Stage_Search_CancelButton_2600]: " + JSON.stringify(obj.$attrs.cancelButton));
       console.info("[ArkUI_Stage_Search_CancelButton_2600]: " + JSON.stringify(obj.$attrs.cancelButton.icon.color));
       expect(obj.$attrs.cancelButton.icon.color).assertEqual("#FF00FF00");

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,7 +52,7 @@ export default function fileIOReadLines() {
           expect(it.value.trim() == arr[i]).assertTrue();
         }
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -81,7 +81,7 @@ export default function fileIOReadLines() {
           expect(it.value.trim() == arr[i]).assertTrue();
         }
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -101,7 +101,8 @@ export default function fileIOReadLines() {
         let fpath = await Utils.nextFileName('fileIO_test_readLines_sync_static_004');
         fs.readLinesSync(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_004 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -128,9 +129,29 @@ export default function fileIOReadLines() {
           expect(it.value.trim() == arr[i]).assertTrue();
         }
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_005 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_readLines_sync_static_006
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0600
+     * @tc.desc   Test readLinesSync() interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_readLines_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_006 start');
+      try {
+        fs.readLinesSync("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_006 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
 
@@ -152,7 +173,8 @@ export default function fileIOReadLines() {
           encoding: 'utf-16'
         });
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_007 has failed for' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -181,8 +203,37 @@ export default function fileIOReadLines() {
           expect(it.done == false).assertTrue();
         }
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_008 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_readLines_sync_static_009
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0900
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_readLines_sync_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_009 start');
+      try {
+        let fpath = await Utils.nextFileName('fileIO_test_readLines_sync_static_009');
+        expect(await Utils.prepareFile(fpath, FILE_CONTENTS)).assertTrue();
+        let arr = FILE_CONTENTS.split("\n");
+        let readerIterator = fs.readLinesSync(fpath);
+        for (let i = 0; i <= arr.length + 1; i++) {
+          let it = readerIterator.next();
+          if(i === arr.length + 1){
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_009 it.done: ' + it.done);
+           expect(it.done == true).assertTrue();
+          }
+        }
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_009 has failed for' + e.code);
         expect(false).assertTrue();
       }
     });
@@ -211,7 +262,7 @@ export default function fileIOReadLines() {
         }
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -241,7 +292,7 @@ export default function fileIOReadLines() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -272,7 +323,7 @@ export default function fileIOReadLines() {
         }
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -304,7 +355,7 @@ export default function fileIOReadLines() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -339,7 +390,7 @@ export default function fileIOReadLines() {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_005 error: ' + JSON.stringify(err));
           expect(false).assertTrue();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_005 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -367,9 +418,80 @@ export default function fileIOReadLines() {
         }
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_006 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_readLines_async_static_007
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0700
+     * @tc.desc   Test readLines() callback interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_readLines_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_007 start');
+      try {
+        fs.readLines("", { encoding: 'utf-8' }, (err: BusinessError | null, readerIterator: fs.ReaderIterator | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_007 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_007 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_readLines_async_static_008
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0800
+     * @tc.desc   Test readLines() promise interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_readLines_async_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_008 start');
+      try {
+        await fs.readLines("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_008 error: {message: ' + e.message + ', code: ' + e.code + '}');
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_readLines_async_static_009
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0900
+     * @tc.desc   Test readLines() callback interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_readLines_async_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_009 start');
+      try {
+        fs.readLines("", (err: BusinessError | null, readerIterator: fs.ReaderIterator | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_009 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_009 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
       }
     });
   })

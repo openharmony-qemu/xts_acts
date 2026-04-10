@@ -18,9 +18,9 @@ export default function getBundleInfo() {
      * @tc.desc   test errCode 17700001 when call getBundleInfo with userID
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getBundleInfoTestWithUserIdCallBack17700001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getBundleInfoTestWithUserIdCallBack17700001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         bundle.getBundleInfo("com.example.helloworld5", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 100, (err: BusinessError<void> | null, data : BundleInfo | undefined) => {
           hilog.info(domain, tag,
@@ -216,6 +216,143 @@ export default function getBundleInfo() {
           done();
         }
         hilog.info(domain, tag, 'getBundleInfoTestSyncWithUserID17700004 end');
+      })
+      
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_Static_2130
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_Static_2130
+     * @tc.desc   Test getBundleInfo interfaces with empty bundleName. (by callback userID)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_Static_2130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        bundle.getBundleInfo("", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 100,
+          (err: BusinessError<void> | null, data: BundleInfo | undefined) => {
+            hilog.info(domain, tag,
+              'Sub_Bms_Framework_Query_AppInfo_Static_2130 err ====> ' + JSON.stringify(err));
+            if (err) {
+              expect(err?.code).assertEqual(17700001);
+              expect(err?.message).assertEqual('BusinessError 17700001: The specified bundle is not found.');
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+          });
+      })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_Static_2140
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_Static_2140
+     * @tc.desc   Test getBundleInfo interfaces with empty bundleName. (by callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_Static_2140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        bundle.getBundleInfo("", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT,
+          (err: BusinessError<void> | null, data: BundleInfo | undefined) => {
+            hilog.info(domain, tag,
+              'Sub_Bms_Framework_Query_AppInfo_Static_2140 err ====> ' + JSON.stringify(err));
+            if (err) {
+              expect(err?.code).assertEqual(17700001);
+              expect(err?.message).assertEqual('BusinessError 17700001: The specified bundle is not found.');
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+          });
+      })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_Static_2040
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_Static_2040
+     * @tc.desc   Test getBundleInfo interfaces with empty bundleName. (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_Static_2040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, 'Sub_Bms_Framework_Query_AppInfo_Static_2040  ====> start');
+        try {
+          bundle.getBundleInfo("", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 100)
+            .then((data: BundleInfo) => {
+              expect().assertFail();
+              done();
+            })
+            .catch((err: Error): void => {
+              hilog.info(0x0000, tag, 'Sub_Bms_Framework_Query_AppInfo_Static_2040 err1 ====> ' + JSON.stringify(err));
+              expect(err.code).assertEqual(17700001);
+              expect(err.message).assertEqual('BusinessError 17700001: The specified bundle is not found.');
+              done();
+            });
+        } catch (err) {
+          hilog.info(0x0000, tag, 'Sub_Bms_Framework_Query_AppInfo_Static_2040 err2 ====> ' + JSON.stringify(err));
+          let message = (err as BusinessError).message;
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_Static_2150
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_Static_2150
+     * @tc.desc   Test getBundleInfoSync interfaces with empty bundleName.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_Static_2150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'Sub_Bms_Framework_Query_AppInfo_Static_2150  ====> Start');
+        try {
+          let data: bundle.BundleInfo =
+            bundle.getBundleInfoSync("", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT);
+          hilog.info(domain, tag, 'Sub_Bms_Framework_Query_AppInfo_Static_2150 data ====>' + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        } catch (err) {
+          hilog.info(0x0000, tag, 'Sub_Bms_Framework_Query_AppInfo_Static_2150 err2 ====> ' + JSON.stringify(err));
+          let message = (err as BusinessError).message;
+          let code = (err as BusinessError).code;
+          expect(code).assertEqual(17700001);
+          expect(message).assertEqual('BusinessError 17700001: The specified bundle is not found.');
+          done();
+        }
+        hilog.info(domain, tag, 'Sub_Bms_Framework_Query_AppInfo_Static_2150 end');
+      })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_Static_2160
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_Static_2160
+     * @tc.desc   Test getBundleInfoSync interfaces with empty bundleName.(With UserId)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('Sub_Bms_Framework_Query_AppInfo_Static_2160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'Sub_Bms_Framework_Query_AppInfo_Static_2160  ====> Start');
+        try {
+          let data: bundle.BundleInfo =
+            bundle.getBundleInfoSync("", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 100);
+          hilog.info(domain, tag, 'Sub_Bms_Framework_Query_AppInfo_Static_2160 data ====>' + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        } catch (err) {
+          hilog.info(0x0000, tag, 'Sub_Bms_Framework_Query_AppInfo_Static_2160 err2 ====> ' + JSON.stringify(err));
+          let message = (err as BusinessError).message;
+          let code = (err as BusinessError).code;
+          expect(code).assertEqual(17700001);
+          expect(message).assertEqual('BusinessError 17700001: The specified bundle is not found.');
+          done();
+        }
+        hilog.info(domain, tag, 'Sub_Bms_Framework_Query_AppInfo_Static_2160 end');
       })
   })
 }

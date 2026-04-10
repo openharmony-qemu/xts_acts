@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function localStorageRefJsunit() {
   describe('localStorageRefJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("localStorageRefJsunit beforeEach start");
 
 

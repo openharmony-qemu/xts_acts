@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -97,7 +97,7 @@ struct LinkArrayBooleanChild {
           this.value.shift()
         })
 
-      ForEach(Array.from(this.value.entries()), (item: [number,Boolean]) => {
+      ForEach(Array.from(this.value.entries()), (item: [int,Boolean]) => {
         Text(`${item[1]} index:${item[0]}`).fontSize(9).id('LinkArrayBoolean_value_' + `${item[0]}`).height('5%')
         Divider()
       })
@@ -116,7 +116,7 @@ struct LinkArrayBoolean {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LinkArrayBoolean', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

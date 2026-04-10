@@ -39,6 +39,8 @@ struct ConstraintSizePage {
 
   @Styles
   commonStyle(){
+    .margin(0)
+    .padding(0)
     .constraintSize(this._constraintSize)
     .width(this.childWidth)
     .height(this.childHeight)

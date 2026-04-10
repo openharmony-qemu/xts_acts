@@ -47,7 +47,7 @@ export default function albumGetAssetsTest() {
         const testNum = 'album_getAssets_callback_static_000';
         try {
           const fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           const album = await fetchResult.getFirstObject();
           fetchResult.close();
           const fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'albumGetAssetsCb01.mp4');
@@ -82,7 +82,7 @@ export default function albumGetAssetsTest() {
         const testNum = 'album_getAssets_promise_static_000';
         try {
           const fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           const album = await fetchResult.getFirstObject();
           fetchResult.close();
           const fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'albumGetAssetsPro01.mp4');

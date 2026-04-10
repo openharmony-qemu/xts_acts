@@ -15,7 +15,7 @@
  */
 import image from '@ohos.multimedia.image'
 import {
-  Entry,Uint8Array,
+  Entry,
   Component,
   Column,
   ColumnOptions,
@@ -53,16 +53,18 @@ struct imageAddApi2 {
   } as ImageAIOptions
 
   onPageShow() {
-    this.imagePixelMap = this.getPixmapFromMedia($r('app.media.icon'))
+    waitForCompletion(async ()=>{
+      this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'))
+    })
   }
 
   build() {
     Column() {
-      Image($r('app.media.icon'), this.options)
+      Image(this.imagePixelMap, this.options)
         .enableAnalyzer(true)
         .width(200)
         .height(200)
-        .key('imageAddApi2')
+        .key('imageEnableAnalyzerTrue')
       Button('getTypes')
         .width(80)
         .height(80)
@@ -71,7 +73,7 @@ struct imageAddApi2 {
         })
     }
   }
-  private getPixmapFromMedia(resource: Resource) {
+  private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {
     let unit8Array = await AppStorage.get<common.Context>('applicationContext')?.resourceManager?.getMediaContent(resource.id)!
     let data: ArrayBuffer = unit8Array
       .buffer

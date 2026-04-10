@@ -35,14 +35,14 @@ import {
   NavigationMode,
   NavPathStack
 } from '@ohos.arkui.component';
-import { Link, State } from '@ohos.arkui.stateManagement';
+import { Link, State, PropRef } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct NavigationView {
   private arr: number[] = [0, 1, 2, 3] as number[]
   @State isActive: boolean = false
   @State dex: number = 0
-  private _position: Position = {x:0,y:0} as Position;
+  @PropRef _position!: Position;
   private componentKey: string = '';
 
   build() {

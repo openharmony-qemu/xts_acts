@@ -140,7 +140,7 @@ export default function testsuite() {
   textJsunit();
   textAreaJsunit();
   textInputJsunit();
-  //  gaugeJsunit();
+  gaugeJsunit();
   imageJsunit(); 
   imageAnimatorJsunit(); 
   videoJsunit(); 

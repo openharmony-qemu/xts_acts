@@ -90,6 +90,7 @@ export struct displayRepeat {
             })
             .key((item: number) => (item).toString())
         }
+        .cachedCount(5)
         .onScrollIndex((start, end) => {
           this.start = start;
           this.end = end;

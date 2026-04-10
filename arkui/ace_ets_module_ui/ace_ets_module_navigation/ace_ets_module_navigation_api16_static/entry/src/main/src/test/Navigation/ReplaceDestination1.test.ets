@@ -41,7 +41,7 @@ import router from '@ohos.router';
 
 export default function ReplaceDestination1Test() {
   describe('ReplaceDestination1Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation16.static", "EntryAbility")
 
@@ -87,12 +87,12 @@ it('ReplaceDestination1_static_0100', Level.LEVEL0, async (done: () => void): Pr
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn1 = await (driver.findComponent(ON.id('pageOneId')) as Promise<Component>);
       await btn1.click()
       console.info('[ReplaceDestination1_static_0100] btn1 click');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('id06');
       let obj = JSON.parseJsonElement(strJson);
@@ -178,12 +178,12 @@ it('ReplaceDestination1_static_0400', Level.LEVEL0, async (done: () => void): Pr
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn1 = await (driver.findComponent(ON.id('replaceId')) as Promise<Component>);
       await btn1.click()
       console.info('[ReplaceDestination1_static_0400] btn1 click');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('stackId');
       let obj = JSON.parseJsonElement(strJson);
@@ -209,32 +209,32 @@ it('ReplaceDestination1_static_0500', Level.LEVEL0, async (done: () => void): Pr
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let clearBtn = await (driver.findComponent(ON.id('clearId')) as Promise<Component>);
       await clearBtn.click()
       console.info('[ReplaceDestination1_static_0500] clearBtn click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn1 = await (driver.findComponent(ON.id('pushId')) as Promise<Component>);
       await btn1.click()
       console.info('[ReplaceDestination1_static_0500] btn1 click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn2 = await (driver.findComponent(ON.id('pushThreeId')) as Promise<Component>);
       await btn2.click()
       console.info('[ReplaceDestination1_static_0500] btn2 click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn3 = await (driver.findComponent(ON.id('pushFourId')) as Promise<Component>);
       await btn3.click()
       console.info('[ReplaceDestination1_static_0500] btn3 click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn4 = await (driver.findComponent(ON.id('moveId')) as Promise<Component>);
       await btn4.click()
       console.info('[ReplaceDestination1_static_0500] btn3 click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('stackId');
       let obj = JSON.parseJsonElement(strJson);
@@ -261,32 +261,32 @@ it('ReplaceDestination1_static_0600', Level.LEVEL0, async (done: () => void): Pr
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let clearBtn = await (driver.findComponent(ON.id('clearId')) as Promise<Component>);
       await clearBtn.click()
       console.info('[ReplaceDestination1_static_0600] clearBtn click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn1 = await (driver.findComponent(ON.id('pushId')) as Promise<Component>);
       await btn1.click()
       console.info('[ReplaceDestination1_static_0600] btn1 click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn2 = await (driver.findComponent(ON.id('pushThreeId')) as Promise<Component>);
       await btn2.click()
       console.info('[ReplaceDestination1_static_0600] btn2 click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn3 = await (driver.findComponent(ON.id('pushFourId')) as Promise<Component>);
       await btn3.click()
       console.info('[ReplaceDestination1_static_0600] btn3 click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let btn4 = await (driver.findComponent(ON.id('popId')) as Promise<Component>);
       await btn4.click()
       console.info('[ReplaceDestination1_static_0600] btn3 click');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('stackId');
       let obj = JSON.parseJsonElement(strJson);

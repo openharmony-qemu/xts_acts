@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, beforeAll, afterEach, it, expect, Level} from "../../../../hypium/index"
+import { describe, beforeEach, beforeAll, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { MessageManager,Callback  } from '../../../ets/MainAbility/common/MessageManager';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import events_emitter from '@ohos.events.emitter';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector'
 import common from '@ohos.app.ability.common';
 import { UtilsTest, startAbility } from '../Util.test';
-import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
+import { SharedTransitionEffectType, Color } from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 export default function NavigationSymbolIcon() {
   describe('NavigationSymbolIcon', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
@@ -64,16 +65,13 @@ export default function NavigationSymbolIcon() {
     });
 
 
-
-    
-
     /**
      * @tc.number   NavigationSymbolIcon_static_0100
      * @tc.name     NavigationSymbolIcon_static_0100
      * @tc.desc     NavigationSymbolIcon_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavigationSymbolIcon_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavigationSymbolIcon_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('NavigationSymbolIcon_static_0100 START');
       await CommonFunc.sleep(1000);
@@ -81,11 +79,36 @@ it('NavigationSymbolIcon_static_0100', Level.LEVEL0, async (done: () => void): P
       await CommonFunc.sleep(1000);
       let obj1 = JSON.parseJsonElement(str);
       await CommonFunc.sleep(1000);
-      expect(obj1.getArray('$children')[0].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[0].getString('$type')).assertEqual('SymbolGlyph');
+
+      let objArray2 =
+        obj1.getArray('$children')[0].getArray('$children')[0].getArray('$children')[0].getArray('$children')
+      let obj2: jsonx.JsonElement | undefined;
+      for (let i = 0; i < objArray2.length; i++) {
+        if (objArray2[i].getString("$type") == "NavigationMenu") {
+          obj2 = objArray2[i]
+          break
+        }
+      }
+      expect(obj2!.getArray('$children')[0].getArray('$children')[0].getArray('$children')[0].getString('$type'))
+        .assertEqual('SymbolGlyph');
       console.info('NavigationSymbolIcon_static_0100 syb1');
-      expect(obj1.getArray('$children')[0].getArray('$children')[0].getArray('$children')[2].getArray('$children')[0].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getString('$type')).assertEqual('SymbolGlyph');
+      expect(obj1.getArray('$children')[0]
+        .getArray('$children')[0]
+        .getArray('$children')[2]
+        .getArray('$children')[0]
+        .getArray('$children')[0]
+        .getArray('$children')[0]
+        .getArray('$children')[1]
+        .getString('$type')).assertEqual('SymbolGlyph');
       console.info('NavigationSymbolIcon_static_0100 syb2');
-      expect(obj1.getArray('$children')[0].getArray('$children')[0].getArray('$children')[2].getArray('$children')[0].getArray('$children')[1].getArray('$children')[0].getArray('$children')[1].getString('$type')).assertEqual('SymbolGlyph');
+      expect(obj1.getArray('$children')[0]
+        .getArray('$children')[0]
+        .getArray('$children')[2]
+        .getArray('$children')[0]
+        .getArray('$children')[1]
+        .getArray('$children')[0]
+        .getArray('$children')[1]
+        .getString('$type')).assertEqual('SymbolGlyph');
       console.info('NavigationSymbolIcon_static_0100 END');
       done();
     });

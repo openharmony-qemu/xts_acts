@@ -14,7 +14,7 @@
  */
 {
   "app": {
-    "bundleName": "com.acts.test.actscodeparsingtest",
+    "bundleName": "com.acts.test.specialchartest",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

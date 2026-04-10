@@ -30,7 +30,7 @@ import { UtilsTest, startAbility } from '../Util.test'
 
 export default function getIndicator() {
   describe('getIndicator', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll15.static", "EntryAbility");
       
     });

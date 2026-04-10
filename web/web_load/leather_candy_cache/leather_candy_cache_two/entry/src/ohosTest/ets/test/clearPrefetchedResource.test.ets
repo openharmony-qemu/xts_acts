@@ -152,5 +152,21 @@ export default function clearPrefetchedResourceTest() {
         });
       Utils.waitAndClickComponent('clearPrefetchedResourceTestButton',driver);
     })
+    /**
+     * @tc.name   testClearPrefetchedResource006
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARPREFETCHEDRESOURCES_0600
+     * @tc.desc   test PrefetchedResource first parameter1 is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testClearPrefetchedResource006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testClearPrefetchedResource006", 148301);
+      Utils.registerBaseEvent("testClearPrefetchedResource006", "401", 148340, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('clearPrefetchedResourceTestButton',driver);
+    })
   })
 }

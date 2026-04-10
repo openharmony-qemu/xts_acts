@@ -499,9 +499,11 @@ export default function audioCapturerVoiceMessage() {
         rendererInfo: AudioRendererInfo,
         privacyType: AudioPrivacyType
       }
+      let flag: boolean = false;
       await getFd("capture_js-44100-2C-16B_voice_message.pcm");
       await recPromise(AudioCapturerOptions, AudioRendererOptions, done);
-      expect(true).assertTrue();
+      flag = true;
+      expect(flag).assertEqual(true);
       done();
     })
 

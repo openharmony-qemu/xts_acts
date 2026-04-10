@@ -21,6 +21,7 @@
 #include <multimedia/player_framework/native_avmemory.h>
 #include "include/DemuxerHelperTest.h"
 #include "include/FuncHelperTest.h"
+#include <hilog/log.h>
 
 #include <iostream>
 #include <cstdio>
@@ -30,6 +31,11 @@
 #include <sys/stat.h>
 #include <cmath>
 #include <thread>
+
+#undef LOG_DOMAIN
+#undef LOG_TAG
+#define LOG_DOMAIN 0x0000
+#define LOG_TAG "DemuxerFuncTest"
 
 using namespace std;
 
@@ -244,6 +250,27 @@ static int InitSourceAndMemory38003900(const char *file, int &fd, int64_t &size)
     memory = OH_AVMemory_Create(size);
     if (memory == nullptr) {
         close(fd);
+        return -1;
+    }
+    return 0;
+}
+
+
+int DemuxerFunction0200()
+{
+    const char *uri = "http://10.174.172.228:8080/share/audio/AAC_48000_1.aac";
+    source = OH_AVSource_CreateWithURI(const_cast<char *>(uri));
+    if (source != nullptr) {
+        return -1;
+    }
+    return 0;
+}
+
+int DemuxerFunction0300()
+{
+    const char *uri = "http://invalidPath/invalid.mp4";
+    source = OH_AVSource_CreateWithURI(const_cast<char *>(uri));
+    if (source != nullptr) {
         return -1;
     }
     return 0;

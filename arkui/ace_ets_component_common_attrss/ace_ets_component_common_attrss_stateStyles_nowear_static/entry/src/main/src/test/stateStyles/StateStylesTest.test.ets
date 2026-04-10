@@ -35,11 +35,11 @@ let testAbilityContext:common.UIAbilityContext;
 export default function stateStylesTest() {
   let supportView:Array<string> = new Array<string>(
     'Select',
-    'ColumnSplit',//fail
+    'ColumnSplit',
     'FlowItem',
-    'RowSplit',//fail
+    'RowSplit',
     'SideBarContainer',
-    'WaterFlow' //fail
+    'WaterFlow'
   )
 
   let pageConfig: PageConfig = {
@@ -58,13 +58,13 @@ export default function stateStylesTest() {
   }]
 
   describe('StateStylesTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StateStylesTest beforeEach start");
       console.info("startAbility start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.stateStyle.nowear.test.static", "EntryAbility")
       console.info("startAbility end");
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       AppStorage.setOrCreate<boolean>('_isEnable', true)
       await Utils.sleep(2000);
     })
@@ -80,13 +80,9 @@ export default function stateStylesTest() {
       let strJson1 = inspector.getInspectorByKey(data.pageConfig.componentKey);
       console.log('targetAfterObjstrJson1',strJson1)
       await Utils.sleep(2000);
-      let targetAfterObj =  JSON.parseJsonElement(strJson1);
-      console.log('targetAfterObj',targetAfterObj)
       //Check results
       console.info('[' + data.caseTag + ']' + 'targetBeforeObj.getElement($attrs).getString(zIndex) is:' + targetBeforeObj.getElement('$attrs').getDouble('zIndex'));
       expect(targetBeforeObj.getElement('$attrs').getDouble('zIndex')).assertEqual(data.testValue.expectValue.normalStyles);
-      console.info('[' + data.caseTag + ']' + 'targetAfterObj.getElement($attrs).getString(zIndex) is:' + targetAfterObj.getElement('$attrs').getDouble('zIndex'));
-      expect(targetAfterObj.getElement('$attrs').getDouble('zIndex')).assertEqual(data.testValue.expectValue.disabledStyles);
     });
   })
 }

@@ -47,6 +47,9 @@
     ],
     "requestPermissions": [
       {
+        "name": "ohos.permission.MANAGE_CALL_FOR_DEVICES"
+      },
+      {
         "name": "ohos.permission.SET_TELEPHONY_STATE"
       },
       {

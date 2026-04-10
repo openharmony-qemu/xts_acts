@@ -182,7 +182,6 @@ describe('fileIO_randomAccessFile_read', function () {
             randomaccessfile.close();
             fileIO.closeSync(file.fd);
             fileIO.unlinkSync(fpath);
-            expect(true).assertTrue();
         } catch (err) {
             console.info('fileIO_randomaccessfile_read_sync_007 has failed for ' + err);
             expect(false).assertTrue();
@@ -208,7 +207,6 @@ describe('fileIO_randomAccessFile_read', function () {
             expect(readLength == 0).assertTrue();
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
-            expect(true).assertTrue();
         } catch (err) {
             console.info('fileIO_randomaccessfile_read_sync_008 has failed for ' + err);
             expect(false).assertTrue();
@@ -592,7 +590,6 @@ describe('fileIO_randomAccessFile_read', function () {
             expect(readLength== FILE_CONTENT.length - 1).assertTrue();
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
-            expect(true).assertTrue();
             done();
         } catch (err) {
             console.info('fileIO_randomaccessfile_read_async_007 has failed for ' + err);

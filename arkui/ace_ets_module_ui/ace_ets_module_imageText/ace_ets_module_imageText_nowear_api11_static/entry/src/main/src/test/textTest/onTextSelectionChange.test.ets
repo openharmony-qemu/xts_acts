@@ -32,7 +32,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function OnTextSelectionChangeTest() {
   describe('OnTextSelectionChangeTest', () : void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("OnTextSelectionChangeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")
@@ -48,9 +48,9 @@ export default function OnTextSelectionChangeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get OnTextSelectionChangeTest state pages:" + "");
-        if (!("onTextSelectionChange" == pages.name)) {
+        if (!("onTextSelectionChange1" == pages.name)) {
           console.info("get OnTextSelectionChangeTest pages.name:" + "");
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -73,7 +73,6 @@ it('OnTextSelectionChangeTest_static_0010', Level.LEVEL2, async (done: ()=> void
       console.info('[OnTextSelectionChangeTest_0010] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      try {
         let textRect = CommonFunc.getComponentRectOnScreen('OnTextSelectionChange_text');
         let clickX1 = Math.round(textRect.left + 2) as int
         let clickX2 = Math.round(textRect.right - 2) as int
@@ -87,9 +86,6 @@ it('OnTextSelectionChangeTest_static_0010', Level.LEVEL2, async (done: ()=> void
         await CommonFunc.sleep(1000);
         console.info('[OnTextSelectionChangeTest_0010] get2: ' + AppStorage.get<string>('OnTextSelectionChange'));
         expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:-1,end:-1');
-      }catch(error) {
-        expect().assertFail();
-      }
       console.info("[OnTextSelectionChangeTest_0010] END");
       done();
     });
@@ -114,7 +110,6 @@ it('OnTextSelectionChangeTest_static_0020', Level.LEVEL2, async (done: ()=> void
       await CommonFunc.sleep(500);
       console.info('[OnTextSelectionChangeTest_0020] get1: ' + AppStorage.get<string>('OnTextSelectionChange'));
 
-      try {
         expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:3,end:11');
         let textRect = CommonFunc.getComponentRectOnScreen('OnTextSelectionChange_text');
         let clickX = Math.round((textRect.left + textRect.right)/2) as int
@@ -124,9 +119,6 @@ it('OnTextSelectionChangeTest_static_0020', Level.LEVEL2, async (done: ()=> void
         await CommonFunc.sleep(1000);
         console.info('[OnTextSelectionChangeTest_0020] get2: ' + AppStorage.get<string>('OnTextSelectionChange'));
         expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:-1,end:-1');
-      }catch(error) {
-        expect().assertFail();
-      }
       console.info("[OnTextSelectionChangeTest_0020] END");
       done();
     });
@@ -139,7 +131,6 @@ it('OnTextSelectionChangeTest_static_0020', Level.LEVEL2, async (done: ()=> void
 it('OnTextSelectionChangeTest_static_0030', Level.LEVEL2, async (done: ()=>void) => {
       console.info('[OnTextSelectionChangeTest_0030] START');
 
-      try {
         let driver = Driver.create();
         await CommonFunc.sleep(500);
         console.info('[OnTextSelectionChangeTest_0030] get1: ' + AppStorage.get<string>('OnTextSelectionChange'));
@@ -152,9 +143,6 @@ it('OnTextSelectionChangeTest_static_0030', Level.LEVEL2, async (done: ()=>void)
         console.info('[OnTextSelectionChangeTest_0030] get2: ' +
         AppStorage.get<string>('OnTextSelectionChange'));
         expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:-1,end:-1');
-      }catch(error) {
-        expect().assertFail();
-      }
       console.info("[OnTextSelectionChangeTest_0030] END");
       done();
     });

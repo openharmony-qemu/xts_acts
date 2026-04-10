@@ -96,7 +96,11 @@ export default class applicationContext02 extends UIAbility {
       } catch (error) {
         console.log(`applicationContext.restartApp fail, error: ${JSON.stringify(error)}`);
         if (error.code == 16000053) {
-          commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          commonEventManager.publish('ACTS_TEST_DESTROY', {
+            parameters:{
+              result: error.code
+            }
+          }, function () {
             console.info('====>SUB_ChildProcessManager_sendableContextManager_0800 publish ACTS_TEST_DESTROY');
             setTimeout(() => {
               globalThis.applicationContext02.terminateSelf()

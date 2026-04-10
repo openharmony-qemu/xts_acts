@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function GridNodeTest() {
   describe('GridNodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("GridNodeTest beforeEach start");
 
       

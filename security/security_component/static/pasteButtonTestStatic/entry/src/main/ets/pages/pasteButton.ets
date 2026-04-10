@@ -37,11 +37,15 @@ import {
   HorizontalAlign,
   ColorMetrics,
   LengthMetrics,
+  Color,
+  AlignRuleOption,
+  LocalizedAlignRuleOptions,
+  Axis,
+  ChainStyle
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-import { BusinessError } from '@ohos.base'
+import { BusinessError, RecordData } from '@ohos.base'
 import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -49,19 +53,19 @@ struct pasteButton {
   @State bgType: ButtonType | undefined = ButtonType.Normal
   @State iconSize: number | undefined = 16
   @State direct: SecurityComponentLayoutDirection | undefined = SecurityComponentLayoutDirection.HORIZONTAL
-  @State positionX: number | undefined = 0
-  @State positionY: number | undefined = 0
-  @State anchorX: number | undefined = 0
-  @State anchorY: number | undefined = 0
-  @State offsetX: number | undefined = 0
-  @State offsetY: number | undefined = 0
+  @State positionX: string | undefined = '0'
+  @State positionY: string | undefined = '0'
+  @State anchorX: string | undefined = '0'
+  @State anchorY: string | undefined = '0'
+  @State offsetX: string | undefined = '0'
+  @State offsetY: string | undefined = '0'
   @State fontSize: number | undefined = 16
   @State fontStyle: FontStyle | undefined = FontStyle.Normal
   @State fontWeight: FontWeight | undefined = FontWeight.Medium
   @State fontFamily: string | undefined = 'HarmonyOS Sans'
-  @State fontColor: string | undefined = '#ffffffff'
-  @State iconColor: string | undefined = '#ffffffff'
-  @State bgColor: string | undefined = '#ff007dff'
+  @State fontColor: string | Color | undefined = '#ffffffff'
+  @State iconColor: string | Color | undefined = '#ffffffff'
+  @State bgColor: string | Color | undefined = '#ff007dff'
   @State borderSty: BorderStyle | undefined = BorderStyle.Dashed
   @State borderWid: number | undefined = 0
   @State borderCol: string | undefined = '#ffffffff'
@@ -71,73 +75,82 @@ struct pasteButton {
   @State top: number | undefined = 4
   @State bottom: number | undefined = 4
   @State middle: number | undefined = 4
-  @State compWidth: number|undefined = undefined
-  @State compHeight: number|undefined = undefined
+  @State compWidth: string | undefined = undefined
+  @State compHeight: string | undefined = undefined
   @State clipSet: boolean | undefined = false
-  @State rowWidth: number | undefined = 100
-  @State rowHeight: number|undefined = undefined
+  @State rowWidth: string | undefined = '100'
+  @State rowHeight: string | undefined = undefined
   @State pbAlign: Alignment | undefined = Alignment.Center
-  @State strokeMargin: number = 0
-  @State strokeColorR: number = 0
-  @State strokeColorG: number = 0
-  @State strokeColorB: number = 0
-  @State strokeWidth: number = 0
+  @State strokeMargin: int = 0
+  @State strokeColorR: int = 0
+  @State strokeColorG: int = 0
+  @State strokeColorB: int = 0
+  @State strokeWidth: int = 0
+  @State alignRule: AlignRuleOption | LocalizedAlignRuleOptions | undefined = undefined
+  @State chainDirection: Axis | undefined = undefined
+  @State chainStyle: ChainStyle | undefined = undefined
   private stateChangeCallBack: (eventData:events_emitter.EventData) => void =
     (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
-      const data = eventData.data as Record<String,RecordData>
-      console.info('====>page_pasteButton page state change called:' + JSON.stringify(eventData));
+      const data = eventData.data as Record<String, RecordData>
+      console.info('====>page_pasteButton page state change called:' + JSON.stringify(eventData.data));
 
       if (data['bgType'] != null) {
-        this.bgType = (data['bgType'] as Object) as ButtonType
+        this.bgType = data['bgType'] as ButtonType
       }
       if (data['iconSize'] != null) {
         this.iconSize = data['iconSize'] as Int
       }
       if (data['direct'] != null) {
-        this.direct = (data['direct'] as Object) as SecurityComponentLayoutDirection
+        this.direct = data['direct'] as SecurityComponentLayoutDirection
       }
       if (data['positionX'] != null) {
-        this.positionX = data['positionX'] as Int
+        this.positionX = data['positionX'] as String
       }
       if (data['positionY'] != null) {
-        this.positionY = data['positionY'] as Int
+        this.positionY = data['positionY'] as String
       }
       if (data['anchorX'] != null) {
-        this.anchorX = data['anchorX'] as Int
+        this.anchorX = data['anchorX'] as String
       }
       if (data['anchorY'] != null) {
-        this.anchorY = data['anchorY'] as Int
+        this.anchorY = data['anchorY'] as String
       }
       if (data['offsetX'] != null) {
-        this.offsetX = data['offsetX'] as Int
+        this.offsetX = data['offsetX'] as String
       }
       if (data['offsetY'] != null) {
-        this.offsetY = data['offsetY'] as Int
+        this.offsetY = data['offsetY'] as String
       }
       if (data['fontSize'] != null) {
         this.fontSize = data['fontSize'] as Int
       }
       if (data['fontStyle'] != null) {
-        this.fontStyle = (data['fontStyle'] as Object) as FontStyle
+        this.fontStyle = data['fontStyle'] as FontStyle
       }
       if (data['fontWeight'] != null) {
-        this.fontWeight = (data['fontWeight'] as Object) as FontWeight
+        this.fontWeight = data['fontWeight'] as FontWeight
       }
       if (data['fontFamily'] != null) {
         this.fontFamily = data['fontFamily'] as String
       }
-      if (data['fontColor'] != null) {
+      if ((data['fontColor'] != null) && (data['fontColor'] != Color.Transparent)) {
         this.fontColor = data['fontColor'] as String
+      } else if ((data['fontColor'] != null) && (data['fontColor'] == Color.Transparent)) {
+        this.fontColor = data['fontColor'] as Color
       }
-      if (data['iconColor'] != null) {
+      if ((data['iconColor'] != null) && (data['iconColor'] != Color.Transparent)) {
         this.iconColor = data['iconColor'] as String
+      } else if ((data['iconColor'] != null) && (data['iconColor'] == Color.Transparent)) {
+        this.iconColor = data['iconColor'] as Color
       }
-      if (data['bgColor'] != null) {
+      if ((data['bgColor'] != null) && (data['bgColor'] != Color.Transparent)) {
         this.bgColor = data['bgColor'] as String
+      } else if ((data['bgColor'] != null) && (data['bgColor'] == Color.Transparent)) {
+        this.bgColor = data['bgColor'] as Color
       }
       if (data['borderSty'] != null) {
-        this.borderSty = (data['borderSty'] as Object) as BorderStyle
+        this.borderSty = data['borderSty'] as BorderStyle
       }
       if (data['borderWid'] != null) {
         this.borderWid = data['borderWid'] as Int
@@ -164,12 +177,12 @@ struct pasteButton {
         this.middle = data['middle'] as Int
       }
       if (data['buWidth'] != null) {
-        this.compWidth = data['buWidth'] as Int
+        this.compWidth = data['buWidth'] as String
       }else{
         this.compWidth = undefined
       }
       if (data['buHeight'] != null) {
-        this.compHeight = data['buHeight'] as Int
+        this.compHeight = data['buHeight'] as String
       }else{
         this.compHeight = undefined
       }
@@ -177,17 +190,17 @@ struct pasteButton {
         this.clipSet = data['clipSet'] as Boolean
       }
       if (data['rowWidth'] != null) {
-        this.rowWidth = data['rowWidth'] as Int
+        this.rowWidth = data['rowWidth'] as String
       }else{
-        this.rowWidth = 100
+        this.rowWidth = '100'
       }
       if (data['rowHeight'] != null) {
-        this.rowHeight = data['rowHeight'] as Int
+        this.rowHeight = data['rowHeight'] as String
       }else{
         this.rowHeight = undefined
       }
       if (data['align'] != null) {
-        this.pbAlign = (data['align'] as Object) as Alignment
+        this.pbAlign = data['align'] as Alignment
       }
       if (data['strokeMag'] != null) {
         this.strokeMargin = data['strokeMag'] as Int
@@ -203,6 +216,15 @@ struct pasteButton {
       }
       if (data['strokeWth'] != null) {
         this.strokeWidth = data['strokeWth'] as Int
+      }
+      if (data['alignRule'] != null) {
+        this.alignRule = data['alignRule'] as AlignRuleOption
+      }
+      if (data['chainDirection'] != null) {
+        this.chainDirection = data['chainDirection'] as Axis
+      }
+      if (data['chainStyle'] != null) {
+        this.chainStyle = data['chainStyle'] as ChainStyle
       }
     }
   }
@@ -231,7 +253,7 @@ struct pasteButton {
                 let clickData:events_emitter.EventData = {
                   data: {
                     'clickResult': result,
-                  } as Record<String,RecordData>
+                  } as Record<string, RecordData>
                 }
                 let clickEvent:events_emitter.InnerEvent = {
                   eventId: 2,
@@ -269,6 +291,8 @@ struct pasteButton {
               strokeColor: ColorMetrics.rgba(this.strokeColorR, this.strokeColorG, this.strokeColorB),
               strokeWidth: LengthMetrics.px(this.strokeWidth)
             })
+            .alignRules(this.alignRule)
+            .chainMode(this.chainDirection, this.chainStyle)
             .id('keyPaste')
             .key('keyPaste')
         }.width(this.rowWidth).height(this.rowHeight)

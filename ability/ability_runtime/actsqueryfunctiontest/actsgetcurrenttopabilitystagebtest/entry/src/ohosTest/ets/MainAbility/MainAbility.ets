@@ -20,6 +20,7 @@ import testsuite from '../test/List.test'
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
+import eventBus from '../lib/EventBus';
 
 export default class MainAbility extends Ability {
     onCreate(want:Want, launchParam:AbilityConstant.LaunchParam) {
@@ -47,9 +48,12 @@ export default class MainAbility extends Ability {
 
     onForeground() {
         console.log('MainAbility onForeground')
+        globalThis.mainAbilityOnBackground = false; 
+        eventBus.emit('MainAbility_onForeground');
     }
 
     onBackground() {
         console.log('MainAbility onBackground')
+        globalThis.mainAbilityOnBackground = true;
     }
 };

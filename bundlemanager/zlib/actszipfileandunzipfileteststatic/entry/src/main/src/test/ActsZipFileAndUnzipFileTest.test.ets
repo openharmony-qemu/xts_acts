@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 Huawei Device Co., Ltd.
+* Copyright (C) 2024-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ let INPUT_FILE_NOT_ZIP = 900003;
 
 export default function ActsZlibTest() {
   describe('ActsZlibTest', ():void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');
@@ -420,7 +420,7 @@ export default function ActsZlibTest() {
           expect(err?.code).assertEqual(INPUT_FILE_NOT_ZIP);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info("decompressFileInputNotZipPro catch1 : " + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -463,7 +463,7 @@ export default function ActsZlibTest() {
           expect(err?.code).assertEqual(INPUT_FILE_NOT_ZIP);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info("decompressFileInputNotZipProcallback catch1 : " + JSON.stringify(err));
         expect().assertFail();
         done();

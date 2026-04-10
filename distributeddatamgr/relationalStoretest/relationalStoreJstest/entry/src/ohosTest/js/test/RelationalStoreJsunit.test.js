@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2022 Huawei Device Co., Ltd.
+ * Copyright (C) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -751,6 +751,34 @@ describe('relationalStoreTest', function () {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Same_Version_0040 end   *************");
     })
 
+    /**
+     * @tc.name   testRdbStoreDeleteRdbStoreTest1300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbStoreDeleteRdbStoreTest_1300
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreDeleteRdbStoreTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+        console.info(TAG + "************* testRdbStoreDeleteRdbStoreTest1300 start *************");
+        try {
+            const delConfig = {
+                name: "RdbTest111.db",
+                securityLevel: data_Rdb.SecurityLevel.S2,
+                dataGroupId:"123"
+            }
+            await data_Rdb.getRdbStore(context, delConfig);
+            console.info(TAG + "getRdbStore success");
+            await data_Rdb.deleteRdbStore(context, delConfig);
+            console.info(TAG + "deleteRdbStore success");
+            expect().assertFail();
+        } catch (err) {
+            console.error(TAG + `testRdbStoreDeleteRdbStoreTest1300  error, code is ${err.code},message is ${err.message}`);
+            expect(err.code).assertEqual("14801001");
+        }
+        console.info(TAG + "************* testRdbStoreDeleteRdbStoreTest1300 end   *************");
+    })
+    
     console.info(TAG + "*************Unit Test End*************");
 })
 }

@@ -73,6 +73,51 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               }
               break;
             }
+
+            case "testSecureDnsModeAUTO004": {
+              try {
+                webview.WebviewController.setHttpDns(webview.SecureDnsMode.AUTO,
+                  "")
+                setTimeout(() => {
+                  Utils.emitEvent(this.controller.getTitle(), 310364)
+                }, 1000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 310364)
+              }
+              break;
+            }
+
+            case "testSecureDnsModeOFF0001": {
+              try {
+                webview.WebviewController.setHttpDns(webview.SecureDnsMode.OFF,
+                  "https://httpdns-browser.platform.dbankcloud.cn/dns-query{?dns}")
+                setTimeout(() => {
+                  Utils.emitEvent(this.controller.getTitle(), 310365)
+                }, 1000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 310365)
+              }
+              break;
+            }
+
+            case "testSecureDnsModeSECURE_ONLY0001": {
+              try {
+                webview.WebviewController.setHttpDns(webview.SecureDnsMode.SECURE_ONLY,
+                  "https://httpdns-browser.platform.dbankcloud.cn/dns-query{?dns}")
+                setTimeout(() => {
+                  Utils.emitEvent(this.controller.getTitle(), 310366)
+                }, 1000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 310366)
+              }
+              break;
+            }
           }
         })
       }

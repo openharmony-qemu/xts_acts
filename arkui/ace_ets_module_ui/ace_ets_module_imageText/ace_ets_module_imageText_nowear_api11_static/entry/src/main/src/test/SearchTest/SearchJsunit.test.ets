@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function SearchJsunit() {
   describe('SearchJsunit', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")
     });
@@ -62,11 +62,7 @@ export default function SearchJsunit() {
       }
       console.info("SearchJsunit beforeEach end");
     });
-    afterEach(() => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
-      await CommonFunc.sleep(2000);
-    })
+
     /**
      * @tc.number   SearchJsunit_static_0100
      * @tc.name     SearchJsunit_static_0100
@@ -122,7 +118,8 @@ it('SearchJsunit_static_0200', Level.LEVEL0, async (done: () => void) => {
       'placeholder':'Type to search...',
       'textFont':{size:'14.00fp',style:FontStyle.Normal,weight:400,family:"HarmonyOS Sans"} as Font,
         'textAlign':TextAlign.Center,
-        'copyOption':CopyOptions.LocalDevice
+        'copyOption':CopyOptions.LocalDevice,
+      "positionValue":2 as int
     } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {

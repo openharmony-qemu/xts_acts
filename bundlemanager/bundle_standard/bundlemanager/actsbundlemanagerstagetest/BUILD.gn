@@ -18,6 +18,22 @@ ohos_js_app_suite("ActsBundleMgrStageEtsTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsBundleMgrStageEtsTest"
+    deps = [
+    "../sceneProject/bmsmainabilityfirstscene:bmsMainAbilityFirstScene",
+    "../sceneProject/bmsmainabilitysecondscene:bmsMainAbilitySecondScene",
+    "../sceneProject/bmsgetinfosjsscene:bmsThirdBundleJs",
+    "../sceneProject/bmsgetinfoshapc:bmsThirdBundleC",
+    "../sceneProject/bmsfirstright:first_right",
+    "../sceneProject/bmssecondright:second_right",
+    "../sceneProject/bmsscenefive:bmsJstest5",
+    "../sceneProject/bmsscenefour:bmsJstest4",
+    "../sceneProject/bmssceneone:bmsJstest1",
+    "../sceneProject/bmsscenesix:bmsJstest6",
+    "../sceneProject/bmsscenethree:bmsJstest3",
+    "../sceneProject/bmsscenetwo:bmsJstest2",
+    "../sceneProject/bmsstagedemoone:bmsStageDemo1",
+    "../sceneProject/bmsstagedemotwo:bmsStageDemo2",
+  ]
   subsystem_name = "bundlemanager"
   part_name = "bundle_framework"
 }

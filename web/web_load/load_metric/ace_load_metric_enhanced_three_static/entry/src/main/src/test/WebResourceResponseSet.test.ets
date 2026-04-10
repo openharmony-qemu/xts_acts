@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
-import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach } from '../../../hypium/index';
+import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach, expect } from '../../../hypium/index';
 import Utils from './Utils.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
+import wifiMg from '@ohos.wifiManager';
 
 let testAbilityContext: common.UIAbilityContext;
 
@@ -49,6 +50,30 @@ export default function webResourceResponseSet() {
       await Utils.msSleep(2000)
       console.log("beforeAll end,%s", "Succeed!")
     });
+
+    beforeEach(async () => {
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info('======> wifi_test/isWifiActive :' + wifiMg.isWifiActive());
+        console.info('======> Internet WifiLinkedInfo : ' + JSON.stringify(data));
+        console.info('======> Internet speed : ' + JSON.stringify(data.linkSpeed));
+        console.info('======> Internet chload : ' + JSON.stringify(data.chload));
+        console.info('======> Internet rssi : ' + JSON.stringify(data.rssi));
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info('======> WLAN connection established ');
+        } else {
+          expect().message('======> WLAN Network error').assertFail();
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message('======> WLAN Network error').assertFail();
+        } else if (data.chload >= 500) {
+          console.info('======> The internet connection is poor. ');
+        }
+      } catch (err) {
+        console.info('======> getLinkedInfo promise failed, err : ', err);
+        throw (err as Error);
+      }
+    })
 
     /**
      * @tc.name   testSetResponseDataStatic001
@@ -83,7 +108,7 @@ export default function webResourceResponseSet() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testSetResponseEncoding001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testSetResponseEncoding001", 'utf-8', 36011, done);
+        Utils.registerEvent("testSetResponseEncoding001", '', 36011, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebResourceResponseSetButton', 10, '');
         await Utils.msSleep(7000);
@@ -123,7 +148,7 @@ export default function webResourceResponseSet() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testSetReasonMessage001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testSetReasonMessage001", "Forbidden", 36013, done);
+        Utils.registerEvent("testSetReasonMessage001", "OK", 36013, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebResourceResponseSetButton', 10, '');
         await Utils.msSleep(7000);
@@ -184,6 +209,26 @@ export default function webResourceResponseSet() {
         Utils.emitEvent("testSetResponseIsReady001", 10)
         await Utils.msSleep(2000);
         Utils.registerEvent("testSetResponseIsReady001", "test", 36016, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebResourceResponseSetButton', 10, '');
+        await Utils.msSleep(7000);
+        done();
+      })
+
+    /**
+     * @tc.name   testSetResponseIsReadyStatic002
+     * @tc.number SUB_WEB_SETRESPONSEISREADY_0200
+     * @tc.desc   test setResponseIsReady
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetResponseIsReadyStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testSetResponseIsReady002", 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testSetResponseIsReady002", "intercept test", 36017, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebResourceResponseSetButton', 10, '');
         await Utils.msSleep(7000);

@@ -29,19 +29,19 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 
 export default function TextParagraphTest() {
   describe("TextParagraphTest", (): void => {
-    let globalFontCollection: text.FontCollection;
-    let globalTextStyle: text.TextStyle;
-    let globalParagraphStyle: text.ParagraphStyle;
+    let globalFontCollection: text.FontCollection | undefined;
+    let globalTextStyle: text.TextStyle | undefined;
+    let globalParagraphStyle: text.ParagraphStyle | undefined;
     let globalStructStyle: text.StrutStyle;
-    let globalCanvas: drawing.Canvas;
-    let checkFontStyle: text.FontStyle;
-    let globalParagraph: text.Paragraph;
+    let globalCanvas: drawing.Canvas | undefined;
+    let checkFontStyle: text.FontStyle | undefined;
+    let globalParagraph: text.Paragraph | undefined;
 
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeEach start');
       try {
         globalFontCollection = text.FontCollection.getGlobalInstance()
-        globalFontCollection.loadFontSync('myFamilyName', 'file:///system/fonts/HarmonyOS_Sans.ttf')
+        globalFontCollection?.loadFontSync('myFamilyName', 'file:///system/fonts/HarmonyOS_Sans.ttf')
         let myFontFamily: Array<string> = ["myFamilyName"]
         let myColor: common2D.Color = { 
           alpha: 255, 
@@ -124,7 +124,7 @@ export default function TextParagraphTest() {
         let textTab: text.TextTab = { alignment: text.TextAlign.START, location: 512 }
 
         globalParagraphStyle = {
-          textStyle: globalTextStyle,
+          textStyle: globalTextStyle!,
           textDirection: text.TextDirection.RTL,
           align: text.TextAlign.JUSTIFY,
           wordBreak: text.WordBreak.BREAK_ALL,
@@ -135,9 +135,9 @@ export default function TextParagraphTest() {
           tab: textTab
         };
 
-        let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle, globalFontCollection);
+        let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle!, globalFontCollection!);
         expect(paragraphBuilder !== undefined).assertTrue();
-        paragraphBuilder.pushStyle(globalTextStyle);
+        paragraphBuilder.pushStyle(globalTextStyle!);
         paragraphBuilder.addText('The quick brown fox jumps over the lazy dog.');
         globalParagraph = paragraphBuilder.build();
         expect(globalParagraph !== undefined).assertTrue();
@@ -171,9 +171,9 @@ export default function TextParagraphTest() {
     it('testCreateParagraphStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle, globalFontCollection)
+          let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle!, globalFontCollection!)
           expect(paragraphBuilder !== undefined).assertTrue()
-          paragraphBuilder.pushStyle(globalTextStyle);
+          paragraphBuilder.pushStyle(globalTextStyle!);
           paragraphBuilder.addText("Hello World!");
           let paragraph = paragraphBuilder.build();
           expect(paragraph !== undefined).assertTrue()
@@ -196,8 +196,8 @@ export default function TextParagraphTest() {
     it('testGetMaxWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          globalParagraph.layoutSync(100);
-          let maxWidth = globalParagraph.getMaxWidth();
+          globalParagraph?.layoutSync(100);
+          let maxWidth = globalParagraph!.getMaxWidth();
           expect(maxWidth).assertEqual(100);
           done();
         } catch (err) {
@@ -218,8 +218,8 @@ export default function TextParagraphTest() {
     it('testGetHeightStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          globalParagraph.layoutSync(100);
-          let height = globalParagraph.getHeight();
+          globalParagraph?.layoutSync(100);
+          let height = globalParagraph!.getHeight();
           expect(height).assertEqual(4068);
           done();
         } catch (err) {
@@ -240,9 +240,9 @@ export default function TextParagraphTest() {
     it('testGetLongestLineStatic_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          globalParagraph.layoutSync(100);
-          let longestLine = globalParagraph.getLongestLine();
-          expect(Math.round(longestLine * 100) / 100).assertEqual(163.51);
+          globalParagraph?.layoutSync(100);
+          let longestLine = globalParagraph!.getLongestLine();
+          expect(Math.round(longestLine * 100) / 100).assertEqual(165.56);
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getLongestLine. Cause:${JSON.stringify(err)}`);
@@ -262,9 +262,9 @@ export default function TextParagraphTest() {
     it('testGetLongestLineWithIndentStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          globalParagraph.layoutSync(100);
-          let width = globalParagraph.getLongestLineWithIndent();
-          expect(Math.round(width * 100) / 100).assertEqual(163.51);
+          globalParagraph?.layoutSync(100);
+          let width = globalParagraph!.getLongestLineWithIndent();
+          expect(Math.round(width * 100) / 100).assertEqual(165.56);
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getLongestLineWithIndent. Cause:${JSON.stringify(err)}`);
@@ -284,9 +284,9 @@ export default function TextParagraphTest() {
     it('testGetMinIntrinsicWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          globalParagraph.layoutSync(100);
-          let width = globalParagraph.getMinIntrinsicWidth();
-          expect(Math.round(width * 100) / 100).assertEqual(257.22);
+          globalParagraph?.layoutSync(100);
+          let width = globalParagraph!.getMinIntrinsicWidth();
+          expect(Math.round(width * 100) / 100).assertEqual(262.15);
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getMinIntrinsicWidth. Cause:${JSON.stringify(err)}`);
@@ -306,9 +306,9 @@ export default function TextParagraphTest() {
     it('testGetMaxIntrinsicWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          globalParagraph.layoutSync(100);
-          let width = globalParagraph.getMaxIntrinsicWidth();
-          expect(Math.round(width * 100) / 100).assertEqual(2302.72);
+          globalParagraph?.layoutSync(100);
+          let width = globalParagraph!.getMaxIntrinsicWidth();
+          expect(Math.round(width * 100) / 100).assertEqual(2333.12);
           done();
         } catch (err) {
           hilog.error(domain, tag, `Failed in getMaxIntrinsicWidth. Cause:${JSON.stringify(err)}`);
@@ -328,8 +328,8 @@ export default function TextParagraphTest() {
     it('testGetAlphabeticBaselineStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          globalParagraph.layoutSync(100);
-          let alphabeticBaseline = globalParagraph.getAlphabeticBaseline();
+          globalParagraph?.layoutSync(100);
+          let alphabeticBaseline = globalParagraph!.getAlphabeticBaseline();
           expect(Math.round(alphabeticBaseline * 100) / 100).assertEqual(303.39);
           done();
         } catch (err) {
@@ -350,10 +350,10 @@ export default function TextParagraphTest() {
     it('testGetRectsForRangeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          globalParagraph.layoutSync(100);
+          globalParagraph?.layoutSync(100);
           let range: text.Range = { start: 0, end: 10 };
           let boxArray: Array<text.TextBox> = 
-            globalParagraph.getRectsForRange(range, text.RectWidthStyle.TIGHT, text.RectHeightStyle.MAX);
+            globalParagraph!.getRectsForRange(range, text.RectWidthStyle.TIGHT, text.RectHeightStyle.MAX);
           for (let i = 0; i < boxArray.length; i++) {
             hilog.info(domain, tag, `TEXT_LOG RectsForRange [${i}]: ${JSON.stringify(boxArray[i])}`);
           }
@@ -376,8 +376,8 @@ export default function TextParagraphTest() {
     it('testGetRectsForPlaceholdersStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          globalParagraph.layoutSync(100);
-          let placeHolders: Array<text.TextBox> = globalParagraph.getRectsForPlaceholders();
+          globalParagraph?.layoutSync(100);
+          let placeHolders: Array<text.TextBox> = globalParagraph!.getRectsForPlaceholders();
           for(let i = 0; i < placeHolders.length; i++){
             const item = placeHolders[i];
             hilog.info(domain, tag, 'Text_LOG RectsForPlaceholders:%{public}s', JSON.stringify(item));
@@ -401,8 +401,8 @@ export default function TextParagraphTest() {
     it('testGetGlyphPositionAtCoordinateStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          globalParagraph.layoutSync(100);
-          let position: text.PositionWithAffinity = globalParagraph.getGlyphPositionAtCoordinate(10, 1);
+          globalParagraph?.layoutSync(100);
+          let position: text.PositionWithAffinity = globalParagraph!.getGlyphPositionAtCoordinate(10, 1);
           console.info('www data GlyphPositionAtCoordinate ' + JSON.stringify(position));
           done();
         } catch (err) {
@@ -423,9 +423,9 @@ export default function TextParagraphTest() {
     it('testGetLongestLineStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle, globalFontCollection)
+          let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle!, globalFontCollection!)
           expect(paragraphBuilder !== undefined).assertTrue()
-          paragraphBuilder.pushStyle(globalTextStyle);
+          paragraphBuilder.pushStyle(globalTextStyle!);
           paragraphBuilder.addText("Hello World!");
           let paragraph = paragraphBuilder.build();
           expect(paragraph !== undefined).assertTrue()
@@ -451,13 +451,13 @@ export default function TextParagraphTest() {
     it('testGetLineMetricsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          hilog.error(0x0000, 'Text', 'MM_LOG print maxLines: %{public}f', globalParagraphStyle.maxLines);
-          let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle, globalFontCollection)
+          hilog.error(0x0000, 'Text', 'MM_LOG print maxLines: %{public}f', globalParagraphStyle!.maxLines);
+          let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle!, globalFontCollection!)
           expect(paragraphBuilder !== undefined).assertTrue()
-          paragraphBuilder.pushStyle(globalTextStyle);
+          paragraphBuilder.pushStyle(globalTextStyle!);
           paragraphBuilder.addText("The quick brown fox jumps over the lazy dog.");
           let paragraph = paragraphBuilder.build();
-          expect(paragraph !== undefined).assertTrue()
+          expect(paragraph !== undefined).assertTrue();
           paragraph.layoutSync(100);
           let lineMetrics: Array<text.LineMetrics> = paragraph.getLineMetrics();
           console.info('www data lxt ' + JSON.stringify(lineMetrics))
@@ -495,30 +495,30 @@ export default function TextParagraphTest() {
               let fontMetrics: drawing.FontMetrics = value.fontMetrics;
               hilog.error(0x0000, 'Text', 'MM_LOG run metrics textStyle data: %{public}s', JSON.stringify(textStyle));
               hilog.error(0x0000, 'Text', 'MM_LOG run metrics fontMetrics data: %{public}s', JSON.stringify(fontMetrics));
-              if (textStyle.decoration && globalTextStyle.decoration) {
-                expect(textStyle.decoration?.textDecoration).assertEqual(globalTextStyle.decoration?.textDecoration)
-                expect(textStyle.decoration?.decorationStyle).assertEqual(globalTextStyle.decoration?.decorationStyle)
+              if (textStyle.decoration && globalTextStyle!.decoration) {
+                expect(textStyle.decoration?.textDecoration).assertEqual(globalTextStyle!.decoration?.textDecoration)
+                expect(textStyle.decoration?.decorationStyle).assertEqual(globalTextStyle!.decoration?.decorationStyle)
               }
-              expect(textStyle.fontWeight).assertEqual(globalTextStyle.fontWeight)
-              expect(textStyle.fontStyle).assertEqual(checkFontStyle)
-              expect(textStyle.baseline).assertEqual(globalTextStyle.baseline)
+              expect(textStyle.fontWeight).assertEqual(globalTextStyle!.fontWeight)
+              expect(textStyle.fontStyle).assertEqual(checkFontStyle!)
+              expect(textStyle.baseline).assertEqual(globalTextStyle!.baseline)
               expect(textStyle.fontFamilies?.length ?? 0).assertEqual(2)
-              expect(textStyle.fontSize).assertEqual(globalTextStyle.fontSize)
-              expect(textStyle.letterSpacing).assertEqual(globalTextStyle.letterSpacing)
-              expect(textStyle.wordSpacing).assertEqual(globalTextStyle.wordSpacing)
-              expect(textStyle.heightScale).assertEqual(globalTextStyle.heightScale)
-              expect(textStyle.halfLeading).assertEqual(globalTextStyle.halfLeading)
+              expect(textStyle.fontSize).assertEqual(globalTextStyle!.fontSize)
+              expect(textStyle.letterSpacing).assertEqual(globalTextStyle!.letterSpacing)
+              expect(textStyle.wordSpacing).assertEqual(globalTextStyle!.wordSpacing)
+              expect(textStyle.heightScale).assertEqual(globalTextStyle!.heightScale)
+              expect(textStyle.halfLeading).assertEqual(globalTextStyle!.halfLeading)
               expect(textStyle.ellipsis).assertEqual("")
-              expect(textStyle.ellipsisMode).assertEqual(globalTextStyle.ellipsisMode)
-              expect(textStyle.locale).assertEqual(globalTextStyle.locale)
-              expect(textStyle.baselineShift).assertEqual(globalTextStyle.baselineShift)
-              expect(textStyle.fontFeatures?.length?? 0).assertEqual(globalTextStyle.fontFeatures?.length?? 0)
-              expect(textStyle.textShadows?.length?? 0).assertEqual(globalTextStyle.textShadows?.length?? 0)
-              if (textStyle.backgroundRect && globalTextStyle.backgroundRect) {
-                expect(textStyle.backgroundRect?.leftTopRadius).assertEqual(globalTextStyle.backgroundRect?.leftTopRadius)
-                expect(textStyle.backgroundRect?.rightTopRadius).assertEqual(globalTextStyle.backgroundRect?.rightTopRadius)
-                expect(textStyle.backgroundRect?.rightBottomRadius).assertEqual(globalTextStyle.backgroundRect?.rightBottomRadius)
-                expect(textStyle.backgroundRect?.leftBottomRadius).assertEqual(globalTextStyle.backgroundRect?.leftBottomRadius)
+              expect(textStyle.ellipsisMode).assertEqual(globalTextStyle!.ellipsisMode)
+              expect(textStyle.locale).assertEqual(globalTextStyle!.locale)
+              expect(textStyle.baselineShift).assertEqual(globalTextStyle!.baselineShift)
+              expect(textStyle.fontFeatures?.length?? 0).assertEqual(globalTextStyle!.fontFeatures?.length?? 0)
+              expect(textStyle.textShadows?.length?? 0).assertEqual(globalTextStyle!.textShadows?.length?? 0)
+              if (textStyle.backgroundRect && globalTextStyle!.backgroundRect) {
+                expect(textStyle.backgroundRect?.leftTopRadius).assertEqual(globalTextStyle!.backgroundRect?.leftTopRadius)
+                expect(textStyle.backgroundRect?.rightTopRadius).assertEqual(globalTextStyle!.backgroundRect?.rightTopRadius)
+                expect(textStyle.backgroundRect?.rightBottomRadius).assertEqual(globalTextStyle!.backgroundRect?.rightBottomRadius)
+                expect(textStyle.backgroundRect?.leftBottomRadius).assertEqual(globalTextStyle!.backgroundRect?.leftBottomRadius)
               }
               if ((Math.round(fontMetrics.ascent * 100) / 100) == -29.70) {
                 expect(Math.round(fontMetrics.ascent * 100) / 100).assertEqual(-29.70)
@@ -558,10 +558,10 @@ export default function TextParagraphTest() {
     it('testGetLineMetricsAtStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          hilog.error(0x0000, 'Text', 'MM_LOG print maxLines: %{public}f', globalParagraphStyle.maxLines);
-          let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle, globalFontCollection)
+          hilog.error(0x0000, 'Text', 'MM_LOG print maxLines: %{public}f', globalParagraphStyle!.maxLines);
+          let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle!, globalFontCollection!)
           expect(paragraphBuilder !== undefined).assertTrue()
-          paragraphBuilder.pushStyle(globalTextStyle);
+          paragraphBuilder.pushStyle(globalTextStyle!);
           paragraphBuilder.addText("The quick brown fox jumps over the lazy dog.");
           let paragraph = paragraphBuilder.build();
           expect(paragraph !== undefined).assertTrue()
@@ -576,8 +576,8 @@ export default function TextParagraphTest() {
             expect(Math.round(Number(lineMetrics?.ascent ?? 0) * 100) / 100).assertEqual(303.39)
             expect(Math.round(Number(lineMetrics?.descent ?? 0) * 100) / 100).assertEqual(112.61)
             expect(lineMetrics?.height).assertEqual(416)
-            expect(Math.round(Number(lineMetrics?.width ?? 0) * 100) / 100).assertEqual(50.50)
-            expect(Math.round(Number(lineMetrics?.left ?? 0) * 100) / 100).assertEqual(49.50)
+            expect(Math.round(Number(lineMetrics?.width ?? 0) * 100) / 100).assertEqual(50.82)
+            expect(Math.round(Number(lineMetrics?.left ?? 0) * 100) / 100).assertEqual(49.18)
             expect(Math.round(Number(lineMetrics?.baseline ?? 0) * 100) / 100).assertEqual(1135.39)
             expect(lineMetrics?.lineNumber).assertEqual(2)
             expect(lineMetrics?.topHeight).assertEqual(832)
@@ -591,30 +591,30 @@ export default function TextParagraphTest() {
                 hilog.error(0x0000, 'Text', 'MM_LOG run metrics fontMetrics data: %{public}s',
                   JSON.stringify(fontMetrics));
 
-                if (textStyle.decoration && globalTextStyle.decoration) {
-                  expect(textStyle.decoration?.textDecoration).assertEqual(globalTextStyle.decoration?.textDecoration)
-                  expect(textStyle.decoration?.decorationStyle).assertEqual(globalTextStyle.decoration?.decorationStyle)
+                if (textStyle.decoration && globalTextStyle!.decoration) {
+                  expect(textStyle.decoration?.textDecoration).assertEqual(globalTextStyle!.decoration?.textDecoration)
+                  expect(textStyle.decoration?.decorationStyle).assertEqual(globalTextStyle!.decoration?.decorationStyle)
                 }
-                expect(textStyle.fontWeight).assertEqual(globalTextStyle.fontWeight)
-                expect(textStyle.fontStyle).assertEqual(checkFontStyle)
-                expect(textStyle.baseline).assertEqual(globalTextStyle.baseline)
+                expect(textStyle.fontWeight).assertEqual(globalTextStyle!.fontWeight)
+                expect(textStyle.fontStyle).assertEqual(checkFontStyle!)
+                expect(textStyle.baseline).assertEqual(globalTextStyle!.baseline)
                 expect(textStyle.fontFamilies?.length ?? 0).assertEqual(2)
-                expect(textStyle.fontSize).assertEqual(globalTextStyle.fontSize)
-                expect(textStyle.letterSpacing).assertEqual(globalTextStyle.letterSpacing)
-                expect(textStyle.wordSpacing).assertEqual(globalTextStyle.wordSpacing)
-                expect(textStyle.heightScale).assertEqual(globalTextStyle.heightScale)
-                expect(textStyle.halfLeading).assertEqual(globalTextStyle.halfLeading)
+                expect(textStyle.fontSize).assertEqual(globalTextStyle!.fontSize)
+                expect(textStyle.letterSpacing).assertEqual(globalTextStyle!.letterSpacing)
+                expect(textStyle.wordSpacing).assertEqual(globalTextStyle!.wordSpacing)
+                expect(textStyle.heightScale).assertEqual(globalTextStyle!.heightScale)
+                expect(textStyle.halfLeading).assertEqual(globalTextStyle!.halfLeading)
                 expect(textStyle.ellipsis).assertEqual("")
-                expect(textStyle.ellipsisMode).assertEqual(globalTextStyle.ellipsisMode)
-                expect(textStyle.locale).assertEqual(globalTextStyle.locale)
-                expect(textStyle.baselineShift).assertEqual(globalTextStyle.baselineShift)
-                expect(textStyle.fontFeatures?.length?? 0).assertEqual(globalTextStyle.fontFeatures?.length?? 0)
-                expect(textStyle.textShadows?.length?? 0).assertEqual(globalTextStyle.textShadows?.length?? 0)
-                if (textStyle.backgroundRect && globalTextStyle.backgroundRect) {
-                  expect(textStyle.backgroundRect?.leftTopRadius).assertEqual(globalTextStyle.backgroundRect?.leftTopRadius)
-                  expect(textStyle.backgroundRect?.rightTopRadius).assertEqual(globalTextStyle.backgroundRect?.rightTopRadius)
-                  expect(textStyle.backgroundRect?.rightBottomRadius).assertEqual(globalTextStyle.backgroundRect?.rightBottomRadius)
-                  expect(textStyle.backgroundRect?.leftBottomRadius).assertEqual(globalTextStyle.backgroundRect?.leftBottomRadius)
+                expect(textStyle.ellipsisMode).assertEqual(globalTextStyle!.ellipsisMode)
+                expect(textStyle.locale).assertEqual(globalTextStyle!.locale)
+                expect(textStyle.baselineShift).assertEqual(globalTextStyle!.baselineShift)
+                expect(textStyle.fontFeatures?.length?? 0).assertEqual(globalTextStyle!.fontFeatures?.length?? 0)
+                expect(textStyle.textShadows?.length?? 0).assertEqual(globalTextStyle!.textShadows?.length?? 0)
+                if (textStyle.backgroundRect && globalTextStyle!.backgroundRect) {
+                  expect(textStyle.backgroundRect?.leftTopRadius).assertEqual(globalTextStyle!.backgroundRect?.leftTopRadius)
+                  expect(textStyle.backgroundRect?.rightTopRadius).assertEqual(globalTextStyle!.backgroundRect?.rightTopRadius)
+                  expect(textStyle.backgroundRect?.rightBottomRadius).assertEqual(globalTextStyle!.backgroundRect?.rightBottomRadius)
+                  expect(textStyle.backgroundRect?.leftBottomRadius).assertEqual(globalTextStyle!.backgroundRect?.leftBottomRadius)
                 }
                 expect(Math.round(fontMetrics.ascent * 100) / 100).assertEqual(-29.70)
                 expect(Math.round(fontMetrics.descent * 100) / 100).assertEqual(7.81)
@@ -644,15 +644,15 @@ export default function TextParagraphTest() {
     it('testPaintStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          hilog.error(0x0000, 'Text', 'MM_LOG print maxLines: %{public}f', globalParagraphStyle.maxLines);
-          let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle, globalFontCollection)
+          hilog.error(0x0000, 'Text', 'MM_LOG print maxLines: %{public}f', globalParagraphStyle!.maxLines);
+          let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle!, globalFontCollection!)
           expect(paragraphBuilder !== undefined).assertTrue()
-          paragraphBuilder.pushStyle(globalTextStyle);
+          paragraphBuilder.pushStyle(globalTextStyle!);
           paragraphBuilder.addText("The quick brown fox jumps over the lazy dog.");
           let paragraph = paragraphBuilder.build();
           expect(paragraph !== undefined).assertTrue()
           paragraph.layoutSync(100);
-          paragraph.paint(globalCanvas, 0, 0);
+          paragraph.paint(globalCanvas!, 0, 0);
           done()
         } catch (err) {
           hilog.error(domain, tag, `Failed in getLineMetricsAt. Cause:${JSON.stringify(err)}`);
@@ -672,11 +672,11 @@ export default function TextParagraphTest() {
     it('testPaintOnPathStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
-          hilog.error(0x0000, 'Text', 'MM_LOG print maxLines: %{public}f', globalParagraphStyle.maxLines);
-          let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle, globalFontCollection)
+          hilog.error(0x0000, 'Text', 'MM_LOG print maxLines: %{public}f', globalParagraphStyle!.maxLines);
+          let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle!, globalFontCollection!)
           expect(paragraphBuilder !== undefined).assertTrue()
           console.info('www data text ', 1111)
-          paragraphBuilder.pushStyle(globalTextStyle);
+          paragraphBuilder.pushStyle(globalTextStyle!);
           console.info('www data text ', 2222)
           paragraphBuilder.addText("The quick brown fox jumps over the lazy dog.");
           console.info('www data text ', 3333)

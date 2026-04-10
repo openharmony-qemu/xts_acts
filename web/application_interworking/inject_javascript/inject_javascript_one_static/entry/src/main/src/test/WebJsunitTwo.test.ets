@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,15 +34,15 @@ export default function webJsunitTwo() {
       console.log("App start")
     });
 
-    /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_014
-     * @tc.name       : DeleteJavaScriptRegisterStatic
-     * @tc.desc       : test delet specific proxy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name        DeleteJavaScriptRegisterStatic000
+     * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_013
+     * @tc.desc        test delet specific proxy
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
      */
-    it('DeleteJavaScriptRegisterStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('DeleteJavaScriptRegisterStatic000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitDeleteJavaScriptRegister";
         Utils.emitEvent(emitKey, 10);
@@ -55,15 +55,78 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_039
-     * @tc.name       : JsMessExtGetStringStatic
-     * @tc.desc       : test Save current page
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name        DeleteJavaScriptRegisterStatic001
+     * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_014
+     * @tc.desc        test delet specific proxy
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
      */
-    it('JsMessExtGetStringStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('DeleteJavaScriptRegisterStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = "emitDeleteJavaScriptRegister";
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("DeleteJavaScriptRegister", "17100008", 14, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponent', 10, '');
+        console.log("click")
+        await Utils.msSleep(12000);
+        done()
+      })
+
+    /**
+     * @tc.name        DeleteJavaScriptRegisterStatic02
+     * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_015
+     * @tc.desc        test delet specific proxy
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('DeleteJavaScriptRegisterStatic02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = "emitDeleteJavaScriptRegister02";
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("DeleteJavaScriptRegister02", "17100008", 143171, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponent', 10, '');
+        console.log("click")
+        await Utils.msSleep(12000);
+        done()
+      })
+
+    /**
+     * @tc.name        DeleteJavaScriptRegisterStatic03
+     * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_016
+     * @tc.desc        test delet specific proxy
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('DeleteJavaScriptRegisterStatic03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = "emitDeleteJavaScriptRegister03";
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("DeleteJavaScriptRegister03", "17100001", 143172, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponent', 10, '');
+        console.log("click")
+        await Utils.msSleep(12000);
+        done()
+      })
+
+    /**
+    * @tc.name        JsMessExtGetStringStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_039
+    * @tc.desc        test Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('JsMessExtGetStringStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitJsMessExtGetString";
         Utils.emitEvent(emitKey, 10);
@@ -75,15 +138,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-      * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_040
-      * @tc.name       : JsMessExtGetNumStatic
-      * @tc.desc       : Save current page
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 3
-      */
-    it('JsMessExtGetNumStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        JsMessExtGetNumStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_040
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('JsMessExtGetNumStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitJsMessExtGetNum";
         Utils.emitEvent(emitKey, 10);
@@ -95,16 +158,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_041
-     * @tc.name       : JsMessExtGetBooStatic
-     * @tc.desc       : Save current page
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name        JsMessExtGetBooStatic
+     * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_041
+     * @tc.desc        Save current page
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
      */
-
-    it('JsMessExtGetBooStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('JsMessExtGetBooStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitJsMessExtGetBoo";
         Utils.emitEvent(emitKey, 10);
@@ -116,15 +178,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-        * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_042
-        * @tc.name       : JsMessExtGetArrayBufferStatic
-        * @tc.desc       : Save current page
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 3
-        */
-    it('JsMessExtGetArrayBufferStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        JsMessExtGetArrayBufferStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_042
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('JsMessExtGetArrayBufferStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitJsMessExtGetArrayBuffer";
         Utils.emitEvent(emitKey, 10);
@@ -136,15 +198,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-        * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_043
-        * @tc.name       : JsMessExtGetArrayStatic
-        * @tc.desc       : Save current page
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 3
-        */
-    it('JsMessExtGetArrayStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        JsMessExtGetArrayStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_043
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('JsMessExtGetArrayStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitJsMessExtGetArray";
         Utils.emitEvent(emitKey, 10);
@@ -156,15 +218,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-        * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_044
-        * @tc.name       : WebMessExtSetStringStatic
-        * @tc.desc       : Save current page
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 3
-        */
-    it('WebMessExtSetStringStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        WebMessExtSetStringStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_044
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('WebMessExtSetStringStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitWebMessExtSetString";
         let result = "String:helloFromEts";
@@ -177,15 +239,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-        * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_046
-        * @tc.name       : WebMessExtSetNumberStatic
-        * @tc.desc       : Save current page
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 3
-        */
-    it('WebMessExtSetNumberStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        WebMessExtSetNumberStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_046
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('WebMessExtSetNumberStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitWebMessExtSetNumber";
         let result = "Number:1";
@@ -198,15 +260,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-        * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_047
-        * @tc.name       : WebMessExtGetNumberStatic
-        * @tc.desc       : Save current page
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 3
-        */
-    it('WebMessExtGetNumberStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        WebMessExtGetNumberStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_047
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('WebMessExtGetNumberStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitWebMessExtGetNumber";
         Utils.emitEvent(emitKey, 10);
@@ -218,15 +280,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-        * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_048
-        * @tc.name       : WebMessExtSetBooleanStatic
-        * @tc.desc       : Save current page
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 3
-        */
-    it('WebMessExtSetBooleanStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        WebMessExtSetBooleanStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_048
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('WebMessExtSetBooleanStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitWebMessExtSetBoolean";
         let result = "Boolean:true";
@@ -239,15 +301,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-        * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_049
-        * @tc.name       : WebMessExtGetBooleanStatic
-        * @tc.desc       : Save current page
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 3
-        */
-    it('WebMessExtGetBooleanStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        WebMessExtGetBooleanStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_049
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('WebMessExtGetBooleanStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitWebMessExtGetBoolean";
         Utils.emitEvent(emitKey, 10);
@@ -259,15 +321,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-        * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_050
-        * @tc.name       : WebMessExtSetArrayStatic
-        * @tc.desc       : Save current page
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 3
-        */
-    it('WebMessExtSetArrayStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        WebMessExtSetArrayStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_050
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('WebMessExtSetArrayStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitWebMessExtSetArray";
         let result = "Array len:2, value:apple,banana";
@@ -281,15 +343,15 @@ export default function webJsunitTwo() {
       })
 
 
-    /*
-       * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_052
-       * @tc.name       : WebMessExtSetArrayBufferStatic
-       * @tc.desc       : Save current page
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
-    it('WebMessExtSetArrayBufferStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        WebMessExtSetArrayBufferStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_052
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('WebMessExtSetArrayBufferStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitWebMessExtSetArrayBuffer";
         let result = "ArrayBuffer:8";
@@ -302,15 +364,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-        * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_053
-        * @tc.name       : WebMessExtGetArrayBufferStatic
-        * @tc.desc       : Save current page
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 3
-        */
-    it('WebMessExtGetArrayBufferStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        WebMessExtGetArrayBufferStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_053
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('WebMessExtGetArrayBufferStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitWebMessExtGetArrayBuffer";
         Utils.emitEvent(emitKey, 10);
@@ -322,15 +384,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-        * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_054
-        * @tc.name       : WebMessExtSetErrorStatic
-        * @tc.desc       : Save current page
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 3
-        */
-    it('WebMessExtSetErrorStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        WebMessExtSetErrorStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_054
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('WebMessExtSetErrorStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitWebMessExtSetError";
         let result = "Error:ReferenceError, msg:Error";
@@ -343,15 +405,15 @@ export default function webJsunitTwo() {
         done()
       })
 
-    /*
-        * @tc.number     : SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_055
-        * @tc.name       : WebMessExtGetErrorStatic
-        * @tc.desc       : Save current page
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 3
-        */
-    it('WebMessExtGetErrorStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        WebMessExtGetErrorStatic
+    * @tc.number      SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_055
+    * @tc.desc        Save current page
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('WebMessExtGetErrorStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         emitKey = "emitWebMessExtGetError";
         Utils.emitEvent(emitKey, 10);
@@ -363,23 +425,22 @@ export default function webJsunitTwo() {
         done();
       })
 
-    /*
-* @tc.number     : SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0200
-* @tc.name       : testJavaScriptOnDocumentStartStatic002
-* @tc.desc       : test javaScriptOnDocumentStart
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 3
-*/
-    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+    * @tc.name        SwitchNextPageStatic
+    * @tc.number      SwitchNextPageStatic444444
+    * @tc.desc        test SwitchNextPageStatic
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent('SwitchNextPageStatic', 10)
         await Utils.msSleep(3000);
-        inspector.sendEventByKey('WebJavaScriptOnDocumentStartTestButton', 10, '');
+        inspector.sendEventByKey('webcomponent', 10, '');
         await Utils.msSleep(6000);
         done();
       })
-    
   })
 }

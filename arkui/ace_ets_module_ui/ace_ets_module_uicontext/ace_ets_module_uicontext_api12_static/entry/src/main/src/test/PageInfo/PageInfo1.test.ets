@@ -24,7 +24,7 @@ import inspector from '@ohos.arkui.inspector'
 
 export default function PageInfo1() {
   describe('PageInfo1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("PageInfo1 beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")

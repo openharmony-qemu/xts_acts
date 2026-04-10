@@ -45,7 +45,7 @@ export default function openCustomDialog2() {
     });
     /* *
     * @tc.number: openCustomDialog2_0100
-    * @tc.name  : openCustomDialog2_0100
+    * @tc.name  openCustomDialog2_0100
     * @tc.desc  : To test that the Provide decorator supports union types.
     * @tc.level : Level 2
     */

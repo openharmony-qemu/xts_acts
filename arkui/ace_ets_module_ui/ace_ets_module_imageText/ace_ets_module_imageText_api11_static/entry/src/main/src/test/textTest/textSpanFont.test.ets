@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textSpanFontTest() {
   describe('textSpanFontTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textSpanFontTest beforeEach start");
 
 

@@ -19,7 +19,6 @@ import progressScaleCountJsunit from './ProgressTest/progress3.test';
 import progressStyleJsunit from './ProgressTest/progress2.test';
 
 export default function testsuite() {
-  progressSecTest();
   progressJsunit();
   progressScaleCountJsunit();
   progressStyleJsunit();

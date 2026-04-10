@@ -89,15 +89,15 @@ export default function webViewControllerErrorCodeSecond() {
       done();
     })
 
-    /*
-      * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0500
-      * @tc.name       : SwitchNextPageStatic
-      * @tc.desc       : test PAGE_REDIRECT
-      * @tc.size       : MEDIUM
-      * @tc.type       : Function
-      * @tc.level      : Level 3
-      */
-    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+     * @tc.name        SwitchNextPageStatic
+     * @tc.number      SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0500
+     * @tc.desc        test PAGE_REDIRECT
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent('SwitchNextPageStatic', 10)

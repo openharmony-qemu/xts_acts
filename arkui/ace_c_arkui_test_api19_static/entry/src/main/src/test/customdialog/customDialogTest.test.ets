@@ -25,7 +25,7 @@ let libUtil:LibUtil = new LibUtil();
 export default function customDialogTest(){
 
   describe('CustomDialogTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api19.static", "EntryAbility")
     });
     afterEach(async (): Promise<void> => {

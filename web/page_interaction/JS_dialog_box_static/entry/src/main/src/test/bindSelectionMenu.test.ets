@@ -43,9 +43,9 @@ export default function webViewSrollableJsunit() {
      * @tc.desc   test bindSelectionMenuType01 interface when choose callback mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('bindSelectionMenuTypeStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void):Promise<void> => {
+    it('bindSelectionMenuTypeStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
       await Utils.msSleep(1000)
       Utils.emitEvent("bindSelectionMenuType01", 10)
       await Utils.msSleep(1000)
@@ -70,9 +70,9 @@ export default function webViewSrollableJsunit() {
      * @tc.desc   test bindSelectionMenuType02 interface when choose callback mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('bindSelectionMenuTypeStatic02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void):Promise<void> => {
+    it('bindSelectionMenuTypeStatic02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
       await Utils.msSleep(1000)
       Utils.emitEvent("bindSelectionMenuType02", 10)
       await Utils.msSleep(2000)
@@ -83,15 +83,208 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-    /*
-  * @tc.number     : SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_003
-  * @tc.name       : bindSelectionMenuTypeStatic03
-  * @tc.desc       : test bindSelectionMenuType02 interface when choose callback mode.
-  * @tc.size       : MediumTest
-  * @tc.type       : Function
-  * @tc.level      : Level 3
-  */
-    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    /**
+     * @tc.name   testGetPreviewWidthStatic001
+     * @tc.number SUB_ACE_BASIC_ETS_GETPREVIEWIDTH_0100
+     * @tc.desc   test getPreviewWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetPreviewWidthStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testGetPreviewWidth001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testGetPreviewWidth001", true, 11000, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponentSelectionMenu', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testGetPreviewHeightStatic001
+     * @tc.number SUB_ACE_BASIC_ETS_GETPREVIEWHEIGTH_0100
+     * @tc.desc   test getPreviewHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetPreviewHeightStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testGetPreviewHeight001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testGetPreviewHeight001", true, 12000, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponentSelectionMenu', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name   testYStatic001
+     * @tc.number SUB_ACE_BASIC_ETS__Y_0100
+     * @tc.desc   test y
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testYStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testY001", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testY001", true, 13000, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponentSelectionMenu', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+
+    /**
+     * @tc.name   webResponseTypeStatic01
+     * @tc.number SUB_ACE_BASIC_ETS_WEBRESPONSETYPE_API_001
+     * @tc.desc   test webResponseType interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('webResponseTypeStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
+      await Utils.msSleep(1000)
+      Utils.emitEvent("webResponseTypeStatic01", 10)
+      await Utils.msSleep(2000)
+      Utils.registerEvent("webResponseTypeStatic01",2,83023233,done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('webcomponentSelectionMenu',10,'');
+      await Utils.msSleep(5000)
+      done();
+    })
+
+    /**
+     * @tc.name   audioSessionTypeStatic01
+     * @tc.number SUB_ACE_BASIC_ETS_AUDIOSESSIONTYPE_API_001
+     * @tc.desc   test audioSessionType interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('audioSessionTypeStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
+      await Utils.msSleep(1000)
+      Utils.emitEvent("audioSessionTypeStatic01", 10)
+      await Utils.msSleep(2000)
+      Utils.registerEvent("audioSessionTypeStatic01",3,83023234,done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('webcomponentSelectionMenu',10,'');
+      await Utils.msSleep(5000)
+      done();
+    })
+
+    /**
+     * @tc.name   onRefreshAccessedHistoryStatic01
+     * @tc.number SUB_ACE_BASIC_ETS_ONREFRESHACCESSEDHISTORY_API_001
+     * @tc.desc   test onRefreshAccessedHistory interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('onRefreshAccessedHistoryStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
+      await Utils.msSleep(1000)
+      Utils.emitEvent("onRefreshAccessedHistoryStatic01", 10)
+      await Utils.msSleep(2000)
+      Utils.registerEvent("onRefreshAccessedHistoryStatic01",true,83023235,done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('webcomponentSelectionMenu',10,'');
+      await Utils.msSleep(5000)
+      done();
+    })
+
+    /**
+     * @tc.name   onSearchResultReceiveStatic01
+     * @tc.number SUB_ACE_BASIC_ETS_ONSEARCHRESULTRECEIVE_API_001
+     * @tc.desc   test onSearchResultReceive interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('onSearchResultReceiveStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
+      await Utils.msSleep(1000)
+      Utils.emitEvent("onSearchResultReceiveStatic01", 10)
+      await Utils.msSleep(2000)
+      Utils.registerEvent("onSearchResultReceiveStatic01",true,83023236,done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('webcomponentSelectionMenu',10,'');
+      await Utils.msSleep(5000)
+      done();
+    })
+
+    /**
+     * @tc.name   onClientAuthenticationRequestStatic01
+     * @tc.number SUB_ACE_BASIC_ETS_ONCLIENTAUTHENTICATIONREQUESTSTATIC01_API_001
+     * @tc.desc   test onClientAuthenticationRequestStatic01 interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('onClientAuthenticationRequestStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
+      await Utils.msSleep(1000)
+      Utils.emitEvent("onClientAuthenticationRequestStatic01", 10)
+      await Utils.msSleep(2000)
+      Utils.registerEvent("onClientAuthenticationRequestStatic01",true,83023237,done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('webcomponentSelectionMenu',10,'');
+      await Utils.msSleep(5000)
+      done();
+    })
+
+    /**
+     * @tc.name   webElementTypeStatic01
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_ELEMENT_TYPE_API_001
+     * @tc.desc   test webElementType01 interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('webElementTypeStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
+      await Utils.msSleep(1000)
+      Utils.emitEvent("webElementTypeStatic01", 10)
+      await Utils.msSleep(2000)
+      Utils.registerEvent("webElementTypeStatic01",2,83023231,done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('webcomponentSelectionMenu',10,'');
+      await Utils.msSleep(5000)
+      done();
+    })
+
+    /**
+     * @tc.name   webElementTypeStatic02
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_ELEMENT_TYPE_API_002
+     * @tc.desc   test webElementType02 interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('webElementTypeStatic02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
+      await Utils.msSleep(1000)
+      Utils.emitEvent("webElementTypeStatic02", 10)
+      await Utils.msSleep(2000)
+      Utils.registerEvent("webElementTypeStatic02",3,83023232,done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('webcomponentSelectionMenu',10,'');
+      await Utils.msSleep(5000)
+      done();
+    })
+
+    /**
+    * @tc.name        SwitchNextPageStatic
+    * @tc.number      SwitchNextPageStatic_83023232
+    * @tc.desc        test bindSelectionMenuType02 interface when choose callback mode.
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);
         Utils.emitEvent('SwitchNextPageStatic', 10)

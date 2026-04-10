@@ -34,7 +34,7 @@ function sleep(time: number) {
 export default function gridJsunit1() {
 
   describe('gridTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

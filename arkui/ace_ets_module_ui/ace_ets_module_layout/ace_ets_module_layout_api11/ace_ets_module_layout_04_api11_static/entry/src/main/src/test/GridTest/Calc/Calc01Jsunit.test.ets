@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function CalcJsunit01() {
   describe('CalcJsunit01', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CalcJsunit01 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

@@ -31,7 +31,7 @@ import {
   FontWeight,
   Axis,
   Margin,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,FlexAlign,TripleLengthDetents,
+  PickerTextStyle, CalendarAlign, CalendarPicker,Builder,FlexAlign,TripleLengthDetents,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,SheetSize,SheetType,Length,$$
 } from '@ohos.arkui.component';
 import { edgeWidths, LengthMetrics } from '@ohos.arkui.node';

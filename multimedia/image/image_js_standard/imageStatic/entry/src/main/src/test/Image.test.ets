@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ export default function imageJsTest() {
   describe('imageJsTest', (): void => {
     let filesDir: string | undefined | null;
     let testContext: common.UIAbilityContext;
-    let filePath: string;
+    let filePath: string = '';
 
     let fdNumber: int;
     let globalpixelmap: image.PixelMap | undefined = undefined;
@@ -48,7 +48,7 @@ export default function imageJsTest() {
     const getFd = (fileName: string): int => {
       filePath = filesDir + "/" + fileName;
       console.info("image filePath:" + filePath);
-      const file = fs.openSync(filePath);
+      const file = fs.openSync(filePath!);
       fdNumber = file.fd as int;
       return fdNumber;
     };
@@ -130,7 +130,7 @@ export default function imageJsTest() {
                 expect(false).assertTrue();
                 logger.log("getImageInfo failed.");
               }
-              await imageSourceApi.release();
+              waitForCompletion(async () => {await imageSourceApi!.release();})
               done();
             });
           } else if (flag == 'CallbackNumber') {
@@ -146,7 +146,7 @@ export default function imageJsTest() {
                 expect(false).assertTrue();
                 logger.log("getImageInfo failed.");
               }
-              await imageSourceApi.release();
+              waitForCompletion(async () => {await imageSourceApi!.release();})
               done();
             });
           }
@@ -158,7 +158,7 @@ export default function imageJsTest() {
       }
     }
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       testContext = Hypium.get('context') as common.UIAbilityContext;
@@ -249,7 +249,7 @@ export default function imageJsTest() {
           expect(res).assertTrue();
           done();
         }
-      } catch(error: Error) {
+      } catch(error) {
         console.log('SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_PROMISE_STATIC_0100 error: ' + error);
         expect().assertFail();
         done();
@@ -307,7 +307,7 @@ export default function imageJsTest() {
           expect(false).assertTrue();
           done();
         }
-      } catch (error: Error) {
+      } catch (error) {
         console.log('SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_CALLBACK_STATIC_0100 error: ' + error);
         expect().assertFail();
         done();
@@ -374,7 +374,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         getFd('test.jpg');
-        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath!);
         if (imageSourceApi == undefined) {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0100 create image source failed');
           expect(false).assertTrue();
@@ -403,7 +403,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         getFd('test.bmp');
-        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath!);
         if (imageSourceApi == undefined) {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0200 create image source failed');
           expect(false).assertTrue();
@@ -432,7 +432,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         getFd('test.gif');
-        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath!);
         if (imageSourceApi == undefined) {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0300 create image source failed');
           expect(false).assertTrue();
@@ -461,7 +461,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         getFd('test.png');
-        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath!);
         if (imageSourceApi == undefined) {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0400 create image source failed');
           expect(false).assertTrue();
@@ -491,7 +491,7 @@ export default function imageJsTest() {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_SUFFIXFILE_STATIC_0100");
       try {
         getFd('test.123');
-        let imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        let imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath!);
         if (imageSourceApi == undefined) {
           logger.log('create image source failed');
           expect(false).assertTrue();
@@ -689,7 +689,7 @@ export default function imageJsTest() {
           sourcePixelFormat: image.PixelMapFormat.RGBA_8888,
           sourceSize: opt_size
         };
-        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath, opts);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath!, opts);
         if (imageSourceApi == undefined) {
           logger.log('create image source failed');
           expect(false).assertTrue();
@@ -1340,7 +1340,7 @@ export default function imageJsTest() {
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0400 failed');
                         done();
                     }
-                } catch(error: BusinessError) {
+                } catch(error) {
                     console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0400 error: ' + error);
                     expect().assertFail();
                     done();
@@ -1728,7 +1728,7 @@ export default function imageJsTest() {
                     await imageSourceApi.release();
                     console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0200 success');
                     done();
-                } catch(error: BusinessError) {
+                } catch(error) {
                     console.log('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0200 error: ' + error);
                     expect().assertFail();
                     done();
@@ -1793,7 +1793,7 @@ export default function imageJsTest() {
                     await imageSourceApi.release()
                     console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0300 success');
                     done();
-                } catch(error: BusinessError) {
+                } catch(error) {
                     console.log('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0300 error: ' + error);
                     expect().assertFail();
                     done();

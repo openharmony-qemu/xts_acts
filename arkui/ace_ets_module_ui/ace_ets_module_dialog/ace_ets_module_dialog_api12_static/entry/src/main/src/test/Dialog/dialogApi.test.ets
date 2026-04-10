@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function dialogApi() {
   describe('dialogApi', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
     })
     beforeEach(async (): Promise<void> => {

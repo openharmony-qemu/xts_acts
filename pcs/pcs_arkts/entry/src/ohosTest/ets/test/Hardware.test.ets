@@ -112,14 +112,14 @@ export default function hardwareTest() {
     })
 
     /**
-     * @tc.name   testWlanSupport2.4G0100
+     * @tc.name   testWlanSupport24G0100Adapt001
      * @tc.number G-HARDWARE-0202
      * @tc.desc   【G-HARDWARE-0202】必须支持 IEEE 802.11b/g/n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testWlanSupport2.4G0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testWlanSupport24G0100Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isWlanSupported) {
         expect(wifiManager.isFeatureSupported(infrastructureFeature)).assertTrue()
       }

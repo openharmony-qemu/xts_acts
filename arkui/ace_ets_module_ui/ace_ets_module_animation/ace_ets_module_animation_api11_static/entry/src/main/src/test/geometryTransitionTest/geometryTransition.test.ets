@@ -36,7 +36,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function geometryTransition() {
   describe('geometryTransition', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("geometryTransition beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")

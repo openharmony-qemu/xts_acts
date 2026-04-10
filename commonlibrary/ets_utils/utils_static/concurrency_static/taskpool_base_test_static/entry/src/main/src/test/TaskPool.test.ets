@@ -191,7 +191,7 @@ async function asyncTask(input: String): Promise<String> {
   });
 }
 
-function taskWrapper(args: Promise<String>): Promise<String> {
+async function taskWrapper(args: Promise<String>): Promise<String> {
   const resolvedValue = await args;
   return asyncTask(resolvedValue);
 }
@@ -585,7 +585,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest009';
         console.info(`${TAG} test start`);
@@ -610,7 +610,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest010';
         console.info(`${TAG} test start`);
@@ -636,7 +636,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest011';
         console.info(`${TAG} test start`);
@@ -661,7 +661,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest012';
         console.info(`${TAG} test start`);
@@ -690,7 +690,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest013';
         console.info(`${TAG} test start`);
@@ -726,7 +726,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest014';
         console.info(`${TAG} test start`);
@@ -790,7 +790,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest016';
         console.info(`${TAG} test start`);
@@ -815,7 +815,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest017';
         console.info(`${TAG} test start`);
@@ -842,7 +842,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest018';
         console.info(`${TAG} test start`);
@@ -868,7 +868,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest019';
         console.info(`${TAG} test start`);
@@ -895,7 +895,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest020';
         console.info(`${TAG} test start`);
@@ -921,7 +921,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest021';
         console.info(`${TAG} test start`);
@@ -947,7 +947,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest022';
         console.info(`${TAG} test start`);
@@ -975,7 +975,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest023';
         console.info(`${TAG} test start`);
@@ -1005,7 +1005,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest024';
         console.info(`${TAG} test start`);
@@ -1043,7 +1043,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it("TaskPoolTest025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("TaskPoolTest025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'taskPoolAsyncTest025';
         console.info(`${TAG} test start`);
@@ -1128,7 +1128,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('TaskPoolTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TaskPoolTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest028';
         console.info(`${TAG} test start`);
@@ -1161,7 +1161,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('TaskPoolTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TaskPoolTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest029';
         console.info(`${TAG} test start`);
@@ -1364,7 +1364,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('TaskPoolTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TaskPoolTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest035';
         console.info(`${TAG} test start`);
@@ -1428,7 +1428,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('TaskPoolTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TaskPoolTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest037';
         console.info(`${TAG} test start`);
@@ -1468,7 +1468,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('TaskPoolTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TaskPoolTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest038';
         console.info(`${TAG} test start`);
@@ -1507,7 +1507,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('TaskPoolTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TaskPoolTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest039';
         console.info(`${TAG} test start`);
@@ -1543,7 +1543,7 @@ export default function taskPoolTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('TaskPoolTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('TaskPoolTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'TaskPoolTest040';
         console.info(`${TAG} test start`);

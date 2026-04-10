@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -61,7 +61,7 @@ function GetChildLayoutConstraint(constraint: LayoutConstraint, child: FrameNode
   return res;
 }
 
-class MyFrameNode extends FrameNode {
+export class MyFrameNode extends FrameNode {
   public width: number = 10;
   private space: number = 1;
 
@@ -117,7 +117,7 @@ class MyFrameNode extends FrameNode {
   }
 }
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public rootNode: MyFrameNode | null = null;
 
   makeNode(context: UIContext): FrameNode | null {
@@ -135,10 +135,6 @@ struct setMeasuredSize1 {
   @State text1: string = 'start';
   @State uiContext:UIContext = this.getUIContext()
   @State drawContext:DrawContext | null= null
-
-  onPageShow(){
-    this.nodeController.makeNode(this.uiContext)
-  }
 
   build() {
     Row() {

@@ -47,7 +47,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest0100
      * @tc.name builtinsArrayEntriesPrototypebTest0100
-     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[number, byte]> 正常遍历，for循环逐项断言（平台推荐初始化）
+     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[int, byte]> 正常遍历，for循环逐项断言（平台推荐初始化）
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -65,7 +65,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, byte];
+          const value = next.value as [int, byte];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -78,7 +78,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest0200
      * @tc.name builtinsArrayEntriesPrototypebTest0200
-     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[number, byte]> 空数组
+     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[int, byte]> 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -105,7 +105,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest0300
      * @tc.name builtinsArrayEntriesPrototypebTest0300
-     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[number, byte]> 单元素数组
+     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[int, byte]> 单元素数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -123,7 +123,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, byte];
+          const value = next.value as [int, byte];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -136,7 +136,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest0400
      * @tc.name builtinsArrayEntriesPrototypebTest0400
-     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[number, byte]> 全部为同一数值
+     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[int, byte]> 全部为同一数值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -154,7 +154,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, byte];
+          const value = next.value as [int, byte];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -167,7 +167,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest0500
      * @tc.name builtinsArrayEntriesPrototypebTest0500
-     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[number, byte]> 只取第一个元素
+     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[int, byte]> 只取第一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -181,7 +181,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
         const expected = [1, 2, 3];
         let idx = 0;
         const first = result.next();
-        const value = first.value as [number, byte];
+        const value = first.value as [int, byte];
         expect(value[0]).assertEqual(0);
         expect(value[1]).assertEqual(1);
         expect(first.done).assertEqual(false);
@@ -201,7 +201,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest0600
      * @tc.name builtinsArrayEntriesPrototypebTest0600
-     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[number, byte]> 迭代器遍历到done
+     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[int, byte]> 迭代器遍历到done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -230,7 +230,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest0700
      * @tc.name builtinsArrayEntriesPrototypebTest0700
-     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[number, byte]> 大数组遍历，检查部分关键下标和值
+     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[int, byte]> 大数组遍历，检查部分关键下标和值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -239,7 +239,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest0700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<byte> = new byte[50];
+        const arr: FixedArray<byte> = new FixedArray<byte>(50);
         for (let i = 0; i < 50; i++) {
           arr[i] = (i * 2).toByte();
         }
@@ -253,7 +253,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, byte];
+          const value = next.value as [int, byte];
           const idx = value[0];
           const val = value[1];
           count++;
@@ -272,7 +272,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest0800
      * @tc.name builtinsArrayEntriesPrototypebTest0800
-     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[number, byte]> 迭代器多次next后done
+     * @tc.desc entries(self: FixedArray<byte>): IterableIterator<[int, byte]> 迭代器多次next后done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -302,7 +302,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest0900
      * @tc.name builtinsArrayEntriesPrototypebTest0900
-     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[number, char]> 正常遍历，while+next逐项断言
+     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[int, char]> 正常遍历，while+next逐项断言
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -320,7 +320,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, char];
+          const value = next.value as [int, char];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -333,7 +333,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest1000
      * @tc.name builtinsArrayEntriesPrototypebTest1000
-     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[number, char]> 空数组
+     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[int, char]> 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -360,7 +360,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest1100
      * @tc.name builtinsArrayEntriesPrototypebTest1100
-     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[number, char]> 单元素数组
+     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[int, char]> 单元素数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -378,7 +378,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, char];
+          const value = next.value as [int, char];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -391,7 +391,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest1200
      * @tc.name builtinsArrayEntriesPrototypebTest1200
-     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[number, char]> 全部为同一字符
+     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[int, char]> 全部为同一字符
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -409,7 +409,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, char];
+          const value = next.value as [int, char];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -422,7 +422,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest1300
      * @tc.name builtinsArrayEntriesPrototypebTest1300
-     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[number, char]> 只取第一个元素
+     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[int, char]> 只取第一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -436,7 +436,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
         const expected = [c'a', c'b', c'c'];
         let idx = 0;
         const first = result.next();
-        const value = first.value as [number, char];
+        const value = first.value as [int, char];
         expect(value[0]).assertEqual(0);
         expect(value[1]).assertEqual(c'a');
         expect(first.done).assertEqual(false);
@@ -456,7 +456,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest1400
      * @tc.name builtinsArrayEntriesPrototypebTest1400
-     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[number, char]> 迭代器遍历到done
+     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[int, char]> 迭代器遍历到done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -485,7 +485,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest1500
      * @tc.name builtinsArrayEntriesPrototypebTest1500
-     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[number, char]> 大数组遍历，检查部分关键下标和值
+     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[int, char]> 大数组遍历，检查部分关键下标和值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -494,7 +494,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest1500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<char> = new char[50];
+        const arr: FixedArray<char> = new FixedArray<char>(50);
         const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         for (let i = 0; i < 50; i++) {
           arr[i] = chars.charAt(i);
@@ -509,7 +509,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, char];
+          const value = next.value as [int, char];
           const idx = value[0];
           const val = value[1];
           count++;
@@ -528,7 +528,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest1600
      * @tc.name builtinsArrayEntriesPrototypebTest1600
-     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[number, char]> 迭代器多次next后done
+     * @tc.desc entries(self: FixedArray<char>): IterableIterator<[int, char]> 迭代器多次next后done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -558,7 +558,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest1700
      * @tc.name builtinsArrayEntriesPrototypebTest1700
-     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[number, double]> 正常遍历，while+next逐项断言
+     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[int, double]> 正常遍历，while+next逐项断言
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -576,7 +576,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, double];
+          const value = next.value as [int, double];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -589,7 +589,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest1800
      * @tc.name builtinsArrayEntriesPrototypebTest1800
-     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[number, double]> 空数组
+     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[int, double]> 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -616,7 +616,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest1900
      * @tc.name builtinsArrayEntriesPrototypebTest1900
-     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[number, double]> 单元素数组
+     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[int, double]> 单元素数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -634,7 +634,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, double];
+          const value = next.value as [int, double];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -647,7 +647,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest2000
      * @tc.name builtinsArrayEntriesPrototypebTest2000
-     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[number, double]> 全部为同一数值
+     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[int, double]> 全部为同一数值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -665,7 +665,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, double];
+          const value = next.value as [int, double];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -678,7 +678,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest2100
      * @tc.name builtinsArrayEntriesPrototypebTest2100
-     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[number, double]> 只取第一个元素
+     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[int, double]> 只取第一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -692,7 +692,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
         const expected = [1.1, 2.2, 3.3];
         let idx = 0;
         const first = result.next();
-        const value = first.value as [number, double];
+        const value = first.value as [int, double];
         expect(value[0]).assertEqual(0);
         expect(value[1]).assertEqual(1.1);
         expect(first.done).assertEqual(false);
@@ -712,7 +712,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest2200
      * @tc.name builtinsArrayEntriesPrototypebTest2200
-     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[number, double]> 迭代器遍历到done
+     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[int, double]> 迭代器遍历到done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -741,7 +741,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest2300
      * @tc.name builtinsArrayEntriesPrototypebTest2300
-     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[number, double]> 大数组遍历，检查部分关键下标和值
+     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[int, double]> 大数组遍历，检查部分关键下标和值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -750,7 +750,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest2300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<double> = new double[50];
+        const arr: FixedArray<double> = new FixedArray<double>(50);
         for (let i = 0; i < 50; i++) {
           arr[i] = i * 1.5;
         }
@@ -764,7 +764,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, double];
+          const value = next.value as [int, double];
           const idx = value[0];
           const val = value[1];
           count++;
@@ -783,7 +783,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest2400
      * @tc.name builtinsArrayEntriesPrototypebTest2400
-     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[number, double]> 迭代器多次next后done
+     * @tc.desc entries(self: FixedArray<double>): IterableIterator<[int, double]> 迭代器多次next后done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -813,7 +813,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest2500
      * @tc.name builtinsArrayEntriesPrototypebTest2500
-     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[number, float]> 正常遍历，while+next逐项断言
+     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[int, float]> 正常遍历，while+next逐项断言
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -831,7 +831,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, float];
+          const value = next.value as [int, float];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -844,7 +844,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest2600
      * @tc.name builtinsArrayEntriesPrototypebTest2600
-     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[number, float]> 空数组
+     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[int, float]> 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -871,7 +871,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest2700
      * @tc.name builtinsArrayEntriesPrototypebTest2700
-     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[number, float]> 单元素数组
+     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[int, float]> 单元素数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -889,7 +889,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, float];
+          const value = next.value as [int, float];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -902,7 +902,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest2800
      * @tc.name builtinsArrayEntriesPrototypebTest2800
-     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[number, float]> 全部为同一数值
+     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[int, float]> 全部为同一数值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -920,7 +920,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, float];
+          const value = next.value as [int, float];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -933,7 +933,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest2900
      * @tc.name builtinsArrayEntriesPrototypebTest2900
-     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[number, float]> 只取第一个元素
+     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[int, float]> 只取第一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -947,7 +947,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
         const expected = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
         let idx = 0;
         const first = result.next();
-        const value = first.value as [number, float];
+        const value = first.value as [int, float];
         expect(value[0]).assertEqual(0);
         expect(value[1]).assertEqual(1.1.toFloat());
         expect(first.done).assertEqual(false);
@@ -967,7 +967,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest3000
      * @tc.name builtinsArrayEntriesPrototypebTest3000
-     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[number, float]> 迭代器遍历到done
+     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[int, float]> 迭代器遍历到done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -996,7 +996,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest3100
      * @tc.name builtinsArrayEntriesPrototypebTest3100
-     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[number, float]> 大数组遍历，检查部分关键下标和值
+     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[int, float]> 大数组遍历，检查部分关键下标和值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1005,7 +1005,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest3100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = new float[50];
+        const arr: FixedArray<float> = new FixedArray<float>(50);
         for (let i = 0; i < 50; i++) {
           arr[i] = (i * 1.5).toFloat();
         }
@@ -1019,7 +1019,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, float];
+          const value = next.value as [int, float];
           const idx = value[0];
           const val = value[1];
           count++;
@@ -1038,7 +1038,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest3200
      * @tc.name builtinsArrayEntriesPrototypebTest3200
-     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[number, float]> 迭代器多次next后done
+     * @tc.desc entries(self: FixedArray<float>): IterableIterator<[int, float]> 迭代器多次next后done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1068,7 +1068,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest3300
      * @tc.name builtinsArrayEntriesPrototypebTest3300
-     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[number, int]> 正常遍历，while+next逐项断言
+     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[int, int]> 正常遍历，while+next逐项断言
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1086,7 +1086,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, int];
+          const value = next.value as [int, int];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -1099,7 +1099,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest3400
      * @tc.name builtinsArrayEntriesPrototypebTest3400
-     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[number, int]> 空数组
+     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[int, int]> 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1126,7 +1126,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest3500
      * @tc.name builtinsArrayEntriesPrototypebTest3500
-     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[number, int]> 单元素数组
+     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[int, int]> 单元素数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1144,7 +1144,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, int];
+          const value = next.value as [int, int];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -1157,7 +1157,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest3600
      * @tc.name builtinsArrayEntriesPrototypebTest3600
-     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[number, int]> 全部为同一数值
+     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[int, int]> 全部为同一数值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1175,7 +1175,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, int];
+          const value = next.value as [int, int];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -1188,7 +1188,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest3700
      * @tc.name builtinsArrayEntriesPrototypebTest3700
-     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[number, int]> 只取第一个元素
+     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[int, int]> 只取第一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1202,7 +1202,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
         const expected = [1, 2, 3];
         let idx = 0;
         const first = result.next();
-        const value = first.value as [number, int];
+        const value = first.value as [int, int];
         expect(value[0]).assertEqual(0);
         expect(value[1]).assertEqual(1);
         expect(first.done).assertEqual(false);
@@ -1222,7 +1222,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest3800
      * @tc.name builtinsArrayEntriesPrototypebTest3800
-     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[number, int]> 迭代器遍历到done
+     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[int, int]> 迭代器遍历到done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1251,7 +1251,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest3900
      * @tc.name builtinsArrayEntriesPrototypebTest3900
-     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[number, int]> 大数组遍历，检查部分关键下标和值
+     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[int, int]> 大数组遍历，检查部分关键下标和值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1260,7 +1260,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest3900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<int> = new int[50];
+        const arr: FixedArray<int> = new FixedArray<int>(50);
         for (let i = 0; i < 50; i++) {
           arr[i] = i * 2;
         }
@@ -1274,7 +1274,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, int];
+          const value = next.value as [int, int];
           const idx = value[0];
           const val = value[1];
           count++;
@@ -1293,7 +1293,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest4000
      * @tc.name builtinsArrayEntriesPrototypebTest4000
-     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[number, int]> 迭代器多次next后done
+     * @tc.desc entries(self: FixedArray<int>): IterableIterator<[int, int]> 迭代器多次next后done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1323,7 +1323,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest4100
      * @tc.name builtinsArrayEntriesPrototypebTest4100
-     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[number, long]> 正常遍历，while+next逐项断言
+     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[int, long]> 正常遍历，while+next逐项断言
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1341,7 +1341,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, long];
+          const value = next.value as [int, long];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -1354,7 +1354,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest4200
      * @tc.name builtinsArrayEntriesPrototypebTest4200
-     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[number, long]> 空数组
+     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[int, long]> 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1381,7 +1381,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest4300
      * @tc.name builtinsArrayEntriesPrototypebTest4300
-     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[number, long]> 单元素数组
+     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[int, long]> 单元素数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1399,7 +1399,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, long];
+          const value = next.value as [int, long];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -1412,7 +1412,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest4400
      * @tc.name builtinsArrayEntriesPrototypebTest4400
-     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[number, long]> 全部为同一数值
+     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[int, long]> 全部为同一数值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1430,7 +1430,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, long];
+          const value = next.value as [int, long];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -1443,7 +1443,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest4500
      * @tc.name builtinsArrayEntriesPrototypebTest4500
-     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[number, long]> 只取第一个元素
+     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[int, long]> 只取第一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1457,7 +1457,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
         const expected = [1, 2, 3];
         let idx = 0;
         const first = result.next();
-        const value = first.value as [number, long];
+        const value = first.value as [int, long];
         expect(value[0]).assertEqual(0);
         expect(value[1]).assertEqual(1);
         expect(first.done).assertEqual(false);
@@ -1477,7 +1477,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest4600
      * @tc.name builtinsArrayEntriesPrototypebTest4600
-     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[number, long]> 迭代器遍历到done
+     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[int, long]> 迭代器遍历到done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1506,7 +1506,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest4700
      * @tc.name builtinsArrayEntriesPrototypebTest4700
-     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[number, long]> 大数组遍历，检查部分关键下标和值
+     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[int, long]> 大数组遍历，检查部分关键下标和值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1515,7 +1515,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest4700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<long> = new long[50];
+        const arr: FixedArray<long> = new FixedArray<long>(50);
         for (let i = 0; i < 50; i++) {
           arr[i] = i * 2;
         }
@@ -1529,7 +1529,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, long];
+          const value = next.value as [int, long];
           const idx = value[0];
           const val = value[1];
           count++;
@@ -1548,7 +1548,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest4800
      * @tc.name builtinsArrayEntriesPrototypebTest4800
-     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[number, long]> 迭代器多次next后done
+     * @tc.desc entries(self: FixedArray<long>): IterableIterator<[int, long]> 迭代器多次next后done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1578,7 +1578,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest4900
      * @tc.name builtinsArrayEntriesPrototypebTest4900
-     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[number, short]> 正常遍历，while+next逐项断言
+     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[int, short]> 正常遍历，while+next逐项断言
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1596,7 +1596,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, short];
+          const value = next.value as [int, short];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -1609,7 +1609,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest5000
      * @tc.name builtinsArrayEntriesPrototypebTest5000
-     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[number, short]> 空数组
+     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[int, short]> 空数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1636,7 +1636,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest5100
      * @tc.name builtinsArrayEntriesPrototypebTest5100
-     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[number, short]> 单元素数组
+     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[int, short]> 单元素数组
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1654,7 +1654,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, short];
+          const value = next.value as [int, short];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -1667,7 +1667,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest5200
      * @tc.name builtinsArrayEntriesPrototypebTest5200
-     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[number, short]> 全部为同一数值
+     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[int, short]> 全部为同一数值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1685,7 +1685,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, short];
+          const value = next.value as [int, short];
           expect(value[0]).assertEqual(idx);
           expect(value[1]).assertEqual(expected[idx]);
           idx++;
@@ -1698,7 +1698,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest5300
      * @tc.name builtinsArrayEntriesPrototypebTest5300
-     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[number, short]> 只取第一个元素
+     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[int, short]> 只取第一个元素
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1712,7 +1712,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
         const expected = [1, 2, 3];
         let idx = 0;
         const first = result.next();
-        const value = first.value as [number, short];
+        const value = first.value as [int, short];
         expect(value[0]).assertEqual(0);
         expect(value[1]).assertEqual(1);
         expect(first.done).assertEqual(false);
@@ -1732,7 +1732,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest5400
      * @tc.name builtinsArrayEntriesPrototypebTest5400
-     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[number, short]> 迭代器遍历到done
+     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[int, short]> 迭代器遍历到done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1761,7 +1761,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest5500
      * @tc.name builtinsArrayEntriesPrototypebTest5500
-     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[number, short]> 大数组遍历，检查部分关键下标和值
+     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[int, short]> 大数组遍历，检查部分关键下标和值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1770,7 +1770,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayEntriesPrototypebTest5500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<short> = new short[50];
+        const arr: FixedArray<short> = new FixedArray<short>(50);
         for (let i = 0; i < 50; i++) {
           arr[i] = (i * 2).toShort();
         }
@@ -1784,7 +1784,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
           if (next.done) {
             break;
           }
-          const value = next.value as [number, short];
+          const value = next.value as [int, short];
           const idx = value[0];
           const val = value[1];
           count++;
@@ -1803,7 +1803,7 @@ export default function builtinsArrayEntriesPrototypebTest(){
     /**
      * @tc.number builtinsArrayEntriesPrototypebTest5600
      * @tc.name builtinsArrayEntriesPrototypebTest5600
-     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[number, short]> 迭代器多次next后done
+     * @tc.desc entries(self: FixedArray<short>): IterableIterator<[int, short]> 迭代器多次next后done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

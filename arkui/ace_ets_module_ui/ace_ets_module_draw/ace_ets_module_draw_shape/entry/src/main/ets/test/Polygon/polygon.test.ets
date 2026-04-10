@@ -18,7 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import Utils from '../../MainAbility/common/Utils'
 
 export default function polygonNewJsunit() {
-  describe('polygonNewJsunit', () => {
+  describe('polygonNewJsunitAdapt001', () => {
     beforeAll(async () => {
       console.info("flex beforeEach start");
      let options:router.RouterOptions = {

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -73,7 +73,7 @@ struct webViewOnNavigationEntryCommitted {
               case 'emitWebViewOnNavigationEntryCommitted01': {
                 try {
                   this.controller.loadUrl('https://www.weibo.com')
-                } catch (error:BusinessError) {
+                } catch (error) {
                   let e:BusinessError = error as BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 }

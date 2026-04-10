@@ -36,7 +36,7 @@ let compareFlexGrow = 1;
 const uiContext = new UIContext();
 export default function onDidIMEInputTest() {
   describe('onDidIMEInputTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onDidIMEInputTest beforeEach start");
 
 

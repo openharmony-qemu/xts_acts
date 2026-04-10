@@ -1109,9 +1109,11 @@ export default function abilityTest() {
       try{
         await sleep(500);
         avSession.getAVSession(context).then((data) => {
-          session = data;
-          console.info('getAVSession successfully${session.sessionType}');
+          console.info('getAVSession successfully${data.sessionType}');
+          expect(data.sessionType).assertEqual('voice_call');
+          expect(data.sessionId.length).assertEqual(64);
         })
+        await sleep(300);
       } catch (err) {
         console.info('getAVSession failed${err.code} message:${err.message}');
         expect(false).assertTrue()
@@ -1591,14 +1593,14 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLEISDESKTOPLYRICVISIBLE_0100Adapt001
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0100
      * @tc.desc   Testing setDesktopLyricVisible&isDesktopLyricVisible with visible=true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0100',
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLEISDESKTOPLYRICVISIBLE_0100Adapt001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0100';
         try {
@@ -1619,14 +1621,14 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLEISDESKTOPLYRICVISIBLE_0200Adapt001
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0200
      * @tc.desc   Testing setDesktopLyricVisible&isDesktopLyricVisible with visible=false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0200',
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLEISDESKTOPLYRICVISIBLE_0200Adapt001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICVISIBLE&ISDESKTOPLYRICVISIBLE_0200';
         try {
@@ -1649,7 +1651,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0100
      * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_0100
-     * @tc.desc   Testing onDesktopLyricVisibilityChanged
+     * @tc.desc   Testing onDesktopLyricVisibilityChanged - callback equals true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1663,22 +1665,65 @@ export default function abilityTest() {
             done();
             return;
           }
+          let callbackData: boolean = false;
           let callbackTriggered: boolean = false;
           let callback = (data: boolean) => {
-            callbackTriggered = data;
-            console.info(`${TAG}: boolean: callback triggered (visible=${data})`);
+            callbackData = data;
+            callbackTriggered = true;
+            console.info(`${TAG}: onDesktopLyricVisibilityChanged callback triggered , data = ${data})`);
           }
           await session.enableDesktopLyric(true);
           session.onDesktopLyricVisibilityChanged(callback);
           await session.setDesktopLyricVisible(true);
           await sleep(200);
           expect(callbackTriggered).assertTrue();
+          expect(callbackData).assertTrue();
         } catch (err) {
           console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
         }
         done();
       });
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_2200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_2200
+     * @tc.desc   Testing onDesktopLyricVisibilityChanged - callback equals false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_2200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let TAG = 'SUB_MULTIMEDIA_AVSESSION_ONDESKTOPLYRICVISIBLITYCHANGED_2200';
+        try {
+          const isSupported: boolean = await avSession.isDesktopLyricSupported();
+          if (!isSupported) {
+            done();
+            return;
+          }
+          let callbackData: boolean = true;
+          let callbackTriggered: boolean = false;
+          let callback = (data: boolean) => {
+            callbackData = data;
+            callbackTriggered = true;
+            console.info(`${TAG}: onDesktopLyricVisibilityChanged callback triggered , data = ${data})`);
+          }
+          await session.enableDesktopLyric(true);
+          await session.setDesktopLyricVisible(true);
+          session.onDesktopLyricVisibilityChanged(callback);
+          await session.setDesktopLyricVisible(false);
+          await sleep(200);
+          expect(callbackTriggered).assertTrue();
+          expect(callbackData).assertFalse();
+        } catch (err) {
+          console.error(`${TAG}: Testlog BusinessError: code:${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+
 
     /**
      * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFDESKTOPLYRICVISIBLITYCHANGED_0100
@@ -1765,14 +1810,14 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATEGETDESKTOPLYRICSTATE_0100Adapt001
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0100
      * @tc.desc   Testing setDesktopLyricState&getDesktopLyricState with locked state (isLocked: true) - normal scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0100',
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATEGETDESKTOPLYRICSTATE_0100Adapt001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0100';
         try {
@@ -1794,14 +1839,14 @@ export default function abilityTest() {
       });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATEGETDESKTOPLYRICSTATE_0200Adapt001
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0200
      * @tc.desc   Testing setDesktopLyricState&getDesktopLyricState with locked state (isLocked: false) - normal scenario
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0200',
+    it('SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATEGETDESKTOPLYRICSTATE_0200Adapt001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let TAG = 'SUB_MULTIMEDIA_AVSESSION_SETDESKTOPLYRICSTATE&GETDESKTOPLYRICSTATE_0200';
         try {
@@ -1942,6 +1987,47 @@ export default function abilityTest() {
         }
         done();
       });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0100
+     * @tc.desc   test setBackgroundPlayMode - set mode as enable
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0100]';
+      await session.setBackgroundPlayMode(0).then(()=>{
+        console.info(`${TAG}TestLog: setBackgroundPlayMode success, ENABLE_BACKGROUND_PLAY set successful!`);
+      }).catch((err: BusinessError) => {
+        console.info(`${TAG}TestLog: setBackgroundPlayMode error occurred, error: code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+      await sleep(300);
+      done();
+    })
+
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0200
+     * @tc.desc   test setBackgroundPlayMode - set mode as disable
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_0200]';
+      await session.setBackgroundPlayMode(1).then(()=>{
+        console.info(`${TAG}TestLog: setBackgroundPlayMode success, DISABLE_BACKGROUND_PLAY set successful!`);
+      }).catch((err: BusinessError) => {
+        console.info(`${TAG}TestLog: setBackgroundPlayMode error occurred, error: code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+      await sleep(300);
+      done();
+    })
 
   })
 }

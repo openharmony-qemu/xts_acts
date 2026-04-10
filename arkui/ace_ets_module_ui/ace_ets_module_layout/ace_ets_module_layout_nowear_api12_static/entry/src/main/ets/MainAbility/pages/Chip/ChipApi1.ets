@@ -21,10 +21,10 @@ import {
   Text,
   Row,
   Color,
-  SymbolGlyphModifier,
   ColumnOptions,
   $r
 } from '@ohos.arkui.component';
+import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { State } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import inspector from '@ohos.arkui.inspector';
@@ -44,14 +44,14 @@ struct ChipApi1 {
           fillColor: Color.Blue,
           activatedFillColor: Color.Blue
         }  as PrefixIconOptions,
-        prefixSymbol: {
-          normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
-          activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
-        } as ChipSymbolGlyphOptions,
-        suffixSymbol: {
-          normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
-          activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
-        } as ChipSymbolGlyphOptions,
+        // prefixSymbol: {
+        //   normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
+        //   activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
+        // } as ChipSymbolGlyphOptions,
+        // suffixSymbol: {
+        //   normal: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
+        //   activated: new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontSize(16),
+        // } as ChipSymbolGlyphOptions,
         label: {
           text: "操作块",
           fontSize: 12,

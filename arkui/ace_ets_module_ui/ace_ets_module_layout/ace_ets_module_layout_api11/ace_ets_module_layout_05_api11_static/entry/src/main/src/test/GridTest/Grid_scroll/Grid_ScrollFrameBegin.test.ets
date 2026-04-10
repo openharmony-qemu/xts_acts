@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_ScrollFrameBegin() {
   describe('Grid_ScrollFrameBegin', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
@@ -116,7 +116,7 @@ it('Grid_ScrollFrameBegin_static_0200', Level.LEVEL0, async (done: () => void): 
       console.info('[Grid_ScrollFrameBegin_static_0200] START');
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ScrollFrameBegin_grid')
       let driver = Driver.create()
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)).toInt(),
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),

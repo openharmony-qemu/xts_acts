@@ -32,7 +32,7 @@ export default function assetGetAllObjectTest() {
     let getAllObjectsCallbackTest =
       async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions): Promise<void> => {
         try {
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           hilog.info(domain, tag, '%{public}s', `${testNum} fetchResult: ${fetchResult.getCount()}`);
           expect(fetchResult.getCount() > 0).assertTrue();
           fetchResult.getAllObjects((err: BusinessError | null,
@@ -63,7 +63,7 @@ export default function assetGetAllObjectTest() {
     let getAllObjectsPromiseTest =
       async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions): Promise<void> => {
         try {
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           hilog.info(domain, tag, `${testNum} fetchResult: ${fetchResult.getCount()}`);
           expect(fetchResult.getCount() > 0).assertTrue();
           const allObj = await fetchResult.getAllObjects();

@@ -31,7 +31,7 @@ import {
   FontWeight,
   Axis,
   Margin,Swiper,ForEach,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,
+  PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,
   SwiperAttribute, DotIndicator
 } from '@ohos.arkui.component';

@@ -31,7 +31,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function imageSpanJsunit() {
   describe('imageSpanTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 

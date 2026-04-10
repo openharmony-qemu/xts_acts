@@ -28,11 +28,6 @@ interface commonEventPublishDataType {
     bundleName?: string
 }
 
-interface wantType {
-    bundleName: string
-    abilityName: string
-}
-
 let options:CommonEventManager.CommonEventPublishData = {
     code: 1,
     data: "initial data",
@@ -608,13 +603,13 @@ export default function test() {
                         }
                     }
                 }).then((res) => {
-                    console.info(`FMS_acquireForm_1400 featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
+                    console.info(`FMS_acquireForm_1400 featureAbility.startAbilityhost again res: ${JSON.stringify(res)}`);
                     expect(res).assertEqual(0);
                     done();
                 }).catch((err: BusinessError) => {
-                    console.info(`FMS_acquireForm_1400 featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
+                    console.info(`FMS_acquireForm_1400 featureAbility.startAbilityhost again error: ${JSON.stringify(err)}`);
                     commonEvent.publish("FMS_FormOnError_commonEvent", () => {
-                        console.info(`FMS_acquireForm_1400  onErrorCallBack publish start`)})
+                        console.info(`FMS_acquireForm_1400  onErrorCallBack publish again start`)})
                 });
                 console.info(`FMS_acquireForm_1400 featureAbility.startAbility again end`);
                 await sleepTime(3000);
@@ -659,50 +654,14 @@ export default function test() {
          */
         it(`FMS_acquireForm_1500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1500 start`);
-            let formId1: string = '';
-            let onCreateCount = 0;
-
-            let onSupplyCallBack = (_:BusinessError, data: CommonEventManager.CommonEventData) => {
-                console.info("====>FMS_acquireForm_1500 onSupplyCallBack====>" + JSON.stringify(data));
-                if (data.data == "FMS_FormSupply_commonEvent") {
-                    onCreateCount++;
-                    console.info("====>FMS_acquireForm_1500 onSupplyCallBack====>" + `${onCreateCount}`);
-                    if (onCreateCount == 2) {
-                        commonEvent.unsubscribe(subscriberSupply, () => unsubscribeSupplyCallback("FMS_acquireForm_1500"))
-                    }
-                    data.data = 'onAcquiredCallBackCache';
-                    commonEvent.publish("FMS_FormOnAcquired_commonEvent", data, () => {
-                        console.info(`FMS_acquireForm_1500 onAcquiredCallBackCache publish start`)});
-                }
-            }
-
-            let onAcquiredCallBackCache = (_:BusinessError, data: CommonEventManager.CommonEventData) => {
-                console.info("!!!====>FMS_acquireForm_1500 onAcquiredCallBackCache data:====>" + JSON.stringify(data));
-                commonEvent.unsubscribe(subscriberOnAcquired, () => unsubscribeOnAcquiredCallBackCache("FMS_acquireForm_1500"));
-                expect(data.data).assertEqual("onAcquiredCallBackCache");
-                commonEvent.publish(deleteForm_Event, data, async (err) => {
-                    console.info('FMS_acquireForm_1500 publish' + JSON.stringify(err));
-                    await sleepTime(3000)
-                    done()
-                });
-            }
-
-            let onAcquiredCallBack = async(_:BusinessError, data: CommonEventManager.CommonEventData) => {
-                console.info("!!!====>FMS_acquireForm_1500 onAcquiredCallBack data:====>" + JSON.stringify(data));
-                expect(data.data).assertEqual("FMS_FormOnAcquired_commonEvent");
-                expect(data.code).assertEqual(0);
-
-                commonEvent.unsubscribe(subscriberOnAcquired, () => unsubscribeOnAcquiredCallback("FMS_acquireForm_1500"))
-                subscriberOnAcquired = await commonEvent.createSubscriber(onAcquiredForm_Event);
-                commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallBackCache);
-                await sleepTime(2000);
-                console.info(`FMS_acquireForm_1500 featureAbility.startAbility again start`);
+            let FMS_acquireForm_1500_hostb = async () => {
+                console.info(`FMS_acquireForm_1500_hostb start`);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostb",
                         abilityName: "com.ohos.st.formsystemhostb.MainAbility",
                         parameters: {
-                            "formId": data.data,
+                            "formId": "0",
                             "name": "Form_Js001",
                             "bundle": "com.acts.form.formsystemtestservicea.hmservice",
                             "ability": "FormAbility",
@@ -712,21 +671,15 @@ export default function test() {
                         }
                     }
                 }).then((res) => {
-                    console.info(`FMS_acquireForm_1500 featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
-                    data.code = res;
-                    data.data = 'FMS_FormSupply_commonEvent';
-                    commonEvent.publish("FMS_FormSupply_commonEvent", data, () => {
-                        console.info(`FMS_acquireForm_1500 onSupplyCallBack publish start`)});
-
+                    console.info(`FMS_acquireForm_1500_hostb then res: ${JSON.stringify(res)}`);
+                    expect(res).assertEqual(0);
+                    commonEvent.publish(deleteForm_Event, ()=>{});
+                    done();
                 }).catch((err: BusinessError) => {
-                    console.info(`FMS_acquireForm_1500 featureAbility.startAbilityhost again error: ${JSON.stringify(err)}`);
+                    console.info(`FMS_acquireForm_1500_hostb catch error: ${JSON.stringify(err)}`);
                 });
-                console.info(`FMS_acquireForm_1500 featureAbility.startAbility again end`);
+                console.info(`FMS_acquireForm_1500_hostb end`);
             }
-
-            commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallBack);
-            commonEvent.subscribe(subscriberSupply, onSupplyCallBack);
-            await sleepTime(2000);
 
             console.info(`FMS_acquireForm_1500 featureAbility.startAbility start`);
             await featureAbility.startAbility({
@@ -745,25 +698,15 @@ export default function test() {
                 }
             }).then((res) => {
                 console.info(`FMS_acquireForm_1500 featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
-                options.code = res;
                 options.data = 'FMS_FormOnAcquired_commonEvent';
-                commonEvent.publish("FMS_FormOnAcquired_commonEvent", options, () => {
-                    console.info(`FMS_acquireForm_1500 onAcquiredCallBack publish start`)})
+                expect(res).assertEqual(0);
+                FMS_acquireForm_1500_hostb();
             }).catch((err: BusinessError) => {
                 console.info(`FMS_acquireForm_1500 featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
-
             });
             console.info(`FMS_acquireForm_1500 featureAbility.startAbility end`);
         });
     });
-}
-
-const delPublishCallBack = async (tcNumber: string, done: () => void) => {
-    console.info(`${tcNumber} delPublishCallBack start`);
-    setTimeout(() => {
-        console.info(`${tcNumber} delPublishCallBack end`);
-        done();
-    }, 1000);
 }
 
 function sleepTime(time: number): Promise<void> {
@@ -791,12 +734,4 @@ const unsubscribeSupplyCallback = (tcNumber: string) => {
 
 const unsubscribeOnErrorCallBackCache = (tcNumber: string) => {
     console.info(`====>${tcNumber} unsubscribeOnErrorCallBackCache CallBack====>`);
-}
-
-const unsubscribeOnAcquiredCallBackCache = (tcNumber: string) => {
-    console.info(`====>${tcNumber} unsubscribeOnAcquiredCallBackCache CallBack====>`);
-}
-
-const unsubscribeOnCastCallback = (tcNumber: string) => {
-    console.info(`====>${tcNumber} unsubscribeOnCastCallback====>`);
 }

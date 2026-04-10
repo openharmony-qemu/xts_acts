@@ -45,7 +45,7 @@ export default function toggleJsunit() {
 
 
   describe('toggleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 

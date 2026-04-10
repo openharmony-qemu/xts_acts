@@ -17,10 +17,6 @@ import commonEvent from '@ohos.commonEventManager';
 import hilog from '@ohos.hilog';
 import ShareExtensionAbility from '@ohos.app.ability.ShareExtensionAbility';
 
-function sleep(time: number): Promise<number> {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
-
 export default class UiExtAbility extends ShareExtensionAbility {
   private StartAbilityForResultAsCaller_0700 = () => {
     setTimeout(() => {
@@ -103,12 +99,6 @@ export default class UiExtAbility extends ShareExtensionAbility {
       });
     } catch (error) {
         console.info('====>[backGroundAbility] startAbilityForResultAsCaller == error :' + JSON.stringify(error));
-    } finally {
-        await sleep(2000);
-        console.info('====>[OtherUIAbility] 2100 commonEvent start publish killui');
-        commonEvent.publish('killui', (err) => {
-          console.info('====>[OtherUIAbility] 2100 killui commonEvent publish err: ' + JSON.stringify(err));
-        });
     }
   }
 

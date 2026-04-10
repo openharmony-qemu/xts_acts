@@ -289,7 +289,11 @@ export default function fontTest() {
       }
 
       try {
-        font.getTypeface();
+        let typeface = font.getTypeface();
+        if(typeface == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
         console.info(msg + ' getTypeface succeeded');
       } catch (e) {
         e = e as BusinessError;
@@ -310,7 +314,11 @@ export default function fontTest() {
       }
 
       try {
-        font.getTypeface();
+        let typeface = font.getTypeface();
+        if(typeface == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
         console.info(msg + ' getTypeface succeeded');
       } catch (e) {
         e = e as BusinessError;
@@ -375,6 +383,25 @@ export default function fontTest() {
         const font = new drawing.Font();
         let metrics = font.getMetrics() as drawing.FontMetrics;
         console.info(msg + ' getMetrics successed' + JSON.stringify(metrics));
+        if(metrics == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
+        let aaa = drawing.FontMetricsFlags.UNDERLINE_THICKNESS_VALID.valueOf();
+        let aaa1 = drawing.FontMetricsFlags.UNDERLINE_POSITION_VALID.valueOf();
+        let aaa2 = drawing.FontMetricsFlags.STRIKETHROUGH_THICKNESS_VALID.valueOf();
+        let aaa3 = drawing.FontMetricsFlags.STRIKETHROUGH_POSITION_VALID.valueOf();
+        let aaa4 = drawing.FontMetricsFlags.BOUNDS_INVALID.valueOf();
+        console.log(msg + ' 1 drawing.FontMetricsFlags value: '+ aaa);
+        console.log(msg + ' 2 drawing.FontMetricsFlags value: '+ aaa1);
+        console.log(msg + ' 3 drawing.FontMetricsFlags value: '+ aaa2);
+        console.log(msg + ' 4 drawing.FontMetricsFlags value: '+ aaa3);
+        console.log(msg + ' 5 drawing.FontMetricsFlags value: '+ aaa4);
+        expect(drawing.FontMetricsFlags.UNDERLINE_THICKNESS_VALID.valueOf()).assertEqual(1);
+        expect(drawing.FontMetricsFlags.UNDERLINE_POSITION_VALID.valueOf()).assertEqual(2);
+        expect(drawing.FontMetricsFlags.STRIKETHROUGH_THICKNESS_VALID.valueOf()).assertEqual(4);
+        expect(drawing.FontMetricsFlags.STRIKETHROUGH_POSITION_VALID.valueOf()).assertEqual(8);
+        expect(drawing.FontMetricsFlags.BOUNDS_INVALID.valueOf()).assertEqual(16);
         expect(metrics.flags !== null).assertTrue();
         expect(metrics.top !== null).assertTrue();
         expect(metrics.ascent !== null).assertTrue();

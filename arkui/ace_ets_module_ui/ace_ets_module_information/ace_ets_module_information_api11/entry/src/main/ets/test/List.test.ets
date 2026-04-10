@@ -36,7 +36,6 @@ export default function testsuite() {
   datapanelJsunit()
   qrcodeJsunit()
   badgeTest();
-  datapanelTest();
   GaugeUxTest();
   QRCodeUIJsunit();
   patternLockJsunit()

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,14 +17,14 @@ import { Entry, Component, AttributeModifier, ShapeAttribute, Shape, Text, Path,
   ColumnOptions, Margin, Rect, Ellipse, Position } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-class ShapeModifier1 implements AttributeModifier<ShapeAttribute>{
+export class ShapeModifier1 implements AttributeModifier<ShapeAttribute>{
   applyNormalAttribute(instance: ShapeAttribute): void {
 
     instance.viewPort({ x: 1, y: -2, width: 100, height: 200 })
 
       .stroke(Color.Pink)
 
-      // .fill(0x317AF7)
+      .fill(0x317AF7)
 
       .strokeDashOffset(15)
 
@@ -38,7 +38,7 @@ class ShapeModifier1 implements AttributeModifier<ShapeAttribute>{
 
       .strokeMiterLimit(5)
 
-      .mesh([10], 1, 1)
+      .mesh([1,2,3,4,5,6,7,8],1,1)
 
       .strokeWidth("20px")
 
@@ -73,7 +73,7 @@ struct ShapeExample {
       .width(350)
         .height(80)
         .viewPort({ x: 0, y: 0, width: 320, height: 70 })
-        // .fill(0x317AF7)
+        .fill(0x317AF7)
         .stroke(Color.Black)
         .strokeWidth(10)
 
@@ -83,7 +83,7 @@ struct ShapeExample {
       .width(350)
         .height(80)
         .viewPort({ x: -5, y: -5, width: 320, height: 70 })
-        // .fill(0x317AF7)
+        .fill(0x317AF7)
         .stroke(Color.Black)
         .strokeWidth(10)
 
@@ -137,7 +137,7 @@ struct ShapeExample {
       .width(300)
         .height(200)
         .viewPort({ x: -20, y: -5, width: 310, height: 90 })
-        // .fill(0x317AF7)
+        .fill(0x317AF7)
         // .stroke(0xEE8443)
         .strokeWidth(10)
         .strokeLineJoin(LineJoinStyle.Miter)

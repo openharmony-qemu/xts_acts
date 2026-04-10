@@ -14,8 +14,10 @@
  */
 import abilityTest from './Ability.test';
 import processorNDKTest from './processorNDK.test';
+import OhHiAppEventSetEventConfig from './OhHiAppEventSetEventConfig.test'
 
 export default function testsuite() {
   abilityTest();
   processorNDKTest();
+  OhHiAppEventSetEventConfig();
 }

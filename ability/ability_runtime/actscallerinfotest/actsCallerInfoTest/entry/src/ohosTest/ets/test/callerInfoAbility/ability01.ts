@@ -48,20 +48,11 @@ export default class CallerInfo01 extends UIAbility {
     commonEventManager.publish('ACTS_TEST_ON_NEW_WANT', options, function () {
       hilog.info(0x0000, 'testTag', '%{public}s', 'commonEventManager CallerInfo01 publish ACTS_TEST_ON_NEW_WANT');
     });
-    setTimeout(()=>{
-      try{
-        commonEventManager.publish('ACTS_TEST_DESTROY', function () {
-          globalThis.CallerInfo01.terminateSelf();
-          hilog.info(0x0000, 'testTag', '%{public}s', 'commonEventManager CallerInfo01 publish ACTS_TEST_DESTROY');
-        });
-      }catch(err){
-        hilog.info(0x0000, 'testTag', '%{public}s', ' CallerInfo01 moveAbilityToBackground fail ' + err.code);
-      }
-    }, 1000)
   }
 
   onDestroy():void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'CallerInfo01 onDestroy');
+    commonEventManager.publish('ACTS_TEST_DESTROY', () => {});
   }
 
   onWindowStageCreate(windowStage: window.WindowStage):void {
@@ -82,28 +73,7 @@ export default class CallerInfo01 extends UIAbility {
 
   onForeground():void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'CallerInfo01 onForeground backSet:' + backSet);
-    setTimeout(()=>{
-      hilog.info(0x0000, 'testTag', '%{public}s', 'CallerInfo01 onForeground backSet:' + backSet);
-      if(backSet==0){
-        backSet = backSet + 1;
-        hilog.info(0x0000, 'testTag', '%{public}s', `UiAbility02 backSet.. is: ${backSet}`);
-        try {
-          globalThis.CallerInfo01.startAbility(
-            {
-              bundleName: 'com.acts.actsCallerInfoAssist01Test',
-              abilityName: 'AssistAbility01'
-            }).then(() => {
-            hilog.info(0x0000, 'testTag', '%{public}s', `CallerInfo01 startAbility end`);
-          })
-        } catch (err) {
-          // 处理入参错误异常
-          let code = (err as BusinessError).code;
-          let message = (err as BusinessError).message;
-          hilog.info(0x0000, 'testTag', '%{public}s', `startAbility failed, error.code: ${code}, error.message: ${message}`);
-        }
-      }
-    }, 500)
-    
+    commonEventManager.publish('CallerInfo01_onForeground', () => {});
   }
 
   onBackground():void {

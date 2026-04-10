@@ -197,6 +197,7 @@ import ImageExifDateTimeSupp from './image/ImageExifDateTime.test';
 import ImageExifVersionSupp from './image/ImageExifVersion.test';
 import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
 import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
+import imageCreateCroppedAndScaledPixelMap from './image/ImageCreateScaledPixelMap.test';
 import ImageBodySerialNumber from './image/ImageBodySerialNumber.test';
 import ImageCameraOwnerName from './image/ImageCameraOwnerName.test';
 import ImageGPSDest from './image/ImageGPSDest.test';
@@ -209,6 +210,11 @@ import ImageBitsPerSampleStripOffsetsSupp from './image/ImageBitsPerSampleStripO
 import ImageSourceMetadataSupp from './image/ImageSourceMetadata.test';
 import ImageGetImagePropertyOptionsSupp from './image/ImageGetImagePropertyOptions.test';
 import ImageGammaSupp from './image/ImageGammaSupp.test';
+import PicturePackDataFirTestSupp from './Picture/PicturePacDataSuppFir.test';
+import PicturePackDataThrTestSupp from './Picture/PicturePacDataSuppThr.test';
+import PicturePackingPictureTestSupp from './Picture/PicturePackingSuppFir.test';
+import PicturePackingPictureSecTestSupp from './Picture/PicturePackingSuppSec.test';
+import ImageSourceModifyImagePropertySupp from './image/ImageModifyImagePropertySupp.test';
 import ImagePictureMetadataTest from './image/ImagePictureMetadata.Test.test';
 import MultimediaImageTest from './image/MultimediaImage.test';
 import ImageExifMetadataTestSupp from './image/ImageExifMetadata.test';
@@ -216,6 +222,27 @@ import CreatePixelMapSupp from './image/CreatePixelMap.test';
 import GetImageInfoSupp from './image/GetImageInfoTest.test';
 import ReadPixelsToBufferSupp from './image/ReadPixelsToBufferTest.test';
 import ImageMetadataTest from './image/ImageMetadataTest.test';
+import PicturePackingPixelMapFirTestSupp from './image/PicturePackingPixelMapFir.test';
+import PicturePackingPixelMapSecTestSupp from './image/PicturePackingPixelMapSec.test';
+import ImageGetComponentFirSupp from './Picture/PictureGetComponentFirSupp.test';
+import ImagePictureTest from './image/ImagePictureTest.test'; 
+import CrateImageSupp from './image/CreateImageTest.test';
+import CreatePixelMapUsingAllocatorTest from './image/ImageCreatePixelMapUsingAllocatorTest.test';
+import ImageCreatePixelMapFromSurfaceTest from './image/ImageCreatePixelMapFromSurfaceTest.test';
+import ImageCreatePremultipliedPixelMapTest from './image/ImageCreatePremultipliedPixelMapTest.test';
+import SendableImagePixelMapTest from './image/SendableImageCreatePixelMap.test';
+import ImageGetComponentSuppSec from './image/ImageGetComponenentSuppSec.test';
+import PicturePackToFileTestSupp from './image/PicturePackToFileSupp.test';
+import PicturePackToFileTestSecSupp from './image/PicturePackToFileSuppSec.test';
+import PicturePackToFileTestThrSupp from './image/PicturePackToFileSuppThr.test';
+import PicturePackToFileTestFourSupp from './image/PicturePackToFileSuppFour.test';
+import imageReadImageMetadataTestSupp from './image/ImageReadImageMetadataSupp.test';
+import ImagCreatePixelMapTest from './image/ImagCreatePixelMapTest.test';
+import ImageCreateImageSourceSuppTest from './image/ImageCreateImageSourceTests.test';
+import ImageHeifsTest from './image/ImageHeifMetadataTest.test';
+import SendImageTest from './image/SendImageTest.test';
+import MetaDataSetBlobTest from './image/MetaDataSetBlobTest.test';
+import ImageSupplementTest from './image/ImageSupplementTest.test';
 
 
 export default function testsuite() {
@@ -400,11 +427,12 @@ export default function testsuite() {
   ImageSourceRelatedSoundFileSupp();
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
+  imageCreateCroppedAndScaledPixelMap();
   ImageBodySerialNumber();
   ImageCameraOwnerName();
   ImageGPSDest();
   ImageSourceLensMakeSupp();
-  ImageSourceLensModelSupp()
+  ImageSourceLensModelSupp();
   ImageLensSpecificationSupp();
   ImageLensSerialNumberSupp();
   ImageExifOECFSupp();
@@ -412,12 +440,38 @@ export default function testsuite() {
   ImageBitsPerSampleStripOffsetsSupp();
   ImageSourceMetadataSupp();
   ImageGetImagePropertyOptionsSupp();
+  ImagePictureMetadataTest();
+  ImageExifMetadataTestSupp();
+  PicturePackDataFirTestSupp();
+  PicturePackDataThrTestSupp();
+  PicturePackingPictureTestSupp();
+  PicturePackingPictureSecTestSupp();
+  ImageSourceModifyImagePropertySupp();
+  ImagCreatePixelMapTest();
+ 	ImageCreateImageSourceSuppTest();
+ 	ImageHeifsTest();
+  MetaDataSetBlobTest();
+ 	SendImageTest();
   ImageGammaSupp()
-  ImagePictureMetadataTest()
-  MultimediaImageTest()
-  ImageExifMetadataTestSupp()
   CreatePixelMapSupp();
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
   ImageMetadataTest();
+  PicturePackingPixelMapFirTestSupp();
+  PicturePackingPixelMapSecTestSupp();
+  ImageGetComponentFirSupp();
+  ImagePictureTest();
+  SendableImagePixelMapTest();
+  CrateImageSupp();
+  CreatePixelMapUsingAllocatorTest();
+  ImageCreatePixelMapFromSurfaceTest();
+  ImageCreatePremultipliedPixelMapTest();
+  ImageGetComponentSuppSec();
+  PicturePackToFileTestSupp();
+  PicturePackToFileTestSecSupp();
+  PicturePackToFileTestThrSupp();
+  PicturePackToFileTestFourSupp();
+  imageReadImageMetadataTestSupp();
+  ImageSupplementTest();
+
 }

@@ -31,7 +31,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function listItemJsunit() {
   describe('listItemTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
       console.info("alphabetIndexerTest beforeEach start");
 
 

@@ -6,6 +6,21 @@
     "MainAbility/pages/repeat/RepeatLazy0150",
     "MainAbility/pages/ArrayLike/ArrayLikeString",
     "MainAbility/pages/Reusable/repeatReusableFalse",
-    "MainAbility/pages/Reusable/repeatReusableTrue"
+    "MainAbility/pages/Reusable/repeatReusableTrue",
+    "MainAbility/pages/AddMonitor/AddMonitorErrorCode",
+    "MainAbility/pages/AddMonitor/AddMonitorNoPath",
+    "MainAbility/pages/AddMonitor/AddMonitorSetPath",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2Int",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2Boolean",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2String",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2Set",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2Map",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2Array",
+    "MainAbility/pages/AddMonitor/AddMonitorObservedV2Date",
+    "MainAbility/pages/AddMonitor/AddMonitorParentChild",
+    "MainAbility/pages/AddMonitor/AddMonitorTwoDimensionalArray",
+    "MainAbility/pages/Prefetcher/BasicPrefetcherMethods",
+    "MainAbility/pages/Prefetcher/IDataSourcePrefetchingMethods",
+    "MainAbility/pages/ReuseObject/ReuseObjectRaw"
   ]
 }

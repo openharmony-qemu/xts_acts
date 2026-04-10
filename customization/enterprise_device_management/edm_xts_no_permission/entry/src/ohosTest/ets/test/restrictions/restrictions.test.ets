@@ -112,7 +112,11 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_MOBILE_DATA, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -133,7 +137,11 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_SMS, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -154,7 +162,11 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_MMS, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -217,7 +229,11 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, LABEL_TELEPHONY_CALL, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -239,7 +255,11 @@ function testSetDisallowedPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_disallowed_policy_0107 error 201 and 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -261,7 +281,11 @@ function testSetDisallowedPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_disallowed_policy_0108 error 201 and 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -377,6 +401,52 @@ function testSetDisallowedPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICY_0200
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICY_0300
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 }
 
 function testGetDisallowedPolicy() {
@@ -415,7 +485,11 @@ function testGetDisallowedPolicy() {
       restrictions.getDisallowedPolicy(SELFWANT, LABEL_MOBILE_DATA);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -436,7 +510,11 @@ function testGetDisallowedPolicy() {
       restrictions.getDisallowedPolicy(SELFWANT, LABEL_SMS);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -457,7 +535,11 @@ function testGetDisallowedPolicy() {
       restrictions.getDisallowedPolicy(SELFWANT, LABEL_MMS);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -520,7 +602,11 @@ function testGetDisallowedPolicy() {
       restrictions.getDisallowedPolicy(SELFWANT, LABEL_TELEPHONY_CALL);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -542,7 +628,11 @@ function testGetDisallowedPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_get_disallowed_policy_0107 error 201 and 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -564,7 +654,11 @@ function testGetDisallowedPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_get_disallowed_policy_0108 error 201 and 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -680,6 +774,31 @@ function testGetDisallowedPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICY_0200
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 }
 
 function testSetDisallowedForAccountPolicy() {
@@ -739,7 +858,11 @@ function testSetDisallowedForAccountPolicy() {
       restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_RECOVERY_KEY, false, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -760,7 +883,11 @@ function testSetDisallowedForAccountPolicy() {
       restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_USB_STORAGE_DEVICE_WRITE, false, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -802,7 +929,11 @@ function testSetDisallowedForAccountPolicy() {
       restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_SUDO, true, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -823,7 +954,11 @@ function testSetDisallowedForAccountPolicy() {
       restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_OPEN_FILE_BOOST, false, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -909,7 +1044,11 @@ function testGetDisallowedForAccountPolicy() {
       restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_RECOVERY_KEY, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -930,7 +1069,11 @@ function testGetDisallowedForAccountPolicy() {
       restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_USB_STORAGE_DEVICE_WRITE, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -972,7 +1115,11 @@ function testGetDisallowedForAccountPolicy() {
       restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_SUDO, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -993,7 +1140,11 @@ function testGetDisallowedForAccountPolicy() {
       restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_OPEN_FILE_BOOST, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1107,7 +1258,11 @@ function testSetUserRestrictionPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_user_restriction_0100 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1129,7 +1284,11 @@ function testSetUserRestrictionPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_user_restriction_0200 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1151,7 +1310,11 @@ function testSetUserRestrictionPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_user_restriction_0300 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1173,7 +1336,11 @@ function testSetUserRestrictionPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_user_restriction_0200 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1195,7 +1362,11 @@ function testSetUserRestrictionPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_user_restriction_0200 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1219,7 +1390,11 @@ function testGetUserRestrictedPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_user_restricted_0100 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1241,7 +1416,11 @@ function testGetUserRestrictedPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_user_restricted_0100 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1263,7 +1442,11 @@ function testGetUserRestrictedPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_user_restricted_0100 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1287,7 +1470,11 @@ function testSetUserRestrictionForAccountPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_user_restriction_for_account_0100 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1311,7 +1498,11 @@ function testGetUserRestrictedForAccountPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_user_restricted_for_account_0100 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

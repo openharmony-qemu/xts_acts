@@ -22,5 +22,4 @@ export default function testsuite() {
   FolderStackTest1();
   FolderStackTest2();
   ChipApi1()
-  ChipGroupApi1()
 }

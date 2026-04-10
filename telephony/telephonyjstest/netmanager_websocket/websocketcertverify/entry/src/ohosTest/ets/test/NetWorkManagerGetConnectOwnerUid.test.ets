@@ -133,6 +133,110 @@ export default function NetWorkManagerGetConnectOwnerUid() {
     });
 
     /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid0804
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_0804
+     * @tc.desc    Test error code 2100001 if parameter is null
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid0804', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          null,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 54321 }
+        );
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_LocalNull] uid=%{public}d', uid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_LocalNull] error: code=%{public}d', error.code);
+        expect(Number(error.code)).assertEqual(2100001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid0805
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_0805
+     * @tc.desc    Test error code 2100001 if parameter is null
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid0805', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 54321 },
+          null
+        );
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_RemoteNull] uid=%{public}d', uid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_RemoteNull] error: code=%{public}d', error.code);
+        expect(Number(error.code)).assertEqual(2100001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid0806
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_0806
+     * @tc.desc    Test error code 2100001 if parameter is undefined
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid0806', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          undefined,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 54321 }
+        );
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_LocalUndefined] uid=%{public}d', uid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_LocalUndefined] error: code=%{public}d', error.code);
+        expect(Number(error.code)).assertEqual(2100001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid0807
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_0807
+     * @tc.desc    Test error code 2100001 if parameter is undefined
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid0807', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 54321 },
+          undefined
+        );
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_RemoteUndefined] uid=%{public}d', uid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_RemoteUndefined] error: code=%{public}d', error.code);
+        expect(Number(error.code)).assertEqual(2100001);
+        done();
+      }
+    });
+
+    /**
      * @tc.name    testNetManagerBaseGetConnectOwnerUid1200
      * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_1200
      * @tc.desc    Test sync API error code 2100001 with invalid IP format
@@ -257,6 +361,110 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         hilog.info(DOMAIN, TAG, '[TCP_IPv4_InvalidPort] error: code=%{public}d', error.code);
+        expect(Number(error.code)).assertEqual(2100001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid1406
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_1406
+     * @tc.desc    Test error code 2100001 if parameter is null
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid1406', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          null,
+          { address: '127.0.0.1', family: FAMILY_IPV4, port: 12345 }
+        );
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_LocalNull] uid=%{public}d', uid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_LocalNull] error: code=%{public}d', error.code);
+        expect(Number(error.code)).assertEqual(2100001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid1407
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_1407
+     * @tc.desc    Test error code 2100001 if parameter is null
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid1407', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          { address: '127.0.0.1', family: FAMILY_IPV4, port: 12345 },
+          null
+        );
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_RemoteNull] uid=%{public}d', uid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_RemoteNull] error: code=%{public}d', error.code);
+        expect(Number(error.code)).assertEqual(2100001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid1408
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_1408
+     * @tc.desc    Test error code 2100001 if parameter is undefined
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid1408', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          undefined,
+          { address: '127.0.0.1', family: FAMILY_IPV4, port: 12345 }
+        );
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_LocalUndefined] uid=%{public}d', uid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_LocalUndefined] error: code=%{public}d', error.code);
+        expect(Number(error.code)).assertEqual(2100001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid1409
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_1409
+     * @tc.desc    Test error code 2100001 if parameter is undefined
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid1409', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          { address: '127.0.0.1', family: FAMILY_IPV4, port: 12345 },
+          undefined
+        );
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_RemoteUndefined] uid=%{public}d', uid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        hilog.info(DOMAIN, TAG, '[TCP_IPv4_RemoteUndefined] error: code=%{public}d', error.code);
         expect(Number(error.code)).assertEqual(2100001);
         done();
       }
@@ -833,6 +1041,66 @@ export default function NetWorkManagerGetConnectOwnerUid() {
         let error = err as BusinessError;
         hilog.info(DOMAIN, TAG, '[UDP_IPv6_Sync_EmptyAddr] error: code=%{public}d', error.code);
         expect(Number(error.code)).assertEqual(2100001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid9000
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_9000
+     * @tc.desc    Test error code 2100301
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid9000', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid9000";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [TCP_IPv4_IncorrectUsage] ${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [TCP_IPv4_IncorrectUsage] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100301);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid9100
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_9100
+     * @tc.desc    Test error code 2100301
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid9100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid9100";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          connection.ProtocolType.PROTO_TYPE_TCP,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [TCP_IPv4_Sync_IncorrectUsage] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [TCP_IPv4_Sync_IncorrectUsage] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100301);
+        console.info(`${caseName}---End`);
         done();
       }
     });

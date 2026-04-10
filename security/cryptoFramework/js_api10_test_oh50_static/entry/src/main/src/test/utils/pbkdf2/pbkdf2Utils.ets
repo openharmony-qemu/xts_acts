@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import * as commonUtils from '../common/commonUtils';
 
 let KDF_DIGEST_SPEC = [
   "SHA1", "SHA224", "SHA256", "SHA384",
-  "SHA512", "SM3"
+  "SHA512", "SHA3-256", "SHA3-384", "SHA3-512", "SM3"
 ]
 
 function getPbkdf2Spec(password: string,
@@ -36,7 +36,7 @@ function getPbkdf2Spec(password: string,
     };
 
     return spec;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getPbkdf2Spec “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -48,15 +48,45 @@ function generateKdfKey(algName: string, pbkdf2Spec: cryptoFramework.PBKDF2Spec)
     let secretKey: cryptoFramework.DataBlob = kdf.generateSecretSync(pbkdf2Spec);
 
     return secretKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`generateKdfKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
+}
+
+async function generateKdfKeyPromise(algName: string,
+  pbkdf2Spec: cryptoFramework.PBKDF2Spec): Promise<cryptoFramework.DataBlob> {
+  try {
+    let kdf: cryptoFramework.Kdf = cryptoFramework.createKdf(algName);
+    let secretKey: cryptoFramework.DataBlob = await kdf.generateSecret(pbkdf2Spec);
+
+    return secretKey;
+  } catch (error) {
+    console.error(`generateKdfKeyPromise “${error}“, error code: ${error.code}`);
+    throw error as Error;
+  }
+}
+
+async function generateKdfKeyCallback(algName: string,
+  pbkdf2Spec: cryptoFramework.PBKDF2Spec): Promise<cryptoFramework.DataBlob> {
+  let kdf: cryptoFramework.Kdf = cryptoFramework.createKdf(algName);
+
+  return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
+    kdf.generateSecret(pbkdf2Spec, (err: BusinessError<void>|null, secretKey: cryptoFramework.DataBlob|undefined) => {
+      if (err || secretKey === undefined) {
+        reject(err as Error);
+      } else {
+        resolve(secretKey as cryptoFramework.DataBlob);
+      }
+    });
+  })
 }
 
 
 export {
   KDF_DIGEST_SPEC,
   generateKdfKey,
+  generateKdfKeyPromise,
+ 	generateKdfKeyCallback,
   getPbkdf2Spec
 }

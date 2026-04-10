@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,7 +32,7 @@ export default function ActsNotificationBadgeTest() {
     let TAG = 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test START')
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(DOMAIN_NUMBER, TAG, '%{public}s', 'beforeAll start');
 
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -90,14 +90,16 @@ export default function ActsNotificationBadgeTest() {
             return 1;
           }
         );
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(0x0000, TAG, `onBadgeNumberQuery failed, code is ${err.code}, message is ${err.message}`);
         expect(err.code).assertEqual(202)
       }
       await Utils.msSleep(500)
       try{
         notificationManager.offBadgeNumberQuery();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(0x0000, TAG, `offBadgeNumberQuery failed, code is ${err.code}, message is ${err.message}`);
         expect(err.code).assertEqual(202)
         console.info(TAG + "Sub_Notification_Ans_Corner_Query_0004 PASS");
@@ -131,7 +133,7 @@ export default function ActsNotificationBadgeTest() {
             done();
           }
         })
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.info(`${TAG} Sub_Notification_Ans_Corner_SetNum_Static_0900 failed, catch error code: ${err.code}, message: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -165,7 +167,7 @@ export default function ActsNotificationBadgeTest() {
           }
 
         })
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.info(`${TAG} Sub_Notification_Ans_Corner_SetNum_Static_1000 failed, catch error code: ${err.code}, message: ${err.message}`)
         expect(false).assertTrue()
         done()

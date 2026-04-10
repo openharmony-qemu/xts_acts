@@ -50,7 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function showDialog() {
   describe('showDialog', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("showDialog beforeAll start");
 
 

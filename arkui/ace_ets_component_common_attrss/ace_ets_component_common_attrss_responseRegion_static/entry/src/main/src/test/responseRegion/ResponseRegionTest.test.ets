@@ -244,12 +244,12 @@ export default function responseRegionTest() {
 
   describe('ResponseRegionTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ResponseRegionTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', [{ x: 0, y: 0, width: '100%', height: '100%' } ])
       AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
       AppStorage.setOrCreate<string>('eventCallBackStr', '')

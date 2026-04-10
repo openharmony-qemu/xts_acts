@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ import Utils from './Util.test';
 
 let TAG = "testTag";
 let rdbStore: relationalStore.RdbStore | undefined = undefined;
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 const STORE_NAME = "statistics.db"
 const CREATE_TABLE_SQL = "CREATE TABLE IF NOT EXISTS test (" +
   "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -53,7 +53,7 @@ export default function SqlExecutionTimeTest() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore");
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext
-      rdbStore = await relationalStore.getRdbStore(context, config);
+      rdbStore = await relationalStore.getRdbStore(context!, config);
 
     })
 
@@ -72,7 +72,7 @@ export default function SqlExecutionTimeTest() {
         };
         let rowId: Long = await rdbStore!.insert('test', valueBucket1);
         expect(1).assertEqual(rowId);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(TAG + `failed, code:${error.code}, message: ${error.message}`);
         expect().assertFail();
       }
@@ -85,7 +85,7 @@ export default function SqlExecutionTimeTest() {
       }
       try {
         rdbStore!.offStatistics();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(TAG + `unRegister fail3, code:${error.code}, message: ${error.message}`);
         expect().assertFail();
       }
@@ -95,7 +95,7 @@ export default function SqlExecutionTimeTest() {
     afterAll(async (): Promise<void> => {
       console.info(TAG + 'afterAll');
       rdbStore = undefined;
-      await relationalStore.deleteRdbStore(context, config);
+      await relationalStore.deleteRdbStore(context!, config);
     })
 
     /**
@@ -121,7 +121,7 @@ export default function SqlExecutionTimeTest() {
             expect('INSERT INTO test(age,blobType,name,salary) VALUES (?,?,?,?)').assertEqual(SqlExeInfo.sql[0]);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `on statistics fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -135,7 +135,7 @@ export default function SqlExecutionTimeTest() {
           };
           let rowId = await rdbStore!.insert('test', valueBucket1);
           expect(2).assertEqual(rowId);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `insert fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -167,7 +167,7 @@ export default function SqlExecutionTimeTest() {
             expect('INSERT INTO test(age,blobType,name,salary) VALUES (?,?,?,?)').assertEqual(SqlExeInfo.sql[0]);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `on statistics fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -181,7 +181,7 @@ export default function SqlExecutionTimeTest() {
           };
           let rowId = rdbStore!.insertSync('test', valueBucket1);
           expect(2).assertEqual(rowId);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `insertSync fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -214,7 +214,7 @@ export default function SqlExecutionTimeTest() {
             expect('UPDATE test SET age=?,blobType=?,name=?,salary=? WHERE id = ? ').assertEqual(SqlExeInfo.sql[0]);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `on statistics fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -230,7 +230,7 @@ export default function SqlExecutionTimeTest() {
           predicates.equalTo('id', 1 as Long);
           let rowId = await rdbStore!.update(valueBucket1, predicates);
           expect(1).assertEqual(rowId);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `update fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -262,7 +262,7 @@ export default function SqlExecutionTimeTest() {
             expect('UPDATE test SET age=?,blobType=?,name=?,salary=? WHERE id = ? ').assertEqual(SqlExeInfo.sql[0]);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `on statistics fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -278,7 +278,7 @@ export default function SqlExecutionTimeTest() {
           predicates.equalTo('id', 1 as Long);
           let rowId = rdbStore!.updateSync(valueBucket1, predicates);
           expect(1).assertEqual(rowId);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `updateSync fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -310,7 +310,7 @@ export default function SqlExecutionTimeTest() {
             expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `on statistics fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -319,7 +319,7 @@ export default function SqlExecutionTimeTest() {
           let predicates = new relationalStore.RdbPredicates('test');
           let result: relationalStore.ResultSet = await rdbStore!.query(predicates);
           expect(1).assertEqual(result.rowCount);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `query fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -352,7 +352,7 @@ export default function SqlExecutionTimeTest() {
             expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `on statistics fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -361,7 +361,7 @@ export default function SqlExecutionTimeTest() {
           let predicates = new relationalStore.RdbPredicates('test');
           let result: relationalStore.ResultSet = rdbStore!.querySync(predicates);
           expect(1).assertEqual(result.rowCount);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `querySync fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -393,7 +393,7 @@ export default function SqlExecutionTimeTest() {
             expect('DELETE FROM test').assertEqual(SqlExeInfo.sql[0]);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `on statistics fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -402,7 +402,7 @@ export default function SqlExecutionTimeTest() {
           let predicates = new relationalStore.RdbPredicates('test');
           let rowId = await rdbStore!.delete(predicates);
           expect(1).assertEqual(rowId);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `delete fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -434,7 +434,7 @@ export default function SqlExecutionTimeTest() {
             expect('DELETE FROM test').assertEqual(SqlExeInfo.sql[0]);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `on statistics fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -443,7 +443,7 @@ export default function SqlExecutionTimeTest() {
           let predicates = new relationalStore.RdbPredicates('test');
           let rowId = rdbStore!.deleteSync(predicates);
           expect(1).assertEqual(rowId);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `deleteSync fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -478,7 +478,7 @@ export default function SqlExecutionTimeTest() {
             expect(CREATE_TABLE_SQL1).assertEqual(SqlExeInfo.sql[0]);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `register fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -495,7 +495,7 @@ export default function SqlExecutionTimeTest() {
           let rowId = await rdbStore!.insert("test1", valueBucket);
           expect(1).assertEqual(rowId);
           await rdbStore!.executeSql("drop table test1");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `insert fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -528,7 +528,7 @@ export default function SqlExecutionTimeTest() {
             expect('select * from test').assertEqual(SqlExeInfo.sql[0]);
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `on statistics fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -563,7 +563,7 @@ export default function SqlExecutionTimeTest() {
             expect(SqlExeInfo.sql.length).assertEqual(1);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `register fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -582,7 +582,7 @@ export default function SqlExecutionTimeTest() {
           }
           let rowId = await rdbStore!.batchInsert("test", valueBucketArray);
           expect(1000).assertEqual(rowId);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `batchInsert fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -609,7 +609,7 @@ export default function SqlExecutionTimeTest() {
           rdbStore!.onStatistics((SqlExeInfo) => {
             expect().assertFail();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `register fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();
@@ -617,7 +617,7 @@ export default function SqlExecutionTimeTest() {
         try {
           rdbStore!.offStatistics(undefined);
           console.info(TAG + 'off statistics is success')
-        } catch (error: BusinessError) {
+        } catch (error) {
           expect().assertFail();
           done();
         }
@@ -631,7 +631,7 @@ export default function SqlExecutionTimeTest() {
           };
           let rowId = await rdbStore!.insert("test", valueBucket);
           expect(2).assertEqual(rowId);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(TAG + `batchInsert fail, code:${error.code}, message: ${error.message}`);
           expect().assertFail();
           done();

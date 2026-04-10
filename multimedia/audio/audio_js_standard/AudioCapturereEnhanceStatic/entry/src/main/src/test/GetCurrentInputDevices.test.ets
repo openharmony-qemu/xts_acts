@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,11 +28,11 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 
 const Tag: string = 'AudioCpaturerEnhanceTest: ';
 let g_context: common.UIAbilityContext;
-let audioCap: audio.AudioCapturer | null;
+let audioCap: audio.AudioCapturer | null = null;
 
 export default function getCurrentInputDevicesTest() {
   describe('getCurrentInputDevices', () => {
-    let dirPath: string;
+    let dirPath: string = "";
 
     let releaseFun = async (audioCap: audio.AudioCapturer) => {
       try {
@@ -45,6 +45,7 @@ export default function getCurrentInputDevicesTest() {
 
     beforeAll(async (): Promise<void> => {
       try {
+        console.info("beforeAll start");
         g_context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
         let atManager = abilityAccessCtrl.createAtManager();
         let arr: Array<Permissions> = new Array<Permissions>();
@@ -55,12 +56,14 @@ export default function getCurrentInputDevicesTest() {
             console.info("getPermissionRequestResult err" + JSON.stringify(err));
           });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
+        await Utils.msSleep(1000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        await Utils.msSleep(1000);
         if (permissionButton != null) {
           await permissionButton.click();
         }
       } catch (err) {
-        console.error(' beforeAll failed, err: ' + err);
+        console.error('beforeAll failed, err: ' + err);
       }
       console.info('TestLog: Start Testing AudioCpaturerEnhanceTest Interfaces');
     })
@@ -102,7 +105,7 @@ export default function getCurrentInputDevicesTest() {
         } else {
           expect(false).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${Tag} getStreamInfo  :ERROR:  ${JSON.stringify(err.message)} ,code:${JSON.stringify(err.code)}`);
         expect(false).assertTrue();
       }
@@ -114,7 +117,7 @@ export default function getCurrentInputDevicesTest() {
           console.info(`${Tag} audioParamsGet are incorrect , is :  ${JSON.stringify(audioParamsGet as audio.AudioCapturerInfo)}`);
           expect(false).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${Tag} CapturerInfo :ERROR:  ${JSON.stringify(err.message)} ${JSON.stringify(err.code)}`);
         expect(false).assertTrue();
       }
@@ -152,7 +155,7 @@ export default function getCurrentInputDevicesTest() {
             try {
               let data = audioCap.getCurrentInputDevices();
               console.info(`recordingFun getCurrentInputDevices: SUCCESS ${getInputDeviceInfo(data)}`)
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.log(`recordingFun getCurrentInputDevices: ERROR ${error.message},${error.code}`);
               expect(false).assertTrue();
             }
@@ -171,7 +174,7 @@ export default function getCurrentInputDevicesTest() {
      * @tc.desc   AudioCapturer - getCurrentInputDevices-Mic-SOURCE_TYPE_MIC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -195,7 +198,7 @@ export default function getCurrentInputDevicesTest() {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
         });
         console.info(`${Tag} Create audio capturer success\n`);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag} AudioCapturer Created : ERROR :  ${error.message} ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -208,7 +211,7 @@ export default function getCurrentInputDevicesTest() {
         expect(InputDeviceInfo[0].id).assertEqual(TestConst.INPUT_DEVICE_MIC_ID);
         expect(InputDeviceInfo[0].encodingTypes?.[0]).assertEqual(TestConst.OUTPUT_NUMBER_0);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`${Tag}: getCurrentInputDevices : ERROR ${error.message},${error.code}`);
         expect(false).assertTrue();
         done();
@@ -246,7 +249,7 @@ export default function getCurrentInputDevicesTest() {
         });
         await getFd("capture_js-44100-2C-16B.pcm");
         await recordingFun(audioCap!);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag} AudioCapturer Created : ERROR :  ${error.message} ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -260,7 +263,7 @@ export default function getCurrentInputDevicesTest() {
         expect(InputDeviceInfo[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
         expect(InputDeviceInfo[0].encodingTypes?.[0]).assertEqual(TestConst.OUTPUT_NUMBER_0);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`${Tag}: getCurrentInputDevices : ERROR ${error.message},${error.code}`);
         expect(false).assertTrue();
         done();

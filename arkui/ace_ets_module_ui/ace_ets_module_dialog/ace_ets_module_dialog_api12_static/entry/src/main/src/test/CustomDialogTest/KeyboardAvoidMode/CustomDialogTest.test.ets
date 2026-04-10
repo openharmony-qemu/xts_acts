@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function CustomDialogTest() {
   describe('CustomDialogTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
     })
 
@@ -46,7 +46,7 @@ export default function CustomDialogTest() {
         // CustomDialogTest.clear();
         let pages:router.RouterState = CustomDialogTest.getState();
         console.info("get CustomDialogTest state pages: " + JSON.stringify(pages));
-        if (!("CustomDialogTest" == pages.name)) {
+        if (!("CustomDialog" == pages.name)) {
           console.info("get CustomDialogTest state pages.name: " + JSON.stringify(pages.name));
           
           CustomDialogTest.pushUrl(options);

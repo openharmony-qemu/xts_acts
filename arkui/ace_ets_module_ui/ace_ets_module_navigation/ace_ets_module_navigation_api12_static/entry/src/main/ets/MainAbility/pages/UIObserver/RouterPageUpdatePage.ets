@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,PopInfo,HorizontalAlign,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -29,21 +29,21 @@ import { Router,UIContext,UIObserver } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import uiObserver from '@ohos.arkui.observer';
 
-AppStorage.setOrCreate<int>('RouterPageUpdatePage_callBackFuncOnCount', 0)
+
 
 export function callBackFunc(info: uiObserver.RouterPageInfo) {
   console.info('RouterPage state updated, called by ' + `${info.name}`);
   if (info.name == 'MainAbility/pages/UIObserver/RouterPageUpdatePage'){
-    let count: number | undefined = AppStorage.get('RouterPageUpdatePage_callBackFuncOnCount');
-    count = Number(count) + 1;
-    AppStorage.setOrCreate<number>('RouterPageUpdatePage_callBackFuncOnCount', count)
+    let count: int = AppStorage.get<int>('RouterPageUpdatePage_callBackFuncOnCount')!;
+    count = count+ 1;
+    AppStorage.setOrCreate<int>('RouterPageUpdatePage_callBackFuncOnCount', count)
   }
 }
 
 @Entry
 @Component
 struct RouterPageUpdatePage {
-
+static{AppStorage.setOrCreate<int>('RouterPageUpdatePage_callBackFuncOnCount', 0)}
   aboutToAppear(): void {
     let observer:UIObserver = this.getUIContext().getUIObserver();
     observer.onRouterPageUpdate(callBackFunc);

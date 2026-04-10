@@ -192,10 +192,10 @@ export default function UsbManagerEnumTest() {
           hilog.info(domain, tag, 'interrupt connectDevice enter');
           let gPipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devices);
           hilog.info(domain, tag, 'interrupt connectDevice end');
-          let tmpInterface: UsbMgr.USBInterface;
+          let tmpInterface: UsbMgr.USBInterface | undefined;
           let flags: UsbMgr.UsbTransferFlags = UsbMgr.UsbTransferFlags.USB_TRANSFER_SHORT_NOT_OK;
           let type: UsbMgr.UsbEndpointTransferType = UsbMgr.UsbEndpointTransferType.TRANSFER_TYPE_ISOCHRONOUS;
-          let endpoint: UsbMgr.USBEndpoint;
+          let endpoint: UsbMgr.USBEndpoint | undefined;
           for (const config of devices.configs) {
             for (const intf of config.interfaces) {
               for (const ep of intf.endpoints) {
@@ -214,8 +214,8 @@ export default function UsbManagerEnumTest() {
           } else {
             hilog.info(domain, tag, "没有有效的endpoint");
           }
-          let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, endpoint.address, type, 2000);
-          UsbMgr.claimInterface(gPipe, tmpInterface, true);
+          let transferParams: UsbMgr.UsbDataTransferParams = getTransfersParam(gPipe, flags, endpoint!.address, type, 2000);
+          UsbMgr.claimInterface(gPipe, tmpInterface!, true);
           try {
             transferParams.callback = (err: BusinessError | null, callBackData: UsbMgr.SubmitTransferCallback | undefined)=> {
               hilog.info(domain, tag, 'callBackData = ' + JSON.stringify(callBackData));

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -800,9 +800,6 @@ export default function saveComponentTest_1() {
         await Utils.sleep(500);
         console.info("====>[Test_Security_Button_Save_3400] button is:" + JSON.stringify(button));
         await button[0].click();
-        await Utils.sleep(1000);
-        let button2 = await driver.findComponents(ON.id('switchButton'));
-        await button2[0].click();
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3400] clickSecComponent err : " + JSON.stringify(err));

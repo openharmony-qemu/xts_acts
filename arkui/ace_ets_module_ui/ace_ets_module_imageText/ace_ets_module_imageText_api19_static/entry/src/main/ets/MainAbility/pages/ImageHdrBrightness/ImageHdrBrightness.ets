@@ -19,7 +19,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct ImageHdrBrightness {
-  @State hdrBrightnessValue: number | undefined = 0.0
+  @State hdrBrightnessValue: double | undefined = 0.0
 
   build() {
     Column({space: 8} as ColumnOptions) {
@@ -28,7 +28,7 @@ struct ImageHdrBrightness {
         Image($r('app.media.flower'))
           .width('32%')
           .aspectRatio(1)
-          // .hdrBrightness(this.hdrBrightnessValue)
+          .hdrBrightness(this.hdrBrightnessValue)
           .key('hdrImageKey')
         Image($r('app.media.flower'))
           .width('32%')

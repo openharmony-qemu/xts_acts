@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,24 +57,26 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage,Environment } from '@ohos.arkui.stateManagement';
 import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
-const router = AppStorage.get<Router>("router") as Router
-AppStorage.clear()
-AppStorage.setOrCreate<Router>('router', router);
-enum KFC19{K = 1,F,L}
-Environment.envProp('stringCode', 'en');
-Environment.envProp('numberCode', 2);
-Environment.envProp('booleanCode', true);
-Environment.envProp('enumCode', KFC19.K);
 
+
+export enum KFC19{K = 1,F,L}
 
 @Entry
 @Component
 struct StorageProp19 {
   @StoragePropRef('stringCode') stringCode: string = 'en';
-  @StoragePropRef('numberCode') numberCode: number = 2;
+  @StoragePropRef('numberCode') numberCode: int = 2;
   @StoragePropRef('booleanCode') booleanCode: boolean = true;
   @StoragePropRef('enumCode') enumCode: KFC19 = KFC19.K;
-
+  static {
+    const router = AppStorage.get<Router>("router") as Router
+    AppStorage.clear()
+    AppStorage.setOrCreate<Router>('router', router);
+    Environment.envProp<string>('stringCode', 'en');
+    Environment.envProp<int>('numberCode', 2);
+    Environment.envProp<boolean>('booleanCode', true);
+    Environment.envProp<KFC19>('enumCode', KFC19.K);
+  }
   build() {
     Column() {
       Button(`button1: ${this.stringCode}`).width("100%").height('5%')

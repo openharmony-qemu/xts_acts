@@ -18,7 +18,7 @@ import router from '@ohos.router';
 import CommonFunc, {RectValue} from "../../../MainAbility/common/Common";
 import { UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, UiDirection, MouseButton } from '@ohos.UiTest';
 export default function swiperAutoPlay_4() {
-  describe('swiperAutoPlayTest',  ()=> {
+  describe('swiperAutoPlayTestAdapt002',  ()=> {
     beforeEach(async  (done:Function)=> {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Swiper/Swiper_ParmsChange/swiperAutoPlay_4',

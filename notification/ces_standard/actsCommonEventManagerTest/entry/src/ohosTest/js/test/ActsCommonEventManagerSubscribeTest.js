@@ -36,7 +36,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_1900 START`)
 
       let subscriber
-
+      let count
       let subscribeInfo = {
         events: ["event09"]
       }
@@ -53,7 +53,6 @@ export default function ActsCommonEventManagerSubscribeTest() {
           } else {
             console.info(`Sub_Notification_Ans_Subscriber_Subscribe_1900 createSubscriber success ${commonEventSubscriber}`)
             subscriber = commonEventSubscriber
-            expect(true).assertTrue()
 
             subscriber.isStickyCommonEvent((err, isSticky) => {
               if (err) {
@@ -77,13 +76,15 @@ export default function ActsCommonEventManagerSubscribeTest() {
                 console.info(`isOrderedCommonEvent_9 success ${isOrdered}`)
                 if (isOrdered == true) {
                   subscriber.abortCommonEvent((err) => {
+                    count = 0
                     if (err) {
                       console.info(`abortCommonEvent_9 err ${err}`)
                       expect(false).assertTrue()
                       done()
                     } else {
                       console.info(`abortCommonEvent_9 success`)
-                      expect(true).assertTrue()
+                      count++
+                      expect(count).assertEqual(1)
                     }
                   })
                 }
@@ -105,24 +106,28 @@ export default function ActsCommonEventManagerSubscribeTest() {
             })
 
             subscriber.clearAbortCommonEvent((err) => {
+              count = 0
               if (err) {
                 console.info(`clearAbortCommonEvent_9 err ${err}`)
                 expect(false).assertTrue()
                 done()
               } else {
+                count++
+                expect(count).assertEqual(1)
                 console.info(`clearAbortCommonEvent_9 success`)
-                expect(true).assertTrue()
               }
             })
 
             subscriber.finishCommonEvent((err) => {
+              count = 0
               if (err) {
                 console.info(`finishCommonEvent_1 err, error code: ${err.code}, message: ${err.message}`)
                 expect(false).assertTrue()
                 done()
               } else {
                 console.info(`finishCommonEvent_1 success `)
-                expect(true).assertTrue()
+                count++
+                expect(count).assertEqual(1)
                 done()
               }
             })
@@ -192,7 +197,6 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
             await subscriber.abortCommonEvent().then(() => {
               console.info(`abortCommonEvent_10 success`)
-              expect(true).assertTrue()
             }).catch((err) => {
               console.info(`abortCommonEvent_10 err ${err}`)
               expect(false).assertTrue()
@@ -222,7 +226,6 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
             await subscriber.finishCommonEvent().then(() => {
               console.info(`finishCommonEvent_10 success `)
-              expect(true).assertTrue()
               done()
             }).catch((err) => {
               console.info(`finishCommonEvent_10 err, error code: ${err.code}, message: ${err.message}`)
@@ -257,7 +260,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             isOrdered: true,
             isSticky: false,
           }
-    
+          let count = 0
           let subscribeInfo = {
             events: ["eventname2"],
             priority: 100
@@ -306,7 +309,8 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
               await subscriber.finishCommonEvent().then(() => {
                 console.info(`finishCommonEvent_12 success `)
-                expect(true).assertTrue()
+                count++
+                expect(count).assertEqual(1)
                 done()
               }).catch((err) => {
                 console.info(`finishCommonEvent_12 err, error code: ${err.code}, message: ${err.message}`)
@@ -357,7 +361,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
         isOrdered: true,
         isSticky: false,
       }
-
+      let count = 0
       let subscribeInfo = {
         events: ["eventname"],
         priority: 100
@@ -453,7 +457,8 @@ export default function ActsCommonEventManagerSubscribeTest() {
               done()
             } else {
               console.info(`finishCommonEvent_11 success `)
-              expect(true).assertTrue()
+              count++
+              expect(count).assertEqual(1)
               done()
             }
           })

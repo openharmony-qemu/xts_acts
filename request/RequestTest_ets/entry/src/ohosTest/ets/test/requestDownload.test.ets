@@ -18,6 +18,7 @@ import featureAbility from '@ohos.ability.featureAbility'
 import fileio from '@ohos.fileio';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "@ohos/hypium";
 import { BusinessError } from '@ohos.base';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestDownloadJSUnit() {
   describe('requestDownloadTest', () => {
@@ -34,6 +35,9 @@ export default function requestDownloadJSUnit() {
      * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
      */
     beforeEach(async () => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
       console.info('====>beforeEach: Prerequisites is executed.');
       await setDownLoadConfig()
     });
@@ -141,7 +145,7 @@ export default function requestDownloadJSUnit() {
               downloadTask.off('complete');
               try{
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0002 task completed.')
-                expect(true).assertTrue();
+                expect(downloadTask !== undefined).assertTrue();
               }catch(err){
                 console.error("====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0002 throw_error: " + err);
               }
@@ -181,7 +185,7 @@ export default function requestDownloadJSUnit() {
           downloadTask.on('pause', async () => {
             try{
               console.info('====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0003 task pause.')
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
             }catch(err){
               console.error("====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0003 throw_error: " + err);
             }
@@ -226,10 +230,11 @@ export default function requestDownloadJSUnit() {
           downloadTask.on('remove', () => {
             try{
               console.info('====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0004 remove remove')
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
             }catch(err){
               console.error("====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0004 throw_error: " + err);
             }
+            expect(err === undefined).assertEqual(true);
             downloadTask.off('remove');
             fileio.unlinkSync(filePath);
             done();
@@ -271,7 +276,7 @@ export default function requestDownloadJSUnit() {
           downloadTask.on('fail', async (err) =>{
             try{
               console.info('====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0005 fail fail' + err)
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
             }catch(err){
               console.error("====>SUB_REQUEST_DOWNLOAD_API_DOWNLOADTASK_ON_0005 throw_error: " + err);
             }
@@ -438,6 +443,7 @@ export default function requestDownloadJSUnit() {
           expect(downloadTask != undefined).assertEqual(true);
           let removeProgress = () => {};
           downloadTask.on('remove', removeProgress);
+          expect(err === undefined).assertEqual(true);
           downloadTask.off('remove', removeProgress);
           await downloadTask.remove();
           fileio.unlinkSync(filePath);
@@ -576,7 +582,7 @@ export default function requestDownloadJSUnit() {
         try{
           downloadTask.pause(async ()=>{
             try{
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
               console.info('====>SUB_REQUEST_DOWNLOAD_API_PAUSE_0001 Download task pause success.');
             }catch(err){
               console.info('====>SUB_REQUEST_DOWNLOAD_API_PAUSE_0001 pause_throw_err:' + JSON.stringify(err))
@@ -641,7 +647,7 @@ export default function requestDownloadJSUnit() {
         try{
           downloadTask.resume(async ()=>{
             try{
-              expect(true).assertTrue();
+              expect(downloadTask !== undefined).assertTrue();
               console.info('====>SUB_REQUEST_DOWNLOAD_API_REMUSE_0001 Download task resume success.');
             }catch(err){
               console.info('====>SUB_REQUEST_DOWNLOAD_API_REMUSE_0001 pause_throw_err:' + JSON.stringify(err))
@@ -676,6 +682,7 @@ export default function requestDownloadJSUnit() {
         try{
           expect(downloadTask != undefined).assertEqual(true);
           await downloadTask.resume();
+          expect(err === undefined).assertEqual(true);
           await downloadTask.remove();
           fileio.unlinkSync(filePath);
           done();
@@ -721,7 +728,18 @@ export default function requestDownloadJSUnit() {
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_QUERY_0001 query info: '+ downloadInfo.targetURI);
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_QUERY_0001 query info: '+ downloadInfo.downloadTitle);
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_QUERY_0001 query info: '+ downloadInfo.downloadTotalBytes);
-                expect(true).assertTrue();
+                expect(downloadInfo.description !== undefined).assertTrue();
+                expect(downloadInfo.downloadedBytes !== undefined).assertTrue();
+                expect(downloadInfo.downloadId !== undefined).assertTrue();
+                expect(downloadInfo.failedReason !== undefined).assertTrue();
+                expect(downloadInfo.fileName !== undefined).assertTrue();
+                expect(downloadInfo.filePath !== undefined).assertTrue();
+                expect(downloadInfo.pausedReason !== undefined).assertTrue();
+                expect(downloadInfo.status !== undefined).assertTrue();
+                expect(downloadInfo.targetURI !== undefined).assertTrue();
+                expect(downloadInfo.downloadTitle !== undefined).assertTrue();
+                expect(downloadInfo.downloadTotalBytes !== undefined).assertTrue();
+                expect(downloadInfo !== undefined).assertTrue();
               }
             }catch(err){
               console.error("====>SUB_REQUEST_DOWNLOAD_API_QUERY_0001 throw_error: " + JSON.stringify(err));
@@ -772,7 +790,18 @@ export default function requestDownloadJSUnit() {
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_QUERY_0002 query info: '+ downloadInfo.targetURI);
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_QUERY_0002 query info: '+ downloadInfo.downloadTitle);
                 console.info('====>SUB_REQUEST_DOWNLOAD_API_QUERY_0002 query info: '+ downloadInfo.downloadTotalBytes);
-                expect(true).assertTrue();
+                expect(downloadInfo.description !== undefined).assertTrue();
+                expect(downloadInfo.downloadedBytes !== undefined).assertTrue();
+                expect(downloadInfo.downloadId !== undefined).assertTrue();
+                expect(downloadInfo.failedReason !== undefined).assertTrue();
+                expect(downloadInfo.fileName !== undefined).assertTrue();
+                expect(downloadInfo.filePath !== undefined).assertTrue();
+                expect(downloadInfo.pausedReason !== undefined).assertTrue();
+                expect(downloadInfo.status !== undefined).assertTrue();
+                expect(downloadInfo.targetURI !== undefined).assertTrue();
+                expect(downloadInfo.downloadTitle !== undefined).assertTrue();
+                expect(downloadInfo.downloadTotalBytes !== undefined).assertTrue();
+                expect(downloadInfo !== undefined).assertTrue();
               }
               await downloadTask.remove();
               fileio.unlinkSync(filePath);
@@ -937,5 +966,183 @@ export default function requestDownloadJSUnit() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0100
+     * @tc.number SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0100
+     * @tc.desc   download callback is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-------------------SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0100 is starting----------------------");
+      try{
+        request.download(undefined, async (err, downloadTask)=>{
+          try{
+            console.info("====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0100 into callback");
+            expect().assertFail();
+          } catch (err){
+            console.info(`====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0100 err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0100 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0200
+     * @tc.number SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0200
+     * @tc.desc   download callback is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-------------------SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0200 is starting----------------------");
+      try{
+        request.download(null, async (err, downloadTask)=>{
+          try{
+            console.info("====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0200 into callback");
+            expect().assertFail();
+          } catch (err){
+            console.info(`====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0200 err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0200 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0300
+     * @tc.number SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0300
+     * @tc.desc   download promise is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-------------------SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0300 is starting----------------------");
+      try{
+        await request.download(undefined);
+        console.info("====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0300 download success");
+        expect().assertFail();
+      } catch (err){
+        console.info(`====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0300 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0400
+     * @tc.number SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0400
+     * @tc.desc   download promise is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0400', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-------------------SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0400 is starting----------------------");
+      try{
+        await request.download(null);
+        console.info("====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0400 download success");
+        expect().assertFail();
+      } catch (err){
+        console.info(`====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0400 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 13499999).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0500
+     * @tc.number SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0500
+     * @tc.desc   callback enableMetered enableRoaming background is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0500', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0500 is starting-----------------------");
+      let filePath:string = '/data/storage/el2/base/haps/entry_test/cache/SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0500';
+      downloadConfig = {
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test001.hap',
+        filePath:'SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0500',
+        enableMetered: true,
+        enableRoaming: true,
+        background: true
+      }
+      request.download(downloadConfig, async (err, downloadTask)=>{
+        console.info(`====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0500 downloadTask: ${downloadTask}`);
+        try{
+          if(err) {
+            console.info('====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0500 download err.')
+            expect().assertFail();
+          }
+          downloadTask.on('complete', async () => {
+            downloadTask.off('complete');
+            try{
+              console.info('====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0500 task completed.')
+              expect(downloadTask !== undefined).assertEqual(true);
+            }catch(err){
+              console.info(`====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0500 throw_error: ${err}`);
+            }
+            fileio.unlinkSync(filePath);
+            await downloadTask.remove();
+            done();
+          });
+        } catch (err){
+          console.info(`====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0500 catch error: ${err}`);
+          downloadTask.off('complete');
+          await downloadTask.remove();
+          fileio.unlinkSync(filePath);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0600
+     * @tc.number SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0600
+     * @tc.desc   promise enableMetered enableRoaming background is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0600', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0600 is starting-----------------------");
+      let filePath:string = '/data/storage/el2/base/haps/entry_test/cache/SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0600';
+      downloadConfig = {
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test001.hap',
+        filePath:'SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0600',
+        enableMetered: true,
+        enableRoaming: true,
+        background: true
+      }
+      let downloadTask = await request.download(downloadConfig);
+      downloadTask.on('complete', async () => {
+        downloadTask.off('complete');
+        try{
+          console.info('====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0600 task completed.')
+          expect(downloadTask !== undefined).assertEqual(true);
+        }catch(err){
+          console.info(`====>SUB_REQUEST_DOWNLOAD_API_SUPPLEMENTAL_0600 throw_error: ${err}`);
+        }
+        fileio.unlinkSync(filePath);
+        await downloadTask.remove();
+        done();
+      });
+    });
+
+
   })
 }

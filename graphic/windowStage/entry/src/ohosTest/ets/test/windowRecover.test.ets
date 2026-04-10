@@ -56,12 +56,12 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
         let promise = wnd.recover();
         promise.then(() => {
           console.info(msgStr + 'Succeeded in recovering the window.');
-          expect(true).assertTrue()
+          
           done();
         }).catch((err: BusinessError) => {
           if (err.code == 801 || err.code == 1300001) {
             console.log(msgStr + ' The current device type does not support calling recover or recover not support ')
-            expect(true).assertTrue()
+            
             done();
           } else {
             console.error(msgStr + ' Failed to recover the window. 03Cause: ' + JSON.stringify(err));
@@ -96,12 +96,12 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
           let currentWnd = wnd.maximize()
           currentWnd.then(() => {
             console.info(msgStr + ' Succeeded from recovering to maximizing the window ')
-            expect(true).assertTrue()
+            
             done()
           }).catch((err: BusinessError) => {
             if (err.code == 801) {
               console.log(msgStr + ' The current device type does not support calling maximize ')
-              expect(true).assertTrue()
+              
               done();
             } else {
               console.error(msgStr + ' Failed to maximize the window. 03Cause: ' + JSON.stringify(err));
@@ -112,7 +112,7 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
         }).catch((err: BusinessError) => {
           if (err.code == 801 || err.code == 1300001) {
             console.log(msgStr + ' The current device type does not support calling recover ')
-            expect(true).assertTrue()
+            
             done();
           } else {
             console.error(msgStr + ' Failed to recover the window. 03Cause: ' + JSON.stringify(err));
@@ -147,12 +147,12 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
           let currentWnd = wnd.recover()
           currentWnd.then(() => {
             console.info(msgStr + ' Succeeded from maximizing to recovering the window ')
-            expect(true).assertTrue()
+            
             done()
           }).catch((err: BusinessError) => {
             if (err.code == 801) {
               console.log(msgStr + ' The current device type does not support calling recover ')
-              expect(true).assertTrue()
+              
               done();
             } else {
               console.error(msgStr + ' Failed to recover the window. 03Cause: ' + JSON.stringify(err));
@@ -163,7 +163,7 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.log(msgStr + ' The current device type does not support calling maximize ')
-            expect(true).assertTrue()
+            
             done();
           } else {
             console.error(msgStr + ' Failed to maximize the window. 03Cause: ' + JSON.stringify(err));
@@ -201,12 +201,12 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
           let currentWnd = wnd.minimize()
           currentWnd.then(() => {
             console.info(msgStr + ' Succeeded from maximizing to minimizing the window ')
-            expect(true).assertTrue()
+            
             done()
           }).catch((err: BusinessError) => {
             if (err.code == 801) {
               console.log(msgStr + ' The current device type does not support calling minimize ')
-              expect(true).assertTrue()
+              
               done();
             } else {
               console.error(msgStr + ' Failed to minimize the window. 03Cause: ' + JSON.stringify(err));
@@ -217,7 +217,7 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.log(msgStr + ' The current device type does not support calling maximize ')
-            expect(true).assertTrue()
+            
             done();
           } else {
             console.error(msgStr + ' Failed to maximize the window. 03Cause: ' + JSON.stringify(err));
@@ -254,12 +254,12 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
           let currentWnd = wnd.maximize()
           currentWnd.then(() => {
             console.info(msgStr + ' Succeeded from minimizing to maximizing the window ')
-            expect(true).assertTrue()
+            
             done()
           }).catch((err: BusinessError) => {
             if (err.code == 801) {
               console.log(msgStr + ' The current device type does not support calling maximize ')
-              expect(true).assertTrue()
+              
               done();
             } else {
               console.error(msgStr + ' Failed to maximize the window. 03Cause: ' + JSON.stringify(err));
@@ -270,7 +270,7 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.log(msgStr + ' The current device type does not support calling minimize ')
-            expect(true).assertTrue()
+            
             done();
           } else {
             console.error(msgStr + ' Failed to minimize the window. 03Cause: ' + JSON.stringify(err));

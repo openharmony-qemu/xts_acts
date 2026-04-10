@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2021-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import account from '@ohos.account.appAccount'
+import osaccount from '@ohos.account.osAccount'
+import daccount from '@ohos.account.distributedAccount'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import featureAbility from "@ohos.ability.featureAbility";
 import { UiDriver, BY } from '@ohos.UiTest';
@@ -950,6 +952,210 @@ export default function ActsSetCheckDataSyncEnabled() {
                 console.info(tag + "catch err: " + JSON.stringify(err));
                 console.info(tag + "end====");
                 expect(err.code).assertEqual(12300002);
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   ActsDaAccountPermissionCheck_0100
+         * @tc.number ActsDaAccountPermissionCheck_0100
+         * @tc.desc   check queryOsAccountDistributedInfo interface meeting ohos.permission.DISTRIBUTED_DATASYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('ActsDaAccountPermissionCheck_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+            let tag = "====>ActsDaAccountPermissionCheck_0100 "
+            console.info(tag + "start====");
+            try {
+                let accountAbility = daccount.getDistributedAccountAbility();
+                let data = await accountAbility.queryOsAccountDistributedInfo();
+                console.info('====>ActsDaAccountPermissionCheck_0100 data:' + JSON.stringify(data));
+                expect(data.name).assertEqual('ohosAnonymousName');
+                expect(data.id).assertEqual('ohosAnonymousUid');
+                done();
+            } catch (err){
+                console.info('====>ActsDaAccountPermissionCheck_0100 err:' + JSON.stringify(err))
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   ActsDaAccountPermissionCheck_0200
+         * @tc.number ActsDaAccountPermissionCheck_0200
+         * @tc.desc   check queryOsAccountDistributedInfo interface meeting ohos.permission.DISTRIBUTED_DATASYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('ActsDaAccountPermissionCheck_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+            let tag = "====>ActsDaAccountPermissionCheck_0200 "
+            console.info(tag + "start====");
+            try {
+                let accountAbility = daccount.getDistributedAccountAbility();
+                accountAbility.queryOsAccountDistributedInfo((err, data) => {
+                    console.info('====>err: ' + JSON.stringify(err));
+                    console.info('====>data: ' + JSON.stringify(data));
+                    expect(data.name).assertEqual('ohosAnonymousName');
+                    expect(data.id).assertEqual('ohosAnonymousUid');
+                    done();
+                });
+            } catch (err) {
+                console.info('====>ActsDaAccountPermissionCheck_0200 err:' + JSON.stringify(err));
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   ActsDaAccountPermissionCheck_0300
+         * @tc.number ActsDaAccountPermissionCheck_0300
+         * @tc.desc   check getOsAccountDistributedInfo interface meeting ohos.permission.DISTRIBUTED_DATASYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('ActsDaAccountPermissionCheck_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+            let tag = "====>ActsDaAccountPermissionCheck_0300 "
+            console.info(tag + "start====");
+            try {
+                let accountAbility = daccount.getDistributedAccountAbility();
+                let data = await accountAbility.getOsAccountDistributedInfo();
+                console.info('====>ActsDaAccountPermissionCheck_0300 data:' + JSON.stringify(data));
+                expect(data.name).assertEqual('ohosAnonymousName');
+                expect(data.id).assertEqual('ohosAnonymousUid');
+                done();
+            } catch (err){
+                console.info('====>ActsDaAccountPermissionCheck_0300 err:' + JSON.stringify(err));
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   ActsDaAccountPermissionCheck_0400
+         * @tc.number ActsDaAccountPermissionCheck_0400
+         * @tc.desc   check getOsAccountDistributedInfo interface meeting ohos.permission.DISTRIBUTED_DATASYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('ActsDaAccountPermissionCheck_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+            let tag = "====>ActsDaAccountPermissionCheck_0400 "
+            console.info(tag + "start====");
+            try {
+                let accountAbility = daccount.getDistributedAccountAbility();
+                accountAbility.getOsAccountDistributedInfo((err, data) => {
+                    console.info('====>err: ' + JSON.stringify(err));
+                    console.info('====>data: ' + JSON.stringify(data));
+                    expect(data.name).assertEqual('ohosAnonymousName');
+                    expect(data.id).assertEqual('ohosAnonymousUid');
+                    done();
+                });
+            } catch (err) {
+                console.info('====>ActsDaAccountPermissionCheck_0400 err:' + JSON.stringify(err));
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   ActsOaAccountPermissionCheck_0100
+         * @tc.number ActsOaAccountPermissionCheck_0100
+         * @tc.desc   check queryDistributedVirtualDeviceId interface meeting ohos.permission.DISTRIBUTED_DATASYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('ActsOaAccountPermissionCheck_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+            let tag = "====>ActsOaAccountPermissionCheck_0100 "
+            console.info(tag + "start====");
+            try {
+                let accountAbility = osaccount.getAccountManager();
+                let data = await accountAbility.queryDistributedVirtualDeviceId();
+                console.info('====>ActsOaAccountPermissionCheck_0100 data:' + JSON.stringify(data));
+                expect(data).not().assertUndefined();
+                done();
+            } catch (err){
+                console.info('====>ActsOaAccountPermissionCheck_0100 err:' + JSON.stringify(err));
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   ActsOaAccountPermissionCheck_0200
+         * @tc.number ActsOaAccountPermissionCheck_0200
+         * @tc.desc   check queryDistributedVirtualDeviceId interface meeting ohos.permission.DISTRIBUTED_DATASYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('ActsOaAccountPermissionCheck_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+            let tag = "====>ActsOaAccountPermissionCheck_0200 "
+            console.info(tag + "start====");
+            try {
+                let accountAbility = osaccount.getAccountManager();
+                accountAbility.queryDistributedVirtualDeviceId((err, data) => {
+                    console.info('====>err: ' + JSON.stringify(err));
+                    console.info('====>data: ' + JSON.stringify(data));
+                    expect(err).assertEqual(null);
+                    done();
+                });
+            } catch (err) {
+                console.info('====>ActsOaAccountPermissionCheck_0200 err:' + JSON.stringify(err));
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   ActsOaAccountPermissionCheck_0300
+         * @tc.number ActsOaAccountPermissionCheck_0300
+         * @tc.desc   check getDistributedVirtualDeviceId interface meeting ohos.permission.DISTRIBUTED_DATASYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('ActsOaAccountPermissionCheck_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+            let tag = "====>ActsOaAccountPermissionCheck_0300 "
+            console.info(tag + "start====");
+            try {
+                let accountAbility = osaccount.getAccountManager();
+                let data = await accountAbility.getDistributedVirtualDeviceId();
+                console.info('====>ActsOaAccountPermissionCheck_0300 data:' + JSON.stringify(data));
+                expect(data).not().assertUndefined();
+                done();
+            } catch (err){
+                console.info('====>ActsOaAccountPermissionCheck_0300 err:' + JSON.stringify(err))
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   ActsOaAccountPermissionCheck_0400
+         * @tc.number ActsOaAccountPermissionCheck_0400
+         * @tc.desc   check getDistributedVirtualDeviceId interface meeting ohos.permission.DISTRIBUTED_DATASYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('ActsOaAccountPermissionCheck_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+            let tag = "====>ActsOaAccountPermissionCheck_0400 "
+            console.info(tag + "start====");
+            try {
+                let accountAbility = osaccount.getAccountManager();
+                accountAbility.getDistributedVirtualDeviceId((err, data) => {
+                    console.info('====>err: ' + JSON.stringify(err));
+                    console.info('====>data: ' + JSON.stringify(data));
+                    expect(err).assertEqual(null);
+                    done();
+                });
+            } catch (err) {
+                console.info('====>ActsOaAccountPermissionCheck_0400 err:' + JSON.stringify(err))
+                expect().assertFail();
                 done();
             }
         });

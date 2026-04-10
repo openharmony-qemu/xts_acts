@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_0100: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_0100: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -78,7 +78,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_0200: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_0200: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -101,7 +101,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_0300: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_0300: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -124,7 +124,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_0400: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_0400: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -147,7 +147,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_0500: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_0500: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -170,7 +170,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_0600: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_0600: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -193,7 +193,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_0700: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_0700: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -216,7 +216,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_0800: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_0800: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -239,7 +239,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_0900: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_0900: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -262,7 +262,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_1000: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_1000: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -285,7 +285,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_1100: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_1100: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -308,7 +308,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_1200: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_1200: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -331,7 +331,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_1300: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_1300: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -354,7 +354,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_1400: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_1400: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -377,7 +377,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_1500: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_1500: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -400,7 +400,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_1600: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_1600: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -423,7 +423,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_1700: ` + curveName + ` generate keyPair succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_1700: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -447,7 +447,8 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         await asyKeyGenPromiseFunc.genKeyPair(true, commonSpec, curveName);
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_1800: ` + curveName + ` generate keyPair succeed.`);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_1800: ` + curveName + ` catch error: “${err}“, error code: ${err.code}`);
       }
@@ -472,7 +473,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = await cipherCallbackFunc.normalProcess(cipherAlgName, commonSpec, null);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_2000: cipher succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_2000: catch error: “${err}“`);
         expect(null).assertFail();
       }
@@ -497,7 +498,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlgName, true, commonSpec, curveName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_2100: signVerify succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_2100: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -522,7 +523,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = await signVerifyCallbackFunc.normalProcess(signVerifyAlgName, true, commonSpec, curveName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_2200: signVerify succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_2200: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -547,7 +548,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(agreementAlgName, true, commonSpec, curveName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_2300: agreement succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_2300: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -572,7 +573,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = await agreementAsyCallbackFunc.normalProcess(agreementAlgName, true, commonSpec, curveName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_genECCCommonSpec_Func_2400: agreement succeed.`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_2400: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -599,7 +600,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_2500: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_2500: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -623,7 +624,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let commonSpec: cryptoFramework.ECCCommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec(curveName);
         let keyPair: cryptoFramework.KeyPair = await asyKeyGenCallbackFunc.genKeyPair(false, commonSpec, agreementAlgName);
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_2600: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -650,7 +651,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_2700: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_2700: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -676,7 +677,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_2800: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_2800: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -702,7 +703,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_2900: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_2900: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -728,7 +729,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_3000: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_3000: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -754,7 +755,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_3100: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_3100: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -780,7 +781,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_3200: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_3200: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -806,7 +807,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_3300: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_3300: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -832,7 +833,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_3400: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_3400: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -858,7 +859,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_3500: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_3500: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -884,7 +885,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_3600: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_3600: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -910,7 +911,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_3700: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_3700: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -936,7 +937,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_3800: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_3800: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -962,7 +963,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_3900: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_3900: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -988,7 +989,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = compareECCParams(commonSpec, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_4000: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_4000: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -1013,7 +1014,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = comparePairParams(keyPair.priKey, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_4100: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_4100: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -1038,7 +1039,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = comparePairParams(keyPair.priKey, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_4200: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_4200: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -1063,7 +1064,7 @@ export default function SecurityCryptoFwGenECCCommonSpecTestUnit() {
         let res: boolean = comparePairParams(keyPair.priKey, keyPair.pubKey);
         expect(res).assertTrue();
         console.log("Security_CryptoFramework_genECCCommonSpec_Func_4300: params compare success");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`Security_CryptoFramework_genECCCommonSpec_Func_4300: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }

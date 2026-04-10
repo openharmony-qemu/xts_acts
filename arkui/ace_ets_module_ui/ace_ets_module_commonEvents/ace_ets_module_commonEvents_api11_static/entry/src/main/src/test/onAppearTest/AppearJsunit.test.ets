@@ -36,7 +36,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function appearJsunit() {
   describe('appearTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 
@@ -82,19 +82,21 @@ it('testAppear_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
       try {
         let callBackAppear1 = (backData: emitter.EventData) => {
-          const data: Record<String,RecordData> =
-            backData.data as Record<String,RecordData>
-          console.info("testAppear01 get appearEvent result is: " + JSON.stringify(backData));
-          await CommonFunc.sleep(1000);
-          expect(data['ACTION']).assertEqual(false);
-          done()
+          waitForCompletion(async () => {
+            const data: Record<String,RecordData> =
+              backData.data as Record<String,RecordData>
+            console.info("testAppear01 get appearEvent result is: " + JSON.stringify(backData));
+            await CommonFunc.sleep(1000);
+            expect(data['ACTION']).assertEqual(false);
+            done()
+          })
         }
         let appearEvent1: emitter.InnerEvent = {
           eventId: 58,
           priority: emitter.EventPriority.LOW
         }
         emitter.on(appearEvent1, callBackAppear1);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testAppear01 on appearEvent err : " + JSON.stringify(err));
       }
       console.info("testAppear01 click result is: " + JSON.stringify(inspector.sendEventByKey('appear', 10, "")));
@@ -116,7 +118,7 @@ it('testAppear_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
           priority: emitter.EventPriority.LOW
         }
         emitter.on(disAppearEvent, callBackDisAppear);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testAppear02 on disAppearEvent err : " + JSON.stringify(err));
       }
 
@@ -138,7 +140,7 @@ it('testAppear_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
         console.info("testAppear03 appearEvent click result is: " +
         JSON.stringify(inspector.sendEventByKey('appear', 10, "")));
         emitter.on(appearEvent2, callBackAppear2);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testAppear03 on appearEvent err : " + JSON.stringify(err));
       }
 

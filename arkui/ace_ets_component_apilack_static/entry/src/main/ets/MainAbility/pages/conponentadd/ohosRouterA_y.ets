@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
+import { BusinessError } from '@ohos.base';
 import {
   Alignment,
   AlignRuleOption,
   Axis,
   BlurStyle,
   Builder,
-  BusinessError,
   Button,
   ClickEvent,
   Color,
@@ -134,7 +134,7 @@ struct OhosRouterA {
               .then(() => {
                 // success
               })
-          } catch (error: Error) {
+          } catch (error) {
             console.error(`pushUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
 
@@ -159,7 +159,7 @@ struct OhosRouterA {
               .then(() => {
                 // success
               })
-          } catch (error: Error) {
+          } catch (error) {
             console.error(`pushUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
           ;
@@ -182,7 +182,7 @@ struct OhosRouterA {
               .then(() => {
                 // success
               })
-          } catch (error: Error) {
+          } catch (error) {
             console.error(`replaceUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
           ;
@@ -204,10 +204,10 @@ struct OhosRouterA {
               .then(() => {
                 // success
               })
-          } catch (error: Error) {
+          } catch (error) {
             console.info(`replaceUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
-          
+
         });
 
       Button('clear')
@@ -263,7 +263,7 @@ struct OhosRouterA {
             routerInstance.showAlertBeforeBackPage({
               message: 'Message Info'
             });
-          } catch (error: Error) {
+          } catch (error) {
             console.error(`enableBackPageAlert failed, code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
         });

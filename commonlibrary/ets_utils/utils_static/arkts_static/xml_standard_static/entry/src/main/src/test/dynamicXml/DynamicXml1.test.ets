@@ -32,7 +32,7 @@ import Utils from '../Util.test';
 
 export default function XmlDynamicSerializerTest() {
   describe('XmlDynamicSerializerTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -51,7 +51,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -74,7 +74,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -98,7 +98,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -120,7 +120,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -142,7 +142,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -164,7 +164,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -188,7 +188,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -212,7 +212,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -238,7 +238,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -264,7 +264,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -287,7 +287,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -312,7 +312,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -336,7 +336,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -361,7 +361,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -387,7 +387,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -410,7 +410,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -433,7 +433,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -456,7 +456,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -477,7 +477,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -501,7 +501,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -525,7 +525,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -550,7 +550,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -577,7 +577,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -604,7 +604,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -628,7 +628,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -651,7 +651,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -676,7 +676,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -697,7 +697,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -720,7 +720,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -742,7 +742,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -763,7 +763,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -786,7 +786,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -809,7 +809,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -832,7 +832,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -856,7 +856,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -877,7 +877,7 @@ export default function XmlDynamicSerializerTest() {
       let view1 = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -900,7 +900,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -923,7 +923,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -946,7 +946,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -970,7 +970,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -993,7 +993,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1017,7 +1017,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1042,7 +1042,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1066,7 +1066,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1090,7 +1090,7 @@ export default function XmlDynamicSerializerTest() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1110,7 +1110,7 @@ export default function XmlDynamicSerializerTest() {
       let result = "";
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < view.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1137,7 +1137,7 @@ export default function XmlDynamicSerializerTest() {
       let arrayBuffer = thatSer.getOutput();
       let view = new Uint8Array(arrayBuffer);
       for (let i = 0; i < view.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       let m = 0;
       for (let i = 0; i < max; ++i) {

@@ -14,13 +14,21 @@
  */
 
 import httpFetchTest from './Fetch.test';
-import EmptyTest from './Empty.test';
+import EmptyTestCheckCard from './EmptyTestCheckCard.test';
+import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
 import sim from '@ohos.telephony.sim';
+import connection from '@ohos.net.connection';
+ 	 
+let netHandle = connection.getDefaultNetSync();
 
 export default function testsuite() {
   if (sim.getMaxSimCount()>1){
-    httpFetchTest();
+    if(netHandle.netId != 0){
+      httpFetchTest();    
+    } else {
+      EmptyTestCheckNetwork();
+    }
   }else{
-    EmptyTest()
+    EmptyTestCheckCard();
   }
 }

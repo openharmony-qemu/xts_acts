@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function flexOffset_EndJsunit() {
   describe('flexItemAlignEndTest1', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexItemAlignEndTest1 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

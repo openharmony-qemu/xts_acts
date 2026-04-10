@@ -16,7 +16,7 @@ import("//test/xts/tools/build/suite.gni")
 ohos_app_assist_suite("ActsMediaXtsTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsMediaXtsTest"
+  hap_name = "ActsMediaXtsMainTest"
   subsystem_name = "multimedia"
   part_name = "player_framework"
 }

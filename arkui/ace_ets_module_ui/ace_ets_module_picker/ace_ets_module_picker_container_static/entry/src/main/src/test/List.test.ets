@@ -17,6 +17,11 @@ import UIPickerEnableHapTest from './UIPickerComponent/UIPickerEnableHap.test';
 import UIPickerOnChangeTest from './UIPickerComponent/UIPickerOnChange.test';
 import UIPickerOnScrollStopTest from './UIPickerComponent/UIPickerOnScrollStop.test';
 import UIPickerIndicatorTest from './UIPickerComponent/UIPickerIndicator.test';
+import UIPickerCanLoopModifierTest from './UIPickerComponent/UIPickerCanLoopModifier.test';
+import UIPickerEnableHapModifierTest from './UIPickerComponent/UIPickerEnableHapModifier.test';
+import UIPickerOnChangeModifierTest from './UIPickerComponent/UIPickerOnChangeModifier.test';
+import UIPickerOnScrollStopModifierTest from './UIPickerComponent/UIPickerOnScrollStopModifier.test';
+import UIPickerIndicatorModifierTest from './UIPickerComponent/UIPickerIndicatorModifier.test';
 
 export default function testsuite() {
     UIPickerCanLoopTest();
@@ -24,4 +29,9 @@ export default function testsuite() {
     UIPickerOnChangeTest();
     UIPickerOnScrollStopTest();
     UIPickerIndicatorTest();
+    UIPickerCanLoopModifierTest();
+    UIPickerEnableHapModifierTest();
+    UIPickerOnChangeModifierTest();
+    UIPickerOnScrollStopModifierTest();
+    UIPickerIndicatorModifierTest();
 }

@@ -15,7 +15,9 @@
 
 class LongPressGestureHandlerAllowedTypesModifier implements GestureModifier {
   toolTypes: Array<SourceTool | undefined | null> = [];
-  listener: Callback<string> = (data: string) => {};
+  listener: Callback<string> = (data: string) => {
+  };
+
   constructor(types: Array<SourceTool | undefined | null>, callback: Callback<string>) {
     this.toolTypes = types;
     this.listener = callback;
@@ -39,30 +41,41 @@ struct LongPressGestureHandlerAllowedTypes {
   private callback: Callback<string> = (data: string) => {
     this.result = data;
   }
-  @State modifier: LongPressGestureHandlerAllowedTypesModifier = new LongPressGestureHandlerAllowedTypesModifier([], this.callback);
+  @State modifier: LongPressGestureHandlerAllowedTypesModifier =
+    new LongPressGestureHandlerAllowedTypesModifier([], this.callback);
+
   build() {
-    Column({space: 10}) {
-      Text('LongPress').fontSize(20).width(240).height(80).margin({left:0,top:0}).padding({left:0,top:0}).backgroundColor(Color.Yellow).key('LongPressGestureHandlerAllowedTypes_Text')
+    Column() {
+      Text('LongPress')
+        .fontSize(20)
+        .width('90%')
+        .height('55%')
+        .backgroundColor(Color.Yellow)
+        .key('LongPressGestureHandlerAllowedTypes_Text')
         .gestureModifier(this.modifier)
 
-      Text(this.result).key('LongPressGestureHandlerAllowedTypes_result')
+      Text(this.result).key('LongPressGestureHandlerAllowedTypes_result').height('10%')
 
       Button('Mouse').id('Mouse_Type')
         .onClick(() => {
           this.result = 'allowed types default'
           this.modifier = new LongPressGestureHandlerAllowedTypesModifier([SourceTool.MOUSE], this.callback);
-        })
+        }).height('10%')
       Button('Finger').id('Finger_Type')
         .onClick(() => {
           this.result = 'allowed types default'
           this.modifier = new LongPressGestureHandlerAllowedTypesModifier([SourceTool.Finger], this.callback);
-        })
+        }).height('10%')
       Button('Invalid').id('Invalid_type')
-          .onClick(() => {
-            this.result = 'allowed types default';
-            this.modifier = new LongPressGestureHandlerAllowedTypesModifier([null, undefined], this.callback);
-          })
-    }.alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('LongPressGestureHandlerAllowedTypes_Father')
+        .onClick(() => {
+          this.result = 'allowed types default';
+          this.modifier = new LongPressGestureHandlerAllowedTypesModifier([null, undefined], this.callback);
+        }).height('10%')
+    }
+    .alignItems(HorizontalAlign.Start)
+    .width('100%')
+    .height('100%')
+    .backgroundColor('#ffbebaba')
+    .key('LongPressGestureHandlerAllowedTypes_Father')
   }
 }
-

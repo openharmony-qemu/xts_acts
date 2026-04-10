@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,7 +78,7 @@ async function doSignVerifyByDigestSpecStub(algName: string, dataLen: int): Prom
           resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doSignVerifyByDigestSpec “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -119,7 +119,7 @@ async function doSignVerifyByDigestSpecCallbackStub(algName: string, dataLen: in
           resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doSignVerifyByDigestSpecCallback “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -155,7 +155,7 @@ async function doAgreementByDigestSpecStub(algName: string): Promise<boolean> {
           resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doAgreementByDigestSpecStub “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -223,7 +223,7 @@ async function doSignVerifyWithUpdateByDigestSpecCallbackStub(algName: string, d
           resolve(undefined)
         }, intervalTime)
       })//.then(undefined, (error: Object) =>{});
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`doSignVerifyWithUpdateByDigestSpecCallbackStub “${error}“, error code: ${error.code}`);
       clearInterval(timeoutId);
       return false;
@@ -249,7 +249,7 @@ async function doSignVerifyByDigestSpec(algName: string, msgData: cryptoFramewor
       ret = ret && await verify.verify(msgData, rawData);
     }
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignVerifyByDigestSpec “${error}“, error code: ${error.code}`);
     return false;
   }
@@ -296,7 +296,7 @@ async function doSignVerifyWithUpdateByDigestSpec(algName: string,
       ret = ret && await verify.verify(null, dataSign);
     }
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignVerifyWithUpdateByDigestSpec “${error}“, error code: ${error.code}`);
     return false;
   }
@@ -317,7 +317,7 @@ function doSignVerifyByDigestSpecSync(algName: string, msgData: cryptoFramework.
       ret = ret && verify.verifySync(msgData, rawData);
     }
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignVerifyByDigestSpecSync “${error}“, error code: ${error.code}`);
     return false;
   }
@@ -364,7 +364,7 @@ function doSignVerifyWithUpdateByDigestSpecSync(algName: string,
       ret = ret && verify.verifySync(null, dataSign);
     }
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignVerifyWithUpdateByDigestSpec “${error}“, error code: ${error.code}`);
     return false;
   }
@@ -386,7 +386,7 @@ async function doSignVerifyByDigestSpecCallback(algName: string, msgData: crypto
       console.info("############################### alg:" + signAlgName + ":" + ret + ":" + msgData.data.byteLength + "#############" + rawData.data.byteLength)
     }
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignVerifyByDigestSpecCallback “${error}“, error code: ${error.code}`);
     return false;
   }
@@ -434,7 +434,7 @@ async function doSignVerifyWithUpdateByDigestSpecCallback(algName: string,
       console.info("############################### alg:" + signAlgName + ":" + ret + ":" + msg.data.byteLength + "#############" + dataSign.data.byteLength)
     }
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`doSignVerifyWithUpdateByDigestSpecCallback “${error}“, error code: ${error.code}`);
     return false;
   }
@@ -477,7 +477,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlobDer);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -515,7 +515,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
         ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -555,7 +555,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let ret: boolean = commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
         ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -588,7 +588,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         expect(ret).assertTrue();
         ret = await secp256k1.doSignVerifyPromise(algSignName, convKeyPair, dataBlob);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -613,7 +613,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let conPriKeyBlob: cryptoFramework.DataBlob = convKeyPair.priKey.getEncoded();
         let ret: boolean = commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -638,7 +638,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let conPubKeyBlob: cryptoFramework.DataBlob = convKeyPair.pubKey.getEncoded();
         let ret: boolean = commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -663,7 +663,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let conPubKeyBlob: cryptoFramework.DataBlob = convKeyPair.pubKey.getEncoded();
         let ret: boolean = commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -689,7 +689,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let ret: boolean = commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
         ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -712,7 +712,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let conPubKeyBlob: cryptoFramework.DataBlob = convKeyPair.pubKey.getEncoded();
         let ret: boolean = commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -735,7 +735,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let conPriKeyBlob: cryptoFramework.DataBlob = convKeyPair.priKey.getEncoded();
         let ret: boolean = commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -762,7 +762,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let rawData: cryptoFramework.DataBlob = secp256k1.doSignSync(algSignName, keyPair, msgBlob);
         let ret: boolean = await secp256k1.doVerifyPromise(algSignName, keyPair, msgBlob, rawData);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -787,7 +787,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let rawData: cryptoFramework.DataBlob = secp256k1.doSignSync(algSignName, keyPair, msgBlob);
         let ret: boolean = await secp256k1.doVerifyPromise(algSignName, keyPair, msgBlob, rawData);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -814,7 +814,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let rawData: cryptoFramework.DataBlob = await secp256k1.doSignPromise(algSignName, keyPair, msgBlob);
         let ret: boolean = await secp256k1.doVerifyPromise(algSignName, keyPair, msgBlob, rawData);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -843,9 +843,9 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let agreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(algName);
         await agreement.generateSecret(keyPair.priKey, keyPair.pubKey);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -865,7 +865,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let msgData: cryptoFramework.DataBlob = await createFullData(dataLen);
         let ret: boolean = (await taskpool.execute(doSignVerifyByDigestSpec, algName, msgData)) as boolean;
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -888,7 +888,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let blockSize: int = 8;
         let ret: boolean = (await taskpool.execute(doSignVerifyWithUpdateByDigestSpec, algName, msgBlob, blockSize)) as boolean;
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -911,7 +911,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let blockSize: int = 8;
         let ret: boolean = (await taskpool.execute(doSignVerifyWithUpdateByDigestSpecSync, algName, msgBlob, blockSize)) as boolean;
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -933,7 +933,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let msgBlob: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
         let ret: boolean = (await taskpool.execute(doSignVerifyByDigestSpecSync, algName, msgBlob)) as boolean;
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -973,7 +973,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlobDer);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1008,7 +1008,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
         ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1035,7 +1035,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         secp256k1.doSignSync(algSignName, convKeyPair, dataBlob);
         let ret: boolean = commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1062,7 +1062,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let ret: boolean = secp256k1.doVerifySync(algSignName, convKeyPair, msgBlob, rawBlob);
         ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1100,7 +1100,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
         ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1125,7 +1125,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let algSignName: string = "ECC|SHA1";
         secp256k1.doSignSync(algSignName, keyPair, dataBlob);
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1150,7 +1150,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let rawBlob: cryptoFramework.DataBlob = {data: new Uint8Array(secp256k1.rawData_r)}
         let ret: boolean = secp256k1.doVerifySync(algSignName, keyPair, msgBlob, rawBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1175,7 +1175,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let algSignName: string = "ECC|SHA256";
         let ret: boolean = secp256k1.doSignVerifySync(algSignName, keyPair, dataBlob);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1201,7 +1201,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let algSignName: string = "ECC|SHA256";
         let ret: boolean = secp256k1.doSignVerifySync(algSignName, convKeyPair, dataBlob);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1228,7 +1228,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let rawData: cryptoFramework.DataBlob = secp256k1.doSignSync(algSignName, keyPair, msgBlob);
         let ret: boolean = secp256k1.doVerifySync(algSignName, keyPair, msgBlob, rawData);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1257,9 +1257,9 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let agreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(algName);
         await agreement.generateSecret(keyPair.priKey, keyPair.pubKey);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1297,7 +1297,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlobDer);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1330,7 +1330,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
         ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1364,7 +1364,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         await secp256k1.doSignSignCallback(sign, dataBlob);
         let ret: boolean = commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1398,7 +1398,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let ret: boolean = await secp256k1.doVerifyVerifyCallback(verify, msgBlob, rawBlob);
         ret= ret && commonUtils.compareDataBlob(pubKeyBlob, conPubKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1420,7 +1420,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let msgData: cryptoFramework.DataBlob = await createFullData(dataLen);
         let ret: boolean = (await taskpool.execute(doSignVerifyByDigestSpecCallback, algName, msgData)) as boolean;
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1443,7 +1443,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let blockSize: int = 8;
         let ret: boolean = (await taskpool.execute(doSignVerifyWithUpdateByDigestSpecCallback, algName, msgBlob, blockSize)) as boolean;
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1472,9 +1472,9 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let agreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(algName);
         await agreement.generateSecret(keyPair.priKey, keyPair.pubKey);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -1498,7 +1498,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let algSignName: string = "ECC|SHA256";
         let ret: boolean = await secp256k1.doSignVerifyPromise(algSignName, convKeyPair, dataBlob);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1519,7 +1519,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let ret: boolean = await vectorTest(algName);
 
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -1544,7 +1544,7 @@ export default function SecurityCryptoFwSECP256K1TestUnit() {
         let keyPair: cryptoFramework.KeyPair = await generator.convertPemKey(secp256k1.secp256k1_pub, null);
         let ret: boolean = await secp256k1.doVerifyPromise(verifyAlgName, keyPair, msg, rawData);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }

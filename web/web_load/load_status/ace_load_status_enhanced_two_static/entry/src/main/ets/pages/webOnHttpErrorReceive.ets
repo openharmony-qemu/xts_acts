@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Row, Button, ClickEvent, Web,  WebResourceResponse, Header, OnInterceptRequestEvent, OnHttpErrorReceiveEvent, OnTitleReceiveEvent} from '@ohos.arkui.component';
+import { Entry, Component, Column, Row, Button, ClickEvent, Web,  WebResourceResponse, MixedMode, Header, OnInterceptRequestEvent, OnHttpErrorReceiveEvent, OnTitleReceiveEvent} from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
@@ -81,7 +81,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                   setTimeout(() => {
                   Utils.emitEvent(this.httpErrorReceive, 60600);
                   }, 2000)
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -93,7 +93,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                   setTimeout(() => {
                   Utils.emitEvent(this.httpErrorReceive, 60602);
                 }, 2000)
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -105,7 +105,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                   setTimeout(() => {
                   Utils.emitEvent(this.httpErrorReceive, 60604);
                   }, 4000)
-                } catch (error: BusinessError) {
+                } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -124,6 +124,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
          .javaScriptAccess(true)
          .geolocationAccess(true)
          .databaseAccess(true)
+         .mixedMode(MixedMode.COMPATIBLE)
 
          .onTitleReceive((event:OnTitleReceiveEvent):void => {
            if (event) {

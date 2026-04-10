@@ -36,6 +36,13 @@ import ToastExample from './promptActionTest/ToastExample.test'
 import openToastTest from './promptActionTest/openToastTest.test'
 import PromptActionToastErrorCodeTest from './promptActionTest/PromptActionToastErrorCodeTest'
 import getDialogControllerReturnTest from './dialog/getDialogControllerReturnTest';
+import addComponentContentWithOrderNullTest from './overlayManager/addComponentContentWithOrderNullTest.test'
+import hideComponentContentNullTest from './overlayManager/hideComponentContentNullTest.test'
+import removeComponentContentNullTest from './overlayManager/removeComponentContentNullTest.test'
+import closeBindSheetNullTest from './UIContextTest/closeBindSheetNullTest.test'
+import openBindSheetNullTest from './UIContextTest/openBindSheetNullTest.test'
+import showActionSheetNullTest from './UIContextTest/showActionSheetNullTest.test'
+import updateBindSheetNullTest from './UIContextTest/updateBindSheetNullTest.test'
 
 export default function testsuite() {
     isVisible()
@@ -62,4 +69,11 @@ export default function testsuite() {
     openToastTest()
     PromptActionToastErrorCodeTest()
     getDialogControllerReturnTest()
+    addComponentContentWithOrderNullTest()
+    hideComponentContentNullTest()
+    removeComponentContentNullTest()
+    closeBindSheetNullTest()
+    openBindSheetNullTest()
+    showActionSheetNullTest()
+    updateBindSheetNullTest()
 }

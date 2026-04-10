@@ -186,7 +186,7 @@ export default function sizeTest() {
    * Create test suite.
    */
   describe('SizeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SizeTest beforeEach start");
 
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")

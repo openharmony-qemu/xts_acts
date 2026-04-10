@@ -45,7 +45,7 @@ function sleep(time: int):Promise<int> {
 export default function sliderJsunit1() {
   describe('appInfoTest_five_3', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 
@@ -169,7 +169,7 @@ it('testSlider004_static', Level.LEVEL1, async (done: () => void): Promise<void>
         }
         console.info("[testSlider004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testSlider004] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);

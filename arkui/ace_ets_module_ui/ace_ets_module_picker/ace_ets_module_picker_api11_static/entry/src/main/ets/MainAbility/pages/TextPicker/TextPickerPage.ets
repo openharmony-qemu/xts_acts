@@ -21,7 +21,7 @@ struct TextPickerPage {
   @StoragePropRef('fruits') fruits: Array<string> = ['apple1', 'orange2', 'peach3', 'grape4']
   @StoragePropRef('select') select: int | int[] = 0
   @StoragePropRef('parameterValue') parameterValue: ResourceStr | ResourceStr[] = 'orange2'
-  @StoragePropRef('defaultPickerItemHeight') defaultPickerItemHeight: number | string = 20
+  @StoragePropRef('defaultPickerItemHeight') defaultPickerItemHeight: double | string = 20
   @State getValue: string|string[] = 'value'
   @State getIndex: int | Array<int> = 0
 

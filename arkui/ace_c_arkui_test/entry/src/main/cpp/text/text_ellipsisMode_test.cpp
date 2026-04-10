@@ -85,7 +85,7 @@ static napi_value TestTextEllipsisMode006(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
 
-    ArkUI_NumberValue value[] = { { .i32 = PARAM_4 } };
+    ArkUI_NumberValue value[] = { { .i32 = PARAM_NEGATIVE_1 } };
     ArkUI_AttributeItem value_item = { value, sizeof(value) / sizeof(ArkUI_NumberValue) };
     auto ret = nodeAPI->setAttribute(text, NODE_TEXT_ELLIPSIS_MODE, &value_item);
     ASSERT_EQ(ret, SUCCESS);
@@ -98,7 +98,7 @@ static napi_value TestTextEllipsisMode007(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
 
-    ArkUI_NumberValue value[] = { { .i32 = PARAM_4 } };
+    ArkUI_NumberValue value[] = { { .i32 = PARAM_NEGATIVE_1 } };
     ArkUI_AttributeItem value_item = { value, sizeof(value) / sizeof(ArkUI_NumberValue) };
     auto ret = nodeAPI->setAttribute(text, NODE_TEXT_ELLIPSIS_MODE, &value_item);
     ASSERT_EQ(ret, SUCCESS);

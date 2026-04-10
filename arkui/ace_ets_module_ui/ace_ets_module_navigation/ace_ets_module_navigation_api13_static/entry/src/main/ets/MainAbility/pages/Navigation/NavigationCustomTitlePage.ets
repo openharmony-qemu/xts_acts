@@ -35,7 +35,7 @@ struct NavigationCustomTitlePage {
     Column() {
       Text('title').fontColor(Color.Red).fontSize(30).id('customTitleId')  //master22 页面有显示，但找不到这个组件
     }
-    .margin({left: '10%', top: '10'} as Margin)
+    .margin({left: '10%', top: '10%'} as Margin)
     .onClick((e: ClickEvent) => {
        AppStorage.setOrCreate<Double>('customTitle', 14);
     })
@@ -65,7 +65,7 @@ struct PageNavDestination {
     Column() {
       Text('title').fontColor(Color.Red).fontSize(30).id('customNavTitleId') //master22 页面有显示，但找不到这个组件
     }
-    .margin({left: '10%', top: '10'} as Margin)
+    .margin({left: '10%', top: '10%'} as Margin)
     .onClick((e: ClickEvent) => {
        this.num = 15;
        AppStorage.setOrCreate<Double>('customNavTitle', 15);

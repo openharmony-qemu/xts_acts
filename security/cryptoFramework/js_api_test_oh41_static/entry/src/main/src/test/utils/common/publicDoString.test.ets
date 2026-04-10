@@ -26,7 +26,7 @@ function stringToArray(str: string) {
 function uInt8ArrayToString(fileData: Uint8Array): string {
   let dataString: string = "";
   for (let i = 0; i < fileData.length; i++) {
-    dataString += String.fromCharCode(fileData[i]);
+    dataString += String.fromCharCode(fileData[i].toInt());
   }
   return dataString;
 }
@@ -156,16 +156,16 @@ function genCcmParamsSpec(): crypto.CcmParamsSpec {
 
 //分段打印原始字符串
 function sliceAndPrintString(sourceString: string, MaxLength: number) {
-  let count: number;
+  let count: int;
   if (MaxLength < 1 || MaxLength > 1023) {
     console.log("MaxLength Value Error , range is: [1, 1023]");
   }
   if (sourceString.length <= MaxLength) {
     console.log(sourceString);
   } else {
-    count = Math.ceil(sourceString.length / MaxLength);
-    for (let i = 0;i <= count; i++) {
-      console.log(sourceString.substring(i * MaxLength, (i + 1) * MaxLength));
+    count = Math.ceil(sourceString.length / MaxLength).toInt()
+    for (let i = 0; i <= count; i++) {
+      console.log(sourceString.substring(i * MaxLength.toInt(), (i + 1) * MaxLength.toInt()));
     }
   }
 }

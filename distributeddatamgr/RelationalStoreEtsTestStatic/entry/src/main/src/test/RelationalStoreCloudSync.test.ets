@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,8 +41,8 @@ const config: relationalStore.StoreConfig = {
   'name': STORE_NAME,
   securityLevel: relationalStore.SecurityLevel.S1,
 }
-let rdbStore: relationalStore.RdbStore;
-let context: common.UIAbilityContext;
+let rdbStore: relationalStore.RdbStore | undefined;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let syncProgressDetail: relationalStore.ProgressDetails;
 
@@ -63,9 +63,9 @@ export default function relationalStoreCloudSyncTest() {
       try {
         console.log(tag + 'create rdb store before');
         try {
-          rdbStore = await relationalStore.getRdbStore(context, config);
+          rdbStore = await relationalStore.getRdbStore(context!, config);
           console.log(tag + 'create rdb store success');
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + 'create rdb store failed' + `, error code is ${err.code}, message is ${err.message}`);
           expect().assertFail();
           done();
@@ -87,11 +87,11 @@ export default function relationalStoreCloudSyncTest() {
           'recycledTime INTEGER, ' +
           'num INTEGER PRIMARY KEY)';
         try {
-          await rdbStore.executeSql(sql_text);
-          await rdbStore.executeSql(sql_int);
-          await rdbStore.executeSql(sql_integer);
+          await rdbStore!.executeSql(sql_text);
+          await rdbStore!.executeSql(sql_int);
+          await rdbStore!.executeSql(sql_integer);
           console.log(tag + 'create table cloud_text cloud_int cloud_integer success');
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + 'create table cloud_text cloud_int cloud_integer failed' +
             `, error code is ${err.code}, message is ${err.message}`)
           expect().assertFail();
@@ -103,9 +103,9 @@ export default function relationalStoreCloudSyncTest() {
         }
 
         try {
-          await rdbStore.setDistributedTables(tableArray, relationalStore.DistributedType.DISTRIBUTED_CLOUD, setConfig);
+          await rdbStore!.setDistributedTables(tableArray, relationalStore.DistributedType.DISTRIBUTED_CLOUD, setConfig);
           console.log(tag + 'setDistributedTables success');
-        } catch (err: BusinessError) {
+        } catch (err) {
             console.log(tag + 'setDistributedTables fail' + `, error code is ${err.code}, message is ${err.message}`);
         }
 
@@ -119,7 +119,7 @@ export default function relationalStoreCloudSyncTest() {
           }
           vBucketArray1.push(valueBucket);
         }
-        await rdbStore.batchInsert('cloud_text', vBucketArray1);
+        await rdbStore!.batchInsert('cloud_text', vBucketArray1);
         let vBucketArray2: relationalStore.ValuesBucket[] = [];
         for (let i = 0 as long; i < 5 as long; i++) {
           let valueBucket: relationalStore.ValuesBucket = {
@@ -130,9 +130,9 @@ export default function relationalStoreCloudSyncTest() {
           }
           vBucketArray2.push(valueBucket);
         }
-        await rdbStore.batchInsert('cloud_integer', vBucketArray2);
+        await rdbStore!.batchInsert('cloud_integer', vBucketArray2);
         console.log(tag + 'create rdb store success');
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(tag + 'create rdb store failed' + `, error code is ${err.code}, message is ${err.message}`);
         expect().assertFail();
       }
@@ -149,7 +149,7 @@ export default function relationalStoreCloudSyncTest() {
 
     afterAll(async (): Promise<void> => {
       console.info(tag + 'afterAll');
-      await relationalStore.deleteRdbStore(context, config);
+      await relationalStore.deleteRdbStore(context!, config);
     })
 
     console.log(tag + '*************Unit Test Begin*************');
@@ -169,14 +169,14 @@ export default function relationalStoreCloudSyncTest() {
         try {
           let PRIKey: relationalStore.PRIKeyType[] = ['test_key1', 'test_key2'];
           hilog.info(domain, tag, 'RS0453 PRIKey: ' + JSON.stringify(PRIKey));
-          await rdbStore.getModifyTime('cloud_text', 'num', PRIKey).then((data: relationalStore.ModifyTime) => {
+          await rdbStore!.getModifyTime('cloud_text', 'num', PRIKey).then((data: relationalStore.ModifyTime) => {
             console.log(tag + ` modifyTime:` + JSON.stringify(data));
             let size = data.size;
             console.log(tag + ' size=' + size);
             expect(size == 2).assertTrue();
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(tag + `get modify time fail, err code is ${err.code}, message is ${err.message}.`);
           expect().assertFail();
           done();
@@ -197,7 +197,7 @@ export default function relationalStoreCloudSyncTest() {
       async (done: () => void): Promise<void> => {
         console.log(tag + "************* testRdbCloudlockCloudContainer0001 start *************");
         try {
-          let time = await rdbStore.lockCloudContainer();
+          let time = await rdbStore!.lockCloudContainer();
           console.info("testRdbCloudlockCloudContainer0001 lockCloudContainer succeeded time:" + time);
           expect(time != null).assertFail();
         } catch (err) {
@@ -220,7 +220,7 @@ export default function relationalStoreCloudSyncTest() {
       async (done: () => void): Promise<void> => {
         console.log(tag + "************* testRdbCloudUnlockCloudContainer0001 start *************");
         try {
-          let time = await rdbStore.unlockCloudContainer();
+          let time = await rdbStore!.unlockCloudContainer();
           console.info("testRdbCloudUnlockCloudContainer0001 unlockCloudContainer succeeded time:" + time);
           expect(time != null).assertFail();
         } catch (err) {
@@ -244,7 +244,7 @@ export default function relationalStoreCloudSyncTest() {
         console.log(tag + "************* testRdbQuerySharingResource0001 start *************");
         let predicates = new relationalStore.RdbPredicates("cloud_text");
         try {
-          let resultSet = await rdbStore.querySharingResource(predicates, ['1', '2']);
+          let resultSet = await rdbStore!.querySharingResource(predicates, ['1', '2']);
           console.info("testRdbQuerySharingResource0001 querySharingResource succeeded");
           expect().assertFail();
         } catch (err) {
@@ -267,7 +267,7 @@ export default function relationalStoreCloudSyncTest() {
       async (done: () => void): Promise<void> => {
         console.log(tag + "************* testRdbQuerySharingResource0002 start *************");
         let predicates = new relationalStore.RdbPredicates("cloud_text");
-        rdbStore.querySharingResource(predicates, (err: BusinessError<void> | null, resultSet) => {
+        rdbStore!.querySharingResource(predicates, (err: BusinessError<void> | null, resultSet) => {
           if (err) {
             console.log(tag + `rdbStore.querySharingResource fail, errcode: ` + err.code);
             expect(202).assertEqual(err.code);
@@ -293,7 +293,7 @@ export default function relationalStoreCloudSyncTest() {
       async (done: () => void): Promise<void> => {
         console.log(tag + "************* testRdbQuerySharingResource0003 start *************");
         let predicates = new relationalStore.RdbPredicates("cloud_text");
-        rdbStore.querySharingResource(predicates, ['1', '2'], (err: BusinessError<void> | null, resultSet) => {
+        rdbStore!.querySharingResource(predicates, ['1', '2'], (err: BusinessError<void> | null, resultSet) => {
           if (err) {
             console.log(tag + `rdbStore.querySharingResource fail, errcode: ` + err.code);
             expect(202).assertEqual(err.code);
@@ -319,7 +319,7 @@ export default function relationalStoreCloudSyncTest() {
       async (done: () => void): Promise<void> => {
         console.log(tag + "************* testRdbRestore0001 start *************");
         try {
-          await rdbStore.restore();
+          await rdbStore!.restore();
           console.info("testRdbRestore0001 restore succeeded");
           expect().assertFail();
         } catch (err) {
@@ -343,7 +343,7 @@ export default function relationalStoreCloudSyncTest() {
         console.log(tag + "************* testRdbCloudSync0001 start *************");
         let predicates = new relationalStore.RdbPredicates("cloud_text");
         try {
-          await rdbStore.cloudSync(relationalStore.SyncMode.SYNC_MODE_CLOUD_FIRST, predicates, (progressDetail) => {
+          await rdbStore!.cloudSync(relationalStore.SyncMode.SYNC_MODE_CLOUD_FIRST, predicates, (progressDetail) => {
               expect().assertFail();
             });
           console.info("testRdbCloudSync0001 cloudSync succeeded");
@@ -368,7 +368,7 @@ export default function relationalStoreCloudSyncTest() {
       async (done: () => void): Promise<void> => {
         console.log(tag + "************* testRdbCloudSync0002 start *************");
         let predicates = new relationalStore.RdbPredicates("cloud_text");
-        rdbStore.cloudSync(relationalStore.SyncMode.SYNC_MODE_CLOUD_FIRST, predicates, (progressDetail) => {
+        rdbStore!.cloudSync(relationalStore.SyncMode.SYNC_MODE_CLOUD_FIRST, predicates, (progressDetail) => {
           expect().assertFail();
         }, (err: BusinessError<void> | null) => {
           if (err) {

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,7 +44,7 @@ export default function PowerTest() {
           hilog.info(domain, tag, `${TAG} isActive type: ${typeof isActive}`);
           expect(typeof isActive).assertEqual('boolean');
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -70,7 +70,7 @@ export default function PowerTest() {
           expect(powerMode).assertLargerOrEqual(ohos_power.DevicePowerMode.MODE_NORMAL);
           expect(powerMode).assertLessOrEqual(ohos_power.DevicePowerMode.MODE_EXTREME_POWER_SAVE);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -96,7 +96,7 @@ export default function PowerTest() {
           expect(isStandby).assertFalse();
           expect(typeof isStandby).assertEqual('boolean');
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -120,7 +120,7 @@ export default function PowerTest() {
           hilog.info(domain, tag, `${TAG} mode: ${mode}`);
           expect(mode).assertEqual(600);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -144,7 +144,7 @@ export default function PowerTest() {
           hilog.info(domain, tag, `${TAG} mode: ${mode}`);
           expect(mode).assertEqual(601);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -168,7 +168,7 @@ export default function PowerTest() {
           hilog.info(domain, tag, `${TAG} mode: ${mode}`);
           expect(mode).assertEqual(602);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -192,7 +192,7 @@ export default function PowerTest() {
           hilog.info(domain, tag, `${TAG} mode: ${mode}`);
           expect(mode).assertEqual(603);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -216,7 +216,7 @@ export default function PowerTest() {
           hilog.info(domain, tag, `${TAG} mode: ${mode}`);
           expect(mode).assertEqual(650);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -237,7 +237,7 @@ export default function PowerTest() {
         hilog.info(domain, tag, `${TAG} start`);
         try {
           ohos_power.shutdown('shutdown test');
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -258,7 +258,7 @@ export default function PowerTest() {
         hilog.info(domain, tag, `${TAG} start`);
         try {
           ohos_power.reboot('update');
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -279,7 +279,7 @@ export default function PowerTest() {
         hilog.info(domain, tag, `${TAG} start`);
         try {
           ohos_power.wakeup('wakeup_test');
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -300,7 +300,7 @@ export default function PowerTest() {
         hilog.info(domain, tag, `${TAG} start`);
         try {
           ohos_power.suspend(true);
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -321,7 +321,7 @@ export default function PowerTest() {
         hilog.info(domain, tag, `${TAG} start`);
         try {
           ohos_power.suspend(false);
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -342,7 +342,7 @@ export default function PowerTest() {
         hilog.info(domain, tag, `${TAG} start`);
         try {
           ohos_power.suspend();
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -373,7 +373,7 @@ export default function PowerTest() {
               expect(error.code).assertEqual(202);
               done();
             });
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -404,7 +404,7 @@ export default function PowerTest() {
               done();
             }
           })
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -425,7 +425,7 @@ export default function PowerTest() {
         hilog.info(domain, tag, `${TAG} start`);
         try {
           ohos_power.setScreenOffTime(3000);
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -446,7 +446,7 @@ export default function PowerTest() {
         hilog.info(domain, tag, `${TAG} start`);
         try {
           ohos_power.hibernate(true);
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -467,7 +467,7 @@ export default function PowerTest() {
         hilog.info(domain, tag, `${TAG} start`);
         try {
           ohos_power.hibernate(false);
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -488,7 +488,7 @@ export default function PowerTest() {
         hilog.info(domain, tag, `${TAG} start`);
         try {
           ohos_power.refreshActivity(TAG);
-        } catch (e : BusinessError) {
+        } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -512,7 +512,7 @@ export default function PowerTest() {
             hilog.info(domain, tag, `${TAG} isReboot:${isReboot}`);
           });
           expect().assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(202);
         } finally {
@@ -538,11 +538,57 @@ export default function PowerTest() {
             hilog.info(domain, tag, `${TAG} unregisterShutdownCallback`);
           });
           expect().assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(202);
         } finally {
           hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testPowerTest_static_2200
+     * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0220
+     * @tc.desc   PowerKeyFilteringStrategy DISABLE_LONG_PRESS_FILTERING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testPowerTest_static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testPowerTest_static_2200';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let powerKeyFilteringStrategy = ohos_power.PowerKeyFilteringStrategy.DISABLE_LONG_PRESS_FILTERING;
+          expect(powerKeyFilteringStrategy).assertEqual(0);
+          done();
+        } catch (e) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testPowerTest_static_2300
+     * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0230
+     * @tc.desc   PowerKeyFilteringStrategy LONG_PRESS_FILTERING_ONCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testPowerTest_static_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testPowerTest_static_2300';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let powerKeyFilteringStrategy = ohos_power.PowerKeyFilteringStrategy.LONG_PRESS_FILTERING_ONCE;
+          expect(powerKeyFilteringStrategy).assertEqual(1);
+          done();
+        } catch (e) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
           done();
         }
       })

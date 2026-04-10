@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -92,12 +92,12 @@ export default function imageAniamtorJsunit() {
         if (!("imageAnimator" == pages.name)) {
           console.info("get imageAniamtorJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push imageAniamtorJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push imageAniamtorJsunit page error:" + err);
         expect().assertFail();
       }

@@ -41,7 +41,7 @@ import emitter from '@ohos.events.emitter';
 import { EventIdMap, FormHostTestController } from '../controller/FormHostTestController';
 
 const DOMAIN: Int = 0x0000;
-const TAG: string = 'XtsFormHost';
+const TAG: string = 'testTag XtsFormHost';
 const FORM_COMPONENT_COUNT = 40;
 const TEMP_FORM_COMPONENT_COUNT = 5;
 const FORM_NAME: string = 'widget';
@@ -104,7 +104,7 @@ struct XtsFormHost {
   tempFormComponentIds: string[] = [] as Array<string>;
 
   aboutToAppear() {
-    hilog.info(DOMAIN, TAG, 'XtsFormHost1 enter');
+    hilog.info(DOMAIN, TAG, 'XtsFormHost enter');
     this.registerTestEvents();
   }
 

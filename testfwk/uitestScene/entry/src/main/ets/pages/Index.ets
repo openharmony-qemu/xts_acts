@@ -33,6 +33,7 @@ struct ScrollExample {
           Column() {
             Button('toast').fontWeight(FontWeight.Bold)
               .id('toastBtn')
+              .accessibilityDescription('toast')
               .onClick(() => {
                 try {
                   console.info('toastShow start')

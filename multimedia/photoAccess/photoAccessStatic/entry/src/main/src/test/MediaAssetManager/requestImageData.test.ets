@@ -24,7 +24,7 @@ let domain: int= 0x0000;
 let tag: string = 'testTag';
 
 class MediaHandler implements photoAccessHelper.MediaAssetDataHandler<ArrayBuffer> {
-  onDataPrepared(data: ArrayBuffer, map?: Map<string, string>) {
+  onDataPrepared(data: ArrayBuffer | undefined, map?: Map<string, string>) {
     hilog.info(domain, tag, `MediaHandler succeed`);
   }
 }
@@ -53,7 +53,7 @@ export default function requestImageDataTest() {
         let testNum = 'request_image_data_static_001';
         try {
           let fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_image.jpg");
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let photoAsset = await fetchResult.getFirstObject();
           let requestOptions: photoAccessHelper.RequestOptions = {
             deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,

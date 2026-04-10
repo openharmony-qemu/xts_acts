@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function LongPressGestureLongClickTest() {
   describe('LongPressGestureLongClickTest', () => {
 
-    await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
+    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
 
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!

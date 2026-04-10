@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,7 +31,7 @@ struct Index {
       console.info("start run testcase333!!!!")
       AppStorage.setOrCreate<Router>('router', router1);
       console.info("start run testcase444!!!!")
-    } catch (error: Error) {
+    } catch (error) {
       console.info("------------------------------ ")
       console.info(error)
       console.log('error ' + error);

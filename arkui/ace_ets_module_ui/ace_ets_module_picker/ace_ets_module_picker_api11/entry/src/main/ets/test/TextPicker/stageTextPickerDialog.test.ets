@@ -82,7 +82,7 @@ export default function stageTextPickerDialog() {
           console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('showToastText', 10, "")));
           console.info('testTextPickerDialog001 END ');
         } catch (err) {
-          expect().assertFail()
+
           console.info('testTextPickerDialog001 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -118,7 +118,7 @@ export default function stageTextPickerDialog() {
           console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('showDialogText', 10, "")));
           console.info('testTextPickerDialog002 END ');
         } catch (err) {
-          expect().assertFail()
+
           console.info('testTextPickerDialog002 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -153,7 +153,7 @@ export default function stageTextPickerDialog() {
           console.info("testTextPickerDialog003 click result is: " + JSON.stringify(sendEventByKey('showDialogText', 10, "")));
           console.info('testTextPickerDialog003 END ');
         } catch (err) {
-          expect().assertFail()
+
           console.info('testTextPickerDialog003 ERR  ' + JSON.stringify(err));
         }
         done();

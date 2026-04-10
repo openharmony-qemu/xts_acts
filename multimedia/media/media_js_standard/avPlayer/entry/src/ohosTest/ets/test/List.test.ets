@@ -42,7 +42,6 @@ export default function testsuite() {
   AVPlayerAudioEffectModeTest();
   // AVPlayerMultiTrackTest();
   // AVPlayerStabilityTest();
-  AVMetadata();
   PreDownLoadTest();
   AVTransCoderTest()
   AVPlayerAmr();
@@ -54,4 +53,5 @@ export default function testsuite() {
   AVPlayerVideoScaleTypeTest();
   AVPlayerVideoSeekTest();
   AVPlayerAudioGetTrackDesTest();
+  AVMetadata();
 }

@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function PixelMapColorFilterTest() {
   describe('PixelMapColorFilterTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("PixelMapColorFilterTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")
@@ -81,9 +81,11 @@ export default function PixelMapColorFilterTest() {
       let strJson = inspector.getInspectorByKey('ColorFilter_content');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PixelMapColorFilterTest_static_0010] component obj is: " +
-      obj.getElement('$attrs').getString('imageNodes'));
-      expect(obj.getElement('$attrs').getString('imageNodes'))
-        .assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
+        (JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('imageNodes')[0])));
+      expect(obj.getElement('$attrs').getArray('imageNodes')[0].getString('colorFilterMatrix'))
+        .assertEqual('[1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000,' +
+          ' 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, ' +
+          '0.000000, 0.000000, 1.000000, 0.000000]');
       console.info('[PixelMapColorFilterTest_static_0010] END');
       done();
     });
@@ -109,9 +111,11 @@ export default function PixelMapColorFilterTest() {
       let strJson = inspector.getInspectorByKey('ColorFilter_content');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PixelMapColorFilterTest_static_0020] component obj is: " +
-      obj.getElement('$attrs').getString('imageNodes'));
-      expect(obj.getElement('$attrs').getString('imageNodes'))
-        .assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
+        (JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('imageNodes')[0])));
+      expect(obj.getElement('$attrs').getArray('imageNodes')[0].getString('colorFilterMatrix'))
+        .assertEqual('[1.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, ' +
+          '0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, ' +
+          '0.000000, 0.000000, 0.000000, 1.000000, 0.000000]');
       console.info('[PixelMapColorFilterTest_static_0020] END');
       done();
     });

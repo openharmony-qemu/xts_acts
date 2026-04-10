@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,18 +68,18 @@ let videoConfig: media.AVRecorderConfig = {
 let AVRecorder: media.AVRecorder | undefined;
 let surfaceIds: string = "";
 let surfaceId: string = "";
-let cameraManager: cameraObj.CameraManager;
-let cameraDevicesArray: Array<cameraObj.CameraDevice>;
-let captureSession: cameraObj.VideoSession;
-let cameraSession: cameraObj.Session;
-let cameraInput: cameraObj.CameraInput;
-let previewOutput: cameraObj.PreviewOutput;
-let photoOutput: cameraObj.PhotoOutput;
-let videoOutput: cameraObj.VideoOutput;
+let cameraManager: cameraObj.CameraManager | undefined;
+let cameraDevicesArray: Array<cameraObj.CameraDevice> = [];
+let captureSession: cameraObj.VideoSession | undefined;
+let cameraSession: cameraObj.Session | undefined;
+let cameraInput: cameraObj.CameraInput | undefined;
+let previewOutput: cameraObj.PreviewOutput | undefined;
+let photoOutput: cameraObj.PhotoOutput | undefined;
+let videoOutput: cameraObj.VideoOutput | undefined;
 let metadataOutput: cameraObj.MetadataOutput | null = null;
 let videoSurfaceId: string | undefined;
 let receiver: image.ImageReceiver | undefined;
-let videoProfilesArray: Array<cameraObj.VideoProfile>;
+let videoProfilesArray: Array<cameraObj.VideoProfile> = [];
 let mMetadataObjectTypeArray: Array<cameraObj.MetadataObjectType>;
 let mMetadataObjectArray: Array<cameraObj.MetadataObject> | undefined = undefined;
 
@@ -255,9 +255,9 @@ data === null || data === undefined;
 
 // 创建input参数为cameraDevice的下标
 let createInput = async (index: int): Promise<void> => {
-  cameraInput = cameraManager.createCameraInput(cameraDevicesArray[index]);
-  if (!isEmpty04(cameraInput)) {
-    await cameraInput.open();
+  cameraInput = cameraManager!.createCameraInput(cameraDevicesArray[index]);
+  if (!isEmpty04(cameraInput!)) {
+    await cameraInput!.open();
   }
 }
 
@@ -268,7 +268,7 @@ let createOutput = (index: int, mode: cameraObj.SceneMode) => {
   let i: int = 0;
   let k: int = 0;
   let equalFlag: boolean = false;
-  let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[index], mode)
+  let cameraOutputCap = cameraManager!.getSupportedOutputCapability(cameraDevicesArray[index], mode)
   if (mode == cameraObj.SceneMode.NORMAL_VIDEO) {
     for (i = 0; i < cameraOutputCap.previewProfiles.length; i++){
       height = cameraOutputCap.previewProfiles[i].size.height
@@ -286,19 +286,19 @@ let createOutput = (index: int, mode: cameraObj.SceneMode) => {
     }
     if (equalFlag) {
       hilog.info(domain, tag, 'createOutput find valid video profile' + JSON.stringify(cameraOutputCap.videoProfiles[k]));
-      previewOutput = cameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+      previewOutput = cameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
       videoProfilesArray = cameraOutputCap.videoProfiles;
       videoProfilesArray[0] = cameraOutputCap.videoProfiles[k];
     }
   } else {
-    photoOutput = cameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[0]);
-    hilog.info(domain, tag, 'Receiver is ok'  + JSON.stringify(photoOutput))
+    photoOutput = cameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[0]);
+    hilog.info(domain, tag, 'Receiver is ok'  + JSON.stringify(photoOutput!))
   }
 }
 
 let createPhotoOutput = (index: int, mode: cameraObj.SceneMode) => {
   let equalFlag: boolean = false;
-  let cameraOutputCap = cameraManager.getSupportedFullOutputCapability(cameraDevicesArray[index], mode)
+  let cameraOutputCap = cameraManager!.getSupportedFullOutputCapability(cameraDevicesArray[index], mode)
   if (mode == cameraObj.SceneMode.NORMAL_PHOTO) {
     let targetProfile = cameraOutputCap.photoProfiles[0];
     for (let i = 0; i < cameraOutputCap.photoProfiles.length; i++) {
@@ -307,7 +307,7 @@ let createPhotoOutput = (index: int, mode: cameraObj.SceneMode) => {
         break;
       }
     }
-    photoOutput = cameraManager.createPhotoOutput(targetProfile);
+    photoOutput = cameraManager!.createPhotoOutput(targetProfile);
     hilog.info(domain, tag, 'Receiver is ok'  + JSON.stringify(photoOutput))
   }
 }
@@ -316,48 +316,48 @@ let createPhotoOutput = (index: int, mode: cameraObj.SceneMode) => {
 let createPhotoSession = (mode: cameraObj.SceneMode) => {
   hilog.info(domain, tag, `createPhotoSession mode: ` + mode);
   if (mode == cameraObj.SceneMode.NORMAL_VIDEO) {
-    cameraSession = cameraManager.createSession<cameraObj.VideoSession>(mode) as cameraObj.VideoSession;
+    cameraSession = cameraManager!.createSession<cameraObj.VideoSession>(mode) as cameraObj.VideoSession;
   } else if (mode == cameraObj.SceneMode.NORMAL_PHOTO) {
-    cameraSession = cameraManager.createSession<cameraObj.PhotoSession>(mode) as cameraObj.PhotoSession;
+    cameraSession = cameraManager!.createSession<cameraObj.PhotoSession>(mode) as cameraObj.PhotoSession;
   } else {
     hilog.info(domain, tag, `createPhotoSession mode is not supported: ` + mode);
     expect().assertFail();
   }
-  cameraSession.beginConfig();
+  cameraSession!.beginConfig();
 }
 
 // 释放相机资源
 let stopCameraSession = async () => {
-  cameraSession.beginConfig();
-  if (!isEmpty04(cameraInput)) {
-    cameraSession.removeInput(cameraInput);
-    await cameraInput.close();
+  cameraSession!.beginConfig();
+  if (!isEmpty04(cameraInput!)) {
+    cameraSession!.removeInput(cameraInput!);
+    await cameraInput!.close();
   }
-  if (!isEmpty07(previewOutput)) {
-    cameraSession.removeOutput(previewOutput);
-    await previewOutput.release();
+  if (!isEmpty07(previewOutput!)) {
+    cameraSession!.removeOutput(previewOutput!);
+    await previewOutput!.release();
   }
   if (photoOutput != null || photoOutput != undefined) {
-    cameraSession.removeOutput(photoOutput);
-    await photoOutput.release();
+    cameraSession!.removeOutput(photoOutput!);
+    await photoOutput!.release();
   }
-  await cameraSession.commitConfig();
+  await cameraSession!.commitConfig();
 }
 
 // 添加相机流参数为cameraDevice的下标、相机模式
 let addCommit = async (i: int, mode: cameraObj.SceneMode) => {
   await createInput(i);
   createOutput(i, mode);
-  if (cameraInput) {
-    cameraSession.addInput(cameraInput);
+  if (cameraInput!) {
+    cameraSession!.addInput(cameraInput!);
   }
   if (mode == cameraObj.SceneMode.NORMAL_VIDEO) {
-    if (previewOutput) {
-      cameraSession.addOutput(previewOutput);
+    if (previewOutput!) {
+      cameraSession!.addOutput(previewOutput!);
     }
   } else {
-    if (photoOutput) {
-      cameraSession.addOutput(photoOutput);
+    if (photoOutput!) {
+      cameraSession!.addOutput(photoOutput!);
     }
   }
 }
@@ -367,8 +367,8 @@ let getCameraDevices = () => {
   let appContext: Context = Hypium.get("Context") as Context;
   cameraManager = cameraObj.getCameraManager(appContext);
   Utils.msSleep(1000);
-  cameraDevicesArray = cameraManager.getSupportedCameras();
-  let sceneModes: Array<cameraObj.SceneMode> = cameraManager.getSupportedSceneModes(cameraDevicesArray[0]);
+  cameraDevicesArray = cameraManager!.getSupportedCameras();
+  let sceneModes: Array<cameraObj.SceneMode> = cameraManager!.getSupportedSceneModes(cameraDevicesArray[0]);
   hilog.info(domain, tag, `  supportedSceneModes sceneModes.length: ` + sceneModes.length)
 }
 
@@ -389,7 +389,7 @@ export default function cameraJSUnitOutput() {
   }
 
   let fdNumber: int;
-  let fdPath: string;
+  let fdPath: string = '';
 
   let getFd = async (pathName: string) => {
     let fileDir: string = Hypium.get('pathDir') as string;
@@ -437,16 +437,16 @@ export default function cameraJSUnitOutput() {
   let release = async () => {
     hilog.info(domain, tag, "start release");
     await AVRecorder!.release();
-    await captureSession.release();
+    await captureSession!.release();
     hilog.info(domain, tag, "release end")
   }
 
   let getSupportedOutputCapabilityInPromise = (cameraDevice: cameraObj.CameraDevice, mode: cameraObj.SceneMode): cameraObj.CameraOutputCapability => {
-    if (isEmpty01(cameraManager)) {
+    if (isEmpty01(cameraManager!)) {
       hilog.info(domain, tag, "  Entering SUB_MULTIMEDIA_CAMERA_GET_CAMERAS_PROMISE_0100 cameraManager == null || undefined")
       expect().assertFail();
     }
-    let outputCapabilityPromise: cameraObj.CameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice, mode);
+    let outputCapabilityPromise: cameraObj.CameraOutputCapability = cameraManager!.getSupportedOutputCapability(cameraDevice, mode);
     hilog.info(domain, tag, `  Entering testSupportedOutputCapabilityPromise: , ${outputCapabilityPromise}`);
     hilog.info(domain, tag, `  Entering testSupportedOutputCapabilityPromise MetadataObjectTypes.length is : , ${outputCapabilityPromise.supportedMetadataObjectTypes.length}`);
     
@@ -464,28 +464,28 @@ export default function cameraJSUnitOutput() {
     // 配置录制参数, 获取 videoSurfaceId
     hilog.info(domain, tag, 'videoSurfaceId: ' + videoSurfaceId)
     // 创建VideoOutput对象
-    videoOutput = cameraManager.createVideoOutput(videoProfilesArray[0], videoSurfaceId!);
+    videoOutput = cameraManager!.createVideoOutput(videoProfilesArray[0], videoSurfaceId!);
     //创建会话
     createPhotoSession(mode)
     // 配置会话
     createInput(i);
-    if (cameraInput) {
-      cameraSession.addInput(cameraInput);
+    if (cameraInput!) {
+      cameraSession!.addInput(cameraInput!);
     }
-    if (previewOutput) {
-      cameraSession.addOutput(previewOutput);
+    if (previewOutput!) {
+      cameraSession!.addOutput(previewOutput!);
     }
-    if (videoOutput) {
-      cameraSession.addOutput(videoOutput);
+    if (videoOutput!) {
+      cameraSession!.addOutput(videoOutput!);
     }
-    await cameraSession.commitConfig();
-    cameraSession.start();
+    await cameraSession!.commitConfig();
+    cameraSession!.start();
   }
 
 
   describe('cameraJSUnitOutput', () => {
     hilog.info(domain, tag, '----------cameraJSUnitOutput begin--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await getVideoSurface();
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -493,7 +493,7 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, 'beforeAll case');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'beforeEach case');
     })
@@ -502,7 +502,7 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, 'afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await closeFd();
       await release();
       hilog.info(domain, tag, 'afterAll case');
@@ -522,8 +522,8 @@ export default function cameraJSUnitOutput() {
         let appContext: Context = Hypium.get("Context") as Context;
         cameraManager = cameraObj.getCameraManager(appContext);
         await Utils.msSleep(1000);
-      } catch (error:BusinessError) {
-        expect(isEmpty08(error)).assertTrue();
+      } catch (error) {
+        expect(isEmpty08(error as BusinessError)).assertTrue();
       }
       await Utils.msSleep(1000);
       done();
@@ -539,7 +539,7 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_CAMERAS_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "--------------GET_CAMERAS--------------");
-      cameraDevicesArray = cameraManager.getSupportedCameras();
+      cameraDevicesArray = cameraManager!.getSupportedCameras();
       if (isEmpty02(cameraDevicesArray)) {
         expect().assertFail();
         hilog.info(domain, tag, "Entering GET_CAMERAS FAILED cameraArray is null || undefined");
@@ -577,11 +577,11 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, " --------------SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_PROMISE_STATIC_0100--------------");
-      cameraInput = cameraManager.createCameraInput(cameraDevicesArray[0]);
-      if (isEmpty04(cameraInput)) {
+      cameraInput = cameraManager!.createCameraInput(cameraDevicesArray[0]);
+      if (isEmpty04(cameraInput!)) {
         hilog.info(domain, tag, "SUB_MULTIMEDIA_CAMERA_CREATE_CAMERA_INPUT_PROMISE_STATIC_0100 FAILED");
       }
-      cameraInput.open((err:BusinessError | null) => {
+      cameraInput!.open((err:BusinessError | null) => {
         if (err) {
           expect(err.code != null).assertTrue();
         }
@@ -610,7 +610,7 @@ export default function cameraJSUnitOutput() {
           "Entering SUB_MULTIMEDIA_CAMERA_CREATE_PREVIEW_OUTPUT_CALLBACK_STATIC_0100 previewProfilesArray == null || undefined")
         expect(isEmpty06(previewProfilesArray)).assertFalse();
       }
-      previewOutput = cameraManager.createPreviewOutput(previewProfilesArray![0], surfaceId);
+      previewOutput = cameraManager!.createPreviewOutput(previewProfilesArray![0], surfaceId);
       await Utils.msSleep(1000);
       done();
     })
@@ -634,8 +634,8 @@ export default function cameraJSUnitOutput() {
           "Entering SUB_MULTIMEDIA_CAMERA_CREATE_PHOTO_OUTPUT_PROMISE_STATIC_0100 previewProfilesArray == null || undefined")
         expect().assertFalse();
       }
-      photoOutput = cameraManager.createPhotoOutput(photoProfilesArray![0]);
-      if (isEmpty15(photoOutput)) {
+      photoOutput = cameraManager!.createPhotoOutput(photoProfilesArray![0]);
+      if (isEmpty15(photoOutput!)) {
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CREATE_PHOTO_OUTPUT_PROMISE_STATIC_0100 data is empty");
         expect().assertFalse();
       }
@@ -663,12 +663,12 @@ export default function cameraJSUnitOutput() {
       expect(isEmpty16(videoProfilesArray)).assertFalse();
       if (videoProfilesArray && videoSurfaceId) {
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CREATE_VIDEO_OUTPUT_CALLBACK_STATIC_0100 start createVideoOutput")
-        videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+        videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
       } else {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_CREATE_VIDEO_OUTPUT_CALLBACK_STATIC_0100 createVideoOutput parse err `)
       }
-      videoOutput.release();
+      videoOutput!.release();
       await Utils.msSleep(1000);
       done();
     })
@@ -696,7 +696,7 @@ export default function cameraJSUnitOutput() {
       } else {
         hilog.info(domain, tag,
           "  Entering SUB_MULTIMEDIA_CAMERA_CREATE_METADATA_OUTPUT_CALLBACK_STATIC_0100 start createMetadataOutput")
-        metadataOutput = cameraManager.createMetadataOutput(mMetadataObjectTypeArray);
+        metadataOutput = cameraManager!.createMetadataOutput(mMetadataObjectTypeArray);
         hilog.info(domain, tag, "  SUB_MULTIMEDIA_CAMERA_CREATE_METADATA_OUTPUT_CALLBACK_STATIC_0100 1111");
         if (metadataOutput == null || metadataOutput == undefined) {
           hilog.info(domain, tag, "  SUB_MULTIMEDIA_CAMERA_CREATE_METADATA_OUTPUT_CALLBACK_STATIC_0100 metadataOutput is null");
@@ -720,8 +720,9 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, "--------------SUB_MULTIMEDIA_CAMERA_CREATE_CAPTURE_SESSION_CALLBACK_STATIC_0100--------------");
       try {
         hilog.info(domain, tag, "Entering  SUB_MULTIMEDIA_CAMERA_CREATE_CAPTURE_SESSION_CALLBACK_STATIC_0100")
-        captureSession = cameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
-      } catch (error:BusinessError) {
+        captureSession = cameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
+      } catch (error) {
+        error = error as BusinessError;
         expect(isEmpty08(error)).assertTrue();
       }
       await Utils.msSleep(1000);
@@ -739,12 +740,12 @@ export default function cameraJSUnitOutput() {
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_BEGIN_CONFIG_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag,
         " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_BEGIN_CONFIG_CALLBACK_STATIC_0100--------------");
-      if (isEmpty03(captureSession)) {
+      if (isEmpty03(captureSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_BEGIN_CONFIG_CALLBACK_STATIC_0100 captureSession == null || undefined")
         expect().assertFail();
       } else {
-        captureSession.beginConfig();
+        captureSession!.beginConfig();
       }
       await Utils.msSleep(1000);
       done();
@@ -760,12 +761,12 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_INPUT_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_INPUT_CALLBACK_STATIC_0100--------------");
-      if (isEmpty03(captureSession)) {
+      if (isEmpty03(captureSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_INPUT_CALLBACK_STATIC_0100 captureSession == null || undefined")
         expect().assertFail();
       } else {
-        captureSession.addInput(cameraInput)
+        captureSession!.addInput(cameraInput!)
       }
       await Utils.msSleep(1000);
       done();
@@ -781,17 +782,17 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_PREVIEW_OUTPUT_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_PREVIEW_OUTPUT_CALLBACK_STATIC_0100--------------");
-      if (isEmpty03(captureSession)) {
+      if (isEmpty03(captureSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_PREVIEW_OUTPUT_CALLBACK_STATIC_0100 captureSession == null || undefined")
         expect().assertFail();
       } else {
-        if (isEmpty24(previewOutput)) {
+        if (isEmpty24(previewOutput!)) {
           hilog.info(domain, tag,
             "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_PREVIEW_OUTPUT_CALLBACK_STATIC_0100 previewOutput == null || undefined")
           expect().assertFail();
         }
-        captureSession.addOutput(previewOutput)
+        captureSession!.addOutput(previewOutput!)
       }
       await Utils.msSleep(1000);
       done();
@@ -808,18 +809,18 @@ export default function cameraJSUnitOutput() {
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_PHOTO_OUTPUT_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag,
         " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_PHOTO_OUTPUT_CALLBACK_STATIC_0100--------------");
-      if (isEmpty03(captureSession)) {
+      if (isEmpty03(captureSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_PHOTO_OUTPUT_CALLBACK_STATIC_0100 captureSession == null || undefined")
         expect().assertFail();
       } else {
-        if (isEmpty15(photoOutput)) {
+        if (isEmpty15(photoOutput!)) {
           hilog.info(domain, tag,
             "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_PHOTO_OUTPUT_CALLBACK_STATIC_0100 photoOutput == null || undefined")
           expect().assertFail();
         }
         hilog.info(domain, tag, "captureSession start add photoOutput")
-        captureSession.addOutput(photoOutput)
+        captureSession!.addOutput(photoOutput!)
       }
       await Utils.msSleep(1000);
       done();
@@ -837,7 +838,7 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag,
         " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_VIDEO_OUTPUT_CALLBACK_STATIC_0100--------------");
       Utils.msSleep(1000);
-      if (isEmpty03(captureSession)) {
+      if (isEmpty03(captureSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_VIDEO_OUTPUT_CALLBACK_STATIC_0100 captureSession == null || undefined")
         expect().assertFail();
@@ -848,14 +849,14 @@ export default function cameraJSUnitOutput() {
         let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
         expect(isEmpty16(videoProfilesArray)).assertFalse();
         if (videoProfilesArray && videoSurfaceId) {
-          videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
-          captureSession.addOutput(videoOutput)
+          videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+          captureSession!.addOutput(videoOutput!)
         } else {
           hilog.info(domain, tag,
             `Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_VIDEO_OUTPUT_CALLBACK_STATIC_0100 createVideoOutput parse err `)
         }
       }
-      videoOutput.release();
+      videoOutput!.release();
       await Utils.msSleep(1000);
       done();
     })
@@ -871,13 +872,13 @@ export default function cameraJSUnitOutput() {
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_METADATA_OUTPUT_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag,
         " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_METADATA_OUTPUT_CALLBACK_STATIC_0100--------------");
-      if (isEmpty03(captureSession)) {
+      if (isEmpty03(captureSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_ADD_METADATA_OUTPUT_CALLBACK_STATIC_0100 captureSession == null || undefined")
         expect().assertFail();
       } else {
         if (metadataOutput != null && metadataOutput != undefined) {
-          captureSession.addOutput(metadataOutput as cameraObj.MetadataOutput)
+          captureSession!.addOutput(metadataOutput as cameraObj.MetadataOutput)
         }
       }
       await Utils.msSleep(1000);
@@ -896,13 +897,13 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag,
         " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_COMMIT_CONFIG_CALLBACK_STATIC_0100--------------");
       createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
-      if (isEmpty21(cameraSession)) {
+      if (isEmpty21(cameraSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_COMMIT_CONFIG_CALLBACK_STATIC_0100 captureSession == null || undefined")
         expect().assertFail();
       } else {
         await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-        cameraSession.commitConfig((err: BusinessError | null) => {
+        cameraSession!.commitConfig((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_COMMIT_CONFIG_CALLBACK_STATIC_0100 success");
           } else {
@@ -911,7 +912,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_COMMIT_CONFIG_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1010,7 +1011,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100 FAILED: " +
             err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1041,7 +1042,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_OFF_ERROR_STATIC_0100 FAILED: " +
             err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1060,14 +1061,14 @@ export default function cameraJSUnitOutput() {
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_START_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_START_CALLBACK_STATIC_0100--------------");
       createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
-      if (isEmpty21(cameraSession)) {
+      if (isEmpty21(cameraSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_START_CALLBACK_STATIC_0100 captureSession == null || undefined")
         expect().assertFail();
       } else {
         await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-        await cameraSession.commitConfig();
-        cameraSession.start((err: BusinessError | null) => {
+        await cameraSession!.commitConfig();
+        cameraSession!.start((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_START_CALLBACK_STATIC_0100 success");
           } else {
@@ -1076,7 +1077,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_START_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1095,14 +1096,14 @@ export default function cameraJSUnitOutput() {
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_STOP_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_STOP_CALLBACK_STATIC_0100--------------");
       createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
-      if (isEmpty21(cameraSession)) {
+      if (isEmpty21(cameraSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_STOP_CALLBACK_STATIC_0100 cameraSession == null || undefined")
         expect().assertFail();
       } else {
         await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-        await cameraSession.commitConfig();
-        cameraSession.stop((err: BusinessError | null) => {
+        await cameraSession!.commitConfig();
+        cameraSession!.stop((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_STOP_CALLBACK_STATIC_0100 success");
           } else {
@@ -1111,7 +1112,7 @@ export default function cameraJSUnitOutput() {
             expect(err!.code == cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR).assertTrue();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_STOP_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1130,14 +1131,14 @@ export default function cameraJSUnitOutput() {
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_RELEASE_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_RELEASE_CALLBACK_STATIC_0100--------------");
       createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
-      if (isEmpty21(cameraSession)) {
+      if (isEmpty21(cameraSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_RELEASE_CALLBACK_STATIC_0100 cameraSession == null || undefined")
         expect().assertFail();
       } else {
         await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-        await cameraSession.commitConfig();
-        cameraSession.release((err: BusinessError | null) => {
+        await cameraSession!.commitConfig();
+        cameraSession!.release((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_RELEASE_CALLBACK_STATIC_0100 success");
           } else {
@@ -1146,7 +1147,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_RELEASE_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1170,8 +1171,8 @@ export default function cameraJSUnitOutput() {
           "Entering SUB_MULTIMEDIA_CAMERA_START_METADATA_OUTPUT_CALLBACK_STATIC_0100 metadataOutput == null || undefined")
       } else {
         await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-        cameraSession.addOutput(metadataOutput as cameraObj.MetadataOutput);
-        await cameraSession.commitConfig();
+        cameraSession!.addOutput(metadataOutput as cameraObj.MetadataOutput);
+        await cameraSession!.commitConfig();
         metadataOutput!.start((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_START_METADATA_OUTPUT_CALLBACK_STATIC_0100 success");
@@ -1286,7 +1287,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_STOP_METADATA_OUTPUT_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1305,14 +1306,14 @@ export default function cameraJSUnitOutput() {
     it('SUB_MULTIMEDIA_CAMERA_START_PREVIEW_OUTPUT_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, " --------------SUB_MULTIMEDIA_CAMERA_START_PREVIEW_OUTPUT_CALLBACK_STATIC_0100--------------");
       createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
-      if (isEmpty21(cameraSession)) {
+      if (isEmpty21(cameraSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_START_PREVIEW_OUTPUT_CALLBACK_STATIC_0100 previewOutput == null || undefined")
         expect().assertFail();
       } else {
         await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-        await cameraSession.commitConfig();
-        cameraSession.start((err: BusinessError | null) => {
+        await cameraSession!.commitConfig();
+        cameraSession!.start((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_START_PREVIEW_OUTPUT_CALLBACK_STATIC_0100 success");
           } else {
@@ -1321,7 +1322,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_START_PREVIEW_OUTPUT_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1340,14 +1341,14 @@ export default function cameraJSUnitOutput() {
     it('SUB_MULTIMEDIA_CAMERA_RELEASE_SESSION_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, " --------------SUB_MULTIMEDIA_CAMERA_RELEASE_SESSION_CALLBACK_STATIC_0100--------------");
       createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
-      if (isEmpty21(cameraSession)) {
+      if (isEmpty21(cameraSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_RELEASE_SESSION_CALLBACK_STATIC_0100 previewOutput == null || undefined")
         expect().assertFail();
       } else {
         await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-        await cameraSession.commitConfig();
-        cameraSession.release((err: BusinessError | null) => {
+        await cameraSession!.commitConfig();
+        cameraSession!.release((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_RELEASE_SESSION_CALLBACK_STATIC_0100 success");
           } else {
@@ -1356,7 +1357,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_RELEASE_SESSION_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1375,14 +1376,14 @@ export default function cameraJSUnitOutput() {
     it('SUB_MULTIMEDIA_CAMERA_RELEASE_SESSION_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, " --------------SUB_MULTIMEDIA_CAMERA_RELEASE_SESSION_CALLBACK_STATIC_0200--------------");
       createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
-      if (isEmpty21(cameraSession)) {
+      if (isEmpty21(cameraSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_RELEASE_SESSION_CALLBACK_STATIC_0200 previewOutput == null || undefined")
         expect().assertFail();
       } else {
         await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-        await cameraSession.commitConfig();
-        cameraSession.release((err: BusinessError | null) => {
+        await cameraSession!.commitConfig();
+        cameraSession!.release((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_RELEASE_SESSION_CALLBACK_STATIC_0200 success");
           } else {
@@ -1391,7 +1392,7 @@ export default function cameraJSUnitOutput() {
             expect(err!.code == cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR).assertTrue();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_RELEASE_SESSION_CALLBACK_STATIC_0200 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1410,14 +1411,14 @@ export default function cameraJSUnitOutput() {
     it('SUB_MULTIMEDIA_CAMERA_STOP_PREVIEW_OUTPUT_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, " --------------SUB_MULTIMEDIA_CAMERA_STOP_PREVIEW_OUTPUT_CALLBACK_STATIC_0100--------------");
       createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
-      if (isEmpty21(cameraSession)) {
+      if (isEmpty21(cameraSession!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_STOP_PREVIEW_OUTPUT_CALLBACK_STATIC_0100 previewOutput == null || undefined")
         expect().assertFail();
       } else {
         await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-        await cameraSession.commitConfig();
-        cameraSession.stop((err: BusinessError | null) => {
+        await cameraSession!.commitConfig();
+        cameraSession!.stop((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_STOP_PREVIEW_OUTPUT_CALLBACK_STATIC_0100 success");
           } else {
@@ -1425,7 +1426,7 @@ export default function cameraJSUnitOutput() {
             err.message);
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_STOP_PREVIEW_OUTPUT_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1443,14 +1444,14 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_START_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_START_STATIC_0100--------------");
-      if (isEmpty07(previewOutput)) {
+      if (isEmpty07(previewOutput!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_START_STATIC_0100 previewOutput == null || undefined")
         expect().assertFail();
       } else {
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_START_STATIC_0100 to operate");
         let count = 0;
-        previewOutput.onFrameStart((err: BusinessError | null) => {
+        previewOutput!.onFrameStart((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_START_STATIC_0100 success");
             count++;
@@ -1459,7 +1460,7 @@ export default function cameraJSUnitOutput() {
             err.message);
             expect().assertFail();
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
         await Utils.msSleep(1000);
@@ -1479,14 +1480,14 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_STATIC_0100--------------");
-      if (isEmpty07(previewOutput)) {
+      if (isEmpty07(previewOutput!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_STATIC_0100 previewOutput == null || undefined")
         expect().assertFail();
       } else {
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_STATIC_0100 to operate");
         let count = 0;
-        previewOutput.onFrameEnd((err: BusinessError | null) => {
+        previewOutput!.onFrameEnd((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             count++
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_STATIC_0100 success");
@@ -1495,7 +1496,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_STATIC_0100 FAILED: " +
             err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1513,13 +1514,13 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100--------------");
-      if (isEmpty07(previewOutput)) {
+      if (isEmpty07(previewOutput!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100 previewOutput == null || undefined")
         expect().assertFail();
       } else {
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100 to operate");
-        previewOutput.onError((err: BusinessError) => {
+        previewOutput!.onError((err: BusinessError) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100 success");
           } else {
@@ -1527,7 +1528,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100 FAILED: " +
             err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1546,12 +1547,12 @@ export default function cameraJSUnitOutput() {
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_MIRROR_SUPPORTED_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag,
         " --------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_MIRROR_SUPPORTED_PROMISE_STATIC_0200--------------");
-      if (isEmpty15(photoOutput)) {
+      if (isEmpty15(photoOutput!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_MIRROR_SUPPORTED_PROMISE_STATIC_0200 photoOutput == null || undefined")
         expect().assertFail();
       } else {
-        let isMirrorSupportedFlag = photoOutput.isMirrorSupported();
+        let isMirrorSupportedFlag = photoOutput!.isMirrorSupported();
         hilog.info(domain, tag, 'SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_IS_MIRROR_SUPPORTED_PROMISE_STATIC_0200 isMirrorSupportedFlag = ' +
           isMirrorSupportedFlag);
       }
@@ -1572,17 +1573,17 @@ export default function cameraJSUnitOutput() {
         " --------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_DEFAULT_PROMISE_STATIC_0100--------------");
       createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
       await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-      await cameraSession.commitConfig();
+      await cameraSession!.commitConfig();
       await Utils.msSleep(500);
-      await cameraSession.start();
+      await cameraSession!.start();
       hilog.info(domain, tag,
         `Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_DEFAULT_PROMISE_STATIC_0100 +${photoOutput}`)
-      if (isEmpty15(photoOutput)) {
+      if (isEmpty15(photoOutput!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_DEFAULT_PROMISE_STATIC_0100 photoOutput == null || undefined")
         expect().assertFail();
       } else {
-        photoOutput.capture().then(() => {
+        photoOutput!.capture().then(() => {
           hilog.info(domain, tag, 'SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_DEFAULT_PROMISE_STATIC_0100 success');
         }).catch((err: Error) => {
           hilog.info(domain, tag, 'SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_DEFAULT_PROMISE_STATIC_0100 failed :' + err);
@@ -1606,15 +1607,15 @@ export default function cameraJSUnitOutput() {
         " --------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_DEFAULT_CALLBACK_STATIC_0100--------------");
       createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
       await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-      await cameraSession.commitConfig();
+      await cameraSession!.commitConfig();
       await Utils.msSleep(500);
-      await cameraSession.start();
-      if (isEmpty15(photoOutput)) {
+      await cameraSession!.start();
+      if (isEmpty15(photoOutput!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_DEFAULT_CALLBACK_STATIC_0100 photoOutput == null || undefined")
         expect().assertFail();
       } else {
-        photoOutput.capture((err: BusinessError | null) => {
+        photoOutput!.capture((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_DEFAULT_CALLBACK_STATIC_0100 success");
           } else {
@@ -1623,7 +1624,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_DEFAULT_CALLBACK_STATIC_0100 ends here");
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1643,7 +1644,7 @@ export default function cameraJSUnitOutput() {
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag,
         " --------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_STATIC_0100--------------");
-      if (isEmpty15(photoOutput)) {
+      if (isEmpty15(photoOutput!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_STATIC_0100 photoOutput == null || undefined")
         expect().assertFail();
@@ -1662,8 +1663,8 @@ export default function cameraJSUnitOutput() {
         captureSetting.mirror);
     
         try {
-          await photoOutput.capture(captureSetting);
-        } catch (err: BusinessError) {
+          await photoOutput!.capture(captureSetting);
+        } catch (err) {
           hilog.info(domain, tag, "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_STATIC_0100 FAILED");
           hilog.info(domain, tag, "ERRORCODE: " + err.code);
         }
@@ -1686,15 +1687,15 @@ export default function cameraJSUnitOutput() {
           " --------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_STATIC_0100--------------");
         createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
         await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-        await cameraSession.commitConfig();
+        await cameraSession!.commitConfig();
         await Utils.msSleep(500);
-        await cameraSession.start();
-        if (isEmpty15(photoOutput)) {
+        await cameraSession!.start();
+        if (isEmpty15(photoOutput!)) {
           hilog.info(domain, tag,
             "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_STATIC_0100 photoOutput == null || undefined")
           expect().assertFail();
         } else {
-          photoOutput.capture(captureSetting, (err: BusinessError | null) => {
+          photoOutput!.capture(captureSetting, (err: BusinessError | null) => {
             if (!err || err.code == 0) {
               hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_STATIC_0100 success");
             } else {
@@ -1703,13 +1704,13 @@ export default function cameraJSUnitOutput() {
               err.message);
             }
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_STATIC_0100 ends here");
-            await Utils.msSleep(1000);
+            waitForCompletion(async () => {await Utils.msSleep(1000);})
             done();
           })
         }
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_STATIC_0100 ends here");
         done();
       }
@@ -1725,7 +1726,7 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_START_WITH_INFO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_START_WITH_INFO_STATIC_0100--------------");
-      if (isEmpty15(photoOutput)) {
+      if (isEmpty15(photoOutput!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_START_WITH_INFO_STATIC_0100 previewOutput == null || undefined")
         expect().assertFail();
@@ -1733,7 +1734,7 @@ export default function cameraJSUnitOutput() {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_START_WITH_INFO_STATIC_0100 to operate");
         let count = 0;
-        photoOutput.onCaptureStartWithInfo((err: BusinessError |null, data: cameraObj.CaptureStartInfo |undefined|undefined) => {
+        photoOutput!.onCaptureStartWithInfo((err: BusinessError |null, data: cameraObj.CaptureStartInfo |undefined|undefined) => {
           if (!err || err.code == 0) {
             expect((!isEmpty22(data!.captureId)) && (!isEmpty22(data!.time))).assertTrue();
             hilog.info(domain, tag,
@@ -1745,7 +1746,7 @@ export default function cameraJSUnitOutput() {
             err.message);
           }
         })
-        photoOutput.capture();
+        photoOutput!.capture();
       }
       await Utils.msSleep(1000);
       done();
@@ -1768,16 +1769,16 @@ export default function cameraJSUnitOutput() {
       createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
     
       // 打开监听
-      photoOutput.onCaptureReady((err: BusinessError | null) => {
+      photoOutput!.onCaptureReady((err: BusinessError | null) => {
         hilog.info(domain, tag, `photo output start listen on captureReady failed: ${err!.code}`);
       })
     
       // 关闭监听
       await Utils.msSleep(1000);
-      photoOutput.offCaptureReady((err: BusinessError | null) => {
+      photoOutput!.offCaptureReady((err: BusinessError | null) => {
         hilog.info(domain, tag, `photo output stop listen on captureReady failed: ${err!.code}`);
         expect(true).assertFalse()
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       hilog.info(domain, tag, `photo output stop listen on captureReady success`);
@@ -1795,14 +1796,14 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_STATIC_0100--------------");
-      if (isEmpty15(photoOutput)) {
+      if (isEmpty15(photoOutput!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_STATIC_0100 previewOutput == null || undefined")
         expect().assertFail();
       } else {
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_STATIC_0100 to operate");
         let count = 0;
-        photoOutput.onFrameShutter((err: BusinessError |null, data:cameraObj.FrameShutterInfo | undefined) => {
+        photoOutput!.onFrameShutter((err: BusinessError |null, data:cameraObj.FrameShutterInfo | undefined) => {
           if (!err || err.code == 0) {
             count++;
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_STATIC_0100 success");
@@ -1815,12 +1816,12 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_STATIC_0100 FAILED: " +
             err.message);
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
         await Utils.msSleep(1000);
         done();
-        photoOutput.capture();
+        photoOutput!.capture();
     
       }
       await Utils.msSleep(1000);
@@ -1837,14 +1838,14 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_END_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_END_STATIC_0100--------------");
-      if (isEmpty15(photoOutput)) {
+      if (isEmpty15(photoOutput!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_END_STATIC_0100 previewOutput == null || undefined")
         expect().assertFail();
       } else {
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_END_STATIC_0100 to operate");
         let count = 0;
-        photoOutput.onCaptureEnd((err: BusinessError |null, data:cameraObj.CaptureEndInfo | undefined) => {
+        photoOutput!.onCaptureEnd((err: BusinessError |null, data:cameraObj.CaptureEndInfo | undefined) => {
           if (!err || err.code == 0) {
             count++;
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_CAPTURE_END_STATIC_0100 success");
@@ -1860,7 +1861,7 @@ export default function cameraJSUnitOutput() {
         })
         await Utils.msSleep(1000);
         done();
-        photoOutput.capture();
+        photoOutput!.capture();
     
       }
       await Utils.msSleep(1000);
@@ -1877,13 +1878,13 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100--------------");
-      if (isEmpty15(photoOutput)) {
+      if (isEmpty15(photoOutput!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100 previewOutput == null || undefined")
         expect().assertFail();
       } else {
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100 to operate");
-        photoOutput.onError((err: BusinessError) => {
+        photoOutput!.onError((err: BusinessError) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100 success");
           } else {
@@ -1891,7 +1892,7 @@ export default function cameraJSUnitOutput() {
             err.message);
             expect().assertFail();
           }
-          await Utils.msSleep(1000);
+          waitForCompletion(async () => {await Utils.msSleep(1000);})
           done();
         })
       }
@@ -1917,18 +1918,18 @@ export default function cameraJSUnitOutput() {
         let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
         expect(isEmpty16(videoProfilesArray)).assertFalse();
         if (videoProfilesArray && videoSurfaceId) {
-          videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+          videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_START_PROMISE_STATIC_0100 start")
-          videoOutput.start();
+          videoOutput!.start();
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_START_PROMISE_STATIC_0100 end")
         } else {
           hilog.info(domain, tag,
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_START_PROMISE_STATIC_0100 createVideoOutput parse err`)
         }
-        videoOutput.release();
+        videoOutput!.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_START_PROMISE_STATIC_0100 error`)
       }
@@ -1953,18 +1954,18 @@ export default function cameraJSUnitOutput() {
         let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
         expect(isEmpty16(videoProfilesArray)).assertFalse();
         if (videoProfilesArray && videoSurfaceId) {
-          videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+          videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_PROMISE_STATIC_0100 start")
-          videoOutput.stop();
+          videoOutput!.stop();
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_PROMISE_STATIC_0100 end")
         } else {
           hilog.info(domain, tag,
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_PROMISE_STATIC_0100 createVideoOutput parse err`)
         }
-        videoOutput.release();
+        videoOutput!.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_PROMISE_STATIC_0100 error`);
         done();
@@ -1990,10 +1991,10 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_ESTIMATED_CAPTURE_DURATION_STATIC_0100 to operate");
     
       // 打开监听
-      photoOutput.onEstimatedCaptureDuration((err: BusinessError |null, data:double | undefined) => {
+      photoOutput!.onEstimatedCaptureDuration((err: BusinessError |null, data:double | undefined) => {
         hilog.info(domain, tag, `photo output start listen on estimatedCaptureDuration failed: ${err!.code}`);
         expect(true).assertFalse()
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       hilog.info(domain, tag, `photo output start listen on estimatedCaptureDuration success`);
@@ -2046,16 +2047,16 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_ESTIMATED_CAPTURE_DURATION_STATIC_0100 to operate");
     
       // 打开监听
-      photoOutput.onEstimatedCaptureDuration((err : BusinessError | null, data:double | undefined) => {
+      photoOutput!.onEstimatedCaptureDuration((err : BusinessError | null, data:double | undefined) => {
         hilog.info(domain, tag, `photo output start listen on estimatedCaptureDuration failed: ${err!.code}`);
       })
     
       // 关闭监听
       await Utils.msSleep(1000);
-      photoOutput.offEstimatedCaptureDuration((err: BusinessError | null, data: double | undefined) => {
+      photoOutput!.offEstimatedCaptureDuration((err: BusinessError | null, data: double | undefined) => {
         hilog.info(domain, tag, `photo output stop listen on estimatedCaptureDuration failed: ${err!.code}`);
         expect(true).assertFalse()
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       hilog.info(domain, tag, `photo output stop listen on estimatedCaptureDuration success`);
@@ -2107,8 +2108,8 @@ export default function cameraJSUnitOutput() {
         let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
         expect(isEmpty16(videoProfilesArray)).assertFalse();
         if (videoProfilesArray && videoSurfaceId) {
-          videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
-          videoOutput.start((err: BusinessError | null) => {
+          videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+          videoOutput!.start((err: BusinessError | null) => {
             if (!err || err.code == 0) {
               hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_START_CALLBACK_STATIC_0100 success");
             } else {
@@ -2124,7 +2125,7 @@ export default function cameraJSUnitOutput() {
         videoOutput!.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_START_CALLBACK_STATIC_0100 error`);
         done();
@@ -2149,8 +2150,8 @@ export default function cameraJSUnitOutput() {
         let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
         expect(isEmpty16(videoProfilesArray)).assertFalse();
         if (videoProfilesArray && videoSurfaceId) {
-          videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
-          videoOutput.stop((err: BusinessError | null) => {
+          videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+          videoOutput!.stop((err: BusinessError | null) => {
             if (!err || err.code == 0) {
               hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_CALLBACK_STATIC_0100 success");
             } else {
@@ -2164,10 +2165,10 @@ export default function cameraJSUnitOutput() {
           hilog.info(domain, tag,
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_CALLBACK_STATIC_0100 createVideoOutput parse err`)
         }
-        videoOutput.release();
+        videoOutput!.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_CALLBACK_STATIC_0100 error`)
       }
@@ -2193,14 +2194,14 @@ export default function cameraJSUnitOutput() {
     
       // 打开监听
       try {
-        photoOutput.onPhotoAvailable((error: BusinessError |null, photo: cameraObj.Photo | undefined) => {
+        photoOutput!.onPhotoAvailable((error: BusinessError |null, photo: cameraObj.Photo | undefined) => {
           console.info(`photo output on photoAvailable callback is called`);
           if (error != undefined && error!.code !== 0) {
             console.info('photo output start listen on photoAvailable failed: ' + error!.code);
             expect().assertFail();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_AVAILABLE_STATIC_0100 FAILED! ERRORCODE: " + err.code);
         expect().assertFail();
       }
@@ -2228,7 +2229,7 @@ export default function cameraJSUnitOutput() {
 
       // 打开监听
       try {
-        photoOutput.onCapturePhotoAvailable((CapturePhoto: cameraObj.CapturePhoto) => {
+        photoOutput!.onCapturePhotoAvailable((CapturePhoto: cameraObj.CapturePhoto) => {
           console.info(`photo output on photoAvailable callback is called for CapturePhoto`);
           if (!CapturePhoto || !CapturePhoto.main) {
             console.error(tag + ' received invalid CapturePhoto or missing main image');
@@ -2240,7 +2241,7 @@ export default function cameraJSUnitOutput() {
           expect(isEmpty25(mainImage)).assertFalse();
           CapturePhoto.release();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_AVAILABLE_STATIC_0200 FAILED! ERRORCODE: " + err.code);
         expect().assertFail();
       }
@@ -2268,8 +2269,8 @@ export default function cameraJSUnitOutput() {
         let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
         expect(isEmpty16(videoProfilesArray)).assertFalse();
         if (videoProfilesArray && videoSurfaceId) {
-          videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
-          videoOutput.onFrameStart((err: BusinessError | null) => {
+          videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+          videoOutput!.onFrameStart((err: BusinessError | null) => {
             if (!err || err.code == 0) {
               hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_START_STATIC_0100 success");
             } else {
@@ -2282,10 +2283,10 @@ export default function cameraJSUnitOutput() {
           hilog.info(domain, tag,
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_START_STATIC_0100 createVideoOutput parse err `)
         }
-        videoOutput.release();
+        videoOutput!.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_START_STATIC_0100 error`);
       }
@@ -2309,8 +2310,8 @@ export default function cameraJSUnitOutput() {
       let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
       expect(isEmpty16(videoProfilesArray)).assertFalse();
       if (videoProfilesArray && videoSurfaceId) {
-        videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
-        videoOutput.onFrameEnd((err: BusinessError | null) => {
+        videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+        videoOutput!.onFrameEnd((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_END_STATIC_0100 success");
           } else {
@@ -2323,7 +2324,7 @@ export default function cameraJSUnitOutput() {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_END_STATIC_0100 createVideoOutput parse err `)
       }
-      videoOutput.release();
+      videoOutput!.release();
       await Utils.msSleep(1000);
       done();
     })
@@ -2346,20 +2347,20 @@ export default function cameraJSUnitOutput() {
       console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_AVAILABLE_STATIC_0100 to operate");
     
       // 打开监听
-      photoOutput.onPhotoAvailable((error: BusinessError |null, photo: cameraObj.Photo | undefined) => {
+      photoOutput!.onPhotoAvailable((error: BusinessError |null, photo: cameraObj.Photo | undefined) => {
         console.info(`photo output on photoAvailable callback is called`);
       })
     
       // 关闭监听
       await Utils.msSleep(1000);
       try{
-        photoOutput.offPhotoAvailable((error: BusinessError | null, photo: cameraObj.Photo | undefined) => {
+        photoOutput!.offPhotoAvailable((error: BusinessError | null, photo: cameraObj.Photo | undefined) => {
           if (error != undefined && error!.code !== 0) {
             console.info(`photo output stop listen off photoAvailable failed: ${error.code}`);
             expect().assertFail();
           }
         })
-      } catch (err : BusinessError) {
+      } catch (err) {
         hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_AVAILABLE_STATIC_0100 FAILED! ERRORCODE: " + err.code);
       }
       console.info(`photo output stop listen on photoAvailable success`);
@@ -2385,14 +2386,14 @@ export default function cameraJSUnitOutput() {
       console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_AVAILABLE_STATIC_0200 to operate");
 
       // 打开监听
-      photoOutput.onCapturePhotoAvailable((CapturePhoto: cameraObj.CapturePhoto) => {
+      photoOutput!.onCapturePhotoAvailable((CapturePhoto: cameraObj.CapturePhoto) => {
         console.info(`photo output on photoAvailable callback is called for CapturePhoto`);
       })
 
       // 关闭监听
       await Utils.msSleep(1000);
       try{
-        photoOutput.offCapturePhotoAvailable((CapturePhoto: cameraObj.CapturePhoto) => {
+        photoOutput!.offCapturePhotoAvailable((CapturePhoto: cameraObj.CapturePhoto) => {
           console.info(`photo output on photoAvailable callback is called for CapturePhoto`);
           if (!CapturePhoto || !CapturePhoto.main) {
             console.error(tag + ' received invalid CapturePhoto or missing main image');
@@ -2404,7 +2405,7 @@ export default function cameraJSUnitOutput() {
           expect(isEmpty25(mainImage)).assertFalse();
           CapturePhoto.release();
         })
-      } catch (err : BusinessError) {
+      } catch (err) {
         hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_AVAILABLE_STATIC_0200 FAILED! ERRORCODE: " + err.code);
       }
       console.info(`photo output stop listen on photoAvailable for CapturePhoto success`);
@@ -2431,14 +2432,14 @@ export default function cameraJSUnitOutput() {
     
       // 打开监听
       try {
-        photoOutput.onPhotoAssetAvailable((error: BusinessError | null, photoAsset: photoAccessHelper.PhotoAsset | undefined) => {
+        photoOutput!.onPhotoAssetAvailable((error: BusinessError | null, photoAsset: photoAccessHelper.PhotoAsset | undefined) => {
           console.info('photo output start listen on photoAssetAvailable callback is called');
           if (error != undefined && error!.code !== 0) {
             console.info(`photo output start listen on photoAssetAvailable failed: ${error!.code}`);
             expect().assertFail();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.error(domain, tag, "ENTERING SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_ASSET_AVAILABLE_STATIC_0100 FAILED! ERRORCODE: " + err.code);
         expect().assertFail();
       }
@@ -2466,20 +2467,20 @@ export default function cameraJSUnitOutput() {
       console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_ASSET_AVAILABLE_STATIC_0100 to operate");
     
       // 打开监听
-      photoOutput.onPhotoAssetAvailable((error: BusinessError | null, photoAsset: photoAccessHelper.PhotoAsset | undefined) => {
+      photoOutput!.onPhotoAssetAvailable((error: BusinessError | null, photoAsset: photoAccessHelper.PhotoAsset | undefined) => {
         console.info(`photo output on photoAssetAvailable callback is called`);
       });
     
       // 关闭监听
       await Utils.msSleep(1000);
       try {
-        photoOutput.offPhotoAssetAvailable((error: BusinessError | null, photoAsset: photoAccessHelper.PhotoAsset | undefined) => {
+        photoOutput!.offPhotoAssetAvailable((error: BusinessError | null, photoAsset: photoAccessHelper.PhotoAsset | undefined) => {
           if (error != undefined && error!.code !== 0) {
             console.info(`photo output stop listen on photoAssetAvailable failed: ${error!.code}`);
             expect().assertFail();
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_ASSET_AVAILABLE_STATIC_0100 FAILED! ERRORCODE: " + err.code);
         expect().assertFail();
       }
@@ -2506,7 +2507,7 @@ export default function cameraJSUnitOutput() {
       createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
     
       // 先开启监听
-      photoOutput.onCaptureStartWithInfo((err: BusinessError | null, data: cameraObj.CaptureStartInfo | undefined) => {
+      photoOutput!.onCaptureStartWithInfo((err: BusinessError | null, data: cameraObj.CaptureStartInfo | undefined) => {
         hilog.info(domain, tag, `photo output error code: ${err!.code}`);
       })
     
@@ -2514,7 +2515,7 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag,
         "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_WITH_INFO_STATIC_0100 to operate");
       let count = 0;
-      photoOutput.offCaptureStartWithInfo((err: BusinessError | null, data: cameraObj.CaptureStartInfo | undefined) => {
+      photoOutput!.offCaptureStartWithInfo((err: BusinessError | null, data: cameraObj.CaptureStartInfo | undefined) => {
         if (!err || err.code == 0) {
           expect((!isEmpty22(data!.captureId)) && (!isEmpty22(data!.time))).assertTrue();
           hilog.info(domain, tag,
@@ -2529,7 +2530,7 @@ export default function cameraJSUnitOutput() {
       expect(1 == 1).assertTrue();
       hilog.info(domain, tag,
         "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_START_WITH_INFO_STATIC_0100 success");
-      photoOutput.capture();
+      photoOutput!.capture();
       await Utils.msSleep(1000);
       done();
     })
@@ -2552,13 +2553,13 @@ export default function cameraJSUnitOutput() {
       createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
     
       // 先开启监听
-      photoOutput.onFrameShutter((err: BusinessError | null, data: cameraObj.FrameShutterInfo | undefined) => {
+      photoOutput!.onFrameShutter((err: BusinessError | null, data: cameraObj.FrameShutterInfo | undefined) => {
         hilog.info(domain, tag, `photo output error code: ${err!.code}`);
       })
     
       hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_STATIC_0100 to operate");
       let count = 0;
-      photoOutput.offFrameShutter((err: BusinessError | null, data:cameraObj.FrameShutterInfo | undefined) => {
+      photoOutput!.offFrameShutter((err: BusinessError | null, data:cameraObj.FrameShutterInfo | undefined) => {
         if (!err || err.code == 0) {
           count++;
           hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_STATIC_0100 success");
@@ -2571,7 +2572,7 @@ export default function cameraJSUnitOutput() {
           hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_STATIC_0100 FAILED: " +
           err.message);
         }
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       expect(1 == 1).assertTrue();
@@ -2599,10 +2600,10 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_END_STATIC_0100 to operate");
     
       // 打开监听
-      photoOutput.onFrameShutterEnd((err: BusinessError | null, data: cameraObj.FrameShutterEndInfo | undefined) => {
+      photoOutput!.onFrameShutterEnd((err: BusinessError | null, data: cameraObj.FrameShutterEndInfo | undefined) => {
         hilog.info(domain, tag, `photo output start listen on frameShutterEnd failed: ${err!.code}`);
         expect(true).assertFalse()
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       hilog.info(domain, tag, `photo output start listen on frameShutterEnd success`);
@@ -2630,16 +2631,16 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_END_STATIC_0100 to operate");
     
       // 打开监听
-      photoOutput.onFrameShutterEnd((err: BusinessError | null, data: cameraObj.FrameShutterEndInfo | undefined) => {
+      photoOutput!.onFrameShutterEnd((err: BusinessError | null, data: cameraObj.FrameShutterEndInfo | undefined) => {
         hilog.info(domain, tag, `photo output start listen on frameShutterEnd failed: ${err!.code}`);
       })
     
       // 关闭监听
       await Utils.msSleep(1000);
-      photoOutput.offFrameShutterEnd((err: BusinessError | null, data: cameraObj.FrameShutterEndInfo | undefined) => {
+      photoOutput!.offFrameShutterEnd((err: BusinessError | null, data: cameraObj.FrameShutterEndInfo | undefined) => {
         hilog.info(domain, tag, `photo output stop listen on frameShutterEnd failed: ${err!.code}`);
         expect(true).assertFalse()
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       hilog.info(domain, tag, `photo output stop listen on frameShutterEnd success`);
@@ -2665,13 +2666,13 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_END_STATIC_0100 to operate");
     
       // 先打开监听
-      photoOutput.onCaptureEnd((err: BusinessError | null, data: cameraObj.CaptureEndInfo | undefined) => {
+      photoOutput!.onCaptureEnd((err: BusinessError | null, data: cameraObj.CaptureEndInfo | undefined) => {
         hilog.info(domain, tag, `photo output error code: ${err!.code}`);
       })
       await Utils.msSleep(1000)
     
       let count = 0;
-      photoOutput.offCaptureEnd((err: BusinessError | null, data: cameraObj.CaptureEndInfo | undefined) => {
+      photoOutput!.offCaptureEnd((err: BusinessError | null, data: cameraObj.CaptureEndInfo | undefined) => {
         if (!err || err.code == 0) {
           count++;
           hilog.info(domain, tag, "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_END_STATIC_0100, captureId = " +
@@ -2710,10 +2711,10 @@ export default function cameraJSUnitOutput() {
       hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_CAPTURE_END_STATIC_0100 to operate");
     
       // 打开监听
-      photoOutput.onCaptureReady((err: BusinessError | null) => {
+      photoOutput!.onCaptureReady((err: BusinessError | null) => {
         hilog.info(domain, tag, `photo output start listen on captureReady failed: ${err!.code}`);
         expect(true).assertFalse()
-        await Utils.msSleep(1000);
+        waitForCompletion(async () => {await Utils.msSleep(1000);})
         done();
       })
       hilog.info(domain, tag, `photo output start listen on captureReady success`);
@@ -2740,7 +2741,7 @@ export default function cameraJSUnitOutput() {
       createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
     
       // 先开启监听
-      photoOutput.onError((err: BusinessError) => {
+      photoOutput!.onError((err: BusinessError) => {
         hilog.info(domain, tag, `photo output error code: ${err.code}`);
       })
     
@@ -2748,7 +2749,7 @@ export default function cameraJSUnitOutput() {
       await Utils.msSleep(1000);
     
       // 关闭监听
-      photoOutput.offError((err: BusinessError) => {
+      photoOutput!.offError((err: BusinessError) => {
         hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_ERROR_STATIC_0100 FAILED: " +
         err.message);
         expect(1 == 1).assertFail();
@@ -2778,7 +2779,7 @@ export default function cameraJSUnitOutput() {
       createOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
     
       // 获取激活的配置
-      let activeProfile = photoOutput.getActiveProfile()
+      let activeProfile = photoOutput!.getActiveProfile()
       hilog.info(domain, tag, `activeProfile: ${JSON.stringify(activeProfile)}`)
     
       // 断言
@@ -2813,7 +2814,7 @@ export default function cameraJSUnitOutput() {
     
       // 开启动态图片功能
       try {
-        photoOutput.enableMovingPhoto(true)
+        photoOutput!.enableMovingPhoto(true)
         hilog.info(domain, tag, `photoOutput enableMovingPhoto success`)
       } catch (err) {
         hilog.info(domain, tag, `photoOutput enableMovingPhoto failed + ${JSON.stringify(err)}`)
@@ -2843,8 +2844,8 @@ export default function cameraJSUnitOutput() {
         let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
         expect(isEmpty16(videoProfilesArray)).assertFalse();
         if (videoProfilesArray && videoSurfaceId) {
-          videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
-          videoOutput.offFrameStart((err: BusinessError | null) => {
+          videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+          videoOutput!.offFrameStart((err: BusinessError | null) => {
             if (!err || err.code == 0) {
               hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_STATIC_0100 success");
             } else {
@@ -2857,10 +2858,10 @@ export default function cameraJSUnitOutput() {
           hilog.info(domain, tag,
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_STATIC_0100 createVideoOutput parse err `)
         }
-        videoOutput.release();
+        videoOutput!.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_STATIC_0100 error`);
       }
@@ -2885,8 +2886,8 @@ export default function cameraJSUnitOutput() {
       let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
       expect(isEmpty16(videoProfilesArray)).assertFalse();
       if (videoProfilesArray && videoSurfaceId) {
-        videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
-        videoOutput.offFrameEnd((err: BusinessError | null) => {
+        videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+        videoOutput!.offFrameEnd((err: BusinessError | null) => {
           if (!err || err.code == 0) {
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_END_STATIC_0100 success");
           } else {
@@ -2899,7 +2900,7 @@ export default function cameraJSUnitOutput() {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_END_STATIC_0100 createVideoOutput parse err `)
       }
-      videoOutput.release();
+      videoOutput!.release();
       await Utils.msSleep(1000);
       done();
     })
@@ -2923,15 +2924,15 @@ export default function cameraJSUnitOutput() {
       let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
       expect(isEmpty16(videoProfilesArray)).assertFalse();
       if (videoProfilesArray && videoSurfaceId) {
-        videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
-        let supportedFrameRatesArray = videoOutput.getSupportedFrameRates()
+        videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+        let supportedFrameRatesArray = videoOutput!.getSupportedFrameRates()
         expect(isEmpty23(supportedFrameRatesArray)).assertFalse();
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_STATIC_0100 success");
       } else {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_STATIC_0100 createVideoOutput parse err `)
       }
-      videoOutput.release();
+      videoOutput!.release();
       await Utils.msSleep(1000);
       done();
     })
@@ -2956,8 +2957,8 @@ export default function cameraJSUnitOutput() {
         let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
         expect(isEmpty16(videoProfilesArray)).assertFalse();
         if (videoProfilesArray && videoSurfaceId) {
-          videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
-          videoOutput.onError((err: BusinessError) => {
+          videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+          videoOutput!.onError((err: BusinessError) => {
             if (!err || err.code == 0) {
               hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_ERROR_STATIC_0100 success");
             } else {
@@ -2970,10 +2971,10 @@ export default function cameraJSUnitOutput() {
           hilog.info(domain, tag,
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_ERROR_STATIC_0100 createVideoOutput parse err `)
         }
-        videoOutput.release();
+        videoOutput!.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_ERROR_STATIC_0100 error`);
         done();
@@ -2995,7 +2996,7 @@ export default function cameraJSUnitOutput() {
       await startSession(0, cameraObj.SceneMode.NORMAL_VIDEO)
     
       // 获取支持的帧率范围
-      let supportedFrameRates = videoOutput.getSupportedFrameRates()
+      let supportedFrameRates = videoOutput!.getSupportedFrameRates()
       hilog.info(domain, tag, `supportedFrameRates length: ` + supportedFrameRates.length)
       expect(isEmpty23(supportedFrameRates)).assertFalse()
       done()
@@ -3016,7 +3017,7 @@ export default function cameraJSUnitOutput() {
       await startSession(0, cameraObj.SceneMode.NORMAL_VIDEO)
     
       // 获取支持的帧率范围
-      let supportedFrameRates = videoOutput.getSupportedFrameRates()
+      let supportedFrameRates = videoOutput!.getSupportedFrameRates()
       hilog.info(domain, tag, `supportedFrameRates length: ` + supportedFrameRates.length)
       if (supportedFrameRates.length == 0) {
         hilog.info(domain, tag, `  SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_ACTIVE_FRAME_RATE_STATIC_0100 supportedFrameRates is empty`)
@@ -3040,9 +3041,9 @@ export default function cameraJSUnitOutput() {
       }
       // 设置帧率范围
       try {
-        videoOutput.setFrameRate((supportedFrameRates[0].min + 1), supportedFrameRates[0].max);
+        videoOutput!.setFrameRate((supportedFrameRates[0].min + 1), supportedFrameRates[0].max);
         hilog.info(domain, tag, `videoOutput set FrameRate success`)
-      } catch(err:BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, `videoOutput set FrameRate failed`)
         expect(true).assertFalse();
       }
@@ -3064,14 +3065,14 @@ export default function cameraJSUnitOutput() {
       await startSession(0, cameraObj.SceneMode.NORMAL_VIDEO)
     
       // 获取支持的帧率范围
-      let supportedFrameRates: Array<cameraObj.FrameRateRange> = videoOutput.getSupportedFrameRates()
+      let supportedFrameRates: Array<cameraObj.FrameRateRange> = videoOutput!.getSupportedFrameRates()
       hilog.info(domain, tag, `supportedFrameRates length: ` + supportedFrameRates.length)
       if (supportedFrameRates.length == 0) {
         hilog.info(domain, tag, `  SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_ACTIVE_FRAME_RATE_STATIC_0100 supportedFrameRates is empty`)
         done();
       }
       let isFindResult = false;
-      let frameRateRangeSetValue: cameraObj.FrameRateRange;
+      let frameRateRangeSetValue: cameraObj.FrameRateRange | undefined;
       // 遍历支持的帧率范围
       for (let i: int = 0; i < supportedFrameRates.length; i++) {
         let item: cameraObj.FrameRateRange = supportedFrameRates[i];
@@ -3088,14 +3089,14 @@ export default function cameraJSUnitOutput() {
       }
       // 设置帧率范围
       try {
-        hilog.info(domain, tag, `  SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_ACTIVE_FRAME_RATE_STATIC_0100 set FrameRate: min = ${frameRateRangeSetValue.min + 1}, max = ${frameRateRangeSetValue.max}`)
-        videoOutput.setFrameRate((supportedFrameRates[0].min + 1), supportedFrameRates[0].max);
+        hilog.info(domain, tag, `  SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_ACTIVE_FRAME_RATE_STATIC_0100 set FrameRate: min = ${frameRateRangeSetValue!.min + 1}, max = ${frameRateRangeSetValue!.max}`)
+        videoOutput!.setFrameRate((supportedFrameRates[0].min + 1), supportedFrameRates[0].max);
         hilog.info(domain, tag, `videoOutput set FrameRate success`)
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `videoOutput set FrameRate failed + + ${JSON.stringify(err)}`)
       }
       // 获取激活的帧率范围
-      let activeFrameRate = videoOutput.getActiveFrameRate();
+      let activeFrameRate = videoOutput!.getActiveFrameRate();
       hilog.info(domain, tag, `videoOutput get FrameRate success:  + ${JSON.stringify(activeFrameRate)}`)
       expect(activeFrameRate.min == (supportedFrameRates[0].min + 1)).assertTrue()
       done()
@@ -3121,8 +3122,8 @@ export default function cameraJSUnitOutput() {
         let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
         expect(isEmpty16(videoProfilesArray)).assertFalse();
         if (videoProfilesArray && videoSurfaceId) {
-          videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
-          videoOutput.offError((err: BusinessError) => {
+          videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+          videoOutput!.offError((err: BusinessError) => {
             if (!err || err.code == 0) {
               hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_ERROR_STATIC_0100 success");
             } else {
@@ -3135,10 +3136,10 @@ export default function cameraJSUnitOutput() {
           hilog.info(domain, tag,
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_ERROR_STATIC_0100 createVideoOutput parse err `)
         }
-        videoOutput.release();
+        videoOutput!.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_ERROR_STATIC_0100 error`);
         done();
@@ -3164,8 +3165,8 @@ export default function cameraJSUnitOutput() {
         let videoProfilesArray = cameraOutputCap!.videoProfiles[0];
         expect(isEmpty16(videoProfilesArray)).assertFalse();
         if (videoProfilesArray && videoSurfaceId) {
-          videoOutput = cameraManager.createVideoOutput(videoProfilesArray, videoSurfaceId!);
-          photoOutput.release((err: BusinessError | null) => {
+          videoOutput = cameraManager!.createVideoOutput(videoProfilesArray, videoSurfaceId!);
+          photoOutput!.release((err: BusinessError | null) => {
             if (!err || err.code == 0) {
               hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_RELEASE_CALLBACK_STATIC_0100 success");
             } else {
@@ -3174,7 +3175,7 @@ export default function cameraJSUnitOutput() {
               err.message);
             }
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_RELEASE_CALLBACK_STATIC_0100 ends here");
-            await Utils.msSleep(1000);
+            waitForCompletion(async () => {await Utils.msSleep(1000);})
             done();
           })
         } else {
@@ -3183,7 +3184,7 @@ export default function cameraJSUnitOutput() {
         }
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_RELEASE_CALLBACK_STATIC_0100 error`);
       }
@@ -3200,19 +3201,19 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_ON_ERROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_ON_ERROR_STATIC_01000--------------");
-      if (isEmpty01(cameraManager)) {
+      if (isEmpty01(cameraManager!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_ON_ERROR_STATIC_0100 cameraManager == null || undefined");
         expect().assertFail();
       } else {
         try {
-          captureSession = cameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
-          captureSession.onError((error: BusinessError) => {
+          captureSession = cameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
+          captureSession!.onError((error: BusinessError) => {
             hilog.error(domain, tag, `Capture session error code: ${error.code}`);
           });
-          captureSession.offError();
+          captureSession!.offError();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           let error = err as BusinessError
           hilog.info(domain, tag,
             "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_ON_ERROR_STATIC_0100 FAILED!");
@@ -3237,23 +3238,23 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_ON_FOCUS_STATE_CHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, " --------------SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_ON_FOCUS_STATE_CHANGE_STATIC_0100--------------");
-      if (isEmpty01(cameraManager)) {
+      if (isEmpty01(cameraManager!)) {
         hilog.info(domain, tag,
           "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_ON_FOCUS_STATE_CHANGE_STATIC_0100 == null || undefined");
         expect().assertFail();
       } else {
         try {
-          captureSession = cameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
-          captureSession.onFocusStateChange( (error: BusinessError | null, focusState: cameraObj.FocusState | undefined) => {
+          captureSession = cameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
+          captureSession!.onFocusStateChange( (error: BusinessError | null, focusState: cameraObj.FocusState | undefined) => {
             if (error !== undefined && error!.code !== 0) {
               hilog.error(domain, tag, `Callback Error, errorCode: ${error!.code}`);
               return;
             }
             hilog.info(domain, tag, `Focus state: ${focusState}`);
           });
-          captureSession.offFocusStateChange();
+          captureSession!.offFocusStateChange();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           let error = err as BusinessError
           hilog.info(domain, tag,
             "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_ON_FOCUS_STATE_CHANGE_STATIC_0100 FAILED!");
@@ -3282,14 +3283,14 @@ export default function cameraJSUnitOutput() {
     
       createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
       await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
-      await cameraSession.commitConfig();
-      await cameraSession.start();
+      await cameraSession!.commitConfig();
+      await cameraSession!.start();
       console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_RELEASE_STATIC_0100 to operate");
     
       let result: boolean = false;
-      let photoTest: cameraObj.Photo;
+      let photoTest: cameraObj.Photo | undefined;
       try{
-        photoOutput.onPhotoAvailable((error: BusinessError | null, photo: cameraObj.Photo | undefined) => {
+        photoOutput!.onPhotoAvailable((error: BusinessError | null, photo: cameraObj.Photo | undefined) => {
           console.info('photo output on photoAssetAvailable callback is called');
           if (error !== undefined && error!.code !== 0) {
             console.info(`photo output start listen on photoAvailable failed: ${error!.code}`);
@@ -3303,13 +3304,13 @@ export default function cameraJSUnitOutput() {
         });
         if (result && photoTest != null && photoTest != undefined) {
           console.info('SUB_MULTIMEDIA_CAMERA_PHOTO_RELEASE_STATIC_0100 start to release photo');
-          await photoTest.release();
+          await photoTest!.release();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_RELEASE_STATIC_0100 error: " + err.code);
         expect().assertFail();
       }
-      await cameraSession.release();
+      await cameraSession!.release();
       done();
      });
 
@@ -3325,13 +3326,13 @@ export default function cameraJSUnitOutput() {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0100--------------");
       let appContext: Context = Hypium.get("Context") as Context;
       cameraManager = cameraObj.getCameraManager(appContext);
-      let camerasArray = cameraManager.getSupportedCameras();
-      if (isEmpty01(cameraManager)) {
+      let camerasArray = cameraManager!.getSupportedCameras();
+      if (isEmpty01(cameraManager!)) {
           console.info(tag + "mCameraManager == null || undefined");
           expect().assertFail();
       }
-      let captureSession = cameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
-      if (isEmpty21(captureSession)) {
+      let captureSession = cameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+      if (isEmpty21(captureSession!)) {
           console.info(tag + "captureSession == null || undefined");
           expect().assertFail();
       }
@@ -3341,38 +3342,38 @@ export default function cameraJSUnitOutput() {
           console.info(tag + "Entering cameraOutputCap == null || undefined");
           expect().assertFail();
       }
-      let cameraInput = cameraManager.createCameraInput(camerasArray[0]);
-      if (isEmpty04(cameraInput)) {
+      let cameraInput = cameraManager!.createCameraInput(camerasArray[0]);
+      if (isEmpty04(cameraInput!)) {
           console.info(tag + "Entering cameraInput == null || undefined");
           expect().assertFail();
       }
       let previewProfiles: cameraObj.Profile = cameraOutputCap?.previewProfiles[0] as cameraObj.Profile;
       expect(isEmpty16(previewProfiles)).assertFalse();
-      previewOutput = cameraManager.createPreviewOutput(previewProfiles, surfaceId)
-      await cameraInput.open();
-      captureSession.beginConfig();
-      if (!isEmpty04(cameraInput)) {
+      previewOutput = cameraManager!.createPreviewOutput(previewProfiles, surfaceId)
+      await cameraInput!.open();
+      captureSession!.beginConfig();
+      if (!isEmpty04(cameraInput!)) {
           console.info(tag + "Start to addInput");
-          captureSession.addInput(cameraInput);
+          captureSession!.addInput(cameraInput!);
       }
-      if (!isEmpty07(previewOutput)) {
+      if (!isEmpty07(previewOutput!)) {
           console.info(tag + "Start to addOutput previewOutput");
-          captureSession.addOutput(previewOutput);
+          captureSession!.addOutput(previewOutput!);
       }
-      await captureSession.commitConfig();
+      await captureSession!.commitConfig();
       try {
         // 获取支持的帧率范围
-        let supportedFrameRates = previewOutput.getSupportedFrameRates()
+        let supportedFrameRates = previewOutput!.getSupportedFrameRates()
         console.info(`supportedFrameRates:  + ${JSON.stringify(supportedFrameRates)}`)
         await Utils.msSleep(1000);
 
-        previewOutput.setFrameRate(supportedFrameRates[0].min + 1, supportedFrameRates[0].max - 1);
+        previewOutput!.setFrameRate(supportedFrameRates[0].min + 1, supportedFrameRates[0].max - 1);
         console.info(`videoOutput set FrameRate success`)
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(`videoOutput set FrameRate failed: ` + err.code)
         expect().assertFail();
       }
-      await captureSession.release();
+      await captureSession!.release();
       console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0100 PASS");
       await Utils.msSleep(1000);
       done();
@@ -3391,13 +3392,13 @@ export default function cameraJSUnitOutput() {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0200--------------");
       let appContext: Context = Hypium.get("Context") as Context;
       cameraManager = cameraObj.getCameraManager(appContext);
-      let camerasArray = cameraManager.getSupportedCameras();
-      if (isEmpty01(cameraManager)) {
+      let camerasArray = cameraManager!.getSupportedCameras();
+      if (isEmpty01(cameraManager!)) {
           console.info(tag + "mCameraManager == null || undefined");
           expect().assertFail();
       }
-      let captureSession = cameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
-      if (isEmpty21(captureSession)) {
+      let captureSession = cameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+      if (isEmpty21(captureSession!)) {
           console.info(tag + "captureSession == null || undefined");
           expect().assertFail();
       }
@@ -3407,39 +3408,40 @@ export default function cameraJSUnitOutput() {
           console.info(tag + "Entering cameraOutputCap == null || undefined");
           expect().assertFail();
       }
-      let cameraInput = cameraManager.createCameraInput(camerasArray[0]);
-      if (isEmpty04(cameraInput)) {
+      let cameraInput = cameraManager!.createCameraInput(camerasArray[0]);
+      if (isEmpty04(cameraInput!)) {
           console.info(tag + "Entering cameraInput == null || undefined");
           expect().assertFail();
       }
       let previewProfiles: cameraObj.Profile = cameraOutputCap?.previewProfiles[0] as cameraObj.Profile;
       expect(isEmpty16(previewProfiles)).assertFalse();
-      previewOutput = cameraManager.createPreviewOutput(previewProfiles, surfaceId)
-      await cameraInput.open();
-      captureSession.beginConfig();
-      if (!isEmpty04(cameraInput)) {
+      previewOutput = cameraManager!.createPreviewOutput(previewProfiles, surfaceId)
+      await cameraInput!.open();
+      captureSession!.beginConfig();
+      if (!isEmpty04(cameraInput!)) {
           console.info(tag + "Start to addInput");
-          captureSession.addInput(cameraInput);
+          captureSession!.addInput(cameraInput!);
       }
-      if (!isEmpty07(previewOutput)) {
+      if (!isEmpty07(previewOutput!)) {
           console.info(tag + "Start to addOutput previewOutput");
-          captureSession.addOutput(previewOutput);
+          captureSession!.addOutput(previewOutput!);
       }
-      await captureSession.commitConfig();
+      await captureSession!.commitConfig();
       try {
         // 获取支持的帧率范围
-        let supportedFrameRates = previewOutput.getSupportedFrameRates()
+        let supportedFrameRates = previewOutput!.getSupportedFrameRates()
         console.info(`supportedFrameRates:  + ${JSON.stringify(supportedFrameRates)}`)
         await Utils.msSleep(1000);
 
-        previewOutput.setFrameRate(-1, -1);
+        previewOutput!.setFrameRate(-1, -1);
         console.info(`previewOutput set FrameRate success`)
         expect(true).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`previewOutput set FrameRate failed: ` + err.code)
         expect(err.code == cameraObj.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
       }
-      await captureSession.release();
+      await captureSession!.release();
       console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0200 PASS");
       await Utils.msSleep(1000);
       done();
@@ -3463,46 +3465,47 @@ export default function cameraJSUnitOutput() {
       await getVideoSurface();
       console.info('videoSurfaceId: ' + videoSurfaceId)
       // 创建2个VideoOutput对象
-      let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_VIDEO);
+      let cameraOutputCap = cameraManager!.getSupportedOutputCapability(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_VIDEO);
       let videoProfileValid = cameraOutputCap.videoProfiles.find((videoProfile: cameraObj.Profile) => {
         return Math.abs((cameraOutputCap.previewProfiles[0].size.width / cameraOutputCap.previewProfiles[0].size.height) - (videoProfile.size.width / videoProfile.size.height)) < Number.EPSILON;
       });
-      videoOutput = cameraManager.createVideoOutput(videoProfileValid!, videoSurfaceId!);
+      videoOutput = cameraManager!.createVideoOutput(videoProfileValid!, videoSurfaceId!);
       //创建会话
       createPhotoSession(cameraObj.SceneMode.NORMAL_VIDEO)
       // 配置会话
       await createInput(0);
       if (cameraInput != null && cameraInput != undefined) {
-        cameraSession.addInput(cameraInput);
+        cameraSession!.addInput(cameraInput!);
       }
       if (previewOutput != null && previewOutput != undefined) {
-        cameraSession.addOutput(previewOutput);
+        cameraSession!.addOutput(previewOutput!);
       }
       if (videoOutput != null && videoOutput != undefined) {
-        cameraSession.addOutput(videoOutput);
+        cameraSession!.addOutput(videoOutput!);
       }
       try {
-        await cameraSession.commitConfig();
-      } catch (err: BusinessError) {
+        await cameraSession!.commitConfig();
+      } catch (err) {
         console.info("Skipping As The Device is Not Supported");
         done()
       }
-      cameraSession.start();
+      cameraSession!.start();
 
       // 获取支持的帧率范围
-      let supportedFrameRates = previewOutput.getSupportedFrameRates()
+      let supportedFrameRates = previewOutput!.getSupportedFrameRates()
       console.info(`supportedFrameRates:  + ${JSON.stringify(supportedFrameRates)}`)
       await Utils.msSleep(1000);
 
       try {
-        previewOutput.setFrameRate(supportedFrameRates[0].min + 1, supportedFrameRates[0].max - 1);
+        previewOutput!.setFrameRate(supportedFrameRates[0].min + 1, supportedFrameRates[0].max - 1);
         console.info(`previewOutput set FrameRate success`)
         expect(true).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`previewOutput set FrameRate failed: ` + err.code)
         expect(err.code == cameraObj.CameraErrorCode.UNRESOLVED_CONFLICTS_WITH_CURRENT_CONFIGURATIONS).assertTrue();
       }
-      await cameraSession.release();
+      await cameraSession!.release();
       console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_STATIC_0300 PASS");
       await Utils.msSleep(1000);
       done();
@@ -3526,12 +3529,63 @@ export default function cameraJSUnitOutput() {
 
       // 获取激活的配置
       try {
-        let activeProfile = previewOutput.getActiveProfile()
+        let activeProfile = previewOutput!.getActiveProfile()
         console.info(`get activeProfile success: ${JSON.stringify(activeProfile)}`)
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(`get activeProfile failed: ${JSON.stringify(err.code)}`)
         expect().assertFail()
       }
+      await Utils.msSleep(1000);
+      done();
+    })
+
+    /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100
+      * @tc.number SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100
+      * @tc.desc   preview output addDeferredSurface api when session is not config.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100--------------");
+      let appContext: Context = Hypium.get("Context") as Context;
+      cameraManager = cameraObj.getCameraManager(appContext);
+      let camerasArray = cameraManager!.getSupportedCameras();
+      if (isEmpty01(cameraManager!)) {
+          console.info(tag + "mCameraManager == null || undefined");
+          expect().assertFail();
+      }
+      let captureSession = cameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+      if (isEmpty21(captureSession)) {
+          console.info(tag + "captureSession == null || undefined");
+          expect().assertFail();
+      }
+      console.info("SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100 camera:" + camerasArray[0].cameraId);
+      let cameraOutputCap = getSupportedOutputCapabilityInPromise(camerasArray[0], cameraObj.SceneMode.NORMAL_PHOTO);
+      if (isEmpty09(cameraOutputCap)) {
+          console.info(tag + "Entering cameraOutputCap == null || undefined");
+          expect().assertFail();
+      }
+      let cameraInput = cameraManager!.createCameraInput(camerasArray[0]);
+      if (isEmpty04(cameraInput)) {
+          console.info(tag + "Entering cameraInput == null || undefined");
+          expect().assertFail();
+      }
+      let previewProfiles: cameraObj.Profile = cameraOutputCap?.previewProfiles[0] as cameraObj.Profile;
+      expect(isEmpty16(previewProfiles)).assertFalse();
+      previewOutput = cameraManager!.createDeferredPreviewOutput(previewProfiles);
+      await cameraInput.open();
+
+      try {
+        previewOutput!.addDeferredSurface(surfaceId);
+        console.info("addDeferredSurface success");
+      } catch (err) {
+        console.info(`addDeferredSurface failed: ${JSON.stringify(err.code)}`);
+        expect(err.code === cameraObj.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+      }
+
+      console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_STATIC_0100 PASS");
       await Utils.msSleep(1000);
       done();
     })

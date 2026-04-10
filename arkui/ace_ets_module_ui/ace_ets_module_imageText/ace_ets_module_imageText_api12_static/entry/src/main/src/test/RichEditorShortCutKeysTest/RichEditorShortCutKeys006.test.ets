@@ -50,7 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function RichEditorShortCutKeys006() {
   describe('RichEditorShortCutKeys006', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorShortCutKeys006 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });

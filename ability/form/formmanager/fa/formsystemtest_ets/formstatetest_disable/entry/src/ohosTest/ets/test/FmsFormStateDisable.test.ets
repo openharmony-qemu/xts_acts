@@ -178,6 +178,7 @@ export default function test() {
 
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.log(`FMS_disableFormsUpdate_0300 featureAbility.startAbility start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -227,6 +228,7 @@ export default function test() {
             }
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.log(`FMS_disableFormsUpdate_0400 featureAbility.startAbility start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -276,6 +278,7 @@ export default function test() {
             }
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.log(`FMS_disableFormsUpdate_0500 featureAbility.startAbility start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -332,6 +335,7 @@ export default function test() {
                 console.info("====>FMS_disableFormsUpdate_0600 onAcquiredCallback data:====>" + JSON.stringify(data));
                 hostFormId = data.data;
 
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostg",
@@ -363,6 +367,7 @@ export default function test() {
             commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallBack);
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.info(`FMS_disableFormsUpdate_0600 featureAbility.startAbility start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostf",
@@ -414,6 +419,7 @@ export default function test() {
                 console.info("====>FMS_disableFormsUpdate_0700 onDeleteCallback data:====>" + JSON.stringify(data));
                 hostFormId = data.parameters?.formId;
 
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostg",
@@ -448,6 +454,7 @@ export default function test() {
             commonEvent.subscribe(subscriberDel, onDeleteCallback);
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.info(`FMS_disableFormsUpdate_0700 featureAbility.startAbility start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -499,6 +506,7 @@ export default function test() {
 
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.log(`FMS_disableFormsUpdate_0800 featureAbility.startAbility start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -559,6 +567,7 @@ export default function test() {
                 subscriberDel = await commonEvent.createSubscriber(onDeletedFormEvent);
                 commonEvent.subscribe(subscriberDel, OnDisableCallBack);
                 console.log(`FMS_disableFormsUpdate_0900 featureAbility.startAbility start`);
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -589,6 +598,7 @@ export default function test() {
 
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.log(`FMS_disableFormsUpdate_0900 featureAbility.startAbility start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -677,6 +687,7 @@ export default function test() {
                 subscriberDel = await commonEvent.createSubscriber(onDeletedFormEvent);
                 commonEvent.subscribe(subscriberDel, onFormDisableCallBack);
                 console.log(`FMS_disableFormsUpdate_1000 featureAbility.startAbility notify disable start`);
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostg",
@@ -707,6 +718,7 @@ export default function test() {
 
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.log(`FMS_disableFormsUpdate_1000 featureAbility.startAbility servicea start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -817,6 +829,7 @@ export default function test() {
                 subscriberOnState = await commonEvent.createSubscriber(onStateFormEvent);
                 commonEvent.subscribe(subscriberOnState, secondOnStateCallBack);
                 console.log(`FMS_disableFormsUpdate_1100 featureAbility.startAbility notify disable start`);
+                await sleepTime(3000);
                 await featureAbility.startAbility({
                     want: {
                         bundleName: "com.ohos.st.formsystemhostg",
@@ -849,6 +862,7 @@ export default function test() {
 
             commonEvent.subscribe(subscriberOnState, onStateCallBack);
             console.log(`FMS_disableFormsUpdate_1100 featureAbility.startAbility servicea start`);
+            await sleepTime(3000);
             await featureAbility.startAbility({
                 want: {
                     bundleName: "com.ohos.st.formsystemhostg",
@@ -909,4 +923,15 @@ const unsubscribeOnEnableCallback = (tcNumber: string) => {
 
 const unsubscribeSupplyCallback = (tcNumber: string) => {
     console.info(`====>${tcNumber} unSubscribeSupplyCallback====>`);
+}
+
+function sleepTime(time: number): Promise<void> {
+    return new Promise((resolve, reject) => {
+        try{
+            setTimeout(resolve,time);
+        } catch(e) {
+            console.error(`sleepTime error: ${JSON.stringify(e)}`);
+			reject();
+        }
+    });
 }

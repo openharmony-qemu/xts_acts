@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function EnableHapticFeedbackTest() {
   describe('EnableHapticFeedbackTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("EnableHapticFeedbackTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api13.static", "EntryAbility")

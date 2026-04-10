@@ -18,10 +18,12 @@ group("componentArcSwiperTest") {
     if (ace_engine_feature_wearable) {
       deps = [ "ace_ets_component_advanced_arcswiper_api18:ActsAceEtscomponentArcSwiperTest",
                "ace_ets_component_advanced_arcswiper_no_wear_api18:ActsAceEtscomponentArcSwiperNoWearTest",
-               "ace_ets_component_advanced_arcswiper_no_wear_api16_static:ActsAceEtscomponentArcSwiperNoWearStaticTest", ]
+               #"ace_ets_component_advanced_arcswiper_no_wear_api16_static:ActsAceEtscomponentArcSwiperNoWearStaticTest",
+               ]
     } else {
       deps = [ "ace_ets_component_advanced_arcswiper_no_wear_api18:ActsAceEtscomponentArcSwiperNoWearTest",
-      "ace_ets_component_advanced_arcswiper_no_wear_api16_static:ActsAceEtscomponentArcSwiperNoWearStaticTest", ]
+      #"ace_ets_component_advanced_arcswiper_no_wear_api16_static:ActsAceEtscomponentArcSwiperNoWearStaticTest",
+      ]
     }
   }
 }

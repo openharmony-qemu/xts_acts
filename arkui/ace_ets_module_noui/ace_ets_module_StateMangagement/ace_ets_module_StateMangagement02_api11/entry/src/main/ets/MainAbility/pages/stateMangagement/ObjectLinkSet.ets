@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -88,7 +88,7 @@ struct ObjectLinkSetNestedChild {
             this.mySet.delete(0)
           })
 
-        ForEach(Array.from(this.mySet.entries()), (item: [number, string]) => {
+        ForEach(Array.from(this.mySet.entries()), (item: [number, number]) => {
           Text(`${item}`).height('5%')
             .fontSize(9)
             .id(`ObtLinkSet_value_${item[0]}`)

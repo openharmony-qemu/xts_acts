@@ -16,7 +16,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import entry from 'libentry.so';
 export default function ffrtTest() {
-  describe('ActsFfrtTest', () => {
+  describe('ActsFfrtTestAdapt001', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -1543,6 +1543,20 @@ export default function ffrtTest() {
     it('ffrtQueueQosCheck', Level.LEVEL0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       let flag = entry.ffrtQueueQosCheck();
+      expect(flag).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   conditionVariableTest005
+     * @tc.number SUB_KERNEL_DISPATCH_entry_10900
+     * @tc.desc   Test ffrt condition variable api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('conditionVariableTest005', Level.LEVEL0, () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      let flag = entry.conditionVariableTest005();
       expect(flag).assertEqual(0);
     })
   })

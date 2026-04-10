@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function listItem_Visibility() {
 
   describe('ListItem_VisibilityTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_VisibilityTest beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -340,14 +340,14 @@ it('testListItemVisibilityFirstVisibile_static', Level.LEVEL0, async (done: () =
 	  expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(UIContext.resolveUIContext()!.vp2px(350))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(UIContext.resolveUIContext()!.vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
+      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top )).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top)).toInt());
       await CommonFunc.sleep(2000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest44');
       expect(locationText4Again.bottom).assertEqual(locationList.bottom);
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
+      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top )).toInt());

@@ -30,11 +30,11 @@ import {
   StickyStyle,
   ListItemGroupOptions
 } from '@ohos.arkui.component';
-import { Link } from '@ohos.arkui.stateManagement';
+import { Link,PropRef } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct ListItemGroupView {
-  private _position: Position = { x: 0, y:0} as Position;
+  @PropRef _position!: Position;
   private componentKey: string = '';
   private parentWidth: number = 0;
   private parentHeight: number = 0;

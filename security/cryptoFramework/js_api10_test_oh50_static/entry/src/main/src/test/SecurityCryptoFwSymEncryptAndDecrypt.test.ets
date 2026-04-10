@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -73,7 +73,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             }
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -119,7 +119,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             }
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -165,7 +165,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             }
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -211,7 +211,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             }
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -257,7 +257,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             }
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -303,7 +303,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             }
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -349,7 +349,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             }
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -402,7 +402,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             }
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -455,7 +455,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             }
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -480,9 +480,9 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let encAlgName: string = algName + "|" + padding;
         syncSymEncAndDecUtils.encryptDecryptAsymMessageSync(encAlgName, keyPair, data, true);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -512,7 +512,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -539,9 +539,9 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let encAlgName: string = `${algName}|${padding}|${mdName}|${maskName}`;
           syncSymEncAndDecUtils.encryptDecryptAsymOAaepMessageSync(encAlgName, keyPair, data, true);
           expect(null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -573,7 +573,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -607,7 +607,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -641,7 +641,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -675,7 +675,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -709,7 +709,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -743,7 +743,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -777,7 +777,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -811,7 +811,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -845,7 +845,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -870,9 +870,9 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let encAlgName: string = algName + "|" + padding;
         syncSymEncAndDecUtils.encryptDecryptAsymMessageSync(encAlgName, keyPair, data, true);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -890,15 +890,15 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let algName: string = "SM4_128";
         let symKey: cryptoFramework.SymKey = syncSymEncAndDecUtils.createSymKeySync(algName);
         let padding: string = "PKCS7";
-        let encAlgName: string = algName + "|XTS|" + padding;
+        let encAlgName: string = algName + "|XTSS|" + padding;
         let cipher = cryptoFramework.createCipher(encAlgName);
         let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         let paramSpec: cryptoFramework.IvParamsSpec = syncSymEncAndDecUtils.genIvParamsSpec(dataIv);
         cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(801);
+        expect((error as BusinessError).code).assertEqual(801);
       }
       done();
     });
@@ -920,9 +920,9 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let cipher = cryptoFramework.createCipher(encAlgName);
         cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, keyPair.priKey, null)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -947,9 +947,9 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let cipher = cryptoFramework.createCipher(algName);
         cipher.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, keyPair.pubKey, null);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -970,9 +970,9 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let cipher = cryptoFramework.createCipher(encAlgName);
         cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, keySym, null);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -994,9 +994,9 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, keyPair.pubKey, null);
         cipher.doFinalSync(null);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1018,9 +1018,9 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, keyPair.pubKey, null);
         cipher.doFinalSync(null);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1102,7 +1102,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         }
         let ret: boolean = commonUtils.compareDataBlob({data: cipherText1}, {data: cipherText1});
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1164,7 +1164,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let cipherPlainText2: cryptoFramework.DataBlob|null = decCipher2.doFinalSync({data: cipherText2});
         let ret: boolean = commonUtils.compareDataBlob(cipherPlainText1, cipherPlainText2);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1194,7 +1194,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertNull();
       }
@@ -1287,7 +1287,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         }
         let ret: boolean = commonUtils.compareDataBlob({data: decText1}, {data: decText2});
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1327,7 +1327,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let cipherPlainText2: cryptoFramework.DataBlob|null = decCipher2.doFinalSync(cipherData2.data);
         let ret: boolean = commonUtils.compareDataBlob(cipherPlainText1, cipherPlainText2);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1367,7 +1367,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let cipherPlainText2: cryptoFramework.DataBlob|null = decCipher2.doFinalSync(cipherData2.data);
         let ret: boolean = commonUtils.compareDataBlob(cipherPlainText1, cipherPlainText2);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1404,7 +1404,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         expect(cipherPlainText2).assertNull();
         let ret: boolean = commonUtils.compareDataBlob(authTag1.authTag, authTag2.authTag);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1439,13 +1439,13 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         try {
           await cipher1.doFinal(data);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           expect(err.code).assertEqual(17630001)
         }
         try {
           await cipher1.doFinal(null);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           expect(err.code).assertEqual(401)
         }
         let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
@@ -1459,7 +1459,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let ret: boolean = commonUtils.compareDataBlob(cipherData, cipherData2);
         expect(ret).assertTrue();
         expect(authTag.byteLength).assertEqual(16);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1490,10 +1490,10 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         try {
           cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec)
           expect(null).assertFail();
-        } catch (error: BusinessError) {
-          expect(error.code).assertEqual(401);
+        } catch (error) {
+          expect((error as BusinessError).code).assertEqual(401);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1534,7 +1534,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let plainText = await cipher2.doFinal(cipherData);
         let ret: boolean = commonUtils.compareDataBlob(data, plainText);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1576,7 +1576,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let plainText = await cipher2.doFinal(cipherData);
         let ret: boolean = commonUtils.compareDataBlob(data, plainText);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1599,15 +1599,15 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let cipher1 : cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         try {
           cipher1.updateSync(data);
-        } catch (error: BusinessError) {
-          expect(error.code).assertEqual(401)
+        } catch (error) {
+          expect((error as BusinessError).code).assertEqual(401)
         }
         try {
           cipher1.doFinalSync(data);
-        } catch (error: BusinessError) {
-          expect(error.code).assertEqual(401)
+        } catch (error) {
+          expect((error as BusinessError).code).assertEqual(401)
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1649,7 +1649,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           ret = ret && commonUtils.compareDataBlob(authTag, {data: new Uint8Array(vector.authTag)});
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1691,7 +1691,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           ret = ret && commonUtils.compareDataBlob(authTag, {data: new Uint8Array(vector.authTag)});
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1750,7 +1750,188 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         expect(noData).assertNull();
         let ret = commonUtils.compareDataBlob({data: plainText1}, data)
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2700
+     * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2700
+     * @tc.desc   algorithm is BF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "Blowfish";
+        let encAlgName: string = "Blowfish|ECB|PKCS7"
+        let dataLen: int = 16;
+        for (let keyLen = 4; keyLen < 33; keyLen += 4) { // 密钥步长4字节
+          let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen.toInt());
+          let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
+          let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyData);
+          let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+          cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, null);
+          let cipherData: cryptoFramework.DataBlob|null = await cipher1.doFinal(data);
+          let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+          cipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, null);
+          let plainText: cryptoFramework.DataBlob|null = await cipher2.doFinal(cipherData);
+          let ret: boolean = commonUtils.compareDataBlob(data, plainText);
+          expect(ret).assertTrue();
+        }
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2800
+     * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2800
+     * @tc.desc   algorithm is BF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "Blowfish";
+        let encAlgName: string = "Blowfish|ECB|PKCS5"
+        let dataLen: int = 19;
+        for (let keyLen = 4; keyLen < 33; keyLen += 4) { // 密钥步长4字节
+          let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen.toInt());
+          let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
+          let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyData);
+          let getKeyLen: int = symKey.getKeySize();
+          expect(getKeyLen).assertEqual(keyLen.toInt() * 8);
+          let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+          cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, null);
+          let cipherData: cryptoFramework.DataBlob|null = cipher1.doFinalSync(data);
+          let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+          cipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, null);
+          let plainText: cryptoFramework.DataBlob|null = cipher2.doFinalSync(cipherData);
+          let ret: boolean = commonUtils.compareDataBlob(data, plainText);
+          expect(ret).assertTrue();
+        }
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2900
+     * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2900
+     * @tc.desc   algorithm is BF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "Blowfish";
+        let encAlgName: string = "Blowfish|ECB|NoPadding"
+        let dataLen: int = 16;
+        for (let keyLen = 4; keyLen < 33; keyLen += 4) { // 密钥步长4字节
+          let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen.toInt());
+          let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
+          let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyData);
+          let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+          cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, null);
+          let cipherData: cryptoFramework.DataBlob|null = cipher1.doFinalSync(data);
+          let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+          cipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, null);
+          let plainText: cryptoFramework.DataBlob|null = cipher2.doFinalSync(cipherData);
+          let ret: boolean = commonUtils.compareDataBlob(data, plainText);
+          expect(ret).assertTrue();
+        }
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_3000
+     * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_3000
+     * @tc.desc   algorithm is BF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let dataLen: int = 16;
+        let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0];
+        let paramSpec: cryptoFramework.IvParamsSpec = syncSymEncAndDecUtils.genIvParamsSpec(dataIv);
+        for (let index = 0; index < syncSymEncAndDecUtils.WEAK_SYM_CIPHER.length; index++) {
+          for (let keyLen = syncSymEncAndDecUtils.WEAK_KEYLEN_CIPHER[index][0];
+            keyLen < syncSymEncAndDecUtils.WEAK_KEYLEN_CIPHER[index][1];
+            keyLen += syncSymEncAndDecUtils.WEAK_KEYLEN_CIPHER[index][2]) {
+            let algName: string = syncSymEncAndDecUtils.WEAK_SYM_CIPHER[index];
+            let mode: string = syncSymEncAndDecUtils.WEAK_MODE_CIPHER[index];
+            let encAlgName: string = algName + "|" + mode + "|NoPadding";
+            let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen.toInt());
+            let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
+            let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyData);
+            let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+            cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
+            let cipherData: cryptoFramework.DataBlob|null = cipher1.doFinalSync(data);
+            let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+            cipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
+            let plainText: cryptoFramework.DataBlob|null = cipher2.doFinalSync(cipherData);
+            let ret: boolean = commonUtils.compareDataBlob(data, plainText);
+            expect(ret).assertTrue();
+          }
+        }
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_3100
+     * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_3100
+     * @tc.desc   algorithm is BF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let dataLen: int = 16;
+        let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0];
+        let paramSpec: cryptoFramework.IvParamsSpec = syncSymEncAndDecUtils.genIvParamsSpec(dataIv);
+        for (let index = 0; index < syncSymEncAndDecUtils.WEAK_SYM_CIPHER.length; index++) {
+          for (let keyLen = syncSymEncAndDecUtils.WEAK_KEYLEN_CIPHER[index][0];
+            keyLen < syncSymEncAndDecUtils.WEAK_KEYLEN_CIPHER[index][1];
+            keyLen += syncSymEncAndDecUtils.WEAK_KEYLEN_CIPHER[index][2]) {
+            let algName: string = syncSymEncAndDecUtils.WEAK_SYM_CIPHER[index];
+            let mode: string = syncSymEncAndDecUtils.WEAK_MODE_CIPHER[index];
+            let encAlgName: string = algName + "|" + mode + "|PKCS7";
+            let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen.toInt());
+            let data: cryptoFramework.DataBlob = await commonUtils.createFullData(dataLen);
+            let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.convertSymKeyPromise(algName, keyData);
+            let cipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+            cipher1.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
+            let cipherData: cryptoFramework.DataBlob|null = cipher1.doFinalSync(data);
+            let cipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+            cipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
+            let plainText: cryptoFramework.DataBlob|null = cipher2.doFinalSync(cipherData);
+            let ret: boolean = commonUtils.compareDataBlob(data, plainText);
+            expect(ret).assertTrue();
+          }
+        }
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }

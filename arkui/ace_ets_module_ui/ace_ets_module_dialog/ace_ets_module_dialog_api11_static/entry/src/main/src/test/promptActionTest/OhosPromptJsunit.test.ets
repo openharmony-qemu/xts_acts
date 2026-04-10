@@ -60,7 +60,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ohosPromptJsunit() {
   describe('appInfoTest_four_3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_3 beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
@@ -109,9 +109,11 @@ export default function ohosPromptJsunit() {
 it('test_OhosPrompt_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       await Utils.sleep(1000)
       let callback = (eventData: emitter.EventData) => {
-        console.info("[test_OhosPrompt_static_001] get event state result is: " + JSON.stringify(eventData));
-        await Utils.sleep(500)
-        expect(((eventData.data) as Record<String,RecordData>)['matrix1']).assertEqual("[100, 10]")
+        waitForCompletion(async () => {
+          console.info("[test_OhosPrompt_static_001] get event state result is: " + JSON.stringify(eventData));
+          await Utils.sleep(500)
+          expect(((eventData.data) as Record<String,RecordData>)['matrix1']).assertEqual("[100, 10]")
+        })
       }
       let innerEvent: emitter.InnerEvent = {
         eventId: 142,

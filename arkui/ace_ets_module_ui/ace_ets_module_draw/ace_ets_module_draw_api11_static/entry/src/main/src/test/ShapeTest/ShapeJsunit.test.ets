@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function shapeJsunit() {
   describe('shapeJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
       
@@ -66,7 +66,8 @@ export default function shapeJsunit() {
           shape.pushUrl(options);
           await CommonFunc.sleep(1000);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push shape page error: " + err);
       }
     });
@@ -274,7 +275,8 @@ it('shapeTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void
         }
         console.info("shapeTest_1000 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_1000 change component color error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -311,7 +313,8 @@ it('shapeTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1100 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1100 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -346,7 +349,8 @@ it('shapeTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1200 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1200 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -381,7 +385,8 @@ it('shapeTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1300 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1300 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -419,7 +424,8 @@ it('shapeTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1400 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1400 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -456,7 +462,8 @@ it('shapeTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1500 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1500 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -493,7 +500,8 @@ it('shapeTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1600 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1600 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -531,7 +539,8 @@ it('shapeTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1700 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1700 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -568,7 +577,8 @@ it('shapeTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1800 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1800 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -605,7 +615,8 @@ it('shapeTest_static_2100', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2100 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2100 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -642,7 +653,8 @@ it('shapeTest_static_3200', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_3200 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_3200 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -679,7 +691,8 @@ it('shapeTest_static_3300', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_3300 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_3300 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -716,7 +729,8 @@ it('shapeTest_static_2200', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2200 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2200 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -753,7 +767,8 @@ it('shapeTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_1900 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_1900 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -790,7 +805,8 @@ it('shapeTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2000 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2000 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -827,7 +843,8 @@ it('shapeTest_static_2300', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2300 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2300 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -864,7 +881,8 @@ it('shapeTest_static_2400', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2400 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2400 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -900,7 +918,8 @@ it('shapeTest_static_2500', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2500 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2500 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -936,7 +955,8 @@ it('shapeTest_static_2600', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2600 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2600 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -972,7 +992,8 @@ it('shapeTest_static_2700', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2700 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2700 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1009,7 +1030,8 @@ it('shapeTest_static_2800', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2800 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2800 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1046,7 +1068,8 @@ it('shapeTest_static_2900', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_2900 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_2900 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1102,7 +1125,8 @@ it('shapeTest_static_3100', Level.LEVEL0, async (done: () => void): Promise<void
         } as emitter.InnerEvent
         console.info("shapeTest_static_3100 start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("shapeTest_static_3100 change component color error: " + err.message);
       }
       await CommonFunc.sleep(2000);

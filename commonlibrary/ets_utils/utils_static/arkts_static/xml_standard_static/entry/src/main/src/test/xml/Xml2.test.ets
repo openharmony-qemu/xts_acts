@@ -35,7 +35,7 @@ let strAttr = "";
 
 export default function xmlTest2() {
   describe('xmlTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
 
@@ -59,7 +59,7 @@ export default function xmlTest2() {
       let result = '<note importance="high">Hello&gt;World</note>';
       let view = "";
       for (let i = 0; i < result.length; ++i) {
-        view = view + String.fromCodePoint(uint8[i]);
+        view = view + String.fromCodePoint(uint8[i].toInt());
       }
       expect(view).assertEqual(result);
     })
@@ -84,7 +84,7 @@ export default function xmlTest2() {
       let result = '<note importance="high">Hello&lt;World</note>';
       let view = "";
       for (let i = 0; i < result.length; ++i) {
-        view = view + String.fromCodePoint(uint8[i]);
+        view = view + String.fromCodePoint(uint8[i].toInt());
       }
       expect(view).assertEqual(result);
     })
@@ -109,7 +109,7 @@ export default function xmlTest2() {
       let result = '<note importance="high">Hello&amp;World</note>';
       let view = "";
       for (let i = 0; i < result.length; ++i) {
-        view = view + String.fromCodePoint(uint8[i]);
+        view = view + String.fromCodePoint(uint8[i].toInt());
       }
       expect(view).assertEqual(result);
     })
@@ -134,7 +134,7 @@ export default function xmlTest2() {
       let result = '<note importance="high">Hello&apos;World</note>';
       let view = "";
       for (let i = 0; i < result.length; ++i) {
-        view = view + String.fromCodePoint(uint8[i]);
+        view = view + String.fromCodePoint(uint8[i].toInt());
       }
       expect(view).assertEqual(result);
     })
@@ -159,7 +159,7 @@ export default function xmlTest2() {
       let result = '<note importance="high">Hello&quot;World</note>';
       let view = "";
       for (let i = 0; i < result.length; ++i) {
-        view = view + String.fromCodePoint(uint8[i]);
+        view = view + String.fromCodePoint(uint8[i].toInt());
       }
       expect(view).assertEqual(result);
     })
@@ -214,7 +214,7 @@ export default function xmlTest2() {
       let xmlStr = '<note importance="Hello&gt;World">high</note>';
       let result = '';
       for (let i = 0; i < xmlStr.length; ++i) {
-        result = result + String.fromCodePoint(uint8[i]);
+        result = result + String.fromCodePoint(uint8[i].toInt());
       }
       expect(result).assertEqual(xmlStr);
     })
@@ -239,7 +239,7 @@ export default function xmlTest2() {
       let xmlStr = '<note importance="Hello&lt;World">high</note>';
       let result = '';
       for (let i = 0; i < xmlStr.length; ++i) {
-        result = result + String.fromCodePoint(uint8[i]);
+        result = result + String.fromCodePoint(uint8[i].toInt());
       }
       expect(result).assertEqual(xmlStr);
     })
@@ -264,7 +264,7 @@ export default function xmlTest2() {
       let xmlStr = '<note importance="Hello&amp;World">high</note>';
       let result = '';
       for (let i = 0; i < xmlStr.length; ++i) {
-        result = result + String.fromCodePoint(uint8[i]);
+        result = result + String.fromCodePoint(uint8[i].toInt());
       }
       expect(result).assertEqual(xmlStr);
     })
@@ -289,7 +289,7 @@ export default function xmlTest2() {
       let xmlStr = '<note importance="Hello&apos;World">high</note>';
       let result = '';
       for (let i = 0; i < xmlStr.length; ++i) {
-        result = result + String.fromCodePoint(uint8[i]);
+        result = result + String.fromCodePoint(uint8[i].toInt());
       }
       expect(result).assertEqual(xmlStr);
     })
@@ -314,7 +314,7 @@ export default function xmlTest2() {
       let xmlStr = '<note importance="Hello&quot;World">high</note>';
       let result = '';
       for (let i = 0; i < xmlStr.length; ++i) {
-        result = result + String.fromCodePoint(uint8[i]);
+        result = result + String.fromCodePoint(uint8[i].toInt());
       }
       expect(result).assertEqual(xmlStr);
     })
@@ -338,7 +338,7 @@ export default function xmlTest2() {
       let uint8 = new Uint8Array(arrayBuffer);
       let result = "";
       for (let i = 0; i < xmlStr.length; ++i) {
-        result += String.fromCodePoint(uint8[i]);
+        result += String.fromCodePoint(uint8[i].toInt());
       }
       expect(result).assertEqual(xmlStr);
     })
@@ -362,7 +362,7 @@ export default function xmlTest2() {
       let uint8 = new Uint8Array(arrayBuffer);
       let result = "";
       for (let i = 0; i < xmlStr.length; ++i) {
-        result += String.fromCodePoint(uint8[i]);
+        result += String.fromCodePoint(uint8[i].toInt());
       }
       expect(result).assertEqual(xmlStr);
     })
@@ -386,7 +386,7 @@ export default function xmlTest2() {
       let uint8 = new Uint8Array(arrayBuffer);
       let result = "";
       for (let i = 0; i < xmlStr.length; ++i) {
-        result += String.fromCodePoint(uint8[i]);
+        result += String.fromCodePoint(uint8[i].toInt());
       }
       expect(result).assertEqual(xmlStr);
     })
@@ -410,7 +410,7 @@ export default function xmlTest2() {
       let uint8 = new Uint8Array(arrayBuffer);
       let result = "";
       for (let i = 0; i < xmlStr.length; ++i) {
-        result += String.fromCodePoint(uint8[i]);
+        result += String.fromCodePoint(uint8[i].toInt());
       }
       expect(result).assertEqual(xmlStr);
     })
@@ -434,7 +434,7 @@ export default function xmlTest2() {
       let uint8 = new Uint8Array(arrayBuffer);
       let result = "";
       for (let i = 0; i < xmlStr.length; ++i) {
-        result += String.fromCodePoint(uint8[i]);
+        result += String.fromCodePoint(uint8[i].toInt());
       }
       expect(result).assertEqual(xmlStr);
     })

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,24 +44,24 @@ let para: Record<string,string> = {
   'attachNodeAdapter': 'start',
   'detachNodeAdapter': 'start',
 };
-let storage: LocalStorage = new LocalStorage();
-
-class MyNodeAdapter extends NodeAdapter {
+let storage: LocalStorage = new LocalStorage(para);
+  
+export class MyNodeAdapter extends NodeAdapter {
   uiContext: UIContext = new UIContext();
   cachePool: Array<FrameNode> = new Array<FrameNode>();
   changed: boolean = false
-  reloadTimes: number = 0;
+  reloadTimes: int = 0;
   data: Array<string> = new Array<string>(100);
   hostNode: FrameNode | null = null;
 
-  constructor(uiContext: UIContext, count: number) {
+  constructor(uiContext: UIContext, count: int) {
     super();
     this.uiContext = uiContext;
     this.totalNodeCount = count as int;
     this.loadData();
   }
 
-  reloadData(count: number): void {
+  reloadData(count: int): void {
     this.reloadTimes++;
     NodeAdapter.attachNodeAdapter(this, this.hostNode!);
     storage.set('attachNodeAdapter', this.hostNode?.getChildrenCount().toString());
@@ -83,13 +83,13 @@ class MyNodeAdapter extends NodeAdapter {
   }
 
   loadData(): void {
-    // console.log('+++++++++++data.length',this.data.length,'this.totalNodeCount',this.totalNodeCount)
+    console.log('+++++++++++data.length',this.data.length,'this.totalNodeCount',this.totalNodeCount)
     for (let i = 0; i < this.totalNodeCount; i++) {
       this.data[i] = 'Adapter ListItem ' + i + ' r:' + this.reloadTimes;
     }
   }
 
-  changeData(from: number, count: number): void {
+  changeData(from: int, count: int): void {
     this.changed = !this.changed;
     for (let i = 0; i < count; i++) {
       let index = i + from;
@@ -98,7 +98,7 @@ class MyNodeAdapter extends NodeAdapter {
     this.reloadItem(from as int, count as int);
   }
 
-  insertData(from: number, count: number): void {
+  insertData(from: int, count: int): void {
     for (let i = 0; i < count; i++) {
       let index = i + from;
       this.data.splice(index as int, 0, 'Adapter ListItem ' + from + '-' + i);
@@ -108,14 +108,14 @@ class MyNodeAdapter extends NodeAdapter {
     console.log('UINodeAdapter after insert count:' + this.totalNodeCount);
   }
 
-  removeData(from: number, count: number): void {
+  removeData(from: int, count: int): void {
     let arr = this.data.splice(from as int, count as int);
     this.removeItem(from as int, count as int);
     this.totalNodeCount -= arr.length;
     console.log('UINodeAdapter after remove count:' + this.totalNodeCount);
   }
 
-  moveData(from: number, to: number): void {
+  moveData(from: int, to: int): void {
     let tmp = this.data.splice(from as int, 1);
     this.data.splice(to as int, 0, tmp[0]);
     this.moveItem(from as int, to as int);
@@ -130,12 +130,12 @@ class MyNodeAdapter extends NodeAdapter {
     console.log('UINodeAdapter onDetachFromNode');
   }
 
-  onGetChildId(index: number): number {
+  onGetChildId(index: int): int {
     console.log('UINodeAdapter onGetChildId:' + index);
     return index;
   }
 
-  onCreateChild(index: number): FrameNode {
+  onCreateChild(index: int): FrameNode {
     storage.set('onCreateChild', 'onCreateChild succ');
     console.log('UINodeAdapter onCreateChild:' + index);
     if (this.cachePool.length > 0) {
@@ -158,7 +158,7 @@ class MyNodeAdapter extends NodeAdapter {
 
 
 
-  onDisposeChild(id: number, node: FrameNode): void {
+  onDisposeChild(id: int, node: FrameNode): void {
     storage.set('onDisposeChild', 'onDisposeChild succ');
     console.log('UINodeAdapter onDisposeChild:' + id);
     if (this.cachePool.length < 10) {
@@ -171,7 +171,7 @@ class MyNodeAdapter extends NodeAdapter {
     }
   }
 
-  onUpdateChild(id: number, node: FrameNode): void {
+  onUpdateChild(id: int, node: FrameNode): void {
     let index = id;
     let text = node.getFirstChild();
     let textNode = text as typeNode.Text;
@@ -180,7 +180,7 @@ class MyNodeAdapter extends NodeAdapter {
   }
 }
 
-class MyNodeAdapterController extends NodeController {
+export class MyNodeAdapterController extends NodeController {
   rootNode: FrameNode | null = null;
   nodeAdapter: MyNodeAdapter | null = null;
 

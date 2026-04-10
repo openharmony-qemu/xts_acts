@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +51,7 @@ async function hkdfPromise(algName: string, spec: cryptoFramework.HKDFSpec): Pro
     let secret: cryptoFramework.DataBlob = await kdf.generateSecret(spec);
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`hkdfPromise “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -63,7 +63,7 @@ function hkdfSync(algName: string, spec: cryptoFramework.HKDFSpec): cryptoFramew
     let secret: cryptoFramework.DataBlob = kdf.generateSecretSync(spec);
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`hkdfSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -84,7 +84,7 @@ function hkdfSpec(key: string, isKeyString: boolean, salt: string,
     };
 
     return spec;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`hkdfSpec “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -110,11 +110,14 @@ let mdLen = [
   ["SHA256", "32"],
   ["SHA384", "48"],
   ["SHA512", "64"],
+  ["SHA3-256", "32"],
+ 	["SHA3-384", "48"],
+ 	["SHA3-512", "64"],
   ["SM3", "32"],
 ]
 
 let HKDF_DIGEST_SPEC =[
-  "SHA1", "SHA224", "SHA256", "SHA384", "SHA512", "SM3"
+  "SHA1", "SHA224", "SHA256", "SHA384", "SHA512", "SHA3-256", "SHA3-384", "SHA3-512", "SM3"
 ]
 
 let HKDF_MODE_SPEC = [

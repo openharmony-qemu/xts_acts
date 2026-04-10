@@ -110,12 +110,40 @@ export default function drawingTsPath3Test() {
         const path = new drawing.Path();
         path.lineTo(50, 40)
         rect = path.getBounds();
+        if(rect){
+          console.info(msg + ' 0 test successes');
+          console.info(msg + " 1 test rect.left: " + rect.left);
+          console.info(msg + " 1 test rect.top: " + rect.top);
+          console.info(msg + " 1 test rect.right: " + rect.right);
+          console.info(msg + " 1 test rect.bottom: " + rect.bottom);
+          expect(rect.left == 0).assertTrue();
+          expect(rect.top == 0).assertTrue();
+          expect(rect.right == 50).assertTrue();
+          expect(rect.bottom == 40).assertTrue();
+        }
+        if(rect == undefined){
+          console.info(msg + ' 0 test failed');
+          expect().assertFail();
+        }
         path.addRect({
           left: 10, right: 400, top: 100, bottom: 300
         }, drawing.PathDirection.CLOCKWISE);
         rect = path.getBounds();
-
-        console.info(msg + 'test successes');
+        if(rect){
+          console.info(msg + ' 1 test successes');
+          console.info(msg + " 2 test rect.left: " + rect.left);
+          console.info(msg + " 2 test rect.top: " + rect.top);
+          console.info(msg + " 2 test rect.right: " + rect.right);
+          console.info(msg + " 2 test rect.bottom: " + rect.bottom);
+          expect(rect.left == 0).assertTrue();
+          expect(rect.top == 0).assertTrue();
+          expect(rect.right == 400).assertTrue();
+          expect(rect.bottom == 300).assertTrue();
+        }
+        if(rect == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -491,6 +519,16 @@ export default function drawingTsPath3Test() {
         expect().assertFail();
       }
       try {
+        let result: boolean;
+        result = path.getSegment(false, 10.0, 20.0, true, dstPath)
+        console.info(msg + " 1 getSegment-----result:  "+ result);
+        expect(result).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `1 test getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
+      try {
         let result2: boolean;
         result2 = path.getSegment(true, 20.0, 10.0, true, dstPath)
         console.info(msg + " getSegment 2 -----result2:  "+ result2);
@@ -498,6 +536,16 @@ export default function drawingTsPath3Test() {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `test getSegment 2. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
+      try {
+        let result3: boolean;
+        result3 = path.getSegment(true, 20.0, 10.0, false, dstPath)
+        console.info(msg + " getSegment 3 -----result2:  "+ result3);
+        expect(result3).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `test getSegment 3. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail();
       }
     })

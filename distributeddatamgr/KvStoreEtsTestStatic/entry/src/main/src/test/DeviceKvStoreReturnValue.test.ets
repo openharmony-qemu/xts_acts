@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -36,7 +36,7 @@ let kvManager: factory.KVManager|null = null;
 let kvStore : factory.DeviceKVStore|null = null;
 let localDeviceId = '';
 let entries: factory.Entry[] = [];
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 function sleep(count:int) : Promise<int> {
@@ -70,16 +70,16 @@ export default function DeviceKvStoreReturnValue(){
         // });
         await Utils.msSleep(8000)
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============beforeAll context e: " + e);
         hilog.info(domain, tag, '%{public}s', '================ beforeAll context end==========');
       }
       const config : factory.KVManagerConfig = {
         bundleName: TEST_BUNDLE_NAME,
-        context: context
+        context: context!
       };
-      console.info(TAG + 'beforeAll context.databaseDir=' + context.databaseDir);
+      console.info(TAG + 'beforeAll context.databaseDir=' + context!.databaseDir);
 
       kvManager = factory.createKVManager(config);
       console.info(TAG + 'beforeAll end, kvManager=' + kvManager);
@@ -138,14 +138,16 @@ export default function DeviceKvStoreReturnValue(){
       await (kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID) as Promise<void>).then(async () => {
         console.info('beforeAll closeKVStore success');
         //await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-          console.info('beforeAll deleteKVStore success');
-          kvStore = null;
-          done();
-        }).catch((err) => {
-          console.info('beforeAll deleteKVStore err ' + err);
-          done();
-        });
+        waitForCompletion(async () => {
+          await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+            console.info('beforeAll deleteKVStore success');
+            kvStore = null;
+            done();
+          }).catch((err) => {
+            console.info('beforeAll deleteKVStore err ' + err);
+            done();
+          });
+        })
       }).catch((err) => {
         console.info('beforeAll closeKVStore err ' + err);
         done();
@@ -161,7 +163,7 @@ export default function DeviceKvStoreReturnValue(){
         kvStore = store;
         console.info(TAG + 'beforeEach getKVStore success');
         done();
-      } catch(err: Error) {
+      } catch(err) {
         console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
         done();
       }
@@ -224,7 +226,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -255,7 +257,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -285,7 +287,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -319,7 +321,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -365,7 +367,7 @@ export default function DeviceKvStoreReturnValue(){
           });
 
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -394,7 +396,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -444,7 +446,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -477,7 +479,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -523,7 +525,7 @@ export default function DeviceKvStoreReturnValue(){
           });
 
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -552,7 +554,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -602,7 +604,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -633,7 +635,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -680,7 +682,7 @@ export default function DeviceKvStoreReturnValue(){
           });
 
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -711,7 +713,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -762,7 +764,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -794,7 +796,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -842,7 +844,7 @@ export default function DeviceKvStoreReturnValue(){
           });
 
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -873,7 +875,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -924,7 +926,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -956,7 +958,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -985,7 +987,7 @@ export default function DeviceKvStoreReturnValue(){
             done();
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1014,7 +1016,7 @@ export default function DeviceKvStoreReturnValue(){
             done();
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1046,7 +1048,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1078,7 +1080,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1107,7 +1109,7 @@ export default function DeviceKvStoreReturnValue(){
             done();
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1136,7 +1138,7 @@ export default function DeviceKvStoreReturnValue(){
             done();
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1168,7 +1170,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1200,7 +1202,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1228,7 +1230,7 @@ export default function DeviceKvStoreReturnValue(){
         node = null;
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1500 end---------  ');
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1261,7 +1263,7 @@ export default function DeviceKvStoreReturnValue(){
           });
 
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1298,7 +1300,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1333,7 +1335,7 @@ export default function DeviceKvStoreReturnValue(){
           });
 
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1371,7 +1373,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1412,7 +1414,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1445,7 +1447,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1484,7 +1486,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1517,7 +1519,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1572,7 +1574,7 @@ export default function DeviceKvStoreReturnValue(){
             done();
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1612,7 +1614,7 @@ export default function DeviceKvStoreReturnValue(){
           console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2001 end---------  ');
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1658,7 +1660,7 @@ export default function DeviceKvStoreReturnValue(){
             done();
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1705,7 +1707,7 @@ export default function DeviceKvStoreReturnValue(){
           console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2101 end---------  ');
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1742,7 +1744,7 @@ export default function DeviceKvStoreReturnValue(){
 
 
 
-      } catch (e: Error) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1775,7 +1777,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1814,7 +1816,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1847,7 +1849,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1902,7 +1904,7 @@ export default function DeviceKvStoreReturnValue(){
           });
 
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -1955,7 +1957,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -2011,7 +2013,7 @@ export default function DeviceKvStoreReturnValue(){
           });
 
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -2065,7 +2067,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -2105,7 +2107,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -2139,7 +2141,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError ) {
+      } catch (e ) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -2179,7 +2181,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();
@@ -2213,7 +2215,7 @@ export default function DeviceKvStoreReturnValue(){
           done();
         });
 
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
         done();

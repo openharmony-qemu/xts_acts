@@ -502,7 +502,7 @@ export default function QueryGroupsTest() {
                 done();
               } else {
                 console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-                ExpectTrue(data.length > 0)
+                expect().assertFail();
                 done();
               }
             });
@@ -529,7 +529,7 @@ export default function QueryGroupsTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         sleep(500);
-        contact.addContact(context, contactData, (err, data) => {
+        contact.addContact(context, contactData, async (err, data) => {
           sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -542,7 +542,7 @@ export default function QueryGroupsTest() {
               holderId: 1.5,
               bundleName: "com.ohos.contacts",
             });
-            promise.then((data) => {
+            await promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
               ExpectTrue(data.length > 0)
               done();
@@ -574,7 +574,7 @@ export default function QueryGroupsTest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         sleep(500);
-        contact.addContact(context, contactData, (err, data) => {
+        contact.addContact(context, contactData, async (err, data) => {
           sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -587,7 +587,7 @@ export default function QueryGroupsTest() {
               bundleName: "",
               displayName: "phone"
             });
-            promise.then((data) => {
+            await promise.then((data) => {
               console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
               ExpectTrue(data.length > 0)
               done();

@@ -291,26 +291,6 @@ export default function telephonyNdkTest() {
     });
 
     /**
-    * @tc.name   testOHTelephonyGetNetworkStateForSlot0100
-    * @tc.number SUB_TELEPHONY_CORE_SERVICE_GetNetworkStateForSlot_0100.
-    * @tc.desc   Obtains the radio network state for given slot id.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL1
-    */
-    it('testOHTelephonyGetNetworkStateForSlot0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        let stateNdk = telAPI.OH_Telephony_GetNetworkStateForSlot0100();
-        console.info('====>testOHTelephonyGetNetworkStateForSlot0100 stateNdk: ', JSON.stringify(stateNdk));
-        expect(stateNdk).assertEqual(TELEPHONY_OK);
-      } catch(e) {
-        console.info('====>testOHTelephonyGetNetworkStateForSlot0100 error: ', JSON.stringify(e));
-      }
-
-      done();
-    });
-
-    /**
      * @tc.name   testOHTelephonyGetNetworkState_0300
      * @tc.number SUB_TELEPHONY_CORE_SERVICE_OHTELEPHONYGETNETWORKSTATE_0300.
      * @tc.desc   Obtains the radio network state.

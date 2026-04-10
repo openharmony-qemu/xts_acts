@@ -101,7 +101,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0220', Level.LEVEL0,
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0220 value is" + left + " --" + right + "--" + top + "--" + bottom);
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0220] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(40))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
@@ -146,7 +146,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0230', Level.LEVEL0,
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0230 value is" + left + " --" + right + "--" + top + "--" + bottom);
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0230] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
@@ -192,7 +192,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0240', Level.LEVEL0,
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0240 value is" + left + " --" + right + "--" + top + "--" + bottom);
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0240] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(150))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),

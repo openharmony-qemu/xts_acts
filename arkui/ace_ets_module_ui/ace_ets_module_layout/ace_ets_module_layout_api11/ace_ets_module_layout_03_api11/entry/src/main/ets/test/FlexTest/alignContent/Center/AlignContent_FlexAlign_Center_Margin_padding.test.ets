@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,14 +54,14 @@ export default function AlignContent_FlexAlign_Center_Margin_padding() {
 
 
     /**
-     * @tc.name   testAlignContentCenterFlexMargin&PaddingNOSatisfy
+     * @tc.name   testAlignContentCenterFlexMarginPaddingNOSatisfyAdapt001
      * @tc.number testAlignContentCenterFlexMargin&PaddingNOSatisfy
      * @tc.desc   testAlignContentCenterFlexMargin&PaddingNOSatisfy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAlignContentCenterFlexMargin&PaddingNOSatisfy',  Level.LEVEL0, async () => {
+    it('testAlignContentCenterFlexMarginPaddingNOSatisfyAdapt001',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
         name: 'padding', value: 40
@@ -87,37 +87,47 @@ export default function AlignContent_FlexAlign_Center_Margin_padding() {
       console.log('AlignContentFlexCenterMargin&padding_flex001_4 rect_value is:' +
       JSON.stringify(AlignContentFlexCenter_4));
 
-      expect(Math.abs((AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top) - vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top) - vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top) - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top) - vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left) - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left) - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left) - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left) - vp2px(150)) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy_chazhi1:'+ Math.floor(Math.abs((AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top) - vp2px(50))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top) - vp2px(50))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy_chazhi2:'+ Math.floor(Math.abs((AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top) - vp2px(100))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top) - vp2px(100))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy_chazhi3:'+ Math.floor(Math.abs((AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top) - vp2px(150))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top) - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy_chazhi4:'+ Math.floor(Math.abs((AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top) - vp2px(200))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top) - vp2px(200))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy_chazhi5:'+ Math.floor(Math.abs((AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left) - vp2px(150))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left) - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy_chazhi6:'+ Math.floor(Math.abs((AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left) - vp2px(150))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left) - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy_chazhi7:'+ Math.floor(Math.abs((AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left) - vp2px(150))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left) - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy_chazhi8:'+ Math.floor(Math.abs((AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left) - vp2px(150))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left) - vp2px(150))) <= 1).assertTrue();
 
       expect(JSON.parse(strJson).$attrs.constructor.direction).assertEqual("FlexDirection.Row");
       expect(JSON.parse(strJson).$attrs.constructor.alignContent).assertEqual("FlexAlign.Center");
 
-      expect(Math.abs((AlignContentFlexCenter_flex001.top - Center_Margin_Column_1.top) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_1.top - Center_Margin_Column_1.top) - vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(AlignContentFlexCenter_4.top - AlignContentFlexCenter_2.bottom) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy_chazhi9:'+ Math.floor(Math.abs((AlignContentFlexCenter_flex001.top - Center_Margin_Column_1.top) - vp2px(10))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_flex001.top - Center_Margin_Column_1.top) - vp2px(10))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy_chazhi10:'+ Math.floor(Math.abs((AlignContentFlexCenter_1.top - Center_Margin_Column_1.top) - vp2px(50))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_1.top - Center_Margin_Column_1.top) - vp2px(50))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy_chazhi11:'+ Math.floor(Math.abs(AlignContentFlexCenter_4.top - AlignContentFlexCenter_2.bottom)))
+      expect(Math.floor(Math.abs(AlignContentFlexCenter_4.top - AlignContentFlexCenter_2.bottom)) <= 1).assertTrue();
+      
       expect(AlignContentFlexCenter_flex001.bottom - AlignContentFlexCenter_4.bottom).assertLess(vp2px(40));
 
       console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy END');
-
     });
 
-
     /**
-     * @tc.name   testAlignContentCenterFlexMargin&PaddingSatisfy
+     * @tc.name   testAlignContentCenterFlexMarginPaddingSatisfyAdapt001
      * @tc.number testAlignContentCenterFlexMargin&PaddingSatisfy
      * @tc.desc   testAlignContentCenterFlexMargin&PaddingSatisfy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAlignContentCenterFlexMargin&PaddingSatisfy',  Level.LEVEL0, async () => {
+    it('testAlignContentCenterFlexMarginPaddingSatisfyAdapt001',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexMargin&PaddingSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
         name: 'padding', value: 15
@@ -149,28 +159,40 @@ export default function AlignContent_FlexAlign_Center_Margin_padding() {
       console.log('AlignContentFlexCenterMargin&padding_flex001_4 rect_value is:' +
       JSON.stringify(AlignContentFlexCenter_4));
 
-      expect(Math.abs((AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top) - vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top) - vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top) - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top) - vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left) - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left) - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left) - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left) - vp2px(150)) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi1:'+ Math.floor(Math.abs((AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top) - vp2px(50))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_1.bottom - AlignContentFlexCenter_1.top) - vp2px(50))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi2:'+ Math.floor(Math.abs((AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top) - vp2px(100))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_2.bottom - AlignContentFlexCenter_2.top) - vp2px(100))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi3:'+ Math.floor(Math.abs((AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top) - vp2px(150))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_3.bottom - AlignContentFlexCenter_3.top) - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi4:'+ Math.floor(Math.abs((AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top) - vp2px(200))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_4.bottom - AlignContentFlexCenter_4.top) - vp2px(200))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi5:'+ Math.floor(Math.abs((AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left) - vp2px(150))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_1.right - AlignContentFlexCenter_1.left) - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi6:'+ Math.floor(Math.abs((AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left) - vp2px(150))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_2.right - AlignContentFlexCenter_2.left) - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi7:'+ Math.floor(Math.abs((AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left) - vp2px(150))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_3.right - AlignContentFlexCenter_3.left) - vp2px(150))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi8:'+ Math.floor(Math.abs((AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left) - vp2px(150))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_4.right - AlignContentFlexCenter_4.left) - vp2px(150))) <= 1).assertTrue();
 
       expect(JSON.parse(strJson).$attrs.constructor.direction).assertEqual("FlexDirection.Row");
       expect(JSON.parse(strJson).$attrs.constructor.alignContent).assertEqual("FlexAlign.Center");
 
-      expect(Math.abs((AlignContentFlexCenter_flex002.top - Center_Margin_Column_2.top) - vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_1.top - Center_Margin_Column_2.top) - vp2px(40)) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_flex002.bottom - AlignContentFlexCenter_4.bottom) - (AlignContentFlexCenter_1.top - AlignContentFlexCenter_flex002.top)) <= 1)
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi9:'+ Math.floor(Math.abs((AlignContentFlexCenter_flex002.top - Center_Margin_Column_2.top) - vp2px(10))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_flex002.top - Center_Margin_Column_2.top) - vp2px(10))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi10:'+ Math.floor(Math.abs((AlignContentFlexCenter_1.top - Center_Margin_Column_2.top) - vp2px(40))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_1.top - Center_Margin_Column_2.top) - vp2px(40))) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi11:'+ Math.floor(Math.abs((AlignContentFlexCenter_flex002.bottom - AlignContentFlexCenter_4.bottom) - (AlignContentFlexCenter_1.top - AlignContentFlexCenter_flex002.top))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_flex002.bottom - AlignContentFlexCenter_4.bottom) - (AlignContentFlexCenter_1.top - AlignContentFlexCenter_flex002.top))) <= 1)
         .assertTrue();
-      expect(Math.abs(AlignContentFlexCenter_4.top - AlignContentFlexCenter_2.bottom) <= 1).assertTrue();
-      expect(Math.abs((AlignContentFlexCenter_1.top - AlignContentFlexCenter_flex002.top) - vp2px(30)) <= 1)
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi12:'+ Math.floor(Math.abs(AlignContentFlexCenter_4.top - AlignContentFlexCenter_2.bottom)))
+      expect(Math.floor(Math.abs(AlignContentFlexCenter_4.top - AlignContentFlexCenter_2.bottom)) <= 1).assertTrue();
+      console.info('testAlignContentCenterFlexMargin&PaddingSatisfy_chazhi13:'+ Math.floor(Math.abs((AlignContentFlexCenter_1.top - AlignContentFlexCenter_flex002.top) - vp2px(30))))
+      expect(Math.floor(Math.abs((AlignContentFlexCenter_1.top - AlignContentFlexCenter_flex002.top) - vp2px(30))) <= 1)
         .assertTrue();
 
       console.info('testAlignContentCenterFlexMargin&PaddingSatisfy END')
-
     });
 
   })

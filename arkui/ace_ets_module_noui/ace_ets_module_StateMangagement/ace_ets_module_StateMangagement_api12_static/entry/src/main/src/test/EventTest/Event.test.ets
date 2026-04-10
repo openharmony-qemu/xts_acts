@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function EventTest() {
   describe('EventTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("EventTestest beforeEach start");
 
 

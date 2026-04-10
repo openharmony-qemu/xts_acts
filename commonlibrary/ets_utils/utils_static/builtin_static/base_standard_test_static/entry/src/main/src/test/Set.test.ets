@@ -4,7 +4,7 @@ import Utils from './Util.test';
 
 export default function SetTest() {
   describe('setTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**
@@ -13,9 +13,9 @@ export default function SetTest() {
      * @tc.desc Test the function of the interface SetPrototypeAdd.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testSetPrototypeAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+    it('testSetPrototypeAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
       , (): void => {
         const TAG = "testSetPrototypeAdd0001";
         try {
@@ -34,9 +34,9 @@ export default function SetTest() {
      * @tc.desc Test the function of the interface SetPrototypeAdd.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testSetPrototypeAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testSetPrototypeAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const TAG = "testSetPrototypeAdd0002";
         try {
@@ -55,9 +55,9 @@ export default function SetTest() {
      * @tc.desc Test the function of the interface SetPrototypeAdd.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testSetPrototypeAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testSetPrototypeAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const TAG = "testSetPrototypeAdd0003";
         try {
@@ -81,9 +81,9 @@ export default function SetTest() {
      * @tc.desc Test the function of the interface SetPrototypeAdd.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testSetPrototypeAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testSetPrototypeAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const TAG = "testSetPrototypeAdd0004";
         try {
@@ -109,18 +109,19 @@ export default function SetTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('testSetPrototypeAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   (): void => {
-    //     const TAG = "testSetPrototypeAdd0005";
-    //     try {
-    //       const odds = new Set<string>([]);
-    //       let value = odds.add("c");
-    //       expect(String(value.has("c"))).assertEqual('true');
-    //     } catch (err: BusinessError) {
-    //       console.error(`${TAG} failed, error: ${err.message}`);
-    //       expect(false).assertFail();
-    //     }
-    //   })
+    it('testSetPrototypeAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (): void => {
+        const TAG = "testSetPrototypeAdd0005";
+        try {
+          const odds = new Set<string>([]);
+          let value = odds.add("c");
+          expect(String(value.has("c"))).assertEqual('true');
+        } catch (err) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect(false).assertFail();
+        }
+      })
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_0600
      * @tc.name testSetPrototypeClear0001

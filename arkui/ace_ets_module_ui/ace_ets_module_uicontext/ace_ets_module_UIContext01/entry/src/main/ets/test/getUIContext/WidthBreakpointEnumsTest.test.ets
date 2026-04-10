@@ -81,6 +81,27 @@ export default function WidthBreakpointEnumsTest() {
     });
 
     /**
+     * @tc.name   WidthBreakpointEnumsTest_0200
+     * @tc.number WidthBreakpointEnumsTest_0200
+     * @tc.desc   WidthBreakpointEnums Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('WidthBreakpointEnumsTest_0200', Level.LEVEL1, async (done: Function) => {
+      console.info('WidthBreakpointEnumsTest_0200 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      console.info('[WidthBreakpointEnumsTest_0200] WIDTH_SM is:' + WidthBreakpoint.WIDTH_SM);
+      expect(WidthBreakpoint.WIDTH_SM).assertEqual(1);
+
+      console.info('[WidthBreakpointEnumsTest_0200] HEIGHT_SM is:' + HeightBreakpoint.HEIGHT_SM);
+      expect(HeightBreakpoint.HEIGHT_SM).assertEqual(0);
+      console.info('[WidthBreakpointEnumsTest_0200] END');
+      done();
+    });
+
+    /**
      * @tc.name   ImageSizeEnumsTest_0200
      * @tc.number ImageSizeEnumsTest_0200
      * @tc.desc   ImageSizeEnums Test

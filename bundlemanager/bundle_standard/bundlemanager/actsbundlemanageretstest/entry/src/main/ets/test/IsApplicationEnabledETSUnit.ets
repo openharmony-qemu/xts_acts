@@ -91,6 +91,27 @@ export default function IsApplicationEnabledETSUnit() {
         });
 
         /**
+         * @tc.name   Sub_Bms_Framework_Status_AppEnable_2950
+         * @tc.number Sub_Bms_Framework_Status_AppEnable_2950
+         * @tc.desc   Check the return value of the interface when bundleName is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('Sub_Bms_Framework_Status_AppEnable_2950', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await Bundle.isApplicationEnabled(null).then((data) => {
+                expect(data).assertFail();
+            }).catch((error) => {
+                expect(error.code).assertEqual(2);
+            });
+            Bundle.isApplicationEnabled(null, (error, data) => {
+                expect(error.code).assertEqual(2);
+                expect(data).assertEqual(undefined);
+                done();
+            });
+        });
+
+        /**
          * @tc.name   Sub_Bms_Framework_Status_AppEnable_3100
          * @tc.number Sub_Bms_Framework_Status_AppEnable_3100
          * @tc.desc   Check the return value of the interface (by promise)

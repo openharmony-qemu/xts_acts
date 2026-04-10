@@ -117,7 +117,7 @@ function sleep(time: number) {
 export default function ArrayCache1Test() {
   describe('ArrayCache1Test', () => {
     beforeEach(async () => {
-      await sleep(50);
+      await sleep(40);
     })
 
     /**

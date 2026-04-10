@@ -207,12 +207,10 @@ export default function AddContactViaUITest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.addContactViaUI(context, contactData);
-        if (deviceInfo.deviceType !== 'wearable') {
-          let driver: Driver = Driver.create();
-          let onType: On = ON.id('save_click_btn');
-          await getComponent(driver, onType);
-          await delay(500);
-        }
+        let driver: Driver = Driver.create();
+        let onType: On = ON.id('save_click_btn');
+        await getComponent(driver, onType);
+        await delay(500);
         promise.then((data: number) => {
             console.log(`${caseName} addContactViaUI: data>${JSON.stringify(data)}`);
             ExpectTrue(data > 0);
@@ -252,14 +250,12 @@ export default function AddContactViaUITest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.addContactViaUI(context, contactData);
-        if (deviceInfo.deviceType !== 'wearable') {
-          let driver: Driver = Driver.create();
-          let onType: On = ON.id('cancel_btn');
-          await getComponent(driver, onType);
-          await delay(500);
-          let onType1: On = ON.text('不保存');
-          await getComponent(driver, onType1);
-        }
+        let driver: Driver = Driver.create();
+        let onType: On = ON.id('cancel_btn');
+        await getComponent(driver, onType);
+        await delay(500);
+        let onType1: On = ON.text('不保存');
+        await getComponent(driver, onType1);
         promise.then((data: number) => {
             console.log(`${caseName} addContactViaUI: data>${JSON.stringify(data)}`);
             ExpectTrue(data == -1);
@@ -299,7 +295,7 @@ export default function AddContactViaUITest() {
       try {
         let context: Context = AppStorage.get('context') as Context;
         let promise = contact.addContactViaUI(context, contactDataNull);
-        promise.then((data: number) => {
+        await promise.then((data: number) => {
             console.log(`${caseName} addContactViaUI: data>${JSON.stringify(data)}`);
             ExpectTrue(data != 0);
             done();
@@ -326,6 +322,54 @@ export default function AddContactViaUITest() {
         done();
       }
       console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   contactsApi_addContactViaUI_empty_test_4200
+     * @tc.number contactsApi_addContactViaUI_empty_test_4200
+     * @tc.desc   Function test with undefined context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_addContactViaUI_empty_test_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_addContactViaUI_empty_test_4200";
+        console.info(`${caseName} test start`);
+        try {
+            let testContact: contact.Contact = {};
+            const result = await contact.addContactViaUI(undefined, testContact);
+            console.info(`${caseName} : result = ${JSON.stringify(result)}`);
+            expect().assertFail();
+            done();
+        } catch (error) {
+            console.info(`${caseName} : addContactViaUI error = ${error.code}, ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_addContactViaUI_empty_test_4300
+     * @tc.number contactsApi_addContactViaUI_empty_test_4300
+     * @tc.desc   Function test with undefined contact object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_addContactViaUI_empty_test_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_addContactViaUI_empty_test_4300";
+        console.info(`${caseName} test start`);
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            const result = await contact.addContactViaUI(context, undefined);
+            console.info(`${caseName} : result = ${JSON.stringify(result)}`);
+            expect().assertFail();
+            done();
+        } catch (error) {
+            console.info(`${caseName} : addContactViaUI error = ${error.code}, ${error.message}`);
+            expect(error != null).assertTrue();
+            done();
+        }
     });
   });
 }

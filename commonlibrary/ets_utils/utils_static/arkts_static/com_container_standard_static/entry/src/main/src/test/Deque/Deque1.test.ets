@@ -41,7 +41,7 @@ class C1 {
 
 export default function DequeTest() {
   describe('dequeTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

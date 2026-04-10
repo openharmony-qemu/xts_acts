@@ -4769,5 +4769,55 @@ export default function XmlTest() {
     });
 
 
+    /**
+     * @tc.name   testXmlCase001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CASE_0100
+     * @tc.desc   Testing XML getAttributeCount with illegal attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testXmlCase001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let strXml = '<note importance=high logged="true"/>';
+      let textEncoder = new util.TextEncoder();
+      let arrbuffer = textEncoder.encodeInto(strXml);
+      let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer);
+      try {
+        that.parse(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        that.parse(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testXmlCase002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CASE_0200
+     * @tc.desc   Testing XML getAttributeCount with illegal attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testXmlCase002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let strXml = '<note importance=high logged="true"/>';
+      let textEncoder = new util.TextEncoder();
+      let arrbuffer = textEncoder.encodeInto(strXml);
+      let that = new xml.XmlPullParser(arrbuffer.buffer as object as ArrayBuffer);
+      try {
+        that.parseXml(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        that.parseXml(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
   })
 }

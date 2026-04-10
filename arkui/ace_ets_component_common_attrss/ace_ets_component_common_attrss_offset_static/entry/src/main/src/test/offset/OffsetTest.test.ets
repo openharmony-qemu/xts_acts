@@ -120,7 +120,7 @@ export default function OffsetTest() {
    */
 
   describe('OffsetTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });

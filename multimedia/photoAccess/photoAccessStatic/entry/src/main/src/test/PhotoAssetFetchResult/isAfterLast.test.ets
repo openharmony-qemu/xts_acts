@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,7 +29,7 @@ export default function assetIsAfterLastTest() {
     let isAfterLastCallbackTest =
       async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions) => {
         try {
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let count = fetchResult.getCount();
           expect(count).assertEqual(2);
           let asset = await fetchResult.getFirstObject();
@@ -64,7 +64,7 @@ export default function assetIsAfterLastTest() {
       async (done: () => void): Promise<void> => {
         const testNum = 'isAfterLast_callback_static_000';
         const predicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE as long).limit(2, 0);
+        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, Int.toLong(photoAccessHelper.PhotoType.IMAGE)).limit(2, 0);
         const fetchOps: photoAccessHelper.FetchOptions = {
           fetchColumns: [],
           predicates: predicates
@@ -85,7 +85,7 @@ export default function assetIsAfterLastTest() {
       async (done: () => void): Promise<void> => {
         const testNum = 'isAfterLast_callback_static_001';
         const predicates = new dataSharePredicates.DataSharePredicates();
-        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE as long).limit(2, 0);
+        predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_TYPE, Int.toLong(photoAccessHelper.PhotoType.IMAGE)).limit(2, 0);
         const fetchOps: photoAccessHelper.FetchOptions = {
           fetchColumns: [],
           predicates: predicates

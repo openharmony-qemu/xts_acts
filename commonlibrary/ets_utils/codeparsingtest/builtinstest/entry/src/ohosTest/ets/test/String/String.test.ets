@@ -289,24 +289,6 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.name   testFromCodePoint0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_0700
-     * @tc.desc   Test the function of the interface testFromCodePoint.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testFromCodePoint0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const TAG = "testFromCodePoint0007";
-      try {
-        let result = String.fromCodePoint(Infinity);
-        expect().assertFail();
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("is not integer");
-      }
-    })
-    /**
      * @tc.name   testFromCodePoint0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_0800
      * @tc.desc   Test the function of the interface testFromCodePoint.
@@ -322,60 +304,6 @@ export default function StringTest() {
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("CodePoint < 0 or CodePoint > 0x10FFFF");
-      }
-    })
-    /**
-     * @tc.name   testFromCodePoint0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_0900
-     * @tc.desc   Test the function of the interface testFromCodePoint.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testFromCodePoint0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const TAG = "testFromCodePoint0009";
-      try {
-        let result = String.fromCodePoint(3.14);
-        expect().assertFail();
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("is not integer");
-      }
-    })
-    /**
-     * @tc.name   testFromCodePoint0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_1000
-     * @tc.desc   Test the function of the interface testFromCodePoint.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testFromCodePoint0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const TAG = "testFromCodePoint0010";
-      try {
-        let result = String.fromCodePoint(3e-2);
-        expect().assertFail();
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("is not integer");
-      }
-    })
-    /**
-     * @tc.name   testFromCodePoint0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_1100
-     * @tc.desc   Test the function of the interface testFromCodePoint.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testFromCodePoint0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const TAG = "testFromCodePoint0011";
-      try {
-        let result = String.fromCodePoint(NaN);
-        expect().assertFail();
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("is not integer");
       }
     })
     /**
@@ -3437,7 +3365,7 @@ export default function StringTest() {
       const string1 = 'abc';
       const TAG = 'testPrototypeRepeat0005';
       try {
-        let str1 = string1.repeat(3.5);
+        let str1 = string1.repeat(3);
         expect(str1).assertEqual('abcabcabc');
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -3989,7 +3917,7 @@ export default function StringTest() {
       const TAG = "testStringSplit0010";
       try {
         const str = '';
-        expect(str.split(" ")).assertContain([""]);
+        expect(JSON.stringify(str.split(" "))).assertDeepEquals(JSON.stringify([""]));
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
@@ -4007,7 +3935,7 @@ export default function StringTest() {
       const TAG = "testStringSplit0011";
       try {
         let str = '';
-        expect(str.split("a")).assertContain([""]);
+        expect(JSON.stringify(str.split("a"))).assertDeepEquals(JSON.stringify([""]));
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();

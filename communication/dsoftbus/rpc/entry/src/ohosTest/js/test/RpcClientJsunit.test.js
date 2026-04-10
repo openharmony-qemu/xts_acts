@@ -19,14 +19,12 @@ import FA from '@ohos.ability.featureAbility';
 import { describe, expect, beforeAll, it, TestType, Size, Level } from '@ohos/hypium';
 import assertDeepEquals from './assertDeepEquals'
 let gIRemoteObject = null;
-
+let testFlag = true;
 
 function assertArrayElementEqual(actual, expected) {
     let result = assertDeepEquals(actual, expected)
     expect(result).assertTrue();
 }
-
-
 
 export default function ActsRpcClientJsTest() {
     describe('ActsRpcClientJsTest', function () {
@@ -42,6 +40,7 @@ export default function ActsRpcClientJsTest() {
         });
 
         afterEach(async function () {
+            testFlag = true;
             console.info('afterEach called');
         });
 
@@ -5641,14 +5640,14 @@ export default function ActsRpcClientJsTest() {
         });
 
         /**
-         * @tc.name   SUB_DSoftbus_IPC_API_MessageSequence_1480
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageSequence_1480Adapt001
          * @tc.number SUB_DSoftbus_IPC_API_MessageSequence_1480
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it("SUB_DSoftbus_IPC_API_MessageSequence_1480", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        it("SUB_DSoftbus_IPC_API_MessageSequence_1480Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("---------------------start SUB_DSoftbus_IPC_API_MessageSequence_1480---------------------------");
             let context = FA.getContext();
             await context.getFilesDir()
@@ -7000,6 +6999,8 @@ export default function ActsRpcClientJsTest() {
             console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_0010---------------------------");
             try {
                 var data = rpc.MessageParcel.create();
+                expect(data != null).assertTrue();
+                expect(data != undefined).assertTrue();
                 let token = "hello ruan zong xian";
                 let result = data.writeInterfaceToken(token);
                 expect(result).assertTrue();
@@ -13034,6 +13035,3074 @@ export default function ActsRpcClientJsTest() {
                 done();
             }
             console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_1920---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_1930
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_1930
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_1930", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_1930---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let arr = [1.1, 2.2, 3.3];
+                data.writeLongArray(arr);
+                let result = new Array();
+                data.readLongArray(result);
+                expect(result.length > 0).assertTrue();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageParcel_1930 error is:" + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_1930---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_1940
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_1940
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_1940", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_1940---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let arr = [];
+                data.writeLongArray(arr);
+                let result = new Array();
+                data.readLongArray(result);
+                expect(result.length == 0).assertTrue();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageParcel_1940 error is:" + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_1940---------------------------");
+        });
+
+        /**
+          * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_1950
+          * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_1950
+          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL3
+          */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_1950", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_1950---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let arr = [1.1, 2.2, 3.3];
+                data.writeFloatArray(arr);
+                let result = new Array();
+                data.readFloatArray(result);
+                expect(result.length > 0).assertTrue();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageParcel_1950 error is:" + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_1950---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_1960
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_1960
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_1960", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_1960---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let arr = [];
+                data.writeFloatArray(arr);
+                let result = new Array();
+                data.readFloatArray(result);
+                expect(result.length == 0).assertTrue();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageParcel_1960 error is:" + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_1960---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_1970
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_1970
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_1970", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_1970---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let arr = [1, 2, 3];
+                data.writeIntArray(arr);
+                let result = new Array();
+                data.readIntArray(result);
+                expect(result.length > 0).assertTrue();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageParcel_1970 error is:" + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_1970---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_1980
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_1980
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_1980", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_1980---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let arr = [];
+                data.writeIntArray(arr);
+                let result = new Array();
+                data.readIntArray(result);
+                expect(result.length == 0).assertTrue();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageParcel_1980 error is:" + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_1980---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_1990
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_1990
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_1990", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_1990---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let arr = [1, 2, 3];
+                data.writeByteArray(arr);
+                let result = new Array();
+                data.readByteArray(result);
+                expect(result.length > 0).assertTrue();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageParcel_1990 error is:" + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_1990---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_2000
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_2000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_2000---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let arr = [];
+                data.writeByteArray(arr);
+                let result = new Array();
+                data.readByteArray(result);
+                expect(result.length == 0).assertTrue();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_MessageParcel_2000 error is:" + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                done();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_2000---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2270
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2270
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2270", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2270---------------------------");
+            try {
+            rpc.MessageParcel.closeFileDescriptor(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2270 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2270 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2270 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2270---------------------------");
+        });
+  
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2280
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2280
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2280", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2280---------------------------");
+            try {
+            rpc.MessageParcel.closeFileDescriptor(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2280 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2280 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2280 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2280---------------------------");
+        });
+  
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2290
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2290
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2290", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2290---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            let res = data.writeRemoteObject(null);
+            expect(res).assertFalse();
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2290 res is: ' + res);
+            } catch (err) {
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2290 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2290 error code is: ' + err.code);
+            expect(err == null).assertTrue();
+            } finally {
+            data.reclaim();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2290 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2290---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2300
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2300---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            let res = data.writeRemoteObject(undefined);
+            expect(res).assertFalse();
+            } catch (err) {
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2300 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2300 error code is: ' + err.code);
+            expect(err == null).assertTrue();
+            } finally {
+            data.reclaim();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2300 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2300---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2310
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2310
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2310", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2310---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeInterfaceToken(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2310 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2310 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2310 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2310---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2320
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2320
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2320", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2320---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeInterfaceToken(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2320 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2320 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2320 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2320---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2330
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2330
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2330", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2330---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.setSize(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2330 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2330 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2330 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2330---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2340
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2340
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2340", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2340---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.setSize(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2340 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2340 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2340 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2340---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2350
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2350
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2350", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2350---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.setCapacity(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2350 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2350 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2350 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2350---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2360
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2360
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2360", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2360---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.setCapacity(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2360 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2360 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2360 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2360---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2370
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2370
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2370", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2370---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.rewindRead(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2370 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2370 error code is: ' + err.code);
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2370 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2370---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2380
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2380
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2380", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2380---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.rewindRead(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2380 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2380 error code is: ' + err.code);
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2380 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2380---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2390
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2390
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2390", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2390---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.rewindWrite(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2390 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2390 error code is: ' + err.code);
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2390 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2390---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2400
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2400---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.rewindWrite(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2400 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2400 error code is: ' + err.code);
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2400 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2400---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2410
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2410
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2410", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2410---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeByte(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2410 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2410 error code is: ' + err.code);
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2410 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2410---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2420
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2420
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2420", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2420---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeByte(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2420 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2420 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2420 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2420---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2430
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2430
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2430", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2430---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeShort(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2430 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2430 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2430 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2430---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2440
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2440
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2440", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2440---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeShort(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2440 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2440 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2440 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2440---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2450
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2450
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2450", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2450---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeInt(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2450 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2450 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2450 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2450---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2460
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2460
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2460", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2460---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeInt(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2460 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2460 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2460 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2460---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2470
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2470
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2470", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2470---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeLong(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2470 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2470 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2470 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2470---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2480
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2480
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2480", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2480---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeLong(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2480 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2480 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2480 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2480---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2490
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2490
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2490", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2490---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeFloat(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2490 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2490 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2490 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2490---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2500
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2500
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2500---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeFloat(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2500 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2500 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2500 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2500---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2510
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2510
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2510", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2510---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeDouble(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2510 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2510 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2510 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2510---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2520
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2520
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2520", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2520---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeDouble(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2520 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2520 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2520 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2520---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2530
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2530
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2530", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2530---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeChar(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2530 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2530 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2530 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2530---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2540
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2540
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2540", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2540---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeChar(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2540 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2540 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2540 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2540---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2550
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2550
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2550", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2550---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+               let res = data.writeSequenceable(null);
+               expect(res).assertFalse();
+            } catch (err) {
+               console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2550 err in catch is: ' + err);
+               console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2550 error code is: ' + err.code);
+               expect(err == null).assertTrue();
+            } finally {
+               data.reclaim();
+               console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2550 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2550---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2560
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2560
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2560", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2560---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+               let res = data.writeSequenceable(undefined);
+               expect(res).assertFalse();
+            } catch (err) {
+               console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2560 err in catch is: ' + err);
+               console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2560 error code is: ' + err.code);
+               expect(err == null).assertTrue();
+            } finally {
+               data.reclaim();
+               console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2560 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2560---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2570
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2570
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2570", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2570---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+               data.writeByteArray(null);
+            } catch (err) {
+               testFlag = false;
+               console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2570 err in catch is: ' + err);
+               console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2570 error code is: ' + err.code);
+               expect(err != null).assertTrue();
+            } finally {
+               data.reclaim();
+               expect(testFlag).assertFalse();
+               console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2570 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2570---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2580
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2580
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2580", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2580---------------------------");
+               let data = rpc.MessageParcel.create();
+            try {
+               data.writeByteArray(undefined);
+            } catch (err) {
+               testFlag = false;
+               console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2580 err in catch is: ' + err);
+               console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2580 error code is: ' + err.code);
+               expect(err != null).assertTrue();
+            } finally {
+               data.reclaim();
+               expect(testFlag).assertFalse();
+               console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2580 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2580---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2590
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2590
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2590", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2590---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeShortArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2590 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2590 error code is: ' + err.code);
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2590 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2590---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2600
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2600
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2600---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeShortArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2600 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2600 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2600 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2600---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2610
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2610
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2610", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2610---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeIntArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2610 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2610 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2610 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2610---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2620
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2620
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2620", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2620---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeIntArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2620 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2620 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2620 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2620---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2630
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2630
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2630", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2630---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeLongArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2630 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2630 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2630 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2630---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2640
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2640
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2640", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2640---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeLongArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2640 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2640 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2640 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2640---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2650
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2650
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2650", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2650---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeFloatArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2650 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2650 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2650 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2650---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2660
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2660
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2660", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2660---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeFloatArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2660 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2660 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2660 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2660---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2670
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2670
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2670", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2670---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeDoubleArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2670 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2670 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2670 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2670---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2680
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2680
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2680", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2680---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeDoubleArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2680 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2680 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2680 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2680---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2690
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2690
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2690", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2690---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeCharArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2690 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2690 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2690 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2690---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2700
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2700
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2700---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeCharArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2700 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2700 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2700 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2700---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2710
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2710
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2710", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2710---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeStringArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2710 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2710 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2710 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2710---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2720
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2720
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2720", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2720---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeStringArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2720 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2720 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2720 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2720---------------------------");
+        });
+        
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2730
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2730
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2730", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2730---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeSequenceableArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2730 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2730 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2730 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2730---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2740
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2740
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2740", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2740---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeSequenceableArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2740 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2740 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2740 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2740---------------------------");
+        });
+        
+            /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2750
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2750
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2750", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2750---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            let input = [];
+            data.writeSequenceableArray(input);
+            let res = [];
+            data.readSequenceableArray(res);
+            expect(res.length == 0).assertTrue();
+            } catch (err) {
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2750 err in catch is: ' + err);
+            expect(err == null).assertTrue();
+            } finally {
+            data.reclaim();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2750 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2750---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2760
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2760
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2760", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2760---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            let res = data.writeRemoteObjectArray(null);
+            expect(res).assertFalse();
+            } catch (err) {
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2760 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2760 error code is: ' + err.code);
+            expect(err == null).assertTrue();
+            } finally {
+            data.reclaim();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2760 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2760---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2770
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2770
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2770", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2770---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            let res = data.writeRemoteObjectArray(undefined);
+            expect(res).assertFalse();
+            } catch (err) {
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2770 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2770 error code is: ' + err.code);
+            expect(err == null).assertTrue();
+            } finally {
+            data.reclaim();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2770 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2770---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2780
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2780
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2780", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2780---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readByteArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2780 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2780 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2780 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2780---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2790
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2790
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2790", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2790---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readByteArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2790 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2790 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2790 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2790---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2800
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2800
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2800---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readShortArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2800 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2800 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2800 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2800---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2810
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2810
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2810", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2810---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readShortArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2810 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2810 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2810 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2810---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2820
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2820
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2820", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2820---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readIntArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2820 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2820 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2820 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2820---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2830
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2830
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2830", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2830---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readIntArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2830 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2830 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2830 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2830---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2840
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2840
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2840", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2840---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readLongArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2840 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2840 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2840 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2840---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2850
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2850
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2850", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2850---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readLongArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2850 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2850 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2850 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2850---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2860
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2860
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2860", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2860---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readFloatArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2860 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2860 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2860 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2860---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2870
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2870
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2870", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2870---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readFloatArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2870 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2870 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2870 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2870---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2880
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2880
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2880", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2880---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readDoubleArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2880 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2880 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2880 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2880---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2890
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2890
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2890", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2890---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readDoubleArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2890 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2890 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2890 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2890---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2900
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2900
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2900---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readCharArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2900 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2900 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2900 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2900---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2910
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2910
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2910", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2910---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readCharArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2910 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2910 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2910 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2910---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2920
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2920
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2920", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2920---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readStringArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2920 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2920 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2920 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2920---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2930
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2930
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2930", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2930---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readStringArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2930 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2930 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2930 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2930---------------------------");
+        });
+        
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2940
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2940
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2940", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2940---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readSequenceableArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2940 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2940 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2940 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2940---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2950
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2950
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2950", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2950---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readSequenceableArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2950 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2950 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2950 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2950---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2960
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2960
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2960", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2960---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readRemoteObjectArray(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2960 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2960 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2960 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2960---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2970
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2970
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2970", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2970---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readRemoteObjectArray(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2970 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2970 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2970 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2970---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2980
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2980
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2980", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2980---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            let a = [];
+            data.writeRemoteObjectArray(a);
+            let res = [];
+            data.readRemoteObjectArray(res);
+            expect(res.length == 0).assertTrue();
+            } catch (err) {
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2980 err in catch is: ' + err);
+            expect(err == null).assertTrue();
+            } finally {
+            data.reclaim();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2980 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2980---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_2990
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_2990
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_2990", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2990---------------------------");
+            try {
+            rpc.MessageParcel.dupFileDescriptor(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2990 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_2990 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_2990 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_2990---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3000
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3000
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3000---------------------------");
+            try {
+            rpc.MessageParcel.dupFileDescriptor(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3000 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3000 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3000 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3000---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3010
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3010
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2990---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeFileDescriptor(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3010 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3010 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3010 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3010---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3020
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3020
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3020---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeFileDescriptor(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3020 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3020 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3020 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3020---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3030
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3030
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_2990---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeAshmem(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3030 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3030 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3030 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3030---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3040
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3040
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3040---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeAshmem(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3040 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3040 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3040 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3040---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3050
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3050
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3050---------------------------");
+            let data = rpc.MessageParcel.create();
+            let arr = [1, 2, 3, 4, 5]
+            try {
+            data.writeRawData(null, arr.length);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3050 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3050 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3050 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3050---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3060
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3060
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3060---------------------------");
+            let data = rpc.MessageParcel.create();
+            let arr = [1, 2, 3, 4, 5]
+            try {
+            data.writeRawData(undefined, arr.length);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3060 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3060 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3060 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3060---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3070
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3070
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3070---------------------------");
+            let data = rpc.MessageParcel.create();
+            let arr = [1, 2, 3, 4, 5]
+            try {
+            data.writeRawData(arr, null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3070 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3070 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3070 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3070---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3080
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3080
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3080---------------------------");
+            let data = rpc.MessageParcel.create();
+            let arr = [1, 2, 3, 4, 5]
+            try {
+            data.writeRawData(arr, undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3080 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3080 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3080 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3080---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3090
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3090
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3090---------------------------");
+            let data = rpc.MessageParcel.create();
+            let arr = []
+            try {
+            let res = data.writeRawData(arr, arr.length);
+            expect(res).assertFalse();
+            } catch (err) {
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3090 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3090 error code is: ' + err.code);
+            expect(err == null).assertTrue();
+            } finally {
+            data.reclaim();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3090 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3090---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3100
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3100
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3100---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readRawData(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3100 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3100 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3100 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3100---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3110
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3110
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3110---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readRawData(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3110 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3110 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3110 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3110---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3120
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3120
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3120---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readRawDataBuffer(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3120 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3120 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3120 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3120---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3130
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3130
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3110---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readRawDataBuffer(undefined);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3130 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3130 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3130 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3130---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3140
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3140
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3140---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeArrayBuffer(null, rpc.TypeCode.INT16_ARRAY);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3140 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3140 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3140 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3140---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3150
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3150
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3150---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.writeArrayBuffer(undefined, rpc.TypeCode.INT16_ARRAY);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3150 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3150 error code is: ' + err.code);
+            
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3150 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3150---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3160
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3160
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3160---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = '';
+                data.writeString(input);
+                let res = data.readString();
+                expect(res).assertEqual('');
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3160 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3160 error code is: ' + err.code);
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertTrue();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3160 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3160---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3170
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3170
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3170---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = null;
+                data.writeString(input);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3170 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3170 error code is: ' + err.code);
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3170 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3170---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3180
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3180
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3180---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = null;
+                data.writeBooleanArray(input);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3180 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3180 error code is: ' + err.code);
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3180 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3180---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3190
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3190
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3190---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = undefined;
+                data.writeBooleanArray(input);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3190 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3190 error code is: ' + err.code);
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3190 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3190---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3200
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3200
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------SUB_DSoftbus_IPC_API_MessageParcel_Error_3200---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = undefined;
+                data.writeString(input);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3200 err in catch is: ' + err);
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3200 error code is: ' + err.code);
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertFalse();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3200 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3200---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3210
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3210
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3210---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+            data.readSequenceable(null);
+            } catch (err) {
+            testFlag = false;
+            console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3210 err in catch is: ' + err);
+
+            expect(err != null).assertTrue();
+            } finally {
+            data.reclaim();
+            expect(testFlag).assertTrue();
+            console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3210 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3210---------------------------");
+        });
+    
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3220
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3220
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3220", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3220---------------------------");
+               let data = rpc.MessageParcel.create();
+            try {
+               data.readSequenceable(undefined);
+            } catch (err) {
+                testFlag = false;
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3220 err in catch is: ' + err);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3220 error code is: ' + err.code);
+                expect(err != null).assertTrue();
+            } finally {
+                data.reclaim();
+                expect(testFlag).assertTrue();
+                console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3220 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3220---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3230
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3230
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3230", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3230---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = [4, 5, 6]
+                data.writeShortArray(input)
+                let array = new Array()
+                array = [1, 2 , 3]
+                data.readShortArray(array);
+                assertArrayElementEqual(array,input);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3230 array is: ' + array);
+            } catch (err) {
+                testFlag = false;
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3230 err in catch is: ' + err);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3230 error code is: ' + err.code);
+                expect(err != null).assertTrue();
+            } finally {
+                data.reclaim();
+                expect(testFlag).assertTrue();
+                console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3230 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3230---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3240
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3240
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3240", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3240---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = [4, 5, 6]
+                data.writeLongArray(input)
+                let array = [1, 2 , 3]
+                data.readLongArray(array);
+                assertArrayElementEqual(array,input);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3240 array is: ' + array);
+            } catch (err) {
+                testFlag = false;
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3240 err in catch is: ' + err);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3240 error code is: ' + err.code);
+                expect(err != null).assertTrue();
+            } finally {
+               data.reclaim();
+               expect(testFlag).assertTrue();
+               console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3240 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3240---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3250
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3250
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3250---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = [4.11, 5.11, 6.11]
+                data.writeDoubleArray(input)
+                let array = [1.11, 2.11 , 3.11]
+                data.readDoubleArray(array);
+                assertArrayElementEqual(array,input);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3250 array is: ' + array);
+            } catch (err) {
+                testFlag = false;
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3250 err in catch is: ' + err);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3250 error code is: ' + err.code);
+                expect(err != null).assertTrue();
+            } finally {
+               data.reclaim();
+               expect(testFlag).assertTrue();
+               console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3250 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3250---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3260
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3260
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3260", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3260---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = [true, false, true]
+                data.writeBooleanArray(input)
+                let array = [true, true , true]
+                data.readBooleanArray(array);
+                assertArrayElementEqual(array,input);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3260 array is: ' + array);
+            } catch (err) {
+                testFlag = false;
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3260 err in catch is: ' + err);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3260 error code is: ' + err.code);
+                expect(err != null).assertTrue();
+            } finally {
+               data.reclaim();
+               expect(testFlag).assertTrue();
+               console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3260 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3260---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3270
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3270
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3270", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3270---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = [true, false, true]
+                data.writeBooleanArray(input)
+                data.readBooleanArray(undefined);
+            } catch (err) {
+                testFlag = false;
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3270 err in catch is: ' + err);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3270 error code is: ' + err.code);
+                expect(err != null).assertTrue();
+            } finally {
+               data.reclaim();
+               expect(testFlag).assertFalse();
+               console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3270 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3270---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3280
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3280
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3280", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3280---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = [true, false, true]
+                data.writeBooleanArray(input)
+                let res = data.readBooleanArray(null);
+            } catch (err) {
+                testFlag = false;
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3280 err in catch is: ' + err);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3280 error code is: ' + err.code);
+                expect(err != null).assertTrue();
+            } finally {
+               data.reclaim();
+               expect(testFlag).assertFalse();
+               console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3280 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3280---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3290
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3290
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3290", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3290---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = [4, 5, 6]
+                data.writeCharArray(input)
+                let array = [1, 2 , 3]
+                data.readCharArray(array);
+                assertArrayElementEqual(array,input);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3290 array is: ' + array);
+            } catch (err) {
+                testFlag = false;
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3290 err in catch is: ' + err);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3290 error code is: ' + err.code);
+                expect(err != null).assertTrue();
+            } finally {
+               data.reclaim();
+               expect(testFlag).assertTrue();
+               console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3290 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3290---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3300
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3300
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3300---------------------------");
+            let data = rpc.MessageParcel.create();
+            try {
+                let input = ['a', 'b', 'c']
+                data.writeStringArray(input)
+                let array = ['d', 'e' , 'f']
+                data.readStringArray(array);
+                assertArrayElementEqual(array,input);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3300 array is: ' + array);
+            } catch (err) {
+                testFlag = false;
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3300 err in catch is: ' + err);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3300 error code is: ' + err.code);
+                expect(err != null).assertTrue();
+            } finally {
+               data.reclaim();
+               expect(testFlag).assertTrue();
+               console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3300 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3300---------------------------");
+        });
+
+        /**
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageParcel_Error_3400
+         * @tc.number SUB_DSoftbus_IPC_API_MessageParcel_Error_3400
+         * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_DSoftbus_IPC_API_MessageParcel_Error_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_MessageParcel_Error_3400---------------------------");
+            let data = rpc.MessageParcel.create();
+            console.info("start SUB_DSoftbus_IPC_API_MessageParcel_Error_3400 typeof data is " + typeof data);
+            expect(typeof data === "object").assertTrue();
+
+            try {
+                let testRemoteObject = new TestRemoteObject("testObject");
+                let result = data.writeRemoteObject(testRemoteObject);
+                expect(result == true).assertTrue();
+                let res = data.readRemoteObject()
+                console.info("start SUB_DSoftbus_IPC_API_MessageParcel_Error_3400 typeof res is " + typeof res);
+                expect(typeof res === "object").assertTrue();
+                let ashmem = rpc.Ashmem.createAshmem("JsAshmemTest", K);
+                ashmem.mapReadWriteAshmem();
+                let ByteArraylet = [1, 2, 3, 4, 5];
+                ashmem.writeAshmem(ByteArraylet, 5, 0);
+                let readResult = ashmem.readAshmem(5, 0);
+                console.info("start SUB_DSoftbus_IPC_API_MessageParcel_Error_3400 typeof readResult is " + typeof readResult);
+                expect(typeof readResult === "object").assertTrue();
+            } catch (err) {
+                testFlag = false;
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3400 err in catch is: ' + err);
+                console.info('SUB_DSoftbus_IPC_API_MessageParcel_Error_3400 error code is: ' + err.code);
+                expect(err != null).assertTrue();
+            } finally {
+               data.reclaim();
+               expect(testFlag).assertTrue();
+               console.info("SUB_DSoftbus_IPC_API_MessageParcel_Error_3400 reclaim done");
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_MessageParcel_Error_3400---------------------------");
         });
 
         /**

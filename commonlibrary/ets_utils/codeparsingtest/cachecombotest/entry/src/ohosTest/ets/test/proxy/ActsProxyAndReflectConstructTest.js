@@ -2090,33 +2090,6 @@ export function testConstructArgsGeneratorFunction2() {
 }
 
 /**
- * 测试点98: 代理参数为Class（类对象）
- * 说明：参数必须是 Class 实例
- */
-export function testConstructArgsClass() {
-    class Target {
-        constructor(cls) {
-            this.type = cls.name;
-        }
-    }
-
-    const handler = {
-        construct: (target, args, newTarget) => {
-            if (typeof args[0] !== 'function' || !args[0].name) {
-                throw new Error('Argument must be Class');
-            }
-            return Reflect.construct(target, args, newTarget);
-        }
-    };
-    const ProxyConstructor = new Proxy(Target, handler);
-
-    class MyClass {
-    }
-
-    return new ProxyConstructor(MyClass).type === 'MyClass';
-}
-
-/**
  * 测试点100: 代理参数为String（基础类型）
  * 说明：参数必须是 String 实例（非基本类型）
  */

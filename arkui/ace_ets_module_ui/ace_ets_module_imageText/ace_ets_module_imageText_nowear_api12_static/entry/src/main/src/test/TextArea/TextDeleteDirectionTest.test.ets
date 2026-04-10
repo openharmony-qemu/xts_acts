@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function TextDeleteDirectionTest() {
   describe('TextDeleteDirectionTest', () :void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextDeleteDirectionTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility")

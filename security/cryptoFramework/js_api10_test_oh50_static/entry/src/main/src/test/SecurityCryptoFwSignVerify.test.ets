@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,6 +23,7 @@ import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import  buffer  from '@ohos.buffer';
 import { cryptoFramework } from '@kit.CryptoArchitectureKit'
+import { MdMap } from './utils/common/commonUtils';
 import * as commonUtils from './utils/common/commonUtils';
 import * as signVerifySyncUtils from './utils/signVerify/signVerifySyncUtils';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -59,7 +60,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -91,7 +92,40 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_0102
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_0102
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        for (let cipherSpec of signVerifySyncUtils.RSA_PKCS1_CIPHER_SPEC) {
+          let algName: string = cipherSpec[0][0];
+          algName = algName === "RSA" ? "RSA512": algName;
+          let padding: string = cipherSpec[1][0];
+          let digests: string[] = cipherSpec[2];
+          let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+          for (let digest of digests) {
+            let msgLen: int = (new MdMap()).getMdSize(digest);
+            let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+            let signAlgName: string = algName + "|" + padding + "|" + digest + "|OnlySign";
+            let verifyAlgName: string = algName + "|" + padding + "|" + digest + "|OnlyVerify";
+            let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+            let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
+            expect(ret).assertTrue();
+          }
+        }
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -123,7 +157,40 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_0201
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_0201
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_0201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        for (let cipherSpec of signVerifySyncUtils.RSA_PSS_CIPHER_SPEC) {
+          let algName: string = cipherSpec[0][0];
+          let padding: string = cipherSpec[1][0];
+          let digest: string = cipherSpec[2][0];
+          let mgf_digests: string[] = cipherSpec[3];
+          let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+          let msgLen: int = (new MdMap()).getMdSize(digest);
+          let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+          for (let mgf_digest of mgf_digests) {
+            let signAlgName: string = algName + "|" + padding + "|" + digest + "|" + mgf_digest + "|OnlySign";
+            let verifyAlgName: string = algName + "|" + padding + "|" + digest + "|" + mgf_digest + "|OnlyVerify";
+            let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+            let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
+            expect(ret).assertTrue();
+          }
+        }
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -155,7 +222,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -187,7 +254,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -219,7 +286,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -251,7 +318,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -283,7 +350,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -315,7 +382,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -347,7 +414,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -380,7 +447,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -411,7 +478,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -442,7 +509,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -473,7 +540,115 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_1201
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_1201
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_1201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        for (let cipherSpec of signVerifySyncUtils.ECDSA_SPEC) {
+          let algName: string = cipherSpec[0][0];
+          algName = algName === "ECC" ? "ECC224": algName;
+          let digests: string[] = cipherSpec[1];
+          let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+          for (let digest of digests) {
+            let signAlgName: string = algName + "|" + digest + "|OnlySign";
+            let verifyAlgName: string = algName + "|" + digest + "|OnlyVerify";
+            let msgLen: int = (new MdMap()).getMdSize(digest);
+            let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+            let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+            let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
+            expect(ret).assertTrue();
+          }
+        }
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_1202
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_1202
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_1202", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "ECC256";
+        let digest: string = "MD5"; // ECC不支持MD5
+        let signAlgName: string = algName + "|" + digest + "|OnlySign";
+        cryptoFramework.createSign(signAlgName);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_1203
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_1203
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_1203", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "ECC256";
+        let digest: string = "SM3"; // ECC不支持SM3
+        let signAlgName: string = algName + "|" + digest + "|OnlyVerify";
+        cryptoFramework.createVerify(signAlgName);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_1204
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_1204
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_1204", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        for (let cipherSpec of signVerifySyncUtils.ECDSA_SPEC) {
+          let algName: string = cipherSpec[0][0];
+          algName = algName === "ECC" ? "ECC224": algName;
+          let digests: string[] = cipherSpec[1];
+          let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+          for (let digest of digests) {
+            let signAlgName: string = algName + "|" + digest + "|OnlySign";
+            let verifyAlgName: string = algName + "|" + digest + "|OnlyVerify";
+            let msgLen: int = (new MdMap()).getMdSize(digest);
+            let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+            let dataSign = await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
+            let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
+            expect(ret).assertTrue();
+          }
+        }
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -504,7 +679,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -528,7 +703,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignSync(algName, keyPair.priKey, msg);
         let ret: boolean = signVerifySyncUtils.doVerifySync(algName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -553,9 +728,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -578,9 +753,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         await signVerifySyncUtils.doSignWithUpdatePromise(signAlgName, keyPair.priKey, msg, blockSize);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_SignVerifySync_Func_1501 SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -604,9 +779,36 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         let ret: boolean = signVerifySyncUtils.doVerifyWithUpdateSync(signAlgName, keyPair.pubKey, msg, dataSign, blockSize);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_1601
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_1601
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_1601", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let msgLen: int = 16;
+        let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+        let algName: string = "RSA512";
+        let signAlgName: string = "RSA512|PKCS1|MD5|OnlySign";
+        let verifyAlgName: string = "RSA512|PKCS1|MD5|OnlyVerify";
+        let blockSize: int = 5;
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        signVerifySyncUtils.doVerifyWithUpdateSync(verifyAlgName, keyPair.pubKey, msg, dataSign, blockSize);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL); // ERR_INVALID_CALL
       }
       done();
     });
@@ -630,7 +832,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         let ret: boolean = signVerifySyncUtils.doVerifyWithUpdateSync(signAlgName, keyPair.pubKey, msg, dataSign, blockSize);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -656,7 +858,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         let ret: boolean = signVerifySyncUtils.doVerifyWithUpdateSync(signAlgName, keyPair.pubKey, msg, dataSign, blockSize);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -682,7 +884,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         let ret: boolean = signVerifySyncUtils.doVerifyWithUpdateSync(signAlgName, keyPair.pubKey, msg, dataSign, blockSize);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -707,9 +909,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_SignVerifySync_Func_2000 SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -732,9 +934,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         await signVerifySyncUtils.doSignWithUpdatePromise(signAlgName, keyPair.priKey, msg, blockSize);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_SignVerifySync_Func_2000 SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -758,7 +960,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignWithUpdateSync(signAlgName, keyPair.priKey, msg, blockSize);
         let ret: boolean = signVerifySyncUtils.doVerifyWithUpdateSync(signAlgName, keyPair.pubKey, msg, dataSign, blockSize);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -785,9 +987,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -812,9 +1014,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -840,7 +1042,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         let ret: boolean = signVerifySyncUtils.doVerifySync(signAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -868,7 +1070,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         let ret: boolean = signVerifySyncUtils.doVerifySync(signAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -895,7 +1097,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         verify.initSync(keyPair.pubKey);
         let ret: boolean = verify.verifySync(null, dataSign);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -922,9 +1124,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -949,9 +1151,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -973,9 +1175,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         sign.initSync(keyPair.priKey);
         sign.signSync(null);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1000,9 +1202,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1027,9 +1229,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1054,9 +1256,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1081,9 +1283,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1108,9 +1310,9 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1134,7 +1336,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1160,7 +1362,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
         let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1186,7 +1388,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_SignVerifySync_Func_3000 SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1212,7 +1414,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
         let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_CryptoFramework_SignVerifySync_Func_3000 SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1237,58 +1439,58 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
       try {
         cryptoFramework.createSign(signAlgName);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       try {
         cryptoFramework.createVerify(verifyAlgName);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       try {
         cryptoFramework.createSign(algNameNoHash);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       try {
         cryptoFramework.createVerify(algNameNoHash);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       try {
         cryptoFramework.createSign(algName);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       try {
         cryptoFramework.createVerify(algName);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       try {
         cryptoFramework.createSign(algNameMGF);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       try {
         cryptoFramework.createVerify(algNameMGF);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -1312,7 +1514,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1338,7 +1540,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
         let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1364,7 +1566,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1390,7 +1592,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
         let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1416,7 +1618,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1442,7 +1644,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
         let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1468,7 +1670,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1494,7 +1696,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
         let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1520,7 +1722,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1546,7 +1748,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
         let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1572,7 +1774,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         let ret: boolean = signVerifySyncUtils.doVerifySync(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1598,7 +1800,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let dataSign = await signVerifySyncUtils.doSignPromise(signAlgName, keyPair.priKey, msg);
         let ret: boolean = await signVerifySyncUtils.doVerifyPromise(verifyAlgName, keyPair.pubKey, msg, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1621,32 +1823,32 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         try {
           cryptoFramework.createSign(signAlgName);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SignVerify “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify(verifyAlgName);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SignVerify “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
         try {
           cryptoFramework.createSign(AlgName);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SignVerify “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify(AlgName);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SignVerify “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1667,19 +1869,19 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let verifyAlgName: string = "Ed25519|NoHash|SHA";
         try {
           cryptoFramework.createSign(signAlgName);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sign “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
         try {
           cryptoFramework.createVerify(verifyAlgName);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Verify “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1702,33 +1904,33 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         try {
           cryptoFramework.createSign(signAlgName);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sign “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify(verifyAlgName);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Verify “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
         try {
           cryptoFramework.createSign(algName);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sign “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify(algName);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Verify “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1750,20 +1952,20 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         try {
           cryptoFramework.createSign(signAlgName);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sign “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify(verifyAlgName);
 
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Verify “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1785,19 +1987,19 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         try {
           cryptoFramework.createSign(signAlgName);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sign “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify(verifyAlgName);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Verify “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect((error as BusinessError).code).assertEqual(401);
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1824,7 +2026,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         verify.initSync(keyPair.pubKey);
         let ret: boolean = await verify.verify(null, dataSign);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1853,7 +2055,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         dataSign.data[0]++;
         let ret: boolean = await verify.verify(null, dataSign);
         expect(ret).assertFalse();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1883,7 +2085,228 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         verify.verify(null, dataSign, (err, ret) => {
           expect(ret).assertFalse();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_4600
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_4600
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RSA1024";
+        let signAlgName: string = "RSA1024|PSS|SHA384|MGF1_SHA256|OnlySign";
+        let msgLen: int = 32;
+        let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_4700
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_4700
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RSA512";
+        let signAlgName: string = "RSA512|PKCS1|SHA256|OnlySign";
+        let msgLen: int = 48;
+        let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_4800
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_4800
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RSA512";
+        let signAlgName: string = "RSA512|PKCS1|SM3|OnlySign";
+        let msgLen: int = 32;
+        let msg: cryptoFramework.DataBlob = await commonUtils.createData(msgLen);
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_4900
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_4900
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_4900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RSA512";
+        let signAlgName: string = "RSA512|PKCS1|SHA256|OnlySign";
+        let verifyAlgName: string = "RSA512|PKCS1|SHA256"
+        let msgData: number[] = [
+          0xe3, 0xb0, 0xc4, 0x42, 0x98, 0xfc, 0x1c, 0x14, 0x9a, 0xfb, 0xf4, 0xc8, 0x99, 0x6f, 0xb9, 0x24,
+          0x27, 0xae, 0x41, 0xe4, 0x64, 0x9b, 0x93, 0x4c, 0xa4, 0x95, 0x99, 0x1b, 0x78, 0x52, 0xb8, 0x55
+        ];
+        let msg: cryptoFramework.DataBlob = {data: new Uint8Array(msgData)};
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        let signData: cryptoFramework.DataBlob = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        let verify: cryptoFramework.Verify = cryptoFramework.createVerify(verifyAlgName);
+        await verify.init(keyPair.pubKey);
+        let ret = await verify.verify(null, signData);
+        expect(ret).assertTrue();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_5000
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_5000
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "ECC256";
+        let signAlgName: string = "ECC256|SHA256|OnlySign";
+        let verifyAlgName: string = "ECC256|SHA256"
+        let msgData: number[] = [
+          0xe3, 0xb0, 0xc4, 0x42, 0x98, 0xfc, 0x1c, 0x14, 0x9a, 0xfb, 0xf4, 0xc8, 0x99, 0x6f, 0xb9, 0x24,
+          0x27, 0xae, 0x41, 0xe4, 0x64, 0x9b, 0x93, 0x4c, 0xa4, 0x95, 0x99, 0x1b, 0x78, 0x52, 0xb8, 0x55
+        ];
+        let msg: cryptoFramework.DataBlob = {data: new Uint8Array(msgData)};
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        let signData: cryptoFramework.DataBlob = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        let verify: cryptoFramework.Verify = cryptoFramework.createVerify(verifyAlgName);
+        await verify.init(keyPair.pubKey);
+        let ret = await verify.verify(null, signData);
+        expect(ret).assertFalse(); // ECC不支持空消息验签
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_5100
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_5100
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_5100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let verifyAlgName: string = "DSA1024|SHA256|OnlyVerify";
+        cryptoFramework.createVerify(verifyAlgName);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_5200
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_5200
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_5200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let verifyAlgName: string = "SM2|SM3|OnlyVerify";
+        cryptoFramework.createVerify(verifyAlgName);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_5300
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_5300
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_5300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let verifyAlgName: string = "Ed25519|OnlyVerify";
+        cryptoFramework.createVerify(verifyAlgName);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_5400
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_5400
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_5400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RSA1024";
+        let signAlgName: string = "RSA1024|NoPadding|NoHash|OnlySign";
+        let verifyAlgName: string = "RSA1024|NoPadding|NoHash|OnlyVerify"
+        let msg: cryptoFramework.DataBlob = {data: new Uint8Array(128)};
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        let signData: cryptoFramework.DataBlob = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        let verify: cryptoFramework.Verify = cryptoFramework.createVerify(verifyAlgName);
+        await verify.init(keyPair.pubKey);
+        let ret = await verify.verify(msg, signData);
+        expect(ret).assertTrue();
+      } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }

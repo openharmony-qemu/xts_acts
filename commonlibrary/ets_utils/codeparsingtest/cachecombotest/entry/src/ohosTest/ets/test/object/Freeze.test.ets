@@ -68,6 +68,10 @@ import {
   testWithStatementSecurityWithFrozenProxy
 } from './FreezeTest';
 
+function sleep(time: number) {
+  return new Promise<void>((resolve) => setTimeout(resolve, time));
+}
+
 export default function FreezeTest() {
   describe('FreezeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -75,7 +79,8 @@ export default function FreezeTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(40);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.

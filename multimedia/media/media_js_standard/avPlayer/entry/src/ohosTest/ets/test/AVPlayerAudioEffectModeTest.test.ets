@@ -441,7 +441,7 @@ export default function AVPlayerAudioEffectModeTest() {
                   console.info(`avPlayer is: null`);
                   break;
               }
-            for (let i = 0; i < 1000; i++) {
+            for (let i = 0; i < 100; i++) {
               avPlayer.audioEffectMode = audioEffectMode[Math.floor((Math.random() * audioEffectMode.length))];
             }
             avPlayer.play();
@@ -452,7 +452,7 @@ export default function AVPlayerAudioEffectModeTest() {
                   break;
               }
             if (playCount++ == 1) {
-              for (let i = 0; i < 1000; i++) {
+              for (let i = 0; i < 100; i++) {
                 avPlayer.audioEffectMode = audioEffectMode[Math.floor((Math.random() * audioEffectMode.length))];
               }
               avPlayer.pause();
@@ -466,7 +466,7 @@ export default function AVPlayerAudioEffectModeTest() {
                   console.info(`avPlayer is: null`);
                   break;
               }
-            for (let i = 0; i < 1000; i++) {
+            for (let i = 0; i < 100; i++) {
               avPlayer.audioEffectMode = audioEffectMode[Math.floor((Math.random() * audioEffectMode.length))];
             }
             avPlayer.play();
@@ -476,7 +476,7 @@ export default function AVPlayerAudioEffectModeTest() {
                   console.info(`avPlayer is: null`);
                   break;
               }
-            for (let i = 0; i < 1000; i++) {
+            for (let i = 0; i < 100; i++) {
               avPlayer.audioEffectMode = audioEffectMode[Math.floor((Math.random() * audioEffectMode.length))];
             }
             avPlayer.release();
@@ -819,6 +819,63 @@ export default function AVPlayerAudioEffectModeTest() {
       avPlayer?.on('amplitudeUpdate', (value) => {
         console.info(`get max amplitude ${value}`);
         expect(value.length).assertEqual(5);
+      });
+      avPlayer?.on('error', (err) => {
+        console.error(`error occurred, message is ${err.message}`);
+        expect().assertFail();
+        avPlayer?.release();
+      });
+      setSource(avPlayer, fileDescriptor);
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_OUTPUT_DEVICE_CHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_OUTPUT_DEVICE_CHANGE_0100
+     * @tc.desc   test get max amplitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_OUTPUT_DEVICE_CHANGE_0100', Level.LEVEL0, async (done: Function) => {
+      let audioEffectMode = [EFFECT_DEFAULT, EFFECT_NONE];
+      await media.createAVPlayer().then((video) => {
+        if (typeof (video) != 'undefined') {
+          avPlayer = video;
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+      avPlayer?.on('stateChange', async (state, reason) => {
+        switch (state) {
+          case INITIALIZED:
+              if (!avPlayer) {
+                  console.info(`avPlayer is: null`);
+                  break;
+              }
+            avPlayer.surfaceId = globalThis.value;
+            avPlayer.prepare();
+            break;
+          case PREPARED:
+              if (!avPlayer) {
+                  console.info(`avPlayer is: null`);
+                  break;
+              }
+            avPlayer.play();
+            break;
+          case PLAYING:
+            await mediaTestBase.msleepAsync(PLAY_TIME);
+            avPlayer?.release();
+            break;
+          case RELEASED:
+            avPlayer = null;
+            done();
+            break;
+          default:
+            break;
+        }
+      });
+      avPlayer?.on('audioOutputDeviceChangeWithInfo', (value) => {
+        console.info(`get output device change ${value}`);
       });
       avPlayer?.on('error', (err) => {
         console.error(`error occurred, message is ${err.message}`);

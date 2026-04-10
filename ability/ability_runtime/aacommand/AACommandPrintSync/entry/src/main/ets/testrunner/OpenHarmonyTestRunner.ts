@@ -72,4 +72,11 @@ export default class OpenHarmonyTestRunner implements TestRunner {
       });
     console.info('OpenHarmonyTestRunner onRun end');
   }
+
+  onStop() {
+    console.info('OpenHarmonyTestRunner onStop called');
+    let msg = 'TestRunner onStop log message for testing';
+    abilityDelegator.printSync(msg);
+    console.info('OpenHarmonyTestRunner onStop end');
+  }
 }

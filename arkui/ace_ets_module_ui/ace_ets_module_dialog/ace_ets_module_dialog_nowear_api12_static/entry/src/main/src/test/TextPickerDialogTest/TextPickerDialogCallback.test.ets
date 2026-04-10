@@ -32,7 +32,7 @@ import { RecordData } from '@ohos.base';
 export default function TextPickerDialogCallback() {
   describe('TextPickerDialogCallback', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerDialogAJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
 

@@ -25,7 +25,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function detentSelection() {
   describe('detentSelection', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("detentSelection beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api15.static", "EntryAbility")
     });

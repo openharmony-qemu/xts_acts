@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,9 +32,9 @@ export default function setShortcutVisible() {
      * @tc.desc   Obtain the shortcut config data through the get interface to determine if it is correct.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Sub_Bms_Framework_shortcutManager_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('Sub_Bms_Framework_shortcutManager_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let tag = 'Sub_Bms_Framework_shortcutManager_static_001';
         hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} begin`);
@@ -66,6 +66,27 @@ export default function setShortcutVisible() {
     })
 
     /**
+     * @tc.name   SUB_BMS_FRAMEWORK_SHORTCUTMANAGER_STATIC_0100
+     * @tc.number SUB_BMS_FRAMEWORK_SHORTCUTMANAGER_STATIC_0100
+     * @tc.desc   isShortcutSupported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BMS_FRAMEWORK_SHORTCUTMANAGER_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let tag = 'SUB_BMS_FRAMEWORK_SHORTCUTMANAGER_STATIC_0100';
+      hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} begin`);
+      let data = shortcutManager.isShortcutSupported();
+      hilog.info(DOMAIN, 'isShortcutSupported Data:', JSON.stringify(data));
+      if (data === true) {
+        expect(data).assertTrue();
+      } else {
+        expect(data).assertFalse();
+      }
+      done();
+    })
+
+    /**
      * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_static_0500
      * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_static_0500
      * @tc.desc   Test setShortcutVisibleForSelf with shortcut id is nonexistent.
@@ -79,7 +100,8 @@ export default function setShortcutVisible() {
         await shortcutManager.setShortcutVisibleForSelf('not_exist', false);
         expect().assertFail();
         done();
-      } catch (error : BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         let msg: string = `setShortcutVisibleForSelf(not_exist,false) failed: ${JSON.stringify(error)}`;
         hilog.info(DOMAIN, 'testTag', '%{public}s', msg);
         expect(error.code).assertEqual(17700070);
@@ -111,6 +133,30 @@ export default function setShortcutVisible() {
       }
     })
 
+    /**
+     * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_static_0300
+     * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_static_0300
+     * @tc.desc   Test setShortcutVisibleForSelf with shortcut id is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('Sub_Bms_Framework_Icon_ShortcutVisible_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(DOMAIN, 'testTag', '%{public}s', 'Sub_Bms_Framework_Icon_ShortcutVisible_static_0300 begin');
+      try {
+        await shortcutManager.setShortcutVisibleForSelf('', true);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        let msg: string = `setShortcutVisibleForSelf(empty,true) failed: ${JSON.stringify(error)}`;
+        hilog.info(DOMAIN, 'testTag', '%{public}s', msg);
+        expect(error.code).assertEqual(17700070);
+        expect(error.message).assertEqual('BusinessError 17700070: The specified shortcut id is illegal.');
+        hilog.info(DOMAIN, 'testTag', '%{public}s', 'Sub_Bms_Framework_Icon_ShortcutVisible_static_0300 end');
+        done();
+      }
+    })
   })
 }
 

@@ -99,7 +99,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -151,7 +151,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -217,7 +217,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -283,7 +283,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -348,7 +348,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -361,7 +361,7 @@ export default function sequenceRunnerTaskTest() {
 
         for (let i = 0; i < 10; i++) {
           let task1: taskpool.Task = new taskpool.Task(printArgs7, 1.0);
-          task1.onReceiveData((): Any => {
+          task1.onReceiveData(() => {
             try {
               count1 += 1
               throw Error(`${Tag}---error`)
@@ -375,7 +375,7 @@ export default function sequenceRunnerTaskTest() {
           });
 
           let task2: taskpool.Task = new taskpool.Task(printArgs7, 1.0);
-          task2.onReceiveData((): Any => {
+          task2.onReceiveData(() => {
             try {
               count2 += 1
               throw Error(`${Tag}---error`)
@@ -402,7 +402,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -456,7 +456,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -505,7 +505,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -560,7 +560,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -601,7 +601,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -645,7 +645,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -687,7 +687,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -729,7 +729,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -770,7 +770,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -811,7 +811,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -853,7 +853,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -896,7 +896,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -937,7 +937,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -979,7 +979,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1022,7 +1022,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1065,7 +1065,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1108,7 +1108,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1151,7 +1151,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1194,7 +1194,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1237,7 +1237,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
@@ -1280,7 +1280,7 @@ export default function sequenceRunnerTaskTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('Sequence_Runner_TaskTest_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {

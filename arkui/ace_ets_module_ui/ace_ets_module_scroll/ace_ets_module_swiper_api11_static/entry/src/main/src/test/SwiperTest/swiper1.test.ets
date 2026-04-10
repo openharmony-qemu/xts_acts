@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,7 +54,7 @@ let emitKey = "emitUserAgent";
 
 export default function swiperCurveJsunit() {
   describe('swiperCurveTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperCurveJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
@@ -71,7 +71,7 @@ export default function swiperCurveJsunit() {
           router.replaceUrl(options)
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`Swiper1_1 beforeEach error:` + JSON.stringify(err));
       }
     });
@@ -301,7 +301,7 @@ it('testswiperCurve_static_00011', Level.LEVEL0, async (): Promise<void> => {
       try {
         obj.getElement('$attrs').getElement('isOn').setBoolean(!obj.getElement('$attrs').getBoolean('isOn'))
         //尝试用isOn的改变来触发Onchange()事件
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testswiperCurve_static_00011 on event err : " + JSON.stringify(err));
       }
       console.info("[testswiperCurve_static_00011] onChange value :" + obj.getElement('$attrs').tryGetElement('onChange'));

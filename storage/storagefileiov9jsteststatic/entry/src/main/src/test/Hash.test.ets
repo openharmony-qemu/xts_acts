@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ export default function fileIOHash() {
         expect(str == '5EB63BBBE01EEED093CB22BB8F5ACDC3').assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -77,7 +77,7 @@ export default function fileIOHash() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -101,7 +101,7 @@ export default function fileIOHash() {
         expect(str == '2AAE6C35C94FCFB415DBE95F408B9CE91EE846ED').assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -130,7 +130,7 @@ export default function fileIOHash() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -154,7 +154,7 @@ export default function fileIOHash() {
         expect(str == 'B94D27B9934D3E08A52E52D7DA7DABFAC484EFE37A5380EE9088F7ACE2EFCDE9').assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -183,7 +183,7 @@ export default function fileIOHash() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -204,9 +204,10 @@ export default function fileIOHash() {
       try {
         let str = await fileHash.hash(fpath,'256');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_006 has failed for' + JSON.stringify(e));
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         fs.unlinkSync(fpath);
         done();
       }
@@ -226,28 +227,145 @@ export default function fileIOHash() {
       expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         fileHash.hash(fpath, "256", (err: BusinessError | null, str: string | undefined) => {
-          if(err?.code != 0){
+                   if(err?.code != 0){
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_007 has error for' + JSON.stringify(err));
-            expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
             fs.unlinkSync(fpath);
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_007 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
     });
 
     /**
-     * @tc.name   fileIO_test_hash_createHash_static_008
+     * @tc.name   fileIO_test_hash_async_static_008
      * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0800
+     * @tc.desc   Test hash() interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_hash_async_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_008 start');
+      try {
+        await fileHash.hash("", "md5");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_008 catch error: ' + e.code);
+        expect(e.code === 13900002).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_hash_async_static_011
+     * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1100
+     * @tc.desc   Test hash() interface with empty algorithm.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_hash_async_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_011 start');
+      let fpath = await Utils.nextFileName('fileIO_test_hash_async_static_011');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        await fileHash.hash(fpath, "");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_011 catch error: ' + JSON.stringify(e));
+        expect(e.code === 13900020).assertTrue();
+        fs.unlinkSync(fpath);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_hash_async_callback_static_000
+     * @tc.number SUB_DF_FILEIO_HASH_CALLBACK_0000
+     * @tc.desc   Test hash() callback interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_hash_async_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_callback_static_000 start');
+      try {
+        fileHash.hash("", "md5", (err: BusinessError | null, str: string | undefined) => {
+          if(err?.code != 0){
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_callback_static_000 catch error: ' + err?.code);
+            expect(err?.code === 13900002).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_callback_static_000 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_hash_async_callback_static_003
+     * @tc.number SUB_DF_FILEIO_HASH_CALLBACK_0300
+     * @tc.desc   Test hash() callback interface with empty algorithm.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_hash_async_callback_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_callback_static_003 start');
+      let fpath = await Utils.nextFileName('fileIO_test_hash_async_callback_static_003');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      try {
+        fileHash.hash(fpath, "", (err: BusinessError | null, str: string | undefined) => {
+          if(err?.code != 0){
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_callback_static_003 catch error: ' + JSON.stringify(err));
+            expect(err?.code === 13900020).assertTrue();
+            fs.unlinkSync(fpath);
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_callback_static_003 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_hash_createHash_static_006
+     * @tc.number SUB_DF_FILEIO_HASH_CREATEHASH_0000
+     * @tc.desc   Test createHash() interface with empty algorithm.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_hash_createHash_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_006 start');
+      try {
+        fileHash.createHash("");
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_006 catch error: ' + JSON.stringify(e));
+        expect(e.code === 401 || e.code === 13900020).assertTrue();
+        done();
+      }
+    });
+	
+    /**
+     * @tc.name   fileIO_test_hash_createHash_static_009
+     * @tc.number SUB_DF_FILEIO_HASH_CREATEHASH_0300
      * @tc.desc   Test createHash() interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('fileIO_test_hash_createHash_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+    it('fileIO_test_hash_createHash_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_008 start');
       let fpath = await Utils.nextFileName('fileIO_test_hash_createHash_static_008');
       expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
@@ -263,7 +381,7 @@ export default function fileIOHash() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let b = data.split('').map((x):double => x.charCodeAt(0));
           hsMd5.update(new Uint8Array(b).buffer);
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_008 readlen ' + data?.length + ', content: ' + data?.slice(0, 10));
@@ -275,23 +393,23 @@ export default function fileIOHash() {
           expect(streamHash == ret).assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_008 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
     });
 
     /**
-     * @tc.name   fileIO_test_hash_createHash_static_009
-     * @tc.number SUB_DF_FILEIO_HASH_ASYNC_0900
+     * @tc.name   fileIO_test_hash_createHash_static_010
+     * @tc.number SUB_DF_FILEIO_HASH_CREATEHASH_0400
      * @tc.desc   Test createHash() interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('fileIO_test_hash_createHash_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_009 start');
-      let fpath = await Utils.nextFileName('fileIO_test_hash_createHash_static_009');
+    it('fileIO_test_hash_createHash_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_010 start');
+      let fpath = await Utils.nextFileName('fileIO_test_hash_createHash_static_010');
       expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
 
       try {
@@ -305,35 +423,35 @@ export default function fileIOHash() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let b = data.split('').map((x):double => x.charCodeAt(0));
           hsSha1.update(new Uint8Array(b).buffer);
-          hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_009 readlen ' + data?.length + ', content: ' + data?.slice(0, 10));
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_010 readlen ' + data?.length + ', content: ' + data?.slice(0, 10));
         });
         rs.on('close', async () => {
           const ret = await fileHash.hash(fpath, 'sha1');
           const streamHash = hsSha1.digest();
-          hilog.info(domain, tag, '%{public}s', `fileIO_test_hash_createHash_static_009 hashResult: ${streamHash}, fileHash: ${ret}`);
+          hilog.info(domain, tag, '%{public}s', `fileIO_test_hash_createHash_static_010 hashResult: ${streamHash}, fileHash: ${ret}`);
           expect(streamHash == ret).assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
-        hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_009 has failed for ' + e.message + ', code: ' + e.code);
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_010 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
     });
 
     /**
-     * @tc.name   fileIO_test_hash_createHash_static_010
-     * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1000
+     * @tc.name   fileIO_test_hash_createHash_static_011
+     * @tc.number SUB_DF_FILEIO_HASH_CREATEHASH_0500
      * @tc.desc   Test createHash() interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('fileIO_test_hash_createHash_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_010 start');
-      let fpath = await Utils.nextFileName('fileIO_test_hash_createHash_static_010');
+    it('fileIO_test_hash_createHash_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_011 start');
+      let fpath = await Utils.nextFileName('fileIO_test_hash_createHash_static_011');
       expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
 
       try {
@@ -347,43 +465,44 @@ export default function fileIOHash() {
           if(a instanceof Record){
             return;
           }
-          const data:string = a.toString();
+          const data:string = (a as Object).toString();
           let b = data.split('').map((x):double => x.charCodeAt(0));
           hsSha256.update(new Uint8Array(b).buffer);
-          hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_010 readlen ' + data?.length + ', content: ' + data?.slice(0, 10));
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_011 readlen ' + data?.length + ', content: ' + data?.slice(0, 10));
         });
         rs.on('close', async () => {
           const ret = await fileHash.hash(fpath, 'sha256');
           const streamHash = hsSha256.digest();
-          hilog.info(domain, tag, '%{public}s', `fileIO_test_hash_createHash_static_010 hashResult: ${streamHash}, fileHash: ${ret}`);
+          hilog.info(domain, tag, '%{public}s', `fileIO_test_hash_createHash_static_011 hashResult: ${streamHash}, fileHash: ${ret}`);
           expect(streamHash == ret).assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
-        hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_010 has failed for ' + e.message + ', code: ' + e.code);
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_011 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
     });
 
     /**
-     * @tc.name   fileIO_test_hash_createHash_static_011
-     * @tc.number SUB_DF_FILEIO_HASH_ASYNC_1100
-     * @tc.desc   Test createHash() interface.
+     * @tc.name   fileIO_test_hash_createHash_static_012
+     * @tc.number SUB_DF_FILEIO_HASH_CREATEHASH_0600
+     * @tc.desc   Test createHashes() interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('fileIO_test_hash_createHash_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_011 start');
-      let fpath = await Utils.nextFileName('fileIO_test_hash_createHash_011');
+    it('fileIO_test_hash_createHash_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_012 start');
+      let fpath = await Utils.nextFileName('fileIO_test_hash_createHash_012');
       expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
 
       try {
         let rs = fs.createReadStream(fpath);
         let hsSha256 = fileHash.createHash('123');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
-        hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_011 has failed for ' + e.message + ', code: ' + e.code);
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_012 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }

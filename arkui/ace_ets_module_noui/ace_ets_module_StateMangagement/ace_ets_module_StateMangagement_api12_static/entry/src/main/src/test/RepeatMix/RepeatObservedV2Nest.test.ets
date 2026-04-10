@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RepeatObservedV2Nest() {
   describe('RepeatObservedV2Nest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatObservedV2Nest beforeEach start");
 
 

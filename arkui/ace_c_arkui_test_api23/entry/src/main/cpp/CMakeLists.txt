@@ -44,6 +44,8 @@ add_library(nativerender SHARED
     textTest/TexeTest.cpp
     textTest/TextInputTest.cpp
     textTest/TextAreaTest.cpp
+    swiper/SwiperFakeTest.cpp
+    textLayoutManager/TextLayoutManager.cpp
 )
 
 add_library(nativefunc SHARED
@@ -55,6 +57,7 @@ add_library(nativefunc SHARED
     containerPicker/ContainerPickerSelectionIndicatorTest.cpp
     containerPicker/ContainerPickerSubComponentTest.cpp
     TextMarqueeOptions/TextMarqueeOptionsTest.cpp
+    TextMarqueeOptions/ControllerBaseCreatTest.cpp
     image/ImageAntialiasedTest.cpp
 )
 

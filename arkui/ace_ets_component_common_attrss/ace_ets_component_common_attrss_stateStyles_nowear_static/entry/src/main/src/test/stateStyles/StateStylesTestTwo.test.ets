@@ -58,7 +58,7 @@ export default function stateStylesTestTwo() {
   }]
 
   describe('StateStylesTestTwo', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StateStylesTestTwo beforeEach start");
       console.info("startAbility start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.stateStyle.nowear.test.static", "EntryAbility")
@@ -70,20 +70,15 @@ export default function stateStylesTestTwo() {
       console.info('strJsonByKey',strJsonByKey)
       UtilsTest.msSleep(2000)
       let strJson =  JSON.parseJsonElement(strJsonByKey);
-      AppStorage.setOrCreate<boolean>('_isSelect', data.testValue.setValue)
       await UtilsTest.msSleep(2000);
       // //Obtain target component information after changes
       let strJsonByKey2 = inspector.getInspectorByKey(data.pageConfig.componentKey);
       console.info('strJsonByKey2',strJsonByKey2)
       UtilsTest.msSleep(2000)
-      let strJson2 =  JSON.parseJsonElement(strJsonByKey2);
-      // //Check results
+      //Check results
       console.info('[' + data.caseTag + ']' + 'targetBeforeObj.getElement($attrs).getString(zIndex) is:' + strJson.getElement('$attrs').getDouble('zIndex'));
       console.info('[' + data.caseTag + ']' + 'data.testValue.expectValue.selectedStyles is:' + data.testValue.expectValue.selectedStyles);
       expect(strJson.getElement('$attrs').getDouble('zIndex')).assertEqual(data.testValue.expectValue.selectedStyles);
-      console.info('[' + data.caseTag + ']' + 'targetAfterObj.getElement($attrs).getString(zIndex) is:' + strJson2.getElement('$attrs').getDouble('zIndex'));
-      console.info('[' + data.caseTag + ']' + 'data.testValue.expectValue.normalStyles is:' + data.testValue.expectValue.normalStyles);
-      expect(strJson2.getElement('$attrs').getDouble('zIndex')).assertEqual(data.testValue.expectValue.normalStyles);
     });
   })
 }

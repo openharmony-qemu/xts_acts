@@ -30,7 +30,7 @@ let domain: Int = 0x0000;
 
 export default function TextMenuType() {
   describe('TextMenuType', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StyledStringUrl beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api13.static", "EntryAbility")

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,7 +36,7 @@ import { AppStorage, Observed } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
 @Observed
-class StateClass0090 {
+export class StateClass0090 {
   private _value: string = ''
 
   public set value(value: string) {
@@ -79,7 +79,7 @@ struct State0090 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('State0090', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

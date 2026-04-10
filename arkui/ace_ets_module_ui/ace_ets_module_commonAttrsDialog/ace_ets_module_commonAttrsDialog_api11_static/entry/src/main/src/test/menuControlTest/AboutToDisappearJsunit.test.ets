@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function aboutToDisappearJsunit() {
   describe('aboutToDisappearTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
     });
 
@@ -89,7 +89,7 @@ it('aboutToDisappearTest_static_0100', Level.LEVEL0, async (done: () => void): P
       } as events_emitter.InnerEvent
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("aboutToDisappearTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("aboutToDisappearTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));

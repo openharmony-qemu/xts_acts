@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ export default function fileIOUtimes() {
         let setime = Math.floor(time / 1000);
         expect(stat.mtime == setime).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_utimes_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -72,7 +72,7 @@ export default function fileIOUtimes() {
         let setime = Math.floor(time / 1000);
         expect(stat.mtime == setime).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_utimes_async_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -97,7 +97,7 @@ export default function fileIOUtimes() {
         let setime = Math.floor(time / 1000);
         expect(stat.mtime == setime).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_utimes_async_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -117,7 +117,8 @@ export default function fileIOUtimes() {
       try {
         fs.utimes(fpath,new Date().getTime());
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_utimes_async_static_004 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -138,9 +139,30 @@ export default function fileIOUtimes() {
       try {
         fs.utimes(fpath,-1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_utimes_async_static_006 has failed for' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_utimes_async_static_007
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_UTIMES_0700
+     * @tc.desc   Test utimes() interface with empty string for the first parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_utimes_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      try {
+        let time = new Date().getTime();
+        fs.utimes("", time);
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_utimes_async_static_007 has failed for' + e.code + e.message);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
   })

@@ -382,364 +382,364 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_0100
+     * @tc.name   SUB_GLOBAL_testDisplayNames_0100Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0100
      * @tc.desc   DisplayNames  with th & standard & th-TH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it(' SUB_GLOBAL_testDisplayNames_0100', Level.LEVEL1, () => {
+    it('SUB_GLOBAL_testDisplayNames_0100Adapt001', Level.LEVEL1, () => {
       const dnDialect = new Intl.DisplayNames('th', { type: 'language', languageDisplay: 'standard' });
       let dn = dnDialect.of('th-TH');
       expect(dn).assertEqual('th-TH');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_0200
+     * @tc.name   SUB_GLOBAL_testDisplayNames_0200Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0200
      * @tc.desc   DisplayNames  with th & dialect & th-TH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it(' SUB_GLOBAL_testDisplayNames_0200', Level.LEVEL1, () => {
+    it('SUB_GLOBAL_testDisplayNames_0200Adapt001', Level.LEVEL1, () => {
       const dnDialect = new Intl.DisplayNames('th', { type: 'language', languageDisplay: 'dialect' });
       let dn = dnDialect.of('th-TH');
       expect(dn).assertEqual('th-TH');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_0300
+     * @tc.name   SUB_GLOBAL_testDisplayNames_0300Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0300
      * @tc.desc   DisplayNames  with ar & standard & ar-EG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_0300', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_0300Adapt001', Level.LEVEL2, () => {
       const dnDialect = new Intl.DisplayNames('ar', { type: 'language', languageDisplay: 'standard' });
       let dn = dnDialect.of('ar-EG');
       expect(dn).assertEqual('ar-EG')
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_0400
+     * @tc.name   SUB_GLOBAL_testDisplayNames_0400Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0400
      * @tc.desc   DisplayNames  with ar & dialect & ar-EG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_0400', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_0400Adapt001', Level.LEVEL2, () => {
       const dnDialect = new Intl.DisplayNames('ar', { type: 'language', languageDisplay: 'dialect' });
       let dn = dnDialect.of('ar-EG');
       expect(dn).assertEqual('ar-EG');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_0500
+     * @tc.name   SUB_GLOBAL_testDisplayNames_0500Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0500
      * @tc.desc   DisplayNames  with zh & standard & zh-Hans-CN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_0500', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_0500Adapt001', Level.LEVEL2, () => {
       const dnDialect = new Intl.DisplayNames('zh', { type: 'language', languageDisplay: 'standard' });
       let dn = dnDialect.of('zh-Hans-CN');
       expect(dn).assertEqual('zh-Hans-CN')
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_0600
+     * @tc.name   SUB_GLOBAL_testDisplayNames_0600Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0600
      * @tc.desc   DisplayNames  with zh & dialect & zh-Hans-CN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_0600', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_0600Adapt001', Level.LEVEL2, () => {
       const dnDialect = new Intl.DisplayNames('zh', { type: 'language', languageDisplay: 'dialect' });
       let dn = dnDialect.of('zh-Hans-CN');
       expect(dn).assertEqual('zh-Hans-CN');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_0700
+     * @tc.name   SUB_GLOBAL_testDisplayNames_0700Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0700
      * @tc.desc   DisplayNames  with en & standard & en-GB
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_0700', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_0700Adapt001', Level.LEVEL2, () => {
       const dnDialect = new Intl.DisplayNames('en', { type: 'language', languageDisplay: 'standard' });
       let dn = dnDialect.of('en-GB');
       expect(dn).assertEqual('British English')
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_0800
+     * @tc.name   SUB_GLOBAL_testDisplayNames_0800Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0800
      * @tc.desc   DisplayNames  with en & dialect & en-GB
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_0800', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_0800Adapt001', Level.LEVEL2, () => {
       const dnDialect = new Intl.DisplayNames('en', { type: 'language', languageDisplay: 'dialect' });
       let dn = dnDialect.of('en-GB');
       expect(dn).assertEqual('British English');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_0900
+     * @tc.name   SUB_GLOBAL_testDisplayNames_0900Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0900
      * @tc.desc   DisplayNames  with th & region & CN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_0900', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_0900Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['th'], { type: 'region' });
       let dn = regionNames.of('CN');
       expect(dn).assertEqual('จีน');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_1000
+     * @tc.name   SUB_GLOBAL_testDisplayNames_1000Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1000
      * @tc.desc   DisplayNames  with th & region & TW
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_1000', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_1000Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['th'], { type: 'region' });
       let dn = regionNames.of('TW');
       expect(dn).assertEqual('ไต้หวัน (จีน)');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_1100
+     * @tc.name   SUB_GLOBAL_testDisplayNames_1100Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1100
      * @tc.desc   DisplayNames  with th & region & SA
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_1100', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_1100Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['th'], { type: 'region' });
       let dn = regionNames.of('SA');
       expect(dn).assertEqual('ซาอุดีอาระเบีย');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_1200
+     * @tc.name   SUB_GLOBAL_testDisplayNames_1200Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1200
      * @tc.desc   DisplayNames  with th & region & MM
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_1200', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_1200Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['th'], { type: 'region' });
       let dn = regionNames.of('MM');
       expect(dn).assertEqual('เมียนมา (พม่า)');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_1300
+     * @tc.name   SUB_GLOBAL_testDisplayNames_1300Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1300
      * @tc.desc   DisplayNames  with th & region & TH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_1300', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_1300Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['th'], { type: 'region' });
       let dn = regionNames.of('TH');
       expect(dn).assertEqual('ไทย');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_1400
+     * @tc.name   SUB_GLOBAL_testDisplayNames_1400Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1400
      * @tc.desc   DisplayNames  with th & region & US
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_1400', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_1400Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['th'], { type: 'region' });
       let dn = regionNames.of('US');
       expect(dn).assertEqual('สหรัฐอเมริกา');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_1500
+     * @tc.name   SUB_GLOBAL_testDisplayNames_1500Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1500
      * @tc.desc   DisplayNames  with th & region & JP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_1500', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_1500Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['th'], { type: 'region' });
       let dn = regionNames.of('JP');
       expect(dn).assertEqual('ญี่ปุ่น');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_1600
+     * @tc.name   SUB_GLOBAL_testDisplayNames_1600Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1600
      * @tc.desc   DisplayNames  with my & region & CN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_1600', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_1600Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['my'], { type: 'region' });
       let dn = regionNames.of('CN');
       expect(dn).assertEqual('တရုတ်');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_1700
+     * @tc.name   SUB_GLOBAL_testDisplayNames_1700Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1700
      * @tc.desc   DisplayNames  with my & region & TW
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_1700', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_1700Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['my'], { type: 'region' });
       let dn = regionNames.of('TW');
       expect(dn).assertEqual('ထိုင်ဝမ် (တရုတ်)');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_1800
+     * @tc.name   SUB_GLOBAL_testDisplayNames_1800Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1800
      * @tc.desc   DisplayNames  with my & region & SA
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_1800', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_1800Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['my'], { type: 'region' });
       let dn = regionNames.of('SA');
       expect(dn).assertEqual('ဆော်ဒီအာရေးဘီးယား');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_1900
+     * @tc.name   SUB_GLOBAL_testDisplayNames_1900Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1900
      * @tc.desc   DisplayNames  with my & region & MM
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_1900', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_1900Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['my'], { type: 'region' });
       let dn = regionNames.of('MM');
       expect(dn).assertEqual('မြန်မာ');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_2000
+     * @tc.name   SUB_GLOBAL_testDisplayNames_2000Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2000
      * @tc.desc   DisplayNames  with my & region & TH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_2000', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_2000Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['my'], { type: 'region' });
       let dn = regionNames.of('TH');
       expect(dn).assertEqual('ထိုင်း');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_2100
+     * @tc.name   SUB_GLOBAL_testDisplayNames_2100Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2100
      * @tc.desc   DisplayNames  with my & region & US
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_2100', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_2100Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['my'], { type: 'region' });
       let dn = regionNames.of('US');
       expect(dn).assertEqual('အမေရိကန် ပြည်ထောင်စု');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_2200
+     * @tc.name   SUB_GLOBAL_testDisplayNames_2200Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2200
      * @tc.desc   DisplayNames  with my & region & JP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_2200', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_2200Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['my'], { type: 'region' });
       let dn = regionNames.of('JP');
       expect(dn).assertEqual('ဂျပန်');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_2300
+     * @tc.name   SUB_GLOBAL_testDisplayNames_2300Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2300
      * @tc.desc   DisplayNames  with ar & region & CN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_2300', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_2300Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['ar'], { type: 'region' });
       let dn = regionNames.of('CN');
       expect(dn).assertEqual('الصين');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_2400
+     * @tc.name   SUB_GLOBAL_testDisplayNames_2400Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2400
      * @tc.desc   DisplayNames  with ar & region & TW
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_2400', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_2400Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['ar'], { type: 'region' });
       let dn = regionNames.of('TW');
       expect(dn).assertEqual('تايوان (الصين)');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_2500
+     * @tc.name   SUB_GLOBAL_testDisplayNames_2500Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2500
      * @tc.desc   DisplayNames  with ar & region & SA
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_2500', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_2500Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['ar'], { type: 'region' });
       let dn = regionNames.of('SA');
       expect(dn).assertEqual('المملكة العربية السعودية');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_2600
+     * @tc.name   SUB_GLOBAL_testDisplayNames_2600Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2600
      * @tc.desc   DisplayNames  with ar & region & MM
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_2600', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_2600Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['ar'], { type: 'region' });
       let dn = regionNames.of('MM');
       expect(dn).assertEqual('ميانمار (بورما)');
@@ -747,154 +747,154 @@ export default function SixPointZeroI18nStageTest() {
 
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_2700
+     * @tc.name   SUB_GLOBAL_testDisplayNames_2700Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2700
      * @tc.desc   DisplayNames  with ar & region & TH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_2700', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_2700Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['ar'], { type: 'region' });
       let dn = regionNames.of('TH');
       expect(dn).assertEqual('تايلاند');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_2800
+     * @tc.name   SUB_GLOBAL_testDisplayNames_2800Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2800
      * @tc.desc   DisplayNames  with ar & region & US
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_2800', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_2800Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['ar'], { type: 'region' });
       let dn = regionNames.of('US');
       expect(dn).assertEqual('الولايات المتحدة');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_2900
+     * @tc.name   SUB_GLOBAL_testDisplayNames_2900Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2900
      * @tc.desc   DisplayNames  with ar & region & JP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_2900', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_2900Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['ar'], { type: 'region' });
       let dn = regionNames.of('JP');
       expect(dn).assertEqual('اليابان');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_3000
+     * @tc.name   SUB_GLOBAL_testDisplayNames_3000Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3000
      * @tc.desc   DisplayNames  with zh & region & CN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_3000', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_3000Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['zh'], { type: 'region' });
       let dn = regionNames.of('CN');
       expect(dn).assertEqual('中国');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_3100
+     * @tc.name   SUB_GLOBAL_testDisplayNames_3100Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3100
      * @tc.desc   DisplayNames  with zh & region & TW
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_3100', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_3100Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['zh'], { type: 'region' });
       let dn = regionNames.of('TW');
       expect(dn).assertEqual('中国台湾');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_3200
+     * @tc.name   SUB_GLOBAL_testDisplayNames_3200Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3200
      * @tc.desc   DisplayNames  with zh & region & SA
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_3200', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_3200Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['zh'], { type: 'region' });
       let dn = regionNames.of('SA');
       expect(dn).assertEqual('沙特阿拉伯');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_3300
+     * @tc.name   SUB_GLOBAL_testDisplayNames_3300Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3300
      * @tc.desc   DisplayNames  with zh & region & MM
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_3300', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_3300Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['zh'], { type: 'region' });
       let dn = regionNames.of('MM');
       expect(dn).assertEqual('缅甸');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_3400
+     * @tc.name   SUB_GLOBAL_testDisplayNames_3400Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3400
      * @tc.desc   DisplayNames  with zh & region & TH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_3400', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_3400Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['zh'], { type: 'region' });
       let dn = regionNames.of('TH');
       expect(dn).assertEqual('泰国');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_3500
+     * @tc.name   SUB_GLOBAL_testDisplayNames_3500Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3500
      * @tc.desc   DisplayNames  with zh & region & US
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_3500', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_3500Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['zh'], { type: 'region' });
       let dn = regionNames.of('US');
       expect(dn).assertEqual('美国');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_3600
+     * @tc.name   SUB_GLOBAL_testDisplayNames_3600Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3600
      * @tc.desc   DisplayNames  with zh & region & JP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_3600', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_3600Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['zh'], { type: 'region' });
       let dn = regionNames.of('JP');
       expect(dn).assertEqual('日本');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_3700
+     * @tc.name   SUB_GLOBAL_testDisplayNames_3700Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3700
      * @tc.desc   DisplayNames  with en & region & CN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_3700', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_3700Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
       let dn = regionNames.of('CN');
       expect(dn).assertEqual('China');
@@ -902,574 +902,574 @@ export default function SixPointZeroI18nStageTest() {
 
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_3800
+     * @tc.name   SUB_GLOBAL_testDisplayNames_3800Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3800
      * @tc.desc   DisplayNames  with en & region & TW
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_3800', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_3800Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
       let dn = regionNames.of('TW');
       expect(dn).assertEqual('Taiwan (China)');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_3900
+     * @tc.name   SUB_GLOBAL_testDisplayNames_3900Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3900
      * @tc.desc   DisplayNames  with en & region & SA
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_3900', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_3900Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
       let dn = regionNames.of('SA');
       expect(dn).assertEqual('Saudi Arabia');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_4000
+     * @tc.name   SUB_GLOBAL_testDisplayNames_4000Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4000
      * @tc.desc   DisplayNames  with en & region & MM
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_4000', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_4000Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
       let dn = regionNames.of('MM');
       expect(dn).assertEqual('Myanmar (Burma)');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_4100
+     * @tc.name   SUB_GLOBAL_testDisplayNames_4100Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4100
      * @tc.desc   DisplayNames  with en & region & TH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_4100', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_4100Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
       let dn = regionNames.of('TH');
       expect(dn).assertEqual('Thailand');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_4200
+     * @tc.name   SUB_GLOBAL_testDisplayNames_4200Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4200
      * @tc.desc   DisplayNames  with en & region & US
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_4200', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_4200Adapt001', Level.LEVEL2, () => {
       const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
       let dn = regionNames.of('US');
       expect(dn).assertEqual('United States');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_4300
+     * @tc.name   SUB_GLOBAL_testDisplayNames_4300Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4300
      * @tc.desc   DisplayNames  with en & region & JP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_4300', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_4300Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['en'], { type: 'region' });
       let dn = scriptNames.of('JP');
       expect(dn).assertEqual('Japan');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_4400
+     * @tc.name   SUB_GLOBAL_testDisplayNames_4400Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4400
      * @tc.desc   DisplayNames  with th & script & Latn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_4400', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_4400Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['th'], { type: 'script' });
       let dn = scriptNames.of('Latn');
       expect(dn).assertEqual('ละติน');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_4500
+     * @tc.name   SUB_GLOBAL_testDisplayNames_4500Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4500
      * @tc.desc   DisplayNames  with th & script & Arab
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_4500', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_4500Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['th'], { type: 'script' });
       let dn = scriptNames.of('Arab');
       expect(dn).assertEqual('อาหรับ');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_4600
+     * @tc.name   SUB_GLOBAL_testDisplayNames_4600Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4600
      * @tc.desc   DisplayNames  with th & script & Kana
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_4600', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_4600Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['th'], { type: 'script' });
       let dn = scriptNames.of('Kana');
       expect(dn).assertEqual('คะตะกะนะ');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_4700
+     * @tc.name   SUB_GLOBAL_testDisplayNames_4700Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4700
      * @tc.desc   DisplayNames  with my & script & Latn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_4700', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_4700Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['my'], { type: 'script' });
       let dn = scriptNames.of('Latn');
       expect(dn).assertEqual('လက်တင်');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_4800
+     * @tc.name   SUB_GLOBAL_testDisplayNames_4800Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4800
      * @tc.desc   DisplayNames  with my & script & Kana
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_4800', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_4800Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['my'], { type: 'script' });
       let dn = scriptNames.of('Kana');
       expect(dn).assertEqual('ခတခန');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_4900
+     * @tc.name   SUB_GLOBAL_testDisplayNames_4900Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4900
      * @tc.desc   DisplayNames  with my & script & Arab
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_4900', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_4900Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['my'], { type: 'script' });
       let dn = scriptNames.of('Arab');
       expect(dn).assertEqual('အာရေဗျ');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_5000
+     * @tc.name   SUB_GLOBAL_testDisplayNames_5000Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5000
      * @tc.desc   DisplayNames  with ar & script & Latn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_5000', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_5000Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['ar'], { type: 'script' });
       let dn = scriptNames.of('Latn');
       expect(dn).assertEqual('اللاتينية');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_5100
+     * @tc.name   SUB_GLOBAL_testDisplayNames_5100Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5100
      * @tc.desc   DisplayNames  with ar & script & Kana
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_5100', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_5100Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['ar'], { type: 'script' });
       let dn = scriptNames.of('Kana');
       expect(dn).assertEqual('الكتكانا');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_5200
+     * @tc.name   SUB_GLOBAL_testDisplayNames_5200Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5200
      * @tc.desc   DisplayNames  with ar & script & Arab
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_5200', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_5200Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['ar'], { type: 'script' });
       let dn = scriptNames.of('Arab');
       expect(dn).assertEqual('العربية');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_5300
+     * @tc.name   SUB_GLOBAL_testDisplayNames_5300Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5300
      * @tc.desc   DisplayNames  with zh & script & Latn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_5300', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_5300Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['zh'], { type: 'script' });
       let dn = scriptNames.of('Latn');
       expect(dn).assertEqual('拉丁文');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_5400
+     * @tc.name   SUB_GLOBAL_testDisplayNames_5400Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5400
      * @tc.desc   DisplayNames  with zh & script & Kana
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_5400', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_5400Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['zh'], { type: 'script' });
       let dn = scriptNames.of('Kana');
       expect(dn).assertEqual('片假名');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_5500
+     * @tc.name   SUB_GLOBAL_testDisplayNames_5500Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5500
      * @tc.desc   DisplayNames  with zh & script & Arab
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_5500', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_5500Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['zh'], { type: 'script' });
       let dn = scriptNames.of('Arab');
       expect(dn).assertEqual('阿拉伯文');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_5600
+     * @tc.name   SUB_GLOBAL_testDisplayNames_5600Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5600
      * @tc.desc   DisplayNames  with en & script & Latn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_5600', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_5600Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['en'], { type: 'script' });
       let dn = scriptNames.of('Latn');
       expect(dn).assertEqual('Latin');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_5700
+     * @tc.name   SUB_GLOBAL_testDisplayNames_5700Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5700
      * @tc.desc   DisplayNames  with en & script & Kana
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_5700', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_5700Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['en'], { type: 'script' });
       let dn = scriptNames.of('Kana');
       expect(dn).assertEqual('Katakana');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_5800
+     * @tc.name   SUB_GLOBAL_testDisplayNames_5800Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5800
      * @tc.desc   DisplayNames  with en & script & Arab
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_5800', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_5800Adapt001', Level.LEVEL2, () => {
       const scriptNames = new Intl.DisplayNames(['en'], { type: 'script' });
       let dn = scriptNames.of('Arab');
       expect(dn).assertEqual('Arabic');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_5900
+     * @tc.name   SUB_GLOBAL_testDisplayNames_5900Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5900
      * @tc.desc   DisplayNames  with th & currency & USD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_5900', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_5900Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['th'], { type: 'currency' });
       let dn = currencyNames.of('USD');
       expect(dn).assertEqual('ดอลลาร์สหรัฐ');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_6000
+     * @tc.name   SUB_GLOBAL_testDisplayNames_6000Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6000
      * @tc.desc   DisplayNames  with th & currency & EUR
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_6000', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_6000Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['th'], { type: 'currency' });
       let dn = currencyNames.of('EUR');
       expect(dn).assertEqual('ยูโร');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_6100
+     * @tc.name   SUB_GLOBAL_testDisplayNames_6100Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6100
      * @tc.desc   DisplayNames  with th & currency & CNY
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_6100', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_6100Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['th'], { type: 'currency' });
       let dn = currencyNames.of('CNY');
       expect(dn).assertEqual('หยวนจีน');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_6200
+     * @tc.name   SUB_GLOBAL_testDisplayNames_6200Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6200
      * @tc.desc   DisplayNames  with th & currency & TWD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_6200', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_6200Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['th'], { type: 'currency' });
       let dn = currencyNames.of('TWD');
       expect(dn).assertEqual('ดอลลาร์ไต้หวันใหม่');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_6300
+     * @tc.name   SUB_GLOBAL_testDisplayNames_6300Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6300
      * @tc.desc   DisplayNames  with my & currency & USD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_6300', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_6300Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['my'], { type: 'currency' });
       let dn = currencyNames.of('USD');
       expect(dn).assertEqual('အမေရိကန် ဒေါ်လာ');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_6400
+     * @tc.name   SUB_GLOBAL_testDisplayNames_6400Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6400
      * @tc.desc   DisplayNames  with my & currency & EUR
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_6400', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_6400Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['my'], { type: 'currency' });
       let dn = currencyNames.of('EUR');
       expect(dn).assertEqual('ယူရို');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_6500
+     * @tc.name   SUB_GLOBAL_testDisplayNames_6500Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6500
      * @tc.desc   DisplayNames  with my & currency & CNY
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_6500', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_6500Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['my'], { type: 'currency' });
       let dn = currencyNames.of('CNY');
       expect(dn).assertEqual('တရုတ် ယွမ်');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_6600
+     * @tc.name   SUB_GLOBAL_testDisplayNames_6600Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6600
      * @tc.desc   DisplayNames  with my & currency & TWD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_6600', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_6600Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['my'], { type: 'currency' });
       let dn = currencyNames.of('TWD');
       expect(dn).assertEqual('ထိုင်ဝမ် ဒေါ်လာအသစ်');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_6700
+     * @tc.name   SUB_GLOBAL_testDisplayNames_6700Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6700
      * @tc.desc   DisplayNames  with ar & currency & USD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_6700', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_6700Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['ar'], { type: 'currency' });
       let dn = currencyNames.of('USD');
       expect(dn).assertEqual('دولار أمريكي');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_6800
+     * @tc.name   SUB_GLOBAL_testDisplayNames_6800Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6800
      * @tc.desc   DisplayNames  with ar & currency & EUR
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_6800', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_6800Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['ar'], { type: 'currency' });
       let dn = currencyNames.of('EUR');
       expect(dn).assertEqual('يورو');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_6900
+     * @tc.name   SUB_GLOBAL_testDisplayNames_6900Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6900
      * @tc.desc   DisplayNames  with ar & currency & CNY
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_6900', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_6900Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['ar'], { type: 'currency' });
       let dn = currencyNames.of('CNY');
       expect(dn).assertEqual('يوان صيني');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_7000
+     * @tc.name   SUB_GLOBAL_testDisplayNames_7000Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7000
      * @tc.desc   DisplayNames  with ar & currency & TWD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_7000', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_7000Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['ar'], { type: 'currency' });
       let dn = currencyNames.of('TWD');
       expect(dn).assertEqual('دولار تايواني');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_7100
+     * @tc.name   SUB_GLOBAL_testDisplayNames_7100Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7100
      * @tc.desc   DisplayNames  with zh & currency & USD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it(' SUB_GLOBAL_testDisplayNames_7100', Level.LEVEL1, () => {
+    it('SUB_GLOBAL_testDisplayNames_7100Adapt001', Level.LEVEL1, () => {
       const currencyNames = new Intl.DisplayNames(['zh'], { type: 'currency' });
       let dn = currencyNames.of('USD');
       expect(dn).assertEqual('美元');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_7200
+     * @tc.name   SUB_GLOBAL_testDisplayNames_7200Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7200
      * @tc.desc   DisplayNames  with zh & currency & EUR
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it(' SUB_GLOBAL_testDisplayNames_7200', Level.LEVEL1, () => {
+    it('SUB_GLOBAL_testDisplayNames_7200Adapt001', Level.LEVEL1, () => {
       const currencyNames = new Intl.DisplayNames(['zh'], { type: 'currency' });
       let dn = currencyNames.of('EUR');
       expect(dn).assertEqual('欧元');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_7300
+     * @tc.name   SUB_GLOBAL_testDisplayNames_7300Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7300
      * @tc.desc   DisplayNames  with zh & currency & CNY
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it(' SUB_GLOBAL_testDisplayNames_7300', Level.LEVEL1, () => {
+    it('SUB_GLOBAL_testDisplayNames_7300Adapt001', Level.LEVEL1, () => {
       const currencyNames = new Intl.DisplayNames(['zh'], { type: 'currency' });
       let dn = currencyNames.of('CNY');
       expect(dn).assertEqual('人民币');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_7400
+     * @tc.name   SUB_GLOBAL_testDisplayNames_7400Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7400
      * @tc.desc   DisplayNames  with zh & currency & TWD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it(' SUB_GLOBAL_testDisplayNames_7400', Level.LEVEL1, () => {
+    it('SUB_GLOBAL_testDisplayNames_7400Adapt001', Level.LEVEL1, () => {
       const currencyNames = new Intl.DisplayNames(['zh'], { type: 'currency' });
       let dn = currencyNames.of('TWD');
       expect(dn).assertEqual('新台币');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_7500
+     * @tc.name   SUB_GLOBAL_testDisplayNames_7500Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7500
      * @tc.desc   DisplayNames  with en & currency & USD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_7500', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_7500Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['en'], { type: 'currency' });
       let dn = currencyNames.of('USD');
       expect(dn).assertEqual('US Dollar');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_7600
+     * @tc.name   SUB_GLOBAL_testDisplayNames_7600Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7600
      * @tc.desc   DisplayNames  with en & currency & EUR
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_7600', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_7600Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['en'], { type: 'currency' });
       let dn = currencyNames.of('EUR');
       expect(dn).assertEqual('Euro');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_7700
+     * @tc.name   SUB_GLOBAL_testDisplayNames_7700Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7700
      * @tc.desc   DisplayNames  with en & currency & CNY
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_7700', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_7700Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['en'], { type: 'currency' });
       let dn = currencyNames.of('CNY');
       expect(dn).assertEqual('Chinese Yuan');
     })
 
     /**
-     * @tc.name    SUB_GLOBAL_testDisplayNames_7800
+     * @tc.name   SUB_GLOBAL_testDisplayNames_7800Adapt001
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7800
      * @tc.desc   DisplayNames  with en & currency & TWD
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it(' SUB_GLOBAL_testDisplayNames_7800', Level.LEVEL2, () => {
+    it('SUB_GLOBAL_testDisplayNames_7800Adapt001', Level.LEVEL2, () => {
       const currencyNames = new Intl.DisplayNames(['en'], { type: 'currency' });
       let dn = currencyNames.of('TWD');
       expect(dn).assertEqual('New Taiwan Dollar');
@@ -3847,14 +3847,15 @@ export default function SixPointZeroI18nStageTest() {
      */
     it('test_IntlDateTimeFormatToParts_0100', Level.LEVEL2, () => {
       let date = new Date(2025, 6, 17, 3, 24, 10);
-      let expected: string =
-        JSON.stringify([{ "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
-          { "type": "month", "value": "六月" }, { "type": "day", "value": "23" }, { "type": "literal", "value": " " },
-          { "type": "fractionalSecond", "value": "0" }])
+      let expectedType: string[] = ["relatedYear", "literal", "month", "day", "literal", "fractionalSecond"];
+      let expectedValue: string[] = ["2025", "年", "六月", "23", " ", "0"];
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat('zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 });
-      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
-      expect(JSON.stringify(daformat)).assertEqual(expected)
+      let parts: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
+      for (let i = 0; i < parts.length; i++) {
+        expect(parts[i].type).assertEqual(expectedType[i]);
+        expect(parts[i].value).assertEqual(expectedValue[i]);
+      }
     })
 
     /**
@@ -3867,14 +3868,15 @@ export default function SixPointZeroI18nStageTest() {
      */
     it('test_IntlDateTimeFormatToParts_0200', Level.LEVEL2, () => {
       let date = new Date(2025, 6, 17, 3, 24, 10);
-      let expected: string =
-        JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
-          { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" },
-          { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "000" }])
+      let expectedType: string[] = ["month", "literal", "day", "literal", "year", "literal", "fractionalSecond"];
+      let expectedValue: string[] = ["7", "/", "17", "/", "2025", ", ", "000"];
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat('en-US', { calendar: 'gregory', fractionalSecondDigits: 3 });
-      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
-      expect(JSON.stringify(daformat)).assertEqual(expected)
+      let parts: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
+      for (let i = 0; i < parts.length; i++) {
+        expect(parts[i].type).assertEqual(expectedType[i]);
+        expect(parts[i].value).assertEqual(expectedValue[i]);
+      }
     })
 
     /**
@@ -3887,13 +3889,15 @@ export default function SixPointZeroI18nStageTest() {
      */
     it('test_IntlDateTimeFormatToParts_0300', Level.LEVEL2, () => {
       let date = new Date(2025, 6, 17, 3, 24, 10);
-      let expected: string =
-        JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
-          { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" }])
+      let expectedType: string[] = ["month", "literal", "day", "literal", "year"];
+      let expectedValue: string[] = ["7", "/", "17", "/", "2025"];
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat();
-      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
-      expect(JSON.stringify(daformat)).assertEqual(expected)
+      let parts: Intl.DateTimeFormatPart[] = dafmt.formatToParts(date);
+      for (let i = 0; i < parts.length; i++) {
+        expect(parts[i].type).assertEqual(expectedType[i]);
+        expect(parts[i].value).assertEqual(expectedValue[i]);
+      }
     })
 
     /**
@@ -4009,17 +4013,19 @@ export default function SixPointZeroI18nStageTest() {
     it('test_IntlDateTimeFormatRangeToParts_0100', Level.LEVEL2, () => {
       let date = new Date(2025, 6, 17, 3, 24, 10);
       let date2 = new Date(2026, 1, 1, 60, 24, 10);
-      let expected: string =
-        JSON.stringify([{ "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
-          { "type": "month", "value": "六月" }, { "type": "day", "value": "23" }, { "type": "literal", "value": " " },
-          { "type": "fractionalSecond", "value": "0" }, { "type": "literal", "value": "–" },
-          { "type": "relatedYear", "value": "2025" }, { "type": "literal", "value": "年" },
-          { "type": "month", "value": "腊月" }, { "type": "day", "value": "16" }, { "type": "literal", "value": " " },
-          { "type": "fractionalSecond", "value": "0" }]);
+      let expectedType: string[] = ["relatedYear", "literal", "month", "day", "literal", "fractionalSecond", "literal",
+        "relatedYear", "literal", "month", "day", "literal", "fractionalSecond"];
+      let expectedValue: string[] = ["2025", "年", "六月", "23", " ", "0", "–", "2025", "年", "腊月", "16", " ", "0"];
+      let expectedSource: string[] = ["startRange", "startRange", "startRange", "startRange", "startRange",
+        "startRange", "shared", "endRange", "endRange", "endRange", "endRange", "endRange", "endRange"];
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat('zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 });
-      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatRangeToParts(date, date2);
-      expect(JSON.stringify(daformat)).assertEqual(expected)
+      let parts: Intl.DateTimeRangeFormatPart[] = dafmt.formatRangeToParts(date, date2);
+      for (let i = 0; i < parts.length; i++) {
+        expect(parts[i].type).assertEqual(expectedType[i]);
+        expect(parts[i].value).assertEqual(expectedValue[i]);
+        expect(parts[i].source).assertEqual(expectedSource[i]);
+      }
     })
 
     /**
@@ -4033,17 +4039,21 @@ export default function SixPointZeroI18nStageTest() {
     it('test_IntlDateTimeFormatRangeToParts_0200', Level.LEVEL2, () => {
       let date = new Date(2025, 6, 17, 3, 24, 10);
       let date2 = new Date(2026, 1, 1, 60, 24, 10);
-      let expected: string =
-        JSON.stringify([{ "type": "day", "value": "17" }, { "type": "literal", "value": "." },
-          { "type": "month", "value": "07" }, { "type": "literal", "value": "." }, { "type": "year", "value": "2025" },
-          { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "0" },
-          { "type": "literal", "value": " – " }, { "type": "day", "value": "03" }, { "type": "literal", "value": "." },
-          { "type": "month", "value": "02" }, { "type": "literal", "value": "." }, { "type": "year", "value": "2026" },
-          { "type": "literal", "value": ", " }, { "type": "fractionalSecond", "value": "0" }]);
+      let expectedType: string[] = ["day", "literal", "month", "literal", "year", "literal", "fractionalSecond",
+        "literal", "day", "literal", "month", "literal", "year", "literal", "fractionalSecond"];
+      let expectedValue: string[] = ["17", ".", "07", ".", "2025", ", ", "0", " – ", "03", ".", "02",
+        ".", "2026", ", ", "0"];
+      let expectedSource: string[] = ["startRange", "startRange", "startRange", "startRange", "startRange",
+        "startRange", "startRange", "shared", "endRange", "endRange", "endRange", "endRange", "endRange", "endRange",
+        "endRange"];
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat('ru', { calendar: 'gregory', fractionalSecondDigits: 1 });
-      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatRangeToParts(date, date2);
-      expect(JSON.stringify(daformat)).assertEqual(expected)
+      let parts: Intl.DateTimeRangeFormatPart[] = dafmt.formatRangeToParts(date, date2);
+      for (let i = 0; i < parts.length; i++) {
+        expect(parts[i].type).assertEqual(expectedType[i]);
+        expect(parts[i].value).assertEqual(expectedValue[i]);
+        expect(parts[i].source).assertEqual(expectedSource[i]);
+      }
     })
 
     /**
@@ -4057,15 +4067,19 @@ export default function SixPointZeroI18nStageTest() {
     it('test_IntlDateTimeFormatRangeToParts_0300', Level.LEVEL2, () => {
       let date = new Date(2025, 6, 17, 3, 24, 10);
       let date2 = new Date(2026, 1, 1, 60, 24, 10);
-      let expected: string =
-        JSON.stringify([{ "type": "month", "value": "7" }, { "type": "literal", "value": "/" },
-          { "type": "day", "value": "17" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2025" },
-          { "type": "literal", "value": " – " }, { "type": "month", "value": "2" }, { "type": "literal", "value": "/" },
-          { "type": "day", "value": "3" }, { "type": "literal", "value": "/" }, { "type": "year", "value": "2026" }]);
+      let expectedType: string[] = ["month", "literal", "day", "literal", "year", "literal", "month", "literal", "day",
+        "literal", "year"];
+      let expectedValue: string[] = ["7", "/", "17", "/", "2025", " – ", "2", "/", "3", "/", "2026"];
+      let expectedSource: string[] = ["startRange", "startRange", "startRange", "startRange", "startRange", "shared",
+        "endRange", "endRange", "endRange", "endRange", "endRange"];
       let dafmt: Intl.DateTimeFormat =
         new Intl.DateTimeFormat();
-      let daformat: Intl.DateTimeFormatPart[] = dafmt.formatRangeToParts(date, date2);
-      expect(JSON.stringify(daformat)).assertEqual(expected)
+      let parts: Intl.DateTimeRangeFormatPart[] = dafmt.formatRangeToParts(date, date2);
+      for (let i = 0; i < parts.length; i++) {
+        expect(parts[i].type).assertEqual(expectedType[i]);
+        expect(parts[i].value).assertEqual(expectedValue[i]);
+        expect(parts[i].source).assertEqual(expectedSource[i]);
+      }
     })
 
     /**
@@ -4676,6 +4690,23 @@ export default function SixPointZeroI18nStageTest() {
       let nft = new Intl.NumberFormat('zh-Hans-CN', {style:"unit", unit: "terabit", unitDisplay: "short"});
       let aft = new i18n.AdvancedMeasureFormat(nft, {unitUsage:i18n.UnitUsage.SIZE_SHORTFILE_BYTE});
       expect(aft.format(100)).assertEqual("100 Tb")
+    })
+
+    /**
+     * @tc.name dateTimeFormat_resolvedOptions_test_0100
+     * @tc.number dateTimeFormat_resolvedOptions_test_0100
+     * @tc.desc with resolvedOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('dateTimeFormat_resolvedOptions_test_0100', Level.LEVEL3, () => {
+      let date: Date = new Date(2020, 11, 20, 14, 23, 16);
+      let option: intl.DateTimeOptions = {dateStyle: 'medium', timeStyle: 'medium'};
+      let datefmt = new intl.DateTimeFormat('zh-CN', option);
+      console.log('dateTimeFormat_resolvedOptions_test_0100 value:', datefmt.resolvedOptions().dateStyle);
+      expect(datefmt.resolvedOptions().dateStyle).assertEqual('medium');
+      expect(datefmt.format(date)).assertContain('2020年12月20日');
     })
 
   })

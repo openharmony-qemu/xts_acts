@@ -65,26 +65,26 @@ export default function gestureNestScrollTest() {
       let rect = Utils.getComponentRect("inner");
       let x = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
       // the visual list height is vp2px(200)
-      let y = Math.round(globalThis.winTop + rect.top + vp2px(100));
+      let y = Math.round(globalThis.winTop + rect.top);
       console.info("gestureNestScrollTest  x= " +  x  + ", y = " + y);
-      await driver.swipe(x, y, x, Math.round(y - vp2px(200)));
+      await driver.swipe(x, Math.round(y+(rect.bottom-rect.top)/40), x, y);
       await Utils.sleep(3000);
       console.info("test");
       let button = await driver.findComponent(ON.text('flowItem8'));
       expect(button != null).assertTrue();
       // outer scroll  scroll
-      let recto = Utils.getComponentRect("outer");   
+      let recto = Utils.getComponentRect("outer");
       let x0 = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(recto));
       let y0 = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(recto));
       console.info("gestureNestScrollTest  xo= " +  x0  + ", y = " + y0);
-      await driver.swipe(x0, y0, x0 , Math.round(vp2px(50)));
+      await driver.swipe(x0, Math.round(y0+(recto.bottom-recto.top)/10), x0 , y0);
       await Utils.sleep(3000);
       let button2 = await driver.findComponent(ON.text('flowItem11'));
       expect(button2 != null).assertTrue();
       done();
-   
+
     });
-   
+
     /**
      * @tc.name   testGestureNestScroll002
      * @tc.number SUB_ARKUI_CAPI_GESTURENESTSCROLL_GESTURE002

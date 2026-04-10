@@ -13,7 +13,9 @@
 * limitations under the License.
 */
 import webViewRegisterScrollCallbackTest from './webViewRegisterScrollCallback.test';
+import SerializeWebState from './SerializeWebState.test'
 
 export default function testsuite() {
   webViewRegisterScrollCallbackTest()
+  SerializeWebState()
 }

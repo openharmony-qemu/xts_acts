@@ -112,7 +112,7 @@ export default function KioskModeTest() {
       } catch (error) {
         let msg: string = `enterKioskMode(UIAbilityContext) failed:${JSON.stringify(error)}`;
         hilog.info(0x0000, 'testTag', '%{public}s', msg);
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -144,7 +144,7 @@ export default function KioskModeTest() {
           kioskManager.enterKioskMode(context)
             .then(() => {
               hilog.info(0x0000, 'testTag', '%{public}s', `enterKioskMode(UIAbilityContext) success`);
-              expect.assertFail();
+              expect().assertFail();
               done();
             })
             .catch((error: BusinessError) => {
@@ -157,7 +157,7 @@ export default function KioskModeTest() {
         } catch (error) {
           let msg: string = `enterKioskMode(UIAbilityContext) failed:${JSON.stringify(error)}`;
           hilog.info(0x0000, 'testTag', '%{public}s', msg);
-          expect.assertFail();
+          expect().assertFail();
           done();
         }
       }, 2000);
@@ -178,7 +178,7 @@ export default function KioskModeTest() {
         kioskManager.exitKioskMode(null)
           .then(() => {
             hilog.info(0x0000, 'testTag', '%{public}s', `exitKioskMode(null) success`);
-            expect.assertFail();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -210,7 +210,7 @@ export default function KioskModeTest() {
         kioskManager.exitKioskMode(undefined)
           .then(() => {
             hilog.info(0x0000, 'testTag', '%{public}s', `exitKioskMode(undefined) success`);
-            expect.assertFail();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -242,7 +242,7 @@ export default function KioskModeTest() {
         kioskManager.exitKioskMode(context)
           .then(() => {
             hilog.info(0x0000, 'testTag', '%{public}s', `exitKioskMode(UIAbilityContext) success`);
-            expect.assertFail();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -255,7 +255,7 @@ export default function KioskModeTest() {
       } catch (error) {
         let msg: string = `exitKioskMode(UIAbilityContext) failed:${JSON.stringify(error)}`;
         hilog.info(0x0000, 'testTag', '%{public}s', msg);
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })

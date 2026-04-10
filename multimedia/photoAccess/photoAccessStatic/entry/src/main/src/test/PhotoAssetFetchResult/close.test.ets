@@ -31,7 +31,7 @@ export default function assetCloseTest() {
     let closeCallbackTest =
       async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions): Promise<void> => {
         try {
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           expect(fetchResult.getCount() > 0).assertTrue();
           fetchResult.close();
           let testCount = 0;

@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 
+import HasCard1PublicTest from "./TelephonyCallHasCard1Public.test";
 import HasCard2PublicTest from "./TelephonyCallHasCard2Public.test";
-import HasCard3PublicTest from "./TelephonyCallHasCard3Public.test";
+import HasCard2PublicNeedCardTest from "./TelephonyCallHasCard3Public.test";
 import sim from '@ohos.telephony.sim';
 import EmptyTest from './Empty.test'
 
@@ -23,8 +24,9 @@ let simState: sim.SimState = sim.getSimStateSync(0);
 export default function testsuite() {
   if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
     if (sim.hasSimCardSync(0)) {
-      HasCard2PublicTest();
-      HasCard3PublicTest();
+    HasCard2PublicTest();
+    HasCard2PublicNeedCardTest();
+    HasCard1PublicTest();
     } else {
       EmptyTest();
     }

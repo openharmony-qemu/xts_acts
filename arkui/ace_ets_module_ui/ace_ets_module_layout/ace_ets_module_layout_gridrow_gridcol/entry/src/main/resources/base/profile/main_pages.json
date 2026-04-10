@@ -42,6 +42,8 @@
         "MainAbility/pages/GridCol/gridcolPage",
         "MainAbility/pages/GridRow/GridRowNoColumnsPage",
         "MainAbility/pages/GridRow/GridRowFixAtIdealSizePage",
-        "MainAbility/pages/GridCol/GridColFixAtIdealSizePage"
+        "MainAbility/pages/GridCol/GridColFixAtIdealSizePage",
+        "MainAbility/pages/GridRow/GridRowAlignItemsNullUndefined",
+        "MainAbility/pages/GridCol/GridColSpanOffsetOrderNullUndefined"
     ]
 }

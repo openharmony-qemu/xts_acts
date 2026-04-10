@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,7 +40,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignCenter_AddVisibility() {
   describe('AlignCenter_AddVisibility', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignCenter_AddVisibility beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });
@@ -117,7 +117,7 @@ it('testFlexAlignCenterVisibilityNone_static', Level.LEVEL0, async () : Promise<
           .assertTrue();
         expect(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1)
           .assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignCenterVisibilityNone] failed');
         expect().assertFail();
       }
@@ -171,7 +171,7 @@ it('testFlexAlignCenterVisibilityHidden_static', Level.LEVEL0, async () : Promis
         expect(Math.abs((Center_AddVisibility_011.bottom - Center_AddVisibility_011.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
         expect(Math.abs((Center_AddVisibility_012.bottom - Center_AddVisibility_012.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
         expect(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignCenterVisibilityHidden] failed');
         expect().assertFail();
       }
@@ -223,7 +223,7 @@ it('testFlexAlignCenterVisibilityVisible_static', Level.LEVEL0, async () : Promi
         expect(Math.abs((Center_AddVisibility_011.bottom - Center_AddVisibility_011.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
         expect(Math.abs((Center_AddVisibility_012.bottom - Center_AddVisibility_012.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
         expect(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignCenterVisibilityVisible_static] failed');
         expect().assertFail();
       }

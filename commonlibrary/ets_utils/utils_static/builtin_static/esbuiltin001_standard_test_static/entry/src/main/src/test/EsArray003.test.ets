@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,7 @@ class A {}
 
 interface GeneratedTypeLiteralInterface_1 {
   name: string;
-  rating: number;
+  rating: int;
 }
 export async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {

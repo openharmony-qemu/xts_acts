@@ -26,7 +26,6 @@ import listItemGroupNodeAdapterTest from "./listItemGroup/ListItemGroupTest.test
 import SwiperChangeIndexTest from "./swiper/SwiperChangeIndex.test"
 
 export default function testsuite() {
-  nodeHandleByIdTest();
   columnBackDropBlurTest();
   ProgressLinearStyleTest();
   listItemGroupNodeAdapterTest();

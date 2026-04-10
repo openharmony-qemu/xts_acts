@@ -31,6 +31,18 @@ import textPickerSelectedAreaTest from './textPicker/textPickerSelectedArea.test
 import textPickerTextStyleThreeTest from './textPicker/textPickerTextStyleThree.test';
 import textPickerValueTest from './textPicker/textPickerValue.test';
 
+import TextPickerDefaultPickerItemHeightNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerDefaultPickerItemHeightNullUndefined.test';
+import TextPickerDisappearTextStyleNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerDisappearTextStyleNullUndefined.test';
+import TextPickerGradientHeightNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerGradientHeightNullUndefined.test';
+import TextPickerSelectedBackgroundStyleNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerSelectedBackgroundStyleNullUndefined.test';
+import TextPickerSelectedTextStyleNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerSelectedTextStyleNullUndefined.test';
+import TextPickerTextStyleNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerTextStyleNullUndefined.test';
+import textPickerCanLoopUndefinedNullTest from './textPickerUndefinedNullTest/textPickerCanLoopUndefinedNull.test';
+import textPickerDisableTextStyleAnimationUndefinedNullTest from './textPickerUndefinedNullTest/textPickerDisableTextStyleAnimationUndefinedNull.test';
+import textPickerSelectedIndexUndefinedNullTest from './textPickerUndefinedNullTest/textPickerSelectedIndexUndefinedNull.test';
+import textPickerDefaultTextStyleUndefinedNullTest from './textPickerUndefinedNullTest/textPickerDefaultTextStyleUndefinedNull.test';
+import textPickerDividerUndefinedNullTest from './textPickerUndefinedNullTest/textPickerDividerUndefinedNull.test';
+
 export default function testsuite() {
     textPickerSelectedBackgroundStyleTest();
     textPickerPropertiesModifierTest();
@@ -49,4 +61,15 @@ export default function testsuite() {
     textPickerSelectedAreaTest();
     textPickerTextStyleThreeTest();
     textPickerValueTest();
+    TextPickerDefaultPickerItemHeightNullUndefinedTest();
+    TextPickerDisappearTextStyleNullUndefinedTest();
+    TextPickerGradientHeightNullUndefinedTest();
+    TextPickerSelectedBackgroundStyleNullUndefinedTest();
+    TextPickerSelectedTextStyleNullUndefinedTest();
+    TextPickerTextStyleNullUndefinedTest();
+    textPickerCanLoopUndefinedNullTest();
+    textPickerDisableTextStyleAnimationUndefinedNullTest();
+    textPickerSelectedIndexUndefinedNullTest();
+    textPickerDefaultTextStyleUndefinedNullTest();
+    textPickerDividerUndefinedNullTest();
 }

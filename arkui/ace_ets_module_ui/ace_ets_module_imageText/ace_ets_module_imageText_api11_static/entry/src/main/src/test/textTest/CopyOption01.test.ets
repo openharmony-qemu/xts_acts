@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function copyOptionJsunit() {
   describe('copyOptionTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("copyOptionJsunit beforeEach start");
 
 

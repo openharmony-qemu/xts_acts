@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,17 +22,17 @@ import Utils from './Util.test';
 
 const TAG = "CameraPhotoSessionTest: ";
 
-let mCameraManager: camera.CameraManager;
-let mCameraDevicesArray: Array<camera.CameraDevice>;
-let mCameraSession: camera.PhotoSession;
+let mCameraManager: camera.CameraManager | undefined;
+let mCameraDevicesArray: Array<camera.CameraDevice> = [];
+let mCameraSession: camera.PhotoSession | undefined;
 
 let mPhotoSurface: string = '';
 let surfaceId: string = '';
 let mCameraNum: number;
 
-let mCameraInput: camera.CameraInput;
-let mPreviewOutput: camera.PreviewOutput;
-let mPhotoOutput: camera.PhotoOutput;
+let mCameraInput: camera.CameraInput | undefined;
+let mPreviewOutput: camera.PreviewOutput | undefined;
+let mPhotoOutput: camera.PhotoOutput | undefined;
 let isSessionCreated: boolean = false;
 
 let receiver: image.ImageReceiver | undefined;
@@ -82,7 +82,7 @@ export default function cameraPhotoSessionTest() {
 
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     if (mCameraDevicesArray == undefined) {
       console.info(TAG + "getSupportedCameras FAILED");
       return false;
@@ -98,7 +98,7 @@ export default function cameraPhotoSessionTest() {
     console.info('Enter createCameraSessionInstance');
 
     try {
-      mCameraSession = mCameraManager.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO) as camera.PhotoSession;
+      mCameraSession = mCameraManager!.createSession<camera.PhotoSession>(camera.SceneMode.NORMAL_PHOTO) as camera.PhotoSession;
     } catch(err) {
       console.info('createPhotoSession FAILED');
     }
@@ -115,7 +115,7 @@ export default function cameraPhotoSessionTest() {
   let releaseCameraSessionInstance = async () => {
     console.info('Enter releaseCameraSessionInstance');
     if (isSessionCreated && mCameraSession != undefined) {
-      await mCameraSession.release();
+      await mCameraSession!.release();
       isSessionCreated = false;
     }
   }
@@ -126,12 +126,12 @@ export default function cameraPhotoSessionTest() {
       console.info(TAG + "Entering createInputs FAILED with NoCamera");
       return false;
     }
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx]);
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[idx]);
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
     }
-    await mCameraInput.open();
+    await mCameraInput!.open();
     await Utils.msSleep(100);
     console.info(idx + 'CameraInput is: ' + mCameraInput);
     console.info('Exit createInput');
@@ -141,7 +141,7 @@ export default function cameraPhotoSessionTest() {
   let releaseInput = async (): Promise<boolean> => {
     console.info('Enter releaseInput');
     if (mCameraInput != undefined && mCameraInput != null) {
-      await mCameraInput.close();
+      await mCameraInput!.close();
     }
     console.info('Exit releaseInput');
     return true;
@@ -150,13 +150,13 @@ export default function cameraPhotoSessionTest() {
   let createOutput = (idx: int) => {
     console.info('Enter createOutput');
 
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx], camera.SceneMode.NORMAL_PHOTO);
+    let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray[idx], camera.SceneMode.NORMAL_PHOTO);
 
     if (cameraOutputCap != undefined) {
       if (cameraOutputCap.previewProfiles != null) {
         console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
         for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
-          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+          mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
           if (mPreviewOutput != undefined) {
             break;
           }
@@ -173,7 +173,7 @@ export default function cameraPhotoSessionTest() {
         console.info(TAG + "cameraOutputCap.photoProfiles.length: " + cameraOutputCap.photoProfiles.length);
 
         for (let i = 0; i < cameraOutputCap.photoProfiles.length; i++) {
-          mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
+          mPhotoOutput = mCameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
           if (mPhotoOutput != undefined) {
             break;
           }
@@ -196,11 +196,11 @@ export default function cameraPhotoSessionTest() {
     console.info('Enter releaseOutput');
 
     if (mPreviewOutput != undefined && mPreviewOutput != null) {
-      await mPreviewOutput.release();
+      await mPreviewOutput!.release();
     }
 
     if (mPhotoOutput != undefined && mPhotoOutput != null) {
-      await mPhotoOutput.release();
+      await mPhotoOutput!.release();
     }
 
     console.info('Exit releaseOutput');
@@ -216,30 +216,30 @@ export default function cameraPhotoSessionTest() {
 
     await Utils.msSleep(1000);
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to addInput");
-      mCameraSession.addInput(mCameraInput);
+      mCameraSession!.addInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to addOutput mPreviewOutput");
-      mCameraSession.addOutput(mPreviewOutput);
+      mCameraSession!.addOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to addOutput mPhotoOutput");
-      mCameraSession.addOutput(mPhotoOutput);
+      mCameraSession!.addOutput(mPhotoOutput!);
     }
 
     await Utils.msSleep(300);
 
-    await mCameraSession.commitConfig();
+    await mCameraSession!.commitConfig();
     console.info(TAG + "commitConfig end");
     await Utils.msSleep(50);
 
-    await mCameraSession.start();
+    await mCameraSession!.start();
 
     await Utils.msSleep(100);
     console.info(TAG + "Exit startCameraSession");
@@ -249,23 +249,23 @@ export default function cameraPhotoSessionTest() {
 
   let stopCameraSession = async (): Promise<boolean> => {
     console.info(TAG + "Enter stopCameraSession");
-    await mCameraSession.stop();
+    await mCameraSession!.stop();
     await Utils.msSleep(100);
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to removeInput input");
-      mCameraSession.removeInput(mCameraInput);
+      mCameraSession!.removeInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPreviewOutput");
-      mCameraSession.removeOutput(mPreviewOutput);
+      mCameraSession!.removeOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPhotoOutput");
-      mCameraSession.removeOutput(mPhotoOutput);
+      mCameraSession!.removeOutput(mPhotoOutput!);
     }
     await releaseInput();
     await releaseOutput();
@@ -278,7 +278,7 @@ export default function cameraPhotoSessionTest() {
   describe('CameraPhotoSessionTest', () => {
     console.info(TAG + '----------CameraPhotoSessionTest--------------')
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info('beforeAll case');
       await getPhotoReceiverSurface();
       getPreviewOutputSurface();
@@ -287,18 +287,18 @@ export default function cameraPhotoSessionTest() {
       await Utils.msSleep(500);
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info('beforeEach case');
       await Utils.msSleep(100);
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info('afterEach case');
       await Utils.msSleep(100);
       await releaseCameraSessionInstance();
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       console.info('afterAll case');
       await releaseCameraSessionInstance();
       await Utils.msSleep(1000);
@@ -323,23 +323,23 @@ export default function cameraPhotoSessionTest() {
         try{
           createCameraSessionInstance();
           await startCameraSession(0);
-          let flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.CLOUDY);
-          let range = mCameraSession.getWhiteBalanceRange();
-          mCameraSession.setWhiteBalanceMode(camera.WhiteBalanceMode.DAYLIGHT);
-          let mode = mCameraSession.getWhiteBalanceMode();
-          flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.AUTO);
-          flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.CLOUDY);
-          flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.INCANDESCENT);
-          flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.FLUORESCENT);
-          flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.DAYLIGHT);
-          flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.MANUAL);
-          flag = mCameraSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.LOCKED);
+          let flag = mCameraSession!.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.CLOUDY);
+          let range = mCameraSession!.getWhiteBalanceRange();
+          mCameraSession!.setWhiteBalanceMode(camera.WhiteBalanceMode.DAYLIGHT);
+          let mode = mCameraSession!.getWhiteBalanceMode();
+          flag = mCameraSession!.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.AUTO);
+          flag = mCameraSession!.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.CLOUDY);
+          flag = mCameraSession!.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.INCANDESCENT);
+          flag = mCameraSession!.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.FLUORESCENT);
+          flag = mCameraSession!.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.DAYLIGHT);
+          flag = mCameraSession!.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.MANUAL);
+          flag = mCameraSession!.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.LOCKED);
           let value: int = 5000;
-          mCameraSession.setWhiteBalance(value);
-          let whiteBalance: int = mCameraSession.getWhiteBalance();
+          mCameraSession!.setWhiteBalance(value);
+          let whiteBalance: int = mCameraSession!.getWhiteBalance();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 start PASSED");
           await stopCameraSession();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(TAG + " SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_STATIC_0100 FAILED" + err.code);
           expect(true).assertFalse();
         }

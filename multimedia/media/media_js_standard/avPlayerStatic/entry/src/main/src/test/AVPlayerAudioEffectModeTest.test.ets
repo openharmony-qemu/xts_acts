@@ -38,9 +38,9 @@ const COMPLETED = 'completed';
 const STOPPED = 'stopped';
 const RELEASED = 'released';
 const ERROR = 'error';
-let fileDescriptor: media.AVFileDescriptor;
-let fileDescriptor2: media.AVFileDescriptor;
-let fileDescriptor3: media.AVFileDescriptor;
+let fileDescriptor: media.AVFileDescriptor | undefined;
+let fileDescriptor2: media.AVFileDescriptor | undefined;
+let fileDescriptor3: media.AVFileDescriptor | undefined;
 let avPlayer: media.AVPlayer | null | undefined;
 let mediaTestBase = new MediaTestBase()
 
@@ -74,9 +74,9 @@ export default function AVPlayerAudioEffectModeTest() {
     });
     afterAll(async () => {
       console.info('afterAll case');
-      await mediaTestBase.closeFdNumber(fileDescriptor.fd);
-      await mediaTestBase.closeFdNumber(fileDescriptor2.fd);
-      await mediaTestBase.closeFdNumber(fileDescriptor3.fd);
+      await mediaTestBase.closeFdNumber(fileDescriptor!.fd);
+      await mediaTestBase.closeFdNumber(fileDescriptor2!.fd);
+      await mediaTestBase.closeFdNumber(fileDescriptor3!.fd);
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_static_0100

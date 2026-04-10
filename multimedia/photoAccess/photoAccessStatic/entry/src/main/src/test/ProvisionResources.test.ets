@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,7 +68,7 @@ export default function provisionResourcesTest() {
           predicates: predicates
         };
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await phAccessHelper.getAssets(fetchOptions);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
         count = fetchResult.getCount();
         fetchResult.close();
         return count;
@@ -113,7 +113,7 @@ export default function provisionResourcesTest() {
           ];
           await pushCreateAsset(testContext, fileNames);
           await checkResourceAsset(done, testNum, fileNames);
-        } catch (error: Error) {
+        } catch (error) {
         }
 
       });

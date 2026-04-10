@@ -16,9 +16,9 @@
 import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent, Row } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import hilog from '@ohos.hilog'
-import { XComponent, XComponentController, XComponentType, XComponentOptions } from 'arkui.component.xcomponent'
+import { XComponent, XComponentController, XComponentOptions } from 'arkui.component.xcomponent'
 import { Position } from 'arkui.component.units'
-import { Color } from 'arkui.component.enums'
+import { Color, XComponentType } from 'arkui.component.enums'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 class MyController extends XComponentController {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,10 +22,10 @@ import Utils from './Util.test';
 
 const TAG = "CameraNoPermissionErrorCodeTest: ";
 
-let mCameraManager: camera.CameraManager;
+let mCameraManager: camera.CameraManager | undefined;
 let mCameraDevicesArray: Array<camera.CameraDevice>;
-let mCameraSession: camera.PhotoSession;
-let mVideoSession: camera.VideoSession
+let mCameraSession: camera.PhotoSession | undefined;
+let mVideoSession: camera.VideoSession | undefined;
 let mPhotoSurface: string | camera.Profile;
 let mCameraNum: number;
 let receiver: image.ImageReceiver | undefined;
@@ -78,7 +78,7 @@ export default function cameraNoPermissionErrorCodeTest() {
     console.info('Enter getCameraManagerInstance');
     let appContext: Context = Hypium.get("Context") as Context;
     mCameraManager = camera.getCameraManager(appContext);
-    if (isEmpty01(mCameraManager)) {
+    if (isEmpty01(mCameraManager!)) {
       console.info(TAG + "getCameraManager FAILED");
       return false;
     }
@@ -88,7 +88,7 @@ export default function cameraNoPermissionErrorCodeTest() {
 
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     if (isEmpty02(mCameraDevicesArray)) {
       console.info(TAG + "getSupportedCameras FAILED");
       return false;
@@ -103,11 +103,11 @@ export default function cameraNoPermissionErrorCodeTest() {
   let createCameraSessionInstance = (sceneMode: camera.SceneMode) => {
     console.info('Enter createCameraSessionInstance' + sceneMode);
     try {
-      mCameraSession = mCameraManager.createSession<camera.PhotoSession>(sceneMode);
-    } catch (error:BusinessError) {
+      mCameraSession = mCameraManager!.createSession<camera.PhotoSession>(sceneMode);
+    } catch (error) {
       console.info('createCaptureSession FAILED');
     }
-    if (isEmpty03(mCameraSession)) {
+    if (isEmpty03(mCameraSession!)) {
       console.info(TAG + "createCaptureSession FAILED");
       return false;
     }
@@ -116,8 +116,8 @@ export default function cameraNoPermissionErrorCodeTest() {
   }
 
   let releaseCameraSessionInstance = async () => {
-    if (!isEmpty03(mCameraSession)) {
-      await mCameraSession.release();
+    if (!isEmpty03(mCameraSession!)) {
+      await mCameraSession!.release();
     }
   }
 
@@ -125,17 +125,17 @@ export default function cameraNoPermissionErrorCodeTest() {
     console.info('Enter createVideoSessionInstance');
 
     try {
-      mVideoSession = mCameraManager.createSession<camera.VideoSession>(camera.SceneMode.NORMAL_VIDEO);
-    } catch (error:BusinessError) {
+      mVideoSession = mCameraManager!.createSession<camera.VideoSession>(camera.SceneMode.NORMAL_VIDEO);
+    } catch (error) {
       console.info('createVideoSession FAILED');
     }
 
-    if (isEmpty04(mVideoSession)) {
+    if (isEmpty04(mVideoSession!)) {
       console.info(TAG + "createVideoSession FAILED");
       return false;
     }
 
-    mVideoSession.beginConfig();
+    mVideoSession!.beginConfig();
 
     console.info('Exit createVideoSessionInstance');
 
@@ -146,7 +146,7 @@ export default function cameraNoPermissionErrorCodeTest() {
   describe('CameraNoPermissionErrorCodeTest', () => {
     console.info(TAG + '----------CameraNoPermissionErrorCodeTest--------------')
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await getPhotoReceiverSurface();
       getCameraManagerInstance();
       getCameraSupportDevicesArray();
@@ -163,7 +163,7 @@ export default function cameraNoPermissionErrorCodeTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       console.info('afterAll case');
     })
@@ -180,9 +180,9 @@ export default function cameraNoPermissionErrorCodeTest() {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0200--------------");
       try {
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0200 SUCCESS");
-        let canPreconfig = mCameraSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P);
+        let canPreconfig = mCameraSession!.canPreconfig(camera.PreconfigType.PRECONFIG_720P);
         done();
-      } catch (error:BusinessError) {
+      } catch (error) {
         let err = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0200 ERRORCODE: " + err.code);
         expect(err.code == 7400201).assertTrue();
@@ -203,9 +203,9 @@ export default function cameraNoPermissionErrorCodeTest() {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0200--------------");
       try {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0200 SUCCESS");
-        mCameraSession.preconfig(camera.PreconfigType.PRECONFIG_720P);
+        mCameraSession!.preconfig(camera.PreconfigType.PRECONFIG_720P);
         done();
-      } catch (error:BusinessError) {
+      } catch (error) {
         let err = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_STATIC_0200 ERRORCODE: " + err.code);
         expect(err.code == 7400201).assertTrue();
@@ -226,9 +226,9 @@ export default function cameraNoPermissionErrorCodeTest() {
         console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100--------------");
         try {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100 SUCCESS");
-          mVideoSession.preconfig(camera.PreconfigType.PRECONFIG_720P);
+          mVideoSession!.preconfig(camera.PreconfigType.PRECONFIG_720P);
           done();
-        } catch (error:BusinessError) {
+        } catch (error) {
           let err = error as BusinessError;
           console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_STATIC_0100 ERRORCODE: " + err.code);
           expect(err.code == 7400201).assertTrue();
@@ -249,9 +249,9 @@ export default function cameraNoPermissionErrorCodeTest() {
         console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100--------------");
         try {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100 SUCCESS");
-          mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P);
+          mVideoSession!.canPreconfig(camera.PreconfigType.PRECONFIG_720P);
           done();
-        } catch (error:BusinessError) {
+        } catch (error) {
           let err = error as BusinessError;
           console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CANPRECONFIG_ERROR_CODE_STATIC_0100 ERRORCODE: " + err.code);
           expect(err.code == 7400201).assertTrue();

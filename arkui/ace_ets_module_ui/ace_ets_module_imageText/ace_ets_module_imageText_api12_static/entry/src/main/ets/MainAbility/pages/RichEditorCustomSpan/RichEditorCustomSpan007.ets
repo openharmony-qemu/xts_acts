@@ -69,7 +69,7 @@ struct RichEditorCustomSpan007 {
     fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
   })
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString('abcd',
     [{ start: 0, length: 4, styledKey: StyledStringKey.FONT, styledValue: this.fontStyle1 }]);
@@ -79,7 +79,9 @@ struct RichEditorCustomSpan007 {
 
    onPageShow() {
     console.info('aboutToAppear initial imagePixelMap');
-    this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
+    waitForCompletion(async ()=>{
+      this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
+    })
   }
 
   private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {
@@ -111,9 +113,9 @@ build() {
       }).id('imageTop')
 
       Button('get content').onClick((e: ClickEvent) => {
-        // this.richEditorStyledString = this.controller!.getStyledString()!;
-        // this.content = this.richEditorStyledString.subStyledString(0, 6).getString();
-        // console.log('RichEditorController this.content:' + this.content);
+        this.richEditorStyledString = this.controller!.getStyledString()!;
+        this.content = this.richEditorStyledString!.subStyledString(0, 6)!.getString();
+        console.log('RichEditorController this.content:' + this.content);
 
       }).id('getContent')
       Button('getStyles')
@@ -130,7 +132,7 @@ build() {
 
       RichEditor(this.options)
         .onReady((): void => {
-          // this.controller!.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height('20%')
         .width('100%')
@@ -140,10 +142,10 @@ build() {
       Column() {
         Row() {
           Button('add custom').onClick((e: ClickEvent) => {
-            // this.richEditorStyledString = this.controller!.getStyledString()!;
-            // this.richEditorStyledString.appendStyledString(this.style1);
-            // this.controller!.setStyledString(this.richEditorStyledString);
-            // this.controller!.setCaretOffset(this.richEditorStyledString.length);
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.richEditorStyledString.appendStyledString(this.style1);
+            this.controller!.setStyledString(this.richEditorStyledString);
+            this.controller!.setCaretOffset(this.richEditorStyledString.length);
           }).id('addCustom')
         }
 

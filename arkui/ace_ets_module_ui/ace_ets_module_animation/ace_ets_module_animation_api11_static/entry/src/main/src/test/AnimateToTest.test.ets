@@ -85,7 +85,7 @@ const waitUiReadyMs = 1000;
 export default function animateToTest() {
   describe('animateToTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("playModeReverseTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
     });

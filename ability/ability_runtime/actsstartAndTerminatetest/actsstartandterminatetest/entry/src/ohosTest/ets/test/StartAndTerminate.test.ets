@@ -579,7 +579,7 @@ export default function startAndTerminateTest() {
               done();
             }, 1000);
           }
-          let subscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+          let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
             hilog.info(0x0000, 'testTag', '%{public}s', `subscribeCallBack success`)
             if (data.event === 'ACTS_TEST_START01') {
               setTimeout(() => {
@@ -601,41 +601,51 @@ export default function startAndTerminateTest() {
             }
             if (data.event === 'UiAbility09_onCreate_01') {
               uiAbility09OnCreate01 = 'uiAbility09OnCreate01Success';
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, uiAbility09OnCreate01: ${uiAbility09OnCreate01}`);
             };
 
             if (data.event === 'UiAbility09_onCreate_02') {
               uiAbility09OnCreate02 = 'uiAbility09OnCreate02Success';
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, uiAbility09OnCreate02: ${uiAbility09OnCreate02}`);
             };
 
             if (data.event === 'UiAbility09_onDestroy_02') {
               uiAbility09OnDestroy02 = 'uiAbility09OnDestroy02Success';
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, uiAbility09OnDestroy02: ${uiAbility09OnDestroy02}`);
             };
 
             if (data.event === 'UiAbility09_onWindowStageCreate_01') {
               uiAbility09OnWindowStageCreate01 = 'uiAbility09OnWindowStageCreate01Success';
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, uiAbility09OnWindowStageCreate01: ${uiAbility09OnWindowStageCreate01}`);
             };
 
             if (data.event === 'UiAbility09_onWindowStageCreate_02') {
               uiAbility09OnWindowStageCreate02 = 'uiAbility09OnWindowStageCreate02Success';
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, uiAbility09OnWindowStageCreate02: ${uiAbility09OnWindowStageCreate02}`);
             };
 
             if (data.event === 'UiAbility09_onForeground_02') {
               uiAbility09OnForeground02 = 'uiAbility09OnForeground02Success';
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, uiAbility09OnForeground02: ${uiAbility09OnForeground02}`);
             };
 
             if (data.event === 'UiAbility09_onBackground_01') {
               uiAbility09OnBackground01 = 'uiAbility09OnBackground01Success';
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, uiAbility09OnBackground01: ${uiAbility09OnBackground01}`);
             };
 
             if (data.event === 'UiAbility09_onBackground_02') {
               uiAbility09OnBackground02 = 'uiAbility09OnBackground02Success';
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, uiAbility09OnBackground02: ${uiAbility09OnBackground02}`);
             };
             if (data.event === 'UiAbility09_onForeground_01') {
               uiAbility09OnForeground01 = 'uiAbility09OnForeground01Success';
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, uiAbility09OnForeground01: ${uiAbility09OnForeground01}`);
               globalThis.uiAbilityContext9.terminateSelf();
             }
             if (data.event === 'UiAbility09_onDestroy_01') {
               uiAbility09OnDestroy01 = 'uiAbility09OnDestroy01Success';
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, uiAbility09OnDestroy01: ${uiAbility09OnDestroy01}`);
               setTimeout(() => {
                 try {
                   context.startAbility(
@@ -654,7 +664,7 @@ export default function startAndTerminateTest() {
               }, 500);
             }
             if (data.event === 'ACTS_TEST_DESTROY') {
-              globalThis.uiAbilityContext9.terminateSelf();
+              await globalThis.uiAbilityContext9.terminateSelf();
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);

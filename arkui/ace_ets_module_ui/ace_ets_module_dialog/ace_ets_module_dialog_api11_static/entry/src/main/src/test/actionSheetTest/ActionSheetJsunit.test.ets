@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ActionSheetJsunit() {
   describe('ActionSheetJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActionSheetJsunit beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

@@ -32,7 +32,7 @@ export default function assetGetPositionObjectTest() {
     const getObjectByPositionCallbackTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions) => {
       try {
-        let fetchResult = await helper.getAssets(fetchOps);
+        let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
         expect(fetchResult.getCount() > 0).assertTrue();
         const firAsset = await fetchResult.getFirstObject();
         hilog.info(domain, tag, '%{public}s', `${testNum} start`);
@@ -62,7 +62,7 @@ export default function assetGetPositionObjectTest() {
     const getObjectByPositionPromiseTest =
       async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions) => {
         try {
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           expect(fetchResult.getCount() > 0).assertTrue();
           const firAsset = await fetchResult.getFirstObject();
           hilog.info(domain, tag, '%{public}s', `${testNum} start`);

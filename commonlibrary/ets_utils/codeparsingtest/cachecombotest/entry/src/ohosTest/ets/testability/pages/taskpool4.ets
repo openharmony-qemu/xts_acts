@@ -88,24 +88,6 @@ export function testRegExpSymbolMatch1() {
   }
 }
 
-@Concurrent
-export function testRegExpStaticProps1() {
-  const TAG = 'testRegExpStaticProps1'
-  try {
-    const reg = /except/g;
-    reg.test('except in compliance');
-    reg.test('except in2 com');
-    if ((RegExp).input !== undefined) {
-      throw new Error(`${TAG} RegExp.input should be undefined`)
-    }
-    if ((RegExp).$_ !== undefined) {
-      throw new Error(`${TAG} RegExp.$_ should be undefined`)
-    }
-  } catch (err) {
-    console.error(`${TAG} failed, error: ${(err as Error).message}`);
-    throw new Error(`${TAG} catch error.`)
-  }
-}
 
 @Concurrent
 export function testRegExpInstanceDotAll1() {

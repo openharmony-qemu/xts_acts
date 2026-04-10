@@ -57,8 +57,8 @@ void CommonAttrsIdTest::OnEventReceive(ArkUI_NodeEvent *event)
 ArkUI_NodeHandle CommonAttrsIdTest::CreateSubCommonAttrsNode(ArkUI_NativeNodeAPI_1 *node_api, const char *id,
                                                              uint32_t eventId)
 {
-    float width = SIZE_200;
-    float height = SIZE_200;
+    float width = PARAM_0_POINT_5;
+    float height = PARAM_0_POINT_2;
     uint32_t backgroundColor = COLOR_RED;
 
     // create commonAttrs
@@ -72,11 +72,11 @@ ArkUI_NodeHandle CommonAttrsIdTest::CreateSubCommonAttrsNode(ArkUI_NativeNodeAPI
     // set commonAttrs width and height
     ArkUI_NumberValue widthValue[] = {{.f32 = width}};
     ArkUI_AttributeItem widthItem = {widthValue, sizeof(widthValue) / sizeof(ArkUI_NumberValue)};
-    node_api->setAttribute(text, NODE_WIDTH, &widthItem);
+    node_api->setAttribute(text, NODE_WIDTH_PERCENT, &widthItem);
 
     ArkUI_NumberValue heightValue[] = {{.f32 = height}};
     ArkUI_AttributeItem heightItem = {heightValue, sizeof(heightValue) / sizeof(ArkUI_NumberValue)};
-    node_api->setAttribute(text, NODE_HEIGHT, &heightItem);
+    node_api->setAttribute(text, NODE_HEIGHT_PERCENT, &heightItem);
 
     // set commonAttrs backgroundColor
     ArkUI_NumberValue backgroundColorValue[] = {{.u32 = backgroundColor}};

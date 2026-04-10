@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ import {
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-class BasicDataSource0470 implements IDataSource<string> {
+export class BasicDataSource0470 implements IDataSource<string> {
   private listeners: DataChangeListener[] = new Array<DataChangeListener>();
   private originDataArray: string[] = new Array<string>();
 
@@ -93,7 +93,7 @@ class BasicDataSource0470 implements IDataSource<string> {
   }
 }
 
-class LazyForEachData0470 extends BasicDataSource0470 {
+export class LazyForEachData0470 extends BasicDataSource0470 {
   public dataArray: string[] = new Array<string>();
 
   public totalCount(): int {
@@ -157,7 +157,7 @@ struct LazyForEach0470 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LazyForEach0470', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

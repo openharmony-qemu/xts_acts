@@ -18,17 +18,17 @@ import { Entry, Text, Column, Row, Component, Button, ClickEvent, Image, ImageAt
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
-class MyImageModifier1 implements AttributeModifier<ImageAttribute> {
+export class MyImageModifier1 implements AttributeModifier<ImageAttribute> {
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.contentTransition(ContentTransitionEffect.IDENTITY)
   }
 }
-class MyImageModifier2 implements AttributeModifier<ImageAttribute> {
+export class MyImageModifier2 implements AttributeModifier<ImageAttribute> {
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.contentTransition(ContentTransitionEffect.OPACITY)
   }
 }
-class MyImageModifier3 implements AttributeModifier<ImageAttribute> {
+export class MyImageModifier3 implements AttributeModifier<ImageAttribute> {
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.contentTransition(undefined)
   }

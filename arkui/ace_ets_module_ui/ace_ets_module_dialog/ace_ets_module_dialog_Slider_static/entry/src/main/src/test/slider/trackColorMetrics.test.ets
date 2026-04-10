@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 export default function trackColorMetricsTest() {
   describe('trackColorMetrics', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("trackColorMetrics beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.slider_static", "EntryAbility")
       await UtilsTest.msSleep(4000)

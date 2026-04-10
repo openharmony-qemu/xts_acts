@@ -19,6 +19,16 @@
 #include <cstdlib>
 #include <js_native_api_types.h>
 
+static napi_value IsDebugMode(napi_env env, napi_callback_info info)
+{
+    bool isBool = false;
+    OH_NativeBundle_IsDebugMode(&isBool);
+    napi_value sum;
+    napi_get_boolean(env, isBool, &sum);
+    return sum;
+}
+
+
 static napi_value GetCurrentApplicationInfo(napi_env env, napi_callback_info info)
 {
     OH_NativeBundle_ApplicationInfo nativeApplicationInfo = OH_NativeBundle_GetCurrentApplicationInfo();
@@ -59,7 +69,8 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         { "getCurrentApplicationInfo", nullptr, GetCurrentApplicationInfo,
-            nullptr, nullptr, nullptr, napi_default, nullptr }
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "IsDebugMode", nullptr, IsDebugMode, nullptr, nullptr, nullptr, napi_default, nullptr },    
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

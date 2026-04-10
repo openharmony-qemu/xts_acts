@@ -10,7 +10,6 @@
                     "SystemCapability.Location.Location.Gnss",
                     "SystemCapability.Location.Location.Geofence",
                     "SystemCapability.Location.Location.Geocoder",
-                    "SystemCapability.Location.Location.Lite",
                     "SystemCapability.Security.AccessToken"
                 ]
             }

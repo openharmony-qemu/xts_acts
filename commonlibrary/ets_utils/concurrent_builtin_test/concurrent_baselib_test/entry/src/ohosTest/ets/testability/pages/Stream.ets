@@ -89,7 +89,7 @@ export function readableStreamRead() {
       let readableStream = new TestReadable();
       let dataChunk = readableStream.read();
       if (dataChunk !== null) {
-        throw new Error(`${TAG} value.toString() invalid: ${dataChunk.toString()}`)
+        throw new Error(`${TAG} value.toString() invalid: ${(dataChunk as Object).toString()}`)
       }
     } catch (err) {
       console.error(`${TAG} failed, error: ${err.message}`);

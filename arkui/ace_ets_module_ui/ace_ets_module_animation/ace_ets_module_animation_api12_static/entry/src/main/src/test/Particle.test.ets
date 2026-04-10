@@ -36,7 +36,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function ParticlePage() {
   describe('ParticlePage', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ParticlePage beforeEach start");
 
       

@@ -49,7 +49,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 expect(info.sql).assertEqual("DELETE FROM users");
                 console.log(TAG + "************* testGetDeleteSqlInfo end4 *************");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(null).assertFail();
                 console.log(TAG + "************* testGetDeleteSqlInfo end *************");
                 done();
@@ -76,7 +77,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 expect(info.args[1]).assertEqual(18);
                 console.log(TAG + "************* testGetDeleteSqlInfo2 end *************");
                 done();
-            } catch (e:BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(null).assertFail();
                 console.log(TAG + "************* testGetQuerySqlInfo end *************");
                 done();
@@ -99,7 +101,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 relationalStore.getDeleteSqlInfo(predicates);
                 expect(null).assertFail();
                 done();
-            } catch (e:BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetDeleteSqlInfoTableNameTooLong end *************");
                 done();
@@ -135,7 +138,7 @@ export default function RdbStoreGetSqlInfoTest() {
                 expect(info.args[3]).assertEqual("man");
                 console.log(TAG + "************* testGetInsertSqlInfo end *************");
                 done();
-            } catch (e:Error){
+            } catch (e){
                 expect(null).assertFail();
                 console.log(TAG + "************* testGetInsertSqlInfo end *************");
                 done();
@@ -167,7 +170,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 );
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetInsertSqlInfoTabkleNameTooLong end *************");
                 console.log(`************* testGetInsertSqlInfoTabkleNameTooLong end *************${e.code}`);
@@ -193,7 +197,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 );
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetInsertSqlInfoBucketTooLong end *************");
                 done();
@@ -226,7 +231,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 );
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetInsertSqlInfoBucketColumnTooLong end *************");
                 done();
@@ -257,7 +263,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 );
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetInsertSqlInfoTableNameIsEmpty end *************");
                 done();
@@ -289,7 +296,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 expect(info.sql).assertEqual("INSERT INTO tableName(age,desc,name,sex) VALUES (?,?,?,?)");
                 console.log(TAG + "************* testGetInsertSqlInfoConflictResolutionIsNotEmpty end *************");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(null).assertFail();
                 console.log(TAG + "************* testGetInsertSqlInfoConflictResolutionIsNotEmpty end *************");
                 done();
@@ -315,7 +323,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 );
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetInsertSqlInfoBucketIsNull end *************");
                 done();
@@ -354,7 +363,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 );
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetInsertSqlInfoBucketIsAssets end *************");
                 done();
@@ -403,7 +413,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 expect(assets[0].status).assertEqual(values[0].status);
                 console.log(TAG + "************* testGetInsertSqlInfo end1 *************");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(null).assertFail();
                 console.log(TAG + "************* testGetInsertSqlInfo end2 *************");
                 done();
@@ -426,7 +437,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 expect(info.sql).assertEqual("SELECT * FROM users");
                 console.log(TAG + "************* testGetQuerySqlInfo end *************");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(null).assertFail();
                 console.log(TAG + "************* testGetQuerySqlInfo end *************");
                 done();
@@ -449,7 +461,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 expect(info.sql).assertEqual("SELECT * FROM users");
                 console.log(TAG + "************* testGetQuerySqlInfoColumnsIsNullList end *************");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(null).assertFail();
                 console.log(TAG + "************* testGetQuerySqlInfoColumnsIsNullList end *************");
                 done();
@@ -472,7 +485,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 expect(info.sql).assertEqual("SELECT name, age  FROM users");
                 console.log(TAG + "************* testGetQuerySqlInfoByColumns end *************");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(null).assertFail();
                 console.log(TAG + "************* testGetQuerySqlInfoByColumns end *************");
                 done();
@@ -495,7 +509,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 relationalStore.getQuerySqlInfo(predicates);
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetQuerySqlInfoTableNameTooLong end *************");
                 done();
@@ -519,7 +534,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 relationalStore.getQuerySqlInfo(predicates);
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetQuerySqlInfoWhereClauseTooLong end *************");
                 done();
@@ -544,7 +560,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 expect(info.args[0]).assertEqual('a');
                 console.log(TAG + "************* testGetQuerySqlInfoColumnsNotstringarray end *************");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(null).assertFail();
                 console.log(TAG + "************* testGetQuerySqlInfoColumnsNotstringarray end *************");
                 done();
@@ -571,7 +588,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 relationalStore.getQuerySqlInfo(predicates, colums);
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetQuerySqlInfoColumnsTooLong end *************");
                 done();
@@ -608,7 +626,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 expect(info.args[3]).assertEqual("man");
                 console.log(TAG + "************* testGetUpdateSqlInfo end *************");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(null).assertFail();
                 console.log(TAG + "************* testGetUpdateSqlInfo end *************");
                 done();
@@ -635,7 +654,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 );
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetUpdateSqlInfoBucketIsNull end *************");
                 done();
@@ -661,7 +681,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 );
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetUpdateSqlInfoBucketTooLong end *************");
                 done();
@@ -694,7 +715,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 );
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetUpdateSqlInfoBucketCloumnTooLong end *************");
                 done();
@@ -730,7 +752,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 );
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetUpdateSqlInfoTableTooLong end *************");
                 done();
@@ -767,7 +790,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 );
                 expect(null).assertFail();
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(e.code).assertEqual(14800001);
                 console.log(TAG + "************* testGetUpdateSqlInfoWhereClauseTooLong end *************");
                 done();
@@ -800,7 +824,8 @@ export default function RdbStoreGetSqlInfoTest() {
                 );
                 expect(info.sql).assertEqual("UPDATE tableName SET age=?,desc=?,name=?,sex=? WHERE tableName = ? ");
                 done();
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 expect(null).assertFail();
                 console.log(TAG + "************* testGetUpdateSqlInfoConflictResolutionIsEmpty end *************");
                 done();

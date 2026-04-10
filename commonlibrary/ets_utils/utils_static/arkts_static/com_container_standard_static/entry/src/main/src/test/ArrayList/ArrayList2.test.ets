@@ -40,7 +40,7 @@ class Cat {
 
 export default function ArrayListTest2() {
   describe('arrayListTest2', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -832,7 +832,7 @@ export default function ArrayListTest2() {
         arrayList.add(51);
         arrayList.add(8);
         arrayList.add(0);
-        arrayList.sort((firstValue, secondValue) => firstValue - secondValue);
+        arrayList.sort((firstValue, secondValue) => (firstValue - secondValue).toInt());
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList)).assertEqual(`{"0":0,"1":1,"2":3,"3":5,"4":8,"5":22,"6":24,"7":51}`);
       } catch (err) {
@@ -862,7 +862,7 @@ export default function ArrayListTest2() {
         arrayList.add(51);
         arrayList.add(8);
         arrayList.add(0);
-        arrayList.sort((firstValue, secondValue) => secondValue - firstValue);
+        arrayList.sort((firstValue, secondValue) => (secondValue - firstValue).toInt());
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList)).assertEqual(`{"0":51,"1":24,"2":22,"3":8,"4":5,"5":3,"6":1,"7":0}`);
       } catch (err) {

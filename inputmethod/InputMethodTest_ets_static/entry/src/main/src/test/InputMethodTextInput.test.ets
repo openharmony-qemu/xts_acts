@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -59,7 +59,7 @@ export default function inputMethodTest() {
                         }
                     });
                     console.info(`attach inputMethod success, data: ${JSON.stringify(data)}`);
-                } catch (error:BusinessError) {
+                } catch (error) {
                     console.info(`attach inputMethod fail, error: [${error.code}, ${error.message}]`);
                 }
             }
@@ -69,7 +69,7 @@ export default function inputMethodTest() {
                 try {
                     await inputMethod.getController().detach();
                     console.info(`clsoe inputMethod success`);
-                } catch (error: BusinessError) {
+                } catch (error) {
                     console.info(`clsoe inputMethod fial, error: [${error.code}, ${error.message}]`);
                 };
             }
@@ -96,7 +96,7 @@ export default function inputMethodTest() {
             };
             try {
                 inputMethod.getController().showTextInput(CallBack);
-            } catch (error:BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expectFalse();
                 done();
@@ -128,14 +128,15 @@ export default function inputMethodTest() {
             try {
                 let data = await inputMethod.getController().detach();
                 console.info(`${CASE_NAME} clsoe inputMethod success, data: ${JSON.stringify(data)}`);
-            } catch (error:BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} clsoe inputMethod fial, error: [${error.code}, ${error.message}]`);
                 expectFalse();
                 done();
             }
             try {
                 inputMethod.getController().showTextInput(CallBack);
-            } catch (error:BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect(error.code === INVALID_INPUT_METHOD_CLIENT_DETACHED).assertTrue();
                 done();
@@ -158,7 +159,7 @@ export default function inputMethodTest() {
                 console.info(`${CASE_NAME} execution success `);
                 expect(CASE_NAME != null).assertTrue();
                 done();
-            } catch (error:BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expectFalse();
                 done();
@@ -171,14 +172,14 @@ export default function inputMethodTest() {
          * @tc.desc   Do not bind the input method keyboard, and call the showTextInput interface in Promise mode
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('SUB_Misc_inputMethod_showTextInput_Promise_static_0400', Level.LEVEL2, async (done: () => void) => {
+        it('SUB_Misc_inputMethod_showTextInput_Promise_static_0400', Level.LEVEL0, async (done: () => void) => {
             const CASE_NAME = 'SUB_Misc_inputMethod_showTextInput_Promise_static_0400';
             try {
                 let data = await inputMethod.getController().detach();
                 console.info(`${CASE_NAME} clsoe inputMethod success, data: ${JSON.stringify(data)}`);
-            } catch (error:BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} clsoe inputMethod fial, error: [${error.code}, ${error.message}]`);
                 expectFalse();
                 done();
@@ -190,7 +191,8 @@ export default function inputMethodTest() {
                 expectFalse();
                 done();
 
-            } catch (error:BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`${CASE_NAME} catch error, expect error: [${error.code}, ${error.message}]`);
                 expect(error.code === INVALID_INPUT_METHOD_CLIENT_DETACHED).assertTrue();
                 done();
@@ -219,7 +221,7 @@ export default function inputMethodTest() {
             };
             try {
                 inputMethod.getController().hideTextInput(CallBack);
-            } catch (error:BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expectFalse();
                 done();
@@ -253,7 +255,7 @@ export default function inputMethodTest() {
             try {
                 let data = await inputMethod.getController().detach();
                 console.info(`${CASE_NAME} clsoe inputMethod success, data: ${JSON.stringify(data)}`);
-            } catch (error:BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} clsoe inputMethod fial, error: [${error.code}, ${error.message}]`);
                 expectFalse();
                 done();
@@ -261,7 +263,8 @@ export default function inputMethodTest() {
             }
             try {
                 inputMethod.getController().hideTextInput(CallBack);
-            } catch (error:BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expect(error.code === INVALID_INPUT_METHOD_CLIENT_DETACHED).assertTrue();
                 done();
@@ -281,7 +284,7 @@ export default function inputMethodTest() {
             const CASE_NAME = 'SUB_Misc_inputMethod_hideTextInput_Promise_static_0100';
             try {
                 await inputMethod.getController().hideTextInput();
-            } catch (error:BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} catch error, expect error: [${error.code}, ${error.message}]`);
                 expect(error.code === INVALID_INPUT_METHOD_CLIENT_DETACHED).assertTrue();
                 done();
@@ -291,7 +294,7 @@ export default function inputMethodTest() {
                 console.info(`${CASE_NAME} execution success `);
                 done();
 
-            } catch (error:BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expectFalse();
                 done();
@@ -312,7 +315,7 @@ export default function inputMethodTest() {
             try {
                 let data = await inputMethod.getController().detach();
                 console.info(`${CASE_NAME} clsoe inputMethod success, data: ${JSON.stringify(data)}`);
-            } catch (error:BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} clsoe inputMethod fial, error: [${error.code}, ${error.message}]`);
                 expectFalse();
                 done();
@@ -324,7 +327,8 @@ export default function inputMethodTest() {
                 expectFalse();
                 done();
                 
-            } catch (error:BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`${CASE_NAME} catch error, expect error: [${error.code}, ${error.message}]`);
                 expect(error.code === INVALID_INPUT_METHOD_CLIENT_DETACHED).assertTrue();
                 done();
@@ -353,7 +357,7 @@ export default function inputMethodTest() {
             };
             try {
                 inputMethod.getController().detach(CallBack);
-            } catch (error:BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expectFalse();
                 done();
@@ -377,7 +381,7 @@ export default function inputMethodTest() {
                 expect(CASE_NAME != null).assertTrue();
                 done();
                 
-            } catch (error:BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
                 expectFalse();
                 done();
@@ -398,7 +402,7 @@ export default function inputMethodTest() {
             try {
                 let data = await inputMethod.getController().detach();
                 console.info(`${CASE_NAME} clsoe inputMethod success, data: ${JSON.stringify(data)}`);
-            } catch (error:BusinessError) {
+            } catch (error) {
                 console.info(`${CASE_NAME} clsoe inputMethod fial, error: [${error.code}, ${error.message}]`);
                 expectFalse();
                 done();
@@ -411,7 +415,8 @@ export default function inputMethodTest() {
                 expectFalse();
                 done();
 
-            } catch (error:BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`${CASE_NAME} catch error, expect error: [${error.code}, ${error.message}]`);
                 expect(error.code === INVALID_INPUT_METHOD_CLIENT_DETACHED).assertTrue();
                 done();

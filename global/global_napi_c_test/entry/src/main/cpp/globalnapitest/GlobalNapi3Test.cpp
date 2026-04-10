@@ -143,8 +143,15 @@ napi_value GetDirectionVertical0100(napi_env env, napi_callback_info info)
 
 napi_value GetColorModeLight0100(napi_env env, napi_callback_info info)
 {
+    size_t argc = 1;
+    napi_value argv[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    napi_valuetype valueType;
+    napi_typeof(env, argv[0], &valueType);
+    NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+    
     ResourceManager_Configuration config;
-    OH_ResourceManager_GetResourceConfiguration(g_mNativeResMgr, &config);
+    OH_ResourceManager_GetResourceConfiguration(mNativeResMgr, &config);
     int32_t res = config.colorMode;
     OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF, "Light", "Light: %{public}d", res);
     OH_ResourceManager_ReleaseConfiguration(&config);
@@ -253,8 +260,15 @@ napi_value GetConfigurations0300(napi_env env, napi_callback_info info)
 
 napi_value GetConfigurations0400(napi_env env, napi_callback_info info)
 {
+    size_t argc = 1;
+    napi_value argv[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    napi_valuetype valueType;
+    napi_typeof(env, argv[0], &valueType);
+    NativeResourceManager *mNativeResMgr = OH_ResourceManager_InitNativeResourceManager(env, argv[0]);
+    
     ResourceManager_Configuration config;
-    OH_ResourceManager_GetResourceConfiguration(g_mNativeResMgr, &config);
+    OH_ResourceManager_GetResourceConfiguration(mNativeResMgr, &config);
     int32_t res = config.colorMode;
     napi_value value = nullptr;
     napi_create_int32(env, res == COLOR_MODE_LIGHT ? 0 : 1, &value);

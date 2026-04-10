@@ -50,6 +50,10 @@ import UnmarshallingErrorCodeTest from './StyledStringTest/UnmarshallingErrorCod
 import VerticalAlignTest from './StyledStringTest/VerticalAlignTest.test';
 import LeadingMarginSpanTest from './StyledStringTest/LeadingMarginSpanTest.test';
 import StyledStringTextDirectionTest from './StyledStringTest/ParagraphStyleTextDirection.test';
+import StyledStringMethodsNullTest from './StyledString/StyledStringMethodsNull.test';
+import MutableStyledStringMethodsNullTest from './StyledString/MutableStyledStringMethodsNull.test';
+import MutableStyledStringMethodsNull2Test from './StyledString/MutableStyledStringMethodsNull2.test';
+import StyledStringFontWeightConfigsTest from './StyledStringTest/StyledStringFontWeightConfigsTest.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -89,4 +93,8 @@ export default function testsuite() {
   VerticalAlignTest()
   LeadingMarginSpanTest()
   StyledStringTextDirectionTest()
+  StyledStringMethodsNullTest()
+  MutableStyledStringMethodsNullTest()
+  MutableStyledStringMethodsNull2Test()
+  StyledStringFontWeightConfigsTest()
 }

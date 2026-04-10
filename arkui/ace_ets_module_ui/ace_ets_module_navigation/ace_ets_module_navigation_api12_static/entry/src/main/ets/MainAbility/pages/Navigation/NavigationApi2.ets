@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -52,11 +52,12 @@ struct NavigationApi2 {
             this.pageInfos.setInterception({
               willShow: (from: NavDestinationContext | "navBar", to: NavDestinationContext | "navBar",
                          operation: NavigationOperation, animated: boolean) => {
+                this.pageInfos.pop();
+                this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
               },
               didShow:((from: NavDestinationContext | "navBar", to: NavDestinationContext | "navBar",
                         operation: NavigationOperation, animated: boolean) => {
-                this.pageInfos.pop();
-                this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
+
               })
             })
           })

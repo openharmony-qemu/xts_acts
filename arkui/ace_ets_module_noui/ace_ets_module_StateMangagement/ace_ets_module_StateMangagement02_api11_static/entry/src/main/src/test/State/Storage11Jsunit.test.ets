@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Storage11Jsunit() {
   describe('Storage11Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Storage11Jsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

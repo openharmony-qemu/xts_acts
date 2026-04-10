@@ -25,7 +25,7 @@ class C1 {
 }
 export default function queueTest1() {
   describe('queueTest1', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -237,14 +237,14 @@ export default function queueTest1() {
     });
 
     /**
-     * @tc.name   testQueue[Symbol.iterator]0011
+     * @tc.name   testQueueSymboliterator0011Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_[SYMBOL.ITERATOR]_1100
      * @tc.desc   Testing Queue [Symbol.iterator] by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testQueue[Symbol.iterator]0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testQueueSymboliterator0011Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testQueue[Symbol.iterator]0011";
       try {
         let queue: Queue<number | string | object> = new Queue<number | string | object>();
@@ -270,14 +270,14 @@ export default function queueTest1() {
     });
 
     /**
-     * @tc.name   testQueueSymbol.iterator0012
+     * @tc.name   testQueueSymboliterator0012Adapt002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_[SYMBOL.ITERATOR]_1200
      * @tc.desc   Testing Queue [Symbol.iterator] by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testQueueSymbol.iterator0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testQueueSymboliterator0012Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testQueueSymbol.iterator0012";
       try {
         let queue: Queue<number | string | object> = new Queue<number | string | object>();

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,7 +28,7 @@ let tag: string = 'PerfTestTag'; //日志标识字符串,作为tag标识当前ru
 
 export default function perfTestTest() {
     describe("perfTestTest", (): void => {
-        let driver: Driver;
+        let driver: Driver | undefined;
         beforeAll(async () : Promise<void> => {
             driver = Driver.create();
             await Utils.msSleep(1000);
@@ -36,7 +36,7 @@ export default function perfTestTest() {
         afterEach(async () => {
             try {
                 await stopApplication('com.perftestScene.acts');
-            } catch(error: BusinessError) {
+            } catch(error) {
                 hilog.info(domain, tag, `afterEach stopApplication, ${JSON.stringify(error)}`);
             }
         })
@@ -81,9 +81,13 @@ export default function perfTestTest() {
             expect(res1.minimum).assertLargerOrEqual(0)
             expect(res1.roundValues.length).assertLargerOrEqual(1)
             expect(res2.average).assertLargerOrEqual(0)
+            expect(res2.metric).assertEqual(PerfMetric.CPU_LOAD)
             expect(res3.average).assertLargerOrEqual(0)
+            expect(res3.metric).assertEqual(PerfMetric.CPU_USAGE)
             expect(res4.average).assertLargerOrEqual(0)
+            expect(res4.metric).assertEqual(PerfMetric.MEMORY_RSS)
             expect(res5.average).assertLargerOrEqual(0)
+            expect(res5.metric).assertEqual(PerfMetric.MEMORY_PSS)
             hilog.info(domain, tag, `testPerfTestCalculate_static end`);
         })
 
@@ -98,21 +102,25 @@ export default function perfTestTest() {
         it('testPerfTestPageSwitch_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
             hilog.info(domain, tag, `testPerfTestPageSwitch_static start`);
             await startAbility('com.perftestScene.acts', 'EntryAbility');
-            await driver.delayMs(3000)
+            await driver!.delayMs(3000)
             let metrics: Array<PerfMetric> = [PerfMetric.PAGE_SWITCH_COMPLETE_TIME]
             let actionCode = (finish: Callback<boolean>) => {
-                let button = await driver.findComponent(ON.text('ListPage'))
+                waitForCompletion(async () => {
+                let button = await driver!.findComponent(ON.text('ListPage'))
                 if (button != null) {
-                    await driver.delayMs(1000)
+                    await driver!.delayMs(1000)
                     await button.click()
-                    await driver.delayMs(1000)
+                    await driver!.delayMs(1000)
                 }
                 finish(true)
+                })
             }
             let resetCode = (finish: Callback<boolean>) => {
-                await driver.pressBack()
-                await driver.delayMs(1000)
+                waitForCompletion(async () => {
+                await driver!.pressBack()
+                await driver!.delayMs(1000)
                 finish(true)
+                })
             }
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
@@ -128,6 +136,7 @@ export default function perfTestTest() {
             perfTest.destroy()
             hilog.info(domain, tag, `testPerfTestPageSwitch_static res1, ${JSON.stringify(res1)}`);
             expect(res1.average).assertLargerOrEqual(0)
+            expect(res1.metric).assertEqual(PerfMetric.PAGE_SWITCH_COMPLETE_TIME)
             await stopApplication('com.perftestScene.acts')
             hilog.info(domain, tag, `testPerfTestPageSwitch_static end`);
         })
@@ -143,34 +152,38 @@ export default function perfTestTest() {
         it('testPerfTestListSwipe_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
             hilog.info(domain, tag, `testPerfTestListSwipe_static start`);
             await startAbility('com.perftest.acts.static', 'EntryAbility');
-            await driver.delayMs(3000)
-            let button = await driver.findComponent(ON.text('ListPage'))
+            await driver!.delayMs(3000)
+            let button = await driver!.findComponent(ON.text('ListPage'))
             expect(button != null).assertTrue()
             if (button != null) {
-                await driver.delayMs(1000)
+                await driver!.delayMs(1000)
                 await button.click()
-                await driver.delayMs(1000)
+                await driver!.delayMs(1000)
             }
             let metrics: Array<PerfMetric> = [PerfMetric.LIST_SWIPE_FPS]
             let actionCode = (finish: Callback<boolean>) => {
-                let scroll = await driver.findComponent(ON.type('Scroll'))
+                waitForCompletion(async () => {
+                let scroll = await driver!.findComponent(ON.type('Scroll'))
                 if (scroll != null) {
-                    await driver.delayMs(1000)
+                    await driver!.delayMs(1000)
                     let center = await scroll.getBoundsCenter()
-                    await driver.delayMs(1000)
-                    await driver.fling({x: center.x, y: Math.floor(center.y * 3 / 2).toInt()}, {x: center.x, y: Math.floor(center.y / 2).toInt()}, 50, 20000)
-                    await driver.delayMs(3000)
+                    await driver!.delayMs(1000)
+                    await driver!.fling({x: center.x, y: Math.floor(center.y * 3 / 2).toInt()}, {x: center.x, y: Math.floor(center.y / 2).toInt()}, 50, 20000)
+                    await driver!.delayMs(3000)
                 }
                 finish(true)
+                })
             }
             let resetCode = (finish: Callback<boolean>) => {
-                let scroll = await driver.findComponent(ON.type('Scroll'))
+                waitForCompletion(async () => {
+                let scroll = await driver!.findComponent(ON.type('Scroll'))
                 if (scroll != null) {
-                    await driver.delayMs(1000)
+                    await driver!.delayMs(1000)
                     await scroll.scrollToTop(40000)
-                    await driver.delayMs(1000)
+                    await driver!.delayMs(1000)
                 }
                 finish(true)
+                })
             }
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
@@ -185,6 +198,7 @@ export default function perfTestTest() {
             perfTest.destroy()
             hilog.info(domain, tag, `testPerfTestListSwipe_static res1, ${JSON.stringify(res1)}`);
             expect(res1.average).assertLargerOrEqual(0)
+            expect(res1.metric).assertEqual(PerfMetric.LIST_SWIPE_FPS)
             hilog.info(domain, tag, `testPerfTestListSwipe_static end`);
         })
 
@@ -199,11 +213,13 @@ export default function perfTestTest() {
         it('testPerfTest_Keep_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
             hilog.info(domain, tag, `testPerfTest_Keep_static start`);
             await startAbility('com.perftestScene.acts', 'EntryAbility');
-            await driver.delayMs(3000)
+            await driver!.delayMs(3000)
             let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS]
             let actionCode = (finish: Callback<boolean>) => {
-                await driver.delayMs(1000)
+                waitForCompletion(async () => {
+                await driver!.delayMs(1000)
                 finish(true)
+                })
             }
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
@@ -239,35 +255,39 @@ export default function perfTestTest() {
         it('testPerfTest_NavigationChange_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
             hilog.info(domain, tag, `testPerfTest_NavigationChange_static start`);
             await startAbility('com.perftestScene.acts', 'EntryAbility');
-            await driver.delayMs(3000)
-            let textCom = await driver.findComponent(ON.text('navigation'))
+            await driver!.delayMs(3000)
+            let textCom = await driver!.findComponent(ON.text('navigation'))
             hilog.info(domain, tag, `testPerfTest_NavigationChange_static textCom, ${JSON.stringify(textCom)}`);
             expect(textCom != null).assertTrue()
             if (textCom != null) {
-                await driver.delayMs(1000)
+                await driver!.delayMs(1000)
                 let center = await textCom.getBoundsCenter()
-                await driver.delayMs(1000)
-                await driver.click(center.x, center.y)
-                await driver.delayMs(1000)
+                await driver!.delayMs(1000)
+                await driver!.click(center.x, center.y)
+                await driver!.delayMs(1000)
             }
             let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS, PerfMetric.PAGE_SWITCH_COMPLETE_TIME]
             let actionCode = (finish: Callback<boolean>) => {
-                await driver.delayMs(1000)
-                let textCom1 = await driver.findComponent(ON.text('push Page01'))
+                waitForCompletion(async () => {
+                await driver!.delayMs(1000)
+                let textCom1 = await driver!.findComponent(ON.text('push Page01'))
                 if (textCom1 != null) {
-                    await driver.delayMs(1000)
+                    await driver!.delayMs(1000)
                     let center1 = await textCom1.getBoundsCenter()
-                    await driver.delayMs(1000)
-                    await driver.click(center1.x, center1.y)
-                    await driver.delayMs(1000)
+                    await driver!.delayMs(1000)
+                    await driver!.click(center1.x, center1.y)
+                    await driver!.delayMs(1000)
                 }
                 finish(true)
+                })
             }
             let resetCode = (finish: Callback<boolean>) => {
-                await driver.delayMs(1000)
-                await driver.pressBack()
-                await driver.delayMs(1000)
+                waitForCompletion(async () => {
+                await driver!.delayMs(1000)
+                await driver!.pressBack()
+                await driver!.delayMs(1000)
                 finish(true)
+                })
             }
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
@@ -308,16 +328,16 @@ export default function perfTestTest() {
          */
         it('testPerfTest_Start_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
             hilog.info(domain, tag, `testPerfTest_Start_static start`);
-            await driver.delayMs(3000)
-            await driver.pressHome()
-            await driver.delayMs(1000)
-            let btn1 = await driver.findComponent(ON.text('PerftestScene'))
+            await driver!.delayMs(3000)
+            await driver!.pressHome()
+            await driver!.delayMs(1000)
+            let btn1 = await driver!.findComponent(ON.text('PerftestScene'))
             let num = 0;
             while (btn1 == null && num < 5) {
-                await driver.fling(UiDirection.RIGHT, 2000)
-                await driver.delayMs(1000)
+                await driver!.fling(UiDirection.RIGHT, 2000)
+                await driver!.delayMs(1000)
                 num += 1
-                btn1 = await driver.findComponent(ON.text('PerftestScene'))
+                btn1 = await driver!.findComponent(ON.text('PerftestScene'))
             }
             if (btn1 == null) {
                 hilog.info(domain, tag, `testPerfTest_Start_static btn1,${JSON.stringify(btn1)}`);
@@ -326,18 +346,22 @@ export default function perfTestTest() {
             expect(btn1 != null).assertTrue();
             let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.APP_START_RESPONSE_TIME, PerfMetric.APP_START_COMPLETE_TIME]
             let actionCode = (finish: Callback<boolean>) => {
+                waitForCompletion(async () => {
                 if (btn1 != null) {
                     let point = await (btn1 as Component).getBoundsCenter()
-                    await driver.click(point.x , point.y - 50)
-                    await driver.delayMs(1000)
+                    await driver!.click(point.x , point.y - 50)
+                    await driver!.delayMs(1000)
                 }
                 finish(true)
+                })
             }
             let resetCode = (finish: Callback<boolean>) => {
-                await driver.delayMs(1000)
+                waitForCompletion(async () => {
+                await driver!.delayMs(1000)
                 await stopApplication('com.perftestScene.acts')
-                await driver.delayMs(1000)
+                await driver!.delayMs(1000)
                 finish(true)
+                })
             }
             let perfTestStrategy: PerfTestStrategy = {
                 metrics: metrics,
@@ -360,7 +384,9 @@ export default function perfTestTest() {
             hilog.info(domain, tag, `testPerfTest_Start_static res7, ${JSON.stringify(res7.average)}`);
             expect(res1.average).assertLargerOrEqual(0)
             expect(res6.average).assertLargerOrEqual(0)
+            expect(res6.metric).assertEqual(PerfMetric.APP_START_RESPONSE_TIME)
             expect(res7.average).assertLargerOrEqual(0)
+            expect(res7.metric).assertEqual(PerfMetric.APP_START_COMPLETE_TIME)
             hilog.info(domain, tag, `testPerfTest_Start_static end`);
         })
 
@@ -374,7 +400,7 @@ export default function perfTestTest() {
          */
         it('testPerfTest_resetCode_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
             hilog.info(domain, tag, `testPerfTest_resetCode_static start`);
-            await driver.delayMs(3000)
+            await driver!.delayMs(3000)
             let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS]
             let actionCode = (finish: Callback<boolean>) => {
                 finish(true)

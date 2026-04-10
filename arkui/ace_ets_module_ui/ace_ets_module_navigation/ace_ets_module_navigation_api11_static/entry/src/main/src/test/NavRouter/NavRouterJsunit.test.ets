@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function NavRouterJsunit() {
   describe('NavRouterJsunit',  () =>{
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });
@@ -70,9 +70,8 @@ it('NavRouterJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promis
       let navRouter = await (driver.findComponent(ON.id('NavRouter1')) as Promise<Component>);
       await navRouter.click();
       await CommonFunc.sleep(1000);
-      let scrollBar: Component = await (driver.findComponent(ON.type('Scroll')) as Promise<Component>);
 
-      let textComponent = await (scrollBar.scrollSearch(ON.id('textContent')) as Promise<Component>);
+      let textComponent = await (driver.findComponent(ON.id('textContent')) as Promise<Component>);
       let text2 = await textComponent.getText();
       console.info("[NavRouterJsunit_static_0100] text2: " + JSON.stringify(text2));
       expect(text2 == 'Hello').assertTrue();

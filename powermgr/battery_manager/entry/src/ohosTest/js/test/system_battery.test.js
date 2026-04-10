@@ -116,7 +116,7 @@ export default function SystemBatteryTest() {
     it('get_status_fail_null_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
       battery.getStatus({
         success: (data) => {
-          expect(data).assertNotNull();
+          expect(data).not().assertNull();;
           successFunc(data, failNullTest);
         },
         fail: null,

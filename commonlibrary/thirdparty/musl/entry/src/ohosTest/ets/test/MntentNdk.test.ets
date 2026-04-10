@@ -32,9 +32,9 @@ export default function mntentNdkTest() {
      * @tc.desc   test setmntent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMntentSetmntent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMntentSetmntent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = mntent.setmntent();
       expect(a).assertEqual(0);
       done()
@@ -46,9 +46,9 @@ export default function mntentNdkTest() {
      * @tc.desc   test hasmntopt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMntentHasmntopt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMntentHasmntopt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = mntent.hasmntopt();
       expect(result).assertEqual(0)
       done()

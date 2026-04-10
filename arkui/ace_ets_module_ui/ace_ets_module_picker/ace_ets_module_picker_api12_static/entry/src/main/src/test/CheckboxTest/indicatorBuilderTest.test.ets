@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function indicatorBuilderTest() {
   describe('indicatorBuilderTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("indicatorBuilderTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

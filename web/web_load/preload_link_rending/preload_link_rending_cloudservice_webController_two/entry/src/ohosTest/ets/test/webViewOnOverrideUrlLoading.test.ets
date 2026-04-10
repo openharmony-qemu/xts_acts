@@ -68,14 +68,40 @@ export default function webViewOnOverrideUrlLoading() {
      */
     it('testWebViewwebViewOnOverrideUrlLoadingGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewOnOverrideUrlLoading", EVENT_ID_SET_EMIT_KEY);
-      let isReturn = false;
-      Utils.registerBaseEvent("emitWebViewwebViewOnOverrideUrlLoading", 'true', 201360, () => { isReturn = true }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testWebViewwebViewOnOverrideUrlLoadingGroup", 'true', 201360, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      await Utils.waitAndClickComponent(driver, "webViewOnOverrideUrlLoading");
-      if (await Utils.waitForExist(() => isReturn, 'testWebViewwebViewOnOverrideUrlLoadingGroup' + '_returnCheck', true, 1000)) {
-        done();
-      }
+      sendEventByKey('webViewOnOverrideUrlLoading', 10, '');
+    })
+    /**
+     * @tc.name   testWebViewwebViewOnOverrideUrlLoadingGroup02
+     * @tc.number SUB_ACE_SUB_ONOVERRIDEURLLOADING_API_GROUP_0700
+     * @tc.desc   test interface of OnOverrideUrlLoading with runjavascript jump return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebViewwebViewOnOverrideUrlLoadingGroup02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebViewOnOverrideUrlLoading02", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebViewwebViewOnOverrideUrlLoadingGroup02", 'https://www.example.com/', 26031028, null, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent("testWebViewwebViewOnOverrideUrlLoadingGroup02", true, 26031029, null, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent("testWebViewwebViewOnOverrideUrlLoadingGroup02", true, 26031030, null, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent("testWebViewwebViewOnOverrideUrlLoadingGroup02", false, 26031031, null, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent("testWebViewwebViewOnOverrideUrlLoadingGroup02", false, 26031032, null, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent("testWebViewwebViewOnOverrideUrlLoadingGroup02", true, 26031033, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('webViewOnOverrideUrlLoading', 10, '');
     })
   })
 }

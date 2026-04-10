@@ -22,6 +22,7 @@ group("distributeddatamgr") {
       "PasteboardJSWithPermissionTest:ActsPasteBoardJSApiWithPermissionTest",
       "PasteboardNdkWithPermissionsTest:ActsPasteboardNapiWithPermissionTest",
       "PasteboardNoPermissionstest:PasteboardNoPermissionstest",
+      "PasteboardPermissionTestTaiheStatic:ActsPasteBoardPermissionsStaticTest",
       "PasteboardTaiheTestStatic:ActsPasteboardTaiheStaticTest",
       "PasteboardTestStatic:ActsPasteboardStaticTest",
       "Pasteboardjsapitest:ActsPasteBoardETSApiTest",
@@ -34,8 +35,10 @@ group("distributeddatamgr") {
       "dataObjecttest:dataObjecttest",
       "dataShareEts_static:ActsDataShareStaticTest",
       "dataShareTest:dataShareTest",
+      "dataShare_Static:dataShare_Static",
       "dataSharejstest:dataShare_js_test",
       "distributedKVStoretest:distributedKVStoretest",
+      "intelligenceTest_static:ActsIntelligenceStaticTest",
       "kvStoretest:kvStoretest",
       "pasteboard_errorcode:ActsPasteboardErrorTest",
       "preferenceEts_static:ActsPreferenceStaticTest",
@@ -47,9 +50,12 @@ group("distributeddatamgr") {
       "preferencesjstest:preferences_js_test",
       "relationalStoretest:relationalStoretest",
       "relationalstoredatagroupidtest:ActsRelationalstoreDataGroupIdTest",
+      "dataObjectEtsNoPermissions_static:ActsDataObjectNoPermissionsStaticTest",
+      "RdbWithPermisionTestStatic:ActsRdbStorePermissionEtsStaticTest",
     ]
   } else {
     deps = [
+      "dataShare_Static:dataShare_Static",
       "kvStorejstest/hap:distributeddatamgrfunctest_hap",
       "relationalStorejstest/hap:appdatamgrfunctest_hap",
       "searchtest/hap:searchfunctest_hap",

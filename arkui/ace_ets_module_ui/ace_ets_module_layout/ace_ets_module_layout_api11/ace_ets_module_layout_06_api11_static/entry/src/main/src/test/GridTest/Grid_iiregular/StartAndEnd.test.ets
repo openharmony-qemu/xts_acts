@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function StartAndEnd() {
   describe('StartAndEnd', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StartAndEnd beforeAll start");
             
       await UtilsTest.msSleep(4000)
@@ -82,7 +82,7 @@ it('StartAndEnd_static_0001', Level.LEVEL0, async (done: () => void): Promise<vo
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('StartAndEnd')
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`}`)).toInt(),
         (Number.parseInt(`${`${`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`}`}`)).toInt(),
         (Number.parseInt(`${`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`}`)).toInt(),
@@ -95,7 +95,7 @@ it('StartAndEnd_static_0001', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info("[StartAndEnd_0001] component obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1)))
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('onReachEnd');
 
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)).toInt(),
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),

@@ -15,9 +15,9 @@ export default function ErrcodeTest() {
      * @tc.desc   test errCode 17700021 when call getBundleNameByUid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getBundleNameByUidCallBack17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('getBundleNameByUidCallBack17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info(TAG +"getBundleNameByUidCallBack17700021 start");
       try {
         bundleManager.getBundleNameByUid(2190, (err: BusinessError | null, data: string | undefined) => {
@@ -31,7 +31,8 @@ export default function ErrcodeTest() {
             done();
           }
         })
-      } catch (exception: BusinessError) {
+      } catch (exception) {
+        exception = exception as BusinessError;
         console.error(`Failed to getBundleNameByUidCallBack17700021 catch. Cause code: ${exception.code}, message: ${exception.message}`);
         expect().assertFail();
         done();
@@ -44,9 +45,9 @@ export default function ErrcodeTest() {
      * @tc.desc   test errCode 17700021 when call getBundleNameByUid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('getBundleNameByUidPromise17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('getBundleNameByUidPromise17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info(TAG + "getBundleNameByUidPromise17700021 start");
       try {
         bundleManager.getBundleNameByUid(2190).then((data: string) => {
@@ -58,7 +59,8 @@ export default function ErrcodeTest() {
           expect(err.code).assertEqual(17700021);
           done();
         })
-      } catch (exception: BusinessError) {
+      } catch (exception) {
+        exception = exception as BusinessError;
         console.error(`Failed to getBundleNameByUidPromise17700021 catch. Cause code: ${exception.code}, message: ${exception.message}`);
         expect().assertFail();
         done();
@@ -80,7 +82,8 @@ export default function ErrcodeTest() {
         console.info(TAG + 'getBundleNameByUidSync17700021 successfully: ' + JSON.stringify(data));
         expect().assertFail();
         done();
-      } catch (exception: BusinessError) {
+      } catch (exception) {
+        exception = exception as BusinessError;
         console.error(`Failed to getBundleNameByUidSync17700021 catch. Cause code: ${exception.code}, message: ${exception.message}`);
         expect(exception.code).assertEqual(17700021);
         done();
@@ -108,7 +111,7 @@ export default function ErrcodeTest() {
           expect(err.code).assertEqual(17700021);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         let message = (err as BusinessError).message;
         console.info(TAG +'getAppCloneIdentity17700021 catch failed: ' + message);
         expect().assertFail();

@@ -95,7 +95,7 @@ export default function scrollThemeTest() {
       }
     })
     /**
-     * @tc.name   ActsScrollThemeColors_0100
+     * @tc.name   `ActsScrollThemeColors_0100`
      * @tc.number ActsScrollThemeColors_0100
      * @tc.desc   Сheck system colors values of the Scroll
      * @tc.type   FUNCTION
@@ -116,7 +116,7 @@ export default function scrollThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-     * @tc.name   ActsScrollThemeColors_0200
+     * @tc.name   `ActsScrollThemeColors_0200`
      * @tc.number ActsScrollThemeColors_0200
      * @tc.desc   Сheck custom colors values of the Scroll
      * @tc.type   FUNCTION
@@ -138,7 +138,7 @@ export default function scrollThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-     * @tc.name   ActsScrollThemeColors_0300
+     * @tc.name   `ActsScrollThemeColors_0300`
      * @tc.number ActsScrollThemeColors_0300
      * @tc.desc   Сheck custom colors values of the Scroll
      * @tc.type   FUNCTION
@@ -161,7 +161,7 @@ export default function scrollThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-     * @tc.name   ActsScrollThemeColors_0400
+     * @tc.name   `ActsScrollThemeColors_0400`
      * @tc.number ActsScrollThemeColors_0400
      * @tc.desc   Сheck system colors values of the Scroll
      * @tc.type   FUNCTION

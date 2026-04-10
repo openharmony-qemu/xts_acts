@@ -24,7 +24,7 @@ import Want from '@ohos.app.ability.Want';
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 
 export default function StartAbilityForResultTest() {
-  describe('StartAbilityForResultTest', () => {
+  describe('StartAbilityForResultTestAdapt001', () => {
 
     let delegator = AbilityDelegatorRegistry.getAbilityDelegator();
     let abilityName = 'SecondAbility';

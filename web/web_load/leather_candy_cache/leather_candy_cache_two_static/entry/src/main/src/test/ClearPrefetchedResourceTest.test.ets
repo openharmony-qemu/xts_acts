@@ -30,22 +30,6 @@ export default function ClearPrefetchedResourceTest() {
   describe('componentLifeCycleTestOne', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log("App start")
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName: "entry",
-        onAbilityCreate: (abilitys: UIAbility): void => {
-          testAbilityContext = abilitys.context
-          console.log("onAbilityCreate end")
-        },
-      }, (err: BusinessError | null, data: undefined): void => {
-        if (err != null) {
-          console.log("-----" + err.code)
-        }
-        console.log("BusinessError  end")
-      });
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.leathercandycachetwotest.static")
       await Utils.msSleep(2000)
       console.log("beforeAll end,%s", "Succeed!")
     });
@@ -61,9 +45,9 @@ export default function ClearPrefetchedResourceTest() {
      * @tc.desc   test clearPrefetchedResource
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testClearPrefetchedResourceStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testClearPrefetchedResourceStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("testClearPrefetchedResource001", 10)

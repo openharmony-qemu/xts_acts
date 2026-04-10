@@ -32,7 +32,7 @@ export default function ArrayConstructor1Test() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(30);
+       await sleep(30);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -132,7 +132,7 @@ export default function ArrayConstructor1Test() {
       expect(r1[0]).assertEqual(1);
       expect(r1[1]).assertEqual(2);
       expect(Number.isNaN(r1[2])).assertTrue();
-      expect(r2).assertDeepEquals([1, 2, NaN]);
+      expect(JSON.stringify(r2)).assertDeepEquals(JSON.stringify([1, 2, NaN]));
     });
 
     /**
@@ -647,7 +647,7 @@ export default function ArrayConstructor1Test() {
      * @tc.level  LEVEL1
      */
     it('ArrayConstructor1Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(Array1.ArrayConstructor1Test036()).assertDeepEquals([[1, undefined], [1, NaN]]);
+      expect(JSON.stringify(Array1.ArrayConstructor1Test036())).assertDeepEquals(JSON.stringify([[1, undefined], [1, NaN]]));
     });
 
     /**
@@ -1399,7 +1399,7 @@ export default function ArrayConstructor1Test() {
         if (Number.isNaN(b)) return -1;
         return a - b;
       });
-      expect(r).assertDeepEquals([-Infinity, 0, -0, Infinity, NaN]);
+      expect(JSON.stringify(r)).assertDeepEquals(JSON.stringify([-Infinity, 0, -0, Infinity, NaN]));
     });
 
     /**

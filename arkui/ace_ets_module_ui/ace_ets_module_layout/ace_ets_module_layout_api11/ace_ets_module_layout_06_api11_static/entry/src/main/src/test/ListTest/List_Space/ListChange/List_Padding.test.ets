@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function List_Padding() {
 
   describe('List_Padding', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("List_Padding beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -123,7 +123,7 @@ it('testListPaddingToTwenty_static', Level.LEVEL0, async (done: () => void): Pro
       expect(Math.abs(Math.round(List_Padding_014.top - List_Padding_013.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      driver.swipe(360, 690, 360, 30);
+      await driver.swipe(360, 690, 360, 30);
       let List_Padding_014Again: RectValue = CommonFunc.getComponentRect('List_Padding_014');
       expect(List_Padding_014.top).assertEqual(List_Padding_014Again.top);
       console.info('testListPaddingToTwenty END');

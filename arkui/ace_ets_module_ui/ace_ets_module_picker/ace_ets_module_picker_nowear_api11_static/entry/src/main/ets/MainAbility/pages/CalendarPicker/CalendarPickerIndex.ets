@@ -30,7 +30,6 @@ import {
   $r,
   CalendarPicker,
   CalendarOptions,
-  Date,
   Optional,
   Callback
 } from '@ohos.arkui.component';

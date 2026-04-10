@@ -108,14 +108,14 @@ export default class Utils {
     })
   }
 
-  static getStringFromFile(fileName: string): Promise<string> {
+  static async getStringFromFile(fileName: string): Promise<string> {
     const abilityContext = AppStorage.get<common.Context>("abilityContext") as common.Context
     const fileData: Uint8Array = await abilityContext.resourceManager.getRawFileContent(fileName);
     return new Promise<string>((resolve, reject) => {
       if (fileData) {
         let result = '';
         for (let i = 0; i < fileData.length; i++) {
-          result += String.fromCharCode(fileData[i]);
+          result += String.fromCharCode(fileData[i].toInt());
         }
         resolve(result);
       } else {
@@ -172,7 +172,7 @@ static async pushPage(obj: PageConfig) {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    await Utils.sleep(1000);
+    waitForCompletion(async ()=>{await Utils.sleep(1000)})
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
@@ -191,22 +191,22 @@ static async pushPage(obj: PageConfig) {
 
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    let rect_value: RectValue = {
-      left:Number(rectInfo[0][0] ?? 0),
-      top:Number(rectInfo[0][1] ?? 0),
-      right:Number(rectInfo[1][0] ?? 0),
-      bottom:Number(rectInfo[1][1] ?? 0),
-    };
-    console.info(JSON.stringify(rect_value));
-    return rect_value;
+    const str = obj.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
+    return {
+      "left": Number(rectInfo[0][0] ?? 0),
+      "top": Number(rectInfo[0][1] ?? 0),
+      "right": Number(rectInfo[1][0] ?? 0),
+      "bottom": Number(rectInfo[1][1] ?? 0)
+    } as RectValue
   }
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);
-    await Utils.sleep(1000);
+    waitForCompletion(async ()=>{await Utils.sleep(1000)})
     console.info('[' + componentKey + '] obj is: ' + JSON.stringify(JSON.parseJsonElement(strJson)));
     return JSON.parseJsonElement(strJson);
   }
@@ -310,7 +310,7 @@ static async pushPage(obj: PageConfig) {
 
     let result = sendKeyEvent({
       type: type,
-      keyCode: keyCode as int,
+      keyCode: keyCode.toInt(),
       keyText: keyText,
       intentionCode: IntentionCode.INTENTION_UNKNOWN,
       keySource: KeySource.Keyboard,

@@ -20,19 +20,25 @@ import nfcMifareClassicTag from './MifareClassicTag.test.js';
 import nfcMifareUltralightTag from './MifareUltralightTag.test.js';
 import nfcTagABFVTest from './TagABFV.test.js';
 import nfcNDEFTagTest from './NDEFTag.test.js';
-import EmptyTest from './Empty.test.js'	
+import EmptyTest from './Empty.test.js';
+import GetParam from './GetParam.test.js';
 let info = canIUse("SystemCapability.Communication.NFC.Core");
 export default function testsuite() {
-if (info)
-{
-    nfcATagSessionTest();
-    nfcControllerTest();
-    nfcIsoDepTagTest();
-    nfcMifareClassicTag();
-    nfcMifareUltralightTag();
-    nfcNDEFTagTest();
-    nfcTagABFVTest();
-} else {
-    EmptyTest();
-}
+    if (info)
+    {
+        let infoNfc = GetParam("const.nfc.not_support", "false");
+        if (infoNfc == "false") {
+            nfcATagSessionTest();
+            nfcControllerTest();
+            nfcIsoDepTagTest();
+            nfcMifareClassicTag();
+            nfcMifareUltralightTag();
+            nfcNDEFTagTest();
+            nfcTagABFVTest();
+        } else {
+            EmptyTest();
+        }
+    } else {
+        EmptyTest();
+    }
 }

@@ -17,10 +17,18 @@ import NetStackNDKTest from './NetStackNDK.test'
 import NetConnectionNDKTest from './NetConnectionNDK.test';
 import PingTraceRouteNDKTest from './PingTraceRouteNDKTest.test';
 import PingTraceRouteErrorCode201NDKTest from './PingTraceRouteErrorCode201NDKTest.test';
+import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
+import connection from '@ohos.net.connection';
+ 	 
+let netHandle = connection.getDefaultNetSync();
 
 export default function testsuite() {
-  PingTraceRouteErrorCode201NDKTest();
-  NetStackNDKTest();
-  NetConnectionNDKTest();
-  PingTraceRouteNDKTest();
+  if(netHandle.netId != 0){
+    PingTraceRouteErrorCode201NDKTest();
+    NetStackNDKTest();
+    NetConnectionNDKTest();
+    PingTraceRouteNDKTest();   
+  } else {
+    EmptyTestCheckNetwork();
+  }
 }

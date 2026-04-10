@@ -232,6 +232,258 @@ export default function GetabilityInfo() {
             });
         });
 
+        /**
+         * @tc.name   testGetAbilityInfoEmptyBundleNameCallback
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2700
+         * @tc.desc   Test getAbilityInfo with empty string bundleName. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetAbilityInfoEmptyBundleNameCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleManager.getAbilityInfo("", ABILITY_NAME1, (err, data) => {
+                if (err) {
+                    console.info('testGetAbilityInfoEmptyBundleNameCallback err:' + JSON.stringify(err));
+                    expect(err).assertEqual(1);
+                    done();
+                    return;
+                }
+                console.info('testGetAbilityInfoEmptyBundleNameCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetAbilityInfoNullBundleNameCallback
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2710
+         * @tc.desc   Test getAbilityInfo with null bundleName. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetAbilityInfoNullBundleNameCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleManager.getAbilityInfo(null, ABILITY_NAME1, (err, data) => {
+                if (err) {
+                    console.info('testGetAbilityInfoNullBundleNameCallback err:' + JSON.stringify(err));
+                    expect(err).assertEqual(2);
+                    done();
+                    return;
+                }
+                console.info('testGetAbilityInfoNullBundleNameCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetAbilityInfoUndefinedBundleNameCallback
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2720
+         * @tc.desc   Test getAbilityInfo with undefined bundleName. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetAbilityInfoUndefinedBundleNameCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleManager.getAbilityInfo(undefined, ABILITY_NAME1, (err, data) => {
+                if (err) {
+                    console.info('testGetAbilityInfoUndefinedBundleNameCallback err:' + JSON.stringify(err));
+                    expect(err).assertEqual(2);
+                    done();
+                    return;
+                }
+                console.info('testGetAbilityInfoUndefinedBundleNameCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetAbilityInfoEmptyAbilityNameCallback
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2730
+         * @tc.desc   Test getAbilityInfo with empty string abilityName. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetAbilityInfoEmptyAbilityNameCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleManager.getAbilityInfo(BUNDLE_NAME1, "", (err, data) => {
+                if (err) {
+                    console.info('testGetAbilityInfoEmptyAbilityNameCallback err:' + JSON.stringify(err));
+                    expect(err).assertEqual(1);
+                    done();
+                    return;
+                }
+                console.info('testGetAbilityInfoEmptyAbilityNameCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetAbilityInfoNullAbilityNameCallback
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2740
+         * @tc.desc   Test getAbilityInfo with null abilityName. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetAbilityInfoNullAbilityNameCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleManager.getAbilityInfo(BUNDLE_NAME1, null, (err, data) => {
+                if (err) {
+                    console.info('testGetAbilityInfoNullAbilityNameCallback err:' + JSON.stringify(err));
+                    expect(err).assertEqual(2);
+                    done();
+                    return;
+                }
+                console.info('testGetAbilityInfoNullAbilityNameCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetAbilityInfoUndefinedAbilityNameCallback
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2750
+         * @tc.desc   Test getAbilityInfo with undefined abilityName. (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetAbilityInfoUndefinedAbilityNameCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleManager.getAbilityInfo(BUNDLE_NAME1, undefined, (err, data) => {
+                if (err) {
+                    console.info('testGetAbilityInfoUndefinedAbilityNameCallback err:' + JSON.stringify(err));
+                    expect(err).assertEqual(2);
+                    done();
+                    return;
+                }
+                console.info('testGetAbilityInfoUndefinedAbilityNameCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetAbilityInfoEmptyBundleNamePromise
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2760
+         * @tc.desc   Test getAbilityInfo with empty string bundleName. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetAbilityInfoEmptyBundleNamePromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleManager.getAbilityInfo("", ABILITY_NAME1).then(res => {
+                console.info('testGetAbilityInfoEmptyBundleNamePromise success:' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            }).catch(err => {
+                console.info('testGetAbilityInfoEmptyBundleNamePromise err:' + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetAbilityInfoNullBundleNamePromise
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2770
+         * @tc.desc   Test getAbilityInfo with null bundleName. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetAbilityInfoNullBundleNamePromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleManager.getAbilityInfo(null, ABILITY_NAME1).then(res => {
+                console.info('testGetAbilityInfoNullBundleNamePromise success:' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            }).catch(err => {
+                console.info('testGetAbilityInfoNullBundleNamePromise err:' + JSON.stringify(err));
+                expect(err).assertEqual(2);
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetAbilityInfoUndefinedBundleNamePromise
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2780
+         * @tc.desc   Test getAbilityInfo with undefined bundleName. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetAbilityInfoUndefinedBundleNamePromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleManager.getAbilityInfo(undefined, ABILITY_NAME1).then(res => {
+                console.info('testGetAbilityInfoUndefinedBundleNamePromise success:' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            }).catch(err => {
+                console.info('testGetAbilityInfoUndefinedBundleNamePromise err:' + JSON.stringify(err));
+                expect(err).assertEqual(2);
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetAbilityInfoEmptyAbilityNamePromise
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2790
+         * @tc.desc   Test getAbilityInfo with empty string abilityName. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetAbilityInfoEmptyAbilityNamePromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleManager.getAbilityInfo(BUNDLE_NAME1, "").then(res => {
+                console.info('testGetAbilityInfoEmptyAbilityNamePromise success:' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            }).catch(err => {
+                console.info('testGetAbilityInfoEmptyAbilityNamePromise err:' + JSON.stringify(err));
+                expect(err).assertEqual(1);
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetAbilityInfoNullAbilityNamePromise
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2800
+         * @tc.desc   Test getAbilityInfo with null abilityName. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetAbilityInfoNullAbilityNamePromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleManager.getAbilityInfo(BUNDLE_NAME1, null).then(res => {
+                console.info('testGetAbilityInfoNullAbilityNamePromise success:' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            }).catch(err => {
+                console.info('testGetAbilityInfoNullAbilityNamePromise err:' + JSON.stringify(err));
+                expect(err).assertEqual(2);
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   testGetAbilityInfoUndefinedAbilityNamePromise
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2810
+         * @tc.desc   Test getAbilityInfo with undefined abilityName. (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testGetAbilityInfoUndefinedAbilityNamePromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await bundleManager.getAbilityInfo(BUNDLE_NAME1, undefined).then(res => {
+                console.info('testGetAbilityInfoUndefinedAbilityNamePromise success:' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            }).catch(err => {
+                console.info('testGetAbilityInfoUndefinedAbilityNamePromise err:' + JSON.stringify(err));
+                expect(err).assertEqual(2);
+                done();
+            });
+        });
+
         function checkAbilityInfo(data) {
             expect(typeof (data.bundleName)).assertEqual("string");
             expect(data.bundleName).assertEqual("com.open.harmony.packagemag");

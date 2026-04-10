@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,7 +49,7 @@ struct alphabetIndexer {
         .itemSize(28)
         .alignStyle(IndexerAlign.Left)
         .onSelected((index: number) => {
-          console.info(this.value[index] + ' on selected')
+          console.info(this.value[index.toInt()] + ' on selected')
         })
       Text("AlphabetIndexer1")
       AlphabetIndexer({ arrayValue: this.value1, selected: 0 })
@@ -66,7 +66,7 @@ struct alphabetIndexer {
         .alignStyle(IndexerAlign.Right)
         .margin({ left: 50 })
         .onSelected((index: number) => {
-          console.info(this.value[index] + ' on selected')
+          console.info(this.value[index.toInt()] + ' on selected')
         })
     }
   }

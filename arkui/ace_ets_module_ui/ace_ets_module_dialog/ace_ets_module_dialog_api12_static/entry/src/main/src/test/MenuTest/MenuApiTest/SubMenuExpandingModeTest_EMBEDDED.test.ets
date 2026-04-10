@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function SubMenuExpandingModeTest_EMBEDDED() {
   describe('SubMenuExpandingModeTest_EMBEDDED', () => {
     beforeEach(async (): Promise<void> => {
-      beforeAll(() => {
+      beforeAll(async (): Promise<void> => {
         await UtilsTest.msSleep(4000)
         await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
         await UtilsTest.msSleep(4000)

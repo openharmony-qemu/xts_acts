@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -39,13 +39,13 @@ struct navigation_add4_1 {
   }
 
   onPageShow(): void {
-    this.pageInfos.pushPath(new NavPathInfo('pageTwo',null))
+    this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
   }
   build() {
     Navigation(this.pageInfos) {
       Column(){
         Button('push pageOne').onClick((event: ClickEvent) => {
-          this.pageInfos.pushPath(new NavPathInfo('pageTwo',null))
+          this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
         })
       }
     }

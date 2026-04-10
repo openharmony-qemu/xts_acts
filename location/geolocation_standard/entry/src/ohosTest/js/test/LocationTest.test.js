@@ -1205,6 +1205,41 @@ export default function geolocationTest_geo3() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_LocRequest_1600
+     * @tc.number SUB_HSS_LocationSystem_LocRequest_1600
+     * @tc.desc   Initiate a request for continuous positioning in a specified scenario and set the navigation scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_LocRequest_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        enableLocationSwitch();
+        var locationChange = (location) => {
+            console.log('locationChanger: data: ' + JSON.stringify(location));
+            expect(true).assertEqual(locationChange !=null);
+        };
+        try {
+            geolocation.on('locationChange', null, locationChange);
+        } catch (error) {
+            console.info("[lbs_js] null SUB_HSS_LocationSystem_LocRequest_1600 try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocation.on('locationChange', undefined, locationChange);
+        } catch (error) {
+            console.info("[lbs_js] undefined SUB_HSS_LocationSystem_LocRequest_1600 try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocation.off('locationChange', locationChange);
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_LocationSystem_LocRequest_1600 try err." + JSON.stringify(error));
+            expect().assertFail();
+        }
+        done();
+    })
+
+    /**
      * @tc.name   SUB_HSS_LocationSystem_LastLoc_0100
      * @tc.number SUB_HSS_LocationSystem_LastLoc_0100
      * @tc.desc   Obtain the last location after a single location.
@@ -2036,5 +2071,466 @@ export default function geolocationTest_geo3() {
         expect(true).assertEqual(err_request_timeout_error == 107)
         done();
     })
+
+    /**
+     * @tc.name   SUB_HSS_cachedGnssLocationsReporting_0001
+     * @tc.number SUB_HSS_cachedGnssLocationsReporting_0001
+     * @tc.desc   Gnss.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_cachedGnssLocationsReporting_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {        
+        var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+        console.info("SUB_HSS_cachedGnssLocationsReporting_0001: " + isAcessToken);
+        if (!isAcessToken) {
+            console.info("The device does not support Gnss");
+            expect(isAcessToken).assertFalse();
+            done();
+        } else {
+            var cachedLocationsCb = (locations) => {
+                console.log('cachedGnssLocationsReporting: locations: ' + JSON.stringify(locations));
+                expect(true).assertEqual(locations !=null);
+            }
+            var CachedGnssLoactionsRequest = null;
+            try {
+                geolocation.on('cachedGnssLocationsReporting', CachedGnssLoactionsRequest, cachedLocationsCb);
+            } catch (error) {
+                console.info("[lbs_js] null cachedGnssOn11 try err." + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            }
+            try {
+                geolocation.on('cachedGnssLocationsReporting', undefined, cachedLocationsCb);
+            } catch (error) {
+                console.info("[lbs_js] undefined cachedGnssOn11 try err." + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            }
+            await sleep(1000);
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_HSS_fenceStatusChange_0001
+     * @tc.number SUB_HSS_fenceStatusChange_0001
+     * @tc.desc   Geofence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_fenceStatusChange_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {        
+        var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
+        console.info("SUB_HSS_fenceStatusChange_0001: " + isAcessToken);
+        if (!isAcessToken) {
+            console.info("The device does not support Geofence");
+            expect(isAcessToken).assertFalse();
+            done();
+        } else {
+            try {
+                let wantAgentObj = null;
+                let requestInfo = null;
+                geolocation.on('fenceStatusChange', requestInfo, wantAgentObj);
+                geolocation.off('fenceStatusChange', requestInfo, wantAgentObj);
+            } catch (error) {
+                console.info("[lbs_js] null fenceStatusChange try err." + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            }
+            try {
+                let wantAgentObj = undefined;
+                let requestInfo = undefined;
+                geolocation.on('fenceStatusChange', requestInfo, wantAgentObj);
+                geolocation.off('fenceStatusChange', requestInfo, wantAgentObj);
+            } catch (error) {
+                console.info("[lbs_js] undefined fenceStatusChange try err." + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            }
+            await sleep(1000);
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_HSS_getCurrentLocation_0100
+     * @tc.number SUB_HSS_getCurrentLocation_0100
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_getCurrentLocation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let currentLocationRequest = null;
+        try {
+            geolocation.getCurrentLocation(currentLocationRequest, (err, result) => {
+                if (err) {
+                    console.info("[lbs_js] null getCurrentLocation_0100 callback err:  " + JSON.stringify(err));
+                    expect(true).assertEqual(err != null);
+                    console.info('[lbs_js] getCurrentLocationCallback_0100 reject after')
+                } else {
+                    console.info("[lbs_js] null getCurrentLocation callback_0100, result:  " + JSON.stringify(result));
+                    expect(true).assertEqual(result != null);
+                }
+            });
+        } catch (error) {
+            console.info("[lbs_js] null getCurrentLocation callback_0100 try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocation.getCurrentLocation(undefined, (err, result) => {
+                if (err) {
+                    console.info("[lbs_js] undefined getCurrentLocation_0100 callback err:  " + JSON.stringify(err));
+                    expect(true).assertEqual(err != null);
+                    console.info('[lbs_js] undefined getCurrentLocationCallback_0100 reject after')
+                } else {
+                    console.info("[lbs_js] undefined getCurrentLocation callback_0100, result:  " + JSON.stringify(result));
+                    expect(true).assertEqual(result != null);
+                }
+            });
+        } catch (error) {
+            console.info("[lbs_js] undefined getCurrentLocation callback_0100 try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_getCurrentLocation_0200
+     * @tc.number SUB_HSS_getCurrentLocation_0200
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_getCurrentLocation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let currentLocationRequest = null;
+        try {
+            await geolocation.getCurrentLocation(currentLocationRequest).then((result) => {
+                console.info('[lbs_js] null getCurrentLocation_0200 promise result ' + JSON.stringify(result));
+            }).catch(error => {
+                console.info('[lbs_js] null getCurrentLocation_0200 promise err:' + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            })
+        } catch (error) {
+            console.info("[lbs_js] null getCurrentLocation promise_0200 try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            await geolocation.getCurrentLocation(undefined).then((result) => {
+                console.info('[lbs_js] undefined getCurrentLocation_0200 promise result ' + JSON.stringify(result));
+            }).catch(error => {
+                console.info('[lbs_js] undefined getCurrentLocation_0200 promise err:' + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            })
+        } catch (error) {
+            console.info("[lbs_js] undefined getCurrentLocation promise_0200 try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_SendCommand_0500
+     * @tc.number SUB_HSS_SendCommand_0500
+     * @tc.desc   Test sendCommand api .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_SendCommand_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let requestInfo = null;
+        try {
+            await geolocation.sendCommand(requestInfo, (err, result) => {
+                if (err) {
+                    console.info('null 1sendcommand callback_0500 err:' + JSON.stringify(err));
+                    expect(true).assertEqual(JSON.stringify(err) != null);
+                    done();
+                }
+                console.info('null sendcommand callback_0500 result:' + JSON.stringify(result));
+            });
+        } catch (error) {
+            console.info('null 2sendcommand callback_0500 err:' + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            await geolocation.sendCommand(undefined, (err, result) => {
+                if (err) {
+                    console.info('undefined 1sendcommand callback_0500 err:' + JSON.stringify(err));
+                    expect(true).assertEqual(JSON.stringify(err) != null);
+                    done();
+                }
+                console.info('undefined sendcommand callback_0500 result:' + JSON.stringify(result));
+            });
+        } catch (error) {
+            console.info('undefined 2sendcommand callback_0500 err:' + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_SendCommand_0600
+     * @tc.number SUB_HSS_SendCommand_0600
+     * @tc.desc   Test sendCommand1 api .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_SendCommand_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let requestInfo = null;
+        try {
+            geolocation.sendCommand(requestInfo).then((result) => {
+                console.info('null sendCommand promise_0600 result:' + result);
+                done();
+            }).catch(error => {
+                console.info('null 1sendcommand promise_0600 err:' + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null);
+                done();
+            })
+        } catch (error) {
+            console.info('null 2sendcommand promise_0600 err:' + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocation.sendCommand(undefined).then((result) => {
+                console.info('undefined sendCommand promise_0600 result:' + result);
+                done();
+            }).catch(error => {
+                console.info('undefined 1sendcommand promise_0600 err:' + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null);
+                done();
+            })
+        } catch (error) {
+            console.info('undefined 2sendcommand promise_0600 err:' + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        done();
+
+    })
+
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_LocRequest_0160
+     * @tc.number SUB_HSS_LocationSystem_LocRequest_0160
+     * @tc.desc   Initiate a request for continuous positioning in a specified scenario and set the navigation scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_LocRequest_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        enableLocationSwitch();
+        let requestInfo = {"priority":request_priority_unset, "scenario":request_scenario_navigation, "timeInterval":5,
+            "distanceInterval": 0, "maxAccuracy": 0};
+        var locationChange = (location) => {
+            console.log('SUB_HSS_LocationSystem_LocRequest_0160: data: ' + JSON.stringify(location));
+            expect(true).assertEqual(location != null);
+            expect(true).assertEqual(location.latitude != -1)
+            expect(true).assertEqual(location.longitude != -1)
+            expect(true).assertEqual(location.altitude != -1)
+            expect(true).assertEqual(location.accuracy != -1)
+            expect(true).assertEqual(location.speed != -1)
+            expect(true).assertEqual(location.timeStamp != -1)
+            expect(true).assertEqual(location.direction != -1)
+            expect(true).assertEqual(location.timeSinceBoot != -1)
+            expect(true).assertEqual(location.additionSize != -1)
+            expect(true).assertEqual(location.additions.length != -1)
+            expect(true).assertEqual(locationChange !=null);
+        };
+        try {
+            geolocation.on('locationChange', requestInfo, locationChange);
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_LocationSystem_LocRequest_0160 try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocation.off('locationChange', locationChange);
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_LocationSystem_LocRequest_0160 try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_getCurrentLocation_SingleLoc_0100
+     * @tc.number SUB_HSS_getCurrentLocation_SingleLoc_0100
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_getCurrentLocation_SingleLoc_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let currentLocationRequest = { "priority": request_priority_unset, "scenario": request_scenario_navigation, "timeoutMs": 1000, "maxAccuracy": 0 };
+        try {
+            geolocation.getCurrentLocation(currentLocationRequest, (err, location) => {
+                if (err) {
+                    console.info("[lbs_js] SUB_HSS_getCurrentLocation_SingleLoc_0100 callback err:  " + JSON.stringify(err));
+                    expect(true).assertEqual(err != null);
+                    console.info('[lbs_js] SUB_HSS_getCurrentLocation_SingleLoc_0100 reject after')
+                } else {
+                    console.info("[lbs_js] SUB_HSS_getCurrentLocation_SingleLoc_0100 callback, result:  " + JSON.stringify(location));
+                    expect(true).assertEqual(location != null);
+                    expect(true).assertEqual(location.latitude != -1)
+                    expect(true).assertEqual(location.longitude != -1)
+                    expect(true).assertEqual(location.altitude != -1)
+                    expect(true).assertEqual(location.accuracy != -1)
+                    expect(true).assertEqual(location.speed != -1)
+                    expect(true).assertEqual(location.timeStamp != -1)
+                    expect(true).assertEqual(location.direction != -1)
+                    expect(true).assertEqual(location.timeSinceBoot != -1)
+                    expect(true).assertEqual(location.additionSize != -1)
+                    expect(true).assertEqual(location.additions.length != -1)
+                }
+            });
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_getCurrentLocation_SingleLoc_0100 callback try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_getCurrentLocation_SingleLoc_0200
+     * @tc.number SUB_HSS_getCurrentLocation_SingleLoc_0200
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_getCurrentLocation_SingleLoc_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let currentLocationRequest = { "priority": request_priority_firstfix, "scenario": request_scenario_navigation, "timeoutMs": 1000, "maxAccuracy": 0 };
+        try {
+            await geolocation.getCurrentLocation(currentLocationRequest).then((location) => {
+                console.info('[lbs_js] SUB_HSS_getCurrentLocation_SingleLoc_0200 promise result ' + JSON.stringify(location));
+                expect(true).assertEqual(location != null);
+                expect(true).assertEqual(location.latitude != -1)
+                expect(true).assertEqual(location.longitude != -1)
+                expect(true).assertEqual(location.altitude != -1)
+                expect(true).assertEqual(location.accuracy != -1)
+                expect(true).assertEqual(location.speed != -1)
+                expect(true).assertEqual(location.timeStamp != -1)
+                expect(true).assertEqual(location.direction != -1)
+                expect(true).assertEqual(location.timeSinceBoot != -1)
+                expect(true).assertEqual(location.additionSize != -1)
+                expect(true).assertEqual(location.additions.length != -1)
+            }).catch(error => {
+                console.info('[lbs_js] SUB_HSS_getCurrentLocation_SingleLoc_0200 promise err:' + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            })
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_getCurrentLocation_SingleLoc_0200 promise try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_getLastLocation_0100
+     * @tc.number SUB_HSS_LocationSystem_getLastLocation_0100
+     * @tc.desc   Obtain the last location after a single location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_getLastLocation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+        enableLocationSwitch();
+        let requestInfo = {"priority":request_priority_unset, "scenario":request_scenario_navigation, "timeInterval":0,
+            "distanceInterval": 0, "maxAccuracy": 0};
+        var locationChange = (location) => {
+            console.log('SUB_HSS_LocationSystem_getLastLocation_0100: data: ' + JSON.stringify(location));
+            expect(true).assertEqual(locationChange !=null);
+        };
+        try {
+            geolocation.on('locationChange', requestInfo, locationChange);
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_LocationSystem_getLastLocation_0100 try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocation.off('locationChange', locationChange);
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_LocationSystem_getLastLocation_0100_off try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        await geolocation.getLastLocation().then((location) => {
+            console.info('[lbs_js] SUB_HSS_LocationSystem_getLastLocation_0100 promise result: ' + JSON.stringify(location));
+            expect(true).assertEqual(JSON.stringify(location) != null);
+            expect(true).assertEqual(location != null);
+            expect(true).assertEqual(location.latitude != -1)
+            expect(true).assertEqual(location.longitude != -1)
+            expect(true).assertEqual(location.altitude != -1)
+            expect(true).assertEqual(location.accuracy != -1)
+            expect(true).assertEqual(location.speed != -1)
+            expect(true).assertEqual(location.timeStamp != -1)
+            expect(true).assertEqual(location.direction != -1)
+            expect(true).assertEqual(location.timeSinceBoot != -1)
+            expect(true).assertEqual(location.additionSize != -1)
+            expect(true).assertEqual(location.additions.length != -1)
+        }).catch((error) => {
+            console.info("[lbs_js] SUB_HSS_LocationSystem_getLastLocation_0100 promise then error:" + JSON.stringify(error));
+            console.info('[lbs_js] not support now');
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        });
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_getLastLocation_0200
+     * @tc.number SUB_HSS_LocationSystem_getLastLocation_0200
+     * @tc.desc   Obtain the last location after continuous positioning.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_getLastLocation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        enableLocationSwitch();
+        let requestInfo = {"priority":request_priority_unset, "scenario":request_scenario_navigation, "timeInterval":0,
+            "distanceInterval": 0, "maxAccuracy": 0};
+        var locationChange = (location) => {
+            console.log('SUB_HSS_LocationSystem_getLastLocation_0200: data: ' + JSON.stringify(location));
+            expect(true).assertEqual(locationChange !=null);
+        };
+        try {
+            geolocation.on('locationChange', requestInfo, locationChange);
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_LocationSystem_getLastLocation_0200 try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocation.off('locationChange', locationChange);
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_LocationSystem_getLastLocation_0200 try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocation.getLastLocation((err, location) => {
+                if (err) {
+                    console.info('[lbs_js] SUB_HSS_LocationSystem_getLastLocation_0200 callback err:' + JSON.stringify(err));
+                    expect(true).assertEqual(err !=null);
+                } else {
+                    console.info('[lbs_js] SUB_HSS_LocationSystem_getLastLocation_0200 callback result:' + JSON.stringify(location));
+                    expect(true).assertEqual(location !=null);
+                    expect(true).assertEqual(location != null);
+                    expect(true).assertEqual(location.latitude != -1)
+                    expect(true).assertEqual(location.longitude != -1)
+                    expect(true).assertEqual(location.altitude != -1)
+                    expect(true).assertEqual(location.accuracy != -1)
+                    expect(true).assertEqual(location.speed != -1)
+                    expect(true).assertEqual(location.timeStamp != -1)
+                    expect(true).assertEqual(location.direction != -1)
+                    expect(true).assertEqual(location.timeSinceBoot != -1)
+                    expect(true).assertEqual(location.additionSize != -1)
+                    expect(true).assertEqual(location.additions.length != -1)
+                }
+            });
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_LocationSystem_getLastLocation_0200 callback try err." + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        await sleep(1000);
+        done();
+    })
+
+
+
 })
 }

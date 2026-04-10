@@ -1,7 +1,7 @@
 
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,7 +34,7 @@ struct MyStateSample {
       let uiContent1 = this.getUIContext();
       AppStorage.setOrCreate<Router>('router', router1);
       AppStorage.setOrCreate<UIContext>('uiContent', uiContent1);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Grid_RowCol_PadMar() {
 
   describe('Grid_RowCol_PadMarTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Grid_RowCol_PadMarTest beforeAll start");
            
       await UtilsTest.msSleep(4000)

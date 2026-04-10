@@ -22,7 +22,6 @@ const TAG ='packToFileFromPixelmapSequenceSupp';
 
 export default function imagePackerPackToFileFromPixelmapSequenceTest() {
   describe('imagePackerPackToFileFromPixelmapSequenceTest', () => {
-
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
     });
@@ -533,5 +532,248 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         done();
       }
     })
+    /**
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_016
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_016
+     * @tc.desc    Packer.packToFileFromPixelmapSequence,delayTimeList: []
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_016', Level.LEVEL0, async (done: Function) => {
+      const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_016';
+      const inputPathUri = 'test6.gif';
+      const outputPathUri = 'output_test6.gif';
+      let opsPack: image.PackingOptionsForSequence = {
+        frameCount: 3,
+        delayTimeList: [],
+        disposalTypes: [3, 2, 3],
+        loopCount: 0
+      };
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        const resourceMgr = testContext.resourceManager;
+        const fileData = await resourceMgr.getRawFileContent(inputPathUri);
+        const color = fileData.buffer;
+        let imageSource = await image.createImageSource(color);
+        let pixelMapList = await imageSource.createPixelMapList();
+        let outputPath = `${testContext.filesDir}/${outputPathUri}`;
+        let file = fs.openSync(outputPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let Packer = image.createImagePacker();
+        await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack)
+          .then(() => {
+            console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
+          }).catch((error: BusinessError) => {
+          console.error(TAG,testName,'Failed to packToFileMultiFrames.');
+        })
+        await Packer.release();
+        done();
+      } catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code}`, testName);
+        expect(error.code).assertEqual(9001005);
+        done();
+      }
+    })
+    /**
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_017
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_017
+     * @tc.desc    Packer.packToFileFromPixelmapSequence,disposalTypes: []
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_017', Level.LEVEL0, async (done: Function) => {
+      const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_017';
+      const inputPathUri = 'test6.gif';
+      const outputPathUri = 'output_test6.gif';
+      let opsPack: image.PackingOptionsForSequence = {
+        frameCount: 3,
+        delayTimeList: [10, 10, 10],
+        disposalTypes: [],
+        loopCount: 0
+      };
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        const resourceMgr = testContext.resourceManager;
+        const fileData = await resourceMgr.getRawFileContent(inputPathUri);
+        const color = fileData.buffer;
+        let imageSource = await image.createImageSource(color);
+        let pixelMapList = await imageSource.createPixelMapList();
+        let outputPath = `${testContext.filesDir}/${outputPathUri}`;
+        let file = fs.openSync(outputPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let Packer = image.createImagePacker();
+        await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack)
+          .then(() => {
+            console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
+          }).catch((error: BusinessError) => {
+            console.error(TAG,testName,'Failed to packToFileMultiFrames.');
+          })
+        await Packer.release();
+        done();
+      } catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code}`, testName);
+        expect(error.code).assertEqual(9001005);
+        done();
+      }
+    })
+    /**
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_018
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_018
+     * @tc.desc    Packer.packToFileFromPixelmapSequence,file.fd: null
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_018', Level.LEVEL0, async (done: Function) => {
+      const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_018';
+      const inputPathUri = 'test6.gif';
+      const outputPathUri = 'output_test6.gif';
+      let opsPack: image.PackingOptionsForSequence = {
+        frameCount: 3,
+        delayTimeList: [10, 10, 10],
+        disposalTypes: [3, 2, 3],
+        loopCount: 0
+      };
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        const resourceMgr = testContext.resourceManager;
+        const fileData = await resourceMgr.getRawFileContent(inputPathUri);
+        const color = fileData.buffer;
+        let imageSource = await image.createImageSource(color);
+        let pixelMapList = await imageSource.createPixelMapList();
+        let outputPath = `${testContext.filesDir}/${outputPathUri}`;
+        let file = fs.openSync(outputPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let Packer = image.createImagePacker();
+        await Packer.packToFileFromPixelmapSequence(pixelMapList, null, opsPack)
+          .then(() => {
+            console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
+          }).catch((error: BusinessError) => {
+            console.error(TAG,testName,'Failed to packToFileMultiFrames.');
+          })
+        await Packer.release();
+        done();
+      } catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code}`, testName);
+        expect(error.code).assertEqual(9001005);
+        done();
+      }
+    })
+    /**
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_019
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_019
+     * @tc.desc    Packer.packToFileFromPixelmapSequence,file.fd: undefined
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_019', Level.LEVEL0, async (done: Function) => {
+      const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_019';
+      const inputPathUri = 'test6.gif';
+      const outputPathUri = 'output_test6.gif';
+      let opsPack: image.PackingOptionsForSequence = {
+        frameCount: 3,
+        delayTimeList: [10, 10, 10],
+        disposalTypes: [3, 2, 3],
+        loopCount: 0
+      };
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        const resourceMgr = testContext.resourceManager;
+        const fileData = await resourceMgr.getRawFileContent(inputPathUri);
+        const color = fileData.buffer;
+        let imageSource = await image.createImageSource(color);
+        let pixelMapList = await imageSource.createPixelMapList();
+        let outputPath = `file://${testContext.filesDir}/${outputPathUri}`;
+        let file = fs.openSync(outputPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let Packer = image.createImagePacker();
+        await Packer.packToFileFromPixelmapSequence(pixelMapList, undefined, opsPack)
+          .then(() => {
+            console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
+          }).catch((error: BusinessError) => {
+            console.error(TAG,testName,'Failed to packToFileMultiFrames.');
+          })
+        await Packer.release();
+        done();
+      } catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code}`, testName);
+        expect(error.code).assertEqual(9001005);
+        done();
+      }
+    })
+    /**
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_020
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_020
+     * @tc.desc    Packer.packToFileFromPixelmapSequence,opsPack: undefined
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_020', Level.LEVEL0, async (done: Function) => {
+      const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_020';
+      const inputPathUri = 'test6.gif';
+      const outputPathUri = 'output_test6.gif';
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        const resourceMgr = testContext.resourceManager;
+        const fileData = await resourceMgr.getRawFileContent(inputPathUri);
+        const color = fileData.buffer;
+        let imageSource = await image.createImageSource(color);
+        let pixelMapList = await imageSource.createPixelMapList();
+        let outputPath = `file://${testContext.filesDir}/${outputPathUri}`;
+        let file = fs.openSync(outputPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let Packer = image.createImagePacker();
+        await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, undefined)
+          .then(() => {
+            console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
+          }).catch((error: BusinessError) => {
+            console.error(TAG,testName,'Failed to packToFileMultiFrames.');
+          })
+        await Packer.release();
+        done();
+      } catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code}`, testName);
+        expect(error.code).assertEqual(9001005);
+        done();
+      }
+    })
+    /**
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_021
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_021
+     * @tc.desc    Packer.packToFileFromPixelmapSequence,pixelMapList: not[];
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_021', Level.LEVEL0, async (done: Function) => {
+      const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_021';
+      const inputPathUri = 'test6.gif';
+      const outputPathUri = 'output_test6.gif';
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        const resourceMgr = testContext.resourceManager;
+        const fileData = await resourceMgr.getRawFileContent(inputPathUri);
+        const color = fileData.buffer;
+        let imageSource = await image.createImageSource(color);
+        let pixelMapList = await imageSource.createPixelMapList();
+        console.info(TAG,testName,'imageSource.createPixelMapList back pixelMapList.',pixelMapList);
+        let outputPath = `file://${testContext.filesDir}/${outputPathUri}`;
+        let file = fs.openSync(outputPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let Packer = image.createImagePacker();
+        await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, null)
+          .then(() => {
+            console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
+          }).catch((error: BusinessError) => {
+            console.error(TAG,testName,'Failed to packToFileMultiFrames.');
+          })
+        await Packer.release();
+        done();
+      } catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code}`, testName);
+        expect(error.code).assertEqual(9001005);
+        done();
+      }
+    })
+
+
   })
 }

@@ -28,7 +28,7 @@ export default function assetGetLastObjectTest() {
     let getLastObjectCallbackTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions) => {
       try {
-        let fetchResult = await helper.getAssets(fetchOps);
+        let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
         expect(fetchResult.getCount() > 0).assertTrue();
         fetchResult.getLastObject((err: BusinessError | null, asset) => {
           try {
@@ -57,7 +57,7 @@ export default function assetGetLastObjectTest() {
     let getLastObjectPromiseTest = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions) => {
       try {
-        let fetchResult = await helper.getAssets(fetchOps);
+        let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
         expect(fetchResult.getCount() > 0).assertTrue();
         const asset = await fetchResult.getLastObject();
         expect(asset !== undefined).assertTrue();

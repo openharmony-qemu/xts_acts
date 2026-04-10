@@ -57,7 +57,7 @@ export default function SXvalueResourceJsunit() {
       }
       console.info("SXvalueResourceJsunit beforeEach end");
     });
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SXvalueResourceJsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

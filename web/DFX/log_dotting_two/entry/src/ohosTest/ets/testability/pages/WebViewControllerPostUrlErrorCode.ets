@@ -102,7 +102,7 @@ struct WebViewControllerPostUrlErrorCode {
                   Utils.emitEvent(this.no_error, 115690)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                  Utils.emitEvent(String(error.code), 115690)
+                  Utils.emitEvent(error.code + error.message, 115690)
                 }
                 break;
               }

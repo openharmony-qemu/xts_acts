@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function row_TextVisibilityTest() {
   describe('Row_TextVisibilityTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Row_TextVisibilityTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

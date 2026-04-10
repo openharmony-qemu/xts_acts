@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@
 import { Entry, Component, AttributeModifier, AlphabetIndexerAttribute, AlphabetIndexer, Row, FontWeight, IndexerAlign } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-class AlphabetIndexerModifier1 implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier1 implements AttributeModifier<AlphabetIndexerAttribute> {
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     instance
       .font({ size: 18, weight: FontWeight.Normal })
@@ -34,7 +34,7 @@ class AlphabetIndexerModifier1 implements AttributeModifier<AlphabetIndexerAttri
   }
 }
 
-class AlphabetIndexerModifier2 implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier2 implements AttributeModifier<AlphabetIndexerAttribute> {
   popupSelectedColorNum: int = 0x00CED1
   popupUnselectedColorNum: int = 0xC0FF3E
   popupItemBackgroundNum: int = 0x8470FF

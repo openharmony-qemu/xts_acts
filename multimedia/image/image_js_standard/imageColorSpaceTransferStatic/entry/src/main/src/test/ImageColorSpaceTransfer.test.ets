@@ -1,5 +1,5 @@
-﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+/*
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -34,8 +34,9 @@ let globalimageSource: image.ImageSource | undefined = undefined;
 function getFd(fileName:string) {
   let filePath = filesDir + "/" + fileName;
   console.info("image case filePath is " + filePath);
-  let file = await fs.open(filePath, 0o0);
-  return file.fd as int
+  let file: fs.File | undefined;
+  waitForCompletion(async () => {file = await fs.open(filePath, 0o0);})
+  return file!.fd as int
 }
 
 class Logger {
@@ -71,11 +72,12 @@ const createPixelmapTestPromise = async (
         csm = colorSpaceManager.create(colorSpace as colorSpaceManager.ColorSpace);
       }
       let decodingOptions: image.DecodingOptions = { desiredColorSpace: csm };
-      let pixelMap: image.PixelMap | undefined = await imageSource.createPixelMap(decodingOptions);
+      let pixelMap: image.PixelMap | undefined;
+      waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap(decodingOptions);})
       logger.log("PixelMap " + pixelMap);
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
-        let cs = pixelMap.getColorSpace();
+        let cs = pixelMap!.getColorSpace();
         let csmn = cs.getColorSpaceName();
         logger.log('csmn ' + csmn);
         checkColorSpace(csmn);
@@ -159,7 +161,8 @@ const applyColorSpacePromiseTest = async (
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
       globalimageSource = imageSource;
-      let pixelMap = await imageSource.createPixelMap();
+      let pixelMap: image.PixelMap | undefined;
+      waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap();})
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
         let csmModify: colorSpaceManager.ColorSpaceManager;
@@ -170,16 +173,16 @@ const applyColorSpacePromiseTest = async (
         }
         logger.log("csmModify " + csmModify);
         try{
-          await pixelMap.applyColorSpace(csmModify);
-          let csm1 = pixelMap.getColorSpace();
+          waitForCompletion(async () => {await pixelMap!.applyColorSpace(csmModify);})
+          let csm1 = pixelMap!.getColorSpace();
           logger.log("getColorSpace " + csm1);
           let csmn = csm1.getColorSpaceName();
           logger.log("getColorSpaceName " + csmn);
           checkColorSpace(csmn);
-          let pixelSize = pixelMap.getPixelBytesNumber();
+          let pixelSize = pixelMap!.getPixelBytesNumber();
           logger.log(`new pixel size ${pixelSize}`);
           done();
-        } catch(error:BusinessError) {
+        } catch(error) {
           logger.log("apply colorSpace failed " + error);
           expect().assertFail();
           done();
@@ -215,7 +218,8 @@ const applyColorSpaceCbTest = async (
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
       globalimageSource = imageSource;
-      let pixelMap = await imageSource.createPixelMap();
+      let pixelMap: image.PixelMap | undefined;
+      waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap();})
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
         let csmModify: colorSpaceManager.ColorSpaceManager;
@@ -224,18 +228,18 @@ const applyColorSpaceCbTest = async (
         } else {
           csmModify = colorSpaceManager.create(colorSpace as colorSpaceManager.ColorSpace);
         }
-        pixelMap.applyColorSpace(csmModify, (err: BusinessError | null) => {
+        pixelMap!.applyColorSpace(csmModify, (err: BusinessError | null) => {
           if (err && err.code) {
             expect(false).assertTrue();
             logger.log("applyColorSpace err " + err);
             done();
           } else {
-            let csm1 = pixelMap.getColorSpace();
+            let csm1 = pixelMap!.getColorSpace();
             logger.log("getColorSpace " + csm1);
             let csmn = csm1.getColorSpaceName();
             logger.log("getColorSpaceName " + csmn);
             checkColorSpace(csmn);
-            let pixelSize = pixelMap.getPixelBytesNumber();
+            let pixelSize = pixelMap!.getPixelBytesNumber();
             logger.log(`new pixel size ${pixelSize}`);
             done();
           }
@@ -259,7 +263,7 @@ const applyColorSpaceCbTest = async (
 
 export default function ImageColorSpaceTransferTest() {
   describe('ImageColorSpaceTransferTest', ()=> {
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
     })

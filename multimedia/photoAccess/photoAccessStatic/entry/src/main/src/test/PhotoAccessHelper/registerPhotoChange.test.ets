@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import Utils from '../Util.test';
 import hilog from '@ohos.hilog'
 import Context from "application.Context"
 import { describe, beforeAll, it, expect, TestType, Size, Level, Hypium } from "../../../../hypium/index";
-import { fetchOption, checkUserAlbum, checkSystemAlbum, sleep, getPermission, driveFn, } from '../Common.test.ets'
+import { fetchOption, checkUserAlbum, checkSystemAlbum, sleep, getPermission, driveFn, pushCreateAsset } from '../Common.test.ets'
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { BusinessError } from '@ohos.base'
 
@@ -32,12 +32,14 @@ export default function registerPhotoChangeTest () {
     let appContext: Context = Hypium.get("context") as Context;
     let helper = photoAccessHelper.getPhotoAccessHelper(appContext);
     let arr: Array<string> = [photoAccessHelper.PhotoKeys.TITLE, photoAccessHelper.PhotoKeys.HIDDEN];
+    let fileNameList: Array<string> = ['registerPhotoChange_01.jpg'];
 
     beforeAll(async () => {
       hilog.info(domain, tag, 'beforeAll case');
       await getPermission();
       await driveFn();
       await sleep(1000);
+      await pushCreateAsset(appContext, fileNameList);
     });
 
     const NOTIFY_CHANGE_UPDATE = photoAccessHelper.NotifyChangeType.NOTIFY_CHANGE_UPDATE;
@@ -56,31 +58,39 @@ export default function registerPhotoChangeTest () {
       const testNum = 'register_photoChange_callback_001';
       try {
         const predicates = new dataSharePredicates.DataSharePredicates();
+        predicates.equalTo('display_name', 'registerPhotoChange_01.jpg');
         const ops : photoAccessHelper.FetchOptions = {
           fetchColumns: arr,
           predicates: predicates
         };
-        const fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(ops);
+        const fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(ops);
         console.log(`${testNum} :: fetchResult is undefined ? ${fetchResult === undefined}`);
         expect(fetchResult !== undefined).assertTrue();
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         fetchResult.close();
         let count = 0;
         await sleep(550);
-        helper.onPhotoChange((changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+        (helper as photoAccessHelper.PhotoAccessHelper).onPhotoChange((changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
           count++;
           console.info(`${testNum} changeData: ${JSON.stringify(changeData)}`);
-          helper.offPhotoChange();
+          (helper as photoAccessHelper.PhotoAccessHelper).offPhotoChange();
           expect(changeData.type).assertEqual(NOTIFY_CHANGE_UPDATE);
         });
         await sleep(550);
         const newTitle = testNum + photoAsset.get(photoAccessHelper.PhotoKeys.TITLE);
         photoAsset.set(photoAccessHelper.PhotoKeys.TITLE, newTitle);
         await photoAsset.commitModify();
-        await sleep(1000);
+        let sleep_time = 0;
+        while (sleep_time < 2000) {
+          if (count === 1) {
+            break;
+          }
+          await sleep(200);
+          sleep_time += 200;
+        }
         expect(count).assertEqual(1);
         done();
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag,
           testNum + ' PhotoAccessHelperTest failed' + ", error.name:" + error.name + ", error.message:" +
           error.message);

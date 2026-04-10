@@ -44,12 +44,9 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function DataOperationTypeTest() {
   describe('DataOperationTypeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DataOperationTypeTest beforeEach start");
-
-
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -67,7 +64,6 @@ export default function DataOperationTypeTest() {
 
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push DataOperationTypeTest page error:" + err);
@@ -75,17 +71,18 @@ export default function DataOperationTypeTest() {
       console.info("DataOperationTypeTest beforeEach end");
     });
     
-    
     /**
      * @tc.number   DataOperationTypeTest_static_0100
      * @tc.name     DataOperationTypeTest_static_0100
      * @tc.desc     DataOperationTypeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('DataOperationTypeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DataOperationTypeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DataOperationTypeTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
+
+      console.info('DataOperationTypeTest_static_0100 chick add');
       let button = await driver.findComponent(ON.id('DataOperationType_2'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -93,52 +90,27 @@ it('DataOperationTypeTest_static_0100', Level.LEVEL0, async (done: () => void): 
       let obj = JSON.parseJsonElement(strJson);
       console.info("[DataOperationTypeTest_static_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Length:4');
+
+      console.info('DataOperationTypeTest_static_0100 chick delete');
+      let button2 = await driver.findComponent(ON.id('DataOperationType_3'));
+      await (button2?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let strJson2 = inspector.getInspectorByKey('DataOperationType_1');
+      let obj2 = JSON.parseJsonElement(strJson2);
+      console.info("[DataOperationTypeTest_static_0200] component obj2 is: " + JSON.stringify(obj2));
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('Length:3');
+
+      console.info('DataOperationTypeTest_static_0100 chick exchange');
+      let button3 = await driver.findComponent(ON.id('DataOperationType_4'));
+      await (button3?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let strJson3 = inspector.getInspectorByKey('DataOperationType_0');
+      let obj3 = JSON.parseJsonElement(strJson3);
+      await CommonFunc.sleep(1000);
+      console.info("[DataOperationTypeTest_static_0300] component obj3 is: " + JSON.stringify(obj3));
+      expect(obj3.getElement('$attrs').getString('content')).assertEqual('Text:Hello 2');
+
       console.info('[DataOperationTypeTest_static_0100] END');
-      done();
-    });
-    
-    
-    /**
-     * @tc.number   DataOperationTypeTest_static_0200
-     * @tc.name     DataOperationTypeTest_static_0200
-     * @tc.desc     DataOperationTypeTest_static_0200
-     * @tc.level    Level.LEVEL0
-     */
-it('DataOperationTypeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DataOperationTypeTest_static_0200 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('DataOperationType_3'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('DataOperationType_1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[DataOperationTypeTest_static_0200] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Length:3');
-      console.info('[DataOperationTypeTest_static_0200] END');
-      done();
-    });
-    
-    
-    /**
-     * @tc.number   DataOperationTypeTest_static_0300
-     * @tc.name     DataOperationTypeTest_static_0300
-     * @tc.desc     DataOperationTypeTest_static_0300
-     * @tc.level    Level.LEVEL0
-     */
-it('DataOperationTypeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DataOperationTypeTest_static_0300 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('DataOperationType_4'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('DataOperationType_0');
-      let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(1000);
-      console.info("[DataOperationTypeTest_static_0300] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Text:Hello 2');
-      console.info('[DataOperationTypeTest_static_0300] END');
       done();
     });
   })

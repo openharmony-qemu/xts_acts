@@ -13,7 +13,11 @@
 * limitations under the License.
 */
 import abilityTest from './Ability.test'
+import getAbilityRunningInfosTest from './GetAbilityRunningInfos.test'
+import getProcessRunningInfosTest from './GetProcessRunningInfos.test.ets'
 
 export default function testsuite() {
   abilityTest()
+  getAbilityRunningInfosTest()
+  getProcessRunningInfosTest()
 }

@@ -18,7 +18,6 @@ import {OnTitleReceiveEvent,OnHttpErrorReceiveEvent,$rawfile,Header,OnRenderExit
 import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
 import web_webview from '@ohos.web.webview'
 import { BusinessError } from '@ohos.base';
-import { setTimeout } from '@internal.full.global';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
@@ -71,25 +70,25 @@ struct webResourceResponseGet {
   @State getResponseMimeTypeValue: string = ''
   @State getReasonMessageValue: string = ''
   @State getResponseCodeValue: number = 10000
-  
-aboutToAppear() {
-  let valueChangeEvent: events_emitter.InnerEvent = {
-    eventId: 10,
-    priority: events_emitter.EventPriority.LOW
-  }
-  events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
-}
 
-private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
-  if (eventData != null) {
-    console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-    const data = eventData.data as Record<string, RecordData>;
-    if (data != null && data['ACTION'] != null) {
-      let strValue: string = String(data['ACTION']);
-      this.stringObj.str = strValue;
+  aboutToAppear() {
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 10,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
+    if (eventData != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
+        let strValue: string = String(data['ACTION']);
+        this.stringObj.str = strValue;
+      }
     }
   }
-}
 
   build() {
     Column() {
@@ -110,7 +109,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                     return
                   }
                   Utils.emitEvent(false, 35010);
-                }, 4000)
+                }, 5000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -122,8 +121,8 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 this.getRequestUrlValue = ' '
                 this.controller.loadUrl('https://gitee.com/openharmony/123' );
                 setTimeout(() => {
-                Utils.emitEvent(this.getRequestUrlValue, 35011);
-                }, 4000)
+                  Utils.emitEvent(this.getRequestUrlValue, 35011);
+                }, 5000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -137,7 +136,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 this.controller.loadUrl('https://gitee.com/openharmony/123' );
                 setTimeout(() => {
                   Utils.emitEvent(this.isRequestGestureValue, 35012);
-                }, 4000)
+                }, 5000)
 
               } catch (error) {
                 error = error as BusinessError;
@@ -153,7 +152,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 this.controller.loadUrl('https://gitee.com/openharmony/123' );
                 setTimeout(() => {
                   Utils.emitEvent(this.isMainFrameValue, 35013);
-                }, 4000)
+                }, 5000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -167,7 +166,21 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 this.controller.loadUrl('https://gitee.com/openharmony/123' );
                 setTimeout(() => {
                   Utils.emitEvent(this.isRedirectValue, 35014);
-                }, 4000)
+                }, 5000)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case "testGetResponseData001": {
+              try{
+                this.isRedirectValue = false
+                this.controller.loadUrl('https://gitee.com/openharmony/123' );
+                setTimeout(() => {
+                  Utils.emitEvent(this.getResponseDataValue, 35025);
+                }, 5000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -181,7 +194,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 this.controller.loadUrl('https://gitee.com/openharmony/123' );
                 setTimeout(() => {
                   Utils.emitEvent(this.getRequestMethodValue, 35015);
-                }, 4000)
+                }, 5000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -209,7 +222,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 this.controller.loadUrl('https://gitee.com/openharmony/123' );
                 setTimeout(() => {
                   Utils.emitEvent(this.getResponseMimeTypeValue, 35018);
-                }, 4000)
+                }, 5000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -223,7 +236,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 this.controller.loadUrl('https://gitee.com/openharmony/123' );
                 setTimeout(() => {
                   Utils.emitEvent(this.getReasonMessageValue, 35019);
-                }, 4000)
+                }, 5000)
 
               } catch (error) {
                 error = error as BusinessError;
@@ -236,13 +249,14 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               try {
                 this.getResponseHeaderValue = 0
                 this.controller.loadUrl('https://gitee.com/openharmony/123' );
+                console.log("rooki get response headervalue = ", this.getResponseHeaderValue);
                 setTimeout(() => {
                   if (this.getResponseHeaderValue > 0) {
                     Utils.emitEvent(true, 35020);
                     return;
                   }
                   Utils.emitEvent(false, 35020);
-                }, 4000)
+                }, 5000)
 
               } catch (error) {
                 error = error as BusinessError;
@@ -257,7 +271,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 this.controller.loadUrl('https://gitee.com/openharmony/123' );
                 setTimeout(() => {
                   Utils.emitEvent(this.getResponseCodeValue, 35021);
-                }, 4000)
+                }, 5000)
 
               } catch (error) {
                 error = error as BusinessError;
@@ -291,6 +305,8 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
             console.log('GetRequest getRequestMethod:' + event.request.getRequestMethod());
             this.getRequestMethodValue = event.request.getRequestMethod()
             console.log('GetRequest getResponseEncoding:' + event.response.getResponseEncoding());
+            this.getResponseDataValue = JSON.stringify(event.response.getResponseData())
+            console.log('GetRequest getResponseData:' + this.getResponseDataValue);
             this.getResponseEncodingValue = event.response.getResponseEncoding()
             console.log('GetRequest getResponseMimeType:' + event.response.getResponseMimeType());
             this.getResponseMimeTypeValue = event.response.getResponseMimeType()
@@ -301,7 +317,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
             this.getReasonMessageValue = event.response.getReasonMessage()
             let result = event.request.getRequestHeader()
             this.getRequestHeaderValue = result.length
-            console.log('GetRequest The request header result size is ' + result.length)
+            console.log('rooki GetRequest The request header result size is ' + result.length)
             for (let i of result) {
               console.log('GetRequest The request header key is : ' + i.headerKey +
                 ' , value is : ' + i.headerValue);

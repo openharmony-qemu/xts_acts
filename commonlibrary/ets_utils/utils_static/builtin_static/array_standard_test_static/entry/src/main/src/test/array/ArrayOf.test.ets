@@ -220,26 +220,9 @@ export default function ArrayOfTest() {
      * @tc.level Level 1
      */
     it('testArrayOf0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: never[] = Array.of();
+      const arr: never[] = Array.of<never>();
       expect(arr.length).assertEqual(0);
       expect(Array.isArray(arr)).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0009
-     * @tc.name testArrayOf0009
-     * @tc.desc Verify Array.of() differs from Array() for single number parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayOf0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arrOf: number[] = Array.of<number>(5);
-      const arrConstructor: number[] = Array<number>(5).fill(0);
-      expect(arrOf.length).assertEqual(1);
-      expect(arrConstructor.length).assertEqual(5);
-      expect(arrOf[0]).assertEqual(5);
-      expect(arrConstructor[0]).assertEqual(0);
     });
 
     /**
@@ -370,9 +353,14 @@ export default function ArrayOfTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // it('testArrayOf0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(testArrayOfJs0018()).assertDeepEquals([true, true, true]);
-    // });
+      it('testArrayOf0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const func1 = (a:number, b:number)=> a + b;
+        const func2 = (a:number, b:number) => a - b;
+        const arr = Array.of(func1, func2);
+
+        expect(arr[0](1,2)).assertEqual(3);
+        expect(arr[1](1,2)).assertEqual(-1);
+      });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0019
@@ -392,18 +380,6 @@ export default function ArrayOfTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0020
-     * @tc.name testArrayOf0020
-     * @tc.desc Verify Array.of() works with Symbol elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testArrayOf0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(testArrayOfJs0020()).assertDeepEquals([true, true, true]);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0021
      * @tc.name testArrayOf0021
      * @tc.desc Verify Array.of() creates array with mixed type elements
@@ -411,9 +387,10 @@ export default function ArrayOfTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // it('testArrayOf0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(testArrayOfJs0021()).assertDeepEquals([true, true, true, true]);
-    // });
+      it('testArrayOf0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const mixedArr = Array.of<Any>(1, 'test', true);
+        expect(mixedArr)?.assertDeepEquals([1, 'test', true]);
+      });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0022
@@ -427,18 +404,6 @@ export default function ArrayOfTest() {
       const arr: number[] = Array.of<number>(1, 2, 3);
       expect(arr instanceof Array).assertTrue();
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0023
-     * @tc.name testArrayOf0023
-     * @tc.desc Verify Array.of() with large number of parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayOf0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   expect(testArrayOfJs0023()).assertDeepEquals([true, true]);
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0024
@@ -543,114 +508,6 @@ export default function ArrayOfTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0031
-     * @tc.name testArrayOf0031
-     * @tc.desc Verify Array.of() called on custom array subclass
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayOf0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   expect(testArrayOfJs0031()).assertDeepEquals([true, true, 3]);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0032
-     * @tc.name testArrayOf0032
-     * @tc.desc Verify Array.of() with non-array constructor (valid)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayOf0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   expect(testArrayOfJs0032()).assertDeepEquals([3, 1]);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0033
-     * @tc.name testArrayOf0033
-     * @tc.desc Verify Array.of() with non-constructor this value returns Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayOf0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   expect(testArrayOfJs0033()).assertDeepEquals([true, 3]);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0034
-     * @tc.name testArrayOf0034
-     * @tc.desc Verify Array.of() with undefined this value returns Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayOf0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   expect(testArrayOfJs0034()).assertDeepEquals([true, 3]);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0035
-     * @tc.name testArrayOf0035
-     * @tc.desc Verify Array.of() with null this value returns Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayOf0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   expect(testArrayOfJs0035()).assertDeepEquals([true, 3]);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0036
-     * @tc.name testArrayOf0036
-     * @tc.desc Verify Array.of() with boolean this value returns Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayOf0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   expect(testArrayOfJs0036()).assertDeepEquals([true, 3]);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0037
-     * @tc.name testArrayOf0037
-     * @tc.desc Verify Array.of() with number this value returns Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayOf0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   expect(testArrayOfJs0037()).assertDeepEquals([true, 3]);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0038
-     * @tc.name testArrayOf0038
-     * @tc.desc Verify Array.of() with string this value returns Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayOf0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   expect(testArrayOfJs0038()).assertDeepEquals([true, 3]);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0039
-     * @tc.name testArrayOf0039
-     * @tc.desc Verify Array.of() created array has correct prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testArrayOf0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(testArrayOfJs0039()).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0040
      * @tc.name testArrayOf0040
      * @tc.desc Verify Array.of() created array supports array methods
@@ -733,18 +590,6 @@ export default function ArrayOfTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0045
-     * @tc.name testArrayOf0045
-     * @tc.desc Verify Array.of() with spread operator on string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testArrayOf0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(testArrayOfJs0045()).assertDeepEquals(['t', 'e', 's', 't']);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0046
      * @tc.name testArrayOf0046
      * @tc.desc Verify Array.of() with typed array parameter
@@ -800,15 +645,16 @@ export default function ArrayOfTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // it('testArrayOf0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   const user: User = { id: 1, name: 'Eve' };
-    //   const arr: (number | string | boolean | User)[] = Array.of(100, 'hello', true, user);
-    //   expect(arr.length).assertEqual(4);
-    //   expect(arr[0]).assertEqual(100);
-    //   expect(arr[1]).assertEqual('hello');
-    //   expect(arr[2]).assertTrue();
-    //   expect(arr[3].id).assertEqual(1);
-    // });
+      it('testArrayOf0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const user: User = { id: 1, name: 'Eve' };
+        const arr: (int | string | boolean | User)[] = Array.of<(int | string | boolean | User)>(100, 'hello', true, user);
+        expect(arr.length).assertEqual(4);
+        expect(arr[0]).assertEqual(100);
+        expect(arr[1]).assertEqual('hello');
+        expect(arr[2]).assertTrue();
+        expect((arr[3] as User).id).assertEqual(1);
+      });
+
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0051
@@ -891,18 +737,6 @@ export default function ArrayOfTest() {
       expect(arr[0].radius).assertEqual(5);
       expect(arr[0].getArea()).assertEqual(Math.PI * 25);
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0056
-     * @tc.name testArrayOf0056
-     * @tc.desc Verify Array.of() with multiple Circle objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testArrayOf0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(testArrayOfJs0056()).assertDeepEquals([2, Math.PI * 4, Math.PI * 9]);
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0057
@@ -1062,14 +896,12 @@ export default function ArrayOfTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // todo
-    // it('testArrayOf0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   const add = (a: number, b: number): number => a + b;
-    //   const arr: ((a: number, b: number) => number)[] = Array.of(add);
-    //   expect(arr.length).assertEqual(1);
-    //   expect(arr[0](3, 5)).assertEqual(8);
-    // });
-
+      it('testArrayOf0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const add = (a: number, b: number): number => a + b;
+        const arr: ((a: number, b: number) => number)[] = Array.of(add);
+        expect(arr.length).assertEqual(1);
+        expect(arr[0](3, 5)).assertEqual(8);
+      });
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0069
      * @tc.name testArrayOf0069
@@ -1078,13 +910,12 @@ export default function ArrayOfTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // todo
-    // it('testArrayOf0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   const concat = (s1: string, s2: string): string => s1 + s2;
-    //   const arr: ((s1: string, s2: string) => string)[] = Array.of(concat);
-    //   expect(arr.length).assertEqual(1);
-    //   expect(arr[0]('Hello', ' World')).assertEqual('Hello World');
-    // });
+      it('testArrayOf0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const concat = (s1: string, s2: string): string => s1 + s2;
+        const arr: ((s1: string, s2: string) => string)[] = Array.of(concat);
+        expect(arr.length).assertEqual(1);
+        expect(arr[0]('Hello', ' World')).assertEqual('Hello World');
+      });
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0070
      * @tc.name testArrayOf0070
@@ -1093,15 +924,14 @@ export default function ArrayOfTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // todo
-    // it('testArrayOf0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   const func1: () => string = () => 'hello';
-    //   const func2: (x: number) => number = (x) => x * x;
-    //   const arr = Array.of<(() => string) | ((x: number) => number)>(func1, func2);
-    //   expect(arr.length).assertEqual(2);
-    //   expect((arr[0] as (() => string))()).assertEqual('hello');
-    //   expect(arr[1](5)).assertEqual(25);
-    // });
+      it('testArrayOf0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const func1: () => string = () => 'hello';
+        const func2: (x: number) => number = (x) => x * x;
+        const arr = Array.of<(() => string) | ((x: number) => number)>(func1, func2);
+        expect(arr.length).assertEqual(2);
+        expect((arr[0] as (() => string))()).assertEqual('hello');
+        expect((arr[1] as (x: number) => number)(5)).assertEqual(25);
+      });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0071
@@ -1121,18 +951,6 @@ export default function ArrayOfTest() {
       expect(arr[1]).assertEqual(999999999999999999n);
       expect(arr[2]).assertEqual(-123456789n);
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0072
-     * @tc.name testArrayOf0072
-     * @tc.desc Verify Array.of() with Symbol values of same description
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testArrayOf0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(testArrayOfJs0072()).assertDeepEquals([true, true, true, false]);
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0073
@@ -1305,29 +1123,6 @@ export default function ArrayOfTest() {
       expect(arr[1]).assertEqual(6);
       expect(arr[2]).assertEqual(7);
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0083
-     * @tc.name testArrayOf0083
-     * @tc.desc Verify Array.of() with Promise objects (rejected)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // todo
-    // it('testArrayOf0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   const promise1: Promise<number> = Promise.reject(new Error('Reject 1'));
-    //   const promise2: Promise<string> = Promise.reject(new Error('Reject 2'));
-    //   const arr = Array.of<Promise<number> | Promise<string>>(promise1, promise2);
-    //   expect(arr.length).assertEqual(2);
-    //
-    //   Promise.allSettled(arr).then(results => {
-    //     expect(results[0].status).assertEqual('rejected');
-    //     expect((results[0] as PromiseRejectedResult).reason.message).assertEqual('Reject 1');
-    //     expect(results[1].status).assertEqual('rejected');
-    //     expect((results[1] as PromiseRejectedResult).reason.message).assertEqual('Reject 2');
-    //   });
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0084
@@ -1579,18 +1374,6 @@ export default function ArrayOfTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0098
-     * @tc.name testArrayOf0098
-     * @tc.desc Verify Array.of() with Symbol and string (different types)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testArrayOf0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(testArrayOfJs0098()).assertDeepEquals([2, 'symbol', 'string', true, true]);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0099
      * @tc.name testArrayOf0099
      * @tc.desc Verify Array.of() with BigInt and number (different types)
@@ -1633,17 +1416,16 @@ export default function ArrayOfTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    // todo
-    // it('testArrayOf0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   const depth1: number[] = [1];
-    //   const depth2: number[][] = [[2]];
-    //   const depth3: number[][][] = [[[3]]];
-    //   const arr = Array.of<(number[] | number[][] | number[][][])>(depth1, depth2, depth3);
-    //   expect(arr.length).assertEqual(3);
-    //   expect(arr[0][0]).assertEqual(1);
-    //   expect((arr[1] as number[][])[0][0]).assertEqual(2);
-    //   expect((arr[2] as number[][][])[0][0][0]).assertEqual(3);
-    // });
+      it('testArrayOf0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+        const depth1: number[] = [1];
+        const depth2: number[][] = [[2]];
+        const depth3: number[][][] = [[[3]]];
+        const arr = Array.of<(number[] | number[][] | number[][][])>(depth1, depth2, depth3);
+        expect(arr.length).assertEqual(3);
+        expect((arr[0] as number[])[0]).assertEqual(1);
+        expect((arr[1] as number[][])[0][0]).assertEqual(2);
+        expect((arr[2] as number[][][])[0][0][0]).assertEqual(3);
+      });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0102

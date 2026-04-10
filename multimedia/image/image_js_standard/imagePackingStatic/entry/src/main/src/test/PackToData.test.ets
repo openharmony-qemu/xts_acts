@@ -1,5 +1,5 @@
-﻿/*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+/*
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ export default function imagePackToData() {
       console.log('image case filePath is', fdNumber + filePath)
     }
 
-    beforeAll(() => {
+    beforeAll(async () => {
       console.info("beforeAll case");
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
@@ -85,13 +85,13 @@ export default function imagePackToData() {
       const Color = new ArrayBuffer(96);
       if (pixFormat == 2) {
         opts = {
-          editable: true, pixelFormat: 2 as image.PixelMapFormat, size: {
+          editable: true, pixelFormat: image.PixelMapFormat.fromValue(2), size: {
             height: 4, width: 6
           }
         };
       } else {
         opts = {
-          editable: true, pixelFormat: 5 as image.PixelMapFormat, size: {
+          editable: true, pixelFormat: image.PixelMapFormat.fromValue(5), size: {
             height: 4, width: 6
           }
         };
@@ -112,10 +112,11 @@ export default function imagePackToData() {
           } else {
             globalPacker = imagePackerApi;
             try {
-              let data: ArrayBuffer = await imagePackerApi.packToData(pixelmap, arg);
-              await pixelmap.release();
-              await imagePackerApi.release();
-              let dataArr = new Uint8Array(data);
+              let data: ArrayBuffer | undefined;
+              waitForCompletion(async () => {data = await imagePackerApi!.packToData(pixelmap, arg);})
+              waitForCompletion(async () => {await pixelmap!.release();})
+              waitForCompletion(async () => {await imagePackerApi!.release();})
+              let dataArr = new Uint8Array(data as ArrayBuffer);
               console.info(`${testNum} dataArr.length=` + dataArr.length);
               for (let i = 0; i < dataArr.length; i++) {
                 console.info(`dataArr[` + i + `]=` + dataArr[i]);
@@ -123,14 +124,14 @@ export default function imagePackToData() {
               expect(data != undefined).assertTrue();
               console.info(`${testNum} success`);
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.log(`${testNum} error:` + JSON.stringify(error));
               expect().assertFail();
               done();
             };
           }
         }
-    } catch (error: BusinessError) {
+    } catch (error) {
         console.log("createpixelmap error: " + JSON.stringify(error));
         expect().assertFail();
         done();
@@ -142,13 +143,13 @@ export default function imagePackToData() {
       let opts: image.InitializationOptions
       if (pixFormat == 2) {
         opts = {
-          editable: true, pixelFormat: 2 as image.PixelMapFormat, size: {
+          editable: true, pixelFormat: image.PixelMapFormat.fromValue(2), size: {
             height: 4, width: 6
           }
         };
       } else {
         opts = {
-          editable: true, pixelFormat: 5 as image.PixelMapFormat, size: {
+          editable: true, pixelFormat: image.PixelMapFormat.fromValue(5), size: {
             height: 4, width: 6
           }
         };
@@ -167,10 +168,12 @@ export default function imagePackToData() {
           } else {
             globalPacker = imagePackerApi;
             try {
-                let data: ArrayBuffer = await imagePackerApi.packToData(pixelmap, packOpts);
+                let data: ArrayBuffer | undefined;
+                waitForCompletion(async () => {data = await imagePackerApi!.packToData(pixelmap, packOpts);})
                 expect(false).assertTrue();
                 done();
-            } catch(error: BusinessError)  {
+            } catch(error)  {
+              error = error as BusinessError;
               console.log(`${testNum} error:` + JSON.stringify(error));
               console.log(`${testNum} error.code:` + error.code);
               expect(error.code == ERROR_CODE).assertTrue();
@@ -178,7 +181,7 @@ export default function imagePackToData() {
             };
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log("createpixelmap error: " + JSON.stringify(error));
         expect().assertFail();
         done();
@@ -209,7 +212,7 @@ export default function imagePackToData() {
               console.info(`${testNum} success`);
               expect(data != undefined).assertTrue();
               done();
-            } catch(error: BusinessError) {
+            } catch(error) {
               await imagePackerApi.release();
               await imageSourceApi.release();
               console.log(`${testNum} error.code:` + error.code + ` error.message: ` + error.message);
@@ -247,7 +250,8 @@ export default function imagePackToData() {
               console.info(`${testNum} failed`);
               expect(data == undefined).assertTrue();
               done();
-            } catch(error: BusinessError) {
+            } catch(error) {
+              error = error as BusinessError;
               console.log(`${testNum} error.code:` + error.code + ` error.message: ` + error.message);
               expect(error.code == ERROR_CODE).assertTrue();
               done();

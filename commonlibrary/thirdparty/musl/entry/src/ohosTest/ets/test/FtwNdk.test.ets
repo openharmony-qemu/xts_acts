@@ -30,9 +30,9 @@ export default function ftwNdkTest() {
      * @tc.desc   test ftw
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFtwFtw001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFtwFtw001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 0;
       let result: number = ftw.ftw();
       expect(result).assertEqual(resultTrue);
@@ -45,9 +45,9 @@ export default function ftwNdkTest() {
      * @tc.desc   test ftw64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFtwFtw64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFtwFtw64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 0;
       let result: number = ftw.ftw64();
       expect(result).assertEqual(resultTrue);
@@ -59,9 +59,9 @@ export default function ftwNdkTest() {
      * @tc.desc   nftw
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFtwNftw001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFtwNftw001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = ftw.nftw();
       expect(a).assertEqual(0);
       done()
@@ -72,9 +72,9 @@ export default function ftwNdkTest() {
      * @tc.desc   nftw64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFtwNftw64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFtwNftw64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = ftw.nftw64();
       expect(a).assertEqual(0);
       done()

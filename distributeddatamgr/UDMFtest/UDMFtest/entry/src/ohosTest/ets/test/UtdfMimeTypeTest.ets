@@ -4554,7 +4554,8 @@ export default function UtdfMimeTypeTest() {
       console.log('SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3470 start');
       let result = UTD.getUniformDataTypesByMIMEType("video/mp4");
       console.log("typeId:" + result);
-      expect(result.toString()).assertEqual("general.mpeg-4,com.adobe.f4v");
+      expect(result).assertContain('general.mpeg-4');
+      expect(result).assertContain('com.adobe.f4v');
     });
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3480
@@ -4568,7 +4569,8 @@ export default function UtdfMimeTypeTest() {
       console.log('SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3480 start');
       let result = UTD.getUniformDataTypesByMIMEType("video/mp2t");
       console.log("typeId:" + result);
-      expect(result.toString()).assertEqual("general.ts,general.mp2t");
+      expect(result).assertContain('general.ts');
+      expect(result).assertContain('general.mp2t');
     });
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3490
@@ -4612,7 +4614,10 @@ export default function UtdfMimeTypeTest() {
       console.log('SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3510 start');
       let result = UTD.getUniformDataTypesByMIMEType("video/mpeg");
       console.log("typeId:" + result);
-      expect(result.toString()).assertEqual("general.mpeg,general.vob,general.mpeg-2,general.mpeg-1");
+      expect(result).assertContain('general.mpeg');
+      expect(result).assertContain('general.mpeg-1');
+      expect(result).assertContain('general.mpeg-2');
+      expect(result).assertContain('general.vob');
     });
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UtdMimeTypeJsAPITest_3520

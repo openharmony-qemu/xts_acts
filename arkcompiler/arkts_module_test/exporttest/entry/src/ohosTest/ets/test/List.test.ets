@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2025 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -25,6 +25,7 @@ import exportStringTest from "./test/ExportStringTest.test";
 import exportTupleTest from "./test/ExportTupleTest.test";
 import exportUnionTest from "./test/ExportUnionTest.test";
 import exportDefaultTest from "./test/ExportDefaultsTest.test";
+import ExportSetTest from "./test/ExportSetTest.test";
 
 export default function testsuite() {
   exportTupleTest();
@@ -40,4 +41,5 @@ export default function testsuite() {
   exportBigIntTest();
   ExportFunctionTest();
   exportDefaultTest();
+  ExportSetTest();
 }

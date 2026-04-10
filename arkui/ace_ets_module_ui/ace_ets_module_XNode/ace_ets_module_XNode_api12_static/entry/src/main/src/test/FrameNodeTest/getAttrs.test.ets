@@ -31,7 +31,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function getAttrsTest() {
   describe('getAttrsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getAttrsTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
@@ -192,6 +192,7 @@ it('getAttrsTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<v
       expect(obj.getElement('$attrs').getString('content')).assertContain('"left":{"unit":1,"value":3}');
       console.info('[getAttrsTest_static_0500] END');
       done();
+      
     });
     
     
@@ -351,7 +352,7 @@ it('getAttrsTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<v
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_1100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("undefined");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("false");
       console.info('[getAttrsTest_static_1100] END');
       done();
     });

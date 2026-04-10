@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 @Observed
-class SecClassB {
+export class SecClassB {
   public b: number = 1;
 
   constructor(b: number) {
@@ -63,7 +63,7 @@ class SecClassB {
   }
 }
 
-class SecClassA {
+export class SecClassA {
   // ClassA成员变量a的类型为ClassB，从而形成嵌套结构，ClassB的成员变量b为第二层变量
   public a:SecClassB = new SecClassB(1)
 
@@ -94,7 +94,7 @@ struct ViewASec {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ObjectLinkSec', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

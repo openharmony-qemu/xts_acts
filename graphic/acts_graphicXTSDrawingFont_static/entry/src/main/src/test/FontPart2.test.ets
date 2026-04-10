@@ -154,6 +154,10 @@ export default function fontPart2Test() {
         let edging: drawing.FontEdging | undefined= font.getEdging();
         expect(edging == drawing.FontEdging.ALIAS).assertTrue();
         console.info(msg + ' setAndGetEdging successed,GetEdging:' + edging);
+        if(edging == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setAndGetEdging errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -165,6 +169,10 @@ export default function fontPart2Test() {
         let edging: drawing.FontEdging | undefined= font.getEdging();
         expect(edging == drawing.FontEdging.ANTI_ALIAS).assertTrue();
         console.info(msg + ' setAndGetEdging successed,GetEdging:' + edging);
+        if(edging == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setAndGetEdging errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -176,6 +184,10 @@ export default function fontPart2Test() {
         let edging: drawing.FontEdging | undefined= font.getEdging();
         expect(edging == drawing.FontEdging.SUBPIXEL_ANTI_ALIAS).assertTrue();
         console.info(msg + ' setAndGetEdging successed,GetEdging:' + edging);
+        if(edging == undefined){
+          console.info(msg + ' 3 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setAndGetEdging errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -252,6 +264,10 @@ export default function fontPart2Test() {
         let hinting: drawing.FontHinting | undefined= font.getHinting();
         expect(hinting == drawing.FontHinting.NONE).assertTrue();
         console.info(msg + ' setAndGetHinting successed,getHinting:' + hinting);
+        if(hinting == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setAndGetHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -263,6 +279,10 @@ export default function fontPart2Test() {
         let hinting: drawing.FontHinting | undefined= font.getHinting();
         expect(hinting == drawing.FontHinting.SLIGHT).assertTrue();
         console.info(msg + ' setAndGetHinting successed,getHinting:' + hinting);
+        if(hinting == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setAndGetHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -274,6 +294,10 @@ export default function fontPart2Test() {
         let hinting: drawing.FontHinting | undefined= font.getHinting();
         expect(hinting == drawing.FontHinting.NORMAL).assertTrue();
         console.info(msg + ' setAndGetHinting successed,getHinting:' + hinting);
+        if(hinting == undefined){
+          console.info(msg + ' 3 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setAndGetHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -285,6 +309,10 @@ export default function fontPart2Test() {
         let hinting: drawing.FontHinting | undefined= font.getHinting();
         expect(hinting == drawing.FontHinting.FULL).assertTrue();
         console.info(msg + ' setAndGetHinting successed,getHinting:' + hinting);
+        if(hinting == undefined){
+          console.info(msg + ' 4 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` setAndGetHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -1128,8 +1156,12 @@ export default function fontPart2Test() {
           let result = path.getLength(false);
           expect(result).assertLarger(0);
         }
+        if(path == undefined){
+          console.info(msg + ' 1 test failed');
+          expect().assertFail();
+        }
         console.info(msg + ' getTextPath successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ' getTextPath failed');
         expect().assertFail();
       }
@@ -1155,7 +1187,7 @@ export default function fontPart2Test() {
           expect(result == 0).assertTrue();
           console.info(msg + ' GetTextPath successed,path length:' + result);
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` GetTextPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -1177,7 +1209,7 @@ export default function fontPart2Test() {
         let path = font.getTextPath(myString, buffer.from(myString).length, -1, -1);
         expect(path).not().assertNull();
         console.info(msg + ' GetTextPath successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` GetTextPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -1203,7 +1235,7 @@ export default function fontPart2Test() {
           expect(result >= 0).assertEqual(true);
         }
         console.info(msg + ' GetTextPath successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.info(msg + ` GetTextPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }

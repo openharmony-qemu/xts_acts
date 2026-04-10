@@ -86,6 +86,7 @@ export default function PhotoShowAssetsFetchResultTest() {
      */
     it("SUB_PHOTO_ACCESS_HELPER_ShowAssetsCreationDialogEx_TEST_0100", Level.LEVEL0, async (done: Function) => {
       const testNum = "SUB_PHOTO_ACCESS_HELPER_ShowAssetsCreationDialogEx_TEST_0100";
+      let isSupportPicker: boolean = true;
       try {
         const creationSetting: photoAccessHelper.PhotoCreationConfig = {
           title: 'test',
@@ -101,14 +102,18 @@ export default function PhotoShowAssetsFetchResultTest() {
           }).catch((error: ESObject) => {
           console.error(TAG, testNum, ` Failed showAssetCreationDialog`, error.code,
             JSON.stringify(error));
-          expect().assertFail();
+          console.info(TAG, testNum, 'error code is 14000011, device does not support');
+          expect(error.code).assertEqual(14000011);
+          isSupportPicker = false;
         }).finally(() => {
           done();
         });
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
-        await sleep(500);
-        await power?.click();
+        if (isSupportPicker) {
+          await sleep(3000);
+          let power = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+          await sleep(500);
+          await power?.click();
+        }
       } catch (error) {
         console.info(TAG, testNum, 'Failed', JSON.stringify(error), error.code);
         expect().assertFail();

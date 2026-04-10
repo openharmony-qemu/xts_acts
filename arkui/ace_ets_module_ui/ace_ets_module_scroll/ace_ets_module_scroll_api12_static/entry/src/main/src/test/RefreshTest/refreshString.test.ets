@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function refreshString() {
   describe('refreshString', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       
     });
@@ -65,7 +65,7 @@ export default function refreshString() {
           console.info("get refresh state pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push refresh page error:" + err);
       }
     });
@@ -94,7 +94,7 @@ it('refreshString_static_0100', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[refreshString_static_0100] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[refreshString_static_0100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -131,7 +131,7 @@ it('refreshString_static_0200', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[refreshString_static_0200] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[refreshString_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -168,7 +168,7 @@ it('refreshString_static_0300', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[refreshString_static_0300] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[refreshString_static_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -205,7 +205,7 @@ it('refreshString_static_0400', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[refreshString_static_0400] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[refreshString_static_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -242,7 +242,7 @@ it('refreshString_static_0500', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[refreshString_static_0500] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[refreshString_static_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -279,7 +279,7 @@ it('refreshString_static_0600', Level.LEVEL0, async (done: () => void): Promise<
         }
         console.info("[refreshString_static_0600] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[refreshString_static_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

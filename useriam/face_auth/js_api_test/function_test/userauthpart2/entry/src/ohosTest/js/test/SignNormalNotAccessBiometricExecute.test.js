@@ -205,22 +205,26 @@ export default function signNormalNotAccessBiometricExecute() {
      */
     it('SUB_Security_IAM_authWidget_API_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("SUB_Security_IAM_authWidget_API_0150 start");
-      let reuseUnlockResult = {
-        reuseMode: userAuth.ReuseMode.AUTH_TYPE_IRRELEVANT,
-        reuseDuration: 120000,
-        other: 5555,
+      const reuseMode1 = [userAuth.ReuseMode.AUTH_TYPE_IRRELEVANT,userAuth.ReuseMode.CALLER_IRRELEVANT_AUTH_TYPE_RELEVANT,userAuth.ReuseMode.CALLER_IRRELEVANT_AUTH_TYPE_IRRELEVANT]
+
+      for (let idx0 = 0; idx0<reuseMode1.length; idx0++) {
+        let reuseUnlockResult = {
+          reuseMode: reuseMode1[idx0],
+          reuseDuration: 120000,
+          other: 5555,
+        }
+        const authParam = {
+          challenge: new Uint8Array([49, 49, 49, 49, 49, 49]),
+          authType: [userAuth.UserAuthType.PIN],
+          authTrustLevel: userAuth.AuthTrustLevel.ATL1,
+          reuseUnlockResult: reuseUnlockResult,
+        };
+        const widgetParam = {
+          title: '请输入密码',
+        };
+        await userAuthPromise(authParam, widgetParam, 
+          'SUB_Security_IAM_authWidget_API_0150 step' + stepIndex, 12500010);
       }
-      const authParam = {
-        challenge: new Uint8Array([49, 49, 49, 49, 49, 49]),
-        authType: [userAuth.UserAuthType.PIN],
-        authTrustLevel: userAuth.AuthTrustLevel.ATL1,
-        reuseUnlockResult: reuseUnlockResult,
-      };
-      const widgetParam = {
-        title: '请输入密码',
-      };
-      await userAuthPromise(authParam, widgetParam, 
-        'SUB_Security_IAM_authWidget_API_0150 step' + stepIndex, 12500010);
       done();
     });
 

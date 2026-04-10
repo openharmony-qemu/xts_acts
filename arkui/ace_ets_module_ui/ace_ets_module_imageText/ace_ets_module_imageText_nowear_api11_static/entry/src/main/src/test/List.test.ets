@@ -37,7 +37,6 @@ import SelectJsunit from './selectTest/SelectJsunit.test';
 export default function testsuite() {
   SearchJsunit();
   RichEditor01();
-  segmentbutton();
   positionSettingJsunit();
   textAreaBC1Jsunit();
   OnTextSelectionChangeTest();
@@ -54,4 +53,5 @@ export default function testsuite() {
   search_gesture();
   SelectJsunit()
   textinputSec();
+  segmentbutton();
 }

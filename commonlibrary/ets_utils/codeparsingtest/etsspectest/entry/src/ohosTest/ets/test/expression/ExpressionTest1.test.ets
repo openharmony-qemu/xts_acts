@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -1496,7 +1496,7 @@ export default function expressionTest1() {
     /**
      * @tc.name   ExpressionTest0101
      * @tc.number SUB_BUILTINS_EXPRESSION_TEST0101
-     * @tc.desc   Test addition with maximum safe integer
+     * @tc.desc   Test addition with maximum safe numbereger
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1972,7 +1972,7 @@ export default function expressionTest1() {
     /**
      * @tc.name   ExpressionTest0132
      * @tc.number SUB_BUILTINS_EXPRESSION_TEST0132
-     * @tc.desc   Test bitwise NOT with maximum integer
+     * @tc.desc   Test bitwise NOT with maximum numbereger
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -2283,7 +2283,7 @@ export default function expressionTest1() {
     /**
      * @tc.name   ExpressionTest0151
      * @tc.number SUB_BUILTINS_EXPRESSION_TEST0151
-     * @tc.desc   Test addition with minimum safe integer
+     * @tc.desc   Test addition with minimum safe numbereger
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

@@ -14,6 +14,9 @@
 group("ActsAceEtsModuleCheckboxgroupContentModifierTest") {
   testonly = true
   if (is_standard_system) {
-    deps = [ "ace_ets_module_checkboxgroup_contentModifier_api21:ActsAceEtsModuleCheckboxgroupContentModifierApi21Test" ]
+    deps = [
+      "ace_ets_module_checkboxgroup_api23:ActsAceEtsModuleCheckBoxGroupApi23StaticTest",
+      "ace_ets_module_checkboxgroup_contentModifier_api21:ActsAceEtsModuleCheckboxgroupContentModifierApi21Test"
+    ]
   }
 }

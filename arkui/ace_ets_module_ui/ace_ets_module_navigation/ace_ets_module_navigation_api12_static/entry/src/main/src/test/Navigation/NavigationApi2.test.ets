@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function NavigationApi2() {
   describe('NavigationApi2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
@@ -76,6 +76,7 @@ it('NavigationApi2_static_0100', Level.LEVEL0, async (done: () => void): Promise
 
       inspector.sendEventByKey('NavigationApi2_btn1',10,"")
       await CommonFunc.sleep(1000);
+      console.info('NavigationApi2_static_0100 NavigationApi2_btn1');
 
       let NavigationApi2_1 = inspector.getInspectorByKey('NavigationApi2_text1');
       await CommonFunc.sleep(1000);

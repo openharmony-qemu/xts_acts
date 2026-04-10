@@ -28,5 +28,17 @@
         fruits.push("banana", "apple", "peach");
         return fruits;
     }
+
+    class UnsupportedType {
+        constructor(name) {
+            this.name = name;
+            this.type = 'unsupported';
+        }
+    }
+
+    function getNotSupport() {
+        const notSupport = new UnsupportedType('test');
+        return notSupport;
+    }
 </script>
 </html>

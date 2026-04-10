@@ -51,7 +51,6 @@ import {
   TextClockController,
   TimePickerFormat,
   TimePicker,
-  Date,
   TextTimer,
   TextTimerConfiguration,
   TextTimerController,

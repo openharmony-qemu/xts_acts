@@ -95,7 +95,7 @@ class EntryAbility extends UIAbility {
           break;
       }
     }
-    await CommonEventManager.createSubscriber(subscribeInfo)
+    CommonEventManager.createSubscriber(subscribeInfo)
     .then((data: CommonEventManager.CommonEventSubscriber | null) => {
       subscriber = data as CommonEventManager.CommonEventSubscriber;
       CommonEventManager.subscribe(subscriber, SubscribeCallBack)

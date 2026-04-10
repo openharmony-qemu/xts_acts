@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,6 +50,7 @@ import testsuite from '../../src/test/List.test';
 import Utils from '../../src/test/Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   public str: string = '';
@@ -111,15 +112,23 @@ struct webViewControllerPart2 {
                 this.controller.clearHistory()
                 let accessStep = this.controller.accessStep(-1);
                 Utils.emitEvent(accessStep, 37000)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
             }
 
+            case 'emitonSwitchNextPage': {
+              console.log("next page error page");
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: "pages/resumeAndPauseAlltimersError" })
+            }
+
           }
         })
       }
+
 
       Web({ src:'resource://rawfile/index.html', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)

@@ -1891,5 +1891,215 @@ export default function RdbStoreBatchInsertWithReturning() {
       console.log(TAG + "************* batchInsertWithReturningSync038 end *************");
       done();
     })
+
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_batchInsertWithReturningAPITest_5000
+     * @tc.name batchInsertWithReturningSync039
+     * @tc.desc conflict: ON_CONFLICT_NONE, twice batchInsertWithReturningSync.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+     it('batchInsertWithReturningSync039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
+      console.log(TAG + "************* batchInsertWithReturningSync039 start *************");
+      const valueBucket2: relationalStore.ValuesBucket = {
+        "id": 1,
+        "name": "lisi",
+        "age": 20,
+        "salary": 40000.4,
+      };
+      const config2: relationalStore.ReturningConfig = {
+        columns: ['name', 'age', 'id'],
+      }
+      try {
+        let results2 = rdbStore?.batchInsertWithReturningSync("test", [valueBucket2], config2,
+          relationalStore.ConflictResolution.ON_CONFLICT_NONE);
+        expect(results2?.changed).assertEqual(1);
+        results2?.resultSet.goToNextRow();
+        expect(results2?.resultSet.getRow().id).assertEqual(1);
+        expect(results2?.resultSet.getRow().name).assertEqual("lisi");
+        expect(results2?.resultSet.getRow().age).assertEqual(20);
+      } catch (e) {
+        console.error(TAG + `batchInsertWithReturningSync039 failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      console.log(TAG + "************* batchInsertWithReturningSync039 end *************");
+      done();
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_batchInsertWithReturningAPITest_5100
+     * @tc.name batchInsertWithReturningSync040
+     * @tc.desc conflict: ON_CONFLICT_ABORT, twice batchInsertWithReturningSync.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('batchInsertWithReturningSync040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
+      console.log(TAG + "************* batchInsertWithReturningSync040 start *************");
+      const valueBucket2: relationalStore.ValuesBucket = {
+        "id": 1,
+        "name": "lisi",
+        "age": 20,
+        "salary": 40000.4,
+      };
+      const config2: relationalStore.ReturningConfig = {
+        columns: ['name', 'age', 'id'],
+      }
+      try {
+        let results2 = rdbStore?.batchInsertWithReturningSync("test", [valueBucket2], config2,
+          relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        expect(results2?.changed).assertEqual(1);
+        results2?.resultSet.goToNextRow();
+        expect(results2?.resultSet.getRow().id).assertEqual(1);
+        expect(results2?.resultSet.getRow().name).assertEqual("lisi");
+        expect(results2?.resultSet.getRow().age).assertEqual(20);
+      } catch (e) {
+        console.error(TAG + `batchInsertWithReturningSync040 failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      console.log(TAG + "************* batchInsertWithReturningSync040 end *************");
+      done();
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_batchInsertWithReturningAPITest_5600
+     * @tc.name batchInsertWithReturning041
+     * @tc.desc conflict: ON_CONFLICT_FAIL, twice batchInsertWithReturning.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('batchInsertWithReturning041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
+      console.log(TAG + "************* batchInsertWithReturning041 start *************");
+      const valueBucket2: relationalStore.ValuesBucket = {
+        "id": 1,
+        "name": "lisi",
+        "age": 20,
+        "salary": 40000.4,
+      };
+      const config2: relationalStore.ReturningConfig = {
+        columns: ['name', 'age', 'id'],
+      }
+      try {
+        let results2 = await rdbStore?.batchInsertWithReturning("test", [valueBucket2], config2,
+          relationalStore.ConflictResolution.ON_CONFLICT_FAIL);
+        expect(results2?.changed).assertEqual(1);
+        results2?.resultSet.goToNextRow();
+        expect(results2?.resultSet.getRow().id).assertEqual(1);
+        expect(results2?.resultSet.getRow().name).assertEqual("lisi");
+        expect(results2?.resultSet.getRow().age).assertEqual(20);
+      } catch (e) {
+        console.error(TAG + `batchInsertWithReturning041 failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      console.log(TAG + "************* batchInsertWithReturning041 end *************");
+      done();
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_batchInsertWithReturningAPITest_5700
+     * @tc.name batchInsertWithReturning042
+     * @tc.desc conflict: ON_CONFLICT_IGNORE, twice batchInsertWithReturning.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('batchInsertWithReturning042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
+      console.log(TAG + "************* batchInsertWithReturning042 start *************");
+      const valueBucket2: relationalStore.ValuesBucket = {
+        "id": 1,
+        "name": "lisi",
+        "age": 20,
+        "salary": 40000.4,
+      };
+      const config2: relationalStore.ReturningConfig = {
+        columns: ['name', 'age', 'id'],
+      }
+      try {
+        let results2 = await rdbStore?.batchInsertWithReturning("test", [valueBucket2], config2,
+          relationalStore.ConflictResolution.ON_CONFLICT_IGNORE);
+        expect(results2?.changed).assertEqual(1);
+        results2?.resultSet.goToNextRow();
+        expect(results2?.resultSet.getRow().id).assertEqual(1);
+        expect(results2?.resultSet.getRow().name).assertEqual("lisi");
+        expect(results2?.resultSet.getRow().age).assertEqual(20);
+      } catch (e) {
+        console.error(TAG + `batchInsertWithReturning042 failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      console.log(TAG + "************* batchInsertWithReturning042 end *************");
+      done();
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_batchInsertWithReturningAPITest_5800
+     * @tc.name batchInsertWithReturning043
+     * @tc.desc conflict: ON_CONFLICT_ABORT, twice batchInsertWithReturning.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('batchInsertWithReturning043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
+      console.log(TAG + "************* batchInsertWithReturning043 start *************");
+      const valueBucket2: relationalStore.ValuesBucket = {
+        "id": 1,
+        "name": "lisi",
+        "age": 20,
+        "salary": 40000.4,
+      };
+      const config2: relationalStore.ReturningConfig = {
+        columns: ['name', 'age', 'id'],
+      }
+      try {
+        let results2 = await rdbStore?.batchInsertWithReturning("test", [valueBucket2], config2,
+          relationalStore.ConflictResolution.ON_CONFLICT_ABORT);
+        expect(results2?.changed).assertEqual(1);
+        results2?.resultSet.goToNextRow();
+        expect(results2?.resultSet.getRow().id).assertEqual(1);
+        expect(results2?.resultSet.getRow().name).assertEqual("lisi");
+        expect(results2?.resultSet.getRow().age).assertEqual(20);
+      } catch (e) {
+        console.error(TAG + `batchInsertWithReturning043 failed. code is ${e.code}, message is ${e.message}`);
+        expect(true).assertFail();
+      }
+      console.log(TAG + "************* batchInsertWithReturning043 end *************");
+      done();
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_batchInsertWithReturningAPITest_5900
+     * @tc.name batchInsertWithReturning044
+     * @tc.desc batchInsertWithReturningSync columns is ""
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('batchInsertWithReturning044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* batchInsertWithReturning044 start *************");
+      const valueBucket: relationalStore.ValuesBucket = {
+        'name': 'zhangsan',
+      };
+      const config: relationalStore.ReturningConfig = {
+        columns: [""],
+      }
+      try {
+        let results = rdbStore?.batchInsertWithReturningSync("test", [valueBucket], config);
+        expect().assertFail();
+      } catch (e) {
+        console.error(TAG + `batchInsertWithReturning044 failed. code is ${e.code}, message is ${e.message}`);
+        expect(e.code).assertEqual(14800021);
+      }
+
+      try {
+        let results = rdbStore?.batchInsertWithReturning("test", [valueBucket], config);
+         expect(typeof(results) === "object").assertTrue();
+      } catch (e) {
+        console.error(TAG + `batchInsertWithReturning044 failed. code is ${e.code}, message is ${e.message}`);
+        expect().assertFail();
+      }
+      console.log(TAG + "************* batchInsertWithReturning044 end *************");
+    })
+
   })
 }

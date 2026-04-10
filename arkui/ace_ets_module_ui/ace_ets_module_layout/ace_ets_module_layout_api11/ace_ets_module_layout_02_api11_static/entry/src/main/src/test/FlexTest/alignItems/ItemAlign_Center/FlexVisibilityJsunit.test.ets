@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexVisibility_CenterJsunit() {
   describe('flexItemAlignCenterTest8', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexItemAlignCenterTest8 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });
@@ -81,7 +81,7 @@ export default function flexVisibility_CenterJsunit() {
 it('testFlexItemAlignCenterSubSetVisibilityNone_static', Level.LEVEL0, async () : Promise<void>=> {
       console.info('new testFlexItemAlignCenterSubSetVisibilityNone START');
       try {
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
             name: 'visibility', value: Visibility.None
@@ -108,7 +108,7 @@ it('testFlexItemAlignCenterSubSetVisibilityNone_static', Level.LEVEL0, async () 
           .assertTrue()
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Center')
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexItemAlignBaselineSubSetVisibilityNone_static] failed');
         expect().assertFail();
       }
@@ -127,7 +127,7 @@ it('testFlexItemAlignCenterSubSetVisibilityNone_static', Level.LEVEL0, async () 
 it('testFlexItemAlignCenterSubSetVisibilityHidden_static', Level.LEVEL0, async () : Promise<void>=> {
       console.info('new testFlexItemAlignCenterSubSetVisibilityHidden START');
       try {
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
             name: 'visibility', value: Visibility.Hidden
@@ -157,7 +157,7 @@ it('testFlexItemAlignCenterSubSetVisibilityHidden_static', Level.LEVEL0, async (
           .assertTrue()
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Center')
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexItemAlignBaselineSubSetVisibilityHidden_static] failed');
         expect().assertFail();
       }

@@ -43,7 +43,7 @@ export default function webController() {
       } catch (err) {
         console.error('push webController page error: ' + err);
       }
-      await driver.waitForComponent(ON.id("WebControllerButton"), 10000);
+      await Utils.waitForComponent(driver, 'WebControllerButton');
       done()
     });
 

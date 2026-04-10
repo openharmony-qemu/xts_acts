@@ -184,6 +184,7 @@ public:
     Camera_ErrorCode GetSupportedOutputCapability(void);
     Camera_ErrorCode GetSupportedFullOutputCapability(void);
     Camera_ErrorCode CreatePreviewOutput(void);
+    Camera_ErrorCode CreateDeferredPreviewOutput(void);
     Camera_ErrorCode CreatePhotoOutput(char* photoSurfaceId);
     Camera_ErrorCode CreateHeifPhotoOutput(char* photoSurfaceId, int idx);
     int AdjustHeifIdx(int idx);
@@ -218,6 +219,7 @@ public:
     Camera_ErrorCode MetadataOutputStop(void);
     Camera_ErrorCode MetadataOutputRelease(void);
     Camera_ErrorCode MetadataOutputRemoveMetadataObjectTypes();
+    bool IsMetadataObjectTypeValid();
  	Camera_ErrorCode MetadataOutputAddMetadataObjectTypes();
 
     Camera_ErrorCode SessionAddInput(void);
@@ -357,6 +359,7 @@ public:
     Camera_ErrorCode EnableMovingPhoto(int useCaseCode, bool enable);
     Camera_ErrorCode IsPhotoQualityPrioritizationSupported(int useCaseCode, int quality);
     Camera_ErrorCode SetPhotoQualityPrioritization(int useCaseCode, int quality);
+    Camera_ErrorCode AddDeferredSurface(int useCaseCode, char* surfaceId);
     Camera_ErrorCode GetMainImage(int useCaseCode);
     Camera_ErrorCode GetUncompressedImage(int useCaseCode);
     Camera_ErrorCode PhotoNativeRelease(int useCaseCode);
@@ -367,6 +370,8 @@ public:
     Camera_ErrorCode IsTorchSupported(int useCaseCode);
     Camera_ErrorCode IsTorchSupportedByTorchMode(int useCaseCode);
     Camera_ErrorCode SetTorchMode(int useCaseCode);
+    bool IsTorchLevelControlSupported();
+    Camera_ErrorCode SetTorchModeOnWithLevel(double level);
     Camera_ErrorCode GetExposureValue(int useCaseCode);
     Camera_ErrorCode GetFocalLength(int useCaseCode);
     Camera_ErrorCode SetSmoothZoom(int useCaseCode);
@@ -414,6 +419,14 @@ public:
     Camera_ErrorCode MacroStatusChangeTest(void);
     Camera_ErrorCode IsoInfoChangeTest(void);
     Camera_ErrorCode CameraOcclusionDetectChangeTest(void);
+    Camera_ErrorCode TestRegisterFlashStateChangeCallback(int useCaseCode);
+    Camera_ErrorCode TestUnregisterFlashStateChangeCallback(int useCaseCode);
+    Camera_ErrorCode IsExposureMeteringModeSupported(int useCaseCode);
+    Camera_ErrorCode GetExposureMeteringMode(int useCaseCode);
+    Camera_ErrorCode SetExposureMeteringMode(int useCaseCode);
+    Camera_ErrorCode GetSupportedISORange(int useCaseCode);
+    Camera_ErrorCode getIso(int useCaseCode);
+    Camera_ErrorCode setIso(int useCaseCode);
     // test aid
     Camera_ErrorCode SetSceneMode(int useCaseCode);
     Camera_ErrorCode GetCameraFromCameras(Camera_Device* cameras, Camera_Device** camera,

@@ -15,9 +15,11 @@
 
 import AxisEvent from './AxisEvent/AxisEvent.test';
 import getPinchAxisScaleValue from './AxisEvent/getPinchAxisScaleValue.test';
-import HasAxisTest from './HasAxisTest/HasAxisTest.test'
+import HasAxisTest from './HasAxisTest/HasAxisTest.test';
+import AxisEventHasAxisTest from './AxisEvent/hasAxisNullAndUndefinedTest.test';
 
 export default function testsuite() {
+  AxisEventHasAxisTest();
   AxisEvent();
   getPinchAxisScaleValue();
   HasAxisTest();

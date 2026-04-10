@@ -20,6 +20,8 @@ import { Driver, ON } from '@kit.TestKit';
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import wifiMg from '@ohos.wifiManager';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -50,6 +52,30 @@ export default function webErrorPageTest() {
     });
 
     beforeEach(async (done: Function) => {
+      try {
+        console.info('======> wifi_test/isWifiActive :' + wifiMg.isWifiActive());
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info('======> Internet WifiLinkedInfo : ' + JSON.stringify(data));
+        console.info('======> Internet speed : ' + JSON.stringify(data.linkSpeed));
+        console.info('======> Internet chload : ' + JSON.stringify(data.chload));
+        console.info('======> Internet rssi : ' + JSON.stringify(data.rssi));
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info('======> WLAN connection established ');
+        } else {
+          expect().message('======> WLAN Network error').assertFail();
+          done()
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message('======> WLAN Network error').assertFail();
+          done();
+        } else if (data.chload >= 500) {
+          console.info('======> The internet connection is poor. ');
+        }
+      } catch (err) {
+        console.info('======> getLinkedInfo promise failed, err : ' + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
@@ -164,10 +190,51 @@ export default function webErrorPageTest() {
      */
     it('testOnOverrideErrorPage01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnOverrideErrorPage01', 19);
-      Utils.registerBaseEvent('testOnOverrideErrorPage01', -106, 2025081407, done, (backData: events_emitter.EventData, expected: Object) => {
+      let isReturn = 0;
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', 'ERR_INTERNET_DISCONNECTED', 26031034, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', 'https://www.baiiiiiiiiidu.com/', 26031035, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', true, 26031036, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', true, 26031037, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', false, 26031038, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', false, 26031039, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', 'GET', 26031040, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', -106, 2025081407, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebErrorPageButton', 10, '');
+      if (await Utils.waitForExist(() => isReturn, 'testOnOverrideErrorPage01' + '_returnCheck', 8, 1000)) {
+        done();
+      }
     })
     /**
      * @tc.name   testOnOverrideErrorPage02

@@ -57,7 +57,8 @@ export default function layoutConstraintsJsunit() {
           console.info("get layoutConstraints state pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push layoutConstraints page error:" + err);
       }
     });
@@ -109,7 +110,8 @@ it('testLayoutConstraints002_static', Level.LEVEL0, async (done: () => void): Pr
         }
         console.info("[testLayoutConstraints002] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testLayoutConstraints002] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -162,7 +164,8 @@ it('testLayoutConstraints004_static', Level.LEVEL0, async (done: () => void): Pr
         }
         console.info("[testLayoutConstraints004] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testLayoutConstraints004] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -195,7 +198,8 @@ it('testLayoutConstraints005_static', Level.LEVEL0, async (done: () => void): Pr
         }
         console.info("[testLayoutConstraints005] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testLayoutConstraints005] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -229,7 +233,8 @@ it('testLayoutConstraints006_static', Level.LEVEL0, async (done: () => void): Pr
         }
         console.info("[testLayoutConstraints006] start to publish emit");
         emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testLayoutConstraints006] change component data error: " + err.message);
       }
       await Utils.sleep(4000);

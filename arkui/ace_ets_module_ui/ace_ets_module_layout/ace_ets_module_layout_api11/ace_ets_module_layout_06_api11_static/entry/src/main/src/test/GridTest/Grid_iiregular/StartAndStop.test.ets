@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function StartAndStop() {
   describe('StartAndStop', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -90,7 +90,7 @@ it('StartAndStop_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('[StartAndStop_0300] START');
       let gridRect: RectValue = CommonFunc.getComponentRect('StartandStop')
       let driver = Driver.create()
-      driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)).toInt(),
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),

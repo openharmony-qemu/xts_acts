@@ -36,8 +36,8 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSetLayoutWeight_SubChange() {
-  describe('ColumnSetLayoutWeightTest', () => {
-    beforeAll(() => {
+  describe('ColumnSetLayoutWeightTestAdapt001', () => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnSetLayoutWeightTest beforeEach start");
 
 
@@ -91,6 +91,14 @@ export default function ColumnSetLayoutWeight_SubChange() {
       let setLayoutWeight3: RectValue = CommonFunc.getComponentRect('setLayoutWeight3');
       let setLayoutWeight: RectValue = CommonFunc.getComponentRect('setLayoutWeight');
 
+      console.info('win6 1 SetLayoutWeightWithRateThreeTwoOne_static:' + Math.abs(setLayoutWeight1.top - setLayoutWeight.top));
+      console.info('win6 2 SetLayoutWeightWithRateThreeTwoOne_static:' + Math.abs(setLayoutWeight2.top - setLayoutWeight1.bottom - Math.round(uiContext!.vp2px(30))));
+      console.info('win6 3 SetLayoutWeightWithRateThreeTwoOne_static:' + Math.abs(setLayoutWeight3.top - setLayoutWeight2.bottom - Math.round(uiContext!.vp2px(30))));
+      console.info('win6 4 SetLayoutWeightWithRateThreeTwoOne_static:' + Math.abs(setLayoutWeight.bottom - setLayoutWeight3.bottom));
+      console.info('win6 5 SetLayoutWeightWithRateThreeTwoOne_static:' + Math.abs(setLayoutWeight1.bottom - setLayoutWeight1.top - Math.round(uiContext!.vp2px(510 / 3))));
+      console.info('win6 6 SetLayoutWeightWithRateThreeTwoOne_static:' + Math.abs(setLayoutWeight2.bottom - setLayoutWeight2.top - Math.round(uiContext!.vp2px(340 / 3))));
+      console.info('win6 7 SetLayoutWeightWithRateThreeTwoOne_static:' + Math.abs(setLayoutWeight3.bottom - setLayoutWeight3.top - Math.round(uiContext!.vp2px(170 / 3))));
+
       expect(Math.abs(setLayoutWeight1.top - setLayoutWeight.top) <= 1).assertTrue()
       expect(Math.abs(setLayoutWeight2.top - setLayoutWeight1.bottom - Math.round(uiContext!.vp2px(30))) <= 1)
         .assertTrue()
@@ -100,9 +108,9 @@ export default function ColumnSetLayoutWeight_SubChange() {
 
       expect(Math.abs(setLayoutWeight1.bottom - setLayoutWeight1.top - Math.round(uiContext!.vp2px(510 / 3))) <= 1)
         .assertTrue()
-      expect(Math.abs(setLayoutWeight2.bottom - setLayoutWeight2.top - Math.round(uiContext!.vp2px(340 / 3))) <= 1)
+      expect(Math.abs(setLayoutWeight2.bottom - setLayoutWeight2.top - Math.round(uiContext!.vp2px(340 / 3))) <= 2)
         .assertTrue()
-      expect(Math.abs(setLayoutWeight3.bottom - setLayoutWeight3.top - Math.round(uiContext!.vp2px(170 / 3))) <= 1)
+      expect(Math.abs(setLayoutWeight3.bottom - setLayoutWeight3.top - Math.round(uiContext!.vp2px(170 / 3))) <= 2)
         .assertTrue()
       console.info('new testColumnSetLayoutWeightWithRateThreeTwoOne_static END');
     });

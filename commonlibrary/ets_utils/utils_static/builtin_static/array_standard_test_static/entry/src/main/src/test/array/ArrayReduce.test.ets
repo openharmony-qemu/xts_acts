@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -661,27 +661,6 @@ export default function ArrayReduceTest() {
     });
 
     /**
-     * @tc.name   ArrayReduceTest035
-     * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_3500
-     * @tc.desc   Reduce to create a function pipeline
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    // todo
-    // it('ArrayReduceTest035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const add2 = (x: number) => x + 2;
-    //   const multiply3 = (x: number) => x * 3;
-    //   const square = (x: number) => x * x;
-    //   const pipeline: Array<(p1: number) => number> = [add2, multiply3, square];
-    //
-    //   const composed = pipeline.reduce((acc, fn: ((p1: number) => number)) => (x: number): number => fn(acc(x)), x => x);
-    //   const result = composed(1);
-    //
-    //   expect(result).assertEqual(81);
-    // });
-
-    /**
      * @tc.name   ArrayReduceTest040
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_4000
      * @tc.desc   Reduce with array that has modified length during iteration
@@ -701,30 +680,6 @@ export default function ArrayReduceTest() {
 
       expect(result).assertEqual(3);
     });
-
-    /**
-     * @tc.name   ArrayReduceTest042
-     * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_4200
-     * @tc.desc   Reduce to flatten nested arrays
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    // todo
-    // it('ArrayReduceTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr: Array<int | Array<int> | Array<int | Array<int>>> = [1, [2, 3], [4, [5, 6]]];
-    //   const flatten = (acc: number[], curr: (number | numOrArr042)): number[] =>{
-    //     if (Array.isArray(curr)) {
-    //       return acc.concat(...curr.map(item =>
-    //       Array.isArray(item) ? flatten([], item) : item
-    //       ));
-    //     }
-    //     return acc.concat(curr);
-    //   };
-    //
-    //   const result = arr.reduce<number[]>(flatten, []);
-    //   expect(result).assertDeepEquals([1, 2, 3, 4, 5, 6]);
-    // });
 
     /**
      * @tc.name   ArrayReduceTest043
@@ -861,23 +816,23 @@ export default function ArrayReduceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    // todo
-    // it('ArrayReduceTest056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr: Array<number | string> = [1, '2', 3, '4'];
-    //   const callback = (acc: number|string, curr: (number|string)): number|string => {
-    //     if (typeof acc === 'number' && typeof curr === 'string') {
-    //       return acc + Number(curr);
-    //     } else if (typeof acc === 'number' && typeof curr === 'number') {
-    //       return String(acc + curr);
-    //     } else if (typeof acc === 'string' && typeof curr === 'number') {
-    //       return Number(acc) + curr;
-    //     }
-    //     return (acc as string) + (curr as string);
-    //   };
-    //   const result = arr.reduce(callback);
-    //
-    //   expect(Number(result)).assertEqual(64);
-    // });
+    it('ArrayReduceTest056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const arr: Array<number | string> = [1, '2', 3, '4'];
+      const callback = (acc: number|string, curr: (number|string)): number|string => {
+        if (typeof acc === 'number' && typeof curr === 'string') {
+          return (acc as number) + Number(curr);
+        } else if (typeof acc === 'number' && typeof curr === 'number') {
+          return String((acc as number) + (curr as number));
+        } else if (typeof acc === 'string' && typeof curr === 'number') {
+          return Number(acc as string) + (curr as number);
+        }
+        return (acc as string) + (curr as string);
+      };
+      const result = arr.reduce(callback);
+
+      expect(Number(result)).assertEqual(64);
+    });
+
 
     /**
      * @tc.name   ArrayReduceTest057
@@ -903,19 +858,19 @@ export default function ArrayReduceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    // todo
-    // it('ArrayReduceTest059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr: Array<number> = [1, 2, 3];
-    //   const callback = (acc: number, curr: number, idx: int, array: (number | string)[]) => {
-    //     if (idx === 1) {
-    //       array[2] = '3';
-    //     }
-    //     return acc + Number(curr);
-    //   };
-    //   const result = arr.reduce(callback, 0);
-    //
-    //   expect(result).assertEqual(6);
-    // });
+    it('ArrayReduceTest059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
+      const arr: Array<number> = [1, 2, 3];
+      const callback = (acc: number, curr: number, idx: int, array: number[]) => {
+        if (idx === 1) {
+          array[2] = 3;
+        }
+        return acc + Number(curr);
+      };
+      const result = arr.reduce(callback, 0);
+
+      expect(result).assertEqual(6);
+    });
+
 
     /**
      * @tc.name   ArrayReduceTest061
@@ -1065,40 +1020,15 @@ export default function ArrayReduceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL4
      */
-    // todo
-    // it('ArrayReduceTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
-    //   const arr: (number | BaseI080)[] = [10, { value: 20 } as BaseI080, 30, { value: 40 } as BaseI080];
-    //   const callback = (acc: number, curr: (number|BaseI080)) => {
-    //     return acc + (typeof curr !== 'number' ? curr.value : curr);
-    //   };
-    //   const result = arr.reduce(callback, 0);
-    //
-    //   expect(result).assertEqual(100);
-    // });
+    it('ArrayReduceTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
+      const arr: (number | BaseI080)[] = [10, { value: 20 } as BaseI080, 30, { value: 40 } as BaseI080];
+      const callback = (acc: number, curr: (number|BaseI080)) => {
+        return acc + (typeof curr !== 'number' ? (curr as BaseI080).value : curr as number);
+      };
+      const result = arr.reduce(callback, 0);
 
-    /**
-     * @tc.name   ArrayReduceTest082
-     * @tc.number SUB_BUILTINS_ARRAY_REDUCE_TEST_8200
-     * @tc.desc   Reduce with callback that uses optional chaining
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL4
-     */
-    // todo
-    // it('ArrayReduceTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
-    //   const arr: (BaseI1082 | null)[] = [
-    //     { prop: { value: 10 } },
-    //     { prop: null },
-    //     { prop: { value: 30 } },
-    //     null
-    //   ];
-    //   const callback = (acc: number, curr: (BaseI1082 | null)) => {
-    //     return acc + (curr?.prop?.value || 0);
-    //   };
-    //   const result = arr.reduce(callback, 0);
-    //
-    //   expect(result).assertEqual(40);
-    // });
+      expect(result).assertEqual(100);
+    });
 
     /**
      * @tc.name   ArrayReduceTest084
@@ -1442,7 +1372,7 @@ export default function ArrayReduceTest() {
       const words = ['apple', 'Banana', 'cherry'];
       const arr: Array<Array<string>> = [];
       const result = collators.reduce((acc: string[][], collator) => {
-        acc.push([...words].sort(collator.compare));
+        acc.push([...words].sort((s1, s2) => collator.compare(s1, s2).toInt()));
         return acc;
       }, arr);
 

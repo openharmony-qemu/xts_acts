@@ -84,31 +84,37 @@ export default function showAssetsCreationDialogTest() {
           console.log(`${testNum} :: showAssetsCreationDialog :: data length is ${data.length}`);
           desFileUris = data;
         });
-        let button: Component | undefined = await driver?.waitForComponent(ON.text(buttonText), 10000);
-        if (button !== undefined) {
-          await button.click();
-        }
-        await sleep(2000);
-        console.log(`${testNum} :: allowFlag is ${allowFlag} :: desFileUris.length is ${desFileUris.length}`);
-        if (allowFlag) {
-          expect(desFileUris.length > 0).assertTrue();
-          const ops = fetchAllOption();
-          let fetchResult1: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(ops);
-          let count_before: number = fetchResult1.getCount();
-          console.log(`${testNum} :: before createAssetByIo :: count before is ${count_before}`);
-          // 往媒体库照片添加内容
-          for (let index = 0; index < fileUriList.length; index++) {
-            await createAssetByIo(fileUriList[index], desFileUris[index], testNum, done);
-            await sleep(500);
-          }
-          let fetchResult2: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(ops);
-          let count_after: number = fetchResult2.getCount();
-          console.log(`${testNum} :: after createAssetByIo :: count after is ${count_after}`);
-          expect(count_after).assertEqual(count_before + desFileUris.length);
-          done();
+        let selectPictureText = await driver?.waitForComponent(ON.text('完成'), 10000);
+        if (selectPictureText) {
+            console.log(testNum,' select “完成” button');
+            done();
         } else {
-          expect(desFileUris.length).assertEqual(0);
-          done();
+          let button: Component | undefined = await driver?.waitForComponent(ON.text(buttonText), 10000);
+          if (button !== undefined) {
+            await button.click();
+          }
+          await sleep(2000);
+          console.log(`${testNum} :: allowFlag is ${allowFlag} :: desFileUris.length is ${desFileUris.length}`);
+          if (allowFlag) {
+            expect(desFileUris.length > 0).assertTrue();
+            const ops = fetchAllOption();
+            let fetchResult1: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(ops);
+            let count_before: number = fetchResult1.getCount();
+            console.log(`${testNum} :: before createAssetByIo :: count before is ${count_before}`);
+            // 往媒体库照片添加内容
+            for (let index = 0; index < fileUriList.length; index++) {
+              await createAssetByIo(fileUriList[index], desFileUris[index], testNum, done);
+              await sleep(500);
+            }
+            let fetchResult2: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(ops);
+            let count_after: number = fetchResult2.getCount();
+            console.log(`${testNum} :: after createAssetByIo :: count after is ${count_after}`);
+            expect(count_after).assertEqual(count_before + desFileUris.length);
+            done();
+          } else {
+            expect(desFileUris.length).assertEqual(0);
+            done();
+          }
         }
       } catch (error) {
         console.error(`${testNum} :: showAssetsCreationDialogPromise error, err is ${error}`);

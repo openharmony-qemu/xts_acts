@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignEnd_AddOneWidth() {
   describe('AlignEnd_AddOneWidth', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignEnd_AddOneWidth beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

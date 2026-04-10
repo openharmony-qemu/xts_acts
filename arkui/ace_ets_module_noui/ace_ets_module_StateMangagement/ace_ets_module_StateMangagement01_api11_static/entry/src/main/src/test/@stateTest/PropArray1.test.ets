@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function PropArray1() {
   describe('PropArray1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LinkNumber beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");

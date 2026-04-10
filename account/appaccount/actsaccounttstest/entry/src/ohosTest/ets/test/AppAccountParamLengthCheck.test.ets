@@ -90,7 +90,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start createAccount");
       try {
         await accountManager.createAccount(name);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -142,7 +142,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start removeAccount");
       try {
         await accountManager.removeAccount(name);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -274,7 +274,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start checkDataSyncEnabled");
       try {
         await accountManager.checkDataSyncEnabled(name);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -302,7 +302,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start checkDataSyncEnabled");
       try {
         await accountManager.checkDataSyncEnabled(name);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -370,7 +370,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start setCredential");
       try {
         await accountManager.setCredential(name, "credentialType", "credential");
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -398,7 +398,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start setCredential");
       try {
         await accountManager.setCredential(name, "credentialType", "credential");
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -446,7 +446,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start setDataSyncEnabled");
       try {
         await accountManager.setDataSyncEnabled(name, true);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -474,7 +474,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start setDataSyncEnabled");
       try {
         await accountManager.setDataSyncEnabled(name, true);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -548,7 +548,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start setCustomData");
       try {
         await accountManager.setCustomData("name", "key", value);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -576,7 +576,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start setCustomData");
       try {
         await accountManager.setCustomData("name", "key", value);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -647,7 +647,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start getCustomData");
       try {
         await accountManager.getCustomData(name, "key");
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -675,7 +675,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start getCustomData");
       try {
         await accountManager.getCustomData(name, "key");
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -700,7 +700,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start getCustomDataSync");
       try {
         accountManager.getCustomDataSync("name", key);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -728,7 +728,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start getCustomDataSync");
       try {
         accountManager.getCustomDataSync("name", key);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -756,7 +756,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start getCustomDataSync");
       try {
         accountManager.getCustomDataSync("name", key);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -972,7 +972,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start getAuthToken");
       try {
         await accountManager.getAuthToken("name", "com.example.accounttstest", authType);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -1000,7 +1000,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start getAuthToken");
       try {
         await accountManager.getAuthToken("name", "com.example.accounttstest", authType);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -1094,7 +1094,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start setAuthToken");
       try {
         await accountManager.setAuthToken("name", "authType", token);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -1122,7 +1122,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start setAuthToken");
       try {
         await accountManager.setAuthToken("name", "authType", token);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -1193,7 +1193,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start deleteAuthToken");
       try {
         await accountManager.deleteAuthToken("name", "com.example.accounttstest","authType", token);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -1221,7 +1221,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start deleteAuthToken");
       try {
         await accountManager.deleteAuthToken("name", "com.example.accounttstest","authType", token);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -1249,7 +1249,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start deleteAuthToken");
       try {
         await accountManager.deleteAuthToken("name", "com.example.accounttstest","authType", token);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));
@@ -1374,7 +1374,7 @@ export default function AppAccountParamLengthCheck() {
       console.info(tag + "start getAuthList");
       try {
         await accountManager.getAuthList("name", authType);
-        console.info(tag + "run err");
+        console.info("====>run err");
         expect().assertFail();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));

@@ -53,7 +53,9 @@ let changedata: avSession.AVMetadata = {
   filter: 2,
   drmSchemes: ['123123','456456'],
   skipIntervals: 10,
-  displayTags: 1
+  displayTags: 1,
+  rewindSkipIntervals: 10,
+  fastForwardSkipIntervals: 10
 };
 
 let playbackstate: avSession.AVPlaybackState = {
@@ -3390,7 +3392,9 @@ export default function abilityTest() {
         filter: 3,
         drmSchemes: ['123123','4564561'],
         skipIntervals: 15,
-        displayTags: 1
+        displayTags: 1,
+        rewindSkipIntervals: 15,
+        fastForwardSkipIntervals: 15
       };
 
       await session.setAVMetadata(changedata1);
@@ -3416,7 +3420,7 @@ export default function abilityTest() {
       let filter = ['assetId','title','artist','author','avQueueName','avQueueId','avQueueImage',
         'album','writer','composer','duration','mediaImage','publishDate','subtitle',
         'description','lyric','singleLyricText','previousAssetId','nextAssetId',
-        'filter','drmSchemes','skipIntervals','displayTags']
+        'filter','drmSchemes','skipIntervals','displayTags', 'rewindSkipIntervals', 'fastForwardSkipIntervals']
       let flag = 0;
 
       await controller.on('metadataChange', filter, (metadata: avSession.AVMetadata) => {
@@ -3449,7 +3453,9 @@ export default function abilityTest() {
         filter: 3,
         drmSchemes: ['123123','4564561'],
         skipIntervals: 15,
-        displayTags: 1
+        displayTags: 1,
+        rewindSkipIntervals: 15,
+        fastForwardSkipIntervals: 15
       };
 
       await session.setAVMetadata(changedata1);
@@ -3476,7 +3482,7 @@ export default function abilityTest() {
       let filter = ['assetId','title','artist','author','avQueueName','avQueueId','avQueueImage',
         'album','writer','composer','duration','mediaImage','publishDate','subtitle',
         'description','lyric','singleLyricText','previousAssetId','nextAssetId',
-        'filter','drmSchemes','skipIntervals','displayTags']
+        'filter','drmSchemes','skipIntervals','displayTags', 'rewindSkipIntervals', 'fastForwardSkipIntervals']
       let flag = 0;
 
       await controller.on('metadataChange', filter, (metadata: avSession.AVMetadata) => {
@@ -3935,6 +3941,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG="[SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2100]";
       let metadata:avSession.AVMetadata = {
         assetId: '121278',
         singleLyricText:
@@ -3948,32 +3955,33 @@ export default function abilityTest() {
           '═ ║ ╒ ╓ ╔ ╕ ╖ ╗ ╘ ╙ ╚ ╛ ╜ ╝ ╞ ╟ ╠ ╡ ╢ ╣ ╤ ╥ ╦ ╧ ╨ ╩ ╪ ╫ ╬\n'
       };
       try {
-        await session.setAVMetadata(metadata, (err:BusinessError) => {
+        session.setAVMetadata(metadata, (err:BusinessError) => {
           if (err) {
-            console.info(`TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
+            console.info(`${TAG}TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
-          } else {
-            controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
-              if (err) {
-                console.info(`TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
-              } else if (data) {
-                console.info('TestLog: Get singleLyricText Successfully');
-                expect(data.assetId).assertEqual(metadata.assetId);
-                expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
-              } else {
-                console.info(`TestLog: Get singleLyricText failed:${data}`);
-                expect(false).assertTrue();
-              }
-              done();
-            })
           }
         })
+        await sleep(200);
+        controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
+          if (err) {
+            console.info(`${TAG}TestLog: getAVMetadata singleLyricText error: code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+          }
+          if (data) {
+            console.info(`${TAG}TestLog: getAVMetadata singleLyricText Successfully`);
+            expect(data.assetId).assertEqual(metadata.assetId);
+            expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
+          } else {
+            console.info(`${TAG}TestLog: getAVMetadata singleLyricText failed:${data}`);
+            expect(false).assertTrue();
+          }
+        })
+        await sleep(200);
       } catch (err) {
-        console.info(`TestLog: set & get singleLyricText error: code: ${err.code}, message: ${err.message}`);
-        expect().assertFail();
-        done();
+        console.info(`${TAG}TestLog: set & get avmetadata singleLyricText error: code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
       }
+      done();
     })
 
 
@@ -3987,6 +3995,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG="[SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2200]";
       let metadata:avSession.AVMetadata = {
         assetId: '121278',
         singleLyricText:
@@ -4005,22 +4014,24 @@ export default function abilityTest() {
       try {
         session.setAVMetadata(metadata, (err:BusinessError) => {
           if (err) {
-            console.info(`TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
+            console.info(`${TAG}TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
           }
-          controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
-            if (err) {
-              console.info(`TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
-              expect(false).assertTrue();
-            } else {
-              console.info(`TestLog: Get singleLyricText data ${data.singleLyricText}`);
-              expect(data.assetId).assertEqual(metadata.assetId);
-              expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
-            }
-          })
         })
+        await sleep(200);
+        controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
+          if (err) {
+            console.info(`${TAG}TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+          } else {
+            console.info(`${TAG}TestLog: Get singleLyricText data ${data.singleLyricText}`);
+            expect(data.assetId).assertEqual(metadata.assetId);
+            expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
+          }
+        })
+        await sleep(200);
       } catch (err) {
-        console.info(`TestLog: set & get singleLyricText error: code: ${err.code}, message: ${err.message}`);
+        console.info(`${TAG}TestLog: set & get singleLyricText error: code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
       }
       done();
@@ -4036,37 +4047,38 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG="[SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2300]";
       let metadata:avSession.AVMetadata = {
         assetId: '121278',
         singleLyricText:''
       };
       try {
-        await session.setAVMetadata(metadata, (err:BusinessError) => {
+        session.setAVMetadata(metadata, (err:BusinessError) => {
           if (err) {
-            console.info(`TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
+            console.info(`${TAG}TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
-          } else {
-            controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
-              if (err) {
-                console.info(`TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
-              } else if (data) {
-                console.info('TestLog: Get singleLyricText Successfully');
-                expect(data.assetId).assertEqual(metadata.assetId);
-                expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
-              } else {
-                console.info(`TestLog: Get singleLyricText failed:${data}`);
-                expect(false).assertTrue();
-              }
-              done();
-            })
           }
         })
+        await sleep(200);
+        controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
+          if (err) {
+            console.info(`${TAG}TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+          } else if (data) {
+            console.info(`${TAG}TestLog: Get singleLyricText Successfully`);
+            expect(data.assetId).assertEqual(metadata.assetId);
+            expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
+          } else {
+            console.info(`${TAG}TestLog: Get singleLyricText failed:${data}`);
+            expect(false).assertTrue();
+          }
+        })
+        await sleep(200);
       } catch (err) {
-        console.info(`TestLog: set & get singleLyricText error: code: ${err.code}, message: ${err.message}`);
-        expect().assertFail();
-        done();
+        console.info(`${TAG}TestLog: set & get singleLyricText error: code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
       }
+      done();
     })
 
 
@@ -4080,38 +4092,39 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG="[SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2400]";
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
         assetId: '121278',
         singleLyricText:str.substring(0,40959)
       };
       try {
-        await session.setAVMetadata(metadata, (err:BusinessError) => {
+        session.setAVMetadata(metadata, (err:BusinessError) => {
           if (err) {
-            console.info(`TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
+            console.info(`${TAG}TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
-          } else {
-            controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
-              if (err) {
-                console.info(`TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
-              } else if (data) {
-                console.info('TestLog: Get singleLyricText Successfully');
-                expect(data.assetId).assertEqual(metadata.assetId);
-                expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
-              } else {
-                console.info(`TestLog: Get singleLyricText failed:${data}`);
-                expect(false).assertTrue();
-              }
-              done();
-            })
           }
         })
+        await sleep(200);
+        controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
+          if (err) {
+            console.info(`${TAG}TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+          } else if (data) {
+            console.info(`${TAG}TestLog: Get singleLyricText Successfully`);
+            expect(data.assetId).assertEqual(metadata.assetId);
+            expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
+          } else {
+            console.info(`${TAG}TestLog: Get singleLyricText failed:${data}`);
+            expect(false).assertTrue();
+          }
+        })
+        await sleep(200);
       } catch (err) {
-        console.info(`TestLog: set & get singleLyricText error: code: ${err.code}, message: ${err.message}`);
-        expect().assertFail();
-        done();
+        console.info(`${TAG}TestLog: set & get singleLyricText error: code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
       }
+      done();
     })
 
 
@@ -4125,39 +4138,28 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG="[SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2500]";
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
         assetId: '121278',
         singleLyricText:str.substring(0,40960)
       };
       try {
-        await session.setAVMetadata(metadata, (err:BusinessError) => {
+        session.setAVMetadata(metadata, (err:BusinessError) => {
           if (err) {
-            console.info(`TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
+            console.info(`${TAG}TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
             expect(err.code).assertEqual(401);
-            done();
-          } else {
-            controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
-              if (err) {
-                console.info(`TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
-              } else if (data) {
-                console.info('TestLog: Get singleLyricText Successfully');
-                expect(data.assetId).assertEqual(metadata.assetId);
-                expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
-              } else {
-                console.info(`TestLog: Get singleLyricText failed:${data}`);
-                expect(false).assertTrue();
-              }
-              done();
-            })
+          } else{
+            console.info(`${TAG}TestLog: check input parm metadata failed.`);
+            expect(false).assertTrue();
           }
         })
+        await sleep(200);
       } catch (err) {
-        console.info(`TestLog: set & get singleLyricText error: code: ${err.code}, message: ${err.message}`);
+        console.info(`${TAG}TestLog: set & get singleLyricText error: code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
-        done();
       }
+      done();
     })
 
 
@@ -4170,38 +4172,38 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG="[SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_2600]";
       let metadata:avSession.AVMetadata = {
         assetId: '121278',
         filter : avSession.ProtocolType.TYPE_CAST_PLUS_AUDIO
       };
       try {
-        await session.setAVMetadata(metadata, (err:BusinessError) => {
+        session.setAVMetadata(metadata, (err:BusinessError) => {
           if (err) {
-            console.info(`TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
-            expect(err.code).assertEqual(401);
-            done();
-          } else {
-            controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
-              if (err) {
-                console.info(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
-              } else if (data) {
-                console.info('TestLog: Get filter Successfully');
-                expect(data.assetId).assertEqual(metadata.assetId);
-                expect(data.filter).assertEqual(metadata.filter);
-              } else {
-                console.info(`TestLog: Get singleLyricText failed:${data}`);
-                expect(false).assertTrue();
-              }
-              done();
-            })
+            console.info(`${TAG}TestLog: Set metadata filter = TYPE_CAST_PLUS_AUDIO error: code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
           }
         })
+        await sleep(200);
+        controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
+          if (err) {
+            console.info(`${TAG}TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+          } else if (data) {
+            console.info(`${TAG}TestLog: Get filter Successfully`);
+            expect(data.assetId).assertEqual(metadata.assetId);
+            expect(data.filter).assertEqual(metadata.filter);
+          } else {
+            console.info(`${TAG}TestLog: Get avmetadata with filter failed:${data}`);
+            expect(false).assertTrue();
+          }
+        })
+        await sleep(200);
       } catch (err) {
-        console.info(`TestLog: set & get filter error: code: ${err.code}, message: ${err.message}`);
+        console.info(`${TAG}TestLog: set & get filter error: code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
-        done();
       }
+      done();
     })
 
 
@@ -4214,14 +4216,15 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_PROMISE_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG="[SUB_MULTIMEDIA_AVSESSION_SETMETADATA_PROMISE_3000]";
       let metadata:avSession.AVMetadata = {
         assetId: '121278',
         filter : avSession.ProtocolType.TYPE_CAST_PLUS_AUDIO
       };
       await session.setAVMetadata(metadata).then(() => {
-        console.info('TestLog: Set filter successfully');
+        console.info(`${TAG}TestLog: Set filter successfully`);
       }).catch((err:BusinessError) => {
-        console.error(`TestLog: Set filter error: code: ${err.code}, message: ${err.message}`);
+        console.error(`${TAG}TestLog: Set filter error: code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(401);
         done();
       });
@@ -4229,7 +4232,7 @@ export default function abilityTest() {
       await controller.getAVMetadata().then((data:avSession.AVMetadata) => {
         expect(data.filter).assertEqual(metadata.filter);
       }).catch((err:BusinessError) => {
-        console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
+        console.error(`${TAG}TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
       });
       done();

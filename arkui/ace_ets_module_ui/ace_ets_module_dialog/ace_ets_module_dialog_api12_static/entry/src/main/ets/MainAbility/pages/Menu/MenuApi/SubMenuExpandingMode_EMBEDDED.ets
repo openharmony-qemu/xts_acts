@@ -31,7 +31,7 @@ import {
   FontWeight,
   Axis,AlertDialogParamWithButtons,DialogAlignment,MenuItemOptions,MenuItemGroupOptions,SubMenuExpandingMode,
   Margin,TransitionEffect,FlexAlign,TransitionEdge,ResourceStr,$r,Menu,MenuItem,MenuItemGroup,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
+  PickerTextStyle, CalendarAlign, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
 } from '@ohos.arkui.component';
 import {

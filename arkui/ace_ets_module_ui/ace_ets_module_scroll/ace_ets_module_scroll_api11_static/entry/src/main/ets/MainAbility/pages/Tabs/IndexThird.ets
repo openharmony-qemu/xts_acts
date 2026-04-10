@@ -132,8 +132,12 @@ struct TabsExampleThird {
       }
 
       if (data.has('barGridAlignSmNumber')) {
-        if (data['barGridAlignSmNumber']) {
-          this.barGridAlignSmNumber = data['barGridAlignSmNumber'] as number;
+        if (data['barGridAlignSmNumber'] ) {
+          if(data['barGridAlignSmNumber'] == 'undefined' || data['barGridAlignSmNumber'] == 'null'){
+            this.barGridAlignSmNumber = undefined;
+          }else{
+            this.barGridAlignSmNumber = data['barGridAlignSmNumber'] as number;
+          }
         } else {
           this.barGridAlignSmNumber = undefined;
         }
@@ -342,7 +346,7 @@ struct TabsExampleThird {
       }
 
       if (data.has('bottomTabBarStyleVerticalAlign')) {
-        if (data['bottomTabBarStyleVerticalAlign']) {
+        if (data['bottomTabBarStyleVerticalAlign'] || data['bottomTabBarStyleVerticalAlign'] == 0) {
           this.bottomTabBarStyleVerticalAlign = data['bottomTabBarStyleVerticalAlign'] as VerticalAlign;
         } else {
           this.bottomTabBarStyleVerticalAlign = VerticalAlign.Center
@@ -350,7 +354,7 @@ struct TabsExampleThird {
       }
 
       if (data.has('bottomTabBarStyleLayoutMode') ) {
-        if (data['bottomTabBarStyleLayoutMode']) {
+        if (data['bottomTabBarStyleLayoutMode'] || data['bottomTabBarStyleLayoutMode'] == 0) {
           this.bottomTabBarStyleLayoutMode = data['bottomTabBarStyleLayoutMode'] as LayoutMode;
         } else {
           this.bottomTabBarStyleLayoutMode = LayoutMode.VERTICAL
@@ -364,7 +368,7 @@ struct TabsExampleThird {
       }
 
       if (data.has('bottomTabBarStyleLabelStyleOverflow') ) {
-        if (data['bottomTabBarStyleLabelStyleOverflow']) {
+        if (data['bottomTabBarStyleLabelStyleOverflow']  || data['bottomTabBarStyleLabelStyleOverflow'] == 0) {
           this.bottomTabBarStyleLabelStyleOverflow = data['bottomTabBarStyleLabelStyleOverflow'] as TextOverflow;
         } else {
           this.bottomTabBarStyleLabelStyleOverflow = undefined

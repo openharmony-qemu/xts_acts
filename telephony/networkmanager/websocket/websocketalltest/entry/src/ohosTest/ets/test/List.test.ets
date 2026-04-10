@@ -19,11 +19,20 @@ import WebSocketApiTest from './WebSocketApi.test';
 import WebSocketCreateTest from './WebSocketCreate.test';
 import WebSocketTest from './Websocket.test';
 import WebSocketServerTest from './WebsocketServer.test';
-
-
+import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
+import connection from '@ohos.net.connection';
+import WebSocketMinSupportTlsProtocolTest from './WebSocketMinSupportTlsProtocol.test';
+ 	 
+let netHandle = connection.getDefaultNetSync();
+ 	 
 export default function testsuite() {
-  WebSocketApiTest();
-  WebSocketCreateTest();
-  WebSocketTest();
-  WebSocketServerTest()
+  if(netHandle.netId != 0){
+    WebSocketApiTest();
+    WebSocketCreateTest();
+    WebSocketTest();
+    WebSocketServerTest();
+    WebSocketMinSupportTlsProtocolTest();
+  } else {
+    EmptyTestCheckNetwork();
+  }
 }

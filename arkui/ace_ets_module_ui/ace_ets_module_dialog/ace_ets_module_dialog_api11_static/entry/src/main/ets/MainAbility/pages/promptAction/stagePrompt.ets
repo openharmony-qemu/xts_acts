@@ -78,7 +78,7 @@ struct stagePrompt {
               }
               console.info("showDialog start to emit action state")
               emitter.emit(backEvent, backData)
-            } catch (error: Error) {
+            } catch (error) {
               console.error("showToast emit action state err:" + JSON.stringify(error.message));
             }
             ;
@@ -138,7 +138,7 @@ struct stagePrompt {
               }
               console.info("showActionMenu start to emit action state")
               emitter.emit(backEvent1, backData1)
-            } catch (error: Error) {
+            } catch (error) {
               console.error("showDialog emit action state err:" + JSON.stringify(error.message));
             }
             ;
@@ -196,7 +196,7 @@ struct stagePrompt {
               }
               console.info("showActionMenu start to emit action state")
               emitter.emit(backEvent2, backData2)
-            } catch (error: Error) {
+            } catch (error) {
               console.error(`showActionMenu args error code is ${error.code}, message is ${error.message}`);
             }
             ;
@@ -248,7 +248,7 @@ struct stagePrompt {
               }
               console.info("showActionMenu start to emit action state")
               emitter.emit(backEvent3, backData3)
-            } catch (error: Error) {
+            } catch (error) {
               console.error("showDialog emit action state err:" + JSON.stringify(error.message));
             }
             ;
@@ -299,7 +299,7 @@ struct stagePrompt {
               }
               console.info("showActionMenu start to emit action state")
               emitter.emit(backEvent4, backData4)
-            } catch (error: Error) {
+            } catch (error) {
               console.error(`showActionMenu args error code is ${error.code}, message is ${error.message}`);
             }
             ;

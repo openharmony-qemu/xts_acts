@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 #include <fstream>
-
+#include <dlfcn.h>
 #include "OhosCommonTest.h"
 #include "nncore_utils.h"
 
@@ -231,6 +231,17 @@ void FreeTensorDescVec(std::vector<NN_TensorDesc*> tensorDescVec)
             ASSERT_EQ(nullptr, tensorDesc);
         }
     }
+}
+
+bool IsSupportNPU()
+{
+    static std::string nnrtLibraryName = "libneural_network_runtime_ext.so";
+    void* handle = dlopen(nnrtLibraryName.c_str(), RTLD_LAZY | RTLD_NODELETE);
+    if (handle == nullptr) {
+        OHPrintf("is not support NPU");
+        return false;
+    }
+    return true;
 }
 } // namespace Test
 } // namespace NeuralNetworkRuntime

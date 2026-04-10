@@ -27,13 +27,13 @@ import { BusinessError } from '@ohos.base';
 
 const TAG = "CameraVideoCodecTypeTest";
 
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.PhotoSession;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> | undefined;
+let mCameraSession: cameraObj.PhotoSession | undefined;
 let mVideoRecorder: media.AVRecorder | undefined;
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
-let mPhotoOutput: cameraObj.PhotoOutput;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
+let mPhotoOutput: cameraObj.PhotoOutput | undefined;
 let mVideoOutput: cameraObj.VideoOutput;
 let AVRecorder: media.AVRecorder;
 let receiver: image.ImageReceiver | undefined;
@@ -67,7 +67,7 @@ let mVideoConfig: media.AVRecorderConfig = {
 export default function cameraVideoCodecTypeTest() {
 
   let fdNumber: int;
-  let fdPath: string;
+  let fdPath: string = '';
   let surfaceId: string = '';
 
   let getFd = async (pathName: string) => {
@@ -158,7 +158,7 @@ export default function cameraVideoCodecTypeTest() {
       console.info(TAG + "getCameraManager FAILED");
       return false;
     }
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     console.info('Exit getCameraManagerInstance');
 
     return true;
@@ -166,13 +166,13 @@ export default function cameraVideoCodecTypeTest() {
 
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     if (mCameraDevicesArray == undefined) {
       console.info(TAG + "getSupportedCameras FAILED");
       return false;
     }
 
-    mCameraNum = mCameraDevicesArray.length;
+    mCameraNum = mCameraDevicesArray!.length;
 
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
 
@@ -185,7 +185,7 @@ export default function cameraVideoCodecTypeTest() {
     console.info('Enter createCameraSessionInstance');
 
     try {
-      mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
+      mCameraSession = mCameraManager!.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
     } catch(err) {
       console.info('createCaptureSession FAILED');
     }
@@ -195,7 +195,7 @@ export default function cameraVideoCodecTypeTest() {
       return false;
     }
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     console.info('Exit createCameraSessionInstance');
 
@@ -203,7 +203,7 @@ export default function cameraVideoCodecTypeTest() {
   }
 
   let releaseCameraSessionInstance = async () => {
-    await mCameraSession.release();
+    await mCameraSession!.release();
   }
 
   let createInput = async (idx: int): Promise<boolean> => {
@@ -214,14 +214,14 @@ export default function cameraVideoCodecTypeTest() {
       return false;
     }
 
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray![idx.toInt()]);
 
     if (mCameraInput == undefined) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
     }
 
-    await mCameraInput.open();
+    await mCameraInput!.open();
 
     await Utils.msSleep(100);
 
@@ -236,7 +236,7 @@ export default function cameraVideoCodecTypeTest() {
     console.info('Enter releaseInput');
 
     if (mCameraInput != undefined) {
-      await mCameraInput.close();
+      await mCameraInput!.close();
     }
 
     console.info('Exit releaseInput');
@@ -247,13 +247,13 @@ export default function cameraVideoCodecTypeTest() {
   let createOutput = (idx: int) => {
     console.info('Enter createOutput');
 
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[0], cameraObj.SceneMode.NORMAL_PHOTO);
+    let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray![idx.toInt()], cameraObj.SceneMode.NORMAL_PHOTO);
 
     if (cameraOutputCap != undefined) {
       if (cameraOutputCap.previewProfiles != null) {
         console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
         for (let i: int = 0; i < cameraOutputCap.previewProfiles.length; i++) {
-          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+          mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
           if (mPreviewOutput != undefined) {
             break;
           }
@@ -270,7 +270,7 @@ export default function cameraVideoCodecTypeTest() {
         console.info(TAG + "cameraOutputCap.photoProfiles.length: " + cameraOutputCap.photoProfiles.length);
 
         for (let i = 0; i < cameraOutputCap.photoProfiles.length; i++) {
-          mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
+          mPhotoOutput = mCameraManager!.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
           if (mPhotoOutput != undefined) {
             break;
           }
@@ -293,11 +293,11 @@ export default function cameraVideoCodecTypeTest() {
     console.info('Enter releaseOutput');
 
     if (mPreviewOutput != undefined) {
-      await mPreviewOutput.release();
+      await mPreviewOutput!.release();
     }
 
     if (mPhotoOutput != undefined) {
-      await mPhotoOutput.release();
+      await mPhotoOutput!.release();
     }
     console.info('Exit releaseOutput');
 
@@ -314,21 +314,21 @@ export default function cameraVideoCodecTypeTest() {
 
     if (mCameraInput!= undefined) {
       console.info(TAG + "Start to addInput");
-      mCameraSession.addInput(mCameraInput);
+      mCameraSession!.addInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to addOutput mPreviewOutput");
-      mCameraSession.addOutput(mPreviewOutput);
+      mCameraSession!.addOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput!= undefined) {
       console.info(TAG + "Start to addOutput mPhotoOutput");
-      mCameraSession.addOutput(mPhotoOutput);
+      mCameraSession!.addOutput(mPhotoOutput!);
     }
     await Utils.msSleep(1);
 
-    await mCameraSession.commitConfig();
+    await mCameraSession!.commitConfig();
 
     console.info(TAG + "Exit startCameraSession");
 
@@ -338,21 +338,21 @@ export default function cameraVideoCodecTypeTest() {
   let stopCameraSession = async (): Promise<boolean> => {
     console.info(TAG + "Enter stopCameraSession");
 
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
 
     if (mCameraInput != undefined) {
       console.info(TAG + "Start to removeInput input");
-      mCameraSession.removeInput(mCameraInput);
+      mCameraSession!.removeInput(mCameraInput!);
     }
 
     if (mPreviewOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPreviewOutput");
-      mCameraSession.removeOutput(mPreviewOutput);
+      mCameraSession!.removeOutput(mPreviewOutput!);
     }
 
     if (mPhotoOutput != undefined) {
       console.info(TAG + "Start to removeOutput mPhotoOutput");
-      mCameraSession.removeOutput(mPhotoOutput);
+      mCameraSession!.removeOutput(mPhotoOutput!);
     }
     await releaseInput();
     await releaseOutput();
@@ -364,7 +364,7 @@ export default function cameraVideoCodecTypeTest() {
 
   describe('CameraVideoCodecTypeTest', () => {
     console.info(TAG + '----------CameraVideoCodecTypeTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -384,7 +384,7 @@ export default function cameraVideoCodecTypeTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);
       console.info('afterAll case');
@@ -415,7 +415,7 @@ export default function cameraVideoCodecTypeTest() {
 
             await startCameraSession(i);
 
-            let videoCodecTypesArray: Array<cameraObj.VideoCodecType> = mPhotoOutput.getSupportedMovingPhotoVideoCodecTypes();
+            let videoCodecTypesArray: Array<cameraObj.VideoCodecType> = mPhotoOutput!.getSupportedMovingPhotoVideoCodecTypes();
             let videoCodecTypesNum: number = videoCodecTypesArray.length;
             if (videoCodecTypesNum != 0) {
               for (let i = 0; i < videoCodecTypesNum; i++) {
@@ -465,7 +465,7 @@ export default function cameraVideoCodecTypeTest() {
           await startCameraSession(i);
 
           try {
-            mPhotoOutput.setMovingPhotoVideoCodecType(cameraObj.VideoCodecType.AVC);
+            mPhotoOutput!.setMovingPhotoVideoCodecType(cameraObj.VideoCodecType.AVC);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0100 finish");
           } catch(err) {
             console.info(TAG +
@@ -510,7 +510,7 @@ export default function cameraVideoCodecTypeTest() {
           await startCameraSession(i);
 
           try {
-            mPhotoOutput.setMovingPhotoVideoCodecType(cameraObj.VideoCodecType.HEVC);
+            mPhotoOutput!.setMovingPhotoVideoCodecType(cameraObj.VideoCodecType.HEVC);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0200 finish");
           } catch(err) {
             console.info(TAG +

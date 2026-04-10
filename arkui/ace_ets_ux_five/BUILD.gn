@@ -23,8 +23,8 @@ group("UxFiveTest") {
         "ace_ets_component_Refresh:RefreshTest",
         "ace_ets_component_ModelSheet_static:ActsModelSheetStaticTest",
         "ace_ets_component_Refresh_static:ActsRefreshStaticTest",
-        "ace_ets_component_Dialog_static:DialogStaticTest",
-        "ace_ets_component_Checkbox_static:CheckboxStaticTest",
+        "ace_ets_component_Dialog_static:ActsAceDialogStaticTest",
+        "ace_ets_component_Checkbox_static:ActsCheckboxStaticTest",
       ]
     } else {
       deps = [
@@ -35,8 +35,8 @@ group("UxFiveTest") {
         "ace_ets_component_Select:SelectTest",
         "ace_ets_component_ModelSheet_static:ActsModelSheetStaticTest",
         "ace_ets_component_Refresh_static:ActsRefreshStaticTest",
-        "ace_ets_component_Dialog_static:DialogStaticTest",
-        "ace_ets_component_Checkbox_static:CheckboxStaticTest",
+        "ace_ets_component_Dialog_static:ActsAceDialogStaticTest",
+        "ace_ets_component_Checkbox_static:ActsCheckboxStaticTest",
         "ace_ets_component_Select_static:ActsSelectStaticTest",
       ]
     }

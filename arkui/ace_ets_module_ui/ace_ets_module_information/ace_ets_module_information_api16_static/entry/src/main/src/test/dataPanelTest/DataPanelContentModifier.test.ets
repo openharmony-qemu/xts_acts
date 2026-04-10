@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function DataPanelContentModifierTest() {
   describe('DataPanelContentModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DataPanelContentModifierTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility");
     });

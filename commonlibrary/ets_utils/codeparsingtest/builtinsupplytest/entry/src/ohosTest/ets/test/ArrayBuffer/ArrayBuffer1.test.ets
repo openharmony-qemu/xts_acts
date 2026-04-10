@@ -32,7 +32,7 @@ export default function ArrayBuffer1Test() {
       // This API supports only one parameter: preset action function.
     })
     afterEach(async () => {
-      await sleep(20);
+      await sleep(40);
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.

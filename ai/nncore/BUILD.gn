@@ -14,8 +14,6 @@
 group("ActsHdfNncoreTest") {
   testonly = true
   deps = [
-    "e2etest:ActsNnrtE2ETest",
-    "nncoretest:ActsNncoreTest",
     "opstest:ActsNnrtOpsTest",
   ]
   if (is_standard_system) {

@@ -26,7 +26,7 @@ export default function builtinsRegExpSymbolSplitTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(20);
+      await sleep(40);
     })
     afterEach(() => {
     })

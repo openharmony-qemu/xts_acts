@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -110,87 +110,87 @@ class AVPlayerDemo {
   // 注册avplayer回调函数
   setAVPlayerCallback(avPlayer: media.AVPlayer, listener: AVPlayerListener) {
     this.listener = listener
-  // seek操作结果回调函数
-  avPlayer.onSeekDone((seekDoneTime: Int) => {
-    console.info('AVPlayer seek succeeded, seek time is ${seekDoneTime}');
-  })
-  // error回调监听函数，当avPlayer在操作过程中出现错误时调用reset接口触发重置流程
-  avPlayer.onError((err: BusinessError) => {
-    console.error(`[BrowserShell] Invoke avPlayer failed, code is ${err.code}, message is ${err.message}`);
-    listener?.onError();
-    avPlayer.reset(); // 调用reset重置资源，触发idle状态
-  })
-  // volumeChange
-  avPlayer.onVolumeChange((vol:Double) => {
-  console.info('volumeChange success,and new volume is :' + vol)
-  listener?.onVolume && listener?.onVolume(vol);
-  })
-  // 状态机变化回调函数
-  avPlayer.onStateChange(async (state: "idle"|"initialized"|"prepared"|"playing"|"paused"|"completed"|"stopped"|"released"|"error", reason: media.StateChangeReason): void => {
-    switch (state) {
-      case 'idle': // 成功调用reset接口后触发该状态机上报
-        console.info('AVPlayer state idle called.');
-        avPlayer.release(); // 调用release接口销毁实例对象
-        break;
-      case 'initialized': // avplayer 设置播放源后触发该状态上报
-        console.info('AVPlayer state initialized called. ');
-        avPlayer.surfaceId = this.surfaceID; // 设置显示画面，当播放的资源为纯音频时无需设置
-        avPlayer.prepare();
-        break;
-      case 'prepared': // prepare调用成功后上报该状态机
-        isPlaying = true
-        console.info('AVPlayer state prepared called.');
-        break;
-      case 'playing': // play成功调用后触发该状态机上报
-        isPlaying = true
-        console.info('AVPlayer state playing called.');
-        listener?.onPlaying();
-        break;
-      case 'paused': // pause成功调用后触发该状态机上报
-        console.info('AVPlayer state paused called.');
-        listener?.onPaused();
-        break;
-      case 'completed': // 播放结束后触发该状态机上报
-        console.info('AVPlayer state completed called.');
-        avPlayer.stop(); // 调用播放结束接口
-        break;
-      case 'stopped': // stop接口成功调用后触发该状态机上报
-        console.info('AVPlayer state stopped called.');
-        listener?.onEnded();
-        break;
-      case 'released':
-        console.info('AVPlayer state released called.');
-        break;
-      default:
-        console.info('AVPlayer state unknown called.');
-        break;
-    }
-  })
-  avPlayer.onDurationUpdate((duration: Int) => {
-    console.info('AVPlayer state durationUpdate success,new duration is:' + duration)
-    listener?.onDurationChanged(duration/1000);
-  })
-  avPlayer.onSeekDone((seekDoneTime: Int) => {
-    console.info('seekDone success,and seek time is:' + seekDoneTime)
-    listener?.onSeekFinished(seekDoneTime);
-  })
-  avPlayer.onSpeedDone((speed: Int) => {
-    console.info('AVPlayer state durationUpdate success,new speed is:' + speed)
-    listener?.onPlaybackRateChanged(speed);
-  })
-  avPlayer.onTimeUpdate((time: Int) => {
-    listener?.onTimeUpdate(time/1000);
-  })
-  avPlayer.onBufferingUpdate((infoType: media.BufferingInfoType, value: Int) => {
-    console.info('AVPlayer state bufferingUpdate success, and InfoType value is:' + infoType + ', value is :' + value)
-    if (infoType == media.BufferingInfoType.BUFFERING_PERCENT) {
-    }
-    listener?.onBufferedTimeChanged(value);
-  })
-  avPlayer.onVideoSizeChange((width: Int, height: Int) => {
-    console.info('AVPlayer state onVideoSizeChange success, and width is:' + width + ', height is :' + height)
-    listener?.onVideoSizeChanged(width, height);
-  })
+    // seek操作结果回调函数
+    avPlayer.onSeekDone((seekDoneTime: Int) => {
+      console.info('AVPlayer seek succeeded, seek time is ${seekDoneTime}');
+    })
+    // error回调监听函数，当avPlayer在操作过程中出现错误时调用reset接口触发重置流程
+    avPlayer.onError((err: BusinessError) => {
+      console.error(`[BrowserShell] Invoke avPlayer failed, code is ${err.code}, message is ${err.message}`);
+      listener?.onError();
+      avPlayer.reset(); // 调用reset重置资源，触发idle状态
+    })
+    // volumeChange
+    avPlayer.onVolumeChange((vol:Double) => {
+      console.info('volumeChange success,and new volume is :' + vol)
+      listener?.onVolume && listener?.onVolume(vol);
+    })
+    // 状态机变化回调函数
+    avPlayer.onStateChange(async (state: "idle"|"initialized"|"prepared"|"playing"|"paused"|"completed"|"stopped"|"released"|"error", reason: media.StateChangeReason): void => {
+      switch (state) {
+        case 'idle': // 成功调用reset接口后触发该状态机上报
+          console.info('AVPlayer state idle called.');
+          avPlayer.release(); // 调用release接口销毁实例对象
+          break;
+        case 'initialized': // avplayer 设置播放源后触发该状态上报
+          console.info('AVPlayer state initialized called. ');
+          avPlayer.surfaceId = this.surfaceID; // 设置显示画面，当播放的资源为纯音频时无需设置
+          avPlayer.prepare();
+          break;
+        case 'prepared': // prepare调用成功后上报该状态机
+          isPlaying = true
+          console.info('AVPlayer state prepared called.');
+          break;
+        case 'playing': // play成功调用后触发该状态机上报
+          isPlaying = true
+          console.info('AVPlayer state playing called.');
+          listener?.onPlaying();
+          break;
+        case 'paused': // pause成功调用后触发该状态机上报
+          console.info('AVPlayer state paused called.');
+          listener?.onPaused();
+          break;
+        case 'completed': // 播放结束后触发该状态机上报
+          console.info('AVPlayer state completed called.');
+          avPlayer.stop(); // 调用播放结束接口
+          break;
+        case 'stopped': // stop接口成功调用后触发该状态机上报
+          console.info('AVPlayer state stopped called.');
+          listener?.onEnded();
+          break;
+        case 'released':
+          console.info('AVPlayer state released called.');
+          break;
+        default:
+          console.info('AVPlayer state unknown called.');
+          break;
+      }
+    })
+    avPlayer.onDurationUpdate((duration: Int) => {
+      console.info('AVPlayer state durationUpdate success,new duration is:' + duration)
+      listener?.onDurationChanged(duration/1000);
+    })
+    avPlayer.onSeekDone((seekDoneTime: Int) => {
+      console.info('seekDone success,and seek time is:' + seekDoneTime)
+      listener?.onSeekFinished(seekDoneTime);
+    })
+    avPlayer.onSpeedDone((speed: Int) => {
+      console.info('AVPlayer state durationUpdate success,new speed is:' + speed)
+      listener?.onPlaybackRateChanged(speed);
+    })
+    avPlayer.onTimeUpdate((time: Int) => {
+      listener?.onTimeUpdate(time/1000);
+    })
+    avPlayer.onBufferingUpdate((infoType: media.BufferingInfoType, value: Int) => {
+      console.info('AVPlayer state bufferingUpdate success, and InfoType value is:' + infoType + ', value is :' + value)
+      if (infoType == media.BufferingInfoType.BUFFERING_PERCENT) {
+      }
+      listener?.onBufferedTimeChanged(value);
+    })
+    avPlayer.onVideoSizeChange((width: Int, height: Int) => {
+      console.info('AVPlayer state onVideoSizeChange success, and width is:' + width + ', height is :' + height)
+      listener?.onVideoSizeChanged(width, height);
+    })
   }
 
   // 以下demo为通过url设置网络地址来实现播放直播码流的demo
@@ -644,7 +644,7 @@ struct MyComponent {
                 if (this.params !== null) {
                   try {
                     this.params?.handler?.handleFullscreenChanged(this.fullscreen);
-                  } catch (error: BusinessError) {
+                  } catch (error) {
 
                   }
                 }
@@ -912,6 +912,19 @@ struct WebComponent {
               }
               break;
             }
+
+            case "emitSuspendTypeEnum001": {
+              Utils.emitEvent(webview.SuspendType.ENTER_BACK_FORWARD_CACHE, 361080)
+            }
+
+            case "emitSuspendTypeEnum002": {
+              Utils.emitEvent(webview.SuspendType.ENTER_BACKGROUND, 361081)
+            }
+
+            case "emitSuspendTypeEnum003": {
+              Utils.emitEvent(webview.SuspendType.AUTO_CLEANUP, 361082)
+            }
+
           }
         })
       }

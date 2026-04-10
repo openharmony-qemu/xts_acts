@@ -18,8 +18,10 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
+import { Driver, ON } from '@kit.TestKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 
 
@@ -43,7 +45,7 @@ export default function WebViewEnumAndFontLibrary() {
       } catch (err) {
         console.error("push WebViewEnumAndFontLibrary page error: " + err);
       }
-      await waitForComponent("buttonEnumAndFontLibrary");
+      await Utils.waitForComponent(driver,'buttonEnumAndFontLibrary');
       console.log("waitForComponent buttonEnumAndFontLibrary");
       done()
     });

@@ -1,6 +1,7 @@
 {
-  "src": [
-    "testability/pages/WebViewControllerPart3",
-    "testability/pages/WebViewEnumAndSetWebController"
-  ]
+   "src": [
+     "testability/pages/WebViewControllerPart3",
+     "testability/pages/WebViewEnumAndSetWebController",
+     "testability/pages/WebViewControllerRestoreWebState"
+   ]
 }

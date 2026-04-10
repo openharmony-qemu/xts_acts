@@ -37,16 +37,15 @@ export default function webJsunit() {
       await Utils.msSleep(2000);
       console.info('web beforeEach start');
     })
-
     /**
      * @tc.name   SavePDFStatic
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_CREATEPDF_001
      * @tc.desc   get createPdf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('SavePDFStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('SavePDFStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       emitKey = 'emitSavePDF';
       Utils.emitEvent(emitKey, 10)
       await Utils.msSleep(2000);
@@ -56,7 +55,6 @@ export default function webJsunit() {
       await Utils.msSleep(8000);
       done();
     })
-
     /**
      * @tc.name   SavePDF1Static
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_CREATEPDF_002
@@ -70,6 +68,8 @@ export default function webJsunit() {
       Utils.emitEvent(emitKey, 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('emitSavePDF', true, 20241128, done);
+      await Utils.msSleep(2000);
+      Utils.emitEvent("emitonSwitchNextPage", 10)
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webSavePDF', 10, '');
       await Utils.msSleep(6000);

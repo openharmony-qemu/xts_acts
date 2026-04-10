@@ -36,10 +36,12 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
       "ace_ets_module_advancedComponents_nowear_api18:ActsAceEtsModuleAdvancedComponentsNoWearApi18Test",
       #"ace_ets_module_advancedComponents_nowear_api18_static:ActsAceEtsModuleAdvancedComponentsNoWearApi18StaticTest",
       "ace_ets_module_advancedComponents_nowear_api20:ActsAceEtsModuleAdvancedComponentsNoWearApi20Test",
-      "ace_ets_module_advancedComponents_nowear_api20_static:ActsAceEtsModuleAdvancedComponentsNoWearApi20StaticTest",
       "ace_ets_module_chip_nowear:ActsAceEtsModuleChipNoWearTest",
+      "ace_ets_module_advance_chip_static:ActsAceEtsModuleAdvanceChipStaticTest",
       "ace_ets_module_segmentButton_nowear:ActsAceEtsModuleSegmentButtonNoWearTest",
+      "ace_ets_module_segmentButton_static:ActsAceEtsModuleAdvancedSegmentButtonStaticTest",
       "ace_ets_module_counter:ActsAceEtsModuleCounterTest",
+      "ace_ets_module_advance_counter_static:ActsAceEtsModuleAdvanceCounterStaticTest",
       "ace_ets_module_composeTitleBar_nowear:ActsAceEtsModuleComposeTitleBarNoWearTest",
       "ace_ets_module_editableTitleBar_nowear:ActsAceEtsModuleEditableTitleBarNoWearTest",
       "ace_ets_module_exceptionPrompt_nowear:ActsAceEtsModuleExceptionPromptNoWearTest",
@@ -58,7 +60,17 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
       "ace_ets_module_composeListItem_nowear:ActsAceEtsModuleComposeListItemNoWearTest",
       "ace_ets_module_progressButton_nowear:ActsAceEtsModuleProgressButtonNoWearTest",
       "ace_ets_module_selectTitleBar_nowear:ActsAceEtsModuleSelectTitleBarNoWearTest",
-      "ace_ets_module_swipeRefresher_nowear:ActsAceEtsModuleSwipeRefresherNoWearTest"
+      "ace_ets_module_swipeRefresher_nowear:ActsAceEtsModuleSwipeRefresherNoWearTest",
+      "ace_ets_module_advancedDialog_static:ActsAceEtsModuleAdvancedDialogStaticTest",
+      "ace_ets_module_advancedDialogV2_static:ActsAceEtsModuleAdvancedDialogV2StaticTest",
+      "ace_ets_module_editableTitleBar_nowear_static:ActsAceEtsModuleAdvancedEditableTitleBarNowearStaticTest",
+      "ace_ets_module_progressButton_nowear_static:ActsAceEtsModuleAdvancedProgressButtonNowearStaticTest",
+      "ace_ets_module_progressButtonV2_nowear_static:ActsAceEtsModuleAdvancedProgressButtonV2NowearStaticTest",
+      "ace_ets_module_splitLayout_nowear_static:ActsAceEtsModuleAdvancedSplitLayoutNoWearStaticTest",
+      "ace_ets_module_subHeader_nowear_static:ActsAceEtsModuleAdvancedSubHeaderNoWearStaticTest",
+      "ace_ets_module_subHeaderV2_nowear_static:ActsAceEtsModuleAdvancedSubHeaderV2NoWearStaticTest",
+      "ace_ets_module_swipeRefresher_nowear_static:ActsAceEtsModuleAdvancedSwipeRefresherNoWearStaticTest",
+      "ace_ets_module_treeView_nowear_static:ActsAceEtsModuleAdvancedTreeViewNoWearStaticTest"
     ]
   }
 }

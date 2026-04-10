@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,11 +40,11 @@ import hilog from '@ohos.hilog';
 
 let domain: int= 0x0000;
 let tag: string = 'testTag';
-let phAccessHelper: photoAccessHelper.PhotoAccessHelper;
-let predicates: dataSharePredicates.DataSharePredicates;
+let phAccessHelper: photoAccessHelper.PhotoAccessHelper | null = null;
+let predicates: dataSharePredicates.DataSharePredicates | null = null;
 
 export default function photoAccessHelperTest() {
-  describe('PhotoAccessHelperTest', () => {
+  describe('PhotoAccessHelperTestAdapt001', () => {
     beforeAll(async () => {
       let testContext: Context = Hypium.get('context') as Context;
       console.info("getContext", testContext);
@@ -75,14 +75,14 @@ export default function photoAccessHelperTest() {
         try {
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: [],
-            predicates: predicates
+            predicates: predicates!
           };
-          phAccessHelper.getAssets(fetchOptions, (err, fetchResult) => {
+          (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions, (err, fetchResult) => {
             expect(fetchResult).not().assertUndefined();
             expect(fetchResult).not().assertNull();
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`getAssets failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -102,14 +102,14 @@ export default function photoAccessHelperTest() {
         try {
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: [],
-            predicates: predicates
+            predicates: predicates!
           };
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await phAccessHelper.getAssets(fetchOptions);
+            await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
           expect(fetchResult).not().assertUndefined();
           expect(fetchResult).not().assertNull();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`getAssets failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -129,13 +129,14 @@ export default function photoAccessHelperTest() {
         try {
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: ['screenshot_20240805_124506.jpeg'],
-            predicates: predicates
+            predicates: predicates!
           };
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await phAccessHelper.getAssets(fetchOptions);
+            await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
           expect().assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`getAssets failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.ARGS_EORRCODE);
           done();
@@ -155,13 +156,14 @@ export default function photoAccessHelperTest() {
         try {
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: ['screenshot_20240805_124506'],
-            predicates: predicates
+            predicates: predicates!
           };
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await phAccessHelper.getAssets(fetchOptions);
+            await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
           expect().assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`getAssets failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.ARGS_EORRCODE);
           done();
@@ -181,14 +183,14 @@ export default function photoAccessHelperTest() {
         try {
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: ['uri', 'media_type', 'subtype', 'display_name'],
-            predicates: predicates
+            predicates: predicates!
           };
-          phAccessHelper.getAssets(fetchOptions, (err, fetchResult) => {
+          (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions, (err, fetchResult) => {
             expect(fetchResult).not().assertUndefined();
             expect(fetchResult).not().assertNull();
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`getAssets failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -211,13 +213,13 @@ export default function photoAccessHelperTest() {
           let options: photoAccessHelper.CreateOptions = {
             title: 'testNum'
           }
-          let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+          let uri: string = await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options);
           console.info('createAsset uri' + uri);
           console.info('createAsset successfully');
           expect(uri).not().assertUndefined();
           expect(uri).not().assertNull();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -240,10 +242,11 @@ export default function photoAccessHelperTest() {
           let options: photoAccessHelper.CreateOptions = {
             title: 'testNum'
           }
-          await phAccessHelper.createAsset(photoType, extension, options);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options);
           expect().assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.PARAM_EORRCODE);
           done();
@@ -266,10 +269,11 @@ export default function photoAccessHelperTest() {
           let options: photoAccessHelper.CreateOptions = {
             title: 'testNum'
           }
-          await phAccessHelper.createAsset(photoType, extension, options);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options);
           expect().assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.ARGS_EORRCODE);
           done();
@@ -293,11 +297,11 @@ export default function photoAccessHelperTest() {
           let options: photoAccessHelper.CreateOptions = {
             title: undefined
           }
-          let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+          let uri: string = await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options);
           console.info('createAsset uri' + uri);
           expect(uri).not().assertNull();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -321,10 +325,10 @@ export default function photoAccessHelperTest() {
           let options: photoAccessHelper.CreateOptions = {
             title: 'testNum'
           }
-          let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+          let uri: string = await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options);
           expect(uri).not().assertNull();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -347,10 +351,11 @@ export default function photoAccessHelperTest() {
           let options: photoAccessHelper.CreateOptions = {
             title: 'testNum'
           }
-          await phAccessHelper.createAsset(photoType, extension, options);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options);
           expect().assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.PARAM_EORRCODE);
           done();
@@ -373,10 +378,11 @@ export default function photoAccessHelperTest() {
           let options: photoAccessHelper.CreateOptions = {
             title: 'testNum'
           }
-          await phAccessHelper.createAsset(photoType, extension, options);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options);
           expect().assertFail();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.PARAM_EORRCODE);
           done();
@@ -399,10 +405,10 @@ export default function photoAccessHelperTest() {
           let options: photoAccessHelper.CreateOptions = {
             title: undefined
           }
-          let uri: string = await phAccessHelper.createAsset(photoType, extension, options);
+          let uri: string = await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options);
           expect(uri).not().assertNull();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -422,13 +428,13 @@ export default function photoAccessHelperTest() {
         try {
           let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
           let extension: string = 'jpg';
-          let uri: string = await phAccessHelper.createAsset(photoType, extension);
+          let uri: string = await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension);
           console.info('createAsset uri' + uri);
           console.info('createAsset successfully');
           expect(uri).not().assertUndefined();
           expect(uri).not().assertNull();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -448,13 +454,13 @@ export default function photoAccessHelperTest() {
         try {
           let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
           let extension: string = 'mp4';
-          let uri: string = await phAccessHelper.createAsset(photoType, extension);
+          let uri: string = await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension);
           console.info('createAsset uri' + uri);
           console.info('createAsset successfully');
           expect(uri).not().assertUndefined();
           expect(uri).not().assertNull();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -477,13 +483,13 @@ export default function photoAccessHelperTest() {
           let extension: string = 'jpg';
           let options: photoAccessHelper.CreateOptions = {
             title: 'testNum'
-          }
-          phAccessHelper.createAsset(photoType, extension, options, (err, uri) => {
+          };
+          (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options, (err: BusinessError | null, uri) => {
             expect(uri).not().assertUndefined();
             expect(uri).not().assertNull();
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -505,12 +511,13 @@ export default function photoAccessHelperTest() {
           let extension: string = '123';
           let options: photoAccessHelper.CreateOptions = {
             title: 'testNum'
-          }
-          phAccessHelper.createAsset(photoType, extension, options, (err: BusinessError | null, uri) => {
+          };
+          (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options, (err: BusinessError | null, uri) => {
             expect(string(err?.code)).assertDeepEquals(Constant.PARAM_EORRCODE);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.PARAM_EORRCODE);
           done();
@@ -532,12 +539,13 @@ export default function photoAccessHelperTest() {
           let extension: string = 'jpg';
           let options: photoAccessHelper.CreateOptions = {
             title: undefined
-          }
-          phAccessHelper.createAsset(photoType, extension, options, (err, uri) => {
+          };
+          (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options, (err, uri) => {
             expect(uri).not().assertNull();
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`createAsset1 failed, error: ${err.code}, ${err.message}`);
           expect(err.code).assertDeepEquals(Constant.ARGS_EORRCODE);
           done();
@@ -559,12 +567,12 @@ export default function photoAccessHelperTest() {
           let extension: string = 'mp4';
           let options: photoAccessHelper.CreateOptions = {
             title: 'testNum'
-          }
-          phAccessHelper.createAsset(photoType, extension, options, (err, uri) => {
+          };
+          (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options, (err, uri) => {
             expect(uri).not().assertNull();
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -586,12 +594,12 @@ export default function photoAccessHelperTest() {
           let extension: string = 'mp4';
           let options: photoAccessHelper.CreateOptions = {
             title: undefined
-          }
-          phAccessHelper.createAsset(photoType, extension, options, (err, uri) => {
+          };
+          (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, options, (err, uri) => {
             expect(uri).not().assertNull();
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -611,12 +619,12 @@ export default function photoAccessHelperTest() {
         try {
           let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
           let extension: string = 'jpg';
-          phAccessHelper.createAsset(photoType, extension, (err, uri) => {
+          (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, (err, uri) => {
             expect(uri).not().assertUndefined();
             expect(uri).not().assertNull();
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`createAsset failed1, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -636,12 +644,12 @@ export default function photoAccessHelperTest() {
         try {
           let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
           let extension: string = 'mp4';
-          phAccessHelper.createAsset(photoType, extension, (err, uri) => {
+          (phAccessHelper as photoAccessHelper.PhotoAccessHelper).createAsset(photoType, extension, (err, uri) => {
             expect(uri).not().assertUndefined();
             expect(uri).not().assertNull();
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect().assertFail();
           done();
@@ -665,7 +673,7 @@ export default function photoAccessHelperTest() {
           fetchColumns: [],
           predicates: predicates
         };
-        phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
+        (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
           fetchOptions).then((fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album>) => {
           expect(fetchResult).not().assertUndefined();
           expect(fetchResult).not().assertNull();
@@ -687,7 +695,7 @@ export default function photoAccessHelperTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC)
+        (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC)
           .then((fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album>) => {
             expect(fetchResult).not().assertUndefined();
             expect(fetchResult).not().assertNull();
@@ -717,7 +725,7 @@ export default function photoAccessHelperTest() {
           fetchColumns: [],
           predicates: predicates
         };
-        phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
+        (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
           fetchOptions).then((fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album>) => {
           expect(fetchResult).not().assertUndefined();
           expect(fetchResult).not().assertNull();
@@ -746,7 +754,7 @@ export default function photoAccessHelperTest() {
           fetchColumns: [],
           predicates: predicates
         };
-        phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
+        (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
           fetchOptions).then((fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album>) => {
           expect(fetchResult).not().assertUndefined();
           expect(fetchResult).not().assertNull();
@@ -775,7 +783,7 @@ export default function photoAccessHelperTest() {
           fetchColumns: [],
           predicates: predicates
         };
-        phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
+        (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
           fetchOptions).then((fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album>) => {
           expect(fetchResult).not().assertUndefined();
           expect(fetchResult).not().assertNull();

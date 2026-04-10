@@ -21,6 +21,7 @@
 #define SCANNER_ID "12"
 #define TEST_PRINTER "testPrinter"
 
+static uint32_t g_singleFd = 100;
 static napi_value OH_Print_Init1(napi_env env, napi_callback_info info)
 {
     Print_ErrorCode errorCode = OH_Print_Init();
@@ -44,6 +45,24 @@ static napi_value OH_Print_ConnectPrinter1(napi_env env, napi_callback_info info
     napi_create_int32(env, errorCode == PRINT_ERROR_NO_PERMISSION ? PRINT_ERROR_NO_PERMISSION : 0, &result);
     return result;
 }
+napi_value OH_Print_StartPrintWithJobStateCallback(napi_env env, napi_callback_info info)
+{
+    Print_PrinterInfo virtualPrinter = {
+        .printerId = "VIRTUAL_001", .printerName = "虚拟打印机", .printerState = PRINTER_IDLE};
+    Print_PrintJob printJob = {.jobName = strdup("Document1"),
+                               .printerId = strdup(virtualPrinter.printerId),
+                               .fdList = &g_singleFd,
+                               .fdListCount = 1,
+                               .copyNumber = 1,
+                               .colorMode = COLOR_MODE_COLOR,
+                               .paperSource = strdup("Auto"),
+                               .pageSizeId = strdup("A4")};
+    OH_Print_OnJobStateChanged cb;
+    Print_ErrorCode errorCode = OH_Print_StartPrintWithJobStateCallback(&printJob, cb);
+    napi_value result = nullptr;
+    napi_create_int32(env, errorCode == PRINT_ERROR_NO_PERMISSION ? PRINT_ERROR_NO_PERMISSION : 0, &result);
+    return result;
+}
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -54,6 +73,8 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"OH_Print_ConnectPrinter1", nullptr, OH_Print_ConnectPrinter1, nullptr, nullptr, nullptr, napi_default,
          nullptr},
+        {"OH_Print_StartPrintWithJobStateCallback", nullptr, OH_Print_StartPrintWithJobStateCallback, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

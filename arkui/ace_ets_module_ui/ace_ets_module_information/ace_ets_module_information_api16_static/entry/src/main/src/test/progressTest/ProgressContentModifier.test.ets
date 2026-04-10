@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ProgressContentModifierTest() {
   describe('ProgressContentModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ProgressContentModifierTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility");
     });

@@ -61,9 +61,9 @@ export default function webViewZoomRatio() {
      * @tc.desc   test ZoomRatio
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('textZoomRatioStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('textZoomRatioStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(3000);
         Utils.emitEvent('emitZoomRatio', 10)

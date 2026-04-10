@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ interface  TestFilePack {
 }
 
 export default function imagePackToFileGif() {
-  describe("imagePackToFileGif", (): void => {
+  describe("imagePackToFileGif", () => {
     let isSupportGifEncode: boolean;
     let filesDir: string | undefined | null;
     let cacheDir: string | undefined | null;
@@ -63,7 +63,7 @@ export default function imagePackToFileGif() {
       console.info("afterAll case");
     });
 
-    const getImageSourceData = (fileName: string) => {
+    const getImageSourceData = async (fileName: string) => {
       let filePath = ""
       let globalImagesource: image.ImageSource | undefined;
       try {
@@ -76,8 +76,8 @@ export default function imagePackToFileGif() {
       }
     }
 
-    const getPixelMapData = () => {
-      let opts: image.InitializationOptions = { editable: true, pixelFormat: 2 as image.PixelMapFormat, size: { height: 4, width: 6 } };
+    const getPixelMapData = async () => {
+      let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.fromValue(2), size: { height: 4, width: 6 } };
       const Color = new ArrayBuffer(96);
       let globalpixelmap = image.createPixelMapSync(Color, opts);
       return globalpixelmap;
@@ -102,7 +102,7 @@ export default function imagePackToFileGif() {
       return writeFd;
     }
 
-    const isSupportImageFormat = (fileName: string, format: string) => {
+    const isSupportImageFormat = async (fileName: string, format: string) => {
       let filePath = ""
       let isSupportFormat = false;
       let globalImagesource: image.ImageSource | undefined;
@@ -122,9 +122,9 @@ export default function imagePackToFileGif() {
       return isSupportFormat;
     }
 
-    const createPixelMapList = (done: () => void, picName: string) => {
+    const createPixelMapList = async (done: () => void, picName: string) => {
       console.info("createPixelMapList start");
-      let imageSourceApi = getImageSourceData(picName);
+      let imageSourceApi = await getImageSourceData(picName);
       let pixelMapList: Array<image.PixelMap> = [];
       if (imageSourceApi == undefined) {
         console.info("createImageSource failed");
@@ -149,7 +149,7 @@ export default function imagePackToFileGif() {
       return pixelMapList;
     }
 
-    const releasePixelMapList = (pixelMapList: Array<image.PixelMap>) => {
+    const releasePixelMapList = async (pixelMapList: Array<image.PixelMap>) => {
       for (let i = 0; i < pixelMapList.length; i++) {
         if (pixelMapList[i] != undefined) {
           await pixelMapList[i].release();
@@ -217,7 +217,7 @@ export default function imagePackToFileGif() {
       packingOptions: image.PackingOptionsForSequence, testFile: TestFile) => {
       let pixelMapList: Array<image.PixelMap> = [];
       if (testFile.fileName != undefined) {
-        pixelMapList = createPixelMapList(done, testFile.fileName!!);
+        pixelMapList = await createPixelMapList(done, testFile.fileName!!);
       }
       let fpath: string = cacheDir + "/" + testFile.packTarget;
       let writeFd = getWriteFd(testFile.packTarget);
@@ -250,13 +250,13 @@ export default function imagePackToFileGif() {
           expect().assertFail();
           done();
         }
-      } catch(error: BusinessError) {
+      } catch(error) {
         console.log(`${testNum} error: ` + JSON.stringify(error));
         expect().assertFail();
         done();
       } finally {
         fs.closeSync(writeFd)
-        releasePixelMapList(pixelMapList);
+        await releasePixelMapList(pixelMapList);
         await globalPacker.release();
       }
     }
@@ -265,7 +265,7 @@ export default function imagePackToFileGif() {
       packingOptions: image.PackingOptionsForSequence, testFile: TestFile) => {
       let pixelMapList: Array<image.PixelMap> = [];
       if (testFile.fileName != undefined) {
-        createPixelMapList(done, testFile.fileName!!);
+        await createPixelMapList(done, testFile.fileName!!);
       }
       let fpath: string = cacheDir + "/" + testFile.packTarget;
       let writeFd = getWriteFd(testFile.packTarget);
@@ -284,19 +284,20 @@ export default function imagePackToFileGif() {
         console.log(`${testNum} packToFileFromPixelmapSequence success`);
         expect(false).assertTrue();
         done();
-      } catch(error: BusinessError) {
+      } catch(error) {
+          error = error as BusinessError;
         console.log(`${testNum} packToFileFromPixelmapSequence error: ` + JSON.stringify(error));
         console.log(`${testNum} packToFileFromPixelmapSequence error.code: ` + error.code);
         expect(error.code == ERROR_CODE1).assertTrue();
         done();
       } finally {
         fs.closeSync(writeFd)
-        releasePixelMapList(pixelMapList);
+        await releasePixelMapList(pixelMapList);
         await globalPacker.release();
       }
     }
 
-    const checkPackToFileResult = (filepath: string, testFilePack: TestFilePack) => {
+    const checkPackToFileResult = async (filepath: string, testFilePack: TestFilePack) => {
       let imageSource = image.createImageSource(filepath);
       if (imageSource == undefined) {
         console.log(`create pack file imageSource failed.`);
@@ -373,7 +374,7 @@ export default function imagePackToFileGif() {
             await imageSource.release();
           }
           console.info(`${testNum} packToFile test success`);
-          let result = checkPackToFileResult(fPath, testFilePack);
+          let result = await checkPackToFileResult(fPath, testFilePack);
           expect(result).assertTrue();
           done();
         } catch (error) {
@@ -389,7 +390,7 @@ export default function imagePackToFileGif() {
 
     const testPackGifToFile = async (done: () => void, testNum: string, packingOptions: image.PackingOption,
       type: string, testFilePack: TestFilePack) => {
-      let imageSource: image.ImageSource | undefined = getImageSourceData(testFilePack.fileName);
+      let imageSource: image.ImageSource | undefined = await getImageSourceData(testFilePack.fileName);
       expect(imageSource != undefined).assertTrue();
       let source: image.ImageSource = imageSource! as image.ImageSource;
       let fpath: string = cacheDir + "/" + testFilePack.packTarget;
@@ -405,9 +406,9 @@ export default function imagePackToFileGif() {
       }
     }
 
-    const packToFileCbErr = (done: () => void, testNum: string, source: image.ImageSource | image.PixelMap, type: string, fd: int,
+    const packToFileCbErr = async (done: () => void, testNum: string, source: image.ImageSource | image.PixelMap, type: string, fd: int,
       ops: image.PackingOption) => {
-      let globalPacker: image.ImagePacker;
+      let globalPacker: image.ImagePacker | undefined;
       try {
         globalPacker = image.createImagePacker();
         expect(globalPacker != undefined).assertTrue();
@@ -418,17 +419,18 @@ export default function imagePackToFileGif() {
         }
         if(type == "PixelMap") {
           let pixelmap: image.PixelMap = source as image.PixelMap;
-          await globalPacker.packToFile(pixelmap, fd, ops);
+          await globalPacker!.packToFile(pixelmap, fd, ops);
           await pixelmap.release();
         } else {
           let imageSource: image.ImageSource = source as image.ImageSource;
-          await globalPacker.packToFile(imageSource, fd, ops);
+          await globalPacker!.packToFile(imageSource, fd, ops);
           await imageSource.release();
         }
         expect(false).assertTrue();
         console.info(`${testNum} packToFile test`);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+          error = error as BusinessError;
         console.log("packToFileCallback error: " + error);
         console.info(`${testNum} pack failerr: ${JSON.stringify(error)}`);
         console.info(`${testNum} pack failerr: ${error.code}`);
@@ -436,11 +438,11 @@ export default function imagePackToFileGif() {
         done();
       } finally {
         fs.closeSync(fd);
-        await globalPacker.release();
+        await globalPacker!.release();
       }
     }
 
-    const packToFilePromiseErr = (done: () => void, testNum: string, source: image.ImageSource | image.PixelMap, type: string, fd: int,
+    const packToFilePromiseErr = async (done: () => void, testNum: string, source: image.ImageSource | image.PixelMap, type: string, fd: int,
       ops: image.PackingOption) => {
       let globalPacker: image.ImagePacker;
       try {
@@ -464,7 +466,8 @@ export default function imagePackToFileGif() {
           expect(false).assertTrue();
           console.info(`${testNum} packToFile test`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${testNum} packToFile error: ` + JSON.stringify(error));
           console.info(`${testNum} pack failerr: ${error.code}`);
           expect(error.code == ERROR_CODE).assertTrue();
@@ -952,7 +955,7 @@ export default function imagePackToFileGif() {
         expect(!isSupportGifEncode).assertTrue();
         done();
       } else {
-        let isSupportFormat = isSupportImageFormat("HDRVividSingleLayer.heic", "image/heic");
+        let isSupportFormat = await isSupportImageFormat("HDRVividSingleLayer.heic", "image/heic");
         if (!isSupportFormat) {
           console.info("device is not support imageformat heic");
           expect(!isSupportFormat).assertTrue();
@@ -1136,14 +1139,14 @@ export default function imagePackToFileGif() {
      * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0100", Level.LEVEL0, async (done: () => void) => {
-      let globalpixelmap = getPixelMapData()
+      let globalpixelmap = await getPixelMapData()
       expect(globalpixelmap != undefined).assertTrue();
       let fpath: string = cacheDir + "/" + "pack_multiFrames_err_001.gif";
       let writeFd = getWriteFd("pack_multiFrames_err_001.gif")
       expect(writeFd != INVALID_FD).assertTrue();
       expect(fpath != undefined).assertTrue();
       let ops: image.PackingOption = { format: "image/gif", quality: 101 };
-      packToFileCbErr(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0100",
+      await packToFileCbErr(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0100",
         globalpixelmap, "PixelMap", writeFd, ops)
     });
 
@@ -1156,14 +1159,14 @@ export default function imagePackToFileGif() {
      * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0300", Level.LEVEL0, async (done: () => void) => {
-      let globalpixelmap = getPixelMapData()
+      let globalpixelmap = await getPixelMapData()
       expect(globalpixelmap != undefined).assertTrue();
       let fpath: string = cacheDir + "/" + "pack_multiFrames_err_003.gif";
       let writeFd = getWriteFd("pack_multiFrames_err_003.gif")
       expect(writeFd != INVALID_FD).assertTrue();
       expect(fpath != undefined).assertTrue();
       let ops: image.PackingOption = { format: "image/gif", quality: 101 };
-      packToFilePromiseErr(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0300",
+      await packToFilePromiseErr(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0300",
         globalpixelmap, "PixelMap", writeFd, ops)
     });
   });

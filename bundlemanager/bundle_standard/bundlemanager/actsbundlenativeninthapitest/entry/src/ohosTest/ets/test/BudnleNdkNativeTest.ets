@@ -14,6 +14,8 @@
  */
 
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from "@ohos/hypium"
+import {BusinessError} from '@ohos.base'
+
 import bundlendk from 'libbundlendk.so'
 
 const BUNDLE_NAME = "com.actsbundle.napitest"
@@ -39,6 +41,33 @@ export default function budnleNdkNativeTest() {
           expect(bundlendk.getCurrentApplicationInfo().appId).assertEqual(APP_ID);
           expect(bundlendk.getCurrentApplicationInfo().appIdentifier).assertEqual(APP_IDENTIFIER);
       });
+
+    /**
+     * @tc.name   BundleNdkTest002
+     * @tc.number SUB_BMS_BASIC_ETS_NATIVE_0200
+     * @tc.desc   budnleNdkNativeTest_IsDebugMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('BundleNdkTest003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+      try{
+        let data = bundlendk.IsDebugMode();
+        console.info('Debug_Metadata_test ==>' + data);
+        expect(data).assertEqual(false);
+        done();
+
+      }catch (err) {
+        let message = (err as BusinessError).message;
+        console.info('Debug_Metadata_test  fail==>' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+
+      }
+    })
+
+
+
 
     })
 }

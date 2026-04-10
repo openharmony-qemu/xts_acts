@@ -63,3 +63,9 @@ add_library(noderenderndk SHARED
 
 target_link_libraries(noderenderndk PUBLIC libace_napi.z.so libhilog_ndk.z.so libos_account_ndk.so libohinput.so
 libace_ndk.z.so libpixelmap.so)
+
+add_library(keyeventndk SHARED arkuikeyeventtest/ArkUIKeyEventTest.cpp
+                               arkuikeyeventtest/ArkUIKeyIntensionTest.cpp
+                               common/CommonTest.cpp)
+target_link_libraries(keyeventndk PUBLIC libace_napi.z.so libhilog_ndk.z.so libos_account_ndk.so libohinput.so
+                          libace_ndk.z.so)

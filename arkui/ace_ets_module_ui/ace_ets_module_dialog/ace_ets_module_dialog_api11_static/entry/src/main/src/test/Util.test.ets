@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ class UtilsTest {
         await UtilsTest.msSleep(4000)
       }
       return true;
-    } catch (error: Error) {
+    } catch (error) {
       console.error(`UiTestCase, start abilityFailed: ${error}`);
       hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${JSON.stringify(error)}`);
       return false;
@@ -56,7 +56,7 @@ async function startAbility(bundleName: string, abilityName: string): Promise<bo
     console.info(`UiTestCase, start abilityFinished`);
     hilog.info(domain, tag, `UiTestCase, start abilityFinished`);
     return true;
-  } catch (error: Error) {
+  } catch (error) {
     console.error(`UiTestCase, start abilityFailed: ${error}`);
     hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${JSON.stringify(error)}`);
     return false;
@@ -68,7 +68,7 @@ async function stopApplication(bundleName: string): Promise<boolean> {
     await abilityDelegator.executeShellCommand(`aa force-stop ${bundleName} `);
     console.info(`UiTestCase, stop application finished`);
     return true;
-  } catch (error: Error) {
+  } catch (error) {
     console.error(`UiTestCase,stop application failed: ${JSON.stringify(error)}`);
     return false;
   }

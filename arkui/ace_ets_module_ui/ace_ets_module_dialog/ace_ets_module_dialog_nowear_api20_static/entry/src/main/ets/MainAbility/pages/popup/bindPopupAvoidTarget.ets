@@ -28,7 +28,6 @@ import {
   PopupCommonOptions,
   Scroll,
   Scroller,
-  ESObject,
   Margin,
   PopupOptions,
   PopupStateChangeParam,

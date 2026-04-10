@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ListItem_Delete_End() {
   describe('ListItem_Delete_End', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_Delete_End beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -103,7 +103,7 @@ it('SUB_ACE_ListItem_Delete_End_static_0200', Level.LEVEL0, async (done: () => v
       console.log('slide ')
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(5))).toInt(),
@@ -174,7 +174,7 @@ it('SUB_ACE_ListItem_Delete_End_static_0300', Level.LEVEL0, async (done: () => v
       console.info("SUB_ACE_ListItem_Delete_End_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       console.log('slide ')
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(80))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
@@ -237,7 +237,7 @@ it('SUB_ACE_ListItem_Delete_End_static_0400', Level.LEVEL0, async (done: () => v
 
       console.log('slide ')
 
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
@@ -301,7 +301,7 @@ it('SUB_ACE_ListItem_Delete_End_static_0500', Level.LEVEL0, async (done: () => v
 
       console.log('slide ')
 
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
@@ -362,7 +362,7 @@ it('SUB_ACE_ListItem_Delete_End_static_0600', Level.LEVEL0, async (done: () => v
       console.info("SUB_ACE_ListItem_Delete_End_0600 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       console.log('slide ')
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(10))).toInt(),

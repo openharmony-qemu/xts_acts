@@ -55,7 +55,7 @@ export default function richEditorApi2() {
       }
       console.info("richEditorApi2 beforeEach end");
     });
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("richEditorApi2 beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
@@ -92,7 +92,17 @@ export default function richEditorApi2() {
 
       let text1 = inspector.getInspectorByKey('richEditorApi2_text1');
       let obj = JSON.parseJsonElement(text1);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual(`{"size":[80,80],"verticalAlign":{"value":3,"#ordinal":1},"objectFit":{"value":1,"#ordinal":2},"layoutStyle":{"margin":{"top":"0.00px","right":"0.00px","bottom":"0.00px","left":"0.00px"},"borderRadius":"50.00px"}}`);
+      const contentElement = JSON.parseJsonElement(obj.getElement('$attrs').getString('content'))
+
+      expect(JSON.stringifyJsonElement(contentElement.getArray("size")[0])).assertEqual("80")
+      expect(JSON.stringifyJsonElement(contentElement.getArray("size")[1])).assertEqual("80")
+      expect(contentElement.getDouble("verticalAlign")).assertEqual(3)
+      expect(contentElement.getDouble("objectFit")).assertEqual(2)
+      expect(contentElement.getElement("layoutStyle").getElement("margin").getString("top")).assertEqual("0.00px")
+      expect(contentElement.getElement("layoutStyle").getElement("margin").getString("right")).assertEqual("0.00px")
+      expect(contentElement.getElement("layoutStyle").getElement("margin").getString("bottom")).assertEqual("0.00px")
+      expect(contentElement.getElement("layoutStyle").getElement("margin").getString("left")).assertEqual("0.00px")
+      expect(contentElement.getElement("layoutStyle").getString("borderRadius")).assertEqual("50.00px")
       console.info('[testRichEditor_0100] END');
       done();
     });

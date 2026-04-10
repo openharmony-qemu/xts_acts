@@ -4,6 +4,12 @@ import { util, xml } from '@kit.ArkTS';
 
 const DOMAIN = 0x0000
 
+const sleep = (time: number): Promise<void> => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
 export default function XmlTest_01() {
   describe('XmlTest_01', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -11,10 +17,11 @@ export default function XmlTest_01() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
+      await sleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -88,7 +95,7 @@ export default function XmlTest_01() {
           expect().assertFail()
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
-          expect(err).assertContain("BusinessError")
+          expect(err.name).assertEqual("BusinessError")
           expect(String(err)).assertContain("utf-8")
         }
 
@@ -298,7 +305,7 @@ export default function XmlTest_01() {
           expect(result).assertFail()
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
-          expect(err).assertContain("BusinessError")
+          expect(err.name).assertEqual("BusinessError")
         }
 
       });
@@ -331,7 +338,7 @@ export default function XmlTest_01() {
           expect(result).assertFail()
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
-          expect(err).assertContain("BusinessError")
+          expect(err.name).assertEqual("BusinessError")
         }
 
       });
@@ -916,7 +923,7 @@ export default function XmlTest_01() {
           expect().assertFail()
         } catch (err) {
           console.error(`${TAG} fail,err:${err}`);
-          expect(err).assertContain("BusinessError")
+          expect(err.name).assertEqual("BusinessError")
         }
 
       });
@@ -1041,7 +1048,7 @@ export default function XmlTest_01() {
           expect().assertFail();
         } catch (err) {
           console.error(`${TAG} fail,err:${err}`);
-          expect(err).assertContain("BusinessError")
+          expect(err.name).assertEqual("BusinessError")
         }
 
       });
@@ -1065,7 +1072,7 @@ export default function XmlTest_01() {
           expect().assertFail();
         } catch (err) {
           console.error(`${TAG} fail,err:${err}`);
-          expect(err).assertContain("BusinessError")
+          expect(err.name).assertEqual("BusinessError")
         }
 
       });
@@ -1089,7 +1096,7 @@ export default function XmlTest_01() {
           expect().assertFail();
         } catch (err) {
           console.error(`${TAG} fail,err:${err}`);
-          expect(err).assertContain("BusinessError")
+          expect(err.name).assertEqual("BusinessError")
         }
 
       });
@@ -1335,7 +1342,7 @@ export default function XmlTest_01() {
           expect().assertFail();
         } catch (err) {
           console.error(`${TAG} fail,err:${err}`);
-          expect(err).assertContain("BusinessError")
+          expect(err.name).assertEqual("BusinessError")
         }
 
       });
@@ -1461,7 +1468,7 @@ export default function XmlTest_01() {
           expect().assertFail()
         } catch (err) {
           console.error(`${TAG} fail,err:${err}`);
-          expect(err).assertContain("BusinessError")
+          expect(err.name).assertEqual("BusinessError")
         }
 
       });
@@ -1486,7 +1493,7 @@ export default function XmlTest_01() {
           expect().assertFail();
         } catch (err) {
           console.error(`${TAG} fail,err:${err}`);
-          expect(err).assertContain("BusinessError")
+          expect(err.name).assertEqual("BusinessError")
         }
 
       });
@@ -1511,7 +1518,7 @@ export default function XmlTest_01() {
           expect().assertFail();
         } catch (err) {
           console.error(`${TAG} fail,err:${err}`);
-          expect(err).assertContain("BusinessError")
+          expect(err.name).assertEqual("BusinessError")
         }
 
       });

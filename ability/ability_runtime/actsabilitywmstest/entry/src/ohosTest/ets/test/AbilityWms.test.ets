@@ -20,8 +20,10 @@ import { appManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@ohos.UiTest';
 
-let context = getContext(this) as common.UIAbilityContext;
-
+function sleep(time: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, time))
+}
+let context:common.UIAbilityContext;
 export default function abilityWMSTest() {
   describe('abilityWMSTest', () => {
 
@@ -36,6 +38,7 @@ export default function abilityWMSTest() {
         console.error('findComponent failed: ' + JSON.stringify(err));
       }
       context = globalThis.context;
+      hilog.info(0x0000, 'testTag', `context is: ${JSON.stringify(context)}`);
     })
     beforeEach(() => {
     })
@@ -53,6 +56,7 @@ export default function abilityWMSTest() {
      * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800', Level.LEVEL3, async (done: Function) => {
+      await sleep(500);
       let tag = `SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800`;
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag}, it begin`);
       appManager.getRunningProcessInformation().then((data) => {

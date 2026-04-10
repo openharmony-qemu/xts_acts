@@ -56,7 +56,7 @@ const SUITE: string = 'textAreaUxTest'
 export default function textAreaUxTest() {
   describe('textAreaUxTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaUxTest beforeEach start");
 
 

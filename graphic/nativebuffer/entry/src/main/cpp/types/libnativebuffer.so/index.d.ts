@@ -89,3 +89,4 @@ export const oHNativeBufferReadFromParcelAbnnormal: () => number;
 export const oHNativeBufferWriteAndReadParcelMultipleCalls: () => number;
 export const oHNativeBufferMapPlanesNormal1: () =>Array<number>;
 export const oHNativeErrorCodeCover: () => number;
+export const oHNativeBufferAllocFormatDiff: () => number;

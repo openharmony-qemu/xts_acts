@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import initNdkTest from './initNdk.test';
+import SuppressWarningsTypeTest from './SuppressWarningsType.test';
 
 export default function testsuite() {
   initNdkTest();
+  SuppressWarningsTypeTest();
 }

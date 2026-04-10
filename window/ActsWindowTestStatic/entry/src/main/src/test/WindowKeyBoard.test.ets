@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,6 +24,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
+import { Driver,ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -31,9 +32,10 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 export default function WindowKeyBoardTest() {
 
     describe("WindowKeyBoardTest", (): void => {
+        let driver: Driver = Driver.create();
         hilog.info(domain, tag, '%{public}s', 'WindowKeyBoardTest describe start');
-        let windowStage: window.WindowStage;
-        let win: window.Window;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
         let context: common.UIAbilityContext;
         let isFreeWindowMode:boolean = false;
         // let session:UIExtensionContentSession;
@@ -53,7 +55,7 @@ export default function WindowKeyBoardTest() {
 
             hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
             hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
-            let mainWindowClass:window.Window = windowStage.getMainWindowSync();
+            let mainWindowClass:window.Window = windowStage!.getMainWindowSync();
             isFreeWindowMode = mainWindowClass.isInFreeWindowMode();
             //isFreeWindowMode == true 自由窗口模式
             //isFreeWindowMode == false 非自由窗口模式
@@ -70,19 +72,19 @@ export default function WindowKeyBoardTest() {
         
 
         /**
-         * @tc.number       testOnKeyboardDidShowErrCode1300002_0100
-         * @tc.name         testOnKeyboardDidShowErrCode1300002_static_0100
-         * @tc.desc         testOnKeyboardDidShowErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
-         */
+        * @tc.number       testOnKeyboardDidShowErrCode1300002_0100
+        * @tc.name         testOnKeyboardDidShowErrCode1300002_static_0100
+        * @tc.desc         testOnKeyboardDidShowErrCode1300002_static_0100
+        * @tc.size         MediumTest
+        * @tc.type         Function
+        * @tc.level        Level 3
+        */
         it('testOnKeyboardDidShowErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnKeyboardDidShowErrCode1300002_static_0100";
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOnKeyboardDidShowErrCode1300002_static_0100')
+                let tempWnd: window.Window = await windowStage!.createSubWindow('testOnKeyboardDidShowErrCode1300002_static_0100')
                 hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
@@ -95,7 +97,8 @@ export default function WindowKeyBoardTest() {
                 hilog.info(domain, tag,msgStr + 'window.isWindowShowing success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -110,31 +113,33 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.number       testOffKeyboardDidShowErrCode1300002_0100
-         * @tc.name         testOffKeyboardDidShowErrCode1300002_static_0100
-         * @tc.desc         testOffKeyboardDidShowErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
-         */
+        * @tc.number       testOffKeyboardDidShowErrCode1300002_0100
+        * @tc.name         testOffKeyboardDidShowErrCode1300002_static_0100
+        * @tc.desc         testOffKeyboardDidShowErrCode1300002_static_0100
+        * @tc.size         MediumTest
+        * @tc.type         Function
+        * @tc.level        Level 3
+        */
         it('testOffKeyboardDidShowErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOffKeyboardDidShowErrCode1300002_static_0100";
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOffKeyboardDidShowErrCode1300002_static_0100')
+                let tempWnd: window.Window = await windowStage!.createSubWindow('testOffKeyboardDidShowErrCode1300002_static_0100')
                 hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.offKeyboardDidShow((keyboardInfo: window.KeyboardInfo) => {
-                    console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
-                });
+                const callback = (keyboardInfo: window.KeyboardInfo) => {
+                    console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+                }
+                tempWnd.offKeyboardDidShow(callback);
                 hilog.info(domain, tag,msgStr + 'window.off_keyboardDidShow success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -150,19 +155,19 @@ export default function WindowKeyBoardTest() {
 
 
         /**
-         * @tc.number       testOnKeyboardDidHideErrCode1300002_0100
-         * @tc.name         testOnKeyboardDidHideErrCode1300002_static_0100
-         * @tc.desc         testOnKeyboardDidHideErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
-         */
+        * @tc.number       testOnKeyboardDidHideErrCode1300002_0100
+        * @tc.name         testOnKeyboardDidHideErrCode1300002_static_0100
+        * @tc.desc         testOnKeyboardDidHideErrCode1300002_static_0100
+        * @tc.size         MediumTest
+        * @tc.type         Function
+        * @tc.level        Level 3
+        */
         it('testOnKeyboardDidHideErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnKeyboardDidHideErrCode1300002_static_0100";
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOnKeyboardDidHideErrCode1300002_static_0100')
+                let tempWnd: window.Window = await windowStage!.createSubWindow('testOnKeyboardDidHideErrCode1300002_static_0100')
                 hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
@@ -174,7 +179,8 @@ export default function WindowKeyBoardTest() {
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -189,31 +195,33 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.number       testOffKeyboardDidHideErrCode1300002_0100
-         * @tc.name         testOffKeyboardDidHideErrCode1300002_static_0100
-         * @tc.desc         testOffKeyboardDidHideErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
-         */
+        * @tc.number       testOffKeyboardDidHideErrCode1300002_0100
+        * @tc.name         testOffKeyboardDidHideErrCode1300002_static_0100
+        * @tc.desc         testOffKeyboardDidHideErrCode1300002_static_0100
+        * @tc.size         MediumTest
+        * @tc.type         Function
+        * @tc.level        Level 3
+        */
         it('testOffKeyboardDidHideErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName : string = "testOffKeyboardDidShowErrCode1300002_static_0100";
+            let caseName : string = "testOffKeyboardDidHideErrCode1300002_static_0100";
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
             try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOffKeyboardDidHideErrCode1300002_static_0100')
+                let tempWnd: window.Window = await windowStage!.createSubWindow('testOffKeyboardDidHideErrCode1300002_static_0100')
                 hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.offKeyboardDidHide((keyboardInfo: window.KeyboardInfo) => {
-                    console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
-                });
+                const callback = (keyboardInfo: window.KeyboardInfo) => {
+                    console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+                }
+                tempWnd.offKeyboardDidHide(callback);
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -228,81 +236,110 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.number       testOnKeyboardHeightChangeErrCode1300002_0100
-         * @tc.name         testOnKeyboardHeightChangeErrCode1300002_static_0100
-         * @tc.desc         testOnKeyboardHeightChangeErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
-         */
-        it('testOnKeyboardHeightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName : string = "testOnKeyboardHeightChangeErrCode1300002_static_0100";
-            let msgStr : string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
-            try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOnKeyboardHeightChangeErrCode1300002_static_0100')
-                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
-                await Utils.msSleep(300);
-                expect(!!tempWnd).assertTrue();
-                hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.onKeyboardHeightChange((data) => {
-                    console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(data));
-                });
-                await tempWnd.destroyWindow();
-                hilog.info(domain, tag,msgStr + 'window.on_keyboardHeightChange success');
-                done()
-            } catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                expect(false).assertTrue();
-                done()
-            }
-        })
+        * @tc.number       testOnKeyboardHeightChangeErrCode1300002_static_0100
+        * @tc.name         testOnKeyboardHeightChangeErrCode1300002_static_0100
+        * @tc.desc         testOnKeyboardHeightChangeErrCode1300002_static_0100
+        * @tc.size         MediumTest
+        * @tc.type         Function
+        * @tc.level        Level 3
+        */
+        it('testOnKeyboardHeightChangeErrCode1300002_static_0100', Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = "testOnKeyboardHeightChangeErrCode1300002_static_0100";
+                let msgStr: string = 'jsunittest ' + caseName + ' ';
+                hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+                try {
+                    let tempWnd: window.Window =
+                        await windowStage!.createSubWindow('testOnKeyboardHeightChangeErrCode1300002_static_0100')
+                    hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow success');
+                    await Utils.msSleep(300);
+                    expect(!!tempWnd).assertTrue();
+                    await tempWnd.destroyWindow();
+                    hilog.info(domain, tag, msgStr + 'window.destroy success');
+                    try {
+                        const callback = (height: int) => {
+                            console.info(`${caseName} KeyboardHeight: ${JSON.stringify(height)}`);
+                            expect(height).assertLarger(0);
+                        }
+                        tempWnd.onKeyboardHeightChange(callback);
+                        hilog.info(domain, tag, msgStr + 'window.on_keyboardHeightChange success');
+                        expect(false).assertTrue();
+                        done()
+                    } catch (err) {
+                        err = err as BusinessError;
+                        console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+                        expect(err.code).assertEqual(1300002);
+                        expect(err.message != null).assertTrue();
+                        done();
+                    }
+
+                } catch (exception) {
+                    hilog.error(0x0000, '[ANI]',
+                        msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                    expect(false).assertTrue();
+                    done()
+                }
+            })
 
         /**
-         * @tc.number       testOffKeyboardHeightChangeErrCode1300002_0100
-         * @tc.name         testOffKeyboardHeightChangeErrCode1300002_static_0100
-         * @tc.desc         testOffKeyboardHeightChangeErrCode1300002_static_0100
-         * @tc.size         MediumTest
-         * @tc.type         Function
-         * @tc.level        Level 3
-         */
+        * @tc.number       testOffKeyboardHeightChangeErrCode1300002_static_0100
+        * @tc.name         testOffKeyboardHeightChangeErrCode1300002_static_0100
+        * @tc.desc         testOffKeyboardHeightChangeErrCode1300002_static_0100
+        * @tc.size         MediumTest
+        * @tc.type         Function
+        * @tc.level        Level 3
+        */
         it('testOffKeyboardHeightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName : string = "testOffKeyboardHeightChangeErrCode1300002_static_0100";
-            let msgStr : string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            let caseName: string = "testOffKeyboardHeightChangeErrCode1300002_static_0100";
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             try {
-                let tempWnd: window.Window = await windowStage.createSubWindow('testOffKeyboardHeightChangeErrCode1300002_static_0100')
-                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                let tempWnd: window.Window =
+                    await windowStage!.createSubWindow('testOffKeyboardHeightChangeErrCode1300002_static_0100')
+                hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow success');
                 await Utils.msSleep(300);
                 expect(!!tempWnd).assertTrue();
-                hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.offKeyboardHeightChange((data) => {
-                    console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(data));
-                });
                 await tempWnd.destroyWindow();
-                hilog.info(domain, tag,msgStr + 'window.on_keyboardHeightChange success');
-                done()
-            } catch (exception: BusinessError) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                hilog.info(domain, tag, msgStr + 'window.destroy success');
+                try {
+                    const callback = (height: int) => {
+                        console.info(`${caseName} KeyboardHeight: ${JSON.stringify(height)}`);
+                        expect(height).assertLarger(0);
+                    }
+                    tempWnd.offKeyboardHeightChange(callback);
+                    hilog.info(domain, tag, msgStr + 'window.off_keyboardHeightChange success');
+                    expect(false).assertTrue();
+                    done()
+                } catch (err) {
+                    err = err as BusinessError;
+                    console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(err.code).assertEqual(1300002);
+                    expect(err.message != null).assertTrue();
+                    done();
+                }
+
+            } catch (exception) {
+                hilog.error(0x0000, '[ANI]',
+                    msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
             }
         })
         /**
-         * @tc.number      testKeepKeyboardOnFocusErrCode1300002_0100
-         * @tc.name        testKeepKeyboardOnFocusErrCode1300002_0100
-         * @tc.desc        testKeepKeyboardOnFocusErrCode1300002_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
+        * @tc.number      testKeepKeyboardOnFocusErrCode1300002_0100
+        * @tc.name        testKeepKeyboardOnFocusErrCode1300002_0100
+        * @tc.desc        testKeepKeyboardOnFocusErrCode1300002_0100
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
         it('testKeepKeyboardOnFocusErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName = "testKeepKeyboardOnFocusErrCode1300002_0100";
             let msgStr = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin.');
             let subWin: window.Window | undefined = undefined;
             try {
-                subWin = await windowStage.createSubWindow('testKeepKeyboardOnFocusErrCode1300002_SubWindow_Promise')
+                subWin = await windowStage!.createSubWindow('testKeepKeyboardOnFocusErrCode1300002_SubWindow_Promise')
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
@@ -314,25 +351,60 @@ export default function WindowKeyBoardTest() {
             await (subWin! as window.Window).destroyWindow();
             try {
                 subWin!.keepKeyboardOnFocus(true);
+                subWin!.keepKeyboardOnFocus(false);
                 console.error(msgStr + 'Succeeded in calling keepKeyboardOnFocus.');
                 expect(false).assertTrue();
                 done()
             } catch (e) {
                 e = e as BusinessError;
-                console.log(msgStr + 'Failed to call keepKeyboardOnFocus. Cause:' + JSON.stringify(e));
-                expect(e.code).assertEqual(1300002);
+                if (e.code === 801) {
+                    console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${e.code}, message: ${e.message}`);
+                    expect(false).assertTrue();
+                    done();
+                } else {
+                    console.log(msgStr + 'Failed to call keepKeyboardOnFocus. Cause:' + JSON.stringify(e));
+                    expect(e.code).assertEqual(1300002);
+                    done()
+                }
+            }
+        })
+
+        /**
+        * @tc.number      testKeepKeyboardOnFocusErrCode1300004_0100
+        * @tc.name        testKeepKeyboardOnFocusErrCode1300004_0100
+        * @tc.desc        testKeepKeyboardOnFocusErrCode1300004_0100
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
+        it('testKeepKeyboardOnFocusErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testKeepKeyboardOnFocusErrCode1300004_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let mainWin :window.Window= windowStage!.getMainWindowSync();
+            expect(!!mainWin).assertTrue();
+            console.info(msgStr + 'Succeeded getMainWindowSync.');
+            try {
+                mainWin!.keepKeyboardOnFocus(false);
+                console.error(msgStr + 'Succeeded in calling keepKeyboardOnFocus.');
+                expect(false).assertTrue();
+                done()
+            } catch (e) {
+                e = e as BusinessError;
+                console.log(msgStr + 'Failed to call keepKeyboardOnFocus. Cause:' + JSON.stringify(e.code));
+                expect(e.code).assertEqual(1300004);
                 done()
             }
         })
 
         /**
-         * @tc.name   testWindowAnimationCurveEnum_static
-         * @tc.number testWindowAnimationCurve_static_0100
-         * @tc.desc   Test the function value of WindowAnimationCurve
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
+        * @tc.name   testWindowAnimationCurveEnum_static
+        * @tc.number testWindowAnimationCurve_static_0100
+        * @tc.desc   Test the function value of WindowAnimationCurve
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
         it('testWindowAnimationCurveEnum_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const caseName:string =  'testWindowAnimationCurveEnum_static';
             console.log(caseName + 'begin.');
@@ -345,13 +417,13 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.name   testRotationInfoTypeEnum_static
-         * @tc.number SUB_BASIC_WMS_XTS_RotationInfoType_static_0100
-         * @tc.desc   验证RotationInfoType枚举值
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
+        * @tc.name   testRotationInfoTypeEnum_static
+        * @tc.number SUB_BASIC_WMS_XTS_RotationInfoType_static_0100
+        * @tc.desc   验证RotationInfoType枚举值
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
         it("testRotationInfoTypeEnum_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName:string =  "testRotationInfoTypeEnum_static";
             console.log(caseName + " begin");
@@ -362,20 +434,20 @@ export default function WindowKeyBoardTest() {
                 expect(window.RotationInfoType.DISPLAY_ORIENTATION).assertEqual(1);
                 expect(window.RotationInfoType.DISPLAY_ROTATION).assertEqual(2);
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.error(caseName + ' Failed. Cause: ' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
             }
         });
         /**
-         * @tc.name   testAnimationType_static
-         * @tc.number SUB_BASIC_WMS_XTS_AnimationType_static_0100
-         * @tc.desc   验证AnimationType枚举值
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
+        * @tc.name   testAnimationType_static
+        * @tc.number SUB_BASIC_WMS_XTS_AnimationType_static_0100
+        * @tc.desc   验证AnimationType枚举值
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
         it("testAnimationType_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName:string =  "testAnimationType_static";
             console.log(caseName + " begin");
@@ -383,7 +455,7 @@ export default function WindowKeyBoardTest() {
                 console.log(caseName + " window.testAnimationTypeEnum: " + window.AnimationType.FADE_IN_OUT);
                 expect(window.AnimationType.FADE_IN_OUT).assertEqual(0);
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 console.error(caseName + ' Failed. Cause: ' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -391,18 +463,18 @@ export default function WindowKeyBoardTest() {
         });
 
         /**
-         * @tc.name   testSetWindowTransitionAnimationNormal_static
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_static_0010
-         * @tc.desc   Add transition animations to the Windows in specific scenes.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
+        * @tc.name   testSetWindowTransitionAnimationNormal_static
+        * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_static_0010
+        * @tc.desc   Add transition animations to the Windows in specific scenes.
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
         it('testSetWindowTransitionAnimationNormal_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName:string =  'testSetWindowTransitionAnimationNormal_static';
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin');
-            let mainWin :window.Window= windowStage.getMainWindowSync();
+            let mainWin :window.Window= windowStage!.getMainWindowSync();
             expect(!!mainWin).assertTrue();
             console.info(msgStr + 'Succeeded getMainWindowSync.');
             const animationConfig: window.WindowAnimationConfig = {
@@ -416,7 +488,6 @@ export default function WindowKeyBoardTest() {
             try {
                 mainWin.setWindowTransitionAnimation(window.WindowTransitionType.DESTROY, transitionAnimation).then(() => {
                     console.info(msgStr + 'Succeeded in setting window transition animation. Cause:');
-                    expect(true).assertTrue();
                     done();
                 }).catch((err:Error) :PromiseLike<void>|undefined => {
                     if (err.code != 801) {
@@ -431,7 +502,8 @@ export default function WindowKeyBoardTest() {
                         done();
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 if (err.code != 801) {
                     console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
@@ -446,17 +518,17 @@ export default function WindowKeyBoardTest() {
             }
         })
         /**
-         * @tc.name   testSubWindowDestroy_onKeyboradWillShow_static
-         * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_static_0400
-         * @tc.desc   子窗销毁后监听onKeyboardWillShow返回1300002错误码
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
+        * @tc.name   testSubWindowDestroy_onKeyboradWillShow_static
+        * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_static_0400
+        * @tc.desc   子窗销毁后监听onKeyboardWillShow返回1300002错误码
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL3
+        */
         it('testSubWindowDestroy_onKeyboradWillShow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testSubWindowDestroy_onKeyboradWillShow_static ';
             console.log(caseName + 'begin');
-            const subWindowClass:window.Window = await windowStage.createSubWindow('testSubWindowDestroy_onKeyboradWillShow_static');
+            const subWindowClass:window.Window = await windowStage!.createSubWindow('testSubWindowDestroy_onKeyboradWillShow_static');
             console.info(`${caseName} Succeeded in creating the sub window.`);
             await subWindowClass.setUIContent('pages/index2');
             await Utils.msSleep(200);
@@ -473,26 +545,30 @@ export default function WindowKeyBoardTest() {
                 }
                 subWindowClass.onKeyboardWillShow(callback);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(1300002);
-                expect(err.message != null).assertTrue();
-                done();
+                if (err!.code === 801) {
+                    done();
+                } else {
+                    expect(err!.code).assertEqual(1300002)
+                    done();
+                }
             }
         });
 
         /**
-         * @tc.name   testSubWindowDestroy_offKeyboradWillShow_static
-         * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_static_0500
-         * @tc.desc   子窗销毁后取消监听offKeyboardWillShow返回1300002错误码
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
+        * @tc.name   testSubWindowDestroy_offKeyboradWillShow_static
+        * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW_static_0500
+        * @tc.desc   子窗销毁后取消监听offKeyboardWillShow返回1300002错误码
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL3
+        */
         it('testSubWindowDestroy_offKeyboradWillShow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testSubWindowDestroy_offKeyboradWillShow_static ';
             console.log(caseName + 'begin');
-            const subWindowClass = await windowStage.createSubWindow('testSubWindowDestroy_offKeyboradWillShow_static');
+            const subWindowClass = await windowStage!.createSubWindow('testSubWindowDestroy_offKeyboradWillShow_static');
             console.info(`${caseName} Succeeded in creating the sub window.`);
             await subWindowClass.setUIContent('pages/index2');
             await Utils.msSleep(200);
@@ -509,7 +585,8 @@ export default function WindowKeyBoardTest() {
                 }
                 subWindowClass.offKeyboardWillShow(callback);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(1300002);
                 expect(err.message != null).assertTrue();
@@ -517,17 +594,17 @@ export default function WindowKeyBoardTest() {
             }
         });
         /**
-         * @tc.name   testSubWindowDestroy_onkeyboardWillHide_static
-         * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_static_0400
-         * @tc.desc   子窗销毁后监听onKeyboardWillHide返回1300002错误码
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
+        * @tc.name   testSubWindowDestroy_onkeyboardWillHide_static
+        * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_static_0400
+        * @tc.desc   子窗销毁后监听onKeyboardWillHide返回1300002错误码
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL3
+        */
         it('testSubWindowDestroy_onkeyboardWillHide_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testSubWindowDestroy_onkeyboardWillHide_static ';
             console.log(caseName + 'begin');
-            const subWindowClass:window.Window = await windowStage.createSubWindow('testSubWindowDestroy_onkeyboardWillHide_static');
+            const subWindowClass:window.Window = await windowStage!.createSubWindow('testSubWindowDestroy_onkeyboardWillHide_static');
             console.info(`${caseName} Succeeded in creating the sub window.`);
             await subWindowClass.setUIContent('pages/index2');
             await Utils.msSleep(200);
@@ -544,26 +621,30 @@ export default function WindowKeyBoardTest() {
                 }
                 subWindowClass.onKeyboardWillHide(callback);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(1300002);
-                expect(err.message != null).assertTrue();
-                done();
+                if (err!.code === 801) {
+                    done();
+                } else {
+                    expect(err!.code).assertEqual(1300002)
+                    done();
+                }
             }
         });
 
         /**
-         * @tc.name   testSubWindowDestroy_offkeyboardWillHide_static
-         * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_static_0500
-         * @tc.desc   子窗销毁后取消监听offKeyboardWillHide返回1300002错误码
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
+        * @tc.name   testSubWindowDestroy_offkeyboardWillHide_static
+        * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_static_0500
+        * @tc.desc   子窗销毁后取消监听offKeyboardWillHide返回1300002错误码
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL3
+        */
         it('testSubWindowDestroy_offkeyboardWillHide_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testSubWindowDestroy_offkeyboardWillHide_static ';
             console.log(caseName + 'begin');
-            const subWindowClass:window.Window = await windowStage.createSubWindow('testSubWindowDestroy_offkeyboardWillHide_static');
+            const subWindowClass:window.Window = await windowStage!.createSubWindow('testSubWindowDestroy_offkeyboardWillHide_static');
             console.info(`${caseName} Succeeded in creating the sub window.`);
             await subWindowClass.setUIContent('pages/index2');
             await Utils.msSleep(200);
@@ -580,26 +661,30 @@ export default function WindowKeyBoardTest() {
                 }
                 subWindowClass.offKeyboardWillHide(callback);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(1300002);
-                expect(err.message != null).assertTrue();
-                done();
+                if (err!.code === 801) {
+                    done();
+                } else {
+                    expect(err!.code).assertEqual(1300002)
+                    done();
+                }
             }
         });
         /**
-         * @tc.name   testGetWindowTransitionAnimationNormal_static
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_static_0050
-         * @tc.desc   Obtain the configuration of window transition animations in specific scenarios.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
+        * @tc.name   testGetWindowTransitionAnimationNormal_static
+        * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_static_0050
+        * @tc.desc   Obtain the configuration of window transition animations in specific scenarios.
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
         it('testGetWindowTransitionAnimationNormal_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
             let caseName:string= 'testGetWindowTransitionAnimationNormal_static';
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin');
-            let mainWin :window.Window= windowStage.getMainWindowSync();
+            let mainWin :window.Window= windowStage!.getMainWindowSync();
             expect(!!mainWin).assertTrue();
             console.info(msgStr + 'Succeeded getMainWindowSync.');
             const animationConfig: window.WindowAnimationConfig = {
@@ -617,7 +702,8 @@ export default function WindowKeyBoardTest() {
                         let transitionAnimationResult = mainWin.getWindowTransitionAnimation(window.WindowTransitionType.DESTROY);
                         console.error(msgStr + `success obtain the window transition animation.`);
                         expect(!!transitionAnimationResult).assertTrue();
-                    } catch (err: BusinessError){
+                    } catch (err){
+                        err = err as BusinessError;
                         if (err.code != 801) {
                             console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);
                             expect(true).assertFail();
@@ -639,7 +725,8 @@ export default function WindowKeyBoardTest() {
                         expect(err.message!=null).assertTrue();
                     }
                 });
-            } catch (err: BusinessError){
+            } catch (err){
+                err = err as BusinessError;
                 if (err.code != 801) {
                     console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
                     expect(true).assertFail();
@@ -651,52 +738,345 @@ export default function WindowKeyBoardTest() {
                 }
             }
         })
+
         /**
-         * @tc.name   testMainWindow_onKeyboradWillShow_static
-         * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW__static0100
-         * @tc.desc   主窗监听onKeyboardWillShow后拉起固定态输入法键盘触发回调
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
+        * @tc.name   testMainWindow_onKeyboardHeightChange_static
+        * @tc.number testMainWindow_onKeyboardHeightChange_static
+        * @tc.desc   主窗监听onKeyboardDidHide后拉起固定态输入法键盘触发回调
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('testMainWindow_onKeyboardHeightChange_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMainWindow_onKeyboardHeightChange_static ';
+            console.log(caseName + 'begin');
+            let mainWindow:window.Window = windowStage!.getMainWindowSync();
+            const subWindowClass:window.Window = await windowStage!.createSubWindow('testMainWindow_onKeyboardHeightChange_static');
+            console.info(`${caseName} Succeeded in creating the sub window.`);
+            await subWindowClass.setUIContent('pages/index2');
+            await subWindowClass.showWindow();
+            try {
+                if (isFreeWindowMode === true) {
+                    done();
+                } else {
+                    const callback = (height: int) => {
+                        console.info(`${caseName} KeyboardHeight: ${JSON.stringify(height)}`);
+                        expect(height).assertLarger(0);
+                    }
+                    subWindowClass.onKeyboardHeightChange(callback);
+                    let input = await driver.findComponent(ON.id('textInput'));
+                    console.info(`${caseName}  input: ` + JSON.stringify(input));
+                    await Utils.msSleep(1000);
+                    if(input === null){
+                        console.info(`${caseName} input is null`);
+                        done();
+                    } else{
+                        console.info(`${caseName} input is click`);
+                        await input.click();
+                    }
+                    await Utils.msSleep(1000);
+                    await driver.pressBack();
+                    subWindowClass.offKeyboardHeightChange(callback);
+                    await subWindowClass.destroyWindow()
+                    done();
+                }
+            } catch (err) {
+                err = err as BusinessError;
+                console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+                subWindowClass.offKeyboardHeightChange();
+                await subWindowClass.destroyWindow()
+                if (err.code === 801) {
+                    expect(err.message != null).assertTrue();
+                    done();
+                } else {
+                    expect(true).assertFail()
+                    done();
+                }
+            }
+        });
+
+        /**
+        * @tc.name   testMainWindow_onKeyboradWillShow_static
+        * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLSHOW__static0100
+        * @tc.desc   主窗监听onKeyboardWillShow后拉起固定态输入法键盘触发回调
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
         it('testMainWindow_onKeyboradWillShow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testMainWindow_onKeyboradWillShow_static ';
             console.log(caseName + 'begin');
-            let mainWindow:window.Window = windowStage.getMainWindowSync();
+            let mainWindow:window.Window = windowStage!.getMainWindowSync();
+            const subWindowClass:window.Window = await windowStage!.createSubWindow('testSubWindowDestroy_onKeyboradWillShow_static');
+            console.info(`${caseName} Succeeded in creating the sub window.`);
+            await subWindowClass.setUIContent('pages/index2');
+            await subWindowClass.showWindow();
             try {
-                if (isFreeWindowMode == true) {
+                if (isFreeWindowMode === true) {
                     done();
                 } else {
                     const callback = (keyboardInfo: window.KeyboardInfo) => {
-                        console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
-                        let displayInfo = display.getDefaultDisplaySync();
-                        console.info(`${caseName} dispalyInfo: ${JSON.stringify(displayInfo)}`);
-                        expect(keyboardInfo.beginRect.left).assertEqual(0);
-                        expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
-                        expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
-                        expect(keyboardInfo.beginRect.height).assertLarger(0);
-                        expect(keyboardInfo.endRect.left).assertEqual(0);
-                        expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
-                        expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
-                        expect(keyboardInfo.endRect.height).assertLarger(0);
-                        expect(keyboardInfo.animated).assertEqual(true);
-                        expect(keyboardInfo.config?.curve).assertEqual(1);
-                        expect(keyboardInfo.config?.duration).assertLarger(0);
-                        if (keyboardInfo.config?.param != null) {
-                            expect(true).assertTrue();
-                        } else {
-                            expect(true).assertFalse();
+                        try{
+                            console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+                            let displayInfo = display.getDefaultDisplaySync();
+                            console.info(`${caseName} dispalyInfo: ${JSON.stringify(displayInfo)}`);
+                            expect(keyboardInfo.beginRect.left).assertEqual(0);
+                            expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
+                            expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+                            expect(keyboardInfo.beginRect.height).assertLarger(0);
+                            expect(keyboardInfo.endRect.left).assertEqual(0);
+                            expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
+                            expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+                            expect(keyboardInfo.endRect.height).assertLarger(0);
+                            expect(keyboardInfo.animated).assertEqual(true);
+                            expect(keyboardInfo.config?.curve).assertEqual(1);
+                            expect(keyboardInfo.config?.duration).assertLarger(0);
+                            expect(keyboardInfo.config?.param !== null).assertTrue();
+                        } catch (err) {
+                            console.error(caseName + 'Failed. Cause:' + err.message);
+                            expect(true).assertFail()
+                            done()
                         }
-                        mainWindow.offKeyboardWillShow();
-                        done();
                     }
-                    mainWindow.onKeyboardWillShow(callback);
-                    mainWindow.offKeyboardWillShow();
+                    subWindowClass.onKeyboardWillShow(callback);
+                    let input = await driver.findComponent(ON.id('textInput'));
+                    console.info(`${caseName}  input: ` + JSON.stringify(input));
+                    await Utils.msSleep(1000);
+                    if(input === null){
+                        console.info(`${caseName} input is null`);
+                        done();
+                    } else{
+                        console.info(`${caseName} input is click`);
+                        await input.click();
+                    }
+                    await Utils.msSleep(1000);
+                    await driver.pressBack();
+                    subWindowClass.offKeyboardWillShow(callback);
+                    await subWindowClass.destroyWindow()
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
-                mainWindow.offKeyboardWillShow();
+                subWindowClass.offKeyboardWillShow();
+                await subWindowClass.destroyWindow()
+                if (err.code === 801) {
+                    expect(err.message != null).assertTrue();
+                    done();
+                } else {
+                    expect(true).assertFail()
+                    done();
+                }
+            }
+        });
+
+        /**
+        * @tc.name   testMainWindow_onKeyboradWillHide_static
+        * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHide__static0100
+        * @tc.desc   主窗监听onKeyboardWillHide后拉起固定态输入法键盘触发回调
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('testMainWindow_onKeyboradWillHide_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMainWindow_onKeyboradWillHide_static ';
+            console.log(caseName + 'begin');
+            let mainWindow:window.Window = windowStage!.getMainWindowSync();
+            const subWindowClass:window.Window = await windowStage!.createSubWindow('testSubWindowDestroy_onKeyboradWillHide_static');
+            console.info(`${caseName} Succeeded in creating the sub window.`);
+            await subWindowClass.setUIContent('pages/index2');
+            await subWindowClass.showWindow();
+            try {
+                if (isFreeWindowMode === true) {
+                    done();
+                } else {
+                    const callback = (keyboardInfo: window.KeyboardInfo) => {
+                        try{
+                            console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+                            let displayInfo = display.getDefaultDisplaySync();
+                            console.info(`${caseName} dispalyInfo: ${JSON.stringify(displayInfo)}`);
+                            expect(keyboardInfo.endRect.left).assertEqual(0);
+                            expect(keyboardInfo.endRect.top).assertEqual(displayInfo.height);
+                            expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+                            expect(keyboardInfo.endRect.height).assertLarger(0);
+                            expect(keyboardInfo.beginRect.left).assertEqual(0);
+                            expect(keyboardInfo.beginRect.top + keyboardInfo.beginRect.height).assertEqual(displayInfo.height);
+                            expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+                            expect(keyboardInfo.beginRect.height).assertLarger(0);
+                            expect(keyboardInfo.animated).assertEqual(true);
+                            expect(keyboardInfo.config?.curve).assertEqual(1);
+                            expect(keyboardInfo.config?.duration).assertLarger(0);
+                            expect(keyboardInfo.config?.param !== null).assertTrue();
+                        } catch (err) {
+                            console.error(caseName + 'Failed. Cause:' + err.message);
+                            expect(true).assertFail()
+                            done()
+                        }
+                    }
+                    subWindowClass.onKeyboardWillHide(callback);
+                    let input = await driver.findComponent(ON.id('textInput'));
+                    console.info(`${caseName}  input: ` + JSON.stringify(input));
+                    await Utils.msSleep(1000);
+                    if(input === null){
+                        console.info(`${caseName} input is null`);
+                        done();
+                    } else{
+                        console.info(`${caseName} input is click`);
+                        await input.click();
+                    }
+                    await Utils.msSleep(1000);
+                    await driver.pressBack();
+                    subWindowClass.offKeyboardWillHide(callback);
+                    await subWindowClass.destroyWindow()
+                    done();
+                }
+            } catch (err) {
+                err = err as BusinessError;
+                console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+                subWindowClass.offKeyboardWillHide();
+                await subWindowClass.destroyWindow()
+                if (err.code === 801) {
+                    expect(err.message != null).assertTrue();
+                    done();
+                } else {
+                    expect(true).assertFail()
+                    done();
+                }
+            }
+        });
+
+        /**
+        * @tc.name   testMainWindow_onKeyboradDidShow_static
+        * @tc.number SUB_BASIC_WMS_ONKEYBOARDDidSHOW__static0100
+        * @tc.desc   主窗监听onKeyboardDidShow后拉起固定态输入法键盘触发回调
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('testMainWindow_onKeyboradDidShow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMainWindow_onKeyboradDidShow_static ';
+            console.log(caseName + 'begin');
+            let mainWindow:window.Window = windowStage!.getMainWindowSync();
+            const subWindowClass:window.Window = await windowStage!.createSubWindow('testSubWindowDestroy_onKeyboradDidShow_static');
+            console.info(`${caseName} Succeeded in creating the sub window.`);
+            await subWindowClass.setUIContent('pages/index2');
+            await subWindowClass.showWindow();
+            try {
+                if (isFreeWindowMode === true) {
+                    done();
+                } else {
+                    const callback = (keyboardInfo: window.KeyboardInfo) => {
+                        try{
+                            console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+                            let displayInfo = display.getDefaultDisplaySync();
+                            console.info(`${caseName} dispalyInfo: ${JSON.stringify(displayInfo)}`);
+                            expect(keyboardInfo.beginRect.left).assertEqual(0);
+                            expect(keyboardInfo.beginRect.top).assertEqual(displayInfo.height);
+                            expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+                            expect(keyboardInfo.beginRect.height).assertLarger(0);
+                            expect(keyboardInfo.endRect.left).assertEqual(0);
+                            expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
+                            expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+                            expect(keyboardInfo.endRect.height).assertLarger(0);
+                        } catch (err) {
+                            console.error(caseName + 'Failed. Cause:' + err.message);
+                            expect(true).assertFail()
+                            done()
+                        }
+                    }
+                    subWindowClass.onKeyboardDidShow(callback);
+                    let input = await driver.findComponent(ON.id('textInput'));
+                    console.info(`${caseName}  input: ` + JSON.stringify(input));
+                    await Utils.msSleep(1000);
+                    if(input === null){
+                        console.info(`${caseName} input is null`);
+                        done();
+                    } else{
+                        console.info(`${caseName} input is click`);
+                        await input.click();
+                    }
+                    await Utils.msSleep(1000);
+                    await driver.pressBack();
+                    subWindowClass.offKeyboardDidShow(callback);
+                    await subWindowClass.destroyWindow()
+                    done();
+                }
+            } catch (err) {
+                err = err as BusinessError;
+                console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+                subWindowClass.offKeyboardDidShow();
+                await subWindowClass.destroyWindow()
+                if (err.code === 801) {
+                    expect(err.message != null).assertTrue();
+                    done();
+                } else {
+                    expect(true).assertFail()
+                    done();
+                }
+            }
+        });
+
+        /**
+        * @tc.name   testMainWindow_onKeyboradDidHide_static
+        * @tc.number SUB_BASIC_WMS_ONKEYBOARDDidHide__static0100
+        * @tc.desc   主窗监听onKeyboardDidHide后拉起固定态输入法键盘触发回调
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('testMainWindow_onKeyboradDidHide_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMainWindow_onKeyboradDidHide_static ';
+            console.log(caseName + 'begin');
+            let mainWindow:window.Window = windowStage!.getMainWindowSync();
+            const subWindowClass:window.Window = await windowStage!.createSubWindow('testSubWindowDestroy_onKeyboradDidHide_static');
+            console.info(`${caseName} Succeeded in creating the sub window.`);
+            await subWindowClass.setUIContent('pages/index2');
+            await subWindowClass.showWindow();
+            try {
+                if (isFreeWindowMode === true) {
+                    done();
+                } else {
+                    const callback = (keyboardInfo: window.KeyboardInfo) => {
+                        try{
+                            console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+                            let displayInfo = display.getDefaultDisplaySync();
+                            console.info(`${caseName} dispalyInfo: ${JSON.stringify(displayInfo)}`);
+                            expect(keyboardInfo.endRect.left).assertEqual(0);
+                            expect(keyboardInfo.endRect.top).assertEqual(displayInfo.height);
+                            expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
+                            expect(keyboardInfo.endRect.height).assertLarger(0);
+                            expect(keyboardInfo.beginRect.left).assertEqual(0);
+                            expect(keyboardInfo.beginRect.top + keyboardInfo.beginRect.height).assertEqual(displayInfo.height);
+                            expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
+                            expect(keyboardInfo.beginRect.height).assertLarger(0);
+                        } catch (err) {
+                            console.error(caseName + 'Failed. Cause:' + err.message);
+                            expect(true).assertFail()
+                            done()
+                        }
+                    }
+                    subWindowClass.onKeyboardDidHide(callback);
+                    let input = await driver.findComponent(ON.id('textInput'));
+                    console.info(`${caseName}  input: ` + JSON.stringify(input));
+                    await Utils.msSleep(1000);
+                    if(input === null){
+                        console.info(`${caseName} input is null`);
+                        done();
+                    } else{
+                        console.info(`${caseName} input is click`);
+                        await input.click();
+                    }
+                    await Utils.msSleep(1000);
+                    await driver.pressBack();
+                    subWindowClass.offKeyboardDidHide(callback);
+                    await subWindowClass.destroyWindow()
+                    done();
+                }
+            } catch (err) {
+                err = err as BusinessError;
+                console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+                subWindowClass.offKeyboardDidHide();
+                await subWindowClass.destroyWindow()
                 if (err.code === 801) {
                     expect(err.message != null).assertTrue();
                     done();

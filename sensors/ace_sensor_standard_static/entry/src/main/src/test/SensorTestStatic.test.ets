@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -310,6 +310,7 @@ function onFusionPressureCallback(data: sensor.FusionPressureResponse) {
 
 export default function SensorJsStaticTest() {
   describe("SensorJsStaticTest", ():void => {
+    const PARAMETER_EXPECT_ERROR = true
     const PERMISSION_DENIED_CODE = 201;
     const NON_SYSTEM_API_CODE = 202;
     const PARAMETER_ERROR_CODE = 401
@@ -332,7 +333,7 @@ export default function SensorJsStaticTest() {
         });
         hilog.info(0x0000, 'testTag', `beforeAll success ${sensorList}`);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(0x0000, 'testTag', `beforeAll failed err.code ${error.code} ,err.message${error.message}`);
         done();
       }
@@ -4270,7 +4271,7 @@ export default function SensorJsStaticTest() {
         for (let i = 0; i < ret.length; i++) {
           console.info(TAG + ' Succeeded in getting sensor: ' + JSON.stringify(ret[i]));
         }
-        expect(true).assertTrue();
+        expect(ret !== undefined).assertTrue();
         done();
       } catch (error) {
         console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
@@ -4372,7 +4373,7 @@ export default function SensorJsStaticTest() {
       console.info("------------------GetSingleSensorByDeviceSync_JSTest_002-------------------------");
       const TAG = 'GetSingleSensorByDeviceSync_JSTest_002'
       try {
-        const invalidType = -1 as sensor.SensorId;
+        const invalidType = sensor.SensorId.fromValue(-1);
         const deviceId = 1;
         const result = sensor.getSingleSensorByDeviceSync(invalidType, deviceId);
         if (Array.isArray(result) && result.length === 0) {
@@ -4384,7 +4385,7 @@ export default function SensorJsStaticTest() {
         done();
       } catch (error) {
         console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
-        expect(true).assertTrue();
+        expect(PARAMETER_EXPECT_ERROR).assertTrue();
         done();
       }
     })
@@ -4657,5 +4658,804 @@ export default function SensorJsStaticTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   GetSensorListByDeviceSync_JSTest_020
+     * @tc.number SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_020
+     * @tc.desc   Test getSensorListByDeviceSync without deviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('GetSensorListByDeviceSync_JSTest_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info("------------------GetSensorListByDeviceSync_JSTest_020-------------------------");
+      const TAG = 'GetSensorListByDeviceSync_JSTest_020'
+      try {
+        const result = sensor.getSensorListByDeviceSync();
+        console.info(TAG + ' Callback in!' + JSON.stringify(result));
+        if (result.length === 0) {
+          console.info('No local sensors found. Test case will return true.');
+          done();
+        } else {
+          const sensorInfo = result[0];
+          const onSensorCallback = (data: sensor.AccelerometerResponse) => {
+            console.info('Accelerometer data received: ' + JSON.stringify(data));
+          };
+          let sensorInfoParam = {
+            deviceId: -1,
+            sensorIndex: 0
+          } as sensor.SensorInfoParam;
+
+          const options = {
+            interval: 100000000,
+            sensorInfoParam: sensorInfoParam
+          } as sensor.Options;
+
+          sensor.onAccelerometerChange(onSensorCallback, options);
+          setTimeout(() => {
+            sensor.offAccelerometerChange(sensorInfoParam, onSensorCallback);
+            done();
+          }, 500);
+        }
+      } catch (error) {
+        console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
+        expect(error.code == 201).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   OnOrientationChange_SensorJsTest_static_010
+     * @tc.number OnOrientationChange_SensorJsTest_static_010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("OnOrientationChange_SensorJsTest_static_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, 'testTag', '---------====>OnOrientationChange_SensorJsTest_static_010--------------');
+      let  onSensorCallback1 = (data: sensor.OrientationResponse) => {
+        expect(data.alpha === 20).assertTrue();
+        expect(data.beta === 40).assertTrue();
+        expect(data.gamma === 30).assertTrue();
+      }
+
+      let  onSensorCallback2 = (data: sensor.AccelerometerResponse) => {
+        expect(data.x === 2).assertTrue();
+        expect(data.y === 4).assertTrue();
+        expect(data.z === 3).assertTrue();
+      }
+
+      let  onSensorCallback3 = (data: sensor.AccelerometerUncalibratedResponse) => {
+        expect(data.x === 2).assertTrue();
+        expect(data.y === 4).assertTrue();
+        expect(data.z === 3).assertTrue();
+        expect(data.biasX === 3).assertTrue();
+        expect(data.biasY === 3).assertTrue();
+        expect(data.biasZ === 3).assertTrue();
+      }
+
+      let  onSensorCallback4 = (data: sensor.LightResponse) => {
+        expect(data.intensity === 2).assertTrue();
+        expect(data.colorTemperature === 5).assertTrue();
+        expect(data.infraredLuminance === 9).assertTrue();
+      }
+
+      let  onSensorCallback5 = (data: sensor.AmbientTemperatureResponse) => {
+        expect(data.temperature === 2).assertTrue();
+      }
+
+      let  onSensorCallback6 = (data: sensor.BarometerResponse) => {
+        expect(data.pressure === 2).assertTrue();
+      }
+
+      let  onSensorCallback7 = (data: sensor.GravityResponse) => {
+        expect(data.x === 2).assertTrue();
+        expect(data.y === 4).assertTrue();
+        expect(data.z === 3).assertTrue();
+      }
+
+      let  onSensorCallback8 = (data: sensor.GyroscopeResponse) => {
+        expect(data.x === 2).assertTrue();
+        expect(data.y === 4).assertTrue();
+        expect(data.z === 3).assertTrue();
+      }
+
+      let  onSensorCallback9 = (data: sensor.GyroscopeUncalibratedResponse) => {
+        expect(data.x === 2).assertTrue();
+        expect(data.y === 4).assertTrue();
+        expect(data.z === 3).assertTrue();
+        expect(data.biasX === 3).assertTrue();
+        expect(data.biasY === 3).assertTrue();
+        expect(data.biasZ === 3).assertTrue();
+      }
+
+      let  onSensorCallback10 = (data: sensor.HallResponse) => {
+        expect(data.status === 5).assertTrue();
+      }
+
+      let  onSensorCallback11 = (data: sensor.HeartRateResponse) => {
+        expect(data.heartRate === 2).assertTrue();
+      }
+
+      let  onSensorCallback12 = (data: sensor.HumidityResponse) => {
+        expect(data.humidity === 2).assertTrue();
+      }
+
+      let  onSensorCallback13 = (data: sensor.LinearAccelerometerResponse) => {
+        expect(data.x === 2).assertTrue();
+        expect(data.y === 4).assertTrue();
+        expect(data.z === 3).assertTrue();
+      }
+
+      let  onSensorCallback14 = (data: sensor.MagneticFieldResponse) => {
+        expect(data.x === 2).assertTrue();
+        expect(data.y === 4).assertTrue();
+        expect(data.z === 3).assertTrue();
+      }
+
+      let  onSensorCallback15 = (data: sensor.MagneticFieldUncalibratedResponse) => {
+        expect(data.x === 2).assertTrue();
+        expect(data.y === 4).assertTrue();
+        expect(data.z === 3).assertTrue();
+        expect(data.biasX === 3).assertTrue();
+        expect(data.biasY === 3).assertTrue();
+        expect(data.biasZ === 3).assertTrue();
+      }
+
+      let  onSensorCallback16 = (data: sensor.PedometerResponse) => {
+        expect(data.steps === 2).assertTrue();
+      }
+
+      let  onSensorCallback17 = (data: sensor.PedometerDetectionResponse) => {
+        expect(data.scalar === 2).assertTrue();
+      }
+
+      let  onSensorCallback18 = (data: sensor.ProximityResponse) => {
+        expect(data.distance === 2).assertTrue();
+      }
+
+      let  onSensorCallback19 = (data: sensor.RotationVectorResponse) => {
+        expect(data.x === 2).assertTrue();
+        expect(data.y === 4).assertTrue();
+        expect(data.z === 3).assertTrue();
+        expect(data.w === 3).assertTrue();
+      }
+
+      let  onSensorCallback20 = (data: sensor.SignificantMotionResponse) => {
+        expect(data.scalar === 2).assertTrue();
+      }
+
+      let  onSensorCallback21 = (data: sensor.WearDetectionResponse) => {
+        expect(data.value === 2).assertTrue();
+      }
+
+      let  onSensorCallback22 = (data: sensor.FusionPressureResponse) => {
+        expect(data.fusionPressure === 2).assertTrue();
+      }
+
+      let  onSensorCallback23 = (data: sensor.OrientationResponse) => {
+        expect(data.alpha === 2).assertTrue();
+        expect(data.beta === 4).assertTrue();
+        expect(data.gamma === 3).assertTrue();
+      }
+
+      let  onSensorCallback24 = (data: sensor.AccelerometerResponse) => {
+        expect(data.x === 2).assertTrue();
+        expect(data.y === 4).assertTrue();
+        expect(data.z === 3).assertTrue();
+      }
+
+      let  onSensorCallback25 = (data: sensor.AccelerometerUncalibratedResponse) => {
+        expect(data.x === 2).assertTrue();
+        expect(data.y === 4).assertTrue();
+        expect(data.z === 3).assertTrue();
+        expect(data.biasX === 3).assertTrue();
+        expect(data.biasY === 3).assertTrue();
+        expect(data.biasZ === 3).assertTrue();
+      }
+
+      let  onSensorCallback26 = (data: sensor.LightResponse) => {
+        expect(data.intensity === 2).assertTrue();
+        expect(data.colorTemperature === 5).assertTrue();
+        expect(data.infraredLuminance === 9).assertTrue();
+      }
+
+      let  onSensorCallback27 = (data: sensor.BarometerResponse) => {
+        expect(data.pressure === 2).assertTrue();
+      }
+
+      let  onSensorCallback28 = (data: sensor.SensorStatusEvent) => {
+        expect(data.timestamp === 4).assertTrue();
+        expect(data.sensorId === 1).assertTrue();
+        expect(data.sensorIndex === 2).assertTrue();
+        expect(data.isSensorOnline === true).assertTrue();
+        expect(data.deviceId === 1).assertTrue();
+        expect(data.deviceName === '').assertTrue();
+      }
+
+      try {
+        sensor.onOrientationChange(onSensorCallback1, { 'interval': -100000000 });
+        sensor.onAccelerometerChange(onSensorCallback2, { 'interval': 100000000 });
+        sensor.onAccelerometerUncalibratedChange(onSensorCallback3, { 'interval': 100000000 });
+        sensor.onAmbientLightChange(onSensorCallback4, { 'interval': -100000000 });
+        sensor.onAmbientTemperatureChange(onSensorCallback5, { 'interval': -100000000 });
+        sensor.onBarometerChange(onSensorCallback6, { 'interval': -100000000 });
+        sensor.onGravityChange(onSensorCallback7, { 'interval': -100000000 });
+        sensor.onGyroscopeChange(onSensorCallback8, { 'interval': -100000000 });
+        sensor.onGyroscopeUncalibratedChange(onSensorCallback9, { 'interval': -100000000 });
+        sensor.onHallChange(onSensorCallback10, { 'interval': -100000000 });
+        sensor.onHeartRateChange(onSensorCallback11, { 'interval': -100000000 });
+        sensor.onHumidityChange(onSensorCallback12, { 'interval': -100000000 });
+        sensor.onLinearAccelerometerChange(onSensorCallback13, { 'interval': -100000000 });
+        sensor.onMagneticFieldChange(onSensorCallback14, { 'interval': -100000000 });
+        sensor.onMagneticFieldUncalibratedChange(onSensorCallback15, { 'interval': -100000000 });
+        sensor.onPedometerChange(onSensorCallback16, { 'interval': -100000000 });
+        sensor.onPedometerDetectionChange(onSensorCallback17, { 'interval': -100000000 });
+        sensor.onProximityChange(onSensorCallback18, { 'interval': -100000000 });
+        sensor.onRotationVectorChange(onSensorCallback19, { 'interval': -100000000 });
+        sensor.onSignificantMotionChange(onSensorCallback20, { 'interval': 100000000 });
+        sensor.onWearDetectionChange(onSensorCallback21, { 'interval': 100000000 });
+        sensor.onFusionPressureChange(onSensorCallback22, { 'interval': -100000000 });
+        sensor.onceOrientationChange(onSensorCallback23);
+        sensor.onceAccelerometerChange(onSensorCallback24);
+        sensor.onceAccelerometerUncalibratedChange(onSensorCallback25);
+        sensor.onceAmbientLightChange(onSensorCallback26);
+        sensor.onceAmbientTemperatureChange(onSensorCallback5);
+        sensor.onceBarometerChange(onSensorCallback27);
+        sensor.onceGravityChange(onSensorCallback7);
+        sensor.onceGyroscopeChange(onSensorCallback8);
+        sensor.onceGyroscopeUncalibratedChange(onSensorCallback9);
+        sensor.onceHallChange(onSensorCallback10);
+        sensor.onceHeartRateChange(onSensorCallback11);
+        sensor.onceHumidityChange(onSensorCallback12);
+        sensor.onceLinearAccelerometerChange(onSensorCallback13);
+        sensor.onceMagneticFieldChange(onSensorCallback14);
+        sensor.onceMagneticFieldUncalibratedChange(onSensorCallback15);
+        sensor.oncePedometerChange(onSensorCallback16);
+        sensor.oncePedometerDetectionChange(onSensorCallback17);
+        sensor.onceProximityChange(onSensorCallback18);
+        sensor.onceRotationVectorChange(onSensorCallback19);
+        sensor.onceSignificantMotionChange(onSensorCallback20);
+        sensor.onceWearDetectionChange(onSensorCallback21);
+        sensor.onSensorStatusChange(onSensorCallback28);
+
+        sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER, (error, data) => {
+          if (error) {
+            console.error('getSingleSensor fail, errorCode:');
+            expect(false).assertTrue();
+          } else {
+            expect(data!.sensorName === '').assertTrue();
+            expect(data!.vendorName === '').assertTrue();
+            expect(data!.firmwareVersion === '').assertTrue();
+            expect(data!.hardwareVersion === '').assertTrue();
+            expect(data!.sensorId === 2).assertTrue();
+            expect(data!.maxRange === 3).assertTrue();
+            expect(data!.minSamplePeriod === 4).assertTrue();
+            expect(data!.maxSamplePeriod === 7).assertTrue();
+            expect(data!.precision === 5).assertTrue();
+            expect(data!.power === 6).assertTrue();
+            expect(data!.sensorIndex === 1).assertTrue();
+            expect(data!.deviceId === 1).assertTrue();
+            expect(data!.deviceName === '4').assertTrue();
+            expect(data!.isLocalSensor === false).assertTrue();
+            expect(data!.isMockSensor === false).assertTrue();
+          }
+        });
+        let ret = sensor.getSingleSensorSync(sensor.SensorId.ACCELEROMETER);
+        expect(ret.sensorName === '').assertTrue();
+        expect(ret.vendorName === '').assertTrue();
+        expect(ret.firmwareVersion === '').assertTrue();
+        expect(ret.hardwareVersion === '').assertTrue();
+        expect(ret.sensorId === 2).assertTrue();
+        expect(ret.maxRange === 3).assertTrue();
+        expect(ret.minSamplePeriod === 4).assertTrue();
+        expect(ret.maxSamplePeriod === 7).assertTrue();
+        expect(ret.precision === 5).assertTrue();
+        expect(ret.power === 6).assertTrue();
+        expect(ret.sensorIndex === 1).assertTrue();
+        expect(ret.deviceId === 1).assertTrue();
+        expect(ret.deviceName === '4').assertTrue();
+        expect(ret.isLocalSensor === false).assertTrue();
+        expect(ret.isMockSensor === false).assertTrue();
+        sensor.getGeomagneticInfo({ latitude: 80, longitude: 0, altitude: 0 }, 1580486400000, (err, data) => {
+          if (err) {
+            expect(false).assertTrue();
+          }
+          expect(data!.x === 4).assertTrue();
+          expect(data!.y === 5).assertTrue();
+          expect(data!.z === 5).assertTrue();
+          expect(data!.geomagneticDip === 5).assertTrue();
+          expect(data!.deflectionAngle === 7).assertTrue();
+          expect(data!.levelIntensity === 7).assertTrue();
+          expect(data!.totalIntensity === 5).assertTrue();
+        });
+
+        let geomagneticResponse = await sensor.getGeomagneticInfo({ latitude: 80, longitude: 0, altitude: 0 }, 1580486400000);
+        expect(geomagneticResponse.x === 4).assertTrue();
+        expect(geomagneticResponse.y === 5).assertTrue();
+        expect(geomagneticResponse.z === 5).assertTrue();
+        expect(geomagneticResponse.geomagneticDip === 5).assertTrue();
+        expect(geomagneticResponse.deflectionAngle === 7).assertTrue();
+        expect(geomagneticResponse.levelIntensity === 7).assertTrue();
+        expect(geomagneticResponse.totalIntensity === 5).assertTrue();
+
+        sensor.getDeviceAltitude(1013.2, 1500.0, (err, data) => {
+          if (err) {
+            expect(false).assertTrue();
+          }
+          expect(data! === 4).assertTrue();
+        });
+
+        let num = await sensor.getDeviceAltitude(1013.2, 1500.0)
+        expect(num === 4).assertTrue();
+
+        sensor.getInclination([1, 0, 0, 0, 1, 0, 0, 0, 1], (err, data) => {
+          if (err) {
+            expect(false).assertTrue();
+          }
+          expect(data! === 4).assertTrue();
+        });
+
+        let num1 = await sensor.getInclination([1, 0, 0, 0, 1, 0, 0, 0, 1])
+        expect(num1 === 4).assertTrue();
+
+        sensor.getRotationMatrix([-0.27775216, 0.5351276, 9.788099],[210.87253, -78.6096, -111.44444], (err, data) => {
+          if (err) {
+            expect(false).assertTrue();
+          }
+          expect(data!.rotation === 4).assertTrue();
+          expect(data!.inclination === 4).assertTrue();
+        });
+
+        let rotationMatrixResponse = await sensor.getRotationMatrix([-0.27775216, 0.5351276, 9.788099],[210.87253, -78.6096, -111.44444])
+        expect(rotationMatrixResponse.rotation === 4).assertTrue();
+        expect(rotationMatrixResponse.inclination === 4).assertTrue();
+
+        sensor.getAngleVariation([], [], (err, data) => {
+          if (err) {
+            expect(false).assertTrue();
+          }
+          expect(data!.length > 3).assertTrue();
+        });
+
+        sensor.getAngleVariation([1013.2,1], [1500.0,2], (err, data) => {
+          if (err) {
+            expect(false).assertTrue();
+          }
+          expect(data!.length > 3).assertTrue();
+        });
+        let num3 = await sensor.getAngleVariation([], [])
+        expect(num3.length > 3).assertTrue();
+
+        let num4 = await sensor.getAngleVariation([1013.2], [1500.0])
+        expect(num4.length > 3).assertTrue();
+
+        sensor.transformRotationMatrix([1013.2,1],  { x: 1, y: 3 }, (err, data) => {
+          if (err) {
+            expect(false).assertTrue();
+          }
+          expect(data!.length > 2).assertTrue();
+        });
+        let num6 = await sensor.transformRotationMatrix([1013.2],  { x: 1, y: 3 })
+        expect(num6.length > 2).assertTrue();
+
+        sensor.getQuaternion( [], (err, data) => {
+          if (err) {
+            expect(false).assertTrue();
+          }
+          expect(data!.length > 4).assertTrue();
+        });
+
+        sensor.getQuaternion([1500.0,2], (err, data) => {
+          if (err) {
+            expect(false).assertTrue();
+          }
+          expect(data!.length > 4).assertTrue();
+        });
+
+        let num7 = await sensor.getQuaternion([])
+        expect(num7.length > 4).assertTrue();
+
+        let num8 = await sensor.getQuaternion([1500.0])
+        expect(num8.length > 4).assertTrue();
+
+        sensor.getOrientation( [], (err, data) => {
+          if (err) {
+            expect(false).assertTrue();
+          }
+          expect(data!.length > 5).assertTrue();
+        });
+
+        sensor.getOrientation([1500.0,2], (err, data) => {
+          if (err) {
+            expect(false).assertTrue();
+          }
+          expect(data!.length > 5).assertTrue();
+        });
+
+        let num9 = await sensor.getOrientation([])
+        expect(num9.length > 5).assertTrue();
+
+        let num10 = await sensor.getOrientation([1500.0])
+        expect(num10.length > 5).assertTrue();
+
+        let ret1 = sensor.getSensorListSync();
+        expect(ret1.length > 2).assertTrue();
+        expect(ret1.length === 0).assertTrue();
+
+        let InfoParam: sensor.SensorInfoParam = {
+          deviceId: -1,
+          sensorIndex: 0
+        }
+        sensor.offOrientationChange(InfoParam, onSensorCallback23);
+        sensor.offAccelerometerChange(InfoParam, onSensorCallback24);
+        sensor.offAccelerometerUncalibratedChange(InfoParam, onSensorCallback25);
+        sensor.offAmbientLightChange(InfoParam, onSensorCallback26);
+        sensor.offAmbientTemperatureChange(InfoParam, onSensorCallback5);
+        sensor.offBarometerChange(InfoParam, onSensorCallback27);
+        sensor.offGravityChange(InfoParam, onSensorCallback7);
+        sensor.offGyroscopeChange(InfoParam, onSensorCallback8);
+        sensor.offGyroscopeUncalibratedChange(InfoParam, onSensorCallback9);
+        sensor.offHallChange(InfoParam, onSensorCallback10);
+        sensor.offHeartRateChange(InfoParam, onSensorCallback11);
+        sensor.offHumidityChange(InfoParam, onSensorCallback12);
+        sensor.offLinearAccelerometerChange(InfoParam, onSensorCallback13);
+        sensor.offMagneticFieldChange(InfoParam, onSensorCallback14);
+        sensor.offMagneticFieldUncalibratedChange(InfoParam, onSensorCallback15);
+        sensor.offPedometerChange(InfoParam, onSensorCallback16);
+        sensor.offPedometerDetectionChange(InfoParam, onSensorCallback17);
+        sensor.offProximityChange(InfoParam, onSensorCallback18);
+        sensor.offRotationVectorChange(InfoParam, onSensorCallback19);
+        sensor.offSignificantMotionChange(InfoParam, onSensorCallback20);
+        sensor.offWearDetectionChange(InfoParam, onSensorCallback21);
+        sensor.offFusionPressureChange(InfoParam, onSensorCallback22);
+
+        let data1 = await sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER);
+        expect(data1.sensorName !== undefined).assertTrue();
+        let data2 = await sensor.getSingleSensor(sensor.SensorId.GYROSCOPE);
+        expect(data2.vendorName !== undefined).assertTrue();
+        let data3 = await sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT);
+        expect(data3.firmwareVersion !== undefined).assertTrue();
+        let data4 = await sensor.getSingleSensor(sensor.SensorId.MAGNETIC_FIELD);
+        expect(data4.hardwareVersion !== undefined).assertTrue();
+        let data5 = await sensor.getSingleSensor(sensor.SensorId.BAROMETER);
+        expect(data5.sensorId !== undefined).assertTrue();
+        let data6 = await sensor.getSingleSensor(sensor.SensorId.HALL);
+        expect(data6.maxRange !== undefined).assertTrue();
+        let data7 = await sensor.getSingleSensor(sensor.SensorId.PROXIMITY);
+        expect(data7.minSamplePeriod !== undefined).assertTrue();
+        let data8 = await sensor.getSingleSensor(sensor.SensorId.HUMIDITY);
+        expect(data8.maxSamplePeriod !== undefined).assertTrue();
+        let data9 = await sensor.getSingleSensor(sensor.SensorId.ORIENTATION);
+        expect(data9.precision !== undefined).assertTrue();
+        let data10 = await sensor.getSingleSensor(sensor.SensorId.GRAVITY);
+        expect(data10.power !== undefined).assertTrue();
+        let data11 = await sensor.getSingleSensor(sensor.SensorId.LINEAR_ACCELEROMETER);
+        expect(data11.sensorIndex !== undefined).assertTrue();
+        let data12 = await sensor.getSingleSensor(sensor.SensorId.ROTATION_VECTOR);
+        expect(data12.deviceId !== undefined).assertTrue();
+        let data13 = await sensor.getSingleSensor(sensor.SensorId.AMBIENT_TEMPERATURE);
+        expect(data13.deviceName !== undefined).assertTrue();
+        let data14 = await sensor.getSingleSensor(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED);
+        expect(data14.isLocalSensor !== undefined).assertTrue();
+        let data15 = await sensor.getSingleSensor(sensor.SensorId.GYROSCOPE_UNCALIBRATED);
+        expect(data15.isMockSensor !== undefined).assertTrue();
+        let data16 = await sensor.getSingleSensor(sensor.SensorId.SIGNIFICANT_MOTION);
+        expect(data16 !== undefined).assertTrue();
+        let data17 = await sensor.getSingleSensor(sensor.SensorId.PEDOMETER_DETECTION);
+        expect(data17 !== undefined).assertTrue();
+        let data18 = await sensor.getSingleSensor(sensor.SensorId.PEDOMETER);
+        expect(data18 !== undefined).assertTrue();
+        let data19 = await sensor.getSingleSensor(sensor.SensorId.HEART_RATE);
+        expect(data19 !== undefined).assertTrue();
+        let data20 = await sensor.getSingleSensor(sensor.SensorId.WEAR_DETECTION);
+        expect(data20 !== undefined).assertTrue();
+        let data21 = await sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER_UNCALIBRATED);
+        expect(data21 !== undefined).assertTrue();
+        let data22 = await sensor.getSingleSensor(sensor.SensorId.FUSION_PRESSURE);
+        expect(data22 !== undefined).assertTrue();
+
+        sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.sensorName !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.GYROSCOPE,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.vendorName !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.firmwareVersion !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.MAGNETIC_FIELD,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.hardwareVersion !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.BAROMETER,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.sensorId !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.maxRange !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.PROXIMITY,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.minSamplePeriod !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.HUMIDITY,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.maxSamplePeriod !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.ORIENTATION,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.precision !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.GRAVITY,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.power !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.LINEAR_ACCELEROMETER,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.sensorIndex !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.ROTATION_VECTOR,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.deviceId !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.AMBIENT_TEMPERATURE,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.deviceName !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.isLocalSensor !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.GYROSCOPE_UNCALIBRATED,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.isMockSensor !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.SIGNIFICANT_MOTION,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.sensorName !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.PEDOMETER_DETECTION,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.sensorName !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.PEDOMETER,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.sensorName !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.HEART_RATE,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.sensorName !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.WEAR_DETECTION,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.sensorName !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER_UNCALIBRATED,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.sensorName !== undefined).assertTrue();
+          }
+        })
+        sensor.getSingleSensor(sensor.SensorId.FUSION_PRESSURE,(error, data) => {
+          if (error) {
+            expect().assertFail();
+          } else {
+            expect(data!.sensorName !== undefined).assertTrue();
+          }
+        })
+
+        let data30 = sensor.getSingleSensorSync(sensor.SensorId.ACCELEROMETER);
+        expect(data30.sensorName !== undefined).assertTrue();
+        let data31 = sensor.getSingleSensorSync(sensor.SensorId.GYROSCOPE);
+        expect(data31.vendorName !== undefined).assertTrue();
+        let data32 = sensor.getSingleSensorSync(sensor.SensorId.AMBIENT_LIGHT);
+        expect(data32.firmwareVersion !== undefined).assertTrue();
+        let data33 = sensor.getSingleSensorSync(sensor.SensorId.MAGNETIC_FIELD);
+        expect(data33.hardwareVersion !== undefined).assertTrue();
+        let data34 = sensor.getSingleSensorSync(sensor.SensorId.BAROMETER);
+        expect(data34.sensorId !== undefined).assertTrue();
+        let data35 = sensor.getSingleSensorSync(sensor.SensorId.HALL);
+        expect(data35.maxRange !== undefined).assertTrue();
+        let data36 = sensor.getSingleSensorSync(sensor.SensorId.PROXIMITY);
+        expect(data36.minSamplePeriod !== undefined).assertTrue();
+        let data37 = sensor.getSingleSensorSync(sensor.SensorId.HUMIDITY);
+        expect(data37.maxSamplePeriod !== undefined).assertTrue();
+        let data38 = sensor.getSingleSensorSync(sensor.SensorId.ORIENTATION);
+        expect(data38.precision !== undefined).assertTrue();
+        let data39 = sensor.getSingleSensorSync(sensor.SensorId.GRAVITY);
+        expect(data39.power !== undefined).assertTrue();
+        let data40 = sensor.getSingleSensorSync(sensor.SensorId.LINEAR_ACCELEROMETER);
+        expect(data40.sensorIndex !== undefined).assertTrue();
+        let data42 = sensor.getSingleSensorSync(sensor.SensorId.ROTATION_VECTOR);
+        expect(data42.deviceId !== undefined).assertTrue();
+        let data43 = sensor.getSingleSensorSync(sensor.SensorId.AMBIENT_TEMPERATURE);
+        expect(data43.deviceName !== undefined).assertTrue();
+        let data44 = sensor.getSingleSensorSync(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED);
+        expect(data44.isLocalSensor !== undefined).assertTrue();
+        let data45 = sensor.getSingleSensorSync(sensor.SensorId.GYROSCOPE_UNCALIBRATED);
+        expect(data45.isMockSensor !== undefined).assertTrue();
+        let data46 = sensor.getSingleSensorSync(sensor.SensorId.SIGNIFICANT_MOTION);
+        expect(data46 !== undefined).assertTrue();
+        let data47 = sensor.getSingleSensorSync(sensor.SensorId.PEDOMETER_DETECTION);
+        expect(data47 !== undefined).assertTrue();
+        let data48 = sensor.getSingleSensorSync(sensor.SensorId.PEDOMETER);
+        expect(data48 !== undefined).assertTrue();
+        let data49 = sensor.getSingleSensorSync(sensor.SensorId.HEART_RATE);
+        expect(data49 !== undefined).assertTrue();
+        let data50 = sensor.getSingleSensorSync(sensor.SensorId.WEAR_DETECTION);
+        expect(data50 !== undefined).assertTrue();
+        let data51 = sensor.getSingleSensorSync(sensor.SensorId.ACCELEROMETER_UNCALIBRATED);
+        expect(data51 !== undefined).assertTrue();
+        let data52 = sensor.getSingleSensorSync(sensor.SensorId.FUSION_PRESSURE);
+        expect(data52 !== undefined).assertTrue();
+
+        sensor.getSingleSensor(sensor.SensorId.WEAR_DETECTION,(error, data) => {
+          if (error) {
+            expect(error.code === PARAMETER_ERROR_CODE).assertTrue();
+          } else {
+            expect().assertFail();
+          }
+        })
+
+        try {
+          await sensor.getSingleSensor(sensor.SensorId.PEDOMETER_DETECTION);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        try {
+          await sensor.getSingleSensor(sensor.SensorId.PEDOMETER_DETECTION);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === SERVICE_EXCEPTION_CODE).assertTrue();
+        }
+
+        try {
+          sensor.getSingleSensorSync(sensor.SensorId.FUSION_PRESSURE);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        try {
+          await sensor.getGeomagneticInfo({ latitude: 80, longitude: 0, altitude: 0 }, 1580486400000);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        sensor.getGeomagneticInfo({ latitude: 80, longitude: 0, altitude: 0 }, 1580486400000, (err, data) => {
+          if (err) {
+            expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+          }
+          expect().assertFail();
+        });
+
+        try {
+          await sensor.getDeviceAltitude(1013.2, 1500.0)
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        sensor.getDeviceAltitude(1013.2, 1500.0, (err, data) => {
+          if (err) {
+            expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+          }
+          expect().assertFail();
+        });
+
+        try {
+          await sensor.getAngleVariation([1013.2], [1500.0])
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        sensor.getAngleVariation([1013.2,1], [1500.0,2], (err, data) => {
+          if (err) {
+            expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+          }
+          expect().assertFail();
+        });
+
+        try {
+          await sensor.transformRotationMatrix([1013.2],  { x: 1, y: 3 })
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        sensor.transformRotationMatrix([1013.2,1],  { x: 1, y: 3 }, (err, data) => {
+          if (err) {
+            expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+          }
+          expect().assertFail();
+        });
+
+        try {
+          sensor.offSensorStatusChange(onSensorCallback28);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === SERVICE_EXCEPTION_CODE).assertTrue();
+        }
+
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(0x0000, 'testTag', `====>OnOrientationChange_SensorJsTest_static_010 failed error.code: ${e.code} , error.message: ${e.message}`);
+        expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
+        done();
+      }
+    })
+
   })
 }

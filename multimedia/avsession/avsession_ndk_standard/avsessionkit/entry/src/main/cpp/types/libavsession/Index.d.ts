@@ -111,7 +111,7 @@ export const AVSessionDestroyInvalidParam: () => number;
 
 export const AVSessionActivateSuccess: () => number;
 
-export const AVSessionDestroyInvalidParam: () => number;
+export const AVSessionActivateInvalidParam: () => number;
 
 export const AVSessionDeactivateSuccess: () => number;
 
@@ -474,3 +474,125 @@ export const AVSessionPlaybackSpeed0_50X: () => number;
 export const AVSessionPlaybackSpeed1_50X: () => number;
 
 export const AVSessionOutputDeviceInfo: () => number;
+
+export const AVSession_TypeSESSION_TYPE_PHOTO: () => number;
+
+export const AVSessionConnectionStateSTATE_CONNECTING: () => number;
+
+export const AVSessionConnectionStateSTATE_CONNECTED: () => number;
+
+export const AVSessionConnectionStateSTATE_DISCONNECTED: () => number;
+
+export const AVSessionAVCastCategoryCATEGORY_LOCAL: () => number;
+
+export const AVSessionAVCastCategoryCATEGORY_REMOTE: () => number;
+
+export const AVSessionDeviceTypeDEVICE_TYPE_LOCAL: () => number;
+
+export const AVSessionDeviceTypeDEVICE_TYPE_TV: () => number;
+
+export const AVSessionDeviceTypeDEVICE_TYPE_SMART_SPEAKER: () => number;
+
+export const AVSessionDeviceTypeDEVICE_TYPE_BLUETOOTH: () => number;
+
+export const AVSessionProtocolTypeTYPE_LOCAL: () => number;
+
+export const AVSessionProtocolTypeTYPE_CAST_PLUS_STREAM: () => number;
+
+export const AVSessionProtocolTypeTYPE_DLNA: () => number;
+
+export const AVSessionProtocolTypeTYPE_CAST_PLUS_AUDIO: () => number;
+
+export const AVSession_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_UNSPECIFIED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_REMOTE_ERROR: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_TIMEOUT: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_DEVICE_MISSING: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_INVALID_PARAM: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_NO_MEMORY: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_READ_ERROR: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_DECODING_FAILED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED: () => number;
+
+export const AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED: () => number;
+
+export const AVSession_AVQUEUEITEM_ERROR_NO_MEMORY: () => number;

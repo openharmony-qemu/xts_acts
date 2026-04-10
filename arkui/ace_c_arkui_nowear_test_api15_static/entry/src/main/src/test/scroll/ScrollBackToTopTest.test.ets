@@ -28,7 +28,7 @@ let libUtil: LibUtil = new LibUtil();
 export default function scrollBackToTopTest() {
     console.info('push page export');
   describe('scrollBackToTopTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_nowear_api15_static", "EntryAbility")
     });
     console.info('push page trying');

@@ -466,13 +466,13 @@ export default function MapEntriesTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // it('testMapEntries0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-    //   const key1 = [1, 2];
-    //   const key2 = [3, 4];
-    //   const map = new Map<int[], string>([[key1, 'first'], [key2, 'second']]);
-    //   const entries = Array.from(map.entries());
-    //   expect(entries).assertDeepEquals([[key1, 'first'], [key2, 'second']]);
-    // });
+    it('testMapEntries0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+      const key1 = [1, 2];
+      const key2 = [3, 4];
+      const map = new Map<int[], string>([[key1, 'first'], [key2, 'second']]);
+      const entries = Array.from(map.entries());
+      expect(entries[1][1]).assertDeepEquals('second');
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0026
@@ -999,29 +999,6 @@ export default function MapEntriesTest() {
       expect(entries[0][0]).assertEqual(instance1);
       expect(entries[1][0]).assertEqual(instance2);
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0067
-     * @tc.name testMapEntries0067
-     * @tc.desc Verify entries() works with Map containing ArrayBuffer views as values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testMapEntries0067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-    //   const buffer = new ArrayBuffer(16);
-    //   const intView = new Int32Array(buffer);
-    //   const floatView = new Float64Array(buffer);
-    //   intView[0] = 12345;
-    //   floatView[1] = 987.654;
-    //
-    //   const map = new Map<string, Int32Array | Float64Array>([['int', intView], ['float', floatView]]);
-    //   const entries = Array.from(map.entries());
-    //
-    //   expect(entries).assertDeepEquals([['int', intView], ['float', floatView]]);
-    //   expect(entries[0][1][0]).assertEqual(12345);
-    //   expect(entries[1][1][1]).assertEqual(987.654);
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0068

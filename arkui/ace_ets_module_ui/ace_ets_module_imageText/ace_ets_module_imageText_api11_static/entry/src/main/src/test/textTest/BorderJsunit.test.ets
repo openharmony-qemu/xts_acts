@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function borderJsunit() {
   describe('borderTest_five_1', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("borderTest_five_1 beforeEach start");
 
 
@@ -130,7 +130,7 @@ export default function borderJsunit() {
         }
         console.info("[testBorder_static_0300] start to publish emit");
         emitter.emit(innerEvent, eventData);
-      } catch (err :Error) {
+      } catch (err) {
         console.log("[testBorder_static_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function RichEditorEKeyboardTest() {
   describe('RichEditorEKeyboardTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorEKeyboardTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")

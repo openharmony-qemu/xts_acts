@@ -32,9 +32,9 @@ export default function pwdNdkTest() {
      * @tc.desc   test setpwent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslPwdSetpwent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslPwdSetpwent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = pwd.setpwent();
       expect(result).assertEqual(0);
       done()
@@ -46,9 +46,9 @@ export default function pwdNdkTest() {
      * @tc.desc   test endpwent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslPwdEndPWent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslPwdEndPWent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(pwd.endpwent()).assertEqual(0);
       done()
     });
@@ -58,9 +58,9 @@ export default function pwdNdkTest() {
      * @tc.desc   test getpwent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslPwdGetpwent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslPwdGetpwent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = pwd.getpwent();
       expect(result).assertEqual(0)
       done()
@@ -72,9 +72,9 @@ export default function pwdNdkTest() {
      * @tc.desc   test getpwnam
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslPwdGetpwnam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslPwdGetpwnam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = pwd.getpwnam();
       expect(result).assertEqual(0)
       done()
@@ -86,9 +86,9 @@ export default function pwdNdkTest() {
      * @tc.desc   test getpwnam_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslPwdGetpwnamR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslPwdGetpwnamR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = pwd.getpwnamR();
       expect(result).assertEqual(0)
       done()
@@ -101,9 +101,9 @@ export default function pwdNdkTest() {
      * @tc.desc   test getpwuid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslPwdGetpwuid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslPwdGetpwuid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = pwd.getpwuid();
       expect(result).assertEqual(0)
       done()
@@ -115,9 +115,9 @@ export default function pwdNdkTest() {
      * @tc.desc   test getpwuid_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslPwdGetpwuidR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslPwdGetpwuidR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = pwd.getpwuidR();
       expect(result).assertEqual(0)
       done()

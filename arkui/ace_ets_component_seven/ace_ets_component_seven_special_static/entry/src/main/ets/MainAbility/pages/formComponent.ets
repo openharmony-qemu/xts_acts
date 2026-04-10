@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,9 +18,8 @@ import { State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import  hilog  from '@ohos.hilog'
 
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute>{
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute>{
 	applyNormalAttribute(instance: FormComponentAttribute): void {
-		instance.size({ width: 200, height: 300 });
 		instance.allowUpdate(false);
 		// instance.dimension(FormDimension.Dimension_2_1);
 		instance.visibility(Visibility.Visible);
@@ -52,6 +51,7 @@ class FormComponentModifier implements AttributeModifier<FormComponentAttribute>
 			})
 			.key('FormComponentKey1')
 			.attributeModifier(this.buttonMod)
+			.size({ width: 200, height: 300 })
 
       FormComponent({
 				id: this.formId,

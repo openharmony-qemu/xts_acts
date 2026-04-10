@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,7 +30,7 @@ class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
-      windowStage.loadContent('pages/blurMode', (err: BusinessError<void> | null): void => {
+      windowStage.loadContent('pages/WebGestureFocusMode', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
         MyCallback.runCasesOfCallback();
         if (err?.code) {
@@ -39,7 +39,7 @@ class EntryAbility extends UIAbility {
         }
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
       });
-    } catch (e: Error) {
+    } catch (e) {
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent catch error：-----------' + e.message);
     }
   }

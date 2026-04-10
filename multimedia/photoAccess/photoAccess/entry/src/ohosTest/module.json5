@@ -79,6 +79,20 @@
                 "usedScene": {
                     "when": "always"
                 }
+            },
+            {
+                "name": "ohos.permission.MANAGE_RISK_PHOTOS",
+                "reason": "$string:reason",
+                "usedScene": {
+                    "when": "always"
+                }
+            },
+            {
+                "name": "ohos.permission.SHORT_TERM_WRITE_IMAGEVIDEO",
+                "reason": "$string:reason",
+                "usedScene": {
+                    "when": "always"
+                }
             }
         ]
     }

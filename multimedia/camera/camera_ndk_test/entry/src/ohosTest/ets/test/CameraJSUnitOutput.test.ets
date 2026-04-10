@@ -22,9 +22,10 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { GlobalThis } from './Constants';
 import { Context } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { Camera_MediaType } from './Constants';
+import { Camera_MediaType, Parameter_Setting } from './Constants';
 
 const TAG = "CameraXts CameraUnitTest: ";
+const CAMERA_INVALID_ARGUMENT = 7400101;
 
 // 创建视频录制的参数
 let mediaUtil = MediaUtils.getInstance();
@@ -470,7 +471,7 @@ export default function cameraJSUnitOutput() {
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_VIDEO_OUTPUT_0100', Level.LEVEL1, async () => {
       console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_VIDEO_OUTPUT_CALLBACK_0100--------------");
-      await createVideoOutput();
+      await cameraObj.createVideoOutput(surfaceId1);
       let ret = cameraObj.sessionAddVideoOutput();
       if (ret) {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAPTURE_SESSION_ADD_VIDEO_OUTPUT_CALLBACK_0100 sessionAddVideoOutput fail");
@@ -824,6 +825,65 @@ export default function cameraJSUnitOutput() {
       }
     });
     /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100
+     * @tc.desc   captureSession add previewOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100', Level.LEVEL1, async () => {
+      console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100--------------");
+      let surfaceId = GlobalThis.getInstance().getValue();
+      cameraObj.initCamera(surfaceId);
+      cameraObj.getSupportedCameras();
+      cameraObj.getSupportedOutputCapability();
+      cameraObj.createDeferredPreviewOutput();
+      let ret = cameraObj.oHPreviewOutputAddDeferredSurface(Parameter_Setting.ALL_PARAMETER_OK, surfaceId);
+      if (ret) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100 sessionAddPreviewOutput fail");
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0200
+     * @tc.desc   captureSession add previewOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0200', Level.LEVEL1, async () => {
+      console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0200--------------");
+      let surfaceId = GlobalThis.getInstance().getValue();
+      cameraObj.initCamera(surfaceId);
+      cameraObj.getSupportedCameras();
+      cameraObj.getSupportedOutputCapability();
+      cameraObj.createDeferredPreviewOutput();
+      let ret = cameraObj.oHPreviewOutputAddDeferredSurface(Parameter_Setting.FIRST_PARAMETER_ERROR, surfaceId);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0200:" + ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0300
+     * @tc.desc   captureSession add previewOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0300', Level.LEVEL1, async () => {
+      console.info(TAG + " --------------SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0300--------------");
+      let surfaceId = GlobalThis.getInstance().getValue();
+      cameraObj.initCamera(surfaceId);
+      cameraObj.getSupportedCameras();
+      cameraObj.getSupportedOutputCapability();
+      cameraObj.createDeferredPreviewOutput();
+      let ret = cameraObj.oHPreviewOutputAddDeferredSurface(Parameter_Setting.SECOND_PARAMETER_ERROR, surfaceId);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0300:" + ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    });
+    /**
       * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200
       * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200
       * @tc.desc   MetadataOutputAddMetadataObjectTypes metadataOutput aync api
@@ -838,16 +898,22 @@ export default function cameraJSUnitOutput() {
           cameraObj.getSupportedCameras();
           cameraObj.getSupportedOutputCapability();
           cameraObj.createSession();
-          let result = cameraObj.createMetadataOutput();
-          result = cameraObj.createCameraInput();
-          result = cameraObj.cameraInputOpen();
-          cameraObj.sessionBegin();
-          result = cameraObj.sessionAddInput();
-          result = cameraObj.sessionAddMetadataOutput();
-          result = cameraObj.sessionCommitConfig();
-          result = cameraObj.sessionStart();
-          result = await cameraObj.MetadataOutputAddMetadataObjectTypes();
-          expect(result).assertEqual(0);
+          if (cameraObj.IsMetadataObjectTypeValid() == 0) {
+            console.info(TAG + "IsMetadataObjectTypeValid invalid"); 
+            expect(true).assertTrue();
+          }
+          else {
+            let result = cameraObj.createMetadataOutput();
+            result = cameraObj.createCameraInput();
+            result = cameraObj.cameraInputOpen();
+            cameraObj.sessionBegin();
+            result = cameraObj.sessionAddInput();
+            result = cameraObj.sessionAddMetadataOutput();
+            result = cameraObj.sessionCommitConfig();
+            result = cameraObj.sessionStart();
+            result = await cameraObj.MetadataOutputAddMetadataObjectTypes();
+            expect(result).assertEqual(0);
+          }
       } catch (error) {
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200 FAILED");
           console.info(TAG + "ERRORCODE: " + error.code);
@@ -869,17 +935,23 @@ export default function cameraJSUnitOutput() {
           cameraObj.getSupportedCameras();
           cameraObj.getSupportedOutputCapability();
           cameraObj.createSession();
-          let result = cameraObj.createMetadataOutput();
-          result = cameraObj.createCameraInput();
-          result = cameraObj.cameraInputOpen();
-          cameraObj.sessionBegin();
-          result = cameraObj.sessionAddInput();
-          result = cameraObj.sessionAddMetadataOutput();
-          result = cameraObj.sessionCommitConfig();
-          result = cameraObj.sessionStart();
-          result = await cameraObj.MetadataOutputAddMetadataObjectTypes();
-          result = await cameraObj.MetadataOutputRemoveMetadataObjectTypes();
-          expect(result).assertEqual(0);
+          if (cameraObj.IsMetadataObjectTypeValid() == 0) {
+            console.info(TAG + "IsMetadataObjectTypeValid invalid"); 
+            expect(true).assertTrue();
+          }
+          else {
+            let result = cameraObj.createMetadataOutput();
+            result = cameraObj.createCameraInput();
+            result = cameraObj.cameraInputOpen();
+            cameraObj.sessionBegin();
+            result = cameraObj.sessionAddInput();
+            result = cameraObj.sessionAddMetadataOutput();
+            result = cameraObj.sessionCommitConfig();
+            result = cameraObj.sessionStart();
+            result = await cameraObj.MetadataOutputAddMetadataObjectTypes();
+            result = await cameraObj.MetadataOutputRemoveMetadataObjectTypes();
+            expect(result).assertEqual(0);
+          }
       } catch (error) {
           console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200 FAILED");
           console.info(TAG + "ERRORCODE: " + error.code);

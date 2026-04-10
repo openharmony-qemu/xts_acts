@@ -47,14 +47,14 @@ export default function gestureInterceptionEnhancementCallbackRecognizerTest() {
     });
 
     /**
-     * @tc.name    gestureInterceptionEnhancementCallbackRecognizerTest_0010
+     * @tc.name     gestureInterceptionEnhancementCallbackRecognizerTest_0010Adapt001
      * @tc.number tabsInterceptionEnhancementcallbackRecognizerTest_0010
      * @tc.desc   test the Recognizer callBackData when invoke gesture Interception Enhancement interface (exposeInnerGesture value true)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it(' gestureInterceptionEnhancementCallbackRecognizerTest_0010', Level.LEVEL0, async (done: Function) => {
+    it('gestureInterceptionEnhancementCallbackRecognizerTest_0010Adapt001', Level.LEVEL0, async (done: Function) => {
         console.info(' gestureInterceptionEnhancementCallbackRecognizerTest_0010 START');
         let driver: Driver = await Driver.create()
         await CommonFunc.sleep(1000);

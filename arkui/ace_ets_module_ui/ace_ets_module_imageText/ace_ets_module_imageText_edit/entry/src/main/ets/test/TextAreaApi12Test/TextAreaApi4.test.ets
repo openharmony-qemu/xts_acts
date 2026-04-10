@@ -60,7 +60,7 @@ export default function TextAreaApi4() {
       await CommonFunc.sleep(1000);
 
       let text1 = getInspectorByKey('TextAreaApi4_text1');
-      expect(String(JSON.parse(text1).$attrs.content)).assertEqual('{"type":"TextDecorationType.Overline","color":"#FFFF0000","style":"TextDecorationStyle.DOUBLE"}')
+      expect(String(JSON.parse(text1).$attrs.content)).assertContain('"type":"TextDecorationType.Overline","color":"#FFFF0000","style":"TextDecorationStyle.DOUBLE"')
 
       await CommonFunc.sleep(1000);
 

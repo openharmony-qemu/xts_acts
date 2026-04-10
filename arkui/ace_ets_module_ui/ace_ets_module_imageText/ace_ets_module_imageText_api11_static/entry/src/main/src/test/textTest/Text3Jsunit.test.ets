@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ const uiContext = new UIContext();
 
 export default function text3Jsunit() {
   describe('text3Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("text3Jsunit beforeEach start");
 
 
@@ -123,7 +123,7 @@ export default function text3Jsunit() {
       try {
         const message: MessageManagerBase<string> = AppStorage.get<MessageManagerBase<string>>("messageManagerString")!
         message.notify({name:'fontSize',value:"10"});
-      } catch (err : Error) {
+      } catch (err) {
         console.log("testText_static_0300 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -166,7 +166,7 @@ export default function text3Jsunit() {
       try {
         const message: MessageManagerBase<string> = AppStorage.get<MessageManagerBase<string>>("messageManagerString")!
         message.notify({name:'fontColor',value:"#330A59F7"});
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testText_static_0500 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -209,7 +209,7 @@ export default function text3Jsunit() {
       try {
         const message: MessageManagerBase<TextAlign> = AppStorage.get<MessageManagerBase<TextAlign>>("messageManagerTextAlign")!
         message.notify({name:'textAlign',value:TextAlign.Center});
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testText_static_0700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -253,7 +253,7 @@ export default function text3Jsunit() {
       try {
         let message: MessageManagerBase<TextOverflow> = AppStorage.get<MessageManagerBase<TextOverflow>>("messageManagerTextOverflow")!
         message.notify({name:'textOverflow',value:TextOverflow.None});
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testText_static_0900 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -300,7 +300,7 @@ export default function text3Jsunit() {
       try {
         const message: MessageManagerBase<string> = AppStorage.get<MessageManagerBase<string>>("messageManagerString")!
         message.notify({name:'fontColor',value:"#FFBC0229"});
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testText_static_1200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -335,7 +335,7 @@ export default function text3Jsunit() {
     //     }
     //     console.info("testText_static_1300 start to publish emit");
     //     emitter.emit(indexEvent, eventData);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("testText_static_1300 change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(3000);
@@ -372,7 +372,7 @@ export default function text3Jsunit() {
     //     }
     //     console.info("testText_static_1400 start to publish emit");
     //     emitter.emit(indexEvent, eventData);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.log("testText_static_1400 change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);

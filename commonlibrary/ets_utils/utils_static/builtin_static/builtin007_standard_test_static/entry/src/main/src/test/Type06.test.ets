@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -122,7 +122,7 @@ export default function type_06Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -152,7 +152,7 @@ export default function type_06Test() {
         const Type1 = FloatType.VAL;
         const Type2 = FloatType.VAL;
         expect(Type1.equals(Type2)).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -172,7 +172,7 @@ export default function type_06Test() {
         const Type1 = FloatType.REF;
         const Type2 = FloatType.REF;
         expect(Type1.equals(Type2)).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -191,7 +191,7 @@ export default function type_06Test() {
       try {
         const type = FloatType.REF;
         expect(type.getLiteral()).assertEqual("Float");
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -210,7 +210,7 @@ export default function type_06Test() {
       try {
         const type = FloatType.VAL;
         expect(type.getLiteral()).assertEqual("float");
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -229,7 +229,7 @@ export default function type_06Test() {
       try {
         const type = FloatType.VAL;
         expect(type.getName()).assertEqual("");
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -248,7 +248,7 @@ export default function type_06Test() {
       try {
         const Type = FloatType.VAL;
         expect(Type.hasName()).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -267,7 +267,7 @@ export default function type_06Test() {
       try {
         const Type = FloatType.REF;
         expect(Type.hasName()).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -286,7 +286,7 @@ export default function type_06Test() {
       try {
         const Type = FloatType.REF;
         expect(Type.isPrimitive()).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -305,7 +305,7 @@ export default function type_06Test() {
       try {
         const Type = FloatType.VAL;
         expect(Type.isPrimitive()).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -324,7 +324,7 @@ export default function type_06Test() {
       try {
         const Type = FloatType.VAL;
         expect(Type.isPrimitive()).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -343,7 +343,7 @@ export default function type_06Test() {
       try {
         const Type = FloatType.VAL;
         expect(Type.isReference()).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -362,7 +362,7 @@ export default function type_06Test() {
       try {
         const Type = FloatType.REF;
         expect(Type.isReference()).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -382,7 +382,7 @@ export default function type_06Test() {
         const Type1 = BooleanType.VAL;
         const Type2 = BooleanType.VAL;
         expect(Type1.equals(Type2)).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -402,7 +402,7 @@ export default function type_06Test() {
         const Type1 = BooleanType.REF;
         const Type2 = BooleanType.REF;
         expect(Type1.equals(Type2)).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -421,7 +421,7 @@ export default function type_06Test() {
       try {
         const Type1 = BooleanType.REF;
         expect(Type1.getLiteral()).assertEqual("Boolean");
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -441,7 +441,7 @@ export default function type_06Test() {
       try {
         const Type1 = BooleanType.VAL;
         expect(Type1.getLiteral()).assertEqual("boolean");
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -460,7 +460,7 @@ export default function type_06Test() {
       try {
         const Type1 = BooleanType.VAL;
         expect(Type1.getName()).assertEqual("");
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -479,7 +479,7 @@ export default function type_06Test() {
       try {
         const Type1 = BooleanType.VAL;
         expect(Type1.hasName()).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -498,7 +498,7 @@ export default function type_06Test() {
       try {
         const Type1 = BooleanType.REF;
         expect(Type1.hasName()).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -517,7 +517,7 @@ export default function type_06Test() {
       try {
         const Type1 = BooleanType.REF;
         expect(Type1.isPrimitive()).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -536,7 +536,7 @@ export default function type_06Test() {
       try {
         const Type1 = BooleanType.VAL;
         expect(Type1.isPrimitive()).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -555,7 +555,7 @@ export default function type_06Test() {
       try {
         const Type1 = BooleanType.VAL;
         expect(Type1.isReference()).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -574,7 +574,7 @@ export default function type_06Test() {
       try {
         const Type1 = BooleanType.REF;
         expect(Type1.isReference()).assertEqual(true);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -601,7 +601,7 @@ export default function type_06Test() {
 
 
         expect(field1.equals(field1Copy)).assertTrue();
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -628,7 +628,7 @@ export default function type_06Test() {
 
 
         expect(field1.equals(field2)).assertFalse();
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -654,7 +654,7 @@ export default function type_06Test() {
 
 
         expect(field1.equals(null)).assertFalse();
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -680,7 +680,7 @@ export default function type_06Test() {
 
 
         expect(field.getAccessModifier()).assertEqual(AccessModifier.PROTECTED);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -706,7 +706,7 @@ export default function type_06Test() {
 
 
         expect(field.getAccessModifier()).assertEqual(AccessModifier.PROTECTED);
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -732,7 +732,7 @@ export default function type_06Test() {
 
         const accessMod = field.getAccessModifier();
         expect(accessMod).assertEqual(AccessModifier.PUBLIC); // 假设AccessModifier.PUBLIC是标准值
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -757,7 +757,7 @@ export default function type_06Test() {
 
         const accessMod = field.getAccessModifier();
         expect(accessMod).assertEqual(AccessModifier.PRIVATE); // 假设AccessModifier.PRIVATE是标准值
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -782,7 +782,7 @@ export default function type_06Test() {
 
         const accessMod = field.getAccessModifier();
         expect(accessMod).assertEqual(AccessModifier.PROTECTED); // 假设AccessModifier.PROTECTED是标准值
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -809,7 +809,7 @@ export default function type_06Test() {
 
         const fieldName = field.getName();
         expect(fieldName).assertEqual("privateField");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -837,7 +837,7 @@ export default function type_06Test() {
 
         expect(ownerType.toString()).assertEqual(classType.toString());
         expect(ownerType.equals(classType)).assertTrue();
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -866,7 +866,7 @@ export default function type_06Test() {
         expect(ownerType.toString()).assertEqual(classType.toString());
         expect(ownerType.equals(classType)).assertTrue();
         expect(staticField.isStatic()).assertTrue();
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -891,7 +891,7 @@ export default function type_06Test() {
 
         expect(value).assertEqual("testValue");
         expect(staticField.isStatic()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -924,7 +924,7 @@ export default function type_06Test() {
           expect(err.toString()).assertContain("Field value is not static");
         }
         expect(instanceField.isStatic()).assertFalse();
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -949,7 +949,7 @@ export default function type_06Test() {
 
         const value = staticField.getStaticValue() as string;
         expect(value).assertEqual("test");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1009,7 +1009,7 @@ export default function type_06Test() {
 
 
         expect(isReadonly).assertFalse();
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1036,7 +1036,7 @@ export default function type_06Test() {
 
 
         expect(fieldString).assertEqual(`${field.getName()}: ${field.getType().toString()}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1063,7 +1063,7 @@ export default function type_06Test() {
 
         const actual = field.getStaticValue() as number;
         expect(actual).assertEqual(newValue);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }
@@ -1098,7 +1098,7 @@ export default function type_06Test() {
           expect(err.toString()).assertContain("Field value is not static");
         }
         expect(hasThrown).assertTrue();
-      } catch (err:BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err.message}`);
         expect().assertFail();
       }

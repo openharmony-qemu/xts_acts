@@ -45,6 +45,7 @@
 #define NUMBER_18 18
 #define NUMBER_19 19
 #define NUMBER_20 20
+#define NUMBER_21 21
 #define NUMBER_32 32
 #define NUMBER_50 50
 #define NUMBER_60 60
@@ -190,4 +191,5 @@ napi_value OHNativeBufferReadFromParcelAbnnormal(napi_env env, napi_callback_inf
 napi_value OHNativeBufferWriteAndReadParcelMultipleCalls(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferMapPlanesNormal1(napi_env env, napi_callback_info info);
 napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferAllocFormatDiff(napi_env env, napi_callback_info info);
 #endif //NATIVEBUFFER_NATIVEBUFFER_H

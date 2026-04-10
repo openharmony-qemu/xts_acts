@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -426,7 +426,7 @@ export default function Array_Sort_Third_Test_static() {
         const caseName = 'Array_Sort_Third_Test_static_1700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [];
-        sort(arr, (a: long, b: long) => a - b);
+        sort(arr, (a: long, b: long) => (a - b).toInt());
         expect(arr.length).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -446,7 +446,7 @@ export default function Array_Sort_Third_Test_static() {
         const caseName = 'Array_Sort_Third_Test_static_1800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [100];
-        sort(arr, (a: long, b: long) => b - a);
+        sort(arr, (a: long, b: long) => (b - a).toInt());
         const expected: FixedArray<long> = [100];
         expect(arr.length).assertEqual(1);
         expect(arr[0]).assertEqual(expected[0]);
@@ -468,7 +468,7 @@ export default function Array_Sort_Third_Test_static() {
         const caseName = 'Array_Sort_Third_Test_static_1900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [100, 300, 700];
-        sort(arr, (a: long, b: long) => a - b);
+        sort(arr, (a: long, b: long) => (a - b).toInt());
         const expected: FixedArray<long> = [100, 300, 700];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -492,7 +492,7 @@ export default function Array_Sort_Third_Test_static() {
         const caseName = 'Array_Sort_Third_Test_static_2000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [100, 300, 700];
-        sort(arr, (a: long, b: long) => b - a);
+        sort(arr, (a: long, b: long) => (b - a).toInt());
         const expected: FixedArray<long> = [700, 300, 100];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -516,7 +516,7 @@ export default function Array_Sort_Third_Test_static() {
         const caseName = 'Array_Sort_Third_Test_static_2100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [90, 90, 90];
-        sort(arr, (a: long, b: long) => b - a);
+        sort(arr, (a: long, b: long) => (b - a).toInt());
         const expected: FixedArray<long> = [90, 90, 90];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -540,7 +540,7 @@ export default function Array_Sort_Third_Test_static() {
         const caseName = 'Array_Sort_Third_Test_static_2200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [90, 90, 90];
-        sort(arr, (a: long, b: long) => b - a);
+        sort(arr, (a: long, b: long) => (b - a).toInt());
         const expected: FixedArray<long> = [90, 90, 90];
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(expected[0]);
@@ -564,7 +564,7 @@ export default function Array_Sort_Third_Test_static() {
         const caseName = 'Array_Sort_Third_Test_static_2300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [-20, 80, 20, -80];
-        sort(arr, (a: long, b: long) => a - b);
+        sort(arr, (a: long, b: long) => (a - b).toInt());
         const expected: FixedArray<long> = [-80, -20, 20, 80];
         expect(arr.length).assertEqual(4);
         expect(arr[0]).assertEqual(expected[0]);
@@ -589,7 +589,7 @@ export default function Array_Sort_Third_Test_static() {
         const caseName = 'Array_Sort_Third_Test_static_2400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<long> = [-20, 80, 20, -80];
-        sort(arr, (a: long, b: long) => b - a);
+        sort(arr, (a: long, b: long) => (b - a).toInt());
         const expected: FixedArray<long> = [80, 20, -20, -80];
         expect(arr.length).assertEqual(4);
         expect(arr[0]).assertEqual(expected[0]);

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,7 +29,7 @@ const domain = 0xFF00;
 const tag = "TestTag";
 let kvManager: ddm.KVManager | null = null;
 let kvStore: ddm.SingleKVStore | null = null;
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 function putBatchString(len: number, prefix: string) {
@@ -49,7 +49,7 @@ function putBatchString(len: number, prefix: string) {
 async function testPutAndGet(kvManager: ddm.KVManager | null, options: ddm.Options): Promise<void> {
   try {
 
-    await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
+    await kvManager!.getKVStore<ddm.SingleKVStore>(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
 
       console.info('testPutAndGet getKVStore success' + JSON.stringify(options));
       kvStore = store;
@@ -105,7 +105,7 @@ async function testPutAndGet(kvManager: ddm.KVManager | null, options: ddm.Optio
       console.info('testPutAndGet canGet fail: ' + error);
       expect(null).assertFail();
     });
-  } catch (e: Error) {
+  } catch (e) {
     console.info('testPutAndGet get exception: ' + e);
     expect(null).assertFail();
   }
@@ -136,7 +136,7 @@ export default function schemaTest(){
           });
           await Utils.msSleep(8000)
           context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-          hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+          hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
         } catch (e) {
           hilog.info(domain, tag, '%{public}s', "============beforeAll context e: " + e);
           hilog.info(domain, tag, '%{public}s', '================ beforeAll context end==========');
@@ -144,12 +144,12 @@ export default function schemaTest(){
 
         const config: ddm.KVManagerConfig = {
           bundleName : TEST_BUNDLE_NAME,
-          context: context,
+          context: context!,
         }
         console.info(`beforeAll: createKVManager (single) with ${config}`);
         kvManager = ddm.createKVManager(config)
         done();
-      } catch (e: Error) {
+      } catch (e) {
         console.info("fail on exception: " + e);
         expect(null).assertFail();
         done();
@@ -223,7 +223,7 @@ export default function schemaTest(){
         let schema = new ddm.Schema();
         schema.root.appendChild(english);
         schema.indexes = ['$.english.first', '$.english.second'];
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }
@@ -266,7 +266,7 @@ export default function schemaTest(){
         }
         await testPutAndGet(kvManager, options);
         console.info("schematestPutAndGet done");
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }
@@ -299,15 +299,16 @@ export default function schemaTest(){
 
         }
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
-          console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 getKVStore success' + JSON.stringify(options));
-          kvStore = store;
-          expect(store != null).assertTrue();
-
-          await kvStore!.put("test_key_1", '{"name":1}');
-          await kvStore!.put("test_key_2", '{"name":2}');
-          await kvStore!.put("test_key_3", '{"name":3}');
-          console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 Put success');
+        await kvManager!.getKVStore<ddm.SingleKVStore>(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
+          waitForCompletion(async () => {
+            console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 getKVStore success' + JSON.stringify(options));
+            kvStore = store;
+            expect(store != null).assertTrue();
+            await kvStore!.put("test_key_1", '{"name":1}');
+            await kvStore!.put("test_key_2", '{"name":2}');
+            await kvStore!.put("test_key_3", '{"name":3}');
+            console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 Put success');
+          })
         });
         console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 start Query ...');
         let query = new ddm.Query();
@@ -324,7 +325,7 @@ export default function schemaTest(){
           expect(null).assertFail();
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.info("SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 fail on exception: " + e);
         expect(null).assertFail();
         done();
@@ -360,15 +361,16 @@ export default function schemaTest(){
           expect(null).assertFail();
         }
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
-          console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 getKVStore success' + JSON.stringify(options));
-          kvStore = store;
-          expect(store != null).assertTrue();
-
-          await kvStore!.put("test_key_1", '{"name":1.5}');
-          await kvStore!.put("test_key_2", '{"name":2.5}');
-          await kvStore!.put("test_key_3", '{}');
-          console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 Put success');
+        await kvManager!.getKVStore<ddm.SingleKVStore>(TEST_STORE_ID, options).then((store: ddm.SingleKVStore) => {
+          waitForCompletion(async () => {
+            console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 getKVStore success' + JSON.stringify(options));
+            kvStore = store;
+            expect(store != null).assertTrue();
+            await kvStore!.put("test_key_1", '{"name":1.5}');
+            await kvStore!.put("test_key_2", '{"name":2.5}');
+            await kvStore!.put("test_key_3", '{}');
+            console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 Put success');
+          })
         });
         console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 start Query ...');
 
@@ -382,7 +384,7 @@ export default function schemaTest(){
           expect(null).assertFail();
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         console.info("SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 fail on exception: " + e);
         expect(null).assertFail();
         done();
@@ -407,7 +409,7 @@ export default function schemaTest(){
 
         let schema = new ddm.Schema();
         expect(schema.root instanceof ddm.FieldNode).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }
@@ -428,7 +430,7 @@ export default function schemaTest(){
         let schema = new ddm.Schema();
         schema.indexes = ['$.english.first', '$.english.second'];
         expect(schema.indexes[0] === '$.english.first' && schema.indexes[1] === '$.english.second').assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }
@@ -450,7 +452,7 @@ export default function schemaTest(){
         schema.mode = 1;
         console.info("schema mode = "+schema.mode)
         expect(schema.mode === 1).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }
@@ -472,7 +474,7 @@ export default function schemaTest(){
         schema.mode = 0;
         console.info("schema mode = "+schema.mode)
         expect(schema.mode === 0).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }
@@ -493,7 +495,7 @@ export default function schemaTest(){
         let schema = new ddm.Schema();
         schema.skip = 0;
         expect(schema.skip === 0).assertTrue();
-      } catch (e: Error) {
+      } catch (e) {
         console.info("schema fail on exception: " + e);
         expect(null).assertFail();
       }

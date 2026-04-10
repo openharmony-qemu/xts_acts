@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,7 +54,7 @@ struct StateStylesPageTwo {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -93,17 +93,17 @@ struct StateStylesPageTwo {
       Stack() {
         if (this.targetView == 'Checkbox') {
           console.log('CheckboxCheckbox', this._isSelect)
-          Checkbox().select(this._isSelect).applyStyles(this.commonStyle)
+          Checkbox().applyStyles(this.commonStyle).select(this._isSelect)
         } else if (this.targetView == 'CheckboxGroup') {
-          CheckboxGroup({ group: 'checkboxGroup' }).selectAll(this._isSelect).applyStyles(this.commonStyle)
+          CheckboxGroup({ group: 'checkboxGroup' }).applyStyles(this.commonStyle).selectAll(this._isSelect)
         } else if (this.targetView == 'Radio') {
-          Radio({ value: 'Radio1', group: 'radioGroup' }).checked(this._isSelect).applyStyles(this.commonStyle)
+          Radio({ value: 'Radio1', group: 'radioGroup' }).applyStyles(this.commonStyle).checked(this._isSelect)
         } else if (this.targetView == 'Toggle') {
           Toggle({ type: ToggleType.Switch, isOn: this._isSelect }).applyStyles(this.commonStyle)
         } else if (this.targetView == 'MenuItem') {
           Menu() {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-              .selected(this._isSelect).applyStyles(this.commonStyle)
+              .applyStyles(this.commonStyle).selected(this._isSelect)
           }
           // .backgroundColor(Color.Yellow)
           .width('100%')

@@ -15,5 +15,7 @@
 export let URL1: string = 'https://'
 export let URL2: string = 'www.example.com/xhr'
 export let URL3: string = 'www.baidu.com'
+export let URL4: string = "www.example.com"
 export let URL_EXAMPLE: string = URL1 + URL2
 export let URL_BAIDU: string = URL1 + URL3
+export let URL_EXAMPLE_HTTPS: string = URL1 + URL4

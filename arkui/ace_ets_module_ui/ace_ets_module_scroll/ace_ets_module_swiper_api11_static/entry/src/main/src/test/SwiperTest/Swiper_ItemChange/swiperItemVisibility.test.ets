@@ -56,7 +56,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function swiperItemVisibility() {
   describe('swiperVisbleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperItemVisibility beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

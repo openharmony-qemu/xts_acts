@@ -2,6 +2,8 @@
   "src": [
     "testability/pages/webViewOnViewportFitChange",
     "testability/pages/webViewMetaViewportTrue",
-	"testability/pages/WebViewAvoidVisibleViewportBottom"
+    "testability/pages/WebViewAvoidVisibleViewportBottom",
+    "testability/pages/AvoidVisibleViewportBottomNull",
+    "testability/pages/AvoidVisibleViewportBottomUndefined"
   ]
 }

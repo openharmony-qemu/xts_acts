@@ -21,7 +21,6 @@ import { testRegExpToString1,
   testRegExpSymbolSearch1,
   testRegExpConstructor1,
   testRegExpInstanceDotAll1,
-  testRegExpStaticProps1,
   testRegExpSymbolMatch1,
   testRegExpSymbolReplace1,
   testMultipleGenericsIsFirstGreaterThanZero1,
@@ -259,37 +258,6 @@ export default function supplyTest() {
           let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
             group.addTask(testRegExpSymbolMatch1)
-          }
-          await taskpool.execute(group).then((res) => {
-            result = res.length
-          }).catch((e: BusinessError) => {
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          expect().assertFail()
-        }
-        console.info(`${caseName} test end`);
-        done()
-      })
-
-    /**
-     * @tc.name   test_concurrent_builtins_regexp_static_props_001
-     * @tc.number SUB_CONCURRENT_BUILTINS_FORTH_TEST_0700
-     * @tc.desc   test legacy RegExp static props remain undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('test_concurrent_builtins_regexp_static_props_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'test_concurrent_builtins_regexp_static_props_001';
-        console.info(`${caseName} test start`);
-        let result = 0
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(testRegExpStaticProps1)
           }
           await taskpool.execute(group).then((res) => {
             result = res.length

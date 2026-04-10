@@ -38,6 +38,10 @@
         "MainAbility/pages/StyledString/UnmarshallingErrorCode",
         "MainAbility/pages/StyledString/VerticalAlign",
         "MainAbility/pages/StyledString/LeadingMarginSpanTest",
-        "MainAbility/pages/StyledString/ParagraphStyleTextDirection"
+        "MainAbility/pages/StyledString/ParagraphStyleTextDirection",
+        "MainAbility/pages/StyledString/StyledStringMethodsNull",
+        "MainAbility/pages/StyledString/MutableStyledStringMethodsNull",
+        "MainAbility/pages/StyledString/MutableStyledStringMethodsNull2",
+        "MainAbility/pages/StyledString/StyledStringFontWeightConfigsTest"
     ]
 }

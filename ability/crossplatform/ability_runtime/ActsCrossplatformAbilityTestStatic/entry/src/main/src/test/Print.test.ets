@@ -38,9 +38,9 @@ export default function PrintTest() {
      * @tc.desc   Test the api "abilityDelegator.printSync", return the result.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("ACTS_PRINT_SYNC_0001", Level.LEVEL2, async (done: () => void): Promise<void> =>{
+    it("ACTS_PRINT_SYNC_0001", Level.LEVEL0, async (done: () => void): Promise<void> =>{
       console.log("ACTS_PRINT_SYNC_0001 :start");
       let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
       let msg = "printSync msg";
@@ -57,9 +57,9 @@ export default function PrintTest() {
      * @tc.desc   Test the api "abilityDelegator.print", return the result.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("ACTS_PRINT_SYNC_0003", Level.LEVEL2, async (done: () => void): Promise<void> =>{
+    it("ACTS_PRINT_SYNC_0003", Level.LEVEL0, async (done: () => void): Promise<void> =>{
       console.log("ACTS_PRINT_SYNC_0003 :start");
       let msg: string = "printSync escape character: \n";
       abilityDelegator.printSync(msg);
@@ -74,9 +74,9 @@ export default function PrintTest() {
      * @tc.desc   Test the api "abilityDelegator.print", return the result.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("ACTS_PRINT_SYNC_0004", Level.LEVEL2, async (done: () => void): Promise<void> =>{
+    it("ACTS_PRINT_SYNC_0004", Level.LEVEL0, async (done: () => void): Promise<void> =>{
       console.log("ACTS_PRINT_SYNC_0004 :start");
       let msg: string = "printSync special character: © ® ℃ ℉ ™ ↵";
       abilityDelegator.printSync(msg);
@@ -91,9 +91,9 @@ export default function PrintTest() {
      * @tc.desc   Test the api "abilityDelegator.print", return the result.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("ACTS_PRINT_SYNC_0005", Level.LEVEL2, async (done: () => void): Promise<void> =>{
+    it("ACTS_PRINT_SYNC_0005", Level.LEVEL0, async (done: () => void): Promise<void> =>{
       console.log("ACTS_PRINT_SYNC_0005 :start");
       let msg: string = "printSync language: 中文 English  Русский язык Français";
       abilityDelegator.printSync(msg);
@@ -108,9 +108,9 @@ export default function PrintTest() {
      * @tc.desc   Test the api "abilityDelegator.print", return the result.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("ACTS_PRINT_SYNC_0006", Level.LEVEL2, async (done: () => void): Promise<void> =>{
+    it("ACTS_PRINT_SYNC_0006", Level.LEVEL0, async (done: () => void): Promise<void> =>{
       console.log("ACTS_PRINT_SYNC_0006 :start");
       let msg: string =
         "0callbackaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
@@ -127,6 +127,23 @@ export default function PrintTest() {
           "fffffffffff";
       abilityDelegator.printSync(msg);
       abilityDelegator.printSync("ACTS_PRINT_SYNC_0006 printSync");
+      expect(true).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   ACTS_PRINT_SYNC_0007
+     * @tc.number ACTS_PRINT_SYNC_0007
+     * @tc.desc   Test the api "abilityDelegator.print", return the result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("ACTS_PRINT_SYNC_0007", Level.LEVEL2, async (done: () => void): Promise<void> =>{
+      console.log("ACTS_PRINT_SYNC_0007 :start");
+      let msg: string = "";
+      abilityDelegator.printSync(msg);
+      abilityDelegator.printSync("ACTS_PRINT_SYNC_0007 printSync");
       expect(true).assertTrue();
       done();
     });

@@ -29,6 +29,7 @@ import drawing from '@ohos.graphics.drawing';
 import common2D from '@ohos.graphics.common2D';
 import { getRandomNumber } from './Util.test';
 import { BusinessError } from '@ohos.base';
+import colorSpaceManager from '@ohos.graphics.colorSpaceManager';
 
 export default function penPart2Test() {
   describe('DrawingTsPenPart2Test', () => {
@@ -127,7 +128,24 @@ export default function penPart2Test() {
       try {
         let cf = drawing.ColorFilter.createLumaColorFilter();
         let cf2 = pen.getColorFilter();
-        console.info(msg + ' getColorFilter successed,colorFilter:' + cf2);
+        console.info(msg + ' 1 getColorFilter successed,colorFilter:' + cf2);
+        expect(cf2 == undefined).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` getColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let setColorFilter = drawing.ColorFilter.createSRGBGammaToLinear();
+        if (setColorFilter != undefined) {
+          pen.setColorFilter(setColorFilter!);
+        }
+        let filter = pen.getColorFilter();
+        console.info(msg + ' 2 getColorFilter successed,colorFilter:' + filter);
+        if(filter == undefined){
+          console.info(msg + ' 2 test failed');
+          expect().assertFail();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` getColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -150,7 +168,8 @@ export default function penPart2Test() {
       for (let i = 0; i < 20; i++) {
         try {
           let cf2 = pen.getColorFilter();
-          console.info(msg + ' getColorFilter succeeded,colorFilter:' + cf2);
+          console.info(msg + ' getColorFilter succeeded,colorFilter:' + cf2 + " step: " + i);
+          expect(cf2 == undefined).assertTrue();
         } catch (e) {
           e = e as BusinessError;
           console.info(msg + ` getColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -452,8 +471,13 @@ export default function penPart2Test() {
       const pen = new drawing.Pen();
       try {
         let colorGet = pen.getColor();
-        expect(colorGet != null).assertTrue();
-        console.info(msg + ' getColor successed,colorGet:' + JSON.stringify(colorGet));
+        if(colorGet == undefined){
+          console.info(msg + ' getColor failed');
+          expect().assertFail();
+        } else {
+          expect(colorGet != null).assertTrue();
+          console.info(msg + ' getColor successed,colorGet:' + JSON.stringify(colorGet));
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` getColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -461,22 +485,27 @@ export default function penPart2Test() {
       }
 
       try {
-        const colors: common2D.Color = {
+        const colors: common2D.Color | undefined= {
           alpha: 0,
           red: 0,
           green: 0,
           blue: 0
         }
         pen.setColor(colors);
-        let colorGet = pen.getColor() as common2D.Color;
-        expect(colors.alpha == colorGet.alpha).assertTrue();
-        expect(colors.red == colorGet.red).assertTrue();
-        expect(colors.green == colorGet.green).assertTrue();
-        expect(colors.blue == colorGet.blue).assertTrue();
-        console.info(msg + ' getColor 2 successed,colorGet:'+ JSON.stringify(colorGet));
-        console.info(`${msg} 2 colorGet.alpha: ${colorGet.alpha} colorGet.red: ${colorGet.red} colorGet.green: ${colorGet.green} colorGet.blue: ${colorGet.blue}`);
-        console.info(msg + ' getColor 2 successed,colors:'+ JSON.stringify(colors));
-        console.info(`${msg} 2 colors.alpha: ${colors.alpha} colors.red: ${colors.red} colors.green: ${colors.green} colors.blue: ${colors.blue}`);
+        let colorGet = pen.getColor();
+        if(colorGet == undefined){
+          console.info(msg + ' getColor colorGet 2 failed');
+          expect().assertFail();
+        } else {
+          expect(colors.alpha == colorGet.alpha).assertTrue();
+          expect(colors.red == colorGet.red).assertTrue();
+          expect(colors.green == colorGet.green).assertTrue();
+          expect(colors.blue == colorGet.blue).assertTrue();
+          console.info(msg + ' getColor 2 successed,colorGet:'+ JSON.stringify(colorGet));
+          console.info(`${msg} 2 colorGet.alpha: ${colorGet.alpha} colorGet.red: ${colorGet.red} colorGet.green: ${colorGet.green} colorGet.blue: ${colorGet.blue}`);
+          console.info(msg + ' getColor 2 successed,colors:'+ JSON.stringify(colors));
+          console.info(`${msg} 2 colors.alpha: ${colors.alpha} colors.red: ${colors.red} colors.green: ${colors.green} colors.blue: ${colors.blue}`);
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` getColor2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -484,22 +513,27 @@ export default function penPart2Test() {
       }
 
       try {
-        const colors: common2D.Color = {
+        const colors: common2D.Color | undefined= {
           alpha: 255,
           red: 255,
           green: 255,
           blue: 255
         }
         pen.setColor(colors);
-        let colorGet = pen.getColor() as common2D.Color;
-        expect(colors.alpha == colorGet.alpha).assertTrue();
-        expect(colors.red == colorGet.red).assertTrue();
-        expect(colors.green == colorGet.green).assertTrue();
-        expect(colors.blue == colorGet.blue).assertTrue();
-        console.info(msg + ' getColor 3 successed,colorGet:'+ JSON.stringify(colorGet));
-        console.info(`${msg} 3 colorGet.alpha: ${colorGet.alpha} colorGet.red: ${colorGet.red} colorGet.green: ${colorGet.green} colorGet.blue: ${colorGet.blue}`);
-        console.info(msg + ' getColor 3 successed,colors:'+ JSON.stringify(colors));
-        console.info(`${msg} 3 colors.alpha: ${colors.alpha} colors.red: ${colors.red} colors.green: ${colors.green} colors.blue: ${colors.blue}`);
+        let colorGet = pen.getColor();
+        if(colorGet == undefined){
+          console.info(msg + ' getColor colorGet 3 failed');
+          expect().assertFail();
+        } else {
+          expect(colors.alpha == colorGet.alpha).assertTrue();
+          expect(colors.red == colorGet.red).assertTrue();
+          expect(colors.green == colorGet.green).assertTrue();
+          expect(colors.blue == colorGet.blue).assertTrue();
+          console.info(msg + ' getColor 3 successed,colorGet:'+ JSON.stringify(colorGet));
+          console.info(`${msg} 3 colorGet.alpha: ${colorGet.alpha} colorGet.red: ${colorGet.red} colorGet.green: ${colorGet.green} colorGet.blue: ${colorGet.blue}`);
+          console.info(msg + ' getColor 3 successed,colors:'+ JSON.stringify(colors));
+          console.info(`${msg} 3 colors.alpha: ${colors.alpha} colors.red: ${colors.red} colors.green: ${colors.green} colors.blue: ${colors.blue}`);
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` getColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
@@ -837,5 +871,231 @@ export default function penPart2Test() {
         }
       }
     });
+    /**
+     * @tc.name   testPenSetAndGetColor4fNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_STATIC_2500
+     * @tc.desc   Test for testPenSetAndGetColor4fNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPenSetAndGetColor4fNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testPenSetAndGetColor4fNormalStatic';
+      const pen = new drawing.Pen();
+      // 枚举值除去UNKNOWN与CUSTOM不可用于直接创建色域对象。
+      let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG);
+      let color4f:common2D.Color4f = {alpha:0.8, red:0.5, green:0.4, blue:0.7};
+      try {
+        pen.setColor4f(color4f, colorSpace);
+        console.info(msg + ' setColor4f successed');
+        let color = pen.getColor4f();
+        if(color == undefined){
+          console.info(msg + ' getColor4f failed color');
+          expect().assertFail();
+        } else {
+          console.info(msg + ' getColor4f successed color is: ' + JSON.stringify(color));
+          let dif_alpha = Math.abs(color.alpha-color4f.alpha);
+          expect( dif_alpha < 0.0001).assertEqual(true);
+          let dif_red = Math.abs(color.red-color4f.red);
+          expect( dif_red < 0.0001).assertEqual(true);
+          let dif_green = Math.abs(color.green-color4f.green);
+          expect( dif_green < 0.0001).assertEqual(true);
+          let dif_blue = Math.abs(color.blue-color4f.blue);
+          expect( dif_blue < 0.0001).assertEqual(true);
+        }
+      } catch( e ) {
+        e = e as BusinessError;
+        console.info(msg + ` 1 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        color4f = {alpha:1, red:1, green:1, blue:1};
+        pen.setColor4f(color4f, colorSpace);
+        let color2 = pen.getColor4f();
+        console.info(msg + ' setColor4f 2 successed');
+        let color = pen.getColor4f();
+        if(color2 == undefined){
+          console.info(msg + ' getColor4f color2 failed color');
+          expect().assertFail();
+        } else {
+          console.info(msg + ' getColor4f 2 successed color2 is: ' + JSON.stringify(color2));
+          let dif_alpha = Math.abs(color2.alpha-color4f.alpha);
+          expect( dif_alpha < 0.0001).assertEqual(true);
+          let dif_red = Math.abs(color2.red-color4f.red);
+          expect( dif_red < 0.0001).assertEqual(true);
+          let dif_green = Math.abs(color2.green-color4f.green);
+          expect( dif_green < 0.0001).assertEqual(true);
+          let dif_blue = Math.abs(color2.blue-color4f.blue);
+          expect( dif_blue < 0.0001).assertEqual(true);
+        }
+      } catch( e ) {
+        e = e as BusinessError;
+        console.info(msg + ` 2 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        color4f = {alpha:0, red:0, green:0, blue:0};
+        pen.setColor4f(color4f, colorSpace);
+        console.info(msg + ' setColor4f 3 successed');
+        let color3 = pen.getColor4f();
+        if(color3 == undefined){
+          console.info(msg + ' getColor4f color3 failed color');
+          expect().assertFail();
+        } else {
+          console.info(msg + ' getColor4f 3 successed color3 is: ' + JSON.stringify(color3));
+          let dif_alpha = Math.abs(color3.alpha-color4f.alpha);
+          expect( dif_alpha < 0.0001).assertEqual(true);
+          let dif_red = Math.abs(color3.red-color4f.red);
+          expect( dif_red < 0.0001).assertEqual(true);
+          let dif_green = Math.abs(color3.green-color4f.green);
+          expect( dif_green < 0.0001).assertEqual(true);
+          let dif_blue = Math.abs(color3.blue-color4f.blue);
+          expect( dif_blue < 0.0001).assertEqual(true);
+        }
+      } catch( e ) {
+        e = e as BusinessError;
+        console.info(msg + ` 3 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        pen.setColor4f(color4f, null);
+        console.info(msg + ' setColor4f 4 successed');
+        let color4 = pen.getColor4f();
+        if(color4 == undefined){
+          console.info(msg + ' getColor4f color4 failed color');
+          expect().assertFail();
+        } else {
+          console.info(msg + ' getColor4f 4 successed color4 is: ' + JSON.stringify(color4));
+          let dif_alpha = Math.abs(color4.alpha-color4f.alpha);
+          expect( dif_alpha < 0.0001).assertEqual(true);
+          let dif_red = Math.abs(color4.red-color4f.red);
+          expect( dif_red < 0.0001).assertEqual(true);
+          let dif_green = Math.abs(color4.green-color4f.green);
+          expect( dif_green < 0.0001).assertEqual(true);
+          let dif_blue = Math.abs(color4.blue-color4f.blue);
+          expect( dif_blue < 0.0001).assertEqual(true);
+        }
+      } catch( e ) {
+        e = e as BusinessError;
+        console.info(msg + ` 4 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   testPenSetAndGetColor4fMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_STATIC_2502
+     * @tc.desc   testPenSetAndGetColor4fMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPenSetAndGetColor4fMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testPenSetAndGetColor4fMultipleCallsStatic';
+      try {
+        for (let i = 0; i < 20; i += 1) {
+          const pen = new drawing.Pen();
+          let colorSpace = colorSpaceManager.create(colorSpaceManager.ColorSpace.BT2020_HLG);
+          let color4f:common2D.Color4f = {alpha:Math.random() *1, red:Math.random() *1, green:Math.random() *1, blue:Math.random() *1};
+          console.info(msg + 'setColor4f  color4f is ' + JSON.stringify(color4f) +' step: ' +i);
+          pen.setColor4f(color4f, colorSpace);
+          console.info(msg + 'setColor4f success step is ' + i);
+          let color = pen.getColor4f();
+          if(color == undefined){
+            console.info(msg + ' getColor4f failed color');
+            expect().assertFail();
+          } else {
+            console.info(msg + 'getColor4f success color is ' + JSON.stringify(color) +' step: ' +i);
+            let dif_alpha = Math.abs(color.alpha-color4f.alpha);
+            expect( dif_alpha < 0.0001).assertEqual(true);
+            let dif_red = Math.abs(color.red-color4f.red);
+            expect( dif_red < 0.0001).assertEqual(true);
+            let dif_green = Math.abs(color.green-color4f.green);
+            expect( dif_green < 0.0001).assertEqual(true);
+            let dif_blue = Math.abs(color.blue-color4f.blue);
+            expect( dif_blue < 0.0001).assertEqual(true);
+          }
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isInterpolate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+    })
+    /**
+     * @tc.name   testPenSetAndGetColor4fBoundaryValueStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_STATIC_2503
+     * @tc.desc   testPenSetAndGetColor4fBoundaryValueStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPenSetAndGetColor4fBoundaryValueStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testPenSetAndGetColor4fBoundaryValueStatic';
+      const pen = new drawing.Pen();
+      try {
+        pen.setColor4f( {alpha:1.1, red:1, green:1, blue:1}, null);
+        console.info(msg + `setColor4f 1 successes`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `setColor4f 1 errorCode is:  ${e.code} + errormsg is: ${e.message} `);
+        expect().assertFail()
+      }
+      try {
+        pen.setColor4f( {alpha:-0.999, red:1, green:1, blue:1}, null);
+        console.info(msg + `setColor4f 2 successes`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `setColor4f 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      try {
+        pen.setColor4f( {alpha:1, red:1.1, green:1, blue:1}, null);
+        console.info(msg + `setColor4f 3 successes`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `setColor4f 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      try {
+        pen.setColor4f( {alpha:1, red:-0.999, green:1, blue:1}, null);
+        console.info(msg + `setColor4f 4 successes`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `setColor4f 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      try {
+        pen.setColor4f( {alpha:1, red:1, green:1.1, blue:1}, null);
+        console.info(msg + `setColor4f 5 successes`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `setColor4f 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      try {
+        pen.setColor4f( {alpha:1, red:1, green:-0.999, blue:1}, null);
+        console.info(msg + `setColor4f 6 successes`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `setColor4f 6 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      try {
+        pen.setColor4f( {alpha:1, red:1, green:1, blue:1.1}, null);
+        console.info(msg + `setColor4f 7 successes`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `setColor4f 7 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+      try {
+        pen.setColor4f( {alpha:1, red:1, green:1, blue:-0.999}, null);
+        console.info(msg + `setColor4f 8 successes`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `setColor4f 8 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+    })
   });
 }

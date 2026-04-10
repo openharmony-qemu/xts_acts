@@ -25,9 +25,9 @@ export default function getTargetOverlayModuleInfos() {
      * @tc.desc   The query fails when the incoming moduleName is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it("Sub_Bms_Framework_Overlay_Query_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("Sub_Bms_Framework_Overlay_Query_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           overlay.getTargetOverlayModuleInfos("",
@@ -54,7 +54,7 @@ export default function getTargetOverlayModuleInfos() {
         await Utils.msSleep(1000);
         try {
           let op4 = overlay.getTargetOverlayModuleInfos("");
-          op4.then((result: Array<OverlayModuleInfo>): Array<OverlayModuleInfo> => {
+          op4.then((result: Array<OverlayModuleInfo>) => {
             hilog.info(0x0000, 'testParamTag',
               'o8 getTargetOverlayModuleInfos Promise success, Array<OverlayModuleInfo> length: ' + result.length);
             expect().assertFail();
@@ -98,7 +98,7 @@ export default function getTargetOverlayModuleInfos() {
           });
         await Utils.msSleep(1000);
         let op4 = overlay.getTargetOverlayModuleInfos(MODULE_NAME1);
-        op4.then((result: Array<OverlayModuleInfo>): Array<OverlayModuleInfo> => {
+        op4.then((result: Array<OverlayModuleInfo>) => {
           hilog.info(0x0000, 'testParamTag', 'o8 getTargetOverlayModuleInfos Promise success, Array<OverlayModuleInfo> length: ' + result.length);
           expect().assertFail();
           done();

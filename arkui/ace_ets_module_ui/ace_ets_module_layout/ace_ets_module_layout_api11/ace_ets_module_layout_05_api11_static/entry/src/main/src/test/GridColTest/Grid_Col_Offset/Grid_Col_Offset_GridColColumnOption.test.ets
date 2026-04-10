@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_Col_Offset_GridColColumnOption() {
   describe('Grid_Col_Offset_GridColColumnOption', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Grid_Col_Offset_GridColColumnOption beforeAll start");
            
       await UtilsTest.msSleep(4000)
@@ -204,7 +204,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0300', Level.LEVEL0,
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'addWidth', value: '130vp'
       });
-      AppStorage.get<MessageManager<Int>>('messageManagerInt')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'addSpan', value: 1
       });
 
@@ -285,7 +285,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0400', Level.LEVEL0,
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'addWidth', value: '180vp'
       });
-      AppStorage.get<MessageManager<Int>>('messageManagerInt')?.notify({
+      AppStorage.get<MessageManager<Int>>('messageManager')?.notify({
         name: 'addSpan', value: 2
       });
 
@@ -356,7 +356,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0500', Level.LEVEL0,
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'addWidth', value: '230vp'
       });
-      AppStorage.get<MessageManager<Int>>('messageManagerInt')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'addSpan', value: 1
       });
 
@@ -427,7 +427,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0600', Level.LEVEL0,
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'addWidth', value: '330vp'
       });
-      AppStorage.get<MessageManager<Int>>('messageManagerInt')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'addSpan', value: 1
       });
 

@@ -30,9 +30,9 @@ export default function ipcNdkTest() {
      * @tc.desc   test ftok
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslIpcFtok001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslIpcFtok001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: number = ipc.ftok();
       expect(result).assertEqual(resultTrue);

@@ -24,7 +24,7 @@ export default function builtinsStringPrototypeTest() {
   describe('builtinsStringPrototypeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
-      await sleep(20);
+      await sleep(40);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })

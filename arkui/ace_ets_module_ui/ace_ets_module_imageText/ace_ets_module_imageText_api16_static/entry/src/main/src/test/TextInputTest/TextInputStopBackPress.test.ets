@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function TextInputStopBackPressTest() {
   describe('TextInputStopBackPressTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInputStopBackPressTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api16.static", "EntryAbility");

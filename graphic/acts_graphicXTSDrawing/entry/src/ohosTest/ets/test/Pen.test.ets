@@ -789,6 +789,48 @@ export default function penTest() {
           expect().assertFail();
         }
       }
+	  let itemList: drawing.BlendMode[] = [
+        drawing.BlendMode.CLEAR,
+        drawing.BlendMode.SRC,
+        drawing.BlendMode.DST,
+        drawing.BlendMode.SRC_OVER,
+        drawing.BlendMode.DST_OVER,
+        drawing.BlendMode.SRC_IN,
+        drawing.BlendMode.DST_IN,
+        drawing.BlendMode.SRC_OUT,
+        drawing.BlendMode.DST_OUT,
+        drawing.BlendMode.SRC_ATOP,
+        drawing.BlendMode.DST_ATOP,
+        drawing.BlendMode.XOR,
+        drawing.BlendMode.PLUS,
+        drawing.BlendMode.MODULATE,
+        drawing.BlendMode.SCREEN,
+        drawing.BlendMode.OVERLAY,
+        drawing.BlendMode.DARKEN,
+        drawing.BlendMode.LIGHTEN,
+        drawing.BlendMode.COLOR_DODGE,
+        drawing.BlendMode.COLOR_BURN,
+        drawing.BlendMode.HARD_LIGHT,
+        drawing.BlendMode.SOFT_LIGHT,
+        drawing.BlendMode.DIFFERENCE,
+        drawing.BlendMode.EXCLUSION,
+        drawing.BlendMode.MULTIPLY,
+        drawing.BlendMode.HUE,
+        drawing.BlendMode.SATURATION,
+        drawing.BlendMode.COLOR,
+        drawing.BlendMode.LUMINOSITY
+      ];
+      for (let i = 0; i < 20; i++) {
+        const randomEnum = Math.floor(29 * Math.random());
+        try {
+          pen.setBlendMode(itemList[randomEnum]);
+          console.info(msg + ' setBlendMode succeeded  blendmode: ' + itemList[randomEnum] + " step: " + i);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` setBlendMode errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+          expect().assertFail();
+        }
+      }
     });
 
     /**

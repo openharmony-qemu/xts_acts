@@ -34,7 +34,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
   public isNum: int = 0
   public testCaseList: Array<ButtonLabelStyle | undefined> = [
     {
@@ -65,7 +65,7 @@ class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
 }
 
 @Observed
-class MyButtonModifier1 implements AttributeModifier<ButtonAttribute> {
+export class MyButtonModifier1 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.labelStyle({
       textAlign: TextAlign.Start
@@ -74,7 +74,7 @@ class MyButtonModifier1 implements AttributeModifier<ButtonAttribute> {
 }
 
 @Observed
-class MyButtonModifier2 implements AttributeModifier<ButtonAttribute> {
+export class MyButtonModifier2 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.labelStyle({
       textAlign: TextAlign.Center
@@ -83,7 +83,7 @@ class MyButtonModifier2 implements AttributeModifier<ButtonAttribute> {
 }
 
 @Observed
-class MyButtonModifier3 implements AttributeModifier<ButtonAttribute> {
+export class MyButtonModifier3 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.labelStyle({
       textAlign: TextAlign.End
@@ -92,7 +92,7 @@ class MyButtonModifier3 implements AttributeModifier<ButtonAttribute> {
 }
 
 @Observed
-class MyButtonModifier4 implements AttributeModifier<ButtonAttribute> {
+export class MyButtonModifier4 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.labelStyle({
       textAlign: TextAlign.JUSTIFY
@@ -101,7 +101,7 @@ class MyButtonModifier4 implements AttributeModifier<ButtonAttribute> {
 }
 
 @Observed
-class MyButtonModifier11 implements AttributeModifier<ButtonAttribute> {
+export class MyButtonModifier11 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.labelStyle({
       maxLines: 3,
@@ -111,7 +111,7 @@ class MyButtonModifier11 implements AttributeModifier<ButtonAttribute> {
 }
 
 @Observed
-class MyButtonModifier22 implements AttributeModifier<ButtonAttribute> {
+export class MyButtonModifier22 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.labelStyle({
       maxLines: 3,
@@ -121,7 +121,7 @@ class MyButtonModifier22 implements AttributeModifier<ButtonAttribute> {
 }
 
 @Observed
-class MyButtonModifier33 implements AttributeModifier<ButtonAttribute> {
+export class MyButtonModifier33 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.labelStyle({
       maxLines: 3,
@@ -131,7 +131,7 @@ class MyButtonModifier33 implements AttributeModifier<ButtonAttribute> {
 }
 
 @Observed
-class MyButtonModifier44 implements AttributeModifier<ButtonAttribute> {
+export class MyButtonModifier44 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.labelStyle({
       maxLines: 3,
@@ -141,7 +141,7 @@ class MyButtonModifier44 implements AttributeModifier<ButtonAttribute> {
 }
 
 @Observed
-class MyButtonModifier4e4 implements AttributeModifier<ButtonAttribute> {
+export class MyButtonModifier4e4 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.labelStyle({
       maxLines: 3,

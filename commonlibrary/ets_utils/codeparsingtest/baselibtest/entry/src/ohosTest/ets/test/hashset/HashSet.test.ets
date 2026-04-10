@@ -1139,5 +1139,31 @@ export default function HasSetTest() {
         expect().assertFail();
       }
     });
+    /**
+     * @tc.name   testHashSetCase001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_CASE_0100
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHashSetCase001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testHashSetCase001';
+      let num = 0;
+      let hashSet = new HashSet<number | string | boolean | undefined | null | Object>();
+      hashSet.add("sparrow");
+      hashSet.add("squirrel");
+      hashSet.forEach((value: number | string | boolean | undefined | null | Object,
+        key: number | string | boolean | undefined | null | Object): void => {
+        num++;
+      }, null);
+
+      hashSet.forEach((value: number | string | boolean | undefined | null | Object,
+        key: number | string | boolean | undefined | null | Object): void => {
+        num++;
+      }, undefined);
+      expect(num).assertEqual(4);
+    });
+
   })
 }

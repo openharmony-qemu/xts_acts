@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,11 +46,10 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         await file.lock();
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -73,11 +72,10 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         await file.lock(true);
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -100,11 +98,10 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         await file.lock(false);
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -128,11 +125,10 @@ export default function fileIOFileLock() {
         await file.lock();
         file.tryLock();
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -156,11 +152,10 @@ export default function fileIOFileLock() {
         await file.lock();
         file.tryLock(true);
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_004 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -184,11 +179,10 @@ export default function fileIOFileLock() {
         await file.lock();
         file.tryLock(false);
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_005 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -211,11 +205,10 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         file.tryLock();
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_006 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -237,11 +230,10 @@ export default function fileIOFileLock() {
         let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_007 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -264,11 +256,10 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         await file.lock(undefined);
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_008 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -292,11 +283,10 @@ export default function fileIOFileLock() {
         await file.lock();
         file.tryLock(undefined);
         file.unlock();
-        expect(true).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_009 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -319,12 +309,11 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         file.lock((err: BusinessError<void> | null) => {
           file.unlock();
-          expect(true).assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_callback_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -347,12 +336,11 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         file.lock(true, (err: BusinessError<void> | null) => {
           file.unlock();
-          expect(true).assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_callback_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -375,12 +363,11 @@ export default function fileIOFileLock() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         file.lock(false, (err: BusinessError<void> | null) => {
           file.unlock();
-          expect(true).assertTrue();
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_callback_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function enumsVerticalAlignJsunit() {
   describe('enumsVerticalAlign', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("enumsVerticalAlign beforeAll start");
            
       await UtilsTest.msSleep(4000)

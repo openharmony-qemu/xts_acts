@@ -73,7 +73,17 @@ import ReturningMultiThread from './ReturningMultiThread.test';
 import RdbStoreErrorCodeAdd1Test from './RdbStoreErrorCodeAdd1.test';
 import RdbStoreErrorCodeAdd2Test from './RdbStoreErrorCodeAdd2.test';
 import RdbStoreErrorCodeAdd3Test from './RdbStoreErrorCodeAdd3.test';
+import RdbStoreErrorCodeAdd4Test from './RdbStoreErrorCodeAdd4.test';
 
+import RdbStoreLiteResultNullUndefinedTest from './RdbStoreLiteResultNullUndefined.test';
+import RdbStoreNullUndefinedTest from './RdbStoreNullUndefined.test';
+import RdbStoreResultNullUndefinedTest from './RdbStoreResultNullUndefined.test';
+import DataRdbStoreCoverageAdd from './DataRdbStoreCoverageAdd.test';
+import RdbStoreParamErrorTest from './RdbStoreParamError.test';
+import rdbStoreAttachErrorTest from './RdbStoreAttachError.test';
+
+import RdbStoreGetRdbStoreSyncEtsTest from './RdbStoreGetRdbStoreSyncEts.test';
+import RdbStoreGetRdbStoreSyncEtsAddTest from './RdbStoreGetRdbStoreSyncEtsAddTest.test'
 export default function testsuite() {
   relationalStoreEncryptTest()
   relationalStoreUpdateTest()
@@ -136,4 +146,16 @@ export default function testsuite() {
   RdbStoreErrorCodeAdd1Test()
   RdbStoreErrorCodeAdd2Test()
   RdbStoreErrorCodeAdd3Test()
+  RdbStoreErrorCodeAdd4Test()
+
+  RdbStoreLiteResultNullUndefinedTest()
+  RdbStoreNullUndefinedTest()
+  RdbStoreResultNullUndefinedTest()
+  DataRdbStoreCoverageAdd()
+
+  RdbStoreParamErrorTest()
+  rdbStoreAttachErrorTest()
+
+  RdbStoreGetRdbStoreSyncEtsTest();
+  RdbStoreGetRdbStoreSyncEtsAddTest();
 }

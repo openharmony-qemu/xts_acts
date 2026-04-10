@@ -29,13 +29,13 @@ struct RichEditorOnWillChange001 {
 
     Column() {
 
-      Text('onWillChange_callback:' + this.onWillChangeCallback).id('onWillChange_callback')
-      Text('replacedSpans_callback:' + this.replacedSpansCallback).id('replacedSpans_callback')
-      Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback')
-      Text('onWillChange_rangeBefore:' + this.onWillChangeRangeBefore).id('onWillChange_rangeBefore')
-      Text('onDidChange_rangeBefore:' + this.onDidChangeRangeBefore).id('onDidChange_rangeBefore')
-      Text('rangeAfter_emoji:' + this.rangeAfterEmoji).id('rangeAfter_emoji')
-      Text('replacedSpans Callback:' + this.replacedSpansCallbackInfo).id('replacedSpansCallback')
+      Text('onWillChange_callback:' + this.onWillChangeCallback).id('onWillChange_callback').height('5%').clip(true)
+      Text('replacedSpans_callback:' + this.replacedSpansCallback).id('replacedSpans_callback').height('5%').clip(true)
+      Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback').height('5%').clip(true)
+      Text('onWillChange_rangeBefore:' + this.onWillChangeRangeBefore).id('onWillChange_rangeBefore').height('5%').clip(true)
+      Text('onDidChange_rangeBefore:' + this.onDidChangeRangeBefore).id('onDidChange_rangeBefore').height('5%').clip(true)
+      Text('rangeAfter_emoji:' + this.rangeAfterEmoji).id('rangeAfter_emoji').height('5%').clip(true)
+      Text('replacedSpans Callback:' + this.replacedSpansCallbackInfo).id('replacedSpansCallback').height('5%').clip(true)
 
       Button('add emoji').onClick(() => {
         this.controller.addTextSpan('\uD83D\uDE00',

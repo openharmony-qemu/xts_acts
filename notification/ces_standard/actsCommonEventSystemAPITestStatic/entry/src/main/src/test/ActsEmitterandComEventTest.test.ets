@@ -33,10 +33,10 @@ class Sample {
 }
 
 
-let subscriber:commonEventManager.CommonEventSubscriber; //用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
+let subscriber:commonEventManager.CommonEventSubscriber | undefined; //用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
 //有序公共事件
-let subscriber_a: commonEventManager.CommonEventSubscriber;
-let subscriber_b: commonEventManager.CommonEventSubscriber;
+let subscriber_a: commonEventManager.CommonEventSubscriber | undefined;
+let subscriber_b: commonEventManager.CommonEventSubscriber | undefined;
 
 export default function ActsEmitterandComEventTest() {
   const DOMAIN_NUMBER: int = 0xFF00;
@@ -150,7 +150,7 @@ export default function ActsEmitterandComEventTest() {
               }
               //订阅公共事件
               try {
-                commonEventManager.subscribe(subscriber, (err: BusinessError|null, data: commonEventManager.CommonEventData|undefined) => {
+                commonEventManager.subscribe(subscriber!, (err: BusinessError|null, data: commonEventManager.CommonEventData|undefined) => {
                   if (err) {
                     console.error(Tag + ` subscribe failed, err is ${JSON.stringify(err)}`);
                     expect(false).assertTrue()
@@ -201,7 +201,7 @@ export default function ActsEmitterandComEventTest() {
         await Utils.msSleep(1000)
         //调用commonEventManager.unsubscribe接口，回调形式取消订阅公共事件
         try {
-          commonEventManager.unsubscribe(subscriber, (err: BusinessError | null) =>{
+          commonEventManager.unsubscribe(subscriber!, (err: BusinessError | null) =>{
             if (err) {
               console.error(Tag+`unsubscribe failed, code is ${err.code}, message is ${err.message}`);
               expect(err?.code).assertEqual(0)
@@ -247,7 +247,7 @@ export default function ActsEmitterandComEventTest() {
                 done()
               }
               try {
-                commonEventManager.subscribe(subscriber_a, (err: BusinessError|null, data_a: commonEventManager.CommonEventData|undefined) => {
+                commonEventManager.subscribe(subscriber_a!, (err: BusinessError|null, data_a: commonEventManager.CommonEventData|undefined) => {
                   if (err) {
                     console.error(Tag + `订阅者a subscribe failed, code is , message is ${err}`);
                   } else {
@@ -256,7 +256,7 @@ export default function ActsEmitterandComEventTest() {
                     console.error(Tag + `Consume callback , event is ${JSON.stringify(event_a)}`);
                     expect(event_a).assertEqual("event11")
                     // 结束订阅者对当前有序公共事件处理的回调
-                    subscriber_a.finishCommonEvent((err: BusinessError | null)=> {
+                    subscriber_a!.finishCommonEvent((err: BusinessError | null)=> {
                       if (err !==null) {
                         console.error(Tag +`订阅者a finishCommonEvent failed, code is ${err.code}, message is ${err.message}`);
                       } else {
@@ -266,7 +266,7 @@ export default function ActsEmitterandComEventTest() {
                     //取消订阅
                     //取消订阅a
                     try {
-                      commonEventManager.unsubscribe(subscriber_a, (err: BusinessError | null) =>{
+                      commonEventManager.unsubscribe(subscriber_a!, (err: BusinessError | null) =>{
                         if (err) {
                           console.error(Tag+`unsubscribe failed, code is ${err.code}, message is ${err.message}`);
                           expect(err?.code).assertEqual(0)
@@ -282,7 +282,7 @@ export default function ActsEmitterandComEventTest() {
                       done()
                     }
                     try {
-                      commonEventManager.unsubscribe(subscriber_b, (err: BusinessError | null) =>{
+                      commonEventManager.unsubscribe(subscriber_b!, (err: BusinessError | null) =>{
                         if (err) {
                           console.error(Tag+`unsubscribe failed, code is ${err.code}, message is ${err.message}`);
                           expect(err?.code).assertEqual(0)
@@ -336,7 +336,7 @@ export default function ActsEmitterandComEventTest() {
                 done()
               }
               try {
-                commonEventManager.subscribe(subscriber_b, (err: BusinessError|null, data_b: commonEventManager.CommonEventData|undefined) => {
+                commonEventManager.subscribe(subscriber_b!, (err: BusinessError|null, data_b: commonEventManager.CommonEventData|undefined) => {
                   if (err) {
                     console.error(Tag + `订阅者b subscribe failed, code is , message is ${err}`);
                   } else {
@@ -345,7 +345,7 @@ export default function ActsEmitterandComEventTest() {
                     console.error(Tag + `Consume callback , event is ${JSON.stringify(event_b)}`);
                     expect(event_b).assertEqual("event11")
                     // 结束订阅者对当前有序公共事件处理的回调
-                    subscriber_b.finishCommonEvent((err: BusinessError | null)=> {
+                    subscriber_b!.finishCommonEvent((err: BusinessError | null)=> {
                       if (err != null) {
                         console.error(Tag +`订阅者b finishCommonEvent failed, code is ${err.code}, message is ${err.message}`);
                       } else {

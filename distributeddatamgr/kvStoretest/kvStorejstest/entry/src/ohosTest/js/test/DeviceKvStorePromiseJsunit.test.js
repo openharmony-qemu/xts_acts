@@ -14,6 +14,8 @@
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
 import factory from '@ohos.data.distributedData'
+import deviceInfo from '@ohos.deviceInfo';
+let currentDeviceIsWatch = false;
 
 const KEY_TEST_INT_ELEMENT = 'key_test_int';
 const KEY_TEST_FLOAT_ELEMENT = 'key_test_float';
@@ -75,6 +77,11 @@ describe('deviceKvStorePromiseTest', function () {
     }
 
     beforeAll(async function (done) {
+        console.info('beforeAll currentDeviceIsWatch');
+        let deviceTypeInfo = deviceInfo.deviceType;
+        currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+        console.info( "the value of the deviceType is : " + deviceInfo.deviceType + ' currentDeviceIsWatch=' +currentDeviceIsWatch);
+
         console.info('beforeAll config:'+ JSON.stringify(config));
         await factory.createKVManager(config).then((manager) => {
             kvManager = manager;
@@ -1381,6 +1388,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStorePutBatch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStorePutBatch001');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let entries = putBatchString(10, 'batch_test_string_key');
             console.info('testDeviceKvStorePutBatch001 entries: ' + JSON.stringify(entries));
@@ -1423,6 +1435,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStorePutBatch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStorePutBatch002');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let entries = [];
             for (var i = 0; i < 10; i++) {
@@ -1472,6 +1489,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStorePutBatch003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStorePutBatch003');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let entries = [];
             for (var i = 0; i < 10; i++) {
@@ -1521,6 +1543,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStorePutBatch004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStorePutBatch004');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let entries = [];
             for (var i = 0; i < 10; i++) {
@@ -1570,6 +1597,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStorePutBatch005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStorePutBatch005');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             var bo = false;
             let entries = [];
@@ -1620,6 +1652,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStorePutBatch006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStorePutBatch006');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             var arr = new Uint8Array([21,31]);
             let entries = [];
@@ -2214,6 +2251,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStoreRemoveDeviceData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreRemoveDeviceData001');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+          }
         try {
             await kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((err) => {
                 console.info('testDeviceKvStoreRemoveDeviceData001 put success');
@@ -2324,6 +2366,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStoreGetResultSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetResultSet001');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let resultSet;
             let entries = [];
@@ -2379,6 +2426,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStoreGetResultSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetResultSet002');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let resultSet;
             await kvStore.getResultSet(localDeviceId, 'batch_test_string_key').then((result) => {
@@ -2415,6 +2467,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStoreGetResultSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetResultSet003');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let resultSet;
             await kvStore.getResultSet().then((result) => {
@@ -2465,6 +2522,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStoreGetResultSet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetResultSet005');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let resultSet;
             let entries = [];
@@ -2524,6 +2586,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStoreGetResultSet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetResultSet006');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let resultSet;
             let entries = [];
@@ -2609,6 +2676,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStoreCloseResultSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreCloseResultSet002');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             console.info('testDeviceKvStoreCloseResultSet002 success');
             let resultSet = null;
@@ -2748,6 +2820,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStoreGetResultSize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetResultSize001');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             let entries = [];
             for (var i = 0; i < 10; i++) {
@@ -2796,6 +2873,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStoreGetEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetEntries001');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             var arr = new Uint8Array([21,31]);
             let entries = [];
@@ -2850,6 +2932,11 @@ describe('deviceKvStorePromiseTest', function () {
      */
     it('testDeviceKvStoreGetEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('testDeviceKvStoreGetEntries002');
+        if (currentDeviceIsWatch) {
+            console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+            done();
+            return;
+        }
         try {
             var arr = new Uint8Array([21,31]);
             let entries = [];

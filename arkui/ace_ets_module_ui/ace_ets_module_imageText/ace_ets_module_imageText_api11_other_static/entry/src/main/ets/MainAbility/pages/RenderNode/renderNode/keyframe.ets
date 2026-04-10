@@ -38,8 +38,6 @@ import {
   Alignment,
   TextAlign,
   TextOverflow,
-  FrameNode,
-  NodeContainer,
   DragPreviewMode,
   Circle
 } from '@ohos.arkui.component';

@@ -35,13 +35,13 @@ let testAbilityContext: common.UIAbilityContext;
 export default function backgroundBrightness() {
 
   describe('backgroundBrightness', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("backgroundBrightness beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api12.static", "EntryAbility")
       
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("backgroundBrightness beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/backgroundImage/backgroundBrightness",

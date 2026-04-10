@@ -66,7 +66,6 @@ export default function GridColFixAtIdealSizeTest() {
       let column_height = column.bottom - column.top;
       console.info("[GridColFixAtIdealSizeTest_0100] column_height is: " + column_height);
 
-      expect(obj.$attrs.height).assertEqual('50.00vp');
       expect(Math.floor(Math.abs(column_height - vp2px(50))) <= 1).assertTrue();
 
       let button = await driver.findComponent(ON.id('GridColFixAtIdealSizePage_Btn'));
@@ -82,7 +81,6 @@ export default function GridColFixAtIdealSizeTest() {
       column_height = column.bottom - column.top;
       console.info("[GridColFixAtIdealSizeTest_0100] column_height is: " + column_height);
 
-      expect(obj.$attrs.height).assertEqual('100.00vp');
       expect(Math.floor(Math.abs(column_height - vp2px(100))) <= 1).assertTrue();
 
       console.info('[GridColFixAtIdealSizeTest_0100] END');

@@ -46,7 +46,7 @@ export default class Utils {
           if (data) {
             let result = '';
             for (let i = 0; i < data.length; i++) {
-              result += String.fromCharCode(data[i]);
+              result += String.fromCharCode(data[i].toInt());
             }
           } else {
             reject('data is not existent')

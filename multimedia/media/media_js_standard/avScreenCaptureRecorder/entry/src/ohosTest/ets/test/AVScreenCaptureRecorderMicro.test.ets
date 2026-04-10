@@ -27,7 +27,7 @@ export default function AVScreenCaptureRecorderMicro() {
       console.info('beforeAll case');
       mediaTestBase.getPermission(['ohos.permission.MICROPHONE']);
       await mediaTestBase.msleepAsync(4000);
-      mediaTestBase.driveFnNoSleep(1);
+      await mediaTestBase.driveFnNoSleep(1);
 
       mediaTestBase.playPcmPromise();
     })

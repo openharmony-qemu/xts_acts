@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,18 +26,20 @@ class UtilsTest{
 
   static async loadAndSetUpUiTest() : Promise<boolean> {
     return new Promise<boolean>((resolve, reject) => {
-      hilog.info(domain, tag, `loadAndSetUpUiTest, isloadAndSetUpUiTest`);
-      try {
-        if (!UtilsTest.isloadAndSetUpUiTest) {
-          hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
-          UtilsTest.isloadAndSetUpUiTest = true;
-          await UtilsTest.msSleep(4000)
+      waitForCompletion(async () => {
+        hilog.info(domain, tag, `loadAndSetUpUiTest, isloadAndSetUpUiTest`);
+        try {
+          if (!UtilsTest.isloadAndSetUpUiTest) {
+            hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
+            UtilsTest.isloadAndSetUpUiTest = true;
+            await UtilsTest.msSleep(4000)
+          }
+          resolve(true)
+        } catch(error) {
+          hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${String(error)}`);
+          reject(error)
         }
-        resolve(true)
-      } catch(error: Error) {
-        hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${String(error)}`);
-        reject(error)
-      }
+      })
     })
   }
 

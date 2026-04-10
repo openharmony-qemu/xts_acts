@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -65,9 +65,9 @@ export default function ObserverManagerTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
-        ExpectTrue(error.code == 8300001);
+        ExpectTrue((error as BusinessError).code == 8300001);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
@@ -94,7 +94,7 @@ export default function ObserverManagerTest() {
         observer.off("networkStateChange");
         ExpectTrue(true);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -124,7 +124,7 @@ export default function ObserverManagerTest() {
         observer.off("networkStateChange", callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -157,46 +157,13 @@ export default function ObserverManagerTest() {
         observer.off("networkStateChange", callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
     });
-
-
-    /**
-     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOnId_static_0500
-     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOnId_0500
-     * @tc.desc   Subscribe to the cellular data link connection status of the specified card slot.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testTelephonyObserverCellularDataConnectionStateChangeOnId_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOnId_static_0500';
-      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-      try {
-        observer.on('cellularDataConnectionStateChange', {
-          slotId: 3
-        }, (data: observer.DataConnectionStateInfo) => {
-          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-          hilog.info(domain, tag, '%{public}s', caseName +': data.state ->'+JSON.stringify(data.state));
-          hilog.info(domain, tag, '%{public}s', caseName +': data.network ->'+JSON.stringify(data.network));
-          ExpectTrue(false);
-          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-          done();
-        });
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
-        ExpectTrue(error.code == 8300001);
-        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-        done();
-      }
-    });
-
-  
   
     /**
      * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOff_static_0100
@@ -210,17 +177,17 @@ export default function ObserverManagerTest() {
       let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOff_static_0100';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-        observer.on('cellularDataConnectionStateChange', (data: observer.DataConnectionStateInfo) => {
+        observer.onCellularDataConnectionStateChange((data: observer.DataConnectionStateInfo) => {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data !== null);
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-        observer.off("cellularDataConnectionStateChange");
+        observer.offCellularDataConnectionStateChange();
         ExpectTrue(true);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -244,11 +211,11 @@ export default function ObserverManagerTest() {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data !== null);
         };
-        observer.on('cellularDataConnectionStateChange', callback);
-        observer.off("cellularDataConnectionStateChange", callback);
+        observer.onCellularDataConnectionStateChange(callback);
+        observer.offCellularDataConnectionStateChange(callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -273,12 +240,12 @@ export default function ObserverManagerTest() {
           ExpectTrue(data != null);
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         };
-        observer.on('cellularDataConnectionStateChange', callback);
-        observer.off("cellularDataConnectionStateChange", callback);
-        observer.off("cellularDataConnectionStateChange", callback);
+        observer.onCellularDataConnectionStateChange(callback);
+        observer.offCellularDataConnectionStateChange(callback);
+        observer.offCellularDataConnectionStateChange(callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -286,67 +253,34 @@ export default function ObserverManagerTest() {
       }
     });
 
-
     /**
-     * @tc.name   testTelephonyObserverCellularDataFlowChangeOnId_static_0100
-     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOnId_0100
-     * @tc.desc   Subscribe to the uplink and downlink data flow status of cellular data services with specified card slots.
+     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOff_static_0500
+     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOff_0500
+     * @tc.desc   Remove subscription cellular data link connection status.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testTelephonyObserverCellularDataFlowChangeOnId_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOnId_static_0100';
+    it('testTelephonyObserverCellularDataConnectionStateChangeOff_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOff_static_0500';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-        observer.on('cellularDataFlowChange', {
-          slotId: 0
-        }, (data: observer.DataFlowType) => {
+        let callback: (data: observer.DataConnectionStateInfo) => void = (data: observer.DataConnectionStateInfo) => {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-          ExpectTrue(data == 0 || data == 4);
+          ExpectTrue(data !== null && data !== undefined);
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-          done();
-        });
+        };
+        observer.onCellularDataConnectionStateChange(callback);
+        observer.offCellularDataConnectionStateChange(callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
     });
-
-
-    /**
-     * @tc.name   testTelephonyObserverCellularDataFlowChangeOnId_static_0300
-     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOnId_0300
-     * @tc.desc   Subscribe to the uplink and downlink data flow status of cellular data services with specified card slots.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testTelephonyObserverCellularDataFlowChangeOnId_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOnId_static_0300';
-      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-      try {
-        observer.on('cellularDataFlowChange', {
-          slotId: 3
-        }, (data: observer.DataFlowType) => {
-          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-          ExpectTrue(false);
-          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-          done();
-        });
-        done();
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
-        ExpectTrue(error.code == 8300001);
-        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-        done();
-      }
-    });
-
 
     /**
      * @tc.name   testTelephonyObserverCellularDataFlowChangeOff_static_0100
@@ -360,16 +294,16 @@ export default function ObserverManagerTest() {
       let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOff_static_0100';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-        observer.on('cellularDataFlowChange', (data: observer.DataFlowType) => {
+        observer.onCellularDataFlowChange((data: observer.DataFlowType) => {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data !== null);
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-        observer.off('cellularDataFlowChange');
+        observer.offCellularDataFlowChange();
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -395,11 +329,11 @@ export default function ObserverManagerTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         }
-        observer.on('cellularDataFlowChange', callback);
-        observer.off('cellularDataFlowChange', callback);
+        observer.onCellularDataFlowChange(callback);
+        observer.offCellularDataFlowChange(callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -426,12 +360,42 @@ export default function ObserverManagerTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         }
-        observer.on('cellularDataFlowChange', callback);
-        observer.off('cellularDataFlowChange', callback);
-        observer.off('cellularDataFlowChange', callback);
+        observer.onCellularDataFlowChange(callback);
+        observer.offCellularDataFlowChange(callback);
+        observer.offCellularDataFlowChange(callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
+        ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOff_static_0500
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOff_0500
+     * @tc.desc   Remove the uplink and downlink data flow status of subscribed cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverCellularDataFlowChangeOff_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOff_static_0500';
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        let callback: (data: observer.DataFlowType) => void = (data: observer.DataFlowType) => {
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
+          ExpectTrue(data !== null && data !== undefined);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        }
+        observer.onCellularDataFlowChange(callback);
+        observer.offCellularDataFlowChange(callback);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');

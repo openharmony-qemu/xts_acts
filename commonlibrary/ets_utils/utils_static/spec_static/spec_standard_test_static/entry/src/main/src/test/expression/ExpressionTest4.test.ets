@@ -741,8 +741,8 @@ export default function expressionTest4() {
      */
     it('ExpressionTest0527', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str: string = "abcdefghijklmno";
-      const start: number = 3;
-      const length: number = 5;
+      const start: int = 3;
+      const length: int = 5;
       const result: string = str.substring(start, start + length);
       expect(result).assertEqual("defgh");
     });
@@ -1103,7 +1103,7 @@ export default function expressionTest4() {
     it('ExpressionTest0550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const base: string = "character_";
       let result: string = "";
-      let i: number, current: string;
+      let i: int, current: string;
       for (i = 65, current = base + String.fromCharCode(i); i <= 67; i++, current = base + String.fromCharCode(i)) {
         result += current + " ";
       }
@@ -1498,8 +1498,8 @@ export default function expressionTest4() {
      */
     it('ExpressionTest0577', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str: string = "abcdefghijklmno";
-      const start: number = 2;
-      const offset: number = 4;
+      const start: int = 2;
+      const offset: int = 4;
       const result: string = str.slice(start, start + offset * 2);
       expect(result).assertEqual("cdefghij");
     });
@@ -2273,7 +2273,7 @@ export default function expressionTest4() {
       const str: string = "abcdefghijklmnopqrstuvwxyz";
       const position: int = 3;
       const result: char = str.charAt(position + 5);
-      expect(result).assertEqual(105);
+      expect(result).assertEqual('i');
     });
 
     /**
@@ -2634,7 +2634,7 @@ export default function expressionTest4() {
     it('ExpressionTest0650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str: string = "abcdefgh";
       let result: string = "";
-      let i: number, chunk: string;
+      let i: int, chunk: string;
       for (i = 0, chunk = str.substring(i, i + 2); i < str.length; i += 2, chunk = str.substring(i, i + 2)) {
         result += chunk + "|";
       }
@@ -3026,8 +3026,8 @@ export default function expressionTest4() {
      */
     it('ExpressionTest0677', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str: string = "abcdefghijklmnopqrstuvwxyz";
-      const start: number = 5;
-      const length: number = 3;
+      const start: int = 5;
+      const length: int = 3;
       const result: string = str.substr(start, length * 2);
       expect(result).assertEqual("fghijk");
     });
@@ -3390,8 +3390,8 @@ export default function expressionTest4() {
     it('ExpressionTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str: string = "abcdefghijklmnop";
       let result: string = "";
-      let i: number, chunkSize: number;
-      for (i = 0, chunkSize = 1; i < str.length; i += chunkSize, chunkSize = Math.min(chunkSize + 1, 4)) {
+      let i: int, chunkSize: int;
+      for (i = 0, chunkSize = 1; i < str.length; i += chunkSize, chunkSize = Math.min(chunkSize + 1, 4).toInt()) {
         result += str.substr(i, chunkSize) + "|";
       }
       expect(result).assertEqual("a|bc|def|ghij|klmn|op|");
@@ -3791,7 +3791,7 @@ export default function expressionTest4() {
      */
     it('ExpressionTest0727', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str: string = "abcdefghijklmnopqrstuvwxyz";
-      const position: number = 4;
+      const position: int = 4;
       const result: string = str.slice(position, position + 6);
       expect(result).assertEqual("efghij");
     });

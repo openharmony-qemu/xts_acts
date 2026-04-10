@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Entry,Component,$r,Column,ColumnOptions,Blank,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,
-  ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,
+  ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign,
   CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
   TextAlign,AlphabetIndexer,ButtonAttribute, TextOverflow,FontStyle} from '@ohos.arkui.component';
 import {
@@ -24,7 +24,7 @@ import {
 } from '@ohos.arkui.stateManagement';
 import { ButtonModifier } from "@ohos.arkui.modifier";
 
-class CustomModifier extends ButtonModifier {
+export class CustomModifier extends ButtonModifier {
   applyNormalAttribute(instance: ButtonAttribute): void {
     // super.applyNormalAttribute?.(instance);
   }
@@ -34,7 +34,7 @@ class CustomModifier extends ButtonModifier {
   }
 }
 
-class CustomModifier2 extends ButtonModifier {
+export class CustomModifier2 extends ButtonModifier {
   applyNormalAttribute(instance: ButtonAttribute): void {
     // super.applyNormalAttribute?.(instance);
   }

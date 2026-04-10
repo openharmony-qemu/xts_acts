@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -63,7 +63,8 @@ struct swiperPreloadItems {
               .catch((error: Error) => {
                 console.error('error preloadItems [2, 3] failed, error code: ' + error.code)
               })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.error('error preloadItems [2, 3] failed, error code: ' + error.code)
           }
 
@@ -84,7 +85,8 @@ struct swiperPreloadItems {
                 console.error('error preloadItems [-1] failed, error code: ' + error.code + ', error message: ' +
                 error.message)
               })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.error('error preloadItems [-1] failed, error code: ' + error.code + ', error message: ' +
             error.message)
           }
@@ -102,7 +104,8 @@ struct swiperPreloadItems {
               .catch((error: Error) => {
                 console.error('error preloadItems [2, 3] failed, error code: ' + error.code)
               })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             this.textResult = JSON.stringify(error.code) //'100004'
             console.info('Get error code: %{public}s', JSON.stringify(error.code));
             console.error('error preloadItems [2, 3] failed, error code: ' + error.code + ', error message: ' +

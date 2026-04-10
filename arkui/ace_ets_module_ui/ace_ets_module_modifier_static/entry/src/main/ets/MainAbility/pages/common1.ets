@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@ import { Entry,Builder,Component,Scroller,GridRow,Scroll,ButtonType,CommonAttrib
   BreakpointsReference,GridRowDirection,GridCol,GridItem,Grid,List,Video,Image,BarPosition,
   ButtonAttribute,Resource,$r,FlexAlign,Divider,Tabs,TabContent,TabsController,TextPicker,TextAreaController,
   PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,
-  ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,
+  ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign,
   CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,Alignment,AlignRuleOption,RenderFit,
   Direction,OutlineStyle,ShadowOptions,Position,Rect,ClickEffectLevel,DragPreviewMode,VerticalAlign,HorizontalAlign,
   AdaptiveColor, HoverEffect, ThemeColorMode, SafeAreaType,SafeAreaEdge,GradientDirection,EdgeOutlineStyles,
@@ -32,7 +32,7 @@ import { CommonModifier } from "@ohos.arkui.modifier";
 import matrix4 from '@ohos.matrix4'
 import UTD from '@ohos.data.uniformTypeDescriptor';
 
-class CustomModifier extends CommonModifier {
+export class CustomModifier extends CommonModifier {
   applyNormalAttribute(instance: CommonAttribute): void {
     // super.applyNormalAttribute(instance);
   }

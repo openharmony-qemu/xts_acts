@@ -43,7 +43,7 @@ const waitUiReadyMs = 1000;
 export default function  datePickerUIJsunit() {
   describe('datePickerUIJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 
@@ -63,13 +63,10 @@ export default function  datePickerUIJsunit() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-          console.error("push datePickerUIJsunit page error:" + err);
-	        expect().assertFail();
+        console.error("push datePickerUIJsunit page error:" + err);
+        expect().assertFail();
       }
     });
-
-
-    
     
     /**
      * @tc.number   datePickerUIJsunit_static_0100
@@ -77,18 +74,16 @@ export default function  datePickerUIJsunit() {
      * @tc.desc     datePickerUIJsunit_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('datePickerUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-       console.info('datePickerUIJsunit_0100 START');
-       await CommonFunc.sleep(1000);
-       // get the datePicker component and test attribute to confirm
-       let strJson = inspector.getInspectorByKey('datePickerUI');
-       let obj = JSON.parseJsonElement(strJson);
-        console.info("obj is: " + JSON.stringify(obj));
-       expect(obj.getElement('$attrs').getString('lunar')).assertEqual('false');
-       done();
+    it('datePickerUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('datePickerUIJsunit_0100 START');
+      await CommonFunc.sleep(1000);
+      // get the datePicker component and test attribute to confirm
+      let strJson = inspector.getInspectorByKey('datePickerUI');
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("obj is: " + JSON.stringify(obj));
+      expect(obj.getElement('$attrs').getString('lunar')).assertEqual('false');
+      done();
     });
-
-   
     
     /**
      * @tc.number   datePickerUIJsunit_static_0200
@@ -96,25 +91,25 @@ it('datePickerUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Pro
      * @tc.desc     datePickerUIJsunit_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('datePickerUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('datePickerUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('datePickerUIJsunit_0200 START');
-      // modify the type attribute normal value of datePicker dynamically
-      const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
-      messageManager.notify({name:'isLunar',value:true})
-      await CommonFunc.sleep(2000);
-      // check the value of changed attribute
+      const driver = Driver.create();
+      const button = await driver.findComponent(ON.id('changeLunarbtn'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+
       let strJson = inspector.getInspectorByKey('datePickerUI');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[datePickerUIJsunit_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('lunar')).assertEqual('true');
-      messageManager.notify({name:'isLunar',value:false})
-      await CommonFunc.sleep(2000);
-       let strJson2 = inspector.getInspectorByKey('datePickerUI');
+
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let strJson2 = inspector.getInspectorByKey('datePickerUI');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[datePickerUIJsunit_0200] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.getElement('$attrs').getString('lunar')).assertEqual('false');
       done();
     });
-
   })
 }

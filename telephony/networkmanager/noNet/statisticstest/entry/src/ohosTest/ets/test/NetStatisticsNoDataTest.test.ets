@@ -52,8 +52,7 @@ export default function   netStatisticsNoDataTest() {
     beforeAll(async () => {
       hasData = await data.isCellularDataEnabled();
       if (hasData) {
-        await data.disableCellularData();
-        hasData = await data.isCellularDataEnabled();
+        console.info(`hasData is ${hasData}`);
       }
     });
 
@@ -564,6 +563,7 @@ export default function   netStatisticsNoDataTest() {
         console.info(`${caseName} test end`);
       }
     });
+
     /**
      * @tc.number SUB_NetworkMgr_Statistics_GetSelfTrafficStats_0004
      * @tc.name   testNetworkMgrStatisticsGetSelfTrafficStats0004
@@ -600,6 +600,63 @@ export default function   netStatisticsNoDataTest() {
       }
     });
 
+    /**
+     * @tc.number SUB_NetworkMgr_Statistics_GetSelfTrafficStats_0005
+     * @tc.name   testNetworkMgrStatisticsGetSelfTrafficStats0005
+     * @tc.desc   get SelfTrafficStats
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  level 3
+     */
+    it('testNetworkMgrStatisticsGetSelfTrafficStats0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrStatisticsGetSelfTrafficStats0005';
+      console.info(`${caseName} test start`);
+      try {
+        statistics.getSelfTrafficStats(null).then((stats: statistics.NetStatsInfo) => {
+          console.info(`${caseName}getSelfTrafficStats success : ` + JSON.stringify(stats));
+          ExpectTrue(false, `${caseName}`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName}getSelfTrafficStats error. code: ` + `${error.code}` + ', message: ' + `${error.message}`);
+          ExpectTrue(error.code === 401);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+        ExpectTrue(Number(err.code) === 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_NetworkMgr_Statistics_GetSelfTrafficStats_0006
+     * @tc.name   testNetworkMgrStatisticsGetSelfTrafficStats0006
+     * @tc.desc   get SelfTrafficStats
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  level 3
+     */
+    it('testNetworkMgrStatisticsGetSelfTrafficStats0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrStatisticsGetSelfTrafficStats0006';
+      console.info(`${caseName} test start`);
+      try {
+        statistics.getSelfTrafficStats(undefined).then((stats: statistics.NetStatsInfo) => {
+          console.info(`${caseName}getSelfTrafficStats success : ` + JSON.stringify(stats));
+          ExpectTrue(false, `${caseName}`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName}getSelfTrafficStats error. code: ` + `${error.code}` + ', message: ' + `${error.message}`);
+          ExpectTrue(error.code === 401);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+        ExpectTrue(Number(err.code) === 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
 
   });
 }

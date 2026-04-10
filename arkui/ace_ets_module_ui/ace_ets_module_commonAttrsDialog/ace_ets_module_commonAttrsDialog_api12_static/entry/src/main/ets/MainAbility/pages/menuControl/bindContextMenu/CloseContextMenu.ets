@@ -59,6 +59,7 @@ struct CloseContextMenu {
 
   @Builder
   MyMenu() {
+    Column(){
     Menu() {
       MenuItem({ startIcon: this.iconStr, content: "菜单选项" } as MenuItemOptions)
       MenuItem({ startIcon: this.iconStr, content: "菜单选项" } as MenuItemOptions)
@@ -68,8 +69,9 @@ struct CloseContextMenu {
     Button("通过ContextMenu.close关闭")
       .id("CloseContextMenuClick")
       .onClick((e:ClickEvent) => {
-        // ContextMenu.close()
+        this.getUIContext().getContextMenuController().close()
       })
+  }
   }
 
   build() {

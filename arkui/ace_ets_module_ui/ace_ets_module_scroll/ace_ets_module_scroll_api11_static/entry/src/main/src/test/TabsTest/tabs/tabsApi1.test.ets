@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function tabsApi1() {
   describe('tabsApi1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
@@ -94,7 +94,7 @@ it('tabsApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
 
       let btn1 = await driver.findComponent(ON.id('tabsApi1_btn1'));
       await (btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(6000);
 
       let text1 = inspector.getInspectorByKey('tabsApi1_text1');
       let Obj1 = JSON.parseJsonElement(text1);

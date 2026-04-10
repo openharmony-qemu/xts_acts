@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ const widgetParam: userAuth.WidgetParam  = {
   uiContext: undefined,
 };
 
-function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | string | int)[]): Promise<void> {
+async function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | string | int)[]): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     try {
       const userAuthInstance: userAuth.UserAuthInstance =
@@ -70,8 +70,8 @@ function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | s
         }
       });
       userAuthInstance.start();
-      await Utils.msSleep(2000);
-    } catch (e: BusinessError) {
+      waitForCompletion(async () => {await Utils.msSleep(2000);})
+    } catch (e) {
       hilog.info(domain, tag, format, `${args[2]} fail ${e.code}`);
       expect(null).assertFail();
       reject({});
@@ -81,7 +81,7 @@ function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | s
   })
 }
 
-function userAuthPromiseFace(...args: (userAuth.AuthParam | userAuth.WidgetParam | string | int)[]): Promise<void> {
+async function userAuthPromiseFace(...args: (userAuth.AuthParam | userAuth.WidgetParam | string | int)[]): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     try {
       const userAuthInstance: userAuth.UserAuthInstance =
@@ -104,8 +104,8 @@ function userAuthPromiseFace(...args: (userAuth.AuthParam | userAuth.WidgetParam
         }
       });
       userAuthInstance.start();
-      await Utils.msSleep(2000);
-    } catch (e: BusinessError) {
+      waitForCompletion(async () => {await Utils.msSleep(2000);})
+    } catch (e) {
       hilog.info(domain, tag, format, `${args[2]} fail ${e.code}`);
       expect(null).assertFail();
       reject({});
@@ -116,7 +116,7 @@ function userAuthPromiseFace(...args: (userAuth.AuthParam | userAuth.WidgetParam
 
 export default function signNormalAccessBiometricExecute() {
   describe('signNormalAccessBiometricExecute', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
@@ -294,9 +294,9 @@ export default function signNormalAccessBiometricExecute() {
          });
          hilog.info(domain, tag, format,`Security_IAM_getUserAuthInstance_Func_Static_0088 step1 success`);
          expect(null).assertFail();
-       } catch (e:BusinessError) {
+       } catch (e) {
          hilog.info(domain, tag, format,`Security_IAM_getUserAuthInstance_Func_Static_0088 step1 fail ${e.code}`);
-         expect(e.code).assertEqual(12500002);
+         expect((e as BusinessError).code).assertEqual(12500002);
        }
        done();
      });
@@ -316,9 +316,9 @@ export default function signNormalAccessBiometricExecute() {
         userAuthInstance.cancel();
         hilog.info(domain, tag, format,`Security_IAM_getUserAuthInstance_Func_Static_0089 success`);
         expect(null).assertFail();
-      } catch (e:BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, format,`Security_IAM_getUserAuthInstance_Func_Static_0089 fail ${e.code}`);
-        expect(e.code).assertEqual(12500002);
+        expect((e as BusinessError).code).assertEqual(12500002);
       }
       done();
     });

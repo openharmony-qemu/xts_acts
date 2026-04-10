@@ -179,6 +179,149 @@ export default function photoPickerCallback(abilityContexts: Context) {
       let testNum = "test_Photopicker_Save_Callback_002";
       await saveWithoutSelect(testNum, done);
     });
+
+    /**
+     * @tc.name   test_Photopicker_Save_Callback_003
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SAVE_CALLBACK_0300
+     * @tc.desc   save mp4 in Videos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_Photopicker_Save_Callback_003", Level.LEVEL0, async (done: Function) => {
+      let testNum = "test_Photopicker_Save_Callback_003";
+      let option = new picker.PhotoSaveOptions();
+      option.newFileNames = [];
+      let saveDir = "Videos";
+      await saveWithOption(testNum, done, option, saveDir);
+    });
+
+    /**
+     * @tc.name   test_Photopicker_Save_Callback_004
+     * @tc.number SUB_STORAGE_PHOTOPICKER_SAVE_CALLBACK_0400
+     * @tc.desc   save mp4 in Videos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_Photopicker_Save_Callback_004", Level.LEVEL0, async (done: Function) => {
+      let testNum = "test_Photopicker_Save_Callback_004";
+      let option = new picker.PhotoSaveOptions();
+      option.newFileNames = [""];
+      let saveDir = "Videos";
+      await saveWithOption(testNum, done, option, saveDir);
+    });
+
+    /**
+     * @tc.name   PhotoViewPicker_select_callback_000
+     * @tc.number SUB_DF_PhotoViewPicker_select_callback_0000
+     * @tc.desc   Test PhotoViewPicker.select() interfaces with null parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('PhotoViewPicker_select_callback_000', Level.LEVEL3, async (done: Function) => {
+      try {
+          new picker.PhotoViewPicker().select(null, (err, data) => {
+            if (err != undefined) {
+              console.info(`PhotoViewPicker_select_callback_000 err: ${JSON.stringify(err)}`);
+              expect(false).assertTrue();
+              done();
+            }
+            console.info(`PhotoViewPicker_select_callback_000 result: ${JSON.stringify(data)}`);
+            expect(data).assertTrue();
+            done();
+          });
+          done();
+      } catch (e) {
+          console.log('PhotoViewPicker_select_callback_000 has failed for ' + e.message + ', code: ' + e.code);
+          expect(false).assertTrue();
+          done();
+      }
+    });
+
+    /**
+     * @tc.name   PhotoViewPicker_select_callback_001
+     * @tc.number SUB_DF_PhotoViewPicker_select_callback_0100
+     * @tc.desc   Test PhotoViewPicker.select() interfaces with null parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('PhotoViewPicker_select_callback_001', Level.LEVEL3, async (done: Function) => {
+      try {
+          new picker.PhotoViewPicker().select(undefined, (err, data) => {
+            if (err != undefined) {
+              console.info(`PhotoViewPicker_select_callback_001 err: ${JSON.stringify(err)}`);
+              expect(false).assertTrue();
+              done();
+            }
+            console.info(`PhotoViewPicker_select_callback_001 result: ${JSON.stringify(data)}`);
+            expect(data.photoUris.length === 0).assertTrue();
+            done();
+          });
+          done();
+      } catch (e) {
+          console.log('PhotoViewPicker_select_callback_001 has failed for ' + e.message + ', code: ' + e.code);
+          expect(false).assertTrue();
+          done();
+      }
+    });
+
+    /**
+     * @tc.name   PhotoViewPicker_save_callback_000
+     * @tc.number SUB_DF_PhotoViewPicker_save_callback_0000
+     * @tc.desc   Test PhotoViewPicker.save() interfaces with null parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('PhotoViewPicker_save_callback_000', Level.LEVEL3, async (done: Function) => {
+      try {
+          new picker.PhotoViewPicker().save(null, (err, data) => {
+            if (err != undefined) {
+              console.info(`PhotoViewPicker_save_callback_000 err: ${JSON.stringify(err)}`);
+              expect(false).assertTrue();
+              done();
+            }
+            console.info(`PhotoViewPicker_save_callback_000 result: ${JSON.stringify(data)}`);
+            expect(data).assertTrue();
+            done();
+          });
+          done();
+      } catch (e) {
+          console.log('PhotoViewPicker_save_callback_000 has failed for ' + e.message + ', code: ' + e.code);
+          expect(false).assertTrue();
+          done();
+      }
+    });
+
+    /**
+     * @tc.name   PhotoViewPicker_save_callback_001
+     * @tc.number SUB_DF_PhotoViewPicker_save_callback_0010
+     * @tc.desc   Test PhotoViewPicker.save() interfaces with undefined parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('PhotoViewPicker_save_callback_001', Level.LEVEL3, async (done: Function) => {
+      try {
+          new picker.PhotoViewPicker().save(undefined, (err, data) => {
+            if (err != undefined) {
+              console.info(`PhotoViewPicker_save_callback_001 err: ${JSON.stringify(err)}`);
+              done();
+            }
+            console.info(`PhotoViewPicker_save_callback_001 result: ${JSON.stringify(data)}`);
+            expect(data.length === 0).assertTrue();
+            done();
+          });
+          done();
+      } catch (e) {
+          console.log('PhotoViewPicker_save_callback_001 has failed for ' + e.message + ', code: ' + e.code);
+          expect(false).assertTrue();
+          done();
+      }
+    });
   });
 }
 
@@ -193,9 +336,9 @@ async function select(testNum: string, done: Function, isSelectOriginal: boolean
         return;
       }
       console.info(`${testNum}::select result: ${JSON.stringify(result)}`);
+      expect(result.photoUris.length === 0).assertTrue();
       done();
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -217,9 +360,9 @@ async function selectWithOption(testNum: string, done: Function, option: picker.
 
       }
       console.info(`${testNum}::selectWithOption result: ${JSON.stringify(result)}`);
+      expect(result.photoUris.length === 0).assertTrue();
       done();
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -239,9 +382,9 @@ async function saveWithoutSelect(testNum: string, done: Function) {
         return;
       }
       console.info(`${testNum}::saveWithoutSelect result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -261,9 +404,9 @@ async function saveWithOption(testNum: string, done: Function, option: picker.Ph
         return;
       }
       console.info(`${testNum}::saveWithOption result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {

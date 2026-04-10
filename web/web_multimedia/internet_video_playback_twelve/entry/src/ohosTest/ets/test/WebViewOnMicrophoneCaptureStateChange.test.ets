@@ -17,13 +17,13 @@ import { afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size,
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import events_emitter from '@ohos.events.emitter';
+import { abilityAccessCtrl, PermissionRequestResult, common } from '@kit.AbilityKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import business_error, { BusinessError } from '@ohos.base';
 import { Driver, ON } from '@kit.TestKit';
 import { waitForExist} from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
-const EVENT_ID_SET_SUITE_KEY = 300752;
 const driver = Driver.create();
 
 export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
@@ -41,7 +41,6 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
         if (!("WebViewOnMicrophoneCaptureStateChange" == pages.name)) {
           console.info("get webViewOnMicrophoneCaptureStateChange state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000)
           console.info("push webViewOnMicrophoneCaptureStateChange page success " + JSON.stringify(result));
           await driver.waitForComponent(ON.id("webViewOnMicrophoneCaptureStateChangeButton"), 10000)
         }
@@ -71,6 +70,27 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
      * @tc.level  LEVEL0
      */
     it('testOnMicrophoneCaptureStateChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+      try {
+        // 替换方案：直接使用全局上下文获取方式
+        let context: Context = getContext() as common.UIAbilityContext;
+        atManager.requestPermissionsFromUser(context, ['ohos.permission.MICROPHONE'],
+          (err: BusinessError, data: PermissionRequestResult) => {
+            console.info('data:' + JSON.stringify(data));
+            console.info('data permissions:' + data.permissions);
+            console.info('data authResults:' + data.authResults);
+          })
+      } catch (error) {
+        let e: business_error.BusinessError = error as business_error.BusinessError;
+        console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+      }
+      let buttonThree = await driver.waitForComponent(ON.text('允许'),10000);
+      await buttonThree.click();
+      let buttonOne = await driver.waitForComponent(ON.text('开启麦克风'),10000);
+      await buttonOne.click();
+      let buttonTwo = await driver.waitForComponent(ON.text('onConfirm'),10000);
+      await buttonTwo.click();
+      await Utils.sleep(1000)
       Utils.emitEvent("emitOnMicrophoneCaptureStateChange001", 300752)
       Utils.registerEvent("testOnMicrophoneCaptureStateChange001", true, 20260101, done);
       sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');

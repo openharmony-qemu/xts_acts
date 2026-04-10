@@ -37,6 +37,8 @@ struct LayoutWeightPage {
 
   @Styles
   commonStyle(){
+    .margin(0)
+    .padding(0)
     .layoutWeight(this._layoutWeight)
     .width(this.childWidth)
     .height(this.childHeight)

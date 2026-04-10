@@ -30,7 +30,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function NO_ANIMATION_APITest() {
   describe('NO_ANIMATION_APITest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("NO_ANIMATION_APITest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility");
     });

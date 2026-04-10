@@ -143,7 +143,7 @@ export default function textInput() {
       let strJson = getInspectorByKey('textInputKey1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[textInputJsunit_0105] obj is: " + JSON.stringify(obj.$attrs));
-      expect(obj.$attrs.selectionMenuHidden).assertEqual(undefined);
+      expect(obj.$attrs.selectionMenuHidden).assertEqual('true');
       console.info('textInputJsunit_0105 END');
       done();
     });
@@ -179,7 +179,7 @@ export default function textInput() {
       let strJson = getInspectorByKey('textInputKey1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[textInputJsunit_0107] obj is: " + JSON.stringify(obj.$attrs));
-      expect(obj.$attrs.enableKeyboardOnFocus).assertEqual(undefined);
+      expect(obj.$attrs.enableKeyboardOnFocus).assertEqual('true');
       console.info('textInputJsunit_0107 END');
       done();
     });
@@ -363,7 +363,7 @@ export default function textInput() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[textInputJsunit_0118] obj is: " + JSON.stringify(obj.$attrs));
       // expect(obj.$attrs.fontColor).assertEqual('#FF123456');
-      expect(obj.$attrs.fontColor).assertNotNull;
+      expect(obj.$attrs.fontColor).not().assertNull();
       console.info('textInputJsunit_0118 END');
       done();
     });

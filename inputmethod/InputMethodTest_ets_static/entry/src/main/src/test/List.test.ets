@@ -13,10 +13,19 @@
  * limitations under the License.
  */
 import inputMethodTest from "./InputMethodJsUnit.test";
-import inputMethodShowHideTest from "./InputMethodTextInput.test"
-import inputMethodAttachTest from "./InputMethodAttach.test"
+import inputMethodShowHideTest from "./InputMethodTextInput.test";
+import inputMethodAttachTest from "./InputMethodAttach.test";
+import inputMethodController from "./InputMethodController.test";
+import inputMethodSetting from "./InputMethodSetting.test";
+import inputMethodNamespace from "./InputMethodNamespace.test";
+import inputMethodNoAttachTest from "./InputMethodNoAttach.test";
 export default function testsuite() {
     inputMethodTest();
     inputMethodShowHideTest();
     inputMethodAttachTest();
+    inputMethodController();
+    inputMethodSetting();
+    inputMethodNamespace();
+    inputMethodNoAttachTest();
 }
+

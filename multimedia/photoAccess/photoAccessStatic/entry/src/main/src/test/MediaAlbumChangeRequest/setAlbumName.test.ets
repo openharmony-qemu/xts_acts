@@ -42,27 +42,27 @@ export default function setAlbumNameChangeRequestTest() {
         let testNum = 'album_name_change_request_static_000';
         try {
           let fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           const album = await fetchResult.getFirstObject();
           fetchResult.close();
           let albumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
           let newName = Date.now() + album.albumName;
           albumChangeRequest.setAlbumName(newName);
-          await helper.applyChanges(albumChangeRequest);
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(albumChangeRequest);
 
           let fetchOps = fetchOption(testNum, photoAccessHelper.AlbumKeys.ALBUM_NAME, newName);
           fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO,
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO,
               fetchOps);
           console.info(`${testNum} fetchResult: ${fetchResult.getCount()}`);
           let curAlbum = await fetchResult.getFirstObject();
           expect(curAlbum.albumName).assertEqual(newName);
-          expect(curAlbum.albumType).assertEqual(albumChangeRequest.getAlbum().albumType);
-          expect(curAlbum.albumSubtype).assertEqual(albumChangeRequest.getAlbum().albumSubtype);
-          expect(curAlbum.albumName).assertEqual(albumChangeRequest.getAlbum().albumName);
-          expect(curAlbum.albumUri).not().assertEqual(albumChangeRequest.getAlbum().albumUri);
-          expect(curAlbum.count).assertEqual(albumChangeRequest.getAlbum().count);
-          expect(curAlbum.coverUri).assertEqual(albumChangeRequest.getAlbum().coverUri);
+          expect(curAlbum.albumType).assertEqual((albumChangeRequest.getAlbum() as photoAccessHelper.Album).albumType);
+          expect(curAlbum.albumSubtype).assertEqual((albumChangeRequest.getAlbum() as photoAccessHelper.Album).albumSubtype);
+          expect(curAlbum.albumName).assertEqual((albumChangeRequest.getAlbum() as photoAccessHelper.Album).albumName);
+          expect(curAlbum.albumUri).not().assertEqual((albumChangeRequest.getAlbum() as photoAccessHelper.Album).albumUri);
+          expect(curAlbum.count).assertEqual((albumChangeRequest.getAlbum() as photoAccessHelper.Album).count);
+          expect(curAlbum.coverUri).assertEqual((albumChangeRequest.getAlbum() as photoAccessHelper.Album).coverUri);
           fetchResult.close();
           done();
         } catch (error) {
@@ -84,13 +84,13 @@ export default function setAlbumNameChangeRequestTest() {
         let testNum = 'album_name_change_request_static_001';
         try {
           const fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           const album = await fetchResult.getFirstObject();
           fetchResult.close();
           let invalidName = genRadomStr(256);
           let albumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
           albumChangeRequest.setAlbumName(invalidName);
-          await helper.applyChanges(albumChangeRequest);
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(albumChangeRequest);
           console.error(`${testNum} set album name successfully: ${invalidName}`);
           expect(false).assertTrue();
           done();
@@ -113,7 +113,7 @@ export default function setAlbumNameChangeRequestTest() {
         let testNum = 'album_name_change_request_static_002';
         try {
           const fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           const album = await fetchResult.getFirstObject();
           fetchResult.close();
           let TITLE_REGEX_CHECK = '\\/:*?"\'`<>|{}\[\]';
@@ -123,7 +123,7 @@ export default function setAlbumNameChangeRequestTest() {
               let invalidName = testNum + TITLE_REGEX_CHECK[i];
               let albumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
               albumChangeRequest.setAlbumName(invalidName);
-              await helper.applyChanges(albumChangeRequest);
+              await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(albumChangeRequest);
               console.error(`${testNum} set album name successfully: ${invalidName}`);
               expect(false).assertTrue();
             } catch (error) {

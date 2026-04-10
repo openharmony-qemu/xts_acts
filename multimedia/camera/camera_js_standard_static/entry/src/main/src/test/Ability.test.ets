@@ -34,9 +34,9 @@ let g_context: Context;
 
 export default function abilityTest() {
 
-    describe("abilityTest", (): void => {
+    describe("abilityTest", () => {
         hilog.info(domain, tag, '%{public}s', 'abilityTest describe start');
-        beforeAll(() => {
+        beforeAll(async () => {
             try {
                 hilog.info(domain, tag, '%{public}s', '  beforeAll get Context');
                 g_context = Hypium.get('Context') as Context;
@@ -48,8 +48,8 @@ export default function abilityTest() {
                 arr.push('ohos.permission.GRANT_SENSITIVE_PERMISSIONS')
                 arr.push('ohos.permission.MICROPHONE')
                 arr.push('ohos.permission.MEDIA_LOCATION')
-                arr.push('ohos.permission.READ_MEDIA')
-                arr.push('ohos.permission.WRITE_MEDIA')
+                arr.push('ohos.permission.READ_IMAGEVIDEO')
+                arr.push('ohos.permission.WRITE_IMAGEVIDEO')
                 hilog.info(domain, tag, '%{public}s', '  beforeAll requestPermissionsFromUser');
                 atManager.requestPermissionsFromUser(g_context, arr,
                     (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
@@ -74,16 +74,16 @@ export default function abilityTest() {
                 hilog.error(0x0000, 'testTag', '  beforeAll failed, err: ' + err);
             }
         })
-        beforeEach((): void => {
+        beforeEach(async () => {
             await Utils.msSleep(1000);
             console.info('  abilityTest beforeEach case');
         })
 
-        afterEach((): void => {
+        afterEach(async () => {
             console.info('  abilityTest afterEach case');
         })
 
-        afterAll((): void => {
+        afterAll(async () => {
             console.info('  abilityTest afterAll case');
         })
     })

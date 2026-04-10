@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,7 +53,97 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_0101
+     * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0101
+     * @tc.desc   algorithm is BF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "Blowfish";
+        for (let keyLen = 4; keyLen < 33; keyLen += 4) { // 密钥步长4字节
+          let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
+          let generator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
+          let symKey: cryptoFramework.SymKey = await generator.convertKey(keyData);
+          let encodedKeyConvert: cryptoFramework.DataBlob = symKey.getEncoded();
+          let ret: boolean = commonUtils.compareDataBlob(keyData, encodedKeyConvert);
+          let expectKeyLen: number = encodedKeyConvert.data.byteLength;
+          let getKeyLen: int = symKey.getKeySize();
+          expect(getKeyLen).assertEqual(keyLen.toInt() * 8);
+          expect(keyLen).assertEqual(expectKeyLen);
+          expect(ret).assertTrue();
+        }
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_0102
+     * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0102
+     * @tc.desc   algorithm is RC2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RC2";
+        for (let keyLen = 1; keyLen < 129; keyLen++) { // 密钥步长1字节
+          let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
+          let generator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
+          let symKey: cryptoFramework.SymKey = generator.convertKeySync(keyData);
+          let encodedKeyConvert: cryptoFramework.DataBlob = symKey.getEncoded();
+          let ret: boolean = commonUtils.compareDataBlob(keyData, encodedKeyConvert);
+          let expectKeyLen: number = encodedKeyConvert.data.byteLength;
+          let getKeyLen: int = symKey.getKeySize();
+          expect(getKeyLen).assertEqual(expectKeyLen.toInt() * 8);
+          expect(keyLen).assertEqual(expectKeyLen);
+          expect(ret).assertTrue();
+        }
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_0103
+     * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_0103
+     * @tc.desc   algorithm is RC4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RC4";
+        for (let keyLen = 1; keyLen < 513; keyLen++) { // 密钥步长1字节
+          let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(keyLen);
+          let generator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
+          let symKey: cryptoFramework.SymKey = await generator.convertKey(keyData);
+          let encodedKeyConvert: cryptoFramework.DataBlob = symKey.getEncoded();
+          let ret: boolean = commonUtils.compareDataBlob(keyData, encodedKeyConvert);
+          let expectKeyLen: number = encodedKeyConvert.data.byteLength;
+          expect(keyLen).assertEqual(expectKeyLen);
+          let getKeyLen: int = symKey.getKeySize();
+          expect(getKeyLen).assertEqual(expectKeyLen.toInt() * 8);
+          expect(ret).assertTrue();
+        }
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -79,7 +169,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -105,7 +195,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -131,7 +221,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -157,7 +247,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -183,7 +273,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -209,7 +299,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -235,7 +325,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -261,7 +351,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -287,7 +377,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -313,7 +403,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -333,9 +423,9 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let algName: string = "SM4_256";
         symKeySyncUtils.createSymKeySync(algName);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(801);
+        expect((error as BusinessError).code).assertEqual(801);
       }
       done();
     });
@@ -355,9 +445,9 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let encodedKey: cryptoFramework.DataBlob = symKeySyncUtils.createSymKeySync(algName);
         symKeySyncUtils.convertSymKeySync(convertAlgName, encodedKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -377,9 +467,9 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let encodedKey: cryptoFramework.DataBlob = symKeySyncUtils.createSymKeySync(algName);
         symKeySyncUtils.convertSymKeySync(convertAlgName, encodedKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });
@@ -405,7 +495,7 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = convertSymKey.getEncoded().data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -430,9 +520,122 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let convertAlgName: string = "HMAC";
         symKeySyncUtils.convertSymKeySync(convertAlgName, encodedKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_1700
+     * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1700
+     * @tc.desc   algorithm is BF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "Blowfish";
+        let expectKeyLen: int = 3;
+        let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(expectKeyLen);
+        let generator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
+        await generator.convertKey(keyData);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`“${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_1800
+     * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1800
+     * @tc.desc   algorithm is BF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "Blowfish";
+        let expectKeyLen: int = 57;
+        let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(expectKeyLen);
+        let generator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
+        await generator.convertKey(keyData);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`“${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_1900
+     * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_1900
+     * @tc.desc   algorithm is RC2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RC2";
+        let expectKeyLen: int = 129;
+        let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(expectKeyLen);
+        let generator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
+        generator.convertKeySync(keyData);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`“${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_2000
+     * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_2000
+     * @tc.desc   algorithm is RC4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RC4";
+        let expectKeyLen: int = 513;
+        let keyData: cryptoFramework.DataBlob = await commonUtils.createFullData(expectKeyLen);
+        let generator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
+        await generator.convertKey(keyData);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`“${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SymKeyGenerator_Func_2100
+     * @tc.number SUB_Security_CryptoFramework_SymKeyGenerator_Func_2100
+     * @tc.desc   algorithm is RC4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_SymKeyGenerator_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RC4";
+        let generator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
+        await generator.generateSymKey(); // RC2 RC4 BF CAST 不支持该方法生成密钥
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`“${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
     });

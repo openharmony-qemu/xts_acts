@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,7 +30,7 @@ function stringToArray(str: string): number[] {
 function uInt8ArrayToString(fileData: Uint8Array): string {
   let dataString = "";
   for (let i = 0; i < fileData.length; i++) {
-    dataString += String.fromCharCode(fileData[i]);
+    dataString += String.fromCharCode(fileData[i].toInt());
   }
   return dataString;
 }
@@ -253,7 +253,7 @@ async function createUint8Array(dataLen: int): Promise<Uint8Array>{
     let rawData: cryptoFramework.DataBlob = await rand.generateRandom(dataLen);
 
     return rawData.data;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('[XTS] create data ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -265,7 +265,7 @@ async function createData(dataLen: int): Promise<cryptoFramework.DataBlob>{
     let rawData: cryptoFramework.DataBlob = await rand.generateRandom(dataLen);
 
     return rawData;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('[XTS] create data ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }

@@ -63,6 +63,437 @@ struct WebViewControllerVideoMedia {
           await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
           this.isReceive = -1;
           switch (this.str) {
+            case "ResumeAllMedia0100": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(1, 350100)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0100 res: " + res);
+                  Utils.emitEvent(res, 350100)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "ResumeAllMedia0200": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(0, 350120)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0200 res: " + res);
+                  Utils.emitEvent(res, 350120)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "ResumeAllMedia0300": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(1, 350130)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(5000);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0300 res: " + res);
+                  Utils.emitEvent(res, 350130)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "ResumeAllMedia0400": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(2, 350140)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(3000);
+                  this.controller.runJavaScript("pauseVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(3000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0400 res: " + res);
+                  Utils.emitEvent(res, 350140)
+                }
+
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "ResumeAllMedia0500": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                this.isPageEnd = -1;
+                this.controller.refresh();
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(3, 350150)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(5000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0500 res: " + res);
+                  Utils.emitEvent(res, 350150)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "ResumeAllMedia0600": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video2.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(1, 350160)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0600 res: " + res);
+                  Utils.emitEvent(res, 350160)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "ResumeAllMedia0700": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video3.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(1, 350170)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  this.controller.runJavaScript("playAudio()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.resumeAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("ResumeAllMedia0700 res: " + res);
+                  Utils.emitEvent(res, 350170)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "PauseAllMedia0100": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(2, 350210)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0100 res: " + res);
+                  Utils.emitEvent(res, 350210)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "PauseAllMedia0200": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(2, 350220)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0200 res: " + res);
+                  Utils.emitEvent(res, 350220)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "PauseAllMedia0300": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(2, 350230)
+                }else{
+
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0300 res: " + res);
+                  Utils.emitEvent(res, 350230)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "PauseAllMedia0400": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(2, 350240)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.runJavaScript("pauseVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0400 res: " + res);
+                  Utils.emitEvent(res, 350240)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "PauseAllMedia0500": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(2, 350250)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0500 res: " + res);
+                  Utils.emitEvent(res, 350250)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "PauseAllMedia0600": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video2.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(2, 350260)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0600 res: " + res);
+                  Utils.emitEvent(res, 350260)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "PauseAllMedia0700": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video2.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(2, 350270)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.runJavaScript("pauseVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0700 res: " + res);
+                  Utils.emitEvent(res, 350270)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "PauseAllMedia0800": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video3.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(2, 350280)
+                }else{
+                  let size = await driver.getDisplaySize();
+                  console.log("size x:" + size.x)
+                  console.log("size y:" + size.y)
+                  await driver.click(size.x / 2, size.y / 2);
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  this.controller.runJavaScript("playAudio()");
+                  await Utils.sleep(2000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("PauseAllMedia0800 res: " + res);
+                  Utils.emitEvent(res, 350280)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
             case "CloseAllMediaPresentations0100": {
               let res: webView.MediaPlaybackState;
               let back_res: boolean = false
@@ -82,7 +513,17 @@ struct WebViewControllerVideoMedia {
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("playVideo()");
-                  await Utils.sleep(2000);
+                  let nums=1;
+                  let tryTime=200
+                  while(nums < tryTime) {
+                    await Utils.sleep(1000);
+                    //播放状态
+                    if (this.controller.getMediaPlaybackState() == 1) {
+                      break;
+                    }
+                    console.log('CloseAllMediaPresentations0100---' + nums)
+                    nums++;
+                  }
                   this.controller.closeAllMediaPresentations();
                   await Utils.sleep(2000);
                   this.isPageEnd = -1;

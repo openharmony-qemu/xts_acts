@@ -48,7 +48,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function list_SpaceChangeTest() {
   describe('list_SpaceChangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("list_SpaceChangeTest beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -136,7 +136,7 @@ it('testListSpaceChangeUnfill_static', Level.LEVEL0, async (done: () => void): P
       expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(60)))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + fourthListItem.bottom)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + thirdListItem.left + ((thirdListItem.right - thirdListItem.left) / 2))).toInt(),
@@ -212,7 +212,7 @@ it('testListSpaceChangeFill_static', Level.LEVEL0, async (done: () => void): Pro
       expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(120)))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + fourthListItem.bottom - 10)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + thirdListItem.left + ((thirdListItem.right - thirdListItem.left) / 2))).toInt(),
@@ -293,7 +293,7 @@ it('testListSpaceChangeOverflow_static', Level.LEVEL0, async (done: () => void):
         ${(listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(180))}`);
       expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.resolveUIContext()!.vp2px(180)))) <= 1).assertTrue();
       let driver = Driver.create();
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + thirdListItem.left + ((thirdListItem.right - thirdListItem.left) / 2))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + thirdListItem.bottom)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + secondListItem.left + ((secondListItem.right - secondListItem.left) / 2))).toInt(),

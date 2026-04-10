@@ -72,6 +72,18 @@ struct Index {
               this.webviewController.loadUrl('https://www.baidu.com/');
               break;
             }
+
+            case 'emitWebCaptureMode01': {
+              try {
+                Utils.emitEvent(WebCaptureMode.HOME_SCREEN,751601319)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false,751601319)
+              }
+              break;
+            }
+
             default:
               console.info('can not match case');
           }

@@ -36,7 +36,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function flex_Wrap_LayoutWeightTest() {
   describe('Flex_Wrap_LayoutWeightTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Flex_Wrap_LayoutWeightTest beforeEach start");
       
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")

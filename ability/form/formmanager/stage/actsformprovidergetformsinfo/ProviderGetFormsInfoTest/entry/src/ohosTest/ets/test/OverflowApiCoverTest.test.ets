@@ -20,6 +20,7 @@ import formProvider from '@ohos.app.form.formProvider';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const INTERVAL_TIME = 2500;
+const ERROR_CODE0 = 202;
 const ERROR_CODE1 = 16500050;
 const ERROR_CODE2 = 16500060;
 const ERROR_CODE3 = 16500100;
@@ -60,9 +61,10 @@ export default function overflowApiCoverTest() {
           useDefaultAnimation: true
         };
         formProvider.requestOverflow("1", overflowInfo).then(() => {
-          console.info('requestOverflow succeed');
+          console.info(`${name} requestOverflow succeed`);
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
+          console.info(`${name} catch BusinessError: ${JSON.stringify(error)}`);
           if (error.code === ERROR_CODE1) {
             expect(error.code).assertEqual(ERROR_CODE1);
           } else if (error.code === ERROR_CODE2) {
@@ -80,6 +82,7 @@ export default function overflowApiCoverTest() {
           }
         })
       } catch (error) {
+        console.info(`${name} catch error: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       console.info(`${name} end`);
@@ -99,9 +102,10 @@ export default function overflowApiCoverTest() {
       console.info(`${name} start`);
       try {
         formProvider.cancelOverflow("1").then(() => {
-          console.info('cancelOverflow succeed');
+          console.info(`${name} cancelOverflow succeed`);
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
+          console.info(`${name} catch BusinessError: ${JSON.stringify(error)}`);
           if (error.code === ERROR_CODE1) {
             expect(error.code).assertEqual(ERROR_CODE1);
           } else if (error.code === ERROR_CODE2) {
@@ -119,6 +123,7 @@ export default function overflowApiCoverTest() {
           }
         })
       } catch (error) {
+        console.info(`${name} catch error: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       console.info(`${name} end`);
@@ -138,12 +143,20 @@ export default function overflowApiCoverTest() {
       console.info(`${name} start`);
       try {
         formProvider.activateSceneAnimation("1").then(() => {
-          console.info('activateSceneAnimation succeed');
+          console.info(`${name} activateSceneAnimation succeed`);
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
-          expect(error.code).assertEqual(16501001);
+          console.info(`${name} catch BusinessError: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE0) {
+            expect(error.code).assertEqual(ERROR_CODE0);
+          } else if (error.code === ERROR_CODE5) {
+            expect(error.code).assertEqual(ERROR_CODE5);
+          } else {
+            expect().assertFail();
+          }
         })
       } catch (error) {
+        console.info(`${name} catch error: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       console.info(`${name} end`);
@@ -163,12 +176,20 @@ export default function overflowApiCoverTest() {
       console.info(`${name} start`);
       try {
         formProvider.deactivateSceneAnimation("1").then(() => {
-          console.info('deactivateSceneAnimation succeed');
+          console.info(`${name} deactivateSceneAnimation succeed`);
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
-          expect(error.code).assertEqual(16501001);
+          console.info(`${name} catch BusinessError: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE0) {
+            expect(error.code).assertEqual(ERROR_CODE0);
+          } else if (error.code === ERROR_CODE5) {
+            expect(error.code).assertEqual(ERROR_CODE5);
+          } else {
+            expect().assertFail();
+          }
         })
       } catch (error) {
+        console.info(`${name} catch error: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       console.info(`${name} end`);
@@ -188,9 +209,10 @@ export default function overflowApiCoverTest() {
       console.info(`${name} start`);
       try {
         formProvider.getFormRect("1").then(() => {
-          console.info('getFormRect succeed');
+          console.info(`${name} getFormRect succeed`);
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
+          console.info(`${name} catch BusinessError: ${JSON.stringify(error)}`);
           if (error.code === ERROR_CODE1) {
             expect(error.code).assertEqual(ERROR_CODE1);
           } else if (error.code === ERROR_CODE2) {
@@ -206,6 +228,7 @@ export default function overflowApiCoverTest() {
           }
         })
       } catch (error) {
+        console.info(`${name} catch error: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
       console.info(`${name} end`);

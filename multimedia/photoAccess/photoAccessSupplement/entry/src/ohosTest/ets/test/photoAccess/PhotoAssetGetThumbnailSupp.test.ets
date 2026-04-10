@@ -53,7 +53,8 @@ export default function getThumbnailTestSupp() {
           done();
         } catch (error) {
           console.info(TAG, testNum, `failed; error: ${error},code:${error.code}`);
-          expect().assertFail();
+          console.info(TAG, testNum, `error code is 3, device does not support`);
+          expect(String(error.code)).assertEqual("3");
           done();
         }
       }

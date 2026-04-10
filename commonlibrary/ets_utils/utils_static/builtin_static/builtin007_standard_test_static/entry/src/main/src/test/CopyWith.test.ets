@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ export default function CopyWithTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -56,7 +56,7 @@ export default function CopyWithTest() {
         let arr: FixedArray<short> = [5];
         let result = every(arr, (value) => value > 0);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -76,7 +76,7 @@ export default function CopyWithTest() {
         let arr: FixedArray<short> = [0];
         let result = every(arr, (value) => value !== 0);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -96,7 +96,7 @@ export default function CopyWithTest() {
         let arr: FixedArray<short> = [-5, -3, -1, -7];
         let result = every(arr, (value) => value < 0);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -116,7 +116,7 @@ export default function CopyWithTest() {
         let arr: FixedArray<short> = [-2, 4, -6, 8];
         let result = every(arr, (value) => Math.abs(value) % 2 === 0);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -136,7 +136,7 @@ export default function CopyWithTest() {
         let arr: FixedArray<short> = [32767, 10000, 20000];
         let result = every(arr, (value) => value > 9999);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -156,7 +156,7 @@ export default function CopyWithTest() {
         let arr: FixedArray<short> = [1, 2, 3, 4];
         let result = every(arr, (value) => value > 1);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -176,7 +176,7 @@ export default function CopyWithTest() {
         let arr: FixedArray<short> = [10, 20, 30, 5];
         let result = every(arr, (value) => value >= 10);
         expect(result).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -196,7 +196,7 @@ export default function CopyWithTest() {
         let arr: FixedArray<short> = [0, 2, 4, 6];
         let result = every(arr, (value, index) => value === index * 2);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -216,7 +216,7 @@ export default function CopyWithTest() {
         let arr: FixedArray<short> = [0, 2, 4, 6];
         let result = every(arr, (value, index) => value === index * 2);
         expect(result).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -241,7 +241,7 @@ export default function CopyWithTest() {
         expect(result[3]).assertEqual(2);
         expect(result[4]).assertEqual(3);
         expect(arr === result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -263,7 +263,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 3, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -285,7 +285,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 0, 5);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -307,7 +307,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 2, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -329,7 +329,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 10, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -351,7 +351,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 2, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -374,7 +374,7 @@ export default function CopyWithTest() {
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
         expect(originalArray).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -396,7 +396,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 2, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -418,7 +418,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -440,7 +440,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, -2, 1, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -462,7 +462,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 0, 5);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -484,7 +484,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 1, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -506,7 +506,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 5, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -528,7 +528,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 3, 1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -550,7 +550,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 2, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -572,7 +572,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -594,7 +594,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 2, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -616,7 +616,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0, 10);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -638,7 +638,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -660,7 +660,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 4, 5);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -682,7 +682,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 0, 1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -705,7 +705,7 @@ export default function CopyWithTest() {
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
         expect(originalArray).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -727,7 +727,7 @@ export default function CopyWithTest() {
         let result = copyWithin(originalArray, -2, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -749,7 +749,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 3, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -771,7 +771,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 1, 2, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -793,7 +793,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -815,7 +815,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, -2, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -837,7 +837,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, -2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -859,7 +859,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 10, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -881,7 +881,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 3, 1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -903,7 +903,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 2, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -925,7 +925,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 3, 1, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -947,7 +947,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 0);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -969,7 +969,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 1, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -991,7 +991,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1013,7 +1013,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 3, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1035,7 +1035,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 4, 0, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(10);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1058,7 +1058,7 @@ export default function CopyWithTest() {
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(6);
         expect(originalArray).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1080,7 +1080,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1102,7 +1102,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 3, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1124,7 +1124,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 2, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1146,7 +1146,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, -1, -2, -1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1168,7 +1168,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1190,7 +1190,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1212,7 +1212,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 3, 1, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1234,7 +1234,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1256,7 +1256,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, -1, -2, -1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1278,7 +1278,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 2, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1300,7 +1300,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 5);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1322,7 +1322,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0, 10);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1344,7 +1344,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, -3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1366,7 +1366,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1388,7 +1388,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1411,7 +1411,7 @@ export default function CopyWithTest() {
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(6);
         expect(originalArray).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -1433,7 +1433,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 3, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1455,7 +1455,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 1, 0, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1477,7 +1477,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 2, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1499,7 +1499,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, -3, -1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1521,7 +1521,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 10, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1543,7 +1543,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 3, 1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1565,7 +1565,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 3, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(8);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1585,7 +1585,7 @@ export default function CopyWithTest() {
         const originalArray: FixedArray<short> = [1, 2, 3, 4, 5] as FixedArray<short>;
         const result = copyWithin(originalArray, 0, 3, 4);
         expect(result === originalArray).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1607,7 +1607,7 @@ export default function CopyWithTest() {
         let result = copyWithin(originalArray, 2, 0, 2);
         result = copyWithin(result, 4, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1628,7 +1628,7 @@ export default function CopyWithTest() {
         const expectedResult: FixedArray<short> = [1, 2, 3, 4, 5] as FixedArray<short>;
         const result = copyWithin(originalArray, -100, -100, -50);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1649,7 +1649,7 @@ export default function CopyWithTest() {
         const expectedResult: FixedArray<short> = [10, 20, 30, 30, 50] as FixedArray<short>;
         const result = copyWithin(originalArray, 3, 2, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1671,7 +1671,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0, 2);
         result[3] = 2;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1692,7 +1692,7 @@ export default function CopyWithTest() {
         const expectedResult: FixedArray<short> = [1, 4, 3, 4, 5] as FixedArray<short>;
         const result = copyWithin(originalArray, -4, -2, -1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1714,7 +1714,7 @@ export default function CopyWithTest() {
         let result = copyWithin(originalArray, 2, 0, 1);
         result = copyWithin(result, 6, 4, 5);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1736,7 +1736,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 1, 3, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1758,7 +1758,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 2, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -1779,7 +1779,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 0, 3, 5);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([4, 5, 3, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -1800,7 +1800,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 0, 1, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([2, 3, 3, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -1821,7 +1821,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 1, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 1, 2, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -1842,7 +1842,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 2, 0, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 1, 2, 3]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -1863,7 +1863,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 0, -2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([4, 5, 3, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -1884,7 +1884,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 0, 0);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -1905,7 +1905,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 1, 0, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 1, 2, 3, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -1926,7 +1926,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 0, 2, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -1947,7 +1947,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 6, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -1968,7 +1968,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, -3, -2, -1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 4, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -1989,7 +1989,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 0, 3, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([4, 2, 3, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2010,7 +2010,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 2, 2, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2031,7 +2031,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 1, 1, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2052,7 +2052,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, -10, -20, -15);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2073,7 +2073,7 @@ export default function CopyWithTest() {
         let result = copyWithin(copyWithin(arr, 0, 1, 3), 3, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([2, 3, 3, 2, 3]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2094,7 +2094,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 2, 0, 6);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 1, 2, 3, 4, 5, 6]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2115,7 +2115,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 3, 1, 5);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 2, 3, 4, 5, 8]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2136,7 +2136,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 1, 0, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([0, 0, 0, 0, 0]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2158,7 +2158,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 0, 2, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([maxInt - 2, maxInt - 3, maxInt - 2, maxInt - 3]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2180,7 +2180,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 1, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([minInt, minInt, minInt + 1, minInt + 3]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2201,7 +2201,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 0, 1, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([2, -3, 4, 4, -5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2222,7 +2222,7 @@ export default function CopyWithTest() {
         let result = copyWithin(arr, 5, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2245,7 +2245,7 @@ export default function CopyWithTest() {
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
         expect(originalArray).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2268,7 +2268,7 @@ export default function CopyWithTest() {
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(6);
         expect(originalArray).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2291,7 +2291,7 @@ export default function CopyWithTest() {
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(6);
         expect(originalArray).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2311,7 +2311,7 @@ export default function CopyWithTest() {
         const arr: FixedArray<long> = [1, 2, 3, 4, 5] as FixedArray<long>;
         const result = copyWithin(arr, 0, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([4, 5, 3, 4, 5]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2331,7 +2331,7 @@ export default function CopyWithTest() {
         const arr: FixedArray<long> = [1, 2, 3, 4, 5] as FixedArray<long>;
         const result = copyWithin(arr, -3, -2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([1, 2, 4, 5, 5]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2351,7 +2351,7 @@ export default function CopyWithTest() {
         const arr: FixedArray<long> = [1, 2, 3, 4, 5, 6, 7] as FixedArray<long>;
         const result = copyWithin(arr, 0, 2, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([3, 4, 3, 4, 5, 6, 7]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2374,7 +2374,7 @@ export default function CopyWithTest() {
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(6);
         expect(originalArray).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -2395,7 +2395,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([3, 4, 5, 4, 5]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -2416,7 +2416,7 @@ export default function CopyWithTest() {
         const result = copyWithin(arr, -2, 0);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([10, 20, 30, 10, 20]));
         console.log(`${TAG} success`);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
@@ -2436,7 +2436,7 @@ export default function CopyWithTest() {
         const arr: FixedArray<long> = [10, 20, 30, 40, 50] as FixedArray<long>;
         const result = copyWithin(arr, 2, 1, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify([10, 20, 20, 30, 50]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2459,7 +2459,7 @@ export default function CopyWithTest() {
         const arr2: FixedArray<long> = [10, 20, 30] as FixedArray<long>;
         const result2 = copyWithin(arr2, 0, 0);
         expect(JSON.stringify(result2)).assertEqual(JSON.stringify([10, 20, 30]));
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed, error is ${err}`);
         expect().assertFail();
       }
@@ -2481,7 +2481,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 3, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2503,7 +2503,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 0);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2525,7 +2525,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 1, 0, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2547,7 +2547,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, -2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2569,7 +2569,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2591,7 +2591,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0, 10);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2613,7 +2613,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, -3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2635,7 +2635,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 0);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2657,7 +2657,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 3, 0, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(7);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2679,7 +2679,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 3, 1, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(6);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2701,7 +2701,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 3, 10);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2723,7 +2723,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, -3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2745,7 +2745,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2767,7 +2767,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 3, 0, 10);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2789,7 +2789,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2811,7 +2811,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 1, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2833,7 +2833,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, -3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2855,7 +2855,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 3, -3, -1);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2877,7 +2877,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 4, 3, 10);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2899,7 +2899,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 1, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2921,7 +2921,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 5, 0);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2943,7 +2943,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 1, 3);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2965,7 +2965,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, -2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -2987,7 +2987,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -3009,7 +3009,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 3, 2, 5);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(7);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -3031,7 +3031,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 1, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -3053,7 +3053,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, 0);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -3075,7 +3075,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 0, -2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -3097,7 +3097,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 1, 2, 4);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -3119,7 +3119,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 0, 10);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -3141,7 +3141,7 @@ export default function CopyWithTest() {
         const result = copyWithin(originalArray, 2, 2);
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expectedResult));
         expect(result.length).assertEqual(5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }

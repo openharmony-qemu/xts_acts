@@ -14,6 +14,10 @@
  */
 
 import fileTest from './File.test.js'
+import documentChooseTest from './DocumentChoose.test.js'
+import documentShowTest from './DocumentShow.test.js'
 export default function testsuite() {
     fileTest()
+    documentChooseTest()
+    documentShowTest()
 }

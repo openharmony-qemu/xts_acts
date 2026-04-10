@@ -1074,7 +1074,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest6000';
         console.info(`${caseName}, test start`);
-        expect(Float.bitCastFromInt(0xFF800000 as int)).assertEqual(Number.NEGATIVE_INFINITY);
+        expect(Float.bitCastFromInt((0xFF800000).toInt())).assertEqual(Number.NEGATIVE_INFINITY);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1108,7 +1108,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest6200';
         console.info(`${caseName}, test start`);
-        expect(Number.isNaN(Float.bitCastFromInt(0xFFFFFFFF as int))).assertEqual(true);
+        expect(Number.isNaN(Float.bitCastFromInt((0xFFFFFFFF).toInt()))).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1125,7 +1125,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest6300';
         console.info(`${caseName}, test start`);
-        const res = Float.bitCastFromInt(0x80000000 as int);
+        const res = Float.bitCastFromInt((0x80000000).toInt());
         const t = res === 0 && (1 / res) === -Infinity;
         expect(t).assertEqual(true);
         console.info(`${caseName}, test end`);

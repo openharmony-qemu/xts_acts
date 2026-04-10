@@ -2,7 +2,6 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/Drag/getDisplayId",
-    "MainAbility/pages/PanGesture/observer",
     "MainAbility/pages/TapGesture/tapLocation"
   ]
 }

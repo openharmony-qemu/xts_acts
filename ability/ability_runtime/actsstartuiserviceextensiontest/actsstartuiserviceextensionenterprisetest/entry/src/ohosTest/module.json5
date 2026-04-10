@@ -70,6 +70,12 @@
       },
       {
         "name": "ohos.permission.GET_RUNNING_INFO"
+      },
+      {
+        "name": "ohos.permission.KILL_APP_PROCESSES"
+      },
+      {
+        "name": "ohos.permission.CLEAN_BACKGROUND_PROCESSES"
       }
     ]
   }

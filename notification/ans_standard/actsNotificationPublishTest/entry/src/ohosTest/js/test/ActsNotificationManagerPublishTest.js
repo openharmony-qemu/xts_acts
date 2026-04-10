@@ -42,6 +42,7 @@ export default function ActsNotificationManagerPublishTest() {
     }
 
 
+
     /**
      * @tc.name   Sub_Notification_Ans_Publish_Cancel_3200
      * @tc.number Sub_Notification_Ans_Publish_Cancel_3200
@@ -54,11 +55,13 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3200 START`)
       let id = 1
       let label = "label"
+      let count = 0
       try {
         await notificationManager.cancel(id, label, (err) => {
           if (err) {
             console.info(`${TAG} cancel AsyncCallback err: ${err.code}, errMes: ${err.message}`)
-            expect(true).assertTrue()
+            count++
+            expect(count).assertEqual(1)
             done()
           } else {
             console.info(`${TAG} cancel AsyncCallback success`)
@@ -86,13 +89,15 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3200 START`)
       let id = 1
       let label = "label"
+      let count = 0
       await notificationManager.cancel(id, label).then(() => {
         console.info(`${TAG} cancel Promise success`)
         expect(false).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} cancel Promise err: ${err.code}, errMes: ${err.message}`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       })
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3200 END`)
@@ -109,11 +114,13 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Publish_Cancel_3300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3300 START`)
       let id = 1
+      let count = 0
       try {
         await notificationManager.cancel(id, (err) => {
           if (err) {
             console.info(`${TAG} cancel id err: ${err.code}, errMes: ${err.message}`)
-            expect(true).assertTrue()
+            count++
+            expect(count).assertEqual(1)
             done()
           } else {
             console.info(`${TAG} cancel id success`)
@@ -140,13 +147,15 @@ export default function ActsNotificationManagerPublishTest() {
     it('SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0400', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0400 START`)
       let id = 1
+      let count = 0
       await notificationManager.cancel(id, undefined).then(() => {
         console.info(`${TAG} cancel Promise success`)
         expect(false).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} cancel Promise err: ${err.code}, errMes: ${err.message}`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       })
       await Utils.sleep(500);
@@ -158,7 +167,8 @@ export default function ActsNotificationManagerPublishTest() {
         done()
       }).catch((err) => {
         console.info(`${TAG} cancel Promise err: ${err.code}, errMes: ${err.message}`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(2)
         done()
       })
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0400 END`)
@@ -176,13 +186,15 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0500 START`)
       let id = 1
       let num = 2
+      let count = 0
       await notificationManager.cancel(id, num).then(() => {
         console.info(`${TAG} cancel Promise success`)
         expect(false).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} cancel Promise err: ${err.code}, errMes: ${err.message}`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       })
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0500 END`)
@@ -200,13 +212,15 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0600 START`)
       let id = 1
       let label = "label"
+      let count = 0
       await notificationManager.cancel(id, label, undefined).then(() => {
         console.info(`${TAG} cancel Promise success`)
         expect(false).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} cancel Promise err: ${err.code}, errMes: ${err.message}`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       })
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_TEST_0600 END`)
@@ -222,6 +236,7 @@ export default function ActsNotificationManagerPublishTest() {
      */
     it('Sub_Notification_Ans_Publish_Cancel_3350', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3350 START`)
+      let count = 0
       try {
         await notificationManager.cancelAll((err) => {
           if (err) {
@@ -230,7 +245,8 @@ export default function ActsNotificationManagerPublishTest() {
             done()
           } else {
             console.info(`${TAG} cancelAll AsyncCallback success`)
-            expect(true).assertTrue()
+            count++
+            expect(count).assertEqual(1)
             done()
           }
         })
@@ -252,9 +268,11 @@ export default function ActsNotificationManagerPublishTest() {
      */
     it('Sub_Notification_Ans_Publish_Cancel_3400', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3400 START`)
+      let count = 0
       await notificationManager.cancelAll().then(() => {
         console.info(`${TAG} cancelAll Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} cancelAll Promise err: ${err.code}, errMes: ${err.message}`)
@@ -274,9 +292,11 @@ export default function ActsNotificationManagerPublishTest() {
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_CANCELAll_TEST_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCELAll_TEST_0300 START`)
+      let count = 0
       await notificationManager.cancelAll(undefined).then(() => {
         console.info(`${TAG} cancelAll Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} cancelAll Promise err: ${err.code}, errMes: ${err.message}`)
@@ -297,6 +317,7 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Publish_Cancel_3100', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3100 START`)
       let groupName = "groupName"
+      let count = 0
       try {
         await notificationManager.cancelGroup(groupName, (err) => {
           if (err) {
@@ -305,7 +326,8 @@ export default function ActsNotificationManagerPublishTest() {
             done()
           } else {
             console.info(`${TAG} cancelGroup AsyncCallback success`)
-            expect(true).assertTrue()
+            count++
+            expect(count).assertEqual(1)
             done()
           }
         })
@@ -328,9 +350,11 @@ export default function ActsNotificationManagerPublishTest() {
     it('Sub_Notification_Ans_Publish_Cancel_3150', Level.LEVEL2, async function (done) {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_3150 START`)
       let groupName = "groupName"
+      let count = 0
       await notificationManager.cancelGroup(groupName).then(() => {
         console.info(`${TAG} cancelGroup Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} cancelGroup Promise err: ${err.code}, errMes: ${err.message}`)
@@ -351,9 +375,11 @@ export default function ActsNotificationManagerPublishTest() {
     it('SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0300 START`)
       let num = 1
+      let count = 0
       await notificationManager.cancelGroup(num).then(() => {
         console.info(`${TAG} cancelGroup Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} cancelGroup Promise err: ${err.code}, errMes: ${err.message}`)
@@ -374,9 +400,11 @@ export default function ActsNotificationManagerPublishTest() {
     it('SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0400', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_CANCEL_GROUP_TEST_0400 START`)
       let groupName = "groupName"
+      let count = 0
       await notificationManager.cancelGroup(groupName, undefined).then(() => {
         console.info(`${TAG} cancelGroup Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} cancelGroup Promise err: ${err.code}, errMes: ${err.message}`)
@@ -395,6 +423,7 @@ export default function ActsNotificationManagerPublishTest() {
      * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Enable_Query_2500', Level.LEVEL2, async function (done) {
+      let count = 0
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2500 START`)
       try {
         await notificationManager.requestEnableNotification((err) => {
@@ -404,7 +433,8 @@ export default function ActsNotificationManagerPublishTest() {
             done()
           } else {
             console.info(`${TAG} requestEnableNotification AsyncCallback success`)
-            expect(true).assertTrue()
+            count++
+            expect(count).assertEqual(1)
             done()
           }
         })
@@ -425,10 +455,12 @@ export default function ActsNotificationManagerPublishTest() {
      * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Enable_Query_2600', Level.LEVEL2, async function (done) {
+      let count = 0
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2600 START`)
       await notificationManager.requestEnableNotification().then(() => {
         console.info(`${TAG} requestEnableNotification Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} requestEnableNotification Promise err: ${err.code}, errMes: ${err.message}`)
@@ -448,9 +480,11 @@ export default function ActsNotificationManagerPublishTest() {
      */
     it('SUB_NOTIFICATION_ANS_MANAGER_REQUEST_ENABLE_TEST_0300', Level.LEVEL2, async function (done) {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_REQUEST_ENABLE_TEST_0300 START`)
+      let count = 0
       await notificationManager.requestEnableNotification(undefined).then(() => {
         console.info(`${TAG} requestEnableNotification Promise success`)
-        expect(true).assertTrue()
+        count++
+        expect(count).assertEqual(1)
         done()
       }).catch((err) => {
         console.info(`${TAG} requestEnableNotification Promise err: ${err.code}, errMes: ${err.message}`)
@@ -478,7 +512,7 @@ export default function ActsNotificationManagerPublishTest() {
             done()
           } else {
             console.info(`${TAG} getActiveNotificationCount AsyncCallback success ${JSON.stringify(data)}`)
-            expect(true).assertTrue()
+            expect(data == 0).assertTrue()
             done()
           }
         })
@@ -502,7 +536,7 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_ACTIVE_COUNT_TEST_0200 START`)
       await notificationManager.getActiveNotificationCount().then((data) => {
         console.info(`${TAG} getActiveNotificationCount Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data == 0).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}, errMes: ${err.message}`)
@@ -578,7 +612,7 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0500 START`)
       await notificationManager.getActiveNotificationCount(undefined).then((data) => {
         console.info(`${TAG} getActiveNotificationCount Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data).assertEqual(0)
         done()
       }).catch((err) => {
         console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}, errMes: ${err.message}`)
@@ -600,7 +634,7 @@ export default function ActsNotificationManagerPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_COUNT_TEST_0600 START`)
       await notificationManager.getActiveNotifications(undefined).then((data) => {
         console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data.length).assertEqual(0)
         done()
       }).catch((err) => {
         console.info(`${TAG} getActiveNotifications Promise err: ${err.code}, errMes: ${err.message}`)
@@ -717,7 +751,7 @@ export default function ActsNotificationManagerPublishTest() {
       let templateName = 'test_templateName'
       await notificationManager.isSupportTemplate(templateName, undefined).then((data) => {
         console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-        expect(true).assertTrue()
+        expect(data).assertFalse()
         done()
       }).catch((err) => {
         console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)
@@ -1721,14 +1755,14 @@ export default function ActsNotificationManagerPublishTest() {
 
 
     /**
-     * @tc.name   testPublishPictureExpandedTitleForNull
+     * @tc.name   testPublishPictureExpandedTitleForNullAdapt001
      * @tc.number Sub_Notification_Ans_Publish_Publish_2110
      * @tc.desc   test publish fail
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPublishPictureExpandedTitleForNull', Level.LEVEL2, async function (done) {
+    it('testPublishPictureExpandedTitleForNullAdapt001', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishPicturepictureForNull';
 
       const color = new ArrayBuffer(60000);

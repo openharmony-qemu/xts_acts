@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -79,7 +79,8 @@ struct Index {
             case 'emitZoomIn': {
               try {
                 this.controllerNull.zoomIn();
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 Utils.emitEvent(error.code, 1012)
               }
               break;
@@ -88,7 +89,8 @@ struct Index {
             case 'emitZoomIn2': {
               try {
                 this.controller.zoomIn();
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 Utils.emitEvent(error.code, 1013)
               }
               break;
@@ -97,7 +99,8 @@ struct Index {
             case 'emitZoomOut': {
               try {
                 this.controllerNull.zoomOut();
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 Utils.emitEvent(error.code, 1028)
               }
               break;
@@ -106,7 +109,8 @@ struct Index {
             case 'emitZoomOut2': {
               try {
                 this.controller.zoomOut();
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 Utils.emitEvent(error.code, 1065)
               }
               break;
@@ -115,7 +119,8 @@ struct Index {
             case 'emitSlideScroll': {
               try {
                 this.controllerNull.slideScroll(500, 500);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 Utils.emitEvent(error.code, 1033)
               }
               break;
@@ -124,7 +129,8 @@ struct Index {
             case 'emitScrollBy': {
               try {
                 this.controllerNull.scrollBy(50, 50);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 Utils.emitEvent(error.code, 1034)
               }
               break;
@@ -133,7 +139,8 @@ struct Index {
             case 'emitZoom': {
               try {
                 this.controllerNull.zoom(this.factor);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 Utils.emitEvent(error.code, 1049)
               }
               break;
@@ -142,7 +149,8 @@ struct Index {
             case 'emitZoom2': {
               try {
                 this.controller.zoom(1);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 Utils.emitEvent(error.code, 1050)
               }
               break;

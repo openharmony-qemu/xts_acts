@@ -29,7 +29,7 @@ export default function ActsNotificationShowTest() {
      * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Distributed_Enable_5300', Level.LEVEL2, async function (done) {
-      console.info(TAG + 'Sub_Notification_Ans_Distributed_Enable_5300 START ')
+      console.info(TAG + 'Sub_Notification_Ans_Distributed_Enable_5300 START ') 
       let ShowNotificationOptions = {
         contentTitle: 'Title1',
         contentText: 'This is a notification 001'
@@ -48,7 +48,7 @@ export default function ActsNotificationShowTest() {
       }
       try {
         await notification.show()
-        expect(true).assertTrue()
+        console.error(`show succees!!`);
         done()
       } catch (error) {
         console.error(`show fail: ${JSON.stringify(error)}`);
@@ -79,7 +79,7 @@ export default function ActsNotificationShowTest() {
       } catch (error) {
         console.error(`show fail: ${JSON.stringify(error)}`);
         if(error.code == 801){
-          expect(true).assertTrue()
+          expect(error.code).assertEqual(801)
           done()
         }else{
           expect(error.code).assertEqual(401)

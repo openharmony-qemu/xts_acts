@@ -17,14 +17,16 @@ group("huks") {
   if (is_standard_system) {
     deps = [
       "huks_ets_api12:ActsHuksEtsApi12FuncTest",
+      "huks_ets_api8:ActsHuksEtsApi8FuncTest",
+      "huks_ets_api9:ActsHuksEtsApi9FuncTest",
       "huks_ets_group:ActsHuksGroupFuncTest",
       "huks_js_api8:ActsHuksJsApi8FuncTest",
-      "huks_js_api9:ActsHuksJsApi9FuncTest",
-      "huks_napi_test:ActsHuksNapiTest",
-      "huks_ndk_api8:ActsHuksNdkTest",
       "huks_ndk_api20:ActsHuksApi20NdkTest",
       "huks_ndk_api20_1:ActsHuksApi20Ndk1Test",
       "huks_ndk_api22:ActsHuksNdkApi22Test",
+      "ActsHuksNapiTest:ActsHuksNapiHapTest",
+      "huks_ndk_api8:ActsHuksNdkTest",
+
     ]
   }
 }

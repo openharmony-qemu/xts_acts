@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textInputEllipsisModeTest() {
   describe('textInputEllipsisModeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputEllipsisModeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api16.static", "EntryAbility");

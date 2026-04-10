@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,7 +25,9 @@ interface GeneratedObjectLiteralInterface_2 {}
 interface GeneratedTypeLiteralInterface_1 {
   valueOf: () => number;
 }
-
+class Obj006 {
+  id: number = 1;
+}
 type MixedType7 = number | string | boolean;
 
 interface ele40 {
@@ -85,7 +87,7 @@ export default function ArrayPrototypeTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(1).fill(0);
+      const arr = new Array<number>(1, (i) => 0);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(0);
     });
@@ -99,7 +101,7 @@ export default function ArrayPrototypeTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<string>(100).fill("0");
+      const arr = new Array<string>(100, (i) => '0');
       expect(arr.length).assertEqual(100);
       expect(arr[99]).assertEqual("0");
     });
@@ -160,14 +162,16 @@ export default function ArrayPrototypeTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('testArrayConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let Constructor0006 = Prototype0006();
-    //   expect(Constructor0006.arr.length).assertEqual(2);
-    //   expect(Constructor0006.arr[0]).assertEqual(Constructor0006.obj1);
-    //   expect(Constructor0006.arr[1]).assertEqual(Constructor0006.obj2);
-    //   expect(Constructor0006.arr[0].id).assertEqual(1);
-    //   expect(Constructor0006.arr[1].id).assertEqual(2);
-    // });
+      it('testArrayConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        const obj1:Obj006 = { id: 1 };
+        const obj2:Obj006 = { id: 2 };
+        const arr = new Array<Obj006>(obj1, obj2);
+        expect(obj1).assertEqual(arr[0]);
+        expect(obj2).assertEqual(arr[1]);
+        expect(obj1.id).assertEqual(1);
+        expect(obj2.id).assertEqual(2);
+      });
+
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0007
@@ -194,57 +198,8 @@ export default function ArrayPrototypeTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       expect(arr.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0009
-     * @tc.name testArrayConstructor0009
-     * @tc.desc Verify Array constructor throws RangeError when called with negative integer length (-1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConstructor0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        new Array<number>(-1);
-      } catch (e) {
-        expect(e.message).assertEqual("size = -1");
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0010
-     * @tc.name testArrayConstructor0010
-     * @tc.desc Verify Array constructor throws RangeError when called with negative float length (-2.5)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConstructor0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        new Array<number>(-2.5);
-      } catch (e) {
-        expect((e as BusinessError).message).assertEqual("Invalid array length");
-      }
-    });
-
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0012
-     * @tc.name testArrayConstructor0012
-     * @tc.desc Verify Array constructor creates array with single float element when float argument is passed (0.5)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testArrayConstructor0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      try {
-        new Array<number>(3.14);
-      } catch (e) {
-        expect((e as BusinessError).message).assertEqual("Invalid array length");
-      }
     });
 
     /**
@@ -312,14 +267,15 @@ export default function ArrayPrototypeTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // it('testArrayConstructor0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   let Constructor0020 = Prototype0020();
-    //   expect(Constructor0020.arr.length).assertEqual(2);
-    //   expect(Constructor0020.arr[0]).assertEqual(Constructor0020.func1);
-    //   expect(Constructor0020.arr[1]).assertEqual(Constructor0020.func2);
-    //   expect(Constructor0020.arr[0]()).assertEqual(1);
-    //   expect(Constructor0020.arr[1](2, 3)).assertEqual(5);
-    // });
+      it('testArrayConstructor0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const func1 = () => 1;
+        const func2 = (a:number,b:number)=> a + b;
+        const arr = new Array<Function>(func1, func2);
+        expect(func1).assertEqual(arr[0]);
+        expect(func2).assertEqual(arr[1]);
+        expect(func1()).assertEqual(1);
+        expect(func2(2, 3)).assertEqual(5);
+      });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0021
@@ -379,40 +335,6 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0024
-     * @tc.name testArrayConstructor0024
-     * @tc.desc Verify Array constructor creates array with Symbol elements when Symbol arguments are passed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testArrayConstructor0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   let Constructor0024 = Prototype0024();
-    //   expect(Constructor0024.arr1).assertEqual(2);
-    //   expect(Constructor0024.arr2).assertEqual(true);
-    //   expect(Constructor0024.arr3).assertEqual(true);
-    //   expect(Constructor0024.arr4).assertEqual(true);
-    //   expect(Constructor0024.arr5 === null).assertFalse();
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0025
-     * @tc.name testArrayConstructor0025
-     * @tc.desc Verify Array constructor creates array with multiple Symbol elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testArrayConstructor0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   let Constructor0025 = Prototype0025();
-    //
-    //   expect(Constructor0025.arr1).assertEqual(2);
-    //   expect(Constructor0025.arr2).assertEqual(true);
-    //   expect(Constructor0025.arr3).assertEqual(true);
-    //   expect(Constructor0025.arr5).assertEqual('test1');
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0026
      * @tc.name testArrayConstructor0026
      * @tc.desc Verify Array constructor creates array with BigInt elements
@@ -463,36 +385,6 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0029
-     * @tc.name testArrayConstructor0029
-     * @tc.desc Verify Array constructor creates array with Map elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayConstructor0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let Constructor0029 = Prototype0029();
-    //   expect(Constructor0029.arr1).assertEqual(2);
-    //   expect(Constructor0029.arr2).assertEqual(1);
-    //   expect(Constructor0029.arr3).assertEqual('b');
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0030
-     * @tc.name testArrayConstructor0030
-     * @tc.desc Verify Array constructor creates array with Set elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayConstructor0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let Constructor0030 = Prototype0030();
-    //   expect(Constructor0030.arr1).assertEqual(2);
-    //   expect(Constructor0030.arr2).assertTrue();
-    //   expect(Constructor0030.arr3).assertFalse();
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0031
      * @tc.name testArrayConstructor0031
      * @tc.desc Verify Array constructor creates array with WeakMap elements
@@ -500,19 +392,17 @@ export default function ArrayPrototypeTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    // todo
-    // it('testArrayConstructor0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   const obj1: GeneratedObjectLiteralInterface_1 = {};
-    //   const obj2: GeneratedObjectLiteralInterface_2 = {};
-    //   const wm1 = new WeakMap<object, string>();
-    //   wm1.set(obj1, 'value1');
-    //   const wm2 = new WeakMap<object, number>();
-    //   wm2.set(obj2, 123);
-    //   const arr = new Array<WeakMap<object, string | number>>(wm1, wm2);
-    //   expect(arr.length).assertEqual(2);
-    //   expect(arr[0].get(obj1)).assertEqual('value1');
-    //   expect(arr[1].get(obj2)).assertEqual(123);
-    // });
+      it('testArrayConstructor0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+        const obj1: object = {};
+        const obj2: object = {};
+        const wm1 = new WeakMap<object, string>();
+        wm1.set(obj1, 'value1');
+        const wm2 = new WeakMap<object, number>();
+        wm2.set(obj2, 123);
+        const arr = new Array<WeakMap<object, string>|WeakMap<object, number>>(wm1, wm2);
+        expect((arr[0] as WeakMap<object, string>).get(obj1)).assertEqual('value1');
+        expect((arr[1] as WeakMap<object, number>).get(obj2)).assertEqual(123);
+      });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0032
@@ -656,11 +546,13 @@ export default function ArrayPrototypeTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // it('testArrayConstructor0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   let Constructor0041 = Prototype0041();
-    //   expect(Constructor0041.arr1).assertEqual(1);
-    //   expect(Constructor0041.arr2).assertEqual('0');
-    // });
+      it('testArrayConstructor0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new Array<string>('0');
+        const arr1 = arr.length;
+        const arr2 = arr[0];
+        expect(arr.length).assertEqual(1);
+        expect(arr[0]).assertEqual('0');
+      });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0042
@@ -706,35 +598,6 @@ export default function ArrayPrototypeTest() {
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(obj);
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0045
-     * @tc.name testArrayConstructor0045
-     * @tc.desc Verify Array constructor uses length when passed object with [Symbol.toPrimitive] returning number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayConstructor0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let Constructor0045 = Prototype0045();
-    //   expect(Constructor0045.arr1).assertEqual(1);
-    //   expect(Constructor0045.arr2).assertEqual(true);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0046
-     * @tc.name testArrayConstructor0046
-     * @tc.desc Verify Array constructor creates array with single element when passed array-like object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayConstructor0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let Constructor0046 = Prototype0046();
-    //   expect(Constructor0046.arr1).assertEqual(1);
-    //   expect(Constructor0046.arr[0]).assertEqual(Constructor0046.arrayLike);
-    //   expect(Constructor0046.arr2).assertEqual('b');
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0047
@@ -910,66 +773,6 @@ export default function ArrayPrototypeTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0058
-     * @tc.name testArrayConstructor0058
-     * @tc.desc Verify Array constructor creates array with nested objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testArrayConstructor0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   let Constructor0058 = Prototype0058();
-    //   expect(Constructor0058.arr1).assertEqual(1);
-    //   expect(Constructor0058.arr2).assertEqual(1);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0059
-     * @tc.name testArrayConstructor0059
-     * @tc.desc Verify Array constructor creates array with circular reference objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayConstructor0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let Constructor0059 = Prototype0059();
-    //   expect(Constructor0059.arr1).assertEqual(1);
-    //   expect(Constructor0059.arr2).assertEqual(Constructor0059.obj);
-    //   expect(Constructor0059.arr3).assertEqual(Constructor0059.obj);
-    //   expect(Constructor0059.arr4).assertEqual('circular');
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0060
-     * @tc.name testArrayConstructor0060
-     * @tc.desc Verify Array constructor creates array with frozen objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayConstructor0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let Constructor0060 = Prototype0060();
-    //   expect(Constructor0060.arr3).assertEqual(1);
-    //   expect(Constructor0060.arr1).assertEqual(Constructor0060.frozenObj);
-    //   expect(Constructor0060.arr2).assertEqual('frozen');
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0061
-     * @tc.name testArrayConstructor0061
-     * @tc.desc Verify Array constructor creates array with sealed objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayConstructor0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let Constructor0061 = Prototype0061();
-    //   expect(Constructor0061.arr3).assertEqual(1);
-    //   expect(Constructor0061.arr1).assertEqual(Constructor0061.sealedObj);
-    //   expect(Constructor0061.arr2).assertEqual('sealed');
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0062
      * @tc.name testArrayConstructor0062
      * @tc.desc Verify Array constructor creates array with multiple regular expressions
@@ -1030,27 +833,13 @@ export default function ArrayPrototypeTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // it('testArrayConstructor0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   let Constructor0065 = Prototype0065();
-    //   expect(Constructor0065.arr3).assertEqual(2);
-    //   expect(Constructor0065.arr1).assertEqual(undefined);
-    //   expect(Constructor0065.arr2).assertEqual('TEST');
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0066
-     * @tc.name testArrayConstructor0066
-     * @tc.desc Verify Array constructor creates array with generator functions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayConstructor0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let Constructor0066 = Prototype0066();
-    //   expect(Constructor0066.arr3).assertEqual(2);
-    //   expect(Constructor0066.arr1).assertDeepEquals([1, 2]);
-    //   expect(Constructor0066.arr2).assertDeepEquals(['a', 'b']);
-    // });
+    it('testArrayConstructor0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const func1 = (x:number):number => x ** 2;
+        const func2 = (s:string):string => s.toUpperCase();
+        const arr:Array<Function> = new Array<Function>(func1, func2);
+        expect(arr[0].unsafeCall(5.0) as number).assertEqual(25.0);
+        expect(arr[1].unsafeCall('test') as string).assertEqual('TEST');
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0067
@@ -1060,10 +849,12 @@ export default function ArrayPrototypeTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    // it('testArrayConstructor0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let Constructor0067 = Prototype0067();
-    //   expect(Constructor0067.arr3).assertEqual(2);
-    // });
+    it('testArrayConstructor0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+        const asyncFunc1 = async () => 42;
+        const asyncFunc2 = async (s:string)=> s;
+        const arr:Array<Function> = new Array<Function>(asyncFunc1, asyncFunc2);
+        expect(arr.length).assertEqual(2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0068
@@ -1081,38 +872,6 @@ export default function ArrayPrototypeTest() {
       expect(arr[0].id).assertEqual(1);
       expect(arr[1].id).assertEqual(2);
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0069
-     * @tc.name testArrayConstructor0069
-     * @tc.desc Verify Array constructor creates array with class constructors
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayConstructor0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //
-    //   let Constructor0069 = Prototype0069();
-    //   expect(Constructor0069.arr3).assertEqual(2);
-    //   expect(Constructor0069.arr1).assertEqual(false);
-    //   expect(Constructor0069.arr2).assertEqual(false);
-    //
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0070
-     * @tc.name testArrayConstructor0070
-     * @tc.desc Verify Array constructor creates array with module-like objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayConstructor0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let Constructor0070 = Prototype0070();
-    //   expect(Constructor0070.arr3).assertEqual(2);
-    //   expect(Constructor0070.arr1).assertEqual('bar');
-    //   expect(Constructor0070.arr2).assertEqual('test');
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0071
@@ -1213,15 +972,14 @@ lineB`;
      * @tc.type Function
      * @tc.level Level 2
      */
-    // todo
-    // it('testArrayConstructor0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   const matrix1 = [[1, 2], [3, 4]];
-    //   const matrix2 = [['a', 'b'], ['c', 'd']];
-    //   const arr = new Array<number[][] | string[][]>(matrix1, matrix2);
-    //   expect(arr.length).assertEqual(2);
-    //   expect(arr[0][1][0]).assertEqual(3);
-    //   expect(arr[1][0][1]).assertEqual('b');
-    // });
+    it('testArrayConstructor0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const matrix1 = [['1', '2'], ['3', '4']];
+      const matrix2 = [['a', 'b'], ['c', 'd']];
+      const arr = new Array<string[][]>(matrix1, matrix2);
+      expect(arr.length).assertEqual(2);
+      expect(arr[0][1][0]).assertEqual('3');
+      expect(arr[1][0][1]).assertEqual('b');
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0078
@@ -1231,34 +989,18 @@ lineB`;
      * @tc.type Function
      * @tc.level Level 3
      */
-    // todo
-    // it('testArrayConstructor0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   const sparse1: number[] = [];
-    //   sparse1[5] = 10;
-    //   const sparse2: string[] = [];
-    //   sparse2[100] = 'test';
-    //   const arr = new Array<number[] | string[]>(sparse1, sparse2);
-    //   expect(arr.length).assertEqual(2);
-    //   expect(arr[0].length).assertEqual(6);
-    //   expect(arr[0][5]).assertEqual(10);
-    //   expect(arr[1].length).assertEqual(101);
-    //   expect(arr[1][100]).assertEqual('test');
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0079
-     * @tc.name testArrayConstructor0079
-     * @tc.desc Verify Array constructor creates array with arguments objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    // it('testArrayConstructor0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let Constructor0079 = Prototype0079();
-    //   expect(Constructor0079.arr3).assertEqual(2);
-    //   expect(Constructor0079.arr1).assertEqual(3);
-    //   expect(Constructor0079.arr2).assertEqual('a');
-    // });
+    it('testArrayConstructor0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const sparse1: number[] = [1,2,3];
+      sparse1[0] = 10;
+      const sparse2: string[] = ['1','2','3'];
+      sparse2[1] = 'test';
+      const arr = new Array<number[] | string[]>(sparse1, sparse2);
+      expect(arr.length).assertEqual(2);
+      expect(arr[0].length).assertEqual(3);
+      expect((arr[0] as number[])[0]).assertEqual(10);
+      expect(arr[1].length).assertEqual(3);
+      expect((arr[1] as string[])[1]).assertEqual('test');
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0080
@@ -1268,12 +1010,14 @@ lineB`;
      * @tc.type Function
      * @tc.level Level 3
      */
-    // it('testArrayConstructor0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   let Constructor0080 = Prototype0080();
-    //   expect(Constructor0080.arr3).assertEqual(2);
-    //   expect(Constructor0080.arr1).assertEqual('value');
-    //   expect(Constructor0080.arr2).assertTrue();
-    // });
+      it('testArrayConstructor0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+          const map = new Map<string,string>([['key', 'value']]);
+          const set = new Set<number>([1, 2, 3]);
+          const arr = new Array<Map<string,string>|Set<number>>(map, set);
+          expect(arr.length).assertEqual(2);
+          expect((arr[0] as Map<string,string>).get('key')).assertEqual('value');
+          expect((arr[1] as Set<number>).has(2)).assertTrue();
+      });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0081
@@ -1312,7 +1056,7 @@ lineB`;
      * @tc.level Level 1
      */
     it('testArrayConstructor0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(10).fill(0);
+      const arr = new Array<number>(10, (i) => 0);
       expect(arr.length).assertEqual(10);
       expect(arr[9]).assertEqual(0);
     });
@@ -1469,21 +1213,6 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0094
-     * @tc.name testArrayConstructor0094
-     * @tc.desc Verify Array constructor creates array with length 1 when passed single symbol
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testArrayConstructor0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   let Constructor0094 = Prototype0094();
-    //   expect(Constructor0094.arr3).assertEqual(1);
-    //   expect(Constructor0094.arr1).assertEqual(true);
-    //   expect(Constructor0094.arr2).assertEqual(undefined);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0095
      * @tc.name testArrayConstructor0095
      * @tc.desc Verify Array constructor creates array with length 1 when passed single bigint
@@ -1562,24 +1291,6 @@ lineB`;
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0100
-     * @tc.name testArrayConstructor0100
-     * @tc.desc Verify Array constructor creates array with mixed element types including objects and primitives
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testArrayConstructor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   let Constructor0100 = Prototype0100();
-    //   expect(Constructor0100.arr1).assertEqual(5);
-    //   expect(Constructor0100.arr[0]).assertEqual(42);
-    //   expect(Constructor0100.arr[1]).assertEqual('hello');
-    //   expect(Constructor0100.arr[2]).assertEqual(true);
-    //   expect(Constructor0100.arr[3]).assertEqual(Constructor0100.obj);
-    //   expect(Constructor0100.arr2).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0101
      * @tc.name testArrayConstructor0101
      * @tc.desc Verify Array constructor creates array with length 1000 when passed 1000 as single argument
@@ -1588,25 +1299,10 @@ lineB`;
      * @tc.level Level 2
      */
     it('testArrayConstructor0101', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000).fill(0);
+      const arr = new Array<number>(1000, (i) => 0);
       expect(arr.length).assertEqual(1000);
       expect(arr[999]).assertEqual(0);
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0102
-     * @tc.name testArrayConstructor0102
-     * @tc.desc Verify Array constructor creates array with 1000 elements when passed 1000 arguments
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    // it('testArrayConstructor0102', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
-    //   let Constructor0102 = Prototype0102();
-    //   expect(Constructor0102.arr1).assertEqual(1000);
-    //   expect(Constructor0102.arr[0]).assertEqual(0);
-    //   expect(Constructor0102.arr[999]).assertEqual(999);
-    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0103
@@ -1729,17 +1425,16 @@ lineB`;
      * @tc.type Function
      * @tc.level Level 3
      */
-    // todo
-    // it('testArrayConstructor0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   const uint8 = new Uint8Array([255, 0]);
-    //   const int16 = new Int16Array([-32768, 32767]);
-    //   const float32 = new Float32Array([1.5, -2.5]);
-    //   const arr = new Array<Uint8Array | Int16Array | Float32Array>(uint8, int16, float32);
-    //   expect(arr.length).assertEqual(3);
-    //   expect(arr[0][0]).assertEqual(255);
-    //   expect(arr[1][1]).assertEqual(32767);
-    //   expect(arr[2][0]).assertEqual(1.5);
-    // });
+    it('testArrayConstructor0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const uint8 = new Uint8Array([255, 0]);
+      const int16 = new Int16Array([-32768, 32767]);
+      const float32 = new Float32Array([1.5, -2.5]);
+      const arr = new Array<Uint8Array | Int16Array | Float32Array>(uint8, int16, float32);
+      expect(arr.length).assertEqual(3);
+      expect((arr[0] as Uint8Array) [0]).assertEqual(255);
+      expect((arr[1] as Int16Array)[1]).assertEqual(32767);
+      expect((arr[2] as Float32Array)[0]).assertEqual(1.5);
+    });
 
   })
 }

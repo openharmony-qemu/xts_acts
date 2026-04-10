@@ -60,7 +60,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ToastShowMode() {
   describe('ToastShowMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ToastShowMode beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

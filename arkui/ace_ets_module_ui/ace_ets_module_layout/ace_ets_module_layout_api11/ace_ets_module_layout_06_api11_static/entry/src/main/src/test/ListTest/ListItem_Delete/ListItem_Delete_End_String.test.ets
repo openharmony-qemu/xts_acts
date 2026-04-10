@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ListItem_Delete_End_String() {
   describe('ListItem_Delete_End_String', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_Delete_End_String beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -100,7 +100,7 @@ it('testListItem_static', Level.LEVEL0, async (done: () => void): Promise<void> 
       let height = bottom -top;
       let width = right - left;
       console.info("SUB_ACE_ListItem_Delete_End_String_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
@@ -161,7 +161,7 @@ it('SUB_ACE_ListItem_Delete_End_String_static_0200', Level.LEVEL0, async (done: 
       let height = bottom -top;
       let width = right - left;
       console.info("SUB_ACE_ListItem_Delete_End_String_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      driver.swipe(
+      await driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),

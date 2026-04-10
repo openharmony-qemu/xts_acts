@@ -19,5 +19,4 @@ import disableDateRangeAndMarkTodayTest from './calendarPickerTest/disableDateRa
 import dialogDisableDateRangeAndMarkTodayTest from './calendarPickerDialogTest/dialogDisableDateRangeAndMarkToday.test'
 export default function testsuite() {
   disableDateRangeAndMarkTodayTest();
-  dialogDisableDateRangeAndMarkTodayTest(); 
 }

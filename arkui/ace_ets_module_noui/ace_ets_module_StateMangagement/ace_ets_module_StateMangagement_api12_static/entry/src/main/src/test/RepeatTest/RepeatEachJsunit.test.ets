@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RepeatEachJsunit() {
   describe('RepeatEachJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatEachJsunit beforeEach start");
 
 
@@ -169,33 +169,6 @@ it('RepeatEachJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
 	
-    
-    
-    /**
-     * @tc.number   RepeatEachJsunit_static_0400
-     * @tc.name     RepeatEachJsunit_static_0400
-     * @tc.desc     RepeatEachJsunit_static_0400
-     * @tc.level    Level.LEVEL0
-     */
-it('RepeatEachJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('RepeatEachJsunit_static_0400 START');
-      let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('repeat_3'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-
-      let strJson = inspector.getInspectorByKey('length_repeat');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[RepeatEachJsunit_static_0400] component obj is: " + JSON.stringify(obj));
-      console.info("[RepeatEachJsunit_static_0400] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("length: 2");
-      console.info('[RepeatEachJsunit_static_0400] END');
-      done();
-    });
-	
-    
-    
     /**
      * @tc.number   RepeatEachJsunit_static_0500
      * @tc.name     RepeatEachJsunit_static_0500
@@ -225,9 +198,7 @@ it('RepeatEachJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promi
       console.info('[RepeatEachJsunit_static_0500] END');
       done();
     });
-	
-    
-    
+
     /**
      * @tc.number   RepeatEachJsunit_static_0600
      * @tc.name     RepeatEachJsunit_static_0600

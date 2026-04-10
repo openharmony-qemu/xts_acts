@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -142,7 +142,7 @@ async function verifyX509CertCallback(certType: string, flag: string): Promise<s
     let res: string = await verifyX509Cert(gInstance, pubKey);
 
     return res;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -152,7 +152,7 @@ async function checkValidityX509CertCallback(certType: string, date: string): Pr
   try {
     let instance: cert.X509Cert = await createX509CertInstanceCallback(certType);
     instance.checkValidityWithDate(date);
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -254,7 +254,7 @@ async function getX509CertInfoCallback(certType: string, processType: string): P
       default:
         console.log("Invalid parameter !");
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -287,7 +287,7 @@ async function checkGetPublicKeyX509CertCallback(certType: string): Promise<void
     let publicKey: cryptoFramework.PubKey = gInstance.getPublicKey();
     console.warn("[callback] publicKey success, publicKey is:" + publicKey);
     expect(publicKey != null).assertTrue();
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -333,7 +333,7 @@ async function checkIsRevokedX509CRLCallback(crlInstance: cert.X509CRL, flag: st
     let status: boolean = crlInstance.isRevoked(certInstance);
 
     return status;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -496,7 +496,7 @@ async function getX509CRLInfoCallback(certType: string, processType: string): Pr
       default:
         console.log("Invalid parameter !");
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -512,7 +512,7 @@ async function checkGetRevokedCertWithCertX509CRLCallback(crlInstance: cert.X509
     console.warn("[num] getRevokedCertWithCert num is:" + num);
 
     return x509CrlEntry;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -692,7 +692,7 @@ async function checkGetX509CRLExtensionsCallback(extensions: string, hasExtensio
     let extension: cert.DataBlob = instance.getExtensions();
 
     return extension;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -753,7 +753,7 @@ async function checkGetX509CRLEntryExtensionsCallback(extensions: string, hasExt
       return {data:new Uint8Array()} as cert.DataBlob;
     }
 
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -772,7 +772,7 @@ async function checkHasX509CRLEntryExtensionsCallback(extensions: string, hasExt
       return false;
     }
 
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -832,7 +832,7 @@ async function checkHasUnsupportedX509CrlCallback(flag: string): Promise<boolean
   try {
     let certExt: cert.CertExtension = await createX509CertExtensionNormalCallback(flag);
     let hasUnsupported: boolean = certExt.hasUnsupportedCriticalExtension();
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }

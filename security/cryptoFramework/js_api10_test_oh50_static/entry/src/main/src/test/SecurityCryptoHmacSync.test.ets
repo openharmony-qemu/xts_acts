@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,7 +53,59 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
           let macLen: number = hmacSyncUtils.getMacSize(algName);
           expect(macLen).assertEqual(macRes.macObj.getMacLength());
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        console.error(`HMAC “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_HMACSync_Func_0101
+     * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0101
+     * @tc.desc   algorithm is HMAC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_HMACSync_Func_0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let keyAlgName: string = "AES256";
+        let messageLen: int = 128;
+        let message: cryptoFramework.DataBlob = await hmacSyncUtils.createData(messageLen);
+        let key: cryptoFramework.SymKey = await hmacSyncUtils.genSymKey(keyAlgName);
+        for(let algName of hmacSyncUtils.H_MAC_SPEC) {
+          let macRes: hmacSyncUtils.macInfo = await hmacSyncUtils.doHmacPromise(algName, message, key);
+          let macLen: number = hmacSyncUtils.getMacSize(algName);
+          expect(macLen).assertEqual(macRes.macObj.getMacLength());
+        }
+      } catch (error) {
+        console.error(`HMAC “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_HMACSync_Func_0102
+     * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0102
+     * @tc.desc   algorithm is HMAC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_HMACSync_Func_0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let keyAlgName: string = "AES256";
+        let messageLen: int = 128;
+        let message: cryptoFramework.DataBlob = await hmacSyncUtils.createData(messageLen);
+        let key: cryptoFramework.SymKey = await hmacSyncUtils.genSymKey(keyAlgName);
+        for(let algName of hmacSyncUtils.H_MAC_SPEC) {
+          let macRes: hmacSyncUtils.macInfo = await hmacSyncUtils.doHmacCallback(algName, message, key);
+          let macLen: number = hmacSyncUtils.getMacSize(algName);
+          expect(macLen).assertEqual(macRes.macObj.getMacLength());
+        }
+      } catch (error) {
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -79,7 +131,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
           let macLen: number = hmacSyncUtils.getMacSize(algName);
           expect(macLen).assertEqual(macRes.macObj.getMacLength());
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -101,9 +153,9 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
     //     let mac: cryptoFramework.Mac = cryptoFramework.createMac(algName);
     //     mac.initSync(key);
     //     expect(null).assertTrue()
-    //   } catch (error: BusinessError) {
+    //   } catch (error) {
     //     console.error(`HMAC “${error}“, error code: ${error.code}`);
-    //     expect(error.code).assertEqual(401);
+    //     expect((error as BusinessError).code).assertEqual(401);
     //   }
     //   done();
     // }); // arkts1.2 let undefined
@@ -133,7 +185,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
           expect(macLen).assertEqual(macRes.macObj.getMacLength());
         }
         expect(data.length).assertEqual(key.getEncoded().data.length);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -162,7 +214,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
           expect(macLen).assertEqual(macRes.macObj.getMacLength());
           expect(keyLen).assertEqual(key.getEncoded().data.length);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -191,7 +243,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
           expect(macLen).assertEqual(macRes.macObj.getMacLength());
           expect(keyLen).assertEqual(key.getEncoded().data.length);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -215,7 +267,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
           let macRes: hmacSyncUtils.macInfo = hmacSyncUtils.doHmacNoMessageSync(algName, key);
           expect(macLen).assertEqual(macRes.macObj.getMacLength());
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -243,12 +295,31 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
         let mac: cryptoFramework.Mac = cryptoFramework.createMac(algName);
         mac.initSync(key);
         mac.updateSync(message);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`HMAC “${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(401); // 1.1:30001
+        expect((error as BusinessError).code).assertEqual(401); // 1.1:30001
       }
       done();
     });
 
+    /**
+    * @tc.name   SUB_Security_CryptoFramework_HMACSync_Func_0900
+    * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0900
+    * @tc.desc   algorithm is HMAC
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it("SUB_Security_CryptoFramework_HMACSync_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "SHA3-224";
+        cryptoFramework.createMac(algName);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`HMAC “${error}“, error code: ${(error as BusinessError).code}`);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+      }
+      done();
     });
+  });
 }

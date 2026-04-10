@@ -47,7 +47,7 @@ export default function webViewOnViewportFitChange() {
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.viewportprocessingtest.static')
       await Utils.msSleep(2000)
-      console.log('[beforeAll end,%s', 'Succeed!')
+      console.log('beforeAll end,%s', 'Succeed!')
 
     })
 
@@ -57,9 +57,9 @@ export default function webViewOnViewportFitChange() {
      * @tc.desc   test OnViewportFitChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWebViewOnViewportFitChange_static_001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testWebViewOnViewportFitChange_static_001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitWebViewOnViewportFitChange', 10);
       Utils.registerEvent('testWebViewOnViewportFitChange', true, 1340, done);
       await Utils.msSleep(1000)

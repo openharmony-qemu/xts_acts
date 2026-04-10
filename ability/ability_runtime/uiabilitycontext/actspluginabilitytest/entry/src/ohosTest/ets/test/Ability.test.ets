@@ -138,5 +138,245 @@ export default function abilityTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_1300
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_1300
+     * @tc.desc   Test createPluginModuleContext with first parameter (context) as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_PluginAbility_1300', Level.LEVEL1, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_1300';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+
+      try {
+        await application.createPluginModuleContext(null, 'testBundle', 'testModule');
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: should throw error');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: ' + JSON.stringify(err));
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_1400
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_1400
+     * @tc.desc   Test createPluginModuleContext with first parameter (context) as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_PluginAbility_1400', Level.LEVEL1, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_1400';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+
+      try {
+        await application.createPluginModuleContext(undefined, 'testBundle', 'testModule');
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: should throw error');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: ' + JSON.stringify(err));
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_1500
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_1500
+     * @tc.desc   Test createPluginModuleContext with second parameter (bundleName) as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_PluginAbility_1500', Level.LEVEL1, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_1500';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+
+      try {
+        await application.createPluginModuleContext(testContext, null, 'testModule');
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: should throw error');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: ' + JSON.stringify(err));
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_1600
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_1600
+     * @tc.desc   Test createPluginModuleContext with second parameter (bundleName) as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_PluginAbility_1600', Level.LEVEL1, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_1600';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+
+      try {
+        await application.createPluginModuleContext(testContext, undefined, 'testModule');
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: should throw error');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: ' + JSON.stringify(err));
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_1700
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_1700
+     * @tc.desc   Test createPluginModuleContext with third parameter (moduleName) as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_PluginAbility_1700', Level.LEVEL1, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_1700';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+
+      try {
+        await application.createPluginModuleContext(testContext, 'testBundle', null);
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: should throw error');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: ' + JSON.stringify(err));
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_1800
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_1800
+     * @tc.desc   Test createPluginModuleContext with third parameter (moduleName) as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_PluginAbility_1800', Level.LEVEL1, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_1800';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+
+      try {
+        await application.createPluginModuleContext(testContext, 'testBundle', undefined);
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: should throw error');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: ' + JSON.stringify(err));
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_2000
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_2000
+     * @tc.desc   Test createPluginModuleContext with second and third parameters as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_PluginAbility_2000', Level.LEVEL1, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_2000';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+
+      try {
+        await application.createPluginModuleContext(testContext, null, null);
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: should throw error');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: ' + JSON.stringify(err));
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_2500
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_2500
+     * @tc.desc   Test createPluginModuleContext with second and third parameters as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_PluginAbility_2500', Level.LEVEL1, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_2500';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+
+      try {
+        await application.createPluginModuleContext(testContext, undefined, undefined);
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: should throw error');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: ' + JSON.stringify(err));
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_2600
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_2600
+     * @tc.desc   Test createPluginModuleContext with bundleName as null and moduleName as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_PluginAbility_2600', Level.LEVEL1, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_2600';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+
+      try {
+        await application.createPluginModuleContext(testContext, null, undefined);
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: should throw error');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: ' + JSON.stringify(err));
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PluginAbility_2700
+     * @tc.number SUB_Ability_AbilityRuntime_PluginAbility_2700
+     * @tc.desc   Test createPluginModuleContext with bundleName as undefined and moduleName as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_PluginAbility_2700', Level.LEVEL1, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_PluginAbility_2700';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+
+      try {
+        await application.createPluginModuleContext(testContext, undefined, null);
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: should throw error');
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.info(0x0000, LOG_TAG, 'createContextFailed: ' + JSON.stringify(err));
+        expect(err?.code).assertEqual(401);
+        done();
+      }
+    })
   })
 }

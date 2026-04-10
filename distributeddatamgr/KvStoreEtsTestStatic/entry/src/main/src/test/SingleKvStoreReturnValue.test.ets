@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ let kvStore: factory.SingleKVStore | null = null;
 let resultSet: factory.KVStoreResultSet | null = null;
 
 let entries: factory.Entry[] = [];
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 function sleep(count: int): Promise<int> {
@@ -77,16 +77,16 @@ export default function SingleKvStoreReturnValue() {
         // });
         await Utils.msSleep(8000)
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
+        hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============beforeAll context e: " + e);
         hilog.info(domain, tag, '%{public}s', '================ beforeAll context end==========');
       }
       const config: factory.KVManagerConfig = {
         bundleName: TEST_BUNDLE_NAME,
-        context: context
+        context: context!
       };
-      console.info(TAG + 'beforeAll context.databaseDir=' + context.databaseDir);
+      console.info(TAG + 'beforeAll context.databaseDir=' + context!.databaseDir);
       kvManager = factory.createKVManager(config);
       console.info(TAG + 'beforeAll end, kvManager=' + kvManager);
       for (let i = 0; i < 10; i++) {
@@ -115,7 +115,7 @@ export default function SingleKvStoreReturnValue() {
         kvStore = store;
         console.info(TAG + 'beforeEach getKVStore success');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
         done();
       }
@@ -191,7 +191,7 @@ export default function SingleKvStoreReturnValue() {
               });
 
           });
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -221,7 +221,7 @@ export default function SingleKvStoreReturnValue() {
               done();
             });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -268,7 +268,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -300,7 +300,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -346,7 +346,7 @@ export default function SingleKvStoreReturnValue() {
               });
 
           });
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -378,7 +378,7 @@ export default function SingleKvStoreReturnValue() {
               done();
             });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -428,7 +428,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -461,7 +461,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -492,7 +492,7 @@ export default function SingleKvStoreReturnValue() {
                 done();
               });
           });
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -523,7 +523,7 @@ export default function SingleKvStoreReturnValue() {
                 done();
               });
           });
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -557,7 +557,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -590,7 +590,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -623,7 +623,7 @@ export default function SingleKvStoreReturnValue() {
             });
 
           });
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -656,7 +656,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -693,7 +693,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -727,7 +727,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -766,7 +766,7 @@ export default function SingleKvStoreReturnValue() {
                 done();
               });
           });
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -802,7 +802,7 @@ export default function SingleKvStoreReturnValue() {
               console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_2001 end---------  ');
               done();
             });
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -839,7 +839,7 @@ export default function SingleKvStoreReturnValue() {
           });
 
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -873,7 +873,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -913,7 +913,7 @@ export default function SingleKvStoreReturnValue() {
             });
 
           });
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -950,7 +950,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -987,7 +987,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -1023,7 +1023,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -1054,7 +1054,7 @@ export default function SingleKvStoreReturnValue() {
           let store: factory.SingleKVStore | null = null;
           let kvStoreS1: factory.SingleKVStore | null = null;
 
-          await kvManager!.getKVStore(TEST_STORE_S1_ID, optionsS1).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S1_ID, optionsS1).then((store: factory.SingleKVStore) => {
             kvStoreS1 = store;
             console.info(TAG+' getKVStore success');
           }).catch((err: Error) => {
@@ -1081,7 +1081,7 @@ export default function SingleKvStoreReturnValue() {
 
           });
 
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -1114,7 +1114,7 @@ export default function SingleKvStoreReturnValue() {
           let store: factory.SingleKVStore | null = null;
           let kvStoreS2: factory.SingleKVStore | null = null;
 
-          await kvManager!.getKVStore(TEST_STORE_S2_ID, optionsS2).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S2_ID, optionsS2).then((store: factory.SingleKVStore) => {
             kvStoreS2 = store;
             console.info(TAG+' getKVStore success');
           }).catch((err: Error) => {
@@ -1142,7 +1142,7 @@ export default function SingleKvStoreReturnValue() {
             });
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -1173,7 +1173,7 @@ export default function SingleKvStoreReturnValue() {
 
           let store: factory.SingleKVStore | null = null;
           let kvStoreS3: factory.SingleKVStore | null = null;
-          await kvManager!.getKVStore(TEST_STORE_S3_ID, optionsS3).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S3_ID, optionsS3).then((store: factory.SingleKVStore) => {
             kvStoreS3 = store;
             console.info(TAG+' getKVStore success');
           }).catch((err: Error) => {
@@ -1200,7 +1200,7 @@ export default function SingleKvStoreReturnValue() {
             });
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -1231,33 +1231,36 @@ export default function SingleKvStoreReturnValue() {
 
           let store: factory.SingleKVStore | null = null;
           let kvStoreS4: factory.SingleKVStore | null = null;
-          await kvManager!.getKVStore(TEST_STORE_S4_ID, optionsS4).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S4_ID, optionsS4).then((store: factory.SingleKVStore) => {
             kvStoreS4 = store;
             console.info(TAG+' getKVStore success');
           }).catch((err: Error) => {
             console.error(TAG+' getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
           });
           kvStoreS4!.getSecurityLevel((err: BusinessError | null, data: factory.SecurityLevel | undefined) => {
-            console.info(TAG + 'Succeeded getSecurityLevel S4, data.=' + JSON.stringify(data!) + ',err=' + err);
-            expect(data).assertEqual(factory.SecurityLevel.S4);
-
-            await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-              console.info(TAG + '  Succeeded closeKVStore S4');
-              await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-                console.info(TAG + '  Succeeded deleteKVStore S4');
-                console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
-                done();
+            waitForCompletion(async () => {
+              console.info(TAG + 'Succeeded getSecurityLevel S4, data.=' + JSON.stringify(data!) + ',err=' + err);
+              expect(data).assertEqual(factory.SecurityLevel.S4);
+              await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
+                waitForCompletion(async () => {
+                  console.info(TAG + '  Succeeded closeKVStore S4');
+                  await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
+                    console.info(TAG + '  Succeeded deleteKVStore S4');
+                    console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
+                    done();
+                  }).catch((err: Error) => {
+                    console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
+                    done();
+                  });
+                })
               }).catch((err: Error) => {
-                console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
+                console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
                 done();
               });
-            }).catch((err: Error) => {
-              console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
-              done();
-            });
+            })
           });
 
-        } catch (e: BusinessError) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -1289,7 +1292,7 @@ export default function SingleKvStoreReturnValue() {
 
           let store: factory.SingleKVStore | null = null;
           let kvStoreS1: factory.SingleKVStore | null = null;
-          await kvManager!.getKVStore(TEST_STORE_S1_ID, optionsS1).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S1_ID, optionsS1).then((store: factory.SingleKVStore) => {
             kvStoreS1 = store;
             console.info('getKVStore success');
           }).catch((err: Error) => {
@@ -1318,7 +1321,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -1349,7 +1352,7 @@ export default function SingleKvStoreReturnValue() {
 
           let store: factory.SingleKVStore | null = null;
           let kvStoreS2: factory.SingleKVStore | null = null;
-          await kvManager!.getKVStore(TEST_STORE_S2_ID, optionsS2).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S2_ID, optionsS2).then((store: factory.SingleKVStore) => {
             kvStoreS2 = store;
             console.info('getKVStore success');
           }).catch((err: Error) => {
@@ -1378,7 +1381,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -1409,7 +1412,7 @@ export default function SingleKvStoreReturnValue() {
 
           let store: factory.SingleKVStore | null = null;
           let kvStoreS3: factory.SingleKVStore | null = null;
-          await kvManager!.getKVStore(TEST_STORE_S3_ID, optionsS3).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S3_ID, optionsS3).then((store: factory.SingleKVStore) => {
             kvStoreS3 = store;
             console.info('getKVStore success');
           }).catch((err: Error) => {
@@ -1438,7 +1441,7 @@ export default function SingleKvStoreReturnValue() {
             done();
           });
 
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();
@@ -1469,7 +1472,7 @@ export default function SingleKvStoreReturnValue() {
 
           let store: factory.SingleKVStore | null = null;
           let kvStoreS4: factory.SingleKVStore | null = null;
-          await kvManager!.getKVStore(TEST_STORE_S4_ID, optionsS4).then((store: factory.SingleKVStore) => {
+          await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_S4_ID, optionsS4).then((store: factory.SingleKVStore) => {
             kvStoreS4 = store;
             console.info('getKVStore success');
           }).catch((err: Error) => {
@@ -1496,7 +1499,7 @@ export default function SingleKvStoreReturnValue() {
             console.error(`Failed to get SecurityLevel.code is ${err.code},message is ${err.message}`);
             done();
           });
-        } catch (e: Error) {
+        } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
           expect(null).assertFail();
           done();

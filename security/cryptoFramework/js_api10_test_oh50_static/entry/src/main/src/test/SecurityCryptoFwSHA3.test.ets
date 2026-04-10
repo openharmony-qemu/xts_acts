@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
           let mdSize: int = dataRes.data.length;
           expect(md.getMdLength()).assertEqual(mdSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`Sha3 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -67,7 +67,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
             let mdSize: int = dataRes.data.length;
             expect(md.getMdLength()).assertEqual(mdSize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -93,7 +93,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
             let mdSize: int = dataRes.data.length;
             expect(md.getMdLength()).assertEqual(mdSize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -126,7 +126,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
             let ret: boolean = compareDataBlob(dataRes1, dataRes2);
             expect(ret).assertTrue();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -153,7 +153,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
             let mdSize: int = dataRes.data.length;
             expect(md.getMdLength()).assertEqual(mdSize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -180,7 +180,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
             let mdSize: int = dataRes.data.length;
             expect(md.getMdLength()).assertEqual(mdSize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -204,7 +204,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
             let mdSize: int = dataRes.data.length;
             expect(md.getMdLength()).assertEqual(mdSize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -229,7 +229,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
             expect(md.getMdLength()).assertEqual(mdSize);
             console.log("################# md:" + decToHexString(dataRes));
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -253,7 +253,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
             let mdSize: int = dataRes.data.length;
             expect(md.getMdLength()).assertEqual(mdSize);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -277,9 +277,9 @@ export default function SecurityCryptoFwSha3TestUnit() {
             let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
             await doMd(md, emptyData, asyncType.TYPE_IS_SYNC);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 "${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       });
@@ -308,7 +308,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
             }
             console.info(`${algName} 边界长度测试通过`);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -343,7 +343,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
             }
             console.info(`${algName} 二进制模式测试通过`);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -378,7 +378,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
             }
             console.info(`${algName} 重复性验证通过`);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -406,7 +406,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
               expect(md.getMdLength()).assertEqual(mdSize);
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`Sha3 "${error}", error code: ${error.code}`);
           expect(null).assertFail();
         }

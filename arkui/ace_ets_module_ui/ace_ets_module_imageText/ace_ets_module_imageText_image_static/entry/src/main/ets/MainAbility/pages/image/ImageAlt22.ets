@@ -1,6 +1,6 @@
 'use static'
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,10 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Text, Column, Row, Component, Button, ClickEvent, Image, ImageAttribute, AttributeModifier, $r} from '@ohos.arkui.component'
+import { Entry, Text, Column, Row, Component, Button, ClickEvent, Image, ImageAttribute, AttributeModifier, $r,
+  Resource, PixelMap} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
-class MyImageModifier1 implements AttributeModifier<ImageAttribute> {
+import {
+  PixelMapDrawableDescriptor,
+  DrawableDescriptor,
+  LayeredDrawableDescriptor,
+  AnimationOptions,
+  AnimatedDrawableDescriptor
+} from '@ohos.arkui.drawableDescriptor';
+export class MyImageModifier1 implements AttributeModifier<ImageAttribute> {
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.alt({
       placeholder: '/resources/rawfile/apple.jpg',
@@ -24,7 +32,7 @@ class MyImageModifier1 implements AttributeModifier<ImageAttribute> {
     })
   }
 }
-class MyImageModifier2 implements AttributeModifier<ImageAttribute> {
+export class MyImageModifier2 implements AttributeModifier<ImageAttribute> {
   applyNormalAttribute(instance: ImageAttribute): void {
     instance.alt({
       placeholder: undefined,
@@ -37,6 +45,18 @@ class MyImageModifier2 implements AttributeModifier<ImageAttribute> {
 struct ImageAlt22 {
   @State modifier1 :MyImageModifier1 = new MyImageModifier1();
   @State modifier2 :MyImageModifier2 = new MyImageModifier2();
+  private getPixmapFromMedia(resource: Resource): PixelMap {
+    let resManager = this.getUIContext().getHostContext()?.resourceManager;
+    let pixmap: DrawableDescriptor = new DrawableDescriptor();
+    if (resManager) {
+      pixmap = (resManager.getDrawableDescriptor(resource.id)) as DrawableDescriptor;
+    }
+    return pixmap.getPixelMap() as PixelMap;
+  }
+  pixMap: PixelMap | undefined =
+    new PixelMapDrawableDescriptor(this.getPixmapFromMedia($r('app.media.apple'))).getPixelMap();
+  pixMap1: PixelMap | undefined =
+    new PixelMapDrawableDescriptor(this.getPixmapFromMedia($r('app.media.apple'))).getPixelMap();
   build() {
     Column(undefined) {
       Row(){
@@ -68,6 +88,16 @@ struct ImageAlt22 {
           .height(35)
           .attributeModifier(this.modifier2)
           .key('image004')
+      }.width('80%')
+      Row(){
+        Image('common/pages/apple')
+          .width('10%')
+          .height(35)
+          .alt({
+            placeholder: this.pixMap,
+            error: this.pixMap1
+          })
+          .key('image005')
       }.width('80%')
     }.width('100%').height('100%')
   }

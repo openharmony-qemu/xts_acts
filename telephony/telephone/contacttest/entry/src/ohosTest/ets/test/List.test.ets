@@ -28,28 +28,30 @@ import ContactsTest from './Contacts.test';
 import AddContactViaUITest from './AddContactViaUI.test';
 import SaveToExistingContactViaUITest from './SaveToExistingContactViaUI.test';
 import SelectContactsTest from './SelectContacts.test';
+import EmptyParamTest from './EmptyParamTest.test';
+import EmptyParamCardTest from './EmptyParamCardTest.test';
+import HasMatchedCallLogTest from './HasMatchedCallLog.test';
 import { deviceInfo } from '@kit.BasicServicesKit'
 import sim from '@ohos.telephony.sim';
 
 export default function testsuite() {
-  if (sim.getMaxSimCount()!=0){
-    AddContactTest();
-    if (deviceInfo.deviceType !== 'wearable') {
-      SelectContactsTest();
-    } 
+  AddContactTest();
+  if (deviceInfo.deviceType !== 'wearable' && deviceInfo.deviceType !== 'default') {
+    SelectContactsTest();
     AddContactViaUITest();
     SaveToExistingContactViaUITest();
-    QueryKeyTest();
-    QueryByEmailTest();
-    QueryByEmailPhoneNumTest();
-    QueryContactTest();
-    UpdateContactTest();
-    QueryGroupsTest();
-    IsMyCardTest();
-    ContactTest();
-    ContactsTest()
-    AddContactsTest();
-  }else{
-    EmptyTest()
-  }
+  } 
+  QueryKeyTest();
+  QueryByEmailTest();
+  QueryByEmailPhoneNumTest();
+  QueryContactTest();
+  UpdateContactTest();
+  QueryGroupsTest();
+  IsMyCardTest();
+  ContactTest();
+  ContactsTest()
+  AddContactsTest();
+  EmptyParamTest();
+  EmptyParamCardTest();
+  HasMatchedCallLogTest();
 }

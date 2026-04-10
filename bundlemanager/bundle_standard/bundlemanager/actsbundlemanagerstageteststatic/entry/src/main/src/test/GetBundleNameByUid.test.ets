@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,8 @@ export default function GetBundleNameByUidTest() {
             done();
           }
         })
-      } catch (exception: BusinessError) {
+      } catch (exception) {
+        exception = exception as BusinessError;
         console.error(`Failed to getBundleNameByUidCallBack17700021 catch. Cause code: ${exception.code}, message: ${exception.message}`);
         expect().assertFail();
         done();
@@ -72,7 +73,8 @@ export default function GetBundleNameByUidTest() {
           expect(err.code).assertEqual(17700021);
           done();
         })
-      } catch (exception: BusinessError) {
+      } catch (exception) {
+        exception = exception as BusinessError;
         console.error(`Failed to getBundleNameByUidPromise17700021 catch. Cause code: ${exception.code}, message: ${exception.message}`);
         expect().assertFail();
         done();
@@ -94,7 +96,8 @@ export default function GetBundleNameByUidTest() {
         console.info(TAG + 'getBundleNameByUidSync17700021 successfully: ' + JSON.stringify(data));
         expect().assertFail();
         done();
-      } catch (exception: BusinessError) {
+      } catch (exception) {
+        exception = exception as BusinessError;
         console.error(`Failed to getBundleNameByUidSync17700021 catch. Cause code: ${exception.code}, message: ${exception.message}`);
         expect(exception.code).assertEqual(17700021);
         done();

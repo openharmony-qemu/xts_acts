@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,7 +54,7 @@ let s4: securityLabel.DataLevel = "s4";
         let level = securityLabel.getSecurityLabelSync(fpath);
         expect(level == s0).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_000 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -79,7 +79,7 @@ let s4: securityLabel.DataLevel = "s4";
         let level = securityLabel.getSecurityLabelSync(fpath);
         expect(level == s1).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_001 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -104,7 +104,7 @@ let s4: securityLabel.DataLevel = "s4";
         let level = securityLabel.getSecurityLabelSync(fpath);
         expect(level == s2).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_002 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -129,7 +129,7 @@ let s4: securityLabel.DataLevel = "s4";
         let level = securityLabel.getSecurityLabelSync(fpath);
         expect(level == s3).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_003 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -154,7 +154,7 @@ let s4: securityLabel.DataLevel = "s4";
         let level = securityLabel.getSecurityLabelSync(fpath);
         expect(level == s4).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_004 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -173,9 +173,10 @@ let s4: securityLabel.DataLevel = "s4";
       try {
         securityLabel.setSecurityLabelSync("/data/aaa.txt", s0);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_005 has failed for ' + JSON.stringify(e));
-        expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       }
     });
 
@@ -197,10 +198,11 @@ let s4: securityLabel.DataLevel = "s4";
         securityLabel.setSecurityLabelSync(fpath, s4);
         securityLabel.setSecurityLabelSync(fpath, s3);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_006 has failed for ' + JSON.stringify(e));
-        expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       }
     });
 
@@ -226,7 +228,7 @@ let s4: securityLabel.DataLevel = "s4";
             done();
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_000 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -248,12 +250,14 @@ let s4: securityLabel.DataLevel = "s4";
         let prepareFile = await Utils.prepareFile(fpath, FILE_CONTENT);
         expect(prepareFile).assertTrue();
         securityLabel.setSecurityLabel(fpath, s1, (err: BusinessError<void> | null) => {
+        waitForCompletion(async () => {
           let level = await securityLabel.getSecurityLabel(fpath);
           expect(level == s1).assertTrue();
           fs.unlinkSync(fpath);
           done();
+        })
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_001 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -280,7 +284,7 @@ let s4: securityLabel.DataLevel = "s4";
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_000 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -306,7 +310,7 @@ let s4: securityLabel.DataLevel = "s4";
         expect(level == s3).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_003 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -332,7 +336,7 @@ let s4: securityLabel.DataLevel = "s4";
         expect(level == s4).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_004 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -351,9 +355,10 @@ let s4: securityLabel.DataLevel = "s4";
       try {
         await securityLabel.setSecurityLabel('/data/test.txt', s3);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_006 has failed for ' + JSON.stringify(e));
-        expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -372,11 +377,11 @@ let s4: securityLabel.DataLevel = "s4";
         securityLabel.setSecurityLabel('/data/test.txt', s1, (err: BusinessError<void> | null) => {
           if(err?.code != 0){
             hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_007 has failed for ' + JSON.stringify(err));
-            expect(err?.code == 13900002 && err?.message == 'No such file or directory').assertTrue();
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_007 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -401,17 +406,153 @@ let s4: securityLabel.DataLevel = "s4";
         securityLabel.setSecurityLabel(fpath, s3, (err: BusinessError<void> | null) => {
           if(err?.code != 0){
             hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_008 has failed for ' + JSON.stringify(err));
-            expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_008 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
     });
 
+    /**
+     * @tc.name   securitylabel_test_set_security_label_async_static_009
+     * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0900
+     * @tc.desc   Test setSecurityLabel() interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('securitylabel_test_set_security_label_async_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_009 start');
+      try {
+        await securityLabel.setSecurityLabel("", s0);
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_static_009 catch error: ' + e.code);
+        expect(e.code === 13900002).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   securitylabel_test_set_security_label_async_callback_static_000
+     * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_CALLBACK_0000
+     * @tc.desc   Test setSecurityLabel() callback interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('securitylabel_test_set_security_label_async_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_callback_static_000 start');
+      try {
+        securityLabel.setSecurityLabel("", s0, (err: BusinessError<void> | null) => {
+          if(err?.code != 0){
+            hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_callback_static_000 catch error: ' + err?.code);
+            expect(err?.code === 13900002).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_async_callback_static_000 has failed for ' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   securitylabel_test_set_security_label_sync_static_007
+     * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0800
+     * @tc.desc   Test setSecurityLabelSync() interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('securitylabel_test_set_security_label_sync_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_007 start');
+      try {
+        securityLabel.setSecurityLabelSync("", s0);
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'securitylabel_test_set_security_label_sync_static_007 catch error: ' + e.code);
+        expect(e.code === 13900002).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   securitylabel_test_get_security_label_async_static_000
+     * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_0000
+     * @tc.desc   Test getSecurityLabel() interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('securitylabel_test_get_security_label_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'securitylabel_test_get_security_label_async_static_000 start');
+      try {
+        let type:string = await securityLabel.getSecurityLabel("");
+        hilog.info(domain, tag, '%{public}s', 'securitylabel_test_get_security_label_async_static_000 type: ' + type);
+        expect(type === s3).assertTrue();
+        done();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'securitylabel_test_get_security_label_async_static_000 catch error: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   securitylabel_test_get_security_label_async_callback_static_000
+     * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_CALLBACK_0000
+     * @tc.desc   Test getSecurityLabel() callback interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('securitylabel_test_get_security_label_async_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'securitylabel_test_get_security_label_async_callback_static_000 start');
+      try {
+        securityLabel.getSecurityLabel("", (err: BusinessError | null, level: string | undefined) => {
+        if(err?.code != 0){
+          hilog.info(domain, tag, '%{public}s', 'securitylabel_test_get_security_label_async_callback_static_000 catch error: ' + err?.code);
+	      expect(false).assertTrue();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', 'securitylabel_test_get_security_label_async_callback_static_000 level: ' + level);
+        expect(level === s3).assertTrue();
+        done();
+      });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'securitylabel_test_get_security_label_async_callback_static_000 has failed for ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   securitylabel_test_get_security_label_sync_static_000
+     * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_SYNC_0000
+     * @tc.desc   Test getSecurityLabelSync() interface with empty path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('securitylabel_test_get_security_label_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'securitylabel_test_get_security_label_sync_static_000 start');
+      try {
+        let type:string = securityLabel.getSecurityLabelSync("");
+		hilog.info(domain, tag, '%{public}s', 'securitylabel_test_get_security_label_sync_static_000 type: ' + type);
+        expect(type === s3).assertTrue();
+		done();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'securitylabel_test_get_security_label_sync_static_000 catch error: ' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'abilityTest end');
-
 }

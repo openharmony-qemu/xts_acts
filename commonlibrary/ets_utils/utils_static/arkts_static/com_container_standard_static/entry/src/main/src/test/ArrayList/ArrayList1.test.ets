@@ -41,7 +41,7 @@ class C1 {
 
 export default function ArraylistTest1() {
   describe("ArraylistTest1", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**
@@ -599,7 +599,7 @@ export default function ArraylistTest1() {
       arrayList.add(1);
       arrayList.add(2);
       arrayList.add(14);
-      arrayList.sort((a, b) => a - b);
+      arrayList.sort((a, b) => (a - b).toInt());
       let arr: Array<Number> = new Array<Number>();
       arrayList.forEach((item: Number, index) => {
         arr.push(item);
@@ -1100,8 +1100,8 @@ export default function ArraylistTest1() {
       arrayList.add("b");
       arrayList.add("e");
       arrayList.add("d");
-      let arrayListCb1: ArrayListComparatorFn<string> = (a: string, b: string): double => {
-        return a.localeCompare(b);
+      let arrayListCb1: ArrayListComparatorFn<string> = (a: string, b: string): int => {
+        return a.localeCompare(b).toInt();
       }
       arrayList.sort(arrayListCb1);
       let arr: Array<String> = new Array<String>();

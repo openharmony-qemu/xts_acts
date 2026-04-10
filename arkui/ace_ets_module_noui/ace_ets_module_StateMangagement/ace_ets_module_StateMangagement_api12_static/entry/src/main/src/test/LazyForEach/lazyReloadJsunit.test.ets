@@ -45,7 +45,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function lazyReloadJsunit() {
   describe('lazyReloadJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("lazyReloadJsunit beforeEach start");
 
 

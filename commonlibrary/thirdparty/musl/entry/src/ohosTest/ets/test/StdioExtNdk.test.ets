@@ -30,9 +30,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fSetErr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioExtFSetErr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioExtFSetErr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fSetErr()).assertEqual(1);
       done()
     });
@@ -43,9 +43,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fSetLocking
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioExtFSetLocking001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioExtFSetLocking001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fSetLocking()).assertEqual(1);
       done()
     });
@@ -56,9 +56,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test flushLbf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioExtFlushLbf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioExtFlushLbf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.flushLbf()).assertEqual(1);
       done()
     });
@@ -69,9 +69,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fWriting
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioExtFWriting001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioExtFWriting001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fWriting()).assertEqual(1);
       done()
     });
@@ -82,9 +82,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fpending
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioExtFPending001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioExtFPending001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fPending()).assertEqual(1);
       done()
     });
@@ -95,9 +95,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fpurge
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioExtFPurge001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioExtFPurge001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fPurge()).assertEqual(1);
       done()
     });
@@ -108,9 +108,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test freadable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioExtFReadable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioExtFReadable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fReadable()).assertEqual(1);
       done()
     });
@@ -121,9 +121,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test freading
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioExtFReading001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioExtFReading001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fReading()).assertEqual(1);
       done()
     });
@@ -134,9 +134,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fWritable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioExtFWritable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioExtFWritable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fWritable()).assertEqual(1);
       done()
     });
@@ -147,9 +147,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fLbf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioExtFLbf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioExtFLbf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fLbf()).assertEqual(1);
       done()
     });
@@ -160,9 +160,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fBufSize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioExtfBufSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioExtfBufSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fBufSize()).assertEqual(1);
       done()
     });
@@ -173,9 +173,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fdopen
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFdOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFdOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fdopen()).assertEqual(0);
       done()
     });
@@ -186,9 +186,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fflush
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFFlush001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFFlush001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fflush()).assertEqual(0);
       done()
     });
@@ -199,9 +199,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fgetc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFGetC001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFGetC001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fgetc()).assertEqual(0);
       done()
     });
@@ -212,9 +212,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fgetpos64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFGetPos64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFGetPos64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fgetpos64()).assertEqual(0);
       done()
     });
@@ -225,9 +225,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fgetpos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFGetPos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFGetPos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fgetpos()).assertEqual(0);
       done()
     });
@@ -238,9 +238,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fgets
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFGetS001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFGetS001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fgets()).assertEqual(0);
       done()
     });
@@ -252,9 +252,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test ferror
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.ferror()).assertEqual(0);
       done()
     });
@@ -266,9 +266,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fileno
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFileNo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFileNo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = false;
       if (stdioext.fileno() >= 0) {
         result = true;
@@ -283,9 +283,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test flockfile
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFLockFile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFLockFile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.flockfile()).assertEqual(0);
       done()
     });
@@ -296,9 +296,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fmemopen
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFMemOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFMemOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fmemopen()).assertEqual(0);
       done()
     });
@@ -309,9 +309,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fclose
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fclose()).assertEqual(0);
       done()
     });
@@ -324,9 +324,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fileno_unlocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFileNoUnlocked001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFileNoUnlocked001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = false;
       if (stdioext.fileno_unlocked() >= 0) {
         result = true;
@@ -341,9 +341,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fgets_unlocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFGetSUnlocked001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFGetSUnlocked001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fgets_unlocked()).assertEqual(0);
       done()
     });
@@ -356,9 +356,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fgetln
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFGetLn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFGetLn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fgetln()).assertEqual(0);
       done()
     });
@@ -369,9 +369,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fgetc_unlocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFGetCUnlocked001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFGetCUnlocked001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fgetc_unlocked()).assertEqual(0);
       done()
     });
@@ -383,9 +383,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test fflush_unlocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFFlushUnlocked001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFFlushUnlocked001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.fflush_unlocked()).assertEqual(0);
       done()
     });
@@ -397,9 +397,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test ferror_unlocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFErrorUnlocked001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFErrorUnlocked001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.ferror_unlocked()).assertEqual(0);
       done()
     });
@@ -410,9 +410,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test feof_unlocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFEofUnlocked001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFEofUnlocked001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdioext.feof_unlocked()).assertEqual(0);
       done()
     });
@@ -424,9 +424,9 @@ export default function muslStdioExtTest() {
      * @tc.desc   test dprintf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioDPrintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioDPrintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = false;
       if (stdioext.dprintf() >= 0) {
         result = true;

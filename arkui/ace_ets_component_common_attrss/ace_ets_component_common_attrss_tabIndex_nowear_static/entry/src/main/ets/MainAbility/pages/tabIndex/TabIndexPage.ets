@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,13 +57,13 @@ struct TabIndexPage {
       this.textComponentKey = routerParamOptions.view.textComponentKey
       this.referenceOneComponentKey = routerParamOptions.view.referenceOneComponentKey
       this.referenceTwoComponentKey = routerParamOptions.view.referenceTwoComponentKey
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
 
   commonStyle(instance: CommonMethod){
-    instance.tabIndex(this._tabIndex as Int)
+    instance.tabIndex(this._tabIndex.toInt())
     instance.key(this.componentKey)
     instance.onFocus(() => {
       this.callback = 'onFocus'

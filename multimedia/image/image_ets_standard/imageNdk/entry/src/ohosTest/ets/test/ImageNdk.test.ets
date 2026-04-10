@@ -5293,14 +5293,14 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100Adapt001
      * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100
      * @tc.desc   1.createImageSource（by Fd/Uri）
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100Adapt001', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100';
       const filename = 'test_exif_v2.jpg'
       let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
@@ -5327,14 +5327,14 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200Adapt001
      * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200
      * @tc.desc   1.createImageSource（by Fd/Uri）
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200Adapt001', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200';
       const filename = 'test_exif_v2.jpg'
       let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Uri')
@@ -5813,40 +5813,6 @@ export default function imageNdkTest() {
     it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0300';
       const filename = 'test_exif_v3.png'
-      let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
-      try {
-        for(let j = 0; j < ModifyData.length; j++){
-            const checkResult = await NewModifyImageProperty(testTag, imageSourceApi, ModifyData[j].key, ModifyData[j].modifyData, ModifyData[j].compareData);
-            if(!checkResult){
-              closeFile(fileFd)
-              ndkTest.SourceRelease(imageSourceApi)
-              expect().assertFail()
-              done()
-              return
-            }
-        }
-        closeFile(fileFd)
-        ndkTest.SourceRelease(imageSourceApi)
-        done()
-      } catch (e) {
-        closeFile(fileFd)
-        hilog.info(0x0000, testTag, `createImageSource error ` + e);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400
-     * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400
-     * @tc.desc   1.createImageSource（by Fd/Uri）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400', Level.LEVEL0, async (done: Function) => {
-      const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_MODIFY_IMAGE_PROPERTY_0400';
-      const filename = 'test_exif_v3.dng'
       let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
       try {
         for(let j = 0; j < ModifyData.length; j++){

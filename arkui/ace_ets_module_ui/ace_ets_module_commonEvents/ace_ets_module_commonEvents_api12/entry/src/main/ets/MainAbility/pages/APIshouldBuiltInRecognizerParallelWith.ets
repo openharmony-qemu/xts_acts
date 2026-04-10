@@ -17,7 +17,7 @@
 struct APIshouldBuiltInRecognizerParallelWith {
   scroller: Scroller = new Scroller()
   scroller2: Scroller = new Scroller()
-  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  private arr: number[] = [0, 1, 2, 3, 4]
   private childRecognizer: GestureRecognizer = new GestureRecognizer()
   private currentRecognizer: GestureRecognizer = new GestureRecognizer()
   private lastOffset: number = 0
@@ -57,19 +57,19 @@ struct APIshouldBuiltInRecognizerParallelWith {
                   ForEach(this.arr, (item: number) => {
                     Text(item.toString())
                       .width('90%')
-                      .height('10%')
+                      .height('15%')
                       .backgroundColor(0xFFFFFF)
                       .borderRadius(15)
                       .fontSize(8)
                       .textAlign(TextAlign.Center)
                       .margin({ top: 10 })
                   }, (item: string) => item)
-                }.width('100%').id('column1')
+                }.width('100%').id('Column')
               }
             }
             .id("inner")
             .width('100%')
-            .height('60%')
+            .height('40%')
             .margin({ right: '15%' })
           }.width('100%').margin({ right: '25%' })
         }
@@ -78,7 +78,7 @@ struct APIshouldBuiltInRecognizerParallelWith {
         .scrollable(ScrollDirection.Vertical)
         .scrollBar(BarState.On)
         .scrollBarColor(Color.Gray)
-        .scrollBarWidth(10)
+        .scrollBarWidth(4)
         .edgeEffect(EdgeEffect.None)
         .shouldBuiltInRecognizerParallelWith((current: GestureRecognizer, others: Array<GestureRecognizer>) => {
           this.API_getTag = current.getTag()

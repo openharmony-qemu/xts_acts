@@ -118,7 +118,7 @@ void addEffectTest(std::vector<napi_property_descriptor>& descData)
     OH_NativeImage* image = OH_NativeImage_Create(0, 0);
     float matrix[16] = {0};
     int32_t  errorCode =  OH_NativeImage_GetTransformMatrixV2(image, matrix);
-    NAPI_ASSERT(env, errorCode == NATIVE_ERROR_OK, "");
+    NAPI_ASSERT(env, errorCode == NATIVE_ERROR_OK, "errorCode != NATIVE_ERROR_OK");
     errorCode =  OH_NativeImage_GetTransformMatrixV2(nullptr, matrix);
     napi_create_int32(env, errorCode == NATIVE_ERROR_INVALID_ARGUMENTS, &result);
     return result;

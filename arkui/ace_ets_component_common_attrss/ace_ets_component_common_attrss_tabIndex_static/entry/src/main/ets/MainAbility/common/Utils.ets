@@ -78,14 +78,14 @@ export default class Utils {
     })
   }
 
-  static getStringFromFile(fileName: string): Promise<string> {
+  static async getStringFromFile(fileName: string): Promise<string> {
     const abilityContext = AppStorage.get<common.Context>("abilityContext") as common.Context
     const fileData: Uint8Array = await abilityContext.resourceManager.getRawFileContent(fileName);
     return new Promise<string>((resolve, reject) => {
       if (fileData) {
         let result = '';
         for (let i = 0; i < fileData.length; i++) {
-          result += String.fromCharCode(fileData[i]);
+          result += String.fromCharCode(fileData[i].toInt());
         }
         resolve(result);
       } else {
@@ -258,9 +258,9 @@ export default class Utils {
   }
 
   static performKeyEventDownUp(keyCode: number, keyText: string): boolean {
-    let down = Utils.performKeyEvent(KeyType.Down, keyCode as Int, keyText)
+    let down = Utils.performKeyEvent(KeyType.Down, keyCode.toInt(), keyText)
     if (down) {
-      let up = Utils.performKeyEvent(KeyType.Up, keyCode as Int, keyText)
+      let up = Utils.performKeyEvent(KeyType.Up, keyCode.toInt(), keyText)
       return up
     }
 

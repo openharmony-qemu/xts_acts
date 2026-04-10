@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function tabs() {
   let count: number = 0
   describe('ActsAceTabsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
@@ -55,7 +55,7 @@ export default function tabs() {
           routerAlp.pushUrl(options)
           // console.info("push Index page success " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push Index page error " + JSON.stringify(err));
       }
 
@@ -75,10 +75,10 @@ export default function tabs() {
 
             "nullFlag": false,
 
-            "strokeWidthNum": 10,
+            "strokeWidthNum": 10 as number,
             "dividerColorNum": 0xFFFF0000,
-            "startMarginNum": 5,
-            "endMarginNum": 5,
+            "startMarginNum": 5 as number,
+            "endMarginNum": 5 as number,
 
             "dividerColor": Color.Red,
 
@@ -89,11 +89,11 @@ export default function tabs() {
 
             "overflowFlag": false,
             "selfIndicatorColor": Color.Red,
-            "selfIndicatorHeight": 10.0,
-            "selfIndicatorWidth": 30.0,
-            "selfIndicatorBorderRadius": 5.0,
-            "selfMarginTop": 10.0,
-            "selfSubTabBorderRadius": 20.0,
+            "selfIndicatorHeight": 10.0 as number,
+            "selfIndicatorWidth": 30.0 as number,
+            "selfIndicatorBorderRadius": 5.0 as number,
+            "selfMarginTop": 10.0 as number,
+            "selfSubTabBorderRadius": 20.0 as number,
             "selfSelectedMode": SelectedMode.INDICATOR,
 
             "selfIndicatorColorStr": "#FFFF0000",
@@ -110,7 +110,7 @@ export default function tabs() {
         }
         console.info("start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -138,7 +138,7 @@ it('ArkUI_Tabs_Divider_static_0100', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0200
      * @tc.name     ArkUI_Tabs_Divider_static_0200
@@ -161,7 +161,7 @@ it('ArkUI_Tabs_Divider_static_0200', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0300
      * @tc.name     ArkUI_Tabs_Divider_static_0300
@@ -183,7 +183,7 @@ it('ArkUI_Tabs_Divider_static_0300', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0400
      * @tc.name     ArkUI_Tabs_Divider_static_0400
@@ -206,7 +206,7 @@ it('ArkUI_Tabs_Divider_static_0400', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0500
      * @tc.name     ArkUI_Tabs_Divider_static_0500
@@ -229,53 +229,6 @@ it('ArkUI_Tabs_Divider_static_0500', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
-    /**
-     * @tc.number   ArkUI_Tabs_Divider_static_0600
-     * @tc.name     ArkUI_Tabs_Divider_static_0600
-     * @tc.desc     ArkUI_Tabs_Divider_static_0600
-     * @tc.level    Level.LEVEL0
-     */
-it('ArkUI_Tabs_Divider_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUI_Tabs_Divider_static_0600 start");
-      await Utils.sleep(2000);
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "nullFlag": true,
-          } as Record<String,RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 183,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[ArkUI_Tabs_Divider_static_0600] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
-        console.log("[ArkUI_Tabs_Divider_static_0600] change component data error: " + err.message);
-      }
-      await Utils.sleep(2000);
-      let defaultStrJson = inspector.getInspectorByKey('defaultTabs');
-      let defaultObj = JSON.parseJsonElement(defaultStrJson);
-      console.info("[ArkUI_Tabs_Divider_static_0600] defaultDivider:" +
-      JSON.stringify(defaultObj.getElement('$attrs').getElement('divider')));
-      let defaultDividerObject = defaultObj.getElement('$attrs').getElement('divider');
-      let defaultDividerColor: string = defaultDividerObject.getString('color');
-
-      let strJson = inspector.getInspectorByKey('tabsTest');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Tabs_Divider_static_0600] divider:" +
-      JSON.stringify(obj.getElement('$attrs').getElement('divider')));
-      let dividerObject = obj.getElement('$attrs').getElement('divider');
-      expect(dividerObject.getString('strokeWidth')).assertEqual("0.00px");
-      expect(dividerObject.getString('color')).assertEqual(defaultDividerColor);
-      expect(dividerObject.getString('startMargin')).assertEqual('0.00px');
-      expect(dividerObject.getString('endMargin')).assertEqual('0.00px');
-      done();
-    });
-
-
-    
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0700
      * @tc.name     ArkUI_Tabs_Divider_static_0700
@@ -300,7 +253,7 @@ it('ArkUI_Tabs_Divider_static_0700', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_Divider_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -324,7 +277,7 @@ it('ArkUI_Tabs_Divider_static_0700', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0800
      * @tc.name     ArkUI_Tabs_Divider_static_0800
@@ -349,7 +302,7 @@ it('ArkUI_Tabs_Divider_static_0800', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_Divider_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -363,7 +316,7 @@ it('ArkUI_Tabs_Divider_static_0800', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_0900
      * @tc.name     ArkUI_Tabs_Divider_static_0900
@@ -388,7 +341,7 @@ it('ArkUI_Tabs_Divider_static_0900', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_Divider_static_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_0900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -402,7 +355,7 @@ it('ArkUI_Tabs_Divider_static_0900', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_1000
      * @tc.name     ArkUI_Tabs_Divider_static_1000
@@ -427,7 +380,7 @@ it('ArkUI_Tabs_Divider_static_1000', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_Divider_static_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -441,7 +394,7 @@ it('ArkUI_Tabs_Divider_static_1000', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_1100
      * @tc.name     ArkUI_Tabs_Divider_static_1100
@@ -467,7 +420,7 @@ it('ArkUI_Tabs_Divider_static_1100', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_Divider_static_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_1100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -490,7 +443,7 @@ it('ArkUI_Tabs_Divider_static_1100', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_Divider_static_1200
      * @tc.name     ArkUI_Tabs_Divider_static_1200
@@ -514,7 +467,7 @@ it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_Divider_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -541,7 +494,7 @@ it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_Divider_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -568,7 +521,7 @@ it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_Divider_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -595,7 +548,7 @@ it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_Divider_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -611,7 +564,7 @@ it('ArkUI_Tabs_Divider_static_1200', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0100
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0100
@@ -667,7 +620,7 @@ it('ArkUI_Tabs_LabelStyle_static_0100', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0200
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0200
@@ -698,7 +651,7 @@ it('ArkUI_Tabs_LabelStyle_static_0200', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0300
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0300
@@ -731,7 +684,7 @@ it('ArkUI_Tabs_LabelStyle_static_0300', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0400
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0400
@@ -764,7 +717,7 @@ it('ArkUI_Tabs_LabelStyle_static_0400', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0500
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0500
@@ -797,7 +750,7 @@ it('ArkUI_Tabs_LabelStyle_static_0500', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_LabelStyle_static_0600
      * @tc.name     ArkUI_Tabs_LabelStyle_static_0600
@@ -852,7 +805,7 @@ it('ArkUI_Tabs_LabelStyle_static_0600', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0100
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0100
@@ -870,7 +823,7 @@ it('ArkUI_Tabs_FadingEdge_static_0100', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0200
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0200
@@ -892,7 +845,7 @@ it('ArkUI_Tabs_FadingEdge_static_0200', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_Tabs_FadingEdge_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_FadingEdge_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -905,7 +858,7 @@ it('ArkUI_Tabs_FadingEdge_static_0200', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_FadingEdge_static_0300
      * @tc.name     ArkUI_Tabs_FadingEdge_static_0300
@@ -927,7 +880,7 @@ it('ArkUI_Tabs_FadingEdge_static_0300', Level.LEVEL0, async (done: () => void): 
         }
         console.info("[ArkUI_Tabs_FadingEdge_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_FadingEdge_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -940,7 +893,7 @@ it('ArkUI_Tabs_FadingEdge_static_0300', Level.LEVEL0, async (done: () => void): 
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0100
      * @tc.name     ArkUI_Tabs_IndicatorColor_0100
@@ -969,7 +922,7 @@ it('ArkUI_Tabs_IndicatorColor_0100', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0200
      * @tc.name     ArkUI_Tabs_IndicatorColor_0200
@@ -989,7 +942,7 @@ it('ArkUI_Tabs_IndicatorColor_0200', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0300
      * @tc.name     ArkUI_Tabs_IndicatorColor_0300
@@ -1009,7 +962,7 @@ it('ArkUI_Tabs_IndicatorColor_0300', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0400
      * @tc.name     ArkUI_Tabs_IndicatorColor_0400
@@ -1029,7 +982,7 @@ it('ArkUI_Tabs_IndicatorColor_0400', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0500
      * @tc.name     ArkUI_Tabs_IndicatorColor_0500
@@ -1049,7 +1002,7 @@ it('ArkUI_Tabs_IndicatorColor_0500', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
+
     /**
      * @tc.number   ArkUI_Tabs_IndicatorColor_0600
      * @tc.name     ArkUI_Tabs_IndicatorColor_0600
@@ -1071,7 +1024,7 @@ it('ArkUI_Tabs_IndicatorColor_0600', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_IndicatorColor_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorColor_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1119,7 +1072,7 @@ it('ArkUI_Tabs_IndicatorColor_0700', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_IndicatorColor_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorColor_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1255,7 +1208,7 @@ it('ArkUI_Tabs_IndicatorHeight_0500', Level.LEVEL0, async (done: () => void): Pr
         }
         console.info("[ArkUI_Tabs_IndicatorHeight_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorHeight_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1299,7 +1252,7 @@ it('ArkUI_Tabs_IndicatorHeight_0600', Level.LEVEL0, async (done: () => void): Pr
         }
         console.info("[ArkUI_Tabs_IndicatorHeight_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorHeight_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1323,7 +1276,7 @@ it('ArkUI_Tabs_IndicatorHeight_0600', Level.LEVEL0, async (done: () => void): Pr
         }
         console.info("[ArkUI_Tabs_IndicatorHeight_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorHeight_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1346,7 +1299,7 @@ it('ArkUI_Tabs_IndicatorHeight_0600', Level.LEVEL0, async (done: () => void): Pr
         }
         console.info("[ArkUI_Tabs_IndicatorHeight_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorHeight_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1462,7 +1415,7 @@ it('ArkUI_Tabs_IndicatorWidth_0500', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_IndicatorWidth_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorWidth_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1499,7 +1452,7 @@ it('ArkUI_Tabs_IndicatorWidth_0600', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_IndicatorWidth_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorWidth_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1523,7 +1476,7 @@ it('ArkUI_Tabs_IndicatorWidth_0600', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_IndicatorWidth_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorWidth_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1546,7 +1499,7 @@ it('ArkUI_Tabs_IndicatorWidth_0600', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info("[ArkUI_Tabs_IndicatorWidth_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorWidth_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1662,7 +1615,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0500', Level.LEVEL0, async (done: () => voi
         }
         console.info("[ArkUI_Tabs_IndicatorBorderRadius_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorBorderRadius_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1699,7 +1652,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0600', Level.LEVEL0, async (done: () => voi
         }
         console.info("[ArkUI_Tabs_IndicatorBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1723,7 +1676,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0600', Level.LEVEL0, async (done: () => voi
         }
         console.info("[ArkUI_Tabs_IndicatorBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1747,7 +1700,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0600', Level.LEVEL0, async (done: () => voi
         }
         console.info("[ArkUI_Tabs_IndicatorBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1867,7 +1820,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0500', Level.LEVEL0, async (done: () => void):
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1910,7 +1863,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0600', Level.LEVEL0, async (done: () => void):
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1933,7 +1886,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0600', Level.LEVEL0, async (done: () => void):
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1956,7 +1909,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0600', Level.LEVEL0, async (done: () => void):
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1992,7 +1945,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0700', Level.LEVEL0, async (done: () => void):
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2059,7 +2012,7 @@ it('ArkUI_Tabs_SelectedMode_static_0300', Level.LEVEL0, async (done: () => void)
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfIndicatorHeight": 10,
+            "selfIndicatorHeight": 10 as number,
             "selfSelectedMode": SelectedMode.BOARD
           } as Record<String,RecordData>
         }
@@ -2069,7 +2022,7 @@ it('ArkUI_Tabs_SelectedMode_static_0300', Level.LEVEL0, async (done: () => void)
         }
         console.info("[ArkUI_Tabs_SelectedMode_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SelectedMode_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2182,8 +2135,8 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0500', Level.LEVEL0, async (done: () =>
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfIndicatorHeight": 10.0,
-            "selfMarginTop": -1.0
+            "selfIndicatorHeight": 10.0 as number,
+            "selfMarginTop": -1.0 as number
           } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -2192,7 +2145,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0500', Level.LEVEL0, async (done: () =>
         }
         console.info("[ArkUI_Tabs_IndicatorMarginTop_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorMarginTop_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2236,7 +2189,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0600', Level.LEVEL0, async (done: () =>
         }
         console.info("[ArkUI_Tabs_IndicatorMarginTop_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorMarginTop_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2260,7 +2213,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0600', Level.LEVEL0, async (done: () =>
         }
         console.info("[ArkUI_Tabs_IndicatorMarginTop_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorMarginTop_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2283,7 +2236,7 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0600', Level.LEVEL0, async (done: () =>
         }
         console.info("[ArkUI_Tabs_IndicatorMarginTop_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorMarginTop_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

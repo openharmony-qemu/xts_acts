@@ -26,7 +26,7 @@ import { UtilsTest } from './Util.test';
 
 export default function TextPrivacySensitive() {
   describe('ArkUIHDSPrivacySensitiveTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ArkUIHDSPrivacySensitiveTest beforeAll start");
       await UtilsTest.startAbility("com.example.privacysensitivetest.static", "EntryAbility")
     });

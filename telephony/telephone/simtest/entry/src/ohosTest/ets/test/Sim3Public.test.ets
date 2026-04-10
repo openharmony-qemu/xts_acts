@@ -147,6 +147,46 @@ export default function Sim3Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimHasSimCard0500
+     * @tc.number SUB_Telephony_Sim_HasSimCard_0500
+     * @tc.desc   Obtain whether the SIM card in the specified slot is inserted. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonySimHasSimCard0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonySimHasSimCard0500';
+      console.info(`${caseName} test start `);
+      try {
+        sim.hasSimCard(undefined, (err: BusinessError, data: boolean) => {
+          if (err.code === 401) {
+            console.info(`${caseName}	Parameter error.: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            console.info(`${caseName} test end `);
+            done();
+          } else {
+            console.info(`${caseName}: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+            ExpectFail();
+            console.info(`${caseName} test end `);
+            done();
+          }
+        });
+      } catch (error) {
+        if ((error as BusinessError).code === 401) {
+          console.info(`${caseName}	Parameter error.: err->${JSON.stringify(error)}`);
+          ExpectTrue(true);
+          console.info(`${caseName} test end `);
+          done();
+        } else {
+          console.info(`${caseName}: err->${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      }
+    });
+
+    /**
      * @tc.name   testTelephonySimHasSimCard0800
      * @tc.number SUB_Telephony_Sim_HasSimCard_0800
      * @tc.desc   Obtain whether the SIM card in the specified slot is inserted. Use callback for asynchronous promise.
@@ -223,6 +263,51 @@ export default function Sim3Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimHasSimCard1000
+     * @tc.number SUB_Telephony_Sim_HasSimCard_1000
+     * @tc.desc   Obtain whether the SIM card in the specified slot is inserted. Use callback for asynchronous promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonySimHasSimCard1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonySimHasSimCard1000';
+      console.info(`${caseName} test start `);
+      try {
+        sim.hasSimCard(undefined).then((data: boolean) => {
+          console.info(`hasSimCard success, promise: data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }).catch((err: BusinessError) => {
+          if (err.code === 401) {
+            console.info(`${caseName}	Parameter error.: err->${JSON.stringify(err)}`);
+            ExpectTrue(true);
+            console.info(`${caseName} test end `);
+            done();
+          } else {
+            console.info(`${caseName}:data->`);
+            ExpectFail();
+            console.info(`${caseName} test end `);
+            done();
+          }
+        });
+      } catch (error) {
+        if ((error as BusinessError).code === 401) {
+          console.info(`${caseName}	Parameter error.: err->${JSON.stringify(error)}`);
+          ExpectTrue(true);
+          console.info(`${caseName} test end `);
+          done();
+        } else {
+          console.info(`${caseName}:data->`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      }
+    });
+
+    /**
      * @tc.name   testTelephonySimHasSimCardSync0300
      * @tc.number SUB_Telephony_Sim_HasSimCardSync_0300
      * @tc.desc   Obtain the SIM card type for the specified slot. Use callback for asynchronous callback.
@@ -235,6 +320,56 @@ export default function Sim3Public() {
       console.info(`${caseName} test start `);
       let hasSimCard: boolean = sim.hasSimCardSync(-1);
       if (hasSimCard === false) {
+        console.info(`${caseName}  success has not sim card1: ` + hasSimCard);
+        ExpectTrue(true);
+        console.info(`${caseName} test end `);
+        done();
+      } else {
+        console.info(`${caseName}  false has sim card1: ` + hasSimCard);
+        ExpectFail();
+        console.info(`${caseName} test end `);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonySimHasSimCardSync0400
+     * @tc.number SUB_Telephony_Sim_HasSimCardSync_0400
+     * @tc.desc   Obtain the SIM card type for the specified slot. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonySimHasSimCardSync0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySimHasSimCardSync0400';
+      console.info(`${caseName} test start `);
+      let hasSimCard: boolean = sim.hasSimCardSync(null);
+      if (Boolean(hasSimCard) === false) {
+        console.info(`${caseName}  success has not sim card1: ` + hasSimCard);
+        ExpectTrue(true);
+        console.info(`${caseName} test end `);
+        done();
+      } else {
+        console.info(`${caseName}  false has sim card1: ` + hasSimCard);
+        ExpectFail();
+        console.info(`${caseName} test end `);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonySimHasSimCardSync0500
+     * @tc.number SUB_Telephony_Sim_HasSimCardSync_0500
+     * @tc.desc   Obtain the SIM card type for the specified slot. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonySimHasSimCardSync0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonySimHasSimCardSync0500';
+      console.info(`${caseName} test start `);
+      let hasSimCard: boolean = sim.hasSimCardSync(undefined);
+      if (Boolean(hasSimCard) === false) {
         console.info(`${caseName}  success has not sim card1: ` + hasSimCard);
         ExpectTrue(true);
         console.info(`${caseName} test end `);

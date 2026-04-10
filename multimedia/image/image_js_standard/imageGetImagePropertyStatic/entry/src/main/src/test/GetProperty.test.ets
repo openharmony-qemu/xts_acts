@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ interface LOOP {
 export default function imageGetImageProperty() {
   describe('imageGetImageProperty', (): void => {
     let filesDir: string | undefined | null;
-    let filePath: string;
+    let filePath: string = '';
     let GET_PROPERTIES_ERROR_CODE = 62980096;
     const ORIENTATION = image.PropertyKey.ORIENTATION
     const IMAGE_LENGTH = image.PropertyKey.IMAGE_LENGTH
@@ -68,7 +68,7 @@ export default function imageGetImageProperty() {
 
     let globalpixelmap: image.PixelMap | undefined = undefined;
     let globalimageSource: image.ImageSource | undefined = undefined;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
     })
@@ -136,11 +136,12 @@ export default function imageGetImageProperty() {
         try {
           let data = await imageSourceApi.getImageProperties(args);
           for (let i = 0; i < args.length; i++) {
-            logger.log("getImageProperties data: " + data[args[i] as string]);
+            logger.log("getImageProperties data: " + data[args[i].valueOf()]);
           }
           expect(true).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           logger.log("getImageProperties failed error: " + error);
           expect(error.code == GET_PROPERTIES_ERROR_CODE).assertTrue();
           done();
@@ -177,7 +178,7 @@ export default function imageGetImageProperty() {
           logger.log('getImageProperty args ' + args + ": " + propsValue);
           expect(data == propsValue).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           logger.log("getImageProperty failed error: " + error.code);
           expect(false).assertTrue();
           done();
@@ -215,7 +216,8 @@ export default function imageGetImageProperty() {
           console.info(`${testNum} ${args} ` + data);
           expect(data == loopCase).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${testNum} error: ` + error);
           console.log(`${testNum} error: ` + JSON.stringify(error));
           expect(error.code == 62980149).assertTrue();
@@ -252,11 +254,12 @@ export default function imageGetImageProperty() {
         try {
           let data = await imageSourceApi.getImageProperties(arrayArgs);
           for (let i = 0; i < arrayArgs.length; i++) {
-            console.info(`${testNum} ${arrayArgs} ` + data[arrayArgs[i] as string]);
+            console.info(`${testNum} ${arrayArgs} ` + data[arrayArgs[i].valueOf()]);
           }
           expect(data['GIFLoopCount'] == loopCase).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${testNum} error: ` + error);
           console.log(`${testNum} error: ` + JSON.stringify(error));
           expect(error.code == 62980096).assertTrue();

@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexWrapReverse_fixedParentChildPosition() {
   describe('FlexWrapReverse_fixedParentChildPosition', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexWrapReverse_fixedParentChildPosition beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

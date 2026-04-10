@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeEach} from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import { cert } from "@kit.DeviceCertificateKit";
 import { createCertChain, createX509Cert,
@@ -33,10 +33,33 @@ import { createCertChain, createX509Cert,
   leafCertRevokedChainTrustCert,
   leafCertRevokedChain
 } from "./utils/crl/crl";
+import { sleep } from "./utils/common/common";
+import wifiMg from '@ohos.wifiManager';
 
 
 export default function certFrameworkCertCheckOnlineCaTestUnit() {
   describe("certFrameworkCertCheckOnlineCaTestUnit", (): void => {
+
+    beforeEach(async (): void => {
+      if(!wifiMg.isWifiActive()) {
+        console.info("=========>>>>>>> wifi_test/enable wifi");
+        await sleep(5000);
+      }
+      let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+      console.info("=========>>>>>>> Internet WifiLinkedInfo : " + JSON.stringify(data));
+      console.info("=========>>>>>>> Internet speed : " + JSON.stringify(data.linkSpeed));
+      console.info("=========>>>>>>> Internet chLoad : " + JSON.stringify(data.chload));
+      console.info("=========>>>>>>> Internet rssi : " + JSON.stringify(data.rssi));
+
+      if (data.connState == wifiMg.ConnState.CONNECTED) {
+        console.info("=========>>>>>>> WLAN connection established");
+      } else {
+        throw new Error("=========>>>>>>> WLAN Network Error");
+      }
+      if (data.chload >= 900 || data.rssi <= -80) {
+        throw new Error("=========>>>>>>> WLAN Network Error (speed)");
+      }
+    })
 
     /**
      * @tc.name   SUB_Security_Cert_Framework_Online_CheckCa_Func_0100
@@ -64,9 +87,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0100 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -100,9 +123,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0200 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         done();
       });
@@ -137,9 +160,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0300 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         done();
       });
@@ -171,10 +194,10 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0400 “${error}“, error code: ${error.code}`);
           if (error.code != cert.CertResult.ERR_CERT_SIGNATURE_FAILURE) {
-            expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION); // 网络原因返回错误码
+            expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION); // 网络原因返回错误码
           }
         }
         done();
@@ -208,9 +231,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0500 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -243,9 +266,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0600 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -281,9 +304,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0700 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -316,9 +339,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0800 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -349,9 +372,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_0900 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -382,9 +405,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_1000 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -415,9 +438,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_1100 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -450,9 +473,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_1200 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -485,9 +508,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_1300 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -521,9 +544,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_1400 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -556,9 +579,9 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           };
           await x509CertChain.validate(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] CheckCa_Func_1500 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });

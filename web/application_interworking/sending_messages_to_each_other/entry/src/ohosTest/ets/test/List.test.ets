@@ -17,6 +17,8 @@ import webMessageExtErrorCode from './WebMessageExtErrorCode.test';
 import webMessagePortIsExtentionTypeTest from './WebMessagePortIsExtentionTypeTest.test';
 import WebViewEnumAndFontLibrary from './WebViewEnumAndFontLibrary.test';
 import webViewControllerPart3Test from './WebViewControllerPart3.test';
+import WebMessageExtSetArray from  './WebMessageExtSetArray.test';
+import runJavaScriptErrorCode from  './RunJavaScriptErrorCode.test';
 
 export default function testsuite() {
   webMessageExt();
@@ -24,4 +26,6 @@ export default function testsuite() {
   webMessagePortIsExtentionTypeTest();
   WebViewEnumAndFontLibrary();
   webViewControllerPart3Test();
+  WebMessageExtSetArray();
+  runJavaScriptErrorCode();
 }

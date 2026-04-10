@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -191,7 +191,7 @@ struct webViewSdkSchemeHandler {
                 resourceHandler.didFail(WebNetErrorList.ERR_FAILED)
                 try {
                   resourceHandler.didFinish();
-                } catch (e: BusinessError) {
+                } catch (e) {
                   console.log('finish error')
                 }
                 return false;
@@ -203,7 +203,7 @@ struct webViewSdkSchemeHandler {
             this.controller.setWebSchemeHandler('http', this.schemeHandler);
             this.controller.setWebSchemeHandler('resource', this.schemeHandler);
             this.controller.setWebSchemeHandler('custom', this.schemeHandler);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
           }
         })

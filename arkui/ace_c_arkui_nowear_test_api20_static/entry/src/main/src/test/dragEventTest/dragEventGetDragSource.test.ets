@@ -25,7 +25,7 @@ export default function dragEventGetDragSourceTest() {
   let PAGE_TAG = 'dragEventGetDragSource';
 
   describe('dragEventGetDragSourceTest', (): void  => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api20.static", "EntryAbility")
     });
     afterEach(async (): Promise<void> => {

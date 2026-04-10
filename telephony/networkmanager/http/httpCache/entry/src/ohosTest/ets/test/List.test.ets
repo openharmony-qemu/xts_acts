@@ -16,14 +16,23 @@
 import HttpCreateHttpResponseCacheTest from './HttpCreateHttpResponseCache.test';
 import HttpFlushTest from './HttpFlush.test';
 import HttpDeleteTest from './HttpDelete.test';
-import EmptyTest from './Empty.test';
+import EmptyTestCheckCard from './EmptyTestCheckCard.test';
+import EmptyTestCheckNetwork from './EmptyTestCheckNetwork.test';
 import sim from '@ohos.telephony.sim';
-
-export default function testsuite() {if (sim.getMaxSimCount()>1){
-  HttpCreateHttpResponseCacheTest();
-  HttpFlushTest();
-  HttpDeleteTest();
-}else{
-  EmptyTest()
-}
+import connection from '@ohos.net.connection';
+ 	 
+let netHandle = connection.getDefaultNetSync();
+ 	 
+export default function testsuite() {
+  if (sim.getMaxSimCount()>1){
+    if(netHandle.netId != 0){
+      HttpCreateHttpResponseCacheTest();
+      HttpFlushTest();
+      HttpDeleteTest();
+    } else {
+      EmptyTestCheckNetwork();
+    }
+  }else{
+    EmptyTestCheckCard();
+  }
 }

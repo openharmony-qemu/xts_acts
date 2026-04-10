@@ -66,7 +66,7 @@ struct GestureSettingsExample {
             }
             console.info("click to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("click action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

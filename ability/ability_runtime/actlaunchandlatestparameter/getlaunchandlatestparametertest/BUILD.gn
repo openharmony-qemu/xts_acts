@@ -16,7 +16,7 @@ import("//test/xts/tools/build/suite.gni")
 ohos_app_assist_suite("ActsGetResourceDirNdkHaveRes_main") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsGetResourceDirNdkHaveResMainTest"
+  hap_name = "ActsGetRaunchAndLatestParameterMain"
   part_name = "ability_runtime"
   subsystem_name = "ability"
 }

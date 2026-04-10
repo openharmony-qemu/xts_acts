@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,7 +36,7 @@ import {
   StorageLink,IMonitor,IMonitorValue,Local
 } from '@ohos.arkui.stateManagement'
 
-class BasicDataSource implements IDataSource<number> {
+export class BasicDataSource implements IDataSource<number> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: Array<number> = [];
 

@@ -63,7 +63,7 @@ struct GestureSetDirection {
   @State numberFingers: int = 1
   @State panDirection: PanDirection = PanDirection.Right
   private panOption: PanGestureOptions =
-    new PanGestureOptions({ direction: (PanDirection.Left | PanDirection.Right) as PanDirection, distance: 10 })
+    new PanGestureOptions({ direction: PanDirection.fromValue(PanDirection.Left | PanDirection.Right), distance: 10 })
 
   aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear GestureSetDirection start`)
@@ -92,7 +92,7 @@ struct GestureSetDirection {
             }
             console.info("setDirectionPanGesture onClick start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("setDirectionPanGesture onClick emit action state err: " +
             JSON.stringify((err as Error)?.message))
           }
@@ -136,7 +136,7 @@ struct GestureSetDirection {
             }
             console.info("onClick start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("onClick emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -180,7 +180,7 @@ struct GestureSetDirection {
             }
             console.info("onClick start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("onClick emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

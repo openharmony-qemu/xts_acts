@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 export default function datePickerDialogBackgroundEffectTest() {
   describe('DatePickerDialogBackgroundEffectTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DatePickerDialogBackgroundEffectTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
     });

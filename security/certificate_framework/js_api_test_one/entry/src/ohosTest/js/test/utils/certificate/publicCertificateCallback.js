@@ -336,7 +336,7 @@ async function checkGetPublicKeyX509CertCallback(certType) {
   });
 }
 
-function createX509CrlInstanceCallback(certType) {
+async function createX509CrlInstanceCallback(certType) {
   var certformat;
   var encodingData;
 

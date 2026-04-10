@@ -26,7 +26,7 @@ import router from '@ohos.router';
 export default function stageDatePickerDialog() {
   describe('stageDatePickerDialog', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     })
     beforeEach(async (): Promise<void> => {

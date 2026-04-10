@@ -17,7 +17,7 @@ import accessibility from '@ohos.accessibility'
 import { Driver } from '@ohos.UiTest';
 
 export default function AccessibleCaptionConfiguration() {
-describe('AccessibleCaptionConfiguration', function () {
+describe('AccessibleCaptionConfigurationAdapt001', function () {
   beforeAll(async function (done) {
     let driver = Driver.create();
     console.info(`AccessibleCaptionConfiguration: beforeAll starts`);
@@ -48,9 +48,16 @@ describe('AccessibleCaptionConfiguration', function () {
     let captionManager = accessibility.getCaptionsManager();
     let stateEventType = 'enableChange';
     let callbackdata = (data) => {}
-    captionManager.on(stateEventType, callbackdata);
-	captionManager.off(stateEventType, callbackdata);
-    expect(true).assertTrue();
+    let result = false;
+    try {
+      captionManager.on(stateEventType, callbackdata);
+      captionManager.off(stateEventType, callbackdata);
+      result = true;
+    } catch (error) {
+      expect(null).assertFail();
+      done();
+    }
+    expect(result).assertEqual(true);
     done();
   })
 
@@ -67,9 +74,16 @@ describe('AccessibleCaptionConfiguration', function () {
     let captionManager = accessibility.getCaptionsManager();
     let stateEventType = 'styleChange';
     let callbackdata = (data) => {}
-    captionManager.on(stateEventType, callbackdata);
-	captionManager.off(stateEventType, callbackdata);
-    expect(true).assertTrue();
+    let result = false;
+    try {
+      captionManager.on(stateEventType, callbackdata);
+      captionManager.off(stateEventType, callbackdata);
+      result = true;
+    } catch (error) {
+      expect(null).assertFail();
+      done();
+    }
+    expect(result).assertEqual(true);
     done();
   })
 

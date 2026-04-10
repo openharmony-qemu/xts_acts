@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function flexBase_BaselineJsunit() {
   describe('flexItemAlignBaselineTest3', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexItemAlignBaselineTest3 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

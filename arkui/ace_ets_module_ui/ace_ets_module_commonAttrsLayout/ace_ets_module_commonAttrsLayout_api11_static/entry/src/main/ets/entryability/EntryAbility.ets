@@ -63,7 +63,7 @@ export default class EntryAbility extends UIAbility {
         }
         // Obtain a UIContext instance.
         if (windowClass !== null) {
-          AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
+
         }
       })
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');

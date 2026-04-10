@@ -112,7 +112,7 @@ export default function UltralightTagErrorTest() {
                     MifareUltralightTag.readMultiplePages('test', (err, data)=> {
                         if (err) {
                             console.info("[NFC_test]mifareUltralight2 readMultiplePages errcode: " + err);
-                            expect(true).assertEqual(true);
+                            expect().assertFail();
                         } else {
                             console.info("[NFC_test]mifareUltralight2 readMultiplePages data: " + data + "json2:" + JSON.stringify(data));
                             if (data.length > 0) {
@@ -180,7 +180,7 @@ export default function UltralightTagErrorTest() {
                     MifareUltralightTag.writeSinglePage('test', rawData, (err, data)=> {
                         if (err) {
                             console.info("[NFC_test]mifareUltralight4 writeSinglePage errcode: " + err);
-                            expect(true).assertEqual(true);
+                            expect().assertFail();
                         } else {
                             console.info("[NFC_test]mifareUltralight4 writeSinglePage data: " + data + "json2:" + JSON.stringify(data));
                             expect(true).assertTrue(data >= 0);

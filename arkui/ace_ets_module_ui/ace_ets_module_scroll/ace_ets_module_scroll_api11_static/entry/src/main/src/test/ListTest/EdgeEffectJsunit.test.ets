@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function edgeEffectJsunit() {
   describe('edgeEffectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
 
@@ -117,7 +117,7 @@ it('edgeEffectTest_static_0200', Level.LEVEL1, async (done: () => void): Promise
         }
         console.info("edgeEffectTest_static_0200 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("edgeEffectTest_static_0200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

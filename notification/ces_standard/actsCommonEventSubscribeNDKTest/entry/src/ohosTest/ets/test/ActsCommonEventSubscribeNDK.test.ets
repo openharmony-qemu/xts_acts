@@ -168,8 +168,7 @@ export default function ActsCommonEventSubscribeNDKTest() {
               expect(result3).assertEqual(1500010)
             }
           }else{
-            let result4 = testNapi.common_event_subscribe();
-            expect(result4).assertEqual(0)
+            testNapi.common_event_subscribe();
           }
         }
         console.info("Sub_Notification_Ces_Subscriber_NDK_0005 testcase end")

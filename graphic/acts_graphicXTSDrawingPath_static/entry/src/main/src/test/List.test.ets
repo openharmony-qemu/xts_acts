@@ -16,12 +16,16 @@ import drawingTsPathTest from "./Path.test";
 import drawingTsPath2Test from "./Path2.test";
 import drawingTsPath3Test from "./Path3.test";
 import drawingTsPath4Test from "./Path4.test";
+import drawingTsPath5Test from "./Path5.test";
 import drawingTsPath6Test from "./Path6.test";
+import drawingTsPath7Test from "./Path7.test";
 
 export default function testsuite() {
   drawingTsPathTest();
   drawingTsPath2Test();
   drawingTsPath3Test();
   drawingTsPath4Test();
+  drawingTsPath5Test();
   drawingTsPath6Test();
+  drawingTsPath7Test();
 }

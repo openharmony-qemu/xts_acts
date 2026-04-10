@@ -45,7 +45,7 @@ function sleep(time: int) {
 export default function badgeJsunit() {
 
   describe('badgeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("badgeTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });
@@ -60,7 +60,7 @@ export default function badgeJsunit() {
         console.info("get Badge state success " + JSON.stringify(pages));
         if (!("Badge" == pages.name)) {
           console.info("get Badge state success " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options)
+          routerInstance.replaceUrl(options)
         }
       } catch (err) {
         console.error("push Badge page error " + JSON.stringify(err));

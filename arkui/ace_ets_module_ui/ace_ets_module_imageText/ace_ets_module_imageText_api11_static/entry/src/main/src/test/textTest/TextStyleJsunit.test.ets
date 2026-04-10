@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ const uiContext=new UIContext()
 export default function textStyleJsunit() {
   describe('textStyleTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textStyleTest beforeEach start");
 
 
@@ -106,7 +106,7 @@ export default function textStyleJsunit() {
         AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
           name: 'fontSize', value: 30
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_007] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -133,7 +133,7 @@ export default function textStyleJsunit() {
         AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
           name: 'fontSize', value: 0x80000000
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_008] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -161,7 +161,7 @@ export default function textStyleJsunit() {
           name: 'fontSize', value: 'error'
         });
         console.info("[testTextStyle_static_009] start to publish emit");
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_009] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -188,7 +188,7 @@ export default function textStyleJsunit() {
         AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
           name: 'fontSize', value: 0x7FFFFFFF
         });
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_010] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -235,7 +235,7 @@ export default function textStyleJsunit() {
           name: 'fontStyle', value: FontStyle.Normal
         });
         await CommonFunc.sleep(2000);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_012] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -259,10 +259,10 @@ export default function textStyleJsunit() {
       console.info('[testTextStyle_static_013] START');
       try {
         AppStorage.get<MessageManagerBase<FontStyle>>("messageManagerFontStyle")?.notify({
-          name: 'fontStyle', value: 0x7FFFFFFF as FontStyle
+          name: 'fontStyle', value: FontStyle.fromValue(0x7FFFFFFF.toInt())
         });
         await CommonFunc.sleep(2000);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_013] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -288,7 +288,7 @@ export default function textStyleJsunit() {
     //     AppStorage.get<MessageManagerBase<FontStyle>>("messageManagerFontStyle")?.notify({
     //       name: 'fontStyle', value: "error" as FontStyle
     //     });
-    //   } catch (err:Error) {
+    //   } catch (err) {
     //     console.log("[testTextStyle_static_014] change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(3000);
@@ -311,10 +311,10 @@ export default function textStyleJsunit() {
       console.info('[testTextStyle_static_015] START');
       try {
         AppStorage.get<MessageManagerBase<FontStyle>>("messageManagerFontStyle")?.notify({
-          name: 'fontStyle', value: (0x80000000.toInt()) as FontStyle
+          name: 'fontStyle', value: FontStyle.fromValue(0x80000000.toInt())
         });
         await CommonFunc.sleep(2000);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_015] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -358,7 +358,7 @@ export default function textStyleJsunit() {
           name: 'fontWeight', value: 400
         });
         await CommonFunc.sleep(2000);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_017] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -384,7 +384,7 @@ export default function textStyleJsunit() {
           name: 'fontWeight', value: "error"
         });
         await CommonFunc.sleep(2000);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_018] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -407,10 +407,10 @@ export default function textStyleJsunit() {
       console.info('[testTextStyle_static_019] START');
       try {
         AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")?.notify({
-          name: 'fontWeight', value: 0x80000000
+          name: 'fontWeight', value: (0x80000000).toInt()
         });
         await CommonFunc.sleep(2000);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_019] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -436,7 +436,7 @@ export default function textStyleJsunit() {
           name: 'fontWeight', value: 0x7FFFFFFF
         });
         await CommonFunc.sleep(2000);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_020] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -480,7 +480,7 @@ export default function textStyleJsunit() {
           name: 'fontFamily', value: 'Arial'
         });
         await CommonFunc.sleep(2000);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_022] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -506,7 +506,7 @@ export default function textStyleJsunit() {
           name: 'fontFamily', value: 'error'
         });
         await CommonFunc.sleep(2000);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_023] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);

@@ -50,10 +50,15 @@ export default function abilityTest() {
      */
     it('getResourceManager_nativeTest_0200', Level.LEVEL0, () => {
       console.log("getResourceManager_nativeTest_0200 1");
-      let value = nativeTest.getRawFileContent(resManager.resourceManager, "test/aa.xml");
+      let value = nativeTest.getRawFileContent(resManager.resourceManager, "rawfileTest.txt");
       console.log("getResourceManager_nativeTest_0200 3");
       console.log("getResourceManager_nativeTest_0200" + value);
-      expect(value !== null).assertTrue();
+      let dataString = "";
+      for (let i = 0; i < value.length; i++) {
+        dataString += String.fromCharCode(value[i]);
+      }
+      console.log("getResourceManager_nativeTest_0200 dataString:" + dataString);
+      expect(dataString).assertEqual('weasd123456zxcbnm7890');
     })
 
     /**
@@ -1064,6 +1069,25 @@ export default function abilityTest() {
     it('getEmuTypeErrorCode', Level.LEVEL3, () => {
       let value = nativeTest.getEmuTypeErrorCode(resManager.resourceManager);
       expect(value).assertTrue();
+    })
+
+    /**
+     * @tc.name   getRawFileContent64
+     * @tc.number getRawFileContent64
+     * @tc.desc   getRawFileContent64 with file path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('getRawFileContent64', Level.LEVEL0, () => {
+      let value = nativeTest.getRawFileContent64(resManager.resourceManager, "rawfileTest.txt");
+      console.log("getRawFileContent64 value:" + value);
+      let dataString = "";
+      for (let i = 0; i < value.length; i++) {
+        dataString += String.fromCharCode(value[i]);
+      }
+      console.log("getRawFileContent64 dataString:" + dataString);
+      expect(dataString).assertEqual('easd123456zxcbnm7890');
     })
   })
 }

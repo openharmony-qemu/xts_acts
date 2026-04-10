@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,7 +27,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function subscribedAbstractPropertyJsunit() {
   describe('appInfoTest_four_8', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
       
@@ -45,7 +45,7 @@ it('subscribedAbstractProperty_static_0100', Level.LEVEL0, async (done: () => vo
       if (true) {
         done();
         //return;
-      }}catch(err: Error) {
+      }}catch(err) {
         expect().assertFail();
       }
 /*

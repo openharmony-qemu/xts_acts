@@ -24,7 +24,7 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 export default function CanvasAttrsTabTest() {
   describe('CanvasAttrsTabTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CanvasAttrsTabTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.drawAPI13.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

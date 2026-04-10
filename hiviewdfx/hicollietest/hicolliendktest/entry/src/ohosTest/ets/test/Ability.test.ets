@@ -46,6 +46,7 @@ export default function abilityTest() {
      */
     it('testHiCollieC002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result:number = testNapi.testHiCollieJankC();
+      expect(result).assertEqual(0);
       done();
     });
 
@@ -264,5 +265,150 @@ export default function abilityTest() {
         expect(result).assertEqual(0);
         done();
       });
+
+    /**
+     * @tc.name   testHicollieSubthreadCode0100
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_Code_0100
+     * @tc.desc   testHicollieSubthreadCode0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHicollieSubthreadCode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let code = testNapi.OH_HiCollie_Report_sucess();
+        expect(code).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error(`====> testHicollieSubthreadCode0100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(true).assertEqual(false);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHicollieSubthreadCode0200
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_Code_0200
+     * @tc.desc   testHicollieSubthreadCode0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHicollieSubthreadCode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let code = testNapi.OH_HiCollie_Report_Main();
+        console.error(`====> testHicollieSubthreadCode0200 > code: ${code}`)
+        expect(code).assertEqual(29800001);
+        done();
+      } catch (err) {
+        console.error(`====> testHicollieSubthreadCode0200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(true).assertEqual(false);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHicollieSubthreadCode0300
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_Code_0300
+     * @tc.desc   testHicollieSubthreadCode0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHicollieSubthreadCode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let code = testNapi.OH_HiCollie_Report_Remote();
+        console.error(`====> testHicollieSubthreadCode0300 > code: ${code}`)
+        expect(code).assertEqual(true);
+        done();
+      } catch (err) {
+        console.error(`====> testHicollieSubthreadCode0300 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(true).assertEqual(false);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHicollieSubthreadCode0400
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_Code_0400
+     * @tc.desc   testHicollieSubthreadCode0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHicollieSubthreadCode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let code = testNapi.OH_HiCollie_ReportInputBlock_Main();
+        console.error(`====> testHicollieSubthreadCode0400 > code: ${code}`)
+        expect(code).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error(`====> testHicollieSubthreadCode0400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(true).assertEqual(false);
+        done();
+      }
+    })
+ 
+    /**
+     * @tc.name   testHicollieSubthreadCode0500
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_Code_0500
+     * @tc.desc   testHicollieSubthreadCode0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHicollieSubthreadCode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let code = testNapi.OH_HiCollie_ReportInputBlock_Remote();
+        console.error(`====> testHicollieSubthreadCode0500 > code: ${code}`)
+        expect(code).assertEqual(true);
+        done();
+      } catch (err) {
+        console.error(`====> testHicollieSubthreadCode0500 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(true).assertEqual(false);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHicollieSubthreadCode0600
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_Code_0600
+     * @tc.desc   testHicollieSubthreadCode0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHicollieSubthreadCode0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let code = testNapi.TestHiCollieSetFreezeCallback();
+        expect(code == 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`====> testHicollieSubthreadCode0600 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHicollieSubthreadCode0700
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_Code_0700
+     * @tc.desc   testHicollieSubthreadCode0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHicollieSubthreadCode0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let code = testNapi.TestHiCollieAssociateProcessReport();
+        expect(code == 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`====> testHicollieSubthreadCode0700 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    
   })
 }

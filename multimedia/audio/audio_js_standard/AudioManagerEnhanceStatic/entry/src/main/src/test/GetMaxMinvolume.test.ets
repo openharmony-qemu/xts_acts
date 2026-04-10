@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,7 +21,7 @@ import ArrayList from '@ohos.util.ArrayList';
 import { TestConst } from './Const.test';
 
 let TagFrmwk: string = "audioManagerEnhanceTest";
-let audioVolumeGroupManager: audio.AudioVolumeGroupManager;
+let audioVolumeGroupManager: audio.AudioVolumeGroupManager | undefined;
 
 function getAudioManager() {
   let audioManager = audio.getAudioManager();
@@ -81,7 +81,7 @@ export default function audioManagerTest() {
       try {
         let actual_maxvol = new ArrayList<int>();
         for (let index = 0; index < TestConst.AudioVolumeType.length; index++) {
-          let maxvol = await audioVolumeGroupManager.getMaxVolume(TestConst.AudioVolumeType[index]);
+          let maxvol = await audioVolumeGroupManager!.getMaxVolume(TestConst.AudioVolumeType[index]);
           console.info(`${TestConst.AudioVolumeType[index]} max volume : ${maxvol}`);
           actual_maxvol.add(maxvol);
         }
@@ -91,7 +91,7 @@ export default function audioManagerTest() {
           // maxVolume value depends on device configuration, simplify judgment here
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`getVolume error: ${error.code}, message ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -110,7 +110,7 @@ export default function audioManagerTest() {
       try {
         let actual_minvol = new ArrayList<int>();
         for (let index = 0; index < TestConst.AudioVolumeType.length; index++) {
-          let minvol = await audioVolumeGroupManager.getMinVolume(TestConst.AudioVolumeType[index]);
+          let minvol = await audioVolumeGroupManager!.getMinVolume(TestConst.AudioVolumeType[index]);
           console.info(`${TestConst.AudioVolumeType[index]} min volume : ${minvol}`);
           actual_minvol.add(minvol);
         }
@@ -121,7 +121,7 @@ export default function audioManagerTest() {
 
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`getVolume error ${error.code}, message ${error.message}`);
         expect(false).assertTrue();
         done();

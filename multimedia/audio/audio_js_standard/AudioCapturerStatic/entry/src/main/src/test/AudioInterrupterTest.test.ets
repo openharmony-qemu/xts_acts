@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,8 +18,8 @@ import { BusinessError } from '@ohos.base';
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
 import Utils from './Util.test';
 
-let render1: audio.AudioRenderer;
-let render2: audio.AudioRenderer;
+let render1: audio.AudioRenderer | undefined;
+let render2: audio.AudioRenderer | undefined;
 interface childType {
   source: number,
   capturerFlags: number
@@ -76,12 +76,12 @@ export default function audioInterrupterTest() {
     })
 
     afterEach(async () => {
-      if (render1.state !== audio.AudioState.STATE_RELEASED) {
-        await render1.release()
+      if (render1!.state !== audio.AudioState.STATE_RELEASED) {
+        await render1!.release()
         console.info(`${Tag} AudioFrameworkTest: afterEach: render1 release success`);
       }
-      if (render2.state !== audio.AudioState.STATE_RELEASED) {
-        await render2.release()
+      if (render2!.state !== audio.AudioState.STATE_RELEASED) {
+        await render2!.release()
         console.info(`${Tag} AudioFrameworkTest: afterEach: render2 release success`);
       }
       await Utils.msSleep(1000)
@@ -144,7 +144,7 @@ export default function audioInterrupterTest() {
 
     let createAudioRenderer =
       async (AudioRendererInfo: audio.AudioRendererInfo, AudioStreamInfo: audio.AudioStreamInfo, done: () => void): Promise<audio.AudioRenderer> => {
-        let render: audio.AudioRenderer | null;
+        let render: audio.AudioRenderer | null = null;
         let AudioRendererOptions: audio.AudioRendererOptions = {
           streamInfo: AudioStreamInfo,
           rendererInfo: AudioRendererInfo
@@ -188,17 +188,17 @@ export default function audioInterrupterTest() {
       try{
         let listeningFlag01 = false;
         let listeningFlag02 = false;
-        render1= await createAudioRenderer(renderInfo.GAME, streamInfo.A16000, done)
-        await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-        await render1.start()
-        render1.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        render1 = await createAudioRenderer(renderInfo.GAME, streamInfo.A16000, done)
+        await render1!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+        await render1!.start()
+        render1!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.log("TEST_0100 come in render1.on：" + JSON.stringify(interruptEvent))
           listeningFlag01 = true;
         })
         render2 = await createAudioRenderer(renderInfo.MUSIC, streamInfo.A44100, done)
-        await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-        await render2.start()
-        render2.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        await render2!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+        await render2!.start()
+        render2!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.log("TEST_0100 come in render2.on：" + JSON.stringify(interruptEvent))
           listeningFlag02 = true;
         })
@@ -223,9 +223,9 @@ export default function audioInterrupterTest() {
         let listeningFlag01 = false;
         let listeningFlag02 = false;
         render1 = await createAudioRenderer(renderInfo.MOVIE, streamInfo.A44100, done)
-        await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-        await render1.start()
-        render1.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        await render1!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+        await render1!.start()
+        render1!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           if (interruptEvent.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
             console.log("TEST_0200 come in INTERRUPT_TYPE_BEGIN：" + JSON.stringify(interruptEvent))
             listeningFlag01 = true
@@ -240,17 +240,17 @@ export default function audioInterrupterTest() {
           }
         })
         render2 = await createAudioRenderer(renderInfo.ALARM, streamInfo.A16000, done)
-        await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-        await render2.start()
-        render2.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        await render2!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+        await render2!.start()
+        render2!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.log("TEST_0200 come in render2.on：" + JSON.stringify(interruptEvent))
           expect(false).assertTrue();
         })
         await Utils.msSleep(500)
         //先释放触发render2 触发render1.on返回参数INTERRUPT_HINT_RESUME
-        await renderRelease(render2, done)
+        await renderRelease(render2!, done)
         await Utils.msSleep(500)
-        await renderRelease(render1, done)
+        await renderRelease(render1!, done)
         expect(listeningFlag01 && listeningFlag02).assertTrue()
       } catch (err) {
         console.log("INTERRUPTER_TEST err:" + JSON.stringify(err))
@@ -270,9 +270,9 @@ export default function audioInterrupterTest() {
       try{
         let listeningFlag01 = false;
         render1 = await createAudioRenderer(renderInfo.ALARM, streamInfo.A44100, done)
-        await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-        await render1.start()
-        render1.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        await render1!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+        await render1!.start()
+        render1!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           if (interruptEvent.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
             console.log("TEST_0300 come in INTERRUPT_TYPE_BEGIN" + JSON.stringify(interruptEvent))
             listeningFlag01 = true
@@ -283,16 +283,16 @@ export default function audioInterrupterTest() {
           }
         })
         render2 = await createAudioRenderer(renderInfo.RINGTONE, streamInfo.A16000, done)
-        await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-        await render2.start()
-        render2.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        await render2!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+        await render2!.start()
+        render2!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.log("TEST_0300 come in render2.on：" + JSON.stringify(interruptEvent))
           expect(false).assertTrue();
         })
         await Utils.msSleep(500)
-        await renderRelease(render2, done)
+        await renderRelease(render2!, done)
         await Utils.msSleep(500)
-        await renderRelease(render1, done)
+        await renderRelease(render1!, done)
         expect(listeningFlag01).assertTrue()
       } catch (err) {
         console.log("INTERRUPTER_TEST err:" + JSON.stringify(err))
@@ -313,9 +313,9 @@ export default function audioInterrupterTest() {
         let listeningFlag01 = false;
         let listeningFlag02 = false;
         render1 = await createAudioRenderer(renderInfo.MOVIE, streamInfo.A44100, done)
-        await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-        await render1.start()
-        render1.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        await render1!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+        await render1!.start()
+        render1!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           if (interruptEvent.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
             console.log("TEST_0400 come in INTERRUPT_TYPE_BEGIN" + JSON.stringify(interruptEvent))
             listeningFlag01 = true
@@ -330,17 +330,17 @@ export default function audioInterrupterTest() {
           }
         })
         render2 = await createAudioRenderer(renderInfo.ACCESSIBILITY, streamInfo.A16000, done)
-        await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-        await render2.start()
-        render2.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        await render2!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+        await render2!.start()
+        render2!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.log("TEST_0400 come in render2.on：" + JSON.stringify(interruptEvent))
           expect(false).assertTrue();
         })
         await Utils.msSleep(500)
         //先释放触发render2 触发render1.on返回参数INTERRUPT_HINT_UNDUCK
-        await renderRelease(render2, done)
+        await renderRelease(render2!, done)
         await Utils.msSleep(500)
-        await renderRelease(render1, done)
+        await renderRelease(render1!, done)
         expect(listeningFlag01 && listeningFlag02).assertTrue()
       } catch (err) {
         console.log("INTERRUPTER_TEST err:" + JSON.stringify(err))
@@ -359,17 +359,18 @@ export default function audioInterrupterTest() {
     it('SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         render1 = await createAudioRenderer(renderInfo.RINGTONE, streamInfo.A44100, done)
-        await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-        await render1.start()
-        render1.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        await render1!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+        await render1!.start()
+        render1!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.log("TEST_0100 come in render1.on：" + JSON.stringify(interruptEvent))
           expect(false).assertTrue()
         })
         render2 = await createAudioRenderer(renderInfo.VOICE_ASSISTANT, streamInfo.A48000, done)
-        await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-        await render2.start()
+        await render2!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+        await render2!.start()
         expect(false).assertTrue()
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("INTERRUPTER_TEST err:" + JSON.stringify(err))
         expect(err.code).assertEqual(6800301)
       }
@@ -388,16 +389,16 @@ export default function audioInterrupterTest() {
         let listeningFlag01 = false;
         let listeningFlag02 = false;
         render1 = await createAudioRenderer(renderInfo.MUSIC, streamInfo.A44100, done)
-        await render1.setInterruptMode(audio.InterruptMode.SHARE_MODE)
-        await render1.start()
-        render1.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        await render1!.setInterruptMode(audio.InterruptMode.SHARE_MODE)
+        await render1!.start()
+        render1!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.log("TEST_0600 come in render1.on：" + JSON.stringify(interruptEvent))
           listeningFlag01 = true;
         })
         render2 = await createAudioRenderer(renderInfo.MUSIC, streamInfo.A16000, done)
-        await render2.setInterruptMode(audio.InterruptMode.SHARE_MODE)
-        await render2.start()
-        render2.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        await render2!.setInterruptMode(audio.InterruptMode.SHARE_MODE)
+        await render2!.start()
+        render2!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.log("TEST_0600 come in render2.on：" + JSON.stringify(interruptEvent))
           listeningFlag02 = true;
         })

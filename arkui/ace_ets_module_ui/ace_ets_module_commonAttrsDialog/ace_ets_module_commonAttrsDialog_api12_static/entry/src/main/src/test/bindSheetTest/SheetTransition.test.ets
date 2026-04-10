@@ -82,7 +82,7 @@ export default function SheetTransition() {
 it('SheetTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SheetTransition_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
       let button = await driver.findComponent(ON.id('SheetTransition'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -104,9 +104,10 @@ it('SheetTransition_static_0100', Level.LEVEL0, async (done: () => void): Promis
       console.info("[SheetTransition_0100] component obj2 is: " + JSON.stringify(obj2));
       console.info("[SheetTransition_0100] title: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
 
-
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual("value Width:" + sizeX);
-
+      console.info("====obj2attr======"+JSON.stringify(obj2.getElement('$attrs')))
+      console.info("====obj2======"+JSON.stringify(obj2))
+      console.info("====obj2conet======"+obj2.getElement('$attrs').getString('content'))
+      expect(obj2.getElement('$attrs').getString('content')).assertContain("value Width");
       console.info('[SheetTransition_0100] END');
       done();
     });

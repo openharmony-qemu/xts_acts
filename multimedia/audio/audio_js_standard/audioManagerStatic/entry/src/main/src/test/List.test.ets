@@ -18,6 +18,7 @@ import getAudioSceneApi12 from "./GetAudioScene.test"
 import audioRoutingManager from "./AudioRoutingManager.test"
 import audioLoopBack from './AudioLoopBack.test';
 import audioSpatializationManager from './AudioSpatializationManager.test';
+import audioSessionManagerTest from './AudioSessionManager.test';
 import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -30,6 +31,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let getPermission = async () => {
     try {
+        console.info('getPermission start');
         let g_context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
         let atManager = abilityAccessCtrl.createAtManager();
         let arr: Array<Permissions> = new Array<Permissions>();
@@ -41,17 +43,20 @@ let getPermission = async () => {
                 console.info("getPermissionRequestResult err" + JSON.stringify(err));
             });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
+        await Utils.msSleep(1000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        await Utils.msSleep(1000);
         if (permissionButton != null) {
             await permissionButton.click();
         }
     } catch (err) {
-        console.error(' beforeAll failed, err: ' + err);
+        console.error('beforeAll failed, err: ' + err);
     }
 }
 
 export default function testsuite() {
     getPermission();
+    audioSessionManagerTest();
     audioManagerApi9();
     audioFramework();
     audioRoutingManager();

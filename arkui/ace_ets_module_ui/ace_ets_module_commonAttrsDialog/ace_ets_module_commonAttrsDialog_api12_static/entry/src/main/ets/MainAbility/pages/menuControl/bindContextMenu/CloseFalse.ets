@@ -59,15 +59,17 @@ struct CloseFalse {
 
   @Builder
   MyMenu() {
-    Menu() {
-      MenuItem({ startIcon: this.iconStr, content: "菜单选项" } as MenuItemOptions)
-      MenuItem({ startIcon: this.iconStr, content: "菜单选项" } as MenuItemOptions)
-      MenuItem({ startIcon: this.iconStr, content: "菜单选项" } as MenuItemOptions)
-    }
+    Column() {
+      Menu() {
+        MenuItem({ startIcon: this.iconStr, content: "菜单选项" } as MenuItemOptions)
+        MenuItem({ startIcon: this.iconStr, content: "菜单选项" } as MenuItemOptions)
+        MenuItem({ startIcon: this.iconStr, content: "菜单选项" } as MenuItemOptions)
+      }
 
-    Button("点我关闭Menu").id("CloseFalseClose").onClick((e:ClickEvent) => {
-      this.isShown = false;
-    })
+      Button("点我关闭Menu").id("CloseFalseClose").onClick((e: ClickEvent) => {
+        this.isShown = false;
+      })
+    }
   }
 
   build() {

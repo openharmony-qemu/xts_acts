@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,19 +16,19 @@
 import { Entry, Component, Column, AttributeModifier, RectAttribute, Rect, RectOptions } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-class RectModifier1 implements AttributeModifier<RectAttribute>{
+export class RectModifier1 implements AttributeModifier<RectAttribute>{
   applyNormalAttribute(instance: RectAttribute): void {
     instance.radiusHeight(8);
   }
 }
 
-class RectModifier2 implements AttributeModifier<RectAttribute>{
+export class RectModifier2 implements AttributeModifier<RectAttribute>{
   applyNormalAttribute(instance: RectAttribute): void {
     instance.radius(6);
   }
 }
 
-class RectModifier3 implements AttributeModifier<RectAttribute>{
+export class RectModifier3 implements AttributeModifier<RectAttribute>{
   applyNormalAttribute(instance: RectAttribute): void {
     instance.radiusWidth(12);
   }

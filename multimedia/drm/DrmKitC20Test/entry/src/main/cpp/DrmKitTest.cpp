@@ -365,6 +365,7 @@ napi_value DRM_MediaKeyRequestTypeValue(napi_env env, napi_callback_info info)
 {
     napi_value result;
     DRM_MediaKeyRequest requestData;
+    requestData.type = MEDIA_KEY_REQUEST_TYPE_UNKNOWN;
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
     napi_create_int32(env, requestData.type == MEDIA_KEY_REQUEST_TYPE_UNKNOWN, &result);
     return result;
@@ -409,6 +410,7 @@ napi_value DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN(napi_env env, n
 {
     napi_value result;
     DRM_MediaKeyRequest requestData;
+    requestData.type = MEDIA_KEY_REQUEST_TYPE_UNKNOWN;
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
     napi_create_int32(env, requestData.type == MEDIA_KEY_REQUEST_TYPE_UNKNOWN, &result);
     return result;
@@ -485,7 +487,7 @@ napi_value DRM_OfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE(napi_env e
     MediaKeySession *drmKeySession = nullptr;
     Drm_ErrCode ret3 = OH_MediaKeySystem_CreateMediaKeySession(system_ptr, &level, &drmKeySession);
     Drm_ErrCode ret4 = OH_MediaKeySystem_ClearOfflineMediaKeys(system_ptr, keyId_ptr, offlineMediaKeyIdLen);
-    DRM_OfflineMediaKeyStatus status = OFFLINE_MEDIA_KEY_STATUS_USABLE;
+    DRM_OfflineMediaKeyStatus status = OFFLINE_MEDIA_KEY_STATUS_INACTIVE;
     if (ret3 == DRM_ERR_OK) {
         Drm_ErrCode ret6 = OH_MediaKeySystem_GetOfflineMediaKeyStatus(system_ptr, keyId_ptr,
             offlineMediaKeyIdLen, &status);
@@ -494,7 +496,7 @@ napi_value DRM_OfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE(napi_env e
         }
     }
     napi_value result;
-    napi_create_int32(env, status == OFFLINE_MEDIA_KEY_STATUS_USABLE, &result);
+    napi_create_int32(env, status == OFFLINE_MEDIA_KEY_STATUS_INACTIVE, &result);
     return result;
 }
 

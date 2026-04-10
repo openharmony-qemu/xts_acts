@@ -208,12 +208,12 @@ napi_value GestureInterfaceTest::CreateNativeNode(napi_env env, napi_callback_in
             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "OnSurfaceCreatedCB  222--1");
             ArkUI_NodeHandle scroll = nodeAPI->createNode(ARKUI_NODE_SCROLL);
             ArkUI_NodeHandle list = nodeAPI->createNode(ARKUI_NODE_LIST);
-            ArkUI_NumberValue listWidthValue[] = {500};
+            ArkUI_NumberValue listWidthValue[] = {PARAM_1_POINT_0};
             ArkUI_AttributeItem listWidthItem = {listWidthValue, 1};
-            nodeAPI->setAttribute(list, NODE_WIDTH, &listWidthItem);
-            ArkUI_NumberValue listHeightValue[] = {150};
+            nodeAPI->setAttribute(list, NODE_WIDTH_PERCENT, &listWidthItem);
+            ArkUI_NumberValue listHeightValue[] = {PARAM_0_POINT_5};
             ArkUI_AttributeItem listHeightItem = {listHeightValue, 1};
-            nodeAPI->setAttribute(list, NODE_HEIGHT, &listHeightItem);
+            nodeAPI->setAttribute(list, NODE_HEIGHT_PERCENT, &listHeightItem);
             ArkUI_NumberValue borderColorValue[] = {{.u32 = 0xCCCCCCCC}};
             ArkUI_AttributeItem borderColorItem = {borderColorValue, 1};
             nodeAPI->setAttribute(list, NODE_BORDER_COLOR, &borderColorItem);
@@ -237,16 +237,16 @@ napi_value GestureInterfaceTest::CreateNativeNode(napi_env env, napi_callback_in
             nodeAPI->setAttribute(list, NODE_ID, &nodeIdItem);
 
             for (int i = 0; i < loopCountNumber; i++) {
-                 ArkUI_NumberValue widthValue[] = {200};
+                 ArkUI_NumberValue widthValue[] = {PARAM_0_POINT_5};
                  ArkUI_AttributeItem widthItem = {widthValue, 1};
-                 ArkUI_NumberValue heightValue[] = {10};
+                 ArkUI_NumberValue heightValue[] = {PARAM_01};
                  ArkUI_AttributeItem heightItem = {heightValue, 1};
                  ArkUI_NumberValue backColorvalue[] = {{.u32 = 0xFF0000FF}};
                  ArkUI_AttributeItem backColoritem = {backColorvalue, 1};
                  ArkUI_NodeHandle FlowItem = nodeAPI->createNode(ARKUI_NODE_LIST_ITEM);
                  ArkUI_NodeHandle text = nodeAPI->createNode(ARKUI_NODE_TEXT);
-                 nodeAPI->setAttribute(text, NODE_WIDTH, &widthItem);
-                 nodeAPI->setAttribute(text, NODE_HEIGHT, &heightItem);
+                 nodeAPI->setAttribute(text, NODE_WIDTH_PERCENT, &widthItem);
+                 nodeAPI->setAttribute(text, NODE_HEIGHT_PERCENT, &heightItem);
                  nodeAPI->setAttribute(text, NODE_BACKGROUND_COLOR, &backColoritem);
                  std::string contentS = "flowItem" + std::to_string(i);
                  const char * contentSS = contentS.c_str();
@@ -265,25 +265,25 @@ napi_value GestureInterfaceTest::CreateNativeNode(napi_env env, napi_callback_in
                     nodeAPI->addChild(list, FlowItem);
             }
 
-            ArkUI_NumberValue itemWidthValue[] = {400};
+            ArkUI_NumberValue itemWidthValue[] = {PARAM_0_POINT_8};
             ArkUI_AttributeItem itemWidthItem = {itemWidthValue, 1};
-            ArkUI_NumberValue itemHeightValue[] = {150};
+            ArkUI_NumberValue itemHeightValue[] = {PARAM_0_POINT_2};
             ArkUI_AttributeItem itemHeightItem = {itemHeightValue, 1};
             ArkUI_NumberValue itemBackColorvalue[] = {{.u32 = 0xFF00FFFF}};
             ArkUI_AttributeItem itemBackColoritem = {itemBackColorvalue, 1};
             ArkUI_NodeHandle text = nodeAPI->createNode(ARKUI_NODE_TEXT);
-            nodeAPI->setAttribute(text, NODE_WIDTH, &itemWidthItem);
-            nodeAPI->setAttribute(text, NODE_HEIGHT, &itemHeightItem);
+            nodeAPI->setAttribute(text, NODE_WIDTH_PERCENT, &itemWidthItem);
+            nodeAPI->setAttribute(text, NODE_HEIGHT_PERCENT, &itemHeightItem);
             nodeAPI->setAttribute(text, NODE_BACKGROUND_COLOR, &itemBackColoritem);
             ArkUI_AttributeItem contentItem = {.string = "scrollItem"};
             nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &contentItem);
 
-            ArkUI_NumberValue scrollWidthValue[] = {500};
+            ArkUI_NumberValue scrollWidthValue[] = {PARAM_1_POINT_0};
             ArkUI_AttributeItem scrollWidthItem = {scrollWidthValue, 1};
-            nodeAPI->setAttribute(scroll, NODE_WIDTH, &scrollWidthItem);
-            ArkUI_NumberValue scrollHeightValue[] = {200};
+            nodeAPI->setAttribute(scroll, NODE_WIDTH_PERCENT, &scrollWidthItem);
+            ArkUI_NumberValue scrollHeightValue[] = {PARAM_0_POINT_6};
             ArkUI_AttributeItem scrollHeightItem = {scrollHeightValue, 1};
-            nodeAPI->setAttribute(scroll, NODE_HEIGHT, &scrollHeightItem);
+            nodeAPI->setAttribute(scroll, NODE_HEIGHT_PERCENT, &scrollHeightItem);
             ArkUI_NumberValue scrollColorvalue[] = {{.u32 = 0xFF2F2F4F}};
             ArkUI_AttributeItem backColoritem = {scrollColorvalue, 1};
             nodeAPI->setAttribute(scroll, NODE_BACKGROUND_COLOR, &backColoritem);

@@ -25,7 +25,7 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 export default function gridScrollbarUpdateTest() {
   describe('gridScrollbarUpdateTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,6 +40,7 @@ class StringFields {
 struct WebViewControllerDownloadTest {
   stringObj: StringFields  = new StringFields ();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
+  controllerNull: webview.WebviewController = new webview.WebviewController(undefined);
   delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
   @State str: string = '';
   @State downloadUrl: string = 'https://consumer.huawei.com/content/dam/' +
@@ -63,6 +64,8 @@ struct WebViewControllerDownloadTest {
   @State start: boolean = true;
   @State savePath: string = '/data/storage/el2/base/cache/web/';
   downloadingItem: webview.WebDownloadItem = new webview.WebDownloadItem();
+  downloadItemErrorCode:  webview.WebDownloadItem = new webview.WebDownloadItem();
+  downloadItem: webview.WebDownloadItem = new webview.WebDownloadItem();
   @State currentDownloadState: number = -1;
   @State testCompleted: boolean = false;
   @State guids: string[] = new Array<string>();
@@ -75,6 +78,8 @@ struct WebViewControllerDownloadTest {
   @State suggestedFileName: string = '';
   @State receivedBytes: number = -1;
   @State fullPath: string = '';
+  @State isDownloadFail: boolean = false;
+  @State getLastErrorCodeEnum: number = -1;
   failedDownloadSerializedData: Uint8Array  = new Uint8Array();
   failedDownload: webview.WebDownloadItem = new webview.WebDownloadItem();
 
@@ -108,7 +113,7 @@ struct WebViewControllerDownloadTest {
             case 'testSetDownloadDelegate001': {
               try {
                 Utils.emitEvent(this.hasSetDownloadDelegate, 79520)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -117,8 +122,17 @@ struct WebViewControllerDownloadTest {
               try {
                 this.controller.startDownload(this.downloadUrl);
                 Utils.emitEvent(true, 79530)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testStartDownload002': {
+              try {
+                this.controller.startDownload("");
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 79501)
               }
               break;
             }
@@ -128,7 +142,7 @@ struct WebViewControllerDownloadTest {
                 if (this.currentDownloadState == webview.WebDownloadState.IN_PROGRESS) {
                   Utils.emitEvent(this.currentDownloadState, 79540);
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -137,7 +151,10 @@ struct WebViewControllerDownloadTest {
               try {
                 this.testCompleted = true
                 this.controller.startDownload(this.downloadUrlImg);
-              } catch (error: BusinessError) {
+                if (this.currentDownloadState == webview.WebDownloadState.COMPLETED) {
+                  Utils.emitEvent(this.currentDownloadState, 79542);
+                }
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -151,8 +168,358 @@ struct WebViewControllerDownloadTest {
                 if ( this.currentDownloadState == webview.WebDownloadState.CANCELED) {
                   Utils.emitEvent(this.currentDownloadState, 79544)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic001': {
+              try {
+                  Utils.emitEvent(webview.WebDownloadErrorCode.ERROR_UNKNOWN, 260326171)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326171);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic002': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_FAILED, 260326172)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326172);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic003': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_ACCESS_DENIED, 260326173)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326173);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic004': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_NO_SPACE, 260326174)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326174);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic005': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_NAME_TOO_LONG, 260326175)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326175);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic006': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_TOO_LARGE, 260326176)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326176);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic007': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_TRANSIENT_ERROR, 260326177)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326177);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic008': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_BLOCKED, 260326178)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326178);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic009': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_TOO_SHORT, 260326179)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326179);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic010': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_HASH_MISMATCH, 260326180)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326180);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic011': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_SAME_AS_SOURCE, 260326181)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326181);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic012': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.NETWORK_FAILED, 260326182)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326182);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic013': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.NETWORK_TIMEOUT, 260326183)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326183);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic014': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.NETWORK_DISCONNECTED, 260326184)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326184);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic015': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.NETWORK_SERVER_DOWN, 260326185)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326185);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic016': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.NETWORK_INVALID_REQUEST, 260326186)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326186);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic017': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_FAILED, 260326187)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326187);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic018': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_NO_RANGE, 260326188)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326188);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic019': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_BAD_CONTENT, 260326189)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326189);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic020': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_UNAUTHORIZED, 260326190)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326190);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic021': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_CERT_PROBLEM, 260326191)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326191);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic022': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_FORBIDDEN, 260326192)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326192);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic023': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_UNREACHABLE, 260326193)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326193);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic024': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_CONTENT_LENGTH_MISMATCH, 260326194)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326194);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic025': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_CROSS_ORIGIN_REDIRECT, 260326195)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326195);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic026': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.USER_CANCELED, 260326196)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326196);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic027': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.USER_SHUTDOWN, 260326197)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326197);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic028': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.CRASH, 260326198)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326198);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic001': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.IN_PROGRESS, 2603261981)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261981);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic002': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.COMPLETED, 2603261982)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261982);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic003': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.CANCELED, 2603261983)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261983);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic004': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.INTERRUPTED, 2603261984)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261984);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic005': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.PENDING, 2603261985)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261985);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic006': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.PAUSED, 2603261986)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261986);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic007': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.UNKNOWN, 2603261987)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261987);
               }
               break;
             }
@@ -163,7 +530,7 @@ struct WebViewControllerDownloadTest {
                 if (this.currentDownloadState == webview.WebDownloadState.INTERRUPTED) {
                   Utils.emitEvent(this.currentDownloadState, 79546)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -175,7 +542,7 @@ struct WebViewControllerDownloadTest {
                 if ( this.currentDownloadState == webview.WebDownloadState.PENDING) {
                   Utils.emitEvent(this.currentDownloadState, 79548)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -194,8 +561,38 @@ struct WebViewControllerDownloadTest {
                   Utils.emitEvent(webview.WebDownloadState.PAUSED, 79550)
                 }
                 console.log('testWebDownloadState006:' + this.currentDownloadState)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testWebDownloadState007': {
+              try {
+                this.controller.startDownload("");
+                if ( this.currentDownloadState == webview.WebDownloadState.UNKNOWN) {
+                  console.log("get download status: ", this.currentDownloadState);
+                  Utils.emitEvent(webview.WebDownloadState.UNKNOWN, 79500)
+                }
+              } catch (error) {
+                if ( this.currentDownloadState == webview.WebDownloadState.UNKNOWN) {
+                  Utils.emitEvent(webview.WebDownloadState.UNKNOWN, 79500)
+                }
+              }
+              break;
+            }
+            case 'testWebDownloadPauseFail001': {
+              try {
+                this.controller.startDownload(this.downloadUrl);
+                if (this.downloadItem) {
+                  this.downloadItem.cancel()
+                }
+                this.isDownloadFail = false;
+                if (this.downloadItem) {
+                  this.downloadItem.pause();
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 79503)
               }
               break;
             }
@@ -206,7 +603,7 @@ struct WebViewControllerDownloadTest {
                 if (this.guids.length >= 1) {
                   Utils.emitEvent(true, 79650)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -220,7 +617,7 @@ struct WebViewControllerDownloadTest {
                   Utils.emitEvent(true, 79652)
                 }
 
-              } catch (error: BusinessError) {
+              } catch (error) {
                 
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -234,7 +631,7 @@ struct WebViewControllerDownloadTest {
                     Utils.emitEvent(true, 79654)
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -245,7 +642,7 @@ struct WebViewControllerDownloadTest {
                 if ( this.percentComplete > 0 && this.percentComplete <= 100 ) {
                   Utils.emitEvent(true , 79656)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -254,9 +651,9 @@ struct WebViewControllerDownloadTest {
               try {
                 this.controller.startDownload(this.downloadUrlImg);
                 if(this.percentComplete == 100) {
-                  Utils.emitEvent(this.percentComplete == 100, 79658)
+                  Utils.emitEvent(this.percentComplete, 79658)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -271,7 +668,7 @@ struct WebViewControllerDownloadTest {
                     Utils.emitEvent(true, 79660)
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -284,7 +681,7 @@ struct WebViewControllerDownloadTest {
                 if (this.methods.length > 0) {
                   Utils.emitEvent(true, 79662)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -296,7 +693,7 @@ struct WebViewControllerDownloadTest {
                 if (this.mimeTypes.indexOf('image/png')>-1) {
                   Utils.emitEvent(true, 79664)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -308,7 +705,7 @@ struct WebViewControllerDownloadTest {
                 if (this.mimeTypes.indexOf('video/mp4') > -1 ) {
                   Utils.emitEvent(true, 79666)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -320,7 +717,7 @@ struct WebViewControllerDownloadTest {
                 if (this.mimeTypes.indexOf('application/x-msdownload') > -1) {
                   Utils.emitEvent(true, 79668)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -332,7 +729,7 @@ struct WebViewControllerDownloadTest {
                 if (this.urls.indexOf(this.downloadUrl) > -1) {
                   Utils.emitEvent(true, 79670)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -343,7 +740,7 @@ struct WebViewControllerDownloadTest {
                 if (this.downloadUrl.indexOf(this.suggestedFileName) > -1) {
                   Utils.emitEvent(true, 79672)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -354,7 +751,7 @@ struct WebViewControllerDownloadTest {
                 if (this.receivedBytes > 0 && this.receivedBytes == this.totalBytes) {
                   Utils.emitEvent(true, 79674)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -366,7 +763,7 @@ struct WebViewControllerDownloadTest {
                 if (this.savePath == this.fullPath ) {
                   Utils.emitEvent(true, 79676)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -382,7 +779,7 @@ struct WebViewControllerDownloadTest {
                     Utils.emitEvent(true, 79678)
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -415,7 +812,7 @@ struct WebViewControllerDownloadTest {
                     }
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -434,8 +831,20 @@ struct WebViewControllerDownloadTest {
                     Utils.emitEvent(webview.WebDownloadState.IN_PROGRESS, 79692)
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testResume002': {
+              try {
+                this.controller.startDownload(this.downloadUrl);
+                  if (this.downloadingItem) {
+                    this.downloadingItem.resume()
+                  }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 79504)
               }
               break;
             }
@@ -445,7 +854,7 @@ struct WebViewControllerDownloadTest {
                 if(this.onBeforeDownloadCalled) {
                   Utils.emitEvent(true, 79700)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -454,7 +863,7 @@ struct WebViewControllerDownloadTest {
               try {
                 this.controller.startDownload(this.downloadUrl);
                 Utils.emitEvent(this.onDownloadUpdatedCalled, 79702)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -465,7 +874,7 @@ struct WebViewControllerDownloadTest {
                 if(this.onDownloadFinishCalled) {
                   Utils.emitEvent(this.onDownloadFinishCalled, 79704)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -473,15 +882,47 @@ struct WebViewControllerDownloadTest {
             case 'testWebDownloadManagerSetDownloadDelegate001': {
               try {
                 Utils.emitEvent(this.hasSetDownloadDelegate, 79750)
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
             }
+
+            case "testSetDownloadDelegateErrorCode001": {
+              try {
+                this.controllerNull.setDownloadDelegate(this.delegate)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 113930)
+              }
+              break;
+            }
+
+            case "testStartDownloadErrorCode001": {
+              try {
+                this.controllerNull.startDownload(this.downloadUrl)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 113940)
+              }
+              break;
+            }
+
+            case "testStartDownloadErrorCode002": {
+              try {
+                this.controller.startDownload("");
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 113950)
+              }
+              break;
+            }
+
             case 'testResumeDownload001': {
               try {
                 this.controller.startDownload(this.downloadUrl);
-                for (let i=0;i++;i<3) {
+                webview.WebDownloadManager.setDownloadDelegate(this.delegate);
+                for (let i=0; i< 3; i++) {
                   if (this.downloadingItem) {
                     this.downloadingItem.cancel()
                   }
@@ -494,8 +935,18 @@ struct WebViewControllerDownloadTest {
                     }
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case "testResumeDownloadErrorCode001": {
+              try {
+                webview.WebDownloadManager.resumeDownload(this.downloadItemErrorCode)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 114070)
               }
               break;
             }
@@ -514,6 +965,7 @@ struct WebViewControllerDownloadTest {
           if (!this.hasSetDownloadDelegate) {
             try {
               this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                this.downloadItemErrorCode = webDownloadItem;
                 this.onBeforeDownloadCalled = true;
                 if(this.onBeforeDownloadCalled) {
                   Utils.emitEvent(true, 79700)
@@ -533,6 +985,9 @@ struct WebViewControllerDownloadTest {
                 }
                 if ( this.currentDownloadState == webview.WebDownloadState.PENDING) {
                   Utils.emitEvent(webview.WebDownloadState.PENDING, 79548)
+                }
+                if ( this.currentDownloadState == webview.WebDownloadState.UNKNOWN) {
+                  Utils.emitEvent(webview.WebDownloadState.UNKNOWN, 79500)
                 }
                 console.info('webDownloadItem.getGuid() = ' + webDownloadItem.getGuid())
                 if (this.guids.indexOf(webDownloadItem.getGuid()) < 0) {
@@ -581,6 +1036,7 @@ struct WebViewControllerDownloadTest {
                 }
               })
               this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                this.downloadItemErrorCode = webDownloadItem;
                 this.downloadingItem = webDownloadItem;
                 this.onDownloadUpdatedCalled = true;
                 this.currentDownloadState = webDownloadItem.getState();
@@ -603,6 +1059,9 @@ struct WebViewControllerDownloadTest {
                 }
                 if ( this.currentDownloadState == webview.WebDownloadState.PENDING) {
                   Utils.emitEvent(this.currentDownloadState, 79548)
+                }
+                if ( this.currentDownloadState == webview.WebDownloadState.UNKNOWN) {
+                  Utils.emitEvent(this.currentDownloadState, 79500)
                 }
                 if (this.guids.indexOf(webDownloadItem.getGuid()) < 0) {
                   this.guids.push(webDownloadItem.getGuid());
@@ -666,6 +1125,8 @@ struct WebViewControllerDownloadTest {
 
               })
               this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                this.downloadItemErrorCode = webDownloadItem;
+                this.downloadItem = webDownloadItem;
                 this.onDownloadFailedCalled = true;
                 console.info('this.currentDownloadState onDownloadFailed before ' + this.currentDownloadState)
                 this.currentDownloadState = webDownloadItem.getState();
@@ -722,11 +1183,15 @@ struct WebViewControllerDownloadTest {
                 console.log('download failed method:' + webDownloadItem.getMethod());
                 console.log('download failed guid: ' + webDownloadItem.getGuid());
                 console.log('download failed lastErrorCode: ' + webDownloadItem.getLastErrorCode());
+                this.getLastErrorCodeEnum = webDownloadItem.getLastErrorCode();
                 webDownloadItem.cancel();
                 this.failedDownload = webDownloadItem;
                 this.failedDownloadSerializedData = webDownloadItem.serialize();
+                this.isDownloadFail = true;
               })
               this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                this.downloadItemErrorCode = webDownloadItem;
+                this.downloadItem = webDownloadItem;
                 this.onDownloadFinishCalled = true;
                 Utils.emitEvent(this.onDownloadFinishCalled, 79704)
                 console.info('this.currentDownloadState onDownloadFinish before ' + this.currentDownloadState)
@@ -785,9 +1250,8 @@ struct WebViewControllerDownloadTest {
               })
 
               this.controller.setDownloadDelegate(this.delegate);
-              webview.WebDownloadManager.setDownloadDelegate(this.delegate);
               this.hasSetDownloadDelegate = true
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
             }
           }

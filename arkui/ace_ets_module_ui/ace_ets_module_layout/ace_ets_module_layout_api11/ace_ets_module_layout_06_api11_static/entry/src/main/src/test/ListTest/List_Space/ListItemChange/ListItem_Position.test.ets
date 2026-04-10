@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function listItem_Position() {
 
   describe('ListItem_PositionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_PositionTest beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -124,7 +124,7 @@ it('testListItemPosition_static', Level.LEVEL0, async (done: () => void): Promis
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(UIContext.resolveUIContext()!.vp2px(500))) <= 1).assertTrue();
       
       let driver = Driver.create();
-      driver.swipe(360, 690, 360, 30);
+      await driver.swipe(360, 690, 360, 30);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest54');
       expect(locationText4.top).assertEqual(locationText4Again.top);
       console.info('new testListItemPosition END');

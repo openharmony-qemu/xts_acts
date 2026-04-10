@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { State } from '@ohos.arkui.stateManagement'
 import { ClickEvent } from '@ohos.arkui.component';
 
-class BasicDataSource implements IDataSource<string> {
+export class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];
 
@@ -60,28 +60,28 @@ class BasicDataSource implements IDataSource<string> {
   }
 
   // 通知LazyForEach组件需要在index对应索引处添加子组件
-  notifyDataAdd(index: number): void {
+  notifyDataAdd(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index as int);
     })
   }
 
   // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
-  notifyDataChange(index: number): void {
+  notifyDataChange(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index as int);
     })
   }
 
   // 通知LazyForEach组件需要在index对应索引处删除该子组件
-  notifyDataDelete(index: number): void {
+  notifyDataDelete(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index as int);
     })
   }
 
   // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
-  notifyDataMove(from: number, to: number): void {
+  notifyDataMove(from: int, to: int): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from as int, to as int);
     })
@@ -94,18 +94,18 @@ class BasicDataSource implements IDataSource<string> {
   }
 }
 
-class MyDataSource extends BasicDataSource {
+export class MyDataSource extends BasicDataSource {
   private dataArray: string[] = [];
 
   public totalCount(): int {
     return this.dataArray.length;
   }
 
-  public getData(index: number): string {
+  public getData(index: int): string {
     return this.dataArray[index as Int];
   }
 
-  public addData(index: number, data: string): void {
+  public addData(index: int, data: string): void {
     this.dataArray.splice(index as int, 0, data);
     this.notifyDataAdd(index);
   }

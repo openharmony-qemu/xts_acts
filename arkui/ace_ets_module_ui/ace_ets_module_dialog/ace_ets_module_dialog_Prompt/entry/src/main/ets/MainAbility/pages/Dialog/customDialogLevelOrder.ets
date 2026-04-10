@@ -56,87 +56,103 @@ struct customDialogLevelOrder {
 
   build() {
     Column({ space: 5 }) {
-      Button('100')
-        .id('100')
-        .height('10%')
-        .onClick(() => {
-          this.dialogController = new CustomDialogController({
-            builder: CustomDialogExampleD(),
-            levelOrder: LevelOrder.clamp(100),
-            alignment: DialogAlignment.Center,
+      Row() {
+        Button('100')
+          .id('100')
+          .height('5%')
+          .onClick(() => {
+            this.dialogController = new CustomDialogController({
+              builder: CustomDialogExampleD(),
+              levelOrder: LevelOrder.clamp(100),
+              offset: { dx: 0, dy: 30 },
+              alignment: DialogAlignment.Center,
+            })
+            if (this.dialogController != null) {
+              this.dialogController.open()
+            }
           })
-          if (this.dialogController != null) {
-            this.dialogController.open()
-          }
-        })
-      Button('100001')
-        .id('100001')
-        .height('10%')
-        .onClick(() => {
-          this.dialogController = new CustomDialogController({
-            builder: CustomDialogExampleD(),
-            levelOrder: LevelOrder.clamp(100001),
-            alignment: DialogAlignment.Center
+        Button('100001')
+          .id('100001')
+          .height('5%')
+          .onClick(() => {
+            this.dialogController = new CustomDialogController({
+              builder: CustomDialogExampleD(),
+              levelOrder: LevelOrder.clamp(100001),
+              offset: { dx: 0, dy: 30 },
+              alignment: DialogAlignment.Center
+            })
+            if ( this.dialogController != null) {
+              this.dialogController.open()
+            }
           })
-          if ( this.dialogController != null) {
-            this.dialogController.open()
-          }
-        })
-      Button('-100001')
-        .id('-100001')
-        .height('10%')
-        .onClick(() => {
-          this.dialogController = new CustomDialogController({
-            builder: CustomDialogExampleD(),
-            levelOrder: LevelOrder.clamp(-100001),
-            alignment: DialogAlignment.Center
+      }
+
+      Row() {
+        Button('-100001')
+          .id('-100001')
+          .height('5%')
+          .onClick(() => {
+            this.dialogController = new CustomDialogController({
+              builder: CustomDialogExampleD(),
+              levelOrder: LevelOrder.clamp(-100001),
+              offset: { dx: 0, dy: 30 },
+              alignment: DialogAlignment.Center
+            })
+            if ( this.dialogController != null) {
+              this.dialogController.open()
+            }
           })
-          if ( this.dialogController != null) {
-            this.dialogController.open()
-          }
-        })
-      Button('undefined')
-        .id('undefined')
-        .height('10%')
-        .onClick(() => {
-          this.dialogController= new CustomDialogController({
-            builder: CustomDialogExampleD(),
-            levelOrder: LevelOrder.clamp(undefined),
-            alignment: DialogAlignment.Center
+        Button('undefined')
+          .id('undefined')
+          .height('5%')
+          .onClick(() => {
+            this.dialogController= new CustomDialogController({
+              builder: CustomDialogExampleD(),
+              levelOrder: LevelOrder.clamp(undefined),
+              offset: { dx: 0, dy: 30 },
+              alignment: DialogAlignment.Center
+            })
+            if ( this.dialogController != null) {
+              this.dialogController.open()
+            }
           })
-          if ( this.dialogController != null) {
-            this.dialogController.open()
-          }
-        })
-      Button('100000')
-        .id('100000')
-        .height('10%')
-        .onClick(() => {
-          this.dialogController = new CustomDialogController({
-            builder: CustomDialogExampleD(),
-            levelOrder: LevelOrder.clamp(100000),
-            alignment: DialogAlignment.Center
+      }
+
+      Row() {
+        Button('100000')
+          .id('100000')
+          .height('5%')
+          .onClick(() => {
+            this.dialogController = new CustomDialogController({
+              builder: CustomDialogExampleD(),
+              levelOrder: LevelOrder.clamp(100000),
+              offset: { dx: 0, dy: 30 },
+              alignment: DialogAlignment.Center
+            })
+            if ( this.dialogController != null) {
+              this.dialogController.open()
+            }
           })
-          if ( this.dialogController != null) {
-            this.dialogController.open()
-          }
-        })
-      Button('-100000')
-        .id('-100000')
-        .height('10%')
-        .onClick(() => {
-          this.dialogController = new CustomDialogController({
-            builder: CustomDialogExampleD(),
-            levelOrder: LevelOrder.clamp(-100000),
-            alignment: DialogAlignment.Center
+        Button('-100000')
+          .id('-100000')
+          .height('5%')
+          .onClick(() => {
+            this.dialogController = new CustomDialogController({
+              builder: CustomDialogExampleD(),
+              levelOrder: LevelOrder.clamp(-100000),
+              offset: { dx: 0, dy: 30 },
+              alignment: DialogAlignment.Center
+            })
+            if ( this.dialogController != null) {
+              this.dialogController.open()
+            }
           })
-          if ( this.dialogController != null) {
-            this.dialogController.open()
-          }
-        })
+      }
+
     }
     .height('100%')
     .width('100%')
-    .justifyContent(FlexAlign.Center)
+    .margin({top:20})
+    .justifyContent(FlexAlign.Start)
   }
 }

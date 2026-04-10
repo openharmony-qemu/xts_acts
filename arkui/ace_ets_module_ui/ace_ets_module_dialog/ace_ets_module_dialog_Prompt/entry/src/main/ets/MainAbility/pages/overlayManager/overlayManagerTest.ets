@@ -28,12 +28,13 @@ class Params {
 function builderText(params: Params) {
   Column() {
     Text(params.text)
+      .height('5%')
       .fontWeight(FontWeight.Bold)
   }
   .alignItems(HorizontalAlign.Center)
   .justifyContent(FlexAlign.End)
   .width(150)
-  .height(80)
+  .height(40)
   .opacity(1)
   .backgroundColor(Color.Red)
   .offset(params.offset)
@@ -87,7 +88,7 @@ struct overlayManagerTest {
       title: '-100001', func: () => {
       let componentContent = new ComponentContent(
         this.ctx, wrapBuilder<[Params]>(builderText),
-        new Params('-100001', { x: 100, y: 10 })
+        new Params('-100001', { x: 80, y: 10 })
       )
       this.contentArray.push(componentContent)
       this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(-100001))
@@ -105,7 +106,7 @@ struct overlayManagerTest {
       title: '100001', func: () => {
       let componentContent = new ComponentContent(
         this.ctx, wrapBuilder<[Params]>(builderText),
-        new Params('100001', { x: 100, y: 15 })
+        new Params('100001', { x: 80, y: 15 })
       )
       this.contentArray.push(componentContent)
       this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(100001))
@@ -123,7 +124,7 @@ struct overlayManagerTest {
       title: 'undefined', func: () => {
       let componentContent = new ComponentContent(
         this.ctx, wrapBuilder<[Params]>(builderText),
-        new Params('undefined', { x: 100, y: 20 })
+        new Params('undefined', { x: 80, y: 20 })
       )
       this.contentArray.push(componentContent)
       this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(undefined))
@@ -141,7 +142,7 @@ struct overlayManagerTest {
       title: '0.111', func: () => {
       let componentContent = new ComponentContent(
         this.ctx, wrapBuilder<[Params]>(builderText),
-        new Params('0.111', { x: 100, y: 25 })
+        new Params('0.111', { x: 80, y: 25 })
       )
       this.contentArray.push(componentContent)
       this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(0.111))
@@ -161,9 +162,12 @@ struct overlayManagerTest {
 
   build() {
     Column({ space: 5 }) {
-      ForEach(this.setLevelOrder, (item: SetParam) => {
-        MyComponent({ title: item.title, func: item.func })
-      }, (item: SetParam) => item.title)
+      Row({ space: 5 }) {
+        ForEach(this.setLevelOrder, (item: SetParam) => {
+          MyComponent({ title: item.title, func: item.func })
+        }, (item: SetParam) => item.title)
+      }.margin({left:30, top:40})
+
       Text(`Top` + this.top)
         .id('myTop')
         .componentTextStyle()

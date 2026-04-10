@@ -65,9 +65,9 @@ export default function webViewController() {
      * @tc.desc   test onOverScroll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnOverScrollStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testOnOverScrollStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       Utils.emitEvent('testOnOverScroll001', 10);
@@ -188,5 +188,71 @@ export default function webViewController() {
         await Utils.msSleep(3000);
         done();
       })
+
+    /**
+     * @tc.name   testOnOverScrollStatic005
+     * @tc.number SUB_WEB_ONOVERSCROLL_0500
+     * @tc.desc   test onOverScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnOverScrollStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(3000);
+        Utils.emitEvent('testOnOverScroll005', 10);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
+        let userAgentPC = '';
+        const isPC: boolean = userAgentPC.includes('PC');
+        if (isPC) {
+          console.info("isPC")
+          await driver.swipe(1200, 600, 1400, 1400);
+        }else{
+          console.info("isPhone")
+          await driver.swipe(100, 300, 400, 300, 600);
+        }
+        await Utils.msSleep(3000);
+        Utils.registerEvent('testOnOverScroll005', true, 310383191, done);
+        await Utils.msSleep(3000);
+        let button = await driver.findComponent(ON.id('WebViewControllerButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      });
+
+    /**
+     * @tc.name   testOnOverScrollStatic006
+     * @tc.number SUB_WEB_ONOVERSCROLL_0600
+     * @tc.desc   test onOverScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnOverScrollStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(3000);
+        Utils.emitEvent('testOnOverScroll006', 10);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
+        let userAgentPC = '';
+        const isPC: boolean = userAgentPC.includes('PC');
+        if (isPC) {
+          console.info("isPC")
+          await driver.swipe(1200, 600, 1400, 1400);
+        }else{
+          console.info("isPhone")
+          await driver.swipe(100, 300, 400, 300, 600);
+        }
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testOnOverScroll006', false, 310383192, done);
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('WebViewControllerButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(5000);
+        done();
+      });
   })
 }

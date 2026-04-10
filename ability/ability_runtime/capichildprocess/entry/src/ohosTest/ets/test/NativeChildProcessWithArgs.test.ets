@@ -308,6 +308,257 @@ export default function nativeProcessTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_0800
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_0800
+     * @tc.desc   Test startNativeChildProcess with name as empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_0800', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_StartNativeChildProcess_0800`;
+      console.log(`${tag} it begin`);
+      try {
+        let args: ChildProcessArgs = {};
+        let options: ChildProcessOptions = {
+          isolationMode: true
+        };
+        await childProcessManager.startNativeChildProcess("", args, options);
+        console.log(`${tag} startNativeChildProcess should not succeed`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${tag} startNativeChildProcess error, errorCode: ${err.code}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_0900
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_0900
+     * @tc.desc   Test startNativeChildProcess with name as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_0900', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_StartNativeChildProcess_0900`;
+      console.log(`${tag} it begin`);
+      try {
+        let args: ChildProcessArgs = {};
+        let options: ChildProcessOptions = {
+          isolationMode: true
+        };
+        await childProcessManager.startNativeChildProcess(null, args, options);
+        console.log(`${tag} startNativeChildProcess should not succeed`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${tag} startNativeChildProcess error, errorCode: ${err.code}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_1000
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_1000
+     * @tc.desc   Test startNativeChildProcess with name as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_1000', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_StartNativeChildProcess_1000`;
+      console.log(`${tag} it begin`);
+      try {
+        let args: ChildProcessArgs = {};
+        let options: ChildProcessOptions = {
+          isolationMode: true
+        };
+        await childProcessManager.startNativeChildProcess(undefined, args, options);
+        console.log(`${tag} startNativeChildProcess should not succeed`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${tag} startNativeChildProcess error, errorCode: ${err.code}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_1100
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_1100
+     * @tc.desc   Test startNativeChildProcess with args as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_1100', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_StartNativeChildProcess_1100`;
+      console.log(`${tag} it begin`);
+      try {
+        let options: ChildProcessOptions = {
+          isolationMode: true
+        };
+        await childProcessManager.startNativeChildProcess("libentry.so:Main", undefined, options);
+        console.log(`${tag} startNativeChildProcess should not succeed`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${tag} startNativeChildProcess error, errorCode: ${err.code}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_1200
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_1200
+     * @tc.desc   Test startNativeChildProcess with options as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_1200', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_StartNativeChildProcess_1200`;
+      console.log(`${tag} it begin`);
+      try {
+        let args: ChildProcessArgs = {};
+        await childProcessManager.startNativeChildProcess("libentry.so:Main", args, null);
+        console.log(`${tag} startNativeChildProcess should not succeed`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${tag} startNativeChildProcess error, errorCode: ${err.code}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_1300
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_1300
+     * @tc.desc   Test startNativeChildProcess with options as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_1300', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_StartNativeChildProcess_1300`;
+      console.log(`${tag} it begin`);
+      try {
+        let args: ChildProcessArgs = {};
+        await childProcessManager.startNativeChildProcess("libentry.so:Main", args, undefined);
+        console.log(`${tag} startNativeChildProcess should not succeed`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${tag} startNativeChildProcess error, errorCode: ${err.code}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_1400
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_1400
+     * @tc.desc   Test startNativeChildProcess with name as empty string and args as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_1400', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_StartNativeChildProcess_1400`;
+      console.log(`${tag} it begin`);
+      try {
+        let options: ChildProcessOptions = {
+          isolationMode: true
+        };
+        await childProcessManager.startNativeChildProcess("", null, options);
+        console.log(`${tag} startNativeChildProcess should not succeed`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${tag} startNativeChildProcess error, errorCode: ${err.code}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_1500
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_1500
+     * @tc.desc   Test startNativeChildProcess with name as null and options as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_1500', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_StartNativeChildProcess_1500`;
+      console.log(`${tag} it begin`);
+      try {
+        let args: ChildProcessArgs = {};
+        await childProcessManager.startNativeChildProcess(null, args, null);
+        console.log(`${tag} startNativeChildProcess should not succeed`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${tag} startNativeChildProcess error, errorCode: ${err.code}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_1600
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_1600
+     * @tc.desc   Test startNativeChildProcess with all parameters as null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_1600', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_StartNativeChildProcess_1600`;
+      console.log(`${tag} it begin`);
+      try {
+        await childProcessManager.startNativeChildProcess(null, null, null);
+        console.log(`${tag} startNativeChildProcess should not succeed`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${tag} startNativeChildProcess error, errorCode: ${err.code}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_1700
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_1700
+     * @tc.desc   Test startNativeChildProcess with all parameters as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_1700', Level.LEVEL1, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_StartNativeChildProcess_1700`;
+      console.log(`${tag} it begin`);
+      try {
+        await childProcessManager.startNativeChildProcess(undefined, undefined, undefined);
+        console.log(`${tag} startNativeChildProcess should not succeed`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(`${tag} startNativeChildProcess error, errorCode: ${err.code}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
   });
 }
 

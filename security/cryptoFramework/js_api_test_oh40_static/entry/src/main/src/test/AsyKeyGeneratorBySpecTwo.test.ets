@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -111,11 +111,11 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
      * @tc.desc   the asyKeySpec is eccPrikeySpec, Use the promise Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CryptoFramework_GeneratorBySpec_Func_0900",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let asyKeyPairSpec: cryptoFramework.AsyKeyGeneratorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(
           genEccKeyTypeSpec(cryptoFramework.AsyKeySpecType.PRIVATE_KEY_SPEC)
@@ -303,12 +303,12 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
         try {
           cryptoFramework.createAsyKeyGeneratorBySpec(genEccCommonSpecErr());
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.error(
             "Security_CryptoFramework_GeneratorBySpec_Func_1500 catch err " +
               err
           );
-          expect(err.code).assertEqual(401);
+          expect((err as BusinessError).code).assertEqual(401);
         }
         done();
       }

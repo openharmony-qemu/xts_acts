@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,7 +31,7 @@ import {
   StorageLink,IMonitor,IMonitorValue,Local,AppStorage
 } from '@ohos.arkui.stateManagement'
 
-class BasicDataSourceInterface implements IDataSource<string> {
+export class BasicDataSourceInterface implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private dataArray: string[] = [];
 
@@ -226,14 +226,18 @@ struct ChildViewShow {
   aboutToReuse(params: ReuseObject) {
     console.info('aboutToReuse Child')
     console.log("================================== " + JSON.stringify(params));
-    this.childInfo = 'aboutToReuse'
-    this.message = String (params['message'])
-  }
+    setTimeout(() => {
+ 	  	this.childInfo = 'aboutToReuse'
+ 	  }, 0);
+ 	  	this.message = String (params['message'])
+ 	}
 
   aboutToRecycle(): void {
-    console.info('Recycle Child')
-    this.childInfo = 'aboutToRecycle'
-  }
+ 	  console.info('Recycle Child')
+ 	  setTimeout(() => {
+ 	  	this.childInfo = 'aboutToRecycle'
+ 	  }, 0);
+ 	}
 
   build() {
     Column() {

@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function provideParent3() {
   describe('provideParent3', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("provideParent3 beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");

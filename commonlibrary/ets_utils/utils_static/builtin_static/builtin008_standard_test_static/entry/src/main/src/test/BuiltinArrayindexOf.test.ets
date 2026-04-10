@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ export default function BuiltinArrayindexOfTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -56,7 +56,7 @@ export default function BuiltinArrayindexOfTest() {
         const testArray = [5 as short, 10 as short, 15 as short, 20 as short] as FixedArray<short>;
         const result = indexOf(testArray, 5 as short, 0);
         expect(result).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -76,7 +76,7 @@ export default function BuiltinArrayindexOfTest() {
         const testArray = [5 as short, 10 as short, 15 as short, 20 as short] as FixedArray<short>;
         const result = indexOf(testArray, 25 as short, 0);
         expect(result).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail, err is ${err}`);
         expect().assertFail();
       }
@@ -96,7 +96,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<float> = [1.1f, 2.2f, 3.3f];
         const result = find(arr, (val) => val > 5);
         expect(result).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -116,7 +116,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<float> = [];
         const result = find(arr, () => true);
         expect(result).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -141,7 +141,7 @@ export default function BuiltinArrayindexOfTest() {
         });
         expect(result).assertEqual(2.0);
         expect(callCount).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -166,7 +166,7 @@ export default function BuiltinArrayindexOfTest() {
         });
         expect(result).assertEqual(2.0);
         expect(callCount).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -186,7 +186,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<int> = [10, 20, 30];
         const result = find(arr, (val) => val === 20);
         expect(result).assertEqual(20);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -206,7 +206,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<int> = [100, 200, 300];
         const result = find(arr, (val, idx) => idx === 2 && val === 300);
         expect(result).assertEqual(300);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -226,7 +226,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<int> = [5, 10, 15];
         const result = find(arr, (val) => val === 20);
         expect(result).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -246,7 +246,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<int> = [];
         const result = find(arr, (val) => val === 10);
         expect(result).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -268,7 +268,7 @@ export default function BuiltinArrayindexOfTest() {
         val === 60 && idx === 1 && array.length === 3
         );
         expect(result).assertEqual(60);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -293,7 +293,7 @@ export default function BuiltinArrayindexOfTest() {
         });
         expect(result).assertEqual(2);
         expect(callCount).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -313,7 +313,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<int> = [-10, -20, -30];
         expect(find(arr, (val) => val === -20)).assertEqual(-20);
         expect(find(arr, (val) => val === -5)).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -334,7 +334,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(find(arr, (v) => v === 2147483647)).assertEqual(2147483647);
         expect(find(arr, (v) => v === -2147483648)).assertEqual(-2147483648);
         expect(find(arr, (v) => v === 0)).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -380,7 +380,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<short> = [100, 200, 300];
         const result = find(arr, (val) => val === 200);
         expect(result).assertEqual(200);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -400,7 +400,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<short> = [-100, -200, -300];
         const result = find(arr, (val) => val === -200);
         expect(result).assertEqual(-200);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -420,7 +420,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<short> = [10, 20, 30];
         const result = find(arr, (val) => val === 40);
         expect(result).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -440,7 +440,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<short> = [];
         const result = find(arr, (val) => val === 10);
         expect(result).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -460,7 +460,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<short> = [100, 200, 300];
         const result = find(arr, (val, idx) => idx === 1 && val === 200);
         expect(result).assertEqual(200);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -485,7 +485,7 @@ export default function BuiltinArrayindexOfTest() {
         });
         expect(result).assertEqual(3);
         expect(callCount).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -507,7 +507,7 @@ export default function BuiltinArrayindexOfTest() {
         val === 60 && idx === 1 && array.length === 3
         );
         expect(result).assertEqual(60);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -529,7 +529,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(true);
         expect(result[1]).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -549,7 +549,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<boolean> = [false, false, false];
         const result = filter(arr, (val) => val === true);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -572,7 +572,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result[0]).assertEqual(true);
         expect(result[1]).assertEqual(true);
         expect(result[2]).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -592,7 +592,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<boolean> = [];
         const result = filter(arr, (val) => val === true);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -615,7 +615,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result[0]).assertEqual(true);
         expect(result[1]).assertEqual(true);
         expect(result[2]).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -639,7 +639,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(true);
         expect(result[1]).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -661,7 +661,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(true);
         expect(result[1]).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -685,7 +685,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(original[0]).assertEqual(copy[0]);
         expect(original[1]).assertEqual(copy[1]);
         expect(original[2]).assertEqual(copy[2]);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -710,7 +710,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result[0]).assertEqual(true);
         expect(result[1]).assertEqual(true);
         expect(result[2]).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -757,7 +757,7 @@ export default function BuiltinArrayindexOfTest() {
         const filtered = filter(original, (v: byte) => v % 2 === 0);
         expect(filtered[0]).assertEqual(2);
         expect(filtered[1]).assertEqual(4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -777,7 +777,7 @@ export default function BuiltinArrayindexOfTest() {
         const empty: FixedArray<byte> = [];
         const result = filter(empty, (v: byte) => v > 0);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -799,7 +799,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result[0]).assertEqual(10);
         expect(result[1]).assertEqual(20);
         expect(result[2]).assertEqual(30);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -819,7 +819,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<byte> = [1, 3, 5];
         const result = filter(arr, (v: byte) => v % 2 === 0);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -837,10 +837,10 @@ export default function BuiltinArrayindexOfTest() {
       const TAG = "testBuiltinArrayFilter10005";
       try {
         const arr: FixedArray<byte> = [10, 20, 30, 40];
-        const result = filter(arr, (v: byte, k: number) => k % 2 === 0);
+        const result = filter(arr, (v: byte, k: int) => k % 2 === 0);
         expect(result[0]).assertEqual(10);
         expect(result[1]).assertEqual(30);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -863,7 +863,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(original[0]).assertEqual(1);
         expect(original[1]).assertEqual(2);
         expect(original[2]).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -882,7 +882,7 @@ export default function BuiltinArrayindexOfTest() {
       let hasThrown = false;
       try {
         const arr: FixedArray<byte> = [1, 2, 3];
-        filter(arr, (v: byte, idx: number) => {
+        filter(arr, (v: byte, idx: int) => {
           if (idx === 1) {
             throw new Error("Callback error");
           }
@@ -907,12 +907,12 @@ export default function BuiltinArrayindexOfTest() {
     it('testBuiltinArrayFilter10008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBuiltinArrayFilter10008";
       try {
-        const arr: FixedArray<byte> = [0 as byte, 255 as byte, 1 as byte];
-        const result = filter(arr, (v: byte) => v === 0 as byte || v === 255 as byte);
+        const arr: FixedArray<byte> = [0 as byte, (255).toByte(), 1 as byte];
+        const result = filter(arr, (v: byte) => v === 0 as byte || v === (255).toByte());
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(0 as byte);
-        expect(result[1]).assertEqual(255 as byte);
-      } catch (err: BusinessError) {
+        expect(result[1]).assertEqual((255).toByte());
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -932,7 +932,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<float> = [];
         const result = filter(arr, (val) => val > 0);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -954,7 +954,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(Math.abs(result[0] - 2.2) < 0.000001).assertTrue();
         expect(Math.abs(result[1] - 4.4) < 0.000001).assertTrue();
         expect(result.length).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -978,7 +978,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(Math.abs(result[1] - 2.5) < FLOAT_PRECISION).assertTrue();
         expect(Math.abs(result[2] - 3.5) < FLOAT_PRECISION).assertTrue();
         expect(result.length).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1002,7 +1002,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(Math.abs(original[0] - copy[0]) < 0.000001).assertTrue();
         expect(Math.abs(original[1] - copy[1]) < 0.000001).assertTrue();
         expect(Math.abs(original[2] - copy[2]) < 0.000001).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1024,7 +1024,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result.length).assertEqual(2);
         expect(Math.abs(result[0] - 3.5) < 0.000001).assertTrue();
         expect(Math.abs(result[1] - 5.5) < 0.000001).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1068,12 +1068,12 @@ export default function BuiltinArrayindexOfTest() {
     it('testBuiltinArrayFilter20004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBuiltinArrayFilter20004";
       try {
-        const empty: FixedArray<char> = new char[0];
-        const filtered = filter(empty, (v: char, _k: number, _arr: FixedArray<char>) =>
+        const empty: FixedArray<char> = new FixedArray<char>(0);
+        const filtered = filter(empty, (v: char, _k: int, _arr: FixedArray<char>) =>
         v > 'a'.charCodeAt(0)
         );
         expect(filtered.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1095,7 +1095,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(filtered[0]).assertEqual(3.7);
         expect(filtered[1]).assertEqual(4.0);
         expect(filtered[2]).assertEqual(5.2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1117,7 +1117,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(filtered[0]).assertEqual(1.0 / 3.0);
         expect(filtered[1]).assertEqual(Math.PI);
         expect(filtered.length).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1138,7 +1138,7 @@ export default function BuiltinArrayindexOfTest() {
         const filtered = filter(original, (v: double) => isFinite(v));
         expect(filtered[0]).assertEqual(1.5);
         expect(filtered.length).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1156,11 +1156,11 @@ export default function BuiltinArrayindexOfTest() {
       const TAG = "testBuiltinArrayFilter30004";
       try {
         const original: FixedArray<double> = [10.1, 20.2, 30.3, 40.4];
-        const filtered = filter(original, (v: double, k: number) => k % 2 === 1);
+        const filtered = filter(original, (v: double, k: int) => k % 2 === 1);
         expect(filtered.length).assertEqual(2);
         expect(filtered[0]).assertEqual(20.2);
         expect(filtered[1]).assertEqual(40.4);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1182,7 +1182,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(filtered[0]).assertEqual(0.0);
         expect(filtered[1]).assertEqual(1.5);
         expect(filtered[2]).assertEqual(2.5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1200,14 +1200,14 @@ export default function BuiltinArrayindexOfTest() {
       const TAG = "testBuiltinArrayFilter30006";
       try {
         const original: FixedArray<double> = [1.1, 2.2, 3.3, 4.4];
-        const filtered = filter(original, (v: double, k: number, arr: FixedArray<double>) => {
+        const filtered = filter(original, (v: double, k: int, arr: FixedArray<double>) => {
           return k < arr.length - 1;
         });
         expect(filtered[0]).assertEqual(1.1);
         expect(filtered[1]).assertEqual(2.2);
         expect(filtered[2]).assertEqual(3.3);
         expect(filtered.length).assertEqual(3);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1232,14 +1232,14 @@ export default function BuiltinArrayindexOfTest() {
           1.5
         ];
         const filtered = filter(original,
-          (v: double, k: number, arr: FixedArray<double>) => {
+          (v: double, k: int, arr: FixedArray<double>) => {
             return v > Number.MIN_VALUE && v < Number.MAX_VALUE;
           });
         expect(filtered.length).assertEqual(3);
         expect(filtered[0]).assertEqual(1.0e-300);
         expect(filtered[1]).assertEqual(1.0e+300);
         expect(filtered[2]).assertEqual(1.5);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1262,7 +1262,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result[0]).assertEqual(2);
         expect(result[1]).assertEqual(4);
         expect(result[2]).assertEqual(6);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1286,7 +1286,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(0);
         expect(result[1]).assertEqual(MAX_INT);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1309,7 +1309,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result[0]).assertEqual(10);
         expect(result[1]).assertEqual(30);
         expect(result[2]).assertEqual(50);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1329,7 +1329,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<int> = [];
         const result = filter(arr, (val) => val > 0);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1352,7 +1352,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result[0]).assertEqual(5);
         expect(result[1]).assertEqual(10);
         expect(result[2]).assertEqual(15);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1372,7 +1372,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<int> = [1, 3, 5];
         const result = filter(arr, (val) => val % 2 === 0);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1396,7 +1396,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(original[0]).assertEqual(copy[0]);
         expect(original[1]).assertEqual(copy[1]);
         expect(original[2]).assertEqual(copy[2]);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1419,7 +1419,7 @@ export default function BuiltinArrayindexOfTest() {
         );
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(200);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1442,7 +1442,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(result[0]).assertEqual(2);
         expect(result[1]).assertEqual(4);
         expect(result[2]).assertEqual(6);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1460,12 +1460,12 @@ export default function BuiltinArrayindexOfTest() {
       const TAG = "testBuiltinArrayFilter60002";
       try {
         const arr: FixedArray<long> = [10, 20, 30, 40, 50];
-        const result = filter(arr, (val: long, idx: number) => idx % 2 === 0);
+        const result = filter(arr, (val: long, idx: int) => idx % 2 === 0);
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(10);
         expect(result[1]).assertEqual(30);
         expect(result[2]).assertEqual(50);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1483,12 +1483,12 @@ export default function BuiltinArrayindexOfTest() {
       const TAG = "testBuiltinArrayFilter60003";
       try {
         const arr: FixedArray<long> = [1, 2, 3, 4];
-        const result = filter(arr, (val: long, idx: number, array: FixedArray<long>) =>
+        const result = filter(arr, (val: long, idx: int, array: FixedArray<long>) =>
         val === array[0]
         );
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1508,7 +1508,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<long> = [];
         const result = filter(arr, () => true);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1528,7 +1528,7 @@ export default function BuiltinArrayindexOfTest() {
         const arr: FixedArray<long> = [1, 3, 5, 7];
         const result = filter(arr, (val: long) => val % 2 === 0);
         expect(result.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1553,7 +1553,7 @@ export default function BuiltinArrayindexOfTest() {
         expect(original[2]).assertEqual(3);
         expect(original[3]).assertEqual(4);
         expect(filtered.length).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }
@@ -1574,13 +1574,13 @@ export default function BuiltinArrayindexOfTest() {
         const MIN_LONG = -9223372036854775808;
         const original: FixedArray<long> = [MIN_LONG, 0, MAX_LONG];
         const filtered = filter(original,
-          (v: long, k: number, arr: FixedArray<long>) => {
+          (v: long, k: int, arr: FixedArray<long>) => {
             return v >= 0 && k < arr.length;
           });
         expect(filtered.length).assertEqual(2);
         expect(filtered[0]).assertEqual(0);
         expect(filtered[1]).assertEqual(MAX_LONG);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();
       }

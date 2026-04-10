@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ParagraphStyle1() {
   describe('ParagraphStyle1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ParagraphStyle1 beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")
@@ -118,10 +118,13 @@ it('ParagraphStyle_static_10001', Level.LEVEL1, async (done: () => void): Promis
       expect('' + AppStorage.get<undefined | TextAlign>('StyledString1_2_textAlign')).assertEqual('0');
       console.info('StyledString ParagraphStyle_static_10001 StyledString1_2_pixelMap ' +
       AppStorage.get<string>('StyledString1_2_pixelMap'));
-      expect('' + AppStorage.get<string>('StyledString1_2_pixelMap')).assertEqual('{}');
+      const StyledStringPixelMap: string = AppStorage.get<string>('StyledString1_2_pixelMap')!
+      const timestamp:double = JSON.parseJsonElement(StyledStringPixelMap).getDouble("timestamp")
+      const captureId:double = JSON.parseJsonElement(StyledStringPixelMap).getDouble("captureId")
+      expect(timestamp + captureId).assertEqual(0);
       console.info('StyledString ParagraphStyle_static_10001 StyledString1_2_size ' +
       AppStorage.get<string>('StyledString1_2_size'));
-      expect('' + AppStorage.get<string>('StyledString1_2_size')).assertEqual('[15,15]');
+      expect('' + AppStorage.get<string>('StyledString1_2_size')).assertEqual('["15.00vp","15.00vp"]');
       console.info('StyledString ParagraphStyle_static_10001 StyledString1_3_textAlign ' +
       AppStorage.get<undefined | TextAlign>('StyledString1_3_textAlign'));
       expect('' + AppStorage.get<undefined | TextAlign>('StyledString1_3_textAlign')).assertEqual('2');

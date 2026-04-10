@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
+* Copyright (c) 2024-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -208,7 +208,7 @@ export default function TaskPoolErrorCodeTest() {
         // taskpool.execute(task)  //execute(task)
         try{
           taskpool.execute(task);
-        }catch(e:Error){
+        }catch(e){
           expect(e.message).assertContain('fail_asyncRunner task has been executed');
         };
         await promiseCase()
@@ -443,7 +443,7 @@ export default function TaskPoolErrorCodeTest() {
         try{
           taskpool.cancel(task);  //cancel(task.taskId)
           console.info('testTaskErrorCode0055=====',)
-        }catch(e:Error){
+        }catch(e){
           console.info('testTaskErrorCode0055=====2',e.message)
           expect(e.toString()).assertContain('asyncRunner task has been executed');////////////////////////////////////////////////////////////////////
         };
@@ -581,7 +581,7 @@ export default function TaskPoolErrorCodeTest() {
       await Sleep(1000)
       try{
         taskpool.cancel(task1);
-      }catch(e:Error){
+      }catch(e){
         console.info('5=====================testTaskErrorCode0059')
         expect(e.message).assertContain('asyncRunner task has been executed');
       };
@@ -611,7 +611,7 @@ export default function TaskPoolErrorCodeTest() {
         });
         await promiseCase()
         // expect().assertFail();
-      } catch (err:Error) {
+      } catch (err) {
         console.info(`${caseName} catch error: code =>  message => ${err.message}`);
          expect(err.message).assertContain('taskpool:: asyncRunner cannot execute executedTask');
          console.info('testTaskErrorCode0060=======')
@@ -681,7 +681,7 @@ export default function TaskPoolErrorCodeTest() {
         });
         try{
           taskpool.cancel(task);  //cancel(task.taskId)
-        }catch(e:Error){
+        }catch(e){
           expect(e.message).assertContain('asyncRunner task has been executed');
         };
       // }
@@ -719,7 +719,7 @@ export default function TaskPoolErrorCodeTest() {
         try{
           taskpool.cancel(task)
           console.info('testTaskErrorCode0067=====',)
-        }catch(e:Error){
+        }catch(e){
           console.info('testTaskErrorCode0067=====2',e.message)
           expect(e.toString()).assertContain('asyncRunner task has been executed');////////////////////////////////////////////////////////////////////
         };

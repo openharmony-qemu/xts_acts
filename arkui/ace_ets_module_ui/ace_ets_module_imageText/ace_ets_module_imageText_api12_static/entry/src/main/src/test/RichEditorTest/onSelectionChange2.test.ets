@@ -46,7 +46,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function onSelectionChange2() {
   describe('onSelectionChange2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onSelectionChange2 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -94,7 +94,6 @@ export default function onSelectionChange2() {
       await CommonFunc.sleep(1000);
 
       await driver.triggerKey(2017);
-	  await driver.triggerKey(2047)
       await CommonFunc.sleep(1000);
       let text1 = inspector.getInspectorByKey('onSelectionChange2_text1');
       let Obj1 = JSON.parseJsonElement(text1);

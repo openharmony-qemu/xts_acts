@@ -16,10 +16,22 @@ import SwiperWithResetTest from './swiper/SwiperWithResetTest.test';
 import PublicAttributeTest from './publicAttribute/PublicAttribute.test'
 import XComponentMultiThreadTest from './xcomponent/XComponentMultiThreadTest.test'
 import XComponentTextureMultiThreadTest from './xcomponent/XComponentTextureMultiThreadTest.test'
+import buttonTest  from "./button/buttonTest.test";
+import checkBoxTest  from "./checkBox/checkBoxTest.test";
+import checkBoxGroupTest  from "./checkBoxGroup/checkBoxGroupTest.test";
+import radioTest  from "./radio/radioTest.test";
+import sliderTest  from "./slider/sliderTest.test";
+import toggleTest  from "./toggle/toggleTest.test";
 
 export default function testsuite() {
   SwiperWithResetTest();
   PublicAttributeTest();
   XComponentMultiThreadTest();
   XComponentTextureMultiThreadTest();
+  buttonTest();
+  checkBoxTest();
+  checkBoxGroupTest();
+  radioTest();
+  sliderTest();
+  toggleTest();
 }

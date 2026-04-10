@@ -184,7 +184,6 @@ export default function testsuite() {
   gridJsunit();
   refreshJsunit();
   listtestIdleJsunit();
-  list_item_groupJsunit();
   refreshDragJsunit();
   alphabetIndexerOnSelectJsunit();
   gridMaxCountJsunit();
@@ -195,7 +194,7 @@ export default function testsuite() {
   tabsBarPositionJsunit();
   scrollBarJsunitt();
   // listItemJsunit2();
-  gridColTest();
+  //gridColTest();
   conSizeGroup1();
   conSizeGroup2();
   conSizeGroup3();

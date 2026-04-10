@@ -48,7 +48,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ListItemGroup_aspectRatio_neither() {
   describe('ListItemGroup_aspectRatio_neither', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ListItemGroup_aspectRatio_neither beforeAll start");
             
       await UtilsTest.msSleep(4000)

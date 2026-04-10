@@ -2613,5 +2613,157 @@ export default function abilityTest() {
                 done();
             });
         })
+
+        /**
+         * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9300
+         * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9300
+         * @tc.desc   The type of EventInfo is announcedForAccessibility, The triggerAction of EventInfo is click ,The textResourceAnnouncedForAccessibility
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9300', TestType.FUNCTION | Size.SmallTest| Level.LEVEL1, async function (done) {
+            console.info('SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9300');
+            let event = new accessibility.EventInfo(eventType,bundleName,triggerAction);
+            event.bundleName = '';
+            event.componentType = '';
+            event.description = '';
+            event.contents = [];
+            event.lastContent = '';
+            event.textAnnouncedForAccessibility = '';
+            event.customId = '';
+            event.bundleName = '';
+
+            try {
+                accessibility.sendAccessibilityEvent(event, (err, result) => {
+                    console.log("AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9300 error : " + JSON.stringify(err));
+                    if (err && err.code != 0) {
+                        console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9300 has error: ${err.code}`);
+                        expect(err.code).assertEqual(401);
+                        done();
+                    } else {
+                        expect(result).assertEqual(undefined);
+                    }
+                    done();
+                });
+            } catch (error) {
+                console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9300 error: ${error.code}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9400
+         * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9400
+         * @tc.desc   The type of EventInfo is announcedForAccessibility, The triggerAction of EventInfo is click ,The textResourceAnnouncedForAccessibility
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9400', TestType.FUNCTION | Size.SmallTest| Level.LEVEL1, async function (done) {
+            console.info('SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9400');
+            let event = new accessibility.EventInfo(eventType,bundleName,triggerAction);
+            event.bundleName = '';
+            event.componentType = '';
+            event.description = '';
+            event.contents = [];
+            event.lastContent = '';
+            event.textAnnouncedForAccessibility = '';
+            event.customId = '';
+            event.bundleName = '';
+
+            try {
+                accessibility.sendAccessibilityEvent(event).then((result) => {
+                    console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9400 result ${result}`);
+                    expect(result).assertEqual(undefined);
+                    done();
+                }).catch((err) => {
+                    console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9400 has error: ${err}`);
+                    expect(err.code).assertEqual(401);
+                    done();
+                });
+            } catch (error) {
+                console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9400 error: ${error.code}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9500
+         * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9500
+         * @tc.desc   The type of EventInfo is announcedForAccessibility, The triggerAction of EventInfo is click ,The textResourceAnnouncedForAccessibility
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9500', TestType.FUNCTION | Size.SmallTest| Level.LEVEL1, async function (done) {
+            console.info('SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9500');
+            let event = new accessibility.EventInfo(eventType,bundleName,triggerAction);
+            event.bundleName = '';
+            event.componentType = '';
+            event.description = '';
+            event.contents = [];
+            event.lastContent = '';
+            event.textAnnouncedForAccessibility = '';
+            event.customId = '';
+            event.bundleName = '';
+
+            try {
+                accessibility.sendEvent(event, (err, result) => {
+                    console.log("AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9500 error : " + JSON.stringify(err));
+                    if (err && err.code != 0) {
+                        console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9500 has error: ${err.code}`);
+                        expect(err.code).assertEqual(9300000);
+                        done();
+                    } else {
+                        expect(result).assertEqual(undefined);
+                    }
+                    done();
+                });
+            } catch (error) {
+                console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9500 error: ${error.code}`);
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9600
+         * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9600
+         * @tc.desc   The type of EventInfo is announcedForAccessibility, The triggerAction of EventInfo is click ,The textResourceAnnouncedForAccessibility
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9600', TestType.FUNCTION | Size.SmallTest| Level.LEVEL1, async function (done) {
+            console.info('SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9600');
+            let event = new accessibility.EventInfo(eventType,bundleName,triggerAction);
+            event.bundleName = '';
+            event.componentType = '';
+            event.description = '';
+            event.contents = [];
+            event.lastContent = '';
+            event.textAnnouncedForAccessibility = '';
+            event.customId = '';
+            event.bundleName = '';
+
+            try {
+                accessibility.sendEvent(event).then((result) => {
+                    console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9600 result ${result}`);
+                    expect(result).assertEqual(undefined);
+                    done();
+                }).catch((err) => {
+                    console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9600 has error: ${err}`);
+                    expect(err.code).assertEqual(9300000);
+                    done();
+                });
+            } catch (error) {
+                console.error(`AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_9600 error: ${error.code}`);
+                done();
+            }
+        })
+
+
     })
 }

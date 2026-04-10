@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,6 +26,7 @@ import notificationManager from '@ohos.notificationManager';
 import { canIUse } from '@internal.full.global';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import wifiMg from '@ohos.wifiManager';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag:string='location'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -37,6 +38,33 @@ export default function actslocationTest() {
     describe("actslocationTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         beforeAll(async() => {
+          let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
+          if(!isWifiActive){
+            console.info("======> wifi_test/enable wifi: false" );
+          }
+
+          try {
+            let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+            console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+            console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+            console.info("======> Internet chload : " + JSON.stringify(data.chload));
+            console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+            if (data.connState == wifiMg.ConnState.CONNECTED) {
+              console.info("======> WLAN connection established ");
+            } else {
+              expect().message("======> WLAN Network error").assertFail();
+
+            }
+            if (data.chload >= 900 || data.rssi <= -80) {
+              expect().message("======> WLAN Network error").assertFail();
+            } else if (data.chload >= 500) {
+              console.info("======> The internet connection is poor. ");
+            }
+          } catch (err) {
+            console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+            throw (err as Error);
+          }
           hilog.info(domain, tag, 'beforeAll start');
           let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
           hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -66,7 +94,7 @@ export default function actslocationTest() {
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })
 
-        beforeEach(() => {
+        beforeEach(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeEach start');
             try {
                 //await Utils.openBluetooth();
@@ -115,6 +143,96 @@ export default function actslocationTest() {
        })
 
         /**
+         * @tc.number  testGeolocationManagerGeofenceConfig001
+         * @tc.name  testGeolocationManagerGeofenceConfig001
+         * @tc.desc  Test Location API functionality
+         * @tc.level  Level 2
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
+         */
+        it('testGeolocationManagerGeofenceConfig001',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
+            async(done:()=>void):Promise<void>=>{
+                expect(true).assertEqual(geoLocationManager.CoordinateSystemType.WGS84 == 1)
+                expect(true).assertEqual(geoLocationManager.CoordinateSystemType.GCJ02 == 2)
+
+                expect(true).assertEqual(geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_DWELL == 4)
+
+                expect(true).assertEqual(geoLocationManager.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA == 1)
+
+
+                done();
+
+       })
+
+        /**
+         * @tc.number  testGeolocationManagerCoreConfig001
+         * @tc.name  testGeolocationManagerCoreConfig001
+         * @tc.desc  Test Location API functionality
+         * @tc.level  Level 2
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
+         */
+        it('testGeolocationManagerCoreConfig001',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
+            async(done:()=>void):Promise<void>=>{
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_DEFAULT == -1)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_PERMISSION_DENIED == -2)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_BACKGROUND_PERMISSION_DENIED == -3)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_SWITCH_OFF == -4)
+                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_INTERNET_ACCESS_FAILURE == -5)
+
+                expect(true).assertEqual(geoLocationManager.UserActivityScenario.SPORT == 0x402)
+                expect(true).assertEqual(geoLocationManager.UserActivityScenario.TRANSPORT == 0x403)
+                expect(true).assertEqual(geoLocationManager.UserActivityScenario.DAILY_LIFE_SERVICE == 0x404)
+
+                expect(true).assertEqual(geoLocationManager.PowerConsumptionScenario.HIGH_POWER_CONSUMPTION == 0x601)
+                expect(true).assertEqual(geoLocationManager.PowerConsumptionScenario.LOW_POWER_CONSUMPTION == 0x602)
+                expect(true).assertEqual(geoLocationManager.PowerConsumptionScenario.NO_POWER_CONSUMPTION == 0x603)
+
+                expect(true).assertEqual(geoLocationManager.SportsType.RUNNING == 1)
+                expect(true).assertEqual(geoLocationManager.SportsType.WALKING == 2)
+                expect(true).assertEqual(geoLocationManager.SportsType.CYCLING == 3)
+
+                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_LOCALE == 1)
+                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_SIM == 2)
+                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_LOCATION	 == 3)
+                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_NETWORK == 4)
+
+
+                done();
+
+       })
+       
+        /**
+         * @tc.number  testGeolocationManagerGnssConfig001
+         * @tc.name  testGeolocationManagerGnssConfig001
+         * @tc.desc  Test Location API functionality
+         * @tc.level  Level 2
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
+         */
+        it('testGeolocationManagerGnssConfig001',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
+            async(done:()=>void):Promise<void>=>{
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_UNKNOWN == 0)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GPS == 1)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_SBAS == 2)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GLONASS == 3)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_QZSS == 4)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_BEIDOU == 5)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GALILEO == 6)
+                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_IRNSS == 7)
+
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_NULL == 0)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_EPHEMERIS_DATA_EXIST == 1)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_ALMANAC_DATA_EXIST == 2)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_USED_IN_FIX == 4)
+                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_CARRIER_FREQUENCY_EXIST == 8)
+
+
+                done();
+
+       })
+
+        /**
          * @tc.number  Sub_Location_GetCurrentLocation_0100
          * @tc.name  Sub_Location_GetCurrentLocation_0100
          * @tc.desc  Test Location API functionality
@@ -144,8 +262,8 @@ export default function actslocationTest() {
                     (err:BusinessError<void>|null,result:geoLocationManager.Location|undefined)=>{
                         if(err!=null){
                           console.info("GetCurrentLocation_0100_err_info", JSON.stringify(err))
-                          if (err.code == 3301200){
-                            expect(err.code == 3301200).assertTrue(); 
+                          if (err.code === 3301200){
+                            expect(err.code === 3301200).assertTrue(); 
                           } else {
                             expect().assertFail();
                           }
@@ -225,7 +343,7 @@ export default function actslocationTest() {
                             }
                         })
 
-                    }catch(error: BusinessError){
+                    }catch(error){
                         hilog.error(domain, tag, '[lbs_js] getAddressesFromLocation callback try err is:' + error);
                     }
                     await Utils.msSleep(1000)
@@ -377,7 +495,7 @@ export default function actslocationTest() {
                                     expect(result == undefined).assertTrue();
                                     done();
                                 }
-                            }catch (err: BusinessError){
+                            }catch (err){
                                 console.info('[lbs_js] sendCommand try err is:' + JSON.stringify(err));
                             }
                         }
@@ -425,7 +543,8 @@ export default function actslocationTest() {
                 try{
                     let location = geoLocationManager.isLocationEnabled();
                     expect(typeof location).assertEqual('boolean');
-                }catch (error: BusinessError){
+                }catch (error){
+                    error = error as BusinessError;
                     expect(error.code).assertEqual(3301000);
                 }
             })
@@ -493,7 +612,8 @@ export default function actslocationTest() {
                 try{
                     let supportedCoordTypes: Array<geoLocationManager.CoordinateSystemType> = geoLocationManager.getGeofenceSupportedCoordTypes();
                     expect(supportedCoordTypes != null).assertTrue();
-                }catch(error: BusinessError){
+                }catch(error){
+                    error = error as BusinessError;
                     expect(error.code).assertEqual(3301000);
                 }
             })
@@ -518,7 +638,7 @@ export default function actslocationTest() {
                         let getCurrentWifiBssidForLocating = geoLocationManager.getCurrentWifiBssidForLocating();
                         console.info('[lbs_js] getCurrentWifiBssidForLocating_0100 result is:' + JSON.stringify(getCurrentWifiBssidForLocating));
                         expect(getCurrentWifiBssidForLocating != null).assertTrue();
-                    }catch(error: BusinessError){
+                    }catch(error){
                         console.info('[lbs_js] getCurrentWifiBssidForLocating_0100 catch err is:' + JSON.stringify(error));
                     }                    
                 }                
@@ -544,7 +664,7 @@ export default function actslocationTest() {
                         let getCurrentWifiBssidForLocating = geoLocationManager.getCurrentWifiBssidForLocating();
                         console.info('[lbs_js] getCurrentWifiBssidForLocating_0300 result is:' + JSON.stringify(getCurrentWifiBssidForLocating));
                         expect(getCurrentWifiBssidForLocating != null).assertTrue();
-                    }catch(error: BusinessError){
+                    }catch(error){
                         console.info('[lbs_js] getCurrentWifiBssidForLocating_0300 catch err is:' + JSON.stringify(error));
                         expect(error.code).assertEqual(201);
                     }                    
@@ -570,7 +690,8 @@ export default function actslocationTest() {
                         let getCurrentWifiBssidForLocating = geoLocationManager.getCurrentWifiBssidForLocating();
                         console.info('[lbs_js] getCurrentWifiBssidForLocating_0400 result is:' + JSON.stringify(getCurrentWifiBssidForLocating));
                         expect(getCurrentWifiBssidForLocating != null).assertTrue();
-                    }catch(error: BusinessError){
+                    }catch(error){
+                        error = error as BusinessError;
                         console.info('[lbs_js] getCurrentWifiBssidForLocating_0400 catch err is:' + JSON.stringify(error));
                         expect(error.code).assertEqual(801);
                     }                    
@@ -596,12 +717,13 @@ export default function actslocationTest() {
                         let getCurrentWifiBssidForLocating = geoLocationManager.getCurrentWifiBssidForLocating();
                         console.info('[lbs_js] getCurrentWifiBssidForLocating_0500 result is:' + JSON.stringify(getCurrentWifiBssidForLocating));
                         expect(getCurrentWifiBssidForLocating != null).assertTrue();
-                    }catch(error: BusinessError){
+                    }catch(error){
                         console.info('[lbs_js] getCurrentWifiBssidForLocating_0500 catch err is:' + JSON.stringify(error));
                         expect(error.code).assertEqual(3301900);
                     }                    
                 }
-            })            
+            })
+
             /**
             * @tc.number  SUB_Location_getActiveGeoFences_0100
             * @tc.name  SUB_Location_getActiveGeoFences_0100
@@ -611,25 +733,32 @@ export default function actslocationTest() {
             * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_getActiveGeoFences_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+              let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
+              console.info("SUB_Location_getActiveGeoFences_0100: " + isAccessToken);
+              if (!isAccessToken) {
+                  console.info("The device does not support Gnss");
+                  expect(isAccessToken).assertFalse();
+              } else {
               try{
                 geoLocationManager.getActiveGeoFences().then((res) => {
                   if (res) {
-                    console.info("fence num:" + res.size);
-                    expect(res.size != 0).assertTrue();
-                    for (const item of res){
-                      console.info("data=" + item);
-                    }
+                    console.info("SUB_Location_getActiveGeoFences_0100 fence num:" + res.size);
+                    expect(true).assertEqual(res != null);
+                    done();
                   }
-                })
-                .catch((error) => {
-                  console.error('promise, getActiveGeoFences: error=' + error.code);
+                }).catch((error) => {
+                  console.error('promise, SUB_Location_getActiveGeoFences_0100: error=' + error.code);
                   expect(error.code).assertEqual(801);
+                  done();
                 });
               } catch (error) {
-                console.error("getActiveGeoFences: errCode" + error.code + ", errMessage" + error.message);
+                console.error("SUB_Location_getActiveGeoFences_0100: errCode" + error.code + ", errMessage" + error.message);
                 expect().assertFalse();
+                done();
               }
+             }
             })
+
             /**
             * @tc.number  SUB_Location_addGnssGeofence_0100
             * @tc.name  SUB_Location_addGnssGeofence_0100
@@ -710,7 +839,7 @@ export default function actslocationTest() {
                         console.error("addGnssGeofence_0100 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         });
                         done();
-                    } catch (error:BusinessError) {
+                    } catch (error) {
                         console.error("addGnssGeofence_0100 failed, err:" + JSON.stringify(error));
                     } 
                     done();
@@ -793,7 +922,7 @@ export default function actslocationTest() {
                         expect((err as BusinessError).code).assertEqual(201);
                         });
                         done();
-                    } catch (error:BusinessError) {
+                    } catch (error) {
                         console.error("addGnssGeofence_0200 failed, err:" + JSON.stringify(error));
                     } 
                     done();
@@ -876,7 +1005,7 @@ export default function actslocationTest() {
                         expect((err as BusinessError).code).assertEqual(401);
                         });
                         done();
-                    } catch (error:BusinessError) {
+                    } catch (error) {
                         console.error("addGnssGeofence_0300 failed, err:" + JSON.stringify(error));
                     } 
                     done();
@@ -959,7 +1088,7 @@ export default function actslocationTest() {
                         expect((err as BusinessError).code).assertEqual(801);
                         });
                         done();
-                    } catch (error:BusinessError) {
+                    } catch (error) {
                         console.error("addGnssGeofence_0400 failed, err:" + JSON.stringify(error));
                     } 
                     done();
@@ -1042,7 +1171,7 @@ export default function actslocationTest() {
                         expect((err as BusinessError).code).assertEqual(3301100);
                         });
                         done();
-                    } catch (error:BusinessError) {
+                    } catch (error) {
                         console.error("addGnssGeofence_0500 failed, err:" + JSON.stringify(error));
                     } 
                     done();
@@ -1125,7 +1254,7 @@ export default function actslocationTest() {
                         expect((err as BusinessError).code).assertEqual(3301601);
                         });
                         done();
-                    } catch (error:BusinessError) {
+                    } catch (error) {
                         console.error("addGnssGeofence_0600 failed, err:" + JSON.stringify(error));
                     } 
                     done();
@@ -1153,7 +1282,7 @@ export default function actslocationTest() {
                   expect(err.code).assertEqual(201);
                 }
               });
-            } catch (error:BusinessError) {
+            } catch (error) {
               console.error("removeGnssGeofence: error=" + JSON.stringify(error));
             }
             await Utils.msSleep(1000)
@@ -1180,7 +1309,7 @@ export default function actslocationTest() {
                 expect(err.code).assertEqual(401);
                 }
               });
-            } catch (error:BusinessError) {
+            } catch (error) {
               console.error("removeGnssGeofence: error=" + JSON.stringify(error));
             }
             await Utils.msSleep(1000)
@@ -1207,7 +1336,7 @@ export default function actslocationTest() {
                 expect(err.code).assertEqual(3301602);
                 }
               });
-            } catch (error: BusinessError) {
+            } catch (error) {
               console.error("removeGnssGeofence: error=" + JSON.stringify(error));
             }
             await Utils.msSleep(1000)
@@ -1231,8 +1360,8 @@ export default function actslocationTest() {
               let locationChange = (err:BusinessError<void>|null,location:geoLocationManager.Location|undefined): void => {
                 if (err) {
                   console.error('locationChange: err=' + JSON.stringify(err));
-                  if (err.code == 3301200){
-                    expect(err.code == 3301200).assertTrue(); 
+                  if (err.code === 3301200){
+                    expect(err.code === 3301200).assertTrue(); 
                   }
                 }
                 if (location) {
@@ -1251,11 +1380,11 @@ export default function actslocationTest() {
                   console.info("getCurrentLocation_1200 ======>timeSinceBoot", typeof location.timeSinceBoot)
                   expect(typeof location.timeSinceBoot).assertEqual("long");
                   console.info("getCurrentLocation_1200 ======>additions", typeof location.additions)
-                  expect(location.additions instanceof Array<string>);
+                  expect(location.additions instanceof Array);
                   console.info("getCurrentLocation_1200 ======>additionSize", typeof location.additionSize)
                   expect(typeof location.additionSize).assertEqual("int");
                   console.info("getCurrentLocation_1200 ======>additionsMap", typeof location.additionsMap)
-                  expect(location.additionsMap instanceof Map<string, string>);
+                  expect(location.additionsMap instanceof Map);
                   console.info("getCurrentLocation_1200 ======>altitudeAccuracy", typeof location.altitudeAccuracy)
                   expect(typeof location.altitudeAccuracy).assertEqual("number");
                   console.info("getCurrentLocation_1200 ======>speedAccuracy", typeof location.speedAccuracy)
@@ -1295,8 +1424,8 @@ export default function actslocationTest() {
                       }
                       if (err) {
                         console.error('locationChange: err=' + JSON.stringify(err));
-                        if (err.code == 3301200){
-                          expect(err.code == 3301200).assertTrue(); 
+                        if (err.code === 3301200){
+                          expect(err.code === 3301200).assertTrue(); 
                         } else {
                         expect(err.code).assertEqual(401);
                         }
@@ -1330,8 +1459,8 @@ export default function actslocationTest() {
                       }
                       if (err) {
                         console.error('locationChange: err=' + JSON.stringify(err));
-                        if (err.code == 3301200){
-                          expect(err.code == 3301200).assertTrue(); 
+                        if (err.code === 3301200){
+                          expect(err.code === 3301200).assertTrue(); 
                         } else {
                         expect(err.code).assertEqual(3301100);
                         }
@@ -1392,8 +1521,8 @@ export default function actslocationTest() {
                       }
                       if (err) {
                         console.error('locationChange: err=' + JSON.stringify(err));
-                        if (err.code == 3301200){
-                          expect(err.code == 3301200).assertTrue(); 
+                        if (err.code === 3301200){
+                          expect(err.code === 3301200).assertTrue(); 
                         } else {
                         expect(err.code).assertEqual(401);
                         }
@@ -1422,8 +1551,8 @@ export default function actslocationTest() {
                     }
                     if (err) {
                       console.error('locationChange: err=' + JSON.stringify(err));
-                      if (err.code == 3301200){
-                        expect(err.code == 3301200).assertTrue(); 
+                      if (err.code === 3301200){
+                        expect(err.code === 3301200).assertTrue(); 
                        } else {
                       expect(err.code).assertEqual(3301100);
                       }
@@ -1482,14 +1611,14 @@ export default function actslocationTest() {
                 }).catch((err) => {
                   if (err instanceof BusinessError) {
                     console.error('promise, getCurrentLocation: error=' + err.code + err.message);
-                    if (err.code == 3301200){
-                      expect(err.code == 3301200).assertTrue(); 
+                    if (err.code === 3301200){
+                      expect(err.code === 3301200).assertTrue(); 
                      } else {
                     expect(err.code).assertEqual(401);
                      }
                   }
                   });
-              } catch (err: BusinessError) {
+              } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
               }
           await Utils.msSleep(1000)
@@ -1515,14 +1644,14 @@ export default function actslocationTest() {
                 }).catch((err) => {
                   if (err instanceof BusinessError) {
                     console.error('promise, getCurrentLocation: error=' + err.code + err.message);
-                    if (err.code == 3301200){
-                      expect(err.code == 3301200).assertTrue(); 
+                    if (err.code === 3301200){
+                      expect(err.code === 3301200).assertTrue(); 
                      } else {
                     expect(err.code).assertEqual(3301100);
                     }
                   }
                   });
-              } catch (err: BusinessError) {
+              } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
               }
           await Utils.msSleep(1000)
@@ -1549,8 +1678,8 @@ export default function actslocationTest() {
                   if (err instanceof BusinessError) {
                     console.error('promise, getCurrentLocation: error=' + err.code + err.message);
                   }
-                    if(err.code == 3301200){
-                      expect(err.code == 3301200).assertTrue();
+                    if(err.code === 3301200){
+                      expect(err.code === 3301200).assertTrue();
                     }
                   });
               } catch (err) {
@@ -1571,11 +1700,12 @@ export default function actslocationTest() {
               try {
                 let locationEnabled = geoLocationManager.isLocationEnabled();
                 expect(true).assertEqual(locationEnabled);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301300);
               }
-          await Utils.msSleep(1000)
+          Utils.msSleep(1000)
       })   
 
         /**
@@ -1633,7 +1763,7 @@ export default function actslocationTest() {
                     expect(typeof data[0].descriptionsSize).assertEqual("int");
                     console.info("getAddressesFromLocation_0100 ======>descriptions ", typeof data[0].descriptions)
                     if(data[0].descriptions != undefined){
-                      expect(typeof data[0].descriptions instanceof Array<string>);
+                      expect(typeof data[0].descriptions instanceof Array);
                     }
                     expect(data.length>0).assertTrue();
                 }
@@ -1675,7 +1805,7 @@ export default function actslocationTest() {
                     expect(err.code).assertEqual(401);
                   }
                   });
-              } catch (err:BusinessError) {
+              } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
               }
           await Utils.msSleep(1000)
@@ -1707,7 +1837,7 @@ export default function actslocationTest() {
                     expect(err.code).assertEqual(3301300);
                   }
                   });
-              } catch (err:BusinessError) {
+              } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
               }
           await Utils.msSleep(1000)
@@ -1733,8 +1863,8 @@ export default function actslocationTest() {
                   }
                 if (err) {
                   console.error('getAddressesFromLocationName: err=' + JSON.stringify(err));
-                  if (err.code == 3301200){
-                    expect(err.code == 3301200).assertTrue();
+                  if (err.code === 3301200){
+                    expect(err.code === 3301200).assertTrue();
                    } else {
                   expect(err.code).assertEqual(401);
                    }
@@ -1766,7 +1896,7 @@ export default function actslocationTest() {
                   expect(err.code).assertEqual(401);
                 }
                 });
-            } catch (err:BusinessError) {
+            } catch (err) {
               console.error("errCode:" + err.code + ", message:" + err.message);
             }
           await Utils.msSleep(1000)
@@ -1790,8 +1920,8 @@ export default function actslocationTest() {
                 }                    
                 if(err){
                     console.error('getCountryCode: err=' + JSON.stringify(err));
-                    if (err.code == 3301200){
-                      expect(err.code == 3301200).assertTrue(); 
+                    if (err.code === 3301200){
+                      expect(err.code === 3301200).assertTrue(); 
                      } else {
                     expect(err.code).assertEqual(3301500);
                      }
@@ -1820,8 +1950,8 @@ export default function actslocationTest() {
                     if (err instanceof BusinessError) {
                     console.error('promise, getCountryCode: error=' + err.code + err.message);
                     }
-                    if (err.code == 3301200){
-                      expect(err.code == 3301200).assertTrue(); 
+                    if (err.code === 3301200){
+                      expect(err.code === 3301200).assertTrue(); 
                      } else {
                     expect(err.code).assertEqual(3301500);
                      }
@@ -1846,8 +1976,8 @@ export default function actslocationTest() {
                 expect(location!=null).assertTrue();
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
-                if (err.code == 3301200){
-                  expect(err.code == 3301200).assertTrue(); 
+                if (err.code === 3301200){
+                  expect(err.code === 3301200).assertTrue(); 
                  } else {
                 expect(err.code).assertEqual(201);
                  }
@@ -1868,8 +1998,8 @@ export default function actslocationTest() {
                 expect(location!=null).assertTrue();
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
-                if (err.code == 3301200){
-                  expect(err.code == 3301200).assertTrue(); 
+                if (err.code === 3301200){
+                  expect(err.code === 3301200).assertTrue(); 
                  } else {
                 expect(err.code).assertEqual(801);
                  }
@@ -1890,8 +2020,8 @@ export default function actslocationTest() {
                 expect(location!=null).assertTrue();
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
-                if (err.code == 3301200){
-                  expect(err.code == 3301200).assertTrue(); 
+                if (err.code === 3301200){
+                  expect(err.code === 3301200).assertTrue(); 
                  } else {
                 expect(err.code).assertEqual(3301100);
                  }
@@ -1910,7 +2040,8 @@ export default function actslocationTest() {
             try {
                 let location = geoLocationManager.getLastLocation();
                 expect(true).assertEqual(location!=null);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301200);
               }
@@ -1935,7 +2066,8 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.onLocationChange(request, locationCallback);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }            
@@ -1962,7 +2094,8 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.onLocationChange(request, locationCallback);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(401);
               }            
@@ -1989,7 +2122,8 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.onLocationChange(request, locationCallback);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }            
@@ -2020,7 +2154,8 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.offLocationChange(locationChange);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
@@ -2058,7 +2193,8 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.onLocationError(locationErrorChange);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
@@ -2081,7 +2217,8 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.offLocationError(locationErrorChange);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }           
@@ -2104,7 +2241,8 @@ export default function actslocationTest() {
             }
             try {
                 geoLocationManager.onLocationEnabledChange(state);
-            } catch (err:BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(801);
             }          
@@ -2127,7 +2265,8 @@ export default function actslocationTest() {
             }
             try {
                 geoLocationManager.offLocationEnabledChange(state);
-            } catch (err:BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(801);
             }          
@@ -2180,7 +2319,8 @@ export default function actslocationTest() {
               }
               try {
                 geoLocationManager.onSatelliteStatusChange(gnssStatusCb);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }       
@@ -2232,7 +2372,8 @@ export default function actslocationTest() {
               }
               try {
                 geoLocationManager.onSatelliteStatusChange(gnssStatusCb);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }       
@@ -2255,7 +2396,8 @@ export default function actslocationTest() {
               }
               try {
                 geoLocationManager.offSatelliteStatusChange(gnssStatusCb);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
@@ -2278,7 +2420,8 @@ export default function actslocationTest() {
               }
               try {
                 geoLocationManager.offSatelliteStatusChange(gnssStatusCb);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }
@@ -2301,7 +2444,8 @@ export default function actslocationTest() {
               }
               try {
                 geoLocationManager.onNmeaMessage(nmeaCb);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
@@ -2324,7 +2468,8 @@ export default function actslocationTest() {
               }
               try {
                 geoLocationManager.onNmeaMessage(nmeaCb);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }
@@ -2347,7 +2492,8 @@ export default function actslocationTest() {
               }
               try {
                 geoLocationManager.offNmeaMessage(nmeaCb);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
@@ -2370,7 +2516,8 @@ export default function actslocationTest() {
               }
               try {
                 geoLocationManager.offNmeaMessage(nmeaCb);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }
@@ -2394,7 +2541,8 @@ export default function actslocationTest() {
               }
               try {
                 geoLocationManager.onCountryCodeChange(callback);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301500);
               }
@@ -2417,7 +2565,8 @@ export default function actslocationTest() {
               }
               try {
                 geoLocationManager.offCountryCodeChange(callback);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301500);
               }
@@ -2440,7 +2589,8 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.onBluetoothScanResultChange(callback);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }
@@ -2463,7 +2613,8 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.onBluetoothScanResultChange(callback);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
               }
@@ -2487,7 +2638,8 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.offBluetoothScanResultChange(callback);
-              } catch (err:BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
               }

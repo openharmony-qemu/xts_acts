@@ -158,14 +158,14 @@ export default function shapeClippingJsunit() {
     });
 
     /**
-     * @tc.name   testShapeClipping004
+     * @tc.name   testShapeClipping004Adapt001
      * @tc.number testShapeClipping004
      * @tc.desc   testShapeClipping004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testShapeClipping004', Level.LEVEL0, async () => {
+    it('testShapeClipping004Adapt001', Level.LEVEL0, async () => {
       console.info('[testShapeClipping004] START');
       try {
         let eventData: events_emitter.EventData = {

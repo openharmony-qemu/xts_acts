@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function drawingTsCanvasPart2Test() {
   describe('DrawingTsCanvasPart2Test', () => {
-    let pixel: image.PixelMap;
+    let pixel: image.PixelMap | undefined;
     const DEFAULT = 0;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
@@ -62,7 +62,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasDrawTextBlobNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawTextBlobNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const brush = new drawing.Brush();
         brush.setColor({alpha: 255, red: 255, green: 0, blue: 0});
         const font = new drawing.Font();
@@ -91,7 +91,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasDrawTextBlobMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawTextBlobMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const brush = new drawing.Brush();
         brush.setColor({alpha: 255, red: 255, green: 0, blue: 0});
         const font = new drawing.Font();
@@ -120,7 +120,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasAttachPenDetachPenNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasAttachPenDetachPenNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -145,7 +145,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasAttachPenDetachPenMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasAttachPenDetachPenMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -179,7 +179,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasAttachPenOlyStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasAttachPenOlyStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -203,7 +203,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasDttachPenOlyStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDttachPenOlyStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         canvas.detachPen();
         console.info(msg + 'attachPen successed');
       } catch (e) {
@@ -223,7 +223,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasAttachBrushDetachBrushNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasAttachBrushDetachBrushNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const brush = new drawing.Brush();
         brush.setColor({alpha: 255, red: 255, green: 0, blue: 0});
         canvas.attachBrush(brush);
@@ -247,7 +247,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasAttachBrushDetachBrushMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasAttachBrushDetachBrushMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const brush = new drawing.Brush();
         brush.setColor({alpha: 255, red: 255, green: 0, blue: 0});
         for (let index = 0; index < 20; index++) {
@@ -280,7 +280,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasAttachBrushOlyStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasAttachBrushOlyStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const brush = new drawing.Brush();
         brush.setColor({alpha: 255, red: 255, green: 0, blue: 0});
         canvas.attachBrush(brush);
@@ -303,7 +303,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasDttachBrushOlyStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDttachBrushOlyStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         canvas.detachBrush();
         console.info(msg + 'attachBrush successed');
       } catch (e) {
@@ -323,7 +323,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasClipPathNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasClipPathNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -356,7 +356,7 @@ export default function drawingTsCanvasPart2Test() {
      */
     it('testCanvasClipPathNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClipPathNullStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
@@ -413,7 +413,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasClipPathMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClipPathMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -445,7 +445,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasClipRectNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasClipRectNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         canvas.clipRect({left : 10, right : 500, top : 300, bottom : 900}, drawing.ClipOp.DIFFERENCE, true);
         canvas.clipRect({left : 10, right : 500, top : 300, bottom : 900}, drawing.ClipOp.INTERSECT, true);
         canvas.clipRect({left : 10, right : 500, top : 300, bottom : 900}, drawing.ClipOp.DIFFERENCE, false);
@@ -477,7 +477,7 @@ export default function drawingTsCanvasPart2Test() {
      */
     it('testCanvasClipRectNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClipRectNullStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       try {
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
@@ -516,7 +516,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasClipRectMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClipRectMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -544,7 +544,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasSaveGetSaveCountNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasSaveGetSaveCountNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let rect: common2D.Rect = {left: 10, right: 200, top: 100, bottom: 300};
         canvas.drawRect(rect);
         let saveCount = canvas.save();
@@ -577,7 +577,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasSaveGetSaveCountMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasSaveGetSaveCountMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let rect: common2D.Rect = {left: 10, right: 200, top: 100, bottom: 300};
         canvas.drawRect(rect);
         for (let index = 0; index < 20; index++) {
@@ -609,7 +609,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasGetSaveCountWhenNoSaveStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasGetSaveCountWhenNoSaveStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         let readCount = canvas.getSaveCount();
         expect(1 == readCount).assertTrue();
         console.info(msg + 'save、getSaveCount successed');
@@ -630,7 +630,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasScaleNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasScaleNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -658,7 +658,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasScaleMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasScaleMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -686,7 +686,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasSkewNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasSkewNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -714,7 +714,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasSkewMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasSkewMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -742,7 +742,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasRotateNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasRotateNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -774,7 +774,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasRotateMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasRotateMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -802,7 +802,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasTranlateNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasTranlateNormalStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
@@ -830,7 +830,7 @@ export default function drawingTsCanvasPart2Test() {
     it('testCanvasTranlateMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasTranlateMultipleCallsStatic';
       try {
-        const canvas = new drawing.Canvas(pixel);
+        const canvas = new drawing.Canvas(pixel!);
         const pen = new drawing.Pen();
         pen.setStrokeWidth(5);
         pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});

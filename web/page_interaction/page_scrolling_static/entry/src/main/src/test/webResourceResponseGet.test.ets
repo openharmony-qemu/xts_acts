@@ -44,9 +44,9 @@ export default function webResourceResponseGet() {
      * @tc.desc   test ScrollType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testScrollTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testScrollTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testScrollType001', 10)
         await Utils.msSleep(1000);
@@ -74,6 +74,29 @@ export default function webResourceResponseGet() {
         Utils.emitEvent('testscrollByWithResult001', 10)
         await Utils.msSleep(1000);
         Utils.registerEvent('testscrollByWithResult001', true, 37024, done);
+        await Utils.msSleep(2000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('WebResourceResponseGetButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+
+    /**
+     * @tc.name   testscrollByWithResultStatic002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBYWITHRESULT_0200
+     * @tc.desc   test ScrollByWithResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testscrollByWithResultStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testscrollByWithResult002', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testscrollByWithResult002', "17100001", 370241, done);
         await Utils.msSleep(2000);
         let driver: Driver = Driver.create();
         await Utils.msSleep(2000);

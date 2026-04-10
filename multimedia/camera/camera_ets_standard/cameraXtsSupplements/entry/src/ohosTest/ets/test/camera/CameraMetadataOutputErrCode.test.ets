@@ -339,6 +339,40 @@ export default function cameraAddMetadataObjectSuppTest() {
       }
       done();
     })
+
+    /**
+     * @tc.number  SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_addMetadataObjectTypes_002
+     * @tc.name    SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_addMetadataObjectTypes_002
+     * @tc.desc    test camera MetadataObjectType addMetadataObjectTypes cover 7400103
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_addMetadataObjectTypes_002', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_addMetadataObjectTypes_002';
+      if (isEmpty(mCameraDeviceArray)) {
+        console.info(TAG, testName + ' mCameraDeviceArray is null.');
+      } else {
+        let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
+        console.log(TAG, testName, `camera.CameraDevice：${useDevice}`);
+        try {
+          mMetadataOutput = mCameraManager.createMetadataOutput([
+            camera.MetadataObjectType.FACE_DETECTION,
+          ]);
+          let metaDataoutputCapability = mCameraManager.getSupportedOutputCapability(useDevice);
+          const types = metaDataoutputCapability.supportedMetadataObjectTypes;
+          console.log(TAG, testName, `相机支持的元数据类型：${types}`);
+          mMetadataOutput.addMetadataObjectTypes(types);
+          console.info(TAG, testName, `addMetadataObjectTypes successs`);
+          expect().assertFail();
+        } catch (err) {
+          console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+          expect(Number(err.code)).assertEqual(7400103);
+        }
+      }
+      done();
+    })
+
     /**
      * @tc.number  SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_removeMetadataObjectTypes_001
      * @tc.name    SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_removeMetadataObjectTypes_001
@@ -371,5 +405,39 @@ export default function cameraAddMetadataObjectSuppTest() {
       }
       done();
     })
+
+    /**
+     * @tc.number  SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_removeMetadataObjectTypes_002
+     * @tc.name    SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_removeMetadataObjectTypes_002
+     * @tc.desc    test camera MetadataObjectType removeMetadataObjectTypes cover 7400103
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_removeMetadataObjectTypes_002', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_removeMetadataObjectTypes_002';
+      if (isEmpty(mCameraDeviceArray)) {
+        console.info(TAG, testName + ' mCameraDeviceArray is null.');
+      } else {
+        let useDevice: camera.CameraDevice = mCameraDeviceArray[0];
+        console.log(TAG, testName, `camera.CameraDevice：${useDevice}`);
+        try {
+          mMetadataOutput = mCameraManager.createMetadataOutput([
+            camera.MetadataObjectType.FACE_DETECTION,
+          ]);
+          let metaDataoutputCapability = mCameraManager.getSupportedOutputCapability(useDevice);
+          const types = metaDataoutputCapability.supportedMetadataObjectTypes;
+          console.log(TAG, testName, `相机支持的元数据类型：${types}`);
+          mMetadataOutput.removeMetadataObjectTypes(types);
+          console.info(TAG, testName, `removeMetadataObjectTypes successs`);
+          expect().assertFail();
+        } catch (err) {
+          console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+          expect(Number(err.code)).assertEqual(7400103);
+        }
+      }
+      done();
+    })
+
   })
 }

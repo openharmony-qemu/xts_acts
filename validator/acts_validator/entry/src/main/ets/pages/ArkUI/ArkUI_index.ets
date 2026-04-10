@@ -43,6 +43,8 @@ struct IndexPage {
   @State result: string = '';
   @State TEST: number = 0;
   private TestCaseList: TestCase[] = [
+    { title: 'CapiGrid', uri: 'pages/ArkUI/CapiGrid' },
+    { title: 'AccessibilityCustom', uri: 'pages/ArkUI/AccessibilityCustom' },
     { title: 'ScrollingList', uri: 'pages/ArkUI/ScrollListTest' },
     { title: 'TouchMove', uri: 'pages/ArkUI/TouchMoveTest' },
     { title: 'PinchGesture', uri: 'pages/ArkUI/PinchGestureTest' },
@@ -89,7 +91,6 @@ struct IndexPage {
     { title: 'Rating', uri: 'pages/ArkUI/Rating' },
     { title: 'Search', uri: 'pages/ArkUI/Search' },
     { title: 'Magnifier', uri: 'pages/ArkUI/Magnifier' },
-    { title: 'SegmentButton', uri: 'pages/ArkUI/SegmentButton' },
     { title: 'SharedTransition', uri: 'pages/ArkUI/SharedTransition' },
     { title: 'Swiper', uri: 'pages/ArkUI/Swiper' },
     { title: 'Gauge', uri: 'pages/ArkUI/Gauge' },
@@ -156,6 +157,11 @@ struct IndexPage {
     { title: 'RadiusRenderStrategy', uri: 'pages/ArkUI/RadiusRenderStrategy' },
     { title: 'ImageDownloadInfo', uri: 'pages/ArkUI/ImageDownloadInfo' },
     { title: 'GameAddTest', uri: 'pages/ArkUI/GameAddTest' },
+    { title: 'AdvancedBlendMode', uri: 'pages/ArkUI/AdvancedBlendMode' },
+    { title: 'PluginComponentTest', uri: 'pages/ArkUI/PluginComponentTest' },
+    { title: 'CapiDragDrop', uri: 'pages/ArkUI/CapiDragDropTest' },
+    { title: 'CapionDigitalCrown', uri: 'pages/ArkUI/CapionDigitalCrown' },
+
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

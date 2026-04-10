@@ -54,7 +54,7 @@ interface Ani {
 export default function playModeReverseJsunit() {
   describe('playModeReverseTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("playModeReverseTest beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -86,9 +86,9 @@ class MyInteropAbilityLifecycleCallback implements InteropAbilityLifecycleCallba
 export default function LifeCycleLinstenerStaticTest() {
 
   describe('LifeCycleLinstenerStaticTest', () => {
-    let uiAbilityContext: common.UIAbilityContext;
-    let applicationContext: common.ApplicationContext;
-    let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+    let uiAbilityContext: common.UIAbilityContext | undefined;
+    let applicationContext: common.ApplicationContext | undefined;
+    let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator | undefined;
     const BUNDLE_NAME: string = 'com.acts.moveabilitytobgtest.static';
 
     beforeAll(async () => {
@@ -104,10 +104,10 @@ export default function LifeCycleLinstenerStaticTest() {
       hilog.info(domain, tag, 'beforeAll start');
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-      await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+      await abilityDelegator!.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
       await Utils.msSleep(2000);
       uiAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
-      applicationContext = uiAbilityContext.getApplicationContext();
+      applicationContext = uiAbilityContext?.getApplicationContext();
       hilog.info(domain, tag, 'beforeAll end');
     })
 
@@ -123,8 +123,9 @@ export default function LifeCycleLinstenerStaticTest() {
       let tag = `SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100`;
       console.log(`${tag}, it begin`);
       try {
-        let appCloneIndex: Int = applicationContext.getCurrentAppCloneIndex();
-      } catch (err: BusinessError) {
+        let appCloneIndex: Int | undefined = applicationContext?.getCurrentAppCloneIndex();
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
         expect(err?.code).assertEqual(16000071);
         done();
@@ -150,23 +151,23 @@ export default function LifeCycleLinstenerStaticTest() {
           try {
             hilog.info(domain, tag, `${itName} on applicationStateChange`);
             const cb = new CustomApplicationStateChangeCallback();
-            applicationContext.onApplicationStateChange(cb);
+            applicationContext?.onApplicationStateChange(cb);
 
             hilog.info(domain, tag, `${itName} EntryAbility moveAbilityToBackground`);
-            await uiAbilityContext.moveAbilityToBackground()
+            await uiAbilityContext!.moveAbilityToBackground()
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isBackground: ${cb.isBackground}`);
             expect(cb.isBackground).assertTrue();
 
             hilog.info(domain, tag, `${itName} start EntryAbility ability`);
-            await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+            await abilityDelegator!.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
             expect(cb.isForeground).assertTrue();
 
             hilog.info(domain, tag, `${itName} off applicationStateChange`);
-            applicationContext.offApplicationStateChange(cb);
-          } catch (err: BusinessError) {
+            applicationContext?.offApplicationStateChange(cb);
+          } catch (err) {
             hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
             expect().assertFail();
           }
@@ -192,17 +193,17 @@ export default function LifeCycleLinstenerStaticTest() {
           try {
             hilog.info(domain, tag, `${itName} on applicationStateChange`);
             const cb = new CustomApplicationStateChangeCallback();
-            applicationContext.onApplicationStateChange(cb);
+            applicationContext?.onApplicationStateChange(cb);
 
             hilog.info(domain, tag, `${itName} off applicationStateChange`);
-            applicationContext.offApplicationStateChange(cb);
+            applicationContext?.offApplicationStateChange(cb);
 
             hilog.info(domain, tag, `${itName} start EntryAbility1 ability`);
             const want: Want = {
               bundleName: `${BUNDLE_NAME}`,
               abilityName: 'EntryAbility1'
             }
-            await uiAbilityContext.startAbility(want);
+            await uiAbilityContext!.startAbility(want);
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} EntryAbility1 moveAbilityToBackground`);
@@ -212,17 +213,18 @@ export default function LifeCycleLinstenerStaticTest() {
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} EntryAbility moveAbilityToBackground`);
-            await uiAbilityContext.moveAbilityToBackground();
+            await uiAbilityContext!.moveAbilityToBackground();
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isBackground: ${cb.isBackground}`);
             expect(cb.isBackground).assertFalse();
 
             hilog.info(domain, tag, `${itName} start EntryAbility ability`);
-            await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+            await abilityDelegator!.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
             expect(cb.isForeground).assertFalse();
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             expect().assertFail();
             hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           }
@@ -249,17 +251,17 @@ export default function LifeCycleLinstenerStaticTest() {
           try {
             hilog.info(domain, tag, `${itName} on applicationStateChange`);
             const cb = new CustomApplicationStateChangeCallback();
-            applicationContext.onApplicationStateChange(cb);
+            applicationContext?.onApplicationStateChange(cb);
 
             hilog.info(domain, tag, `${itName} off applicationStateChange`);
-            applicationContext.offApplicationStateChange();
+            applicationContext?.offApplicationStateChange();
 
             hilog.info(domain, tag, `${itName} start EntryAbility1 ability`);
             const want: Want = {
               bundleName: `${BUNDLE_NAME}`,
               abilityName: 'EntryAbility1'
             }
-            await uiAbilityContext.startAbility(want);
+            await uiAbilityContext!.startAbility(want);
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} EntryAbility1 moveAbilityToBackground`);
@@ -269,17 +271,18 @@ export default function LifeCycleLinstenerStaticTest() {
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} EntryAbility moveAbilityToBackground`);
-            await uiAbilityContext.moveAbilityToBackground();
+            await uiAbilityContext!.moveAbilityToBackground();
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isBackground: ${cb.isBackground}`);
             expect(cb.isBackground).assertFalse();
 
             hilog.info(domain, tag, `${itName} start EntryAbility ability`);
-            await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+            await abilityDelegator!.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
             expect(cb.isForeground).assertFalse();
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             expect().assertFail();
             hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           }
@@ -303,9 +306,9 @@ export default function LifeCycleLinstenerStaticTest() {
         try {
           let cb: InteropAbilityLifecycleCallback = new MyInteropAbilityLifecycleCallback()
           hilog.info(domain, tag, `${itName} onInteropAbilityLifecycle`);
-          applicationContext.onInteropAbilityLifecycle(cb)
+          applicationContext?.onInteropAbilityLifecycle(cb)
           hilog.info(domain, tag, `${itName} offInteropAbilityLifecycle`);
-          applicationContext.offInteropAbilityLifecycle(cb);
+          applicationContext?.offInteropAbilityLifecycle(cb);
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
@@ -329,7 +332,59 @@ export default function LifeCycleLinstenerStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           let cb: InteropAbilityLifecycleCallback = new MyInteropAbilityLifecycleCallback()
-          applicationContext.offInteropAbilityLifecycle(cb);
+          applicationContext?.offInteropAbilityLifecycle(cb);
+          expect().assertFail()
+          done()
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
+          expect(err.code === 401).assertTrue();
+          hilog.info(domain, tag, `${itName} end`);
+          done();
+        }
+      })
+
+      /**
+     * @tc.name   SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300
+     * @tc.desc   onInteropAbilityLifecycle（）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const itName = `SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300`;
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          let cb: InteropAbilityLifecycleCallback = new MyInteropAbilityLifecycleCallback()
+          hilog.info(domain, tag, `${itName} onInteropAbilityLifecycle`);
+          applicationContext?.onInteropAbilityLifecycle(cb)
+          hilog.info(domain, tag, `${itName} offInteropAbilityLifecycle`);
+          applicationContext?.offInteropAbilityLifecycle();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
+          expect().assertFail();
+        }
+        hilog.info(domain, tag, `${itName} end`);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0400
+     * @tc.desc   offInteropAbilityLifecycle（） no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const itName = `SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0400`;
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          applicationContext?.offInteropAbilityLifecycle();
           expect().assertFail()
           done()
         } catch (err) {

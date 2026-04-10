@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ class EntryAbility1 extends UIAbility {
         hilog.info(0x0000, 'testTag EntryAbility1', 'loadContent ok');
         hilog.info(0x0000, 'testTag EntryAbility1', 'onWindowStageCreate ok');
       });
-    } catch (e: Error) {
+    } catch (e) {
       hilog.info(0x0000, 'testTag EntryAbility1', 'loadContent catch error：-----------' + e.message);
     }
   }
@@ -61,7 +61,8 @@ class EntryAbility1 extends UIAbility {
           hilog.info(0x0000, 'testTag EntryAbility1',  `startAbility success`);
         }
       });
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.info(0x0000, 'testTag EntryAbility1',  `startAbility fail: ` + JSON.stringify(err));
     }
   }

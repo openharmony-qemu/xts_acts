@@ -37,7 +37,7 @@ const uiContext = new UIContext();
 
 export default function SwipeGestureExample01Test() {
   describe('SwipeGestureExample01Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
       

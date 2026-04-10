@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,7 +54,7 @@ export default function SetGetUserIdTest() {
         expect(userIdValue3 == idValue).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
         hilog.error(domain, tag, `testSetGetUserId01 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -78,7 +78,7 @@ export default function SetGetUserIdTest() {
         expect(userIdValue == "testUserIdValue1").assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
         hilog.error(domain, tag, `testSetGetUserId02 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -102,7 +102,7 @@ export default function SetGetUserIdTest() {
         expect(userIdValue == "").assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
         hilog.error(domain, tag, `testSetGetUserId03 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -124,7 +124,8 @@ export default function SetGetUserIdTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId04 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -150,7 +151,8 @@ export default function SetGetUserIdTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId05 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -173,7 +175,8 @@ export default function SetGetUserIdTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId06 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -199,7 +202,8 @@ export default function SetGetUserIdTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId07 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -221,7 +225,8 @@ export default function SetGetUserIdTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId08 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -247,7 +252,8 @@ export default function SetGetUserIdTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId09 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -270,7 +276,8 @@ export default function SetGetUserIdTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserId10 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();

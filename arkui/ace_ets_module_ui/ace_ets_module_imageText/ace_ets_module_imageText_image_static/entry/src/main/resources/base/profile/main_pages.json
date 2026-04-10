@@ -11,6 +11,9 @@
     "MainAbility/pages/image/ImageSupportSvg2",
     "MainAbility/pages/drawableDescriptor/ImageAnimationController",
     "MainAbility/pages/drawableDescriptor/ImageAnimationControllerERROR",
-    "MainAbility/pages/ImageLoader/ImageLoader"
+    "MainAbility/pages/ImageLoader/ImageLoader",
+    "MainAbility/pages/image/ImageOrientation",
+    "MainAbility/pages/image/ImageHdrBrightness",
+    "MainAbility/pages/ListImage/ListImage"
   ]
 }

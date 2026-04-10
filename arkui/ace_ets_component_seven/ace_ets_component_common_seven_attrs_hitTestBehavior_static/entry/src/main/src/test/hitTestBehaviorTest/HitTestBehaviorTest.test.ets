@@ -64,7 +64,7 @@ export default function hitTestBehaviorTest() {
    * Create test suite.
    */
   describe('hitTestBehaviorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000)
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

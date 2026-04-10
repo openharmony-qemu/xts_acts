@@ -4,8 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Communication.NetStack",
-
+                    "SystemCapability.Communication.NetStack"
                 ]
             }
         ]

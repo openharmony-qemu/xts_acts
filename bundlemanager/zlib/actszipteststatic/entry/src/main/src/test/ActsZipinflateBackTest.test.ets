@@ -50,7 +50,7 @@ export default function ActsZipInflateBackTest() {
             let array = new Uint8Array(buffer);
             let dataString = "";
             for (let i = 0; i < length; i++) {
-              dataString += String.fromCharCode(array[i]);
+              dataString += String.fromCharCode(array[i].toInt());
             }
             return 0;
           }

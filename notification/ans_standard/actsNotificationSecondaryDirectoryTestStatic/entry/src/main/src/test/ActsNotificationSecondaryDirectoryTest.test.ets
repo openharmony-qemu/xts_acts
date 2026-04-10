@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,7 +29,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext | undefined;
 let bundle_name: string = 'com.example.secondaryDirectory.static'
 let count: int = 0;
 
@@ -39,7 +39,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
     console.info(TAG + 'SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST START')
 
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -59,7 +59,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info(`${TAG} beforeEach START`)
       await notificationManager.cancelAll()
       await notificationManager.removeAllSlots();
@@ -80,7 +80,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_3850 ===>'
         count = 0;
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3850 START`);
-        notificationManager.requestEnableNotification(testAbilityContext).then(() => {
+        notificationManager.requestEnableNotification(testAbilityContext!).then(() => {
           let basicContent: notificationManager.NotificationBasicContent = {
             title: "test_title",
             text: "test_text",
@@ -119,7 +119,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
                 done()
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
             console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
             expect(false).assertTrue()
             done()
@@ -201,7 +201,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -263,7 +263,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -327,7 +327,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -417,7 +417,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -491,7 +491,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -561,7 +561,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -644,7 +644,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -695,7 +695,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               })
             }
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
           console.info(`${TAG} addSlot failed err: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -757,11 +757,11 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         let num2 = flags.vibrationEnabled as notificationManager.NotificationFlagStatus
         expect(num1 == 1).assertTrue()
         expect(num2 == 2).assertTrue()
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT as int).assertEqual(0)
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_LONG_TEXT as int).assertEqual(1)
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_PICTURE as int).assertEqual(2)
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_CONVERSATION as int).assertEqual(3)
-        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_MULTILINE as int).assertEqual(4)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT.valueOf()).assertEqual(0)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_LONG_TEXT.valueOf()).assertEqual(1)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_PICTURE.valueOf()).assertEqual(2)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_CONVERSATION.valueOf()).assertEqual(3)
+        expect(notificationManager.ContentType.NOTIFICATION_CONTENT_MULTILINE.valueOf()).assertEqual(4)
         done()
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4850 END`);
       })

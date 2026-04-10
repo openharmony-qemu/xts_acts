@@ -273,14 +273,14 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.name   testParams[Symbol.iterator]001
+     * @tc.name   testParamsSymboliterator001Adapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02100
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testParams[Symbol.iterator]001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testParamsSymboliterator001Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
       const arr: string[] = [];
       for (const pair of params.$_iterator()) {
@@ -291,14 +291,14 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.name   testParams[Symbol.iterator]002
+     * @tc.name   testParamsSymboliterator002Adapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02200
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testParams[Symbol.iterator]002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testParamsSymboliterator002Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
       const arr: string[] = [];
       for (const pair of params.$_iterator()) {
@@ -309,14 +309,14 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.name   testParams[Symbol.iterator]003
+     * @tc.name   testParamsSymboliterator003Adapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02300
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testParams[Symbol.iterator]003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testParamsSymboliterator003Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
       params.append("foo", "jk")
       const arr: string[] = [];
@@ -328,14 +328,14 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.name   testParams[Symbol.iterator]004
+     * @tc.name   testParamsSymboliterator004Adapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02400
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testParams[Symbol.iterator]004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testParamsSymboliterator004Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
       const arr: string[] = [];
       for (const pair of params.$_iterator()) {
@@ -346,14 +346,14 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.name   testParams[Symbol.iterator]005
+     * @tc.name   testParamsSymboliterator005Adapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_02500
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testParams[Symbol.iterator]005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testParamsSymboliterator005Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
       params.append("jss", "txt")
       const arr: string[] = [];
@@ -1112,23 +1112,6 @@ export default function urlTest2() {
       expect(result).assertEqual("user=abc&query=first&query=second")
     })
 
-    // /**
-    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08200
-    //  * @tc.name testParamsConstruction004
-    //  * @tc.desc A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('testParamsConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let map: Map<string, string> = new Map<string, string>();
-    //   map.set('user', 'abc');
-    //   map.set('query', 'xyz');
-    //   let params = new Url.URLParams(map)
-    //   const result = params.toString()
-    //   expect(result).assertEqual("user=abc&query=xyz")
-    // })
-
     /**
      * @tc.name   testParamsConstruction005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08300
@@ -1162,23 +1145,6 @@ export default function urlTest2() {
       const paramsResult = params.toString()
       expect(paramsResult).assertEqual('abcde=fghki')
     })
-
-    // /**
-    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08800
-    //  * @tc.name testNewURLSearchParams001
-    //  * @tc.desc The input parameter for New URLParams is undefined or null.
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('testNewURLSearchParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = new Url.URLParams(undefined);
-    //   let result = params.toString()
-    //   expect(result).assertEqual('')
-    //   let params1 = new Url.URLParams(null);
-    //   let result2 = params1.toString()
-    //   expect(result2).assertEqual('')
-    // })
 
     /**
      * @tc.name   testUrlAppend001
@@ -1434,14 +1400,14 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.name   testUrl[Symbol.iterator]001
+     * @tc.name   testUrlSymboliterator001Adapt002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10500
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUrl[Symbol.iterator]001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testUrlSymboliterator001Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2");
       const arr: string[] = [];
       for (const pair of params.$_iterator()) {
@@ -1452,14 +1418,14 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.name   testUrl[Symbol.iterator]002
+     * @tc.name   testUrlSymboliterator002Adapt002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10600
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUrl[Symbol.iterator]002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testUrlSymboliterator002Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
       const arr: string[] = [];
       for (const pair of params.$_iterator()) {
@@ -1470,14 +1436,14 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.name   testUrl[Symbol.iterator]003
+     * @tc.name   testUrlSymboliterator003Adapt002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10700
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUrl[Symbol.iterator]003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testUrlSymboliterator003Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
       params.append("foo", "jk")
       const arr: string[] = [];
@@ -1489,14 +1455,14 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.name   testUrl[Symbol.iterator]004
+     * @tc.name   testUrlSymboliterator004Adapt002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10800
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUrl[Symbol.iterator]004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testUrlSymboliterator004Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
       const arr: string[] = [];
       for (const pair of params.$_iterator()) {
@@ -1507,14 +1473,14 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.name   testUrl[Symbol.iterator]005
+     * @tc.name   testUrlSymboliterator005Adapt002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_10900
      * @tc.desc   Returns an ES6 iterator. Each item of the iterator is a JavaScript Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUrl[Symbol.iterator]005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testUrlSymboliterator005Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams("key1=value1&key2=value2")
       params.append("jss", "txt")
       const arr: string[] = [];
@@ -2279,22 +2245,6 @@ export default function urlTest2() {
       expect(result).assertEqual("user=abc&query=xyz")
     })
 
-    // /**
-    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16000
-    //  * @tc.name testUrlSearchParamsConstruction002
-    //  * @tc.desc  A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('testUrlSearchParamsConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = new Url.URLParams({
-    //     user: 'abc',
-    //     query: ['first', 'second']
-    //   });
-    //   const result = params.toString()
-    //   expect(result).assertEqual("user=abc&query=first%2Csecond")
-    // })
 
     /**
      * @tc.name   testUrlSearchParamsConstruction003
@@ -2313,25 +2263,6 @@ export default function urlTest2() {
       const result = params.toString()
       expect(result).assertEqual("user=abc&query=first&query=second")
     })
-
-    // /**
-    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16300
-    //  * @tc.name testUrlSearchParamsConstruction005
-    //  * @tc.desc  A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size MediumTest
-    //  * @tc.type Function
-    //  * @tc.level Level 1
-    //  */
-    // it('testUrlSearchParamsConstruction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const getQueryPairs = () => [
-    //     ['user', 'abc'],
-    //     ['query', 'first'],
-    //     ['query', 'second'],
-    //   ]
-    //   let params = new Url.URLParams(getQueryPairs());
-    //   const result = params.toString()
-    //   expect(result).assertEqual("user=abc&query=first&query=second")
-    // })
 
     /**
      * @tc.name   testUrlSearchParamsConstruction006
@@ -5055,7 +4986,7 @@ export default function urlTest2() {
       expect(uriObj3.port).assertEqual("");
       expect(uriObj3.protocol).assertEqual("https:");
       expect(uriObj3.search).assertEqual("?id=10086&type=bond&region=CN&sort=amount_desc");
-      //expect(JSON.stringify(uriObj3.params)).assertEqual('{"urlClass":{},"parentUrl":"https://admin:SecurePass123!@api.example.com/v2/resources/finance/transactions/2025Q4?id=10086&type=bond&region=CN&sort=amount_desc#payment-detail-789"}');
+      expect(JSON.stringify(uriObj3.params)).assertEqual('{"parentUrl":"https://admin:SecurePass123!@api.example.com/v2/resources/finance/transactions/2025Q4?id=10086&type=bond&region=CN&sort=amount_desc#payment-detail-789"}');
       expect(uriObj3.username).assertEqual("admin");
     })
   })

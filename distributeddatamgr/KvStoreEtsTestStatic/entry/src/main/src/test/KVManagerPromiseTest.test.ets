@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,7 +58,7 @@ export default function KVManagerPromiseTest(){
         await Utils.msSleep(8000)
         context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
         hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context.databaseDir);
-      } catch (e: Error) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', "============beforeAll context e: " + e);
         hilog.info(domain, tag, '%{public}s', '================ beforeAll context end==========');
       }
@@ -89,7 +89,7 @@ export default function KVManagerPromiseTest(){
     })
 
     beforeEach(async (done: () => void) => {
-      kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
+      kvManager!.getKVStore<factory.DeviceKVStore>(TEST_STORE_ID, options).then((store: factory.DeviceKVStore) => {
         kvStore = store;
         hilog.info(domain, tag, 'beforeEach getKVStore success');
         done();
@@ -102,16 +102,18 @@ export default function KVManagerPromiseTest(){
       hilog.info(domain, tag, 'afterEach');
       try {
         await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then((error) => {
-          hilog.info(domain, tag, 'afterEach closeKVStore success ' );
-          await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-          hilog.info(domain, tag, 'afterEach deleteKVStore success ');
-          kvStore = null;
-          done();
+          waitForCompletion(async () => {
+            hilog.info(domain, tag, 'afterEach closeKVStore success ' );
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
+            hilog.info(domain, tag, 'afterEach deleteKVStore success ');
+            kvStore = null;
+            done();
+          })
         }).catch((err: Error) => {
           hilog.error(domain, tag, 'afterEach closeKVStore and deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
           done();
         });
-      } catch (e: Error) {
+      } catch (e) {
         hilog.error(domain, tag, 'afterEach closeKVStore err ' + `, error code is ${e.code}, message is ${e.message}`);
         done();
       }
@@ -134,7 +136,7 @@ export default function KVManagerPromiseTest(){
 
         kvManager!.onDistributedDataServiceDie(deathCallback);
         kvManager!.offDistributedDataServiceDie();
-      } catch(e: Error) {
+      } catch(e) {
         console.log(`SUB_DDM_DKV_KVMANAGER_ON_PROMISE_0100 error.code is ${e.code},message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -161,7 +163,7 @@ export default function KVManagerPromiseTest(){
         kvManager!.onDistributedDataServiceDie(deathCallback2);
         kvManager!.offDistributedDataServiceDie(deathCallback1);
         kvManager!.offDistributedDataServiceDie(deathCallback2);
-      } catch(e: Error) {
+      } catch(e) {
         console.log(`SUB_DDM_DKV_KVMANAGER_ON_PROMISE_0200 error.code is ${e.code},message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -185,7 +187,7 @@ export default function KVManagerPromiseTest(){
         kvManager!.onDistributedDataServiceDie(deathCallback);
         kvManager!.onDistributedDataServiceDie(deathCallback);
         kvManager!.offDistributedDataServiceDie(deathCallback);
-      } catch(e: Error) {
+      } catch(e) {
         console.log(`SUB_DDM_DKV_KVMANAGER_ON_PROMISE_0300 error.code is ${e.code},message is ${e.message}`);
         expect(null).assertFail();
       }
@@ -207,7 +209,7 @@ export default function KVManagerPromiseTest(){
           console.info('SUB_DDM_DKV_KVMANAGER_ON_PROMISE_0300 death callback call');
         }
         kvManager!.offDistributedDataServiceDie(deathCallback);
-      } catch(e: Error) {
+      } catch(e) {
         console.log(`SUB_DDM_DKV_KVMANAGER_OFF_PROMISE_0100 error.code is ${e.code},message is ${e.message}`);
         expect(null).assertFail();
       }

@@ -24,8 +24,8 @@ import TaskPoolSequenceRunnerTest from './TaskPoolSequenceRunnerTest.test';
 export default function testsuite() {
   taskPoolSequenceRunnerMultipleUITest();
   taskPoolSequenceRunnerActTest();
-  TaskPoolSequenceRunnerTest();
   sequenceRunnerAbilityTest()
   sequenceRunnerAbilityTest_2();
   sequenceRunnerTaskTest();
+  TaskPoolSequenceRunnerTest();
 }

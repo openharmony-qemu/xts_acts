@@ -109,7 +109,48 @@ function testSetLocationPolicy() {
       let resAfter = locationManager.getLocationPolicy(SELFWANT);
       expect(resAfter == locationManager.LocationPolicy.DISALLOW_LOCATION_SERVICE).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+
+  /**
+   * @tc.name   test_set_location_policy_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_LOCATION_POLICY_JS_0005
+   * @tc.desc   test locationManager setLocationPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_location_policy_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      locationManager.setLocationPolicy(SELFWANT, null);
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_location_policy_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_LOCATION_POLICY_JS_0006
+   * @tc.desc   test locationManager setLocationPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_location_policy_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      locationManager.setLocationPolicy(SELFWANT, undefined);
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -170,7 +211,42 @@ function testGetLocationPolicy() {
       locationManager.getLocationPolicy(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_location_policy_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_LOCATION_POLICY_JS_0004
+   * @tc.desc   test locationManager getLocationPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_location_policy_0004", Level.LEVEL2, async (done: Function) => {
+    try {
+      locationManager.getLocationPolicy(null);
+    } catch (error) {
+      expect(error == null).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_location_policy_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_LOCATION_POLICY_JS_0005
+   * @tc.desc   test locationManager getLocationPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_location_policy_0005", Level.LEVEL2, async (done: Function) => {
+    try {
+      locationManager.getLocationPolicy(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });

@@ -77,7 +77,7 @@ struct WebkeyboardAvoidMode {
               this.controller.loadUrl("www.example.com");
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1
-              this.controller.loadUrl("resource://rawfile/index377.html");
+              this.controller.loadUrl("resource://rawfile/index388.html");
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let buttonOne = await driver.findComponent(ON.type('textField').isAfter(ON.text('TextA')));
               await buttonOne.click()
@@ -507,7 +507,7 @@ struct WebkeyboardAvoidMode {
               this.controller.loadUrl("www.example.com");
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               this.isPageEnd = -1;
-              this.controller.loadUrl("resource://rawfile/index377.html");
+              this.controller.loadUrl("resource://rawfile/index388.html");
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let buttonOne = await driver.findComponent(ON.type('textField').isAfter(ON.text('TextA')));
               await buttonOne.click()

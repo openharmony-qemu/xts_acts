@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -296,7 +296,8 @@ export default function AVScreenCaptureRecorderTest() {
         let id: int = 0;
         let resultStr: string = await media.getAVScreenCaptureConfigurableParameters(id)
         expect(resultStr).assertEqual("");
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`getAVScreenCaptureConfigurableParameters error, error code: ${error.code}`);
         console.error(`getAVScreenCaptureConfigurableParameters error, error message: ${error.message}`);
         expect(error.code).assertEqual(202);

@@ -25,14 +25,15 @@ struct TextInputCaret {
   build() {
     Column() {
       TextInput({ text:"12345", placeholder: 'input your word...', controller: this.controller })
-        .height(200)
-      Text(this.text).fontSize(18).margin(15).key('inputCaretText')
+        .fontSize(16)
+        .height('10%')
+      Text(this.text).fontSize(18).margin(15).key('inputCaretText').height('5%')
 
       Button('getCaret').onClick((event: ClickEvent) => {
         this.positionInfo = this.controller.getCaretOffset()
         this.text = this.positionInfo.index + ''
-      }).key('inputGetCaret')
+      }).key('inputGetCaret').height('10%')
 
-    }.width('100%')
+    }.width('100%').height('100%')
   }
 }

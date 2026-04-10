@@ -165,7 +165,7 @@ export default function windowMaximizeTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} The current device type does not support to maximize`);
-            expect(true).assertTrue();
+            
             done();
           } else {
             console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -199,7 +199,7 @@ export default function windowMaximizeTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} The current device type does not support to maximize`);
-            expect(true).assertTrue();
+            
             done();
           } else {
             console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -235,7 +235,7 @@ export default function windowMaximizeTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} The current device type does not support to maximize`);
-            expect(true).assertTrue();
+            
             done();
           } else {
             console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -278,7 +278,7 @@ export default function windowMaximizeTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} The current device type does not support to maximize`);
-            expect(true).assertTrue();
+            
             done();
           } else {
             console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -315,7 +315,7 @@ export default function windowMaximizeTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} The current device type does not support to maximize`);
-            expect(true).assertTrue();
+            
             done();
           } else {
             console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -352,7 +352,7 @@ export default function windowMaximizeTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} The current device type does not support to maximize`);
-            expect(true).assertTrue();
+            
             done();
           } else {
             console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -389,7 +389,7 @@ export default function windowMaximizeTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} The current device type does not support to maximize`);
-            expect(true).assertTrue();
+            
             done();
           } else {
             console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -432,7 +432,7 @@ export default function windowMaximizeTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} The current device type does not support to maximize`);
-            expect(true).assertTrue();
+            
             done();
           } else {
             console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -469,7 +469,7 @@ export default function windowMaximizeTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} The current device type does not support to maximize`);
-            expect(true).assertTrue();
+            
             done();
           } else {
             console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -507,7 +507,7 @@ export default function windowMaximizeTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} The current device type does not support to maximize`);
-            expect(true).assertTrue();
+            
             done();
           } else {
             console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -554,7 +554,7 @@ export default function windowMaximizeTest() {
                 done();
               }else if(err.code == 1300004) {
                 console.info(`${message} The subWindow is not support`);
-                expect(true).assertTrue();
+                
                 done();
               }else {
                 expect(false).assertTrue();
@@ -598,7 +598,7 @@ export default function windowMaximizeTest() {
             promise.then(async () => {
               console.info('Succeeded in setTitleAndDockHoverShown the window.');
               windowClass.recover();
-              expect(true).assertTrue();
+              
               done();
             }).catch((err: BusinessError) => {
               console.error(`${message} Failed to setTitleAndDockHoverShown the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -650,7 +650,7 @@ export default function windowMaximizeTest() {
             promise.then(async () => {
               console.info('Succeeded in setTitleAndDockHoverShown the window.');
               windowClass.recover();
-              expect(true).assertTrue();
+              
               done();
             }).catch((err: BusinessError) => {
               console.error(`${message} Failed to setTitleAndDockHoverShown the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -702,7 +702,7 @@ export default function windowMaximizeTest() {
             promise.then(async () => {
               console.info('Succeeded in setTitleAndDockHoverShown the window.');
               windowClass.recover();
-              expect(true).assertTrue();
+              
               done();
             }).catch((err: BusinessError) => {
               console.error(`${message} Failed to setTitleAndDockHoverShown the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -754,7 +754,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_1', TestType.FUNCTION | Si
         promise.then(async () => {
           console.info('Succeeded in setTitleAndDockHoverShown the window.');
           windowClass.recover();
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to setTitleAndDockHoverShown the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -803,7 +803,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_2', TestType.FUNCTION | Si
     promise.then(async () => {
       console.info('Succeeded in maximizing the window.');
       await windowClass.recover();
-      expect(true).assertTrue();
+      
       done();
     }).catch((err: BusinessError) => {
       console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -839,7 +839,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_3', TestType.FUNCTION | Si
       promise.then(async () => {
         console.info('Succeeded in maximizing the window.');
         await windowClass.recover();
-        expect(true).assertTrue();
+        
         done();
       }).catch((err: BusinessError) => {
         console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -884,7 +884,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_4', TestType.FUNCTION | Si
       let promise = windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER);
       promise.then(async () => {
         console.info('Succeeded in maximizing the window.');
-        expect(true).assertTrue();
+        
         done();
       }).catch((err: BusinessError) => {
         console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -930,7 +930,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_5', TestType.FUNCTION | Si
       promise.then(async () => {
         console.info('Succeeded in maximizing the window.');
         await windowClass.recover();
-        expect(true).assertTrue();
+        
         done();
       }).catch((err: BusinessError) => {
         console.error(`${message} Failed to maximize the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -977,7 +977,7 @@ it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Si
         promise.then(async () => {
           console.info('Succeeded in setTitleAndDockHoverShown the window.');
           windowClass.recover();
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to setTitleAndDockHoverShown the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -1010,14 +1010,14 @@ it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Si
   }
 })
 /**
- * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_show_1
+ * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_show_1Adapt001
  * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1100
  * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_show_2
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+it('testSetTitleAndDockHoverShow_Title_show_dock_show_1Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_show_dock_show_1';
   try {
     let windowClass = windowStage.getMainWindowSync();
@@ -1029,7 +1029,7 @@ it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Si
         promise.then(async () => {
           console.info('Succeeded in setTitleAndDockHoverShown the window.');
           windowClass.recover();
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to setTitleAndDockHoverShown the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -1081,7 +1081,7 @@ it('testSetTitleAndDockHoverShow_Title_show_dock_show_2', TestType.FUNCTION | Si
         promise.then(async () => {
           console.info('Succeeded in setTitleAndDockHoverShown the window.');
           windowClass.recover();
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to setTitleAndDockHoverShown the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -1133,7 +1133,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_show', TestType.FUNCTION | Size
         promise.then(async () => {
           console.info('Succeeded in setTitleAndDockHoverShown the window.');
           windowClass.recover();
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to setTitleAndDockHoverShown the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -1186,7 +1186,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_show_1', TestType.FUNCTION | Si
         promise.then(async () => {
           console.info('Succeeded in setTitleAndDockHoverShown the window.');
           windowClass.recover();
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to setTitleAndDockHoverShown the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -1238,7 +1238,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_show_2', TestType.FUNCTION | Si
         promise.then(async () => {
           console.info('Succeeded in setTitleAndDockHoverShown the window.');
           windowClass.recover();
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to setTitleAndDockHoverShown the window. Cause code: ${err.code}, message: ${err.message}`);
@@ -1291,7 +1291,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
         promise.then(async () => {
           console.info('Succeeded in setTitleAndDockHoverShown the window.');
           windowClass.recover();
-          expect(true).assertTrue();
+          
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} Failed to setTitleAndDockHoverShown the window. Cause code: ${err.code}, message: ${err.message}`);

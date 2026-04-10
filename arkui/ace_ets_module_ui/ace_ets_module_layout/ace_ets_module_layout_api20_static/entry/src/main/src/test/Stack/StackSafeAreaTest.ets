@@ -49,7 +49,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function StackSafeAreaTest() {
   describe('StackSafeAreaTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StackSafeAreaTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")

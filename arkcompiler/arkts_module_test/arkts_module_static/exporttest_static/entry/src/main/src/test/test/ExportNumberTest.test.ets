@@ -56,7 +56,7 @@ export default function exportNumberTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('exportNumberTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+    it('exportNumberTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (): Promise<void> => {
       let a: myNumber = 12;
       await sleep(100);
       expect(12).assertEqual(a);
@@ -70,7 +70,7 @@ export default function exportNumberTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('exportNumberTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('exportNumberTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (): Promise<void> => {
       let a = myNumber2.toString();
       await sleep(100);
       expect('43').assertEqual(a);
@@ -84,7 +84,7 @@ export default function exportNumberTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('exportNumberTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('exportNumberTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (): Promise<void> => {
       let a = exportObject.number1;
       await sleep(100);
       expect(45).assertEqual(a);
@@ -97,7 +97,7 @@ export default function exportNumberTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('exportNumberTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('exportNumberTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (): Promise<void> => {
       let a = myExport.number1;
       await sleep(100);
       expect(45).assertEqual(a);
@@ -111,7 +111,7 @@ export default function exportNumberTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('exportNumberTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('exportNumberTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (): Promise<void> => {
       let a = exportObject2.number1;
       await sleep(100);
       expect(46).assertEqual(a);
@@ -125,7 +125,7 @@ export default function exportNumberTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('exportNumberTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('exportNumberTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (): Promise<void> => {
       let a = exportedNumberObj.number1;
       await sleep(100);
       expect(46).assertEqual(a);
@@ -139,7 +139,7 @@ export default function exportNumberTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('exportNumberTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('exportNumberTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (): Promise<void> => {
       let a = myNumberObject.number1;
       let b = anotherObject.number1;
       await sleep(100);
@@ -156,7 +156,7 @@ export default function exportNumberTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('exportNumberTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('exportNumberTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (): Promise<void> => {
       let a = aaExport.myNumberObject.number1;
       let b = aaExport.anotherObject.number1;
       await sleep(100);
@@ -172,7 +172,7 @@ export default function exportNumberTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('exportNumberTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('exportNumberTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (): Promise<void> => {
       let a: myNumberType = 1;
       await sleep(100);
       expect(1).assertEqual(a);

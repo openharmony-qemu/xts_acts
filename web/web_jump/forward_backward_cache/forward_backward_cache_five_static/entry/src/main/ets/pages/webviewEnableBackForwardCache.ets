@@ -15,12 +15,12 @@
 
 import { Entry, Text,Column, Component, Button, ClickEvent, Web, Row, Stack } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import { BusinessError, Area, OnPageBeginEvent } from '@ohos.arkui.component'
+import { Area, OnPageBeginEvent } from '@ohos.arkui.component'
 import Utils from '../../src/test/Utils.test';
 import hilog from '@ohos.hilog';
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
-import { Callback, RecordData } from '@ohos.base'
+import { Callback, RecordData, BusinessError } from '@ohos.base'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -101,6 +101,91 @@ struct WebComponent {
                 }
               } catch (error) {
                 Utils.emitEvent('fail', 24086)
+              }
+              break;
+            }
+
+            case 'emitWebviewEnableBackForwardCacheStatic001': {
+              try {
+                console.info('test enableBackForwardCache with nativeEmbed true');
+                let features: webview.BackForwardCacheSupportedFeatures = {
+                  nativeEmbed: true,
+                  mediaTakeOver: false
+                };
+                webview.WebviewController.enableBackForwardCache(features);
+                Utils.emitEvent('success', 260326101);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326101);
+              }
+              break;
+            }
+
+            case 'emitWebviewEnableBackForwardCacheStatic002': {
+              try {
+                console.info('test enableBackForwardCache with nativeEmbed true');
+                let features: webview.BackForwardCacheSupportedFeatures = {
+                  nativeEmbed: false,
+                  mediaTakeOver: false
+                };
+                webview.WebviewController.enableBackForwardCache(features);
+                Utils.emitEvent('success', 260326102);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326102);
+              }
+              break;
+            }
+
+            case 'emitWebviewEnableBackForwardCacheStatic003': {
+              try {
+                console.info('test enableBackForwardCache with nativeEmbed true');
+                let features: webview.BackForwardCacheSupportedFeatures = {
+                  nativeEmbed: false,
+                  mediaTakeOver: true
+                };
+                webview.WebviewController.enableBackForwardCache(features);
+                Utils.emitEvent('success', 260326103);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326103);
+              }
+              break;
+            }
+
+            case 'emitWebviewEnableBackForwardCacheStatic004': {
+              try {
+                console.info('test enableBackForwardCache with nativeEmbed true');
+                let features: webview.BackForwardCacheSupportedFeatures = {
+                  nativeEmbed: true,
+                  mediaTakeOver: true
+                };
+                webview.WebviewController.enableBackForwardCache(features);
+                Utils.emitEvent('success', 260326104);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326104);
+              }
+              break;
+            }
+
+            case 'emitWebviewEnableBackForwardCacheStatic005': {
+              try {
+                console.info('test enableBackForwardCache with nativeEmbed true');
+                let features: webview.BackForwardCacheSupportedFeatures = {
+                  nativeEmbed: true,
+                  mediaTakeOver: true
+                };
+                webview.WebviewController.enableBackForwardCache(undefined);
+                Utils.emitEvent('success', 260326105);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326105);
               }
               break;
             }

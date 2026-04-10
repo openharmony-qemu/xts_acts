@@ -361,7 +361,7 @@ struct WebCookieManagerConfigCookie {
               }
 
               case 'testConfigCookieIncludeHttpOnlyErrorCode005': {
-                let resultValue: number = 0;
+                let resultValue = '';
                 try {
                   webView.WebCookieManager.clearAllCookiesSync(true);
                   webView.WebCookieManager.configCookie(URL_INVALID, 'id=123;HttpOnly', true, true)
@@ -371,18 +371,18 @@ struct WebCookieManagerConfigCookie {
                     .catch((error: business_error.BusinessError) => {
                       console.error('testConfigCookieIncludeHttpOnlyErrorCode005 configCookie error: ' +
                       JSON.stringify(error));
-                      resultValue = error.code
+                      resultValue = error.code + error.message
                     })
                 } catch (error) {
                   let e: business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`testConfigCookieIncludeHttpOnlyErrorCode005 ErrorCode: ${e.code},  Message: ${e.message}`);
-                  resultValue = error.code
+                  resultValue = error.code + error.message
                 }
 
-                let check = (v1: number, v2: number): boolean => {
+                let check = (v1: string, v2: string): boolean => {
                   return v1 == v2 ? true : false;
                 }
-                await waitForAssert(() => resultValue, check, 17100002, 135510, this.str);
+                await waitForAssert(() => resultValue, check, '17100002URL error. No valid cookie found for the specified URL.', 135510, this.str);
                 break;
               }
 

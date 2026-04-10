@@ -49,11 +49,11 @@ export default function AsyKeyGeneratorBySpecJsunit() {
      * @tc.desc   the asyKeySpec is genDsa2048CommonSpec, Use the callback Style of Interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it(
       "Security_CryptoFramework_GeneratorBySpec_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await asyCallback
           .generateByCommonSpec(genDsa2048CommonSpec(), "DSA")

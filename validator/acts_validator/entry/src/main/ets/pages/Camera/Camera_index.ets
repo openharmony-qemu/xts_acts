@@ -46,6 +46,7 @@ struct IndexPage {
     { title: 'CameraPreviewFormat', uri: 'pages/Camera/CameraPreviewFormat' },
     { title: 'CameraPhotoFormat', uri: 'pages/Camera/CameraPhotoFormat' },
     { title: 'CameraFlash', uri: 'pages/Camera/CameraFlash' },
+    { title: 'CameraFitRotate', uri: 'pages/Camera/CameraFitRotate' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

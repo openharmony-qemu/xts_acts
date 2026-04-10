@@ -570,6 +570,18 @@ export class KeyboardController {
           console.debug(TAG + '====>Sub_InputMethod_IME_Streamer_1000 event:' + data.event);
           that.Sub_InputMethod_IME_Streamer_1000();
           break;
+        case 563:
+          console.debug(TAG + '====>Sub_InputMethod_IMF_PerceptionScreen_0400 event:' + data.event);
+          that.Sub_InputMethod_IMF_PerceptionScreen_0400();
+          break;
+        case 564:
+          console.debug(TAG + '====>Sub_InputMethod_IMF_PerceptionScreen_0500 event:' + data.event);
+          that.Sub_InputMethod_IMF_PerceptionScreen_0500();
+          break;
+        case 565:
+          console.debug(TAG + '====>Sub_InputMethod_IMF_PerceptionScreen_0600 event:' + data.event);
+          that.Sub_InputMethod_IMF_PerceptionScreen_0600();
+          break;
       }
     }
 
@@ -1920,7 +1932,7 @@ export class KeyboardController {
     let t = setTimeout(() => {
       clearTimeout(t);
       commoneventmanager.publish('Sub_InputMethod_IME_Custom_0200', commonEventPublishData, this.publishCallback);
-    }, 100)
+    }, 100);
   }
 
   private Sub_InputMethod_IME_Custom_0800(): void {
@@ -3670,7 +3682,7 @@ export class KeyboardController {
         data: 'FAILED'
     };
     try {
-      let Height = this.display_info.height * 0.15;
+      let Height = (this.display_info.height > this.display_info.width ? this.display_info.height : this.display_info.width) * 0.15 + 1;
       this.softKeyboardPanel.setImmersiveMode(inputMethodEngine.ImmersiveMode.LIGHT_IMMERSIVE);
       let effect: inputMethodEngine.ImmersiveEffect = {
         gradientHeight: Height,
@@ -4073,6 +4085,125 @@ export class KeyboardController {
       }
     };
     commoneventmanager.publish('Sub_InputMethod_IME_setSystemPanelButtonColor_0600', commonEventPublishData, this.publishCallback);
+  }
+
+  private async Sub_InputMethod_IMF_PerceptionScreen_0400(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IMF_PerceptionScreen_0400 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    inputmethodengine.getKeyboardDelegate().on('editorAttributeChanged', (attr:inputMethodEngine.EditorAttribute) => {
+      console.info(TAG + `====>on_EditorAttribute_callback = ${JSON.stringify(attr)}`); 
+      if (typeof (attr.windowId) === 'number' && typeof (attr.displayId) === 'number') {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      inputmethodengine.getKeyboardDelegate().off('editorAttributeChanged');
+      commoneventmanager.publish('Sub_InputMethod_IMF_PerceptionScreen_0400', commonEventPublishData, this.publishCallback);
+    });
+    try {
+      let callingDisplayDidChangeCallback = (num: number): void => {
+        console.info(TAG + `====>Sub_InputMethod_IMF_PerceptionScreen_0400 callingDisplayDidChangeCallback success display id: ${num}`);
+      };
+      let callingDisplayDidChangeCallback1 = (num: number): void => {
+        console.info(TAG + `====>Sub_InputMethod_IMF_PerceptionScreen_0400 callingDisplayDidChangeCallback1 success display id: ${num}`);
+      };
+      let callingDisplayDidChangeCallback2 = (num: number): void => {
+        console.info(TAG + `====>Sub_InputMethod_IMF_PerceptionScreen_0400 callingDisplayDidChangeCallback2 success display id: ${num}`);
+      };
+      inputMethodEngine.getInputMethodAbility().on('callingDisplayDidChange', callingDisplayDidChangeCallback);
+      inputMethodEngine.getInputMethodAbility().on('callingDisplayDidChange', callingDisplayDidChangeCallback1);
+      inputMethodEngine.getInputMethodAbility().on('callingDisplayDidChange', callingDisplayDidChangeCallback2);
+    } catch (err) {
+      if (err.code === 801) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      console.info(TAG + '====>Sub_InputMethod_IMF_PerceptionScreen_0400 cathch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IMF_PerceptionScreen_0400', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_IMF_PerceptionScreen_0500(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IMF_PerceptionScreen_0500 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    inputmethodengine.getKeyboardDelegate().on('editorAttributeChanged', (attr:inputMethodEngine.EditorAttribute) => {
+      console.info(TAG + `====>on_EditorAttribute_callback = ${JSON.stringify(attr)}`); 
+      if (typeof (attr.windowId) === 'number' && typeof (attr.displayId) === 'number') {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      inputmethodengine.getKeyboardDelegate().off('editorAttributeChanged');
+      commoneventmanager.publish('Sub_InputMethod_IMF_PerceptionScreen_0500', commonEventPublishData, this.publishCallback);
+    });
+    try {
+      let callingDisplayDidChangeCallback = (num: number): void => {
+        console.info(TAG + `====>Sub_InputMethod_IMF_PerceptionScreen_0500 callingDisplayDidChangeCallback success display id: ${num}`);
+      };
+      let callingDisplayDidChangeCallback1 = (num: number): void => {
+        console.info(TAG + `====>Sub_InputMethod_IMF_PerceptionScreen_0500 callingDisplayDidChangeCallback1 success display id: ${num}`);
+      };
+      let callingDisplayDidChangeCallback2 = (num: number): void => {
+        console.info(TAG + `====>Sub_InputMethod_IMF_PerceptionScreen_0500 callingDisplayDidChangeCallback2 success display id: ${num}`);
+      };
+      inputMethodEngine.getInputMethodAbility().on('callingDisplayDidChange', callingDisplayDidChangeCallback);
+      inputMethodEngine.getInputMethodAbility().on('callingDisplayDidChange', callingDisplayDidChangeCallback1);
+      inputMethodEngine.getInputMethodAbility().on('callingDisplayDidChange', callingDisplayDidChangeCallback2);
+      inputMethodEngine.getInputMethodAbility().off('callingDisplayDidChange');
+    } catch (err) {
+      if (err.code === 801) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      console.info(TAG + '====>Sub_InputMethod_IMF_PerceptionScreen_0500 cathch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IMF_PerceptionScreen_0500', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_IMF_PerceptionScreen_0600(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IMF_PerceptionScreen_0600 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    inputmethodengine.getKeyboardDelegate().on('editorAttributeChanged', (attr:inputMethodEngine.EditorAttribute) => {
+      console.info(TAG + `====>on_EditorAttribute_callback = ${JSON.stringify(attr)}`); 
+      if (typeof (attr.windowId) === 'number' && typeof (attr.displayId) === 'number') {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      inputmethodengine.getKeyboardDelegate().off('editorAttributeChanged');
+      commoneventmanager.publish('Sub_InputMethod_IMF_PerceptionScreen_0600', commonEventPublishData, this.publishCallback);
+    });
+    try {
+      let callingDisplayDidChangeCallback = (num: number): void => {
+        console.info(TAG + `====>Sub_InputMethod_IMF_PerceptionScreen_0600 callingDisplayDidChangeCallback success display id: ${num}`);
+      };
+      let callingDisplayDidChangeCallback1 = (num: number): void => {
+        console.info(TAG + `====>Sub_InputMethod_IMF_PerceptionScreen_0600 callingDisplayDidChangeCallback1 success display id: ${num}`);
+      };
+      let callingDisplayDidChangeCallback2 = (num: number): void => {
+        console.info(TAG + `====>Sub_InputMethod_IMF_PerceptionScreen_0600 callingDisplayDidChangeCallback2 success display id: ${num}`);
+      };
+      inputMethodEngine.getInputMethodAbility().on('callingDisplayDidChange', callingDisplayDidChangeCallback);
+      inputMethodEngine.getInputMethodAbility().on('callingDisplayDidChange', callingDisplayDidChangeCallback1);
+      inputMethodEngine.getInputMethodAbility().on('callingDisplayDidChange', callingDisplayDidChangeCallback2);
+      inputMethodEngine.getInputMethodAbility().off('callingDisplayDidChange', callingDisplayDidChangeCallback);
+    } catch (err) {
+      if (err.code === 801) {
+        commonEventPublishData = {
+          data: 'SUCCESS'
+        };
+      };
+      console.info(TAG + '====>Sub_InputMethod_IMF_PerceptionScreen_0600 cathch err: ' + JSON.stringify(err));
+      commoneventmanager.publish('Sub_InputMethod_IMF_PerceptionScreen_0600', commonEventPublishData, this.publishCallback);
+    }
   }
 
 }

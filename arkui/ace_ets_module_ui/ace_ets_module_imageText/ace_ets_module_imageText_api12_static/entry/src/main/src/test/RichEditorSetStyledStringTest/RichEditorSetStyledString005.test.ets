@@ -47,7 +47,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorSetStyledString005() {
   describe('RichEditorSetStyledString005', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorSetStyledString005 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -100,8 +100,9 @@ export default function RichEditorSetStyledString005() {
       let content = await (driver.findComponent(ON.id('content')) as Promise<Component>);
       let contentText = await content.getText();
       await CommonFunc.sleep(500);
-      let imageStyle = 'verticalAlign:1;objectFit:0{"topLeft":"10.00vp","topRight":"10.00vp","bottomLeft":"10.00vp","bottomRight":"10.00vp"}';
-      expect(contentText).assertContain(imageStyle);
+      const contentStr = contentText.slice(contentText.indexOf('{'), contentText.lastIndexOf('}') + 1);
+      expect(contentText).assertContain('verticalAlign:1;objectFit:1');
+      expect(contentText).assertContain('"topLeft":10,"topRight":10,"bottomLeft":10,"bottomRight":10');
       done();
     });
 

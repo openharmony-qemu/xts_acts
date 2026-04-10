@@ -33,7 +33,7 @@ let tag: string = 'testTag';
 
 export default function datePickerMode() {
   describe('DatePickerMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DatePicker beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api18.static", "EntryAbility")
 

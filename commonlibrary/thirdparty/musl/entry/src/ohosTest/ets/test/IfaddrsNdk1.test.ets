@@ -31,9 +31,9 @@ export default function muslIfaddrsNdk1Test() {
      * @tc.desc   test freeifaddrs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslIfAddrsFreeIfAddrs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslIfAddrsFreeIfAddrs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(ifAddrs.freeIfAddrs()).assertEqual(0);
       done()
     });

@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function List_lanes_1() {
 
   describe('List_lanes_1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("List_lanes_1 beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -114,7 +114,7 @@ it('testListLanesToOne_static', Level.LEVEL0, async (done: () => void): Promise<
       expect(Math.abs(Math.round(List_lanes_014.bottom - List_lanes_014.top) - Math.round(height*0.15)) <= 1).assertTrue();
 
       let driver = Driver.create();
-      driver.swipe(
+      await driver.swipe(
         (Math.round(List_lanes_013.left + ((List_lanes_013.right - List_lanes_013.left) / 2))).toInt(),
         (Math.round(List_lanes_013.bottom)).toInt(),
         (Math.round(List_lanes_012.left + ((List_lanes_012.right - List_lanes_012.left) / 2))).toInt(),

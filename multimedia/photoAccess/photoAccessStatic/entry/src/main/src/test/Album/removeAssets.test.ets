@@ -45,12 +45,12 @@ export default function removeAssetsTest() {
         const testNum = 'removeAssets_promise_static_003';
         try {
           const fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           const album = await fetchResult.getFirstObject();
           fetchResult.close();
           let albumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album)
           albumChangeRequest.removeAssets([]);
-          await helper.applyChanges(albumChangeRequest);
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(albumChangeRequest);
           expect(false).assertTrue();
           done();
         } catch (error) {

@@ -119,13 +119,19 @@ void CreateTextNode(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle column)
     nodeAPI->registerNodeEvent(text, NODE_TEXT_ON_DETECT_RESULT_UPDATE, 1, nullptr);
     nodeAPI->registerNodeEvent(text, NODE_VISIBLE_AREA_APPROXIMATE_CHANGE_EVENT, 1, nullptr);
     
-    ArkUI_NumberValue textwidth[] = {{ .f32 = PARAM_100 }};
+    ArkUI_NumberValue textwidth[] = {{ .f32 = PARAM_50 }};
+    ArkUI_NumberValue textHeight[] = {{ .f32 = PARAM_20 }};
     ArkUI_AttributeItem textitem1 = {.value = textwidth, .size = PARAM_1};
+    ArkUI_AttributeItem textitem2 = {.value = textHeight, .size = PARAM_1};
+    
     nodeAPI->setAttribute(text, NODE_WIDTH, &textitem1);
-    nodeAPI->setAttribute(text, NODE_HEIGHT, &textitem1);
+    nodeAPI->setAttribute(text, NODE_HEIGHT, &textitem2);
     
     ArkUI_AttributeItem item3 = {.string = "手机号码：15535573557" };
     nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &item3);
+    ArkUI_NumberValue textmaxLines[] = {{ .i32 = PARAM_1 }};
+    ArkUI_AttributeItem textmaxLinesitem1 = {.value = textmaxLines, .size = PARAM_1};
+    nodeAPI->setAttribute(text, NODE_TEXT_MAX_LINES, &textmaxLinesitem1);
     
     ArkUI_NumberValue value2[] = {{ .i32 = ARKUI_TEXT_DATA_DETECTOR_TYPE_PHONE_NUMBER }};
     ArkUI_AttributeItem item2 = {.value = value2, .size = PARAM_1};
@@ -156,12 +162,17 @@ void CreateSpanNode(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle column)
     
     nodeAPI->registerNodeEvent(span, NODE_TEXT_SPAN_ON_LONG_PRESS, PARAM_1, nullptr);
     
-    ArkUI_NumberValue spanwidth[] = {{ .f32 = PARAM_100 }};
+    ArkUI_NumberValue spanwidth[] = {{ .f32 = PARAM_50 }};
+    ArkUI_NumberValue spanHeight[] = {{ .f32 = PARAM_20 }};
     ArkUI_AttributeItem spanitem1 = {.value = spanwidth, .size = PARAM_1};
+    ArkUI_AttributeItem spanitem2 = {.value = spanHeight, .size = PARAM_1};
+    ArkUI_NumberValue maxLines[] = {{ .i32 = PARAM_1 }};
+    ArkUI_AttributeItem spanitem3 = {.value = maxLines, .size = PARAM_1};
     nodeAPI->setAttribute(text1, NODE_WIDTH, &spanitem1);
-    nodeAPI->setAttribute(text1, NODE_HEIGHT, &spanitem1);
+    nodeAPI->setAttribute(text1, NODE_HEIGHT, &spanitem2);
     nodeAPI->setAttribute(span, NODE_WIDTH, &spanitem1);
-    nodeAPI->setAttribute(span, NODE_HEIGHT, &spanitem1);
+    nodeAPI->setAttribute(span, NODE_HEIGHT, &spanitem2);
+    nodeAPI->setAttribute(text1, NODE_TEXT_MAX_LINES, &spanitem3);
     
     ArkUI_AttributeItem spaniditem = { .string = "span66", .size = PARAM_1};
     nodeAPI->setAttribute(text1, NODE_ID, &spaniditem);
@@ -179,10 +190,10 @@ void CreateImageNode(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle column)
     
     nodeAPI->registerNodeEvent(image, NODE_IMAGE_ON_ERROR, PARAM_1, nullptr);
     
-    ArkUI_NumberValue imageidth[] = {{ .f32 = PARAM_100 }};
+    ArkUI_NumberValue imageidth[] = {{ .f32 = PARMA_0_POINT_05 }};
     ArkUI_AttributeItem imageitem1 = {.value = imageidth, .size = PARAM_1};
-    nodeAPI->setAttribute(image, NODE_WIDTH, &imageitem1);
-    nodeAPI->setAttribute(image, NODE_HEIGHT, &imageitem1);
+    nodeAPI->setAttribute(image, NODE_WIDTH_PERCENT, &imageitem1);
+    nodeAPI->setAttribute(image, NODE_HEIGHT_PERCENT, &imageitem1);
     
     ArkUI_AttributeItem imageitem = { .string = "image7", .size = PARAM_1};
     nodeAPI->setAttribute(image, NODE_ID, &imageitem);
@@ -204,6 +215,10 @@ void CreateTextInputNode(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle column
     ArkUI_NumberValue textinputvalue[] = {{ .u32 = 0xFF0000FF }};
     ArkUI_AttributeItem textinputcoloritem = {.value = textinputvalue, .size = 1};
     nodeAPI->setAttribute(textinput, NODE_BACKGROUND_COLOR, &textinputcoloritem);
+
+    ArkUI_NumberValue textinputidth[] = {{ .f32 = PARMA_0_POINT_05 }};
+    ArkUI_AttributeItem textinputitem1 = {.value = textinputidth, .size = PARAM_1};
+    nodeAPI->setAttribute(textinput, NODE_HEIGHT_PERCENT, &textinputitem1);
     
     nodeAPI->registerNodeEvent(textinput, NODE_TEXT_INPUT_ON_WILL_CHANGE, PARAM_1, nullptr);
     nodeAPI->addNodeEventReceiver(textinput, onReceiver1);
@@ -220,6 +235,9 @@ void CreateTextAreaNode(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle column)
     ArkUI_NumberValue textareavalue[] = {{ .u32 = 0xFF0000FF }};
     ArkUI_AttributeItem textareacoloritem = {.value = textareavalue, .size = PARAM_1};
     nodeAPI->setAttribute(textarea, NODE_BACKGROUND_COLOR, &textareacoloritem);
+    ArkUI_NumberValue textareaidth[] = {{ .f32 = PARMA_0_POINT_05 }};
+    ArkUI_AttributeItem textareaitem1 = {.value = textareaidth, .size = PARAM_1};
+    nodeAPI->setAttribute(textarea, NODE_HEIGHT_PERCENT, &textareaitem1);
     
     nodeAPI->registerNodeEvent(textarea, NODE_TEXT_AREA_ON_WILL_CHANGE, PARAM_1, nullptr);
     nodeAPI->addNodeEventReceiver(textarea, onReceiver1);
@@ -234,6 +252,9 @@ void CreateCheckboxNode(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle column)
     
     ArkUI_AttributeItem checkboxitem = { .string = "Checkbox11", .size = PARAM_1 };
     nodeAPI->setAttribute(checkbox, NODE_ID, &checkboxitem);
+    ArkUI_NumberValue checkboxidth[] = {{ .f32 = PARMA_0_POINT_05 }};
+    ArkUI_AttributeItem checkboxitem1 = {.value = checkboxidth, .size = PARAM_1};
+    nodeAPI->setAttribute(checkbox, NODE_HEIGHT_PERCENT, &checkboxitem1);
     
     nodeAPI->addNodeEventReceiver(checkbox, onReceiver1);
 }
@@ -251,7 +272,9 @@ void CreateTextPickerNode(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle colum
     ArkUI_NumberValue textpickerwidth[] = {{ .f32 = PARAM_200 }};
     ArkUI_AttributeItem textpickeritem1 = {.value = textpickerwidth, .size = PARAM_1};
     nodeAPI->setAttribute(textpicker, NODE_WIDTH, &textpickeritem1);
-    nodeAPI->setAttribute(textpicker, NODE_HEIGHT, &textpickeritem1);
+    ArkUI_NumberValue textpickeridth[] = {{ .f32 = PARMA_0_POINT_05 }};
+    ArkUI_AttributeItem textpickeritem2 = {.value = textpickeridth, .size = PARAM_1};
+    nodeAPI->setAttribute(textpicker, NODE_HEIGHT_PERCENT, &textpickeritem2);
     
     ArkUI_NumberValue itemvalue3[] = {{ .u32 = 0xFFFF00FF }};
     ArkUI_AttributeItem listitem33 = {.value = itemvalue3, .size = PARAM_1};
@@ -294,8 +317,10 @@ napi_value CreateEventTypeNode(napi_env env, napi_callback_info info)
     OH_ArkUI_NodeContent_AddNode(nodeContentHandle, column);
     
     CreateRowAndButtonNodes(nodeAPI, column);
-    CreateTextNode(nodeAPI, column);
-    CreateSpanNode(nodeAPI, column);
+    auto row = nodeAPI->createNode(ARKUI_NODE_ROW);
+    nodeAPI->addChild(column, row);
+    CreateTextNode(nodeAPI, row);
+    CreateSpanNode(nodeAPI, row);
     CreateImageNode(nodeAPI, column);
     CreateTextInputNode(nodeAPI, column);
     CreateTextAreaNode(nodeAPI, column);

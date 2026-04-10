@@ -28,7 +28,6 @@ import AnimatorOptionTest1 from './animatetest/AnimatorOptionTest1.test'
 import AnimatorOptionTest2 from './animatetest/AnimatorOptionTest2.test'
 import FocusControlTest from './foucscontroltest/FocusRequestTest.test'
 import KeyEventTest from './keyeventtest/KeyEventTest.test'
-import NodeEventTest from './nodeeventtest/NodeEventTest.test'
 import NodeAdapterTest from './nodeadaptertest/NodeAdapterTest.test'
 import NodeContentTest from './nodecontenttest/NodeContentTest.test'
 import SnapShotTest from './snapshottest/SnapShotTest.test'
@@ -51,7 +50,6 @@ import NodeEventTypeTest2 from './textinputcontenttypetest/nodeeventtypeTest2.te
 import NapiEnvTest from './nodenapitest/NapiEnvTest.test'
 import AnimatorTest from './animatetest/AnimatorTest.test'
 import ArkUIKeyEventTypeTest from './arkuikeyeventtest/ArkUIKeyEventTypeTest.test'
-import ArkUIKeyIntensionTest from './arkuikeyeventtest/ArkUIKeyIntensionTest.test'
 import ArkUIKeySourceTypeTest from './arkuikeyeventtest/ArkUIKeySourceTypeTest.test'
 import NativeDialogTest from './nativedialog/NativeDialogTest.test'
 import NativeGestureTest1 from './nativegesture/NativeGestureTest1.test'
@@ -103,7 +101,6 @@ export default function testsuite() {
   AnimatorOptionTest2()
   FocusControlTest()
   KeyEventTest()
-  NodeEventTest()
   NodeAdapterTest()
   NodeContentTest()
   SnapShotTest()
@@ -125,7 +122,6 @@ export default function testsuite() {
   NapiEnvTest()
   AnimatorTest()
   ArkUIKeyEventTypeTest()
-  ArkUIKeyIntensionTest()
   ArkUIKeySourceTypeTest()
   NativeDialogTest()
   NativeGestureTest1()

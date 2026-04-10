@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
   describe('DialogDisableDateRangeAndMarkToday', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DialogDisableDateRangeAndMarkToday beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api19.static", "EntryAbility");
     });
@@ -97,23 +97,23 @@ export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
       console.log('-------getInspectorTree '+ inspector.getInspectorTree())
       let objjson = JSON.stringify(inspector.getInspectorTree())
       console.log('-------stringify '+ objjson)
-      // let obj = JSON.parseJsonElement(objjson);
+      let obj = JSON.parseJsonElement(objjson);
       console.log('-------parseJsonElement ')
 
 
-      // await Utils.sleep(2000);
-      // console.log('DialogDialogDisableDateRangeAndMarkToday_001afterclck2=================' + JSON.stringify(obj))
-      // let calendarPickerDialog =
-      //
-      //   JSON.stringify(obj.getArray("$children")[1].getArray("$children")[0].getArray("$children")[0])
-      // expect(JSON.parseJsonElement(calendarPickerDialog).getElement('$attrs').getString('disabledDateRange'))
-      //   .assertEqual('2025年1月9日星期四,2025年1月10日星期五');
-      // // await Utils.sleep(1000);
-      // expect(JSON.parseJsonElement(calendarPickerDialog).getElement('$attrs').getString('markToday'))
-      //   .assertEqual('true');
-      // inspector.sendEventByKey('calendarPickerDialog', 10, '')
-      // // await Utils.sleep(1000);
-      // console.info('[DialogDisableDateRangeAndMarkToday_001] END');
+      await Utils.sleep(2000);
+      console.log('DialogDialogDisableDateRangeAndMarkToday_001afterclck2=================' + JSON.stringify(obj))
+      let calendarPickerDialog =
+
+        JSON.stringify(obj.getArray("$children")[1].getArray("$children")[0].getArray("$children")[0])
+      expect(JSON.parseJsonElement(calendarPickerDialog).getElement('$attrs').getString('disabledDateRange'))
+        .assertEqual('2025年1月9日星期四,2025年1月10日星期五');
+      await Utils.sleep(1000);
+      expect(JSON.parseJsonElement(calendarPickerDialog).getElement('$attrs').getString('markToday'))
+        .assertEqual('true');
+      inspector.sendEventByKey('calendarPickerDialog', 10, '')
+      await Utils.sleep(1000);
+      console.info('[DialogDisableDateRangeAndMarkToday_001] END');
       done();
     });
 

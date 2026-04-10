@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function rowMar_TextMarPadTest() {
   describe('RowMar_TextMarPadTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RowMar_TextMarPadTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

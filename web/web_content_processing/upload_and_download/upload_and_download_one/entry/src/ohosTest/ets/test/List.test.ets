@@ -14,7 +14,9 @@
  */
 
 import webViewControllerDownloadTest from './WebViewControllerDownloadTest.test'
+import webDownloadItemSetNullUndefined from './WebDownloadItemSetNullUndefined.test'
 
 export default function testsuite() {
   webViewControllerDownloadTest()
+  webDownloadItemSetNullUndefined()
 }

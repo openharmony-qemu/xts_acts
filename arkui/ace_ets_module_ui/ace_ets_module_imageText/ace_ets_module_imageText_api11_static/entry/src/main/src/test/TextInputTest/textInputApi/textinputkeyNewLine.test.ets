@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textInputApiTest() {
   describe('textInputApiTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textInputApiTest beforeEach start");
 
 
@@ -82,7 +82,7 @@ export default function textInputApiTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInputApiTest] get inspector value is: " + JSON.stringify(obj));
       console.info("[textInput1] get inspector value is: " + JSON.stringify(obj.getElement('$attrs').getString('enterKeyType')));
-      expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Done')
+      expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.NewLine')
       done();
 
     });

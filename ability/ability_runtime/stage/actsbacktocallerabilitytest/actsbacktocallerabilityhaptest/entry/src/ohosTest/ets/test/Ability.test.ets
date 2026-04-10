@@ -305,5 +305,78 @@ export default function abilityTest() {
       });
       log(TAG, '---------------testcase is end---------------')
     });
+
+    /**
+     * @tc.name   testSetOnNewWantSkipScenariosNull0100
+     * @tc.number SetOnNewWantSkipScenarios_0200
+     * @tc.desc   Test setOnNewWantSkipScenarios with null scenarios parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetOnNewWantSkipScenariosNull0100', Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'SetOnNewWantSkipScenarios_0200';
+      log(TAG, '---------------testcase is start---------------')
+      let abilityContext: common.UIAbilityContext = getContext() as common.UIAbilityContext;
+      if (!abilityContext) {
+        log_error(TAG, 'abilityContext is undefined');
+        expect().assertFail();
+        done();
+      }
+      let scenarios: number | null = null;
+      try{
+        abilityContext?.setOnNewWantSkipScenarios(scenarios).then((data) => {
+          log(TAG, 'testSetOnNewWantSkipScenariosNull0100 succeed');
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          log_error(TAG, `testSetOnNewWantSkipScenariosNull0100 failed, code is ${err.code}, message is ${err.message}`);
+          expect().assertFail();
+          done();
+        });
+      }catch(err){
+        log_error(TAG, `testSetOnNewWantSkipScenariosNull0100 failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+
+      log(TAG, '---------------testcase is end---------------')
+    });
+
+    /**
+     * @tc.name   testSetOnNewWantSkipScenariosUndefined0200
+     * @tc.number SetOnNewWantSkipScenarios_0300
+     * @tc.desc   Test setOnNewWantSkipScenarios with undefined scenarios parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetOnNewWantSkipScenariosUndefined0200', Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'SetOnNewWantSkipScenarios_0300';
+      log(TAG, '---------------testcase is start---------------')
+      let abilityContext: common.UIAbilityContext = getContext() as common.UIAbilityContext;
+      if (!abilityContext) {
+        log_error(TAG, 'abilityContext is undefined');
+        expect().assertFail();
+        done();
+      }
+      let scenarios: number | undefined = undefined;
+      try{
+        abilityContext?.setOnNewWantSkipScenarios(scenarios).then((data) => {
+          log(TAG, 'testSetOnNewWantSkipScenariosUndefined0200 succeed');
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          log_error(TAG, `testSetOnNewWantSkipScenariosUndefined0200 failed, code is ${err.code}, message is ${err.message}`);
+          expect().assertFail();
+          done();
+        });
+      }catch(err){
+        log_error(TAG, `testSetOnNewWantSkipScenariosNull0100 failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+      log(TAG, '---------------testcase is end---------------')
+    });
   })
 }

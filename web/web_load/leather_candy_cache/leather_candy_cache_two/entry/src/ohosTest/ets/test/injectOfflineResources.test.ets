@@ -136,5 +136,21 @@ export default function injectOfflineResourcesTest() {
         });
       Utils.waitAndClickComponent('injectOfflineResourcesTestButton',driver)
     })
+    /**
+     * @tc.name   testInjectOfflineResources006
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0600
+     * @tc.desc   test injectOfflineResources first parameter1 is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInjectOfflineResources006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testInjectOfflineResources006", 148311)
+      Utils.registerBaseEvent("testInjectOfflineResources006", '401', 148406, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('injectOfflineResourcesTestButton',driver)
+    })
   })
 }

@@ -30,7 +30,7 @@ export default function builtinsStringPrototypebTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(20);
+      await sleep(40);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -57,7 +57,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest8600'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.padEnd(10);
+        const result = myString.padEnd(10);
         console.log(result?.toString());
         expect(result.toString()).assertEqual('abc       ');
         console.info(`${caseName}, test end`);
@@ -77,7 +77,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest8700'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.padEnd(10,'s');
+        const result = myString.padEnd(10,'s');
         console.log(result?.toString());
         expect(result.toString()).assertEqual('abcsssssss');
         console.info(`${caseName}, test end`);
@@ -97,7 +97,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest8800'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.padEnd(10,'s');
+        const result = myString.padEnd(10,'s');
         console.log(result?.toString());
         expect(result.toString()).assertEqual('abcsssssss');
         console.info(`${caseName}, test end`);
@@ -117,7 +117,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest8900'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.padEnd(10,'foo');
+        const result = myString.padEnd(10,'foo');
         console.log(result?.toString());
         expect(result.toString()).assertEqual('abcfoofoof');
         console.info(`${caseName}, test end`);
@@ -137,7 +137,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest9000'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.padEnd(6,'123456');
+        const result = myString.padEnd(6,'123456');
         console.log(result?.toString());
         expect(result.toString()).assertEqual('abc123');
         console.info(`${caseName}, test end`);
@@ -157,7 +157,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest9100'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.padEnd(2);
+        const result = myString.padEnd(2);
         console.log(result?.toString());
         expect(result.toString()).assertEqual('abc');
         console.info(`${caseName}, test end`);
@@ -177,7 +177,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest9200'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.padStart(10);
+        const result = myString.padStart(10);
         console.log(result?.toString());
         expect(result.toString()).assertEqual('       abc');
         console.info(`${caseName}, test end`);
@@ -197,7 +197,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest9300'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.padStart(10,'s');
+        const result = myString.padStart(10,'s');
         console.log(result?.toString());
         expect(result.toString()).assertEqual('sssssssabc');
         console.info(`${caseName}, test end`);
@@ -217,7 +217,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest9400'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.padStart(10,'f00');
+        const result = myString.padStart(10,'f00');
         console.log(result?.toString());
         expect(result.toString()).assertEqual('f00f00fabc');
         console.info(`${caseName}, test end`);
@@ -237,7 +237,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest9500'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.padStart(6,'123456');
+        const result = myString.padStart(6,'123456');
         console.log(result?.toString());
         expect(result.toString()).assertEqual('123abc');
         console.info(`${caseName}, test end`);
@@ -257,7 +257,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest9600'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.padStart(2);
+        const result = myString.padStart(2);
         console.log(result?.toString());
         expect(result.toString()).assertEqual('abc');
         console.info(`${caseName}, test end`);
@@ -277,7 +277,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest9700'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.repeat(0);
+        const result = myString.repeat(0);
         console.log(result?.toString());
         expect(result.toString()).assertEqual('');
         console.info(`${caseName}, test end`);
@@ -297,7 +297,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest9800'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.repeat(1);
+        const result = myString.repeat(1);
         console.log(result?.toString());
         expect(result.toString()).assertEqual('abc');
         console.info(`${caseName}, test end`);
@@ -317,7 +317,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest9900'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.repeat(2);
+        const result = myString.repeat(2);
         console.log(result?.toString());
         expect(result.toString()).assertEqual('abcabc');
         console.info(`${caseName}, test end`);
@@ -337,7 +337,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest10000'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.repeat(3.5);
+        const result = myString.repeat(3);
         console.log(result?.toString());
         expect(result.toString()).assertEqual('abcabcabc');
         console.info(`${caseName}, test end`);
@@ -357,7 +357,7 @@ export default function builtinsStringPrototypebTest() {
         const caseName = 'BuiltinsStringPrototypebTest0100'
         console.info(`${caseName}, test start`);
         const myString = 'abc';
-        const result= myString.repeat(3.5);
+        const result = myString.repeat(3);
         console.log(result?.toString());
         expect(result.toString()).assertEqual('abcabcabc');
         console.info(`${caseName}, test end`);
@@ -451,7 +451,7 @@ export default function builtinsStringPrototypebTest() {
       async (Done: Function) => {
         const caseName = 'BuiltinsStringPrototypebTest0500'
         const myString = 'Twas the night before Xmas...';
-        const result= myString.replace(/Xmas/i,'Christmas');
+        const result = myString.replace(/Xmas/i,'Christmas');
         console.log(result?.toString());
         expect(result.toString()).assertEqual('Twas the night before Christmas...');
         console.info(`${caseName}, test end`);
@@ -470,7 +470,7 @@ export default function builtinsStringPrototypebTest() {
       async (Done: Function) => {
         const caseName = 'BuiltinsStringPrototypebTest0600'
         const myString = 'Apples are round, and apples are juicy.';
-        const result= myString.replace(/apples/gi,'oranges');
+        const result = myString.replace(/apples/gi,'oranges');
         console.log(result?.toString());
         expect(result.toString()).assertEqual('oranges are round, and oranges are juicy.');
         console.info(`${caseName}, test end`);
@@ -489,7 +489,7 @@ export default function builtinsStringPrototypebTest() {
       async (Done: Function) => {
         const caseName = 'BuiltinsStringPrototypebTest0700'
         const myString = 'Maria Cruz';
-        const result= myString.replace(/(\w+)\s(\w+)/,'$2, $1');
+        const result = myString.replace(/(\w+)\s(\w+)/,'$2, $1');
         console.log(result?.toString());
         expect(result.toString()).assertEqual('Cruz, Maria');
         console.info(`${caseName}, test end`);

@@ -25,7 +25,7 @@ import {UtilsTest} from '../Util.test'
 
 export default function SwipeGestureExample02Test() {
   describe('SwipeGestureExample02Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
 
@@ -241,7 +241,7 @@ it('SwipeGestureExample02Test_static_0010', Level.LEVEL0, async (done: () => voi
       let text26 = inspector.getInspectorByKey('SwipeGestureExample02_sourceTool');
       let obj26 = JSON.parseJsonElement(text26);
       console.log('SwipeGestureExample02Test_0010 obj26 $attrs content',obj26.getElement('$attrs').getString('content'),obj26)
-      expect(obj26.getElement('$attrs').getString('content')).assertEqual('sourceTool:FINGER');
+      expect(obj26.getElement('$attrs').getString('content')).assertEqual('sourceTool:Finger');
 
       console.info('SwipeGestureExample02Test_0010 END');
       done();

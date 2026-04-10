@@ -25,7 +25,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest} from './Util.test'
 export default function APIshouldBuiltInRecognizerParallelWith() {
   describe('APIshouldBuiltInRecognizerParallelWith', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
 

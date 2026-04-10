@@ -32,6 +32,7 @@
 #define PARAM_9 9
 #define PARAM_202 202
 #define PARAM_1400002 1400002
+uint64_t g_areaCount;
 
 static napi_value Add(napi_env env, napi_callback_info info)
 {
@@ -537,18 +538,28 @@ static napi_value GetDisplayPosition_ErrCode140004(napi_env env, napi_callback_i
 void AvailableAreaChangeCallback(uint64_t displayId)
 {
     OH_LOG_INFO(LOG_APP, "AvailableAreaChangeCallback displayId=%{public}lu.", displayId);
+    g_areaCount++;
+    OH_LOG_INFO(LOG_APP, "Area count :%{public}d", g_areaCount);
+}
+
+static napi_value getAreaLinsterCount(napi_env env, napi_callback_info info)
+{
+    napi_value index;
+    OH_LOG_INFO(LOG_APP, "DisplayAreaChangeCallback count:%{public}d", g_areaCount);
+    napi_create_uint32(env, g_areaCount, &index);
+    return index;
 }
 
 
 static napi_value RegisterAvailableAreaChangeListener(napi_env env, napi_callback_info info)
 {
+    g_areaCount = 0;
     uint32_t listenerIndex = 0;
     NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_RegisterAvailableAreaChangeListener(
         AvailableAreaChangeCallback, &listenerIndex);
     OH_LOG_INFO(LOG_APP, "errorCode=%{public}d", errCode);
     napi_value errorCode;
     napi_create_int32(env, errCode, &errorCode);
-    OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener(listenerIndex);
     return errorCode;
 }
 
@@ -793,6 +804,7 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "unregisterFoldDisplayModeChange", nullptr, UnregisterFoldDisplayModeChangeListener, nullptr, nullptr,
             nullptr, napi_default, nullptr },
+        { "getAreaLinsterCount", nullptr, getAreaLinsterCount, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

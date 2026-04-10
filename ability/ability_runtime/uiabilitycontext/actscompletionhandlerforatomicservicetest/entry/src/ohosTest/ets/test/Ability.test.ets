@@ -42,6 +42,8 @@ export default function abilityTest() {
       let tag: string = 'UIAbilityContext.openAtomicService';
       let options: AtomicServiceOptions = {
         displayId: 0,
+        flags:0,
+        parameters:{"startAbility":true},
         completionHandlerForAtomicService:
         {
           onAtomicServiceRequestSuccess(appId) {

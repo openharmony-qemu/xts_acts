@@ -69,6 +69,10 @@ export default function CanvasGradientTest() {
       await button.click();
       await CommonFunc.sleep(500)
 
+      button = await driver.findComponent(ON.id('CanvasGradientPage_color_null_str'));
+      await button.click();
+      await CommonFunc.sleep(500)
+
       button = await driver.findComponent(ON.id('CanvasGradientPage_offset_null'));
       await button.click();
       await CommonFunc.sleep(500)

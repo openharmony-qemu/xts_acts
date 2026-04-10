@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ class Logger {
 export default function imageWebp() {
   describe('imageWebp', (): void => {
     let filesDir: string | undefined | null;
-    let filePath: string;
+    let filePath: string = '';
     const ERR_CODE = 62980149;
 
     let globalpixelmap: image.PixelMap | undefined = undefined;
@@ -43,7 +43,7 @@ export default function imageWebp() {
     let globalPacker: image.ImagePacker | undefined = undefined;
     let isSupportGifEncode: boolean | undefined;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       isSupportGifEncode = image.createImagePacker().supportedFormats.includes("image/gif");
@@ -122,26 +122,28 @@ export default function imageWebp() {
         } else {
           globalImageSource = imageSourceApi;
           imageSourceApi.createPixelMap(arg, (err, pixelmap) => {
-            if (err && err.code) {
-              console.info(`${testNum} - fail ${err}`);
-              expect(false).assertTrue();
-              done();
-            } else {
-              globalpixelmap = pixelmap!;
-              try {
-                let imageInfo = await pixelmap!.getImageInfo();
-                expect(imageInfo.size.height == 2).assertTrue();
-                expect(imageInfo.size.width == 1).assertTrue();
-                console.info(`${testNum} - success `);
-                console.info("imageInfo height :" + imageInfo.size.height + "width : " +
-                imageInfo.size.width);
-                done();
-              } catch (err) {
-                console.info(`${testNum} getimageInfo err ` + JSON.stringify(err));
+            waitForCompletion(async () => {
+              if (err && err.code) {
+                console.info(`${testNum} - fail ${err}`);
                 expect(false).assertTrue();
                 done();
+              } else {
+                globalpixelmap = pixelmap!;
+                try {
+                  let imageInfo = await pixelmap!.getImageInfo();
+                  expect(imageInfo.size.height == 2).assertTrue();
+                  expect(imageInfo.size.width == 1).assertTrue();
+                  console.info(`${testNum} - success `);
+                  console.info("imageInfo height :" + imageInfo.size.height + "width : " +
+                  imageInfo.size.width);
+                  done();
+                } catch (err) {
+                  console.info(`${testNum} getimageInfo err ` + JSON.stringify(err));
+                  expect(false).assertTrue();
+                  done();
+                }
               }
-            }
+            })
           });
         }
       };
@@ -405,7 +407,8 @@ export default function imageWebp() {
               logger.log(`delayTimes[ ${i} ]= ${delayTimes[i]}`);
             }
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             logger.log("getDelayTimeList failed err: " + error);
             logger.log("getDelayTimeList failed err: " + error.code);
             expect(error.code == ERR_CODE).assertTrue();

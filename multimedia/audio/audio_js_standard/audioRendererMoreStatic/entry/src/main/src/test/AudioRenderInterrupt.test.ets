@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -115,7 +115,7 @@ export default function AudioRendererInterruptUnitTest() {
             AudioStreamInfo: audio.AudioStreamInfo,
             done: () => void
         ): Promise<audio.AudioRenderer> => {
-            let render: audio.AudioRenderer | null;
+            let render: audio.AudioRenderer | null = null;
 
             let AudioRendererOptions: audio.AudioRendererOptions = {
                 streamInfo: AudioStreamInfo,
@@ -154,7 +154,7 @@ export default function AudioRendererInterruptUnitTest() {
             try {
                 await render!.start()
                 console.log(" start success.")
-            } catch (err: BusinessError) {
+            } catch (err) {
                 await release(render, done)
                 console.log(" start err:" + JSON.stringify(err))
                 expect(false).assertEqual(true)
@@ -216,7 +216,7 @@ export default function AudioRendererInterruptUnitTest() {
                 await release(render2, done)
                 done()
             }
-            catch (err: BusinessError) {
+            catch (err) {
                 console.info('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0100 err is ' + err.message)
             }
 
@@ -3636,7 +3636,7 @@ export default function AudioRendererInterruptUnitTest() {
               await release(render1, done)
               await release(render2, done)
               done()
-            } catch (err: BusinessError) {
+            } catch (err) {
               expect(false).assertTrue();
               done()
             }

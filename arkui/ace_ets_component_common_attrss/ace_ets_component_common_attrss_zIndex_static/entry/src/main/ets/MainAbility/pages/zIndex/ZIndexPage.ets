@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -161,14 +161,14 @@ struct ZIndexPage {
     try {
       console.info('[TabIndexPage] start router ');
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
-      AppStorage.setOrCreate<Int>('_zIndex', routerParamOptions.view.testValue.setValue as Int)
+      AppStorage.setOrCreate<Int>('_zIndex', routerParamOptions.view.testValue.setValue.toInt())
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.targetComponentWidth = routerParamOptions.view.targetComponentWidth
       this.targetComponentHeight = routerParamOptions.view.targetComponentHeight
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
       console.info('[TabIndexPage] end router ');
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }

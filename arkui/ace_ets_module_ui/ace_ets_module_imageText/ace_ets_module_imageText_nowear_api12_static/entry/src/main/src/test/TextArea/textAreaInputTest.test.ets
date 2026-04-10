@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () : void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaInputTest beforeEach start");
 
 

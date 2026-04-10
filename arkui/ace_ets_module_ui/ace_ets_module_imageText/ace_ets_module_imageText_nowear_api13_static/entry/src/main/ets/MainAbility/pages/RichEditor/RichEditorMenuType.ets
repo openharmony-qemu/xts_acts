@@ -18,7 +18,7 @@ import { ResourceColor, Resource, ShadowStyle, $r, Entry, Component,RichEditorCo
   Visibility,RichEditorTextStyle,RichEditorSelection,Length,FontStyle,TextDecorationType,Builder,FontWeight,
   RichEditorTextSpanResult,RichEditorImageSpanResult,TouchEvent,SliderChangeMode,Color,Column,ResourceStr,
   HoverEvent,RichEditorSpanType,ResponseType,Row,RowOptions,Menu,Flex,MenuItemGroup,FlexAlign,ItemAlign,Text,Slider,SliderStyle,
-  Margin,ForEach,TextDecorationStyle,RichEditor,Error,RichEditorUpdateTextSpanStyleOptions,MenuType,Image,MenuItem,MenuItemOptions,
+  Margin,ForEach,TextDecorationStyle,RichEditor,RichEditorUpdateTextSpanStyleOptions,MenuType,Image,MenuItem,MenuItemOptions,
   TouchType,UrlStyle,TextController,TextOptions,StyledStringKey
 
 } from '@ohos.arkui.component';

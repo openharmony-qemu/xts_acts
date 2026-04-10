@@ -45,9 +45,9 @@ export default function webviewTerminateRenderProcess() {
      * @tc.desc   terminateRenderProcess
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('emitTerminateRenderProcessstatic0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('emitTerminateRenderProcessstatic0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitTerminateRenderProcess0100', 10)
         await Utils.msSleep(2000);
@@ -111,6 +111,7 @@ export default function webviewTerminateRenderProcess() {
         let button = await driver.findComponent(ON.id('TerminateRenderProcess'));
         await Utils.msSleep(2000);
         button?.click();
+        await Utils.msSleep(5000);
         done();
       })
   })

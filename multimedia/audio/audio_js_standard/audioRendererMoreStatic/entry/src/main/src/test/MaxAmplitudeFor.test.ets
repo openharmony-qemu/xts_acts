@@ -19,7 +19,7 @@ import { BusinessError } from '@ohos.base'
 const defaultVolumeGroupId = audio.DEFAULT_VOLUME_GROUP_ID;
 let audioManager = audio.getAudioManager();
 let audioVolumeManager: audio.AudioVolumeManager = audioManager.getVolumeManager();
-let audioVolumeGroupManager: audio.AudioVolumeGroupManager;
+let audioVolumeGroupManager: audio.AudioVolumeGroupManager | undefined;
 let audioRoutingManager: audio.AudioRoutingManager = audioManager.getRoutingManager();
 let REMOTE_CAST = audio.DeviceType.REMOTE_CAST;
 let rate_88200 = audio.AudioSamplingRate.SAMPLE_RATE_88200;
@@ -97,7 +97,7 @@ export default function maxAmplitudeFor() {
         it('SUB_MULTIMEDIA_AUDIO_RECORD_UV_VALUE_STATIC_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ()=> {
             let flag: boolean = false;
             audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo).then((data: audio.AudioDeviceDescriptors) => {
-                audioVolumeGroupManager.getMaxAmplitudeForInputDevice(data[0]).then((value: double) => {
+                audioVolumeGroupManager!.getMaxAmplitudeForInputDevice(data[0]).then((value: double) => {
                     console.info(`mic volatileume amplitude is: ${value}`);
                     if (value >= 0 && value <= 1) {
                         flag = true;
@@ -124,7 +124,7 @@ export default function maxAmplitudeFor() {
         it('SUB_MULTIMEDIA_AUDIO_PlAY_UV_VALUE_STATIC_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ()=> {
             let flag: boolean = false;
             audioRoutingManager.getPreferOutputDeviceForRendererInfo(rendererInfo).then((data: audio.AudioDeviceDescriptors) => {
-                audioVolumeGroupManager.getMaxAmplitudeForOutputDevice(data[0]).then((value: double) => {
+                audioVolumeGroupManager!.getMaxAmplitudeForOutputDevice(data[0]).then((value: double) => {
                     console.info(`mic volatileume amplitude is: ${value}`);
                     if (value >= 0 && value <= 1) {
                         flag = true;

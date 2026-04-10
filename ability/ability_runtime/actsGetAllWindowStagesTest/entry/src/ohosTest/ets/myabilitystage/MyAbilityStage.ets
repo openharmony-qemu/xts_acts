@@ -24,7 +24,14 @@ export default class MyAbilityStage extends AbilityStage {
   }
 
   onAcceptWant(want: Want): string {
-    // 仅specified模式下触发
-    return 'MyAbilityStage';
+    const abilityName = want.abilityName;
+    const instanceKey = want.parameters?.instanceKey as string;
+    hilog.info(0x0000, 'AbilityStage', `onAcceptWant: ${abilityName}, instanceKey: ${instanceKey}`);
+    if (abilityName === 'TestAbility3') {
+      const newInstanceId = `instance_${Date.now()}_${Math.random()}`;
+      hilog.info(0x0000, 'AbilityStage', `${abilityName}: ${newInstanceId}`);
+      return newInstanceId;
+    }
+    return '';
   }
 }

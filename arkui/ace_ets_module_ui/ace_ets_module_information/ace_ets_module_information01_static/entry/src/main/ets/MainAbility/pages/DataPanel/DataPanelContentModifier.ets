@@ -53,7 +53,6 @@ import {
   TextClockController,
   TimePickerFormat,
   TimePicker,
-  Date,
   TextTimer,
   TextTimerConfiguration,
   TextTimerController,
@@ -119,7 +118,7 @@ class MyDataPanelStyle implements ContentModifier<DataPanelConfiguration> {
   }
 }
 
-class DataPanelModifier implements ContentModifier<DataPanelConfiguration> {
+export class DataPanelModifier implements ContentModifier<DataPanelConfiguration> {
   constructor() {
   }
 

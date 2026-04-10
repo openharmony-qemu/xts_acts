@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -83,7 +83,7 @@ export default function certFrameworkCertResolutionTestUnit() {
         // expect(issuerName).not().assertEqual(issuerPem);
         expect(issuerPem).assertEqual(issuerDer);
         expect(issuerPem).assertEqual("C=CN,ST=陕西 HAI 13<..>,L=Hello 321 西安,O=Hello 测试,CN=中文测试 Test");
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_Cert_Framework_CertResolution_Func_0100 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -122,7 +122,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(issuerPem).assertEqual(issuerDer);
           expect(issuerPem).assertEqual("C=CN,ST=shan xi,L=xi an,O=o 11 test,CN=test321");
           // expect(issuerNameDer).assertEqual("/C=CN/ST=shan xi/L=xi an/O=o 11 test/CN=test321");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_0200 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -155,7 +155,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           let certString: string = x509CertPem.toString();
           expect(certDer).assertEqual(certPem);
           expect(certDer).assertEqual(certString);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_0300 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -188,7 +188,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           let certString: string = x509CertPem.toString();
           expect(certDer).assertEqual(certPem);
           expect(certDer).not().assertEqual(certString);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_0400 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -224,7 +224,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(issuerNamePem).assertEqual(issuerNameDer);
           expect(issuerNamePem).not().assertEqual(issuerName);
           expect(issuerNamePem).assertEqual("C=CN,ST=陕西 HAI 13<..>,L=Hello 321 西安,O=Hello 测试,CN=中文测试 Test");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_0500 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -261,7 +261,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(issuerNamePem).not().assertEqual(issuerName);
           expect(issuerNamePem).assertEqual("C=CN,ST=shan xi,L=xi an,O=o 11 test,CN=test321");
           expect(issuerName).assertEqual("/C=CN/ST=shan xi/L=xi an/O=o 11 test/CN=test321");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_0600 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -298,7 +298,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(subjectNamePem).assertEqual(subjectNameDer);
           expect(subjectNamePem).assertEqual("C=CN,ST=shan xi,L=xi an,O=o 11 test,CN=test321");
           expect(subjectName).assertEqual("/C=CN/ST=shan xi/L=xi an/O=o 11 test/CN=test321");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_0700 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -334,7 +334,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           let subjectNameType: string[] = X500NamePem.getName("CN");
           expect(subjectNamePem).assertEqual(subjectNameDer);
           expect(subjectNamePem).not().assertEqual(subjectName);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_0800 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -374,7 +374,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(subjectNamePem).assertEqual(subjectNameDer);
           expect(subjectNameDer).assertEqual("C=CN,ST=陕西 HAI 13<..>,L=Hello 321 西安,O=Hello 测试,CN=中文测试 Test,CN=中文测试 Test1,CN=中文测试 Test2")
           expect(subjectNamePem).not().assertEqual(subjectName);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_0900 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -402,7 +402,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           X500Name = X500NameZhObj.getName();
           expect(X500Name).not().assertEqual(DNZh);
           expect(X500NameZh).assertEqual("CN=中文TEST,OU=中文TEST,O=中文TEST,L=中文TEST,ST=中文TEST,C=CN,CN=中文TEST,CN=中文TEST")
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_1000 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -450,7 +450,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(caSubjectName).assertEqual("C=CN,O=Root CA Corp 根,CN=Root CA 根");
           expect(interSubjectName).assertEqual("C=CN,O=Intermediate CA Corp 根,CN=Intermediate CA 根");
           expect(subSubjectName).assertEqual("C=CN,ST=Beijing 北京,L=Beijing 北京,O=Example Corp 嗨,CN=example.com 例");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_1100 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -498,7 +498,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(caSubjectName).assertEqual("C=CN,O=Root CA Corp 根,CN=Root CA 根");
           expect(interSubjectName).assertEqual("C=CN,O=Intermediate CA Corp 根,CN=Intermediate CA 根");
           expect(subSubjectName).assertEqual("C=CN,ST=Beijing 北京,L=Beijing 北京,O=Example Corp 嗨,CN=example.com 例");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_1200 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -523,7 +523,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           let x509CertPem: cert.X509Cert = await cert.createX509Cert(encodingBlobPem);
           let certPem: string = x509CertPem.getIssuerName(cert.EncodingType.ENCODING_UTF8);
           expect(certPem).assertEqual("C=C1N,ST=shan xi,L=xi an,O=o 11 test,CN=test321");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_1300 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -585,7 +585,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(caSubjectName).assertEqual("C=CN,O=Root CA Corp 根,CN=Root CA 根");
           expect(interSubjectName).assertEqual("C=CN,O=Intermediate CA Corp 根,CN=Intermediate CA 根");
           expect(subSubjectName).assertEqual("C=CN,ST=Beijing 北京,L=Beijing 北京,O=Example Corp 嗨,CN=example.com 例");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_1400 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -641,7 +641,7 @@ export default function certFrameworkCertResolutionTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`SUB_Security_Cert_Framework_CertResolution_Func_1500 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -676,17 +676,17 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(x509CertPem.toString(cert.EncodingType.ENCODING_UTF8)).not().assertEqual(x509CertPem.toString())
           try {
             x509CertPem.getSubjectX500DistinguishedName();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`x509CertPem ${error}, error code: ${error.code}`);
-            expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+            expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
           }
           try {
             x509CertDer.getSubjectX500DistinguishedName();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`x509CertDer ${error}, error code: ${error.code}`);
-            expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+            expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_1600 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -716,41 +716,41 @@ export default function certFrameworkCertResolutionTestUnit() {
           let x509CertDer: cert.X509Cert = await cert.createX509Cert(encodingBlobDer);
           try {
             x509CertPem.getIssuerName(cert.EncodingType.ENCODING_UTF8);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`PEM Issuer New getIssuerName ${error}, error code: ${error.code}`);
-            expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+            expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
           }
           try {
             x509CertDer.getIssuerName(cert.EncodingType.ENCODING_UTF8);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`DER Issuer New getIssuerName ${error}, error code: ${error.code}`);
-            expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+            expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
           }
           try {
             x509CertPem.getIssuerName();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`PEM Issuer Old getIssuerName ${error}, error code: ${error.code}`);
-            expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+            expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
           }
           try {
             x509CertDer.getIssuerName();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`DER Issuer Old getIssuerName ${error}, error code: ${error.code}`);
-            expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+            expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
           }
           try {
             x509CertPem.getIssuerX500DistinguishedName();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`x509CertPem ${error}, error code: ${error.code}`);
-            expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+            expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
           }
           try {
             x509CertDer.getIssuerX500DistinguishedName();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`x509CertDer ${error}, error code: ${error.code}`);
-            expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+            expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_1700 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -785,7 +785,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           // const issuerName = encoder.decodeWithStream(issuer.data)
           expect(issuerDer).assertEqual(issuerPem);
           // expect(issuerDer).not().assertEqual(issuerName);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_1800 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -820,7 +820,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           // const issuerName = encoder.decodeWithStream(issuer.data)
           expect(issuerDer).assertEqual(issuerPem);
           // expect(issuerDer).not().assertEqual(issuerName);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_1900 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -853,7 +853,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           let issuer: string = x509CRLDer.toString();
           expect(issuerDer).assertEqual(issuerPem);
           expect(issuerDer).assertEqual(issuer);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_2000 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -886,7 +886,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           let issuer: string = x509CRLDer.toString();
           expect(issuerDer).assertEqual(issuerPem);
           expect(issuerDer).not().assertEqual(issuer);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_2100 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -921,7 +921,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           let issuer: string = issuerDerObj.getName();
           expect(issuerDer).assertEqual(issuerPem);
           expect(issuerDer).not().assertEqual(issuer);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_2200 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -957,7 +957,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(issuerDer).assertEqual(issuerPem);
           expect(issuer).assertEqual("/C=CN/L=Beijing/O=Intermediate CA Corp/CN=Intermediate CA");
           expect(issuerDer).assertEqual("C=CN,L=Beijing,O=Intermediate CA Corp,CN=Intermediate CA");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_2300 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -995,7 +995,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(issuerDer).assertEqual(issuerPem);
           // expect(issuerName).assertEqual("/C=CN/O=Intermediate CA Corp \\xE6\\xA0\\xB9/CN=Intermediate CA \\xE6\\xA0\\xB9");
           expect(issuerDer).assertEqual("C=CN,O=Intermediate CA Corp 根,CN=Intermediate CA 根");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_2400 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1043,7 +1043,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(issuerDer).assertEqual(issuerPem);
           // expect(issuerName).assertEqual("/C=CN/L=Beijing/L=\\xE4\\xBD\\xA0\\xE5\\xA5\\xBD China/L=\\xE4\\xBD\\xA0\\xE5\\xA5\\xBD Beijing/O=\\xE5\\x97\\xA8 Intermediate CA Corp/CN=\\xE5\\x97\\xA8 Intermediate CA");
           expect(issuerDer).assertEqual("C=CN,L=Beijing,L=你好 China,L=你好 Beijing,O=嗨 Intermediate CA Corp,CN=嗨 Intermediate CA");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_2500 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1086,7 +1086,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(issuerDer).assertEqual(issuerPem);
           // expect(issuerName).assertEqual("/C=CN/L=Beijing/O=Intermediate CA Corp/CN=Intermediate CA");
           expect(issuerDer).assertEqual("C=CN,L=Beijing,O=Intermediate CA Corp,CN=Intermediate CA");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_2600 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1126,7 +1126,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(issuerDer).assertEqual(issuerPem);
           // expect(issuerName).assertEqual("/C=CN/L=Beijing/L=\\xE4\\xBD\\xA0\\xE5\\xA5\\xBD China/L=\\xE4\\xBD\\xA0\\xE5\\xA5\\xBD Beijing/O=\\xE5\\x97\\xA8 Intermediate CA Corp/CN=\\xE5\\x97\\xA8 Intermediate CA");
           expect(issuerDer).assertEqual("C=CN,L=Beijing,L=你好 China,L=你好 Beijing,O=嗨 Intermediate CA Corp,CN=嗨 Intermediate CA");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_2700 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1166,7 +1166,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(issuerDer).assertEqual(issuerPem);
           // expect(issuerName).assertEqual("/C=CN/L=Beijing/O=Intermediate CA Corp/CN=Intermediate CA");
           expect(issuerDer).assertEqual("C=CN,L=Beijing,O=Intermediate CA Corp,CN=Intermediate CA");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_2800 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1206,7 +1206,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(issuerDer).assertEqual(issuerPem);
           // expect(issuerName).assertEqual("/C=CN/L=Beijing/L=\\xE4\\xBD\\xA0\\xE5\\xA5\\xBD China/L=\\xE4\\xBD\\xA0\\xE5\\xA5\\xBD Beijing/O=\\xE5\\x97\\xA8 Intermediate CA Corp/CN=\\xE5\\x97\\xA8 Intermediate CA");
           expect(issuerDer).assertEqual("C=CN,L=Beijing,L=你好 China,L=你好 Beijing,O=嗨 Intermediate CA Corp,CN=嗨 Intermediate CA");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_2900 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1246,7 +1246,7 @@ export default function certFrameworkCertResolutionTestUnit() {
           expect(issuerDer).assertEqual(issuerPem);
           // expect(issuerName).assertEqual("/C=CN/L=Beijing/O=Intermediate CA Corp/CN=Intermediate CA");
           expect(issuerDer).assertEqual("C=CN,L=Beijing,O=Intermediate CA Corp,CN=Intermediate CA");
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`SUB_Security_Cert_Framework_CertResolution_Func_3000 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }

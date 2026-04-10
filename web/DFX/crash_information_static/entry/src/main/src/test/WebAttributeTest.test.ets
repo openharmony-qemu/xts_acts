@@ -62,9 +62,9 @@ export default function webAttributeTest() {
      * @tc.desc   test onRenderExited RenderExitReason.PROCESS_CRASHED
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnRenderExitedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testOnRenderExitedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("emitOnRenderExited", 10)
         await Utils.msSleep(2000);

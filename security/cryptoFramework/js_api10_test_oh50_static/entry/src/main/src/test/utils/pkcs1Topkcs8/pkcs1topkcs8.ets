@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -754,7 +754,7 @@ async function doPrivatePkcs1ToPkcs8ByPromise(algName: string, priKey: string) :
   try {
     let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     keyPair = await rsaGenerator.convertPemKey(null, priKey);
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`convertPemKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -762,7 +762,7 @@ async function doPrivatePkcs1ToPkcs8ByPromise(algName: string, priKey: string) :
     let priPemKey = keyPair.priKey;
     let priString = priPemKey.getEncodedPem('PKCS8');
     return priString;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getEncodedPem “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -773,7 +773,7 @@ function doPrivatePkcs1ToPkcs8BySync(algName: string, priKey: string) : string {
   try {
     let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     keyPair = rsaGenerator.convertPemKeySync(null, priKey);
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`convertPemKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -781,7 +781,7 @@ function doPrivatePkcs1ToPkcs8BySync(algName: string, priKey: string) : string {
     let priPemKey = keyPair.priKey;
     let priString = priPemKey.getEncodedPem('PKCS8');
     return priString;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getEncodedPem “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -792,7 +792,7 @@ async function doPrivatePkcs8ToPkcs1ByPromise(algName: string, priKey: string) :
   try {
     let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     keyPair = await rsaGenerator.convertPemKey(null, priKey);
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`convertPemKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -800,7 +800,7 @@ async function doPrivatePkcs8ToPkcs1ByPromise(algName: string, priKey: string) :
     let priPemKey = keyPair.priKey;
     let priString = priPemKey.getEncodedPem('PKCS1');
     return priString;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getEncodedPem “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -811,7 +811,7 @@ function doPrivatePkcs8ToPkcs1BySync(algName: string, priKey: string) : string {
   try {
     let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     keyPair = rsaGenerator.convertPemKeySync(null, priKey);
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`convertPemKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -819,7 +819,7 @@ function doPrivatePkcs8ToPkcs1BySync(algName: string, priKey: string) : string {
     let priPemKey = keyPair.priKey;
     let priString = priPemKey.getEncodedPem('PKCS1');
     return priString;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getEncodedPem “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -830,7 +830,7 @@ async function doPublicPkcs1ToX509ByPromise(algName: string, pubKey: string) : P
   try {
     let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     keyPair = await rsaGenerator.convertPemKey(pubKey, null);
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`convertPemKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -838,7 +838,7 @@ async function doPublicPkcs1ToX509ByPromise(algName: string, pubKey: string) : P
     let pubPemKey = keyPair.pubKey;
     let pubString = pubPemKey.getEncodedPem('X509');
     return pubString;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getEncodedPem “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -849,7 +849,7 @@ function doPublicPkcs1ToX509BySync(algName: string, pubKey: string) : string {
   try {
     let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     keyPair = rsaGenerator.convertPemKeySync(pubKey, null);
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`convertPemKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -857,7 +857,7 @@ function doPublicPkcs1ToX509BySync(algName: string, pubKey: string) : string {
     let pubPemKey = keyPair.pubKey;
     let pubString = pubPemKey.getEncodedPem('X509');
     return pubString;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getEncodedPem “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -868,7 +868,7 @@ async function doPublicX509ToPkcs1ByPromise(algName: string, pubKey: string) : P
   try {
     let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     keyPair = await rsaGenerator.convertPemKey(pubKey, null);
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`convertPemKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -876,7 +876,7 @@ async function doPublicX509ToPkcs1ByPromise(algName: string, pubKey: string) : P
     let pubPemKey = keyPair.pubKey;
     let pubString = pubPemKey.getEncodedPem('PKCS1');
     return pubString;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getEncodedPem “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -887,7 +887,7 @@ function doPublicX509ToPkcs1BySync(algName: string, pubKey: string) : string {
   try {
     let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     keyPair = rsaGenerator.convertPemKeySync(pubKey, null);
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`convertPemKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -895,7 +895,7 @@ function doPublicX509ToPkcs1BySync(algName: string, pubKey: string) : string {
     let pubPemKey = keyPair.pubKey;
     let pubString = pubPemKey.getEncodedPem('PKCS1');
     return pubString;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getEncodedPem “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -906,7 +906,7 @@ function doPubGetEncodedPemX509(keyPair: cryptoFramework.KeyPair) : string {
     let pubPemKey = keyPair.pubKey;
     let pubString = pubPemKey.getEncodedPem('X509');
     return pubString;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getEncodedPem “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -917,7 +917,7 @@ function doPubGetEncodedPemPkcs1(keyPair: cryptoFramework.KeyPair) : string {
     let pubPemKey = keyPair.pubKey;
     let pubString = pubPemKey.getEncodedPem('PKCS1');
     return pubString;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getEncodedPem “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -928,7 +928,7 @@ function doPriGetEncodedPemPkcs1(keyPair: cryptoFramework.KeyPair) : string {
     let priPemKey = keyPair.priKey;
     let priString = priPemKey.getEncodedPem('PKCS1');
     return priString;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getEncodedPem “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -939,7 +939,7 @@ function doPriGetEncodedPemPkcs8(keyPair: cryptoFramework.KeyPair) : string {
     let priPemKey = keyPair.priKey;
     let priString = priPemKey.getEncodedPem('PKCS8');
     return priString;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`getEncodedPem “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -951,7 +951,7 @@ async function doConvertPemKeyByPromise(algName: string, pubKey: string, priKey:
     let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     keyPair = await rsaGenerator.convertPemKey(pubKey, priKey);
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`convertPemKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -963,7 +963,7 @@ function doConvertPemKeyBySync(algName: string, pubKey: string, priKey: string) 
     let rsaGenerator = cryptoFramework.createAsyKeyGenerator(algName);
     keyPair = rsaGenerator.convertPemKeySync(pubKey, priKey);
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`convertPemKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

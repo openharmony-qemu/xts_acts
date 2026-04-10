@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function state2() {
   describe('state2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("state2 beforeEach start");
 
 

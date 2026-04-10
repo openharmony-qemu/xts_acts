@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,18 +20,18 @@ import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let context: common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 const TAG = "[AVSessionJSTest]";
 export default function abilityTest() {
     describe("AVSessionJsTest", () => {
-        let session: avSession.AVSession | null;
-        let controller: avSession.AVSessionController;
+        let session: avSession.AVSession | null = null;
+        let controller: avSession.AVSessionController | undefined;
         let receivedCallback = false;
         let receivedCallback2 = false;
-        let receivedString: string;
-        let receivedString2: string;
-        let receivedParam: Record<string, Object>;
-        let receivedParam2: Record<string, Object>;
+        let receivedString: string = '';
+        let receivedString2: string = '';
+        let receivedParam: Record<string, Object> = {};
+        let receivedParam2: Record<string, Object> = {};
         const INVALID_STRING = "invalid string";
         const UPDATE_LYRICS_EVENT = "dynamic_lyrics";
         const UPDATE_LYRICS_WANT_PARAMS: Record<string, Object> = {
@@ -55,7 +55,7 @@ export default function abilityTest() {
                 try{
                     await session!.destroy()
                     console.info(`${TAG}: Session destroy success`);
-                }catch(err: BusinessError){
+                }catch(err){
                     console.info(`${TAG}: Session destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -65,20 +65,20 @@ export default function abilityTest() {
 
         beforeEach(async () => {
             try{
-                session = await avSession.createAVSession(context, "AVSessionDemo", 'video_call');
-            }catch(err: BusinessError){
+                session = await avSession.createAVSession(context!, "AVSessionDemo", 'video_call');
+            }catch(err){
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
             try{
                 await session!.activate();
                 console.info(`TestLog: Session activate`);
-            }catch(err: BusinessError){
+            }catch(err){
                 console.info(`TestLog: Session activate error: code: ${err.code}, message: ${err.message}`);
             };
             try {
                 controller = await session!.getController();
                 console.info(`TestLog: controller getController`);
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.info(`TestLog: getController error: code: ${err.code}, message: ${err.message}`);
             }
             await Utils.msSleep(800);
@@ -130,7 +130,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -147,7 +146,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             try {
                 await session!.dispatchSessionEvent(UPDATE_LYRICS_EVENT, UPDATE_LYRICS_WANT_PARAMS)
-            }catch(err: BusinessError){
+            }catch(err){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -173,7 +172,6 @@ export default function abilityTest() {
                     done();
                 }
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_STATIC_0100 finished");
-                expect(true).assertTrue();
                 done();
             });
         })
@@ -190,7 +188,7 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             try {
                 await session!.setExtras(CUSTOM_EXTRAS)
-            }catch(err: BusinessError){
+            }catch(err){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_STATIC_0200 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -210,8 +208,8 @@ export default function abilityTest() {
         it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             session!.onCommonCommand(commonCommandCallback1);
             try {
-                await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
-            }catch(err: BusinessError){
+                await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+            }catch(err){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_STATIC_0100 error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -244,8 +242,8 @@ export default function abilityTest() {
             session!.onCommonCommand(commonCommandCallback1);
             session!.onCommonCommand(commonCommandCallback2);
             try {
-                await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
-            }catch(err: BusinessError){
+                await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+            }catch(err){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_STATIC_0200 Send common command error " + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -257,7 +255,6 @@ export default function abilityTest() {
                 expect(receivedParam['command'] == COMMON_COMMAND_PARAMS['command']).assertTrue();
                 expect(receivedString2 == COMMON_COMMAND_STRING).assertTrue();
                 expect(receivedParam2['command'] == COMMON_COMMAND_PARAMS['command']).assertTrue();
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_STATIC_0200 Common command not received");
                 expect(true).assertFalse();
@@ -284,8 +281,8 @@ export default function abilityTest() {
             session!.onCommonCommand(commonCommandCallback2);
             session!.offCommonCommand(commonCommandCallback2);
             try {
-                await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
-            }catch(err: BusinessError){
+                await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+            }catch(err){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0100 Send common command error" + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -295,7 +292,6 @@ export default function abilityTest() {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0100 finished");
                 expect(receivedString == COMMON_COMMAND_STRING).assertTrue();
                 expect(receivedParam['command'] == COMMON_COMMAND_PARAMS['command']).assertTrue();
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0100 failed");
                 expect(true).assertFalse();
@@ -321,8 +317,8 @@ export default function abilityTest() {
             session!.offCommonCommand(commonCommandCallback1);
             session!.offCommonCommand(commonCommandCallback2);
             try {
-                await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
-            }catch(err: BusinessError){
+                await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+            }catch(err){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0200 Send common command error" + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -330,7 +326,6 @@ export default function abilityTest() {
             await Utils.msSleep(200);
             if (!receivedCallback && !receivedCallback2) {
                 console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0200 finished");
-                expect(true).assertTrue();
             } else {
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0200 failed");
                 expect(true).assertFalse();
@@ -353,8 +348,8 @@ export default function abilityTest() {
             session!.onCommonCommand(commonCommandCallback2);
             session!.offCommonCommand();
             try {
-                await controller.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
-            }catch(err: BusinessError){
+                await controller!.sendCommonCommand(COMMON_COMMAND_STRING, COMMON_COMMAND_PARAMS)
+            }catch(err){
                 console.error(TAG + "SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_STATIC_0300 Send common command error" + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
@@ -386,7 +381,7 @@ export default function abilityTest() {
                 console.log(`TestLog: Get output device info: ${outputDeviceInfo}`);
                 console.log(`TestLog: Get output device info: ${outputDeviceInfo.devices[0].deviceId}`);
                 expect(outputDeviceInfo.devices[0].deviceId).assertEqual("0");
-            } catch (err: BusinessError) {
+            } catch (err) {
                 expect(true).assertFalse();
             }
             done();
@@ -416,7 +411,8 @@ export default function abilityTest() {
                         console.info('castDisplayChange display : ${display.id} OFF');
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600101);
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_STATIC_0100 finished");
             }
@@ -447,7 +443,8 @@ export default function abilityTest() {
                         console.info('castDisplayChange display : ${display.id} OFF');
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600101);
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_STATIC_0100 finished");
             }
@@ -478,7 +475,8 @@ export default function abilityTest() {
                         console.info('castDisplayChange display : ${display.id} OFF');
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600101);
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_STATIC_0100 finished");
             }
@@ -509,7 +507,8 @@ export default function abilityTest() {
                         console.info('castDisplayChange display : ${display.id} OFF');
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600101);
                 console.info(TAG + "SUB_MULTIMEDIA_AVSESSION_CASTDISPLAYCHANGE_STATIC_0100 finished");
             }

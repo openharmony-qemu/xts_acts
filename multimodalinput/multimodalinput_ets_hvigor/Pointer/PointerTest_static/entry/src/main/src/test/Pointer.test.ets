@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,18 +58,21 @@ export default function MultimodalInputPointerTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0100";
         hilog.info(domain, tag, `${caseName} enter`);
-        let ifSetPointerStyleSuccess = 0;
         try {
-          pointer.setPointerStyle(100000, pointer.PointerStyle.CROSS, err => {
-            hilog.info(domain, tag, `${caseName} Set pointer style success`);
-            ifSetPointerStyleSuccess++;
-            ExpectTrue(ifSetPointerStyleSuccess == 1);
+          pointer.setPointerStyle(-2, pointer.PointerStyle.CROSS, error => {
+            if (error) {
+              hilog.info(domain, tag, `${caseName} Set pointer style failed`);
+              expect(error.code).assertEqual(401);
+            } else {
+              hilog.info(domain, tag, `${caseName} Set pointer style success`);
+              expect().assertFail();
+            }
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag,
             `${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(error.code == 401 || true);
+          expect().assertFail();
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -87,18 +90,17 @@ export default function MultimodalInputPointerTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0200";
         hilog.info(domain, tag, `${caseName} enter`);
-        let ifSetPointerStyleSuccess = 0;
         try {
-          pointer.setPointerStyle(100000, pointer.PointerStyle.CROSS).then(() => {
+          await pointer.setPointerStyle(-2, pointer.PointerStyle.CROSS).then(() => {
             hilog.info(domain, tag, `${caseName} Set pointer style success`);
-            ifSetPointerStyleSuccess++;
-            ExpectTrue(ifSetPointerStyleSuccess == 1);
+            expect().assertFail();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag,
             `${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(error.code == 401 || true);
+          expect(error.code).assertEqual(401);
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -116,16 +118,15 @@ export default function MultimodalInputPointerTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0300";
         hilog.info(domain, tag, `${caseName} enter`);
-        let ifSetPointerStyleSyncSuccess = 0;
         try {
-          pointer.setPointerStyleSync(10000, pointer.PointerStyle.CROSS);
+          pointer.setPointerStyleSync(-2, pointer.PointerStyle.CROSS);
           console.info(`${caseName} Set pointer style success`);
-          ifSetPointerStyleSyncSuccess++;
-          ExpectTrue(ifSetPointerStyleSyncSuccess == 1);
+          expect().assertFail();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          ExpectFalse(error.code == 401 || true);
+          expect(error.code).assertEqual(401);
           done();
         }
         hilog.info(domain, tag, `${caseName} leave`);
@@ -189,8 +190,16 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.PointerStyle.LOADING == 42);
           ExpectTrue(pointer.PointerStyle.RUNNING == 43);
           ExpectTrue(pointer.PointerStyle.MIDDLE_BTN_EAST_WEST == 44);
+          expect(pointer.PointerStyle.RUNNING_LEFT).assertEqual(45);
+          expect(pointer.PointerStyle.RUNNING_RIGHT).assertEqual(46);
+          expect(pointer.PointerStyle.AECH_DEVELOPER_DEFINED_ICON).assertEqual(47);
+          expect(pointer.PointerStyle.SCREENRECORDER_CURSOR).assertEqual(48);
+          expect(pointer.PointerStyle.LASER_CURSOR).assertEqual(49);
+          expect(pointer.PointerStyle.LASER_CURSOR_DOT).assertEqual(50);
+          expect(pointer.PointerStyle.LASER_CURSOR_DOT_RED).assertEqual(51);
+          expect(pointer.PointerStyle.DEVELOPER_DEFINED_ICON).assertEqual(-100);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -214,7 +223,7 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.PrimaryButton.LEFT == 0);
           ExpectTrue(pointer.PrimaryButton.RIGHT == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -239,7 +248,7 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.RightClickType.TOUCHPAD_LEFT_BUTTON == 2);
           ExpectTrue(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP == 3);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -264,7 +273,7 @@ export default function MultimodalInputPointerTest() {
           let followSystemTest = cursorconfig.followSystem;
           ExpectTrue(followSystemTest == true);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -66,9 +66,6 @@ import {
   FlowItemAttribute,
   ForEach,
   FormComponentAttribute,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -202,7 +199,7 @@ import {
 import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
@@ -211,7 +208,7 @@ class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttrib
   }
 }
 
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: BadgeAttribute): void {
@@ -220,7 +217,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   }
 }
 
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: BlankAttribute): void {
@@ -229,7 +226,7 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
   }
 }
 
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: ButtonAttribute): void {
@@ -238,7 +235,7 @@ class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   }
 }
 
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
@@ -247,7 +244,7 @@ class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribut
   }
 }
 
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: CheckboxAttribute): void {
@@ -256,7 +253,7 @@ class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   }
 }
 
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
@@ -265,7 +262,7 @@ class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute>
   }
 }
 
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: ColumnAttribute): void {
@@ -274,7 +271,7 @@ class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   }
 }
 
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
@@ -283,7 +280,7 @@ class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   }
 }
 
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: CounterAttribute): void {
@@ -292,7 +289,7 @@ class CounterModifier implements AttributeModifier<CounterAttribute> {
   }
 }
 
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: DataPanelAttribute): void {
@@ -301,7 +298,7 @@ class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   }
 }
 
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: DatePickerAttribute): void {
@@ -310,7 +307,7 @@ class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   }
 }
 
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: DividerAttribute): void {
@@ -319,7 +316,7 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
   }
 }
 
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: EffectComponentAttribute): void {
@@ -328,7 +325,7 @@ class EffectComponentModifier implements AttributeModifier<EffectComponentAttrib
   }
 }
 
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: FlexAttribute): void {
@@ -337,7 +334,7 @@ class FlexModifier implements AttributeModifier<FlexAttribute> {
   }
 }
 
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
@@ -346,7 +343,7 @@ class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   }
 }
 
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
@@ -355,16 +352,7 @@ class FormComponentModifier implements AttributeModifier<FormComponentAttribute>
   }
 }
 
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mRenderGroup: boolean = true
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-    console.info(`renderGroup page show ${JSON.stringify(this.mRenderGroup)}`)
-    instance.renderGroup(this.mRenderGroup)
-  }
-}
-
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: GaugeAttribute): void {
@@ -373,7 +361,7 @@ class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   }
 }
 
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: GridAttribute): void {
@@ -382,7 +370,7 @@ class GridModifier implements AttributeModifier<GridAttribute> {
   }
 }
 
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: GridColAttribute): void {
@@ -391,7 +379,7 @@ class GridColModifier implements AttributeModifier<GridColAttribute> {
   }
 }
 
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: GridItemAttribute): void {
@@ -400,7 +388,7 @@ class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   }
 }
 
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: GridRowAttribute): void {
@@ -409,7 +397,7 @@ class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   }
 }
 
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: HyperlinkAttribute): void {
@@ -418,7 +406,7 @@ class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   }
 }
 
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
@@ -427,7 +415,7 @@ class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute>
   }
 }
 
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: ImageSpanAttribute): void {
@@ -436,7 +424,7 @@ class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   }
 }
 
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: ImageAttribute): void {
@@ -445,7 +433,7 @@ class ImageModifier implements AttributeModifier<ImageAttribute> {
   }
 }
 
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: ListAttribute): void {
@@ -454,7 +442,7 @@ class ListModifier implements AttributeModifier<ListAttribute> {
   }
 }
 
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: ListItemAttribute): void {
@@ -463,7 +451,7 @@ class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   }
 }
 
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
@@ -472,7 +460,7 @@ class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute>
   }
 }
 
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
@@ -481,7 +469,7 @@ class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttrib
   }
 }
 
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: MarqueeAttribute): void {
@@ -490,7 +478,7 @@ class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   }
 }
 
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: MenuAttribute): void {
@@ -499,7 +487,7 @@ class MenuModifier implements AttributeModifier<MenuAttribute> {
   }
 }
 
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: MenuItemAttribute): void {
@@ -508,7 +496,7 @@ class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   }
 }
 
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
@@ -517,7 +505,7 @@ class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute>
   }
 }
 
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: NavDestinationAttribute): void {
@@ -526,7 +514,7 @@ class NavDestinationModifier implements AttributeModifier<NavDestinationAttribut
   }
 }
 
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: NavigationAttribute): void {
@@ -535,7 +523,7 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: PatternLockAttribute): void {
@@ -544,7 +532,7 @@ class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   }
 }
 
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: PluginComponentAttribute): void {
@@ -553,7 +541,7 @@ class PluginComponentModifier implements AttributeModifier<PluginComponentAttrib
   }
 }
 
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: QRCodeAttribute): void {
@@ -562,7 +550,7 @@ class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   }
 }
 
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: RadioAttribute): void {
@@ -571,7 +559,7 @@ class RadioModifier implements AttributeModifier<RadioAttribute> {
   }
 }
 
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: RatingAttribute): void {
@@ -580,7 +568,7 @@ class RatingModifier implements AttributeModifier<RatingAttribute> {
   }
 }
 
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: RefreshAttribute): void {
@@ -589,7 +577,7 @@ class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   }
 }
 
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
@@ -598,7 +586,7 @@ class RelativeContainerModifier implements AttributeModifier<RelativeContainerAt
   }
 }
 
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
@@ -607,7 +595,7 @@ class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   }
 }
 
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: RichEditorAttribute): void {
@@ -616,7 +604,7 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   }
 }
 
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: RichTextAttribute): void {
@@ -625,7 +613,7 @@ class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   }
 }
 
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: RowAttribute): void {
@@ -634,7 +622,7 @@ class RowModifier implements AttributeModifier<RowAttribute> {
   }
 }
 
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: RowSplitAttribute): void {
@@ -643,7 +631,7 @@ class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   }
 }
 
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: ScrollAttribute): void {
@@ -652,7 +640,7 @@ class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   }
 }
 
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: ScrollBarAttribute): void {
@@ -661,7 +649,7 @@ class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   }
 }
 
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: SearchAttribute): void {
@@ -670,7 +658,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
   }
 }
 
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: SelectAttribute): void {
@@ -679,7 +667,7 @@ class SelectModifier implements AttributeModifier<SelectAttribute> {
   }
 }
 
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
@@ -688,7 +676,7 @@ class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttr
   }
 }
 
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: SliderAttribute): void {
@@ -697,7 +685,7 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
   }
 }
 
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: StackAttribute): void {
@@ -706,7 +694,7 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: SwiperAttribute): void {
@@ -715,7 +703,7 @@ class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   }
 }
 
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: TabContentAttribute): void {
@@ -724,7 +712,7 @@ class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   }
 }
 
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: TabsAttribute): void {
@@ -733,7 +721,7 @@ class TabsModifier implements AttributeModifier<TabsAttribute> {
   }
 }
 
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: TextAttribute): void {
@@ -742,7 +730,7 @@ class TextModifier implements AttributeModifier<TextAttribute> {
   }
 }
 
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: TextAreaAttribute): void {
@@ -751,7 +739,7 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   }
 }
 
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: TextClockAttribute): void {
@@ -760,7 +748,7 @@ class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   }
 }
 
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: TextInputAttribute): void {
@@ -769,7 +757,7 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   }
 }
 
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: TextPickerAttribute): void {
@@ -778,7 +766,7 @@ class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   }
 }
 
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: TextTimerAttribute): void {
@@ -787,7 +775,7 @@ class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   }
 }
 
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: TimePickerAttribute): void {
@@ -796,7 +784,7 @@ class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   }
 }
 
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: ToggleAttribute): void {
@@ -805,7 +793,7 @@ class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   }
 }
 
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
@@ -814,7 +802,7 @@ class UIExtensionComponentModifier implements AttributeModifier<UIExtensionCompo
   }
 }
 
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: WaterFlowAttribute): void {
@@ -823,7 +811,7 @@ class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   }
 }
 
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: WebAttribute): void {
@@ -832,7 +820,7 @@ class WebModifier implements AttributeModifier<WebAttribute> {
   }
 }
 
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mRenderGroup: boolean = true
 
   applyNormalAttribute(instance: XComponentAttribute): void {
@@ -933,12 +921,6 @@ function commonStyle(this: FlexAttribute, componentKey: string) {
 }
 
 function commonStyle(this: FlowItemAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
   return this
@@ -1342,7 +1324,6 @@ struct renderGroupPage {
   @State _renderGroupFlexMod: FlexModifier = new FlexModifier()
   @State _renderGroupFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _renderGroupFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _renderGroupFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _renderGroupGaugeMod: GaugeModifier = new GaugeModifier()
   @State _renderGroupGridMod: GridModifier = new GridModifier()
   @State _renderGroupGridColMod: GridColModifier = new GridColModifier()

@@ -16,6 +16,8 @@ import {
   Aabb,
   Animation,
   CullMode,
+  Effect,
+  EffectParameters,
   Environment,
   EnvironmentBackgroundType,
   Geometry,
@@ -26,6 +28,8 @@ import {
   Mesh,
   MetallicRoughnessMaterial,
   Node,
+  PolygonMode,
+  Quaternion,
   Rect,
   Sampler,
   SamplerAddressMode,
@@ -39,6 +43,7 @@ import {
   Vec2,
   Vec4
 } from '@ohos.graphics.scene'
+import * as scene3d from '@ohos.graphics.scene'
 import { $rawfile, Resource } from '@ohos.arkui.component'
 import { describe, expect, it, Level, Size, TestType } from '../../../hypium/index'
 import { SceneResourceType } from 'graphics3d.SceneResources';
@@ -49,13 +54,13 @@ export default function sceneResourcesTest() {
     let scene0: Scene | null = null;
     let scene1: Scene | null = null;
     let scene2: Scene | null = null;
-    let env: Environment;
-    let anim: Animation;
+    let env: Environment | null = null;
+    let anim: Animation | null = null;
     let envImage1: Image | null = null;
     let envImage2: Image | null = null;
     let envImage3: Image | null = null;
     let radianceImage: Image | null = null;
-    let rf: SceneResourceFactory;
+    let rf: SceneResourceFactory | null = null;
     let rf1: SceneResourceFactory;
     let material: ShaderMaterial | null = null;
     let shader: Shader | null = null;
@@ -83,12 +88,12 @@ export default function sceneResourcesTest() {
         anim = scene0!.animations[0];
         expect(scene0 != null).assertTrue();
         console.info(msg + " Succeed in scene0?.animations[0] ");
-        anim.onStarted(() => {
+        anim?.onStarted(() => {
           console.info(msg + " Succeed in anim.start() ");
           startFlag = true;
         })
-        anim.start();
-        anim.progress;
+        anim?.start();
+        anim?.progress;
         await sleep(200);
         expect(startFlag).assertTrue();
         console.info(msg + " Succeed in onStarted() ");
@@ -133,11 +138,15 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationSeek";
       console.info(msg + ' begin ');
       try {
-        anim.seek(0.3);
-        console.info(msg + " Succeed in anim.seek(0.3) ");
+        anim?.seek(0.3);
+        console.info(msg + " Succeed in anim?.seek(0.3) ");
+        anim?.seek(0.0);
+        console.info(msg + " Succeed in anim?.seek(0.0) ");
+        anim?.seek(1.0);
+        console.info(msg + " Succeed in anim?.seek(1.0) ");
         done();
       } catch (err) {
-        console.info(msg + " Failed in anim.seek(0.3) " + JSON.stringify(err));
+        console.info(msg + " Failed in anim?.seek(0.3) " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
@@ -154,12 +163,12 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationRestart";
       console.info(msg + ' begin ');
       try {
-        anim.restart();
-        console.info(msg + " Succeed in anim.restart() ");
+        anim?.restart();
+        console.info(msg + " Succeed in anim?.restart() ");
         expect(anim!.running).assertTrue();
         done();
       } catch (err) {
-        console.info(msg + " Failed in anim.restart() " + JSON.stringify(err));
+        console.info(msg + " Failed in anim?.restart() " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
@@ -176,11 +185,11 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationStop";
       console.info(msg + ' begin ');
       try {
-        anim.restart();
-        expect(anim.running).assertTrue();
+        anim?.restart();
+        expect(anim!.running).assertTrue();
         console.info(msg + " anim is running ");
-        anim.stop();
-        expect(anim.running).assertFalse();
+        anim?.stop();
+        expect(anim!.running).assertFalse();
         console.info(msg + " anim is stopping ");
         done();
       } catch (err) {
@@ -203,14 +212,14 @@ export default function sceneResourcesTest() {
       try {
         await sleep(200);
         let finishFlag = false;
-        anim.onFinished(() => {
+        anim?.onFinished(() => {
           console.info(msg + " Succeed in anim.finish() ");
           finishFlag = true;
         })
-        anim.restart();
-        expect(anim.running).assertTrue();
+        anim?.restart();
+        expect(anim!.running).assertTrue();
         console.info(msg + " anim is running ");
-        anim.finish();
+        anim?.finish();
         await sleep(200);
         expect(finishFlag).assertTrue();
         console.info(msg + " Succeed in onFinished() ");
@@ -233,7 +242,7 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationDuration";
       console.info(msg + ' begin ');
       try {
-        let duration = anim.duration;
+        let duration = anim!.duration;
         expect(duration != 0).assertTrue();
         console.info(msg + " Succeed in anim.duration ");
         done();
@@ -255,10 +264,10 @@ export default function sceneResourcesTest() {
       let msg = "============================testAnimationEnabled";
       console.info(msg + ' begin ');
       try {
-        anim.start();
-        expect(anim.running).assertTrue();
-        anim.enabled = false;
-        expect(anim.running).assertFalse();
+        anim?.start();
+        expect(anim!.running).assertTrue();
+        anim!.enabled = false;
+        expect(anim!.running).assertFalse();
         console.info(msg + " Succeed in anim.enabled = false ");
         done();
       } catch (err) {
@@ -287,10 +296,10 @@ export default function sceneResourcesTest() {
           rf = scene1!.getResourceFactory();
           env = scene1!.environment;
           let vec4: Vec4 = { x: 1, y: 40, z: 1, w: 1 }
-          env.indirectDiffuseFactor = vec4;
-          expect(env.indirectDiffuseFactor.y).assertEqual(40);
+          env!.indirectDiffuseFactor = vec4;
+          expect(env!.indirectDiffuseFactor.y).assertEqual(40);
           console.info(msg + " Succeed in env.indirectDiffuseFactor ");
-          let env1 = await rf.createEnvironment({ "name": "Env" });
+          let env1 = await rf!.createEnvironment({ "name": "Env" });
           expect(env1 != null).assertTrue();
           console.info(msg + " Succeed in createEnvironment ");
           done();
@@ -314,8 +323,8 @@ export default function sceneResourcesTest() {
         console.info(msg + ' begin ');
         try {
           let vec4: Vec4 = { x: 1, y: 40, z: 1, w: 1 }
-          env.indirectSpecularFactor = vec4;
-          expect(env.indirectSpecularFactor.y).assertEqual(40);
+          env!.indirectSpecularFactor = vec4;
+          expect(env!.indirectSpecularFactor.y).assertEqual(40);
           console.info(msg + " Succeed in env.indirectSpecularFactor ");
           done();
         } catch (err) {
@@ -337,8 +346,8 @@ export default function sceneResourcesTest() {
       console.info(msg + ' begin ');
       try {
         let vec4: Vec4 = { x: 1, y: 40, z: 1, w: 1 }
-        env.environmentMapFactor = vec4;
-        expect(env.environmentMapFactor.y).assertEqual(40);
+        env!.environmentMapFactor = vec4;
+        expect(env!.environmentMapFactor.y).assertEqual(40);
         console.info(msg + " Succeed in env.environmentMapFactor ");
         done();
       } catch (err) {
@@ -360,31 +369,31 @@ export default function sceneResourcesTest() {
       console.info(msg + ' begin ');
       try {
         let image1Uri = $rawfile("gltf/Cube/glTF/Cube_BaseColor.png");
-        envImage1 = await rf.createImage({ name: "envImage1", uri: image1Uri });
+        envImage1 = await rf!.createImage({ name: "envImage1", uri: image1Uri });
         expect(envImage1 != undefined).assertTrue();
         console.info(msg + " create envImage1 success ");
         let image2Uri = $rawfile("gltf/Environment/glTF/images/quarry_02_2k_skybox.ktx");
-        envImage2 = await rf.createImage({ name: "envImage2", uri: image2Uri });
+        envImage2 = await rf!.createImage({ name: "envImage2", uri: image2Uri });
         expect(envImage2 != undefined).assertTrue();
         console.info(msg + " create envImage2 success ");
         let image3Uri = $rawfile("gltf/DamagedHelmet/glTF/Default_albedo.jpg");
-        envImage3 = await rf.createImage({ name: "envImage3", uri: image3Uri });
+        envImage3 = await rf!.createImage({ name: "envImage3", uri: image3Uri });
         expect(envImage3 != undefined).assertTrue();
         console.info(msg + " create envImage3 success ");
-        env.backgroundType = EnvironmentBackgroundType.BACKGROUND_NONE;
-        expect(env.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_NONE);
+        env!.backgroundType = EnvironmentBackgroundType.BACKGROUND_NONE;
+        expect(env!.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_NONE);
         console.info(msg + " Succeed in Environment environmentImage set NONE ");
-        env.backgroundType = EnvironmentBackgroundType.BACKGROUND_IMAGE;
-        expect(env.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_IMAGE);
-        env.environmentImage = envImage1;
+        env!.backgroundType = EnvironmentBackgroundType.BACKGROUND_IMAGE;
+        expect(env!.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_IMAGE);
+        env!.environmentImage = envImage1;
         console.info(msg + " Succeed in Environment environmentImage set envImage1 IMAGE ");
-        env.backgroundType = EnvironmentBackgroundType.BACKGROUND_CUBEMAP;
-        expect(env.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_CUBEMAP);
-        env.environmentImage = envImage2;
+        env!.backgroundType = EnvironmentBackgroundType.BACKGROUND_CUBEMAP;
+        expect(env!.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_CUBEMAP);
+        env!.environmentImage = envImage2;
         console.info(msg + " Succeed in Environment environmentImage set envImage2 CUBEMAP ");
-        env.backgroundType = EnvironmentBackgroundType.BACKGROUND_EQUIRECTANGULAR;
-        expect(env.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_EQUIRECTANGULAR);
-        env.environmentImage = envImage3;
+        env!.backgroundType = EnvironmentBackgroundType.BACKGROUND_EQUIRECTANGULAR;
+        expect(env!.backgroundType).assertEqual(EnvironmentBackgroundType.BACKGROUND_EQUIRECTANGULAR);
+        env!.environmentImage = envImage3;
         console.info(msg + " Succeed in Environment environmentImage set envImage3 EQUIRECTANGULAR ");
         done();
       } catch (err) {
@@ -406,14 +415,14 @@ export default function sceneResourcesTest() {
       console.info(msg + ' begin ');
       try {
         let imageUri = $rawfile("gltf/Environment/glTF/images/quarry_02_2k_radiance.ktx");
-        radianceImage = await rf.createImage({ name: "radianceImage", uri: imageUri });
+        radianceImage = await rf!.createImage({ name: "radianceImage", uri: imageUri });
         expect(radianceImage != undefined).assertTrue();
         console.info(msg + " create radianceImage success ");
-        env.radianceImage = null;
+        env!.radianceImage = null;
         console.info(msg + " Succeed in Environment radianceImage set null ");
-        env.radianceImage = radianceImage;
-        expect(env.radianceImage!.width).assertEqual(radianceImage!.width);
-        expect(env.radianceImage!.height).assertEqual(radianceImage!.height);
+        env!.radianceImage = radianceImage;
+        expect(env!.radianceImage!.width).assertEqual(radianceImage!.width);
+        expect(env!.radianceImage!.height).assertEqual(radianceImage!.height);
         console.info(msg + " Succeed in Environment radianceImage set radianceImage ");
         radianceImage?.width;
         radianceImage?.height;
@@ -437,7 +446,7 @@ export default function sceneResourcesTest() {
         let msg = "============================testEnvironmentIrradianceCoefficients";
         console.info(msg + ' begin ');
         try {
-          env.irradianceCoefficients =
+          env!.irradianceCoefficients =
             [{ x: GenRandom(), y: GenRandom(), z: GenRandom() },
             { x: GenRandom(), y: GenRandom(), z: GenRandom() },
             { x: GenRandom(), y: GenRandom(), z: GenRandom() },
@@ -528,7 +537,7 @@ export default function sceneResourcesTest() {
       let msg = "============================testSceneResourceType";
       console.info(msg + ' begin ');
       try {
-        node = await rf.createNode({ name: "createNode" });
+        node = await rf!.createNode({ name: "createNode" });
         console.info(msg + " shader?.resourceType: " + JSON.stringify(shader?.resourceType));
         expect(shader?.resourceType).assertEqual(SceneResourceType.SHADER);
         console.info(msg + " node?.resourceType: " + JSON.stringify(node?.resourceType));
@@ -620,7 +629,7 @@ export default function sceneResourcesTest() {
           expect(scene0 != undefined).assertTrue();
           console.info(msg + " get scene0 success ");
           rf = scene0!.getResourceFactory();
-          let material = await rf.createMaterial({ name: 'metalMat' }, MaterialType.METALLIC_ROUGHNESS);
+          let material = await rf!.createMaterial({ name: 'metalMat' }, MaterialType.METALLIC_ROUGHNESS);
           expect(MaterialType.METALLIC_ROUGHNESS).assertEqual(2);
           expect(material != null).assertTrue();
           expect(material.materialType).assertEqual(MaterialType.METALLIC_ROUGHNESS);
@@ -666,7 +675,7 @@ export default function sceneResourcesTest() {
         expect(scene0 != undefined).assertTrue();
         console.info(msg + " get scene0 success ");
         rf = scene0!.getResourceFactory();
-        let material = await rf.createMaterial({ name: 'testCullModeMat' }, MaterialType.METALLIC_ROUGHNESS);
+        let material = await rf!.createMaterial({ name: 'testCullModeMat' }, MaterialType.METALLIC_ROUGHNESS);
         expect(material != null).assertTrue();
 
         material.cullMode = CullMode.NONE;
@@ -754,7 +763,7 @@ export default function sceneResourcesTest() {
         expect(scene0 != undefined).assertTrue();
         console.info(msg + " get scene0 success ");
         rf = scene0!.getResourceFactory();
-        let material = await rf.createMaterial({ name: 'renderSortTestMat' }, MaterialType.METALLIC_ROUGHNESS);
+        let material = await rf!.createMaterial({ name: 'renderSortTestMat' }, MaterialType.METALLIC_ROUGHNESS);
         console.info(msg, 'material created:', material !== null);
         expect(material != null).assertTrue();
 
@@ -799,7 +808,7 @@ export default function sceneResourcesTest() {
         expect(scene0 != undefined).assertTrue();
         console.info(msg + " get scene0 success ");
         rf = scene0!.getResourceFactory();
-        let material = await rf.createMaterial({ name: 'fullFeatureMat' }, MaterialType.METALLIC_ROUGHNESS);
+        let material = await rf!.createMaterial({ name: 'fullFeatureMat' }, MaterialType.METALLIC_ROUGHNESS);
         expect(material != null).assertTrue();
         expect(material.materialType).assertEqual(MaterialType.METALLIC_ROUGHNESS);
 
@@ -1294,6 +1303,456 @@ export default function sceneResourcesTest() {
         done();
       } catch (err) {
         console.info(msg + " Failed in testAnimation_speed  " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testAnimationDuration2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1220
+     * @tc.desc   Test Animation.duration property (readonly)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testAnimationDuration2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testAnimationDuration";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let animations = scene.animations;
+        expect(animations != null).assertTrue();
+        
+        let animCount = animations.length;
+        if (animCount > 0) {
+          let anim: Animation = animations[0];
+          expect(anim != null).assertTrue();
+          
+          expect(anim.duration != null).assertTrue();
+          expect(typeof anim.duration).assertEqual('number');
+          console.info(msg + " duration is number type and readonly");
+        } else {
+          console.info(msg + " no animations found, skip test");
+        }
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testAnimationProgress
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1230
+     * @tc.desc   Test Animation.progress property (readonly)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testAnimationProgress', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testAnimationProgress";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let animations = scene.animations;
+        expect(animations != null).assertTrue();
+        
+        let animCount = animations.length;
+        if (animCount > 0) {
+          let anim: Animation = animations[0];
+          expect(anim != null).assertTrue();
+          
+          expect(anim.progress != null).assertTrue();
+          expect(typeof anim.progress).assertEqual('number');
+          console.info(msg + " progress is number type and readonly");
+        } else {
+          console.info(msg + " no animations found, skip test");
+        }
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testShaderSetShaderInputs
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1440
+     * @tc.desc   Test Shader.setShaderInputs method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testShaderSetShaderInputs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testShaderSetShaderInputs";
+      console.info(msg + ' begin ');
+      try {
+        let scene: Scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        expect(rf != undefined).assertTrue();
+        shader = await rf!.createShader({ name: "CustomShader", uri: $rawfile("shaders/custom_shader/custom_material_sample.shader")});
+        expect(shader != undefined).assertTrue();
+        console.info(msg + " shader created successfully");
+
+        material = await rf!.createMaterial({ name: "CustomMaterial" }, MaterialType.SHADER) as ShaderMaterial;
+        expect(material != null).assertTrue();
+        console.info(msg + " material created successfully");
+
+        if (material) {
+          console.info(msg + " material colorShader set start");
+          material!.colorShader = shader as Shader;
+        }
+
+        expect(material?.colorShader != null).assertTrue();
+        console.info(msg + " colorShader set successfully");
+
+        // Create a dummy image for testing
+        let testImage: scene3d.Image = await rf!.createImage({ name: "testImage", uri: $rawfile("gltf/Cube/glTF/Cube_BaseColor.png")});
+        console.info(msg + " createImage successfully");
+
+        // Test setShaderInputs with various input types
+        if (material && material!.colorShader) {
+          console.info(msg + " material && material!.colorShader == True");
+          material!.colorShader!.setShaderInputs({
+            "time": 1.5,
+            "vec_1": {x: 1.0, y: 1.0, z: -1.0, w: -1.0},
+            "vec_2": {x: 0.0, y: 0.0, z: 0.0},
+            "vec_3": {x: 0.0, y: 0.5},
+            "BASE_COLOR_Image": testImage
+          });
+          console.info(msg + " setShaderInputs called successfully");
+
+          console.info(msg + " material!.colorShader!.inputs[\"time\"]: " + material!.colorShader!.inputs["time"]);
+          console.info(msg + " material!.colorShader!.inputs[\"vec_1\"]: " + material!.colorShader!.inputs["vec_1"]);
+          console.info(msg + " material!.colorShader!.inputs[\"vec_2\"]: " + material!.colorShader!.inputs["vec_2"]);
+          console.info(msg + " material!.colorShader!.inputs[\"vec_3\"]: " + material!.colorShader!.inputs["vec_3"]);
+          console.info(msg + " material!.colorShader!.inputs[\"BASE_COLOR_Image\"]: " + material!.colorShader!.inputs["BASE_COLOR_Image"]);
+          // Verify inputs were set
+          expect(typeof material!.colorShader!.inputs["time"]).assertEqual('number');
+          expect(material!.colorShader!.inputs["time"]).assertEqual(1.5);
+          console.info(msg + " time input verified");
+
+          expect(material!.colorShader!.inputs["vec_1"] != null).assertTrue();
+          console.info(msg + " vec_1 input verified");
+
+          expect(material!.colorShader!.inputs["vec_2"] != null).assertTrue();
+          console.info(msg + " vec_2 input verified");
+
+          expect(material!.colorShader!.inputs["vec_3"] != null).assertTrue();
+          console.info(msg + " vec_3 input verified");
+
+          expect(material!.colorShader!.inputs["BASE_COLOR_Image"] != null).assertTrue();
+          console.info(msg + " BASE_COLOR_Image input verified");
+        }
+        else {
+          console.info(msg + " material && material!.colorShader == False");
+          expect(material && material!.colorShader).assertTrue();
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testEffectGetPropertyValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1450
+     * @tc.desc   Test Effect.getPropertyValue method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectGetPropertyValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testEffectGetPropertyValue";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        let rf = scene.getResourceFactory();
+        let effectIdName: string = "89b83608-c910-433e-9fd8-22f3ef64eabd";
+        let effectParameters: EffectParameters = { effectId: effectIdName };
+        let effect: Effect = await rf.createEffect(effectParameters);
+
+        // Test 1: Get 'thresholdSoft' property value (should return Object)
+        let thresholdSoftValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue: " + JSON.stringify(thresholdSoftValue));
+        expect(thresholdSoftValue != null).assertTrue();
+        expect(typeof thresholdSoftValue).assertEqual('number');
+        console.info(msg + " thresholdSoft property value retrieved successfully");
+
+        // Test 2: Get 'thresholdHard' property value (should return Object)
+        let thresholdHardValue = effect.getPropertyValue('thresholdHard');
+        console.info(msg + " thresholdHardValue: " + JSON.stringify(thresholdHardValue));
+        expect(thresholdHardValue != null).assertTrue();
+        expect(typeof thresholdHardValue).assertEqual('number');
+        console.info(msg + " thresholdHard property value retrieved successfully");
+
+        // Test 3: Get non-existent property value (should return null)
+        let invalidValue = effect.getPropertyValue('invalidProperty');
+        console.info(msg + " invalidValue: " + JSON.stringify(invalidValue));
+        expect(invalidValue).assertNull();
+        console.info(msg + " non-existent property returns null as expected");
+
+        // Test 6: Get empty string property value (should return null)
+        let emptyStringValue = effect.getPropertyValue('');
+        console.info(msg + " emptyStringValue: " + JSON.stringify(emptyStringValue));
+        expect(emptyStringValue).assertNull();
+        console.info(msg + " empty string property returns null as expected");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testEffectSetPropertyValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1460
+     * @tc.desc   Test Effect.setPropertyValue method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEffectSetPropertyValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testEffectSetPropertyValue";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        let rf = scene.getResourceFactory();
+        let effectIdName: string = "89b83608-c910-433e-9fd8-22f3ef64eabd";
+        let effectParameters: EffectParameters = { effectId: effectIdName };
+        let effect: Effect = await rf.createEffect(effectParameters);
+        expect(effect != null).assertTrue();
+        console.info(msg + " effect created successfully");
+
+        // Test 1: Set 'thresholdSoft' property value (should return true)
+        let result1 = effect.setPropertyValue('thresholdSoft', 1);
+        console.info(msg + " set thresholdSoft result: " + result1);
+        expect(result1).assertTrue();
+        console.info(msg + " thresholdSoft property set successfully");
+
+        // Verify the value was set
+        let thresholdSoftValue = effect.getPropertyValue('thresholdSoft');
+        console.info(msg + " thresholdSoftValue after set: " + JSON.stringify(thresholdSoftValue));
+        expect(thresholdSoftValue).assertEqual(1);
+
+        // Test 2: Set 'thresholdHard' property value (should return true)
+        let result2 = effect.setPropertyValue('thresholdHard', 1);
+        console.info(msg + " set thresholdHard result: " + result2);
+        expect(result2).assertTrue();
+        console.info(msg + " thresholdHard property set successfully");
+
+        // Verify the value was set
+        let thresholdHardValue = effect.getPropertyValue('thresholdHard');
+        console.info(msg + " thresholdHardValue after set: " + JSON.stringify(thresholdHardValue));
+        expect(thresholdHardValue).assertEqual(1);
+
+        // Test 7: Set empty string property name (should return false)
+        let result7 = effect.setPropertyValue('', 1);
+        console.info(msg + " set with empty string propertyName result: " + result7);
+        expect(result7).assertFalse();
+        console.info(msg + " empty string propertyName test completed");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testMaterialTypeUnlit
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1760
+     * @tc.desc   Test MaterialType.UNLIT enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMaterialTypeUnlit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testMaterialTypeUnlit";
+      console.info(msg + ' begin ');
+      try {
+        expect(MaterialType.UNLIT).assertEqual(3);
+        console.info(msg + " MaterialType.UNLIT = 3 verified");
+        
+        expect(MaterialType.UNLIT != MaterialType.SHADER).assertTrue();
+        expect(MaterialType.UNLIT != MaterialType.METALLIC_ROUGHNESS).assertTrue();
+        console.info(msg + " MaterialType.UNLIT distinct from other types");
+
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+
+        // 创建UnlitMaterial
+        let unlitMaterial: scene3d.UnlitMaterial = await rf!.createMaterial({ name: "UnlitMaterial" }, MaterialType.UNLIT) as scene3d.UnlitMaterial;
+        expect(unlitMaterial != null).assertTrue();
+        expect(unlitMaterial.materialType).assertEqual(MaterialType.UNLIT);
+
+        // 验证baseColor属性存在
+        expect(unlitMaterial.baseColor != null).assertTrue();
+        console.info(msg + " UnlitMaterial baseColor property exists");
+
+        // 测试baseColor的factor属性
+        let baseColorFactor: Vec4 = {x: 1.0, y: 0.5, z: 0.2, w: 1.0};
+        unlitMaterial.baseColor!.factor = baseColorFactor;
+        expect(Math.abs(unlitMaterial.baseColor!.factor!.x - 1.0)).assertLess(1e-6);
+        expect(Math.abs(unlitMaterial.baseColor!.factor!.y - 0.5)).assertLess(1e-6);
+        expect(Math.abs(unlitMaterial.baseColor!.factor!.z - 0.2)).assertLess(1e-6);
+        expect(Math.abs(unlitMaterial.baseColor!.factor!.w - 1.0)).assertLess(1e-6);
+        console.info(msg + " UnlitMaterial baseColor factor set successfully");
+
+        // 测试不同的baseColor值
+        unlitMaterial.baseColor!.factor = {x: 0.0, y: 0.0, z: 0.0, w: 1.0};
+        expect(Math.abs(unlitMaterial.baseColor!.factor!.x - 0.0)).assertLess(1e-6);
+        console.info(msg + " UnlitMaterial baseColor factor set to black successfully");
+
+        unlitMaterial.baseColor!.factor = {x: 1.0, y: 1.0, z: 1.0, w: 1.0};
+        expect(Math.abs(unlitMaterial.baseColor!.factor!.x - 1.0)).assertLess(1e-6);
+        console.info(msg + " UnlitMaterial baseColor factor set to white successfully");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testMaterialTypeOcclusion
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1770
+     * @tc.desc   Test MaterialType.OCCLUSION enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMaterialTypeOcclusion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
+      let msg = "============================testMaterialTypeOcclusion";
+      console.info(msg + ' begin ');
+      try {
+        expect(MaterialType.OCCLUSION).assertEqual(4);
+        console.info(msg + " MaterialType.OCCLUSION = 4 verified");
+        
+        expect(MaterialType.OCCLUSION != MaterialType.UNLIT).assertTrue();
+        expect(MaterialType.OCCLUSION != MaterialType.SHADER).assertTrue();
+        console.info(msg + " MaterialType.OCCLUSION distinct from other types");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testPolygonModeFill
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1780
+     * @tc.desc   Test PolygonMode.FILL enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPolygonModeFill', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
+      let msg = "============================testPolygonModeFill";
+      console.info(msg + ' begin ');
+      try {
+        expect(PolygonMode.FILL).assertEqual(0);
+        console.info(msg + " PolygonMode.FILL = 0 verified");
+        
+        expect(PolygonMode.FILL != PolygonMode.LINE).assertTrue();
+        expect(PolygonMode.FILL != PolygonMode.POINT).assertTrue();
+        console.info(msg + " PolygonMode.FILL distinct from other modes");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testPolygonModeLine
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1790
+     * @tc.desc   Test PolygonMode.LINE enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPolygonModeLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
+      let msg = "============================testPolygonModeLine";
+      console.info(msg + ' begin ');
+      try {
+        expect(PolygonMode.LINE).assertEqual(1);
+        console.info(msg + " PolygonMode.LINE = 1 verified");
+        
+        expect(PolygonMode.LINE != PolygonMode.FILL).assertTrue();
+        expect(PolygonMode.LINE != PolygonMode.POINT).assertTrue();
+        expect(PolygonMode.LINE > PolygonMode.FILL).assertTrue();
+        console.info(msg + " PolygonMode.LINE value and order verified");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testPolygonModePoint
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1800
+     * @tc.desc   Test PolygonMode.POINT enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPolygonModePoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
+      let msg = "============================testPolygonModePoint";
+      console.info(msg + ' begin ');
+      try {
+        expect(PolygonMode.POINT).assertEqual(2);
+        console.info(msg + " PolygonMode.POINT = 2 verified");
+        
+        expect(PolygonMode.POINT != PolygonMode.FILL).assertTrue();
+        expect(PolygonMode.POINT != PolygonMode.LINE).assertTrue();
+        expect(PolygonMode.POINT > PolygonMode.LINE).assertTrue();
+        console.info(msg + " PolygonMode.POINT value and order verified");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
         expect().assertFail();
         done();
       }

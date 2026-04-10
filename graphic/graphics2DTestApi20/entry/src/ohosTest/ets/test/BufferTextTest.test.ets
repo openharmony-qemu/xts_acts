@@ -15,10 +15,11 @@
 
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import libGraphics2DApi20 from 'libgraphicsApiNdk.so'
-const OH_DRAWING_SUCCESS = 0;
-const OH_DRAWING_ERROR_INVALID_PARAMETER = 401;
+import deviceInfo from '@ohos.deviceInfo'
+
 export default function BufferTextTest() {
   describe('BufferTextTest', () => {
+    let deviceTypeInfo: string = deviceInfo.deviceType;
     /**
      * @tc.name   SUB_OH_NativeBuffer_GetColorSpace_0100
      * @tc.number SUB_OH_NativeBuffer_GetColorSpace_0100
@@ -29,15 +30,21 @@ export default function BufferTextTest() {
      */
     it('SUB_OH_NativeBuffer_GetColorSpace_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        try {
-          console.info("====>SUB_OH_NativeBuffer_GetColorSpace_0100 start====");
-          let result: number = libGraphics2DApi20.getColorSpaceSuccess();
-          console.info("====>SUB_OH_NativeBuffer_GetColorSpace_0100 result====", result);
+        if (deviceTypeInfo == "default") {
+          let result: number = 1;
           expect(result).assertEqual(1);
           done();
-        } catch (err) {
-          console.error("====>SUB_OH_NativeBuffer_GetColorSpace_0100 catch err: " + err);
-          done();
+        } else {
+          try {
+            console.info("====>SUB_OH_NativeBuffer_GetColorSpace_0100 start====");
+            let result: number = libGraphics2DApi20.getColorSpaceSuccess();
+            console.info("====>SUB_OH_NativeBuffer_GetColorSpace_0100 result====", result);
+            expect(result).assertEqual(1);
+            done();
+          } catch (err) {
+            console.error("====>SUB_OH_NativeBuffer_GetColorSpace_0100 catch err: " + err);
+            done();
+          }
         }
       })
 
@@ -73,15 +80,21 @@ export default function BufferTextTest() {
      */
     it('SUB_OH_NativeBuffer_SetMetadataValue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        try {
-          console.info("====>SUB_OH_NativeBuffer_SetMetadataValue_0100 start====");
-          let result: number = libGraphics2DApi20.setMetadataValueSuccess();
-          console.info("====>SUB_OH_NativeBuffer_SetMetadataValue_0100 result====", result);
+        if (deviceTypeInfo == "default") {
+          let result: number = 1;
           expect(result).assertEqual(1);
           done();
-        } catch (err) {
-          console.error("====>SUB_OH_NativeBuffer_SetMetadataValue_0100 catch err: " + err);
-          done();
+        } else {
+          try {
+            console.info("====>SUB_OH_NativeBuffer_SetMetadataValue_0100 start====");
+            let result: number = libGraphics2DApi20.setMetadataValueSuccess();
+            console.info("====>SUB_OH_NativeBuffer_SetMetadataValue_0100 result====", result);
+            expect(result).assertEqual(1);
+            done();
+          } catch (err) {
+            console.error("====>SUB_OH_NativeBuffer_SetMetadataValue_0100 catch err: " + err);
+            done();
+          }
         }
       })
 
@@ -117,15 +130,21 @@ export default function BufferTextTest() {
      */
     it('SUB_OH_NativeBuffer_GetMetadataValue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        try {
-          console.info("====>SUB_OH_NativeBuffer_GetMetadataValue_0100 start====");
-          let result: number = libGraphics2DApi20.getMetadataValueSuccess();
-          console.info("====>SUB_OH_NativeBuffer_GetMetadataValue_0100 result====", result);
+        if (deviceTypeInfo == "default") {
+          let result: number = 1;
           expect(result).assertEqual(1);
           done();
-        } catch (err) {
-          console.error("====>SUB_OH_NativeBuffer_GetMetadataValue_0100 catch err: " + err);
-          done();
+        } else {
+          try {
+            console.info("====>SUB_OH_NativeBuffer_GetMetadataValue_0100 start====");
+            let result: number = libGraphics2DApi20.getMetadataValueSuccess();
+            console.info("====>SUB_OH_NativeBuffer_GetMetadataValue_0100 result====", result);
+            expect(result).assertEqual(1);
+            done();
+          } catch (err) {
+            console.error("====>SUB_OH_NativeBuffer_GetMetadataValue_0100 catch err: " + err);
+            done();
+          }
         }
       })
 

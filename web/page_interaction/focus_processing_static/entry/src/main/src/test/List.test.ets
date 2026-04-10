@@ -14,8 +14,10 @@
  */
 
 import webViewSrollableJsunit from './BlurMode.test'
-
+import webGestureFocusModeJsunit from './WebGestureFocusMode.test'
+import webForceEnableZoomJsunit from './WebForceEnableZoom.test'
 export default function testsuite() {
-
+    webGestureFocusModeJsunit();
+    webForceEnableZoomJsunit();
     webViewSrollableJsunit();
 }

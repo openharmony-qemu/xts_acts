@@ -25,7 +25,7 @@ export default function builtinsArrayToReversedTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100);
+      await sleep(50);;
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -152,7 +152,7 @@ export default function builtinsArrayToReversedTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayToReversedTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(toReversedRes([NaN, 2, NaN])).assertDeepEquals([NaN, 2, NaN]);
+      expect(JSON.stringify(toReversedRes([NaN, 2, NaN]))).assertDeepEquals(JSON.stringify([NaN, 2, NaN]));
     });
 
     /**

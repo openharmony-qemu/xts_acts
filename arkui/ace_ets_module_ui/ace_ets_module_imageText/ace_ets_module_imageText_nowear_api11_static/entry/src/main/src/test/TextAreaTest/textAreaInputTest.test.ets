@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,7 +31,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () :void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaInputTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")
@@ -84,7 +84,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
           await CommonFunc.sleep(500);
           await (button1?.click() as Promise<void>);
           await CommonFunc.sleep(500);
-        }catch(e:Error){}
+        }catch(e){}
 
         await (textArea1?.longClick() as Promise<void>);
         await CommonFunc.sleep(2000);
@@ -92,7 +92,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
          let button3 = await driver.findComponent(ON.text('全选'));
          await CommonFunc.sleep(500);
          await (button3?.click() as Promise<void>);
-       }catch(e:Error){}
+       }catch(e){}
         console.info('textAreaInputTest0001 全选 success');
         await CommonFunc.sleep(500);
 
@@ -103,7 +103,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
           let button4 = await driver.findComponent(ON.text('取消'));
           await CommonFunc.sleep(500);
           await (button4?.click() as Promise<void>);
-        }catch(e:Error){}
+        }catch(e){}
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 取消 success');
 
@@ -113,14 +113,14 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
          let button5 = await driver.findComponent(ON.text('全选'));
          await CommonFunc.sleep(500);
          await (button5?.click() as Promise<void>);
-       }catch(e: Error){}
+       }catch(e){}
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 2 全选 success');
         try{
           let button6 = await driver.findComponent(ON.text('复制'));
           await CommonFunc.sleep(500);
           await (button6?.click() as Promise<void>);
-        }catch(e: Error){}
+        }catch(e){}
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 2 复制 success');
         textArea1?.dragTo(textArea2!);
@@ -130,7 +130,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
           let button7 = await driver.findComponent(ON.type('Button'));
           await CommonFunc.sleep(500);
           await (button7?.click() as Promise<void>);
-        }catch(e:Error){}
+        }catch(e){}
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 2 Button success');
       }

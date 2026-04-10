@@ -1,5 +1,5 @@
-﻿/*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+/*
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ export default function imageSync() {
 
     let globalpixelmap: image.PixelMap | undefined = undefined;
     let globalimageSource: image.ImageSource | undefined = undefined;
-    beforeAll(() => {
+    beforeAll(async () => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
     })
@@ -250,23 +250,24 @@ export default function imageSync() {
             done();
           } else {
             globalpixelmap = pixelMap;
-            let pixelMapInfo = await pixelMap.getImageInfo();
+            let pixelMapInfo: image.ImageInfo | undefined;
+            waitForCompletion(async () => {pixelMapInfo = await pixelMap!.getImageInfo();})
             let pixelColorSpace = pixelMap.getColorSpace().getColorSpaceName();
             let pixelGamma = pixelMap.getColorSpace().getGamma();
             logger.log('pixelmap info:');
             expect(pixelMap != undefined).assertTrue();
-            expect(pixelMapInfo.size.width == opts?.desiredSize?.width).assertTrue();
-            expect(pixelMapInfo.size.height == opts?.desiredSize?.height).assertTrue();
-            expect(pixelMapInfo.pixelFormat == opts.desiredPixelFormat).assertTrue();
+            expect(pixelMapInfo!.size.width == opts?.desiredSize?.width).assertTrue();
+            expect(pixelMapInfo!.size.height == opts?.desiredSize?.height).assertTrue();
+            expect(pixelMapInfo!.pixelFormat == opts.desiredPixelFormat).assertTrue();
             expect(pixelMap.isEditable == opts.editable).assertTrue();
             expect(pixelMap.getDensity() == opts.fitDensity).assertTrue();
             expect(pixelColorSpace == opts?.desiredColorSpace?.getColorSpaceName()
               || pixelColorSpace == colorSpaceManager.ColorSpace.CUSTOM).assertTrue();
             expect(pixelGamma == opts?.desiredColorSpace?.getGamma()).assertTrue();
-            logger.log('pixelmap width: ' + pixelMapInfo.size.width);
-            logger.log('pixelmap height: ' + pixelMapInfo.size.height);
+            logger.log('pixelmap width: ' + pixelMapInfo!.size.width);
+            logger.log('pixelmap height: ' + pixelMapInfo!.size.height);
             logger.log('pixelmap editable: ' + pixelMap.isEditable);
-            logger.log('pixelmap pixel format: ' + pixelMapInfo.pixelFormat);
+            logger.log('pixelmap pixel format: ' + pixelMapInfo!.pixelFormat);
             logger.log('pixelmap density: ' + pixelMap.getDensity());
             logger.log('pixelmap color space name: ' + pixelColorSpace);
             logger.log('pixelmap color space gamma: ' + pixelGamma);
@@ -274,7 +275,7 @@ export default function imageSync() {
             done();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         logger.log('createPixelMapSync error' + error);
         expect(false).assertTrue();
         done();
@@ -848,7 +849,7 @@ export default function imageSync() {
             done();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         logger.log('createPixelMapSync error' + error);
         expect(false).assertTrue();
         done();

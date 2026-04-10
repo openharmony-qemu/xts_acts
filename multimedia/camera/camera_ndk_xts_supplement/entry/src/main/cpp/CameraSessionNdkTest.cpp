@@ -649,6 +649,58 @@ napi_value OHCameraInputOpenConcurrentCameras(napi_env env, napi_callback_info i
     napi_create_int32(env, code, &ret);
     return ret;
 }
+
+napi_value OHCameraInputOpenConcurrentCamerasErr(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    Camera_ErrorCode errorCode = CAMERA_OK;
+    uint32_t cameraCount = 0;
+    Camera_Device *cameras = nullptr;
+    napi_value result = nullptr;
+    Camera_ErrorCode ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &cameraCount);
+    const int minCameraCount = 2;
+    if (cameraCount < minCameraCount) {
+        OH_LOG_WARN(LOG_APP, "fewer than two cameras, skip the use case");
+        napi_create_int32(env, CAMERA_CONFLICT_CAMERA, &result);
+        return result;
+    }
+    Camera_Input *frontCameraInput = nullptr;
+    Camera_Input *backCameraInput = nullptr;
+    ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[0], &backCameraInput);
+    ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[1], &frontCameraInput);
+    switch (index) {
+    case CASE_INDEX_1:
+        errorCode = OH_CameraInput_OpenConcurrentCameras(frontCameraInput,
+            Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
+        if (errorCode != CAMERA_OK) {
+            OH_CameraInput_Close(frontCameraInput);
+            OH_CameraInput_Close(backCameraInput);
+            napi_create_int32(env, errorCode, &result);
+            return result;
+        }
+        errorCode = OH_CameraInput_OpenConcurrentCameras(backCameraInput,
+            Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
+        if (errorCode != CAMERA_CONFLICT_CAMERA) {
+            OH_CameraInput_Close(frontCameraInput);
+            OH_CameraInput_Close(backCameraInput);
+            napi_create_int32(env, CAMERA_CONFLICT_CAMERA, &result);
+            return result;
+        }
+        break;
+    default:
+        break;
+    }
+    OH_CameraInput_Close(frontCameraInput);
+    OH_CameraInput_Close(backCameraInput);
+    napi_value retValue;
+    napi_create_int32(env, errorCode, &retValue);
+    return retValue;
+}
+
 void OnIsoValueChanged(Camera_CaptureSession* session, int32_t isoValue) {
 }
 napi_value captureSessionRegisterIsoChangeCallback(napi_env env, napi_callback_info info)

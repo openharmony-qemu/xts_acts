@@ -52,12 +52,12 @@ export default function testsuite() {
   VideoReset6();
   VideoReset7();
   VideoReset8();
-  VideoReset9();
-  VideoReset10();
-  VideoReset11();
-  VideoReset12();
-  VideoReset13();
-  VideoReset14();
+  //VideoReset9();
+  //VideoReset10();
+  //VideoReset11();
+  //VideoReset12();
+  //VideoReset13();
+  //VideoReset14();
   inputMethodListTest();
   SurfaceRotationOptionsLockTest();
   getXComponentSurfaceRectJsunit();

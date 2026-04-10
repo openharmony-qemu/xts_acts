@@ -18,6 +18,7 @@
         "MainAbility/pages/Rect/RectPage",
         "MainAbility/pages/Rect/RectCommonShapeMethodPage",
         "MainAbility/pages/Shape/shape",
+        "MainAbility/pages/Shape/BaseShapeWidthHeightNullUndefined",
        
         "MainAbility/pages/Circle/circleNew",
         "MainAbility/pages/Ellipse/ellipseNew",
@@ -34,6 +35,20 @@
         "MainAbility/pages/Polygon/PolygonResource",
         "MainAbility/pages/Polyline/PolylineResource",
         "MainAbility/pages/Rect/RectResource",
-        "MainAbility/pages/Shape/ShapeResource"
+        "MainAbility/pages/Shape/ShapeResource",
+        "MainAbility/pages/Shape/ShapeNullUndefined",
+        "MainAbility/pages/Shape/ShapeNullUndefined2",
+        "MainAbility/pages/Shape/ShapeNullUndefined3",
+        "MainAbility/pages/Shape/ShapeNullUndefined4",
+        "MainAbility/pages/Shape/ShapeNullUndefined5",
+        "MainAbility/pages/Line/lineStartPointNullUndefined",
+        "MainAbility/pages/Path/pathCommandsNullUndefined",
+        "MainAbility/pages/Polygon/polygonPointsNullUndefined",
+        "MainAbility/pages/Polyline/polylinePointsNullUndefined",
+        "MainAbility/pages/Circle/CircleNullUndefined",
+        "MainAbility/pages/Circle/CircleNullUndefined2",
+        "MainAbility/pages/Circle/CircleNullUndefined3",
+        "MainAbility/pages/Rect/RectRadiusWidthHeightNullUndefined",
+        "MainAbility/pages/Rect/RectNullUndefined"
     ]
 }

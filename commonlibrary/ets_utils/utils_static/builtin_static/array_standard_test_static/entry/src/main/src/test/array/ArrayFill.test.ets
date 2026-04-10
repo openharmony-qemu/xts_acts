@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1479,7 +1479,7 @@ export default function ArrayFillTest() {
     it("testArrayFill0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [3, 1, 4];
       arr.fill(2, 0, 2);
-      arr.sort((a, b) => a - b);
+      arr.sort((a, b) => (a - b).toInt());
       expect(JSON.stringify(arr)).assertDeepEquals(JSON.stringify([2, 2, 4]));
     });
 
@@ -1755,7 +1755,7 @@ export default function ArrayFillTest() {
      * @tc.level Level 1
      */
     it("testArrayFill0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: int[] = new Array<int>(5).fill(0).map((_: int, i: int): int => i + 1);
+      const arr: int[] = Array.create<int>(5, 0).map((_: int, i: int): int => i + 1);
       arr.fill(3, 1, 4);
       const found: int | undefined = arr.find((v: int): boolean => v === 3);
       expect(found).assertEqual(3);
@@ -1770,7 +1770,7 @@ export default function ArrayFillTest() {
      * @tc.level Level 1
      */
     it("testArrayFill0112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: int[] = new Array<int>(4).fill(0).map((_: int, i: int): int => i);
+      const arr: int[] = Array.create<int>(4, 0).map((_: int, i: int): int => i);
       arr.fill(2, 1);
       const mapped: int[] = arr.map((v: int): int => v * 2);
       expect(mapped).assertDeepEquals([0, 4, 4, 4]);
@@ -1785,7 +1785,7 @@ export default function ArrayFillTest() {
      * @tc.level Level 1
      */
     it("testArrayFill0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: int[] = new Array<int>(5).fill(0).map((_: int, i: int): int => i + 1);
+      const arr: int[] = Array.create<int>(5, 0).map((_: int, i: int): int => i + 1);
       arr.fill(3, 1, 4);
       const sum: int =
         arr.filter((v: int): boolean => v === 3).reduce((a: int, b: int): int => a + b, 0);
@@ -1801,7 +1801,7 @@ export default function ArrayFillTest() {
      * @tc.level Level 1
      */
     it("testArrayFill0114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: int[] = new Array<int>(4).fill(0).map((_: int, i: int): int => i + 1);
+      const arr: int[] = Array.create<int>(4, 0).map((_: int, i: int): int => i + 1);
       arr.fill(7, 1, 3);
       arr.reverse();
       const idx: int = arr.findIndex((v: int): boolean => v === 7);
@@ -1817,7 +1817,7 @@ export default function ArrayFillTest() {
      * @tc.level Level 1
      */
     it("testArrayFill0115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: int[] = new Array<int>(6).fill(0).map((_: int, i: int): int => i);
+      const arr: int[] = Array.create<int>(6, 0).map((_: int, i: int): int => i);
       arr.fill(5, 2, 5);
       const mapped: int[] = arr.slice(1, 5).map((v: int): int => v * 2);
       expect(mapped).assertDeepEquals([2, 10, 10, 10]);
@@ -1848,7 +1848,7 @@ export default function ArrayFillTest() {
      * @tc.level Level 1
      */
     it("testArrayFill0119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: (number | undefined)[] = new Array<number | undefined>(5);
+      const arr: (number | undefined)[] = new Array<number | undefined>(5, (i) => undefined);
       arr[1] = 2;
       arr[3] = 4;
       arr.fill(5);
@@ -1883,7 +1883,7 @@ export default function ArrayFillTest() {
      * @tc.level Level 1
      */
     it("testArrayFill0121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: int[] = new Array<int>(3).fill(2).map((x: int, i: int) => x + i);
+      const arr: int[] = new Array<int>(3, (i) => 0).fill(2).map((x: int, i: int) => x + i);
       expect(arr).assertDeepEquals([2, 3, 4]);
     });
 
@@ -1896,7 +1896,7 @@ export default function ArrayFillTest() {
      * @tc.level Level 1
      */
     it("testArrayFill0123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: int[] = new Array<int>(10000);
+      const arr: int[] = new Array<int>(10000, (i) => 0);
       arr.fill(1);
       expect(arr[0]).assertEqual(1);
       expect(arr[9999]).assertEqual(1);
@@ -1925,7 +1925,7 @@ export default function ArrayFillTest() {
      * @tc.level Level 1
      */
     it("testArrayFill0125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: int[] = new Array<int>(5).fill(3);
+      const arr: int[] = new Array<int>(5, (i) => 0).fill(3);
       const filled: int = arr.find((x: int) => x === 3) as int;
       expect(filled).assertEqual(3);
     });

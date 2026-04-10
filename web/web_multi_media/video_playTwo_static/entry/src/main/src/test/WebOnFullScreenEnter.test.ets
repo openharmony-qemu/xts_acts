@@ -28,13 +28,29 @@ export default function webJsunitTwo() {
 
   describe('componentLifeCycleTestOne', (): void => {
     beforeAll(async (): Promise<void> => {
-      await Utils.msSleep(3000);
-      console.log("App start")
-    });
-
-    beforeEach(async () => {
+      console.log('App start')
+      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+      abilityDelegator.addAbilityMonitor({
+        abilityName: 'EntryAbility',
+        moduleName:'entry',
+        onAbilityCreate: (abilitys : UIAbility) : void => {
+          testAbilityContext = abilitys.context
+          console.log('onAbilityCreate end')
+        },
+      }, (err: BusinessError<void> | null): void => {
+        if (err != null ) {
+          console.log('-----' + err.code)
+        }
+        console.log('BusinessError  end')
+      });
+      await Utils.msSleep(2000)
+      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.videoplaybackTwotest.static')
       await Utils.msSleep(5000);
-      console.info("componentLifeCycleTestOne beforeEach start");
+      console.log('beforeAll end,%s', 'Succeed!')
+    });
+    beforeEach(async () => {
+      await Utils.msSleep(3000);
+      console.info('web beforeEach start');
     })
 
     /**
@@ -43,17 +59,110 @@ export default function webJsunitTwo() {
      * @tc.desc   test onFullScreenEnter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnFullScreenEnterStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testOnFullScreenEnterStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(5000);
       Utils.emitEvent("emitOnFullScreenEnter", 10)
       await Utils.msSleep(2000);
       Utils.registerEvent("testOnFullScreenEnter001", true, 442, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
+      await Utils.msSleep(3000);
+      done();
+    })
+
+    /**
+     * @tc.name   testOnFullScreenEnterStatic002
+     * @tc.number SUB_WEB_ONFULLSCREENENTER_0200
+     * @tc.desc   test onFullScreenEnter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnFullScreenEnterStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(5000);
+      Utils.emitEvent("emitOnFullScreenEnter_handler", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testOnFullScreenEnter002", true, 443, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
       await Utils.msSleep(5000);
       done();
     })
+
+    /**
+     * @tc.name   testOnFullScreenEnterStatic003
+     * @tc.number SUB_WEB_ONFULLSCREENENTER_0300
+     * @tc.desc   test onFullScreenEnter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnFullScreenEnterStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(5000);
+      Utils.emitEvent("emitOnFullScreenEnter_handler_exitFullScreen", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testOnFullScreenEnter003", true, 444, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testOnFullScreenEnterStatic004
+     * @tc.number SUB_WEB_ONFULLSCREENENTER_0400
+     * @tc.desc   test onFullScreenEnter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnFullScreenEnterStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(5000);
+      Utils.emitEvent("emitOnFullScreenEnter_videoWidth", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testOnFullScreenEnter004", true, 445, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   testOnFullScreenEnterStatic005
+     * @tc.number SUB_WEB_ONFULLSCREENENTER_0500
+     * @tc.desc   test onFullScreenEnter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnFullScreenEnterStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(5000);
+      Utils.emitEvent("emitOnFullScreenEnter_videoHeight", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testOnFullScreenEnter005", true, 446, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
+      await Utils.msSleep(5000);
+      done();
+    })
+
+    /**
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number UB_WEB_ONFULLSCREENENTER_0442
+     * @tc.desc   test mediaOptions single instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
   })
 }

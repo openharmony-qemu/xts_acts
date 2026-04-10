@@ -18,7 +18,7 @@ import Utils from './Util.test';
 
 export default function typedArray() {
   describe('typedArrayTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
 
@@ -3293,7 +3293,7 @@ export default function typedArray() {
     it("testPrototypeReduce0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testPrototypeReduce0002"
       try {
-        const total = new Uint8Array([0, 1, 2, 3]).reduce((a, b) => a + b, 0);
+        const total = new Uint8Array([0, 1, 2, 3]).reduce((a, b) => a + b, 0.);
         expect(total).assertEqual(6);
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);

@@ -39,6 +39,7 @@ struct FlexBasisPage {
   @Styles
   commonStyle(){
     .margin(0)
+    .padding(0)
     .flexBasis(this._flexBasis)
     .width(this.targetWidth)
     .height(this.targetHeight)

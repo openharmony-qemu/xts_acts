@@ -177,7 +177,7 @@ struct SwiperExample {
               }
               console.info("button1 start to emit action state")
               events_emitter.emit(backEvent, backData)
-            } catch (err: Error) {
+            } catch (err) {
               console.info("button1 emit action state err: " + JSON.stringify((err as Error)?.message))
             }
           })
@@ -199,7 +199,7 @@ struct SwiperExample {
               }
               console.info("button2 start to emit action state")
               events_emitter.emit(backEvent, backData)
-            } catch (err: Error) {
+            } catch (err) {
               console.info("button2 emit action state err: " + JSON.stringify((err as Error)?.message))
             }
           })

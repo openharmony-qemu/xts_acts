@@ -69,7 +69,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test ErrorSuccess
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -108,7 +108,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test onExecutionSucceeded
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -159,7 +159,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test Task
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -199,7 +199,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test Task
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -241,7 +241,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test Task
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -281,7 +281,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test asyncLock
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -319,7 +319,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test onEnqueued
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -371,7 +371,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test asyncLock-catch
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -409,7 +409,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test asyncLock-finally
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -447,7 +447,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test task-then
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -485,7 +485,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test task-catch
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -523,7 +523,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test task-finally
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -561,7 +561,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test task-promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -599,7 +599,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test async-error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -637,7 +637,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test await-error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -675,7 +675,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test await-then
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -713,7 +713,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test await-catch
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 
@@ -751,7 +751,7 @@ export default function taskPoolErrorSuccessTest() {
      * @tc.desc test await-finally
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskErrorSuccessTest1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
 

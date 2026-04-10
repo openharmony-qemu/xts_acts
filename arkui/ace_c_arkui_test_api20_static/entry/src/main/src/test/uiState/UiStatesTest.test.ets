@@ -25,7 +25,7 @@ export default function uiStatesTest() {
   describe('UiStatesTest', (): void => {
 
     let PAGE_TAG = 'UiStatesTest';
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       console.info("[ui] beforeAll start");
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api20.static", "EntryAbility")
       console.info("[ui] beforeAll end");

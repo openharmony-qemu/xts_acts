@@ -56,7 +56,7 @@
       },
       {
         "name": "EntryAbility1",
-        "srcEntry": "./ets/entryability1/EntryAbility.ts",
+        "srcEntry": "./ets/entryability1/EntryAbility.ets",
         "description": "$string:EntryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:EntryAbility_label",

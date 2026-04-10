@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,7 +40,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function gestureSetDirectionJsunit() {
   describe('gestureSetDirectionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 
@@ -96,7 +96,7 @@ it('testgestureSetDirection_static_0001', Level.LEVEL0, async () => {
         }
         inspector.sendEventByKey('setDirectionPanGesture', 10, "")
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("onClick_0001 on emitter err : " + JSON.stringify(err));
       }
       console.info('gestureSetDirection testgestureSetDirection0002 END')
@@ -125,7 +125,7 @@ it('testgestureSetDistance_static_0002', Level.LEVEL0, async () => {
         }
         inspector.sendEventByKey('setDistancePanGesture', 10, "")
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("onClick_0002 on emitter err : " + JSON.stringify(err));
       }
       console.info('gestureSetDistance testgestureSetDistance0002 END');
@@ -154,7 +154,7 @@ it('testgestureSetFingers_static_0003', Level.LEVEL0, async () => {
         }
         inspector.sendEventByKey('setFingersPanGesture', 10, "")
         emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("onClick_0003 on emitter err : " + JSON.stringify(err));
       }
       console.info('gestureSetFingers testgestureSetFingers0003 END');

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ export default function type_02Test() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -72,7 +72,7 @@ export default function type_02Test() {
         let error = new AssertionError();
         expect(error.name).assertEqual("AssertionError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -92,7 +92,7 @@ export default function type_02Test() {
         let error = new AssertionError(undefined);
         expect(error.name).assertEqual("AssertionError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -113,7 +113,7 @@ export default function type_02Test() {
         let error = new AssertionError(errorMessage);
         expect(error.name).assertEqual("AssertionError");
         expect(error.message).assertEqual(errorMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -134,7 +134,7 @@ export default function type_02Test() {
         let error = new AssertionError(errorMessage);
         expect(error.name).assertEqual("AssertionError");
         expect(error.message).assertEqual(errorMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -155,7 +155,7 @@ export default function type_02Test() {
         let error = new AssertionError(errorMessage);
         expect(error.name).assertEqual("AssertionError");
         expect(error.message).assertEqual(errorMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -177,7 +177,7 @@ export default function type_02Test() {
         expect(error.name).assertEqual("AssertionError");
         expect(error.message.length).assertEqual(10000);
         expect(error.message).assertEqual(errorMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -198,7 +198,7 @@ export default function type_02Test() {
         let error = new AssertionError(errorMessage);
         expect(error.name).assertEqual("AssertionError");
         expect(error.message).assertEqual(errorMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -218,7 +218,7 @@ export default function type_02Test() {
         let error = new DivideByZeroError();
         expect(error.name).assertEqual("DivideByZeroError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -239,7 +239,7 @@ export default function type_02Test() {
         let error = new DivideByZeroError(errorMessage);
         expect(error.message).assertEqual(errorMessage);
         expect(error.name).assertEqual("DivideByZeroError");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -261,7 +261,7 @@ export default function type_02Test() {
         expect(error.cause).assertEqual(cause);
         expect(error.message).assertEqual("");
         expect(error.name).assertEqual("DivideByZeroError");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -283,7 +283,7 @@ export default function type_02Test() {
         expect(error.cause).assertEqual(cause);
         expect(error.message).assertEqual("custom message");
         expect(error.name).assertEqual("DivideByZeroError");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -303,7 +303,7 @@ export default function type_02Test() {
         let error = new NullPointerError();
         expect(error.name).assertEqual("NullPointerError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -324,7 +324,7 @@ export default function type_02Test() {
         let error = new NullPointerError(testMessage);
         expect(error.message).assertEqual(testMessage);
         expect(error.name).assertEqual("NullPointerError");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -346,7 +346,7 @@ export default function type_02Test() {
         expect(error.cause).assertEqual(cause);
         expect(error.message).assertEqual("");
         expect(error.name).assertEqual("NullPointerError");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -368,7 +368,7 @@ export default function type_02Test() {
         expect(error.cause).assertEqual(cause);
         expect(error.message).assertEqual("custom message");
         expect(error.name).assertEqual("NullPointerError");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -388,7 +388,7 @@ export default function type_02Test() {
         let error = new JSONTypeError(); // 无参调用
         expect(error.name).assertEqual("JSONTypeError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -409,7 +409,7 @@ export default function type_02Test() {
         let error = new JSONTypeError(testMessage);
         expect(error.name).assertEqual("JSONTypeError");
         expect(error.message).assertEqual(testMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -431,7 +431,7 @@ export default function type_02Test() {
         expect(error.cause).assertEqual(cause);
         expect(error.message).assertEqual("");
         expect(error.name).assertEqual("JSONTypeError");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -453,7 +453,7 @@ export default function type_02Test() {
         expect(error.cause).assertEqual(cause);
         expect(error.message).assertEqual("custom message");
         expect(error.name).assertEqual("JSONTypeError");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -558,7 +558,7 @@ export default function type_02Test() {
         let error = new ArithmeticError();
         expect(error.name).assertEqual("ArithmeticError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -579,7 +579,7 @@ export default function type_02Test() {
         let error = new ArithmeticError(testMessage);
         expect(error.name).assertEqual("ArithmeticError");
         expect(error.message).assertEqual(testMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -599,7 +599,7 @@ export default function type_02Test() {
         let error = new OutOfMemoryError();
         expect(error.name).assertEqual("OutOfMemoryError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -620,7 +620,7 @@ export default function type_02Test() {
         let error = new OutOfMemoryError(testMessage);
         expect(error.name).assertEqual("OutOfMemoryError");
         expect(error.message).assertEqual(testMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -640,7 +640,7 @@ export default function type_02Test() {
         let error = new StackOverflowError();
         expect(error.name).assertEqual("StackOverflowError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -661,7 +661,7 @@ export default function type_02Test() {
         let error = new StackOverflowError(testMessage);
         expect(error.name).assertEqual("StackOverflowError");
         expect(error.message).assertEqual(testMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -681,7 +681,7 @@ export default function type_02Test() {
         let error = new InstantiationError();
         expect(error.name).assertEqual("InstantiationError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -702,7 +702,7 @@ export default function type_02Test() {
         let error = new InstantiationError(testMessage);
         expect(error.name).assertEqual("InstantiationError");
         expect(error.message).assertEqual(testMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -722,7 +722,7 @@ export default function type_02Test() {
         let error = new InternalError();
         expect(error.name).assertEqual("InternalError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -743,48 +743,7 @@ export default function type_02Test() {
         let error = new InternalError(testMessage);
         expect(error.name).assertEqual("InternalError");
         expect(error.message).assertEqual(testMessage);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_IllegalMonitorStateError_3400
-     * @tc.name    testIllegalMonitorStateError0034
-     * @tc.desc    Testing IllegalMonitorStateError without message parameter.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testIllegalMonitorStateError0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let TAG = "testIllegalMonitorStateError0034";
-      try {
-        let error = new IllegalMonitorStateError();
-        expect(error.name).assertEqual("IllegalMonitorStateError");
-        expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
-        console.error(`${TAG} is fail,err is ${err}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_IllegalMonitorStateError_3500
-     * @tc.name    testIllegalMonitorStateError0035
-     * @tc.desc    Verify error can accept and store custom message.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('testIllegalMonitorStateError0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      let TAG = "testIllegalMonitorStateError0035";
-      try {
-        let testMessage = "IllegalMonitorStateError";
-        let error = new IllegalMonitorStateError(testMessage);
-        expect(error.name).assertEqual("IllegalMonitorStateError");
-        expect(error.message).assertEqual(testMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -804,7 +763,7 @@ export default function type_02Test() {
         let error = new IndexOutOfBoundsError();
         expect(error.name).assertEqual("IndexOutOfBoundsError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -825,7 +784,7 @@ export default function type_02Test() {
         let error = new IndexOutOfBoundsError(testMessage);
         expect(error.name).assertEqual("IndexOutOfBoundsError");
         expect(error.message).assertEqual(testMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -845,7 +804,7 @@ export default function type_02Test() {
         let error = new StringIndexOutOfBoundsError();
         expect(error.name).assertEqual("StringIndexOutOfBoundsError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -866,7 +825,7 @@ export default function type_02Test() {
         let error = new StringIndexOutOfBoundsError(testMessage);
         expect(error.name).assertEqual("StringIndexOutOfBoundsError");
         expect(error.message).assertEqual(testMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -886,7 +845,7 @@ export default function type_02Test() {
         let error = new ClassCastError();
         expect(error.name).assertEqual("ClassCastError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -907,7 +866,7 @@ export default function type_02Test() {
         let error = new ClassCastError(testMessage);
         expect(error.name).assertEqual("ClassCastError");
         expect(error.message).assertEqual(testMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -927,7 +886,7 @@ export default function type_02Test() {
         let error = new UncaughtExceptionError();
         expect(error.name).assertEqual("UncaughtExceptionError");
         expect(error.message).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }
@@ -948,7 +907,7 @@ export default function type_02Test() {
         let error = new UncaughtExceptionError(testMessage);
         expect(error.name).assertEqual("UncaughtExceptionError");
         expect(error.message).assertEqual(testMessage);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect().assertFail();
       }

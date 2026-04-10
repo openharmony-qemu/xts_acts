@@ -31,7 +31,7 @@ import Utils from './Util.test';
 
 export default function EmojiString() {
   describe('Emoji_String', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**
@@ -807,13 +807,13 @@ export default function EmojiString() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_01030
-     * @tc.name testString.prototype.codePointAtEmoji0001
+     * @tc.name testStringprototypecodePointAtEmoji0001Adapt002
      * @tc.desc Testing the Uri interface codePointAt with input emoji \ud83d\ude0a
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.codePointAtEmoji0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypecodePointAtEmoji0001Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.codePointAtEmoji0001";
       try {
         let emoji = '\ud83d\ude0a';
@@ -826,13 +826,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0203
-     * @tc.name testString.prototype.codePointAtEmoji0002
+     * @tc.name testStringprototypecodePointAtEmoji0002Adapt002
      * @tc.desc Testing the Uri interface codePointAt with input emoji \ud83d\udc64
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.codePointAtEmoji0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypecodePointAtEmoji0002Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.codePointAtEmoji0002";
       try {
         let emoji = '\ud83d\udc64';
@@ -845,13 +845,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0303
-     * @tc.name testString.prototype.codePointAtEmoji0003
+     * @tc.name testStringprototypecodePointAtEmoji0003Adapt002
      * @tc.desc Testing the Uri interface codePointAt with input emoji \ud83d\udc6b
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.codePointAtEmoji0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypecodePointAtEmoji0003Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.codePointAtEmoji0003";
       try {
         let emoji = '\ud83d\udc6b';
@@ -864,13 +864,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_04030
-     * @tc.name testString.prototype.codePointAtEmoji0004
+     * @tc.name testStringprototypecodePointAtEmoji0004Adapt002
      * @tc.desc Testing the Uri interface codePointAt with input emoji \u260e
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.codePointAtEmoji0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypecodePointAtEmoji0004Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.codePointAtEmoji0004";
       try {
         let emoji = '\u260e';
@@ -883,13 +883,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0503
-     * @tc.name testString.prototype.codePointAtEmoji0005
+     * @tc.name testStringprototypecodePointAtEmoji0005Adapt002
      * @tc.desc Testing the Uri interface codePointAt with input emoji \ud83d\udc79
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.codePointAtEmoji0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypecodePointAtEmoji0005Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.codePointAtEmoji0005";
       try {
         let emoji = '\ud83d\udc79';
@@ -902,13 +902,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0603
-     * @tc.name testString.prototype.codePointAtEmoji0006
+     * @tc.name testStringprototypecodePointAtEmoji0006Adapt002
      * @tc.desc Testing the Uri interface codePointAt with input emoji \ud83d\udd5b
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.codePointAtEmoji0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypecodePointAtEmoji0006Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.codePointAtEmoji0006";
       try {
         let emoji = '\ud83d\udd5b';
@@ -921,13 +921,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_07030
-     * @tc.name testString.prototype.codePointAtEmoji0007
+     * @tc.name testStringprototypecodePointAtEmoji0007Adapt002
      * @tc.desc Testing the Uri interface codePointAt with input emoji \ud83c\udf4f
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.codePointAtEmoji0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypecodePointAtEmoji0007Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.codePointAtEmoji0007";
       try {
         let emoji = '\ud83c\udf4f';
@@ -940,13 +940,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_08030
-     * @tc.name testString.prototype.codePointAtEmoji0008
+     * @tc.name testStringprototypecodePointAtEmoji0008Adapt002
      * @tc.desc Testing the Uri interface codePointAt with input emoji \ud83d\udd03
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.codePointAtEmoji0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypecodePointAtEmoji0008Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.codePointAtEmoji0008";
       try {
         let emoji = '\ud83d\udd03';
@@ -959,13 +959,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0903
-     * @tc.name testString.prototype.codePointAtEmoji0009
+     * @tc.name testStringprototypecodePointAtEmoji0009Adapt002
      * @tc.desc Testing the Uri interface codePointAt with input emoji \ud83c\udf41
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.codePointAtEmoji0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypecodePointAtEmoji0009Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.codePointAtEmoji0009";
       try {
         let emoji = '\ud83c\udf41';
@@ -978,13 +978,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1030
-     * @tc.name testString.prototype.codePointAtEmoji0010
+     * @tc.name testStringprototypecodePointAtEmoji0010Adapt002
      * @tc.desc Testing the Uri interface codePointAt with input emoji \u2666
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.codePointAtEmoji0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypecodePointAtEmoji0010Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.codePointAtEmoji0010";
       try {
         let emoji = '\u2666';
@@ -997,13 +997,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1103
-     * @tc.name testString.prototype.codePointAtEmoji0011
+     * @tc.name testStringprototypecodePointAtEmoji0011Adapt002
      * @tc.desc Testing the Uri interface codePointAt with input emoji \ud83d\udc48
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.codePointAtEmoji0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypecodePointAtEmoji0011Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.codePointAtEmoji0011";
       try {
         let emoji = '\ud83d\udc48';
@@ -1016,13 +1016,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1212
-     * @tc.name testString.prototype.codePointAtEmoji0012
+     * @tc.name testStringprototypecodePointAtEmoji0012Adapt002
      * @tc.desc Testing the Uri interface codePointAt with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.codePointAtEmoji0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypecodePointAtEmoji0012Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.codePointAtEmoji0012";
       try {
         let emoji = '\ud83e\udd3c\u200d\u2642\ufe0f';
@@ -1035,13 +1035,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_01040
-     * @tc.name testString.prototype.concatEmoji0001
+     * @tc.name testStringprototypeconcatEmoji0001Adapt002
      * @tc.desc Testing the Uri interface concat with input emoji \ud83d\ude0a
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.concatEmoji0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeconcatEmoji0001Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.concatEmoji0001";
       try {
         let emoji = '\ud83d\ude0a';
@@ -1055,13 +1055,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0204
-     * @tc.name testString.prototype.concatEmoji0002
+     * @tc.name testStringprototypeconcatEmoji0002Adapt002
      * @tc.desc Testing the Uri interface concat with input emoji \ud83d\udc64
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.concatEmoji0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeconcatEmoji0002Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.concatEmoji0002";
       try {
         let emoji = '\ud83d\udc64';
@@ -1075,13 +1075,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0304
-     * @tc.name testString.prototype.concatEmoji0003
+     * @tc.name testStringprototypeconcatEmoji0003Adapt002
      * @tc.desc Testing the Uri interface concat with input emoji \ud83d\udc6b
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.concatEmoji0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeconcatEmoji0003Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.concatEmoji0003";
       try {
         let emoji = '\ud83d\udc6b';
@@ -1095,13 +1095,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_04040
-     * @tc.name testString.prototype.concatEmoji0004
+     * @tc.name testStringprototypeconcatEmoji0004Adapt002
      * @tc.desc Testing the Uri interface concat with input emoji \u260e
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.concatEmoji0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeconcatEmoji0004Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.concatEmoji0004";
       try {
         let emoji = '\u260e';
@@ -1115,13 +1115,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0504
-     * @tc.name testString.prototype.concatEmoji0005
+     * @tc.name testStringprototypeconcatEmoji0005Adapt002
      * @tc.desc Testing the Uri interface concat with input emoji \ud83d\udc79
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.concatEmoji0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeconcatEmoji0005Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.concatEmoji0005";
       try {
         let emoji = '\ud83d\udc79';
@@ -1135,13 +1135,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0604
-     * @tc.name testString.prototype.concatEmoji0006
+     * @tc.name testStringprototypeconcatEmoji0006Adapt002
      * @tc.desc Testing the Uri interface concat with input emoji \ud83d\udd5b
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.concatEmoji0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeconcatEmoji0006Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.concatEmoji0006";
       try {
         let emoji = '\ud83d\udd5b';
@@ -1155,13 +1155,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_07040
-     * @tc.name testString.prototype.concatEmoji0007
+     * @tc.name testStringprototypeconcatEmoji0007Adapt002
      * @tc.desc Testing the Uri interface concat with input emoji \ud83c\udf4f
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.concatEmoji0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeconcatEmoji0007Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.concatEmoji0007";
       try {
         let emoji = '\ud83c\udf4f';
@@ -1175,13 +1175,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_08040
-     * @tc.name testString.prototype.concatEmoji0008
+     * @tc.name testStringprototypeconcatEmoji0008Adapt002
      * @tc.desc Testing the Uri interface concat with input emoji \ud83d\udd03
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.concatEmoji0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeconcatEmoji0008Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.concatEmoji0008";
       try {
         let emoji = '\ud83d\udd03';
@@ -1195,13 +1195,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0904
-     * @tc.name testString.prototype.concatEmoji0009
+     * @tc.name testStringprototypeconcatEmoji0009Adapt002
      * @tc.desc Testing the Uri interface concat with input emoji \ud83c\udf41
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.concatEmoji0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeconcatEmoji0009Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.concatEmoji0009";
       try {
         let emoji = '\ud83c\udf41';
@@ -1215,13 +1215,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0911
-     * @tc.name testString.prototype.concatEmoji0010
+     * @tc.name testStringprototypeconcatEmoji0010Adapt002
      * @tc.desc Testing the Uri interface concat with input emoji \u2666
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.concatEmoji0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeconcatEmoji0010Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.concatEmoji0010";
       try {
         let emoji = '\u2666';
@@ -1235,13 +1235,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1104
-     * @tc.name testString.prototype.concatEmoji0011
+     * @tc.name testStringprototypeconcatEmoji0011Adapt002
      * @tc.desc Testing the Uri interface concat with input emoji \ud83d\udc48
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.concatEmoji0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeconcatEmoji0011Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.concatEmoji0011";
       try {
         let emoji = '\ud83d\udc48';
@@ -1255,13 +1255,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1213
-     * @tc.name testString.prototype.concatEmoji0012
+     * @tc.name testStringprototypeconcatEmoji0012Adapt002
      * @tc.desc Testing the Uri interface concat with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.concatEmoji0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeconcatEmoji0012Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.concatEmoji0012";
       try {
         let emoji = '\ud83e\udd3c\u200d\u2642\ufe0f';
@@ -1275,13 +1275,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_01050
-     * @tc.name testString.prototype.endsWithEmoji0001
+     * @tc.name testStringprototypeendsWithEmoji0001Adapt002
      * @tc.desc Testing the Uri interface endsWith with input emoji \ud83d\ude0a
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.endsWithEmoji0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeendsWithEmoji0001Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.endsWithEmoji0001";
       try {
         let emoji = '\ud83d\ude0a';
@@ -1296,13 +1296,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0205
-     * @tc.name testString.prototype.endsWithEmoji0002
+     * @tc.name testStringprototypeendsWithEmoji0002Adapt002
      * @tc.desc Testing the Uri interface endsWith with input emoji \ud83d\udc64
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.endsWithEmoji0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeendsWithEmoji0002Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.endsWithEmoji0002";
       try {
         let emoji = '\ud83d\udc64';
@@ -1317,13 +1317,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0305
-     * @tc.name testString.prototype.endsWithEmoji0003
+     * @tc.name testStringprototypeendsWithEmoji0003Adapt002
      * @tc.desc Testing the Uri interface endsWith with input emoji \ud83d\udc6b
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.endsWithEmoji0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeendsWithEmoji0003Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.endsWithEmoji0003";
       try {
         let emoji = '\ud83d\udc6b';
@@ -1338,13 +1338,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_04050
-     * @tc.name testString.prototype.endsWithEmoji0004
+     * @tc.name testStringprototypeendsWithEmoji0004Adapt002
      * @tc.desc Testing the Uri interface endsWith with input emoji \u260e
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.endsWithEmoji0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeendsWithEmoji0004Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.endsWithEmoji0004";
       try {
         let emoji = '\u260e';
@@ -1359,13 +1359,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0505
-     * @tc.name testString.prototype.endsWithEmoji0005
+     * @tc.name testStringprototypeendsWithEmoji0005Adapt002
      * @tc.desc Testing the Uri interface endsWith with input emoji \ud83d\udc79
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.endsWithEmoji0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeendsWithEmoji0005Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.endsWithEmoji0005";
       try {
         let emoji = '\ud83d\udc79';
@@ -1380,13 +1380,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0605
-     * @tc.name testString.prototype.endsWithEmoji0006
+     * @tc.name testStringprototypeendsWithEmoji0006Adapt002
      * @tc.desc Testing the Uri interface endsWith with input emoji \ud83d\udd5b
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.endsWithEmoji0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeendsWithEmoji0006Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.endsWithEmoji0006";
       try {
         let emoji = '\ud83d\udd5b';
@@ -1401,13 +1401,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_07050
-     * @tc.name testString.prototype.endsWithEmoji0007
+     * @tc.name testStringprototypeendsWithEmoji0007Adapt002
      * @tc.desc Testing the Uri interface endsWith with input emoji \ud83c\udf4f
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.endsWithEmoji0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeendsWithEmoji0007Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.endsWithEmoji0007";
       try {
         let emoji = '\ud83c\udf4f';
@@ -1422,13 +1422,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_08050
-     * @tc.name testString.prototype.endsWithEmoji0008
+     * @tc.name testStringprototypeendsWithEmoji0008Adapt002
      * @tc.desc Testing the Uri interface endsWith with input emoji \ud83d\udd03
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.endsWithEmoji0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeendsWithEmoji0008Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.endsWithEmoji0008";
       try {
         let emoji = '\ud83d\udd03';
@@ -1442,13 +1442,13 @@ export default function EmojiString() {
       }
     }) /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0905
-     * @tc.name testString.prototype.endsWithEmoji0009
+     * @tc.name testStringprototypeendsWithEmoji0009Adapt002
      * @tc.desc Testing the Uri interface endsWith with input emoji \ud83c\udf41
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.endsWithEmoji0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeendsWithEmoji0009Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.endsWithEmoji0009";
       try {
         let emoji = '\ud83c\udf41';
@@ -1463,13 +1463,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1040
-     * @tc.name testString.prototype.endsWithEmoji0010
+     * @tc.name testStringprototypeendsWithEmoji0010Adapt002
      * @tc.desc Testing the Uri interface endsWith with input emoji \u2666
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.endsWithEmoji0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeendsWithEmoji0010Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.endsWithEmoji0010";
       try {
         let emoji = '\u2666';
@@ -1484,13 +1484,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1105
-     * @tc.name testString.prototype.endsWithEmoji0011
+     * @tc.name testStringprototypeendsWithEmoji0011Adapt002
      * @tc.desc Testing the Uri interface endsWith with input emoji \ud83d\udc48
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.endsWithEmoji0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeendsWithEmoji0011Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.endsWithEmoji0011";
       try {
         let emoji = '\ud83d\udc48';
@@ -1505,13 +1505,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1214
-     * @tc.name testString.prototype.endsWithEmoji0012
+     * @tc.name testStringprototypeendsWithEmoji0012Adapt002
      * @tc.desc Testing the Uri interface endsWith with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.endsWithEmoji0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeendsWithEmoji0012Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.endsWithEmoji0012";
       try {
         let emoji = '\ud83e\udd3c\u200d\u2642\ufe0f';
@@ -1526,13 +1526,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_01060
-     * @tc.name testString.prototype.includesEmoji0001
+     * @tc.name testStringprototypeincludesEmoji0001Adapt002
      * @tc.desc Testing the Uri interface includes with input emoji \ud83d\ude0a
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.includesEmoji0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeincludesEmoji0001Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.includesEmoji0001";
       try {
         let emoji = '\ud83d\ude0a';
@@ -1547,13 +1547,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0206
-     * @tc.name testString.prototype.includesEmoji0002
+     * @tc.name testStringprototypeincludesEmoji0002Adapt002
      * @tc.desc Testing the Uri interface includes with input emoji \ud83d\udc64
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.includesEmoji0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeincludesEmoji0002Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.includesEmoji0002";
       try {
         let emoji = '\ud83d\udc64';
@@ -1568,13 +1568,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0306
-     * @tc.name testString.prototype.includesEmoji0003
+     * @tc.name testStringprototypeincludesEmoji0003Adapt002
      * @tc.desc Testing the Uri interface includes with input emoji \ud83d\udc6b
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.includesEmoji0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeincludesEmoji0003Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.includesEmoji0003";
       try {
         let emoji = '\ud83d\udc6b';
@@ -1589,13 +1589,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_04060
-     * @tc.name testString.prototype.includesEmoji0004
+     * @tc.name testStringprototypeincludesEmoji0004Adapt002
      * @tc.desc Testing the Uri interface includes with input emoji \u260e
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.includesEmoji0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeincludesEmoji0004Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.includesEmoji0004";
       try {
         let emoji = '\u260e';
@@ -1610,13 +1610,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0506
-     * @tc.name testString.prototype.includesEmoji0005
+     * @tc.name testStringprototypeincludesEmoji0005Adapt002
      * @tc.desc Testing the Uri interface includes with input emoji \ud83d\udc79
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.includesEmoji0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeincludesEmoji0005Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.includesEmoji0005";
       try {
         let emoji = '\ud83d\udc79';
@@ -1631,13 +1631,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0606
-     * @tc.name testString.prototype.includesEmoji0006
+     * @tc.name testStringprototypeincludesEmoji0006Adapt002
      * @tc.desc Testing the Uri interface includes with input emoji \ud83d\udd5b
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.includesEmoji0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeincludesEmoji0006Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.includesEmoji0006";
       try {
         let emoji = '\ud83d\udd5b';
@@ -1652,13 +1652,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_07060
-     * @tc.name testString.prototype.includesEmoji0007
+     * @tc.name testStringprototypeincludesEmoji0007Adapt002
      * @tc.desc Testing the Uri interface includes with input emoji \ud83c\udf4f
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.includesEmoji0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeincludesEmoji0007Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.includesEmoji0007";
       try {
         let emoji = '\ud83c\udf4f';
@@ -1673,13 +1673,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_08060
-     * @tc.name testString.prototype.includesEmoji0008
+     * @tc.name testStringprototypeincludesEmoji0008Adapt002
      * @tc.desc Testing the Uri interface includes with input emoji \ud83d\udd03
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.includesEmoji0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeincludesEmoji0008Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.includesEmoji0008";
       try {
         let emoji = '\ud83d\udd03';
@@ -1693,13 +1693,13 @@ export default function EmojiString() {
       }
     }) /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_0906
-     * @tc.name testString.prototype.includesEmoji0009
+     * @tc.name testStringprototypeincludesEmoji0009Adapt002
      * @tc.desc Testing the Uri interface includes with input emoji \ud83c\udf41
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.includesEmoji0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeincludesEmoji0009Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.includesEmoji0009";
       try {
         let emoji = '\ud83c\udf41';
@@ -1714,13 +1714,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number     :SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1050
-     * @tc.name testString.prototype.includesEmoji0010
+     * @tc.name testStringprototypeincludesEmoji0010Adapt002
      * @tc.desc Testing the Uri interface includes with input emoji \u2666
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.includesEmoji0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeincludesEmoji0010Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.includesEmoji0010";
       try {
         let emoji = '\u2666';
@@ -1735,13 +1735,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1106
-     * @tc.name testString.prototype.includesEmoji0011
+     * @tc.name testStringprototypeincludesEmoji0011Adapt002
      * @tc.desc Testing the Uri interface includes with input emoji \ud83d\udc48
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.includesEmoji0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeincludesEmoji0011Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.includesEmoji0011";
       try {
         let emoji = '\ud83d\udc48';
@@ -1756,13 +1756,13 @@ export default function EmojiString() {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_EMOJI_1215
-     * @tc.name testString.prototype.includesEmoji0012
+     * @tc.name testStringprototypeincludesEmoji0012Adapt002
      * @tc.desc Testing the Uri interface includes with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testString.prototype.includesEmoji0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testStringprototypeincludesEmoji0012Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testString.prototype.includesEmoji0012";
       try {
         let emoji = '\ud83e\udd3c\u200d\u2642\ufe0f';

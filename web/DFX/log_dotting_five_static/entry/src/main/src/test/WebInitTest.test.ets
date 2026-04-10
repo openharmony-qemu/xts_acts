@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, TestType,afterEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, beforeEach, TestType,afterEach, describe, it, TestType,  Size, Level } from '../../../hypium/index';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import Utils from '../../src/test/Utils.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -21,6 +21,7 @@ import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
+import wifiMg from '@ohos.wifiManager';
 
 let testAbilityContext: common.UIAbilityContext;
 
@@ -31,9 +32,39 @@ export default function WebInitTest() {
       console.log('App start')
     });
 
-    beforeEach(async () => {
-      await Utils.msSleep(2000);
-      console.info('webOnFirstContFour beforeEach start');
+    beforeEach(async (done: () => void): Promise<void> => {	 
+      await Utils.msSleep(2000); 
+      console.info('webOnFirstContFour beforeEach start'); 
+      if(!wifiMg.isWifiActive()){
+        let state:boolean = wifiMg.isWifiActive();
+        console.info("======> wifi_test/enable wifi: enabled " + state);
+        await Utils.msSleep(2000);
+      }
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          throw new Error("======> WLAN Network error");//方式二
+          done();
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          throw new Error("======> WLAN Network error");//方式二
+          done();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+        done();
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
     })
 
     /*
@@ -67,7 +98,7 @@ export default function WebInitTest() {
       await Utils.msSleep(2000);
       Utils.emitEvent("customizeSchemes0200", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("customizeSchemes0200", 17100020, 302, done);
+      Utils.registerEvent("customizeSchemes0200", 401, 302, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('customizeSchemes', 10, '');
       await Utils.msSleep(2000);

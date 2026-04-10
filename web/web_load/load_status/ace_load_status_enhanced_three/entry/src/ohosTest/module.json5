@@ -59,6 +59,9 @@
             },
             {
               "name": "ohos.permission.READ_PASTEBOARD"
+            },
+            {
+              "name": "ohos.permission.GET_WIFI_INFO"
             }
         ]
   }

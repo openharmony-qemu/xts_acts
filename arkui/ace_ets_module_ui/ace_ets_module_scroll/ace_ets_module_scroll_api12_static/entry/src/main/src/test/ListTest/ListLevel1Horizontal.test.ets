@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function listLevel1HorizontalTest() {
   describe('listLevel1HorizontalTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
@@ -52,7 +52,7 @@ export default function listLevel1HorizontalTest() {
           console.info("get listLevel1HorizontalTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({ url: "MainAbility/pages/List/ListLevel1Horizontal" })
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push listLevel1HorizontalTest page error:" + err);
       }
       console.info("listLevel1HorizontalTest beforeEach end");
@@ -84,7 +84,7 @@ it('listLevel1HorizontalTest_static_0100', Level.LEVEL1, async (done: () => void
         }
         console.info("[listLevel1HorizontalTest_static_0100] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1HorizontalTest_static_0100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -120,7 +120,7 @@ it('listLevel1HorizontalTest_static_0200', Level.LEVEL1, async (done: () => void
         }
         console.info("[listLevel1HorizontalTest_static_0200] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1HorizontalTest_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -156,7 +156,7 @@ it('listLevel1HorizontalTest_static_0300', Level.LEVEL1, async (done: () => void
         }
         console.info("[listLevel1HorizontalTest_static_0300] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1HorizontalTest_static_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -192,7 +192,7 @@ it('listLevel1HorizontalTest_static_0400', Level.LEVEL1, async (done: () => void
         }
         console.info("[listLevel1HorizontalTest_static_0400] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1HorizontalTest_static_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -228,7 +228,7 @@ it('listLevel1HorizontalTest_static_0500', Level.LEVEL1, async (done: () => void
         }
         console.info("[listLevel1HorizontalTest_static_0500] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1HorizontalTest_static_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -264,7 +264,7 @@ it('listLevel1HorizontalTest_static_0600', Level.LEVEL1, async (done: () => void
         }
         console.info("[listLevel1HorizontalTest_static_0600] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1HorizontalTest_static_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -300,7 +300,7 @@ it('listLevel1HorizontalTest_static_0700', Level.LEVEL1, async (done: () => void
         }
         console.info("[listLevel1HorizontalTest_static_0700] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1HorizontalTest_static_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

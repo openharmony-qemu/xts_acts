@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,14 +41,14 @@ export default function motionTest() {
           motion.offOperatingHandChanged();
           hilog.info(domain, tag, `${caseName} offOperatingHandChanged success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          if(error.code == 801) {
+          if(e.code == 801) {
             hilog.info(domain, tag, `${caseName} The device does not support this API.`);
           } else {
             hilog.info(domain, tag, `${caseName} offOperatingHandChanged fail`);
-            expect(error.code).assertEqual(31500001);
+            expect(e.code).assertEqual(31500001);
           }
           done();
         }
@@ -71,10 +71,10 @@ export default function motionTest() {
           motion.onOperatingHandChanged((info: motion.OperatingHandStatus) => {});
           hilog.info(domain, tag, `${caseName} onOperatingHandChanged success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          if(error.code == 801) {
+          if(e.code == 801) {
             hilog.info(domain, tag, `${caseName} The device does not support this API.`);
           } else {
             hilog.info(domain, tag, `${caseName} onOperatingHandChanged fail`);
@@ -103,10 +103,10 @@ export default function motionTest() {
           motion.offOperatingHandChanged();
           hilog.info(domain, tag, `${caseName} onOperatingHandChanged success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          if(error.code == 801) {
+          if(e.code == 801) {
             hilog.info(domain, tag, `${caseName} The device does not support this API.`);
           } else {
             hilog.info(domain, tag, `${caseName} fail`);
@@ -130,17 +130,17 @@ export default function motionTest() {
         let caseName = "SUB_MSDP_Api_motion_static_0400";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          motion.offOperatingHandChanged();
+          motion.offOperatingHandChanged((info: motion.OperatingHandStatus) => {});
           hilog.info(domain, tag, `${caseName} offOperatingHandChanged success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          if(error.code == 801) {
+          if(e.code == 801) {
             hilog.info(domain, tag, `${caseName} The device does not support this API.`);
           } else {
             hilog.info(domain, tag, `${caseName} offOperatingHandChanged fail`);
-            expect(error.code).assertEqual(31500001);
+            expect(e.code).assertEqual(31500001);
           }
           done();
         }
@@ -168,14 +168,135 @@ export default function motionTest() {
           expect(motion.OperatingHandStatus.RIGHT_HAND_OPERATED == 2).assertTrue();
           hilog.info(domain, tag, `${caseName} getRecentOperatingHandStatus success`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
-          if(error.code == 801) {
+          if(e.code == 801) {
             hilog.info(domain, tag, `${caseName} The device does not support this API.`);
           } else {
             hilog.info(domain, tag, `${caseName} fail`);
             expect().assertFail();
+          }
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} end`);
+      });
+
+    /**
+     * @tc.name   SUB_MSDP_Api_motion_static_0600
+     * @tc.number SUB_MSDP_Api_motion_static_0600
+     * @tc.desc   SUB_MSDP_Api_motion_static_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MSDP_Api_motion_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MSDP_Api_motion_static_0600";
+        hilog.info(domain, tag, `${caseName} enter`);
+        try {
+          expect(motion.HoldingHandStatus.NOT_HELD == 0).assertTrue();
+          expect(motion.HoldingHandStatus.LEFT_HAND_HELD == 1).assertTrue();
+          expect(motion.HoldingHandStatus.RIGHT_HAND_HELD == 2).assertTrue();
+          expect(motion.HoldingHandStatus.BOTH_HANDS_HELD == 3).assertTrue();
+          expect(motion.HoldingHandStatus.UNKNOWN_STATUS == 16).assertTrue();
+          hilog.info(domain, tag, `${caseName} get HoldingHandStatus success`);
+          done();
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} end`);
+      });
+
+    /**
+     * @tc.name   SUB_MSDP_Api_motion_static_0700
+     * @tc.number SUB_MSDP_Api_motion_static_0700
+     * @tc.desc   SUB_MSDP_Api_motion_static_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MSDP_Api_motion_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MSDP_Api_motion_static_0700";
+        hilog.info(domain, tag, `${caseName} enter`);
+        try {
+          motion.onHoldingHandChanged((info: motion.HoldingHandStatus) => {});
+          hilog.info(domain, tag, `${caseName} onHoldingHandChanged success`);
+          done();
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
+          if(e.code == 801) {
+            hilog.info(domain, tag, `${caseName} The device does not support this API.`);
+          } else {
+            hilog.info(domain, tag, `${caseName} onHoldingHandChanged fail`);
+            expect().assertFail();
+          }
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} end`);
+      });
+
+    /**
+     * @tc.name   SUB_MSDP_Api_motion_static_0800
+     * @tc.number SUB_MSDP_Api_motion_static_0800
+     * @tc.desc   SUB_MSDP_Api_motion_static_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MSDP_Api_motion_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MSDP_Api_motion_static_0800";
+        hilog.info(domain, tag, `${caseName} enter`);
+        try {
+          motion.onHoldingHandChanged((info: motion.HoldingHandStatus) => {});
+          await Utils.msSleep(2000);
+          motion.offHoldingHandChanged();
+          hilog.info(domain, tag, `${caseName} onHoldingHandChanged success`);
+          done();
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
+          if(e.code == 801) {
+            hilog.info(domain, tag, `${caseName} The device does not support this API.`);
+          } else {
+            hilog.info(domain, tag, `${caseName} onHoldingHandChanged fail`);
+            expect().assertFail();
+          }
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} end`);
+      });
+
+    /**
+     * @tc.name   SUB_MSDP_Api_motion_static_0900
+     * @tc.number SUB_MSDP_Api_motion_static_0900
+     * @tc.desc   SUB_MSDP_Api_motion_static_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MSDP_Api_motion_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MSDP_Api_motion_static_0900";
+        hilog.info(domain, tag, `${caseName} enter`);
+        try {
+          motion.offHoldingHandChanged((info: motion.HoldingHandStatus) => {});
+          hilog.info(domain, tag, `${caseName} offHoldingHandChanged success`);
+          done();
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(domain, tag, `${caseName} failed error.code: ${e.code} , error.message: ${e.message}`);
+          if(e.code == 801) {
+            hilog.info(domain, tag, `${caseName} The device does not support this API.`);
+          } else {
+            hilog.info(domain, tag, `${caseName} offHoldingHandChanged fail`);
+            expect(e.code).assertEqual(31500001);
           }
           done();
         }

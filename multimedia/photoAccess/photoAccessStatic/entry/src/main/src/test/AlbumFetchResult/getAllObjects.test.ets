@@ -46,7 +46,7 @@ export default function albumGetAllObjectTest() {
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album>;
           let passCount = 0;
           for (let i = 0; i < subTypes.length; i++) {
-            fetchResult = await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
+            fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
             expect(fetchResult.getCount()).assertEqual(1);
             fetchResult.getAllObjects((err: BusinessError | null,
               allObj: Array<photoAccessHelper.Album> | undefined) => {
@@ -93,7 +93,7 @@ export default function albumGetAllObjectTest() {
           ];
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album>;
           let passCount = 0;
-          fetchResult = await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[0]);
+          fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[0]);
           expect(fetchResult.getCount()).assertEqual(1);
           fetchResult.getAllObjects((err: BusinessError | null, allObj: Array<photoAccessHelper.Album> | undefined) => {
             try {
@@ -137,7 +137,7 @@ export default function albumGetAllObjectTest() {
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album>;
           let passCount = 0;
           for (let i = 0; i < subTypes.length; i++) {
-            fetchResult = await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
+            fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
             expect(fetchResult.getCount()).assertEqual(1);
             const allObj = await fetchResult.getAllObjects();
             expect(allObj.length).assertEqual(1);

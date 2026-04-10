@@ -3,6 +3,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import notificationManager from '@ohos.notificationManager';
 import { common } from '@kit.AbilityKit';
 import { Driver, ON } from '@kit.TestKit';
+import image from '@ohos.multimedia.image';
 
 let ctx = getContext(this) as common.UIAbilityContext;
 let TAG: string = 'Notification';
@@ -13,26 +14,30 @@ export default function actsNotificationPriorityTest() {
   describe('actsNotificationPriorityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async (done: Function) => {
-
-      let driver = Driver.create();
-      notificationManager.requestEnableNotification(ctx).then(() => {
-        console.info(`${TAG} requestEnableNotification succeeded`);
-      }).catch((err: Error) => {
-        console.info(`${TAG} requestEnableNotification err: `+ JSON.stringify(err));
-        expect(err).assertNull()
-        done()
+      notificationManager.requestEnableNotification((err) => {
+        if (err) {
+          console.error(TAG+`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue();
+          console.info(TAG + `test case end`);
+          done();
+        } else {
+          console.info(TAG + "requestEnableNotification success");
+        }
       });
-      await sleep(1500)
+
+      await sleep(1500);
+      let driver = Driver.create();
+      console.log(TAG + `driver is ${JSON.stringify(driver)}`);
+      await driver.assertComponentExist(ON.text('允许'));
       let button = await driver.findComponent(ON.text('允许'));
-      console.info(`${TAG} button is ${JSON.stringify(button)}`);
+      console.log(TAG + `button is ${JSON.stringify(button)}`);
       if (button !== null) {
-        await sleep(1000);
         await button.click();
-        await sleep(1000);
+        await sleep(1500);
         done()
       } else {
-        console.info('${TAG} null button');
-        expect(button).assertContain('允许')
+        console.log(TAG + `button is null`)
+        expect(false).assertTrue();
         done()
       }
     })
@@ -47,8 +52,16 @@ export default function actsNotificationPriorityTest() {
      */
     it('Sub_Notification_Ans_Priority_Notification_0100', Level.LEVEL2, async  (done : Function) => {
       let TAG = "Sub_Notification_Ans_Priority_Notification_0100"
+      const color = new ArrayBuffer(96);
+      let opts: image.InitializationOptions = {
+        editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {
+          height: 4, width: 6
+        }
+      };
+      let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
       let notificationRequest: notificationManager.NotificationRequest = {
         id: 7,
+        overlayIcon: pixelMap,
         priorityNotificationType: 'OTHER' as notificationManager.PriorityNotificationType,
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,

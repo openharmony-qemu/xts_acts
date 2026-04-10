@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,7 +32,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaInputTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
     });
@@ -86,7 +86,7 @@ export default function textAreaInputTest() {
           await CommonFunc.sleep(500);
           await button1.click()
           await CommonFunc.sleep(500);
-        } catch (e: Error) {
+        } catch (e) {
           console.log('下一步 error')
         }
         await textArea1.longClick();
@@ -96,7 +96,7 @@ export default function textAreaInputTest() {
           await CommonFunc.sleep(500);
           await button3.click();
           console.info('textAreaInputTest0001 全选 success');
-        } catch (e: Error) {
+        } catch (e) {
           console.log('全选 error')
         }
         await CommonFunc.sleep(500);
@@ -110,7 +110,7 @@ export default function textAreaInputTest() {
           await button4.click();
           await CommonFunc.sleep(500);
           console.info('textAreaInputTest0001 取消 success');
-        } catch (e: Error) {
+        } catch (e) {
           console.log('取消 error')
         }
 
@@ -122,7 +122,7 @@ export default function textAreaInputTest() {
           await button5.click();
           await CommonFunc.sleep(500);
           console.info('textAreaInputTest0001 2 全选 success');
-        } catch (e: Error) {
+        } catch (e) {
           console.log('全选 error')
         }
         try {
@@ -131,7 +131,7 @@ export default function textAreaInputTest() {
           await button6.click();
           await CommonFunc.sleep(500);
           console.info('textAreaInputTest0001 2 复制 success');
-        } catch (e: Error) {
+        } catch (e) {
           console.log('复制 error')
         }
         textArea1?.dragTo(textArea2!);
@@ -144,7 +144,7 @@ export default function textAreaInputTest() {
             await (button7?.click() as Promise<void>);
           }
           await CommonFunc.sleep(500);
-        } catch (e: Error) {
+        } catch (e) {
           console.log('拖拽到底部小艺 error')
         }
         console.info('textAreaInputTest0001 2 Button success');

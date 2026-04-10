@@ -92,7 +92,7 @@ export default function qrCodeJsunit() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[test_qrCode_003] obj is: " + JSON.stringify(obj.$attrs));
 
-      expect(obj.$attrs.contentOpacity).assertEqual(undefined); //not support
+      expect(obj.$attrs.contentOpacity).assertEqual(1);
       console.info('[test_qrCode_003] END');
       done();
     });

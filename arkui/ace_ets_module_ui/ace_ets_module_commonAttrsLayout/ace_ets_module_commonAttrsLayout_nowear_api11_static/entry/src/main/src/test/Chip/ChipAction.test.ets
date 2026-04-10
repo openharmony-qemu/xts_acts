@@ -73,9 +73,9 @@ it('ChipAction_static_001', Level.LEVEL0, async (done: () => void): Promise<void
       let ChipActionCol = CommonFunc.getComponentRect('ChipActionCol');
       await CommonFunc.sleep(200);
       let right: number = ChipActionCol.right - uiContext.vp2px(22) + Number(AppStorage.get<number>("winLeft") ?? 0);
-      let top: number = ChipActionCol.top + uiContext.vp2px(18) + Number(AppStorage.get<number>("winTop") ?? 0);
+      let top: number = ChipActionCol.top + uiContext.vp2px(60) + Number(AppStorage.get<number>("winTop") ?? 0);
       await CommonFunc.sleep(200);
-      console.info('ChipAction_static_001 right：' + right + 'top:' + top);
+      console.info('ChipAction_static_001 right：' + right + ',top:' + top);
       let driver = Driver.create();
       await driver.mouseClick({
         x: Math.round(right) as int, y: Math.round(top) as int

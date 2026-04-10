@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsmechanicManagerTestStatic.hap"
+            "ActsmechanicManagerStaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true

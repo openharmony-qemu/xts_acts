@@ -33,7 +33,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function KeyboardAvoidModeTest() {
   describe('KeyboardAvoidModeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("KeyboardAvoidModeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility");
@@ -50,7 +50,7 @@ export default function KeyboardAvoidModeTest() {
         console.info("get KeyboardAvoidModeTest state pages: " + JSON.stringify(pages));
         if (!("KeyboardAvoidMode" == pages.name)) {
           console.info("get KeyboardAvoidModeTest state pages.name: " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {

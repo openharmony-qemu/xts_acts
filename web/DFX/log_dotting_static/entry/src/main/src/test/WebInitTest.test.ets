@@ -76,15 +76,15 @@ export default function WebInitTest() {
       done()
     })
 
-    /*
-   * @tc.number     : SUB_WEB_WEBNETERRORLIST_0200
-   * @tc.name       : WebNetErrorList_Static_0200
-   * @tc.desc       : test WebSchemeHandlerResponse
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 3
-   */
-    it('WebNetErrorList_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    /**
+     * @tc.name        WebNetErrorList_Static_0200
+     * @tc.number      SUB_WEB_WEBNETERRORLIST_0200
+     * @tc.desc        test WebSchemeHandlerResponse
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('WebNetErrorList_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000);
       Utils.emitEvent("WebNetErrorList_Static_0200", 10)
       await Utils.msSleep(1000);

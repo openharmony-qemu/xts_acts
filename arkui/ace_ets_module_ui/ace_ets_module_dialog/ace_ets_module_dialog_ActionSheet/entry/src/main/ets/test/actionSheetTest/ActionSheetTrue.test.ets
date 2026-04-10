@@ -51,11 +51,11 @@ export default function ActionSheetTrue() {
      * @tc.number    SUB_ACE_ActionSheetTrue_0100
      * @tc.name      ActionSheetTrue_0100
      * @tc.desc      set api
-     * @tc.level:    Level 2
+     * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
      */
-    it('ActionSheetTrue_0100', Level.LEVEL2, async (done: Function) => {
+    it('ActionSheetTrue_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ActionSheetTrue_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

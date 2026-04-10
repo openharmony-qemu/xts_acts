@@ -50,7 +50,7 @@ export default function albumGetLastObjectTest() {
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album>;
           let passCount = 0;
           for (let i = 0; i < subTypes.length; i++) {
-            fetchResult = await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
+            fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
             expect(fetchResult.getCount()).assertEqual(1);
             fetchResult.getLastObject((err: BusinessError | null, asset: photoAccessHelper.Album | undefined) => {
               try {
@@ -98,7 +98,7 @@ export default function albumGetLastObjectTest() {
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album>;
           let passCount = 0;
           for (let i = 0; i < subTypes.length; i++) {
-            fetchResult = await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
+            fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
             expect(fetchResult.getCount()).assertEqual(1);
             const asset = await fetchResult.getLastObject();
             expect(asset !== undefined).assertTrue();

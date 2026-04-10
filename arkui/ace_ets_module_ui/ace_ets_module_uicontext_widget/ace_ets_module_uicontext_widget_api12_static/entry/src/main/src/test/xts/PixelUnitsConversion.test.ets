@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function PixelUnitsConversionJsunit() {
   describe('PixelUnitsConversionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("PixelUnitsConversionTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.example.myapplication.static", "EntryAbility")

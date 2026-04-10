@@ -15,13 +15,43 @@
 # limitations under the License.
 #
 
-import os;
-import subprocess;
-import sys;
-root_path = sys.argv[1]
-jsvm_test_path = root_path + "commonlibrary/ark_runtime/ark_runtime_jsvm_test/"
-jsvm_test_jitless_path = root_path + "commonlibrary/ark_runtime/ark_runtime_jsvm_test_jitless/"
-if os.path.exists(root_path):
-    subprocess.run(["cp", "-rf", jsvm_test_path + "entry/src/ohosTest/ets", jsvm_test_jitless_path + "entry/src/ohosTest/"])
-    subprocess.run(["cp", "-rf", jsvm_test_path + "entry/src/main/ets", jsvm_test_jitless_path + "entry/src/main/"])
-    subprocess.run(["cp", "-rf", jsvm_test_path + "entry/src/main/MainAbility", jsvm_test_jitless_path + "entry/src/main/"])
+import os
+import subprocess
+import argparse
+
+
+def main():
+  parser = argparse.ArgumentParser()
+  parser.add_argument('--root-path', required = True)
+  parser.add_argument('--output', required = True)
+  args = parser.parse_args()
+
+  root_path = args.root_path
+  jsvm_test_path = os.path.join(
+      root_path, 'commonlibrary/ark_runtime/ark_runtime_jsvm_test/')
+  jsvm_test_jitless_path = os.path.join(
+      root_path, 'commonlibrary/ark_runtime/ark_runtime_jsvm_test_jitless/')
+
+  if os.path.exists(root_path):
+    subprocess.run([
+        'cp', '-rf',
+        os.path.join(jsvm_test_path, 'entry/src/ohosTest/ets'),
+        os.path.join(jsvm_test_jitless_path, 'entry/src/ohosTest/')
+    ])
+    subprocess.run([
+        'cp', '-rf',
+        os.path.join(jsvm_test_path, 'entry/src/main/ets'),
+        os.path.join(jsvm_test_jitless_path, 'entry/src/main/')
+    ])
+    subprocess.run([
+        'cp', '-rf',
+        os.path.join(jsvm_test_path, 'entry/src/main/MainAbility'),
+        os.path.join(jsvm_test_jitless_path, 'entry/src/main/')
+    ])
+
+    with open(args.output, 'w') as f:
+      f.write('done')
+
+
+if __name__ == '__main__':
+  main()

@@ -69,7 +69,7 @@ export default function webViewContCookieToGeoLocationError() {
       emitKey = "emitGetCookieInitErr";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testGetCookieInitErr", "17100002", 110020, null);
-      Utils.registerEvent("testGetCookieInitErr", "URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.", 110030, done);
+      Utils.registerEvent("testGetCookieInitErr", "URL error. No valid cookie found for the specified URL.", 110030, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
     /**
@@ -84,7 +84,7 @@ export default function webViewContCookieToGeoLocationError() {
       emitKey = "emitSetCookieInitErr";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testSetCookieInitErr", "17100002", 110040, null);
-      Utils.registerEvent("testSetCookieInitErr", "URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.", 110050, done);
+      Utils.registerEvent("testSetCookieInitErr", "URL error. No valid cookie found for the specified URL.", 110050, done);
       Utils.waitAndClickComponent(driver, "webViewContCookieToGeoLocationError");
     })
     /**

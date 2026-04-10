@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ export default function hiTraceChainJsTest() {
           expect().assertFail();
         }
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic01 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -68,7 +68,7 @@ export default function hiTraceChainJsTest() {
           expect().assertFail();
         }
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic02 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -96,7 +96,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.THREAD,
           hiTraceChain.HiTraceTracepointType.SS, traceId, "hitrace api test.");
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic03 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -133,7 +133,7 @@ export default function hiTraceChainJsTest() {
           hilog.info(0x0000, 'testTag', 'testHitraceApiStatic04 if');
         }
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic04 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -166,7 +166,7 @@ export default function hiTraceChainJsTest() {
           expect().assertFail();
         }
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic05 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -199,7 +199,7 @@ export default function hiTraceChainJsTest() {
           expect().assertFail();
         }
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic06 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -233,7 +233,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.PROCESS,
           hiTraceChain.HiTraceTracepointType.CS, traceId, "hitrace test");
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic07 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -262,7 +262,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEVICE,
           hiTraceChain.HiTraceTracepointType.CR,traceId, "hitrace test");
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic10 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done()
@@ -301,7 +301,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEFAULT,
           hiTraceChain.HiTraceTracepointType.SR, traceId, "hitrace test");
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic11 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done()
@@ -332,7 +332,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEVICE,
           hiTraceChain.HiTraceTracepointType.GENERAL, traceId, "hitrace test");
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic12 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done()
@@ -377,7 +377,7 @@ export default function hiTraceChainJsTest() {
           expect().assertFail();
         }
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic15 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -403,7 +403,7 @@ export default function hiTraceChainJsTest() {
           expect().assertFail();
         }
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic016 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -429,7 +429,7 @@ export default function hiTraceChainJsTest() {
           expect().assertFail();
         }
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic017 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -455,7 +455,7 @@ export default function hiTraceChainJsTest() {
           expect().assertFail();
         }
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic018 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -481,7 +481,7 @@ export default function hiTraceChainJsTest() {
           expect().assertFail();
         }
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic019 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -507,7 +507,7 @@ export default function hiTraceChainJsTest() {
           expect().assertFail();
         }
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic020 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -535,7 +535,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEFAULT,
           hiTraceChain.HiTraceTracepointType.SS, traceId, "hitrace api test.");
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic021 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -563,7 +563,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.PROCESS,
           hiTraceChain.HiTraceTracepointType.SS, traceId, "hitrace api test.");
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic022 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -591,7 +591,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEVICE,
           hiTraceChain.HiTraceTracepointType.SS, traceId, "hitrace api test.");
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic023 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -619,7 +619,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEVICE,
           hiTraceChain.HiTraceTracepointType.CS, traceId, "hitrace api test.");
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic024 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -647,7 +647,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEVICE,
           hiTraceChain.HiTraceTracepointType.CR, traceId, "hitrace api test.");
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic025 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -675,7 +675,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEVICE,
           hiTraceChain.HiTraceTracepointType.SR, traceId, "hitrace api test.");
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic026 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -703,7 +703,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEVICE,
           hiTraceChain.HiTraceTracepointType.GENERAL, traceId, "hitrace api test.");
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic027 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -732,7 +732,7 @@ export default function hiTraceChainJsTest() {
         hiTraceChain.tracepoint(hiTraceChain.HiTraceCommunicationMode.DEVICE,
           hiTraceChain.HiTraceTracepointType.GENERAL, traceId);
         hiTraceChain.end(traceId);
-      } catch (err: BusinessError){
+      } catch (err){
         hilog.info(0x0000, 'testTag', 'testHitraceApiStatic028 got an error:' + JSON.stringify(err));
         expect().assertFail();
         done();

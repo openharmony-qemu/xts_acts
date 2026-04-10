@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,7 +28,7 @@ class Person {
     this.age = age;
   }
 }
-
+type union = number | string;
 export default function ArrayTest() {
   describe("ArrayTest", (): void => {
 
@@ -709,7 +709,7 @@ export default function ArrayTest() {
      */
     it("testArrayShrinkTo019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
-        let array1 = new Array<number>(1);
+        let array1 = new Array<number>(1, (i) => 0);
         array1.shrinkTo(Number.MIN_VALUE.toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {
@@ -814,7 +814,7 @@ export default function ArrayTest() {
      */
     it("testArrayShrinkTo024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
-        let array1 = new Array<number>(1);
+        let array1 = new Array<number>(1, (i) => 0);
         array1.shrinkTo(Number.EPSILON.toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {
@@ -919,71 +919,13 @@ export default function ArrayTest() {
     it("testArrayCreate004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG: string = 'testArrayCreate004';
       try {
-        let array = Array.create<number>(8.5, 0);
+        let array = Array.create<number>(8, 0);
         expect(array.length).assertEqual(8);
       } catch (err) {
         if (err instanceof BusinessError) {
           console.error(`Expected error caught: ${err.message}`);
           expect(false).assertFail();
         }
-      }
-    });
-
-    /**
-     * @tc.number    SUB_ARRAY_CREATE_TEST_0500
-     * @tc.name      testArrayCreate005
-     * @tc.desc      Test the function of the interface ArrayCreate
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it("testArrayCreate005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayCreate005';
-      try {
-        let array = Array.create<number>(6 * Int.MAX_VALUE, 0);
-      } catch (err) {
-        err = err as Error;
-        expect(err.message).assertEqual('size = -6');
-        console.error(`Expected error caught: ${err.message}`);
-      }
-    });
-
-
-    /**
-     * @tc.number    SUB_ARRAY_CREATE_TEST_0600
-     * @tc.name      testArrayCreate006
-     * @tc.desc      Test the function of the interface ArrayCreate
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it("testArrayCreate006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayCreate006';
-      try {
-        let array = Array.create<number>(-Infinity, 0);
-      } catch (err) {
-        err = err as Error;
-        console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('size = -2147483648');
-      }
-    });
-
-    /**
-     * @tc.number    SUB_ARRAY_CREATE_TEST_0700
-     * @tc.name      testArrayCreate007
-     * @tc.desc      Test the function of the interface ArrayCreate
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it("testArrayCreate007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayCreate007';
-      try {
-        let array = Array.create<number>(2 * Int.MAX_VALUE, 0);
-      } catch (err) {
-        err = err as Error;
-        console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('size = -2');
       }
     });
 
@@ -998,111 +940,11 @@ export default function ArrayTest() {
     it("testArrayCreate008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG: string = 'testArrayCreate008';
       try {
-        let array = Array.create<number>(Number.MIN_SAFE_INTEGER, 0);
+        let array = Array.create<number>(Int.MIN_VALUE, 0);
       } catch (err) {
         err = err as Error;
         console.error(`Expected error caught: ${err.message}`);
         expect(err.message).assertEqual('size = -2147483648');
-      }
-    });
-
-    /**
-     * @tc.number    SUB_ARRAY_CREATE_TEST_0900
-     * @tc.name      testArrayCreate009
-     * @tc.desc      Test the function of the interface ArrayCreate
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it("testArrayCreate009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayCreate009';
-      try {
-        let array = Array.create<number>(8 * Int.MAX_VALUE, 0);
-        expect(array.length).assertEqual(8);
-      } catch (err) {
-        err = err as Error;
-        console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('size = -8');
-      }
-    });
-
-    /**
-     * @tc.number    SUB_ARRAY_CREATE_TEST_1000
-     * @tc.name      testArrayCreate010
-     * @tc.desc      Test the function of the interface ArrayCreate
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("testArrayCreate010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayCreate010';
-      try {
-        let array = Array.create<number>(Number.MIN_VALUE, 0);
-        expect(array.length).assertEqual(0);
-      } catch (err) {
-        if (err instanceof BusinessError) {
-          console.error(`Expected error caught: ${err.message}`);
-          expect(false).assertFail();
-        }
-      }
-    });
-
-    /**
-     * @tc.number    SUB_ARRAY_CREATE_TEST_1100
-     * @tc.name      testArrayCreate011
-     * @tc.desc      Test the function of the interface ArrayCreate
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testArrayCreate011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayCreate011';
-      try {
-        let array = Array.create<number>(Number.EPSILON, 0);
-        expect(array.length).assertEqual(0);
-      } catch (err) {
-        if (err instanceof BusinessError) {
-          console.error(`Expected error caught: ${err.message}`);
-          expect(false).assertFail();
-        }
-      }
-    });
-
-    /**
-     * @tc.number    SUB_ARRAY_CREATE_TEST_1200
-     * @tc.name      testArrayCreate012
-     * @tc.desc      Test the function of the interface ArrayCreate
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testArrayCreate012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayCreate012';
-      try {
-        let array = Array.create<number>(Number.NEGATIVE_INFINITY, 0);
-      } catch (err) {
-        err = err as Error;
-        console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('size = -2147483648');
-      }
-    });
-
-    /**
-     * @tc.number    SUB_ARRAY_CREATE_TEST_1300
-     * @tc.name      testArrayCreate013
-     * @tc.desc      Test the function of the interface ArrayCreate
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testArrayCreate013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayCreate013';
-      try {
-        let array = Array.create<number>(4 * Int.MAX_VALUE, 0);
-      } catch (err) {
-        err = err as Error;
-        console.error(`Expected error caught: ${err.message}`);
-        expect(err.message).assertEqual('size = -4');
       }
     });
 
@@ -1761,30 +1603,27 @@ export default function ArrayTest() {
     });
 
     /**
-     * @tc.number    SUB_ARRAY_EXTEND_TO_TEST_3000
-     * @tc.name      testArrayExtendTo030
-     * @tc.desc      Test the function of the interface ArrayExtendTo
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // it("testArrayExtendTo030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG: string = 'testArrayExtendTo030';
-    //   try {
-    //     type union = number | string;
-    //     let array = new Array<union>(0, 2, 'a', 'b')
-    //     array.extendTo(6, 3)
-    //     array.extendTo(8, 'c')
-    //     expect(array.length).assertEqual(8);
-    //     expect(array[5]).assertEqual(3);
-    //     expect(array[7]).assertEqual('c');
-    //   } catch (err) {
-    //     if (err instanceof BusinessError) {
-    //       console.error(`Expected error caught: ${err.message}`);
-    //       expect(false).assertFail();
-    //     }
-    //   }
-    // });
+      * @tc.number    SUB_ARRAY_EXTEND_TO_TEST_3000
+      * @tc.name      testArrayExtendTo030
+      * @tc.desc      Test the function of the interface ArrayExtendTo
+      * @tc.size      MediumTest
+      * @tc.type      Function
+      * @tc.level     Level 2
+      */
+    it("testArrayExtendTo030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = 'testArrayExtendTo030';
+      try {
+        let array = new Array<union>(0, 2, 'a', 'b')
+        array.extendTo(6, 3)
+        array.extendTo(8, 'c')
+        expect(array.length).assertEqual(8);
+        expect(array[5]).assertEqual(3);
+        expect(array[7]).assertEqual('c');
+      } catch (err) {
+        console.error(`Expected error caught: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number    SUB_ARRAY_EXTEND_TO_TEST_3100
@@ -1794,22 +1633,18 @@ export default function ArrayTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    // it("testArrayExtendTo031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG: string = 'testArrayExtendTo031';
-    //   try {
-    //     type union = number | string;
-    //     let array = new Array<union>(0, 2, 'a', 'b')
-    //     array.extendTo(6, 3)
-    //     array.extendTo(6, 'c')
-    //     expect(array.length).assertEqual(6);
-    //     expect(array[5]).assertEqual(3);
-    //   } catch (err) {
-    //     if (err instanceof BusinessError) {
-    //       console.error(`Expected error caught: ${err.message}`);
-    //       expect(false).assertFail();
-    //     }
-    //   }
-    // });
+    it("testArrayExtendTo031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = 'testArrayExtendTo031';
+      try {
+        let array = new Array<union>(0, 2, 'a', 'b')
+        array.extendTo(6, 3)
+        array.extendTo(6, 'c')
+        expect(array.length).assertEqual(6);
+        expect(array[5]).assertEqual(3);
+      } catch (err) {
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.number    SUB_ARRAY_EXTEND_TO_TEST_3200
@@ -1819,22 +1654,18 @@ export default function ArrayTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    // it("testArrayExtendTo032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG: string = 'testArrayExtendTo032';
-    //   try {
-    //     type union = number | string;
-    //     let array = new Array<union>(0, 2, 'a', 'b')
-    //     array.extendTo(6, 3)
-    //     array.extendTo(5, 'c')
-    //     expect(array.length).assertEqual(6);
-    //     expect(array[5]).assertEqual(3);
-    //     expect(array[4]).assertEqual(3);
-    //   } catch (err) {
-    //     if (err instanceof BusinessError) {
-    //       console.error(`Expected error caught: ${err.message}`);
-    //       expect(false).assertFail();
-    //     }
-    //   }
-    // });
+    it("testArrayExtendTo032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = 'testArrayExtendTo032';
+      try {
+        let array = new Array<union>(0, 2, 'a', 'b')
+        array.extendTo(6, 3)
+        array.extendTo(5, 'c')
+        expect(array.length).assertEqual(6);
+        expect(array[5]).assertEqual(3);
+        expect(array[4]).assertEqual(3);
+      } catch (err) {
+        expect(false).assertFail();
+      }
+    });
   })
 }

@@ -15,7 +15,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import power from '@ohos.power';
 
-const PERMISSION_DENIED_CODE = 201
 
 export default function PowerPermissionTest() {
   describe('PowerPermissionTest', () => {
@@ -57,7 +56,7 @@ export default function PowerPermissionTest() {
         done();
       } catch (error) {
         console.error(TAG + ` err: ${error.code}  ${error.message}`);
-        expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+        expect(error.code).assertEqual(201);
         done();
       }
     });

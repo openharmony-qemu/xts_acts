@@ -918,11 +918,13 @@ async function sleep(delay: number): Promise<void> {
 export default function pictureNdkTest() {
   describe('pictureNdkTest', () => {
     let isSupportHdr: boolean = false;
-    fileDir = AppStorage.get('pathDir')
     beforeAll(async () => {
-      isSupportHEIFDecode = 
-        image.createImageSource(fileDir + '/' + 'test.jpg').supportedFormats.includes('image/heic')
-      isSupportVPE = await fs.access("/sys_prod/etc/VideoProcessingEngine/Image_SR_Model_576x576_20240402.omc").then((res: boolean) => {
+      let filePath = AppStorage.get('pathDir') + '/' + "test.jpg";
+      let imageSource: image.ImageSource = image.createImageSource(filePath);
+      console.info('imageSource is ' + imageSource);
+      isSupportHEIFDecode = imageSource.supportedFormats.includes('image/heic');
+      console.info('isSupportHEIFDecode is ' + isSupportHEIFDecode);
+      isSupportVPE = await fs.access("/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so").then((res: boolean) => {
         if (res) {
           console.info("file exists");
           return true;
@@ -4693,7 +4695,7 @@ export default function pictureNdkTest() {
               let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, Data[i].key)
               if(PropertyValue != Data[i].jpegData){
                   console.log("compare value error file:" + filename + "get value: " + PropertyValue + " compare value: " + Data[i].jpegData);
-                  expect.assertFail();
+                  expect().assertFail();
                   done()
                   return
               }
@@ -4729,7 +4731,7 @@ export default function pictureNdkTest() {
               let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, Data[i].key)
               if(PropertyValue != Data[i].pngData){
                   console.log("compare value error file:" + filename + "get value: " + PropertyValue + " compare value: " + Data[i].pngData);
-                  expect.assertFail();
+                  expect().assertFail();
                   done()
                   return
               }
@@ -4765,7 +4767,7 @@ export default function pictureNdkTest() {
               let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, Data[i].key)
               if(PropertyValue != Data[i].heifData){
                   console.log("compare value error file:" + filename + "get value: " + PropertyValue + " compare value: " + Data[i].heifData);
-                  expect.assertFail();
+                  expect().assertFail();
                   done()
                   return
               }
@@ -4801,7 +4803,7 @@ export default function pictureNdkTest() {
               let PropertyValue = ndkTest.PictureMetadataGetPropertyWithNull(exifType, Data0[i].key)
               if(PropertyValue != Data0[i].jpegData){
                   console.log("compare value error file:" + filename + "get value: " + PropertyValue + " compare value: " + Data0[i].jpegData);
-                  expect.assertFail();
+                  expect().assertFail();
                   done()
                   return
               }
@@ -4830,13 +4832,13 @@ export default function pictureNdkTest() {
         for(let i = 0; i < ModifyData.length; i++){
             let setRes = ndkTest.MetadataSetProperty(ModifyData[i].key, ModifyData[i].modifyData)
             if(setRes != ErrorCode.IMAGE_SUCCESS){
-                expect.assertFail();
+                expect().assertFail();
                 done()
                 return
             }
             let getRes = ndkTest.MetadataGetProperty(ModifyData[i].key)
             if(getRes != ModifyData[i].compareData){
-                expect.assertFail();
+                expect().assertFail();
                 done()
                 return
             }
@@ -4865,7 +4867,7 @@ export default function pictureNdkTest() {
           if(Data[i].onlyRead == true){
             let setRes = ndkTest.MetadataSetPropertyErrorCode(Data[i].key, Data[i].jpegData)
             if(setRes != ErrorCode.IMAGE_UNSUPPORTED_METADATA){
-                expect.assertFail();
+                expect().assertFail();
                 done()
                 return
             }

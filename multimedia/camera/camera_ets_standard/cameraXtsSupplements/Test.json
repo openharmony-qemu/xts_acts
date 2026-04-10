@@ -29,6 +29,7 @@
         },
         {
             "test-file-name": [
+                "ActsCameraXtsSuppMainTest.hap",
                 "ActsCameraXtsSuppTest.hap"
             ],
             "type": "AppInstallKit",

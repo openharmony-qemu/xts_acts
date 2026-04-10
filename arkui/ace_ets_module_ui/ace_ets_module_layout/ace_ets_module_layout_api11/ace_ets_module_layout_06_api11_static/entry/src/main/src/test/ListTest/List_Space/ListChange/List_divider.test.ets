@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function List_divider() {
 
   describe('List_divider', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("List_divider beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -122,7 +122,7 @@ it('testListDividerStrokeWidthToTen_static', Level.LEVEL0, async (done: () => vo
 	  expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - UIContext.resolveUIContext()!.vp2px(500))) <= 1).assertTrue();
 	  expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - UIContext.resolveUIContext()!.vp2px(350))) <= 1).assertTrue();
       let driver = Driver.create();
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
+      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top)).toInt());
@@ -185,7 +185,7 @@ it('testListDividerStrokeWidthToForty_static', Level.LEVEL0, async (done: () => 
 	  expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - UIContext.resolveUIContext()!.vp2px(500))) <= 1).assertTrue();
 	  expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - UIContext.resolveUIContext()!.vp2px(350))) <= 1).assertTrue();
       let driver = Driver.create();
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
+      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top)).toInt());

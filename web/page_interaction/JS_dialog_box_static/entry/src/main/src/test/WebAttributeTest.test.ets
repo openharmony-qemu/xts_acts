@@ -39,9 +39,9 @@ export default function webAttributeTest() {
      * @tc.desc   test onAlert callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnAlertStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testOnAlertStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitOnAlert001", 10)
@@ -94,9 +94,9 @@ export default function webAttributeTest() {
       })
 
 
-    /*
-    * @tc.number      : SUB_WEB_JSRESULT_HANDLECANCEL_0100
+    /**
     * @tc.name        : testJsResultHandleCancelStatic001
+    * @tc.number      : SUB_WEB_JSRESULT_HANDLECANCEL_0100
     * @tc.desc        : test JsResultHandle.cancel()
     * @tc.size        : MediumTest
     * @tc.type        : Function
@@ -114,9 +114,10 @@ export default function webAttributeTest() {
         done();
       })
 
-    /*
-   * @tc.number      : SUB_WEB_JSRESULT_HANDLECANCEL_0200
+  /**
    * @tc.name        : testJsResultHandleCancelStatic002
+   * @tc.number      : SUB_WEB_JSRESULT_HANDLECANCEL_0200
+
    * @tc.desc        : test JsResultHandle.cancel()
    * @tc.size        : MediumTest
    * @tc.type        : Function

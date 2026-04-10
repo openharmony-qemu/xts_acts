@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function listLevel1Test() {
   describe('listLevel1Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       
@@ -50,7 +50,7 @@ export default function listLevel1Test() {
           console.info("get listLevel1 pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({ url: "MainAbility/pages/List/ListLevel1" })
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push listLevel1 page error:" + err);
       }
       console.info("listLevel1 beforeEach end");
@@ -97,7 +97,7 @@ it('listLevel1Test_static_static_0200', Level.LEVEL1, async (done: () => void): 
       console.info('[listLevel1Test_static_static_0200] START');
       try {
         AppStorage.setOrCreate<number | string>('startMargin', "30.00vp")
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -123,7 +123,7 @@ it('listLevel1Test_static_static_0300', Level.LEVEL1, async (done: () => void): 
       console.info('[listLevel1Test_static_static_0300] START');
       try {
         AppStorage.setOrCreate<number | string>('startMargin', "30.90vp")
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_static_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -149,7 +149,7 @@ it('listLevel1Test_static_static_0400', Level.LEVEL1, async (done: () => void): 
       console.info('[listLevel1Test_static_static_0400] START');
       try {
         AppStorage.setOrCreate<number | string>('startMargin', "0.00vp")
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_static_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -175,7 +175,7 @@ it('listLevel1Test_static_static_0500', Level.LEVEL1, async (done: () => void): 
       console.info('[listLevel1Test_static_static_0500] START');
       try {
         AppStorage.setOrCreate<number | string>('endMargin', "30.00vp")
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_static_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -201,7 +201,7 @@ it('listLevel1Test_static_static_0600', Level.LEVEL1, async (done: () => void): 
       console.info('[listLevel1Test_static_static_0600] START');
       try {
         AppStorage.setOrCreate<number | string>('endMargin', "0.00vp")
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_static_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -227,7 +227,7 @@ it('listLevel1Test_static_static_0700', Level.LEVEL1, async (done: () => void): 
       console.info('[listLevel1Test_static_static_0700] START');
       try {
         AppStorage.setOrCreate<number | string>('endMargin', "30.90vp")
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_static_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -253,7 +253,7 @@ it('listLevel1Test_static_static_0800', Level.LEVEL1, async (done: () => void): 
       console.info('[listLevel1Test_static_static_0800] START');
       try {
         AppStorage.setOrCreate<number | string>('startMargin', "30%")
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_static_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -262,7 +262,7 @@ it('listLevel1Test_static_static_0800', Level.LEVEL1, async (done: () => void): 
       console.info("[listLevel1Test_static_static_0800] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('startMargin'))
-        .assertEqual("0.00vp");
+        .assertEqual("30.00%");
       console.info('listLevel1Test_static_static_0800 END');
       done()
     });
@@ -279,7 +279,7 @@ it('listLevel1Test_static_static_0900', Level.LEVEL1, async (done: () => void): 
       console.info('[listLevel1Test_static_static_0900] START');
       try {
         AppStorage.setOrCreate<number | string>('endMargin', "5")
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_static_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -307,7 +307,7 @@ it('listLevel1Test_static_1000', Level.LEVEL1, async (done: () => void): Promise
         // 1.2只能设置数字
         AppStorage.setOrCreate<number>('contentStartOffset', 200)
         AppStorage.setOrCreate<number>('contentEndOffset', 200)
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_1000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -360,7 +360,7 @@ it('listLevel1Test_static_1200', Level.LEVEL1, async (done: () => void): Promise
       try {
         AppStorage.setOrCreate<string>('padding', "0")
         AppStorage.setOrCreate<number>('contentStartOffset', 5)
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_1200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -388,7 +388,7 @@ it('listLevel1Test_static_1300', Level.LEVEL1, async (done: () => void): Promise
       try {
         AppStorage.setOrCreate<string>('padding', "0")
         AppStorage.setOrCreate<number>('contentStartOffset', 5)
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_1300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -436,7 +436,7 @@ it('listLevel1Test_static_1400', Level.LEVEL1, async (done: () => void): Promise
       try {
         AppStorage.setOrCreate<number>('contentStartOffset', 10)
         AppStorage.setOrCreate<number>('contentEndOffset', 10)
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_1400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -493,7 +493,7 @@ it('listLevel1Test_static_1500', Level.LEVEL1, async (done: () => void): Promise
       await CommonFunc.sleep(3000);
       try {
         AppStorage.setOrCreate<string>('startDeleteAreaDistance', "50")
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_1500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -535,7 +535,7 @@ it('listLevel1Test_static_1600', Level.LEVEL1, async (done: () => void): Promise
       await CommonFunc.sleep(3000);
       try {
         AppStorage.setOrCreate<string>('endDeleteAreaDistance', "50")
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_1600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -577,7 +577,7 @@ it('listLevel1Test_static_1700', Level.LEVEL1, async (done: () => void): Promise
       await CommonFunc.sleep(3000);
       try {
         AppStorage.setOrCreate<string>('startDeleteAreaDistance', "100")
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[listLevel1Test_static_1700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

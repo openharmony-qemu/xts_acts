@@ -149,6 +149,7 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       let driver = await Driver.create();
       await CommonFunc.sleep(2000);
 
+      // 获取滑动组件Scroll
       let swiperTabs = CommonFunc.getComponentRectOnScreen('inner');
       let top = swiperTabs.top;
       let right = swiperTabs.right;
@@ -159,12 +160,12 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       let width = right - left;
       await CommonFunc.sleep(1000);
       // 滑动到顶
-      await driver.swipe(Math.round(left + width*0.5),Math.round(bottom),Math.round(left + width*0.5),Math.round(top + height*0.08));
+      await driver.swipe(Math.round(right),Math.round(bottom - height*0.08),Math.round(right),Math.round(top - height*0.5));
       await CommonFunc.sleep(1000);
       expect(AppStorage.get('isBegin')).assertEqual(false);
       expect(AppStorage.get('isEnd')).assertEqual(true);
       // 滑动到底
-      await driver.swipe(Math.round(left + width*0.5),Math.round(top),Math.round(left + width*0.5),Math.round(bottom + height*0.5));
+      await driver.swipe(Math.round(right),Math.round(top + height*0.08),Math.round(right),Math.round(bottom + height*0.5));
       await CommonFunc.sleep(1000);
       expect(AppStorage.get('isBegin')).assertEqual(true);
       expect(AppStorage.get('isEnd')).assertEqual(false);

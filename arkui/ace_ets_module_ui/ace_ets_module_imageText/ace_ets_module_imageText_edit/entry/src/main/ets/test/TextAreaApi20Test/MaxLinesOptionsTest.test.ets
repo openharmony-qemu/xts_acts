@@ -135,5 +135,23 @@ export default function MaxLinesOptionsTest() {
       console.info("[MaxLinesOptionsTest0005] end");
       done();
     });
+
+    /**
+     * @tc.name   MaxLinesOptionsTest0006
+     * @tc.number SUB_ACE_BASIC_MAX_LINES_OPTIONS_ETS_API_0006
+     * @tc.desc   test textArea maxLines set Zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('MaxLinesOptionsTest0006', Level.LEVEL3, async (done: Function) => {
+      console.info('MaxLinesOptionsTest0006 START');
+      let strJson6 = getInspectorByKey('TextAreaMaxLinesZero');
+      let obj6: ESObject = JSON.parse(strJson6);
+      console.log('TextAreaMaxLinesMode------' + obj6.$attrs.scrollable);
+      expect(''+obj6.$attrs.scrollable).assertEqual('false');
+      console.info("[MaxLinesOptionsTest0006] end");
+      done();
+    });
   })
 }

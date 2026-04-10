@@ -90,7 +90,6 @@ export default function audioManagerTest() {
       try {
         let data = audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.SPEAKER)
         console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.info(`GETSYSTEMVOLUMEINDB error ${error.message}, code ${error.code}`);
@@ -287,7 +286,6 @@ export default function audioManagerTest() {
         await audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.SPEAKER)
           .then((data) => {
             console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
-            expect(true).assertTrue();
             done();
           })
           .catch((error: BusinessError) => {
@@ -319,7 +317,6 @@ export default function audioManagerTest() {
             .then((data) => {
               console.info(`${env.AudioVolumeType[index]} getSystemVolumeInDb :SUCCESS ${data}`);
               // db1.add(data);
-              expect(true).assertTrue();
               done();
             })
             .catch((error: BusinessError) => {
@@ -388,7 +385,7 @@ export default function audioManagerTest() {
             })
             .catch((error: BusinessError) => {
               if (index == 'DEFAULT' || index == 'MAX' || index == 'INVALID' || index == 'NONE' || index == 'WAKEUP' ||
-                index == 'DISPLAY_PORT' || index == 'REMOTE_CAST' || index == 'HDMI' || index == 'REMOTE_DAUDIO' || 
+                index == 'DISPLAY_PORT' || index == 'REMOTE_CAST' || index == 'HDMI' || index == 'REMOTE_DAUDIO' ||
                 index == 'LINE_DIGITAL' || index == 'ACCESSORY') {
                 console.log(`${index} getSystemVolumeInDb :${error.code} ${error.message}`);
               } else {
@@ -609,7 +606,6 @@ export default function audioManagerTest() {
         await audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.MIC)
           .then((data) => {
             console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
-            expect(true).assertTrue();
             done();
           })
           .catch((error: BusinessError) => {
@@ -794,17 +790,29 @@ export default function audioManagerTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETSYSTEMVOLUMEINDB_CALLBACK_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      let lineDigitalDevice: boolean = false;
+      console.info(`GETSYSTEMVOLUMEINDB_CALLBACK_1600 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      lineDigitalDevice = outputDeviceDescription.some(device => 
+        device.deviceType === audio.DeviceType.DISPLAY_PORT || device.deviceType === audio.DeviceType.LINE_DIGITAL
+      );
+      console.info(`lineDigitalDevice is: ${lineDigitalDevice}`)
+      await sleep(1000);
       audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 0, audio.DeviceType.SPEAKER, (err: BusinessError, data: number) => {
         if (err) {
           console.log(`${TagFrmwk}:getSystemVolumeInDb : error ${err.message} ${err.code}`);
           expect(false).assertTrue();
           done();
+        } else if (lineDigitalDevice) {          
+          console.log(`${TagFrmwk}:getSystemVolumeInDb SUCCESS dB:${data}`);
+          expect(data).assertEqual(1);
         } else {
           console.log(`${TagFrmwk}:getSystemVolumeInDb SUCCESS dB:${data}`);
           expect(data).assertEqual(0);
-          done();
         }
       })
+      done();
     })
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0500

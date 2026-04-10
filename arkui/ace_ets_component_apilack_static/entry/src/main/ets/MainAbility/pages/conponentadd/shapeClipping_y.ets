@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import { BusinessError } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
 import {
   Alignment,
@@ -22,7 +23,6 @@ import {
   BlurStyle,
   BorderStyle,
   Builder,
-  BusinessError,
   Button,
   ClickEvent,
   Color,

@@ -812,8 +812,8 @@ export default function rdbResultSetSJsTest() {
           expect(true).assertEqual(resultSet?.goToRow(count - 1));
           resultSet?.getColumnType(0);
           resultSet?.close();
-          done();
         }
+        done();
       } catch (err) {
         console.error(TAG + "testgetColumnTypeJsTest1700 success " + err.code + err.message );
         expect('14800014').assertEqual(err.code);

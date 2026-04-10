@@ -116,5 +116,24 @@ export default function abilityTest() {
         console.log("ACTS_AACommand_printSync_01_0400 print  test  end ========> callback ");
       })
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_TestRunner_OnStop_01_0500
+     * @tc.number SUB_Ability_AbilityTools_TestRunner_OnStop_01_0500
+     * @tc.desc   Verify that testRunner onStop can be called normally and print logs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_TestRunner_OnStop_01_0500', Level.LEVEL0, async (done: Function) => {
+      done();
+      let msg = 'TestRunner onStop log message for testing';
+      abilityDelegator?.printSync(msg);
+      console.log("SUB_Ability_AbilityTools_TestRunner_OnStop_01_0500 printSync end ====> ");
+      let finishmsg = 'SUB_Ability_AbilityTools_TestRunner_OnStop_01_0500 end';
+      abilityDelegator?.finishTest(finishmsg, 1).then(() => {
+        console.log("SUB_Ability_AbilityTools_TestRunner_OnStop_01_0500 print  test  end ========> callback ");
+      })
+    })
   })
 }

@@ -31,11 +31,11 @@ const COMPLETED = 'completed';
 const STOPPED = 'stopped';
 const RELEASED = 'released';
 const ERROR = 'error';
-let movFd: media.AVFileDescriptor;
-let mkvFd: media.AVFileDescriptor;
-let mp3Fd: media.AVFileDescriptor;
-let aacFd: media.AVFileDescriptor;
-let wavFd: media.AVFileDescriptor;
+let movFd: media.AVFileDescriptor | undefined;
+let mkvFd: media.AVFileDescriptor | undefined;
+let mp3Fd: media.AVFileDescriptor | undefined;
+let aacFd: media.AVFileDescriptor | undefined;
+let wavFd: media.AVFileDescriptor | undefined;
 const VIDEO_SOURCE_MOV = "No_Support_Format.mov";
 const VIDEO_SOURCE_MKV = "H264_AAC.mkv";
 const AUDIO_SOURCE_MP3 = "01.mp3";
@@ -125,8 +125,10 @@ async function testSetPlaybackSpeed(fd: media.AVFileDescriptor, done: () => void
     }
   }).catch(mediaTestBase.catchCallback);
   avPlayer!!.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
-    console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
-    await handleState(state.toString(), operationRecord);
+    waitForCompletion(async () => {
+      console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
+      await handleState(state.toString(), operationRecord);
+    })
   });
   avPlayer!!.onPlaybackRateDone(callback);
   console.info(`register playbackRateDone`);
@@ -180,11 +182,11 @@ export default function AVPlayerSetPlaybackRateTest() {
     afterAll(async () => {
       console.info('afterAll case');
       try {
-        await mediaTestBase.closeFdNumber(movFd.fd)
-        await mediaTestBase.closeFdNumber(mkvFd.fd)
-        await mediaTestBase.closeFdNumber(mp3Fd.fd)
-        await mediaTestBase.closeFdNumber(aacFd.fd)
-        await mediaTestBase.closeFdNumber(wavFd.fd)
+        await mediaTestBase.closeFdNumber(movFd!.fd)
+        await mediaTestBase.closeFdNumber(mkvFd!.fd)
+        await mediaTestBase.closeFdNumber(mp3Fd!.fd)
+        await mediaTestBase.closeFdNumber(aacFd!.fd)
+        await mediaTestBase.closeFdNumber(wavFd!.fd)
       } catch (e) {
         console.info(`afterAll error: ${JSON.stringify(e)}`)
       }
@@ -210,7 +212,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(movFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(movFd!, done, callback, operationRecord)
     });
 
     /**
@@ -233,7 +235,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -256,7 +258,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -279,7 +281,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -302,7 +304,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -325,7 +327,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -348,7 +350,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -371,7 +373,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -400,7 +402,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -429,7 +431,7 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(setrate).assertEqual(rate)
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
     });
 
     /**
@@ -452,7 +454,63 @@ export default function AVPlayerSetPlaybackRateTest() {
         expect(Math.abs(setrate - rate) < 0.0000001).assertTrue();
         done()
       }
-      await testSetPlaybackSpeed(mkvFd, done, callback, operationRecord)
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord)
+    });
+    /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1200
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1200
+    * @tc.desc   test setPlaybackRate 1.5 in idle state, expect error
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let setrate = 1.5
+      let operationRecord: Record<string, () => Promise<void>> = {}
+      operationRecord[IDLE] = async () => {
+        avPlayer!!.setPlaybackRate(setrate)
+      }
+      operationRecord[PLAYING] = async () => {
+        await avPlayer!!.reset()
+      }
+      let callback: media.OnPlaybackRateDone = (rate: double) => {
+        console.info(`case OnPlaybackRateDone call: setrate: ${setrate}, rate: ${rate}`)
+        expect().assertFail()
+        done();
+      }
+      let errCallback: ErrorCallback = (error: BusinessError) => {
+        console.info('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1200 setPlaybackRate error: ' + JSON.stringify(error))
+        expect(error.code).assertEqual(5400102);
+        done()
+      }
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord, errCallback)
+    });
+    /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1300
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1300
+    * @tc.desc   test setPlaybackRate 10000 in prepared state, expect error
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let setrate = 10000
+      let operationRecord: Record<string, () => Promise<void>> = {}
+      operationRecord[PREPARED] = async () => {
+        avPlayer!!.setPlaybackRate(setrate)
+        console.info(`case operationRecord[PREPARED] call`)
+      }
+      let callback: media.OnPlaybackRateDone = (rate: double) => {
+        console.info(`case OnPlaybackRateDone call: setrate: ${setrate}, rate: ${rate}`)
+        expect().assertFail()
+        done();
+      }
+      let errCallback: ErrorCallback = (error: BusinessError) => {
+        console.info('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_1300 setPlaybackRate error: ' + JSON.stringify(error))
+        expect(error.code).assertEqual(5400108);
+        done()
+      }
+      await testSetPlaybackSpeed(mkvFd!, done, callback, operationRecord, errCallback)
     });
   })
 }

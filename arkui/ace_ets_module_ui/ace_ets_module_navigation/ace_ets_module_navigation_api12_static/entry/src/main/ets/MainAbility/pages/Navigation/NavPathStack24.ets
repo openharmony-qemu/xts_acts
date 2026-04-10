@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,PopInfo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -26,7 +26,7 @@ import {
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Callback } from '@ohos.base'
-class DerivedNavPathStack extends NavPathStack {
+export class DerivedNavPathStack extends NavPathStack {
   id: string = '__default__';
 
   setId(id: string) {
@@ -49,8 +49,8 @@ class DerivedNavPathStack extends NavPathStack {
     super.pushPathByName(name, param, onPop, animated);
   }
 
-  moveToTop(name: string, animated?: boolean): int {
-    return super.moveToTop(name, animated);
+  moveToTop(name: string): int {
+    return super.moveToTop(name);
   }
 
   replacePath(info: NavPathInfo, animated?: boolean): void {
@@ -200,7 +200,7 @@ struct NavPathStack24{
             this.derivedStack.moveToTop('pageOne')
           }).id('NavPathStack24_btn3').height('5%')
           Button('replacePath pageTwo').onClick((event: ClickEvent) => {
-            this.derivedStack.replacePath(new NavPathInfo('pageOne',new param('ok')))
+            this.derivedStack.replacePath(new NavPathInfo('pageTwo',new param('ok')))
           }).id('NavPathStack24_btn4').height('5%')
 
         }

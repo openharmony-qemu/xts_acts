@@ -72,9 +72,9 @@ export default function ActsAceWebViewIncognitoMode() {
      * @tc.desc   test getStoredGeolocation(promise) incognito
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testWebViewIncognitoModeStatic13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testWebViewIncognitoModeStatic13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitWebViewIncognitoMode13', 10)
         await Utils.msSleep(9000);

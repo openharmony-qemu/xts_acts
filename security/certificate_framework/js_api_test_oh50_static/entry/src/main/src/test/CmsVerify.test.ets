@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -95,7 +95,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_0100 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -138,7 +138,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_0200 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -183,7 +183,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_0300 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -228,7 +228,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_0400 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -280,7 +280,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_0500 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -327,7 +327,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_0600 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -374,7 +374,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_0700 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -428,7 +428,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_0800 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -475,7 +475,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(signData, cert.CmsFormat.DER);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_0900 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -513,10 +513,10 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_1000 “${error}“, error code: ${error.code}`);
           // [Openssl]: engine fail, error code = 385876103, error string = error:17000087:CMS routines::no signers
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -550,10 +550,10 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_1100 “${error}“, error code: ${error.code}`);
           // [Openssl]: engine fail, error code = 385876103, error string = error:17000087:CMS routines::no signers
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -610,7 +610,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_1200 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -651,7 +651,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let allCerts: cert.X509Cert[] = await verify.getCerts(cert.CmsCertType.ALL_CERTS);
           console.info("[XTS] getCert 2 success:" + contentType);
           expect(allCerts.length).assertEqual(0);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_1300 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -682,7 +682,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(DSA_CMS_SIGN, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_1400 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -728,9 +728,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_1500 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -776,9 +776,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_1600 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -801,9 +801,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.setRawData(CMS_ENVELOPE, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_1700 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
         }
         done();
       });
@@ -831,7 +831,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(CMS_SIGN_WITH_SHA224, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_1800 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -852,9 +852,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(CMS_S_MIME_DATA, cert.CmsFormat.PEM);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_1900 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -882,7 +882,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(CMS_SIGN_ATTACHED_NO_DATA, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_2000 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -912,7 +912,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(CMS_SIGN_DETACHED_NO_DATA, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_2100 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -943,9 +943,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.setRawData(CMS_SIGN_DETACHED_DATA, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_2200 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -972,9 +972,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.setRawData(CMS_SIGN_DETACHED_DATA, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_2300 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -1002,9 +1002,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.setRawData(CMS_SIGN_DETACHED_DATA, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_2400 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY);
         }
         done();
       });
@@ -1019,7 +1019,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
      */
     it("SUB_Security_Cert_Framework_Cms_Verify_Func_2500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let verify: cert.CmsParser;
+      let verify: cert.CmsParser | undefined;
       try {
           let plainText: Uint8Array = new Uint8Array([0x01, 0x02, 0x03, 0x04]);
           let x509CertEntry: cert.X509Cert = await createX509Cert(CMS_SIGN_WITH_SHA224_PUB_CERT);
@@ -1031,19 +1031,19 @@ export default function certFrameworkCmsVerifyTestUnit() {
             signerCerts: [x509CertEntry]
           };
           verify= cert.createCmsParser();
-          await verify.setRawData(CMS_SIGN_DETACHED_DATA, cert.CmsFormat.PEM);
-          await verify.verifySignedData(config);
+          await verify!.setRawData(CMS_SIGN_DETACHED_DATA, cert.CmsFormat.PEM);
+          await verify!.verifySignedData(config);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_2500 1 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY);
         } finally {
           try {
-            await verify.getContentData();
+            await verify!.getContentData();
             expect(null).assertFail();
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`[XTS] Cms_Verify_Func_2500 2 “${error}“, error code: ${error.code}`);
-            expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+            expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
           }
         }
         done();
@@ -1064,9 +1064,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.setRawData(CMS_SIGN_DETACHED_DATA, cert.CmsFormat.PEM);
           await verify.getContentData();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_2600 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -1096,9 +1096,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.verifySignedData(config);
           await verify.getContentData();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_2700 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -1130,7 +1130,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let data: Uint8Array = await verify.getContentData();
           let ret: boolean = compareUint8Array(plainText, data);
           expect(ret).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_2800 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1162,7 +1162,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(CMS_SIGN_TEXT_DETACHED_DATA, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_2900 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1193,9 +1193,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.setRawData(CMS_SIGN_TEXT_DETACHED_DATA, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_3000 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -1225,7 +1225,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(CMS_SIGN_TEXT_DETACHED_NO_DATA, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_3100 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1255,7 +1255,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(CMS_SIGN_BINARY_DETACHED_NO_DATA, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_3200 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1300,11 +1300,11 @@ export default function certFrameworkCmsVerifyTestUnit() {
           try {
             config.contentDataFormat = undefined;
             await verify.verifySignedData(config);
-          } catch (error: BusinessError) {
+          } catch (error) {
             console.error(`[XTS] verifySignedData 2 “${error}“, error code: ${error.code}`);
             expect(null).assertFail();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_3300 “${error}“, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -1335,9 +1335,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.setRawData(CMS_EXPIRED_DATA, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_3400 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_HAS_EXPIRED);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CERT_HAS_EXPIRED);
         }
         done();
       });
@@ -1366,9 +1366,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           await verify.setRawData(CMS_NOT_EFFECT_DATA, cert.CmsFormat.PEM);
           await verify.verifySignedData(config);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_3500 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_NOT_YET_VALID);
+          expect((error as BusinessError).code).assertEqual(cert.CertResult.ERR_CERT_NOT_YET_VALID);
         }
         done();
       });

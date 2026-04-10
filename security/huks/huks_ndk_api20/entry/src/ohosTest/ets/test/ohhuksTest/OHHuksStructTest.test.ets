@@ -30,7 +30,7 @@ export default function OHHuksStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGetOHHuksResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetOHHuksResult0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           console.info("====>testGetOHHuksResult0100 start====");
@@ -53,7 +53,7 @@ export default function OHHuksStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGetOHHuksResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetOHHuksResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           console.info("====>testGetOHHuksResult0200 start====");

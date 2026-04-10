@@ -1,6 +1,7 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { sleep } from '../../testability/TestUtils';
 
 export default function BitVectorTest() {
   describe('BitVectorTest', () => {
@@ -19,9 +20,9 @@ export default function BitVectorTest() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
     })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+    afterAll(async () => {
+      // Add delay to ensure resources from the previous test case are released
+      await sleep(100);
     })
     /**
      * @tc.name   testBitVectorConstructor0001
@@ -2168,5 +2169,26 @@ export default function BitVectorTest() {
       }
       done()
     });
+
+    /**
+     * @tc.name   testBitVectorMissing0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BITVECTOR_MISSING_0200
+     * @tc.desc   Test BitVector getBitsByRange().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testBitVectorMissing0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let bitVector: collections.BitVector = new collections.BitVector(0);
+      bitVector.push(0);
+      bitVector.push(1);
+      bitVector.push(0);
+      bitVector.push(1);
+      bitVector.push(0); // bitVector: [0, 1, 0, 1, 0]
+      let result = bitVector.getBitsByRange(1, 3); // bitVector2: [1, 0]
+      expect(result.length).assertEqual(2)
+      done();
+    })
+
   })
 }

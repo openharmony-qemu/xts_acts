@@ -73,7 +73,7 @@ import webview from '@ohos.web.webview';
 import Utils from '../common/Utils';
 import { RecordData } from '@ohos.base';
 
-class TestObj {
+export class TestObj {
   constructor() {
   }
 

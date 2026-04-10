@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexBasis_Default() {
   describe('flexBasis_Default', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexBasis_Default beforeEach start");
 
 

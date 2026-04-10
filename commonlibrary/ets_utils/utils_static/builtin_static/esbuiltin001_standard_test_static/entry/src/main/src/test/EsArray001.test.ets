@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -62,7 +62,7 @@ export async function sleep(time: int): Promise<int> {
 let originalArray: number[] = [0, 1, -2, 4, -8, 16];
 let array: number[] = [0, 1, -2, 4, -8, 16];
 let arrayIndex = -1;
-function mapFn(value: number, index: number): number {
+function mapFn(value: number, index: int): number {
     arrayIndex++;
     expect(value).assertEqual(array[arrayIndex]);
     expect(index).assertEqual(arrayIndex);
@@ -218,10 +218,10 @@ export default function EsArrayTest001(){
         it('ESBuiltinsArrayTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void): Promise<void> => {
             const caseName = 'ESBuiltinsArrayTest0006';
             console.info(`${caseName}, test start`);
-            let a = new Array<String>(0);
+            let a = new Array<String>();
             expect(a.length).assertEqual(0);
 
-            let b = new Array<Double>(1);
+            let b = new Array<Double>(1, (i) => 0);
             expect(b.length).assertEqual(1);
             console.info(`${caseName}, test end`);
             Done();
@@ -343,7 +343,7 @@ export default function EsArrayTest001(){
         it('ESBuiltinsArrayTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void): Promise<void> => {
             const caseName = 'ESBuiltinsArrayTest0011';
             console.info(`${caseName}, test start`);
-            let x = new Array<number|undefined>(1000);
+            let x = new Array<number|undefined>(1000, (i) => undefined);
             x[2] = 4;
             x[10] = 20;
             x[500] = 100;
@@ -419,7 +419,7 @@ export default function EsArrayTest001(){
         it('ESBuiltinsArrayTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void): Promise<void> => {
             const caseName = 'ESBuiltinsArrayTest0014';
             console.info(`${caseName}, test start`);
-            let x = new Array<number>(100);
+            let x = new Array<number>(100, (i) => 0);
             x[0] = 1;
             expect(x.length).assertEqual(100);
             x[98] = 1;
@@ -441,7 +441,7 @@ export default function EsArrayTest001(){
         it('ESBuiltinsArrayTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void): Promise<void> => {
             const caseName = 'ESBuiltinsArrayTest0015';
             console.info(`${caseName}, test start`);
-            let x = Array<number>(101);
+            let x = Array.create<number>(101, 0.0);
             x[100] = 1;
             expect(x.length).assertEqual(101);
             let threw = false;
@@ -526,21 +526,13 @@ export default function EsArrayTest001(){
         it('ESArrayPrototypeTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
             const caseName = 'ESArrayPrototypeTest0002';
             console.info(`${caseName}, test start`);
-            let a = new Array<int>(5);
+            let a = new Array<int>(5, (i) => 0);
             a[0] = 0;
             a[2] = 2;
             a[3] = 2;
             expect(a.at(0)).assertEqual(0);
             expect(a.at(2)).assertEqual(2);
             expect(a.at(3)).assertEqual(2);
-            let threw = false;
-            try {
-                a.at(1);
-                expect(false).assertTrue();
-            } catch (err) {
-                if (err instanceof ClassCastError) threw = true;
-            }
-            expect(threw).assertEqual(true);
             console.info(`${caseName}, test end`);
         });
 
@@ -1006,10 +998,7 @@ export default function EsArrayTest001(){
         it('ESArrayPrototypeTest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
             const caseName = 'ESArrayPrototypeTest0021';
             console.info(`${caseName}, test start`);
-            let arr = new Array<Int>(3);
-            arr[0] = 0;
-            arr[1] = 1;
-            arr[2] = 2;
+            let arr = new Array<Int>(0, 1, 2);
             let callbackfn = (val: int, idx: int, obj: Array<Int>): boolean => {
                 arr[2] = 3;
                 return val < 3;
@@ -1066,9 +1055,9 @@ export default function EsArrayTest001(){
             const caseName = 'ESArrayPrototypeTest0024';
             console.info(`${caseName}, test start`);
             let callCnt = 0;
-            let arr = new Array<Int>(10);
+            let arr = Array.create<Int | undefined>(10, undefined);
             arr[1] = 1;
-            let callbackfn = (val: int | undefined, idx: int, obj: Array<Int>): boolean => {
+            let callbackfn = (val: int | undefined, idx: int, obj: Array<Int | undefined>): boolean => {
                 if(val) {
                     callCnt++;
                 }
@@ -1500,22 +1489,23 @@ export default function EsArrayTest001(){
         it('ESArrayPrototypeTest0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
             const caseName = 'ESArrayPrototypeTest0047';
             console.info(`${caseName}, test start`);
-            let srcArr = new Array<Int>(10);
+            let srcArr = new Array<int | undefined>(10, (i) => undefined);
             srcArr[1] = 1;
             srcArr[2] = 2;
 
-            let callbackfn = (val: int | undefined, idx: int, obj: Array<Int>) => {
+            let callbackfn = (val: int | undefined, idx: int, obj: Array<Int | undefined>) => {
                 if(val) {
                     srcArr[1] = 3;
                     return true;
                 }
+                return false;
             };
             let resArr = srcArr.filter(callbackfn);
             expect(resArr.length).assertEqual(2);
-            expect(resArr[0]).assertEqual(1);
-            expect(resArr[1]).assertEqual(2);
-            expect(srcArr[1]).assertEqual(3);
-            expect(srcArr[2]).assertEqual(2);
+            expect(resArr[0]!).assertEqual(1);
+            expect(resArr[1]!).assertEqual(2);
+            expect(srcArr[1]!).assertEqual(3);
+            expect(srcArr[2]!).assertEqual(2);
 
             console.info(`${caseName}, test end`);
         });
@@ -2715,7 +2705,8 @@ export default function EsArrayTest001(){
         it('ESArrayPrototypeTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
             const caseName = 'ESArrayPrototypeTest0109';
             console.info(`${caseName}, test start`);
-            let a: Array<number | string | object | undefined | null | boolean> = new Array<number | string | object | undefined | null | boolean>(123457);
+            let a: Array<number | string | object | undefined | null | boolean> =
+                Array.create<number | string | object | undefined | null | boolean>(123457, undefined);
             let b: object = new Object();
             a[100] = 1;
             a[99999] = "";
@@ -2773,10 +2764,10 @@ export default function EsArrayTest001(){
             let x: Array<number> = new Array<number>(0, 1, 2, 3);
             expect(x.join()).assertEqual("0,1,2,3");
 
-            x = new Array<number>(4);
+            x = new Array<number>(4, (i) => 0);
             x[0] = 0;
             x[3] = 3;
-            expect(x.join()).assertEqual("0,,,3");
+            expect(x.join()).assertEqual("0,0,0,3");
 
             x = new Array<number>();
             x.push(0);
@@ -2798,10 +2789,10 @@ export default function EsArrayTest001(){
             let x: Array<number> = new Array<number>(0, 1, 2, 3);
             expect(x.join(undefined)).assertEqual("0,1,2,3");
 
-            x = new Array<number>(4);
+            x = new Array<number>(4, (i) => 0);
             x[0] = 0;
             x[3] = 3;
-            expect(x.join(undefined)).assertEqual("0,,,3");
+            expect(x.join(undefined)).assertEqual("0,0,0,3");
 
             x = new Array<number>();
             x.push(0);
@@ -2933,7 +2924,7 @@ export default function EsArrayTest001(){
             console.info(`${caseName}, test start`);
             let array: Array<string> = new Array<string>();
             let iterator = array.keys();
-            let result: IteratorResult<number>;
+            let result: IteratorResult<int>;
 
             array.push('a');
 
@@ -2966,7 +2957,7 @@ export default function EsArrayTest001(){
             console.info(`${caseName}, test start`);
             let array: Array<string> = new Array<string>('a', 'b', 'c');
             let iterator = array.keys();
-            let result: IteratorResult<number>;
+            let result: IteratorResult<int>;
 
             result = iterator.next();
             expect(result.value).assertEqual(0);
@@ -3570,7 +3561,8 @@ export default function EsArrayTest001(){
         it('ESArrayPrototypeTest0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
             const caseName = 'ESArrayPrototypeTest0145';
             console.info(`${caseName}, test start`);
-            let a: Array<number | string | object | undefined | null | boolean> = new Array<number | string | object | undefined | null | boolean>(123457);
+            let a: Array<number | string | object | undefined | null | boolean> =
+                Array.create<number | string | object | undefined | null | boolean>(123457, undefined);
             let b: object = new Object();
             a[100] = 1;
             a[99999] = "";

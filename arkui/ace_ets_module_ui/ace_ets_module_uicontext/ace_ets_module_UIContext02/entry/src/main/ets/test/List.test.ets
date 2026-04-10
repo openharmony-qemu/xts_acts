@@ -14,8 +14,28 @@
  */
 import IsFollowingSystemFontScaleTrueTest from './ContextTest/IsFollowingSystemFontScaleTrueTest.test';
 import GetUIContextTest from './getUIContext/GetUIContextTest.test';
+import uiContextUnitConversionNullUndefinedTest from './uiContext/UIContextUnitConversionNullUndefined.test';
+import uiContextFrameNodeQueryNullTest from './uiContext/UIContextFrameNodeQueryNull.test';
+import uiContextMiscNullUndefinedTest from './uiContext/UIContextMiscNullUndefined.test';
+import UIContextGetRectangleByIdNullUndefined from './uiContext/UIContextGetRectangleByIdNullUndefined.test';
+import setResourceManagerCacheNullUndefinedTest from './uiContext/SetResourceManagerCacheNullUndefined.test';
+import columnAllowForceDarkTest from './column/ColumnAllowForceDark.test';
+import GetContextNullUndefinedTest from './getUIContext/GetContextNullUndefined.test';
+import PostDelayedFrameCallbackParamTest from './getUIContext/PostDelayedFrameCallbackParamTest.test';
+import GetPageRootNodeErrorCodeTest from './getUIContext/GetPageRootNodeErrorCodeTest.test';
+import GetPageRootNodeNullTest from './getUIContext/GetPageRootNodeNullTest.test';
 
 export default function testsuite() {
   IsFollowingSystemFontScaleTrueTest();
   GetUIContextTest();
+  uiContextUnitConversionNullUndefinedTest();
+  uiContextFrameNodeQueryNullTest();
+  uiContextMiscNullUndefinedTest();
+  UIContextGetRectangleByIdNullUndefined();
+  setResourceManagerCacheNullUndefinedTest();
+  columnAllowForceDarkTest();
+  GetContextNullUndefinedTest();
+  PostDelayedFrameCallbackParamTest();
+  GetPageRootNodeErrorCodeTest();
+  GetPageRootNodeNullTest();
 }

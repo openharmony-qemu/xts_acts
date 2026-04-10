@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function typeNodeTextDecorationStyleTest() {
   describe('typeNodeTextDecorationStyleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("typeNodeTextDecorationStyleTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

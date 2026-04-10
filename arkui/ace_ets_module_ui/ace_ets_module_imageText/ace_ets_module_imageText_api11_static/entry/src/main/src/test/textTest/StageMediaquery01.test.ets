@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function stageMediaquery() {
   describe('stageMediaquery', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("stageMediaquery beforeEach start");
 
 

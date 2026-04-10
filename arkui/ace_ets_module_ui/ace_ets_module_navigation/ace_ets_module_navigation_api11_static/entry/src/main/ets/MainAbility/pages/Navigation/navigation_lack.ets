@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,NavigationCommonTitle,NavDestinationCommonTitle
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign,NavigationCommonTitle,NavDestinationCommonTitle
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -153,7 +153,7 @@ struct NavigationExample {
               }
               console.info("navigationContent1 start to emit action state")
               events_emitter.emit(backEvent, backData)
-            } catch (err: Error) {
+            } catch (err) {
               console.info("navigationContent1 emit action state err: " + JSON.stringify(err.message))
             }
           })

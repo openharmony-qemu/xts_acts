@@ -18,10 +18,24 @@ import uitestDriverErrorTest from './UitestDriverErrorCode.test';
 import uitestUiWindowErrorTest from './UitestUiWindowErrorCode.test';
 import uitestOnErrorTest from './UitestOnErrorCode.test';
 import uitest401 from './Uitest401ErrorCode.test';
+import UitestBy401ErrorCode from './UitestBy401ErrorCode.test'
+import UitestUiComponent401ErrorCode from './UitestUiComponent401ErrorCode.test'
+import UitestUiDriver401ErrorCode from './UitestUiDriver401ErrorCode.test'
+import UitestOn401ErrorCode from './UitestOn401ErrorCode.test'
+import UitestComponent401ErrorCode from './UitestComponent401ErrorCode.test'
+import UitestDriver401ErrorCode from './UitestDriver401ErrorCode.test'
+import UitestUWindow401ErrorCode from './UitestUWindow401ErrorCode.test'
 export default function testsuite() {
   uitestComponentErrorTest();
   uitestDriverErrorTest();
   uitestUiWindowErrorTest();
   uitestOnErrorTest();
   uitest401();
+  UitestBy401ErrorCode();
+  UitestUiComponent401ErrorCode();
+  UitestUiDriver401ErrorCode();
+  UitestOn401ErrorCode();
+  UitestComponent401ErrorCode();
+  UitestDriver401ErrorCode();
+  UitestUWindow401ErrorCode();
 }

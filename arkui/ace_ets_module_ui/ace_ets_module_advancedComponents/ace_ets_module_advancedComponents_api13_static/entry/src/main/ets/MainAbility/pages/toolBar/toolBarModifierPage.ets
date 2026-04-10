@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -75,7 +75,8 @@ struct ToolBarModifierPage {
     try {
       this.getUIContext()?.isFollowingSystemFontScale();
       this.getUIContext()?.getMaxFontScale();
-    } catch (err:BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       let code: undefined | Int = (err as BusinessError)?.code as Int;
       let message: undefined | String = (err as BusinessError)?.message as String;
       hilog.error(0x3900, 'Ace', `Faild to toolBar getMaxFontScale, code: ${code}, message: ${message}`);

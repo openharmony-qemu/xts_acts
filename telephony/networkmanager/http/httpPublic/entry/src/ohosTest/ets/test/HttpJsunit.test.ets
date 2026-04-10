@@ -57,6 +57,7 @@ export default function httpJsunit() {
     let ttl = 100;
     let ttl_invalid = 256;
     let ttl_undefined = undefined;
+    let ttl_null = null;
 
     /**
      * @tc.name   testNetworkMgrHttpCreateHttp0100
@@ -695,6 +696,39 @@ export default function httpJsunit() {
         done();
       }
     });
+     /**
+     * @tc.name   testNetworkMgrUDPSocketSetLoopbackModePromise0400
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetLoopbackMode_Promise_0400
+     * @tc.desc   Test setMulticastTTL401 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it("testNetworkMgrUDPSocketSetLoopbackModePromise0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testNetworkMgrUDPSocketSetLoopbackModePromise0400";
+      console.info(`${caseName}---Start`);
+      try {
+        multicastSocket.setLoopbackMode(undefined, (err: BusinessError) => {
+          if (err) {
+            console.log(`${caseName} setLoopbackMode failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.log(`${caseName} setLoopbackMode success`);
+            expectFalse();
+            console.info(`${caseName}---End`);
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
+        expectTrue(error.code == 401);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
     /**
      * @tc.name   testNetworkMgrUDPSocketGetLoopbackModePromise0100
      * @tc.number SUB_NetworkMgr_UDPSocket_GetLoopbackMode_Promise_0100
@@ -895,5 +929,320 @@ export default function httpJsunit() {
         done();
       }
     });
+    /**
+     * @tc.name   testNetworkMgrUDPSocketDropMembershipPromise0500
+     * @tc.number SUB_NetworkMgr_UDPSocket_DropMembership_Promise_0500
+     * @tc.desc   Test dropMembership401 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testNetworkMgrUDPSocketDropMembershipPromise0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testNetworkMgrUDPSocketDropMembershipPromise0500";
+      console.info(`${caseName}---Start`);
+      try {
+        multicastSocket.dropMembership(null).then((data) => {
+          console.log(`${caseName} dropMembership success, data: ${JSON.stringify(data)}`);
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} dropMembership failed, err: ${JSON.stringify(err)}`);
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
+        expectTrue(error.code == 401);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrUDPSocketSetMulticastTTLPromise0400
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0400
+     * @tc.desc   Test setMulticastTTL401 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testNetworkMgrUDPSocketSetMulticastTTLPromise0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testNetworkMgrUDPSocketSetMulticastTTLPromise0400";
+      console.info(`${caseName}---Start`);
+      try {
+        multicastSocket.setMulticastTTL(ttl_null).then((data) => {
+          console.log(`${caseName} setMulticastTTL success, data: ${JSON.stringify(data)}`);
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
+        expectTrue(error.code == 401);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrUDPSocketSetMulticastTTLPromise0500
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0500
+     * @tc.desc   Test setMulticastTTL401 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testNetworkMgrUDPSocketSetMulticastTTLPromise0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testNetworkMgrUDPSocketSetMulticastTTLPromise0500";
+      console.info(`${caseName}---Start`);
+      try {
+        multicastSocket.setMulticastTTL(0).then((data) => {
+          console.log(`${caseName} setMulticastTTL success, data: ${JSON.stringify(data)}`);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrUDPSocketSetMulticastTTLPromise0600
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0600
+     * @tc.desc   Test setMulticastTTL401 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testNetworkMgrUDPSocketSetMulticastTTLPromise0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testNetworkMgrUDPSocketSetMulticastTTLPromise0600";
+      console.info(`${caseName}---Start`);
+      try {
+        multicastSocket.setMulticastTTL(-1).then((data) => {
+          console.log(`${caseName} setMulticastTTL success, data: ${JSON.stringify(data)}`);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrUDPSocketSetMulticastTTLPromise0700
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0700
+     * @tc.desc   Test setMulticastTTL401 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testNetworkMgrUDPSocketSetMulticastTTLPromise0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testNetworkMgrUDPSocketSetMulticastTTLPromise0700";
+      console.info(`${caseName}---Start`);
+      try {
+        multicastSocket.setMulticastTTL(255).then((data) => {
+          console.log(`${caseName} setMulticastTTL success, data: ${JSON.stringify(data)}`);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrUDPSocketSetMulticastTTLPromise0800
+     * @tc.number SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0800
+     * @tc.desc   Test setMulticastTTL401 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testNetworkMgrUDPSocketSetMulticastTTLPromise0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testNetworkMgrUDPSocketSetMulticastTTLPromise0800";
+      console.info(`${caseName}---Start`);
+      try {
+        multicastSocket.setMulticastTTL(256).then((data) => {
+          console.log(`${caseName} setMulticastTTL success, data: ${JSON.stringify(data)}`);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrUDPSocketAddMembershipPromise0500
+     * @tc.number SUB_NetworkMgr_UDPSocket_AddMembership_Promise_0500
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testNetworkMgrUDPSocketAddMembershipPromise0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testNetworkMgrUDPSocketAddMembershipPromise0500";
+      console.info(`${caseName}---Start`);
+      try {
+        multicastSocket.addMembership(null).then((data) => {
+          console.log(`${caseName} addMembership success, data: ${JSON.stringify(data)}`);
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} addMembership failed, err: ${JSON.stringify(err)}`);
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err:${JSON.stringify(err)}`);
+        expectTrue(err.code == 401);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   NetworkManager_UDPSocket_addMembership_Async_0400
+     * @tc.number NetworkManager_UDPSocket_addMembership_Async_0400
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("NetworkManager_UDPSocket_addMembership_Async_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "NetworkManager_UDPSocket_addMembership_Async_0400";
+      try {
+        multicastSocket.addMembership(undefined, (err, data) => {
+          if (err) {
+            console.log(`${caseName} addMembership failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            done();
+          } else {
+            console.log(`${caseName} addMembership success, data: ${JSON.stringify(data)}`);
+            expectFalse();
+            done();
+          }
+        });
+      } catch (error) {
+        console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
+        expect(Number(error.code) === 401).assertTrue();
+        done();
+      }
+    });
+    /**
+     * @tc.name   NetworkManager_UDPSocket_addMembership_Async_0500
+     * @tc.number NetworkManager_UDPSocket_addMembership_Async_0500
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("NetworkManager_UDPSocket_addMembership_Async_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "NetworkManager_UDPSocket_addMembership_Async_0500";
+      try {
+        multicastSocket.addMembership(null, (err, data) => {
+          if (err) {
+            console.log(`${caseName} addMembership failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            done();
+          } else {
+            console.log(`${caseName} addMembership success, data: ${JSON.stringify(data)}`);
+            expectFalse();
+            done();
+          }
+        });
+      } catch (error) {
+        console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
+        expect(Number(error.code) === 401).assertTrue();
+        done();
+      }
+    });
+     /**
+     * @tc.name   NetworkManager_UDPSocket_dropMembership_Async_0400
+     * @tc.number NetworkManager_UDPSocket_dropMembership_Async_0400
+     * @tc.desc   Test dropMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it("NetworkManager_UDPSocket_dropMembership_Async_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "NetworkManager_UDPSocket_dropMembership_Async_0400";
+      try {
+        multicastSocket.dropMembership(undefined, (err, data) => {
+          if (err) {
+            console.log(`${caseName} dropMembership failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            done();
+          } else {
+            console.log(`${caseName} dropMembership success, data: ${JSON.stringify(data)}`);
+            expectFalse();
+            done();
+          }
+        });
+      } catch (error) {
+        console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
+        expect(Number(error.code) === 401).assertTrue();
+        done();
+      }
+    });
+    console.log("************* socket Test end*************");
+    /**
+     * @tc.name   NetworkManager_UDPSocket_dropMembership_Async_0500
+     * @tc.number NetworkManager_UDPSocket_dropMembership_Async_0500
+     * @tc.desc   Test dropMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("NetworkManager_UDPSocket_dropMembership_Async_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "NetworkManager_UDPSocket_dropMembership_Async_0500";
+      try {
+        multicastSocket.dropMembership(null, (err, data) => {
+          if (err) {
+            console.log(`${caseName} dropMembership failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            done();
+          } else {
+            console.log(`${caseName} dropMembership success, data: ${JSON.stringify(data)}`);
+            expectFalse();
+            done();
+          }
+        });
+      } catch (error) {
+        console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
+        expect(Number(error.code) === 401).assertTrue();
+        done();
+      }
+    });
+    console.log("************* socket Test end*************");
   });
 }

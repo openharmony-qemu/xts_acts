@@ -1871,5 +1871,150 @@ export default function PlainArrayTest() {
         expect().assertFail();
       }
     });
+
+    /**
+     * @tc.name   testPlainArrayGetIndexOfKey001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_CASE_0100
+     * @tc.desc   Testing PlainArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPlainArrayGetIndexOfKey001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let plainArray = new PlainArray<string | null | undefined>();
+      plainArray.add(1, "squirrel");
+      plainArray.add(2, "sparrow");
+      let result = plainArray.getIndexOfKey(2);
+      console.info("result = ", result);
+      try {
+        plainArray.getIndexOfKey(null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        plainArray.getIndexOfKey(undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testPlainArrayRemoveAt001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_CASE_0200
+     * @tc.desc   Testing PlainArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPlainArrayRemoveAt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let plainArray = new PlainArray<string | null | undefined>();
+      plainArray.add(1, "squirrel");
+      plainArray.add(2, "sparrow");
+      let result = plainArray.removeAt(1);
+      console.info("result:", result);
+      try {
+        plainArray.removeAt(null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        plainArray.removeAt(undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testPlainArrayRemoveRangeFrom001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_CASE_0300
+     * @tc.desc   Testing PlainArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPlainArrayRemoveRangeFrom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let plainArray = new PlainArray<string | null | undefined>();
+      plainArray.add(1, "squirrel");
+      plainArray.add(2, "sparrow");
+      let result = plainArray.removeRangeFrom(1, 3);
+      console.info("result:", result);
+      try {
+        plainArray.removeRangeFrom(null, 3);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        plainArray.removeRangeFrom(1, null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        plainArray.removeRangeFrom(null, null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        plainArray.removeRangeFrom(undefined, 3);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        plainArray.removeRangeFrom(1, undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        plainArray.removeRangeFrom(undefined, undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testPlainArrayForEach001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PLAINARRAY_CASE_0400
+     * @tc.desc   Testing PlainArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPlainArrayForEach001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let plainArray = new PlainArray<string | null | undefined>();
+      plainArray.add(1, "squirrel");
+      plainArray.add(2, "sparrow");
+      plainArray.forEach((value: string, index: number) => {
+        console.info("value:" + value, "index:" + index);
+      });
+      try {
+        plainArray.forEach(null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        plainArray.forEach(undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
   });
 }

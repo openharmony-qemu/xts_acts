@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function List_alignListItem() {
 
   describe('List_alignListItem', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("List_alignListItem beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -117,7 +117,7 @@ it('testListAlignListItemStart_static', Level.LEVEL0, async (done: () => void): 
 	  expect(Math.abs(Math.round(List_alignListItem_014.bottom - List_alignListItem_014.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      driver.swipe(
+      await driver.swipe(
         (Math.round(List_alignListItem_013.left + ((List_alignListItem_013.right - List_alignListItem_013.left) / 2))).toInt(),
         (Math.round(List_alignListItem_013.bottom)).toInt(),
         (Math.round(List_alignListItem_012.left + ((List_alignListItem_012.right - List_alignListItem_012.left) / 2))).toInt(),
@@ -185,7 +185,7 @@ it('testListAlignListItemCenter_static', Level.LEVEL0, async (done: () => void):
 	  expect(Math.abs(Math.round(List_alignListItem_014.bottom - List_alignListItem_014.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      driver.swipe(
+      await driver.swipe(
         (Math.round(List_alignListItem_013.left + ((List_alignListItem_013.right - List_alignListItem_013.left) / 2))).toInt(),
         (Math.round(List_alignListItem_013.bottom)).toInt(),
         (Math.round(List_alignListItem_012.left + ((List_alignListItem_012.right - List_alignListItem_012.left) / 2))).toInt(),
@@ -248,7 +248,7 @@ it('testListAlignListItemEnd_static', Level.LEVEL0, async (done: () => void): Pr
 	  expect(Math.abs(Math.round(List_alignListItem_014.bottom - List_alignListItem_014.top) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      driver.swipe(
+      await driver.swipe(
         (Math.round(List_alignListItem_013.left + ((List_alignListItem_013.right - List_alignListItem_013.left) / 2))).toInt(),
         (Math.round(List_alignListItem_013.bottom)).toInt(),
         (Math.round(List_alignListItem_012.left + ((List_alignListItem_012.right - List_alignListItem_012.left) / 2))).toInt(),

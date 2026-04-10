@@ -35,7 +35,7 @@ class TestEntry {
 
 export default function TreemapTest3() {
   describe('TreemapTest3', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

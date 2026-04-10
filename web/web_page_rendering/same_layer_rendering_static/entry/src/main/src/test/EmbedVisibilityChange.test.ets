@@ -58,21 +58,34 @@ export default function EmbedVisibilityChange() {
      * @tc.desc   test EmbedVisibilityChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('emitEmbedVisibilityChange_static_001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(3000);
+    it('emitEmbedVisibilityChange_static_001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitEmbedVisibilityChange001', 10)
       await Utils.msSleep(3000);
       Utils.registerEvent('emitEmbedVisibilityChange001', true, 16571657, done);
-      await Utils.msSleep(8000);
+      await Utils.msSleep(4000);
       inspector.sendEventByKey('WebViewEmbedVisibilityChangeButton', 10, '');
-      await Utils.msSleep(10000);
-      Utils.emitEvent('emitonSwitchNextPage1', 10)
-      await Utils.msSleep(1000);
-      inspector.sendEventByKey('WebViewEmbedVisibilityChangeButton', 10, '');
-      await Utils.msSleep(1000);
+      await Utils.msSleep(4000);
       done();
     })
+
+    /**
+    * @tc.name         SwitchNextPageStatic
+    * @tc.number       SUB_WEB_SWITCH_NEXT_PAGE16571657
+    * @tc.desc         test SwitchNextPageStatic
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitSwitchNextPage1', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewEmbedVisibilityChangeButton', 10, '');
+        await Utils.msSleep(3000);
+        done()
+      })
   })
 }

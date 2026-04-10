@@ -21,6 +21,67 @@
 
 static int32_t g_trueValue = PARAM_1;
 static int32_t g_falseValue = PARAM_0;
+const int32_t ENUM_SESSION_TYPE_PHOTO = 4;
+const int32_t ENUM_STATE_CONNECTING = 0;
+const int32_t ENUM_STATE_CONNECTED = 1;
+const int32_t ENUM_STATE_DISCONNECTED = 6;
+const int32_t ENUM_CATEGORY_LOCAL = 0;
+const int32_t ENUM_CATEGORY_REMOTE = 1;
+const int32_t ENUM_DEVICE_TYPE_LOCAL = 0;
+const int32_t ENUM_DEVICE_TYPE_TV = 2;
+const int32_t ENUM_DEVICE_TYPE_SMART_SPEAKER = 3;
+const int32_t ENUM_DEVICE_TYPE_BLUETOOTH = 10;
+const int32_t ENUM_TYPE_LOCAL = 0;
+const int32_t ENUM_TYPE_CAST_PLUS_STREAM = 2;
+const int32_t ENUM_TYPE_DLNA = 4;
+const int32_t ENUM_TYPE_CAST_PLUS_AUDIO = 8;
+const int32_t ENUM_AV_SESSION_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST = 6600109;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_UNSPECIFIED = 6611000;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_REMOTE_ERROR = 6611001;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW = 6611002;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_TIMEOUT = 6611003;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED = 6611004;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING = 6611100;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED = 6611101;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET = 6611102;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED = 6611103;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED = 6611104;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DEVICE_MISSING = 6611105;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_INVALID_PARAM = 6611106;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_NO_MEMORY = 6611107;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED = 6611108;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED = 6612000;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED = 6612001;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT = 6612002;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE = 6612003;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS = 6612004;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND = 6612005;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION = 6612006;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED = 6612007;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE = 6612008;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS = 6612100;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_READ_ERROR = 6612101;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY = 6612102;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED = 6612103;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN = 6612104;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED = 6612105;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES = 6612106;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED = 6612107;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED = 6613000;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED = 6613001;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED = 6613002;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED = 6613003;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED = 6613004;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED = 6614000;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED = 6614001;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED = 6614002;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FAILED = 6614003;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES = 6614004;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED = 6614005;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED = 6615000;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED = 6615001;
+const int32_t ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED = 6615002;
+const int32_t ENUM_AVQUEUEITEM_ERROR_NO_MEMORY = 2;
 
 napi_value AVSessionRegisterToggleFavoriteCallbackSuccess(napi_env env, napi_callback_info info)
 {
@@ -804,6 +865,737 @@ napi_value AVSessionOutputDeviceInfo(napi_env env, napi_callback_info info)
     OH_AVSession_Destroy(avsession);
     napi_value retValue;
     if (avdeviceinfo->size == 0 && avdeviceinfo->deviceInfos == nullptr) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_TypeSESSION_TYPE_PHOTO(napi_env env, napi_callback_info info)
+{
+    AVSession_Type sessionType = SESSION_TYPE_PHOTO;
+    napi_value retValue;
+    if (sessionType == ENUM_SESSION_TYPE_PHOTO) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionConnectionStateSTATE_CONNECTING(napi_env env, napi_callback_info info)
+{
+    AVSession_ConnectionState state = AVSession_ConnectionState::STATE_CONNECTING;
+    napi_value retValue;
+    if (state == ENUM_STATE_CONNECTING) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionConnectionStateSTATE_CONNECTED(napi_env env, napi_callback_info info)
+{
+    AVSession_ConnectionState state = AVSession_ConnectionState::STATE_CONNECTED;
+    napi_value retValue;
+    if (state == ENUM_STATE_CONNECTED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionConnectionStateSTATE_DISCONNECTED(napi_env env, napi_callback_info info)
+{
+    AVSession_ConnectionState state = AVSession_ConnectionState::STATE_DISCONNECTED;
+    napi_value retValue;
+    if (state == ENUM_STATE_DISCONNECTED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionAVCastCategoryCATEGORY_LOCAL(napi_env env, napi_callback_info info)
+{
+    AVSession_AVCastCategory category = AVSession_AVCastCategory::CATEGORY_LOCAL;
+    napi_value retValue;
+    if (category == ENUM_CATEGORY_LOCAL) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionAVCastCategoryCATEGORY_REMOTE(napi_env env, napi_callback_info info)
+{
+    AVSession_AVCastCategory category = AVSession_AVCastCategory::CATEGORY_REMOTE;
+    napi_value retValue;
+    if (category == ENUM_CATEGORY_REMOTE) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionDeviceTypeDEVICE_TYPE_LOCAL(napi_env env, napi_callback_info info)
+{
+    AVSession_DeviceType deviceType = AVSession_DeviceType::DEVICE_TYPE_LOCAL;
+    napi_value retValue;
+    if (deviceType == ENUM_DEVICE_TYPE_LOCAL) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionDeviceTypeDEVICE_TYPE_TV(napi_env env, napi_callback_info info)
+{
+    AVSession_DeviceType deviceType = AVSession_DeviceType::DEVICE_TYPE_TV;
+    napi_value retValue;
+    if (deviceType == ENUM_DEVICE_TYPE_TV) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionDeviceTypeDEVICE_TYPE_SMART_SPEAKER(napi_env env, napi_callback_info info)
+{
+    AVSession_DeviceType deviceType = AVSession_DeviceType::DEVICE_TYPE_SMART_SPEAKER;
+    napi_value retValue;
+    if (deviceType == ENUM_DEVICE_TYPE_SMART_SPEAKER) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionDeviceTypeDEVICE_TYPE_BLUETOOTH(napi_env env, napi_callback_info info)
+{
+    AVSession_DeviceType deviceType = AVSession_DeviceType::DEVICE_TYPE_BLUETOOTH;
+    napi_value retValue;
+    if (deviceType == ENUM_DEVICE_TYPE_BLUETOOTH) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionProtocolTypeTYPE_LOCAL(napi_env env, napi_callback_info info)
+{
+    AVSession_ProtocolType protocolType = AVSession_ProtocolType::TYPE_LOCAL;
+    napi_value retValue;
+    if (protocolType == ENUM_TYPE_LOCAL) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionProtocolTypeTYPE_CAST_PLUS_STREAM(napi_env env, napi_callback_info info)
+{
+    AVSession_ProtocolType protocolType = AVSession_ProtocolType::TYPE_CAST_PLUS_STREAM;
+    napi_value retValue;
+    if (protocolType == ENUM_TYPE_CAST_PLUS_STREAM) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionProtocolTypeTYPE_DLNA(napi_env env, napi_callback_info info)
+{
+    AVSession_ProtocolType protocolType = AVSession_ProtocolType::TYPE_DLNA;
+    napi_value retValue;
+    if (protocolType == ENUM_TYPE_DLNA) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionProtocolTypeTYPE_CAST_PLUS_AUDIO(napi_env env, napi_callback_info info)
+{
+    AVSession_ProtocolType protocolType = AVSession_ProtocolType::TYPE_CAST_PLUS_AUDIO;
+    napi_value retValue;
+    if (protocolType == ENUM_TYPE_CAST_PLUS_AUDIO) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_REMOTE_CONNECTION_NOT_EXIST) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_UNSPECIFIED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_UNSPECIFIED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_UNSPECIFIED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_REMOTE_ERROR(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_REMOTE_ERROR;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_REMOTE_ERROR) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_TIMEOUT(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_TIMEOUT;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_TIMEOUT) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_DEVICE_MISSING(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_DEVICE_MISSING;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DEVICE_MISSING) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_INVALID_PARAM(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_INVALID_PARAM;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_INVALID_PARAM) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_NO_MEMORY(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_NO_MEMORY;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_NO_MEMORY) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_READ_ERROR(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_READ_ERROR;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_READ_ERROR) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_DECODING_FAILED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FAILED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FAILED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AV_SESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED;
+    napi_value retValue;
+    if (errCode == ENUM_AV_SESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSession_AVQUEUEITEM_ERROR_NO_MEMORY(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = AVQUEUEITEM_ERROR_NO_MEMORY;
+    napi_value retValue;
+    if (errCode == ENUM_AVQUEUEITEM_ERROR_NO_MEMORY) {
         napi_create_int32(env, g_trueValue, &retValue);
     } else {
         napi_create_int32(env, g_falseValue, &retValue);

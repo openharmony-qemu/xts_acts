@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function LocalStoagePropFourJsunit() {
   describe('LocalStoagePropFourJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LocalStoagePropFourJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

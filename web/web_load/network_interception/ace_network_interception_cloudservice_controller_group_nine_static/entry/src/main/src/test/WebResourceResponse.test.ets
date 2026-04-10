@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +51,7 @@ export default function ActsAceWebDevCloudServiceWebControllerGroupNineTest() {
         abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.actsacenetworkinterceptioncloudservicecontrollergroupninetest.static')
         await Utils.msSleep(2000)
         console.log('beforeAll end,%s', "Succeed!")
-      } catch (error: Error) {
+      } catch (error) {
         console.info(`beforeAll error: ${JSON.stringify(error)}`)
       }
     });
@@ -79,8 +79,6 @@ export default function ActsAceWebDevCloudServiceWebControllerGroupNineTest() {
       done()
     })
 
-
-
     /*
      * @tc.number     : SUB_WEB_GETRESPONSEISREADY_RETURN_TRUE_0005
      * @tc.name       : testGetResponseIsReadyReturnTrue
@@ -98,5 +96,24 @@ export default function ActsAceWebDevCloudServiceWebControllerGroupNineTest() {
       await Utils.msSleep(6000);
       done()
     })
+
+    /**
+     * @tc.name       SwitchNextPageStatic
+     * @tc.number     SUB_ACE_WEB_GETRESPONSEDATAEX_API
+     * @tc.desc       test GetResponseDataEx
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      LEVEL0
+     */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebResourceResponseButton', 10, '');
+        await Utils.msSleep(2000);
+        done()
+      })
+
   })
 }

@@ -149,7 +149,7 @@ function getIntExport(): int {
   return intExport;
 }
 
-function checkReject(promise: Promise<String>, rejection: String): boolean {
+async function checkReject(promise: Promise<String>, rejection: String): Promise<boolean> {
   try {
     await promise;
     return false;
@@ -158,7 +158,7 @@ function checkReject(promise: Promise<String>, rejection: String): boolean {
     return exception.toString() == rejection;
   }
 }
-function checkResolve(promise: Promise<String>, resolution: String): boolean {
+async function checkResolve(promise: Promise<String>, resolution: String): Promise<boolean> {
   let value = await promise;
   return value == resolution;
 }

@@ -24,7 +24,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let testAbilityContext: common.UIAbilityContext
+let testAbilityContext: common.UIAbilityContext | undefined;
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let bundle :string = 'com.example.actsnotificationmanagerrequestenablenotificationcallbacktest.static'
@@ -33,7 +33,7 @@ let count: int = 0;
 export default function ActsCallbackTest() {
   describe('ActsCallbackTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -61,7 +61,7 @@ export default function ActsCallbackTest() {
       async (done: () => void): Promise<void> => {
         let TAG = 'Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100'
         count = 0;
-        notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
+        notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
           if (err) {
             console.info(`${TAG} requestEnableNotification err: ${JSON.stringify(err)}`)
             if (err.code !== 1600004) {
@@ -77,11 +77,9 @@ export default function ActsCallbackTest() {
           } else {
             console.info(`${TAG} requestEnableNotification succeeded`)
             expect(false).assertTrue()
-            await Utils.msSleep(1000)
+            waitForCompletion(async () => {await Utils.msSleep(1000)})
             done()
           }
-
-          
         })
         await Utils.msSleep(1500)
         let driver = Driver.create()

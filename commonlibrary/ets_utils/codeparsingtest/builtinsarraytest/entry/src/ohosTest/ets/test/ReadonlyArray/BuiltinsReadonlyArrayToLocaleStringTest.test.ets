@@ -41,7 +41,7 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(100);
+      await sleep(50);;
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -132,7 +132,7 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
       let all: readonly Object[] = [obj, arr, () => {
       }]
       const actual = all.toLocaleString();
-      expect(actual).assertEqual("[object Object],,Cannot get source code of funtion");
+      expect(actual).assertEqual("[object Object],,Cannot get source code of function");
     });
 
     /**

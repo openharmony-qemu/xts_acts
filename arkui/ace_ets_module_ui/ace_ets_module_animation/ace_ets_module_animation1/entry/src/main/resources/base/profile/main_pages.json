@@ -42,6 +42,24 @@
         "MainAbility/pages/StepsCurveComponent",
         "MainAbility/pages/CurvesSpringMotion",
         "MainAbility/pages/Animation/AnimatorEase",
-        "MainAbility/pages/ExcludeFromRenderGroupDemo"
+        "MainAbility/pages/ExcludeFromRenderGroupDemo",
+        "MainAbility/pages/animator/DurationNullUndefined",
+        "MainAbility/pages/animator/DelayNullUndefined",
+        "MainAbility/pages/animator/FillNullUndefined",
+        "MainAbility/pages/animator/DirectionNullUndefined",
+        "MainAbility/pages/animator/IterationsNullUndefined",
+        "MainAbility/pages/animator/AnimatorNullUndefined",
+        "MainAbility/pages/animator/CreateNullUndefined",
+        "MainAbility/pages/matrix4/Matrix4TransitUndefined",
+        "MainAbility/pages/matrix4/Matrix4TransitNull",
+        "MainAbility/pages/global/GlobalPxNullUndefined",
+        "MainAbility/pages/global/AnimateToImmediatelyNullUndefined",
+        "MainAbility/pages/global/AnimateToNullUndefined",
+        "MainAbility/pages/nullandundefinedTest/BackgroundBlurStyleTest",
+        "MainAbility/pages/nullandundefinedTest/ForegroundBlurStyleTest",
+        "MainAbility/pages/nullandundefinedTest/ImageBlurTest",
+        "MainAbility/pages/nullandundefinedTest/BackdropBlurTest",
+        "MainAbility/pages/nullandundefinedTest/UniversalAttributesTest",
+        "MainAbility/pages/nullandundefinedTest/QueryNavDestinationInfoTest"
     ]
 }

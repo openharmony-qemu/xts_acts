@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -122,7 +122,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -149,7 +149,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -176,7 +176,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -194,20 +194,20 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
       const param: cert.X509CertMatchParameters = {
         subjectAlternativeNames: []
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([7], [], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
       try {
-        await certFunc.selectCertsCallback(collection, param);
+        await certFunc.selectCertsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -296,7 +296,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -323,7 +323,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -413,7 +413,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -441,7 +441,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -469,7 +469,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -497,7 +497,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -515,20 +515,20 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
       const param: cert.X509CertMatchParameters = {
         authorityKeyIdentifier: new Uint8Array()
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([7], [], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
       try {
-        await certFunc.selectCertsCallback(collection, param);
+        await certFunc.selectCertsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -550,7 +550,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -573,7 +573,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -596,7 +596,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -619,7 +619,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -642,7 +642,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -665,7 +665,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -688,7 +688,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -711,7 +711,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -734,7 +734,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -757,7 +757,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -780,7 +780,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -803,7 +803,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -826,7 +826,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -849,7 +849,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -872,7 +872,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -895,7 +895,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -913,20 +913,20 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
       const param: cert.X509CertMatchParameters = {
         extendedKeyUsage: []
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([1], [], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
       try {
-        await certFunc.selectCertsCallback(collection, param);
+        await certFunc.selectCertsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -948,7 +948,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -972,7 +972,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -996,7 +996,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1014,20 +1014,20 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
       const param: cert.X509CertMatchParameters = {
         nameConstraints: new Uint8Array()
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([1], [], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
       try {
-        await certFunc.selectCertsCallback(collection, param);
+        await certFunc.selectCertsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -1049,7 +1049,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1072,7 +1072,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1095,7 +1095,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1113,20 +1113,20 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
       const param: cert.X509CertMatchParameters = {
         certPolicy: []
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([1], [], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
       try {
-        await certFunc.selectCertsCallback(collection, param);
+        await certFunc.selectCertsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -1148,7 +1148,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1171,7 +1171,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1194,7 +1194,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1212,20 +1212,20 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
       const param: cert.X509CertMatchParameters = {
         privateKeyValid: ''
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([1], [], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
       try {
-        await certFunc.selectCertsCallback(collection, param);
+        await certFunc.selectCertsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });
@@ -1248,7 +1248,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 1).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1272,7 +1272,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1296,7 +1296,7 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
         expect(certs != null).assertTrue();
         expect(certs.length === 0).assertTrue();
       }
-      catch (err: BusinessError) {
+      catch (err) {
         expect(null).assertFail();
       }
       done();
@@ -1314,20 +1314,20 @@ export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
       const param: cert.X509CertMatchParameters = {
         subjectKeyIdentifier: new Uint8Array()
       };
-      let collection: cert.CertCRLCollection;
+      let collection: cert.CertCRLCollection | undefined;
       try {
         collection = await crlFunc.createCollection([7], [], PEM);
       }
-      catch (err: BusinessError) {
+      catch (err) {
         console.error("createCollection error");
         expect(null).assertFail();
       }
       try {
-        await certFunc.selectCertsCallback(collection, param);
+        await certFunc.selectCertsCallback(collection!, param);
         expect(null).assertFail();
       }
-      catch (err: BusinessError) {
-        expect(err.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      catch (err) {
+        expect((err as BusinessError).code).assertEqual(cert.CertResult.INVALID_PARAMS);
       }
       done();
     });

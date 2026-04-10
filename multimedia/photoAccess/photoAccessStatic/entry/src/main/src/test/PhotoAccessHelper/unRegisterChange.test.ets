@@ -52,12 +52,12 @@ export default function unRegisterChangeTest() {
           const asset = await getFileAsset(testNum, fetchOps);
           let count = 0;
           await sleep(550);
-          helper.registerChange(asset.uri, false, (changeData) => {
+          (helper as photoAccessHelper.PhotoAccessHelper).registerChange(asset.uri, false, (changeData) => {
             count++;
             console.info(`${testNum} changeData: ${JSON.stringify(changeData)}`);
           });
           await sleep(550);
-          helper.unRegisterChange(asset.uri);
+          (helper as photoAccessHelper.PhotoAccessHelper).unRegisterChange(asset.uri);
           await sleep(550);
           const newTitle = testNum + asset.get(photoAccessHelper.PhotoKeys.TITLE);
           asset.set(photoAccessHelper.PhotoKeys.TITLE, newTitle);
@@ -88,16 +88,16 @@ export default function unRegisterChangeTest() {
           const asset = await getFileAsset(testNum, fetchOps);
           let listenCount = 0;
           await sleep(550);
-          helper.registerChange(asset.uri, false, (changeData) => {
+          (helper as photoAccessHelper.PhotoAccessHelper).registerChange(asset.uri, false, (changeData) => {
             listenCount++;
             console.info(`${testNum} changeData1: ${JSON.stringify(changeData)}`);
           });
-          helper.registerChange(asset.uri, false, (changeData) => {
+          (helper as photoAccessHelper.PhotoAccessHelper).registerChange(asset.uri, false, (changeData) => {
             listenCount++;
             console.info(`${testNum} changeData2: ${JSON.stringify(changeData)}`);
           });
           await sleep(550);
-          helper.unRegisterChange(asset.uri);
+          (helper as photoAccessHelper.PhotoAccessHelper).unRegisterChange(asset.uri);
           await sleep(550);
           const newTitle = testNum + asset.get(photoAccessHelper.PhotoKeys.TITLE);
           asset.set(photoAccessHelper.PhotoKeys.TITLE, newTitle);
@@ -133,17 +133,17 @@ export default function unRegisterChangeTest() {
             listenCount1++;
             hilog.info(domain, tag, `${testNum} callback1: ${JSON.stringify(changeData)}`);
           };
-          let callback2: (changeData: photoAccessHelper.ChangeData) => void;
+          let callback2: ((changeData: photoAccessHelper.ChangeData) => void) | undefined;
           callback2 = (changeData: photoAccessHelper.ChangeData) => {
             listenCount2++;
             hilog.info(domain, tag, `${testNum} callback2: ${JSON.stringify(changeData)}`);
-            helper.unRegisterChange(asset.uri, callback2);
+            (helper as photoAccessHelper.PhotoAccessHelper).unRegisterChange(asset.uri, callback2!);
           };
-          helper.registerChange(asset.uri, false, callback1);
-          helper.registerChange(asset.uri, false, callback2);
+          (helper as photoAccessHelper.PhotoAccessHelper).registerChange(asset.uri, false, callback1);
+          (helper as photoAccessHelper.PhotoAccessHelper).registerChange(asset.uri, false, callback2!);
 
           await sleep(550);
-          helper.unRegisterChange(asset.uri, callback1);
+          (helper as photoAccessHelper.PhotoAccessHelper).unRegisterChange(asset.uri, callback1);
           await sleep(550);
           const newTitle = testNum + asset.get(photoAccessHelper.PhotoKeys.TITLE);
           asset.set(photoAccessHelper.PhotoKeys.TITLE, newTitle);

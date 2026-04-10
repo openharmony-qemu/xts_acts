@@ -42,7 +42,7 @@ function sleep(time: int) {
 
 export default function progressJsunit() {
   describe('progressTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("progressTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.other.static", "EntryAbility");
     });

@@ -109,6 +109,21 @@ export default function webPrefetchPageEnhancedTest() {
       });
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
     })
+    /**
+     * @tc.name   testPrefetchPageWithHeaderError01
+     * @tc.number SUB_ACE_WEB_PREFETCHPAGE_HEADER_ERROR_API_0001
+     * @tc.desc   test prefetchPage url with additionalHeaders errorCode 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPrefetchPageWithHeaderError01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitPrefetchPageWithHeaderError01', 119);
+      Utils.registerBaseEvent('testPrefetchPageWithHeaderError01', '17100002URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.', 26020501, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
+    })
 
     /**
      * @tc.name   testPrefetchPageWithOptions01
@@ -300,7 +315,135 @@ export default function webPrefetchPageEnhancedTest() {
      */
     it('testPrefetchPageWithOptionsError02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitPrefetchPageWithOptionsError02', 119);
-      Utils.registerBaseEvent('testPrefetchPageWithOptionsError02', 17100002, 2025091616, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent('testPrefetchPageWithOptionsError02', '17100002URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.', 2025091616, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testPrefetchPageUriEmpty
+     * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_ERROR_API_0003
+     * @tc.desc   test prefetchPage url with PrefetchOptions 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPrefetchPageUriEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitPrefetchPageUriEmpty', 119);
+      Utils.registerBaseEvent('testPrefetchPageUriEmpty', '17100002', 2025091617, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testPrefetchPageUriNull
+     * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_ERROR_API_0004
+     * @tc.desc   test prefetchPage url with PrefetchOptions 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPrefetchPageUriNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitPrefetchPageUriNull', 119);
+      Utils.registerBaseEvent('testPrefetchPageUriNull', '17100002', 2025091618, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testPrefetchPageUriUndefined
+     * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_ERROR_API_0005
+     * @tc.desc   test prefetchPage url with PrefetchOptions 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPrefetchPageUriUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitPrefetchPageUriUndefined', 119);
+      Utils.registerBaseEvent('testPrefetchPageUriUndefined', '17100002', 2025091619, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testPrefetchPageHeadersEmptyArray
+     * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_ERROR_API_0006
+     * @tc.desc   test prefetchPage url with PrefetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPrefetchPageHeadersEmptyArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitPrefetchPageHeadersEmptyArray', 119);
+      Utils.registerBaseEvent('testPrefetchPageHeadersEmptyArray', 'noError', 2025091620, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testPrefetchPageUriEmpty2
+     * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_ERROR_API_0007
+     * @tc.desc   test prefetchPage url with PrefetchOptions 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPrefetchPageUriEmpty2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitPrefetchPageUriEmpty2', 119);
+      Utils.registerBaseEvent('testPrefetchPageUriEmpty2', '17100002', 2025091621, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testPrefetchPageUriNull2
+     * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_ERROR_API_0008
+     * @tc.desc   test prefetchPage url with PrefetchOptions 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPrefetchPageUriNull2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitPrefetchPageUriNull2', 119);
+      Utils.registerBaseEvent('testPrefetchPageUriNull2', '17100002', 2025091622, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testPrefetchPageUriUndefined2
+     * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_ERROR_API_0009
+     * @tc.desc   test prefetchPage url with PrefetchOptions 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPrefetchPageUriUndefined2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitPrefetchPageUriUndefined2', 119);
+      Utils.registerBaseEvent('testPrefetchPageUriUndefined2', '17100002', 2025091623, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testPrefetchPageHeadersEmptyArray2
+     * @tc.number SUB_ACE_WEB_PREFETCHPAGE_PREFETCHOPTIONS_ERROR_API_0010
+     * @tc.desc   test prefetchPage url with PrefetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPrefetchPageHeadersEmptyArray2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitPrefetchPageHeadersEmptyArray2', 119);
+      Utils.registerBaseEvent('testPrefetchPageHeadersEmptyArray2', 'noError', 2025091624, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebPrefetchPageEnhancedButton', 10, '');

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -718,7 +718,7 @@ class OH_Pkcs12DataMap {
           pkcs12Data.privateKey = new Uint8Array(vector.priKeyDer);
         }
       }
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`getPkcs12Data ${error}, error code: ${error.code}`);
       throw error as Error;
     }
@@ -748,7 +748,7 @@ class OH_Pkcs12DataMap {
       } else {
         pkcs12Data = cert.createPkcs12Sync(vector, config);
       }
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`createPkcs12 ${error}, error code: ${error.code}`);
       throw error as Error;
     }
@@ -767,7 +767,7 @@ class OH_Pkcs12DataMap {
       }
 
       return p12;
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`parsePkcs12 ${error}, error code: ${error.code}`);
       throw error as Error;
     }
@@ -850,7 +850,7 @@ class OH_Pkcs12DataMap {
         }
       }
       console.log("############# check end");
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`checkPkcs12 ${error}, error code: ${error.code} otherCert:${index}`);
       ret = false;
     }
@@ -875,7 +875,7 @@ class OH_Pkcs12DataMap {
     try {
       let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
       return x509Cert;
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`createCaX509Cert ${error}, error code: ${error.code}`);
       throw error as Error;
     }
@@ -898,7 +898,7 @@ class OH_Pkcs12DataMap {
     try {
       let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
       return x509Cert;
-    } catch (error: BusinessError) {
+    } catch (error) {
       console.error(`createOtherX509Cert ${error}, error code: ${error.code}`);
       throw error as Error;
     }
@@ -937,7 +937,7 @@ function setPbesParams(saltLen: int, iterations: int = 2048,
       encryptionAlgorithm: encryptionAlgorithm
     };
     return PbesParams;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`setPbesParams ${error}, error code: ${error.code}`);
     throw error as Error;
   }
@@ -953,7 +953,7 @@ function setMacParams(saltLen: int, iterations: int = 2048,
       macDigestAlgorithm: macDigestAlgorithm
     };
     return config;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`setMacParams ${error}, error code: ${error.code}`);
     throw error as Error;
   }

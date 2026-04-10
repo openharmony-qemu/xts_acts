@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,7 +49,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -77,13 +77,13 @@ export default function WindowEnterpriseTest() {
         hilog.info(domain, tag, '%{public}s', 'WindowEnterpriseTest describe start');
         hilog.info(domain, tag, 'WindowEnterpriseTest start');
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-        let windowStage: window.WindowStage;
-        let win: window.Window;
-        let context: common.UIAbilityContext;
+        let windowStage: window.WindowStage | undefined;
+        let win: window.Window | undefined;
+        let context: common.UIAbilityContext | undefined;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
-        beforeAll(() => {
+        beforeAll(async () => {
             hilog.info(domain, tag, 'beforeAll start');
             let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -97,7 +97,7 @@ export default function WindowEnterpriseTest() {
                 context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
                 hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
 
-            } catch (e:BusinessError) {
+            } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
             }
 
@@ -124,7 +124,7 @@ export default function WindowEnterpriseTest() {
         it('test_GET_VISIBLEWINDOWINFO_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_GET_VISIBLEWINDOWINFO_static_0100 ';
             hilog.info(domain, tag,caseName + 'begin');
-            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context!);
             try {
                 let windowClass2:window.Window = windowStageStart.getMainWindowSync();
                 let res:window.WindowProperties = windowClass2.getWindowProperties()
@@ -153,21 +153,34 @@ export default function WindowEnterpriseTest() {
                             expect(info.rect.top).assertEqual(res.windowRect.top);
                             expect(info.rect.width).assertEqual(res.windowRect.width);
                             expect(info.rect.height).assertEqual(res.windowRect.height);
-                            expect(info.isFocused).assertEqual(true);
+                            expect(info!.globalDisplayRect!.left).assertLargerOrEqual(0);
+                            expect(info!.globalDisplayRect!.top).assertLargerOrEqual(0);
+                            expect(info!.globalDisplayRect!.width).assertLarger(0);
+                            expect(info!.globalDisplayRect!.height).assertLarger(0);
+                            expect(info!.globalRect!.left).assertEqual(res.windowRect.left);
+                            expect(info!.globalRect!.top).assertEqual(res.windowRect.top);
+                            expect(info!.globalRect!.width).assertEqual(res.windowRect.width);
+                            expect(info!.globalRect!.height).assertEqual(res.windowRect.height);
+                            expect(info!.displayId).assertEqual(0);
+                            expect(info!.bundleName === "com.example.actswindowtest.static").assertTrue();
+                            expect(info!.abilityName !== null).assertTrue();
+                            expect(info!.windowId).assertLargerOrEqual(0);
+                            expect(info!.windowStatusType !== null).assertTrue();
+                            expect(info!.isFocused === true || info!.isFocused === false).assertTrue();
                             break;
                         }
                     }
                     if (!isExit) {
                         hilog.error(domain, tag,`${caseName} failed, there is no match windowId.`);
-                        await terminateAbility(caseName);
+                        waitForCompletion(async () => {await terminateAbility(caseName);})
                         expect(false).assertTrue();
                         done()
                     }
-                    await terminateAbility(caseName);
+                    waitForCompletion(async () => {await terminateAbility(caseName);})
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' +' code:' +err.code+'msg:'+ err.message);
-                    await terminateAbility(caseName);
+                    waitForCompletion(async () => {await terminateAbility(caseName);})
                     expect(err.message!=null).assertTrue();
                     if (err.code === 801) {
                         hilog.info(domain, tag,`${caseName} deviceType does not supported this Capability`);

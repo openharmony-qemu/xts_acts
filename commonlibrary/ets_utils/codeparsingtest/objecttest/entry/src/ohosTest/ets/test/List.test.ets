@@ -58,6 +58,8 @@ import ObjectProtoTest from './object1/object_proto.test';
 import ObjectSetPrototypeOfTest from './object1/object_setprototypeof.test';
 import ReflectSetPrototypeOfTest from './object1/reflect_setprototypeof.test';
 import prototypeChangeTest from './object1/prototypeChange.test';
+import namespaceFuncTsAopTest from './aop/NamespaceFuncTsAop.test';
+import namespaceFuncNativeAopTest from './aop/NamespaceFuncNativeAop.test';
 
 export default function testsuite() {
 
@@ -105,6 +107,7 @@ export default function testsuite() {
   ObjectSetPrototypeOfTest();
   prototypeChangeTest();
   ReflectSetPrototypeOfTest();
-
+  namespaceFuncTsAopTest();
+  namespaceFuncNativeAopTest();
 };
 

@@ -64,6 +64,67 @@ export default function actsBmsJsUnPermissionTest() {
         });
 
         /**
+         * @tc.name   getApplicationInfosUnPermissionWithUserIdPromise
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_1090
+         * @tc.desc   test getAllApplicationInfo with userId Promise (no permission)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('getApplicationInfosUnPermissionWithUserIdPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
+            await bundle.getAllApplicationInfo(DEFAULT_FLAG, userId).then(data => {
+                expect().assertFail();
+            }).catch(err => {
+                expect(err.code).assertEqual(INVALID_CODE);
+            });
+            done();
+        });
+
+        /**
+         * @tc.name   getApplicationInfosUnPermissionWithUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_1100
+         * @tc.desc   test getAllApplicationInfo with userId callback (no permission)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('getApplicationInfosUnPermissionWithUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
+            bundle.getAllApplicationInfo(DEFAULT_FLAG, userId, (err, data) => {
+                if (err) {
+                    console.info('getApplicationInfosUnPermissionWithUserIdCallback err:' + JSON.stringify(err));
+                    expect(err.code).assertEqual(INVALID_CODE);
+                    done();
+                    return;
+                }
+                console.info('getApplicationInfosUnPermissionWithUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   getApplicationInfosUnPermissionWithoutUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_1110
+         * @tc.desc   test getAllApplicationInfo without userId callback (no permission)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('getApplicationInfosUnPermissionWithoutUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
+            bundle.getAllApplicationInfo(DEFAULT_FLAG, (err, data) => {
+                if (err) {
+                    console.info('getApplicationInfosUnPermissionWithoutUserIdCallback err:' + JSON.stringify(err));
+                    expect(err.code).assertEqual(INVALID_CODE);
+                    done();
+                    return;
+                }
+                console.info('getApplicationInfosUnPermissionWithoutUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
          * @tc.name   getBundleInfoUnPermission
          * @tc.number Sub_Bms_Framework_Query_AppInfo_2340
          * @tc.desc   test getBundleInfo
@@ -77,9 +138,75 @@ export default function actsBmsJsUnPermissionTest() {
             }).catch(err => {
                 expect(err).assertEqual(INVALID_CODE);
             });
+            await bundle.getBundleInfo(BUNDLE_NAME_OTHER, DEFAULT_FLAG).then(data => {
+                expect().assertFail();
+            }).catch(err => {
+                expect(err).assertEqual(INVALID_CODE);
+            });
             bundle.getBundleInfo(BUNDLE_NAME_OTHER, DEFAULT_FLAG, { userId: userId }, (err, data) => {
                 expect(err).assertEqual(INVALID_CODE);
                 expect(data).assertEqual(undefined);
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   getAllBundleInfoUnPermissionWithUserIdPromise
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_2350
+         * @tc.desc   test getAllBundleInfo with userId Promise (no permission)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('getAllBundleInfoUnPermissionWithUserIdPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
+            await bundle.getAllBundleInfo(DEFAULT_FLAG, userId).then(data => {
+                expect().assertFail();
+            }).catch(err => {
+                expect(err).assertEqual(INVALID_CODE);
+            });
+            done();
+        });
+
+        /**
+         * @tc.name   getAllBundleInfoUnPermissionWithUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_2360
+         * @tc.desc   test getAllBundleInfo with userId callback (no permission)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('getAllBundleInfoUnPermissionWithUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
+            bundle.getAllBundleInfo(DEFAULT_FLAG, userId, (err, data) => {
+                if (err) {
+                    console.info('getAllBundleInfoUnPermissionWithUserIdCallback err:' + JSON.stringify(err));
+                    expect(err).assertEqual(INVALID_CODE);
+                    done();
+                    return;
+                }
+                console.info('getAllBundleInfoUnPermissionWithUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   getAllBundleInfoUnPermissionWithoutUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_2370
+         * @tc.desc   test getAllBundleInfo without userId callback (no permission)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('getAllBundleInfoUnPermissionWithoutUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
+            bundle.getAllBundleInfo(DEFAULT_FLAG, (err, data) => {
+                if (err) {
+                    console.info('getAllBundleInfoUnPermissionWithoutUserIdCallback err:' + JSON.stringify(err));
+                    expect(err).assertEqual(INVALID_CODE);
+                    done();
+                    return;
+                }
+                console.info('getAllBundleInfoUnPermissionWithoutUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
                 done();
             });
         });
@@ -102,6 +229,28 @@ export default function actsBmsJsUnPermissionTest() {
                 expect(err.code).assertEqual(INVALID_CODE);
                 expect(data).assertEqual(undefined);
                 done();
+            });
+        });
+	
+	/**
+         * @tc.name   getApplicationInfoUnPermissionx
+         * @tc.number Sub_Bms_Framework_Query_AppInfo_05400
+         * @tc.desc   test getApplicationInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('getApplicationInfoUnPermissionx', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) { 
+            bundle.getApplicationInfo(BUNDLE_NAME_OTHER, DEFAULT_FLAG, userId, (err, data) => {
+	         if (err) {
+                     console.info('getApplicationInfoUnPermissionx err:' + JSON.stringify(err));
+                     expect(err.code).assertEqual(INVALID_CODE);
+                     done();
+                     return;
+                 }
+                console.info('getApplicationInfoUnPermissionx success:' + JSON.stringify(data));
+                expect().assertFail();
+                done()    
             });
         });
 
@@ -218,6 +367,34 @@ export default function actsBmsJsUnPermissionTest() {
             });
         });
 
+
+        /**
+         * @tc.name   getAbilityInfoUnPermissionOtherBundlename
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2590
+         * @tc.desc   test getAbilityInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+           it('getAbilityInfoUnPermissionOtherBundlename', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+            await bundle.getAbilityInfo(BUNDLE_NAME_OTHER, ABILITIY_NAME_OTHER).then(res => {
+                console.info('actwsBundleManagerx getAbilityInfo promise success res:' + JSON.stringify(res));
+                expect().assertFail();
+            }).catch(err => {
+                expect(err).assertEqual(1);
+            });
+            bundle.getAbilityInfo(BUNDLE_NAME_OTHER, ABILITIY_NAME_OTHER, (err, res) => {
+                if (err) {
+                    expect(err).assertEqual(1);
+                    done();
+                    return;
+                }
+                console.info('actwsBundleManagexr getAbilityInfo callback success res:' + JSON.stringify(res));
+                expect().assertFail();
+                done();
+            });
+        });
+
         async function checkAbilityInfo(data) {
             console.info("checkAbilityInfo start !!!");
             expect(data.bundleName).assertEqual("com.example.actsbmsetsunpermissiontest");
@@ -270,5 +447,76 @@ export default function actsBmsJsUnPermissionTest() {
             expect(info.removable).assertEqual(true);
             console.info("checkApplicationInfo end !!!");
         }
+
+        /**
+         * @tc.name   queryAbilityByWantUnPermissionWithUserIdPromise
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6200
+         * @tc.desc   test queryAbilityByWant without permission (by promise with userId)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('queryAbilityByWantUnPermissionWithUserIdPromise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+            await bundle.queryAbilityByWant({
+                action: "action_a"
+            }, DEFAULT_FLAG, userId).then(res => {
+                console.info('queryAbilityByWantUnPermissionWithUserIdPromise success:' + JSON.stringify(res));
+                expect().assertFail();
+            }).catch(err => {
+                console.info('queryAbilityByWantUnPermissionWithUserIdPromise err:' + JSON.stringify(err));
+                expect(err).assertEqual(INVALID_CODE);
+            });
+            done();
+        });
+
+        /**
+         * @tc.name   queryAbilityByWantUnPermissionWithUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6210
+         * @tc.desc   test queryAbilityByWant without permission (by callback with userId)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('queryAbilityByWantUnPermissionWithUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+            bundle.queryAbilityByWant({
+                action: "action_a"
+            }, DEFAULT_FLAG, userId, (err, data) => {
+                if (err) {
+                    console.info('queryAbilityByWantUnPermissionWithUserIdCallback err:' + JSON.stringify(err));
+                    expect(err).assertEqual(INVALID_CODE);
+                    done();
+                    return;
+                }
+                console.info('queryAbilityByWantUnPermissionWithUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+
+        /**
+         * @tc.name   queryAbilityByWantUnPermissionWithoutUserIdCallback
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_6220
+         * @tc.desc   test queryAbilityByWant without permission (by callback without userId)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('queryAbilityByWantUnPermissionWithoutUserIdCallback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+            bundle.queryAbilityByWant({
+                action: "action_a"
+            }, DEFAULT_FLAG, (err, data) => {
+                if (err) {
+                    console.info('queryAbilityByWantUnPermissionWithoutUserIdCallback err:' + JSON.stringify(err));
+                    expect(err).assertEqual(INVALID_CODE);
+                    done();
+                    return;
+                }
+                console.info('queryAbilityByWantUnPermissionWithoutUserIdCallback success:' + JSON.stringify(data));
+                expect().assertFail();
+                done();
+            });
+        });
+	
+		
     })
 }

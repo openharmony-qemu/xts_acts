@@ -45,9 +45,9 @@ export default function componentLifeCycleTestOne() {
      * @tc.desc   make web component inactive
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('onInactiveStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('onInactiveStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitonInactive", 10)
       await Utils.msSleep(2000);
       Utils.registerEvent("onInactive", "baidu", 7, done);

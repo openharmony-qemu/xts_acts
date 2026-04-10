@@ -34,6 +34,21 @@ import cameraEnumTestSupp from './camera/CameraEnum.test';
 import CameraAPIEnumSupplementTest from "./camera/CameraAPIEnumSupplement.test";
 import cameraAddMetadataObjectSuppTest from './camera/CameraMetadataOutputErrCode.test';
 import CameraSessionSuppTest from './camera/CameraSessionWhiteBalanceTest.test';
+import CameraManagerGetCameraDevicesTest from './camera/CameraManagerGetCameraDevicesTest.test';
+import CameraManagerCreateMetadataOutputTest from './camera/CameraManagerCreateMetadataOutputTest.test';
+import CameraManagerCreatePhotoOutputTest from './camera/CameraManagerCreatePhotoOutputTest.test';
+import CameraManagerCreateVideoOutputTest from './camera/CameraManagerCreateVideoOutputTest.test';
+import CameraManagerGetSupportedOutputCapabilityTest from './camera/CameraManagerGetSupportedOutputCapabilityTest.test';
+import CameraInputOnerrorTest from './camera/CameraInputOnerrorTest.test';
+import createCameraInput from './camera/CameraManagerCreateCameraInputTest.test';
+import CameraSessionSetWhiteBalanceModeTest from './camera/CameraSessionSetWhiteBalanceModeTest.test';
+import CameraGetActiveProfileTest from './camera/CameraGetActiveProfileTest.test';
+import CameraSessionBandSuppTest from './camera/CameraSessionBandSupp.test';
+import CameraCaptureSessionTest from './camera/CameraCaptureSessionTest.test';
+import CameraPhotoSessionTest from './camera/CameraPhotoSessionTest.test';
+import CameraTest from './camera/CameraTest.test';
+import CameraPickerPickTest from './camera/CameraPickerPickTest.test';
+
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
@@ -71,4 +86,19 @@ export default function testsuite() {
   CameraAPIEnumSupplementTest();
   cameraAddMetadataObjectSuppTest();
   CameraSessionSuppTest();
+  CameraManagerGetCameraDevicesTest();
+  CameraManagerCreateMetadataOutputTest();
+  CameraManagerCreatePhotoOutputTest();
+  CameraManagerCreateVideoOutputTest();
+  CameraInputOnerrorTest();
+  createCameraInput();
+  CameraSessionSetWhiteBalanceModeTest();
+  CameraGetActiveProfileTest();
+  CameraSessionBandSuppTest();
+  CameraPhotoSessionTest();
+  CameraCaptureSessionTest();
+  CameraTest()
+  CameraPickerPickTest();
+  CameraManagerGetSupportedOutputCapabilityTest();
+
 }

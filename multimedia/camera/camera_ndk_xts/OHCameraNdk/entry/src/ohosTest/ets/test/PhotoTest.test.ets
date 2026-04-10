@@ -426,16 +426,22 @@ export default function PhotoTest() {
      * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputEnableMirror0100', Level.LEVEL0, () => {
-      let isSupported: boolean = cameras.oHPhotoOutputgetMirrorSupported(0);
-      console.info(`testOHPhotoOutputEnableMirror0100 MirrorSupported is ${isSupported} ${typeof isSupported}`);
-      if (isSupported) {
+      let isMovingPhotoSupported: number = cameras.oHPhotoOutputIsMovingPhotoSupported(0);
+      if (isMovingPhotoSupported != CAMERA_OK) {
+        console.info(`testOHPhotoOutputEnableMirror0100 movingPhoto is not supported`);
+        expect(isMovingPhotoSupported != CAMERA_OK).assertTrue();
+        return;
+      }
+      let IsMirrorSupported: boolean = cameras.oHPhotoOutputgetMirrorSupported(0);
+      console.info(`testOHPhotoOutputEnableMirror0100 MirrorSupported is ${IsMirrorSupported} ${typeof IsMirrorSupported}`);
+      if (IsMirrorSupported) {
         console.info(`testOHPhotoOutputEnableMirror0100 Enter`);
         let ret: number = cameras.oHPhotoOutputEnableMirror(0);
         console.log(TAG+"testOHPhotoOutputEnableMirror0100:"+ret);
         expect(ret).assertEqual(CAMERA_OK);
       } else {
-        console.info(`testOHPhotoOutputEnableMirror0100 no supported`);
-        expect(!isSupported).assertTrue();
+        console.info(`testOHPhotoOutputEnableMirror0100 mirror is not supported`);
+        expect(!IsMirrorSupported).assertTrue();
       }
     })
     /**

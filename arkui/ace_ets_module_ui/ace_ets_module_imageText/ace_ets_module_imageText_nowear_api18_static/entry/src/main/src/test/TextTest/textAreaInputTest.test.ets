@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textAreaInputTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api18.static", "EntryAbility")
@@ -89,7 +89,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () => void): Prom
           let button1 = await driver.findComponent(ON.text('下一步'));
           await CommonFunc.sleep(500);
           await (button1?.click() as Promise<void>);
-        }catch(e: Error){
+        }catch(e){
 
         }
         await CommonFunc.sleep(500);
@@ -102,7 +102,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () => void): Prom
           await CommonFunc.sleep(500);
           await (button3?.click() as Promise<void>);
           console.info('textAreaInputTest0001 全选 success');
-        }catch(e: Error){
+        }catch(e){
 
         }
         await CommonFunc.sleep(500);
@@ -117,7 +117,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () => void): Prom
           await (button4?.click() as Promise<void>);
           await CommonFunc.sleep(500);
           console.info('textAreaInputTest0001 取消 success');
-        }catch(e: Error){
+        }catch(e){
 
         }
         await (textArea1?.longClick() as Promise<void>);
@@ -129,7 +129,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () => void): Prom
           await (button5?.click() as Promise<void>);
           await CommonFunc.sleep(500);
           console.info('textAreaInputTest0001 2 全选 success');
-        }catch(e: Error){
+        }catch(e){
 
         }
 
@@ -139,7 +139,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () => void): Prom
           await (button6?.click() as Promise<void>);
           await CommonFunc.sleep(500);
           console.info('textAreaInputTest0001 2 复制 success');
-        }catch(e: Error){
+        }catch(e){
 
         }
         textArea1?.dragTo(textArea2!);
@@ -152,7 +152,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () => void): Prom
             await (button7?.click() as Promise<void>);
           await CommonFunc.sleep(500);
           console.info('textAreaInputTest0001 2 Button success');
-        }catch(e: Error){
+        }catch(e){
 
         }
       }

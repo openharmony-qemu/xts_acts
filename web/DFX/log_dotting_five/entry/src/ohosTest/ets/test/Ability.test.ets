@@ -17,6 +17,8 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import { webview } from '@kit.ArkWeb';
 import { temp } from './Const';
+import Utils from './Utils';
+import wifiMg from '@ohos.wifiManager';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
@@ -29,12 +31,45 @@ export default function abilityTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (done: Function) => {
+      if(!wifiMg.isWifiActive()){
+        console.info("======> wifi_test/enable wifi:" + wifiMg.enableWifi());
+        await Utils.sleep(5000);
+      }
+
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          expect().message("======> WLAN Network error").assertFail(); //方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message("======> WLAN Network error").assertFail();//方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
+	  done();
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -79,7 +114,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(`[PrefetchResource] ErrorCode: ${(e as BusinessError).code},  Message: ${(e as BusinessError).message}`);
         expect(e.code).assertEqual("17100002")
-        expect(e.message).assertEqual("URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
+        expect(e.message).assertEqual("URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
         console.info('Sub_WEB_PrefetchResource_0100 end')
         hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_0100 end')
         return
@@ -321,7 +356,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(`[PrefetchResource] ErrorCode: ${(e as BusinessError).code},  Message: ${(e as BusinessError).message}`);
         expect(e.code).assertEqual("17100002")
-        expect(e.message).assertEqual("URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
+        expect(e.message).assertEqual("URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
         console.info('Sub_WEB_PrefetchResource_0900 end')
         hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_0900 end')
         return
@@ -361,7 +396,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(`[PrefetchResource] ErrorCode: ${(e as BusinessError).code},  Message: ${(e as BusinessError).message}`);
         expect(e.code).assertEqual("17100002")
-        expect(e.message).assertEqual("URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
+        expect(e.message).assertEqual("URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
         console.info('Sub_WEB_PrefetchResource_1000 end')
         hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_1000 end')
         return
@@ -401,7 +436,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(`[PrefetchResource] ErrorCode: ${(e as BusinessError).code},  Message: ${(e as BusinessError).message}`);
         expect(e.code).assertEqual("17100002")
-        expect(e.message).assertEqual("URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
+        expect(e.message).assertEqual("URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
         console.info('Sub_WEB_PrefetchResource_1100 end')
         hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_1100 end')
         return
@@ -689,6 +724,37 @@ export default function abilityTest() {
       expect(false).assertTrue()
       console.info('Sub_WEB_PrefetchResource_1800 end')
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_1800 end')
+    })
+    /**
+     * @tc.name   testPrefetchResourceErrorCode
+     * @tc.number Sub_WEB_PrefetchResource_ErrorCode_0001
+     * @tc.desc   test PrefetchResource errorCode 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPrefetchResourceErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info('Sub_WEB_PrefetchResource_ErrorCode_0001 start')
+      let info: webview.RequestInfo = {
+        url: '//collect-v6.51.la/v6/collect?dt=4',
+        method: 'POST',
+        formData: 'a=x&b=y'
+      }
+      let hands: Array<webview.WebHeader> = [{
+        headerKey: 'c',
+        headerValue: 'z',
+      }]
+      try {
+        webview.WebviewController.prefetchResource(info, hands, 'KeyX', 500)
+      } catch (e) {
+        console.error(`[PrefetchResource] ErrorCode: ${(e as BusinessError).code},  Message: ${(e as BusinessError).message}`);
+        expect(e.code).assertEqual('17100002')
+        expect(e.message).assertEqual('URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.')
+        console.info('Sub_WEB_PrefetchResource_ErrorCode_0001 end')
+        return
+      }
+      expect(false).assertTrue()
+      console.info('Sub_WEB_PrefetchResource_ErrorCode_0001 end')
     })
   })
 }

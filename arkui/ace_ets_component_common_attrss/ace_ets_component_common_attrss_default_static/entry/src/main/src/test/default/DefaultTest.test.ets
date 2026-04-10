@@ -184,7 +184,7 @@ export default function defaultTest() {
   ]
 
   describe('DefaultTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("defaultTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

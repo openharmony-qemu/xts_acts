@@ -15,10 +15,17 @@
  */
 
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, ExpectValue, SetValue } from '../../../ets/MainAbility/common/Utils';
+import Utils, {
+  BasePageConfig,
+  PageConfig,
+  TestValue,
+  RectValue,
+  ExpectValue,
+  SetValue
+} from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { describe, beforeAll, expect } from '../../../../hypium/index';
-import { AlignRuleOption, VerticalAlign, HorizontalAlign,  Position, $r } from '@ohos.arkui.component';
+import { AlignRuleOption, VerticalAlign, HorizontalAlign, Position, $r } from '@ohos.arkui.component';
 import { UIContext } from "@ohos.arkui.UIContext";
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -29,11 +36,12 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {UtilsTest} from '../Util.test'
+import { UtilsTest } from '../Util.test'
 
-let domain: int= 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
+
 /**
  * Test of common attribute: position
  */
@@ -92,15 +100,11 @@ export default function positionTest() {
     'Shape',
     'AlphabetIndexer',
     'Navigation',
-    'NavRouter',
     'ListItemGroup',
     'Tabs',
     'Gauge',
     'TabContent',
   )
-  // 存在问题的自定义组件 TabsView ListItemGroupView NavigationView NavRouterView  AlphabetIndexerView
-  // 存在问题的官方组件 TabContent Column>Text   Navigator Gauge
-  // 总共8个导致32个报错，           报错原因inspector.getInspectorByKey()取不到值
 
   //The size of the parent component, when set as a percentage, serves as the calculation basis.
   let parentWidth = 300;
@@ -118,28 +122,31 @@ export default function positionTest() {
   }
 
   //The data type to be tested, this parameter is required.
-  let testValues: TestValue[] = [{
-    describe: 'SetNumber',
-    setValue: {
-      x: 200, y: 100
+  let testValues: TestValue[] = [
+    {
+      describe: 'SetNumber',
+      setValue: {
+        x: 200, y: 100
+      },
+      expectValue: {
+        x: '200.00vp',
+        y: '100.00vp',
+        left: 200,
+        top: 100
+      }
     },
-    expectValue: {
-      x: '200.00vp', y: '100.00vp',
-      left:  200,
-      top: 100
-    }
-  }, {
-    describe: 'SetStringPx',
-    setValue: {
-      x: '200px', y: '100px'
+    {
+      describe: 'SetStringPx',
+      setValue: {
+        x: '200px', y: '100px'
+      },
+      expectValue: {
+        x: '200.00px',
+        y: '100.00px',
+        left: 200,
+        top: 100
+      }
     },
-    expectValue: {
-      x: '200.00px',
-      y: '100.00px',
-      left: 200,
-      top: 100
-    }
-  },
     {
       describe: 'SetStringPercent',
       setValue: {
@@ -147,7 +154,8 @@ export default function positionTest() {
         // xp: 0.2, yp: 0.1
       },
       expectValue: {
-        x: '20.00%', y: '10.00%',
+        x: '20.00%',
+        y: '10.00%',
         left: Number(parentWidth) * 0.2,
         top: Number(parentHeight) * 0.1
       }
@@ -158,8 +166,9 @@ export default function positionTest() {
         x: $r('app.float.200vp'), y: $r('app.float.100vp')
       },
       expectValue: {
-        x: '200.00vp', y: '100.00vp',
-        left:200,
+        x: '200.00vp',
+        y: '100.00vp',
+        left: 200,
         top: 100
       }
     }
@@ -170,29 +179,27 @@ export default function positionTest() {
    * Create test suite.
    */
   describe('PositionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     //Generate test cases (it) through a loop based on the support view * test values.
-    CommonTest.initTest(pageConfig, supportView, testValues,  async (data: BasePageConfig): Promise<void> => {
+    CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Obtain the region information of the reference component.
 
       let uiContext = AppStorage.get<UIContext>('uiContext');
-      if (data.testValue.describe=='SetNumber') {
+      if (data.testValue.describe == 'SetNumber') {
         data.testValue.expectValue.top = Number(uiContext!.vp2px(100))
         data.testValue.expectValue.left = Number(uiContext!.vp2px(200))
       }
-      if (data.testValue.describe=='SetStringPercent') {
-        data.testValue.expectValue.left =Number(uiContext!.vp2px(parentWidth)) * 0.2
+      if (data.testValue.describe == 'SetStringPercent') {
+        data.testValue.expectValue.left = Number(uiContext!.vp2px(parentWidth)) * 0.2
         data.testValue.expectValue.top = Number(uiContext!.vp2px(parentHeight)) * 0.1
       }
-      if (data.testValue.describe=='SetResource') {
-        data.testValue.expectValue.left =Number(uiContext!.vp2px(200))
+      if (data.testValue.describe == 'SetResource') {
+        data.testValue.expectValue.left = Number(uiContext!.vp2px(200))
         data.testValue.expectValue.top = Number(uiContext!.vp2px(100))
       }
-
-
 
 
       console.info('[' + data.caseTag + '] get referenceComponent rect before position changed.');
@@ -217,7 +224,8 @@ export default function positionTest() {
       //Obtain the region information of the parent component.
       console.info('[' + data.caseTag + '] get parentComponent rect after position changed.');
       let parentRectAfter: RectValue = Utils.getComponentRect(data.pageConfig.parentComponentKey);
-      console.info('[' + data.caseTag + '] data.pageConfig.parentComponentKey+++.' + data.pageConfig.parentComponentKey);
+      console.info('[' + data.caseTag + '] data.pageConfig.parentComponentKey+++.' +
+      data.pageConfig.parentComponentKey);
 
       //Obtain the region information of the target component.
       console.info('[' + data.caseTag + '] check actual position.');
@@ -228,12 +236,15 @@ export default function positionTest() {
       let rectParent = parentRectAfter;
       let benchmarkChanged = false;
       if ('TabContent' == data.pageConfig.targetView) {
-        console.info('[wll210]'+JSON.stringify(inspector.getInspectorTree()))
+        console.info('[wll210]' + JSON.stringify(inspector.getInspectorTree()))
         let parentComponent = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-        parentComponent?.getArray('$children')?.forEach((element: jsonx.JsonElement) => {
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+        parentComponent?.getArray('$children')?.forEach((element) => {
           if ('Swiper' == element.getString('$type')) {
-            console.log('[wll]type'+element.toString())
-            rectParent = Utils.getComponentRectByObj(element)  // 218行
+            console.log('[wll]type' + element.toString())
+            rectParent = Utils.getComponentRectByObj(element)
             benchmarkChanged = true;
           }
         });
@@ -267,22 +278,29 @@ export default function positionTest() {
           .assertTrue();
       } else {
         console.info('[' + data.caseTag + '] check actual offset x.');
-        console.info('[' + data.caseTag + '=============rect.left'+rect.left+ '=============rectParent.left'+rectParent.left+ '=============data.testValue.expectValue.top'+data.testValue.expectValue.left);
+        console.info('[' + data.caseTag + '=============rect.left' + rect.left + '=============rectParent.left' +
+        rectParent.left + '=============data.testValue.expectValue.left' + data.testValue.expectValue.left);
         expect(Math.abs(Number(rect.left - rectParent.left) - Number(data.testValue.expectValue.left)) <= 1)
           .assertTrue();
         console.info('[' + data.caseTag + '] check actual offset y.');
-        console.info('[' + data.caseTag + '=============rect.top'+rect.top+ '=============rectParent.top'+rectParent.top+ '=============data.testValue.expectValue.top'+data.testValue.expectValue.top);
+        console.info('[' + data.caseTag + '=============rect.top' + rect.top + '=============rectParent.top' +
+        rectParent.top + '=============data.testValue.expectValue.top' + data.testValue.expectValue.top);
         expect(Math.abs(Number(rect.top - rectParent.top) - Number(data.testValue.expectValue.top)) <= 1).assertTrue();
       }
 
       //Confirm that the position attribute value has been set successfully.
       console.info('[' + data.caseTag + '] check position attr value.');
-      console.log('+++++++++++++++data.pageConfig.componentKey',data.pageConfig.componentKey,'getComp',Utils.getComponentByKey(data.pageConfig.componentKey ?? ""))
+      console.log('+++++++++++++++data.pageConfig.componentKey', data.pageConfig.componentKey, 'getComp',
+        Utils.getComponentByKey(data.pageConfig.componentKey ?? ""))
       let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey ?? "");
-      console.info('[' + data.caseTag + '] check position x.'+viewObj.getElement('$attrs').getElement('position').getString('x')+'expect'+data.testValue.expectValue.x);
-      expect(viewObj.getElement('$attrs').getElement('position').getString('x')).assertEqual(data.testValue.expectValue.x);
-      console.info('[' + data.caseTag + '] check position y.'+viewObj.getElement('$attrs').getElement('position').getString('y'));
-      expect(viewObj.getElement('$attrs').getElement('position').getString('y')).assertEqual(data.testValue.expectValue.y);
+      console.info('[' + data.caseTag + '] check position x.' +
+      viewObj.getElement('$attrs').getElement('position').getString('x') + 'expect' + data.testValue.expectValue.x);
+      expect(viewObj.getElement('$attrs').getElement('position').getString('x'))
+        .assertEqual(data.testValue.expectValue.x);
+      console.info('[' + data.caseTag + '] check position y.' +
+      viewObj.getElement('$attrs').getElement('position').getString('y'));
+      expect(viewObj.getElement('$attrs').getElement('position').getString('y'))
+        .assertEqual(data.testValue.expectValue.y);
 
       //Confirm that the region information of the reference component has not changed.
       console.info('[' + data.caseTag + '] check referenceComponent layout not changed.');

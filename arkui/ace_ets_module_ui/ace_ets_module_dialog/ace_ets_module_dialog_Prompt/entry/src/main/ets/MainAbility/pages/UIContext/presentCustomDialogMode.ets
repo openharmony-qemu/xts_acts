@@ -50,19 +50,21 @@ export struct MyComponent {
 @Builder
 function customDialogDemo() {
 
-  Column({ space: 30 }) {
+  Column() {
     Text('自定义弹窗')
     Row() {
       Button(`router`)
-      .height('8%')
-      .id('router')
-      .onClick(() => {
-        router.pushUrl({
-          url: 'MainAbility/pages/UIContext/index'
-        }, router.RouterMode.Standard)
-      })
+        .height('8%')
+        .margin({bottom:10})
+        .id('router')
+        .onClick(() => {
+          router.pushUrl({
+            url: 'MainAbility/pages/UIContext/index'
+          }, router.RouterMode.Standard)
+        })
       Text('返回')
         .height('8%')
+        .margin({bottom:10})
         .componentTextStyle()
         .onClick(() => {
           router.back(1)
@@ -72,7 +74,7 @@ function customDialogDemo() {
   }
   .borderRadius(10)
   .backgroundColor(Color.White)
-  .margin(10)
+  .margin({top:140})
 }
 
 
@@ -110,7 +112,7 @@ struct presentCustomDialogMode {
   @State isModal: boolean = true
   @State maskRect: Rectangle = {
     x: 0,
-    y: 130,
+    y: 150,
     width: '100%',
     height: '100%'
   }
@@ -152,8 +154,8 @@ struct presentCustomDialogMode {
         }
 
 
-        Column({ space: 2 }) {
-          Row({ space: 3 }) {
+        Column() {
+          Row() {
             MyComponent({
               title: 'levelMode: OVERLAY', func: () => {
                 this.levelMode = 0
@@ -166,7 +168,7 @@ struct presentCustomDialogMode {
             })
           }
 
-          Row({ space: 3 }) {
+          Row() {
             MyComponent({
               title: 'undefined', func: () => {
                 this.levelMode = undefined
@@ -179,7 +181,7 @@ struct presentCustomDialogMode {
             })
           }
 
-          Row({ space: 3 }) {
+          Row() {
             MyComponent({
               title: 'uniqId: Normal value', func: () => {
                 const node: FrameNode | null = this.getUIContext().getFrameNodeById('pageCol') || null;
@@ -194,7 +196,7 @@ struct presentCustomDialogMode {
           }
 
 
-          Row({ space: 3 }) {
+          Row() {
             MyComponent({
               title: 'imMode: default', func: () => {
                 this.immersiveMode = 0
@@ -209,7 +211,7 @@ struct presentCustomDialogMode {
         }
         .columnStyle()
 
-        Column({ space: 2 }) {
+        Column() {
           Text(`uiContext_presentCustomDialog`)
             .id('presentCustomDialog')
             .componentTextStyle()

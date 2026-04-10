@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function StyledStringUrl() {
     describe('StyledStringUrl', () => {
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             console.info("StyledStringUrl beforeAll start");
 
             await UtilsTest.msSleep(4000)

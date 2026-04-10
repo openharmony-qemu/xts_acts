@@ -63,7 +63,7 @@ export default function ResponseRegionJsunit() {
   describe('responseRegionTest', () => {
     let x_value: number;
     let y_value: number;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("responseRegionTest beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
@@ -89,7 +89,7 @@ export default function ResponseRegionJsunit() {
           await CommonFunc.sleep(2000);
           // console.info("push ResponseRegion success: " + JSON.stringify(result));
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push ResponseRegion page error:" + err);
       }
 
@@ -126,7 +126,7 @@ it('testResponseRegion01_static', Level.LEVEL2, async (done: () => void): Promis
           console.info("[testResponseRegion01_static] start to publish emit:" +
           JSON.stringify(((eventData.data) as Record<String,RecordData>)));
           emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[testResponseRegion01_static] change component data error: " + err.message);
         }
         await Utils.sleep(1000);
@@ -175,7 +175,7 @@ it('testResponseRegion02_static', Level.LEVEL2, async (done: () => void): Promis
       }
       try {
         emitter.on(innerEventTwo, callbackTwo)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[testResponseRegion02_static] on emitter err : " + JSON.stringify(err));
       }
       console.info('[testResponseRegion02_static] testSendTouchEvent ' + sendTouchEvent(point));

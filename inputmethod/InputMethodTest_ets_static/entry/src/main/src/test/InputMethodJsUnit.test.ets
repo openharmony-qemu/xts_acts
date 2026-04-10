@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,7 +29,7 @@ export default function inputMethodTest() {
 
     describe("inputMethodTest", (): void => {
         console.info('%{public}s', 'describe start');
-        beforeAll(() => {
+        beforeAll(async (): Promise<void> => {
             console.info('%{public}s', 'beforeAll start');
             let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             abilityDelegator.addAbilityMonitor({
@@ -77,7 +77,8 @@ export default function inputMethodTest() {
                 await inputMethod.switchInputMethod(inputM);
                 expect().assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error('====>inputmethodNomal_test_switchInputMethod_static_001 switchInputMethod catch err' + JSON.stringify(err))
                 expect(err.code).assertEqual(201);
                 expect(err.message).assertContain("the permissions check fails");
@@ -109,7 +110,7 @@ export default function inputMethodTest() {
                         expect().assertFail();
                         done();
                     }
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.error("====>inputmethodNomal_test_switchInputMethod_static_002 catch err: " + JSON.stringify(err));
                     done();
                     console.info("====>inputmethodNomal_test_switchInputMethod_static_002 end");
@@ -124,9 +125,9 @@ export default function inputMethodTest() {
          * @tc.desc   Test Indicates the input method which will hide softboard with calback.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+         * @tc.level  LEVEL0
          */
-        it('inputmethodNomal_test_hideSoftKeyboard_static_001', Level.LEVEL2, async (done: () => void)  => {
+        it('inputmethodNomal_test_hideSoftKeyboard_static_001', Level.LEVEL0, async (done: () => void)  => {
             console.info("====>*********inputmethodNomal_test_hideSoftKeyboard_static_001 start************");
             let inputMethodCtrl = inputMethod.getController()
             inputMethodCtrl.hideSoftKeyboard((err : BusinessError | null) => {
@@ -140,7 +141,7 @@ export default function inputMethodTest() {
                         expect().assertFail();
                         done();
                     }
-                } catch (err: BusinessError) {
+                } catch (err) {
                     console.error("====>inputmethodNomal_test_hideSoftKeyboard_static_001 catch err: " + JSON.stringify(err));
                     expect().assertFail();
                     done();
@@ -165,7 +166,8 @@ export default function inputMethodTest() {
                 await inputMethodCtrl.hideSoftKeyboard();
                 expect().assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error('====>inputmethodNomal_test_hideSoftKeyboard_static_002 hideSoftKeyboard catch err' + JSON.stringify(err))
                 expect(err.code).assertEqual(201);
                 expect(err.message).assertContain("the permissions check fails");
@@ -214,6 +216,7 @@ export default function inputMethodTest() {
                     };
                     console.info("====>inputmethod_test_getInputMethods_static_001 listInputMethod result---" + JSON.stringify(arr));
                     expect(arr != undefined).assertTrue();
+                    expect(arr?.length === 0).assertTrue();
                     console.info("====>************* inputmethod_test_getInputMethods_static_001 Test end*************");
                     done();
                 } catch (err) {
@@ -245,6 +248,7 @@ export default function inputMethodTest() {
                     };
                     console.info("====>inputmethod_test_getInputMethods_static_002 listInputMethod result---");
                     expect(arr != undefined).assertTrue();
+                    expect(arr?.length !== 0).assertTrue();
                     done();
                 } catch (err) {
                     console.error("inputmethod_test_getInputMethods_static_002 catch error: " + err);
@@ -370,12 +374,14 @@ export default function inputMethodTest() {
                 try {
                     if (err != null || Enable_List == undefined) {
                         console.info("====>SUB_InputMethod_IMF_Enable_static_0400 getAllInputMethods fail because: " + JSON.stringify(err));
-                        expect().assertFail();
+                        expect(Enable_List?.length == 0).assertTrue();
+                        expect().assertFail();                        
                         done();
                     }
                     console.info('====>SUB_InputMethod_IMF_Enable_static_0400 getAllInputMethods success: ' + JSON.stringify(Enable_List));
                     let arr = Array<string>();
                     if (Enable_List != undefined && Enable_List.length > 0) {
+                        expect(Enable_List?.length !== 0).assertTrue();
                         for (let i = 0; i < Enable_List.length; i++) {
                             arr.push(Enable_List[i].name);
                         }
@@ -409,7 +415,7 @@ export default function inputMethodTest() {
                 let Enable_List = await inputMethodSetting.getAllInputMethods();
                 console.info('====>SUB_InputMethod_IMF_Enable_static_0500 getAllInputMethods success: ' + JSON.stringify(Enable_List));
                 let arr = Array<string>();
-                for (let i = 0; i < Enable_List.length; i++) {
+                for (let i = 0; i < Enable_List.length; i++) {                    
                     arr.push(Enable_List[i].name);
                 }
                 let arr1 = ["com.example.kikakeyboard", "com.huawei.hmos.inputmethod"];
@@ -800,6 +806,21 @@ export default function inputMethodTest() {
             let number_password = inputMethod.TextInputType.NUMBER_PASSWORD;
             console.info("====>Sub_Misc_inputMethod_TextInputType_static_0100 NUMBER_PASSWORD:" + number_password);
             expect(number_password == 8).assertTrue();
+            let screen_lock_password = inputMethod.TextInputType.SCREEN_LOCK_PASSWORD;
+            console.info("====>Sub_Misc_inputMethod_TextInputType_static_0100 SCREEN_LOCK_PASSWORD:" + screen_lock_password);
+            expect(screen_lock_password).assertEqual(9);
+            let user_name = inputMethod.TextInputType.USER_NAME;
+            console.info("====>Sub_Misc_inputMethod_TextInputType_0100 USER_NAME:" + user_name);
+            expect(user_name).assertEqual(10);
+            let new_password = inputMethod.TextInputType.NEW_PASSWORD;
+            console.info("====>Sub_Misc_inputMethod_TextInputType_static_0100 NEW_PASSWORD:" + new_password);
+            expect(new_password).assertEqual(11);
+            let number_decimal = inputMethod.TextInputType.NUMBER_DECIMAL;
+            console.info("====>Sub_Misc_inputMethod_TextInputType_static_0100 NUMBER_DECIMAL:" + number_decimal);
+            expect(number_decimal).assertEqual(12);
+            let one_time_code = inputMethod.TextInputType.ONE_TIME_CODE;
+            console.info("====>Sub_Misc_inputMethod_TextInputType_static_0100 ONE_TIME_CODE:" + one_time_code);
+            expect(one_time_code).assertEqual(13);
             done();
         });
 
@@ -938,6 +959,7 @@ export default function inputMethodTest() {
                 top: 607,
                 width: 720,
                 height: 601,
+                displayId: 1
             }
             try {
                 console.info('====>Sub_Misc_inputMethod_inputWindowInfo_static_0201 inputWindowInfo: ' + JSON.stringify(inputWindowInfo));
@@ -946,6 +968,7 @@ export default function inputMethodTest() {
                 expect(inputWindowInfo.top).assertEqual(607)
                 expect(inputWindowInfo.width).assertEqual(720)
                 expect(inputWindowInfo.height).assertEqual(601)
+                expect(inputWindowInfo.displayId).assertEqual(1)
                 done();
             } catch (err) {
                 console.info('====>Sub_Misc_inputMethod_inputWindowInfo_static_0201 fail: ' + JSON.stringify(err));

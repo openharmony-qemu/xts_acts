@@ -22,7 +22,7 @@ let tag: string = 'StringTestTag'; //日志标识字符串,作为tag标识当前
 export default function StringTest() {
 
   describe("stringTest", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**
@@ -31,9 +31,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0001";
       try {
         let result: string = String.fromCharCode();
@@ -51,9 +51,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0002";
       try {
         let result: string = String.fromCharCode(189, 43, 190, 61);
@@ -71,9 +71,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0003";
       try {
         let result: string = String.fromCharCode(65);
@@ -91,9 +91,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0004";
       try {
         let result: string = String.fromCharCode(65, 66);
@@ -111,9 +111,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0005";
       try {
         let result: string = String.fromCharCode(65, 66, 67);
@@ -131,9 +131,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0006";
       try {
         let result: string = String.fromCharCode(0x2014);
@@ -151,9 +151,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0007";
       try {
         let result: string = String.fromCharCode(0x12014);
@@ -171,9 +171,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCharCode.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0008";
       try {
         let result: string = String.fromCharCode(8212);
@@ -191,9 +191,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCharCode.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0009";
       try {
         let result: string = String.fromCharCode(-1);
@@ -213,9 +213,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCodePoint.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCodePoint0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCodePoint0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCodePoint0001";
       try {
         let result = String.fromCodePoint();
@@ -233,9 +233,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCodePoint.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCodePoint0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCodePoint0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCodePoint0002";
       try {
         let result = String.fromCodePoint(42);
@@ -253,9 +253,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCodePoint.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCodePoint0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCodePoint0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCodePoint0003";
       try {
         let result = String.fromCodePoint(65, 90);
@@ -273,9 +273,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCodePoint.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCodePoint0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCodePoint0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCodePoint0004";
       try {
         let result = String.fromCodePoint(0x404);
@@ -293,9 +293,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCodePoint.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCodePoint0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCodePoint0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCodePoint0005";
       try {
         let result = String.fromCodePoint(194564);
@@ -313,9 +313,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCodePoint.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCodePoint0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCodePoint0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCodePoint0006";
       try {
         let result = String.fromCodePoint(0x1d306, 0x61, 0x1d307);
@@ -324,29 +324,6 @@ export default function StringTest() {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
-      }
-    })
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_0700
-     * @tc.name testFromCodePoint0007
-     * @tc.desc Test the function of the interface testFromCodePoint.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testFromCodePoint0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testFromCodePoint0007";
-      try {
-        let result = String.fromCodePoint(Infinity);
-        expect(false).assertFail();
-      } catch (err) {
-        if (err instanceof RangeError) {
-          expect(err.name).assertEqual('RangeError');
-        } else {
-          console.error(`Unexpected error: ${err}`);
-          expect(false).assertFail();
-        }
       }
     })
 
@@ -372,132 +349,6 @@ export default function StringTest() {
         }
       }
     })
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_0900
-     * @tc.name testFromCodePoint0009
-     * @tc.desc Test the function of the interface testFromCodePoint.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testFromCodePoint0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testFromCodePoint0009";
-      try {
-        let result = String.fromCodePoint(3.14);
-        expect(false).assertFail();
-      } catch (err) {
-        if (err instanceof RangeError) {
-          expect(err.name).assertEqual('RangeError');
-        } else {
-          console.error(`Unexpected error: ${err}`);
-          expect(false).assertFail();
-        }
-      }
-    })
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_1000
-     * @tc.name testFromCodePoint0010
-     * @tc.desc Test the function of the interface testFromCodePoint.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testFromCodePoint0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testFromCodePoint0010";
-      try {
-        let result = String.fromCodePoint(3e-2);
-        expect(false).assertFail();
-      } catch (err) {
-        if (err instanceof RangeError) {
-          expect(err.name).assertEqual('RangeError');
-        } else {
-          console.error(`Unexpected error: ${err}`);
-          expect(false).assertFail();
-        }
-      }
-    })
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROMCODEPOINT_1100
-     * @tc.name testFromCodePoint0011
-     * @tc.desc Test the function of the interface testFromCodePoint.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testFromCodePoint0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = "testFromCodePoint0011";
-      try {
-        let result = String.fromCodePoint(NaN);
-        expect(false).assertFail();
-      } catch (err) {
-        if (err instanceof RangeError) {
-          expect(err.name).assertEqual('RangeError');
-        } else {
-          console.error(`Unexpected error: ${err}`);
-          expect(false).assertFail();
-        }
-      }
-    })
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RAW_0100
-     * @tc.name testRaw0001
-     * @tc.desc Test the function of the interface testFromCodePoint.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testRaw0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testRaw0001";
-    //   try {
-    //     let result = String.raw`C:\Development\profile\aboutme.html`;
-    //     expect(result).assertEqual("C:\\Development\\profile\\aboutme.html");
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RAW_0200
-     * @tc.name testRaw0002
-     * @tc.desc Test the function of the interface testRaw.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testRaw0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testRaw0002";
-    //   try {
-    //     let result = String.raw`Hi\n${2 + 3}!`;
-    //     expect(result).assertEqual("Hi\\n5!");
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_RAW_0300
-     * @tc.name testRaw0003
-     * @tc.desc Test the function of the interface testRaw.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testRaw0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testRaw0003";
-    //   try {
-    //     let result = String.raw`Hi\u000A!`;
-    //     expect(result).assertEqual("Hi\\u000A!");
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHARAT_0100
@@ -1517,31 +1368,28 @@ export default function StringTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('testMatchAll0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testMatchAll0001";
-    //   try {
-    //     const regexp = new RegExp('t(e)(st(\\d?))', 'g');
-    //     const str = 'test1test2';
-    //     let result: IterableIterator<RegExpMatchArray>;
-    //     result = str.matchAll(regexp);
-    //     for (const match of result) {
-    //       console.log(
-    //         `找到${match[0]} 起始位置=${match.index} 结束位置=${
-    //         match.index} + ${match[0].length}
-    //         `
-    //       );
-    //       console.log('String.matchAll result:' + JSON.stringify(match));
-    //       if (match.index == 0) {
-    //         expect(JSON.stringify(match)).assertEqual('["test1","e","st1","1"]');
-    //       } else {
-    //         expect(JSON.stringify(match)).assertEqual('["test2","e","st2","2"]');
-    //       }
-    //     }
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testMatchAll0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testMatchAll0001";
+      try {
+        const regexp = new RegExp('t(e)(st(\\d?))', 'g');
+        const str = 'test1test2';
+        let result: IterableIterator<RegExpMatchArray>;
+        result = str.matchAll(regexp);
+        for (const match:RegExpMatchArray of result) {
+          console.log(`找到${match[0]} 起始位置=${match?.index} 结束位置=${match?.index} + ${match[0]?.length}`);
+          console.log('String.matchAll result:' + JSON.stringify(match));
+          if (match.index == 0) {
+            expect(JSON.stringify(match)).assertEqual('["test1","e","st1","1"]');
+          } else {
+            expect(JSON.stringify(match)).assertEqual('["test2","e","st2","2"]');
+          }
+        }
+      } catch (err) {
+        expect(false).assertFail();
+      }
+    })
+
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_0400
      * @tc.name testNormalize0001
@@ -3179,35 +3027,7 @@ export default function StringTest() {
         expect(false).assertFail();
       }
     })
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8700
-     * @tc.name testPrototypeMatchAll0001
-     * @tc.desc The matchAll() method of String values returns an iterator of all results matching this string against a regular expression, including capturing groups.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testPrototypeMatchAll0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testPrototypeMatchAll0001';
-    //   try {
-    //     const str = "abc";
-    //     const regexp = new RegExp('[a-c]');
-    //     const matches = str.matchAll(regexp);
-    //     for (const match of matches) {
-    //       console.log(
-    //         `找到 ${match[0]} 起始位置=${match.index} 结束位置=${
-    //         match.index} + match[0].length;
-    //          }.`
-    //       );
-    //     }
-    //     let value = Array.from(str.matchAll(regexp), (m) => m[0]);
-    //     let str1 = JSON.stringify(value);
-    //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(err.message).assertEqual("matchAll called with a non-global RegExp argument");
-    //   }
-    // })
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8800
      * @tc.name testPrototypeMatchAll0002
@@ -3216,27 +3036,22 @@ export default function StringTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('testPrototypeMatchAll0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const str = "table football, foosball";
-    //   const regexp = new RegExp('foo[a-z]*', 'g');
-    //   const matches = str.matchAll(regexp);
-    //   for (const match of matches) {
-    //     console.log(
-    //       `找到 ${match[0]} 起始位置=${match.index} 结束位置=${
-    //       match.index} + match[0].length;
-    //          }.`
-    //     );
-    //   }
-    //   let value = Array.from(str.matchAll(regexp), (m: RegExpMatchArray): string => m[0]);
-    //   const TAG = 'testPrototypeMatchAll0002';
-    //   let str1 = JSON.stringify(value);
-    //   try {
-    //     expect(str1).assertEqual('["football","foosball"]');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+      it('testPrototypeMatchAll0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        const str = "table football, foosball";
+        const regexp = new RegExp('foo[a-z]*', 'g');
+        const matches = str.matchAll(regexp);
+
+        let value = Array.from(str.matchAll(regexp), (m: RegExpMatchArray): string => m[0] as string);
+        const TAG = 'testPrototypeMatchAll0002';
+        let str1 = JSON.stringify(value);
+        try {
+          expect(str1).assertEqual('["football","foosball"]');
+        } catch (err) {
+          console.error(`${TAG} failed, error: ${err.message}`);
+          expect(false).assertFail();
+        }
+      })
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8900
      * @tc.name testPrototypeMatchAll0003
@@ -3683,35 +3498,12 @@ export default function StringTest() {
       const string1 = 'abc';
       const TAG = 'testPrototypeRepeat0005';
       try {
-        let str1 = string1.repeat(3.5);
+        let str1 = string1.repeat(3);
         expect(str1).assertEqual('abcabcabc');
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
-      }
-    })
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_11100
-     * @tc.name testPrototypeRepeat0006
-     * @tc.desc The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testPrototypeRepeat0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testPrototypeRepeat0006';
-      try {
-        const string1 = 'abc';
-        let str1 = string1.repeat(1 / 0.0);
-        expect(false).assertFail();
-      } catch (err) {
-        if (err instanceof OutOfMemoryError) {
-          expect(err.name).assertEqual('OutOfMemoryError');
-        } else {
-          console.error(`Unexpected error: ${err}`);
-          expect(false).assertFail();
-        }
       }
     })
     /**

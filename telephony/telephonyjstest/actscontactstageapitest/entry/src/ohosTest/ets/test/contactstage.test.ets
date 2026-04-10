@@ -564,7 +564,11 @@ export default function ContactInterfaceStageTest() {
               done();
               return;
             });
-          }else {done()}
+          }else {
+            console.error("SUB_Telephony_ContactsApi_updateContact_test_0300 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       });
       sleep(500);
@@ -992,12 +996,12 @@ export default function ContactInterfaceStageTest() {
             contact.deleteContact(context, keyData, (err:BusinessError) => {
               if (err) {
                 console.info("SUB_Telephony_ContactsApi_addContact_test_0100  err = " + JSON.stringify(err));
-                expect(false).assertTrue();
+                expect().assertFail();
                 done();
                 return;
-              }else {
+              } else {
                 console.log('deleteContact success ');
-                ExpectTrue(true);
+                expect(keyData != undefined).assertTrue();
                 done();
               }
             });
@@ -1040,7 +1044,11 @@ export default function ContactInterfaceStageTest() {
               done();
               return;
             });
-          }else {done()}
+          }else {
+            console.error("SUB_Telephony_ContactsApi_addContact_test_0200 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       }).catch((err:BusinessError) => {
         console.info("SUB_Telephony_ContactsApi_addContact_test_0200  err = " + JSON.stringify(err));
@@ -1094,7 +1102,11 @@ export default function ContactInterfaceStageTest() {
               expect(data != null).assertTrue();
               done();
             });
-          }else {done()}
+          }else {
+            console.error("SUB_Telephony_ContactsApi_addContact_test_0200 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       });
       sleep(500);
@@ -1140,7 +1152,11 @@ export default function ContactInterfaceStageTest() {
               expect(data != null).assertTrue();
               done();
             });
-          }else {done()}
+          }else {
+            console.error("SUB_Telephony_ContactsApi_queryContact_test_0200 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       });
       sleep(500);
@@ -1186,7 +1202,11 @@ export default function ContactInterfaceStageTest() {
               expect(data != null).assertTrue();
               done();
             });
-          }else {done()}
+          }else {
+            console.error("SUB_Telephony_ContactsApi_queryContact_test_0300 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       });
       sleep(500);
@@ -1232,7 +1252,11 @@ export default function ContactInterfaceStageTest() {
               expect(data != null).assertTrue();
               done();
             });
-          }else {done()}
+          }else {
+            console.error("SUB_Telephony_ContactsApi_queryContact_test_0400 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       });
       sleep(500);
@@ -1278,7 +1302,11 @@ export default function ContactInterfaceStageTest() {
               done();
               return;
             });
-          }else {done()}
+          }else {
+            console.error("SUB_Telephony_ContactsApi_queryContact_test_0500 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       });
       sleep(500);

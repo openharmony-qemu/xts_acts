@@ -64,7 +64,7 @@ export default function onSelectionChange14() {
       await CommonFunc.sleep(1000);
 
       let Select  = await driver.findComponent(ON.text('全选'))
-      await Select .click()
+      await Select?.click()
       await CommonFunc.sleep(1000);
       let shear  = await driver.findComponent(ON.text('剪切'))
       await shear .click()

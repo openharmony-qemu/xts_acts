@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -100,7 +100,12 @@ class C94 {
 }
 
 interface Opt96 { val?: number; }
-
+class C102 {
+  public val?:number;
+  constructor(val?:number){
+    this.val = val
+  }
+}
 interface Obj103 { x: number; }
 
 type F104 = () => string;
@@ -131,6 +136,7 @@ class C122 {
 
 interface Inner128 { x: number };
 interface Obj128 { data: Inner128 };
+
 
 export default function ArrayPopTest() {
   describe('ArrayPopTest', () => {
@@ -376,34 +382,6 @@ export default function ArrayPopTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0015
-     * @tc.name testArrayPop0015
-     * @tc.desc Verify Array.prototype.pop.call on array-like object decreases length and returns last numeric property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testArrayPop0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   class ArrLike {
-    //     length: number;
-    //     // define numeric properties explicitly as possibly undefined
-    //     0: number | undefined;
-    //     1: number | undefined;
-    //     constructor() {
-    //       this.length = 2;
-    //       this[0] = 5;
-    //       this[1] = 10;
-    //     }
-    //   }
-    //   const obj = new ArrLike();
-    //   const popped: number | undefined = Array.prototype.pop.call(obj);
-    //   expect(popped === undefined).assertEqual(false);
-    //   expect(popped!).assertEqual(10);
-    //   expect(obj.length).assertEqual(1);
-    //   expect(obj[1] === undefined).assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0016
      * @tc.name testArrayPop0016
      * @tc.desc Verify pop combined with concat does not affect combined copy
@@ -520,7 +498,7 @@ export default function ArrayPopTest() {
      * @tc.level Level 1
      */
     it('testArrayPop0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: number[] = Array<number>(100).fill(1);
+      const arr: number[] = Array.create<number>(100, 1);
       arr.pop();
       expect(arr.length).assertEqual(99);
     });
@@ -534,7 +512,7 @@ export default function ArrayPopTest() {
      * @tc.level Level 1
      */
     it('testArrayPop0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: number[] = new Array<number>(3).fill(5);
+      const arr: number[] = Array.create<number>(3, 5);
       const popped: number | undefined = arr.pop();
       expect(popped === undefined).assertEqual(false);
       expect(popped!).assertEqual(5);
@@ -849,7 +827,7 @@ export default function ArrayPopTest() {
      * @tc.level Level 1
      */
     it('testArrayPop0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: number[] = new Array<number>(3).fill(9);
+      const arr: number[] = Array.create<number>(3, 9);
       const popped: number | undefined = arr.pop();
       expect(popped).assertEqual(9);
       expect(arr.length).assertEqual(2);
@@ -923,7 +901,7 @@ export default function ArrayPopTest() {
      */
     it('testArrayPop0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 1, 3];
-      arr.sort((a, b) => a - b);
+      arr.sort((a, b) => (a - b).toInt())
       const popped: number | undefined = arr.pop();
       expect(popped).assertEqual(5);
     });
@@ -1269,37 +1247,6 @@ export default function ArrayPopTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0074
-     * @tc.name testArrayPop0074
-     * @tc.desc Verify pop returns last element from frozen inner arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testArrayPop0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const inner:number[]=Object.freeze([1,2]);
-    //   const arr:number[][]=[inner,[3,4]];
-    //   const popped:number[]|undefined=arr.pop();
-    //   expect(popped).assertDeepEquals([3,4]);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0075
-     * @tc.name testArrayPop0075
-     * @tc.desc Verify pop on array of symbols
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testArrayPop0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const s1:unique symbol=Symbol('a');
-    //   const s2:unique symbol=Symbol('b');
-    //   const arr:symbol[]=[s1,s2];
-    //   const popped:symbol|undefined=arr.pop();
-    //   expect(typeof popped==='symbol').assertEqual(true);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0076
      * @tc.name testArrayPop0076
      * @tc.desc Verify pop on array after reverse order
@@ -1367,7 +1314,7 @@ export default function ArrayPopTest() {
      */
     it('testArrayPop0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: C80[] = [new C80(2), new C80(1)];
-      arr.sort((a, b) => a.n - b.n);
+      arr.sort((a, b) => (a.n - b.n).toInt());
       const popped: C80 | undefined = arr.pop();
       expect(popped?.n).assertEqual(2);
     });
@@ -1615,23 +1562,6 @@ export default function ArrayPopTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0097
-     * @tc.name testArrayPop0097
-     * @tc.desc Verify pop on array of nested arrays after flatMap
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // todo
-    // it('testArrayPop0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arr: number[][] = [[1, 2], [3, 4]];
-    //   const flat: number[] = arr.flatMap(x => x.map(v => v * 2));
-    //   flat.push(10);
-    //   const popped: number | undefined = flat.pop();
-    //   expect(popped).assertEqual(10);
-    // });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0098
      * @tc.name testArrayPop0098
      * @tc.desc Verify pop on array of tuples after map modification
@@ -1703,12 +1633,12 @@ export default function ArrayPopTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // it('testArrayPop0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   class C { constructor(public val?:number){} }
-    //   const arr:C[]=[new C(1),new C()];
-    //   const popped:C|undefined=arr.pop();
-    //   expect(popped?.val===undefined).assertEqual(true);
-    // });
+      it('testArrayPop0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+
+        const arr:C102[]=[new C102(1),new C102()];
+        const popped:C102|undefined=arr.pop();
+        expect(popped?.val===undefined).assertEqual(true);
+      });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0103
@@ -1718,16 +1648,11 @@ export default function ArrayPopTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // todo
-    // it('testArrayPop0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   interface Obj103 { x: number; }
-    //
-    //   const arr: Obj[] = [{ x: 1 }, { x: 2 }];
-    //   const str: string = JSON.stringify(arr);
-    //   const arr2: Obj[] = JSON.parse(str);
-    //   const popped: Obj | undefined = arr2.pop();
-    //   expect(popped?.x).assertEqual(2);
-    // });
+      it('testArrayPop0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        const arr: Obj103[] = [{ x: 1 }, { x: 2 }];
+        const popped: Obj103 | undefined = arr.pop();
+        expect(popped?.x).assertEqual(2);
+      });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0104
@@ -1918,7 +1843,7 @@ export default function ArrayPopTest() {
      */
     it('testArrayPop0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: C115[] = [new C115(5), new C115(3), new C115(7)];
-      arr.sort((a, b) => a.v - b.v);
+      arr.sort((a, b) => (a.v - b.v).toInt());
       const popped: C115 | undefined = arr.pop();
       expect(popped?.v).assertEqual(7);
     });
@@ -1951,46 +1876,7 @@ export default function ArrayPopTest() {
       const popped: Obj117 | undefined = arr.pop();
       expect(popped?.val === undefined).assertEqual(true);
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0118
-     * @tc.name testArrayPop0118
-     * @tc.desc Verify pop on array of arrays after flatMap modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // todo
-    // it('testArrayPop0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const arr: number[][] = [[1, 2], [3, 4]];
-    //   const flat: number[] = arr.flatMap(a => {
-    //     const result: number[] = [];
-    //     for (let i = 0; i < a.length; i++) {
-    //       result.push(a[i] + 1);
-    //     }
-    //     return result;
-    //   });
-    //   flat.push(10);
-    //   const popped: number | undefined = flat.pop();
-    //   expect(popped).assertEqual(10);
-    // });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0119
-     * @tc.name testArrayPop0119
-     * @tc.desc Verify pop on array of unique symbols
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('testArrayPop0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const s1:unique symbol=Symbol('s1');
-    //   const s2:unique symbol=Symbol('s2');
-    //   const arr:symbol[]=[s1,s2];
-    //   const popped:symbol|undefined=arr.pop();
-    //   expect(typeof popped==='symbol').assertEqual(true);
-    // });
-
+    
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0120
      * @tc.name testArrayPop0120

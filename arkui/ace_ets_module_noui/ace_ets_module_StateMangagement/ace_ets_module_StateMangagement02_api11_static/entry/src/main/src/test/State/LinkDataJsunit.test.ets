@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function LinkDataJsunit() {
   describe('LinkDataJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LinkDataJsunit beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
       

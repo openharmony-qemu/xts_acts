@@ -2544,84 +2544,6 @@ export default function inputMethodAbility() {
     });
 
     /**
-     * @tc.name   inputMethodAbility_test_073
-     * @tc.number inputMethodAbility_test_073
-     * @tc.desc   Function test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('inputMethodAbility_test_073', Level.LEVEL2, async (done: Function) => {
-
-      let unSubscriberCallback = (err: BusinessError) => {
-        console.info("====>inputMethodAbility_test_073 unSubscriberCallback start");
-        if (err) {
-          console.info("====>inputMethodAbility_test_073 unSubscriberCallback failed:" +
-          JSON.stringify(err));
-        } else {
-          console.info("====>inputMethodAbility_test_073 unSubscriberCallback finish");
-        }
-      }
-
-      let subscriberCallback = (err: BusinessError, data: ESObject) => {
-        console.info("====>inputMethodAbility_test_073 subscriberCallback data:"
-          + JSON.stringify(data));
-        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
-        let t = setTimeout(() => {
-          try {
-            expect(data.data).assertEqual("SUCCESS");
-            console.info("====>inputMethodAbility_test_073 end");
-            clearTimeout(t);
-            done();
-          } catch (err) {
-            console.info("====>inputMethodAbility_test_073 err:" + JSON.stringify(err));
-            clearTimeout(t);
-            done();
-          }
-        }, 1000)
-      }
-
-      let publishCallback = (err: BusinessError) => {
-        console.info("====>inputMethodAbility_test_073 publishCallback start");
-        if (err) {
-          console.info("====>inputMethodAbility_test_073 publishCallback failed:" + JSON.stringify(err));
-        } else {
-          let t1 = setTimeout(async () => {
-            let result = await delegator.executeShellCommand(`uinput -K -d 2000 -u 2000`);
-            console.info("====>inputMethodAbility_test_073 executeShellCommand success: " + JSON.stringify(result));
-            clearTimeout(t1);
-          }, 300);
-        }
-      }
-
-      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ["inputMethodAbility_test_073"]
-      }
-      let subscriber: ESObject;
-      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
-        try {
-          subscriber = data;
-          console.info("====>inputMethodAbility_test_073 subscriber data:" + JSON.stringify(data));
-          commonEventManager.subscribe(subscriber, subscriberCallback);
-          console.info("====>inputMethodAbility_test_073 subscriber finish");
-        } catch (err) {
-          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
-        }
-
-        let t = setTimeout(async () => {
-          clearTimeout(t);
-          let commonEventPublishData: commonEventManager.CommonEventPublishData = {
-            code: 73
-          }
-          commonEventManager.publish('inputMethodAbilityTest', commonEventPublishData, publishCallback);
-        }, 500)
-
-      }).catch((err: BusinessError) => {
-        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
-      })
-    });
-
-    /**
      * @tc.name   inputMethodAbility_test_074
      * @tc.number inputMethodAbility_test_074
      * @tc.desc   Function test
@@ -3192,7 +3114,7 @@ export default function inputMethodAbility() {
         console.info('====>Sub_Misc_inputMethod_onSelectByMovement_0120 onSelectByMovement start');
         inputMethodController.off("selectByMovement");
         try {
-          expect(movement.direction).assertEqual(2);
+          expect(movement.direction).assertEqual(inputMethod.Direction.CURSOR_DOWN);
           console.info('====>Sub_Misc_inputMethod_onSelectByMovement_0120 Succeed onSelectByMovement: ' +
           JSON.stringify(movement));
           done();
@@ -3205,6 +3127,123 @@ export default function inputMethodAbility() {
 
       let commonEventPublishData: commonEventManager.CommonEventPublishData = {
         code: 120
+      }
+      commonEventManager.publish('inputMethodAbilityTest', commonEventPublishData, publishCallback);
+    });
+
+    /**
+     * @tc.name   Sub_Misc_inputMethod_onSelectByMovement_0121
+     * @tc.number Sub_Misc_inputMethod_onSelectByMovement_0121
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Misc_inputMethod_onSelectByMovement_0121', Level.LEVEL2, async (done: Function) => {
+
+      let publishCallback = (err: BusinessError) => {
+        console.info("====>Sub_Misc_inputMethod_onSelectByMovement_0121 publishCallback start");
+        if (err) {
+          console.info("====>Sub_Misc_inputMethod_onSelectByMovement_0121 publishCallback failed:" +
+          JSON.stringify(err));
+        }
+      }
+
+      inputMethodController.on("selectByMovement", async (movement) => {
+        console.info('====>Sub_Misc_inputMethod_onSelectByMovement_0121 onSelectByMovement start');
+        inputMethodController.off("selectByMovement");
+        try {
+          expect(movement.direction).assertEqual(inputMethod.Direction.CURSOR_UP);
+          console.info('====>Sub_Misc_inputMethod_onSelectByMovement_0121 Succeed onSelectByMovement: ' +
+          JSON.stringify(movement));
+          done();
+        } catch (err) {
+          console.info('====>Sub_Misc_inputMethod_onSelectByMovement_0121 onSelectByMovement catch err: ' +
+          JSON.stringify(err));
+          done();
+        }
+      });
+
+      let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+        code: 121
+      }
+      commonEventManager.publish('inputMethodAbilityTest', commonEventPublishData, publishCallback);
+    });
+
+    /**
+     * @tc.name   Sub_Misc_inputMethod_onSelectByMovement_0122
+     * @tc.number Sub_Misc_inputMethod_onSelectByMovement_0122
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Misc_inputMethod_onSelectByMovement_0122', Level.LEVEL2, async (done: Function) => {
+
+      let publishCallback = (err: BusinessError) => {
+        console.info("====>Sub_Misc_inputMethod_onSelectByMovement_0122 publishCallback start");
+        if (err) {
+          console.info("====>Sub_Misc_inputMethod_onSelectByMovement_0122 publishCallback failed:" +
+          JSON.stringify(err));
+        }
+      }
+
+      inputMethodController.on("selectByMovement", async (movement) => {
+        console.info('====>Sub_Misc_inputMethod_onSelectByMovement_0122 onSelectByMovement start');
+        inputMethodController.off("selectByMovement");
+        try {
+          expect(movement.direction).assertEqual(inputMethod.Direction.CURSOR_LEFT);
+          console.info('====>Sub_Misc_inputMethod_onSelectByMovement_0122 Succeed onSelectByMovement: ' +
+          JSON.stringify(movement));
+          done();
+        } catch (err) {
+          console.info('====>Sub_Misc_inputMethod_onSelectByMovement_0122 onSelectByMovement catch err: ' +
+          JSON.stringify(err));
+          done();
+        }
+      });
+
+      let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+        code: 122
+      }
+      commonEventManager.publish('inputMethodAbilityTest', commonEventPublishData, publishCallback);
+    });
+
+    /**
+     * @tc.name   Sub_Misc_inputMethod_onSelectByMovement_0123
+     * @tc.number Sub_Misc_inputMethod_onSelectByMovement_0123
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Misc_inputMethod_onSelectByMovement_0123', Level.LEVEL2, async (done: Function) => {
+
+      let publishCallback = (err: BusinessError) => {
+        console.info("====>Sub_Misc_inputMethod_onSelectByMovement_0123 publishCallback start");
+        if (err) {
+          console.info("====>Sub_Misc_inputMethod_onSelectByMovement_0123 publishCallback failed:" +
+          JSON.stringify(err));
+        }
+      }
+
+      inputMethodController.on("selectByMovement", async (movement) => {
+        console.info('====>Sub_Misc_inputMethod_onSelectByMovement_0123 onSelectByMovement start');
+        inputMethodController.off("selectByMovement");
+        try {
+          expect(movement.direction).assertEqual(inputMethod.Direction.CURSOR_RIGHT);
+          console.info('====>Sub_Misc_inputMethod_onSelectByMovement_0123 Succeed onSelectByMovement: ' +
+          JSON.stringify(movement));
+          done();
+        } catch (err) {
+          console.info('====>Sub_Misc_inputMethod_onSelectByMovement_0123 onSelectByMovement catch err: ' +
+          JSON.stringify(err));
+          done();
+        }
+      });
+
+      let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+        code: 123
       }
       commonEventManager.publish('inputMethodAbilityTest', commonEventPublishData, publishCallback);
     });

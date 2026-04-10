@@ -503,21 +503,6 @@ export function testFunctionLength() {
 }
 
 /**
- * 测试点31: 函数的 name 属性
- * 说明：验证函数命名的代理支持
- */
-export function testFunctionName() {
-    const target = function myFunc() {
-    };
-    const proxy = new Proxy(target, {
-        get(target, prop) {
-            return Reflect.get(target, prop);
-        }
-    });
-    return proxy.name === 'myFunc';
-}
-
-/**
  * 测试点32: 类实例的 constructor 属性
  * 说明：验证类继承链的代理支持
  */

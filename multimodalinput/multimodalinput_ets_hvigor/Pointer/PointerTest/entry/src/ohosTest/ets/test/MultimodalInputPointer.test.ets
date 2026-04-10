@@ -371,6 +371,106 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_getPointerStyle_0400
+     * @tc.number SUB_MMI_Input_Api_Pointer_getPointerStyle_0400
+     * @tc.desc   Test callback getPointerStyle interface when the windowId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_getPointerStyle_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyle_0400";
+        console.info(`${caseName} enter`);
+        try {
+          pointer.getPointerStyle(null, (error: Error, style: pointer.PointerStyle) => {
+            console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error,[`code`, `message`])}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+        console.info(`${caseName} exit`);
+      });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_getPointerStyle_0500
+     * @tc.number SUB_MMI_Input_Api_Pointer_getPointerStyle_0500
+     * @tc.desc   Test callback getPointerStyle interface when the windowId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_getPointerStyle_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyle_0500";
+        console.info(`${caseName} enter`);
+        try {
+          pointer.getPointerStyle(undefined, (error: Error, style: pointer.PointerStyle) => {
+            console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error,[`code`, `message`])}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+        console.info(`${caseName} exit`);
+      });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_getPointerStyle_0600
+     * @tc.number SUB_MMI_Input_Api_Pointer_getPointerStyle_0600
+     * @tc.desc   Test promise getPointerStyle interface when the windowId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_getPointerStyle_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyle_0600";
+      console.info(`${caseName} enter`);
+      try {
+        pointer.getPointerStyle(null).then((style: pointer.PointerStyle) => {
+          console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_getPointerStyle_0700
+     * @tc.number SUB_MMI_Input_Api_Pointer_getPointerStyle_0700
+     * @tc.desc   Test promise getPointerStyle interface when the windowId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_getPointerStyle_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyle_0700";
+      console.info(`${caseName} enter`);
+      try {
+        pointer.getPointerStyle(undefined).then((style: pointer.PointerStyle) => {
+          console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
      * @tc.name   SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0100
      * @tc.desc   Test getPointerStyleSync interface to get the mouse style type.
@@ -417,6 +517,54 @@ export default function MultimodalInputPointerTest() {
         ExpectFalse(true);
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0300
+     * @tc.number SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0300
+     * @tc.desc   Test getPointerStyleSync interface when the windowId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0300";
+      console.info(`${caseName} enter`);
+      try {
+        let style: pointer.PointerStyle = pointer.getPointerStyleSync(null);
+        console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0400
+     * @tc.number SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0400
+     * @tc.desc   Test getPointerStyleSync interface when the windowId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyleSync_0400";
+      console.info(`${caseName} enter`);
+      try {
+        let style: pointer.PointerStyle = pointer.getPointerStyleSync(undefined);
+        console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
     });
 
     /**
@@ -519,6 +667,175 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0400
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0400
+     * @tc.desc   Test callback setPointerStyle interface when the windowId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0400";
+      console.info(`${caseName} enter`);
+      try {
+        pointer.setPointerStyle(null, pointer.PointerStyle.CROSS, error => {
+          console.info(`${caseName} Set pointer style success`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0500
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0500
+     * @tc.desc   Test callback setPointerStyle interface when the windowId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0500";
+      console.info(`${caseName} enter`);
+      try {
+        pointer.setPointerStyle(undefined, pointer.PointerStyle.CROSS, error => {
+          console.info(`${caseName} Set pointer style success`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0600
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0600
+     * @tc.desc   Test callback setPointerStyle interface to set all mouse style types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0600";
+      console.info(`${caseName} enter`);
+      try {
+        let ifSetPointerStyleSuccess = 0;
+        window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+          let windowId = win.getWindowProperties().id;
+          if (error.code) {
+            console.info(`${caseName} Failed to obtain the top window. Cause: ${JSON.stringify(error)}`);
+            expect().assertFail();
+            done();
+          } else if (windowId < 0) {
+            console.info(`${caseName} Invalid windowId`);
+            expect().assertFail();
+            done();
+          } else {
+            try {
+              for (let pointerStyle = pointer.PointerStyle.DEFAULT; pointerStyle <= pointer.PointerStyle.LASER_CURSOR_DOT_RED; pointerStyle++) {
+                pointer.setPointerStyle(windowId, pointerStyle, error => {
+                  console.info(`${caseName} Set pointer style success`);
+                });
+                ifSetPointerStyleSuccess++;
+              }
+              expect(ifSetPointerStyleSuccess).assertEqual(52);
+              done();
+            } catch (error) {
+              console.info(`${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect().assertFail();
+              done();
+            }
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} Get last window failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0700
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0700
+     * @tc.desc   Test promise setPointerStyle interface to set the mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0700";
+      console.info(`${caseName} enter`);
+      try {
+        let ifSetPointerStyleSuccess = 0;
+        window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+          let windowId = win.getWindowProperties().id;
+          if (error.code) {
+            console.info(`${caseName} Failed to obtain the top window. Cause: ${JSON.stringify(error)}`);
+            expect().assertFail();
+            done();
+          } else if (windowId < 0) {
+            console.info(`${caseName} Invalid windowId`);
+            expect().assertFail();
+            done();
+          } else {
+            try {
+              for (let pointerStyle = pointer.PointerStyle.DEFAULT; pointerStyle <= pointer.PointerStyle.LASER_CURSOR_DOT_RED; pointerStyle++) {
+                pointer.setPointerStyle(windowId, pointerStyle).then(() => {
+                  console.info(`${caseName} Set pointer style success`);
+                });
+                ifSetPointerStyleSuccess++;
+              }
+              expect(ifSetPointerStyleSuccess).assertEqual(52);
+              done();
+            } catch (error) {
+              console.info(`${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect().assertFail();
+              done();
+            }
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} Get last window failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    }); 
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyle_0800
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyle_0800
+     * @tc.desc   Test promise setPointerStyle interface to set undefined value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerStyle_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0800";
+      try {
+        pointer.setPointerStyle(10, undefined).then(() => {
+          console.info(`${caseName} set pointer style success`);
+          expect().assertFail();
+          done();
+        })
+      } catch (error) {
+        console.info(`${caseName} set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });  
+
+    /**
      * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0100
      * @tc.desc   Test setPointerStyleSync interface to set the mouse style type.
@@ -554,6 +871,134 @@ export default function MultimodalInputPointerTest() {
         }
       });
     });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0200
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0200
+     * @tc.desc   Test setPointerStyleSync interface when the windowId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0200";
+      console.info(`${caseName} enter`);
+      try {
+        pointer.setPointerStyleSync(null, pointer.PointerStyle.CROSS);
+        console.info(`${caseName} Set pointer style success`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} getPointerSize failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0300
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0300
+     * @tc.desc   Test setPointerStyleSync interface when the windowId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0300";
+      console.info(`${caseName} enter`);
+      try {
+        pointer.setPointerStyleSync(undefined, pointer.PointerStyle.CROSS);
+        console.info(`${caseName} Set pointer style success`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} getPointerSize failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0400
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0400
+     * @tc.desc   Test setPointerStyleSync interface to set all mouse style types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0400";
+      console.info(`${caseName} enter`);
+      try {
+        let ifSetPointerStyleSyncSuccess = 0;
+        window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+          let windowId = win.getWindowProperties().id;
+          if (error.code) {
+            console.info(`${caseName} Failed to obtain the top window. Cause: ${JSON.stringify(error)}`);
+            expect().assertFail();
+            done();
+          } else {
+            try {
+              for (let pointerStyle = pointer.PointerStyle.DEFAULT; pointerStyle <= pointer.PointerStyle.LASER_CURSOR_DOT_RED; pointerStyle++) {
+                pointer.setPointerStyleSync(windowId, pointerStyle);
+                ifSetPointerStyleSyncSuccess++;
+                console.info(`${caseName} Set pointer style success:${ifSetPointerStyleSyncSuccess}`);
+              }
+              expect(ifSetPointerStyleSyncSuccess).assertEqual(52);
+              done();
+            } catch (error) {
+              console.info(`${caseName} getPointerSize failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect().assertFail();
+              done();
+            }
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} Get last window failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0500
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0500
+     * @tc.desc   Test setPointerStyleSync interface to set DEVELOPER_DEFINED_ICON mouse style type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyleSync_0500";
+      let ifSetPointerStyleSyncSuccess = 0;
+      window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+        let windowId = win.getWindowProperties().id;
+        if (error.code) {
+          console.info(`${caseName} Failed to obtain the top window. Cause: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        } else if (windowId < 0) {
+          console.info(`${caseName} Invalid windowId`);
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            pointer.setPointerStyleSync(windowId, pointer.PointerStyle.DEVELOPER_DEFINED_ICON);
+            console.info(`${caseName} Set pointer style success`);
+            ifSetPointerStyleSyncSuccess++;
+            expect(ifSetPointerStyleSyncSuccess).assertEqual(1);
+            done();
+          } catch (error) {
+            console.info(`${caseName} getPointerSize failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+            expect().assertFail();
+            done();
+          }
+        }
+      });
+    });    
 
     /**
      * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_0100
@@ -622,6 +1067,276 @@ export default function MultimodalInputPointerTest() {
           });
         });
       });
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0800
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0800
+     * @tc.desc   Test setCustomCursorSync interface when the windowId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0800";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.app_icon")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width: 50, height:50 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            try {
+              pointer.setCustomCursorSync(null, pixelMap, 25, 25);
+              console.info(`${caseName} setCustomCursorSync success`);
+              expect().assertFail();
+              done();
+            } catch (error) {
+              console.info(`${caseName} setCustomCursorSync failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0900
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0900
+     * @tc.desc   Test setCustomCursorSync interface when the windowId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_0900";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.app_icon")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width: 50, height:50 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            try {
+              pointer.setCustomCursorSync(undefined, pixelMap, 25, 25);
+              console.info(`${caseName} setCustomCursorSync success`);
+              expect().assertFail();
+              done();
+            } catch (error) {
+              console.info(`${caseName} setCustomCursorSync failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1000
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1000
+     * @tc.desc   Test setCustomCursorSync interface when the pixelMap is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1000";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.app_icon")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width: 50, height:50 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try {
+              pointer.setCustomCursorSync(windowId, null, 25, 25);
+              console.info(`${caseName} setCustomCursorSync success`);
+              expect().assertFail();
+              done();
+            } catch (error) {
+              console.info(`${caseName} setCustomCursorSync failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1100
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1100
+     * @tc.desc   Test setCustomCursorSync interface when the pixelMap is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1100";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.app_icon")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width: 50, height:50 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try {
+              pointer.setCustomCursorSync(windowId, undefined, 25, 25);
+              console.info(`${caseName} setCustomCursorSync success`);
+              expect().assertFail();
+              done();
+            } catch (error) {
+              console.info(`${caseName} setCustomCursorSync failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1200
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1200
+     * @tc.desc   Test setCustomCursorSync interface when the focusX is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1200";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.app_icon")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width: 50, height:50 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try {
+              pointer.setCustomCursorSync(windowId, pixelMap, null, 25);
+              console.info(`${caseName} setCustomCursorSync success`);
+              expect().assertFail();
+              done();
+            } catch (error) {
+              console.info(`${caseName} setCustomCursorSync failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1300
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1300
+     * @tc.desc   Test setCustomCursorSync interface when the focusX is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1300";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.app_icon")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width: 50, height:50 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try {
+              pointer.setCustomCursorSync(windowId, pixelMap, undefined, 25);
+              console.info(`${caseName} setCustomCursorSync success`);
+              expect().assertFail();
+              done();
+            } catch (error) {
+              console.info(`${caseName} setCustomCursorSync failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1400
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1400
+     * @tc.desc   Test setCustomCursorSync interface when the focusY is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1400";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.app_icon")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width: 50, height:50 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try {
+              pointer.setCustomCursorSync(windowId, pixelMap, 25, null);
+              console.info(`${caseName} setCustomCursorSync success`);
+              expect().assertFail();
+              done();
+            } catch (error) {
+              console.info(`${caseName} setCustomCursorSync failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1500
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1500
+     * @tc.desc   Test setCustomCursorSync interface when the focusY is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursorSync_1500";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.app_icon")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width: 50, height:50 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try {
+              pointer.setCustomCursorSync(windowId, pixelMap, 25, undefined);
+              console.info(`${caseName} setCustomCursorSync success`);
+              expect().assertFail();
+              done();
+            } catch (error) {
+              console.info(`${caseName} setCustomCursorSync failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
     });
 
     /**
@@ -1232,6 +1947,286 @@ export default function MultimodalInputPointerTest() {
             }catch (error){
               console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error,[`code`,`message`])}`);
               ExpectTrue(error.code == 401);
+              done();
+            }
+          });
+        });
+      });
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_2400
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_2400
+     * @tc.desc   Test promise setCustomCursor interface when the windowId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursor_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_2400";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.257x257")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width:1, height:1 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          console.info(`${caseName} pixelMap: ${JSON.stringify(pixelMap)}`);
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            try{
+              pointer.setCustomCursor(null, {pixelMap: pixelMap, focusX: 0, focusY: 0}, {followSystem: true}).then(() => {
+                console.info(`${caseName} setCustomCursor success`);
+                expect().assertFail();
+                done();
+              });
+            }catch (error){
+              console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error,[`code`,`message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_2500
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_2500
+     * @tc.desc   Test promise setCustomCursor interface when the windowId is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursor_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_2500";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.257x257")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width:1, height:1 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          console.info(`${caseName} pixelMap: ${JSON.stringify(pixelMap)}`);
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            try{
+              pointer.setCustomCursor(undefined, {pixelMap: pixelMap, focusX: 0, focusY: 0}, {followSystem: true}).then(() => {
+                console.info(`${caseName} setCustomCursor success`);
+                expect().assertFail();
+                done();
+              });
+            }catch (error){
+              console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error,[`code`,`message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_2600
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_2600
+     * @tc.desc   Test promise setCustomCursor interface when the pixelMap is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursor_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_2600";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.257x257")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width:1, height:1 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          console.info(`${caseName} pixelMap: ${JSON.stringify(pixelMap)}`);
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try{
+              pointer.setCustomCursor(windowId, null, {followSystem: true}).then(() => {
+                console.info(`${caseName} setCustomCursor success`);
+                expect().assertFail();
+                done();
+              });
+            }catch (error){
+              console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error,[`code`,`message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_2700
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_2700
+     * @tc.desc   Test promise setCustomCursor interface when the pixelMap is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursor_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_2700";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.257x257")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width:1, height:1 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          console.info(`${caseName} pixelMap: ${JSON.stringify(pixelMap)}`);
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try{
+              pointer.setCustomCursor(windowId, undefined, {followSystem: true}).then(() => {
+                console.info(`${caseName} setCustomCursor success`);
+                expect().assertFail();
+                done();
+              });
+            }catch (error){
+              console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error,[`code`,`message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_2800
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_2800
+     * @tc.desc   Test promise setCustomCursor interface when the followSystem is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursor_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_2800";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.257x257")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width:1, height:1 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          console.info(`${caseName} pixelMap: ${JSON.stringify(pixelMap)}`);
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try{
+              pointer.setCustomCursor(windowId, {pixelMap: pixelMap, focusX: 0, focusY: 0}, null).then(() => {
+                console.info(`${caseName} setCustomCursor success`);
+                expect().assertFail();
+                done();
+              });
+            }catch (error){
+              console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error,[`code`,`message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_2900
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_2900
+     * @tc.desc   Test promise setCustomCursor interface when the followSystem is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursor_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_2900";
+      console.info(`${caseName} enter`);
+      getContext().resourceManager.getMediaContent($r("app.media.257x257")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width:1, height:1 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          console.info(`${caseName} pixelMap: ${JSON.stringify(pixelMap)}`);
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try{
+              pointer.setCustomCursor(windowId, {pixelMap: pixelMap, focusX: 0, focusY: 0}, undefined).then(() => {
+                console.info(`${caseName} setCustomCursor success`);
+                expect().assertFail();
+                done();
+              });
+            }catch (error){
+              console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error,[`code`,`message`])}`);
+              expect(error.code).assertEqual(401);
+              done();
+            }
+          });
+        });
+      });
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_3000
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_3000
+     * @tc.desc   Test promise setCustomCursor interface to set the focusY as null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursor_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_3000";
+      getContext().resourceManager.getMediaContent($r("app.media.app_icon")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width: 50, height:50 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try {
+              pointer.setCustomCursor(windowId, pixelMap, 25, null).then(() => {
+                console.info(`${caseName} setCustomCursor success`);
+                expect().assertFail();
+                done();
+              });
+            } catch (error) {
+              console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect(error.code).assertEqual(401)
+              done();
+            }
+          });
+        });
+      });
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setCustomCursor_3100
+     * @tc.number SUB_MMI_Input_Api_Pointer_setCustomCursor_3100
+     * @tc.desc   Test promise setCustomCursor interface to set the focusY as undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setCustomCursor_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setCustomCursor_3100";
+      getContext().resourceManager.getMediaContent($r("app.media.app_icon")).then((svgFileData) => {
+        const svgBuffer: ArrayBuffer = svgFileData.buffer.slice(0);
+        let svgImagesource: image.ImageSource = image.createImageSource(svgBuffer);
+        let svgDecodingOptions: image.DecodingOptions = {desiredSize: { width: 50, height:50 }};
+        svgImagesource.createPixelMap(svgDecodingOptions).then((pixelMap) => {
+          window.getLastWindow(getContext(), (error: BusinessError, win: window.Window) => {
+            let windowId = win.getWindowProperties().id;
+            try {
+              pointer.setCustomCursor(windowId, pixelMap, 25, undefined).then(() => {
+                console.info(`${caseName} setCustomCursor success`);
+                expect().assertFail();
+                done();
+              });
+            } catch (error) {
+              console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+              expect(error.code).assertEqual(401)
               done();
             }
           });

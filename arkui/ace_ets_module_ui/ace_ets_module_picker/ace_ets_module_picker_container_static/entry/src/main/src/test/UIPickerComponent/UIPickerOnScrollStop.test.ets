@@ -28,7 +28,7 @@ const SLEEP_TIME_L = 1000;
 export default function UIPickerOnScrollStopTest() {
   describe('UIPickerOnScrollStopTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("UIPickerOnScrollStopTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.container.static", "EntryAbility")
       await UtilsTest.msSleep(SLEEP_TIME_L)

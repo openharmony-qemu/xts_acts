@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textCaretColor() {
   describe('textCaretColor', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textCaretColor beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility")

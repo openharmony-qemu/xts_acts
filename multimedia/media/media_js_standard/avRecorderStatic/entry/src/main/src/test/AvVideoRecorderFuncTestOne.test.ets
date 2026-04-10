@@ -44,7 +44,7 @@ export function avVideoRecorderTestOne() {
     const ENCORDER_AAC = media.CodecMimeType.AUDIO_AAC;
     const ONLYAUDIO_TYPE = 'only_audio';
     let trackArray: ESObject;
-    let fdObject: FdObject;
+    let fdObject: FdObject | undefined;
     let fdPath: string;
     let maxAmplitudeStartTimes = 0;
     let maxAmplitudePauseTimes = 0;
@@ -246,14 +246,14 @@ export function avVideoRecorderTestOne() {
 
     const UPDATE_ROTATION_EVENT = 'updateRotationEvent';
 
-    let cameraManager: camera.CameraManager;
-    let videoOutput: camera.VideoOutput;
+    let cameraManager: camera.CameraManager | undefined;
+    let videoOutput: camera.VideoOutput | undefined;
     let captureSession: camera.VideoSession | null = null;
-    let cameraInput: camera.CameraInput;
-    let previewOutput: camera.PreviewOutput;
+    let cameraInput: camera.CameraInput | undefined;
+    let previewOutput: camera.PreviewOutput | undefined;
     let cameraOutputCap: camera.CameraOutputCapability;
     let videoSurfaceId: string | undefined = undefined;
-    let myProfile: camera.VideoProfile;
+    let myProfile: camera.VideoProfile | undefined;
     let isSupportCameraVideoProfiles = true;
     let isCorrectSize = (size: camera.Size, standardWidth: number, standardHeight: number) => {
       return (size.width <= standardWidth) && (size.height <= standardHeight);
@@ -261,16 +261,16 @@ export function avVideoRecorderTestOne() {
     let getVideoProfile =
       (sizeList: Array<camera.VideoProfile>, width: number, height: number, toList: Array<camera.VideoProfile>, index: number) => {
         console.log('display width: ' + width + ', height: ' + height);
-        let aVvideoProfile: camera.VideoProfile;
+        let aVvideoProfile: camera.VideoProfile | undefined;
         for (let i = 0; i < sizeList.length; i++) {
           const size = sizeList[i].size;
           if (isCorrectSize(size, width, height)) {
-            if (!aVvideoProfile || size.width > aVvideoProfile.size.width) {
+            if (!aVvideoProfile || size.width > aVvideoProfile!.size.width) {
               aVvideoProfile = sizeList[i];
             }
           }
         }
-        toList.splice(index.toInt(), 0, aVvideoProfile);
+        toList.splice(index.toInt(), 0, aVvideoProfile!);
         console.log('choosen aVvideoProfile: ' + JSON.stringify(aVvideoProfile));
       }
 
@@ -280,8 +280,8 @@ export function avVideoRecorderTestOne() {
       } else {
         avConfig.videoSourceType = media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_YUV
       }
-      avConfig.profile.videoFrameWidth = myProfile.size.width as int;
-      avConfig.profile.videoFrameHeight = myProfile.size.height as int;
+      avConfig.profile.videoFrameWidth = myProfile!.size.width as int;
+      avConfig.profile.videoFrameHeight = myProfile!.size.height as int;
     }
     beforeAll(async (): Promise<void> => {
       screen = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so')
@@ -297,11 +297,11 @@ export function avVideoRecorderTestOne() {
           resolve(undefined)
         });
       }
-      let cameras = cameraManager.getSupportedCameras();
+      let cameras = cameraManager!.getSupportedCameras();
       let cameraDevice = cameras[0];
       console.info(TAG + 'initCamera 006');
       try {
-        let cameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_VIDEO);
+        let cameraOutputCapability = cameraManager!.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_VIDEO);
         console.info(TAG + 'initCamera cameraOutputCapability ' + JSON.stringify(cameraOutputCapability));
         if (cameraOutputCapability?.videoProfiles) {
           console.info(TAG + 'initCamera 007');
@@ -400,34 +400,34 @@ export function avVideoRecorderTestOne() {
       done: () => void
     ) => {
       // 获取相机列表
-      let cameras = cameraManager.getSupportedCameras();
+      let cameras = cameraManager!.getSupportedCameras();
       let cameraDevice = cameras[0];
       // 查询相机设备在模式下支持的输出能力
-      let cameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_VIDEO);
+      let cameraOutputCapability = cameraManager!.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_VIDEO);
       // 创建相机输入流
       try {
-        cameraInput = cameraManager.createCameraInput(cameraDevice);
+        cameraInput = cameraManager!.createCameraInput(cameraDevice);
         console.info('createCameraInput success');
       } catch (error) {
         console.error('Failed to createCameraInput errorCode = ' + error);
       }
       // 监听cameraInput错误信息
-      cameraInput.onError(cameraDevice, (error: BusinessError | null) => {
+      cameraInput!.onError(cameraDevice, (error: BusinessError | null) => {
         console.log(`Camera input error code: ${error!!.code}`);
       });
 
       // 创建VideoOutput对象
       // let profile = cameraOutputCapability.videoProfiles[0];
-      let profile: camera.VideoProfile = myProfile;
+      let profile: camera.VideoProfile = myProfile!;
       console.log('choosen[0] profile: ' + JSON.stringify(profile));
       try {
-        videoOutput = cameraManager.createVideoOutput(profile, videoSurfaceId!!);
+        videoOutput = cameraManager!.createVideoOutput(profile, videoSurfaceId!!);
         console.info('createVideoOutput success');
       } catch (error) {
         console.error('Failed to create the videoOutput instance. errorCode = ' + error);
       }
       // 监听视频输出错误信息
-      videoOutput.onError((error: BusinessError | null) => {
+      videoOutput!.onError((error: BusinessError | null) => {
         console.log(`Preview output error code: ${error!!.code}`);
       });
 
@@ -436,18 +436,18 @@ export function avVideoRecorderTestOne() {
       let previewProfile = cameraOutputCapability.previewProfiles[0];
       console.log('choosen[0] previewProfile: ' + JSON.stringify(previewProfile));
       try {
-        previewOutput = cameraManager.createPreviewOutput(previewProfile, surfaceId);
+        previewOutput = cameraManager!.createPreviewOutput(previewProfile, surfaceId);
         console.info('createPreviewOutput success');
       } catch (error) {
         console.error('Failed to create the PreviewOutput instance errorCode = ' + error);
       }
 
       // 打开相机
-      await cameraInput.open();
+      await cameraInput!.open();
 
       //创建会话
       try {
-        captureSession = cameraManager.createSession<camera.VideoSession>(camera.SceneMode.NORMAL_VIDEO);
+        captureSession = cameraManager!.createSession<camera.VideoSession>(camera.SceneMode.NORMAL_VIDEO);
         console.info('createCaptureSession success');
       } catch (error) {
         console.error('Failed to create the CaptureSession instance. errorCode = ' + error);
@@ -468,7 +468,7 @@ export function avVideoRecorderTestOne() {
 
       // 向会话中添加相机输入流
       try {
-        captureSession?.addInput(cameraInput);
+        captureSession?.addInput(cameraInput!);
         console.info('captureSession?.addInput cameraInput success');
       } catch (error) {
         console.error('Failed to addInput. errorCode = ' + error);
@@ -476,7 +476,7 @@ export function avVideoRecorderTestOne() {
 
       // 向会话中添加预览输入流
       try {
-        captureSession?.addOutput(previewOutput);
+        captureSession?.addOutput(previewOutput!);
         console.info('captureSession?.addOutput previewOutput success');
       } catch (error) {
         console.error('Failed to addOutput(previewOutput). errorCode = ' + error);
@@ -484,7 +484,7 @@ export function avVideoRecorderTestOne() {
 
       // 向会话中添加录像输出流
       try {
-        captureSession?.addOutput(videoOutput);
+        captureSession?.addOutput(videoOutput!);
         console.info('captureSession?.addOutput videoOutput success');
       } catch (error) {
         console.error('Failed to addOutput(videoOutput). errorCode = ' + error);
@@ -506,13 +506,13 @@ export function avVideoRecorderTestOne() {
         await captureSession!!.stop()
         console.info('releaseCameraError 001');
         console.info('captureSession?.stop success');
-        await cameraInput.close()
+        await cameraInput!.close()
         console.info('releaseCameraError 002');
         console.info('cameraInput.close success');
-        await previewOutput.release()
+        await previewOutput!.release()
         console.info('releaseCameraError 003');
         console.info('previewOutput.release success');
-        await videoOutput.release()
+        await videoOutput!.release()
         console.info('releaseCameraError 004');
         console.info('videoOutput.release success');
         await captureSession!!.release()
@@ -548,13 +548,15 @@ export function avVideoRecorderTestOne() {
       });
       // 错误上报回调函数
       avRecorder.onError((err: BusinessError | null) => {
-        try {
-          console.error(TAG + 'error ocConstantSourceNode, error message is ' + err!!);
-          await releaseRecorderPromise(avRecorder, done);
-        } catch (error) {
-          // 处理错误
-          console.error(TAG + 'when error on execute releaseRecorderPromise error message is ' + error);
-        }
+        waitForCompletion(async () => {
+          try {
+            console.error(TAG + 'error ocConstantSourceNode, error message is ' + err!!);
+            await releaseRecorderPromise(avRecorder, done);
+          } catch (error) {
+            // 处理错误
+            console.error(TAG + 'when error on execute releaseRecorderPromise error message is ' + error);
+          }
+        })
       });
     };
 
@@ -585,7 +587,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000);
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       media.createAVRecorder((error: BusinessError | null, recorder: undefined | media.AVRecorder) => {
         if (recorder != null) {
           let avRecorder = recorder;
@@ -608,7 +610,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000);
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       media.createAVRecorder().then((recorder: media.AVRecorder | undefined) => {
         if (recorder != null) {
           let avRecorder = recorder;
@@ -632,7 +634,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         setAvRecorderCallback(avRecorder, done)
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
@@ -650,7 +652,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         setPhotoAssetAvailableCallback(avRecorder, done)
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
@@ -676,11 +678,11 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         setOffAvRecorderCallback(avRecorder, done)
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
-      } catch (error: Error) {
+      } catch (error) {
         console.info('SETOFFCALLBACK_EVENT setOffAvRecorderCallback failed and catch error is ' + error.message);
       }
     } as Callback<eventEmitter.EventData>);
@@ -693,11 +695,11 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         setOffPhotoAssetAvailableCallback(avRecorder, done)
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
-      } catch (error: Error) {
+      } catch (error) {
         console.info('setOffAvRecorderCallback failed and catch error is ' + error.message);
       }
     } as Callback<eventEmitter.EventData>);
@@ -712,7 +714,7 @@ export function avVideoRecorderTestOne() {
         let done: () => void = data?.get("done") as (() => void)
         let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
         let recorderTime: number = data?.get("recorderTime") as number
-        await commonFun.sleep(1000)
+        waitForCompletion(async()=> {await commonFun.sleep(1000);});
         avRecorder.prepare(avConfig, (err: BusinessError | null) => {
           console.info('case prepare called');
           if (err == null) {
@@ -739,7 +741,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let rotation = 90
       avRecorder.updateRotation(rotation).then(() => {
         console.info('updateRotation success');
@@ -760,7 +762,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.prepare(avConfig).then(() => {
         expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PREPARED);
         console.info('prepare success');
@@ -780,7 +782,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.getInputSurface((err: BusinessError | null, surfaceId: undefined | string) => {
         if (err == null) {
           console.info('getInputSurface success');
@@ -802,7 +804,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.getInputSurface().then((surfaceId: string | undefined) => {
         console.info('getInputSurface success');
         videoSurfaceId = surfaceId;
@@ -821,7 +823,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.getAVRecorderConfig().then((config: media.AVRecorderConfig | undefined) => {
         console.info('getAVRecorderConfig success');
         expect(config!!.audioSourceType).assertEqual(avConfig.audioSourceType);
@@ -841,7 +843,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         initCamera(avRecorder, avConfig, recorderTime, mySteps, done);
       } catch (error) {
@@ -853,7 +855,7 @@ export function avVideoRecorderTestOne() {
       async (avRecorder: media.AVRecorder, avConfig: media.AVRecorderConfig, recorderTime: number, steps: string[],
         done: () => void) => {
         console.info('startCameraOutput start')
-        videoOutput.start((err: BusinessError | null) => {
+        videoOutput!.start((err: BusinessError | null) => {
           if (err) {
             console.error(`Failed to start the video output ${err!!.message}`);
           } else {
@@ -870,7 +872,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         startCameraOutput(avRecorder, avConfig, recorderTime, mySteps, done);
       } catch (error) {
@@ -881,7 +883,7 @@ export function avVideoRecorderTestOne() {
     let stopCameraOutput =
       async (avRecorder: media.AVRecorder, avConfig: media.AVRecorderConfig, recorderTime: number, steps: string[],
         done: () => void) => {
-        videoOutput.stop((err: BusinessError | null) => {
+        videoOutput!.stop((err: BusinessError | null) => {
           if (err) {
             console.error(`Failed to stop the video output ${err!!.message}`);
           } else {
@@ -899,7 +901,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         stopCameraOutput(avRecorder, avConfig, recorderTime, mySteps, done);
       } catch (error) {
@@ -915,7 +917,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.start((err: BusinessError | null) => {
         console.info('case start called');
         if (err == null) {
@@ -940,7 +942,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.start().then(() => {
         expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.STARTED);
         console.info('start success');
@@ -962,7 +964,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.pause((err: BusinessError | null) => {
         console.info('case pause called');
         if (err == null) {
@@ -984,7 +986,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.pause().then(() => {
         expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.PAUSED);
         console.info('pause AVRecorder success');
@@ -1003,7 +1005,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let resumeValue = true;
       avRecorder.resume((err: BusinessError | null) => {
         console.info('case resume called');
@@ -1029,7 +1031,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let resumeValue = true;
       avRecorder.resume().then(() => {
         console.info('resume success');
@@ -1052,7 +1054,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let stopValue = true;
       avRecorder.stop((err: BusinessError | null) => {
         console.info('case stop called');
@@ -1080,7 +1082,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let stopValue = true;
       avRecorder.stop((err: BusinessError | null) => {
         console.info('case stop called');
@@ -1108,7 +1110,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.reset((err: BusinessError | null) => {
         console.info('case reset called');
         if (err == null) {
@@ -1130,7 +1132,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.reset().then(() => {
         expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.IDLE);
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
@@ -1148,7 +1150,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.offAudioCapturerChange()
       avRecorder.release((err: BusinessError | null) => {
         console.info('case release called');
@@ -1170,7 +1172,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get("done") as (() => void)
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
-      await commonFun.sleep(1000)
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       avRecorder.release().then(() => {
         expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
         console.info('release AVRecorder success');
@@ -1189,7 +1191,7 @@ export function avVideoRecorderTestOne() {
         let done: () => void = data?.get("done") as (() => void)
         let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
         let recorderTime: number = data?.get("recorderTime") as number
-        await commonFun.sleep(1000)
+        waitForCompletion(async()=> {await commonFun.sleep(1000);});
         let state: string = avRecorder.state;
         avRecorder.getAvailableEncoder().then((encoderInfo: Array<media.EncoderInfo>) => {
           if (state == commonFun.AV_RECORDER_STATE.RELEASED) {
@@ -1238,7 +1240,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      await commonFun.sleep(1000);
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let state: string = avRecorder.state;
       avRecorder
         .getAudioCapturerMaxAmplitude()
@@ -1306,13 +1308,13 @@ export function avVideoRecorderTestOne() {
           await captureSession!!.stop()
           console.info('releaseCamera 001');
           console.info('captureSession?.stop success');
-          await cameraInput.close()
+          await cameraInput!.close()
           console.info('releaseCamera 002');
           console.info('cameraInput.close success');
-          await previewOutput.release()
+          await previewOutput!.release()
           console.info('releaseCamera 003');
           console.info('previewOutput.release success');
-          await videoOutput.release()
+          await videoOutput!.release()
           console.info('releaseCamera 004');
           console.info('videoOutput.release success');
           await captureSession!!.release()
@@ -1335,7 +1337,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      await commonFun.sleep(1000);
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         releaseCamera(avRecorder, avConfig, recorderTime, mySteps, done);
       } catch (error) {
@@ -1351,7 +1353,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      await commonFun.sleep(1000);
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         let state: string = avRecorder.state;
         avRecorder.getAvailableEncoder((err: BusinessError | null, encoderInfo: Array<media.EncoderInfo> | undefined) => {
@@ -1399,7 +1401,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      await commonFun.sleep(1000);
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         let state: string = avRecorder.state;
         avRecorder.getAudioCapturerMaxAmplitude((err: BusinessError | null, maxAmplitude: int | undefined) => {
@@ -1467,7 +1469,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      await commonFun.sleep(1000);
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       let state: string = avRecorder.state;
       avRecorder
         .getCurrentAudioCapturerInfo()
@@ -1518,7 +1520,7 @@ export function avVideoRecorderTestOne() {
       let done: () => void = data?.get('done') as () => void;
       let avConfig: media.AVRecorderConfig = data?.get('avConfig') as media.AVRecorderConfig;
       let recorderTime: number = data?.get('recorderTime') as number;
-      await commonFun.sleep(1000);
+      waitForCompletion(async()=> {await commonFun.sleep(1000);});
       try {
         let state: string = avRecorder.state;
         avRecorder.getCurrentAudioCapturerInfo(
@@ -1579,7 +1581,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_MPEG4_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       let mySteps = new Array<string>(
         // init avRecorder
@@ -1621,7 +1623,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -1664,7 +1666,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -1707,7 +1709,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -1750,7 +1752,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -1797,7 +1799,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -1840,7 +1842,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -1883,7 +1885,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -1926,7 +1928,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -1973,7 +1975,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -2016,7 +2018,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2059,7 +2061,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2102,7 +2104,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       console.info('avRecorderResumeCallBack1 test start');
       eventEmitter.off(CREATE_CALLBACK_EVENT);
@@ -2138,7 +2140,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -2173,7 +2175,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -2214,7 +2216,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_CALLBACK_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -2252,7 +2254,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2293,7 +2295,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2334,7 +2336,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2375,7 +2377,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESUME_PROMISE_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2415,7 +2417,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -2454,7 +2456,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -2496,7 +2498,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -2537,7 +2539,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_CALLBACK_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -2580,7 +2582,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2615,7 +2617,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2650,7 +2652,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2690,7 +2692,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2732,7 +2734,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2773,7 +2775,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2812,7 +2814,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_STOP_PROMISE_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -2857,7 +2859,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       console.info('avRecorderResumeCallBack1 test start');
       eventEmitter.off(CREATE_CALLBACK_EVENT);
@@ -2893,7 +2895,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -2928,7 +2930,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -2969,7 +2971,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -3010,7 +3012,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -3051,7 +3053,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -3092,7 +3094,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -3129,7 +3131,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_CALLBACK_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -3172,7 +3174,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3207,7 +3209,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3242,7 +3244,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3281,7 +3283,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3323,7 +3325,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3364,7 +3366,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3401,7 +3403,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_RESET_PROMISE_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3447,7 +3449,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3484,7 +3486,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3531,7 +3533,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3579,7 +3581,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3629,7 +3631,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3677,7 +3679,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3725,7 +3727,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -3768,7 +3770,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_PROMISE_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       let loopTimes = 3;
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -3832,7 +3834,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -3888,7 +3890,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -3944,7 +3946,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -4000,7 +4002,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -4039,7 +4041,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4076,7 +4078,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4117,7 +4119,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4162,7 +4164,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4211,7 +4213,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4262,7 +4264,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4311,7 +4313,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4360,7 +4362,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_PROMISE_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       let loopTimes = 3;
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -4408,7 +4410,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4445,7 +4447,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4484,7 +4486,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4533,7 +4535,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4584,7 +4586,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4633,7 +4635,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4682,7 +4684,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4725,7 +4727,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_PROMISE_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       let loopTimes = 3;
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -4778,7 +4780,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4815,7 +4817,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4854,7 +4856,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4899,7 +4901,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4948,7 +4950,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -4997,7 +4999,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -5046,7 +5048,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -5089,7 +5091,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_PROMISE_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       let loopTimes = 3;
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -5143,7 +5145,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -5186,7 +5188,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -5231,7 +5233,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -5280,7 +5282,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -5325,7 +5327,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -5370,7 +5372,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -5417,7 +5419,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -5464,7 +5466,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -5513,7 +5515,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_0900 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -5575,7 +5577,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -5632,7 +5634,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -5691,7 +5693,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -5752,7 +5754,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -5811,7 +5813,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -5858,7 +5860,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -5897,7 +5899,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -5936,7 +5938,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -5979,7 +5981,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6018,7 +6020,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6057,7 +6059,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6098,7 +6100,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6139,7 +6141,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6182,7 +6184,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_0900 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6225,7 +6227,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_1000 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6264,7 +6266,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_1100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6303,7 +6305,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_1200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6346,7 +6348,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_1300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6385,7 +6387,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_1400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6425,7 +6427,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6458,7 +6460,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6497,7 +6499,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6538,7 +6540,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6583,7 +6585,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6626,7 +6628,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6669,7 +6671,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6706,7 +6708,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PREPARE_CALLBACK_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6761,7 +6763,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_CALLBACK_EVENT);
@@ -6813,7 +6815,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_CALLBACK_EVENT);
@@ -6865,7 +6867,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_CALLBACK_EVENT);
@@ -6917,7 +6919,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_CALLBACK_EVENT);
@@ -6952,7 +6954,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -6987,7 +6989,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7022,7 +7024,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7061,7 +7063,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7104,7 +7106,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7149,7 +7151,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7192,7 +7194,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7235,7 +7237,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETSURFACE_CALLBACK_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7275,7 +7277,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7310,7 +7312,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7345,7 +7347,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7388,7 +7390,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7433,7 +7435,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7476,7 +7478,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7519,7 +7521,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7556,7 +7558,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_START_CALLBACK_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7598,7 +7600,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7633,7 +7635,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_0200 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7668,7 +7670,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_0300 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7707,7 +7709,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_0400 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7750,7 +7752,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_0500 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7793,7 +7795,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_0600 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7834,7 +7836,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_0700 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7875,7 +7877,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_PAUSE_CALLBACK_0800 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfig.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -7925,7 +7927,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -7973,7 +7975,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -8021,7 +8023,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -8069,7 +8071,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -8113,7 +8115,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -8157,7 +8159,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -8201,7 +8203,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -8247,7 +8249,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -8293,7 +8295,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -8337,7 +8339,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpeg.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
       let mySteps = new Array<string>(
@@ -8380,7 +8382,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_MPEG4_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -8429,7 +8431,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
       let mySteps = new Array<string>(
@@ -8478,7 +8480,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -8528,7 +8530,7 @@ export function avVideoRecorderTestOne() {
 
         let fileName: string = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
-        fdPath = 'fd://' + fdObject.fdNumber;
+        fdPath = 'fd://' + fdObject!.fdNumber;
         avConfigMpegAac.url = fdPath;
         eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -8579,7 +8581,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -8625,7 +8627,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -8671,7 +8673,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -8717,7 +8719,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -8765,7 +8767,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -8813,7 +8815,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpegAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -8859,7 +8861,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigMpeg.url = fdPath
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -8904,7 +8906,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_PROMISE_H264_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -8953,7 +8955,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -9002,7 +9004,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -9051,7 +9053,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -9100,7 +9102,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -9145,7 +9147,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -9190,7 +9192,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -9235,7 +9237,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -9282,7 +9284,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -9329,7 +9331,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -9374,7 +9376,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -9418,7 +9420,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_FUNCTION_CALLBACK_H264_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -9468,7 +9470,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -9518,7 +9520,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -9568,7 +9570,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -9618,7 +9620,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -9664,7 +9666,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -9710,7 +9712,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -9756,7 +9758,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -9804,7 +9806,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -9852,7 +9854,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -9898,7 +9900,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -9943,7 +9945,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETAVRECORDERCONFIG_PROMISE_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH264Aac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -9983,7 +9985,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH265Aac.url = fdPath;
       eventEmitter.off(CREATE_PROMISE_EVENT);
 
@@ -10028,7 +10030,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH265Aac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -10074,7 +10076,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigH265Aac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -10119,7 +10121,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigOnlyAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -10165,7 +10167,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigOnlyAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -10211,7 +10213,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigOnlyAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -10257,7 +10259,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigOnlyAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -10322,7 +10324,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigOnlyAac.url = fdPath
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -10410,7 +10412,7 @@ export function avVideoRecorderTestOne() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_METADATA_0100 start')
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avmetaConfig.url = fdPath;
       checkDevice(avmetaConfig);
       eventEmitter.off(CREATE_CALLBACK_EVENT);
@@ -10461,7 +10463,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avmetaConfig.url = fdPath;
       checkDevice(avmetaConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -10501,7 +10503,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avmetaConfig.url = fdPath;
       checkDevice(avmetaConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -10544,7 +10546,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -10587,7 +10589,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -10630,7 +10632,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -10673,7 +10675,7 @@ export function avVideoRecorderTestOne() {
       }
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avNewConfig.url = fdPath;
       checkDevice(avNewConfig);
       eventEmitter.off(CREATE_PROMISE_EVENT);
@@ -10792,7 +10794,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigOnlyAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 
@@ -10837,7 +10839,7 @@ export function avVideoRecorderTestOne() {
 
       let fileName: string = commonFun.resourceName();
       fdObject = await commonFun.getFd(fileName);
-      fdPath = "fd://" + fdObject.fdNumber;
+      fdPath = "fd://" + fdObject!.fdNumber;
       avConfigOnlyAac.url = fdPath;
       eventEmitter.off(CREATE_CALLBACK_EVENT);
 

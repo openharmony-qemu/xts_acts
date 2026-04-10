@@ -161,7 +161,7 @@ struct webViewController {
                 let buttonOne = await driver.findComponent(ON.text('保存文件'));
                 await buttonOne.click()
                 await Utils.waitForReleaseDriver(this.str, driver)
-                Utils.emitEvent(this.isAcceptAllOptionExcluded, 20260108);
+                let isAcceptAllOptionExcluded = this.isAcceptAllOptionExcluded
                 let buttonTwo = await driver.findComponent(ON.text('重置内容'));
                 if (buttonTwo) {
                   await buttonTwo.click()
@@ -169,6 +169,9 @@ struct webViewController {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
                   await buttonThree.click()
                 }
+                setTimeout(() => {
+                  Utils.emitEvent(isAcceptAllOptionExcluded, 20260108);
+                }, 1000)
               }
               break;
             }
@@ -233,11 +236,10 @@ struct webViewController {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showSaveFilePicker1.html")
                 await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
-
                 let buttonOne = await driver.findComponent(ON.text('保存文件'));
                 await buttonOne.click()
                 await Utils.waitForReleaseDriver(this.str, driver)
-                Utils.emitEvent(this.getDescriptions, 202601077);
+                let getDescriptions = this.getDescriptions
                 let buttonTwo = await driver.findComponent(ON.text('重置内容'));
                 if (buttonTwo) {
                   await buttonTwo.click()
@@ -245,6 +247,10 @@ struct webViewController {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
                   await buttonThree.click()
                 }
+                setTimeout(() => {
+                  Utils.emitEvent(getDescriptions, 202601077);
+                }, 1000)
+
               }
               break;
             }
@@ -260,7 +266,7 @@ struct webViewController {
                 let buttonOne = await driver.findComponent(ON.text('保存文件'));
                 await buttonOne.click()
                 await Utils.waitForReleaseDriver(this.str, driver)
-                Utils.emitEvent(this.isAcceptAllOptionExcluded, 202601078);
+                let isAcceptAllOptionExcluded = this.isAcceptAllOptionExcluded
                 let buttonTwo = await driver.findComponent(ON.text('重置内容'));
                 if (buttonTwo) {
                   await buttonTwo.click()
@@ -268,6 +274,9 @@ struct webViewController {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
                   await buttonThree.click()
                 }
+                setTimeout(() => {
+                  Utils.emitEvent(isAcceptAllOptionExcluded, 202601078);
+                }, 1000)
               }
               break;
             }
@@ -283,7 +292,7 @@ struct webViewController {
                 let buttonOne = await driver.findComponent(ON.text('保存文件'));
                 await buttonOne.click()
                 await Utils.waitForReleaseDriver(this.str, driver)
-                Utils.emitEvent(this.getAcceptableFileTypesArr, 202601079);
+                let getAcceptableFileTypesArr = this.getAcceptableFileTypesArr;
                 let buttonTwo = await driver.findComponent(ON.text('重置内容'));
                 if (buttonTwo) {
                   await buttonTwo.click()
@@ -291,6 +300,9 @@ struct webViewController {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
                   await buttonThree.click()
                 }
+                setTimeout(() => {
+                  Utils.emitEvent(getAcceptableFileTypesArr, 202601079);
+                }, 1000)
               }
               break;
             }
@@ -314,7 +326,9 @@ struct webViewController {
                   let buttonThree = await driver.findComponent(ON.text('取消'));
                   await buttonThree.click()
                 }
-                Utils.emitEvent(getAcceptableFileTypesArr, 2026010710);
+                setTimeout(() => {
+                  Utils.emitEvent(getAcceptableFileTypesArr, 2026010710);
+                }, 1000)
               }
               break;
             }

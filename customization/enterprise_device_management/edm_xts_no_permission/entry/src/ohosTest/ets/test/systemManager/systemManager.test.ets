@@ -41,6 +41,10 @@ export default function systemManagerTest() {
     testGetKeyEventPolicies();
     testStartCollectLog();
     testFinishLogCollected();
+    testSetActivationLockDisabled();
+    testIsActivationLockDisabled();
+    testSetInstallLocalEnterpriseAppEnabledForAccount();
+    testGetInstallLocalEnterpriseAppEnabledForAccount();
   })
 }
 
@@ -227,7 +231,11 @@ function testSetAutoUnlockAfterReboot() {
       await systemManager.setAutoUnlockAfterReboot(SELFWANT, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 201).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -250,7 +258,11 @@ function testGetAutoUnlockAfterReboot() {
       await systemManager.getAutoUnlockAfterReboot(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 201).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -273,7 +285,11 @@ function testGetDisallowedNearLink() {
             let protocols: Array<number> =
                 systemManager.getDisallowedNearLinkProtocols(SELFWANT, DEFAULT_USER_ID);
         } catch (error) {
-            expect(error.code == 801 ||error.code == 201).assertTrue();
+            if (Number(error.code) === 801) {
+              expect(Number(error.code) === 801).assertTrue();
+            } else {
+              expect(Number(error.code) === 201).assertTrue();
+            }
         } finally {
             await adminManager.disableAdmin(SELFWANT);
         }
@@ -299,7 +315,11 @@ function testAddDisallowedNearLinkProtocols() {
             systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
             expect(false).assertTrue();
         } catch (error) {
-            expect(error.code == 801 ||error.code == 201).assertTrue();
+            if (Number(error.code) === 801) {
+              expect(Number(error.code) === 801).assertTrue();
+            } else {
+              expect(Number(error.code) === 201).assertTrue();
+            }
         } finally {
             await adminManager.disableAdmin(SELFWANT);
         }
@@ -325,7 +345,11 @@ function testRemoveDisallowedNearLinkProtocols() {
             systemManager.removeDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
             expect(false).assertTrue();
         } catch (error) {
-            expect(error.code == 801 ||error.code == 201).assertTrue();
+            if (Number(error.code) === 801) {
+              expect(Number(error.code) === 801).assertTrue();
+            } else {
+              expect(Number(error.code) === 201).assertTrue();
+            }
         } finally {
             await adminManager.disableAdmin(SELFWANT);
         }
@@ -348,7 +372,11 @@ function testSetInstallLocalEnterpriseAppEnabled() {
       systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, true);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 201).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -371,7 +399,11 @@ function testGetInstallLocalEnterpriseAppEnabled() {
       systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 201).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -398,7 +430,11 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 201).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -422,7 +458,11 @@ function testRemoveKeyEventPolicies() {
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 201).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -445,7 +485,11 @@ function testGetKeyEventPolicies() {
       let keyEventPolicies: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 201).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -467,7 +511,11 @@ function testStartCollectLog() {
     await systemManager.startCollectLog(SELFWANT).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError) => {
-      expect(error.code == 801 || error.code == 201).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
     });
@@ -490,7 +538,118 @@ function testFinishLogCollected() {
       systemManager.finishLogCollected(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 201).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetActivationLockDisabled() {
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0100
+  * @tc.desc   test systemManager setActivationLockDisabled with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    let credential: string = "test";
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError) => {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+}
+
+function testIsActivationLockDisabled() {
+  /**
+  * @tc.name   test_is_activation_lock_disabled_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_IS_ACTIVATION_LOCK_DISABLED_JS_0100
+  * @tc.desc   test systemManager isActivationLockDisabled with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_is_activation_lock_disabled_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await systemManager.isActivationLockDisabled(SELFWANT).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError) => {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+}
+
+function testSetInstallLocalEnterpriseAppEnabledForAccount() {
+  /**
+   * @tc.name   test_set_install_local_enterprise_app_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_INSTALL_LOCAL_ENTERPRISE_APP_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test systemManager setInstallLocalEnterpriseAppEnabledForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_install_local_enterprise_app_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      systemManager.setInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, true, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetInstallLocalEnterpriseAppEnabledForAccount() {
+  /**
+   * @tc.name   test_get_install_local_enterprise_app_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALL_LOCAL_ENTERPRISE_APP_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test systemManager getInstallLocalEnterpriseAppEnabledForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_install_local_enterprise_app_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      systemManager.getInstallLocalEnterpriseAppEnabledForAccount(SELFWANT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

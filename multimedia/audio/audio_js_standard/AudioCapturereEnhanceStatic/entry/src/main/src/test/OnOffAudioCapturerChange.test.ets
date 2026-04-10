@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,13 +27,13 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 const Tag: string = 'AudioCpaturerEnhanceTest: ';
 let tag: string = 'AudioCpaturerEnhanceTest';
 let g_context: common.UIAbilityContext;
-let audioCap: audio.AudioCapturer | null;
+let audioCap: audio.AudioCapturer | null = null;
 
 
 export default function onOffAudioCapturerChangeTest() {
   describe('onOffAudioCapturerChange', () => {
     let dirPath: string;
-    let audioCap: audio.AudioCapturer | null;
+    let audioCap: audio.AudioCapturer | null = null;
     let audioManager: audio.AudioManager;
     let flag1: boolean = false;
     let flag2: boolean = false;
@@ -59,6 +59,7 @@ export default function onOffAudioCapturerChangeTest() {
 
     beforeAll(async (): Promise<void> => {
       try {
+        console.info("beforeAll start");
         g_context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
         let atManager = abilityAccessCtrl.createAtManager();
         let arr: Array<Permissions> = new Array<Permissions>();
@@ -69,18 +70,20 @@ export default function onOffAudioCapturerChangeTest() {
             console.info("getPermissionRequestResult err" + JSON.stringify(err));
           });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
+        await Utils.msSleep(1000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        await Utils.msSleep(1000);
         if (permissionButton != null) {
           await permissionButton.click();
         }
       } catch (err) {
-        console.error(' beforeAll failed, err: ' + err);
+        console.error('beforeAll failed, err: ' + err);
       }
       console.info("beforeAll case");
       try {
         audioManager = audio.getAudioManager();
         console.log(`get audioManager success!`);
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.log(`getAudioManager err: ${error.message}, ${error.code}`);
       }
       console.info('TestLog: Start Testing AudioCpaturerEnhanceTest Interfaces');
@@ -130,7 +133,7 @@ export default function onOffAudioCapturerChangeTest() {
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag} AudioCapturer Created and start ERROR! ${error.message} ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -149,7 +152,7 @@ export default function onOffAudioCapturerChangeTest() {
           expect(flag2).assertEqual(true);
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`${Tag}: on-audioCapturerChange Fail: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -186,7 +189,7 @@ export default function onOffAudioCapturerChangeTest() {
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag} AudioCapturer Created and start ERROR! ${error.message} ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -208,7 +211,7 @@ export default function onOffAudioCapturerChangeTest() {
           expect(flag2).assertEqual(true);
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`${Tag}: on-audioCapturerChange Fail: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -244,7 +247,7 @@ export default function onOffAudioCapturerChangeTest() {
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.info(`${Tag} AudioCapturer Created and start ERROR! ${error.message} ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -266,7 +269,7 @@ export default function onOffAudioCapturerChangeTest() {
           expect(flag2).assertEqual(false);
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`${Tag}: on-audioCapturerChange Fail: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();

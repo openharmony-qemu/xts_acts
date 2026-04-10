@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SymbolGlyphNodeTest() {
   describe('SymbolGlyphNodeTest', ():void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SymbolGlyphNodeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility")

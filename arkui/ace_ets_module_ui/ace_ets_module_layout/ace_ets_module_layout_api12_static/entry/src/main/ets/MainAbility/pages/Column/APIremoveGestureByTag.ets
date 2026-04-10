@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,9 +22,10 @@ import {
   UIGestureEvent,
   TapGestureHandler,
   GestureEvent,
-  Text,LocalStorage,
+  Text,
   Color
 } from '@ohos.arkui.component';
+import { LocalStorage } from '@ohos.arkui.stateManagement';
 import {
   State,
 
@@ -33,7 +34,7 @@ import {
 
 let storage: LocalStorage = new LocalStorage();
 
-class MyButtonModifier implements GestureModifier {
+export class MyButtonModifier implements GestureModifier {
   applyGesture(event: UIGestureEvent): void {
     event.addGesture(
       new TapGestureHandler({ count: 1, fingers: 1 })

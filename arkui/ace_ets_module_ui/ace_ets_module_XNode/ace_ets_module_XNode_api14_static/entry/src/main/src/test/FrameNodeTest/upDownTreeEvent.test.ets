@@ -41,7 +41,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function upDownTreeEventTest() {
   describe('upDownTreeEventTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.XNode.api14.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -57,7 +57,7 @@ export default function upDownTreeEventTest() {
         // router.clear();
         let pages = router.getState();
         console.info("get upDownTreeEventTest state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/FrameNode/upDownTreeEventTest" == pages.name)) {
+        if (!("upDownTreeEventTest" == pages.name)) {
           console.info("get upDownTreeEventTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);

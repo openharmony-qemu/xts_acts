@@ -25,13 +25,13 @@ import {
 import { State } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
-import { Callback, RecordData } from '@ohos.base'
-import { BusinessError } from '@ohos.arkui.component';
+import { Callback, RecordData, BusinessError } from '@ohos.base'
 import webview from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
@@ -136,6 +136,12 @@ struct WebComponent {
                 })
 
               break;
+            }
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({url: 'pages/WebViewOnPdfLoadEvent'})
+              console.log('push URL success')
             }
 
           }

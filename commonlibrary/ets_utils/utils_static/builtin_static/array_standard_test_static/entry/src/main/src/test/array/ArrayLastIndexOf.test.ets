@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -452,7 +452,7 @@ export default function ArrayLastIndexOfTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = new Array<number>(10000).fill(0);
+      const arr: number[] = Array.create<number>(10000, 0);
       arr[9999] = 123;
       const result: number = arr.lastIndexOf(123);
       expect(result).assertEqual(9999);
@@ -804,7 +804,7 @@ export default function ArrayLastIndexOfTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = new Array<number>(100000).fill(0);
+      const arr: number[] = Array.create<number>(100000, 0);
       arr[99999] = 5;
       const result: number = arr.lastIndexOf(5);
       expect(result).assertEqual(99999);
@@ -911,7 +911,7 @@ export default function ArrayLastIndexOfTest() {
      */
     it("testArrayLastIndexOf0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Uint32Array = new Uint32Array([4, 1, 3, 1]);
-      const sortedArr: number[] = Array.from(arr).sort((a: number, b: number) => a - b);
+      const sortedArr: number[] = Array.from(arr).sort((a: number, b: number) => (a - b).toInt());
       const result: number = sortedArr.lastIndexOf(1);
       expect(result).assertEqual(1);
     });
@@ -1243,7 +1243,7 @@ export default function ArrayLastIndexOfTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: (number | undefined)[] = new Array<number | undefined>(6);
+      const arr: (number | undefined)[] = new Array<number | undefined>(6, (i) => undefined);
       arr[0] = 1;
       arr[3] = 2;
       arr[5] = 2;

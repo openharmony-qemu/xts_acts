@@ -54,7 +54,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function FreezeV2Child() {
   describe('FreezeV2Child', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FreezeV2Child beforeEach start");
 
 

@@ -40,7 +40,7 @@ export default function SourceTypeTest() {
         }
       } catch (err) {
         console.error('push SourceType page error:' + JSON.stringify(err));
-        expect().assertFail('页面跳转失败'); 
+        expect().assertFail(); 
       }
       console.info('SourceTypeTest beforeEach end');
       done();

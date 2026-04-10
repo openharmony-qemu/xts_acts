@@ -19,11 +19,20 @@ import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 
+async function sleep(delay: number): Promise<void> {
+  return new Promise((resolve, _) => {
+    setTimeout(async () => {
+      resolve();
+    }, delay);
+  });
+};
+
 export default function imageNdkDecodeTest() {
   describe('ImageNdkDecodeTest', () => {
     let testContext: common.UIAbilityContext;
     afterEach(async () => {
       console.info('afterEach case');
+      await sleep(200);
     })
 
     beforeAll(async () => {

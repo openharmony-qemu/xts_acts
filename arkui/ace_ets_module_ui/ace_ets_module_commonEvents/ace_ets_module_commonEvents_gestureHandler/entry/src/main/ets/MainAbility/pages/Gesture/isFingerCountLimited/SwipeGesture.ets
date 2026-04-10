@@ -32,7 +32,6 @@ struct SwipeGestureExample {
         .height('40%')
         .width('90%')
         .border({ width: 3 })
-        .margin(10)
       Text(this.value2)
         .id('SwipeGesture2')
         .gesture(
@@ -46,7 +45,6 @@ struct SwipeGestureExample {
         .height('40%')
         .width('90%')
         .border({ width: 3 })
-        .margin(10)
-    }.width('100%')
+    }.height('100%').width('100%')
   }
 }

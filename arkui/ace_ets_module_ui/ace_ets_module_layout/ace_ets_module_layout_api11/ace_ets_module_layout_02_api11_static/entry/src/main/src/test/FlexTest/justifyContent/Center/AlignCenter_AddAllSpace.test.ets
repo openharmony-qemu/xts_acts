@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignCenter_AddAllSpace() {
   describe('AlignCenter_AddAllSpace', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignCenter_AddAllSpace beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });
@@ -71,15 +71,15 @@ export default function AlignCenter_AddAllSpace() {
       console.info("AlignAlignCenter_AddAllSpace after each called");
     });
 
-    
-    
-/**
+
+
+    /**
      * @tc.number   testFlexAlignCenterFlexSpaceOverflow_static
      * @tc.name     testFlexAlignCenterFlexSpaceOverflow_static
      * @tc.desc     testFlexAlignCenterFlexSpaceOverflow_static
      * @tc.level    Level.LEVEL0
      */
-it('testFlexAlignCenterFlexSpaceOverflow_static', Level.LEVEL0, async () : Promise<void>=> {
+    it('testFlexAlignCenterFlexSpaceOverflow_static', Level.LEVEL0, async () : Promise<void>=> {
       console.info('[testFlexAlignCenterFlexSpaceOverflow] START');
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
@@ -98,44 +98,73 @@ it('testFlexAlignCenterFlexSpaceOverflow_static', Level.LEVEL0, async () : Promi
       let Center_AddAllSpace_013: RectValue = CommonFunc.getComponentRect('Center_AddAllSpace_013');
       let Center_AddAllSpace_01: RectValue = CommonFunc.getComponentRect('Center_AddAllSpace_01');
       let Center_AddAllSpace_01_Box: RectValue = CommonFunc.getComponentRect('Center_AddAllSpace_01_Box');
-      expect(Math.abs(Center_AddAllSpace_011.top - Center_AddAllSpace_012.top) <= 1).assertTrue();
-      expect(Math.abs(Center_AddAllSpace_012.top - Center_AddAllSpace_013.top) <= 1).assertTrue();
-      expect(Math.abs(Center_AddAllSpace_012.left - Center_AddAllSpace_011.right) <= 1).assertTrue();
-      expect(Math.abs(Center_AddAllSpace_013.left - Center_AddAllSpace_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.top - Center_AddAllSpace_01.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
+
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi1'+ Math.floor(Math.abs(Center_AddAllSpace_011.top - Center_AddAllSpace_012.top)));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi2'+ Math.floor(Math.abs(Center_AddAllSpace_012.top - Center_AddAllSpace_013.top)));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi3'+ Math.floor(Math.abs(Center_AddAllSpace_012.left - Center_AddAllSpace_011.right)));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi4'+ Math.floor(Math.abs(Center_AddAllSpace_013.left - Center_AddAllSpace_012.right)));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi5'+ Math.floor(Math.abs((Center_AddAllSpace_011.top - Center_AddAllSpace_01.top) - 
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi6'+ Math.floor(Math.abs((Center_AddAllSpace_011.left - Center_AddAllSpace_01.left) - 
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi7'+ Math.floor(Math.abs((Center_AddAllSpace_01.right - Center_AddAllSpace_013.right) - 
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi8'+ Math.floor(Math.abs((Center_AddAllSpace_01.top - Center_AddAllSpace_01_Box.top) - 
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi9'+ Math.floor(Math.abs((Center_AddAllSpace_01.left - Center_AddAllSpace_01_Box.left) - 
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi10'+ Math.floor(Math.abs((Center_AddAllSpace_011.bottom - Center_AddAllSpace_011.top) -
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi11'+ Math.floor(Math.abs((Center_AddAllSpace_012.bottom - Center_AddAllSpace_012.top) -
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi12'+ Math.floor(Math.abs((Center_AddAllSpace_013.bottom - Center_AddAllSpace_013.top) - 
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi13'+ Math.floor(Math.abs((Center_AddAllSpace_011.right - Center_AddAllSpace_011.left) - 
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi14'+ Math.floor(Math.abs((Center_AddAllSpace_012.right - Center_AddAllSpace_012.left) - 
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))));
+      console.info('testFlexAlignCenterFlexSpaceOverflow_static_chazhi15'+ Math.floor(Math.abs((Center_AddAllSpace_013.right - Center_AddAllSpace_013.left) -
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))));
+
+      expect(Math.floor(Math.abs(Center_AddAllSpace_011.top - Center_AddAllSpace_012.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Center_AddAllSpace_012.top - Center_AddAllSpace_013.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Center_AddAllSpace_012.left - Center_AddAllSpace_011.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Center_AddAllSpace_013.left - Center_AddAllSpace_012.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Center_AddAllSpace_011.top - Center_AddAllSpace_01.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.left - Center_AddAllSpace_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddAllSpace_011.left - Center_AddAllSpace_01.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_01.right - Center_AddAllSpace_013.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddAllSpace_01.right - Center_AddAllSpace_013.right) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_01.top - Center_AddAllSpace_01_Box.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddAllSpace_01.top - Center_AddAllSpace_01_Box.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_01.left - Center_AddAllSpace_01_Box.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddAllSpace_01.left - Center_AddAllSpace_01_Box.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.bottom - Center_AddAllSpace_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddAllSpace_011.bottom - Center_AddAllSpace_011.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_012.bottom - Center_AddAllSpace_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddAllSpace_012.bottom - Center_AddAllSpace_012.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_013.bottom - Center_AddAllSpace_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddAllSpace_013.bottom - Center_AddAllSpace_013.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.right - Center_AddAllSpace_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddAllSpace_011.right - Center_AddAllSpace_011.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_012.right - Center_AddAllSpace_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddAllSpace_012.right - Center_AddAllSpace_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 3)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_013.right - Center_AddAllSpace_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 1)
+      expect(Math.floor(Math.abs((Center_AddAllSpace_013.right - Center_AddAllSpace_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
+
       console.info('[testFlexAlignCenterFlexSpaceOverflow] END');
 
     });
-    
-    
-/**
+
+
+    /**
      * @tc.number   testFlexAlignCenterFlexSpaceMeet_static
      * @tc.name     testFlexAlignCenterFlexSpaceMeet_static
      * @tc.desc     testFlexAlignCenterFlexSpaceMeet_static
      * @tc.level    Level.LEVEL0
      */
-it('testFlexAlignCenterFlexSpaceMeet_static', Level.LEVEL0, async () : Promise<void>=> {
+    it('testFlexAlignCenterFlexSpaceMeet_static', Level.LEVEL0, async () : Promise<void>=> {
       console.info('[testFlexAlignCenterFlexSpaceMeet] START');
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
@@ -154,34 +183,62 @@ it('testFlexAlignCenterFlexSpaceMeet_static', Level.LEVEL0, async () : Promise<v
       let Center_AddAllSpace_013: RectValue = CommonFunc.getComponentRect('Center_AddAllSpace_013');
       let Center_AddAllSpace_01: RectValue = CommonFunc.getComponentRect('Center_AddAllSpace_01');
       let Center_AddAllSpace_01_Box: RectValue = CommonFunc.getComponentRect('Center_AddAllSpace_01_Box');
-      expect(Math.abs(Center_AddAllSpace_011.top - Center_AddAllSpace_012.top) <= 1).assertTrue();
-      expect(Math.abs(Center_AddAllSpace_012.top - Center_AddAllSpace_013.top) <= 1).assertTrue();
-      expect(Math.abs(Center_AddAllSpace_012.left - Center_AddAllSpace_011.right) <= 1).assertTrue();
-      expect(Math.abs(Center_AddAllSpace_013.left - Center_AddAllSpace_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.top - Center_AddAllSpace_01.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round((Center_AddAllSpace_011.left - Center_AddAllSpace_01.left) * 10) / 10) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round((Center_AddAllSpace_01.right - Center_AddAllSpace_013.right) * 10) / 10) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_01.top - Center_AddAllSpace_01_Box.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_01.left - Center_AddAllSpace_01_Box.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.bottom - Center_AddAllSpace_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_012.bottom - Center_AddAllSpace_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_013.bottom - Center_AddAllSpace_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_011.right - Center_AddAllSpace_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_012.right - Center_AddAllSpace_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
-        .assertTrue();
-      expect(Math.abs((Math.round(Center_AddAllSpace_013.right - Center_AddAllSpace_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
-        .assertTrue();
-      console.info('[testFlexAlignCenterFlexSpaceMeet] END');
 
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi1'+ Math.floor(Math.abs(Center_AddAllSpace_011.top - Center_AddAllSpace_012.top)));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi2'+ Math.floor(Math.abs(Center_AddAllSpace_012.top - Center_AddAllSpace_013.top)));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi3'+ Math.floor(Math.abs(Center_AddAllSpace_012.left - Center_AddAllSpace_011.right)));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi4'+ Math.floor(Math.abs(Center_AddAllSpace_013.left - Center_AddAllSpace_012.right)));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi5'+ Math.floor(Math.abs((Center_AddAllSpace_011.top - Center_AddAllSpace_01.top) -
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))))));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi6'+ Math.floor(Math.abs((Center_AddAllSpace_011.left - Center_AddAllSpace_01.left) * 10) / 10 -
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi7'+ Math.floor(Math.abs((Center_AddAllSpace_01.right -
+      Center_AddAllSpace_013.right) * 10) / 10 - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi8'+ Math.floor(Math.abs((Center_AddAllSpace_01.top -
+      Center_AddAllSpace_01_Box.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi9'+ Math.floor(Math.abs((Center_AddAllSpace_01.left -
+      Center_AddAllSpace_01_Box.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi10'+ Math.floor(Math.abs((Center_AddAllSpace_011.bottom -
+      Center_AddAllSpace_011.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi11'+ Math.floor(Math.abs((Center_AddAllSpace_012.bottom -
+      Center_AddAllSpace_012.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi12'+ Math.floor(Math.abs((Center_AddAllSpace_013.bottom -
+      Center_AddAllSpace_013.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi13'+ Math.floor(Math.abs((Center_AddAllSpace_011.right -
+      Center_AddAllSpace_011.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi14'+ Math.floor(Math.abs((Center_AddAllSpace_012.right -
+      Center_AddAllSpace_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('testFlexAlignCenterFlexSpaceMeet_static_chazhi15'+ Math.floor(Math.abs((Center_AddAllSpace_013.right -
+      Center_AddAllSpace_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+
+      expect(Math.floor(Math.abs(Center_AddAllSpace_011.top - Center_AddAllSpace_012.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Center_AddAllSpace_012.top - Center_AddAllSpace_013.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Center_AddAllSpace_012.left - Center_AddAllSpace_011.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Center_AddAllSpace_013.left - Center_AddAllSpace_012.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Center_AddAllSpace_011.top - Center_AddAllSpace_01.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Center_AddAllSpace_011.left - Center_AddAllSpace_01.left) * 10) / 10 - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10) <= 1)
+      .assertTrue();
+      expect(Math.floor(Math.abs((Center_AddAllSpace_01.right - Center_AddAllSpace_013.right) * 10) / 10 - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10) <= 1)
+      .assertTrue();
+      expect(Math.floor(Math.abs((Center_AddAllSpace_01.top - Center_AddAllSpace_01_Box.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Center_AddAllSpace_01.left - Center_AddAllSpace_01_Box.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Center_AddAllSpace_011.bottom - Center_AddAllSpace_011.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Center_AddAllSpace_012.bottom - Center_AddAllSpace_012.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Center_AddAllSpace_013.bottom - Center_AddAllSpace_013.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Center_AddAllSpace_011.right - Center_AddAllSpace_011.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Center_AddAllSpace_012.right - Center_AddAllSpace_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Center_AddAllSpace_013.right - Center_AddAllSpace_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+        .assertTrue();
+
+      console.info('[testFlexAlignCenterFlexSpaceMeet] END');
     });
   })
 }

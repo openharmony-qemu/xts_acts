@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import { BusinessError } from '@ohos.base';
 
 
 export let digestSpec: string[] = [
-  "SHA1", "SHA224", "SHA256", "SHA384", "SHA512"
+  "SHA1", "SHA224", "SHA256", "SHA384", "SHA512", "SHA3-256", "SHA3-384", "SHA3-512"
 ];
 
 export function JsX963Spec(key: string, info: string, keySize: int,
@@ -32,7 +32,7 @@ export function JsX963Spec(key: string, info: string, keySize: int,
     };
 
     return spec;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error(`“${error}“, spec error code: ${error.code}`);
     throw error as Error;
   }
@@ -45,7 +45,7 @@ export function JsX963KdfSync(digestAlgName: string, spec: cryptoFramework.X963K
     let secret: cryptoFramework.DataBlob = kdf.generateSecretSync(spec);
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -59,7 +59,7 @@ export async function JsX963KdfPromise(digestAlgName: string,
     let secret: cryptoFramework.DataBlob = await kdf.generateSecret(spec);
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('promise error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -79,7 +79,7 @@ export async function JsX963KdfCallback(digestAlgName: string,
         }
       });
     });
-  } catch (error: BusinessError) {
+  } catch (error) {
     console.error('callback error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }

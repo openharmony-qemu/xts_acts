@@ -274,6 +274,8 @@ export default function GraphicTextEnum() {
         expect('0').assertEqual(text.EllipsisMode.START + '');
         expect('1').assertEqual(text.EllipsisMode.MIDDLE + '');
         expect('2').assertEqual(text.EllipsisMode.END + '');
+        expect('3').assertEqual(text.EllipsisMode.MULTILINE_START + '');
+        expect('4').assertEqual(text.EllipsisMode.MULTILINE_MIDDLE + '');
         done();
       } catch (err) {
         console.info(msg + 'test enum value of EllipsisMode error ' + JSON.stringify(err));
@@ -438,16 +440,16 @@ export default function GraphicTextEnum() {
       })
 
     /**
-     * @tc.name   testTextVerticalAlign
-     * @tc.number testTextVerticalAlign
+     * @tc.name   testTextVerticalAlignStatic
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_API_ENUM_TEXTVERTICALALIGN
      * @tc.desc   To test the enum value of TextVerticalAlign.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTextVerticalAlign', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testTextVerticalAlignStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      let msg = "testTextVerticalAlign"
+      let msg = "testTextVerticalAlignStatic"
       console.info(msg + 'begin');
       try {
         expect(0).assertEqual(text.TextVerticalAlign.BASELINE);
@@ -456,23 +458,23 @@ export default function GraphicTextEnum() {
         expect(3).assertEqual(text.TextVerticalAlign.TOP);
         done();
       } catch (err) {
-        console.info(msg + 'test enum value of testTextVerticalAlign error ' + JSON.stringify(err));
+        console.info(msg + 'test enum value of testTextVerticalAlignStatic error ' + JSON.stringify(err));
         expect().assertFail();
         done();
       }
     })
 
     /**
-     * @tc.name   testTextBadgeType
-     * @tc.number testTextBadgeType
+     * @tc.name   testTextBadgeTypeStatic
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_API_ENUM_TEXTBADGETYPE
      * @tc.desc   To test the enum value of TextBadgeType.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTextBadgeType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testTextBadgeTypeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msg = "testTextBadgeType"
+        let msg = "testTextBadgeTypeStatic"
         console.info(msg + 'begin');
         try {
           expect(0).assertEqual(text.TextBadgeType.TEXT_BADGE_NONE);
@@ -480,23 +482,23 @@ export default function GraphicTextEnum() {
           expect(2).assertEqual(text.TextBadgeType.TEXT_SUBSCRIPT);
           done();
         } catch (err) {
-          console.info(msg + 'test enum value of testTextBadgeType error ' + JSON.stringify(err));
+          console.info(msg + 'test enum value of testTextBadgeTypeStatic error ' + JSON.stringify(err));
           expect().assertFail();
           done();
         }
       })
 
     /**
-     * @tc.name   testTextHighContrast
-     * @tc.number testTextHighContrast
+     * @tc.name   testTextHighContrastStatic
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_API_ENUM_TEXTHIGHCONTRAST
      * @tc.desc   To test the enum value of TextBadgeType.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTextHighContrast', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testTextHighContrastStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msg = "testTextHighContrast"
+        let msg = "testTextHighContrastStatic"
         console.info(msg + 'begin');
         try {
           expect(0).assertEqual(text.TextHighContrast.TEXT_FOLLOW_SYSTEM_HIGH_CONTRAST);
@@ -504,30 +506,53 @@ export default function GraphicTextEnum() {
           expect(2).assertEqual(text.TextHighContrast.TEXT_APP_ENABLE_HIGH_CONTRAST);
           done();
         } catch (err) {
-          console.info(msg + 'test enum value of testTextHighContrast error ' + JSON.stringify(err));
+          console.info(msg + 'test enum value of testTextHighContrastStatic error ' + JSON.stringify(err));
           expect().assertFail();
           done();
         }
       })
 
     /**
-     * @tc.name   testTextUndefinedGlyphDisplay
-     * @tc.number testTextUndefinedGlyphDisplay
+     * @tc.name   testTextUndefinedGlyphDisplayStatic
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_API_ENUM_TEXTUNDEFINEDGLYPHDISPLAY
      * @tc.desc   To test the enum value of TextUndefinedGlyphDisplay.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTextUndefinedGlyphDisplay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testTextUndefinedGlyphDisplayStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msg = "testTextUndefinedGlyphDisplay"
+        let msg = "testTextUndefinedGlyphDisplayStatic"
         console.info(msg + 'begin');
         try {
           expect(0).assertEqual(text.TextUndefinedGlyphDisplay.USE_DEFAULT);
           expect(1).assertEqual(text.TextUndefinedGlyphDisplay.USE_TOFU);
           done();
         } catch (err) {
-          console.info(msg + 'test enum value of testTextUndefinedGlyphDisplay error ' + JSON.stringify(err));
+          console.info(msg + 'test enum value of testTextUndefinedGlyphDisplayStatic error ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testLineHeightStyleStatic
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_API_ENUM_LINEHEIGHTSTYLE
+     * @tc.desc   To test the enum value of LineHeightStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLineHeightStyleStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msg = "testLineHeightStyleStatic"
+        console.info(msg + 'begin');
+        try {
+          expect(0).assertEqual(text.LineHeightStyle.FONT_SIZE);
+          expect(1).assertEqual(text.LineHeightStyle.FONT_HEIGHT);
+          done();
+        } catch (err) {
+          console.info(msg + 'test enum value of testLineHeightStyleStatic error ' + JSON.stringify(err));
           expect().assertFail();
           done();
         }

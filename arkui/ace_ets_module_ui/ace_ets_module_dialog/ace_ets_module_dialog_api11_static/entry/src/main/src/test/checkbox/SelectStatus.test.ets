@@ -61,7 +61,7 @@ let emitKey = 'emitUserAgent';
 
 export default function SelectStatusTest() {
   describe('SelectStatus', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SelectStatus beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

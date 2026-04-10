@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextTimerApiTest() {
   describe("TextTimerApiTest", (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextTimerApiTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

@@ -35,7 +35,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function closeMenuTest() {
   describe('closeMenuTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("closeMenuTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.api19.static", "EntryAbility")
     });

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ function createGlobalParams(symAlgoName: string, paramType: string): cryptoFrame
       params = null;
     }
     return params;
-  } catch (err: BusinessError) {
+  } catch (err) {
     throw err as Error;
   }
 }
@@ -172,19 +172,19 @@ async function encryptAndDecryptNormalProcess(
   paramType: string
 ): Promise<boolean> {
   let updateOutputdata: string = '';
-  let globalCipherText: cryptoFramework.DataBlob;
-  let globalKey: cryptoFramework.SymKey;
+  let globalCipherText: cryptoFramework.DataBlob | undefined;
+  let globalKey: cryptoFramework.SymKey | undefined;
   let globalText: string = "aaa this is test! this is test! bbb";
   let encryptMode: cryptoFramework.CryptoMode = cryptoFramework.CryptoMode.ENCRYPT_MODE;
   let decryptMode: cryptoFramework.CryptoMode = cryptoFramework.CryptoMode.DECRYPT_MODE;
-  let cipherGenerator: cryptoFramework.Cipher;
+  let cipherGenerator: cryptoFramework.Cipher | undefined;
 
   return new Promise<boolean>((resolve, reject) => {
     let symKeyGenerator: cryptoFramework.SymKeyGenerator = createSymKeyGenerator(symAlgoName);
     expect(symKeyGenerator != null).assertTrue();
     try {
       cipherGenerator = createSymCipher(cipherAlgoName);
-    } catch (err: BusinessError) {
+    } catch (err) {
       reject(err as Error);
     }
     expect(cipherGenerator != null).assertTrue();
@@ -195,7 +195,7 @@ async function encryptAndDecryptNormalProcess(
         expect(promiseKey != null).assertTrue();
         globalKey = promiseKey;
         return initCipher(
-          cipherGenerator,
+          cipherGenerator!,
           encryptMode,
           promiseKey,
           globalParams
@@ -204,7 +204,7 @@ async function encryptAndDecryptNormalProcess(
       .then<cryptoFramework.DataBlob>((initData: string) => {
         expect(initData === "init success").assertTrue();
         let plainText: cryptoFramework.DataBlob = { data: stringTouInt8Array(globalText) };
-        return updateCipher(cipherGenerator, encryptMode, plainText);
+        return updateCipher(cipherGenerator!, encryptMode, plainText);
       })
       .then<cryptoFramework.DataBlob|null>((updateOutput: cryptoFramework.DataBlob) => {
         console.warn(
@@ -213,7 +213,7 @@ async function encryptAndDecryptNormalProcess(
         );
         globalCipherText = updateOutput;
         expect(globalCipherText != null).assertTrue();
-        return doFinalCipher(cipherGenerator, encryptMode, null);
+        return doFinalCipher(cipherGenerator!, encryptMode, null);
       })
       .then<string>((finalOutput: cryptoFramework.DataBlob|null) => {
         if (finalOutput == null) {
@@ -236,22 +236,22 @@ async function encryptAndDecryptNormalProcess(
               "[promise]encrypt authTag(finalOutput) hex: " +
               uInt8ArrayToShowStr((finalOutput as cryptoFramework.DataBlob).data)
             );
-            let mergeText = new Uint8Array((finalOutput as cryptoFramework.DataBlob).data.length + globalCipherText.data.length);
-            mergeText.set(globalCipherText.data);
-            mergeText.set((finalOutput as cryptoFramework.DataBlob).data, globalCipherText.data.length);
+            let mergeText = new Uint8Array((finalOutput as cryptoFramework.DataBlob).data.length + globalCipherText!.data.length);
+            mergeText.set(globalCipherText!.data);
+            mergeText.set((finalOutput as cryptoFramework.DataBlob).data, globalCipherText!.data.length);
             globalCipherText = { data: mergeText};
           }
         }
         return initCipher(
-          cipherGenerator,
+          cipherGenerator!,
           decryptMode,
-          globalKey,
+          globalKey!,
           globalParams
         );
       })
       .then<cryptoFramework.DataBlob>((initData: string) => {
         expect(initData === "init success").assertTrue();
-        return updateCipher(cipherGenerator, decryptMode, globalCipherText);
+        return updateCipher(cipherGenerator!, decryptMode, globalCipherText!);
       })
       .then<cryptoFramework.DataBlob|null>((updateOutput: cryptoFramework.DataBlob) => {
         updateOutputdata = uInt8ArrayToString(updateOutput.data);
@@ -259,11 +259,11 @@ async function encryptAndDecryptNormalProcess(
           "[promise]decrypt update out: " +
           uInt8ArrayToString(updateOutput.data)
         );
-        return doFinalCipher(cipherGenerator, decryptMode, null);
+        return doFinalCipher(cipherGenerator!, decryptMode, null);
       })
       .then((finalOutput: cryptoFramework.DataBlob|null) => {
         if (finalOutput == null) {
-          const modeName: string = cipherGenerator.algName.split("|")[1];
+          const modeName: string = cipherGenerator!.algName.split("|")[1];
           if (modeName === "ECB" || modeName === "CBC") {
             resolve(false);
           } else {
@@ -290,8 +290,8 @@ async function convertKeyEncryptAndDecryptProcess(
   paramType: string
 ): Promise<boolean> {
   let updateOutputdata: string = '';
-  let globalCipherText: cryptoFramework.DataBlob;
-  let globalKey: cryptoFramework.SymKey;
+  let globalCipherText: cryptoFramework.DataBlob | undefined;
+  let globalKey: cryptoFramework.SymKey | undefined;
   let globalText: string = "aaa this is test! this is test! bbb";
   let encryptMode: cryptoFramework.CryptoMode = cryptoFramework.CryptoMode.ENCRYPT_MODE;
   let decryptMode: cryptoFramework.CryptoMode = cryptoFramework.CryptoMode.DECRYPT_MODE;
@@ -354,22 +354,22 @@ async function convertKeyEncryptAndDecryptProcess(
               "[promise]encrypt authTag(finalOutput) hex: " +
               uInt8ArrayToShowStr((finalOutput as cryptoFramework.DataBlob).data)
             );
-            let mergeText: Uint8Array = new Uint8Array((finalOutput as cryptoFramework.DataBlob).data.length + globalCipherText.data.length);
-            mergeText.set(globalCipherText.data);
-            mergeText.set((finalOutput as cryptoFramework.DataBlob).data, globalCipherText.data.length);
+            let mergeText: Uint8Array = new Uint8Array((finalOutput as cryptoFramework.DataBlob).data.length + globalCipherText!.data.length);
+            mergeText.set(globalCipherText!.data);
+            mergeText.set((finalOutput as cryptoFramework.DataBlob).data, globalCipherText!.data.length);
             globalCipherText = { data: mergeText};
           }
         }
         return initCipher(
           cipherGenerator,
           decryptMode,
-          globalKey,
+          globalKey!,
           globalParams
         );
       })
       .then<cryptoFramework.DataBlob>((initData: string) => {
         expect(initData === "init success").assertTrue();
-        return updateCipher(cipherGenerator, decryptMode, globalCipherText);
+        return updateCipher(cipherGenerator, decryptMode, globalCipherText!);
       })
       .then<cryptoFramework.DataBlob|null>((updateOutput: cryptoFramework.DataBlob) => {
         updateOutputdata = uInt8ArrayToString(updateOutput.data);
@@ -409,7 +409,7 @@ async function convertKeyEncryptAndDecryptProcess(
 async function encryptAndDecryptNormalSM4Process(symKeyPair: cryptoFramework.SymKey,
   cipherAlgoName: string): Promise<boolean> {
   let updateOutputdata: string = '';
-  let globalCipherText: cryptoFramework.DataBlob;
+  let globalCipherText: cryptoFramework.DataBlob | undefined;
   let globalText: string = "abcdefghabcdefghabcdefghabcdefgh";
   let encryptMode: cryptoFramework.CryptoMode = cryptoFramework.CryptoMode.ENCRYPT_MODE;
   let decryptMode: cryptoFramework.CryptoMode = cryptoFramework.CryptoMode.DECRYPT_MODE;
@@ -436,16 +436,16 @@ async function encryptAndDecryptNormalSM4Process(symKeyPair: cryptoFramework.Sym
       .then<string>((finalOutput: cryptoFramework.DataBlob|null) => {
         if (finalOutput == null) {
         } else {
-          let mergeText: Uint8Array = new Uint8Array((finalOutput as cryptoFramework.DataBlob).data.length + globalCipherText.data.length);
-          mergeText.set(globalCipherText.data);
-          mergeText.set((finalOutput as cryptoFramework.DataBlob).data, globalCipherText.data.length);
+          let mergeText: Uint8Array = new Uint8Array((finalOutput as cryptoFramework.DataBlob).data.length + globalCipherText!.data.length);
+          mergeText.set(globalCipherText!.data);
+          mergeText.set((finalOutput as cryptoFramework.DataBlob).data, globalCipherText!.data.length);
           globalCipherText = { data: mergeText};
         }
         return initCipher(cipherGenerator, decryptMode, symKeyPair, null);
       })
       .then<cryptoFramework.DataBlob>((initData: string) => {
         console.log("initData: " + initData);
-        return updateCipher(cipherGenerator, decryptMode, globalCipherText);
+        return updateCipher(cipherGenerator, decryptMode, globalCipherText!);
       })
       .then<cryptoFramework.DataBlob|null>((updateOutput: cryptoFramework.DataBlob) => {
         updateOutputdata = uInt8ArrayToString(updateOutput.data);
@@ -476,8 +476,8 @@ async function encryptAndDecryptNormalProcessSuperdata(
   paramType: string
 ): Promise<boolean> {
   let updateOutputdata: string = '';
-  let globalCipherText: cryptoFramework.DataBlob;
-  let globalKey: cryptoFramework.SymKey;
+  let globalCipherText: cryptoFramework.DataBlob | undefined;
+  let globalKey: cryptoFramework.SymKey | undefined;
   let globalText: string = '';
   let globalTextLen: int = 1025;
   let encryptMode = cryptoFramework.CryptoMode.ENCRYPT_MODE;
@@ -540,22 +540,22 @@ async function encryptAndDecryptNormalProcessSuperdata(
               "[promise]encrypt authTag(finalOutput) hex: " +
               uInt8ArrayToShowStr((finalOutput as cryptoFramework.DataBlob).data)
             );
-            let mergeText: Uint8Array = new Uint8Array((finalOutput as cryptoFramework.DataBlob).data.length + globalCipherText.data.length);
-            mergeText.set(globalCipherText.data);
-            mergeText.set((finalOutput as cryptoFramework.DataBlob).data, globalCipherText.data.length);
+            let mergeText: Uint8Array = new Uint8Array((finalOutput as cryptoFramework.DataBlob).data.length + globalCipherText!.data.length);
+            mergeText.set(globalCipherText!.data);
+            mergeText.set((finalOutput as cryptoFramework.DataBlob).data, globalCipherText!.data.length);
             globalCipherText = { data: mergeText};
           }
         }
         return initCipher(
           cipherGenerator,
           decryptMode,
-          globalKey,
+          globalKey!,
           globalParams
         );
       })
       .then<cryptoFramework.DataBlob>((initData: string) => {
         expect(initData === "init success").assertTrue();
-        return updateCipher(cipherGenerator, decryptMode, globalCipherText);
+        return updateCipher(cipherGenerator, decryptMode, globalCipherText!);
       })
       .then<cryptoFramework.DataBlob|null>((updateOutput: cryptoFramework.DataBlob) => {
         updateOutputdata = uInt8ArrayToString(updateOutput.data);

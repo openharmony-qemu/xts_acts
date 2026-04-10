@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -166,7 +166,7 @@ export default function cloneAssetTest() {
           hilog.info(domain, tag, `${testNum} :: title is ${title}`);
           let newPhotoAsset: photoAccessHelper.PhotoAsset | undefined;
           if (movingPhotoAsset !== undefined) {
-            newPhotoAsset = await movingPhotoAsset.clone(cloneTitle);
+            newPhotoAsset = await (movingPhotoAsset as photoAccessHelper.PhotoAsset).clone(cloneTitle);
           }
           if (newPhotoAsset === undefined) {
             hilog.error(domain, tag, `${testNum} :: clone failed !`)
@@ -260,7 +260,8 @@ export default function cloneAssetTest() {
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, `${testNum} :: test failed ,errorCode is ${error.code}`);
         hilog.error(domain, tag, `${testNum} :: test failed ,error is ${error}`);
         expect(error.code).assertEqual(401);
@@ -296,7 +297,8 @@ export default function cloneAssetTest() {
             expect(false).assertTrue();
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, tag, `${testNum} :: test failed ,errorCode is ${error.code}`);
           hilog.error(domain, tag, `${testNum} :: test failed ,error is ${error}`);
           expect(error.code).assertEqual(401);
@@ -333,7 +335,8 @@ export default function cloneAssetTest() {
             if (photoAsset !== undefined) {
               try {
                 await photoAsset.clone(title);
-              } catch (error: BusinessError<void>) {
+              } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, `${testNum} :: illegal titile , errCode is ${error.code}`);
                 expect(error.code).assertEqual(401);
                 count++;
@@ -343,7 +346,7 @@ export default function cloneAssetTest() {
           hilog.info(domain, tag, `${testNum} :: sumCount = ${count}, illegalStrList len = ${illegalStrList.length}`);
           expect(count).assertEqual(illegalStrList.length);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.error(domain, tag, `${testNum} :: test failed ,errorCode is ${error.code}`);
           hilog.error(domain, tag, `${testNum} :: test failed ,error is ${error}`);
           expect(false).assertTrue();
@@ -379,7 +382,8 @@ export default function cloneAssetTest() {
             expect(false).assertTrue();
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, tag, `${testNum} :: test failed ,errorCode is ${error.code}`);
           hilog.error(domain, tag, `${testNum} :: test failed ,error is ${error}`);
           expect(error.code).assertEqual(401);

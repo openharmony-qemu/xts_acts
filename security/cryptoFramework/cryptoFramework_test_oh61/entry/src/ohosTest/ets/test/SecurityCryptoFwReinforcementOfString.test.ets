@@ -25,10 +25,10 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
      * @tc.desc Test createAsyKeyGenerator with empty string
      * @tc.size Medium
      * @tc.type Func
-     * @tc.level Level1
+     * @tc.level Level0
      */
     it("SUB_Security_CryptoFramework_Reinforcement_Func_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           cryptoFramework.createAsyKeyGenerator("");
           expect(null).assertFail();

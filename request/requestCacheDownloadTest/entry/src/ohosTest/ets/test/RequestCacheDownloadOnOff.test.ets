@@ -15,10 +15,21 @@
 
 import cacheDownload from "@ohos.request.cacheDownload";
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestCacheDownloadOnOffUnitTest() {
   describe('requestCacheDownloadOnOffJSTest', () => {
     console.info('====>requestCacheDownloadOnOffJSTest Test start');
+
+    /**
+     * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
+     */
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
+    });
 
     /**
      * @tc.name   SUB_Request_cacheDownload_ListeningSuccess_0100
@@ -638,6 +649,523 @@ export default function requestCacheDownloadOnOffUnitTest() {
       } catch (err) {
         console.info("====>SUB_Request_cacheDownload_ListeningError_1600 catch err: " + JSON.stringify(err));
         expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_0100
+     * @tc.number SUB_Request_cacheDownload_supplemental_0100
+     * @tc.desc   download of undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_0100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_0100 is starting-----------------------");
+      try {
+        cacheDownload.download(undefined, undefined);
+        console.info("====>SUB_Request_cacheDownload_supplemental_0100 download success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_0100 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_0200
+     * @tc.number SUB_Request_cacheDownload_supplemental_0200
+     * @tc.desc   download of null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_0200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_0200 is starting-----------------------");
+      try {
+        cacheDownload.download(null, null);
+        console.info("====>SUB_Request_cacheDownload_supplemental_0200 download success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_0200 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_0300
+     * @tc.number SUB_Request_cacheDownload_supplemental_0300
+     * @tc.desc   cancel of undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_0300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_0300 is starting-----------------------");
+      try {
+        cacheDownload.cancel(undefined);
+        console.info("====>SUB_Request_cacheDownload_supplemental_0300 cancel success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_0300 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_0400
+     * @tc.number SUB_Request_cacheDownload_supplemental_0400
+     * @tc.desc   cancel of null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_0400', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_0400 is starting-----------------------");
+      try {
+        cacheDownload.cancel(null);
+        console.info("====>SUB_Request_cacheDownload_supplemental_0400 cancel success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_0400 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_0500
+     * @tc.number SUB_Request_cacheDownload_supplemental_0500
+     * @tc.desc   cancel of empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_0500', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_0500 is starting-----------------------");
+      let url:string = '';
+      try {
+        cacheDownload.cancel(url);
+        console.info("====>SUB_Request_cacheDownload_supplemental_0500 cancel success");
+        expect(url.length === 0).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_0500 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_0600
+     * @tc.number SUB_Request_cacheDownload_supplemental_0600
+     * @tc.desc   setFileCacheSize of undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_0600', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_0600 is starting-----------------------");
+      try {
+        cacheDownload.setFileCacheSize(undefined);
+        console.info("====>SUB_Request_cacheDownload_supplemental_0600 setFileCacheSize success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_0600 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_0700
+     * @tc.number SUB_Request_cacheDownload_supplemental_0700
+     * @tc.desc   setFileCacheSize of null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_0700', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_0700 is starting-----------------------");
+      try {
+        cacheDownload.setFileCacheSize(null);
+        console.info("====>SUB_Request_cacheDownload_supplemental_0700 setFileCacheSize success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_0700 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_0800
+     * @tc.number SUB_Request_cacheDownload_supplemental_0800
+     * @tc.desc   setDownloadInfoListSize of undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_0800', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_0800 is starting-----------------------");
+      try {
+        cacheDownload.setDownloadInfoListSize(undefined);
+        console.info("====>SUB_Request_cacheDownload_supplemental_0800 setDownloadInfoListSize success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_0800 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_0900
+     * @tc.number SUB_Request_cacheDownload_supplemental_0900
+     * @tc.desc   setDownloadInfoListSize of null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_0900', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_0900 is starting-----------------------");
+      try {
+        cacheDownload.setDownloadInfoListSize(null);
+        console.info("====>SUB_Request_cacheDownload_supplemental_0900 setDownloadInfoListSize success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_0900 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_1000
+     * @tc.number SUB_Request_cacheDownload_supplemental_1000
+     * @tc.desc   offDownloadSuccess of undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_1000', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_1000 is starting-----------------------");
+      try {
+        cacheDownload.offDownloadSuccess(undefined);
+        console.info("====>SUB_Request_cacheDownload_supplemental_1000 offDownloadSuccess success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_1000 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_1100
+     * @tc.number SUB_Request_cacheDownload_supplemental_1100
+     * @tc.desc   offDownloadSuccess of null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_1100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_1100 is starting-----------------------");
+      try {
+        cacheDownload.offDownloadSuccess(null);
+        console.info("====>SUB_Request_cacheDownload_supplemental_1100 offDownloadSuccess success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_1100 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_1200
+     * @tc.number SUB_Request_cacheDownload_supplemental_1200
+     * @tc.desc   offDownloadError of undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_1200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_1200 is starting-----------------------");
+      try {
+        cacheDownload.offDownloadError(undefined);
+        console.info("====>SUB_Request_cacheDownload_supplemental_1200 offDownloadError success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_1200 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_1300
+     * @tc.number SUB_Request_cacheDownload_supplemental_1300
+     * @tc.desc   offDownloadError of null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_1300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_1300 is starting-----------------------");
+      try {
+        cacheDownload.offDownloadError(null);
+        console.info("====>SUB_Request_cacheDownload_supplemental_1300 offDownloadError success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_1300 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_1400
+     * @tc.number SUB_Request_cacheDownload_supplemental_1400
+     * @tc.desc   setMemoryCacheSize of undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_1400', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_1400 is starting-----------------------");
+      try {
+        cacheDownload.setMemoryCacheSize(undefined);
+        console.info("====>SUB_Request_cacheDownload_supplemental_1400 setMemoryCacheSize success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_1400 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_1500
+     * @tc.number SUB_Request_cacheDownload_supplemental_1500
+     * @tc.desc   setMemoryCacheSize of null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_1500', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_1500 is starting-----------------------");
+      try {
+        cacheDownload.setMemoryCacheSize(null);
+        console.info("====>SUB_Request_cacheDownload_supplemental_1500 setMemoryCacheSize success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_1500 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_1600
+     * @tc.number SUB_Request_cacheDownload_supplemental_1600
+     * @tc.desc   offDownloadError of empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_1600', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_1600 is starting-----------------------");
+      try {
+        cacheDownload.offDownloadError('');
+        console.info("====>SUB_Request_cacheDownload_supplemental_1600 cancel success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_1600 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_1700
+     * @tc.number SUB_Request_cacheDownload_supplemental_1700
+     * @tc.desc   offDownloadError of empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_1700', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_1700 is starting-----------------------");
+      try {
+        cacheDownload.offDownloadSuccess('');
+        console.info("====>SUB_Request_cacheDownload_supplemental_1700 cancel success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_1700 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_1800
+     * @tc.number SUB_Request_cacheDownload_supplemental_1800
+     * @tc.desc   getDownloadInfo of empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_1800', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_1800 is starting-----------------------");
+      try {
+        let taskInfo = cacheDownload.getDownloadInfo('');
+        console.info(`====>SUB_Request_cacheDownload_supplemental_1800 cancel success: ${taskInfo}`);
+        expect(taskInfo === undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_1800 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_1900
+     * @tc.number SUB_Request_cacheDownload_supplemental_1900
+     * @tc.desc   getDownloadInfo of undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_1900', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_1900 is starting-----------------------");
+      try {
+        cacheDownload.getDownloadInfo(undefined);
+        console.info("====>SUB_Request_cacheDownload_supplemental_1900 cancel success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_1900 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_2000
+     * @tc.number SUB_Request_cacheDownload_supplemental_2000
+     * @tc.desc   getDownloadInfo of null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_2000', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_2000 is starting-----------------------");
+      try {
+        cacheDownload.getDownloadInfo(null);
+        console.info("====>SUB_Request_cacheDownload_supplemental_2000 cancel success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_2000 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_2100
+     * @tc.number SUB_Request_cacheDownload_supplemental_2100
+     * @tc.desc   onDownloadError url is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_2100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_2100 is starting-----------------------");
+      try {
+        let onErrorCallback = () => {
+          console.info("====>SUB_Request_cacheDownload_supplemental_2100 onErrorCallback");
+        }
+        cacheDownload.onDownloadError(undefined, onErrorCallback)
+        console.info(`====>SUB_Request_cacheDownload_supplemental_2100 onDownloadError success`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_supplemental_2100 catch err: " + JSON.stringify(err));
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_2200
+     * @tc.number SUB_Request_cacheDownload_supplemental_2200
+     * @tc.desc   onDownloadError url is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_2200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_2200 is starting-----------------------");
+      try {
+        let onErrorCallback = () => {
+          console.info("====>SUB_Request_cacheDownload_supplemental_2200 onErrorCallback");
+        }
+        cacheDownload.onDownloadError(null, onErrorCallback)
+        console.info(`====>SUB_Request_cacheDownload_supplemental_2200 onDownloadError success`);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_supplemental_2200 catch err: " + JSON.stringify(err));
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_supplemental_2300
+     * @tc.number SUB_Request_cacheDownload_supplemental_2300
+     * @tc.desc   download of undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_supplemental_2300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_supplemental_2300 is starting-----------------------");
+      try {
+        class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
+          headers?: Record<string, string> | undefined = {'Accept': '*/*'}
+        }
+        let downloadOptions = new cacheDownloadOptions();
+        cacheDownload.download('', downloadOptions);
+        console.info(`====>SUB_Request_cacheDownload_supplemental_2300 download success: ${downloadOptions}`);
+        expect(downloadOptions.headers !== undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_supplemental_2300 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
         done();
       }
     });

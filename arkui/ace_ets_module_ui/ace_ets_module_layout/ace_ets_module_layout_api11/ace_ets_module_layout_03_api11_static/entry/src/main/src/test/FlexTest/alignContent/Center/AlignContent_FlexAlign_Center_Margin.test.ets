@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignContent_FlexAlign_Center_Margin() {
 
   describe('AlignContent_FlexAlign_Center_Margin', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignContent_FlexAlign_Center_Margin beforeEach start");
       
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")

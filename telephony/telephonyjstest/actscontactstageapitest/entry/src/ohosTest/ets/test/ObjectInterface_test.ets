@@ -865,15 +865,15 @@ export default function ObjectInterfaceTest() {
           console.info("contactsApi_addContact_test_100  keyData = " + JSON.stringify(keyData));
           if (JSON.stringify(keyData) != undefined){
             sleep(500);
-            contact.deleteContact(context,keyData, (keyData) => {
+            contact.deleteContact(context,keyData, () => {
               if (err) {
                 console.info("contactsApi_addContact_test_100  err = " + JSON.stringify(err));
-                expect(false).assertTrue();
+                expect().assertFail();
                 done();
                 return;
               }
               console.log('deleteContact success');
-              expect(true).assertTrue();
+              expect(keyData != undefined).assertTrue();
               done();
             });
           }else {done()}
@@ -910,11 +910,11 @@ export default function ObjectInterfaceTest() {
             let promise = contact.deleteContact(context,keyData);
             promise.then(() => {
               console.log(`deleteContact success`);
-              expect(true).assertTrue();
+              expect(keyData != undefined).assertTrue();
               done();
             }).catch((err:BusinessError) => {
               console.info("contactsApi_addContact_test_200  err = " + JSON.stringify(err));
-              expect(false).assertTrue();
+              expect().assertFail();
               done();
               return;
             });
@@ -982,7 +982,11 @@ export default function ObjectInterfaceTest() {
                 };
               };
             });
-          }else {done()}
+          }else {
+            console.error("contactsApi_queryContact_test_100 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       });
       sleep(500);
@@ -1028,7 +1032,11 @@ export default function ObjectInterfaceTest() {
               expect(data != null).assertTrue();
               done();
             });
-          }else {done()}
+          }else {
+            console.error("contactsApi_queryContact_test_200 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       });
       sleep(500);
@@ -1081,7 +1089,11 @@ export default function ObjectInterfaceTest() {
                 };
               };
             });
-          }else {done()}
+          }else {
+            console.error("contactsApi_queryContact_test_300 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       });
       sleep(500);
@@ -1127,7 +1139,11 @@ export default function ObjectInterfaceTest() {
               expect(data != null).assertTrue();
               done();
             });
-          }else {done()}
+          }else {
+            console.error("contactsApi_queryContact_test_400 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       });
       sleep(500);
@@ -1173,7 +1189,11 @@ export default function ObjectInterfaceTest() {
               done();
               return;
             });
-          }else {done()}
+          }else {
+            console.error("contactsApi_queryContact_test_500 failed keyData = " + JSON.stringify(keyData));
+            expect().assertFail();
+            done()
+          }
         });
       });
       sleep(500);

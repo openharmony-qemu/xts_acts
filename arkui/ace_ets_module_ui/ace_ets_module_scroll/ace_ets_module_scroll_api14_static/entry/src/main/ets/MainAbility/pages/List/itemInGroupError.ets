@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -82,7 +82,7 @@ struct getItemRectInGroupError {
           .onClick((e: ClickEvent) => {
             try {
               // this.listScroller.getItemRectInGroup(undefined, 10)
-            } catch (error: Error) {
+            } catch (error) {
               this.textResult = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
@@ -93,7 +93,7 @@ struct getItemRectInGroupError {
           .onClick((e: ClickEvent) => {
             try {
               this.listScroller2.getItemRectInGroup(10, 10)
-            } catch (error: Error) {
+            } catch (error) {
               this.textResult = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
@@ -109,7 +109,7 @@ struct getItemRectInGroupError {
           .onClick((e: ClickEvent) => {
             try {
               // this.listScroller.scrollToItemInGroup(1, undefined)
-            } catch (error: Error) {
+            } catch (error) {
               this.textResult2 = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
@@ -120,7 +120,7 @@ struct getItemRectInGroupError {
           .onClick((e: ClickEvent) => {
             try {
               this.listScroller2.scrollToItemInGroup(1, 3)
-            } catch (error: Error) {
+            } catch (error) {
               this.textResult2 = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }

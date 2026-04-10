@@ -68,7 +68,7 @@ struct RichEditorCustomSpan010 {
     fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
   })
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   fontStyleAttr1: TextStyle =new TextStyle({
     fontColor: Color.Orange,
     fontSize: LengthMetrics.vp(50)
@@ -81,7 +81,9 @@ struct RichEditorCustomSpan010 {
 
    onPageShow() {
     console.info('aboutToAppear initial imagePixelMap');
-    this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
+    waitForCompletion(async ()=>{
+      this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
+    })
   }
 
   private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {

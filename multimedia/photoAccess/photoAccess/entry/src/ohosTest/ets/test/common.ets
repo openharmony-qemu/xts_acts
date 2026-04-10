@@ -141,7 +141,8 @@ export async function getPermission(name = 'ohos.acts.multimedia.photoaccess'): 
     atManager.requestPermissionsFromUser(testContext,  [
       'ohos.permission.MEDIA_LOCATION',
       'ohos.permission.READ_IMAGEVIDEO',
-      'ohos.permission.WRITE_IMAGEVIDEO'
+      'ohos.permission.WRITE_IMAGEVIDEO',
+      'ohos.permission.MANAGE_RISK_PHOTOS'
     ], (err: BusinessError, data: PermissionRequestResult) => {
       if (err) {
         console.error(`requestPermissionsFromUser fail, err->${JSON.stringify(err)}`);
@@ -499,44 +500,44 @@ export async function getAssetCountByMediaSuffix(testNum:string, helper: photoAc
   return count;
 }
 
-export async function createShootingModeAssetBatch(testNum: string, testContext: common.UIAbilityContext, fileNameList: Array<string>, disPlayName: string) {
-  let photoAssetUriList: Array<string> = [];
-  try {
-    let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
-    let imageFormatList: Array<string>  = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.IMAGE);
-    let videoFormatList: Array<string>  = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.VIDEO);
-    let photoType: photoAccessHelper.PhotoType | undefined = undefined;
-    let resourceType: photoAccessHelper.ResourceType | undefined = undefined;
-    for (let fileName of fileNameList) {
-      let mediaSuffix: string = fileName.substring((fileName.lastIndexOf(".") + 1), fileName.length);
-      let assetTitle: string = fileName.substring(0, (fileName.lastIndexOf(".")));
-      if (imageFormatList.includes(mediaSuffix)) {
-        photoType = photoAccessHelper.PhotoType.IMAGE;
-        resourceType = photoAccessHelper.ResourceType.IMAGE_RESOURCE;
-      } else if (videoFormatList.includes(mediaSuffix)) {
-        photoType = photoAccessHelper.PhotoType.VIDEO;
-        resourceType = photoAccessHelper.ResourceType.VIDEO_RESOURCE;
-      } else {
-        console.log(`${testNum} :: fileName = ${fileName} is not mediaLibrary support asset !`);
-        continue;
-      }
-      // let fileUri: string = testContext.filesDir + `/${disPlayName}`;
-      let fileUri: string = `file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/${disPlayName}`
-      let options: photoAccessHelper.CreateOptions = {
-        title: assetTitle
-      }
-      let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, mediaSuffix, options);
-      assetChangeRequest.addResource(resourceType, fileUri);
-      await phAccessHelper.applyChanges(assetChangeRequest);
-      console.info(`${testNum} :: apply createAssetRequest successfully !`);
-      let photoAssetUri: string = assetChangeRequest.getAsset().uri;
-      photoAssetUriList.push(photoAssetUri);
-    }
-    console.log(`${testNum} :: create all support mediaAsset success, assetCount = ${photoAssetUriList.length}`);
-  } catch (error) {
-    console.error(`${testNum} :: createShootingModeAssetBatch failed ! error = ${error}`);
-  }
-  return photoAssetUriList;
+export async function createShootingModeAssetBatch(testNum: string, testContext: common.UIAbilityContext, fileNameList: Array<string>, disPlayName: string) { 
+  let photoAssetUriList: Array<string> = []; 
+  try { 
+    let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext); 
+    let imageFormatList: Array<string>  = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.IMAGE); 
+    let videoFormatList: Array<string>  = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.VIDEO); 
+    let photoType: photoAccessHelper.PhotoType | undefined = undefined; 
+    let resourceType: photoAccessHelper.ResourceType | undefined = undefined; 
+    for (let fileName of fileNameList) { 
+      let mediaSuffix: string = fileName.substring((fileName.lastIndexOf(".") + 1), fileName.length); 
+      let assetTitle: string = fileName.substring(0, (fileName.lastIndexOf("."))); 
+      if (imageFormatList.includes(mediaSuffix)) { 
+        photoType = photoAccessHelper.PhotoType.IMAGE; 
+        resourceType = photoAccessHelper.ResourceType.IMAGE_RESOURCE; 
+      } else if (videoFormatList.includes(mediaSuffix)) { 
+        photoType = photoAccessHelper.PhotoType.VIDEO; 
+        resourceType = photoAccessHelper.ResourceType.VIDEO_RESOURCE; 
+      } else { 
+        console.log(`${testNum} :: fileName = ${fileName} is not mediaLibrary support asset !`); 
+        continue; 
+      } 
+      // let fileUri: string = testContext.filesDir + `/${disPlayName}`; 
+      let fileUri: string = `file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/${disPlayName}` 
+      let options: photoAccessHelper.CreateOptions = { 
+        title: assetTitle 
+      } 
+      let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, mediaSuffix, options); 
+      assetChangeRequest.addResource(resourceType, fileUri); 
+      await phAccessHelper.applyChanges(assetChangeRequest); 
+      console.info(`${testNum} :: apply createAssetRequest successfully !`); 
+      let photoAssetUri: string = assetChangeRequest.getAsset().uri; 
+      photoAssetUriList.push(photoAssetUri); 
+    } 
+    console.log(`${testNum} :: create all support mediaAsset success, assetCount = ${photoAssetUriList.length}`); 
+  } catch (error) { 
+    console.error(`${testNum} :: createShootingModeAssetBatch failed ! error = ${error}`); 
+  } 
+  return photoAssetUriList; 
 }
 
 export {

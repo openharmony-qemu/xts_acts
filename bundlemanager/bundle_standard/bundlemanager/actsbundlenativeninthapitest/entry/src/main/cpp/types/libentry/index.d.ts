@@ -14,3 +14,4 @@
  */
 
 export const GetCurrentApplicationInfo: () => object;
+export const IsDebugMode: () => string;

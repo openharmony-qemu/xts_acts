@@ -33,7 +33,7 @@ let tag: string = 'testTag';
 export default function EnableHapticFeedbackModifierTest() {
   describe('EnableHapticFeedbackModifierTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("datePickerEnableHapticFeedbackModifier beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api18.static", "EntryAbility")
 

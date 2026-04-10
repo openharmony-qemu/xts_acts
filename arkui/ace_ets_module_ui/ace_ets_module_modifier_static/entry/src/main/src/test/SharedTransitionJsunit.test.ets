@@ -38,7 +38,7 @@ interface EventD {
 }
 export default function sharedTransitionJsunit() {
   describe('common_sharedTransitionTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 
@@ -93,7 +93,7 @@ it('sharedTransitionTest_static_0100', Level.LEVEL0, async (done: () => void): P
         }
         events_emitter.emit(indexEvent, eventData);
        await UtilsTest.msSleep(2500);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("sharedTransitionTest_static_0100 change component data error: " + err.message);
       }
       let callback = (indexEventOne: events_emitter.EventData) => {
@@ -103,7 +103,7 @@ it('sharedTransitionTest_static_0100', Level.LEVEL0, async (done: () => void): P
           expect(data["duration"] as int).assertEqual(2000);
           expect(data["delay"]  as int).assertEqual(5);
           expect(data["type"] as SharedTransitionEffectType).assertEqual(SharedTransitionEffectType.Exchange);
-        } catch (err: Error) {
+        } catch (err) {
           console.info("sharedTransitionTest_static_0100 error: " + err.message);
         }
 

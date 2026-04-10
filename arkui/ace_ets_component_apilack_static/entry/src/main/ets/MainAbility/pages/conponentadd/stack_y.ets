@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import { BusinessError } from '@ohos.base';
 import Log from '../../common/Log';
 import {
   Alignment,
@@ -22,7 +23,6 @@ import {
   BlurStyle,
   BorderStyle,
   Builder,
-  BusinessError,
   Button,
   ClickEvent,
   Color,

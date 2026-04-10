@@ -30,7 +30,7 @@ import { UtilsTest } from '../../Util.test';
 
 export default function TimePickerDialog_Cancel_Test() {
 
-  beforeAll(() => {
+  beforeAll(async (): Promise<void> => {
     console.info("TimePickerDialog_Cancel_Test beforeAll start");
     await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
 

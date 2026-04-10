@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -56,7 +56,7 @@ interface ParamsInterface {
   text: string;
   func: () => void;
 }
-class MyDataSource implements IDataSource<string> {
+export class MyDataSource implements IDataSource<string> {
   private dataArray: string[] = []
   private listeners: DataChangeListener[] = []
 
@@ -142,7 +142,7 @@ struct LazyForEachVisibleAreaChangeDemo {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LazyForEachVisibleAreaChange', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

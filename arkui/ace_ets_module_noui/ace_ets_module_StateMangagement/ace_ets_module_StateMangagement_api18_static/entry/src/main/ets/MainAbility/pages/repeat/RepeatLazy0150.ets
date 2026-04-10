@@ -31,7 +31,7 @@ import {
   FontWeight,RowOptions,ComponentV2,Scroller,Repeat,ListItem,
   Axis,AlertDialogParamWithButtons,DialogAlignment,DialogButtonStyle,DialogAlignment,
   Margin,TransitionEffect,FlexAlign,TransitionEdge,AlertDialogParamWithConfirm,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
+  PickerTextStyle, CalendarAlign, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
 } from '@ohos.arkui.component';
 import {
@@ -54,7 +54,8 @@ struct RepeatLazy0150 {
         .onClick(() :void => {
           this.scroller.scrollToIndex(0); // Slide to the specified index
         })
-      List({ scroller: this.scroller, initialIndex: 80 }) {
+        // List({ scroller: this.scroller, initialIndex: 80 }) { // RangeError，ArkTS1.2当前不支持稀疏数组
+ 	      List({ scroller: this.scroller }) {
         Repeat<string>(this.dataArr)
           .each((ri) => {
             ListItem() {
@@ -65,7 +66,7 @@ struct RepeatLazy0150 {
           .virtualScroll({
             onTotalCount: ()=> {return 100},
             onLazyLoading: (index: int) => {
-              this.dataArr[index.toInt()] = index.toString()
+              this.dataArr.push(index.toString())
             }
           })
 

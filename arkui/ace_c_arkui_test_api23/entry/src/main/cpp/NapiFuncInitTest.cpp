@@ -28,6 +28,7 @@
 #include "list/ListEmptyTest.cpp"
 #include "grid/GridEmptyTest.cpp"
 #include "TextMarqueeOptions/TextMarqueeOptionsTest.cpp"
+#include "TextMarqueeOptions/ControllerBaseCreatTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -185,13 +186,19 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"TextMarqueeOptionsTest", nullptr, TextMarqueeOptionsTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"ControllerBaseCreatTest", nullptr, ControllerBaseCreatTest, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"TestAtomicServiceMenuBarSetVisible01", nullptr,
          TestAtomicServiceMenuBarSetVisible01, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestAccessibilityElementInfoSetComponentIdentifier001", nullptr,
+         TestAccessibilityElementInfoSetComponentIdentifier001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextSelectionTest", nullptr, MotionPathNode, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"TestIsInRenderStateReturnValue001", nullptr, TestIsInRenderStateReturnValue001,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestIsInRenderStateReturnValue002", nullptr, TestIsInRenderStateReturnValue002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestMoveToParam001", nullptr, TestMoveToParam001,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testPullUpToCancelRefresh01", nullptr, TestPullUpToCancelRefresh01, nullptr, nullptr, nullptr,
          napi_default, nullptr},

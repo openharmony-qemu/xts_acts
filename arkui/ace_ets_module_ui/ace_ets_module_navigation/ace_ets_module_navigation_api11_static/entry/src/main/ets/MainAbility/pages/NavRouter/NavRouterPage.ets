@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,Padding,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -68,7 +68,6 @@ struct NavRouterPage {
                   Row() {
                     Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
                     Text(`NavRouter${item + 1}`)
-                      .fontSize(22)
                       .fontWeight(500)
                       .textAlign(TextAlign.Center)
                   }
@@ -78,11 +77,11 @@ struct NavRouterPage {
                   .borderRadius(24)
 
                   NavDestination() {
-                    Text(`我是NavDestination第${item + 1}页内容`).fontSize(50)
+                    Text(`我是NavDestination第${item + 1}页内容`)
                     Flex({ direction: FlexDirection.Row }) {
                       Row() {
                         Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
-                        Text('Hello').fontSize(30).key('textContent')
+                        Text('Hello').key('textContent')
                       }.padding({ left: 15 } as Padding)
                     }
                   }.backgroundColor('#ccc')
@@ -101,8 +100,8 @@ struct NavRouterPage {
         .hideTitleBar(true)
         .hideToolBar(true)
         .height('80%')
-      Text(this.stateChange).fontSize(20).margin(10).key('testT')
-      Text(this.routerState).fontSize(20).margin(10).key('TestRouter')
+      Text(this.stateChange).margin(10).key('testT')
+      Text(this.routerState).margin(10).key('TestRouter')
       }
     }
   }

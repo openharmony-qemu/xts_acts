@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,7 +51,7 @@ export default function cloudCloudSyncTest() {
         }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_001 sync failed : " + err.message + ", error code: " + err.code);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -81,7 +81,7 @@ export default function cloudCloudSyncTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -104,7 +104,7 @@ export default function cloudCloudSyncTest() {
           expect(cloudSync.SyncState.UPLOADING == 0).assertTrue();
         }
         fileSync.onProgress(callback);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -127,7 +127,7 @@ export default function cloudCloudSyncTest() {
           expect(cloudSync.SyncState.UPLOAD_FAILED == 1).assertTrue();
         }
         fileSync.onProgress(callback);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -150,7 +150,7 @@ export default function cloudCloudSyncTest() {
           expect(cloudSync.SyncState.DOWNLOADING == 2).assertTrue();
         }
         fileSync.onProgress(callback);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_005 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -174,7 +174,7 @@ export default function cloudCloudSyncTest() {
         }
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_006 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -198,7 +198,7 @@ export default function cloudCloudSyncTest() {
         }
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_007 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -222,7 +222,7 @@ export default function cloudCloudSyncTest() {
         }
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_008 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -247,7 +247,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_009 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -272,7 +272,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_010 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -297,7 +297,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_011 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -322,7 +322,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_012 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -347,7 +347,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_013 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -372,7 +372,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_014 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -397,7 +397,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_015 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -422,7 +422,7 @@ export default function cloudCloudSyncTest() {
         fileSync.onProgress(callback);
         fileSync.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_016 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -446,7 +446,7 @@ export default function cloudCloudSyncTest() {
         }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_017 sync failed : " + err.message + ", error code: " + err.code);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_017 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -472,7 +472,7 @@ export default function cloudCloudSyncTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_018 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -498,7 +498,7 @@ export default function cloudCloudSyncTest() {
           expect(err.code == 401 && err.message =='The input parameter is invalid').assertTrue();
 
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_019 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -528,7 +528,7 @@ export default function cloudCloudSyncTest() {
             }
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_020 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -551,7 +551,7 @@ export default function cloudCloudSyncTest() {
         }
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_021 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -575,7 +575,7 @@ export default function cloudCloudSyncTest() {
         fileCache.onProgress(callback);
         fileCache.offProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_022 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -605,7 +605,7 @@ export default function cloudCloudSyncTest() {
         }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_023 start download failed: " + err.message + ", error code: " + err.code);
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_023 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -637,7 +637,7 @@ export default function cloudCloudSyncTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_024 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -663,7 +663,7 @@ export default function cloudCloudSyncTest() {
           hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_025 stop download failed: " + err.message + ", error code: " + err.code);
           expect(err.code == 13600001 && err.message =='IPC error').assertTrue();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_025 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -691,7 +691,7 @@ export default function cloudCloudSyncTest() {
             hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_026 start download successfully');
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_026 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -717,7 +717,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_027 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -741,7 +741,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_028 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -765,7 +765,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_029 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -789,7 +789,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_030 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -813,7 +813,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_031 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -837,7 +837,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_032 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -861,7 +861,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_033 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -885,7 +885,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_034 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -909,7 +909,7 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_035 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -933,13 +933,1041 @@ export default function cloudCloudSyncTest() {
         };
         fileCache.onProgress(callback);
         expect(true).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_036 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
       done();
     });
 
+    /**
+ 	   * @tc.name   test_cloudSync_State_static_037
+ 	   * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3700
+ 	   * @tc.desc   function of API, CloudFileCache.start, Promise, uri is empty string
+ 	   * @tc.type   FUNCTION
+ 	   * @tc.size   MEDIUMTEST
+ 	   * @tc.level  LEVEL3
+ 	   */
+    it('test_cloudSync_State_static_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let uri: string = "";
+        fileCache.start(uri).then(() => {
+          hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_037 start download successfully');
+          expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_037 start download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 14000002 && err.message == 'Invalid uri').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_037 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_038
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3800
+      * @tc.desc   function of API, CloudFileCache.start, callback, uri is empty string
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let uri: string = "";
+        fileCache.start(uri, (err: BusinessError<void> | null) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_038 start download failed: " + err?.message + ", error code: " + err?.code);
+            expect(err?.code === 14000002 && err?.message == 'Invalid uri').assertTrue();
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_038 start download successfully');
+            expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_038 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_039
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_3900
+      * @tc.desc   function of API, CloudFileCache.stop, callback, uri is empty string
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let uri: string = "";
+        fileCache.stop(uri, (err: BusinessError<void> | null) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_039 stop download failed: " + err?.message + ", error code: " + err?.code);
+            expect(err?.code === 13600001 && err?.message == 'IPC error').assertTrue();
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_039 stop download successfully');
+            expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_039 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+      /**
+      * @tc.name   test_cloudSync_State_static_040
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_4000
+      * @tc.desc   function of API, CloudFileCache.stop, Promise, uri is empty string
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let uri: string = "";
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.stop(uri).then(() => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_040 stop download successfully");
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_040 stop download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 13600001 && err.message == 'IPC error').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_040 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_041
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_4100
+      * @tc.desc   function of API, CloudFileCache.stop, Promise, needClean is false
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let path = "/data/storage/el2/cloud/1.txt";
+      let uri = fileUri.getUriFromPath(path);
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.stop(uri, false).then(() => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_041 stop download successfully");
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_041 stop download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 13600001 && err.message == 'IPC error').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_041 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_042
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_4200
+      * @tc.desc   function of API, CloudFileCache.onBatchDownload
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_042 batch download state： ' + pg.state);
+        }
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_042 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_043
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_4300
+      * @tc.desc   function of API, CloudFileCache.offBatchDownload
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_043 batch download state： ' + pg.state);
+        }
+        fileCache.onBatchDownload(callback);
+        fileCache.offBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_043 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_044
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_4400
+      * @tc.desc   function of API, CloudFileCache.onBatchDownload, State.RUNNING
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_044 batch download state：" + pg.state);
+          expect(cloudSync.State.RUNNING === 0).assertTrue();
+        };
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_044 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_045
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_4500
+      * @tc.desc   function of API, CloudFileCache.onBatchDownload, State.COMPLETED
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_045 batch download state：" + pg.state);
+          expect(cloudSync.State.COMPLETED === 1).assertTrue();
+        };
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_045 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_046
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_4600
+      * @tc.desc   function of API, CloudFileCache.onBatchDownload, State.FAILED
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_046 batch download state：" + pg.state);
+          expect(cloudSync.State.FAILED === 2).assertTrue();
+        };
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_046 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_047
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_4700
+      * @tc.desc   function of API, CloudFileCache.onBatchDownload, State.STOPPED
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_047 batch download state：" + pg.state);
+          expect(cloudSync.State.STOPPED === 3).assertTrue();
+        };
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_047 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_048
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_4800
+      * @tc.desc   function of API, CloudFileCache.onBatchDownload, DownloadErrorType.NO_ERROR
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_048 batch download error type：" + pg.errType);
+          expect(cloudSync.DownloadErrorType.NO_ERROR === 0).assertTrue();
+        };
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_048 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_049
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_4900
+      * @tc.desc   function of API, CloudFileCache.onBatchDownload, DownloadErrorType.UNKNOWN_ERROR
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_049 batch download error type：" + pg.errType);
+          expect(cloudSync.DownloadErrorType.UNKNOWN_ERROR === 1).assertTrue();
+        };
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_049 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_050
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_5000
+      * @tc.desc   function of API, CloudFileCache.onBatchDownload, DownloadErrorType.NETWORK_UNAVAILABLE
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_050 batch download error type：" + pg.errType);
+          expect(cloudSync.DownloadErrorType.NETWORK_UNAVAILABLE === 2).assertTrue();
+        };
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_050 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_051
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_5100
+      * @tc.desc   function of API, CloudFileCache.onBatchDownload, DownloadErrorType.LOCAL_STORAGE_FULL
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_051 batch download error type：" + pg.errType);
+          expect(cloudSync.DownloadErrorType.LOCAL_STORAGE_FULL === 3).assertTrue();
+        };
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_051 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_052
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_5200
+      * @tc.desc   function of API, CloudFileCache.onBatchDownload, DownloadErrorType.CONTENT_NOT_FOUND
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_052 batch download error type：" + pg.errType);
+          expect(cloudSync.DownloadErrorType.CONTENT_NOT_FOUND === 4).assertTrue();
+        };
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_052 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_053
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_5300
+      * @tc.desc   function of API, CloudFileCache.onBatchDownload, DownloadErrorType.FREQUENT_USER_REQUESTS
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_053 batch download error type：" + pg.errType);
+          expect(cloudSync.DownloadErrorType.FREQUENT_USER_REQUESTS === 5).assertTrue();
+        };
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_053 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_054
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_5400
+      * @tc.desc   function of API, MultiDownloadProgress.getFailedFiles
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_054 batch download state：" + pg.state);
+          if (pg.state == cloudSync.State.FAILED) {
+            let failedFiles = pg.getFailedFiles();
+            hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_054 failed files count：" + failedFiles.length);
+          }
+        };
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_054 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_055
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_5500
+      * @tc.desc   function of API, MultiDownloadProgress.getSuccessfulFiles
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let callback = (pg: cloudSync.MultiDownloadProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_055 batch download state：" + pg.state);
+          if (pg.state == cloudSync.State.COMPLETED) {
+            let successfulFiles = pg.getSuccessfulFiles();
+            hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_055 successful files count：" + successfulFiles.length);
+          }
+        };
+        fileCache.onBatchDownload(callback);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_055 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+
+    /**
+      * @tc.name   test_cloudSync_State_static_057
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_5700
+      * @tc.desc   function of API, CloudFileCache.startBatch, Promise, default fileType
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let path = "/data/storage/el2/cloud/1.txt";
+      let uri = fileUri.getUriFromPath(path);
+      let uriList: Array<string> = [uri];
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.startBatch(uriList).then((downloadId: long): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_057 start batch download successfully, taskId: " + downloadId);
+          expect(downloadId >= 0).assertTrue();
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_057 start batch download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 22400005).assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_057 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_058
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_5800
+      * @tc.desc   function of API, CloudFileCache.startBatch, Promise, fileType CONTENT
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let path = "/data/storage/el2/cloud/1.txt";
+      let uri = fileUri.getUriFromPath(path);
+      let uriList: Array<string> = [uri];
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.startBatch(uriList, cloudSync.DownloadFileType.CONTENT).then((downloadId: long): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_058 start batch download successfully, taskId: " + downloadId);
+          expect(downloadId >= 0).assertTrue();
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_058 start batch download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 22400005).assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_058 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_059
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_5900
+      * @tc.desc   function of API, CloudFileCache.startBatch, Promise, fileType THUMBNAIL
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let path = "/data/storage/el2/cloud/1.txt";
+      let uri = fileUri.getUriFromPath(path);
+      let uriList: Array<string> = [uri];
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.startBatch(uriList, cloudSync.DownloadFileType.THUMBNAIL).then((downloadId: long): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_059 start batch download successfully, taskId: " + downloadId);
+          expect(downloadId >= 0).assertTrue();
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_059 start batch download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 22400005).assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_059 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_060
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_6000
+      * @tc.desc   function of API, CloudFileCache.startBatch, Promise, fileType LCD
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let path = "/data/storage/el2/cloud/1.txt";
+      let uri = fileUri.getUriFromPath(path);
+      let uriList: Array<string> = [uri];
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.startBatch(uriList, cloudSync.DownloadFileType.LCD).then((downloadId: long): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_060 start batch download successfully, taskId: " + downloadId);
+          expect(downloadId >= 0).assertTrue();
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_060 start batch download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 22400005).assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_060 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_061
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_6100
+      * @tc.desc   function of API, CloudFileCache.startBatch, Promise, empty uri array
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let uriList: Array<string> = [];
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.startBatch(uriList).then((downloadId: long): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_061 start batch download successfully, taskId: " + downloadId);
+          expect(downloadId >= 0).assertTrue();
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_061 start batch download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 401 && err.message == 'The input parameter is invalid').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_061 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_062
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_6200
+      * @tc.desc   function of API, CloudFileCache.startBatch, Promise, exceed 400 uris
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let path = "/data/storage/el2/cloud/1.txt";
+      let uri = fileUri.getUriFromPath(path);
+      let uriList: Array<string> = [];
+      for (let i = 0; i < 401; i++) {
+        uriList.push(uri);
+      }
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.startBatch(uriList).then((downloadId: long): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_062 start batch download successfully, taskId: " + downloadId);
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_062 start batch download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 22400004 && err.message == 'Exceed the maximum limit').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_062 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_063
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_6300
+      * @tc.desc   function of API, CloudFileCache.startBatch, Promise, invalid uri
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let uriList: Array<string> = ["invalid_uri"];
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.startBatch(uriList).then((downloadId: long): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_063 start batch download successfully, taskId: " + downloadId);
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_063 start batch download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 14000002 && err.message == 'Invalid uri').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_063 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_064
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_6400
+      * @tc.desc   function of API, CloudFileCache.cleanFileCache
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let path = "/data/storage/el2/cloud/1.txt";
+      let uri = fileUri.getUriFromPath(path);
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.cleanFileCache(uri);
+        hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_064 clean file cache successfully");
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_064 has failed for' + e.message + ', code: ' + e.code);
+        expect((e as BusinessError).code === 401 && (e as BusinessError).message == 'The input parameter is invalid').assertTrue();
+        done();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_065
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_6500
+      * @tc.desc   function of API, CloudFileCache.cleanFileCache, invalid uri
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let uri: string = "invalid_uri";
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.cleanFileCache(uri);
+        hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_065 clean file cache successfully");
+        expect(false).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_065 has failed for' + e.message + ', code: ' + e.code);
+        expect((e as BusinessError).code === 14000002 && (e as BusinessError).message == 'Invalid uri').assertTrue();
+        done();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_066
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_6600
+      * @tc.desc   function of API, CloudFileCache.cleanFileCache, empty string uri
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let uri: string = "";
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.cleanFileCache(uri);
+        hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_066 clean file cache successfully");
+        expect(false).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_066 has failed for' + e.message + ', code: ' + e.code);
+        expect((e as BusinessError).code === 14000002 && (e as BusinessError).message == 'Invalid uri').assertTrue();
+        done();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_067
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_6700
+      * @tc.desc   function of API, CloudFileCache.stopBatch, Promise, default needClean
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let downloadId: long = 1;
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.stopBatch(downloadId).then<void>((): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_067 stop batch download successfully");
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_067 stop batch download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_067 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_068
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_6800
+      * @tc.desc   function of API, CloudFileCache.stopBatch, Promise, needClean is false
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let downloadId: long = 1;
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.stopBatch(downloadId, false).then<void>((): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_068 stop batch download successfully");
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_068 stop batch download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_068 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_069
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_6900
+      * @tc.desc   function of API, CloudFileCache.stopBatch, Promise, needClean is true
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let downloadId: long = 1;
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.stopBatch(downloadId, true).then<void>((): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_069 stop batch download successfully");
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_069 stop batch download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_069 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_070
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_7000
+      * @tc.desc   function of API, CloudFileCache.stopBatch, Promise, invalid downloadId
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let downloadId: long = -1;
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.stopBatch(downloadId).then<void>((): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_070 stop batch download successfully");
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_070 stop batch download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_070 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_071
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_7100
+      * @tc.desc   function of API, cloudSync.getCoreFileSyncState
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let path = "/data/storage/el2/cloud/1.txt";
+      let uri: string = fileUri.getUriFromPath(path);
+      try {
+        let fileState: cloudSync.FileState = cloudSync.getCoreFileSyncState(uri);
+        hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_071 get core file sync state: " + fileState);
+        expect(cloudSync.SyncState.UPLOAD_FAILED === 1).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_071 has failed for' + e.message + ', code: ' + e.code);
+        expect((e as BusinessError).code === 14000002 && (e as BusinessError).message == 'Invalid uri').assertTrue();
+      }
+      done();
+    });
+
+
+    /**
+      * @tc.name   test_cloudSync_State_static_076
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_7600
+      * @tc.desc   function of API, cloudSync.getCoreFileSyncState, invalid uri
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let uri: string = "invalid_uri";
+      try {
+        let fileState: cloudSync.FileState = cloudSync.getCoreFileSyncState(uri);
+        hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_076 get core file sync state: " + fileState);
+        expect(false).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_076 has failed for' + e.message + ', code: ' + e.code);
+        expect((e as BusinessError).code === 14000002 && (e as BusinessError).message == 'Invalid uri').assertTrue();
+        done();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_077
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_7700
+      * @tc.desc   function of API, cloudSync.getCoreFileSyncState, empty string uri
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let uri: string = "";
+      try {
+        let fileState: cloudSync.FileState = cloudSync.getCoreFileSyncState(uri);
+        hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_077 get core file sync state: " + fileState);
+        expect(false).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_077 has failed for' + e.message + ', code: ' + e.code);
+        expect((e as BusinessError).code === 14000002 && (e as BusinessError).message == 'Invalid uri').assertTrue();
+        done();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_078
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_7800
+      * @tc.desc   function of API, cloudSync.isFileConflict
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let path = "/data/storage/el2/cloud/1.txt";
+      let uri: string = fileUri.getUriFromPath(path);
+      let fileVersion = new cloudSync.FileVersion();
+      try {
+        fileVersion.isFileConflict(uri).then((isConflict: boolean) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_078 is file conflict: " + isConflict);
+          expect(false).assertTrue();
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_078 check file conflict failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 22400001 && err.message == 'Cloud status not ready').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_078 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_079
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_7900
+      * @tc.desc   function of API, cloudSync.isFileConflict, invalid uri
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let uri: string = "invalid_uri";
+      let fileVersion = new cloudSync.FileVersion();
+      try {
+        fileVersion.isFileConflict(uri).then((isConflict: boolean) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_079 is file conflict: " + isConflict);
+          expect(false).assertTrue();
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_079 check file conflict failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 22400001 && err.message == 'Cloud status not ready').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_079 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   test_cloudSync_State_static_080
+      * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_8000
+      * @tc.desc   function of API, cloudSync.isFileConflict, empty string uri
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_cloudSync_State_static_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let uri: string = "";
+      let fileVersion = new cloudSync.FileVersion();
+      try {
+        fileVersion.isFileConflict(uri).then((isConflict: boolean) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_080 is file conflict: " + isConflict);
+          expect(false).assertTrue();
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_080 check file conflict failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_080 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   test_cloudSync_State_static_081
+     * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_8100
+     * @tc.desc   function of API, on_progress, ErrorType.REMOTE_SERVER_ABNORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSync_State_static_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+     
+      try {
+        let fileSync = new cloudSync.FileSync();
+        let callback = (pg: cloudSync.SyncProgress) => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_081 file sync state：" + pg.state + "error type:" + pg.error);
+          expect(cloudSync.ErrorType.REMOTE_SERVER_ABNORMAL == 8).assertTrue();
+        }
+      fileSync.onProgress(callback);
+      fileSync.offProgress(callback);
+     } catch (err) {
+       hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_081 has failed for' + err.message + ', code: ' + err.code);
+       expect(false).assertTrue();
+     }
+     done();
+   });
+
+   /**
+     * @tc.name   test_cloudSync_State_static_082
+     * @tc.number SUB_STORAGE_CLOUDSYNC_TEST_8200
+     * @tc.desc   function of API, CloudFileCache.stop, Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_cloudSync_State_static_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        fileCache.stop("", true).then(() => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_082 stop download successfully");
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', "test_cloudSync_State_static_082 stop download failed: " + err.message + ", error code: " + err.code);
+          expect(err.code === 13600001).assertTrue();
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_cloudSync_State_static_082 has failed for' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'cloud_sync_test end');
 

@@ -38,7 +38,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 export default function longPressGestureJsunit() {
   describe('longPressGestureJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
 
@@ -95,7 +95,7 @@ it('testLongPressGesture_static_01', Level.LEVEL0, async (done: () => void): Pro
       try {
         console.info("testLongPressGesture01 on emitter on");
         emitter.on(innerEvent, callback)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testLongPressGesture01 on emitter err : " + JSON.stringify(err));
       }
       console.info("testLongPressGesture01 sendEventByKey result: " +
@@ -130,7 +130,7 @@ it('testLongPressGesture_static_02', Level.LEVEL0, async (done: () => void): Pro
       try {
         console.info("testLongPressGesture02 on emitter on");
         emitter.on(innerEvent, callback)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testLongPressGesture02 on emitter err : " + JSON.stringify(err));
       }
       const strJson = inspector.sendEventByKey('flex', 11, "")

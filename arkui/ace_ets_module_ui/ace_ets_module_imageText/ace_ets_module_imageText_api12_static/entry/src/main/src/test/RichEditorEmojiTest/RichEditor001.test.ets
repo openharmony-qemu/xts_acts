@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditor001() {
   describe('RichEditor001', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -74,7 +74,7 @@ export default function RichEditor001() {
         expect().assertFail();
       }
     });
-    afterEach(()=>{
+    afterEach(async (): Promise<void> => {
       const defaultRouter = AppStorage.get<Router>("router") as Router
       defaultRouter.replaceUrl({url:'MainAbility/pages/index/index'})
 

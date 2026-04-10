@@ -13,13 +13,15 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, beforeEach, Level } from '@ohos/hypium';
 import request from '@ohos.request';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import fs from  '@ohos.file.fs';
 import statistics from '@ohos.net.statistics';
 import wantAgent, { WantAgent } from '@ohos.app.ability.wantAgent';
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
+import Server from '../common/ServerDownload'
 
 export default function requestConfigSavesTest() {
   describe('requestConfigSavesTest', () => {
@@ -47,6 +49,9 @@ export default function requestConfigSavesTest() {
      */
     beforeAll((done: Function) => {
       try {
+        console.info('====>beforeAll: startServer');
+        new Server().startServer();
+        console.info('====>beforeAll: startServer success!');
         let context: common.Context | undefined = AppStorage.get('context');
         if (context !== undefined){
           baseContext = context;
@@ -63,6 +68,16 @@ export default function requestConfigSavesTest() {
     });
 
     /**
+     * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
+     */
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
+    });
+
+    /**
      * @tc.name   SUB_Request_Agent_TaskSaveas_0100
      * @tc.number SUB_Request_Agent_TaskSaveas_0100
      * @tc.desc   request config saveas validate
@@ -74,7 +89,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0100 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: undefined,
@@ -83,7 +98,7 @@ export default function requestConfigSavesTest() {
         mode:request.agent.Mode.FOREGROUND
       };
       try {
-        let path: string = '/data/storage/el2/base/haps/entry_test/cache/test.hap';
+        let path: string = '/data/storage/el2/base/haps/entry_test/cache/127.0.0.1:3374';
         let ifExitOut: boolean = fs.accessSync(path);
         if (ifExitOut) {
           fs.unlinkSync(path);
@@ -140,7 +155,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0200 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './',
@@ -149,7 +164,7 @@ export default function requestConfigSavesTest() {
         mode:request.agent.Mode.FOREGROUND
       };
       try {
-        let path: string = '/data/storage/el2/base/haps/entry_test/cache/test.hap';
+        let path: string = '/data/storage/el2/base/haps/entry_test/cache/127.0.0.1:3374';
         let ifExitOut: boolean = fs.accessSync(path);
         if (ifExitOut) {
           fs.unlinkSync(path);
@@ -207,7 +222,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0300 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './request/SUB_Request_Agent_TaskSaveas_0300',
@@ -265,7 +280,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0400 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_Request_Agent_TaskSaveas_0400',
@@ -354,7 +369,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0600 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: 'SUB_Request_Agent_TaskSaveas_0600',
@@ -412,7 +427,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0700 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: 'request/SUB_Request_Agent_TaskSaveas_0700',
@@ -470,10 +485,10 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_0800 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
-        saveas: 'internal://cache/test.hap',
+        saveas: 'internal://cache/127.0.0.1:3374',
         network: request.agent.Network.WIFI,
         overwrite: true,
         mode:request.agent.Mode.FOREGROUND
@@ -484,7 +499,7 @@ export default function requestConfigSavesTest() {
             try {
               task.off('completed', on_completedCallback);
               console.info("====>SUB_Request_Agent_TaskSaveas_0800 completed task.config.saveas: " + JSON.stringify(task.config.saveas));
-              let path: string = '/data/storage/el2/base/haps/entry_test/cache/test.hap';
+              let path: string = '/data/storage/el2/base/haps/entry_test/cache/127.0.0.1:3374';
               let ifExit: boolean = fs.accessSync(path);
               console.info("====>SUB_Request_Agent_TaskSaveas_0800 ifExit: " + ifExit);
               expect(ifExit).assertTrue();
@@ -658,7 +673,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_1100 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: '/data/storage/../../data/storage/el1/../el2/base/SUB_Request_Agent_TaskSaveas_1100',
@@ -747,7 +762,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_1300 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: 'file://com.acts.newRequestAuthority.test/data/storage/el2/base/SUB_Request_Agent_TaskSaveas_1300',
@@ -836,7 +851,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_TaskSaveas_1500 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: '/data/storage/el5/base/SUB_Request_Agent_TaskSaveas_1500',
@@ -987,7 +1002,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_onResponse_0300 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_Request_Agent_onResponse_0300',
@@ -1099,7 +1114,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_onResponse_0500 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_Request_Agent_onResponse_0500',
@@ -1431,7 +1446,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_ContinueDown_0300 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_Request_Agent_ContinueDown_0300.txt',
@@ -1484,7 +1499,7 @@ export default function requestConfigSavesTest() {
       console.info("====>-----------------------SUB_Request_Agent_ContinueDown_0310 is starting-----------------------");
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_Request_Agent_ContinueDown_0310.txt',
@@ -2011,7 +2026,7 @@ export default function requestConfigSavesTest() {
       }
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_Request_Download_minSped_1000',
@@ -2061,7 +2076,7 @@ export default function requestConfigSavesTest() {
       }
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_Request_Download_minSped_1100',
@@ -2578,7 +2593,7 @@ export default function requestConfigSavesTest() {
       }
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'reeateTest',
         mode: request.agent.Mode.BACKGROUND,
         notification: notification,
@@ -2777,7 +2792,7 @@ export default function requestConfigSavesTest() {
       }
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'reeateTest',
         mode: request.agent.Mode.BACKGROUND,
         notification: notification,
@@ -2837,7 +2852,7 @@ export default function requestConfigSavesTest() {
       }
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'reeateTest',
         mode: request.agent.Mode.BACKGROUND,
         notification: notification,
@@ -2910,7 +2925,7 @@ export default function requestConfigSavesTest() {
       }
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'reeateTest',
         mode: request.agent.Mode.BACKGROUND,
         notification: notification,
@@ -2957,7 +2972,7 @@ export default function requestConfigSavesTest() {
       }
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        url: 'http://127.0.0.1:3374',
         title: 'reeateTest',
         mode: request.agent.Mode.BACKGROUND,
         notification: notification,

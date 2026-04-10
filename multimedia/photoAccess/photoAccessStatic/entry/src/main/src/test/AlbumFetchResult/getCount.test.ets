@@ -49,7 +49,7 @@ export default function albumGetCountTest() {
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album>;
           let count = 0;
           for (let i = 0; i < subTypes.length; i++) {
-            fetchResult = await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
+            fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
             try {
               expect(fetchResult.getCount()).assertEqual(1);
               count++;

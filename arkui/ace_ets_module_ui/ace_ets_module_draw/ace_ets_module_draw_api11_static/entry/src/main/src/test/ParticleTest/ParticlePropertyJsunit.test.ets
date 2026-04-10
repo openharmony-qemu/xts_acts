@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ParticleJsunit() {
   describe('ParticleJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ParticleJsunit beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")

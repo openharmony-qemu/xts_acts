@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,11 +68,11 @@ export async function getFileAsset(testNum: string, fetchOps: photoAccessHelper.
     let appContext: Context = Hypium.get("context") as Context;
     const helper = photoAccessHelper.getPhotoAccessHelper(appContext);
     let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset>;
-    fetchResult = await helper.getAssets(fetchOps);
+    fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
     hilog.info(0x0000, testTag, '%{public}s', `${testNum} getFileAsset fetchResult: ${fetchResult.getCount()}`);
     asset = await fetchResult.getFirstObject();
     fetchResult.close();
-  } catch (error: Error) {
+  } catch (error) {
     hilog.info(0x0000, testTag, '%{public}s', `${testNum} getFileAsset error: ${error}`);
     throw error;
   }
@@ -164,7 +164,7 @@ export async function getBurstKey(testNum: string, fetchOps: photoAccessHelper.F
   try {
     let appContext: Context = Hypium.get("context") as Context;
     const helper = photoAccessHelper.getPhotoAccessHelper(appContext);
-    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(fetchOps);
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
     if (fetchResult === undefined) {
       hilog.info(0x0000, testTag, `${testNum} getBurstKey fetchResult is undefined !`);
       return burstKey;
@@ -232,15 +232,15 @@ export async function getPermission(name?: Permissions): Promise<void> {
         hilog.info(0x0000, testTag, 'requestPermissionsFromUser data dialogShownResults:' + data?.dialogShownResults);
       }
     });
-  } catch (error: Error) {
+  } catch (error) {
     hilog.info(0x0000, testTag,
       ' createAsset failed' + ", error.name:" + error.name + ", error.message:" + error.message);
   }
 }
 
 export async function createMovingPhoto(testNum: string, context: Context, titleName: string):
-  Promise<photoAccessHelper.PhotoAsset | undefined> {
-  let photoAsset: photoAccessHelper.PhotoAsset | undefined = undefined;
+  Promise<photoAccessHelper.PhotoAsset | null> {
+  let photoAsset: photoAccessHelper.PhotoAsset | null = null;
   try {
     let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
@@ -249,19 +249,19 @@ export async function createMovingPhoto(testNum: string, context: Context, title
       title: titleName,
       subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO
     }
-    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null =
       photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
     hilog.info(0x0000, testTag, `${testNum} :: create assetChangeRequest success`);
     let photoUri =
       "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/test_mov_1.jpg";
     let videoUri =
       "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/test_mov_1.mp4";
-    assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, photoUri);
-    assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
+    (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, photoUri);
+    (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
     hilog.info(0x0000, testTag, `${testNum} :: add resource success`);
-    await phAccessHelper.applyChanges(assetChangeRequest);
+    await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).applyChanges((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest));
     hilog.info(0x0000, testTag, `${testNum} :: applyChange success`);
-    photoAsset = assetChangeRequest.getAsset();
+    photoAsset = (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).getAsset();
   } catch (error) {
     hilog.error(0x0000, testTag, `${testNum} :: create moving photo failed, error is ${error}`);
   }
@@ -325,11 +325,11 @@ export async function pushCreateAsset(context: Context, names: Array<string>):
             photoType = photoAccessHelper.PhotoType.VIDEO;
             resourceType = photoAccessHelper.ResourceType.VIDEO_RESOURCE;
           }
-          let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+          let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null =
             photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType,
               extension, options);
-          assetChangeRequest.addResource(resourceType, fileUri);
-          await phAccessHelper.applyChanges(assetChangeRequest);
+          (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(resourceType, fileUri);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).applyChanges((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest));
           hilog.info(0x0000, testTag, `pushCreateAsset ${name} create success`)
           successNum++;
         }
@@ -355,10 +355,10 @@ export async function createVideoBySandBoxUri(testNum: string, testContext: Cont
   let uri: string = "";
   try {
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
-    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null =
       photoAccessHelper.MediaAssetChangeRequest.createVideoAssetRequest(testContext, fileUri);
-    await phAccessHelper.applyChanges(assetChangeRequest);
-    uri = assetChangeRequest.getAsset().uri;
+    await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).applyChanges((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest));
+    uri = ((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).getAsset() as photoAccessHelper.PhotoAsset).uri;
     hilog.info(0x0000, testTag, `${testNum} :: createVideoBySandBoxUri success, uri is ${uri}`);
   } catch (error) {
     hilog.info(0x0000, testTag, `${testNum} :: createVideoBySandBoxUri failed ! error is ${error}`);
@@ -372,7 +372,7 @@ export async function startAbility(bundleName: string, abilityName: string): Pro
       await abilityDelegatorRegistry.getAbilityDelegator()
         .executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
     console.info(`[picker] start abilityFinished: ${result}`);
-  } catch (err: Error) {
+  } catch (err) {
     console.error(`[picker] start abilityFailed: ${err}`);
   }
 }
@@ -382,7 +382,7 @@ export async function stopAbility(bundleName: string): Promise<void> {
     let result =
       await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(`aa force-stop ${bundleName}`);
     console.info(`[picker] stop abilityFinished: ${result}`);
-  } catch (err: Error) {
+  } catch (err) {
     console.error(`[picker] stop abilityFailed: ${err}`);
   }
 }
@@ -443,11 +443,11 @@ export async function pushCreateAssetSingle(context: Context, names: Array<strin
             photoType = photoAccessHelper.PhotoType.VIDEO;
             resourceType = photoAccessHelper.ResourceType.VIDEO_RESOURCE;
           }
-          let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+          let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null =
             photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType,
               extension, options);
-          assetChangeRequest.addResource(resourceType, fileUri);
-          await phAccessHelper.applyChanges(assetChangeRequest);
+          (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(resourceType, fileUri);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).applyChanges((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest));
           console.info(`pushCreateAssetSingle ${name} create success`)
           successNum++;
         }

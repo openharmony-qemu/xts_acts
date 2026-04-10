@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,12 +26,12 @@ import image from '@ohos.multimedia.image';
 
 const TAG = "CameraInputTest: ";
 
-let mCameraManager: cameraObj.CameraManager;
-let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
-let mCameraSession: cameraObj.VideoSession;
+let mCameraManager: cameraObj.CameraManager | undefined;
+let mCameraDevicesArray: Array<cameraObj.CameraDevice> = [];
+let mCameraSession: cameraObj.VideoSession | undefined;
 let mCameraNum: number;
-let mCameraInput: cameraObj.CameraInput;
-let mPreviewOutput: cameraObj.PreviewOutput;
+let mCameraInput: cameraObj.CameraInput | undefined;
+let mPreviewOutput: cameraObj.PreviewOutput | undefined;
 let receiver: image.ImageReceiver | undefined;
 let surfaceId: string = '';
 
@@ -114,7 +114,7 @@ let isEmpty08 = (data: BusinessError) => {
     let appContext: Context = Hypium.get("Context") as Context;
     console.info('Enter appContext');
     mCameraManager = cameraObj.getCameraManager(appContext);
-    if (isEmpty01(mCameraManager)) {
+    if (isEmpty01(mCameraManager!)) {
       console.info(TAG + "getCameraManager FAILED");
       return false;
     }
@@ -127,7 +127,7 @@ let isEmpty08 = (data: BusinessError) => {
   let getCameraSupportDevicesArray = () => {
     console.info('Enter getCameraSupportDevicesArray');
 
-    mCameraDevicesArray = mCameraManager.getSupportedCameras();
+    mCameraDevicesArray = mCameraManager!.getSupportedCameras();
     if (isEmpty02(mCameraDevicesArray)) {
       console.info(TAG + "getSupportedCameras FAILED");
       return false;
@@ -145,7 +145,7 @@ let isEmpty08 = (data: BusinessError) => {
     console.info('Enter beginCameraSessionConfig');
 
     console.info(TAG + "Entering beginConfig start");
-    mCameraSession.beginConfig();
+    mCameraSession!.beginConfig();
     console.info(TAG + "Entering beginConfig end");
     console.info('Exit beginCameraSessionConfig');
 
@@ -155,7 +155,7 @@ let isEmpty08 = (data: BusinessError) => {
   let commitCameraSessionConfig = async (): Promise<boolean> => {
     console.info('Enter commitCameraSessionConfig');
 
-    await mCameraSession.commitConfig();
+    await mCameraSession!.commitConfig();
 
     await Utils.msSleep(500);
 
@@ -168,12 +168,12 @@ let isEmpty08 = (data: BusinessError) => {
     console.info('Enter createCameraSessionInstance');
 
     try {
-      mCameraSession = mCameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
-    } catch(err: BusinessError) {
+      mCameraSession = mCameraManager!.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
+    } catch(err) {
       console.info('createCaptureSession FAILED');
     }
 
-    if (isEmpty03(mCameraSession)) {
+    if (isEmpty03(mCameraSession!)) {
       console.info(TAG + "createCaptureSession FAILED");
       return false;
     }
@@ -184,7 +184,7 @@ let isEmpty08 = (data: BusinessError) => {
   }
 
   let releaseCameraSessionInstance = async () => {
-    await mCameraSession.release();
+    await mCameraSession!.release();
   }
 
   let createInput = async (idx: int): Promise<boolean> => {
@@ -196,15 +196,15 @@ let isEmpty08 = (data: BusinessError) => {
     }
 
     console.info('Enter mCameraDevicesArray');
-    mCameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[idx.toInt()]);
+    mCameraInput = mCameraManager!.createCameraInput(mCameraDevicesArray[idx.toInt()]);
     console.info('Enter mCameraInput');
 
-    if (isEmpty04(mCameraInput)) {
+    if (isEmpty04(mCameraInput!)) {
       console.info(TAG + "createCameraInput FAILED");
       return false;
     }
 
-    await mCameraInput.open();
+    await mCameraInput!.open();
 
     await Utils.msSleep(100);
 
@@ -218,8 +218,8 @@ let isEmpty08 = (data: BusinessError) => {
   let releaseInput = async (): Promise<boolean> => {
     console.info('Enter releaseInput');
 
-    if (!isEmpty04(mCameraInput)) {
-      await mCameraInput.close();
+    if (!isEmpty04(mCameraInput!)) {
+      await mCameraInput!.close();
     }
 
     console.info('Exit releaseInput');
@@ -245,7 +245,7 @@ let isEmpty08 = (data: BusinessError) => {
   let createOutput = (idx: int) => {
     console.info('Enter createOutput');
 
-    let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()],
+    let cameraOutputCap = mCameraManager!.getSupportedOutputCapability(mCameraDevicesArray[idx.toInt()],
       cameraObj.SceneMode.NORMAL_VIDEO);
     console.log(TAG + 'Exit createOutput cameraOutputCap001')
 
@@ -254,14 +254,14 @@ let isEmpty08 = (data: BusinessError) => {
         console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
         for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
           console.log(TAG + 'Enter createOutput cameraOutputCap002')
-          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
+          mPreviewOutput = mCameraManager!.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
           console.log(TAG + 'Enter createOutput cameraOutputCap003')
-          if (!isEmpty07(mPreviewOutput)) {
+          if (!isEmpty07(mPreviewOutput!)) {
             break;
           }
         }
 
-        if (isEmpty07(mPreviewOutput)) {
+        if (isEmpty07(mPreviewOutput!)) {
           console.info(TAG + "createPreviewOutput FAILED");
         }
 
@@ -277,8 +277,8 @@ let isEmpty08 = (data: BusinessError) => {
   let releaseOutput = async (): Promise<boolean> => {
     console.info('Enter releaseOutput');
 
-    if (!isEmpty07(mPreviewOutput)) {
-      await mPreviewOutput.release();
+    if (!isEmpty07(mPreviewOutput!)) {
+      await mPreviewOutput!.release();
     }
 
     console.info('Exit releaseOutput');
@@ -297,14 +297,14 @@ let isEmpty08 = (data: BusinessError) => {
 
     await Utils.msSleep(1);
 
-    if (!isEmpty04(mCameraInput)) {
+    if (!isEmpty04(mCameraInput!)) {
       console.info(TAG + "Start to addInput");
-      mCameraSession.addInput(mCameraInput);
+      mCameraSession!.addInput(mCameraInput!);
     }
 
-    if (!isEmpty07(mPreviewOutput)) {
+    if (!isEmpty07(mPreviewOutput!)) {
       console.info(TAG + "Start to addOutput mPreviewOutput");
-      mCameraSession.addOutput(mPreviewOutput);
+      mCameraSession!.addOutput(mPreviewOutput!);
     }
 
     await Utils.msSleep(1);
@@ -319,14 +319,14 @@ let isEmpty08 = (data: BusinessError) => {
   let stopCameraSession = async (): Promise<boolean> => {
     console.info(TAG + "Enter stopCameraSession");
 
-    if (!isEmpty04(mCameraInput)) {
+    if (!isEmpty04(mCameraInput!)) {
       console.info(TAG + "Start to removeInput input");
-      mCameraSession.removeInput(mCameraInput);
+      mCameraSession!.removeInput(mCameraInput!);
     }
 
-    if (!isEmpty07(mPreviewOutput)) {
+    if (!isEmpty07(mPreviewOutput!)) {
       console.info(TAG + "Start to removeOutput mPreviewOutput");
-      mCameraSession.removeOutput(mPreviewOutput);
+      mCameraSession!.removeOutput(mPreviewOutput!);
     }
 
     await releaseInput();
@@ -341,7 +341,7 @@ let isEmpty08 = (data: BusinessError) => {
 
    describe('CameraInputTest', () => {
     console.info(TAG + '----------CameraInputTest--------------');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       try {
         await Utils.msSleep(1000);
         getPreviewOutputSurface();
@@ -355,7 +355,7 @@ let isEmpty08 = (data: BusinessError) => {
       }
     });
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1000);
       console.info('beforeEach case');
     });
@@ -364,7 +364,7 @@ let isEmpty08 = (data: BusinessError) => {
       console.info('afterEach case');
     });
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       console.info('afterAll case');
     });
@@ -390,22 +390,22 @@ let isEmpty08 = (data: BusinessError) => {
           await startCameraSession(i);
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 startCameraSession");
 
-          mCameraInput.onError(mCameraDevicesArray[i], (err: BusinessError) => {
+          mCameraInput!.onError(mCameraDevicesArray[i], (err: BusinessError) => {
             if (isEmpty08(err)) {
               console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 err == null || undefined");
-              await stopCameraSession();
+               waitForCompletion(async () => {await stopCameraSession();})
               expect().assertFail();
             } else {
               console.info(TAG + "SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 Callback SUCCESSFUL");
             }
-            await Utils.msSleep(1);
+             waitForCompletion(async () => {await Utils.msSleep(1);})
           })
 
           try {
-            mCameraInput.offError( mCameraDevicesArray[i]);
+            mCameraInput!.offError( mCameraDevicesArray[i]);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 off('reeor') SUCCESSFUL");
             done();
-          } catch (error:BusinessError) {
+          } catch (error) {
             let err = error as BusinessError
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 off('error') FAILED!");
             console.info(TAG + 'ERRORCODE: ' + error.code)
@@ -454,12 +454,12 @@ let isEmpty08 = (data: BusinessError) => {
         let camerasArray = mCameraDevicesArray;
         for (let i = 0; i < mCameraNum; i++) {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 start for camera[" + i + "]");
-          let cameraInput = mCameraManager.createCameraInput(camerasArray[i]);
+          let cameraInput = mCameraManager!.createCameraInput(camerasArray[i]);
           try {
             cameraInput.onCameraOcclusionDetection(occlusionDetectChange);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 onCameraOcclusionDetection SUCCESSFUL");
             done();
-          } catch (error:BusinessError) {
+          } catch (error) {
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 onCameraOcclusionDetection FAILED!");
             console.info(TAG + 'ERRORCODE: ' + error.code)
             expect().assertFail()
@@ -470,7 +470,7 @@ let isEmpty08 = (data: BusinessError) => {
             cameraInput.offCameraOcclusionDetection(occlusionDetectChange);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 offCameraOcclusionDetectChange SUCCESSFUL");
             done();
-          } catch (error:BusinessError) {
+          } catch (error) {
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 offCameraOcclusionDetectChange FAILED!");
             console.info(TAG + 'ERRORCODE: ' + error.code)
             expect().assertFail()
@@ -492,7 +492,7 @@ let isEmpty08 = (data: BusinessError) => {
      */
     it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_STATIC_0100--------------");
-      if (isEmpty01(mCameraManager)) {
+      if (isEmpty01(mCameraManager!)) {
         console.info(TAG +
           "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_STATIC_0100 cameraManager == null || undefined");
         expect().assertFail();
@@ -501,7 +501,7 @@ let isEmpty08 = (data: BusinessError) => {
         for (let i = 0; i < camerasArray.length; i++) {
           let successFlag = false;
           console.info(TAG + "Entering createCameraInput with camera: " + camerasArray[i].cameraId);
-          let cameraInput = mCameraManager.createCameraInput(camerasArray[i]);
+          let cameraInput = mCameraManager!.createCameraInput(camerasArray[i]);
           //expect(isEmpty04(cameraInput)).assertFalse();
           cameraInput.open((err: BusinessError | null) => {
             if (!err || err.code == 0) {
@@ -545,7 +545,7 @@ let isEmpty08 = (data: BusinessError) => {
     it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let functionTag = "SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_STATIC_0100";
       console.info(functionTag);
-      if (isEmpty01(mCameraManager)) {
+      if (isEmpty01(mCameraManager!)) {
         console.info(TAG +
           "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_STATIC_0100 cameraManager == null || undefined");
         expect().assertFail();
@@ -556,7 +556,7 @@ let isEmpty08 = (data: BusinessError) => {
           console.info(TAG + functionTag +
             "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_STATIC_0100 createCameraInput with camera: " +
           camerasArray[i].cameraId);
-          let cameraInput = mCameraManager.createCameraInput(camerasArray[i]);
+          let cameraInput = mCameraManager!.createCameraInput(camerasArray[i]);
 
           expect(isEmpty04(cameraInput)).assertFalse();
           console.info(TAG + functionTag +

@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,Curve,PopInfo,HorizontalAlign,AnimateParam,NavDestinationTransition,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -158,11 +158,11 @@ struct PageFour {
       Column({space: '5vp'} as ColumnOptions) {
         Button('LaunchModeMoveTOTopSingleton').id('moveId').onClick((e: ClickEvent) => {
           console.log("============================================ moveId ");
-          this.pageInfos.pushPath(new NavPathInfo('pageOne',null),{ launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON, animated: true } )
+          this.pageInfos.replaceDestination(new NavPathInfo('pageOne',null),{ launchMode: LaunchMode.MOVE_TO_TOP_SINGLETON, animated: true } )
         }).height('10%')
         Button('LaunchModePopToSingleton').id('popId').onClick((e: ClickEvent) => {
           console.log("============================================ popId ");
-          this.pageInfos.pushPath(new NavPathInfo('pageOne',null),{ launchMode: LaunchMode.POP_TO_SINGLETON, animated: undefined } )
+          this.pageInfos.replaceDestination(new NavPathInfo('pageOne',null),{ launchMode: LaunchMode.POP_TO_SINGLETON, animated: undefined } )
         }).height('10%')
       }
     }

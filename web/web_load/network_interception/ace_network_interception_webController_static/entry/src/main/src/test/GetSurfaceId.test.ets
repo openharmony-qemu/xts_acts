@@ -58,20 +58,57 @@ export default function getSurfaceId() {
       console.info('web beforeEach start');
     })
 
-    
-    /*
-   *@tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0100
-   *@tc.name emitSetUrlTrustListStatic0100
-   *@tc.desc SetUrlTrustList
-   *@tc.size       : MediumTest
-   *@tc.type       : Function
-   *@tc.level      : Level 3
-   */
+    /**
+     * @tc.name   emitSetUrlTrustListStatic0100
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0100
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitSetUrlTrustListStatic0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       emitKey = 'emitSetUrlTrustList0100';
       Utils.emitEvent(emitKey, 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('emitSetUrlTrustList0100', false, 28931, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('getSurfaceIdButton', 10, '');
+      await Utils.msSleep(10000);
+      done()
+    })
+
+    /**
+     * @tc.name   emitSetUrlTrustListStatic0200
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0200
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitSetUrlTrustListStatic0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      emitKey = 'emitSetUrlTrustList0200';
+      Utils.emitEvent(emitKey, 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('emitSetUrlTrustList0100', false, 289311, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('getSurfaceIdButton', 10, '');
+      await Utils.msSleep(10000);
+      done()
+    })
+
+    /**
+     * @tc.name   emitSetUrlTrustListStatic0300
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0300
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitSetUrlTrustListStatic0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      emitKey = 'emitSetUrlTrustList0300';
+      Utils.emitEvent(emitKey, 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('emitSetUrlTrustList0300', "17100001", 289312, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('getSurfaceIdButton', 10, '');
       await Utils.msSleep(10000);

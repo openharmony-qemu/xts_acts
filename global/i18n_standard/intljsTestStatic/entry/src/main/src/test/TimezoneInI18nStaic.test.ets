@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -385,7 +385,7 @@ export default function TimezoneInI18nTest() {
         expect(value != null).assertTrue();
         console.log('timezone_test_static_2200 ' + value[0].getID());
         expect(value[0].getID()).assertEqual('CST');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.log('timezone_test_static_2200 e.code' + e.code);
         console.log('timezone_test_static_2200 e.message' + e.message);
       }
@@ -409,7 +409,7 @@ export default function TimezoneInI18nTest() {
         console.log('timezone_test_static_2300 ' + value[1].getID());
         expect(value[0].getID()).assertEqual('CST');
         expect(value[1].getID()).assertEqual('CST');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.log('timezone_test_static_2300 e.code' + e.code);
         console.log('timezone_test_static_2300 e.message' + e.message);
       }
@@ -431,7 +431,7 @@ export default function TimezoneInI18nTest() {
         expect(value != null).assertTrue();
         console.log('timezone_test_static_2400 ' + value[0].getID());
         expect(value[0].getID()).assertEqual('CST');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.log('timezone_test_static_2400 e.code' + e.code);
         console.log('timezone_test_static_2400 e.message' + e.message);
       }
@@ -453,7 +453,7 @@ export default function TimezoneInI18nTest() {
         expect(value != null).assertTrue();
         console.log('timezone_test_static_2500 ' + value[0].getID());
         expect(value[0].getID()).assertEqual('CST');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.log('timezone_test_static_2500 e.code' + e.code);
         console.log('timezone_test_static_2500 e.message' + e.message);
       }
@@ -475,7 +475,7 @@ export default function TimezoneInI18nTest() {
         expect(value != null).assertTrue();
         console.log('timezone_test_static_2600 ' + value[0].getID());
         expect(value[0].getID()).assertEqual('CST');
-      } catch (e: BusinessError) {
+      } catch (e) {
         console.log('timezone_test_static_2600 e.code' + e.code);
         console.log('timezone_test_static_2600 e.message' + e.message);
       }
@@ -495,7 +495,8 @@ export default function TimezoneInI18nTest() {
         let value = i18n.TimeZone.getTimezonesByLocation(100,90);
         console.log('timezone_test_static_2700 ' + value);
         expect(value != null).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('timezone_test_static_2700 e.code' + e.code);
         console.log('timezone_test_static_2700 e.message' + e.message);
         expect(e.code == 890001).assertTrue();
@@ -517,7 +518,8 @@ export default function TimezoneInI18nTest() {
         let value = i18n.TimeZone.getTimezonesByLocation(100,-90.1);
         console.log('timezone_test_static_2800 ' + value);
         expect(value != null).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('timezone_test_static_2800 e.code' + e.code);
         console.log('timezone_test_static_2800 e.message' + e.message);
         expect(e.code == 890001).assertTrue();
@@ -539,7 +541,8 @@ export default function TimezoneInI18nTest() {
         let value = i18n.TimeZone.getTimezonesByLocation(180.0,50);
         console.log('timezone_test_static_2900 ' + value);
         expect(value != null).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('timezone_test_static_2900 e.code' + e.code);
         console.log('timezone_test_static_2900 e.message' + e.message);
         expect(e.code == 890001).assertTrue();
@@ -561,7 +564,8 @@ export default function TimezoneInI18nTest() {
         let value = i18n.TimeZone.getTimezonesByLocation(-180.1,50);
         console.log('timezone_test_static_3000 ' + value);
         expect(value != null).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('timezone_test_static_3000 e.code' + e.code);
         console.log('timezone_test_static_3000 e.message' + e.message);
         expect(e.code == 890001).assertTrue();
@@ -583,7 +587,8 @@ export default function TimezoneInI18nTest() {
         let value = i18n.TimeZone.getTimezonesByLocation(18, -77);
         console.log('timezone_test_static_3100 ' + value.length);
         expect(value != null).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('timezone_test_static_3100 e.code' + e.code);
         console.log('timezone_test_static_3100 e.message' + e.message);
         expect(e.code == 401).assertTrue();
@@ -605,7 +610,8 @@ export default function TimezoneInI18nTest() {
         let value = i18n.TimeZone.getTimezonesByLocation(18, 33);
         console.log('timezone_test_static_3200 ' + value.length);
         expect(value != null).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.log('timezone_test_static_3200 e.code' + e.code);
         console.log('timezone_test_static_3200 e.message' + e.message);
         expect(e.code == 401).assertTrue();

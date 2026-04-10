@@ -34,6 +34,8 @@
         "MainAbility/pages/Gesture/isFingerCountLimited/SwipeGesture",
         "MainAbility/pages/Gesture/isFingerCountLimited/TapGesture",
         "MainAbility/pages/ListeningEvent/UIObserverEvent",
-        "MainAbility/pages/GestureHandler/TapGestureHandler_add/distanceThreshold"
+        "MainAbility/pages/GestureHandler/TapGestureHandler_add/distanceThreshold",
+        "MainAbility/pages/uIObserver/UIObserverClickPage",
+        "MainAbility/pages/uIObserver/UIObserverPanPage"
     ]
 }

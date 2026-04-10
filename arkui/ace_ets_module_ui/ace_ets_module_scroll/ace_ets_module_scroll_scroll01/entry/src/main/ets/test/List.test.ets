@@ -62,6 +62,12 @@ import scrollFrictionRes from './Scroll/scrollFrictionRes.test';
 import scrollOffsetRes from './Scroll/scrollOffsetRes.test';
 import scrollContentOffset from './Scroll/scrollContentOffset.test';
 import currentScroll from './scrollCallback/currentScroll.test';
+import scrollBarNullUndefined from './ScrollBar/scrollBarNullUndefined.test';
+import scrollEventNullUndefined from './scrollDefault/scrollEventNullUndefined.test';
+import scrollerNullUndefined from './scrollDefault/scrollerNullUndefined.test';
+import scrollDefaultTest1 from './scrollDefault/scrollDefault1.test';
+import scrollDefaultTest2 from './scrollDefault/scrollDefault2.test';
+import scrollDefaultTest3 from './scrollDefault/scrollDefault3.test';
 
 export default function testsuite() {
   OnScrollBeginJsunit()
@@ -113,4 +119,10 @@ export default function testsuite() {
   scrollOffsetRes()
   scrollContentOffset()
   currentScroll()
+  scrollBarNullUndefined()
+  scrollEventNullUndefined()
+  scrollerNullUndefined()
+  scrollDefaultTest1()
+  scrollDefaultTest2()
+  scrollDefaultTest3()
 }

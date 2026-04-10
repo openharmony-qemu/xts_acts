@@ -22,16 +22,12 @@ const TAG = '[ttt]'
 export default function dragWithOutPPermissionTest() {
   describe('DragWithOutPPermissionTest', () => {
     beforeAll(() => {
-     unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DRAG);
     })
     beforeEach(() => {
-     unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DRAG);
     })
     afterEach(() => {
-      unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DRAG);
     })
     afterAll(() => {
-      unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DRAG);
     })
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0100

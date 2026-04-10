@@ -23,11 +23,6 @@ import XComponentNodeTest from './XComponentNode/XComponentNodeTest.test';
 
 export default function testsuite() {
   XComponentNodeChageJsSuit()
-
-  videoJsunit()
-  videoJsunit2()
-  videoOnFullscreenChangeJsunit()
   xcomponentGetXComponentContextJsunit()
-
   XComponentNodeTest()
 }

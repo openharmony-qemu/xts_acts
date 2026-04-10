@@ -131,7 +131,7 @@ it('testImageEffects_static_002', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects002] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects002] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -167,7 +167,7 @@ it('testImageEffects_static_002', Level.LEVEL2, async (done: () => void): Promis
 //         }
 //         console.info("[testImageEffects003] start to publish emit");
 //         events_emitter.emit(innerEvent, eventData);
-//       } catch (err: Error) {
+//       } catch (err) {
 //         console.log("[testImageEffects003] change component data error: " + err.message);
 //       }
 //       await CommonFunc.sleep(2000);
@@ -203,7 +203,7 @@ it('testImageEffects_static_004', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects004] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -239,7 +239,7 @@ it('testImageEffects_static_005', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects005] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects005] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -307,7 +307,7 @@ it('testImageEffects_static_007', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects007] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects007] change component data error: " + err.message);
       }
 
@@ -357,7 +357,7 @@ it('testImageEffects_static_007', Level.LEVEL2, async (done: () => void): Promis
 //         }
 //         console.info("[testImageEffects008] start to publish emit");
 //         events_emitter.emit(innerEvent, eventData);
-//       } catch (err: Error) {
+//       } catch (err) {
 //         console.log("[testImageEffects008] change component data error: " + err.message);
 //       }
 //       await CommonFunc.sleep(2000);
@@ -406,7 +406,7 @@ it('testImageEffects_static_009', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects009] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects009] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -455,7 +455,7 @@ it('testImageEffects_static_010', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects010] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects010] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -523,7 +523,7 @@ it('testImageEffects_static_012', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects012] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects012] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -559,7 +559,7 @@ it('testImageEffects_static_012', Level.LEVEL2, async (done: () => void): Promis
 //         }
 //         console.info("[testImageEffects013] start to publish emit");
 //         events_emitter.emit(innerEvent, eventData);
-//       } catch (err: Error) {
+//       } catch (err) {
 //         console.log("[testImageEffects013] change component data error: " + err.message);
 //       }
 //       await CommonFunc.sleep(2000);
@@ -596,7 +596,7 @@ it('testImageEffects_static_014', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects014] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects014] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -632,7 +632,7 @@ it('testImageEffects_static_015', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects015] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects015] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -688,7 +688,7 @@ it('testImageEffects_static_017', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects017] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects017] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -723,7 +723,7 @@ it('testImageEffects_static_018', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects018] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects018] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -759,7 +759,7 @@ it('testImageEffects_static_019', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects019] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects019] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -794,7 +794,7 @@ it('testImageEffects_static_020', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects020] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects020] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -847,7 +847,7 @@ it('testImageEffects_static_022', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects022] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects022] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -882,7 +882,7 @@ it('testImageEffects_static_023', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects023] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects023] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -917,7 +917,7 @@ it('testImageEffects_static_024', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects024] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects024] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -952,7 +952,7 @@ it('testImageEffects_static_025', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects025] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects025] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1005,7 +1005,7 @@ it('testImageEffects_static_027', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects027] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects027] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1040,7 +1040,7 @@ it('testImageEffects_static_028', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects028] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects028] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1075,7 +1075,7 @@ it('testImageEffects_static_029', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects029] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects029] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1110,7 +1110,7 @@ it('testImageEffects_static_030', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects030] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects030] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1164,7 +1164,7 @@ it('testImageEffects_static_032', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects032] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects032] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1198,7 +1198,7 @@ it('testImageEffects_static_032', Level.LEVEL2, async (done: () => void): Promis
 //         }
 //         console.info("[testImageEffects033] start to publish emit");
 //         events_emitter.emit(innerEvent, eventData);
-//       } catch (err: Error) {
+//       } catch (err) {
 //         console.log("[testImageEffects033] change component data error: " + err.message);
 //       }
 //       await CommonFunc.sleep(2000);
@@ -1232,7 +1232,7 @@ it('testImageEffects_static_034', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects034] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects034] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1266,7 +1266,7 @@ it('testImageEffects_static_035', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects035] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects035] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1301,7 +1301,7 @@ it('testImageEffects_static_036', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects036] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects036] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1337,7 +1337,7 @@ it('testImageEffects_static_037', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects037] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects037] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1374,7 +1374,7 @@ it('testImageEffects_static_038', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects038] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects038] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1411,7 +1411,7 @@ it('testImageEffects_static_039', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects039] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects039] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1448,7 +1448,7 @@ it('testImageEffects_static_040', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects040] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects040] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1485,7 +1485,7 @@ it('testImageEffects_static_041', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects041] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects041] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1528,7 +1528,7 @@ it('testImageEffects_static_042', Level.LEVEL2, async (done: () => void): Promis
         }
         console.info("[testImageEffects042] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testImageEffects042] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

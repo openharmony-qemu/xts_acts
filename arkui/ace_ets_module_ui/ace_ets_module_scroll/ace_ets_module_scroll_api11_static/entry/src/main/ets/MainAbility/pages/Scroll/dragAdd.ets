@@ -112,6 +112,7 @@ struct Index {
           video.videoUri = 'resource://RAWFILE/01.mp4';
           let data: unifiedDataChannel.UnifiedData = new unifiedDataChannel.UnifiedData(video);
           event.setData(data);
+          return (): void => {};
         })
 
         Column() {
@@ -126,6 +127,7 @@ struct Index {
           data.textAbstract = 'this is abstract';
           data.textContent = 'this is content this is content';
           event.setData(new unifiedDataChannel.UnifiedData(data));
+          return (): void => {};
         })
       }.width('45%')
       .height('100%')

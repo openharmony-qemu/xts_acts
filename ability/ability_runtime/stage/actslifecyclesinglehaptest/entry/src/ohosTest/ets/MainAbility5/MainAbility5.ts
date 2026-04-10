@@ -17,44 +17,45 @@ import commonEvent from '@ohos.commonEvent';
 
 export default class MainAbility5 extends Ability {
     onCreate(want, launchParam) {
-        console.log("[Demo] MainAbility5 onCreate")
+        console.log('[Demo] MainAbility5 onCreate');
         globalThis.abilityWant5 = want;
     }
 
-    onDestroy() {
-        console.log("[Demo] MainAbility5 onDestroy")
+    async onDestroy():Promise<void> {
+        console.log('[Demo] MainAbility5 onDestroy');
+        commonEvent.publish('MainAbility5_onDestroy', (err, data) => {
+            console.log('MainAbility5 onDestroy publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+        });
     }
 
     onWindowStageCreate(windowStage) {
         // Main window is created, set main page for this ability
-        console.log("[Demo] MainAbility5 onWindowStageCreate")
+        console.log('[Demo] MainAbility5 onWindowStageCreate');
         globalThis.ability5 = this.context;
-        windowStage.setUIContent(this.context, "MainAbility/pages/index5", null)
+        windowStage.setUIContent(this.context, 'MainAbility/pages/index5', null);
     }
 
     onWindowStageDestroy() {
         // Main window is destroyed, release UI related resources
-        console.log("[Demo] MainAbility5 onWindowStageDestroy")
+        console.log('[Demo] MainAbility5 onWindowStageDestroy');
     }
 
     onForeground() {
         // Ability has brought to foreground
-        console.log("[Demo] MainAbility5 onForeground")
-        setTimeout(function () {
-          commonEvent.publish('MainAbility5_onForground', (err, data) => {
+        console.log('[Demo] MainAbility5 onForeground');
+        commonEvent.publish('MainAbility5_onForground', (err, data) => {
             console.log('MainAbility5 onForeground publish succeed' + JSON.stringify(err) + JSON.stringify(data));
-          })
-            globalThis.ability5.terminateSelf()
-                .then((data) => {
-                    console.info('[Demo] MainAbility5 terminateself succeeded: ' + data);
-                }).catch((error) => {
-                console.error('[Demo] MainAbility5 terminateself failed. Cause: ' + error);
-            })
-        }, 500);
+        });
+        globalThis.ability5.terminateSelf()
+            .then((data) => {
+                console.info('[Demo] MainAbility5 terminateself succeeded: ' + data);
+            }).catch((error) => {
+            console.error('[Demo] MainAbility5 terminateself failed. Cause: ' + error);
+        });
     }
 
     onBackground() {
         // Ability has back to background
-        console.log("[Demo] MainAbility5 onBackground")
+        console.log('[Demo] MainAbility5 onBackground');
     }
 };

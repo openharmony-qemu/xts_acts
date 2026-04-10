@@ -17,7 +17,7 @@ import {
   Entry,Component,$r,$rawfile,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, SharedTransitionEffectType, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, SharedTransitionEffectType, Visibility,NavigationCommonTitle,NavDestinationCommonTitle
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,

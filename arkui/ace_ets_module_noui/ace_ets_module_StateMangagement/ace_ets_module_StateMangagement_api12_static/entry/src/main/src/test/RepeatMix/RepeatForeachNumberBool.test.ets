@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function RepeatForeachNumberBool() {
   describe('RepeatForeachNumberBool', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatForeachNumberBool beforeEach start");
 
 

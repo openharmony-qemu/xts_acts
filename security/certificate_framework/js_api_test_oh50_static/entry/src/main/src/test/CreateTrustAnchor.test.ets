@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,7 +50,7 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
         //   expect(null).assertFail();
         //   done();
         // });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -80,10 +80,10 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
           //   expect(err.code == 19030001).assertTrue();
           //   done();
           // });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XtsTestLog] catch error: ${error}`);
         // expect(null).assertFail();
-        expect(error.code == 19030001).assertTrue();
+        expect((error as BusinessError).code == 19030001).assertTrue();
       }
       done();
     });
@@ -110,9 +110,9 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
           //   expect(null).assertFail();
           //   done();
           // });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XtsTestLog] catch error: ${error.code}`);
-        expect(error.code == 401).assertTrue(); // 返回30001与期望不符
+        expect((error as BusinessError).code == 401).assertTrue(); // 返回30001与期望不符
       }
       done();
     });
@@ -140,10 +140,10 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
           //   expect(err.code == 19030001).assertTrue();
             // done();
           // });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XtsTestLog] catch error: ${error}`);
         // expect(null).assertFail();
-        expect(error.code == 19030001).assertTrue();
+        expect((error as BusinessError).code == 19030001).assertTrue();
       }
       done();
     });
@@ -170,9 +170,9 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
           //   expect(null).assertFail();
           //   done();
           // });
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`[XtsTestLog] catch error: ${JSON.stringify(error.code)}`);
-        expect(error.code).assertEqual(401);
+        expect((error as BusinessError).code).assertEqual(401);
       }
       done();
     });

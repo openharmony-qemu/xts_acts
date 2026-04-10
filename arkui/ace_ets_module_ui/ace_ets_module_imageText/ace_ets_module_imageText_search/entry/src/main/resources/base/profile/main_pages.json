@@ -46,6 +46,12 @@
         "MainAbility/pages/SearchApi23/SearchTextDirection",
         "MainAbility/pages/Search/SearchCompressLeadingPunctuation",
         "MainAbility/pages/Search/SearchCompressLeadingPunctuationModifier",
-        "MainAbility/pages/Search/DividerColorTest"
+        "MainAbility/pages/Search/DividerColorTest",
+        "MainAbility/pages/Search/SearchEnableKeyboardOnFocus",
+        "MainAbility/pages/Search/SearchSelectionMenuHidden",
+        "MainAbility/pages/Search/SearchPropertiesNullUndefined",
+        "MainAbility/pages/Search/SearchPropertiesNullUndefined02",
+        "MainAbility/pages/Search/SearchControllerMethodsTest",
+        "MainAbility/pages/Search/SearchPropertiesNullUndefined03Test"
     ]
 }

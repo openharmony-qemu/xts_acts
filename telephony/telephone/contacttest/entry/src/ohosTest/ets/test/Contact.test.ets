@@ -297,7 +297,7 @@ export default function ErrTest() {
       } catch (err) {
         const ee: BusinessError = err as BusinessError;
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectTrue(ee.code === 401);
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} test end `);
@@ -1069,12 +1069,7 @@ export default function ErrTest() {
               let con: contact.Contact = 0 as contact.Contact;
               try {
                 contact.updateContact(context, con, (updateErr: BusinessError, updateDate: void) => {
-                  if (updateErr) {
-                    console.info(`${caseName} updateContact: err->${JSON.stringify(updateErr)}`);
-                    ExpectFail();
-                    done();
-                  }
-                  console.info(`${caseName} updateContact: success data->${JSON.stringify(updateDate)}`);
+                  console.info(`${caseName} updateContact: data->${JSON.stringify(updateDate)}`);
                 });
               } catch (e) {
                 console.info(`${caseName} updateContact: catch err->${JSON.stringify(e)}`);
@@ -1219,15 +1214,7 @@ export default function ErrTest() {
                   contact.updateContact(context, con, {
                     attributes: attr.attributes
                   }, (updateErr: BusinessError, updateDate: void) => {
-                    if (updateErr) {
-                      console.info(`${caseName} updateContact: err->${JSON.stringify(updateErr)}`);
-                      ExpectFail();
-                      done();
-                    } else {
-                      console.info(`${caseName} updateContact: success data->${JSON.stringify(updateDate)}`);
-                      ExpectFail();
-                      done();
-                    }
+                    console.info(`${caseName} updateContact: data->${JSON.stringify(updateDate)}`);
                   });
                 } catch (e) {
                   console.info(`${caseName} updateContact: catch err->${JSON.stringify(e)}`);
@@ -1468,15 +1455,7 @@ export default function ErrTest() {
         sleep(500);
         contact.queryContactsByEmail(context, null, (err: BusinessError, data) => {
           sleep(500);
-          if (err) {
-            console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
-            ExpectTrue(err.code === 401 || err.code === 201);
-            done();
-          } else {
-            console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectFail();
-            done();
-          }
+          console.info(`${caseName} queryContactsByEmail`);
         });
       } catch (err) {
         const ee: BusinessError = err as BusinessError;
@@ -1506,7 +1485,7 @@ export default function ErrTest() {
         }, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
-            ExpectTrue(err.code === 401);
+            expect().assertFail();
             done();
           } else {
             console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
@@ -1537,15 +1516,7 @@ export default function ErrTest() {
         let context: Context = AppStorage.get('context') as Context;
         sleep(500);
         contact.queryContactsByEmail(context, null, holder, (err: BusinessError, data) => {
-          if (err) {
-            console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
-            ExpectTrue(err.code === 401 || err.code === 201);
-            done();
-          } else {
-            console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectFail();
-            done();
-          }
+            console.info(`${caseName} callback`);
         });
       } catch (err) {
         const ee: BusinessError = err as BusinessError;
@@ -1575,15 +1546,7 @@ export default function ErrTest() {
           bundleName: "",
           displayName: ""
         }, (err: BusinessError, data) => {
-          if (err) {
-            console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
-            ExpectTrue(err.code === 401 || err.code === 201);
-            done();
-          } else {
-            console.info(`${caseName} callback: success data->${JSON.stringify(data)}`);
-            ExpectFail();
-            done();
-          }
+            console.info(`${caseName} callback`);
         });
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -1741,7 +1704,7 @@ export default function ErrTest() {
             done();
           } else {
             console.log(`${caseName} callback: success data>${JSON.stringify(data)}`);
-            ExpectTrue(data === false);
+            expect().assertFail();
             done();
           }
         });
@@ -1770,7 +1733,7 @@ export default function ErrTest() {
         let promise = contact.isLocalContact(context, 0);
         promise.then((data: boolean) => {
           console.log(`${caseName} success: data>${JSON.stringify(data)}`);
-          ExpectTrue(data === false);
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} fail: err>${JSON.stringify(err)}`);

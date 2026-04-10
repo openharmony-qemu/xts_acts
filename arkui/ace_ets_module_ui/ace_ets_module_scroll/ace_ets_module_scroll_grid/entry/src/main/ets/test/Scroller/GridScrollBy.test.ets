@@ -38,7 +38,7 @@ export default function GridScrollBy() {
         router.clear();
         let pages = router.getState();
         console.info("get GridScrollBy state pages: " + JSON.stringify(pages));
-        if (!("GridScrollBy" == pages.name)) {
+        if (!("GridScrollByTest" == pages.name)) {
           console.info("get GridScrollBy state pages.name: " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);

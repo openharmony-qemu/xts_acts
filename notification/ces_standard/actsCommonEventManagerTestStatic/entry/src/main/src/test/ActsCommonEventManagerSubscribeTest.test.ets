@@ -1,5 +1,5 @@
 /**
-* Copyright (c) 2023 Huawei Device Co., Ltd.
+* Copyright (c) 2023-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License")
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -33,7 +33,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
   describe('SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST', () => {
     let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST ===>'
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBE_MANAGER_TEST START`)
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -56,7 +56,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_1900'
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 START`)
 
-      let subscriber:commonEventManager.CommonEventSubscriber
+      let subscriber:commonEventManager.CommonEventSubscriber | undefined;
 
       let subscribeInfo:commonEventManager.CommonEventSubscribeInfo = {
         events: ["event09"]
@@ -66,6 +66,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
         console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 come in `)
 
         commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
+          waitForCompletion(async () => {
           console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 createSubscriber come in `)
           if (err) {
             console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 createSubscriber err, error code: ${err.code}, message: ${err.message}`)
@@ -80,7 +81,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               done()
             }
 
-            subscriber.isStickyCommonEvent((err: BusinessError | null, isSticky:boolean|undefined) => {
+            subscriber!.isStickyCommonEvent((err: BusinessError | null, isSticky:boolean|undefined) => {
               if (err) {
                 console.info(TAG+`isStickyCommonEvent_9 err ${err}`)
                 expect(false).assertTrue()
@@ -97,7 +98,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             })
 
             count = 0;
-            subscriber.isOrderedCommonEvent((err: BusinessError | null, isOrdered:boolean|undefined) => {
+            subscriber!.isOrderedCommonEvent((err: BusinessError | null, isOrdered:boolean|undefined) => {
               if (err) {
                 console.info(TAG+`isOrderedCommonEvent_9 err ${err}`)
                 expect(false).assertTrue()
@@ -106,7 +107,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
                 console.info(TAG+`isOrderedCommonEvent_9 success ${isOrdered}`)
                 if(isOrdered !== undefined){
                   if (isOrdered == true) {
-                    subscriber.abortCommonEvent((err: BusinessError | null) => {
+                    subscriber!.abortCommonEvent((err: BusinessError | null) => {
                       if (err) {
                         console.info(TAG+`abortCommonEvent_9 err ${err}`)
                         expect(false).assertTrue()
@@ -126,7 +127,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               }
             })
 
-            subscriber.getAbortCommonEvent((err: BusinessError | null, abortEvent:boolean|undefined) => {
+            subscriber!.getAbortCommonEvent((err: BusinessError | null, abortEvent:boolean|undefined) => {
               if (err) {
                 console.info(TAG+`getAbortCommonEvent_9 err ${err}`)
                 expect(false).assertTrue()
@@ -137,7 +138,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               }
             })
 
-            subscriber.clearAbortCommonEvent((err: BusinessError | null) => {
+            subscriber!.clearAbortCommonEvent((err: BusinessError | null) => {
               if (err) {
                 console.info(TAG+`clearAbortCommonEvent_9 err ${err}`)
                 expect(false).assertTrue()
@@ -147,9 +148,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
                 expect(count).assertEqual(0);
               }
             })
-
-
-            await subscriber.finishCommonEvent().then(() => {
+            await subscriber!.finishCommonEvent().then(() => {
               console.info(TAG+`finishCommonEvent_2 success `)
               expect(count).assertEqual(0);
               done()
@@ -159,8 +158,9 @@ export default function ActsCommonEventManagerSubscribeTest() {
               done()
             })
           }
+          })
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 failed, code is ${err.code}, message is ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -182,7 +182,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
       let TAG:string = 'Sub_Notification_Ans_Subscriber_Subscribe_Static_2000'
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_2000 START`)
 
-      let subscriber:commonEventManager.CommonEventSubscriber
+      let subscriber:commonEventManager.CommonEventSubscriber | undefined;
 
       let subscribeInfo:commonEventManager.CommonEventSubscribeInfo = {
         events: ["event10"]
@@ -190,6 +190,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
       try {
         commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
+        waitForCompletion(async () => {
           if (err) {
             console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_2000 createSubscriber err, error code: ${err.code}, message: ${err.message}`)
             expect(false).assertTrue()
@@ -203,7 +204,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               done()
             }
 
-            await subscriber.isStickyCommonEvent().then((isSticky:boolean) => {
+            await subscriber!.isStickyCommonEvent().then((isSticky:boolean) => {
               console.info(TAG+`isStickyCommonEvent_10 success ${isSticky}`)
               expect(isSticky).assertFalse()
             }).catch((err: Error):void => {
@@ -212,10 +213,10 @@ export default function ActsCommonEventManagerSubscribeTest() {
               done()
             })
 
-            let isSticky = subscriber.isStickyCommonEventSync();
+            let isSticky = subscriber!.isStickyCommonEventSync();
             expect(isSticky).assertFalse()
 
-            await subscriber.isOrderedCommonEvent().then((isOrdered:boolean) => {
+            await subscriber!.isOrderedCommonEvent().then((isOrdered:boolean) => {
               console.info(TAG+`isOrderedCommonEvent_10 success ${isOrdered}`)
               expect(isOrdered).assertFalse()
             }).catch((err: Error):void => {
@@ -224,11 +225,11 @@ export default function ActsCommonEventManagerSubscribeTest() {
               done()
             })
 
-            let isorder = subscriber.isOrderedCommonEventSync();
+            let isorder = subscriber!.isOrderedCommonEventSync();
             expect(isorder).assertFalse()
             console.info(`isOrderedCommonEventSync, isorder is ${isorder}`)
 
-            await subscriber.abortCommonEvent().then(() => {
+            await subscriber!.abortCommonEvent().then(() => {
               console.info(TAG+`abortCommonEvent_10 success`)
             }).catch((err: Error):void => {
               console.info(TAG+`abortCommonEvent_10 err ${err}`)
@@ -236,7 +237,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               done()
             })
 
-            await subscriber.getAbortCommonEvent().then((abortEvent:boolean) => {
+            await subscriber!.getAbortCommonEvent().then((abortEvent:boolean) => {
               console.info(TAG+`getAbortCommonEvent_10 success ${abortEvent}`)
               expect(abortEvent).assertFalse()
             }).catch((err: Error):void => {
@@ -245,11 +246,11 @@ export default function ActsCommonEventManagerSubscribeTest() {
               done()
             })
 
-            let isaborted = subscriber.getAbortCommonEventSync();
+            let isaborted = subscriber!.getAbortCommonEventSync();
             expect(isaborted).assertFalse()
 
             count = 0;
-            await subscriber.clearAbortCommonEvent().then(() => {
+            await subscriber!.clearAbortCommonEvent().then(() => {
               console.info(TAG+`clearAbortCommonEvent_10 success`)
               count++;
               expect(count).assertEqual(1);
@@ -260,7 +261,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             })
 
             count = 0;
-            await subscriber.finishCommonEvent().then(() => {
+            await subscriber!.finishCommonEvent().then(() => {
               console.info(TAG+`finishCommonEvent_2 success `)
               count++;
               expect(count).assertEqual(1);
@@ -273,7 +274,8 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
           }
         })
-      } catch (err: BusinessError) {
+        })
+      } catch (err) {
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_2000 failed, code is ${err.code}, message is ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -305,7 +307,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
         priority:100
       };
 
-      let subscriber:commonEventManager.CommonEventSubscriber
+      let subscriber:commonEventManager.CommonEventSubscriber | undefined;
       let tmpsubscriber = commonEventManager.createSubscriberSync(subscribeInfo)
       if (tmpsubscriber !== null){
         subscriber = tmpsubscriber
@@ -314,12 +316,12 @@ export default function ActsCommonEventManagerSubscribeTest() {
         expect(false).assertTrue()
         done()
       }
-      commonEventManager.subscribe(subscriber, (err: BusinessError | null, data: commonEventManager.CommonEventData|undefined)=> {
+      commonEventManager.subscribe(subscriber!, (err: BusinessError | null, data: commonEventManager.CommonEventData|undefined)=> {
         if (err) {
           expect(false).assertTrue()
           done()
         } else {
-          subscriber.isOrderedCommonEvent((err: BusinessError | null, isOrdered:boolean|undefined) => {
+          subscriber!.isOrderedCommonEvent((err: BusinessError | null, isOrdered:boolean|undefined) => {
             if (err) {
               console.info(TAG+`isOrderedCommonEvent_11 err ${err}`)
               expect(false).assertTrue()
@@ -335,7 +337,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             }
           })
 
-          subscriber.isStickyCommonEvent((err: BusinessError | null, isSticky:boolean|undefined) => {
+          subscriber!.isStickyCommonEvent((err: BusinessError | null, isSticky:boolean|undefined) => {
               if (err) {
                 console.info(TAG+`isStickyCommonEvent_9 err ${err}`)
                 expect(false).assertTrue()
@@ -352,47 +354,47 @@ export default function ActsCommonEventManagerSubscribeTest() {
             })
 
 
-          let code1 = subscriber.getCodeSync();
+          let code1 = subscriber!.getCodeSync();
           expect(code1).assertEqual(0);
           console.info(TAG+`getCodeSync before setCodeSync, code is ${code1}`)
 
-          subscriber.setCodeSync(1);
-          let code2 = subscriber.getCodeSync();
+          subscriber!.setCodeSync(1);
+          let code2 = subscriber!.getCodeSync();
           console.info(TAG+`getCodeSync after setCodeSync, code is ${code2}`)
           expect(code2).assertEqual(1);
 
-          let data = subscriber.getDataSync();
+          let data = subscriber!.getDataSync();
           expect(data).assertEqual("initial data");
           console.info(TAG+`getDataSync before setDataSync, data is ${data}`)
 
-          subscriber.setDataSync("data change");
-          let data2 = subscriber.getDataSync();
+          subscriber!.setDataSync("data change");
+          let data2 = subscriber!.getDataSync();
           expect(data2).assertEqual("data change");
           console.info(TAG+`getDataSync after setDataSync, data is ${data2}`)
 
-          subscriber.setCodeAndDataSync(2, "setCodeAndDataSync")
-          let code3 = subscriber.getCodeSync()
+          subscriber!.setCodeAndDataSync(2, "setCodeAndDataSync")
+          let code3 = subscriber!.getCodeSync()
           expect(code3).assertEqual(2);
           console.info(TAG+`getCodeSync after setCodeAndDataSync, code is ${code3}`)
 
-          let data3 = subscriber.getDataSync();
+          let data3 = subscriber!.getDataSync();
           expect(data3).assertEqual("setCodeAndDataSync");
           console.info(TAG+`getDataSync after setCodeAndDataSync, data is ${data3}`)
 
-          let isorder = subscriber.isOrderedCommonEventSync();
+          let isorder = subscriber!.isOrderedCommonEventSync();
           expect(isorder).assertEqual(true)
           console.info(TAG+`isOrderedCommonEventSync, isorder is ${isorder}`)
 
 
-          let isSticky = subscriber.isStickyCommonEventSync();
+          let isSticky = subscriber!.isStickyCommonEventSync();
           expect(isSticky).assertEqual(false)
           console.info(TAG+`isStickyCommonEventSync, isStickyCommonEventSync is ${isSticky}`)
 
-          subscriber.abortCommonEventSync();
-          let isaborted = subscriber.getAbortCommonEventSync();
+          subscriber!.abortCommonEventSync();
+          let isaborted = subscriber!.getAbortCommonEventSync();
           expect(isaborted).assertEqual(true)
 
-          subscriber.getAbortCommonEvent((err: BusinessError | null, abortEvent:boolean|undefined) => {
+          subscriber!.getAbortCommonEvent((err: BusinessError | null, abortEvent:boolean|undefined) => {
             if (err) {
               console.info(TAG+`getAbortCommonEvent_11 err ${err}`)
               expect(false).assertTrue()
@@ -403,11 +405,11 @@ export default function ActsCommonEventManagerSubscribeTest() {
             }
           })
 
-          await Utils.msSleep(1000)
+          waitForCompletion(async () => {await Utils.msSleep(1000)})
           count = 0;
           console.info(TAG+`getAbortCommonEventSync isaborted ${isaborted}`)
-          subscriber.clearAbortCommonEventSync()
-          subscriber.finishCommonEvent((err: BusinessError | null) => {
+          subscriber!.clearAbortCommonEventSync()
+          subscriber!.finishCommonEvent((err: BusinessError | null) => {
             if (err) {
               console.info(TAG+`finishCommonEvent_11 err, error code: ${err.code}, message: ${err.message}`)
               expect(false).assertTrue()
@@ -434,7 +436,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             }
           });
         }, 1000);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(TAG+`publish failed, code is ${err.code}, message is ${err.message}`)
       }
     })
@@ -463,7 +465,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
         priority: 100
       };
 
-      let subscriber:commonEventManager.CommonEventSubscriber
+      let subscriber:commonEventManager.CommonEventSubscriber | undefined;
       let tmpsubscriber = commonEventManager.createSubscriberSync(subscribeInfo)
       if (tmpsubscriber !== null){
         subscriber = tmpsubscriber
@@ -472,13 +474,14 @@ export default function ActsCommonEventManagerSubscribeTest() {
         expect(false).assertTrue()
         done()
       }
-      commonEventManager.subscribe(subscriber, (err: BusinessError | null, data: commonEventManager.CommonEventData|undefined)=> {
+      commonEventManager.subscribe(subscriber!, (err: BusinessError | null, data: commonEventManager.CommonEventData|undefined)=> {
+      waitForCompletion(async () => {
         if (err) {
           console.error(TAG+`subscribe failed, code is ${err.code}, message is ${err.message}`)
           expect(false).assertTrue()
           done()
         } else {
-          await subscriber.isOrderedCommonEvent().then((isOrdered) => {
+          await subscriber!.isOrderedCommonEvent().then((isOrdered) => {
             console.info(TAG+`isOrderedCommonEvent_12 success ${isOrdered}`)
             expect(isOrdered).assertTrue()
           }).catch((err) => {
@@ -487,7 +490,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             done()
           })
 
-          await subscriber.isStickyCommonEvent().then((isSticky) => {
+          await subscriber!.isStickyCommonEvent().then((isSticky) => {
             console.info(TAG+`isStickyCommonEvent_12 success ${isSticky}`)
             expect(isSticky).assertFalse()
           }).catch((err) => {
@@ -496,8 +499,8 @@ export default function ActsCommonEventManagerSubscribeTest() {
             done()
           })
 
-          subscriber.abortCommonEventSync();
-          await subscriber.getAbortCommonEvent().then((abortEvent) => {
+          subscriber!.abortCommonEventSync();
+          await subscriber!.getAbortCommonEvent().then((abortEvent) => {
             console.info(TAG+`getAbortCommonEvent_12 success ${abortEvent}`)
             expect(abortEvent).assertTrue()
           }).catch((err) => {
@@ -505,9 +508,9 @@ export default function ActsCommonEventManagerSubscribeTest() {
             expect(false).assertTrue()
             done()
           })
-          subscriber.clearAbortCommonEventSync()
+          subscriber!.clearAbortCommonEventSync()
 
-          let info = subscriber.getSubscribeInfoSync();
+          let info = subscriber!.getSubscribeInfoSync();
           if(info !== null){
             let msubscribeInfo:commonEventManager.CommonEventSubscribeInfo = info
             expect(msubscribeInfo.priority).assertEqual(100)
@@ -520,7 +523,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
           }
 
           count = 0;
-          await subscriber.finishCommonEvent().then(() => {
+          await subscriber!.finishCommonEvent().then(() => {
             console.info(TAG+`finishCommonEvent_12 success `)
               count++;
               expect(count).assertEqual(1);
@@ -531,6 +534,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             done()
           })
         }
+      })
       })
 
       let publishCB=(err: BusinessError|null)=> {
@@ -547,7 +551,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
         setTimeout(()=>{
           commonEventManager.publish("eventname2", options, publishCB);
         }, 1000);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.error(TAG+`publish failed, code is ${err.code}, message is ${err.message}`)
         expect(false).assertTrue()
         done()

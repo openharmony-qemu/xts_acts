@@ -23,7 +23,7 @@ export default function ActsNotificationSlotTest() {
   describe('ActsNotificationSlotTest', () => {
 
     const TAG:string = 'ActsNotificationSlotTest ===>';
-    afterEach(()=>{
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(1000)
     })
 

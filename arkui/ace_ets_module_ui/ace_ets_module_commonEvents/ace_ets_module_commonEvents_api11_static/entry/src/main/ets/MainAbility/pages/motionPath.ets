@@ -81,7 +81,7 @@ struct MotionPathExample {
             }
             console.info("button start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("button emit action state err: " + JSON.stringify((err as Error)?.message))
           }
           this.getUIContext().animateTo({ duration: 4000, curve: Curve.Linear }, () => {
@@ -105,7 +105,7 @@ struct MotionPathExample {
             }
             console.info("button1 position start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("button1 position emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

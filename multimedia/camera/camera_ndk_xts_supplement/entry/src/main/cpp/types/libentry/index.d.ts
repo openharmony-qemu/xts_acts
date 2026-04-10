@@ -35,6 +35,7 @@ export const captureSessionBeginConfig: (a:string) => number;
 export const captureSessionEnableMacroConfigAllow: () => number;
 export const captureSessionEmu: (a:number) => number;
 export const OHCameraInputOpenConcurrentCameras: (a:number) => number;
+export const OHCameraInputOpenConcurrentCamerasErr: (a:number) => number;
 export const OHCaptureSessionDeleteSupportedEffectTypes: (a:number) => number;
 export const OHCaptureSessionGetSupportedEffectTypesSupp: () => number;
 export const captureSessionRegisterIsoChangeCallback: (a:number) => number;

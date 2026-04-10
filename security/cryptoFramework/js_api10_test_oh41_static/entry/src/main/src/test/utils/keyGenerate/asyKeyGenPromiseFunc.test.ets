@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,7 +27,7 @@ async function genKeyPair(isSpec: boolean, spec: cpFw.AsyKeySpec, algName: strin
       let keyPair: cpFw.KeyPair = await generate.generateKeyPair();
       return keyPair;
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.error("Promise genKeyPair: catch error:" + err + "errCode: " + err.code);
     throw err as Error;
   }
@@ -36,7 +36,7 @@ async function genKeyPair(isSpec: boolean, spec: cpFw.AsyKeySpec, algName: strin
 async function genPubKey(spec: cpFw.AsyKeySpec): Promise<cpFw.PubKey> {
   try {
     return await cpFw.createAsyKeyGeneratorBySpec(spec).generatePubKey();
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.log("Promise genPubKey failed. catch error " + err);
     throw err as Error;
   }
@@ -45,7 +45,7 @@ async function genPubKey(spec: cpFw.AsyKeySpec): Promise<cpFw.PubKey> {
 async function genPriKey(spec: cpFw.AsyKeySpec): Promise<cpFw.PriKey> {
   try {
     return await cpFw.createAsyKeyGeneratorBySpec(spec).generatePriKey();
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.log("Promise genPriKey failed. catch error " + err);
     throw err as Error;
   }
@@ -64,7 +64,7 @@ async function convertKey(algName: string): Promise<boolean> {
     await generator.convertKey(keyPair.pubKey.getEncoded(), keyPair.priKey.getEncoded());
     console.log("Promise convertKey: success.");
     return true;
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.log("Promise convertKey failed. catch error " + err);
     throw err as Error;
   }
@@ -91,7 +91,7 @@ async function convertDHKey(algName: string): Promise<boolean> {
     } else {
       return false;
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.log("Promise convertKey failed. catch error " + err);
     throw err as Error;
   }
@@ -115,7 +115,7 @@ async function convertX25519Key(algName: string): Promise<boolean> {
     } else {
       return false;
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.log("Promise convertKey failed. catch error " + err);
     throw err as Error;
   }
@@ -139,7 +139,7 @@ async function convertEd25519Key(algName: string): Promise<boolean> {
     } else {
       return false;
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
     console.log("Promise convertKey failed. catch error " + err);
     throw err as Error;
   }

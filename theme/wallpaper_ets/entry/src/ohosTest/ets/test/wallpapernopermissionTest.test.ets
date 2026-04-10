@@ -246,7 +246,7 @@ export default function wallpaperNoPermissionJSUnit() {
          */
         it('testGetFileCallbackNoPermission101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetFileCallbackNoPermission101 start-----------------');
-            wallpaper.getFile(WALLPAPER_SYSTEM, (err, data) => {
+            wallpaper.getFile(wallpaper.WallpaperType.WALLPAPER_SYSTEM, (err, data) => {
                 try {
                     if (err) {
                         console.info('====>testGetFileCallbackNoPermission101 NoPermission check: ' + JSON.stringify(err));
@@ -277,7 +277,7 @@ export default function wallpaperNoPermissionJSUnit() {
             console.info('--------------testGetFilePromiseNoPermission101 start-----------------');
             try{
                 console.info('====>testGetFilePromiseNoPermission101 NoPermission check');
-                await wallpaper.getFile(WALLPAPER_LOCKSCREEN);
+                await wallpaper.getFile(wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN);
                 expect().assertFail();
                 done();
             }catch(err){
@@ -299,7 +299,7 @@ export default function wallpaperNoPermissionJSUnit() {
          */
         it('testGetFileCallbackNoPermission102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetFileCallbackNoPermission102 start-----------------');
-            wallpaper.getFile(WALLPAPER_LOCKSCREEN, (err, data) => {
+            wallpaper.getFile(wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN, (err, data) => {
                 try {
                     if (err) {
                         console.info('====>testGetFileCallbackNoPermission102 NoPermission check: ' + JSON.stringify(err));
@@ -330,7 +330,7 @@ export default function wallpaperNoPermissionJSUnit() {
             console.info('--------------testGetFilePromiseNoPermission102 start-----------------');
             try{
                 console.info('====>testGetFilePromiseNoPermission102 NoPermission check');
-                await wallpaper.getFile(WALLPAPER_SYSTEM);
+                await wallpaper.getFile(wallpaper.WallpaperType.WALLPAPER_SYSTEM);
                 expect().assertFail();
                 done();
             }catch(err){

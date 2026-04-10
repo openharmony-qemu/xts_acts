@@ -50,26 +50,25 @@ struct TextTimerIndex {
   build() {
     Row() {
       Column() {
+      Row() {
+          Button('start').onClick(()=>{
+            this.countDownTextTimerController.start()
+            this.countUpTextTimerController.start()
+          }).id('start')
+          Button('pause').onClick(()=>{
+            this.countDownTextTimerController.pause()
+            this.countUpTextTimerController.pause()
+          })
+          Button('reset').onClick(()=>{
+            this.countDownTextTimerController.reset()
+            this.countUpTextTimerController.reset()
+          })
+        }.height('5%')
         TextTimer({isCountDown: false, controller: this.countUpTextTimerController})
           .contentModifier(this.myTimerModifier)
           .onTimer((utc: number, elapsedTime: number) => {
             console.info('textTimer onTimer utc is：' + utc + ', elapsedTime: ' + elapsedTime)
-          })
-          .margin(10)
-        Row() {
-          Button('start').onClick(()=>{
-            this.countDownTextTimerController.start()
-            this.countUpTextTimerController.start()
-          }).margin(10).id('start')
-          Button('pause').onClick(()=>{
-            this.countDownTextTimerController.pause()
-            this.countUpTextTimerController.pause()
-          }).margin(10)
-          Button('reset').onClick(()=>{
-            this.countDownTextTimerController.reset()
-            this.countUpTextTimerController.reset()
-          }).margin(10)
-        }.margin(20)
+          })        
       }.width('100%')
     }.height('100%')
   }

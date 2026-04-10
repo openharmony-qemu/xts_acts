@@ -99,7 +99,7 @@ struct TabBarComponentContent {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Blue).borderRadius('12vp')
           }
-          .tabBar(() => {this.setUndefined[this.setUndefinedIndex.toInt()]})
+          .tabBar(this.setUndefined[this.setUndefinedIndex.toInt()])
         }
         .vertical(false)
         .barMode(BarMode.Fixed)

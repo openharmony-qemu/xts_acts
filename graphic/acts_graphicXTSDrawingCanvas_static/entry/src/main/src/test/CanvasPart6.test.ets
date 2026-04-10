@@ -21,7 +21,7 @@ import { BusinessError } from '@ohos.base';
 
 export default function drawingTsCanvasPart6Test() {
   describe('DrawingTsCanvasPart6Test', () => {
-    let pixel: image.PixelMap;
+    let pixel: image.PixelMap | undefined;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
       const color: ArrayBuffer = new ArrayBuffer(40000); // 96为需要创建的像素buffer大小，取值为：height * width *4
@@ -60,7 +60,7 @@ export default function drawingTsCanvasPart6Test() {
      */
     it('testCanvasDrawShadowNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawShadowNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const path = new drawing.Path();
       let itemList: drawing.ShadowFlag[]= [
         drawing.ShadowFlag.NONE,
@@ -127,8 +127,55 @@ export default function drawingTsCanvasPart6Test() {
         expect().assertFail();
       }
     })
-
-
+    /**
+     * @tc.name   testCanvasDrawShadow2NormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_4506
+     * @tc.desc   testCanvasDrawShadow2NormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCanvasDrawShadow2NormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawShadow2NormalStatic';
+      const canvas = new drawing.Canvas(pixel!)
+      const path = new drawing.Path();
+      try {
+        canvas.drawShadow(path, {
+          x: 100.1, y: 80.1, z: 80.1
+        }, {
+          x: 200.1, y: 10.1, z: 40.1
+        }, 30.1, 100, 100, drawing.ShadowFlag.ALL);
+        console.info(msg + '1 test successes');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `1 test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawShadow(path, {
+          x: 100, y: 80, z: 80
+        }, {
+          x: 200, y: 10, z: 40
+        }, -1, 500, 100, drawing.ShadowFlag.NONE);
+        console.info(msg + '2 test successes');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `2 test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        path.addCircle(300.0, 600.0, 100.0, drawing.PathDirection.CLOCKWISE);
+        let point1 : common2D.Point3d = {x: 100.0, y: 80.0, z:80.0};
+        let point2 : common2D.Point3d = {x: 200.0, y: 10.0, z:40.0};
+        let shadowFlag : drawing.ShadowFlag = drawing.ShadowFlag.ALL;
+        canvas.drawShadow(path, point1, point2, 30.0, 0xFF0000FF.toInt(), 0xFFFF0000.toInt(), shadowFlag);
+        console.info(msg + '3 test successes');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `3 test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
     /**
      * @tc.name   testCanvasDrawShadowMultipleCallsStatic
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_4501
@@ -139,7 +186,7 @@ export default function drawingTsCanvasPart6Test() {
      */
     it('testCanvasDrawShadowMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawShadowMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const path = new drawing.Path();
       let itemList: drawing.ShadowFlag[]= [
         drawing.ShadowFlag.NONE,
@@ -177,7 +224,7 @@ export default function drawingTsCanvasPart6Test() {
      */
     it('testCanvasDrawShadowAbNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawShadowAbNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
       const path = new drawing.Path();
       const shadowFlag: drawing.ShadowFlag = drawing.ShadowFlag.ALL;
       try {
@@ -491,7 +538,7 @@ export default function drawingTsCanvasPart6Test() {
      */
     it('testCanvasDrawBackgroundNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawBackgroundNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
 
       try {
         const brush = new drawing.Brush();
@@ -520,7 +567,7 @@ export default function drawingTsCanvasPart6Test() {
      */
     it('testCanvasDrawBackgroundMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawBackgroundMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
 
       try {
         for (let i = 0; i < 20; i += 1) {
@@ -551,7 +598,7 @@ export default function drawingTsCanvasPart6Test() {
      */
     it('testCanvadrawNestedRoundRectNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvadrawNestedRoundRectNormalStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
 
       try {
         let rect1: common2D.Rect = {
@@ -589,7 +636,7 @@ export default function drawingTsCanvasPart6Test() {
      */
     it('testCanvadrawNestedRoundRectMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvadrawNestedRoundRectMultipleCallsStatic';
-      const canvas = new drawing.Canvas(pixel);
+      const canvas = new drawing.Canvas(pixel!);
 
       try {
         for (let i = 0; i < 20; i += 1) {

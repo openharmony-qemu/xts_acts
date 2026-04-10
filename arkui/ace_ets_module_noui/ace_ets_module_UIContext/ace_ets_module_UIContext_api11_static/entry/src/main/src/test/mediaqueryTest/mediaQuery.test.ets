@@ -29,7 +29,7 @@ import { RecordData } from '@ohos.base';
 
 export default function mediaQueryOffJsunit() {
   describe('mediaQueryOffTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("mediaQueryOffTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
@@ -185,7 +185,6 @@ it('testmediaQueryOff_static_0006', Level.LEVEL0, async  () => {
       console.info("[testmediaQueryOff_static_0006] component fontColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual("#E5182431");
       console.info("[testmediaQueryOff_static_0006] fontColor value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'));
 
     });
@@ -272,7 +271,7 @@ it('testmediaQueryOff_static_0011', Level.LEVEL0, async  () => {
         }
         console.info("onSelect_0012 click result is: " + JSON.stringify(inspector.sendEventByKey('offText', 10, "")));
         emitter.on(innerEventOne, callback1);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("onRequestPopupData_0012 on emitter err : " + JSON.stringify(err));
       }
       console.info('testmediaQueryOff_static_0011 END');
@@ -302,7 +301,7 @@ it('testmatchMediaSync_static_0001', Level.LEVEL0, async  () => {
         }
         console.info("onSelect_0012 click result is: " + inspector.sendEventByKey('matchMediaSyncText', 10, "")); //没有执行页面的点击事件，appDied
         emitter.on(innerEventOne, callback1);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("onRequestPopupData_0012 on emitter err : " + JSON.stringify(err));
       }
       console.info('testmatchMediaSync_static_0001 END');

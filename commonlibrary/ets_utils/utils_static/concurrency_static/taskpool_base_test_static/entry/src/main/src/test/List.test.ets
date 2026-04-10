@@ -17,11 +17,18 @@ import taskTest from "./Task.test";
 import executeDelayedTest from "./ExecuteDelayed.test";
 import taskGroupTest from "./TaskGroup.test";
 import taskPoolTest from "./TaskPool.test";
+import taskPoolCoverageTest from "./TaskpoolCoverage.test";
+import taskTimeoutTest from "./TaskTimeout.test";
+import getTaskTest from "./GetTaskTest.test";
+import taskpoolCancelTest from "./TaskpoolCancelTest.test";
 
 
 export default function testsuite() {
   taskTest();
   executeDelayedTest();
   taskGroupTest();
-  taskPoolTest()
+  taskPoolTest();
+  taskPoolCoverageTest();
+  taskTimeoutTest();
+  getTaskTest();
 }

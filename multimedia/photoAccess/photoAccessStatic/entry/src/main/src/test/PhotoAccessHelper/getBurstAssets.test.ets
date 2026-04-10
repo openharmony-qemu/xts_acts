@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,27 +53,27 @@ export default function getBurstAssetsTest() {
     });
 
     /**
-     * @tc.name   get_image_burst_assets_static_003 
+     * @tc.name   get_image_burst_assets_static_003Adapt001
      * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_Static_003
      * @tc.desc   getBurstAssets by burstKey not exist
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("get_image_burst_assets_static_003 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("get_image_burst_assets_static_003Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let testNum = 'get_image_burst_assets_static_003';
         try {
           let ops = fetchAllOption();
           let burstKey = "e719d696-09fa-44f8-ec3f215aa62a";
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await helper.getBurstAssets(burstKey, ops);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getBurstAssets(burstKey, ops);
           if (fetchResult === undefined || fetchResult.getCount() > 0) {
             expect(false).assertTrue();
             done();
           }
           done();
-        } catch (error: Error) {
+        } catch (error) {
           hilog.info(domain, tag,
             testNum + ' getBurstAssets failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           expect(false).assertTrue();
@@ -94,13 +94,13 @@ export default function getBurstAssetsTest() {
         const testNum = "get_burst_asset_by_subtype_static_001";
         try {
           let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_SUBTYPE, photoAccessHelper.PhotoSubtype.BURST as long);
+          predicates.equalTo(photoAccessHelper.PhotoKeys.PHOTO_SUBTYPE, Int.toLong(photoAccessHelper.PhotoSubtype.BURST));
           let fetchOptions: photoAccessHelper.FetchOptions = {
             fetchColumns: [],
             predicates: predicates
           };
           let assetResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await helper.getAssets(fetchOptions);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
           hilog.info(domain, tag, `${testNum} :: assetResult count:: count = ${assetResult.getCount()}`);
           expect(assetResult.getCount() >= 0).assertTrue();
           done();

@@ -4046,6 +4046,29 @@ export default function abilityTest() {
     })
 
 
+    /**
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_ERRORCODE_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_ERRORCODE_0100
+     * @tc.desc   test setBackgroundPlayMode errcode 6600102
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_SETBACKGROUNDPLAYMODE_ERRORCODE_0100]';
+      await session.destroy();
+      await session.setBackgroundPlayMode(0).then(()=>{
+        console.info(`${TAG}TestLog: setBackgroundPlayMode without avsession test fail, set successful!`);
+        expect(false).assertTrue();
+      }).catch((err: BusinessError) => {
+        console.info(`${TAG}TestLog: setBackgroundPlayMode without avsession error occured, error: code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600102);
+      });
+      session = null;
+      done();
+    })
+
+
   })
 }
 

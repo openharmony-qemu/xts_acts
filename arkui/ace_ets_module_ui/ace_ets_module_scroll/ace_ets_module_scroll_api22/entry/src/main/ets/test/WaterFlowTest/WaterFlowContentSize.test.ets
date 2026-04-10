@@ -61,7 +61,9 @@ export default function WaterFlowContentSize() {
       await getContentSize.click();
       await CommonFunc.sleep(SLEEP_TIME);
       let strJson = getInspectorByKey('WaterFlowContentHeight');
-      expect(Math.abs(vp2px(parseInt(JSON.parse(strJson).$attrs.content)) - vp2px(HEIGHT)) <= 1).assertTrue();
+      console.info('test_waterflow_getContentSize_001 content: ' + parseInt(JSON.parse(strJson).$attrs.content));
+      console.info('test_waterflow_getContentSize_001 HEIGHT: ' + HEIGHT);
+      expect(Math.floor(Math.abs(parseInt(JSON.parse(strJson).$attrs.content) - HEIGHT)) <= 1).assertTrue();
       console.info('[test_waterflow_getContentSize_001] END');
       done();
     });
@@ -81,7 +83,9 @@ export default function WaterFlowContentSize() {
       await getContentSize.click();
       await CommonFunc.sleep(SLEEP_TIME);
       let strJson = getInspectorByKey('WaterFlowContentWidth');
-      expect(Math.abs(vp2px(parseInt(JSON.parse(strJson).$attrs.content)) - vp2px(WIDTH)) <= 1).assertTrue();
+      console.info('test_waterflow_getContentSize_002 content: ' + parseInt(JSON.parse(strJson).$attrs.content));
+      console.info('test_waterflow_getContentSize_002 WIDTH: ' + WIDTH);
+      expect(Math.floor(Math.abs(parseInt(JSON.parse(strJson).$attrs.content) - WIDTH)) <= 1).assertTrue();
       console.info('[test_waterflow_getContentSize_002] END');
       done();
     });

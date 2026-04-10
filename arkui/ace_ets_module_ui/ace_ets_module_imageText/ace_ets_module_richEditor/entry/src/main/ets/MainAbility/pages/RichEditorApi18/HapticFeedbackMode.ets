@@ -113,7 +113,7 @@ struct HapticFeedbackMode1 {
             {
               imageStyle:
               {
-                size: ['50vp', '50vp'],
+                size: ['15vp', '15vp'],
                 objectFit: ImageFit.Fill,
                 verticalAlign: ImageSpanAlignment.CENTER
               }

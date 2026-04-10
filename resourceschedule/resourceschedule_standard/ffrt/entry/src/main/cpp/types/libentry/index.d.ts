@@ -17,6 +17,7 @@ export const conditionVariableTest001: () => number;
 export const conditionVariableTest002: () => number;
 export const conditionVariableTest003: () => number;
 export const conditionVariableTest004: () => number;
+export const conditionVariableTest005: () => number;
 export const conditionVariableApiTest001: () => number;
 export const conditionVariableApiTest002: () => number;
 export const conditionVariableApiTest003: () => number;

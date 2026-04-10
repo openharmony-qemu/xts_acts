@@ -16,14 +16,20 @@
 import newSEServicetest from './newSEService.test.js';
 import openSessionTest from './openSession.test.js';
 import channelCallbacktest from './channelCallback.test.js';
-import EmptyTest from './Empty.test.js'	
+import EmptyTest from './Empty.test.js';
+import GetParam from './GetParam.test.js';
 let info = canIUse("SystemCapability.Communication.NFC.Core");
 export default function testsuite() {
 if (info)
 {
-    newSEServicetest();
-    openSessionTest();
-    channelCallbacktest();
+    let infoNfc = GetParam("const.nfc.not_support", "false");
+    if (infoNfc == "false") {
+        newSEServicetest();
+        openSessionTest();
+        channelCallbacktest();
+    } else {
+        EmptyTest();
+    }
 } else {
     EmptyTest();
 }

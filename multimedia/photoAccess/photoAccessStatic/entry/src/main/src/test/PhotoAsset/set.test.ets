@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,12 +45,12 @@ export default function setTest() {
           predicates: predicates
         };
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await phAccessHelper.getAssets(fetchOption);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOption);
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
         photoAsset.set(title, 'newTitle');
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.error(domain, tag, `${testNum} release failed. error: ${err.code}, ${err.message}`);
         expect(false).assertTrue();
         done();
@@ -66,12 +66,13 @@ export default function setTest() {
           predicates: predicates
         };
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await phAccessHelper.getAssets(fetchOption);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOption);
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let title: string = '';
         photoAsset.set(title, 'newTitle');
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `${testNum} release failed. error: ${err.code}, ${err.message}`);
         expect(err.code === 14000014).assertTrue();
         done();

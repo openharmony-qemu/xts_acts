@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -56,7 +56,7 @@ export default function PhotoAccessHelperStaticTest() {
           hilog.info(domain, tag, '%{public}s', 'PhotoAccessHelperStaticTest 444');
           options.predicates = predicates;
           hilog.info(domain, tag, '%{public}s', 'PhotoAccessHelperStaticTest 666');
-          let result: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(options);
+          let result: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(options);
           hilog.info(domain, tag, '%{public}s', 'PhotoAccessHelperStaticTest 777');
           let photoAssetList: Array<photoAccessHelper.PhotoAsset> = await result.getAllObjects();
           hilog.info(domain, tag, '%{public}s', 'PhotoAccessHelperStaticTest 8888');
@@ -69,7 +69,7 @@ export default function PhotoAccessHelperStaticTest() {
           }
           hilog.info(0x0000, 'testTag', 'PhotoAccessHelperStaticTest end');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag', 'PhotoAccessHelperStaticTest failed' + err.name + err.message);
           expect(false).assertTrue();
           done();

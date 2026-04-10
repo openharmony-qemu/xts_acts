@@ -80,9 +80,9 @@ export default function WebCameraApiNoCrash() {
      * @tc.desc   test WebCameraApiNoCrash
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('WebCameraApiNoCrashStatic0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
+    it('WebCameraApiNoCrashStatic0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('WebCameraApiNoCrash0200', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('WebCameraApiNoCrash0200', true, 1402, done);

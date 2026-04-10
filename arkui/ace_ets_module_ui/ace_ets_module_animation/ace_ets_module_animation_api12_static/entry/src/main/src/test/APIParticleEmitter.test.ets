@@ -34,7 +34,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function APIParticleEmitter() {
   describe('APIParticleEmitter', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APIParticleEmitter beforeEach start");
 
       
@@ -87,7 +87,7 @@ it('APIParticleEmitter_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info('APIParticleEmitter_0100 START ' + JSON.stringify(create));
       await CommonFunc.sleep(1000);
       await (create?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('APIParticleEmitter_Text01');
       await CommonFunc.sleep(1000);
       console.info("[APIParticleEmitter_0100] component JSON.parse(strJson) is: " +

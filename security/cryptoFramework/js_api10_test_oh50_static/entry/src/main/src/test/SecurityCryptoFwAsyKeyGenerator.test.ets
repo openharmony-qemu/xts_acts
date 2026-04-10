@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,7 +60,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -89,7 +89,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
           ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -118,7 +118,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
           ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -147,7 +147,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
           ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -176,7 +176,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
           ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -205,7 +205,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
           ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -234,7 +234,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
           ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -263,7 +263,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
           ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -292,7 +292,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
           ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -321,7 +321,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
           ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -350,7 +350,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
           ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -376,7 +376,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -407,7 +407,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -438,7 +438,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
           ret = ret && commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -472,7 +472,7 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
         let conPriKeyBlob: cryptoFramework.DataBlob = convKeyPair.priKey.getEncoded();
         let ret = commonUtils.compareDataBlob(priKeyBlob, conPriKeyBlob);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -501,9 +501,9 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
         let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(eccPriKeySpec);
         generatorBySpec.generatePriKeySync();
         expect(null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -530,9 +530,9 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
         let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(eccPriKeySpec);
         generatorBySpec.generatePriKeySync();
         expect(null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });
@@ -559,9 +559,9 @@ export default function SecurityCryptoFwAsyKeyGeneratorTestUnit() {
         let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(eccPriKeySpec);
         generatorBySpec.generatePriKeySync();
         expect(null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
-        expect(error.code).assertEqual(17630001);
+        expect((error as BusinessError).code).assertEqual(17630001);
       }
       done();
     });

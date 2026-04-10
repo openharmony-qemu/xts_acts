@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function tabBarModifier() {
   describe('tabBarModifier', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("tabBarModifier beforeEach start");
 
       

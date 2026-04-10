@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ProgressCapsuleRadius() {
  describe('ProgressCapsuleRadius', () => {
-   beforeAll(() => {
+   beforeAll(async (): Promise<void> => {
      console.info("ProgressCapsuleRadius beforeEach start");
      await UtilsTest.msSleep(4000);
      await UtilsTest.startAbility("com.arkui.ace.information.api16.static", "EntryAbility");

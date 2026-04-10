@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,13 +53,13 @@ export default function getSupportedPhotoFormatsTest() {
       async (done: () => void): Promise<void> => {
         const testNum = 'get_supported_photo_formats_static_000';
         try {
-          let result: Array<string> = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.IMAGE);
+          let result: Array<string> = await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getSupportedPhotoFormats(photoAccessHelper.PhotoType.IMAGE);
           for (let i = 0; i < result.length; i++) {
             expect(result[i].length >= 1).assertTrue();
           }
           expect(result).assertContain("jpg");
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(false).assertTrue();
           done();
@@ -78,7 +78,7 @@ export default function getSupportedPhotoFormatsTest() {
       async (done: () => void): Promise<void> => {
         let testNum = 'get_supported_photo_formats_static_001';
         try {
-          let result: Array<string> = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.VIDEO);
+          let result: Array<string> = await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getSupportedPhotoFormats(photoAccessHelper.PhotoType.VIDEO);
           for (let i = 0; i < result.length; i++) {
             expect(result[i].length >= 1).assertTrue();
           }
@@ -104,7 +104,7 @@ export default function getSupportedPhotoFormatsTest() {
         let testNum = 'get_supported_photo_formats_static_002';
         try {
           let result: Array<string> =
-            await phAccessHelper.getSupportedPhotoFormats(1000 as photoAccessHelper.PhotoType);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getSupportedPhotoFormats(photoAccessHelper.PhotoType.fromValue(1000));
           for (let i = 0; i < result.length; i++) {
             expect(videoArray).assertContain(result[i]);
             expect(imageArray).assertContain(result[i]);

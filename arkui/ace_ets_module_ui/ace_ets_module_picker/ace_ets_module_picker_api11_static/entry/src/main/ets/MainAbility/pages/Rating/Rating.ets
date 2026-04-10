@@ -31,7 +31,7 @@ import {
   FontWeight,
   Axis,
   Margin,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,
+  PickerTextStyle, CalendarAlign, CalendarPicker,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,FlexAlign,Rating
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
