@@ -566,10 +566,7 @@ std::vector<OH_NativeBuffer_Format> nativeBuffeFormat = {
     NATIVEBUFFER_PIXEL_FMT_YVYU_422_PKG, NATIVEBUFFER_PIXEL_FMT_VYUY_422_PKG, NATIVEBUFFER_PIXEL_FMT_RGBA_1010102,
     NATIVEBUFFER_PIXEL_FMT_YCBCR_P010,   NATIVEBUFFER_PIXEL_FMT_YCRCB_P010,   NATIVEBUFFER_PIXEL_FMT_RAW10,
     NATIVEBUFFER_PIXEL_FMT_BLOB,         NATIVEBUFFER_PIXEL_FMT_RGBA16_FLOAT, NATIVEBUFFER_PIXEL_FMT_Y8,
-    NATIVEBUFFER_PIXEL_FMT_Y16,          NATIVEBUFFER_PIXEL_FMT_VENDER_MASK,  NATIVEBUFFER_PIXEL_FMT_BUTT
-};
-
-std::vector<OH_NativeBuffer_Format> nativeBuffeFormat_RK = {
+    NATIVEBUFFER_PIXEL_FMT_Y16,          NATIVEBUFFER_PIXEL_FMT_VENDER_MASK,  NATIVEBUFFER_PIXEL_FMT_BUTT,
     NATIVEBUFFER_PIXEL_FMT_RGBX_4444,    NATIVEBUFFER_PIXEL_FMT_RGBA_4444,    NATIVEBUFFER_PIXEL_FMT_RGBX_8888,
     NATIVEBUFFER_PIXEL_FMT_RGBA_8888,    NATIVEBUFFER_PIXEL_FMT_RGB_888,      NATIVEBUFFER_PIXEL_FMT_BGR_565,
     NATIVEBUFFER_PIXEL_FMT_BGRX_4444,    NATIVEBUFFER_PIXEL_FMT_BGRA_4444,    NATIVEBUFFER_PIXEL_FMT_BGRX_5551,
@@ -582,21 +579,25 @@ std::vector<OH_NativeBuffer_Format> nativeBuffeFormat_RK = {
 napi_value OHNativeBufferAllocFormatDiff(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    for (uint32_t index = 0; index < nativeBuffeFormat_RK.size(); index++) {
-        int backInfo = FAIL;
+    int success = 0;
+    for (uint32_t index = 0; index < nativeBuffeFormat.size(); index++) {
         OH_NativeBuffer_Config config = {
             .width = 0x100,
             .height = 0x100,
-            .format = nativeBuffeFormat_RK[index],
+            .format = nativeBuffeFormat[index],
             .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
         };
         OH_NativeBuffer *buffer = OH_NativeBuffer_Alloc(&config);
         if (buffer == nullptr) {
-            napi_create_int32(env, backInfo, &result);
-            LOGE("OH_NativeBuffer_Alloc OH_NativeBuffer_Alloc index = %{public}d", index);
-            return result;
+            continue;
         }
+        LOGI("OH_NativeBuffer_Alloc success num =%{public}d, index=%{public}d", success, index);
+        success += 1;
         OH_NativeBuffer_Unreference(buffer);
+    }
+    if (success == 0) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
     }
     napi_create_int32(env, NUMBER_0, &result);
     return result;
