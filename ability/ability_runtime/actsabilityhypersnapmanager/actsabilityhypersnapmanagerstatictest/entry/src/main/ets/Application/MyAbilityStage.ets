@@ -12,22 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import AbilityStage from "@ohos.app.ability.AbilityStage"
+import AbilityStage from '@ohos.app.ability.AbilityStage'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 export default class MyAbilityStage extends AbilityStage {
   onCreate() {
-    console.log("[Demo] MyAbilityStage onCreate")
-    AppStorage.setOrCreate<string>("onCreate", 'onCreate');
+    console.log('[Demo] MyAbilityStage onCreate')
+    AppStorage.setOrCreate<string>('onCreate', 'onCreate');
   }
 
-  onAboutToCreateAbility(){
-    console.info("MyAbilityStage onAboutToCreateAbility");
-    AppStorage.setOrCreate<string>("onAboutToCreateAbility", 'onAboutToCreateAbility');
-
+  onAboutToCreateAbility() {
+    console.info('MyAbilityStage onAboutToCreateAbility');
+    AppStorage.setOrCreate<string>('onAboutToCreateAbility', 'onAboutToCreateAbility');
   }
-  onLaunchFromHyperSnap(){
-    console.info("MyAbilityStage onLaunchFromHyperSnap");
-    AppStorage.setOrCreate<string>("onLaunchFromHyperSnap", 'onLaunchFromHyperSnap');
+  
+  onLaunchFromHyperSnap() {
+    console.info('MyAbilityStage onLaunchFromHyperSnap');
+    AppStorage.setOrCreate<string>('onLaunchFromHyperSnap', 'onLaunchFromHyperSnap');
   }
 }

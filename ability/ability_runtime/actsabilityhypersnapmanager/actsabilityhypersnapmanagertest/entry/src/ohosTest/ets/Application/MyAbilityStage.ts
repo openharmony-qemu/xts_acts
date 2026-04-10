@@ -13,21 +13,22 @@
 * limitations under the License.
 */
 
-import AbilityStage from "@ohos.app.ability.AbilityStage"
+import AbilityStage from '@ohos.app.ability.AbilityStage'
 
 export default class MyAbilityStage extends AbilityStage {
   onCreate() {
-    console.info("MyAbilityStageMonitor onCreate");
+    console.info('MyAbilityStageMonitor onCreate');
     globalThis.abilityStageContext = this.context;
-    AppStorage.setOrCreate<string>("onCreate", 'onCreate');
+    AppStorage.setOrCreate<string>('onCreate', 'onCreate');
   }
-  onAboutToCreateAbility(){
-    console.info("MyAbilityStage onAboutToCreateAbility");
-    AppStorage.setOrCreate<string>("onAboutToCreateAbility", 'onAboutToCreateAbility');
 
+  onAboutToCreateAbility() {
+    console.info('MyAbilityStage onAboutToCreateAbility');
+    AppStorage.setOrCreate<string>('onAboutToCreateAbility', 'onAboutToCreateAbility');
   }
-  onLaunchFromHyperSnap(){
-    console.info("MyAbilityStage onLaunchFromHyperSnap");
-    AppStorage.setOrCreate<string>("onLaunchFromHyperSnap", 'onLaunchFromHyperSnap');
+  
+  onLaunchFromHyperSnap() {
+    console.info('MyAbilityStage onLaunchFromHyperSnap');
+    AppStorage.setOrCreate<string>('onLaunchFromHyperSnap', 'onLaunchFromHyperSnap');
   }
 }
