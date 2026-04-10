@@ -169,7 +169,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_0100
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_0100
      * @tc.name      testGenericMethodsConstraintGroup0001
      * @tc.desc      Generic methods constraint test for PointIntOrDouble with Int1
      * @tc.size      MediumTest
@@ -185,7 +185,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_0200
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_0200
      * @tc.name      testGenericMethodsConstraintGroup0002
      * @tc.desc      Generic methods constraint test for PointIntOrDouble with Double1
      * @tc.size      MediumTest
@@ -201,7 +201,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_0300
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_0300
      * @tc.name      testGenericMethodsConstraintGroup0003
      * @tc.desc      Generic methods constraint test for PointAOrB with "a"
      * @tc.size      MediumTest
@@ -216,7 +216,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_0400
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_0400
      * @tc.name      testGenericMethodsConstraintGroup0004
      * @tc.desc      Generic methods constraint test for PointByte
      * @tc.size      MediumTest
@@ -231,7 +231,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_0500
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_0500
      * @tc.name      testGenericMethodsConstraintGroup0005
      * @tc.desc      Generic methods constraint test for PointShort
      * @tc.size      MediumTest
@@ -246,7 +246,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_0600
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_0600
      * @tc.name      testGenericMethodsConstraintGroup0006
      * @tc.desc      Generic methods constraint test for PointInt
      * @tc.size      MediumTest
@@ -261,7 +261,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_0700
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_0700
      * @tc.name      testGenericMethodsConstraintGroup0007
      * @tc.desc      Generic methods constraint test for PointLong
      * @tc.size      MediumTest
@@ -276,7 +276,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_0800
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_0800
      * @tc.name      testGenericMethodsConstraintGroup0008
      * @tc.desc      Generic methods constraint test for PointFloat
      * @tc.size      MediumTest
@@ -291,7 +291,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_0900
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_0900
      * @tc.name      testGenericMethodsConstraintGroup0009
      * @tc.desc      Generic methods constraint test for PointDouble with double
      * @tc.size      MediumTest
@@ -306,7 +306,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_1000
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_1000
      * @tc.name      testGenericMethodsConstraintGroup0010
      * @tc.desc      Generic methods constraint test for PointDouble with number
      * @tc.size      MediumTest
@@ -321,7 +321,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_1100
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_1100
      * @tc.name      testGenericMethodsConstraintGroup0011
      * @tc.desc      Generic methods constraint test for PointNumber with double
      * @tc.size      MediumTest
@@ -336,7 +336,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_1200
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_1200
      * @tc.name      testGenericMethodsConstraintGroup0012
      * @tc.desc      Generic methods constraint test for PointNumber with number
      * @tc.size      MediumTest
@@ -351,7 +351,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_1300
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_1300
      * @tc.name      testGenericMethodsConstraintGroup0013
      * @tc.desc      Generic methods constraint test for PointBoolean
      * @tc.size      MediumTest
@@ -366,7 +366,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_1400
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_1400
      * @tc.name      testGenericMethodsConstraintGroup0014
      * @tc.desc      Generic methods constraint test for PointChar
      * @tc.size      MediumTest
@@ -381,7 +381,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_1500
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_1500
      * @tc.name      testGenericMethodsConstraintGroup0015
      * @tc.desc      Generic methods constraint test for PointNull
      * @tc.size      MediumTest
@@ -396,7 +396,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_1600
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_1600
      * @tc.name      testGenericMethodsConstraintGroup0016
      * @tc.desc      Generic methods constraint test for PointUndefined
      * @tc.size      MediumTest
@@ -411,7 +411,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_1700
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_1700
      * @tc.name      testGenericMethodsConstraintGroup0017
      * @tc.desc      Generic methods constraint test for PointIntArray
      * @tc.size      MediumTest
@@ -427,7 +427,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_1800
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_1800
      * @tc.name      testGenericMethodsConstraintGroup0018
      * @tc.desc      Generic methods constraint test for PointIntPrimitiveArray
      * @tc.size      MediumTest
@@ -443,7 +443,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_1900
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_1900
      * @tc.name      testGenericMethodsConstraintGroup0019
      * @tc.desc      Generic methods constraint test for PointColor
      * @tc.size      MediumTest
@@ -458,7 +458,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_2000
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_2000
      * @tc.name      testGenericMethodsConstraintGroup0020
      * @tc.desc      Generic methods constraint test for PointObjectInt
      * @tc.size      MediumTest
@@ -474,7 +474,7 @@ export default function GenericMethodsConstraintTest_Continue() {
     });
 
     /**
-     * @tc.number    SUB_GENERIC_METHODS_CONSTRAIN_2100
+     * @tc.number    SUB_GENERIC_METHODS_CONSTRAINT_2100
      * @tc.name      testGenericMethodsConstraintGroup0021
      * @tc.desc      Generic methods constraint test for PointIntObject
      * @tc.size      MediumTest
