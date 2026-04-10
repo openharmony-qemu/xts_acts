@@ -826,7 +826,7 @@ napi_value TestSetTorchModeOnWithLevelErr(napi_env env, napi_callback_info info)
     const double normalTorchLevel = 1.0;
     const double negativeTorchLevel = -1.0;
     const double overRangeTorchLevel = 1.1;
-    Camera_ErrorCode ret = OH_CameraManager_SetTorchModeOnWithLevel(nullptr, NORMAL_TORCH_LEVEL);
+    Camera_ErrorCode ret = OH_CameraManager_SetTorchModeOnWithLevel(nullptr, normalTorchLevel);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         napi_create_int32(env, ret, &result);
         return result;
@@ -839,13 +839,13 @@ napi_value TestSetTorchModeOnWithLevelErr(napi_env env, napi_callback_info info)
         return result;
     }
     
-    ret = OH_CameraManager_SetTorchModeOnWithLevel(cameraManager, NEGATIVE_TORCH_LEVEL);
+    ret = OH_CameraManager_SetTorchModeOnWithLevel(cameraManager, negativeTorchLevel);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         napi_create_int32(env, ret, &result);
         return result;
     }
 
-    ret = OH_CameraManager_SetTorchModeOnWithLevel(cameraManager, OVER_RANGE_TORCH_LEVEL);
+    ret = OH_CameraManager_SetTorchModeOnWithLevel(cameraManager, overRangeTorchLevel);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         napi_create_int32(env, ret, &result);
         return result;
