@@ -27,7 +27,8 @@ export default function abilityTest() {
   let TAG = "";
 
   describe('HyperSnapManagerTest', () => {
-    beforeAll(async (done: Function) => {
+    
+    beforeAll(async (done: () => void): Promise<void> => {
       console.log('HyperSnapManagerTest' + "beforeAll called");
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
       await abilityDelegator.executeShellCommand('hidumper -s 1901 -a -a').then((result:ShellCmdResult|undefined): void => {
@@ -39,6 +40,7 @@ export default function abilityTest() {
       })
       done();
     })
+
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbility_static_0100
      * @tc.number SUB_Ability_AbilityRuntime_HyperSnapManager_OnAboutToCreateAbility_static_0100

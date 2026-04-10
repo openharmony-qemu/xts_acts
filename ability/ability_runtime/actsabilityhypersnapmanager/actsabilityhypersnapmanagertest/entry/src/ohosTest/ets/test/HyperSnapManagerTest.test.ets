@@ -17,6 +17,7 @@ import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
 import hyperSnapManager from "@ohos.app.ability.hyperSnapManager"
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
+import hilog from '@ohos.hilog';
 
 let supportUse = false;
 
