@@ -24,24 +24,31 @@ import { Driver, Point, ON } from '@kit.TestKit';
 
 async function dragFromProbeHost(): Promise<void> {
   const driver = Driver.create();
-  let button = await driver.findComponent(ON.id('commonDragHost'));
-  if (button === undefined || button === null) {
+  const host = await driver.findComponent(ON.id('commonDragHost'));
+  if (host === undefined || host === null) {
     throw new Error('commonDragHost not found');
   }
-  let center = await button.getBoundsCenter();
-  let bounds = await button.getBounds();
+  const center = await host.getBoundsCenter();
+  const bounds = await host.getBounds();
   if (center === undefined || center === null) {
     throw new Error('getBoundsCenter nullish');
   }
   if (bounds === undefined || bounds === null) {
     throw new Error('getBounds nullish');
   }
-  let cx: int = Double.toInt(Math.round(center.x)) as int;
-  let cy: int = Double.toInt(Math.round(center.y)) as int;
-  let left: int = Double.toInt(Math.round(bounds.left)) as int;
+  let cx: int = Double.toInt(Math.round(center.x));
+  let cy: int = Double.toInt(Math.round(center.y));
+  let left: int = Double.toInt(Math.round(bounds.left));
+  let right: int = Double.toInt(Math.round(bounds.right));
+  let w: int = right - left;
+  let step: int = Double.toInt(Math.max(1, Math.floor(Number(w) / 4)));
+  let toX: int = cx - step;
+  if (toX < left) {
+    toX = left;
+  }
   await driver.dragBetween(
     { x: cx, y: cy } as Point,
-    { x: left, y: cy } as Point,
+    { x: toX, y: cy } as Point,
     3500,
     1600
   );
