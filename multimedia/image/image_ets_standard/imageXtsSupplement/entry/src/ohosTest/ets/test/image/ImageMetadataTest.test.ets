@@ -18,7 +18,6 @@ import { common } from '@kit.AbilityKit';
 import { fileIo as fs } from '@kit.CoreFileKit';
 import { PixelMapFormat } from '@kit.MediaLibraryKit';
 import { colorSpaceManager } from '@kit.ArkGraphics2D';
-
 const TAG = 'Xts.ImageMetadataTest';
 
 let fdNumber: number;
@@ -56,15 +55,15 @@ export default function ImageMetadataTest() {
       console.info(TAG, 'afterAll case.');
     });
     /**
-     * @tc.number    IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0100
-     * @tc.name      IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0100
+     * @tc.number    SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0100
+     * @tc.name      SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0100
      * @tc.desc      createAuxiliaryPictureUsingAllocator the third parameter is null
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0100', Level.LEVEL1, async (done: Function) => {
-      const testName = 'IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0100';
+    it('SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0100', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0100';
       let mAuxiliaryPicture: image.AuxiliaryPicture | undefined;
       try {
         let auxiliaryPictureInfo: image.AuxiliaryPictureInfo = {
@@ -87,15 +86,15 @@ export default function ImageMetadataTest() {
       }
     });
     /**
-     * @tc.number    IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0200
-     * @tc.name      IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0200
+     * @tc.number    SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0200
+     * @tc.name      SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0200
      * @tc.desc      createAuxiliaryPictureUsingAllocator the third parameter is undefined
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0200', Level.LEVEL1, async (done: Function) => {
-      const testName = 'IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0200';
+    it('SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0200', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0200';
       let mAuxiliaryPicture: image.AuxiliaryPicture | undefined;
       try {
         let auxiliaryPictureInfo: image.AuxiliaryPictureInfo = {
@@ -118,15 +117,15 @@ export default function ImageMetadataTest() {
       }
     });
     /**
-     * @tc.number    IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0300
-     * @tc.name      IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0300
+     * @tc.number    SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0300
+     * @tc.name      SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0300
      * @tc.desc      createAuxiliaryPictureUsingAllocator the first parameter is null
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0300', Level.LEVEL1, async (done: Function) => {
-      const testName = 'IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0300';
+    it('SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0300', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0300';
       let mAuxiliaryPicture: image.AuxiliaryPicture | undefined;
       try {
         mAuxiliaryPicture = image.createAuxiliaryPictureUsingAllocator(null);
@@ -139,15 +138,15 @@ export default function ImageMetadataTest() {
       }
     });
     /**
-     * @tc.number    IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0400
-     * @tc.name      IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0400
+     * @tc.number    SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0400
+     * @tc.name      SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0400
      * @tc.desc      createAuxiliaryPictureUsingAllocator the first parameter is undefined
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0400', Level.LEVEL1, async (done: Function) => {
-      const testName = 'IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0400';
+    it('SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0400', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0400';
       let mAuxiliaryPicture: image.AuxiliaryPicture | undefined;
       try {
         mAuxiliaryPicture = image.createAuxiliaryPictureUsingAllocator(undefined);
@@ -160,15 +159,15 @@ export default function ImageMetadataTest() {
       }
     });
     /**
-     * @tc.number    IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0500
-     * @tc.name      IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0500
+     * @tc.number    SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0500
+     * @tc.name      SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0500
      * @tc.desc      createAuxiliaryPictureUsingAllocator pixelFormat
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0500', Level.LEVEL1, async (done: Function) => {
-      const testName = 'IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0500';
+    it('SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0500', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_CREATE_AUXILIARY_PICTURE_TEST_0500';
       let mAuxiliaryPicture: image.AuxiliaryPicture | undefined;
       let pixels: ArrayBuffer = new ArrayBuffer(0);
       const formats = [
@@ -199,15 +198,15 @@ export default function ImageMetadataTest() {
       done();
     });
     /**
-     * @tc.number    IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0100
-     * @tc.name      IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0100
+     * @tc.number    SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0100
+     * @tc.name      SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0100
      * @tc.desc      readImageMetadataByType cover exifMetadata
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0100', Level.LEVEL1, async (done: Function) => {
-      const testName = 'IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0100';
+    it('SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0100', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0100';
       let imageSource = await getImageSource('test_exif_v2.jpg');
       try {
         let res = await imageSource.readImageMetadataByType();
@@ -222,15 +221,15 @@ export default function ImageMetadataTest() {
       }
     });
     /**
-     * @tc.number    IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0200
-     * @tc.name      IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0200
+     * @tc.number    SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0200
+     * @tc.name      SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0200
      * @tc.desc      readImageMetadataByType the first parameter is 空数组
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0200', Level.LEVEL1, async (done: Function) => {
-      const testName = 'IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0200';
+    it('SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0200', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0200';
       let imageSource = await getImageSource('test_exif_v2.jpg');
       const metadataTypes = [image.MetadataType.EXIF_METADATA];
       try {
@@ -246,15 +245,15 @@ export default function ImageMetadataTest() {
       }
     });
     /**
-     * @tc.number    IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0300
-     * @tc.name      IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0300
+     * @tc.number    SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0300
+     * @tc.name      SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0300
      * @tc.desc      readImageMetadataByType the second parameter is undefined
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0300', Level.LEVEL1, async (done: Function) => {
-      const testName = 'IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0300';
+    it('SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0300', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0300';
       let imageSource = await getImageSource('test_exif_v2.jpg');
       const metadataTypes = [image.MetadataType.EXIF_METADATA];
       try {
@@ -269,15 +268,15 @@ export default function ImageMetadataTest() {
       }
     });
     /**
-     * @tc.number    IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0400
-     * @tc.name      IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0400
+     * @tc.number    SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0400
+     * @tc.name      SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0400
      * @tc.desc      readImageMetadataByType the second parameter is null
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0400', Level.LEVEL1, async (done: Function) => {
-      const testName = 'IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0400';
+    it('SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0400', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0400';
       let imageSource = await getImageSource('test_exif_v2.jpg');
       const metadataTypes = [image.MetadataType.EXIF_METADATA];
       try {
@@ -292,15 +291,84 @@ export default function ImageMetadataTest() {
       }
     });
     /**
-     * @tc.number    IMAGE_MEDIA_CREATE_IMAGE_RAW_DATA_0100
-     * @tc.name      IMAGE_MEDIA_CREATE_IMAGE_RAW_DATA_0100
+     * @tc.number    SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0500
+     * @tc.name      SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0500
+     * @tc.desc      readImageMetadataByType the first parameter is null
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0500', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0500';
+      let imageSource = await getImageSource('test_exif_v2.jpg');
+      try {
+        let res = await imageSource.readImageMetadataByType(null, 0);
+        console.info(TAG, testName, 'readImageMetadataByType success', JSON.stringify(res));
+        expect(res != undefined).assertTrue();
+        await imageSource!.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0600
+     * @tc.name      SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0600
+     * @tc.desc      readImageMetadataByType the first parameter is undefined
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0600', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0600';
+      let imageSource = await getImageSource('test_exif_v2.jpg');
+      try {
+        let res = await imageSource.readImageMetadataByType(undefined, 0);
+        console.info(TAG, testName, 'readImageMetadataByType success', JSON.stringify(res));
+        expect(res != undefined).assertTrue();
+        await imageSource!.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });/**
+     * @tc.number    SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0700
+     * @tc.name      SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0700
+     * @tc.desc      readImageMetadataByType cover 7700204
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0700', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_READ_IMAGE_METADATA_BY_TYPE_0700';
+      let imageSource = await getImageSource('test_exif_v2.jpg');
+      try {
+        const metadataTypes = [image.MetadataType.EXIF_METADATA];
+        let res = await imageSource.readImageMetadataByType(metadataTypes, -100);
+        console.info(TAG, testName, 'readImageMetadataByType success', JSON.stringify(res));
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(7700204);
+        await imageSource!.release();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_IMAGE_MEDIA_CREATE_IMAGE_RAW_DATA_0100
+     * @tc.name      SUB_IMAGE_MEDIA_CREATE_IMAGE_RAW_DATA_0100
      * @tc.desc      createImageRawData
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('IMAGE_MEDIA_CREATE_IMAGE_RAW_DATA_0100', Level.LEVEL1, async (done: Function) => {
-      const testName = 'IMAGE_MEDIA_CREATE_IMAGE_RAW_DATA_0100';
+    it('SUB_IMAGE_MEDIA_CREATE_IMAGE_RAW_DATA_0100', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_MEDIA_CREATE_IMAGE_RAW_DATA_0100';
       let imageSource = await getImageSource('meta.dng');
       try {
         let res = await imageSource.createImageRawData();
