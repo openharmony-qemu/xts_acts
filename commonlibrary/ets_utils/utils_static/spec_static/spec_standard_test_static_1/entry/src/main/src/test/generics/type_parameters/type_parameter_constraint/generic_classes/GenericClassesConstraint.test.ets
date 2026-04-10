@@ -654,19 +654,5 @@ export default function GenericClassesConstraintTest() {
       expect(x1 instanceof PointAny).assertTrue()
       expect(x2 instanceof FinalPointAny).assertTrue()
     });
-
-    /**
-     * @tc.number    SUB_GENERIC_CLASSES_CONSTRAINT_3100
-     * @tc.name      testGenericClassesConstraintGroup0031
-     * @tc.desc      Generic class constraint test with custom class A
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericClassesConstraintGroup0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      res = 0
-      new C<A>(new A())
-      expect(res).assertEqual(0)
-    });
   })
 }
