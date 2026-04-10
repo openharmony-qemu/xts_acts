@@ -1592,6 +1592,20 @@ export default function CameraXtsTest() {
       expect(ret).assertEqual(TEST_OK)
       done()
     })
+
+    /**
+     * @tc.name   testCameraControlCenterStatusInfoCONTROLCENTEREFFECTTYPEAUTOFRAMING
+     * @tc.number SUB_MULTIMEIDA_OH_Camera_CONTROL_CENTER_EFFECT_TYPE_AUTO_FRAMING_ErrorCode_0100
+     * @tc.desc   Test CONTROL_CENTER_EFFECT_TYPE_AUTO_FRAMING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCameraControlCenterStatusInfoCONTROLCENTEREFFECTTYPEAUTOFRAMING", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.sessionGetSupportedEffectTypes(camera.ControlCenterEffectType.AUTO_FRAMING)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
   })
 }
 
