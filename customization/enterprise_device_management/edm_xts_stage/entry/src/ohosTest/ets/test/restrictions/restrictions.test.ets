@@ -2065,6 +2065,191 @@ function testSetDisallowedPolicy() {
       done();
     });
 
+   /**
+    * @tc.name   test_set_disallowed_policy_core_dump_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with coredump feature using byod admin (disallow true)
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_core_dump_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, true);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_core_dump_0200
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0200
+    * @tc.desc   test restrictions setDisallowedPolicy with coredump undefined disallow
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_core_dump_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_core_dump_0300
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0300
+    * @tc.desc   test restrictions setDisallowedPolicy with coredump feature normal admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_core_dump_0300", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, false);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+        expect(ret).assertFalse();
+      } catch (error) {
+        expect(Number(error.code) === 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_core_dump_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0400
+    * @tc.desc   test restrictions setDisallowedPolicy with coredump feature super admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_core_dump_0400", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, true);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+        expect(ret).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_core_dump_0500
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0500
+    * @tc.desc   test restrictions setDisallowedPolicy with coredump without admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_core_dump_0500", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_core_dump_0600
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0600
+    * @tc.desc   test restrictions setDisallowedPolicy with coredump with null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_core_dump_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.CORE_DUMP, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_core_dump_0700
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0700
+    * @tc.desc   test restrictions setDisallowedPolicy with coredump with undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_core_dump_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.CORE_DUMP, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_core_dump_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCORE_DUMP_0800
+    * @tc.desc   test restrictions setDisallowedPolicy with coredump with null disallow
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_core_dump_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.CORE_DUMP, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
     /**
     * @tc.name   getDisallowedPolicy_test_001
     * @tc.number getDisallowedPolicy_test_001
@@ -3339,6 +3524,147 @@ function testGetDisallowedPolicy() {
        expect(Number(error.code) === 401).assertTrue();
      } finally {
        await adminManager.disableAdmin(SELFWANT);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_core_dump_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0100
+    * @tc.desc   test restrictions getDisallowedPolicy with coredump feature byod admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_core_dump_0100", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+     try {
+       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(Number(error.code) === 9200002).assertTrue();
+     } finally {
+       await adminManager.disableAdmin(SELFWANT);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_core_dump_0200
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0200
+    * @tc.desc   test restrictions getDisallowedPolicy with coredump feature null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_core_dump_0200", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+     try {
+       let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.CORE_DUMP);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(false).assertTrue();
+     } finally {
+       await adminManager.disableAdmin(SELFWANT);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_core_dump_0300
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0300
+    * @tc.desc   test restrictions getDisallowedPolicy with coredump feature super admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_core_dump_0300", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+     try {
+       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(false).assertTrue();
+     } finally {
+       await adminManager.disableSuperAdmin(SELFHAPNAME);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_core_dump_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0400
+    * @tc.desc   test restrictions getDisallowedPolicy with coredump feature normal admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_core_dump_0400", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+     try {
+       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(Number(error.code) === 9200002).assertTrue();  
+     } finally {
+       await adminManager.disableAdmin(SELFWANT);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_core_dump_0500
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0500
+    * @tc.desc   test restrictions getDisallowedPolicy with coredump feature without admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_core_dump_0500", Level.LEVEL2, async (done: Function) => {
+     try {
+       restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.CORE_DUMP);
+       expect(false).assertTrue();
+     } catch (error) {
+       expect(Number(error.code) === 9200001).assertTrue();  
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_core_dump_0600
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0600
+    * @tc.desc   test restrictions getDisallowedPolicy with unknow feature
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_core_dump_0600", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+     try {
+       restrictions.getDisallowedPolicy(SELFWANT, -1);
+       expect(false).assertTrue();
+     } catch (error) {
+       expect(Number(error.code) === 801).assertTrue();  
+     } finally {
+       await adminManager.disableSuperAdmin(SELFHAPNAME);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_core_dump_0700
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYCOREDUMP_0700
+    * @tc.desc   test restrictions getDisallowedPolicy with coredump feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_core_dump_0700", Level.LEVEL2, async (done: Function) => {
+     try {
+       let ret = restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.CORE_DUMP);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(Number(error.code) === 401).assertTrue();  
      }
      done();
    });
